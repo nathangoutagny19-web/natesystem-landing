@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231a1a1a'/%3E%3Ctext x='12' y='48' font-family='Georgia,serif' font-style='italic' font-size='46' font-weight='bold' fill='white'%3EN%3C/text%3E%3Ccircle cx='49' cy='46' r='4' fill='%23e63946'/%3E%3C/svg%3E">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231a1a1a'/%3E%3Ctext x='12' y='48' font-family='Georgia,serif' font-style='italic' font-size='46' font-weight='bold' fill='white'%3EN%3C/text%3E%3Ccircle cx='49' cy='46' r='4' fill='%23C9A84C'/%3E%3C/svg%3E">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nate System — L’écosystème sur-mesure qui manque à votre entreprise</title>
-<meta name="description" content="Nate System conçoit des écosystèmes digitaux sur-mesure pour les TPE/PME de 10 à 70 employés. Outils connectés, équipes formées, zéro friction.">
-<meta property="og:title" content="Nate System — Scale Smarter">
-<meta property="og:description" content="On remplace vos outils génériques par une infrastructure taillée pour vous. Livrée. Formée. Autonome.">
+<title>Nathan Goutagny — Custom Operational Systems for Independent Luxury Hotels</title>
+<meta name="description" content="I build custom internal systems that connect every department in real time for independent luxury hotels. Based in Budapest.">
+<meta property="og:title" content="Nathan Goutagny — Independent Luxury Hotel Systems">
+<meta property="og:description" content="Custom operational systems for boutique hotels. Every department connected in real time.">
 <meta property="og:type" content="website">
-<meta property="og:locale" content="fr_FR">
+<meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
@@ -24,9 +24,9 @@
   --text: #f0f0f2;
   --text-secondary: #8a8a96;
   --text-muted: #55555f;
-  --red: #c83737;
-  --red-glow: rgba(200,55,55,0.15);
-  --red-subtle: rgba(200,55,55,0.08);
+  --accent: #C9A84C;
+  --accent-glow: rgba(201,168,76,0.15);
+  --accent-subtle: rgba(201,168,76,0.08);
   --border: rgba(255,255,255,0.06);
   --border-hover: rgba(255,255,255,0.12);
   --serif: 'Instrument Serif', Georgia, serif;
@@ -49,7 +49,7 @@ body {
 .grid-bg::after {
   content: ''; position: absolute; top: -200px; left: 50%; transform: translateX(-50%);
   width: 800px; height: 600px;
-  background: radial-gradient(ellipse, var(--red-glow) 0%, transparent 70%); filter: blur(80px);
+  background: radial-gradient(ellipse, var(--accent-glow) 0%, transparent 70%); filter: blur(80px);
 }
 .noise {
   position: fixed; inset: 0; z-index: 1; pointer-events: none; opacity: 0.03;
@@ -58,7 +58,6 @@ body {
 .content { position: relative; z-index: 2; }
 
 /* NAV */
-/* FIXED LOGO — top left */
 .nav-logo-fixed {
   position: fixed; top: 20px; left: 24px; z-index: 100;
   display: flex; align-items: center; gap: 10px; text-decoration: none;
@@ -69,8 +68,8 @@ body {
   transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .nav-logo-fixed .nav-logo-dot {
-  width: 5px; height: 5px; background: var(--red); border-radius: 50%;
-  margin-left: -5px; margin-top: 8px; box-shadow: 0 0 8px var(--red-glow);
+  width: 5px; height: 5px; background: var(--accent); border-radius: 50%;
+  margin-left: -5px; margin-top: 8px; box-shadow: 0 0 8px var(--accent-glow);
   transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .nav-logo-fixed .nav-brand {
@@ -79,11 +78,11 @@ body {
 }
 .nav-logo-fixed.scrolled .nav-brand { opacity: 0; width: 0; overflow: hidden; margin: 0; padding: 0; }
 .nav-logo-fixed.scrolled .nav-logo-n { font-size: 22px; }
-/* NAV — centered CTA pill */
+
 nav {
-  position: fixed; top: 16px; left: 50%; transform: translateX(-50%); z-index: 100;
+  position: fixed; top: 16px; right: 24px; z-index: 100;
   padding: 0; width: auto;
-  display: flex; align-items: center;
+  display: flex; align-items: center; gap: 4px;
   backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
   background: rgba(14,14,18,0.4); border: 1px solid rgba(255,255,255,0.06);
   border-radius: 100px; transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
@@ -93,6 +92,17 @@ nav.scrolled {
   background: rgba(14,14,18,0.85); border-color: rgba(255,255,255,0.1);
   box-shadow: 0 8px 40px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.03) inset;
 }
+.lang-toggle {
+  display: flex; align-items: center; gap: 2px; padding: 4px;
+}
+.lang-btn {
+  display: flex; align-items: center; justify-content: center;
+  padding: 6px 10px; border-radius: 50px; border: none;
+  background: transparent; cursor: pointer; transition: all 0.3s ease;
+  color: var(--text-muted); font-family: var(--sans); font-size: 11px; font-weight: 600; letter-spacing: 0.5px;
+}
+.lang-btn:hover { color: var(--text); }
+.lang-btn.active { color: var(--text); background: rgba(255,255,255,0.08); }
 .nav-cta {
   display: flex; align-items: center; gap: 8px; padding: 12px 24px;
   background: transparent; border: none; border-radius: 100px;
@@ -100,192 +110,31 @@ nav.scrolled {
   letter-spacing: 0.3px; cursor: pointer; transition: all 0.3s ease;
   text-decoration: none; position: relative; overflow: hidden; white-space: nowrap;
 }
-.nav-cta::before { content: ''; position: absolute; inset: 0; background: rgba(200,55,55,0.15); opacity: 0; transition: opacity 0.3s; border-radius: 100px; }
+.nav-cta::before { content: ''; position: absolute; inset: 0; background: rgba(201,168,76,0.15); opacity: 0; transition: opacity 0.3s; border-radius: 100px; }
 .nav-cta:hover::before { opacity: 1; }
-.nav-cta:hover { border-color: rgba(200,55,55,0.5); box-shadow: 0 0 24px var(--red-glow); transform: scale(1.02); }
+.nav-cta:hover { border-color: rgba(201,168,76,0.5); box-shadow: 0 0 24px var(--accent-glow); transform: scale(1.02); }
 .nav-cta-dot {
-  width: 5px; height: 5px; background: var(--red); border-radius: 50%;
-  position: relative; z-index: 1; box-shadow: 0 0 6px var(--red-glow);
+  width: 5px; height: 5px; background: var(--accent); border-radius: 50%;
+  position: relative; z-index: 1; box-shadow: 0 0 6px var(--accent-glow);
   animation: navPulse 2.5s ease-in-out infinite;
 }
-@keyframes navPulse { 0%, 100% { box-shadow: 0 0 6px var(--red-glow); } 50% { box-shadow: 0 0 12px var(--red-glow), 0 0 20px rgba(200,55,55,0.15); } }
+@keyframes navPulse { 0%, 100% { box-shadow: 0 0 6px var(--accent-glow); } 50% { box-shadow: 0 0 12px var(--accent-glow), 0 0 20px rgba(201,168,76,0.15); } }
 .nav-cta span { position: relative; z-index: 1; }
-/* LIGHT THEME */
-[data-theme="light"] {
-  --bg: #f5f4f1;
-  --bg-card: #ffffff;
-  --bg-elevated: #f0efec;
-  --grid: rgba(0,0,0,0.04);
-  --grid-strong: rgba(0,0,0,0.07);
-  --text: #1a1a1f;
-  --text-secondary: #5a5a66;
-  --text-muted: #9a9aa6;
-  --red: #c83737;
-  --red-glow: rgba(200,55,55,0.12);
-  --red-subtle: rgba(200,55,55,0.06);
-  --border: rgba(0,0,0,0.08);
-  --border-hover: rgba(0,0,0,0.15);
-}
-[data-theme="light"] body { background: var(--bg); color: var(--text); }
-[data-theme="light"] .grid-bg {
-  background-image: linear-gradient(var(--grid) 1px, transparent 1px), linear-gradient(90deg, var(--grid) 1px, transparent 1px);
-}
-[data-theme="light"] .grid-bg::after { background: radial-gradient(ellipse, rgba(200,55,55,0.06) 0%, transparent 70%); }
-[data-theme="light"] .noise { opacity: 0.015; }
-[data-theme="light"] .nav-logo-fixed .nav-brand { color: var(--text-muted); }
-[data-theme="light"] nav {
-  background: rgba(245,244,241,0.6);
-  border-color: rgba(0,0,0,0.08);
-}
-[data-theme="light"] nav.scrolled {
-  background: rgba(245,244,241,0.92);
-  border-color: rgba(0,0,0,0.12);
-  box-shadow: 0 8px 40px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.03) inset;
-}
-[data-theme="light"] .nav-sep { background: rgba(0,0,0,0.1); }
-[data-theme="light"] .nav-cta {
-  background: rgba(200,55,55,0.08);
-  border-color: rgba(200,55,55,0.2);
-}
-[data-theme="light"] .nav-cta:hover {
-  border-color: rgba(200,55,55,0.4);
-  box-shadow: 0 0 24px rgba(200,55,55,0.1);
-}
-[data-theme="light"] .problem-card,
-[data-theme="light"] .solution-step,
-[data-theme="light"] .result-card,
-[data-theme="light"] .case-study-card,
-[data-theme="light"] .faq-item,
-[data-theme="light"] .q-insight,
-[data-theme="light"] .q-details,
-[data-theme="light"] .qualify-item {
-  background: var(--bg-card);
-  border-color: var(--border);
-}
-[data-theme="light"] .problem-card:hover,
-[data-theme="light"] .solution-step:hover,
-[data-theme="light"] .case-study-card:hover {
-  background: var(--bg-elevated);
-  border-color: var(--border-hover);
-}
-[data-theme="light"] .divider { background: var(--border); }
-[data-theme="light"] .divider::after { background: var(--bg); color: var(--text-muted); }
-[data-theme="light"] .hero-cta {
-  border-color: rgba(200,55,55,0.2);
-  box-shadow: 0 0 40px rgba(200,55,55,0.06), 0 0 80px rgba(200,55,55,0.03);
-}
-[data-theme="light"] .hero-cta-arrow,
-[data-theme="light"] .hero-cta-chevron { border-color: rgba(200,55,55,0.15); }
-[data-theme="light"] .quiz-overlay { background: rgba(255,255,255,0.7); }
-[data-theme="light"] .quiz-modal {
-  background: var(--bg);
-  border-color: var(--border);
-  box-shadow: 0 24px 80px rgba(0,0,0,0.12);
-}
-[data-theme="light"] .q-opt {
-  background: var(--bg-card);
-  border-color: var(--border);
-}
-[data-theme="light"] .q-opt:hover {
-  border-color: var(--border-hover);
-}
-[data-theme="light"] .q-input,
-[data-theme="light"] .q-textarea {
-  background: rgba(0,0,0,0.03);
-  border-color: rgba(0,0,0,0.1);
-  color: var(--text);
-}
-[data-theme="light"] .q-input:focus,
-[data-theme="light"] .q-textarea:focus {
-  border-color: rgba(200,55,55,0.35);
-  background: rgba(0,0,0,0.02);
-  box-shadow: 0 0 20px rgba(200,55,55,0.06);
-}
-[data-theme="light"] .q-slider { background: rgba(0,0,0,0.08); }
-[data-theme="light"] .mobile-cta { background: rgba(245,244,241,0.95); border-color: rgba(0,0,0,0.08); }
-[data-theme="light"] footer { border-color: var(--border); }
-[data-theme="light"] .comparison-col.after {
-  background: var(--bg-card);
-  border-color: rgba(200,55,55,0.12);
-  box-shadow: 0 0 40px rgba(200,55,55,0.03);
-}
-[data-theme="light"] .timeline-dot { background: var(--bg); border-color: var(--text-muted); }
-[data-theme="light"] #qCalEmbed { background: var(--bg-card); border-color: var(--border); }
-/* Theme toggle */
-.theme-toggle {
-  position: fixed; top: 20px; right: 24px; z-index: 99;
-  display: flex; align-items: center; gap: 2px;
-  background: rgba(14,14,18,0.4); border: 1px solid rgba(255,255,255,0.06);
-  border-radius: 100px; padding: 4px; backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-  transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
-}
-[data-theme="light"] .theme-toggle {
-  background: rgba(245,244,241,0.6); border-color: rgba(0,0,0,0.08);
-}
-.theme-btn {
-  display: flex; align-items: center; justify-content: center;
-  width: 28px; height: 28px; border-radius: 50%; border: none;
-  background: transparent; cursor: pointer; transition: all 0.3s ease;
-  color: var(--text-muted); padding: 0;
-}
-.theme-btn:hover { color: var(--text); }
-[data-theme="light"] .theme-btn:hover { color: var(--text); }
-.theme-btn.active { color: var(--text); background: rgba(255,255,255,0.08); }
-[data-theme="light"] .theme-btn.active { background: rgba(0,0,0,0.07); }
-.theme-btn svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
-.q-input-group { display: flex; gap: 12px; margin-bottom: 16px; }
-.q-input-group.col { flex-direction: column; }
-.q-input, .q-textarea {
-  width: 100%; padding: 14px 18px; background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08); border-radius: 12px;
-  color: var(--text); font-family: var(--sans); font-size: 15px;
-  transition: all 0.3s ease; outline: none; box-sizing: border-box;
-}
-.q-input::placeholder, .q-textarea::placeholder { color: var(--text-muted); }
-.q-input:focus, .q-textarea:focus { border-color: rgba(200,55,55,0.4); background: rgba(255,255,255,0.06); box-shadow: 0 0 20px rgba(200,55,55,0.08); }
-.q-textarea { min-height: 100px; resize: vertical; line-height: 1.5; }
-.q-next-btn {
-  display: inline-flex; align-items: center; gap: 8px; padding: 12px 28px; margin-top: 12px;
-  background: rgba(200,55,55,0.12); border: 1px solid rgba(200,55,55,0.3); border-radius: 100px;
-  color: var(--text); font-family: var(--sans); font-size: 14px; font-weight: 600;
-  cursor: pointer; transition: all 0.3s ease;
-}
-.q-next-btn:hover { background: rgba(200,55,55,0.2); border-color: rgba(200,55,55,0.5); box-shadow: 0 0 24px rgba(200,55,55,0.15); }
-.q-next-btn:disabled { opacity: 0.3; cursor: not-allowed; }
-.q-slider-wrap { padding: 20px 0; }
-.q-slider { width: 100%; -webkit-appearance: none; appearance: none; height: 6px; border-radius: 3px; background: rgba(255,255,255,0.08); outline: none; }
-.q-slider::-webkit-slider-thumb { -webkit-appearance: none; width: 24px; height: 24px; border-radius: 50%; background: var(--red); cursor: pointer; box-shadow: 0 0 12px var(--red-glow); }
-.q-slider-val { text-align: center; font-size: 48px; font-weight: 700; color: var(--text); margin-bottom: 4px; font-family: var(--sans); }
-.q-slider-val span { color: var(--red); }
-.q-slider-labels { display: flex; justify-content: space-between; margin-top: 8px; font-size: 12px; color: var(--text-muted); }
-.q-multi-hint { font-size: 12px; color: var(--text-muted); margin-bottom: 12px; }
-.q-opt.multi .q-radio { border-radius: 4px; }
-.q-opt.multi.sel .q-radio { border-radius: 4px; }
 
 /* HERO */
 .hero {
   min-height: 100vh; display: flex; flex-direction: column; justify-content: center;
   align-items: center; text-align: center; padding: 140px 24px 80px; position: relative;
 }
-.hero-eyebrow {
-  font-family: var(--mono); font-size: 12px; font-weight: 300; letter-spacing: 4px;
-  text-transform: uppercase; color: var(--text-muted); margin-bottom: 40px;
-  opacity: 0; animation: fadeUp 0.8s ease 0.2s forwards;
-}
-.hero-eyebrow .red-dot { display: inline-block; width: 6px; height: 6px; background: var(--red); border-radius: 50%; margin-left: 8px; vertical-align: middle; }
 .hero-title {
   font-family: var(--serif); font-style: italic; font-size: clamp(48px, 8vw, 110px);
   font-weight: 400; line-height: 1.05; margin-bottom: 32px; max-width: 900px;
   opacity: 0; animation: fadeUp 0.8s ease 0.4s forwards;
 }
-.hero-title .accent { background: linear-gradient(135deg, var(--red), #e06060); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.hero-title .accent { color: var(--accent); }
 .hero-sub {
   font-size: 18px; font-weight: 300; color: var(--text-secondary); max-width: 580px;
-  line-height: 1.7; margin-bottom: 16px; opacity: 0; animation: fadeUp 0.8s ease 0.6s forwards;
-}
-.hero-targeting {
-  font-family: var(--mono); font-size: 11px; font-weight: 300; letter-spacing: 1px;
-  color: var(--text-muted); margin-bottom: 48px; opacity: 0; animation: fadeUp 0.8s ease 0.7s forwards;
+  line-height: 1.7; margin-bottom: 48px; opacity: 0; animation: fadeUp 0.8s ease 0.6s forwards;
 }
 .hero-cta {
   display: inline-flex; align-items: center; gap: 16px; padding: 0;
@@ -293,17 +142,17 @@ nav.scrolled {
   opacity: 0; animation: fadeUp 0.8s ease 0.8s forwards; text-decoration: none;
 }
 .hero-cta-pill {
-  display: flex; align-items: center; border: 1px solid rgba(200,55,55,0.35);
-  border-radius: 100px; overflow: hidden; transition: all 0.4s ease; background: rgba(200,55,55,0.05);
+  display: flex; align-items: center; border: 1px solid rgba(201,168,76,0.35);
+  border-radius: 100px; overflow: hidden; transition: all 0.4s ease; background: rgba(201,168,76,0.05);
 }
 .hero-cta:hover .hero-cta-pill {
-  border-color: rgba(200,55,55,0.7);
-  box-shadow: 0 0 50px var(--red-glow), 0 0 100px rgba(200,55,55,0.08);
-  background: rgba(200,55,55,0.08);
+  border-color: rgba(201,168,76,0.7);
+  box-shadow: 0 0 50px var(--accent-glow), 0 0 100px rgba(201,168,76,0.08);
+  background: rgba(201,168,76,0.08);
 }
-.hero-cta-arrow { display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; color: var(--text); font-size: 18px; border-right: 1px solid rgba(200,55,55,0.2); }
+.hero-cta-arrow { display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; color: var(--text); font-size: 18px; border-right: 1px solid rgba(201,168,76,0.2); }
 .hero-cta-text { padding: 0 24px; font-family: var(--sans); font-size: 14px; font-weight: 500; color: var(--text); white-space: nowrap; }
-.hero-cta-chevron { display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; color: var(--text-muted); font-size: 14px; border-left: 1px solid rgba(200,55,55,0.2); }
+.hero-cta-chevron { display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; color: var(--text-muted); font-size: 14px; border-left: 1px solid rgba(201,168,76,0.2); }
 .hero-scroll-hint { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 8px; opacity: 0; animation: fadeUp 0.8s ease 1.2s forwards; }
 .hero-scroll-line { width: 1px; height: 40px; background: linear-gradient(to bottom, var(--text-muted), transparent); animation: scrollPulse 2s ease infinite; }
 @keyframes scrollPulse { 0%, 100% { opacity: 0.3; } 50% { opacity: 0.8; } }
@@ -313,68 +162,62 @@ section { padding: 120px 24px; position: relative; }
 .section-label { font-family: var(--mono); font-size: 11px; font-weight: 300; letter-spacing: 3px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 16px; }
 .section-title { font-family: var(--serif); font-style: italic; font-size: clamp(32px, 5vw, 56px); font-weight: 400; line-height: 1.15; margin-bottom: 24px; }
 
+/* SOCIAL PROOF */
+.social-proof { max-width: 900px; margin: 0 auto; text-align: center; }
+.social-proof-header { margin-bottom: 40px; }
+.social-proof-header p { font-size: 15px; color: var(--text-muted); max-width: 500px; margin: 0 auto; line-height: 1.6; font-style: italic; }
+.marquee-wrap { overflow: hidden; margin-bottom: 40px; mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); }
+.marquee-track { display: flex; gap: 64px; width: max-content; animation: marquee 18s linear infinite; }
+.marquee-track:hover { animation-play-state: paused; }
+@keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+.social-proof-item { text-align: center; flex-shrink: 0; display: flex; align-items: center; gap: 12px; }
+.social-proof-item .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); opacity: 0.4; flex-shrink: 0; }
+.social-proof-item .name { font-family: var(--serif); font-style: italic; font-size: 18px; color: var(--text); white-space: nowrap; }
+.social-proof-item .city { font-family: var(--mono); font-size: 11px; color: var(--accent); opacity: 0.5; letter-spacing: 1px; text-transform: uppercase; white-space: nowrap; }
+.social-proof-quote { font-family: var(--serif); font-style: italic; font-size: 18px; color: var(--accent); line-height: 1.6; max-width: 520px; margin: 0 auto; }
+
 /* PROBLEM */
 .problem { max-width: 1100px; margin: 0 auto; }
 .problem-header { text-align: center; margin-bottom: 80px; }
 .problem-header .section-title { max-width: 700px; margin: 0 auto 24px; }
-.problem-header p { font-size: 17px; color: var(--text-secondary); max-width: 500px; margin: 0 auto; line-height: 1.6; }
-.problem-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
-.problem-card { background: var(--bg-card); border: 1px solid var(--border); padding: 48px 36px; transition: all 0.4s ease; position: relative; overflow: hidden; }
-.problem-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: var(--red); transform: scaleX(0); transition: transform 0.4s ease; }
-.problem-card:hover::before { transform: scaleX(1); }
-.problem-card:hover { border-color: var(--border-hover); background: var(--bg-elevated); }
-.problem-card-number { font-family: var(--mono); font-size: 11px; color: var(--red); margin-bottom: 24px; letter-spacing: 2px; }
-.problem-card h3 { font-family: var(--serif); font-style: italic; font-size: 24px; font-weight: 400; margin-bottom: 16px; line-height: 1.3; }
-.problem-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.7; font-weight: 300; }
-
-/* QUALIFY */
-.qualify { max-width: 800px; margin: 0 auto; }
-.qualify-header { text-align: center; margin-bottom: 60px; }
-.qualify-header .section-title { max-width: 600px; margin: 0 auto 24px; }
-.qualify-list { display: flex; flex-direction: column; gap: 0; }
-.qualify-item {
+.problem-grid { display: flex; flex-direction: column; gap: 0; }
+.problem-item {
   display: flex; align-items: flex-start; gap: 20px; padding: 24px 32px;
-  background: rgba(200,55,55,0.03); border-left: 2px solid rgba(200,55,55,0.3);
+  background: rgba(201,168,76,0.03); border-left: 2px solid rgba(201,168,76,0.3);
   border-bottom: 1px solid var(--border); transition: all 0.3s ease;
 }
-.qualify-item:first-child { border-top: 1px solid var(--border); }
-.qualify-item:hover { background: rgba(200,55,55,0.06); border-left-color: var(--red); }
-.qualify-check {
-  flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%;
-  background: rgba(200,55,55,0.12); display: flex; align-items: center;
-  justify-content: center; font-size: 11px; color: var(--red); margin-top: 1px;
-}
-.qualify-item p { font-size: 15px; color: var(--text); line-height: 1.6; font-weight: 400; }
-
-/* GHOST CTA */
-.ghost-cta-wrap { text-align: center; padding: 48px 24px 0; }
-.ghost-cta {
-  display: inline-flex; align-items: center; gap: 12px; padding: 14px 32px;
-  background: transparent; border: 1px solid rgba(200,55,55,0.3); border-radius: 100px;
-  color: var(--text); font-family: var(--sans); font-size: 14px; font-weight: 500;
-  cursor: pointer; transition: all 0.4s ease; text-decoration: none; position: relative; overflow: hidden;
-}
-.ghost-cta::before { content: ''; position: absolute; inset: 0; background: var(--red-subtle); opacity: 0; transition: opacity 0.3s; }
-.ghost-cta:hover::before { opacity: 1; }
-.ghost-cta:hover { border-color: rgba(200,55,55,0.6); box-shadow: 0 0 30px var(--red-glow); }
-.ghost-cta span { position: relative; z-index: 1; }
-.ghost-cta .ghost-cta-arrow { position: relative; z-index: 1; font-size: 16px; }
+.problem-item:first-child { border-top: 1px solid var(--border); }
+.problem-item:hover { background: rgba(201,168,76,0.06); border-left-color: var(--accent); }
+.problem-arrow { flex-shrink: 0; font-family: var(--mono); font-size: 14px; color: var(--accent); margin-top: 2px; }
+.problem-item p { font-size: 15px; color: var(--text); line-height: 1.6; font-weight: 400; }
 
 /* SOLUTION */
 .solution { max-width: 1100px; margin: 0 auto; }
 .solution-header { text-align: center; margin-bottom: 80px; }
 .solution-header .section-title { max-width: 700px; margin: 0 auto 24px; }
-.solution-header p { font-size: 17px; color: var(--text-secondary); max-width: 560px; margin: 0 auto; line-height: 1.6; }
-.solution-steps { display: flex; flex-direction: column; gap: 2px; }
-.solution-step {
-  display: grid; grid-template-columns: 80px 1fr 1fr; gap: 40px; align-items: center;
+.solution-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+.solution-card { background: var(--bg-card); border: 1px solid var(--border); padding: 48px 36px; transition: all 0.4s ease; position: relative; overflow: hidden; }
+.solution-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: var(--accent); transform: scaleX(0); transition: transform 0.4s ease; }
+.solution-card:hover::before { transform: scaleX(1); }
+.solution-card:hover { border-color: var(--border-hover); background: var(--bg-elevated); }
+.solution-card h3 { font-family: var(--serif); font-style: italic; font-size: 24px; font-weight: 400; margin-bottom: 16px; line-height: 1.3; }
+.solution-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.7; font-weight: 300; }
+
+/* HOW IT WORKS */
+.how-it-works { max-width: 1100px; margin: 0 auto; }
+.how-header { text-align: center; margin-bottom: 80px; }
+.how-header .section-title { max-width: 700px; margin: 0 auto 24px; }
+.how-steps { display: flex; flex-direction: column; gap: 2px; }
+.how-step {
+  display: grid; grid-template-columns: 80px 1fr; gap: 40px; align-items: start;
   padding: 48px 40px; background: var(--bg-card); border: 1px solid var(--border);
   transition: all 0.4s ease; cursor: default;
 }
-.solution-step:hover { border-color: var(--border-hover); background: var(--bg-elevated); }
-.solution-step-num { font-family: var(--serif); font-style: italic; font-size: 48px; color: var(--red); opacity: 0.6; }
-.solution-step h3 { font-family: var(--serif); font-style: italic; font-size: 26px; font-weight: 400; }
-.solution-step p { font-size: 14px; color: var(--text-secondary); line-height: 1.7; font-weight: 300; }
+.how-step:hover { border-color: var(--border-hover); background: var(--bg-elevated); }
+.how-step-num { font-family: var(--serif); font-style: italic; font-size: 48px; color: var(--accent); opacity: 0.6; }
+.how-step h3 { font-family: var(--serif); font-style: italic; font-size: 26px; font-weight: 400; margin-bottom: 12px; }
+.how-step p { font-size: 14px; color: var(--text-secondary); line-height: 1.7; font-weight: 300; }
+.how-step .price { font-family: var(--mono); font-size: 13px; color: var(--accent); margin-top: 12px; letter-spacing: 0.5px; }
 
 /* COMPARISON */
 .comparison { max-width: 1100px; margin: 0 auto; }
@@ -383,65 +226,47 @@ section { padding: 120px 24px; position: relative; }
 .comparison-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
 .comparison-col { padding: 40px 36px; transition: all 0.3s ease; }
 .comparison-col.before { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08); }
-.comparison-col.after { background: var(--bg-card); border: 1px solid rgba(200,55,55,0.15); box-shadow: 0 0 40px rgba(200,55,55,0.05); }
+.comparison-col.after { background: var(--bg-card); border: 1px solid rgba(201,168,76,0.15); box-shadow: 0 0 40px rgba(201,168,76,0.05); }
 .comparison-col-title { font-family: var(--mono); font-size: 11px; font-weight: 300; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 32px; padding-bottom: 16px; border-bottom: 1px solid var(--border); }
 .comparison-col.before .comparison-col-title { color: var(--text-muted); }
-.comparison-col.after .comparison-col-title { color: var(--red); }
+.comparison-col.after .comparison-col-title { color: var(--accent); }
 .comparison-item { display: flex; align-items: flex-start; gap: 14px; padding: 14px 0; font-size: 14px; line-height: 1.6; font-weight: 300; }
 .comparison-item:not(:last-child) { border-bottom: 1px solid var(--border); }
 .comparison-mark { flex-shrink: 0; font-family: var(--mono); font-size: 12px; margin-top: 2px; }
-.comparison-col.before .comparison-mark { color: var(--red); }
-.comparison-col.before .comparison-item span:last-child { color: var(--text-muted); }
+.comparison-col.before .comparison-mark { color: var(--accent); }
+.comparison-col.before .comparison-item span:last-child { color: var(--text-muted); text-decoration: line-through; opacity: 0.6; }
 .comparison-col.after .comparison-mark { color: #5cb85c; }
 .comparison-col.after .comparison-item span:last-child { color: var(--text); }
 
-/* TIMELINE */
-.timeline { max-width: 1000px; margin: 0 auto; }
-.timeline-header { text-align: center; margin-bottom: 80px; }
-.timeline-header .section-title { max-width: 700px; margin: 0 auto 24px; }
-.timeline-header p { font-size: 17px; color: var(--text-secondary); max-width: 500px; margin: 0 auto; line-height: 1.6; }
-.timeline-track { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; position: relative; }
-.timeline-track::before { content: ''; position: absolute; top: 20px; left: 10%; right: 10%; height: 1px; background: linear-gradient(90deg, var(--border) 0%, var(--red) 50%, var(--border) 100%); }
-.timeline-step { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 0 12px; position: relative; }
-.timeline-dot {
-  width: 12px; height: 12px; border-radius: 50%; background: var(--bg);
-  border: 2px solid var(--text-muted); margin-bottom: 24px; position: relative; z-index: 1; transition: all 0.3s ease;
-}
-.timeline-step:hover .timeline-dot { border-color: var(--red); box-shadow: 0 0 16px var(--red-glow); background: var(--red); }
-.timeline-step-label { font-family: var(--mono); font-size: 10px; font-weight: 300; letter-spacing: 2px; text-transform: uppercase; color: var(--red); margin-bottom: 12px; opacity: 0.7; }
-.timeline-step h4 { font-family: var(--serif); font-style: italic; font-size: 18px; font-weight: 400; margin-bottom: 8px; line-height: 1.3; }
-.timeline-step p { font-size: 12px; color: var(--text-muted); font-weight: 300; line-height: 1.5; }
-
 /* CASE STUDY */
-.case-study { max-width: 1100px; margin: 0 auto; }
-.case-study-header { text-align: center; margin-bottom: 80px; }
+.case-study { max-width: 800px; margin: 0 auto; }
+.case-study-header { text-align: center; margin-bottom: 60px; }
 .case-study-header .section-title { max-width: 600px; margin: 0 auto 24px; }
-.case-study-header p { font-size: 17px; color: var(--text-secondary); max-width: 480px; margin: 0 auto; line-height: 1.6; }
-.case-study-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
-.case-study-card { background: var(--bg-card); border: 1px solid var(--border); padding: 48px 36px; transition: all 0.4s ease; position: relative; overflow: hidden; }
-.case-study-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: var(--red); transform: scaleX(0); transition: transform 0.4s ease; }
+.case-study-card { background: var(--bg-card); border: 1px solid rgba(201,168,76,0.15); padding: 48px 40px; transition: all 0.4s ease; position: relative; overflow: hidden; }
+.case-study-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: var(--accent); transform: scaleX(0); transition: transform 0.4s ease; }
 .case-study-card:hover::before { transform: scaleX(1); }
-.case-study-card:hover { border-color: var(--border-hover); background: var(--bg-elevated); }
-.case-study-card-number { font-family: var(--mono); font-size: 11px; color: var(--red); margin-bottom: 24px; letter-spacing: 2px; }
-.case-study-card h3 { font-family: var(--serif); font-style: italic; font-size: 24px; font-weight: 400; margin-bottom: 16px; line-height: 1.3; }
-.case-study-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.7; font-weight: 300; }
+.case-study-card h3 { font-family: var(--serif); font-style: italic; font-size: 24px; font-weight: 400; margin-bottom: 16px; line-height: 1.3; color: var(--accent); }
+.case-study-card p { font-size: 15px; color: var(--text-secondary); line-height: 1.8; font-weight: 300; }
 
-/* RESULTS */
-.results { max-width: 1100px; margin: 0 auto; text-align: center; }
-.results-header { margin-bottom: 80px; }
-.results-header .section-title { max-width: 600px; margin: 0 auto 24px; }
-.results-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; }
-.result-card { background: var(--bg-card); border: 1px solid var(--border); padding: 48px 24px; transition: all 0.4s ease; }
-.result-card:hover { border-color: var(--border-hover); }
-.result-card-value { font-family: var(--serif); font-style: italic; font-size: 44px; color: var(--text); margin-bottom: 12px; }
-.result-card-value .red { color: var(--red); }
-.result-card-label { font-size: 13px; color: var(--text-secondary); font-weight: 300; line-height: 1.5; }
+/* ABOUT */
+.about { max-width: 800px; margin: 0 auto; }
+.about-header { text-align: center; margin-bottom: 60px; }
+.about-header .section-title { max-width: 600px; margin: 0 auto 24px; }
+.about-text { font-size: 16px; color: var(--text-secondary); line-height: 1.8; font-weight: 300; }
+.about-text p { margin-bottom: 20px; }
+.about-text strong { color: var(--text); font-weight: 500; }
+
+/* GUARANTEE */
+.guarantee { max-width: 800px; margin: 0 auto; text-align: center; padding: 100px 24px; }
+.guarantee-text {
+  font-family: var(--serif); font-style: italic; font-size: clamp(24px, 4vw, 36px);
+  color: var(--accent); line-height: 1.4; max-width: 650px; margin: 0 auto;
+}
 
 /* FAQ */
 .faq { max-width: 800px; margin: 0 auto; }
 .faq-header { text-align: center; margin-bottom: 60px; }
 .faq-header .section-title { max-width: 500px; margin: 0 auto 24px; }
-.faq-header p { font-size: 17px; color: var(--text-secondary); max-width: 460px; margin: 0 auto; line-height: 1.6; }
 .faq-list { display: flex; flex-direction: column; gap: 0; }
 .faq-item { border-bottom: 1px solid var(--border); }
 .faq-item:first-child { border-top: 1px solid var(--border); }
@@ -451,9 +276,9 @@ section { padding: 120px 24px; position: relative; }
   font-family: var(--sans); font-size: 16px; font-weight: 500; color: var(--text);
   text-align: left; gap: 24px; transition: color 0.3s ease;
 }
-.faq-question:hover { color: var(--red); }
+.faq-question:hover { color: var(--accent); }
 .faq-icon { font-family: var(--mono); font-size: 18px; color: var(--text-muted); transition: transform 0.4s ease, color 0.3s ease; flex-shrink: 0; }
-.faq-item.open .faq-icon { transform: rotate(45deg); color: var(--red); }
+.faq-item.open .faq-icon { transform: rotate(45deg); color: var(--accent); }
 .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
 .faq-item.open .faq-answer { max-height: 300px; }
 .faq-answer p { padding-bottom: 28px; font-size: 14px; color: var(--text-secondary); line-height: 1.7; font-weight: 300; }
@@ -464,21 +289,37 @@ section { padding: 120px 24px; position: relative; }
 .cta-final p { font-size: 17px; color: var(--text-secondary); max-width: 520px; margin: 0 auto 48px; line-height: 1.6; font-weight: 300; }
 .cta-final-button {
   display: inline-flex; align-items: center; gap: 16px; padding: 18px 40px;
-  background: var(--red); border: none; border-radius: 100px; color: white;
-  font-family: var(--sans); font-size: 15px; font-weight: 500; cursor: pointer;
+  background: var(--accent); border: none; border-radius: 100px; color: #0A0A0A;
+  font-family: var(--sans); font-size: 15px; font-weight: 600; cursor: pointer;
   transition: all 0.4s ease; text-decoration: none; position: relative;
 }
-.cta-final-button:hover { background: #d94444; box-shadow: 0 0 60px var(--red-glow), 0 10px 40px rgba(0,0,0,0.3); transform: translateY(-2px); }
+.cta-final-button:hover { background: #d4b65e; box-shadow: 0 0 60px var(--accent-glow), 0 10px 40px rgba(0,0,0,0.3); transform: translateY(-2px); }
 .cta-final-button span { font-size: 18px; }
 .cta-final-sub { margin-top: 20px; font-size: 12px; color: var(--text-muted); font-weight: 300; }
+
+/* GHOST CTA */
+.ghost-cta-wrap { text-align: center; padding: 48px 24px 0; }
+.ghost-cta {
+  display: inline-flex; align-items: center; gap: 12px; padding: 14px 32px;
+  background: transparent; border: 1px solid rgba(201,168,76,0.3); border-radius: 100px;
+  color: var(--text); font-family: var(--sans); font-size: 14px; font-weight: 500;
+  cursor: pointer; transition: all 0.4s ease; text-decoration: none; position: relative; overflow: hidden;
+}
+.ghost-cta::before { content: ''; position: absolute; inset: 0; background: var(--accent-subtle); opacity: 0; transition: opacity 0.3s; }
+.ghost-cta:hover::before { opacity: 1; }
+.ghost-cta:hover { border-color: rgba(201,168,76,0.6); box-shadow: 0 0 30px var(--accent-glow); }
+.ghost-cta span { position: relative; z-index: 1; }
+.ghost-cta .ghost-cta-arrow { position: relative; z-index: 1; font-size: 16px; }
 
 /* FOOTER */
 footer { padding: 40px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; }
 .footer-left { display: flex; align-items: center; gap: 8px; }
 .footer-n { font-family: var(--serif); font-style: italic; font-size: 20px; }
-.footer-dot { width: 4px; height: 4px; background: var(--red); border-radius: 50%; margin-top: 6px; margin-left: -4px; }
+.footer-dot { width: 4px; height: 4px; background: var(--accent); border-radius: 50%; margin-top: 6px; margin-left: -4px; }
 .footer-name { font-size: 12px; color: var(--text-muted); margin-left: 8px; font-weight: 300; }
 .footer-right { font-size: 11px; color: var(--text-muted); font-weight: 300; }
+.footer-right a { color: var(--accent); text-decoration: none; }
+.footer-right a:hover { text-decoration: underline; }
 
 /* DIVIDER */
 .divider { max-width: 1100px; margin: 0 auto; height: 1px; background: var(--border); position: relative; }
@@ -493,10 +334,10 @@ footer { padding: 40px; border-top: 1px solid var(--border); display: flex; just
 .mobile-cta.visible { transform: translateY(0); }
 .mobile-cta a {
   display: flex; align-items: center; justify-content: center; gap: 10px; padding: 14px;
-  background: var(--red); color: white; border-radius: 100px; font-weight: 500;
+  background: var(--accent); color: #0A0A0A; border-radius: 100px; font-weight: 600;
   font-size: 14px; text-decoration: none; font-family: var(--sans); transition: background 0.3s;
 }
-.mobile-cta a:hover { background: #d94444; }
+.mobile-cta a:hover { background: #d4b65e; }
 
 /* ANIMATIONS */
 @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
@@ -507,132 +348,18 @@ footer { padding: 40px; border-top: 1px solid var(--border); display: flex; just
 @media (max-width: 768px) {
   .nav-logo-fixed { top: 14px; left: 14px; }
   .nav-logo-fixed .nav-brand { display: none; }
-  nav { top: 10px; }
-  .theme-toggle { top: 14px; right: 14px; padding: 3px; }
-  .theme-btn { width: 24px; height: 24px; }
-  .theme-btn svg { width: 12px; height: 12px; }
+  nav { top: 10px; right: 14px; }
+  .lang-btn { padding: 4px 8px; font-size: 10px; }
   .nav-cta { padding: 7px 16px; font-size: 11px; }
   .hero { min-height: 90vh; }
-  .problem-grid { grid-template-columns: 1fr; }
-  .solution-step { grid-template-columns: 1fr; gap: 16px; }
-  .solution-step-num { font-size: 32px; }
-  .results-grid { grid-template-columns: repeat(2, 1fr); }
+  .solution-grid { grid-template-columns: 1fr; }
+  .how-step { grid-template-columns: 1fr; gap: 16px; }
+  .how-step-num { font-size: 32px; }
   .comparison-cols { grid-template-columns: 1fr; }
-  .case-study-grid { grid-template-columns: 1fr; }
-  .timeline-track { grid-template-columns: 1fr; gap: 32px; }
-  .timeline-track::before { top: 0; bottom: 0; left: 20px; right: auto; width: 1px; height: auto; }
-  .timeline-step { flex-direction: row; text-align: left; gap: 20px; padding: 0; }
-  .timeline-dot { margin-bottom: 0; flex-shrink: 0; }
-  .timeline-step-label { margin-bottom: 4px; }
+  .marquee-track { gap: 40px; }
   footer { flex-direction: column; gap: 16px; text-align: center; }
   .mobile-cta { display: block; }
 }
-
-/* QUIZ OVERLAY */
-body.quiz-open { overflow: hidden; }
-.quiz-overlay { display:none; position:fixed; inset:0; z-index:200; background:rgba(0,0,0,0.7); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); overflow-y:auto; align-items:flex-start; justify-content:center; padding:40px 20px; }
-.quiz-overlay.active { display:flex; }
-.quiz-nav .nav-logo { text-decoration: none; display: flex; align-items: center; gap: 0; }
-.quiz-nav .nav-logo .nav-logo-n { font-family: var(--serif); font-style: italic; font-size: 24px; color: var(--text); line-height: 1; }
-.quiz-nav .nav-logo .nav-logo-dot { width: 5px; height: 5px; background: var(--red); border-radius: 50%; margin-left: -4px; margin-top: 8px; box-shadow: 0 0 8px var(--red-glow); }
-.quiz-nav { padding:20px 24px; display:flex; justify-content:space-between; align-items:center; background:transparent; border-bottom:1px solid var(--border); }
-.quiz-close { background:none; border:1px solid var(--border); width:36px; height:36px; border-radius:50%; color:var(--text-muted); font-size:20px; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:all 0.2s; font-family:var(--sans); }
-.quiz-close:hover { border-color:var(--border-hover); color:var(--text); }
-.quiz-timer { font-family:var(--mono); font-size:12px; color:var(--text-muted); letter-spacing:1px; }
-.quiz-progress { padding:16px 24px; border-bottom:1px solid var(--border); }
-.quiz-progress-inner { max-width:640px; margin:0 auto; }
-.quiz-progress-bar { width:100%; height:3px; background:var(--border); border-radius:3px; overflow:hidden; }
-.quiz-progress-fill { height:100%; background:var(--red); border-radius:3px; transition:width 0.5s cubic-bezier(0.4,0,0.2,1); box-shadow:0 0 12px var(--red-glow); }
-.quiz-progress-meta { display:flex; justify-content:space-between; align-items:center; margin-top:8px; }
-.quiz-progress-step { font-family:var(--mono); font-size:11px; color:var(--text-muted); letter-spacing:1px; }
-.quiz-progress-label { font-size:12px; color:var(--text-secondary); }
-.quiz-body { padding:40px 24px 40px; }
-.quiz-card { width:100%; }
-.quiz-modal { background:var(--bg); border:1px solid var(--border); border-radius:16px; width:100%; max-width:680px; margin:0 auto; max-height:calc(100vh - 80px); overflow-y:auto; box-shadow:0 24px 80px rgba(0,0,0,0.6); animation:quizFadeIn 0.3s ease; }
-@keyframes quizFadeIn { from { opacity:0; transform:translateY(20px) scale(0.98); } to { opacity:1; transform:translateY(0) scale(1); } }
-.quiz-modal::-webkit-scrollbar { width:6px; }
-.quiz-modal::-webkit-scrollbar-track { background:transparent; }
-.quiz-modal::-webkit-scrollbar-thumb { background:var(--border); border-radius:3px; }
-.q-step { display:none; opacity:0; transform:translateY(20px); transition:all 0.4s cubic-bezier(0.4,0,0.2,1); }
-.q-step.active { display:block; opacity:1; transform:translateY(0); }
-.q-num { font-family:var(--mono); font-size:11px; color:var(--red); letter-spacing:2px; text-transform:uppercase; margin-bottom:16px; }
-.q-title { font-family:var(--serif); font-style:italic; font-size:clamp(28px,4vw,38px); line-height:1.25; margin-bottom:12px; }
-.q-sub { font-size:14px; color:var(--text-secondary); line-height:1.6; margin-bottom:36px; }
-.q-options { display:flex; flex-direction:column; gap:12px; }
-.q-opt { display:flex; align-items:center; gap:16px; padding:18px 24px; background:var(--bg-card); border:1px solid var(--border); border-radius:12px; cursor:pointer; transition:all 0.25s; position:relative; overflow:hidden; }
-.q-opt::before { content:''; position:absolute; inset:0; background:var(--red-subtle); opacity:0; transition:opacity 0.25s; }
-.q-opt:hover { border-color:var(--border-hover); transform:translateY(-1px); }
-.q-opt:hover::before { opacity:1; }
-.q-opt.sel { border-color:rgba(200,55,55,0.4); background:rgba(200,55,55,0.06); }
-.q-opt.sel::before { opacity:1; }
-.q-radio { width:20px; height:20px; border-radius:50%; border:2px solid var(--border-hover); flex-shrink:0; display:flex; align-items:center; justify-content:center; transition:all 0.25s; position:relative; z-index:1; }
-.q-opt.sel .q-radio { border-color:var(--red); background:var(--red); }
-.q-opt.sel .q-radio::after { content:''; width:6px; height:6px; border-radius:50%; background:#fff; }
-.q-opt-c { position:relative; z-index:1; }
-.q-opt-l { font-size:15px; font-weight:500; color:var(--text); line-height:1.4; }
-.q-opt-h { font-size:12px; color:var(--text-muted); margin-top:3px; }
-.q-intro { text-align:center; padding-top:20px; }
-.q-intro-label { font-family:var(--mono); font-size:11px; color:var(--red); letter-spacing:3px; text-transform:uppercase; margin-bottom:24px; }
-.q-intro-title { font-family:var(--serif); font-style:italic; font-size:clamp(32px,5vw,48px); line-height:1.2; margin-bottom:20px; }
-.q-intro-sub { font-size:16px; color:var(--text-secondary); line-height:1.7; max-width:480px; margin:0 auto 40px; }
-.q-intro-feats { display:flex; justify-content:center; gap:32px; margin-bottom:40px; flex-wrap:wrap; }
-.q-intro-feat { display:flex; align-items:center; gap:8px; font-family:var(--mono); font-size:12px; color:var(--text-muted); letter-spacing:0.5px; }
-.q-intro-dot { width:5px; height:5px; background:var(--red); border-radius:50%; }
-.q-btn { display:inline-flex; align-items:center; justify-content:center; gap:12px; padding:18px 48px; background:var(--red); border:none; border-radius:100px; color:#fff; font-family:var(--sans); font-size:16px; font-weight:600; cursor:pointer; transition:all 0.3s; text-decoration:none; box-shadow:0 4px 24px rgba(200,55,55,0.3); }
-.q-btn:hover { transform:translateY(-2px); box-shadow:0 8px 40px rgba(200,55,55,0.4); }
-.q-btn .arrow { transition:transform 0.3s; }
-.q-btn:hover .arrow { transform:translateX(4px); }
-.q-result { text-align:center; }
-.q-badge { display:inline-flex; align-items:center; gap:8px; padding:8px 20px; border-radius:100px; font-family:var(--mono); font-size:11px; letter-spacing:2px; text-transform:uppercase; margin-bottom:24px; }
-.q-badge.critical { background:rgba(200,55,55,0.15); color:#e85555; border:1px solid rgba(200,55,55,0.2); }
-.q-badge.warning { background:rgba(230,160,50,0.12); color:#e6a032; border:1px solid rgba(230,160,50,0.2); }
-.q-badge.ok { background:rgba(92,184,92,0.12); color:#5cb85c; border:1px solid rgba(92,184,92,0.2); }
-.q-badge-dot { width:6px; height:6px; border-radius:50%; }
-.q-badge.critical .q-badge-dot { background:#e85555; animation:qPulse 2s infinite; }
-.q-badge.warning .q-badge-dot { background:#e6a032; }
-.q-badge.ok .q-badge-dot { background:#5cb85c; }
-@keyframes qPulse { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
-.q-result-title { font-family:var(--serif); font-style:italic; font-size:clamp(28px,4vw,40px); line-height:1.25; margin-bottom:16px; }
-.q-result-sub { font-size:15px; color:var(--text-secondary); line-height:1.7; max-width:500px; margin:0 auto 40px; }
-.q-insights { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-bottom:40px; }
-.q-insight { background:var(--bg-card); border:1px solid var(--border); border-radius:12px; padding:24px 16px; text-align:center; }
-.q-insight-val { font-family:var(--serif); font-style:italic; font-size:32px; color:var(--red); margin-bottom:6px; }
-.q-insight-lbl { font-size:12px; color:var(--text-muted); line-height:1.4; }
-.q-details { background:var(--bg-card); border:1px solid var(--border); border-radius:16px; padding:32px; margin-bottom:40px; text-align:left; }
-.q-details-title { font-family:var(--mono); font-size:11px; color:var(--red); letter-spacing:2px; text-transform:uppercase; margin-bottom:20px; }
-.q-detail { display:flex; gap:14px; padding:14px 0; border-bottom:1px solid var(--border); }
-.q-detail:last-child { border-bottom:none; }
-.q-detail-icon { font-size:16px; flex-shrink:0; margin-top:2px; }
-.q-detail-text { font-size:14px; color:var(--text-secondary); line-height:1.6; }
-.q-detail-text strong { color:var(--text); font-weight:600; }
-.q-cta-section { background:linear-gradient(135deg, rgba(200,55,55,0.08) 0%, rgba(200,55,55,0.02) 100%); border:1px solid rgba(200,55,55,0.15); border-radius:16px; padding:40px 32px; margin-top:40px; }
-.q-cta-title { font-family:var(--serif); font-style:italic; font-size:24px; line-height:1.3; margin-bottom:12px; }
-.q-cta-sub { font-size:14px; color:var(--text-secondary); line-height:1.6; margin-bottom:28px; }
-.q-cta-feats { display:flex; flex-wrap:wrap; justify-content:center; gap:16px; margin-bottom:28px; }
-.q-cta-feat { display:flex; align-items:center; gap:6px; font-size:13px; color:var(--text-secondary); }
-.q-cta-feat .check { color:#5cb85c; font-weight:700; }
-.q-loading-icon { width:64px; height:64px; border-radius:50%; background:rgba(200,55,55,0.1); border:2px solid rgba(200,55,55,0.3); display:inline-flex; align-items:center; justify-content:center; font-size:28px; margin-bottom:24px; }
-@media (max-width:768px) {
-  .quiz-nav { padding:16px 20px; }
-  .quiz-progress { padding:12px 20px; }
-  .quiz-body { padding:40px 20px 60px; }
-  .q-insights { grid-template-columns:1fr; gap:12px; }
-  .q-intro-feats { flex-direction:column; align-items:center; gap:16px; }
-  .q-details { padding:24px 20px; }
-  .q-cta-section { padding:28px 20px; }
-  .q-intro { padding-top:30px; }
-}
-
-@media(max-width:600px) {
-  .quiz-overlay { padding:20px 12px; }
-  .quiz-modal { max-height:calc(100vh - 40px); border-radius:12px; }
-  .quiz-body { padding:24px 16px 32px; }
-  .quiz-nav { padding:16px 16px; }
-  .quiz-progress { padding:12px 16px; }
-}
-
-.q-cta-section iframe, .q-cta-section cal-inline { border-radius:12px; }
-#qCalEmbed { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; }
 </style>
 </head>
 <body>
@@ -642,28 +369,27 @@ body.quiz-open { overflow: hidden; }
   <a href="#top" class="nav-logo-fixed" id="navLogo">
     <span class="nav-logo-n">N</span>
     <span class="nav-logo-dot"></span>
-    <span class="nav-brand">nate system</span>
+    <span class="nav-brand">Nathan Goutagny</span>
   </a>
   <nav>
-    <a href="#" onclick="openQuiz(); return false;" class="nav-cta">
+    <div class="lang-toggle">
+      <button class="lang-btn active" id="langEN" onclick="switchLang('en')">EN</button>
+      <button class="lang-btn" id="langFR" onclick="switchLang('fr')">FR</button>
+    </div>
+    <a href="#" class="nav-cta">
       <span class="nav-cta-dot"></span>
-      <span>Faire le quiz</span>
+      <span data-en="Book a call" data-fr="Réserver un appel">Book a call</span>
     </a>
   </nav>
-  <div class="theme-toggle" id="themeToggle">
-    <button class="theme-btn active" id="themeDark" onclick="setTheme('dark')" title="Mode sombre"><svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
-    <button class="theme-btn" id="themeLight" onclick="setTheme('light')" title="Mode clair"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button>
-  </div>
 
+  <!-- HERO -->
   <section class="hero" id="top">
-    <p class="hero-eyebrow">nate system <span class="red-dot"></span></p>
-    <h1 class="hero-title">L’écosystème sur-mesure<br>qui <span class="accent">manque</span><br>à votre entreprise.</h1>
-    <p class="hero-sub">On remplace vos outils génériques par une infrastructure taillée pour vous. Livrée. Formée. Autonome.</p>
-    <p class="hero-targeting">Pour les TPE/PME de 10 à 70 employés qui veulent tourner sans friction.</p>
-    <a href="#" onclick="openQuiz(); return false;" class="hero-cta">
+    <h1 class="hero-title" data-en='Making independent luxury hotels feel as good to work in as they do <span class="accent">to stay in.</span>' data-fr='Rendre les hôtels indépendants de luxe aussi agréables à travailler qu&apos;<span class="accent">à y séjourner.</span>'>Making independent luxury hotels feel as good to work in as they do <span class="accent">to stay in.</span></h1>
+    <p class="hero-sub" data-en="I've worked the front desk. I know what breaks at 3pm on a full house. Now I build 100% custom systems — from scratch, for your hotel only — that connect every department in real time. No generic software. No compromise." data-fr="J'ai travaillé à la réception. Je sais ce qui lâche à 15h quand l'hôtel est complet. Aujourd'hui je construis des systèmes 100% sur-mesure — de zéro, pour votre hôtel uniquement — qui connectent chaque département en temps réel. Zéro logiciel générique. Zéro compromis.">I've worked the front desk. I know what breaks at 3pm on a full house. Now I build 100% custom systems — from scratch, for your hotel only — that connect every department in real time. No generic software. No compromise.</p>
+    <a href="#" class="hero-cta">
       <div class="hero-cta-pill">
         <div class="hero-cta-arrow">→</div>
-        <div class="hero-cta-text">Découvrir votre écosystème</div>
+        <div class="hero-cta-text" data-en="Book a free 20-min call" data-fr="Réserver un appel de 20 min">Book a free 20-min call</div>
         <div class="hero-cta-chevron">›</div>
       </div>
     </a>
@@ -672,839 +398,266 @@ body.quiz-open { overflow: hidden; }
 
   <div class="divider"></div>
 
+  <!-- SOCIAL PROOF -->
+  <section class="social-proof">
+    <div class="social-proof-header reveal">
+      <p data-en="Trusted by people who know the industry from the inside." data-fr="Reconnu par des professionnels qui connaissent l'industrie de l'intérieur.">Trusted by people who know the industry from the inside.</p>
+    </div>
+    <div class="marquee-wrap reveal">
+      <div class="marquee-track">
+        <div class="social-proof-item"><span class="dot"></span><span class="name">Hôtel du Golf</span><span class="city">Saint-Étienne</span></div>
+        <div class="social-proof-item"><span class="dot"></span><span class="name">Espace Fauriel</span><span class="city">Saint-Étienne</span></div>
+        <div class="social-proof-item"><span class="dot"></span><span class="name">Chromosome</span><span class="city">Lyon</span></div>
+        <div class="social-proof-item"><span class="dot"></span><span class="name">Hôtel du Golf</span><span class="city">Saint-Étienne</span></div>
+        <div class="social-proof-item"><span class="dot"></span><span class="name">Espace Fauriel</span><span class="city">Saint-Étienne</span></div>
+        <div class="social-proof-item"><span class="dot"></span><span class="name">Chromosome</span><span class="city">Lyon</span></div>
+      </div>
+    </div>
+    <p class="social-proof-quote reveal" data-en="I haven't just built systems for hospitality. I've worked inside it." data-fr="Je n'ai pas seulement construit des systèmes pour l'hôtellerie. J'y ai travaillé.">I haven't just built systems for hospitality. I've worked inside it.</p>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- PROBLEM -->
   <section class="problem">
     <div class="problem-header reveal">
-      <p class="section-label">Le problème</p>
-      <h2 class="section-title">Votre entreprise avance,<br>mais avec le frein à main.</h2>
-      <p>Des outils qui font 70% du job, des données éparpillées, des process bancals. Ça vous parle ?</p>
+      <p class="section-label" data-en="The problem" data-fr="Le problème">The problem</p>
+      <h2 class="section-title" data-en='Your hotel has five-star standards.<br>Your backstage runs on WhatsApp.' data-fr='Votre hôtel a des standards cinq étoiles.<br>Vos coulisses tournent sur WhatsApp.'>Your hotel has five-star standards.<br>Your backstage runs on WhatsApp.</h2>
     </div>
     <div class="problem-grid">
-      <div class="problem-card reveal">
-        <p class="problem-card-number">01</p>
-        <h3>Trop d’outils, pas assez de résultats</h3>
-        <p>Vous payez 10 SaaS différents. Aucun ne fait exactement ce qu’il vous faut. Les données ne se parlent pas. Du temps et de l’argent dans le vide.</p>
+      <div class="problem-item reveal">
+        <span class="problem-arrow">→</span>
+        <p data-en="Housekeeping doesn't know what front desk promised the guest in room 12." data-fr="La housekeeping ne sait pas ce que la réception a promis au client de la chambre 12.">Housekeeping doesn't know what front desk promised the guest in room 12.</p>
       </div>
-      <div class="problem-card reveal">
-        <p class="problem-card-number">02</p>
-        <h3>Des process fragiles et lents</h3>
-        <p>Les tâches prennent trois fois plus de temps qu’elles ne devraient. Les erreurs se multiplient. L’information se perd entre les maillons.</p>
+      <div class="problem-item reveal">
+        <span class="problem-arrow">→</span>
+        <p data-en="Maintenance issues disappear into chat groups, untracked and forgotten." data-fr="Les problèmes de maintenance disparaissent dans des groupes WhatsApp, sans suivi.">Maintenance issues disappear into chat groups, untracked and forgotten.</p>
       </div>
-      <div class="problem-card reveal">
-        <p class="problem-card-number">03</p>
-        <h3>L’incertitude freine les décisions</h3>
-        <p>Sans données fiables, chaque décision est un pari. Vous avancez à l’aveugle alors que vous pourriez avoir une vision claire.</p>
+      <div class="problem-item reveal">
+        <span class="problem-arrow">→</span>
+        <p data-en="You spend 30–40% of your day relaying information between departments." data-fr="Vous passez 30 à 40% de votre journée à faire le lien entre les départements.">You spend 30–40% of your day relaying information between departments.</p>
+      </div>
+      <div class="problem-item reveal">
+        <span class="problem-arrow">→</span>
+        <p data-en="You've tried generic PMS add-ons and hotel software. Expensive, rigid, built for no hotel in particular — and definitely not yours." data-fr="Vous avez essayé des modules PMS et des logiciels hôteliers génériques. Chers, rigides, conçus pour aucun hôtel en particulier — et certainement pas le vôtre.">You've tried generic PMS add-ons and hotel software. Expensive, rigid, built for no hotel in particular — and definitely not yours.</p>
       </div>
     </div>
   </section>
 
   <div class="divider"></div>
 
-  <section class="qualify">
-    <div class="qualify-header reveal">
-      <p class="section-label">Qualification</p>
-      <h2 class="section-title">C’est pour vous si…</h2>
-    </div>
-    <div class="qualify-list">
-      <div class="qualify-item reveal">
-        <span class="qualify-check">✓</span>
-        <p>Vous payez plus de 5 SaaS différents et aucun ne fait 100% du job</p>
-      </div>
-      <div class="qualify-item reveal">
-        <span class="qualify-check">✓</span>
-        <p>Vos équipes perdent du temps à copier-coller des données entre outils</p>
-      </div>
-      <div class="qualify-item reveal">
-        <span class="qualify-check">✓</span>
-        <p>Vous prenez des décisions sans données fiables</p>
-      </div>
-      <div class="qualify-item reveal">
-        <span class="qualify-check">✓</span>
-        <p>Vous avez déjà essayé d’automatiser mais ça tient avec du scotch</p>
-      </div>
-    </div>
-    <div class="ghost-cta-wrap reveal">
-      <a href="#" onclick="openQuiz(); return false;" class="ghost-cta">
-        <span>Faire le quiz</span>
-        <span class="ghost-cta-arrow">→</span>
-      </a>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
+  <!-- SOLUTION -->
   <section class="solution">
     <div class="solution-header reveal">
-      <p class="section-label">La solution</p>
-      <h2 class="section-title">Un écosystème conçu<br>uniquement pour vous.</h2>
-      <p>Pas un SaaS de plus. Une infrastructure sur-mesure, connectée, pensée pour votre réalité. Livrée et formée.</p>
+      <p class="section-label" data-en="The solution" data-fr="La solution">The solution</p>
+      <h2 class="section-title" data-en='Not another SaaS. Not another generic tool.<br>A system built <span class="accent">only</span> for your hotel.' data-fr='Pas un énième SaaS. Pas un outil générique de plus.<br>Un système construit <span class="accent">uniquement</span> pour votre hôtel.'>Not another SaaS. Not another generic tool.<br>A system built <span class="accent">only</span> for your hotel.</h2>
     </div>
-    <div class="solution-steps">
-      <div class="solution-step reveal">
-        <span class="solution-step-num">1</span>
-        <h3>Audit & diagnostic</h3>
-        <p>On cartographie vos process, vos outils, vos frictions. On identifie exactement où vous perdez du temps et de l’argent.</p>
+    <div class="solution-grid">
+      <div class="solution-card reveal">
+        <h3 data-en="Maintenance tracking" data-fr="Suivi maintenance">Maintenance tracking</h3>
+        <p data-en="Every issue logged, assigned, and closed. Nothing forgotten. Nothing lost in a chat group." data-fr="Chaque problème enregistré, assigné, résolu. Rien d'oublié. Rien de perdu dans un groupe WhatsApp.">Every issue logged, assigned, and closed. Nothing forgotten. Nothing lost in a chat group.</p>
       </div>
-      <div class="solution-step reveal">
-        <span class="solution-step-num">2</span>
-        <h3>Construction sur-mesure</h3>
-        <p>On crée votre écosystème — chaque brique est pensée pour votre entreprise. Rien de générique, tout est taillé pour vous.</p>
+      <div class="solution-card reveal">
+        <h3 data-en="Shift handover" data-fr="Passation de service">Shift handover</h3>
+        <p data-en="Structured, visible, accessible by everyone. The night shift always knows what the day shift left." data-fr="Structurée, visible, accessible par tous. L'équipe de nuit sait toujours ce que l'équipe de jour a laissé.">Structured, visible, accessible by everyone. The night shift always knows what the day shift left.</p>
       </div>
-      <div class="solution-step reveal">
-        <span class="solution-step-num">3</span>
-        <h3>Formation & autonomie</h3>
-        <p>On ne livre pas et on se barre. Vos équipes sont formées, autonomes, opérationnelles. L’écosystème vous appartient.</p>
+      <div class="solution-card reveal">
+        <h3 data-en="GM dashboard" data-fr="Dashboard GM">GM dashboard</h3>
+        <p data-en="Full operational visibility from your phone. Anywhere. Anytime. Stop chasing updates." data-fr="Visibilité opérationnelle complète depuis votre téléphone. Partout. Tout le temps.">Full operational visibility from your phone. Anywhere. Anytime. Stop chasing updates.</p>
       </div>
-    </div>
-    <div class="ghost-cta-wrap reveal">
-      <a href="#" onclick="openQuiz(); return false;" class="ghost-cta">
-        <span>Découvrir votre écosystème</span>
-        <span class="ghost-cta-arrow">→</span>
-      </a>
     </div>
   </section>
 
   <div class="divider"></div>
 
+  <!-- HOW IT WORKS -->
+  <section class="how-it-works">
+    <div class="how-header reveal">
+      <p class="section-label" data-en="Process" data-fr="Processus">Process</p>
+      <h2 class="section-title" data-en="How it works." data-fr="Comment ça marche.">How it works.</h2>
+    </div>
+    <div class="how-steps">
+      <div class="how-step reveal">
+        <span class="how-step-num">01</span>
+        <div>
+          <h3 data-en="On-site diagnostic — 2 days" data-fr="Diagnostic sur site — 2 jours">On-site diagnostic — 2 days</h3>
+          <p data-en="I come to your property, observe every department, map every friction point, and deliver a 10-page report with exact costs and a fix roadmap." data-fr="Je viens dans votre hôtel, j'observe chaque département, je cartographie chaque point de friction et livre un rapport de 10 pages avec les coûts exacts.">I come to your property, observe every department, map every friction point, and deliver a 10-page report with exact costs and a fix roadmap.</p>
+          <p class="price" data-en="€490 — paid upfront." data-fr="€490 — payé à l'avance.">€490 — paid upfront.</p>
+        </div>
+      </div>
+      <div class="how-step reveal">
+        <span class="how-step-num">02</span>
+        <div>
+          <h3 data-en="Custom system built around your hotel" data-fr="Système sur-mesure pour votre hôtel">Custom system built around your hotel</h3>
+          <p data-en="4–5 weeks. Every screen, every workflow, every automation — designed around how your specific property operates. Zero generic features you'll never use. Zero monthly fees for things you don't need." data-fr="4-5 semaines. Chaque écran, chaque workflow, chaque automatisation — conçu autour du fonctionnement précis de votre hôtel. Zéro fonctionnalité générique inutile. Zéro abonnement pour des choses dont vous n'avez pas besoin.">4–5 weeks. Every screen, every workflow, every automation — designed around how your specific property operates. Zero generic features you'll never use. Zero monthly fees for things you don't need.</p>
+          <p class="price" data-en="€6,000 – €12,000 depending on property size." data-fr="€6 000 – €12 000 selon la taille.">€6,000 – €12,000 depending on property size.</p>
+        </div>
+      </div>
+      <div class="how-step reveal">
+        <span class="how-step-num">03</span>
+        <div>
+          <h3 data-en="Monthly retainer" data-fr="Retainer mensuel">Monthly retainer</h3>
+          <p data-en="Evolutions, new modules, priority support, quarterly GM review." data-fr="Évolutions, nouveaux modules, support prioritaire, revue trimestrielle GM.">Evolutions, new modules, priority support, quarterly GM review.</p>
+          <p class="price" data-en="€800 – €1,500/month. 3-month minimum." data-fr="€800 – €1 500/mois. Minimum 3 mois.">€800 – €1,500/month. 3-month minimum.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- BEFORE / AFTER -->
   <section class="comparison">
     <div class="comparison-header reveal">
-      <p class="section-label">Transformation</p>
-      <h2 class="section-title">Avant & après<br>Nate System.</h2>
+      <p class="section-label" data-en="Transformation" data-fr="Transformation">Transformation</p>
+      <h2 class="section-title" data-en="Before. After." data-fr="Avant. Après.">Before. After.</h2>
     </div>
     <div class="comparison-cols reveal">
       <div class="comparison-col before">
-        <p class="comparison-col-title">Avant</p>
-        <div class="comparison-item"><span class="comparison-mark">✗</span><span>10+ outils différents</span></div>
-        <div class="comparison-item"><span class="comparison-mark">✗</span><span>Données éparpillées</span></div>
-        <div class="comparison-item"><span class="comparison-mark">✗</span><span>Process manuels et lents</span></div>
-        <div class="comparison-item"><span class="comparison-mark">✗</span><span>Décisions à l’aveugle</span></div>
-        <div class="comparison-item"><span class="comparison-mark">✗</span><span>Frictions quotidiennes</span></div>
+        <p class="comparison-col-title" data-en="Before" data-fr="Avant">Before</p>
+        <div class="comparison-item"><span class="comparison-mark">✗</span><span data-en="WhatsApp groups for every department" data-fr="Groupes WhatsApp par département">WhatsApp groups for every department</span></div>
+        <div class="comparison-item"><span class="comparison-mark">✗</span><span data-en="Paper logbooks at reception" data-fr="Cahiers papier à la réception">Paper logbooks at reception</span></div>
+        <div class="comparison-item"><span class="comparison-mark">✗</span><span data-en="GM as full-time dispatcher" data-fr="GM coordinateur à plein temps">GM as full-time dispatcher</span></div>
+        <div class="comparison-item"><span class="comparison-mark">✗</span><span data-en="Issues discovered after the guest has left" data-fr="Problèmes découverts après le départ du client">Issues discovered after the guest has left</span></div>
+        <div class="comparison-item"><span class="comparison-mark">✗</span><span data-en="No visibility without being physically present" data-fr="Aucune visibilité sans être physiquement présent">No visibility without being physically present</span></div>
+        <div class="comparison-item"><span class="comparison-mark">✗</span><span data-en="Expensive generic software that fits no one perfectly" data-fr="Logiciels génériques chers qui ne conviennent parfaitement à personne">Expensive generic software that fits no one perfectly</span></div>
       </div>
       <div class="comparison-col after">
-        <p class="comparison-col-title">Après</p>
-        <div class="comparison-item"><span class="comparison-mark">✓</span><span>1 écosystème unifié</span></div>
-        <div class="comparison-item"><span class="comparison-mark">✓</span><span>Données centralisées</span></div>
-        <div class="comparison-item"><span class="comparison-mark">✓</span><span>Process automatisés</span></div>
-        <div class="comparison-item"><span class="comparison-mark">✓</span><span>Vision claire en temps réel</span></div>
-        <div class="comparison-item"><span class="comparison-mark">✓</span><span>Zéro friction</span></div>
+        <p class="comparison-col-title" data-en="After" data-fr="Après">After</p>
+        <div class="comparison-item"><span class="comparison-mark">✓</span><span data-en="One dashboard, every department, real time" data-fr="Un dashboard, chaque département, en temps réel">One dashboard, every department, real time</span></div>
+        <div class="comparison-item"><span class="comparison-mark">✓</span><span data-en="Every issue tracked from report to resolution" data-fr="Chaque problème suivi de l'alerte à la résolution">Every issue tracked from report to resolution</span></div>
+        <div class="comparison-item"><span class="comparison-mark">✓</span><span data-en="GM focused on guest experience and revenue" data-fr="GM concentré sur l'expérience client et les revenus">GM focused on guest experience and revenue</span></div>
+        <div class="comparison-item"><span class="comparison-mark">✓</span><span data-en="Problems resolved before the guest notices" data-fr="Problèmes résolus avant que le client ne s'en aperçoive">Problems resolved before the guest notices</span></div>
+        <div class="comparison-item"><span class="comparison-mark">✓</span><span data-en="Full visibility from your phone, anywhere" data-fr="Visibilité complète depuis votre téléphone">Full visibility from your phone, anywhere</span></div>
+        <div class="comparison-item"><span class="comparison-mark">✓</span><span data-en="100% custom — built for your hotel, owned by you" data-fr="100% sur-mesure — construit pour votre hôtel, vous appartient">100% custom — built for your hotel, owned by you</span></div>
       </div>
     </div>
   </section>
 
   <div class="divider"></div>
 
-  <section class="timeline">
-    <div class="timeline-header reveal">
-      <p class="section-label">Le process</p>
-      <h2 class="section-title">Comment ça marche<br>concrètement.</h2>
-      <p>De l’audit à l’autonomie, en 5 semaines.</p>
-    </div>
-    <div class="timeline-track reveal">
-      <div class="timeline-step">
-        <div class="timeline-dot"></div>
-        <div>
-          <p class="timeline-step-label">Semaine 1</p>
-          <h4>Audit & diagnostic gratuit</h4>
-          <p>On cartographie tout</p>
-        </div>
-      </div>
-      <div class="timeline-step">
-        <div class="timeline-dot"></div>
-        <div>
-          <p class="timeline-step-label">Semaine 2-3</p>
-          <h4>Construction de votre écosystème</h4>
-          <p>Sur-mesure, brique par brique</p>
-        </div>
-      </div>
-      <div class="timeline-step">
-        <div class="timeline-dot"></div>
-        <div>
-          <p class="timeline-step-label">Semaine 4</p>
-          <h4>Formation de vos équipes</h4>
-          <p>Chaque profil est formé</p>
-        </div>
-      </div>
-      <div class="timeline-step">
-        <div class="timeline-dot"></div>
-        <div>
-          <p class="timeline-step-label">Semaine 5+</p>
-          <h4>Vous êtes autonomes</h4>
-          <p>L’écosystème est à vous</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
+  <!-- CASE STUDY -->
   <section class="case-study">
     <div class="case-study-header reveal">
-      <p class="section-label">Cas concret</p>
-      <h2 class="section-title">Un exemple concret.</h2>
-      <p>Ce qu’on a fait pour une TPE de 25 employés qui noyait dans ses outils.</p>
+      <p class="section-label" data-en="Case study" data-fr="Cas client">Case study</p>
+      <h2 class="section-title" data-en="What I've already built." data-fr="Ce que j'ai déjà construit.">What I've already built.</h2>
     </div>
-    <div class="case-study-grid">
-      <div class="case-study-card reveal">
-        <p class="case-study-card-number">01</p>
-        <h3>Le contexte</h3>
-        <p>TPE de 25 employés, 8 outils différents, des données partout, 15h/semaine perdues en tâches manuelles.</p>
-      </div>
-      <div class="case-study-card reveal">
-        <p class="case-study-card-number">02</p>
-        <h3>Ce qu’on a fait</h3>
-        <p>Audit complet, construction d’un écosystème sur-mesure en 4 semaines, formation des 3 équipes.</p>
-      </div>
-      <div class="case-study-card reveal">
-        <p class="case-study-card-number">03</p>
-        <h3>Le résultat</h3>
-        <p>1 seul écosystème, 15h/semaine récupérées, zéro friction, équipes autonomes en 2 semaines.</p>
-      </div>
+    <div class="case-study-card reveal">
+      <h3>Chromosome — Lyon, France</h3>
+      <p data-en="Restaurant group operational ecosystem. Coordination failures reduced to zero. Team went from reactive to proactive. Services run smooth every single night." data-fr="Écosystème opérationnel pour un groupe de restaurants. Zéro défaillance de coordination. L'équipe est passée de réactive à proactive. Les services tournent parfaitement chaque soir.">Restaurant group operational ecosystem. Coordination failures reduced to zero. Team went from reactive to proactive. Services run smooth every single night.</p>
     </div>
   </section>
 
   <div class="divider"></div>
 
-  <section class="results">
-    <div class="results-header reveal">
-      <p class="section-label">Les résultats</p>
-      <h2 class="section-title">Ce que ça change,<br>concrètement.</h2>
+  <!-- ABOUT -->
+  <section class="about">
+    <div class="about-header reveal">
+      <p class="section-label" data-en="About" data-fr="À propos">About</p>
+      <h2 class="section-title" data-en="From the hotel. To the hotels." data-fr="De l'hôtel. Aux hôtels.">From the hotel. To the hotels.</h2>
     </div>
-    <div class="results-grid">
-      <div class="result-card reveal">
-        <div class="result-card-value">÷<span class="red">2</span></div>
-        <p class="result-card-label">Temps passé sur<br>les tâches répétitives</p>
-      </div>
-      <div class="result-card reveal">
-        <div class="result-card-value"><span class="red">0</span></div>
-        <p class="result-card-label">Friction entre<br>vos outils</p>
-      </div>
-      <div class="result-card reveal">
-        <div class="result-card-value"><span class="red">1</span></div>
-        <p class="result-card-label">Écosystème unifié<br>qui fait tout</p>
-      </div>
-      <div class="result-card reveal">
-        <div class="result-card-value" data-counter="100">100<span class="red">%</span></div>
-        <p class="result-card-label">Sur-mesure, pensé<br>pour vous seul</p>
-      </div>
+    <div class="about-text reveal" data-en="<p>I'm 23. I've worked front desk at Hôtel du Golf in Saint-Étienne — check-ins, complaints, night shifts, full houses. I've seen firsthand how generic hotel software fails when it matters most.</p><p>I also build software. SimpleTeam is a SaaS I designed from scratch, used daily by real teams. I know what works in production, not just in demos.</p><p><strong>That's why every system I build starts from zero.</strong> No template. No generic module. I sit with your team, I understand your workflows, and I build exactly what your hotel needs — nothing more, nothing less.</p><p>Field experience + engineering. That's the difference.</p>" data-fr="<p>J'ai 23 ans. J'ai travaillé à la réception de l'Hôtel du Golf à Saint-Étienne — check-ins, réclamations, nuits, hôtel complet. J'ai vu de mes propres yeux comment les logiciels hôteliers génériques lâchent quand ça compte vraiment.</p><p>Je construis aussi des logiciels. SimpleTeam est un SaaS que j'ai conçu de zéro, utilisé chaque jour par de vraies équipes. Je sais ce qui fonctionne en production, pas seulement en démo.</p><p><strong>C'est pourquoi chaque système que je construis part de zéro.</strong> Pas de template. Pas de module générique. Je m'assois avec votre équipe, je comprends vos workflows, et je construis exactement ce dont votre hôtel a besoin — rien de plus, rien de moins.</p><p>Expérience terrain + ingénierie. C'est toute la différence.</p>">
+      <p>I'm 23. I've worked front desk at Hôtel du Golf in Saint-Étienne — check-ins, complaints, night shifts, full houses. I've seen firsthand how generic hotel software fails when it matters most.</p>
+      <p>I also build software. SimpleTeam is a SaaS I designed from scratch, used daily by real teams. I know what works in production, not just in demos.</p>
+      <p><strong>That's why every system I build starts from zero.</strong> No template. No generic module. I sit with your team, I understand your workflows, and I build exactly what your hotel needs — nothing more, nothing less.</p>
+      <p>Field experience + engineering. That's the difference.</p>
     </div>
   </section>
 
   <div class="divider"></div>
 
-  <section class="faq">
-    <div class="faq-header reveal">
-      <p class="section-label">Questions fréquentes</p>
-      <h2 class="section-title">Vous vous demandez…</h2>
-      <p>Les vraies questions. Les vraies réponses.</p>
-    </div>
-    <div class="faq-list reveal">
-      <div class="faq-item">
-        <button class="faq-question">
-          <span>Combien ça coûte ?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">
-          <p>Chaque écosystème est sur-mesure, donc le prix aussi. Le quiz vous donne une estimation en 3 minutes.</p>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question">
-          <span>Combien de temps ça prend ?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">
-          <p>En moyenne 4 semaines entre l’audit et la livraison. Vos équipes sont autonomes en 2 semaines de plus.</p>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question">
-          <span>Et si ça marche pas ?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">
-          <p>On fait un audit gratuit avant de commencer. Si on voit que c’est pas pertinent pour vous, on vous le dit.</p>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question">
-          <span>C’est quoi la différence avec un intégrateur classique ?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">
-          <p>Un intégrateur livre et se barre. Nous on livre ET on forme. L’écosystème vous appartient, vos équipes le maîtrisent.</p>
-        </div>
-      </div>
-    </div>
+  <!-- GUARANTEE -->
+  <section class="guarantee reveal">
+    <p class="section-label" data-en="Guarantee" data-fr="Garantie" style="text-align:center;">Guarantee</p>
+    <p class="guarantee-text" data-en="If after 4 weeks your team coordination hasn't visibly improved — I work for free until it does." data-fr="Si après 4 semaines la coordination de votre équipe ne s'est pas visiblement améliorée — je travaille gratuitement jusqu'à ce que ce soit le cas.">If after 4 weeks your team coordination hasn't visibly improved — I work for free until it does.</p>
   </section>
 
   <div class="divider"></div>
 
-  <section class="cta-final" id="quiz">
-    <p class="section-label reveal">Le moment</p>
-    <h2 class="section-title reveal">Chaque semaine sans le bon écosystème vous coûte du temps et de l’argent.</h2>
-    <p class="reveal">Faites le quiz maintenant. 3 minutes. Gratuit. On vous montre exactement ce qu’on peut construire pour vous.</p>
-    <a href="#" onclick="openQuiz(); return false;" class="cta-final-button reveal">
-      Commencer le quiz <span>→</span>
+  <!-- CTA FINAL -->
+  <section class="cta-final">
+    <h2 class="section-title reveal" data-en="Currently accepting 1 new hotel in Budapest." data-fr="J'accepte actuellement 1 nouvel hôtel à Budapest.">Currently accepting 1 new hotel in Budapest.</h2>
+    <a href="#" class="cta-final-button reveal">
+      <span data-en="Book a free 20-min call" data-fr="Réserver un appel de 20 min">Book a free 20-min call</span> <span>→</span>
     </a>
-    <p class="cta-final-sub reveal">Gratuit · 3 minutes · Sans engagement</p>
+    <p class="cta-final-sub reveal" data-en="No pitch. Just a conversation about your operations." data-fr="Pas de pitch. Juste une conversation sur vos opérations.">No pitch. Just a conversation about your operations.</p>
   </section>
 
   <footer>
     <div class="footer-left">
       <span class="footer-n">N</span>
       <span class="footer-dot"></span>
-      <span class="footer-name">nate system · Scale Smarter</span>
+      <span class="footer-name">Nathan Goutagny · Budapest · 2026</span>
     </div>
-    <p class="footer-right">© 2026 Nate System. Tous droits réservés.</p>
+    <p class="footer-right"><a href="https://linkedin.com/in/nathan-goutagny" target="_blank">linkedin.com/in/nathan-goutagny</a></p>
   </footer>
 </div>
-<div class="mobile-cta" id="mobileCta"><a href="#" onclick="openQuiz(); return false;">Faire le quiz →</a></div>
 
-
-<!-- QUIZ OVERLAY -->
-<div class="quiz-overlay" id="quizOverlay" onclick="if(event.target===this)closeQuiz()">
-  <div class="quiz-modal" id="quizModal">
-  <div class="quiz-nav">
-    <a href="#" onclick="closeQuiz(); return false;" class="nav-logo">
-      <span class="nav-logo-n">N</span><span class="nav-logo-dot"></span>
-    </a>
-    <span class="quiz-timer" id="qTimer">~ 3 min</span>
-    <button class="quiz-close" onclick="closeQuiz()">&times;</button>
-  </div>
-  <div class="quiz-progress" id="qProgress" style="display:none">
-    <div class="quiz-progress-inner">
-      <div class="quiz-progress-bar"><div class="quiz-progress-fill" id="qFill" style="width:0%"></div></div>
-      <div class="quiz-progress-meta">
-        <span class="quiz-progress-step" id="qStepLabel">Question 1 / 13</span>
-        <span class="quiz-progress-label" id="qLabel"></span>
-      </div>
-    </div>
-  </div>
-  <div class="quiz-body">
-    <div class="quiz-card">
-
-      <div class="q-step active" id="q-intro">
-        <div class="q-intro">
-          <div class="q-intro-label">Formulaire d'éligibilité</div>
-          <h2 class="q-intro-title">Vérifiez votre éligibilité.</h2>
-          <p class="q-intro-sub">13 questions pour déterminer si nos services sont adaptés à votre situation.</p>
-          <div class="q-intro-feats">
-            <div class="q-intro-feat"><span class="q-intro-dot"></span>3 minutes</div>
-            <div class="q-intro-feat"><span class="q-intro-dot"></span>100% confidentiel</div>
-            <div class="q-intro-feat"><span class="q-intro-dot"></span>Réponse sous 24h</div>
-          </div>
-          <button class="q-btn" onclick="qStartQuiz()">C'est parti <span class="arrow">→</span></button>
-        </div>
-      </div>
-
-      <!-- Q1: Prénom -->
-      <div class="q-step" id="q-1">
-        <div class="q-num">01</div>
-        <h2 class="q-title">Votre prénom</h2>
-        <div class="q-input-group col">
-          <input type="text" class="q-input" id="qFirstName" placeholder="Prénom" onkeyup="qCheckField('qFirstName','qBtn1')" />
-        </div>
-        <button class="q-next-btn" id="qBtn1" disabled onclick="qSaveField('firstName','qFirstName',1)">Continuer <span>→</span></button>
-      </div>
-
-      <!-- Q2: Nom -->
-      <div class="q-step" id="q-2">
-        <div class="q-num">02</div>
-        <h2 class="q-title">Votre nom</h2>
-        <div class="q-input-group col">
-          <input type="text" class="q-input" id="qLastName" placeholder="Nom" onkeyup="qCheckField('qLastName','qBtn2')" />
-        </div>
-        <button class="q-next-btn" id="qBtn2" disabled onclick="qSaveField('lastName','qLastName',2)">Continuer <span>→</span></button>
-      </div>
-
-      <!-- Q3: Email -->
-      <div class="q-step" id="q-3">
-        <div class="q-num">03</div>
-        <h2 class="q-title">Votre email</h2>
-        <div class="q-input-group col">
-          <input type="email" class="q-input" id="qEmail" placeholder="Email" onkeyup="qCheckField('qEmail','qBtn3','email')" />
-        </div>
-        <button class="q-next-btn" id="qBtn3" disabled onclick="qSaveField('email','qEmail',3)">Continuer <span>→</span></button>
-      </div>
-
-      <!-- Q4: Téléphone -->
-      <div class="q-step" id="q-4">
-        <div class="q-num">04</div>
-        <h2 class="q-title">Votre téléphone</h2>
-        <div class="q-input-group col">
-          <input type="tel" class="q-input" id="qPhone" placeholder="Téléphone" onkeyup="qCheckField('qPhone','qBtn4','phone')" />
-        </div>
-        <button class="q-next-btn" id="qBtn4" disabled onclick="qSaveField('phone','qPhone',4)">Continuer <span>→</span></button>
-      </div>
-
-      <!-- Q5: Entreprise -->
-      <div class="q-step" id="q-5">
-        <div class="q-num">05</div>
-        <h2 class="q-title">Votre entreprise</h2>
-        <div class="q-input-group col">
-          <input type="text" class="q-input" id="qCompany" placeholder="Ex : Dupont Construction — BTP résidentiel" onkeyup="qCheckText('qCompany','qCompanyBtn')" />
-        </div>
-        <button class="q-next-btn" id="qCompanyBtn" disabled onclick="qNextCompany()">Continuer <span>→</span></button>
-      </div>
-
-      <!-- Q6: Rôle -->
-      <div class="q-step" id="q-6">
-        <div class="q-num">06</div>
-        <h2 class="q-title">Votre rôle</h2>
-        <div class="q-options">
-          <div class="q-opt" onclick="qSelect(6,0,this)"><div class="q-radio"></div><div class="q-opt-c"><div class="q-opt-l">Fondateur / CEO</div></div></div>
-          <div class="q-opt" onclick="qSelect(6,1,this)"><div class="q-radio"></div><div class="q-opt-c"><div class="q-opt-l">Directeur / C-Level</div></div></div>
-          <div class="q-opt" onclick="qSelect(6,2,this)"><div class="q-radio"></div><div class="q-opt-c"><div class="q-opt-l">Manager / Responsable</div></div></div>
-          <div class="q-opt" onclick="qSelect(6,3,this)"><div class="q-radio"></div><div class="q-opt-c"><div class="q-opt-l">Autre</div></div></div>
-        </div>
-      </div>
-
-      <!-- Q7: Secteur -->
-      <div class="q-step" id="q-7">
-        <div class="q-num">07</div>
-        <h2 class="q-title">Votre secteur</h2>
-        <div class="q-options">
-          <div class="q-opt" onclick="qSelect(7,0,this)"><div class="q-radio"></div><div class="q-opt-c"><div class="q-opt-l">Services / Conseil</div></div></div>
-          <div class="q-opt" onclick="qSelect(7,1,this)"><div class="q-radio"></div><div class="q-opt-c"><div class="q-opt-l">Commerce / E-commerce</div></div></div>
-          <div class="q-opt" onclick="qSelect(7,2,this)"><div class="q-radio"></div><div class="q-opt-c"><div class="q-opt-l">Tech / SaaS</div></div></div>
-          <div class="q-opt" onclick="qSelect(7,3,this)"><div class="q-radio"></div><div class="q-opt-c"><div class="q-opt-l">BTP / Industrie</div></div></div>
-          <div class="q-opt" onclick="qSelect(7,4,this)"><div class="q-radio"></div><div class="q-opt-c"><div class="q-opt-l">Santé / Bien-être</div></div></div>
-          <div class="q-opt" onclick="qSelect(7,5,this)"><div class="q-radio"></div><div class="q-opt-c"><div class="q-opt-l">Autre secteur</div></div></div>
-        </div>
-      </div>
-
-      <!-- Q8: Taille équipe -->
-      <div class="q-step" id="q-8">
-        <div class="q-num">08</div>
-        <h2 class="q-title">Taille de l'équipe</h2>
-        <div class="q-options">
-          <div class="q-opt" onclick="qSelect(8,0,this)"><div class="q-radio"></div><div class="q-opt-c"><div class="q-opt-l">Solo / 1-3 personnes</div></div></div>
-          <div class="q-opt" onclick="qSelect(8,1,this)"><div class="q-radio"></div><div class="q-opt-c"><div class="q-opt-l">4 à 15 personnes</div></div></div>
-          <div class="q-opt" onclick="qSelect(8,2,this)"><div class="q-radio"></div><div class="q-opt-c"><div class="q-opt-l">16 à 50 personnes</div></div></div>
-          <div class="q-opt" onclick="qSelect(8,3,this)"><div class="q-radio"></div><div class="q-opt-c"><div class="q-opt-l">50+ personnes</div></div></div>
-        </div>
-      </div>
-
-      <!-- Q9: CA -->
-      <div class="q-step" id="q-9">
-        <div class="q-num">09</div>
-        <h2 class="q-title">CA annuel</h2>
-        <div class="q-options">
-          <div class="q-opt" onclick="qSelect(9,0,this)"><div class="q-radio"></div><div class="q-opt-c"><div class="q-opt-l">Moins de 100k€/an</div></div></div>
-          <div class="q-opt" onclick="qSelect(9,1,this)"><div class="q-radio"></div><div class="q-opt-c"><div class="q-opt-l">100k€ à 500k€/an</div></div></div>
-          <div class="q-opt" onclick="qSelect(9,2,this)"><div class="q-radio"></div><div class="q-opt-c"><div class="q-opt-l">500k€ à 2M€/an</div></div></div>
-          <div class="q-opt" onclick="qSelect(9,3,this)"><div class="q-radio"></div><div class="q-opt-c"><div class="q-opt-l">2M€ à 10M€/an</div></div></div>
-          <div class="q-opt" onclick="qSelect(9,4,this)"><div class="q-radio"></div><div class="q-opt-c"><div class="q-opt-l">Plus de 10M€/an</div></div></div>
-        </div>
-      </div>
-
-      <!-- Q10: Relation IA -->
-      <div class="q-step" id="q-10">
-        <div class="q-num">10</div>
-        <h2 class="q-title">Votre niveau en IA</h2>
-        <div class="q-options">
-          <div class="q-opt" onclick="qSelect(10,0,this)"><div class="q-radio"></div><div class="q-opt-c"><div class="q-opt-l">J'en ai entendu parler, c'est tout</div></div></div>
-          <div class="q-opt" onclick="qSelect(10,1,this)"><div class="q-radio"></div><div class="q-opt-c"><div class="q-opt-l">J'utilise ChatGPT de temps en temps</div></div></div>
-          <div class="q-opt" onclick="qSelect(10,2,this)"><div class="q-radio"></div><div class="q-opt-c"><div class="q-opt-l">On a commencé à l'intégrer dans nos process</div></div></div>
-          <div class="q-opt" onclick="qSelect(10,3,this)"><div class="q-radio"></div><div class="q-opt-c"><div class="q-opt-l">L'IA est au cœur de notre stratégie</div></div></div>
-        </div>
-      </div>
-
-      <!-- Q11: Objectif principal -->
-      <div class="q-step" id="q-11">
-        <div class="q-num">11</div>
-        <h2 class="q-title">Objectif principal</h2>
-        <div class="q-options">
-          <div class="q-opt" onclick="qSelect(11,0,this)"><div class="q-radio"></div><div class="q-opt-c"><div class="q-opt-l">Gagner du temps sur l'opérationnel</div></div></div>
-          <div class="q-opt" onclick="qSelect(11,1,this)"><div class="q-radio"></div><div class="q-opt-c"><div class="q-opt-l">Structurer et connecter mes outils</div></div></div>
-          <div class="q-opt" onclick="qSelect(11,2,this)"><div class="q-radio"></div><div class="q-opt-c"><div class="q-opt-l">Augmenter mon CA / générer plus de leads</div></div></div>
-          <div class="q-opt" onclick="qSelect(11,3,this)"><div class="q-radio"></div><div class="q-opt-c"><div class="q-opt-l">Avoir une vision claire sur mes chiffres</div></div></div>
-          <div class="q-opt" onclick="qSelect(11,4,this)"><div class="q-radio"></div><div class="q-opt-c"><div class="q-opt-l">Scaler sans exploser</div></div></div>
-        </div>
-      </div>
-
-      <!-- Q12: Urgence -->
-      <div class="q-step" id="q-12">
-        <div class="q-num">12</div>
-        <h2 class="q-title">Niveau d'urgence</h2>
-        <div class="q-options">
-          <div class="q-opt" onclick="qSelect(12,0,this)"><div class="q-radio"></div><div class="q-opt-c"><div class="q-opt-l">Je me renseigne pour le moment</div></div></div>
-          <div class="q-opt" onclick="qSelect(12,1,this)"><div class="q-radio"></div><div class="q-opt-c"><div class="q-opt-l">Dans les 3 prochains mois</div></div></div>
-          <div class="q-opt" onclick="qSelect(12,2,this)"><div class="q-radio"></div><div class="q-opt-c"><div class="q-opt-l">Ce mois-ci</div></div></div>
-          <div class="q-opt" onclick="qSelect(12,3,this)"><div class="q-radio"></div><div class="q-opt-c"><div class="q-opt-l">C'est urgent — j'aurais dû commencer hier</div></div></div>
-        </div>
-      </div>
-
-      <!-- Q13: Budget -->
-      <div class="q-step" id="q-13">
-        <div class="q-num">13</div>
-        <h2 class="q-title">Votre budget</h2>
-        <div class="q-options">
-          <div class="q-opt" onclick="qSelect(13,0,this)"><div class="q-radio"></div><div class="q-opt-c"><div class="q-opt-l">Moins de 1 000€</div></div></div>
-          <div class="q-opt" onclick="qSelect(13,1,this)"><div class="q-radio"></div><div class="q-opt-c"><div class="q-opt-l">1 000€ à 3 000€</div></div></div>
-          <div class="q-opt" onclick="qSelect(13,2,this)"><div class="q-radio"></div><div class="q-opt-c"><div class="q-opt-l">3 000€ à 7 000€</div></div></div>
-          <div class="q-opt" onclick="qSelect(13,3,this)"><div class="q-radio"></div><div class="q-opt-c"><div class="q-opt-l">7 000€ à 15 000€</div></div></div>
-          <div class="q-opt" onclick="qSelect(13,4,this)"><div class="q-radio"></div><div class="q-opt-c"><div class="q-opt-l">Plus de 15 000€</div></div></div>
-        </div>
-      </div>
-
-      <!-- Loading -->
-      <div class="q-step" id="q-loading">
-        <div class="q-intro">
-          <div class="q-result-icon">✓</div>
-          <h2 class="q-intro-title">C'est bon pour nous.</h2>
-          <p class="q-intro-sub">Dernière étape : réservez votre créneau.</p>
-          <button class="q-next-btn" style="margin-top:24px;opacity:1;" onclick="qShowResult()">Prochaine étape <span>→</span></button>
-        </div>
-      </div>
-
-      <!-- Result: Cal.com for everyone -->
-      <div class="q-step" id="q-result">
-        <div class="q-result">
-          <div class="q-result-icon">✓</div>
-          <h2 class="q-result-title">Réservez votre créneau.</h2>
-          <p class="q-result-sub">Choisissez le moment qui vous arrange.</p>
-        </div>
-        <div id="qCalEmbed" style="width:100%; min-height:500px; border-radius:12px; overflow:hidden;"></div>
-      </div>
-    </div>
-  </div>
-  </div>
+<div class="mobile-cta" id="mobileCta">
+  <a href="#" data-en="Book a free 20-min call →" data-fr="Réserver un appel de 20 min →">Book a free 20-min call →</a>
 </div>
 
 <script>
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
-}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+// LANGUAGE TOGGLE
+let currentLang = 'en';
+function switchLang(lang) {
+  currentLang = lang;
+  document.getElementById('langEN').classList.toggle('active', lang === 'en');
+  document.getElementById('langFR').classList.toggle('active', lang === 'fr');
+  document.querySelectorAll('[data-en]').forEach(el => {
+    const text = el.getAttribute('data-' + lang);
+    if (text) el.innerHTML = text;
+  });
+}
 
-document.querySelectorAll('.problem-grid .reveal, .results-grid .reveal, .solution-steps .reveal, .case-study-grid .reveal, .qualify-list .reveal').forEach((el, i) => {
-  el.style.transitionDelay = i * 0.1 + 's';
+// NAV SCROLL
+const navLogo = document.getElementById('navLogo');
+const nav = document.querySelector('nav');
+window.addEventListener('scroll', () => {
+  const scrolled = window.scrollY > 60;
+  navLogo.classList.toggle('scrolled', scrolled);
+  nav.classList.toggle('scrolled', scrolled);
 });
 
-
-// Theme toggle
-function setTheme(t) {
-  document.documentElement.setAttribute('data-theme', t);
-  localStorage.setItem('ns-theme', t);
-  document.getElementById('themeDark').classList.toggle('active', t === 'dark');
-  document.getElementById('themeLight').classList.toggle('active', t === 'light');
+// MOBILE CTA
+const mobileCta = document.getElementById('mobileCta');
+const hero = document.querySelector('.hero');
+const ctaFinal = document.querySelector('.cta-final');
+function checkMobileCta() {
+  if (!mobileCta || window.innerWidth > 768) return;
+  const heroBottom = hero.getBoundingClientRect().bottom;
+  const ctaTop = ctaFinal.getBoundingClientRect().top;
+  const show = heroBottom < 0 && ctaTop > window.innerHeight;
+  mobileCta.classList.toggle('visible', show);
 }
-// Restore saved theme
-(function() {
-  var saved = localStorage.getItem('ns-theme');
-  if (saved) setTheme(saved);
-})();
-const nav = document.querySelector('nav');
-const navLogo = document.getElementById('navLogo');
-var lastScrollY = 0;
-var navHidden = false;
-window.addEventListener('scroll', function() {
-  var sy = window.scrollY;
-  nav.classList.toggle('scrolled', sy > 80);
-  if (navLogo) navLogo.classList.toggle('scrolled', sy > 80);
-  // Hide nav on scroll down past 400px, show on scroll up
-  if (sy > 400 && sy > lastScrollY + 10 && !navHidden) {
-    nav.style.transform = 'translateX(-50%) translateY(-120%)';
-    if (navLogo) navLogo.style.transform = 'translateY(-120%)';
-    navHidden = true;
-  } else if ((sy < lastScrollY - 5 || sy < 100) && navHidden) {
-    nav.style.transform = 'translateX(-50%) translateY(0)';
-    if (navLogo) navLogo.style.transform = 'translateY(0)';
-    navHidden = false;
-  }
-  lastScrollY = sy;
-}, { passive: true });
+window.addEventListener('scroll', checkMobileCta);
+window.addEventListener('resize', checkMobileCta);
 
+// REVEAL ON SCROLL
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      const delay = entry.target.dataset.delay || 0;
+      setTimeout(() => entry.target.classList.add('visible'), delay);
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+reveals.forEach((el, i) => {
+  el.dataset.delay = (i % 3) * 100;
+  observer.observe(el);
+});
+
+// FAQ ACCORDION
 document.querySelectorAll('.faq-question').forEach(btn => {
   btn.addEventListener('click', () => {
     const item = btn.parentElement;
     const wasOpen = item.classList.contains('open');
-    document.querySelectorAll('.faq-item.open').forEach(x => x.classList.remove('open'));
+    document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
     if (!wasOpen) item.classList.add('open');
   });
 });
-
-const mobileCta = document.getElementById('mobileCta');
-const heroSection = document.querySelector('.hero');
-const ctaFinal = document.getElementById('quiz');
-if (mobileCta && heroSection && ctaFinal) {
-  const mobileObs = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.target === heroSection) {
-        entry.isIntersecting ? mobileCta.classList.remove('visible') : mobileCta.classList.add('visible');
-      }
-      if (entry.target === ctaFinal && entry.isIntersecting) mobileCta.classList.remove('visible');
-    });
-  }, { threshold: 0.1 });
-  mobileObs.observe(heroSection);
-  mobileObs.observe(ctaFinal);
-}
-
-const counterEl = document.querySelector('[data-counter]');
-if (counterEl) {
-  const target = parseInt(counterEl.dataset.counter);
-  const suffix = counterEl.querySelector('.red') ? counterEl.querySelector('.red').outerHTML : '';
-  new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const duration = 1500, start = performance.now();
-        function ease(t) { return 1 - Math.pow(1 - t, 3); }
-        function animate(now) {
-          const progress = Math.min((now - start) / duration, 1);
-          counterEl.innerHTML = Math.round(ease(progress) * target) + suffix;
-          if (progress < 1) requestAnimationFrame(animate);
-        }
-        requestAnimationFrame(animate);
-      }
-    });
-  }, { threshold: 0.5 }).observe(counterEl);
-}
-
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-  link.addEventListener('click', e => {
-    const target = document.querySelector(link.getAttribute('href'));
-    if (target) {
-      e.preventDefault();
-      window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - nav.offsetHeight - 10, behavior: 'smooth' });
-    }
-  });
-});
-
-// === QUIZ LOGIC ===
-var qAnswers = {};
-var qTotal = 13;
-var qLabels = ['', 'Prénom', 'Nom', 'Email', 'Téléphone', 'Entreprise', 'Rôle', 'Secteur', 'Équipe', 'CA', 'IA', 'Objectif', 'Urgence', 'Budget'];
-
-function openQuiz() {
-  qAnswers = {};
-  var overlay = document.getElementById('quizOverlay');
-  overlay.querySelectorAll('.q-step').forEach(function(s) { s.classList.remove('active'); s.style.display = 'none'; });
-  overlay.querySelectorAll('.q-opt').forEach(function(o) { o.classList.remove('sel'); });
-  var inputs = overlay.querySelectorAll('.q-input, .q-textarea');
-  inputs.forEach(function(i) { i.value = ''; });
-  ['qBtn1','qBtn2','qBtn3','qBtn4','qCompanyBtn'].forEach(function(id) {
-    var b = document.getElementById(id); if (b) b.disabled = true;
-  });
-  var intro = document.getElementById('q-intro');
-  intro.style.display = 'block';
-  intro.classList.add('active');
-  document.getElementById('qProgress').style.display = 'none';
-  overlay.classList.add('active');
-  document.body.classList.add('quiz-open');
-  overlay.scrollTop = 0;
-}
-
-function closeQuiz() {
-  document.getElementById('quizOverlay').classList.remove('active');
-  document.body.classList.remove('quiz-open');
-}
-
-function qStartQuiz() {
-  document.getElementById('qProgress').style.display = 'block';
-  qGoTo(1);
-}
-
-function qGoTo(step) {
-  var overlay = document.getElementById('quizOverlay');
-  overlay.querySelectorAll('.q-step').forEach(function(s) { s.classList.remove('active'); s.style.display = 'none'; });
-  var id = typeof step === 'number' ? 'q-' + step : 'q-' + step;
-  var target = document.getElementById(id);
-  if (!target) return;
-  setTimeout(function() {
-    target.style.display = 'block';
-    requestAnimationFrame(function() { target.classList.add('active'); });
-    var firstInput = target.querySelector('.q-input, .q-textarea');
-    if (firstInput) setTimeout(function() { firstInput.focus(); }, 200);
-  }, 100);
-  if (typeof step === 'number') {
-    var pct = ((step - 1) / qTotal) * 100;
-    document.getElementById('qFill').style.width = pct + '%';
-    document.getElementById('qStepLabel').textContent = 'Question ' + step + ' / ' + qTotal;
-    document.getElementById('qLabel').textContent = qLabels[step] || '';
-  }
-  overlay.scrollTop = 0;
-}
-
-function qSelect(q, val, el) {
-  el.parentElement.querySelectorAll('.q-opt').forEach(function(o) { o.classList.remove('sel'); });
-  el.classList.add('sel');
-  qAnswers[q] = val;
-  setTimeout(function() {
-    if (q < qTotal) { qGoTo(q + 1); } else { qShowLoading(); }
-  }, 400);
-}
-
-function qCheckField(inputId, btnId, type) {
-  var val = document.getElementById(inputId).value.trim();
-  var ok = false;
-  if (type === 'email') ok = val.includes('@') && val.includes('.');
-  else if (type === 'phone') ok = val.length >= 6;
-  else ok = val.length > 0;
-  document.getElementById(btnId).disabled = !ok;
-}
-
-function qSaveField(key, inputId, step) {
-  qAnswers[key] = document.getElementById(inputId).value.trim();
-  if (step < qTotal) { qGoTo(step + 1); } else { qShowLoading(); }
-}
-
-function qCheckText(inputId, btnId) {
-  var val = document.getElementById(inputId).value.trim();
-  document.getElementById(btnId).disabled = val.length < 3;
-}
-
-function qNextCompany() {
-  qAnswers['company'] = document.getElementById('qCompany').value.trim();
-  qGoTo(6);
-}
-
-function qShowLoading() {
-  document.getElementById('qFill').style.width = '100%';
-  document.getElementById('qStepLabel').textContent = '';
-  document.getElementById('qLabel').textContent = '';
-  document.getElementById('qProgress').style.display = 'none';
-  qGoTo('loading');
-}
-
-function sendToSheet() {
-  var roleLabels = ['Fondateur/CEO','Directeur/C-Level','Manager/Responsable','Autre'];
-  var secteurLabels = ['Services/Conseil','Commerce/E-commerce','Tech/SaaS','BTP/Industrie','Sant\u00e9/Bien-\u00eatre','Autre'];
-  var equipeLabels = ['Solo/1-3','4-15','16-50','50+'];
-  var caLabels = ['<100k\u20ac','100-500k\u20ac','500k-2M\u20ac','2-10M\u20ac','+10M\u20ac'];
-  var iaLabels = ['Entendu parler','ChatGPT ponctuel','D\u00e9but int\u00e9gration','IA strat\u00e9gique'];
-  var objectifLabels = ['Gagner du temps','Structurer les outils','Augmenter CA/leads','Vision data','Scaler'];
-  var urgenceLabels = ['Se renseigne','Dans 3 mois','Ce mois-ci','Urgent'];
-  var budgetLabels = ['<1k\u20ac','1-3k\u20ac','3-7k\u20ac','7-15k\u20ac','+15k\u20ac'];
-  var score = 0;
-  score += [3,2,1,0][qAnswers[6]] || 0;
-  score += [0,1,2,3,3][qAnswers[9]] || 0;
-  score += [0,1,2,3][qAnswers[12]] || 0;
-  score += [0,1,2,2,3][qAnswers[13]] || 0;
-  score += [0,1,2,2][qAnswers[8]] || 0;
-  var temp = score >= 10 ? 'CHAUD' : score >= 6 ? 'TIEDE' : 'FROID';
-  var data = {
-    firstName: qAnswers.firstName || '',
-    lastName: qAnswers.lastName || '',
-    email: qAnswers.email || '',
-    phone: qAnswers.phone || '',
-    company: qAnswers.company || '',
-    role: roleLabels[qAnswers[6]] || '',
-    secteur: secteurLabels[qAnswers[7]] || '',
-    equipe: equipeLabels[qAnswers[8]] || '',
-    ca: caLabels[qAnswers[9]] || '',
-    ia: iaLabels[qAnswers[10]] || '',
-    objectif: objectifLabels[qAnswers[11]] || '',
-    urgence: urgenceLabels[qAnswers[12]] || '',
-    budget: budgetLabels[qAnswers[13]] || '',
-    score: score,
-    temperature: temp
-  };
-  var iframe = document.createElement('iframe');
-  iframe.name = 'sheetFrame';
-  iframe.style.display = 'none';
-  document.body.appendChild(iframe);
-  var form = document.createElement('form');
-  form.method = 'POST';
-  form.action = 'https://script.google.com/macros/s/AKfycbx4nZELsK7SQVly6lNpnWWButu6Xc2GiHnoT7rDppU1sHZ2noWWlMA7tlUHmVw-LSUrdg/exec';
-  form.target = 'sheetFrame';
-  Object.keys(data).forEach(function(key) {
-    var input = document.createElement('input');
-    input.type = 'hidden';
-    input.name = key;
-    input.value = data[key];
-    form.appendChild(input);
-  });
-  document.body.appendChild(form);
-  form.submit();
-  setTimeout(function() {
-    try { document.body.removeChild(form); document.body.removeChild(iframe); } catch(e){}
-  }, 5000);
-}
-
-function qShowResult() {
-  sendToSheet();
-  document.getElementById('qProgress').style.display = 'none';
-  qGoTo('result');
-  setTimeout(function() { loadCalEmbed(); }, 300);
-}
-
-
-// === CAL.COM EMBED ===
-(function() {
-  var s = document.createElement('script');
-  s.src = 'https://app.cal.com/embed/embed.js';
-  s.async = true;
-  document.head.appendChild(s);
-})();
-
-function buildQuizNotes() {
-  var roleLabels = ['Fondateur/CEO','Directeur/C-Level','Manager/Responsable','Autre'];
-  var secteurLabels = ['Services/Conseil','Commerce/E-commerce','Tech/SaaS','BTP/Industrie','Santé/Bien-être','Autre'];
-  var equipeLabels = ['Solo/1-3','4-15','16-50','50+'];
-  var caLabels = ['<100k€','100-500k€','500k-2M€','2-10M€','+10M€'];
-  var iaLabels = ['Entendu parler','ChatGPT ponctuel','Début intégration','IA stratégique'];
-  var objectifLabels = ['Gagner du temps','Structurer les outils','Augmenter CA/leads','Vision data','Scaler'];
-  var urgenceLabels = ['Se renseigne','Dans 3 mois','Ce mois-ci','Urgent'];
-  var budgetLabels = ['<1k€','1-3k€','3-7k€','7-15k€','+15k€'];
-  var score = 0;
-  score += [3,2,1,0][qAnswers[6]] || 0;
-  score += [0,1,2,3,3][qAnswers[9]] || 0;
-  score += [0,1,2,3][qAnswers[12]] || 0;
-  score += [0,1,2,2,3][qAnswers[13]] || 0;
-  score += [0,1,2,2][qAnswers[8]] || 0;
-  var temp = score >= 10 ? 'CHAUD' : score >= 6 ? 'TIEDE' : 'FROID';
-  var notes = '';
-  notes += '=== QUIZ NATE SYSTEM ===\n';
-  notes += 'Score: ' + score + '/15 (' + temp + ')\n\n';
-  notes += 'Prénom: ' + (qAnswers.firstName || '?') + '\n';
-  notes += 'Nom: ' + (qAnswers.lastName || '?') + '\n';
-  notes += 'Email: ' + (qAnswers.email || '?') + '\n';
-  notes += 'Tél: ' + (qAnswers.phone || '?') + '\n';
-  notes += 'Entreprise: ' + (qAnswers.company || '?') + '\n';
-  notes += 'Rôle: ' + (roleLabels[qAnswers[6]] || '?') + '\n';
-  notes += 'Secteur: ' + (secteurLabels[qAnswers[7]] || '?') + '\n';
-  notes += 'Équipe: ' + (equipeLabels[qAnswers[8]] || '?') + '\n';
-  notes += 'CA annuel: ' + (caLabels[qAnswers[9]] || '?') + '\n';
-  notes += 'Niveau IA: ' + (iaLabels[qAnswers[10]] || '?') + '\n';
-  notes += 'Objectif: ' + (objectifLabels[qAnswers[11]] || '?') + '\n';
-  notes += 'Urgence: ' + (urgenceLabels[qAnswers[12]] || '?') + '\n';
-  notes += 'Budget: ' + (budgetLabels[qAnswers[13]] || '?') + '\n';
-  return notes;
-}
-
-function loadCalEmbed() {
-  var container = document.getElementById('qCalEmbed');
-  if (!container) return;
-  container.innerHTML = '';
-  // Use Cal.com inline embed
-  if (typeof Cal !== 'undefined') {
-    Cal('inline', {
-      calLink: 'simplaizer/appel-avec-moi',
-      elementOrSelector: '#qCalEmbed',
-      config: {
-        layout: 'month_view',
-        theme: 'dark'
-      }
-    });
-  } else {
-    // Fallback: try again in 500ms (script may still be loading)
-    setTimeout(function() {
-      if (typeof Cal !== 'undefined') {
-        Cal('inline', {
-          calLink: 'simplaizer/appel-avec-moi',
-          elementOrSelector: '#qCalEmbed',
-          config: {
-            layout: 'month_view',
-            theme: 'dark'
-          }
-        });
-      } else {
-        // Final fallback: direct iframe
-        container.innerHTML = '<iframe src="https://cal.com/simplaizer/appel-avec-moi?embed=true&theme=dark&layout=month_view&name=' + encodeURIComponent((qAnswers.firstName||'')+ ' ' + (qAnswers.lastName||'')) + '&email=' + encodeURIComponent(qAnswers.email||'') + '&notes=' + encodeURIComponent(buildQuizNotes()) + '" style="width:100%; height:600px; border:none; border-radius:12px;" frameborder="0"></iframe>';
-      }
-    }, 1000);
-  }
-}
 </script>
 </body>
 </html>
