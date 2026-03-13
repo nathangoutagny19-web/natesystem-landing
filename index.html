@@ -147,13 +147,13 @@ nav.scrolled {
   border-radius: 100px; overflow: hidden; transition: all 0.4s ease; background: transparent;
 }
 .hero-cta:hover .hero-cta-pill {
-  background: #C9A84C;
-  box-shadow: 0 0 50px var(--accent-glow), 0 0 100px rgba(201,168,76,0.08);
+  background: transparent;
+  box-shadow: 0 0 20px rgba(201,168,76,0.4), 0 0 40px rgba(201,168,76,0.15);
 }
 .hero-cta-arrow { display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; color: #FAF7F2; font-size: 18px; border-right: 1px solid rgba(201,168,76,0.3); transition: color 0.4s; }
 .hero-cta-text { padding: 0 24px; font-family: var(--sans); font-size: 14px; font-weight: 500; color: #FAF7F2; white-space: nowrap; transition: color 0.4s; }
 .hero-cta-chevron { display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; color: #FAF7F2; font-size: 14px; border-left: 1px solid rgba(201,168,76,0.3); transition: color 0.4s; opacity: 0.6; }
-.hero-cta:hover .hero-cta-arrow, .hero-cta:hover .hero-cta-text, .hero-cta:hover .hero-cta-chevron { color: #0A0A0A; }
+.hero-cta:hover .hero-cta-arrow, .hero-cta:hover .hero-cta-text, .hero-cta:hover .hero-cta-chevron { color: #FAF7F2; }
 .hero-scroll-hint { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 8px; opacity: 0; animation: fadeUp 0.8s ease 1.2s forwards; }
 .hero-scroll-line { width: 1px; height: 40px; background: linear-gradient(to bottom, var(--text-muted), transparent); animation: scrollPulse 2s ease infinite; }
 @keyframes scrollPulse { 0%, 100% { opacity: 0.3; } 50% { opacity: 0.8; } }
@@ -290,7 +290,7 @@ section { padding: 120px 24px; position: relative; }
   font-family: var(--sans); font-size: 15px; font-weight: 600; cursor: pointer;
   transition: all 0.4s ease; text-decoration: none; position: relative;
 }
-.cta-final-button:hover { background: #C9A84C; color: #0A0A0A; box-shadow: 0 0 60px var(--accent-glow), 0 10px 40px rgba(0,0,0,0.3); transform: translateY(-2px); }
+.cta-final-button:hover { background: transparent; color: #FAF7F2; box-shadow: 0 0 20px rgba(201,168,76,0.4), 0 0 40px rgba(201,168,76,0.15); border-color: #C9A84C; transform: translateY(-2px); }
 .cta-final-button span { font-size: 18px; }
 .cta-final-sub { margin-top: 20px; font-size: 12px; color: var(--text-muted); font-weight: 300; }
 
@@ -302,7 +302,7 @@ section { padding: 120px 24px; position: relative; }
   color: var(--text); font-family: var(--sans); font-size: 14px; font-weight: 500;
   cursor: pointer; transition: all 0.4s ease; text-decoration: none; position: relative; overflow: hidden;
 }
-.ghost-cta:hover { background: #C9A84C; color: #0A0A0A; border-color: #C9A84C; box-shadow: 0 0 30px var(--accent-glow); }
+.ghost-cta:hover { background: transparent; color: #FAF7F2; border-color: #C9A84C; box-shadow: 0 0 20px rgba(201,168,76,0.4), 0 0 40px rgba(201,168,76,0.15); }
 .ghost-cta span { position: relative; z-index: 1; }
 .ghost-cta .ghost-cta-arrow { position: relative; z-index: 1; font-size: 16px; }
 
@@ -332,65 +332,65 @@ footer { padding: 40px; border-top: 1px solid var(--border); display: flex; just
   background: transparent; border: 1px solid #C9A84C; color: #FAF7F2; border-radius: 100px; font-weight: 600;
   font-size: 14px; text-decoration: none; font-family: var(--sans); transition: all 0.3s;
 }
-.mobile-cta a:hover { background: #C9A84C; color: #0A0A0A; }
+.mobile-cta a:hover { background: transparent; color: #FAF7F2; box-shadow: 0 0 20px rgba(201,168,76,0.4), 0 0 40px rgba(201,168,76,0.15); }
 
 /* MOCKUP SECTION */
 .mockup-section { padding: 80px 24px; max-width: 1100px; margin: 0 auto; }
 .mockup-section .section-label { text-align: center; }
 .mockup-section .section-title { text-align: center; margin-bottom: 48px; }
-.mockup-wrapper { max-width: 960px; margin: 0 auto; border-radius: 16px; overflow: hidden; box-shadow: 0 40px 80px rgba(0,0,0,0.4); }
+.mockup-wrapper { max-width: 960px; margin: 0 auto; border-radius: 16px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.15); }
 .mockup-inner { display: flex; min-height: 520px; }
 /* Sidebar */
-.mockup-sidebar { width: 200px; background: #1A1A1A; display: flex; flex-direction: column; flex-shrink: 0; }
-.mockup-logo { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 18px; font-weight: 400; color: #C9A84C; padding: 20px; }
+.mockup-sidebar { width: 200px; background: #F8F9FA; border-right: 1px solid #E5E7EB; display: flex; flex-direction: column; flex-shrink: 0; }
+.mockup-logo { font-family: 'Montserrat', sans-serif; font-size: 16px; font-weight: 500; color: #1A1A1A; padding: 20px; }
 .mockup-nav { list-style: none; display: flex; flex-direction: column; }
-.mockup-nav li { padding: 10px 20px; font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 300; color: #888; display: flex; align-items: center; justify-content: space-between; cursor: default; }
-.mockup-nav li.active { color: #FAF7F2; background: #2A2A2A; border-left: 2px solid #C9A84C; }
+.mockup-nav li { padding: 10px 20px; font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 300; color: #6B7280; display: flex; align-items: center; justify-content: space-between; cursor: default; }
+.mockup-nav li.active { color: #1A1A1A; background: #FFFFFF; border-left: 2px solid #2D6A4F; }
 .mockup-nav li .badge { font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 10px; }
 .mockup-nav li .badge.red { background: #DC2626; color: #fff; }
-.mockup-sidebar-sep { height: 1px; background: rgba(255,255,255,0.06); margin: auto 20px 0; }
+.mockup-sidebar-sep { height: 1px; background: #E5E7EB; margin: auto 20px 0; }
 .mockup-sidebar-footer { padding: 16px 20px; }
-.mockup-sidebar-footer .gmview { font-family: 'Montserrat', sans-serif; font-size: 11px; color: #555; margin-bottom: 2px; }
-.mockup-sidebar-footer .hotel-name { font-family: 'Montserrat', sans-serif; font-size: 13px; color: #FAF7F2; font-weight: 400; }
+.mockup-sidebar-footer .gmview { display: none; }
+.mockup-sidebar-footer .hotel-name { font-family: 'Montserrat', sans-serif; font-size: 12px; color: #9CA3AF; font-weight: 400; }
 /* Main zone */
-.mockup-main { flex: 1; background: #FAF7F2; display: flex; flex-direction: column; min-width: 0; }
-.mockup-topbar { background: #FFFFFF; border-bottom: 1px solid #E8E4DC; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; }
+.mockup-main { flex: 1; background: #FFFFFF; display: flex; flex-direction: column; min-width: 0; }
+.mockup-topbar { background: #FFFFFF; border-bottom: 1px solid #E5E7EB; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; }
 .mockup-topbar-left {}
-.mockup-greeting { font-family: 'Cormorant Garamond', serif; font-size: 20px; color: #1A1A1A; font-weight: 400; }
-.mockup-topbar-sub { font-family: 'Montserrat', sans-serif; font-weight: 300; font-size: 12px; color: #888; margin-top: 2px; }
+.mockup-greeting { font-family: 'Montserrat', sans-serif; font-size: 16px; color: #1A1A1A; font-weight: 500; }
+.mockup-topbar-sub { font-family: 'Montserrat', sans-serif; font-weight: 300; font-size: 12px; color: #6B7280; margin-top: 2px; }
 .mockup-urgent-badge { font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 500; background: #FEE2E2; color: #DC2626; padding: 4px 10px; border-radius: 20px; white-space: nowrap; }
 /* Metrics */
 .mockup-metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; padding: 20px 24px; }
-.mockup-metric { background: #FFFFFF; border: 1px solid #E8E4DC; border-radius: 10px; padding: 14px 16px; }
-.mockup-metric-label { font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 400; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px; }
-.mockup-metric-value { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 400; color: #1A1A1A; }
-.mockup-metric-value .sub { font-size: 18px; color: #888; font-weight: 400; }
-.mockup-metric-sub { font-family: 'Montserrat', sans-serif; font-size: 11px; color: #888; margin-top: 2px; }
+.mockup-metric { background: #F8F9FA; border: 1px solid #E5E7EB; border-radius: 8px; padding: 14px 16px; }
+.mockup-metric-label { font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 400; color: #6B7280; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px; }
+.mockup-metric-value { font-family: 'Montserrat', sans-serif; font-size: 28px; font-weight: 500; color: #1A1A1A; }
+.mockup-metric-value .sub { font-size: 18px; color: #6B7280; font-weight: 400; }
+.mockup-metric-sub { font-family: 'Montserrat', sans-serif; font-size: 11px; color: #6B7280; margin-top: 2px; }
 .mockup-metric-sub.urgent { color: #DC2626; }
-.mockup-metric-sub.accent { color: #C9A84C; font-weight: 500; }
+.mockup-metric-sub.accent { color: #16A34A; font-weight: 500; }
 /* Tickets */
-.mockup-section-label { font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 400; color: #888; text-transform: uppercase; letter-spacing: 0.08em; padding: 0 24px; margin-bottom: 8px; }
-.mockup-ticket { display: flex; align-items: center; gap: 12px; background: #FFFFFF; border: 1px solid #E8E4DC; border-radius: 10px; margin: 0 24px 8px; padding: 12px 16px; }
+.mockup-section-label { font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 400; color: #6B7280; text-transform: uppercase; letter-spacing: 0.08em; padding: 0 24px; margin-bottom: 8px; }
+.mockup-ticket { display: flex; align-items: center; gap: 12px; background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 8px; margin: 0 24px 8px; padding: 12px 16px; }
 .mockup-ticket-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
 .mockup-ticket-dot.urgent { background: #DC2626; }
-.mockup-ticket-dot.pending { background: #C9A84C; }
+.mockup-ticket-dot.pending { background: #D97706; }
 .mockup-ticket-dot.done { background: #16A34A; }
 .mockup-ticket-body { flex: 1; min-width: 0; }
 .mockup-ticket-title { font-family: 'DM Sans', sans-serif; font-size: 13px; color: #1A1A1A; font-weight: 500; }
-.mockup-ticket-meta { font-family: 'Montserrat', sans-serif; font-size: 11px; color: #888; margin-top: 2px; }
+.mockup-ticket-meta { font-family: 'Montserrat', sans-serif; font-size: 11px; color: #6B7280; margin-top: 2px; }
 .mockup-ticket-badge { font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 500; padding: 3px 10px; border-radius: 20px; white-space: nowrap; flex-shrink: 0; }
 .mockup-ticket-badge.urgent { background: #FEE2E2; color: #DC2626; }
 .mockup-ticket-badge.pending { background: #FEF3C7; color: #92400E; }
 .mockup-ticket-badge.done { background: #DCFCE7; color: #15803D; }
 /* Handover */
-.mockup-handover { background: #F5F1E8; border-radius: 10px; margin: 0 24px 20px; padding: 4px 0; }
+.mockup-handover { background: #F8F9FA; border-radius: 8px; margin: 0 24px 20px; padding: 4px 0; }
 .mockup-handover-row { padding: 10px 16px; display: flex; gap: 10px; align-items: flex-start; }
-.mockup-handover-row + .mockup-handover-row { border-top: 1px solid rgba(0,0,0,0.06); }
+.mockup-handover-row + .mockup-handover-row { border-top: 1px solid #E5E7EB; }
 .mockup-handover-pill { font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; padding: 2px 8px; border-radius: 20px; white-space: nowrap; flex-shrink: 0; }
 .mockup-handover-pill.frontdesk { background: #DBEAFE; color: #1E40AF; }
 .mockup-handover-pill.housekeeping { background: #D1FAE5; color: #065F46; }
 .mockup-handover-pill.fnb { background: #EDE9FE; color: #5B21B6; }
-.mockup-handover-text { font-family: 'DM Sans', sans-serif; font-size: 12px; color: #444; line-height: 1.4; }
+.mockup-handover-text { font-family: 'DM Sans', sans-serif; font-size: 12px; color: #374151; line-height: 1.4; }
 /* Caption */
 .mockup-caption { text-align: center; padding-top: 32px; font-family: 'Montserrat', sans-serif; font-weight: 300; font-size: 16px; color: rgba(250,247,242,0.5); line-height: 1.8; }
 
@@ -633,7 +633,7 @@ footer { padding: 40px; border-top: 1px solid var(--border); display: flex; just
         <div>
           <h3 data-en="On-site diagnostic — 2 days" data-fr="Diagnostic sur site — 2 jours">On-site diagnostic — 2 days</h3>
           <p data-en="I come to your property, observe every department, map every friction point, and deliver a 10-page report with exact costs and a fix roadmap." data-fr="Je viens dans votre hôtel, j'observe chaque département, je cartographie chaque point de friction et livre un rapport de 10 pages avec les coûts exacts.">I come to your property, observe every department, map every friction point, and deliver a 10-page report with exact costs and a fix roadmap.</p>
-          <p class="price" data-en="€490 — paid upfront." data-fr="€490 — payé à l'avance.">€490 — paid upfront.</p>
+
         </div>
       </div>
       <div class="how-step reveal">
@@ -641,7 +641,6 @@ footer { padding: 40px; border-top: 1px solid var(--border); display: flex; just
         <div>
           <h3 data-en="Custom system built around your hotel" data-fr="Système sur-mesure pour votre hôtel">Custom system built around your hotel</h3>
           <p data-en="4–5 weeks. Every screen, every workflow, every automation — designed around how your specific property operates. Zero generic features you'll never use. Zero monthly fees for things you don't need." data-fr="4-5 semaines. Chaque écran, chaque workflow, chaque automatisation — conçu autour du fonctionnement précis de votre hôtel. Zéro fonctionnalité générique inutile. Zéro abonnement pour des choses dont vous n'avez pas besoin.">4–5 weeks. Every screen, every workflow, every automation — designed around how your specific property operates. Zero generic features you'll never use. Zero monthly fees for things you don't need.</p>
-          <p class="price" data-en="€6,000 – €12,000 depending on property size." data-fr="€6 000 – €12 000 selon la taille.">€6,000 – €12,000 depending on property size.</p>
         </div>
       </div>
       <div class="how-step reveal">
@@ -649,7 +648,6 @@ footer { padding: 40px; border-top: 1px solid var(--border); display: flex; just
         <div>
           <h3 data-en="Monthly retainer" data-fr="Retainer mensuel">Monthly retainer</h3>
           <p data-en="Evolutions, new modules, priority support, quarterly GM review." data-fr="Évolutions, nouveaux modules, support prioritaire, revue trimestrielle GM.">Evolutions, new modules, priority support, quarterly GM review.</p>
-          <p class="price" data-en="€800 – €1,500/month. 3-month minimum." data-fr="€800 – €1 500/mois. Minimum 3 mois.">€800 – €1,500/month. 3-month minimum.</p>
         </div>
       </div>
     </div>
