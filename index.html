@@ -12,7 +12,7 @@
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 :root {
@@ -93,16 +93,17 @@ nav.scrolled {
   box-shadow: 0 8px 40px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.03) inset;
 }
 .lang-toggle {
-  display: flex; align-items: center; gap: 2px; padding: 4px;
+  display: flex; align-items: center; gap: 0; padding: 4px 8px;
 }
 .lang-btn {
   display: flex; align-items: center; justify-content: center;
-  padding: 6px 10px; border-radius: 50px; border: none;
+  padding: 6px 4px; border-radius: 0; border: none;
   background: transparent; cursor: pointer; transition: all 0.3s ease;
-  color: var(--text-muted); font-family: var(--sans); font-size: 11px; font-weight: 600; letter-spacing: 0.5px;
+  color: #FAF7F2; opacity: 0.4; font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 300; letter-spacing: 2px;
 }
-.lang-btn:hover { color: var(--text); }
-.lang-btn.active { color: var(--text); background: rgba(255,255,255,0.08); }
+.lang-btn:hover { opacity: 0.7; }
+.lang-btn.active { color: #C9A84C; opacity: 1; }
+.lang-sep { color: #FAF7F2; opacity: 0.3; font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 300; padding: 0 4px; }
 .nav-cta {
   display: flex; align-items: center; gap: 8px; padding: 12px 24px;
   background: transparent; border: none; border-radius: 100px;
@@ -142,17 +143,17 @@ nav.scrolled {
   opacity: 0; animation: fadeUp 0.8s ease 0.8s forwards; text-decoration: none;
 }
 .hero-cta-pill {
-  display: flex; align-items: center; border: 1px solid rgba(201,168,76,0.35);
-  border-radius: 100px; overflow: hidden; transition: all 0.4s ease; background: rgba(201,168,76,0.05);
+  display: flex; align-items: center; border: 1px solid #C9A84C;
+  border-radius: 100px; overflow: hidden; transition: all 0.4s ease; background: transparent;
 }
 .hero-cta:hover .hero-cta-pill {
-  border-color: rgba(201,168,76,0.7);
+  background: #C9A84C;
   box-shadow: 0 0 50px var(--accent-glow), 0 0 100px rgba(201,168,76,0.08);
-  background: rgba(201,168,76,0.08);
 }
-.hero-cta-arrow { display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; color: var(--text); font-size: 18px; border-right: 1px solid rgba(201,168,76,0.2); }
-.hero-cta-text { padding: 0 24px; font-family: var(--sans); font-size: 14px; font-weight: 500; color: var(--text); white-space: nowrap; }
-.hero-cta-chevron { display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; color: var(--text-muted); font-size: 14px; border-left: 1px solid rgba(201,168,76,0.2); }
+.hero-cta-arrow { display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; color: #FAF7F2; font-size: 18px; border-right: 1px solid rgba(201,168,76,0.3); transition: color 0.4s; }
+.hero-cta-text { padding: 0 24px; font-family: var(--sans); font-size: 14px; font-weight: 500; color: #FAF7F2; white-space: nowrap; transition: color 0.4s; }
+.hero-cta-chevron { display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; color: #FAF7F2; font-size: 14px; border-left: 1px solid rgba(201,168,76,0.3); transition: color 0.4s; opacity: 0.6; }
+.hero-cta:hover .hero-cta-arrow, .hero-cta:hover .hero-cta-text, .hero-cta:hover .hero-cta-chevron { color: #0A0A0A; }
 .hero-scroll-hint { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 8px; opacity: 0; animation: fadeUp 0.8s ease 1.2s forwards; }
 .hero-scroll-line { width: 1px; height: 40px; background: linear-gradient(to bottom, var(--text-muted), transparent); animation: scrollPulse 2s ease infinite; }
 @keyframes scrollPulse { 0%, 100% { opacity: 0.3; } 50% { opacity: 0.8; } }
@@ -166,13 +167,9 @@ section { padding: 120px 24px; position: relative; }
 .social-proof { max-width: 900px; margin: 0 auto; text-align: center; }
 .social-proof-header { margin-bottom: 40px; }
 .social-proof-header p { font-size: 15px; color: var(--text-muted); max-width: 500px; margin: 0 auto; line-height: 1.6; font-style: italic; }
-.marquee-wrap { overflow: hidden; margin-bottom: 40px; mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); }
-.marquee-track { display: flex; gap: 64px; width: max-content; animation: marquee 18s linear infinite; }
-.marquee-track:hover { animation-play-state: paused; }
-@keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-.social-proof-item { text-align: center; flex-shrink: 0; display: flex; align-items: center; gap: 12px; }
-.social-proof-item .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); opacity: 0.4; flex-shrink: 0; }
-.social-proof-item .name { font-family: var(--serif); font-style: italic; font-size: 18px; color: var(--text); white-space: nowrap; }
+.social-proof-row { display: flex; justify-content: center; align-items: center; gap: 64px; margin-bottom: 40px; flex-wrap: wrap; }
+.social-proof-item { display: flex; flex-direction: column; align-items: center; gap: 6px; min-width: 160px; padding: 16px 24px; }
+.social-proof-item .name { font-family: var(--serif); font-style: italic; font-size: 18px; color: #FAF7F2; white-space: nowrap; }
 .social-proof-item .city { font-family: var(--mono); font-size: 11px; color: var(--accent); opacity: 0.5; letter-spacing: 1px; text-transform: uppercase; white-space: nowrap; }
 .social-proof-quote { font-family: var(--serif); font-style: italic; font-size: 18px; color: var(--accent); line-height: 1.6; max-width: 520px; margin: 0 auto; }
 
@@ -234,7 +231,7 @@ section { padding: 120px 24px; position: relative; }
 .comparison-item:not(:last-child) { border-bottom: 1px solid var(--border); }
 .comparison-mark { flex-shrink: 0; font-family: var(--mono); font-size: 12px; margin-top: 2px; }
 .comparison-col.before .comparison-mark { color: var(--accent); }
-.comparison-col.before .comparison-item span:last-child { color: var(--text-muted); text-decoration: line-through; opacity: 0.6; }
+.comparison-col.before .comparison-item span:last-child { color: var(--text-muted); text-decoration: line-through; opacity: 0.4; }
 .comparison-col.after .comparison-mark { color: #5cb85c; }
 .comparison-col.after .comparison-item span:last-child { color: var(--text); }
 
@@ -289,11 +286,11 @@ section { padding: 120px 24px; position: relative; }
 .cta-final p { font-size: 17px; color: var(--text-secondary); max-width: 520px; margin: 0 auto 48px; line-height: 1.6; font-weight: 300; }
 .cta-final-button {
   display: inline-flex; align-items: center; gap: 16px; padding: 18px 40px;
-  background: var(--accent); border: none; border-radius: 100px; color: #0A0A0A;
+  background: transparent; border: 1px solid #C9A84C; border-radius: 100px; color: #FAF7F2;
   font-family: var(--sans); font-size: 15px; font-weight: 600; cursor: pointer;
   transition: all 0.4s ease; text-decoration: none; position: relative;
 }
-.cta-final-button:hover { background: #d4b65e; box-shadow: 0 0 60px var(--accent-glow), 0 10px 40px rgba(0,0,0,0.3); transform: translateY(-2px); }
+.cta-final-button:hover { background: #C9A84C; color: #0A0A0A; box-shadow: 0 0 60px var(--accent-glow), 0 10px 40px rgba(0,0,0,0.3); transform: translateY(-2px); }
 .cta-final-button span { font-size: 18px; }
 .cta-final-sub { margin-top: 20px; font-size: 12px; color: var(--text-muted); font-weight: 300; }
 
@@ -305,9 +302,7 @@ section { padding: 120px 24px; position: relative; }
   color: var(--text); font-family: var(--sans); font-size: 14px; font-weight: 500;
   cursor: pointer; transition: all 0.4s ease; text-decoration: none; position: relative; overflow: hidden;
 }
-.ghost-cta::before { content: ''; position: absolute; inset: 0; background: var(--accent-subtle); opacity: 0; transition: opacity 0.3s; }
-.ghost-cta:hover::before { opacity: 1; }
-.ghost-cta:hover { border-color: rgba(201,168,76,0.6); box-shadow: 0 0 30px var(--accent-glow); }
+.ghost-cta:hover { background: #C9A84C; color: #0A0A0A; border-color: #C9A84C; box-shadow: 0 0 30px var(--accent-glow); }
 .ghost-cta span { position: relative; z-index: 1; }
 .ghost-cta .ghost-cta-arrow { position: relative; z-index: 1; font-size: 16px; }
 
@@ -334,10 +329,10 @@ footer { padding: 40px; border-top: 1px solid var(--border); display: flex; just
 .mobile-cta.visible { transform: translateY(0); }
 .mobile-cta a {
   display: flex; align-items: center; justify-content: center; gap: 10px; padding: 14px;
-  background: var(--accent); color: #0A0A0A; border-radius: 100px; font-weight: 600;
-  font-size: 14px; text-decoration: none; font-family: var(--sans); transition: background 0.3s;
+  background: transparent; border: 1px solid #C9A84C; color: #FAF7F2; border-radius: 100px; font-weight: 600;
+  font-size: 14px; text-decoration: none; font-family: var(--sans); transition: all 0.3s;
 }
-.mobile-cta a:hover { background: #d4b65e; }
+.mobile-cta a:hover { background: #C9A84C; color: #0A0A0A; }
 
 /* ANIMATIONS */
 @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
@@ -356,7 +351,7 @@ footer { padding: 40px; border-top: 1px solid var(--border); display: flex; just
   .how-step { grid-template-columns: 1fr; gap: 16px; }
   .how-step-num { font-size: 32px; }
   .comparison-cols { grid-template-columns: 1fr; }
-  .marquee-track { gap: 40px; }
+  .social-proof-row { gap: 32px; }
   footer { flex-direction: column; gap: 16px; text-align: center; }
   .mobile-cta { display: block; }
 }
@@ -374,6 +369,7 @@ footer { padding: 40px; border-top: 1px solid var(--border); display: flex; just
   <nav>
     <div class="lang-toggle">
       <button class="lang-btn active" id="langEN" onclick="switchLang('en')">EN</button>
+      <span class="lang-sep">/</span>
       <button class="lang-btn" id="langFR" onclick="switchLang('fr')">FR</button>
     </div>
     <a href="#" class="nav-cta">
@@ -385,7 +381,7 @@ footer { padding: 40px; border-top: 1px solid var(--border); display: flex; just
   <!-- HERO -->
   <section class="hero" id="top">
     <h1 class="hero-title" data-en='Making independent luxury hotels feel as good to work in as they do <span class="accent">to stay in.</span>' data-fr='Rendre les hôtels indépendants de luxe aussi agréables à travailler qu&apos;<span class="accent">à y séjourner.</span>'>Making independent luxury hotels feel as good to work in as they do <span class="accent">to stay in.</span></h1>
-    <p class="hero-sub" data-en="I've worked the front desk. I know what breaks at 3pm on a full house. Now I build 100% custom systems — from scratch, for your hotel only — that connect every department in real time. No generic software. No compromise." data-fr="J'ai travaillé à la réception. Je sais ce qui lâche à 15h quand l'hôtel est complet. Aujourd'hui je construis des systèmes 100% sur-mesure — de zéro, pour votre hôtel uniquement — qui connectent chaque département en temps réel. Zéro logiciel générique. Zéro compromis.">I've worked the front desk. I know what breaks at 3pm on a full house. Now I build 100% custom systems — from scratch, for your hotel only — that connect every department in real time. No generic software. No compromise.</p>
+    <p class="hero-sub" data-en="Custom internal systems for independent luxury hotels — built around how your specific property works." data-fr="Systèmes internes sur-mesure pour les hôtels indépendants de luxe — construits autour de comment votre hôtel fonctionne spécifiquement.">Custom internal systems for independent luxury hotels — built around how your specific property works.</p>
     <a href="#" class="hero-cta">
       <div class="hero-cta-pill">
         <div class="hero-cta-arrow">→</div>
@@ -403,15 +399,10 @@ footer { padding: 40px; border-top: 1px solid var(--border); display: flex; just
     <div class="social-proof-header reveal">
       <p data-en="Trusted by people who know the industry from the inside." data-fr="Reconnu par des professionnels qui connaissent l'industrie de l'intérieur.">Trusted by people who know the industry from the inside.</p>
     </div>
-    <div class="marquee-wrap reveal">
-      <div class="marquee-track">
-        <div class="social-proof-item"><span class="dot"></span><span class="name">Hôtel du Golf</span><span class="city">Saint-Étienne</span></div>
-        <div class="social-proof-item"><span class="dot"></span><span class="name">Espace Fauriel</span><span class="city">Saint-Étienne</span></div>
-        <div class="social-proof-item"><span class="dot"></span><span class="name">Chromosome</span><span class="city">Lyon</span></div>
-        <div class="social-proof-item"><span class="dot"></span><span class="name">Hôtel du Golf</span><span class="city">Saint-Étienne</span></div>
-        <div class="social-proof-item"><span class="dot"></span><span class="name">Espace Fauriel</span><span class="city">Saint-Étienne</span></div>
-        <div class="social-proof-item"><span class="dot"></span><span class="name">Chromosome</span><span class="city">Lyon</span></div>
-      </div>
+    <div class="social-proof-row reveal">
+      <div class="social-proof-item"><span class="name">Hôtel du Golf</span><span class="city">Saint-Étienne</span></div>
+      <div class="social-proof-item"><span class="name">Espace Fauriel</span><span class="city">Saint-Étienne</span></div>
+      <div class="social-proof-item"><span class="name">Chromosome</span><span class="city">Lyon</span></div>
     </div>
     <p class="social-proof-quote reveal" data-en="I haven't just built systems for hospitality. I've worked inside it." data-fr="Je n'ai pas seulement construit des systèmes pour l'hôtellerie. J'y ai travaillé.">I haven't just built systems for hospitality. I've worked inside it.</p>
   </section>
@@ -450,7 +441,7 @@ footer { padding: 40px; border-top: 1px solid var(--border); display: flex; just
   <section class="solution">
     <div class="solution-header reveal">
       <p class="section-label" data-en="The solution" data-fr="La solution">The solution</p>
-      <h2 class="section-title" data-en='Not another SaaS. Not another generic tool.<br>A system built <span class="accent">only</span> for your hotel.' data-fr='Pas un énième SaaS. Pas un outil générique de plus.<br>Un système construit <span class="accent">uniquement</span> pour votre hôtel.'>Not another SaaS. Not another generic tool.<br>A system built <span class="accent">only</span> for your hotel.</h2>
+      <h2 class="section-title" data-en='One system. Every department. <span class="accent">Real time.</span>' data-fr='Un système. Chaque département. <span class="accent">En temps réel.</span>'>One system. Every department. <span class="accent">Real time.</span></h2>
     </div>
     <div class="solution-grid">
       <div class="solution-card reveal">
@@ -554,7 +545,7 @@ footer { padding: 40px; border-top: 1px solid var(--border); display: flex; just
   <section class="about">
     <div class="about-header reveal">
       <p class="section-label" data-en="About" data-fr="À propos">About</p>
-      <h2 class="section-title" data-en="From the hotel. To the hotels." data-fr="De l'hôtel. Aux hôtels.">From the hotel. To the hotels.</h2>
+      <h2 class="section-title" data-en="I've been on both sides." data-fr="J'ai été des deux côtés.">I've been on both sides.</h2>
     </div>
     <div class="about-text reveal" data-en="<p>I'm 23. I've worked front desk at Hôtel du Golf in Saint-Étienne — check-ins, complaints, night shifts, full houses. I've seen firsthand how generic hotel software fails when it matters most.</p><p>I also build software. SimpleTeam is a SaaS I designed from scratch, used daily by real teams. I know what works in production, not just in demos.</p><p><strong>That's why every system I build starts from zero.</strong> No template. No generic module. I sit with your team, I understand your workflows, and I build exactly what your hotel needs — nothing more, nothing less.</p><p>Field experience + engineering. That's the difference.</p>" data-fr="<p>J'ai 23 ans. J'ai travaillé à la réception de l'Hôtel du Golf à Saint-Étienne — check-ins, réclamations, nuits, hôtel complet. J'ai vu de mes propres yeux comment les logiciels hôteliers génériques lâchent quand ça compte vraiment.</p><p>Je construis aussi des logiciels. SimpleTeam est un SaaS que j'ai conçu de zéro, utilisé chaque jour par de vraies équipes. Je sais ce qui fonctionne en production, pas seulement en démo.</p><p><strong>C'est pourquoi chaque système que je construis part de zéro.</strong> Pas de template. Pas de module générique. Je m'assois avec votre équipe, je comprends vos workflows, et je construis exactement ce dont votre hôtel a besoin — rien de plus, rien de moins.</p><p>Expérience terrain + ingénierie. C'est toute la différence.</p>">
       <p>I'm 23. I've worked front desk at Hôtel du Golf in Saint-Étienne — check-ins, complaints, night shifts, full houses. I've seen firsthand how generic hotel software fails when it matters most.</p>
