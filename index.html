@@ -12,7 +12,7 @@
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 :root {
@@ -334,6 +334,52 @@ footer { padding: 40px; border-top: 1px solid var(--border); display: flex; just
 }
 .mobile-cta a:hover { background: #C9A84C; color: #0A0A0A; }
 
+/* MOCKUP SECTION */
+.mockup-section { padding: 80px 24px; max-width: 1100px; margin: 0 auto; }
+.mockup-section .section-label { text-align: center; }
+.mockup-section .section-title { text-align: center; margin-bottom: 48px; }
+.mockup-wrapper { max-width: 900px; margin: 0 auto; border: 0.5px solid rgba(201,168,76,0.2); border-radius: 12px; overflow: hidden; background: #0D0D0D; }
+.mockup-inner { display: flex; min-height: 480px; }
+.mockup-sidebar { width: 200px; background: #111; border-right: 0.5px solid rgba(201,168,76,0.1); padding: 24px 0; display: flex; flex-direction: column; flex-shrink: 0; }
+.mockup-logo { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 500; color: #FAF7F2; padding: 0 20px; margin-bottom: 32px; letter-spacing: 1px; }
+.mockup-logo span { color: #C9A84C; }
+.mockup-nav { list-style: none; display: flex; flex-direction: column; gap: 2px; }
+.mockup-nav li { padding: 10px 20px; font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 400; color: rgba(250,247,242,0.4); display: flex; align-items: center; justify-content: space-between; cursor: default; transition: all 0.2s; letter-spacing: 0.5px; }
+.mockup-nav li.active { color: #FAF7F2; background: rgba(201,168,76,0.08); border-right: 2px solid #C9A84C; }
+.mockup-nav li .badge { background: #C9A84C; color: #0D0D0D; font-size: 9px; font-weight: 600; padding: 2px 7px; border-radius: 10px; }
+.mockup-nav li .badge.muted { background: rgba(250,247,242,0.1); color: rgba(250,247,242,0.4); }
+.mockup-main { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+.mockup-topbar { padding: 18px 24px; border-bottom: 0.5px solid rgba(201,168,76,0.1); display: flex; align-items: center; justify-content: space-between; }
+.mockup-greeting { font-family: 'DM Sans', sans-serif; font-size: 14px; color: #FAF7F2; font-weight: 400; }
+.mockup-greeting span { color: rgba(250,247,242,0.4); font-size: 12px; }
+.mockup-avatar { width: 28px; height: 28px; border-radius: 50%; background: linear-gradient(135deg, #C9A84C, #8a6f2a); display: flex; align-items: center; justify-content: center; font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 500; color: #0D0D0D; }
+.mockup-content { padding: 24px; flex: 1; }
+.mockup-metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 24px; }
+.mockup-metric { background: rgba(250,247,242,0.03); border: 0.5px solid rgba(250,247,242,0.06); border-radius: 8px; padding: 16px; }
+.mockup-metric-label { font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 400; color: rgba(250,247,242,0.4); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+.mockup-metric-value { font-family: 'DM Sans', sans-serif; font-size: 28px; font-weight: 300; color: #FAF7F2; }
+.mockup-metric-value.accent { color: #C9A84C; }
+.mockup-metric-change { font-family: 'Montserrat', sans-serif; font-size: 10px; color: #5cb85c; margin-top: 4px; }
+.mockup-metric-change.down { color: #e74c3c; }
+.mockup-tickets { margin-bottom: 24px; }
+.mockup-tickets-title { font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 500; color: rgba(250,247,242,0.5); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+.mockup-ticket { display: flex; align-items: center; gap: 12px; padding: 10px 12px; border-radius: 6px; background: rgba(250,247,242,0.02); margin-bottom: 6px; border: 0.5px solid rgba(250,247,242,0.04); }
+.mockup-ticket-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+.mockup-ticket-dot.urgent { background: #e74c3c; }
+.mockup-ticket-dot.pending { background: #f0ad4e; }
+.mockup-ticket-dot.done { background: #5cb85c; }
+.mockup-ticket-text { font-family: 'DM Sans', sans-serif; font-size: 12px; color: #FAF7F2; flex: 1; }
+.mockup-ticket-meta { font-family: 'Montserrat', sans-serif; font-size: 10px; color: rgba(250,247,242,0.3); }
+.mockup-handover { background: rgba(201,168,76,0.04); border: 0.5px solid rgba(201,168,76,0.12); border-radius: 8px; padding: 16px; }
+.mockup-handover-title { font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 500; color: #C9A84C; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+.mockup-handover-pills { display: flex; flex-wrap: wrap; gap: 6px; }
+.mockup-pill { font-family: 'DM Sans', sans-serif; font-size: 11px; padding: 5px 12px; border-radius: 20px; }
+.mockup-pill.gold { background: rgba(201,168,76,0.12); color: #C9A84C; }
+.mockup-pill.blue { background: rgba(100,149,237,0.12); color: #6495ed; }
+.mockup-pill.green { background: rgba(92,184,92,0.12); color: #5cb85c; }
+.mockup-pill.red { background: rgba(231,76,60,0.12); color: #e74c3c; }
+.mockup-caption { text-align: center; margin-top: 20px; font-family: 'Montserrat', sans-serif; font-weight: 300; font-size: 13px; color: rgba(250,247,242,0.5); }
+
 /* ANIMATIONS */
 @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
@@ -352,6 +398,14 @@ footer { padding: 40px; border-top: 1px solid var(--border); display: flex; just
   .how-step-num { font-size: 32px; }
   .comparison-cols { grid-template-columns: 1fr; }
   .social-proof-row { gap: 32px; }
+  .mockup-inner { flex-direction: column; }
+  .mockup-sidebar { width: 100%; border-right: none; border-bottom: 0.5px solid rgba(201,168,76,0.1); padding: 16px 0; }
+  .mockup-logo { margin-bottom: 16px; }
+  .mockup-nav { flex-direction: row; flex-wrap: wrap; gap: 0; padding: 0 12px; }
+  .mockup-nav li { padding: 6px 12px; font-size: 10px; }
+  .mockup-nav li.active { border-right: none; border-bottom: 2px solid #C9A84C; }
+  .mockup-metrics { grid-template-columns: 1fr; }
+  .mockup-metric-value { font-size: 22px; }
   footer { flex-direction: column; gap: 16px; text-align: center; }
   .mobile-cta { display: block; }
 }
@@ -457,6 +511,83 @@ footer { padding: 40px; border-top: 1px solid var(--border); display: flex; just
         <p data-en="Full operational visibility from your phone. Anywhere. Anytime. Stop chasing updates." data-fr="Visibilité opérationnelle complète depuis votre téléphone. Partout. Tout le temps.">Full operational visibility from your phone. Anywhere. Anytime. Stop chasing updates.</p>
       </div>
     </div>
+  </section>
+
+  <!-- MOCKUP -->
+  <section class="mockup-section">
+    <div class="solution-header reveal">
+      <p class="section-label" data-en="What it looks like" data-fr="À quoi ça ressemble">What it looks like</p>
+      <h2 class="section-title" data-en='Built around <span class="accent">your</span> operations.' data-fr='Conçu autour de <span class="accent">vos</span> opérations.'>Built around <span class="accent">your</span> operations.</h2>
+    </div>
+    <div class="mockup-wrapper reveal">
+      <div class="mockup-inner">
+        <div class="mockup-sidebar">
+          <div class="mockup-logo">Ops<span>Hub</span></div>
+          <ul class="mockup-nav">
+            <li class="active">Dashboard <span class="badge">3</span></li>
+            <li>Tickets <span class="badge muted">12</span></li>
+            <li>Rooms</li>
+            <li>Housekeeping</li>
+            <li>Maintenance</li>
+            <li>Handover</li>
+            <li>Reports</li>
+          </ul>
+        </div>
+        <div class="mockup-main">
+          <div class="mockup-topbar">
+            <div class="mockup-greeting" data-en='Good morning, Thomas <span>· General Manager</span>' data-fr='Bonjour, Thomas <span>· Directeur Général</span>'>Good morning, Thomas <span>· General Manager</span></div>
+            <div class="mockup-avatar">TL</div>
+          </div>
+          <div class="mockup-content">
+            <div class="mockup-metrics">
+              <div class="mockup-metric">
+                <div class="mockup-metric-label" data-en="Occupancy" data-fr="Occupation">Occupancy</div>
+                <div class="mockup-metric-value">87%</div>
+                <div class="mockup-metric-change">+4% vs last week</div>
+              </div>
+              <div class="mockup-metric">
+                <div class="mockup-metric-label" data-en="Open tickets" data-fr="Tickets ouverts">Open tickets</div>
+                <div class="mockup-metric-value accent">3</div>
+                <div class="mockup-metric-change down">2 urgent</div>
+              </div>
+              <div class="mockup-metric">
+                <div class="mockup-metric-label" data-en="Avg. resolution" data-fr="Résolution moy.">Avg. resolution</div>
+                <div class="mockup-metric-value">2.4h</div>
+                <div class="mockup-metric-change">-18% vs last month</div>
+              </div>
+            </div>
+            <div class="mockup-tickets">
+              <div class="mockup-tickets-title" data-en="Recent tickets" data-fr="Tickets récents">Recent tickets</div>
+              <div class="mockup-ticket">
+                <div class="mockup-ticket-dot urgent"></div>
+                <div class="mockup-ticket-text" data-en="Room 412 — AC not cooling" data-fr="Chambre 412 — Climatisation HS">Room 412 — AC not cooling</div>
+                <div class="mockup-ticket-meta">14 min</div>
+              </div>
+              <div class="mockup-ticket">
+                <div class="mockup-ticket-dot pending"></div>
+                <div class="mockup-ticket-text" data-en="Lobby — Light fixture flickering" data-fr="Lobby — Luminaire clignotant">Lobby — Light fixture flickering</div>
+                <div class="mockup-ticket-meta">2h</div>
+              </div>
+              <div class="mockup-ticket">
+                <div class="mockup-ticket-dot done"></div>
+                <div class="mockup-ticket-text" data-en="Pool area — Towel dispenser refilled" data-fr="Piscine — Distributeur serviettes rempli">Pool area — Towel dispenser refilled</div>
+                <div class="mockup-ticket-meta" data-en="Done" data-fr="Fait">Done</div>
+              </div>
+            </div>
+            <div class="mockup-handover">
+              <div class="mockup-handover-title" data-en="Shift handover — Night → Morning" data-fr="Passation — Nuit → Matin">Shift handover — Night → Morning</div>
+              <div class="mockup-handover-pills">
+                <span class="mockup-pill red" data-en="VIP arrival 11AM" data-fr="Arrivée VIP 11h">VIP arrival 11AM</span>
+                <span class="mockup-pill gold" data-en="Room 308 late checkout" data-fr="Chambre 308 late checkout">Room 308 late checkout</span>
+                <span class="mockup-pill blue" data-en="Pool maintenance 9-10AM" data-fr="Maintenance piscine 9h-10h">Pool maintenance 9-10AM</span>
+                <span class="mockup-pill green" data-en="All areas inspected" data-fr="Toutes zones inspectées">All areas inspected</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="mockup-caption reveal" data-en="This is a simplified preview. Every system is designed around your specific property." data-fr="Ceci est un aperçu simplifié. Chaque système est conçu autour de votre établissement.">This is a simplified preview. Every system is designed around your specific property.</p>
   </section>
 
   <div class="divider"></div>
