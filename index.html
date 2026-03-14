@@ -5,7 +5,7 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231a1a1a'/%3E%3Ctext x='12' y='48' font-family='Georgia,serif' font-style='italic' font-size='46' font-weight='bold' fill='white'%3EN%3C/text%3E%3Ccircle cx='49' cy='46' r='4' fill='%23C9A84C'/%3E%3C/svg%3E">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NateSystem — Custom Internal Tools for SMEs | Replace 6 Tools With One</title>
-<meta name="description" content="I replace your 6 disconnected tools with one custom system built around how your team actually works. 8-12h saved per week. Schools, hotels, restaurants, agencies. Lyon · Budapest.">
+<meta name="description" content="NateSystem replaces your 6 disconnected tools with one custom system built around how your team actually works. 8-12h saved per week. Schools, hotels, restaurants, agencies.">
 <meta property="og:title" content="NateSystem — Stop Paying for Tools You Use at 30%">
 <meta property="og:description" content="Custom internal tools for SMEs. Replace disconnected software with one system your team actually uses. No monthly fee — you own it.">
 <meta property="og:type" content="website">
@@ -270,6 +270,11 @@ section { padding: 120px 24px; position: relative; }
 .case-study-card:hover::before { transform: scaleX(1); }
 .case-study-card h3 { font-family: var(--serif); font-style: italic; font-size: 24px; font-weight: 400; margin-bottom: 16px; line-height: 1.3; color: var(--accent); }
 .case-study-card p { font-size: 15px; color: var(--text-secondary); line-height: 1.8; font-weight: 300; }
+/* Case study mockup gallery */
+.case-study-gallery { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-top: 24px; }
+.case-study-gallery img { width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.06); box-shadow: 0 4px 20px rgba(0,0,0,0.2); transition: transform 0.3s ease, box-shadow 0.3s ease; mask-image: linear-gradient(to bottom, #000 50%, transparent 100%); -webkit-mask-image: linear-gradient(to bottom, #000 50%, transparent 100%); }
+.case-study-gallery img:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(0,0,0,0.3); }
+@media (max-width: 768px) { .case-study-gallery { grid-template-columns: 1fr 1fr; } }
 
 /* ABOUT */
 .about { max-width: 800px; margin: 0 auto; }
@@ -361,64 +366,125 @@ footer { padding: 40px; border-top: 1px solid var(--border); display: flex; just
 .mobile-cta a:hover { background: transparent; color: #FAF7F2; box-shadow: 0 0 20px rgba(201,168,76,0.4), 0 0 40px rgba(201,168,76,0.15); }
 
 /* MOCKUP SECTION */
-.mockup-section { padding: 80px 24px; max-width: 1100px; margin: 0 auto; }
+.mockup-section { padding: 80px 24px; max-width: 1200px; margin: 0 auto; overflow: hidden; }
 .mockup-section .section-label { text-align: center; }
-.mockup-section .section-title { text-align: center; margin-bottom: 48px; }
-.mockup-wrapper { max-width: 960px; margin: 0 auto; border-radius: 16px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.15); }
-.mockup-inner { display: flex; min-height: 520px; }
-/* Sidebar */
-.mockup-sidebar { width: 200px; background: #F8F9FA; border-right: 1px solid #E5E7EB; display: flex; flex-direction: column; flex-shrink: 0; }
-.mockup-logo { font-family: 'Montserrat', sans-serif; font-size: 16px; font-weight: 500; color: #1A1A1A; padding: 20px; }
-.mockup-nav { list-style: none; display: flex; flex-direction: column; }
-.mockup-nav li { padding: 10px 20px; font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 300; color: #6B7280; display: flex; align-items: center; justify-content: space-between; cursor: default; }
-.mockup-nav li.active { color: #1A1A1A; background: #FFFFFF; border-left: 2px solid #2D6A4F; }
-.mockup-nav li .badge { font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 10px; }
-.mockup-nav li .badge.red { background: #DC2626; color: #fff; }
-.mockup-sidebar-sep { height: 1px; background: #E5E7EB; margin: auto 20px 0; }
-.mockup-sidebar-footer { padding: 16px 20px; }
-.mockup-sidebar-footer .gmview { display: none; }
-.mockup-sidebar-footer .hotel-name { font-family: 'Montserrat', sans-serif; font-size: 12px; color: #9CA3AF; font-weight: 400; }
-/* Main zone */
-.mockup-main { flex: 1; background: #FFFFFF; display: flex; flex-direction: column; min-width: 0; }
-.mockup-topbar { background: #FFFFFF; border-bottom: 1px solid #E5E7EB; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; }
-.mockup-topbar-left {}
-.mockup-greeting { font-family: 'Montserrat', sans-serif; font-size: 16px; color: #1A1A1A; font-weight: 500; }
-.mockup-topbar-sub { font-family: 'Montserrat', sans-serif; font-weight: 300; font-size: 12px; color: #6B7280; margin-top: 2px; }
-.mockup-urgent-badge { font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 500; background: #FEE2E2; color: #DC2626; padding: 4px 10px; border-radius: 20px; white-space: nowrap; }
-/* Metrics */
-.mockup-metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; padding: 20px 24px; }
-.mockup-metric { background: #F8F9FA; border: 1px solid #E5E7EB; border-radius: 8px; padding: 14px 16px; }
-.mockup-metric-label { font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 400; color: #6B7280; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px; }
-.mockup-metric-value { font-family: 'Montserrat', sans-serif; font-size: 28px; font-weight: 500; color: #1A1A1A; }
-.mockup-metric-value .sub { font-size: 18px; color: #6B7280; font-weight: 400; }
-.mockup-metric-sub { font-family: 'Montserrat', sans-serif; font-size: 11px; color: #6B7280; margin-top: 2px; }
-.mockup-metric-sub.urgent { color: #DC2626; }
-.mockup-metric-sub.accent { color: #16A34A; font-weight: 500; }
-/* Tickets */
-.mockup-section-label { font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 400; color: #6B7280; text-transform: uppercase; letter-spacing: 0.08em; padding: 0 24px; margin-bottom: 8px; }
-.mockup-ticket { display: flex; align-items: center; gap: 12px; background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 8px; margin: 0 24px 8px; padding: 12px 16px; }
-.mockup-ticket-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
-.mockup-ticket-dot.urgent { background: #DC2626; }
-.mockup-ticket-dot.pending { background: #D97706; }
-.mockup-ticket-dot.done { background: #16A34A; }
-.mockup-ticket-body { flex: 1; min-width: 0; }
-.mockup-ticket-title { font-family: 'DM Sans', sans-serif; font-size: 13px; color: #1A1A1A; font-weight: 500; }
-.mockup-ticket-meta { font-family: 'Montserrat', sans-serif; font-size: 11px; color: #6B7280; margin-top: 2px; }
-.mockup-ticket-badge { font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 500; padding: 3px 10px; border-radius: 20px; white-space: nowrap; flex-shrink: 0; }
-.mockup-ticket-badge.urgent { background: #FEE2E2; color: #DC2626; }
-.mockup-ticket-badge.pending { background: #FEF3C7; color: #92400E; }
-.mockup-ticket-badge.done { background: #DCFCE7; color: #15803D; }
-/* Handover */
-.mockup-handover { background: #F8F9FA; border-radius: 8px; margin: 0 24px 20px; padding: 4px 0; }
-.mockup-handover-row { padding: 10px 16px; display: flex; gap: 10px; align-items: flex-start; }
-.mockup-handover-row + .mockup-handover-row { border-top: 1px solid #E5E7EB; }
-.mockup-handover-pill { font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; padding: 2px 8px; border-radius: 20px; white-space: nowrap; flex-shrink: 0; }
-.mockup-handover-pill.frontdesk { background: #DBEAFE; color: #1E40AF; }
-.mockup-handover-pill.housekeeping { background: #D1FAE5; color: #065F46; }
-.mockup-handover-pill.fnb { background: #EDE9FE; color: #5B21B6; }
-.mockup-handover-text { font-family: 'DM Sans', sans-serif; font-size: 12px; color: #374151; line-height: 1.4; }
-/* Caption */
-.mockup-caption { text-align: center; padding-top: 32px; font-family: 'Montserrat', sans-serif; font-weight: 300; font-size: 16px; color: rgba(250,247,242,0.5); line-height: 1.8; }
+.mockup-section .section-title { text-align: center; margin-bottom: 56px; }
+.mockup-caption { text-align: center; padding-top: 40px; font-family: 'Montserrat', sans-serif; font-weight: 300; font-size: 16px; color: rgba(250,247,242,0.5); line-height: 1.8; }
+
+/* MOCKUP SHOWCASE — Fan layout */
+.mockup-showcase {
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto;
+  height: 520px;
+  perspective: 1200px;
+}
+.mockup-panel {
+  position: absolute;
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+/* Center (active) */
+.mockup-panel.center {
+  width: 68%;
+  left: 16%;
+  top: 0;
+  z-index: 3;
+  transform: scale(1) rotateY(0deg);
+  opacity: 1;
+  filter: brightness(1);
+}
+
+/* Left satellite */
+.mockup-panel.left {
+  width: 52%;
+  left: -8%;
+  top: 8%;
+  z-index: 1;
+  transform: scale(0.85) rotateY(8deg);
+  opacity: 0.5;
+  filter: brightness(0.6);
+}
+
+/* Right satellite */
+.mockup-panel.right {
+  width: 52%;
+  right: -8%;
+  left: auto;
+  top: 8%;
+  z-index: 1;
+  transform: scale(0.85) rotateY(-8deg);
+  opacity: 0.5;
+  filter: brightness(0.6);
+}
+
+/* Hidden (off-screen) */
+.mockup-panel.hidden {
+  width: 40%;
+  left: 50%;
+  top: 15%;
+  z-index: 0;
+  transform: translateX(-50%) scale(0.7);
+  opacity: 0;
+  pointer-events: none;
+  filter: brightness(0.4);
+}
+
+/* Browser frame */
+.browser-frame { border-radius: 14px; overflow: hidden; box-shadow: 0 25px 80px rgba(0,0,0,0.3), 0 0 0 1px rgba(255,255,255,0.06); background: var(--bg-card); }
+.mockup-panel.center .browser-frame { box-shadow: 0 30px 100px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.08), 0 0 60px rgba(201,168,76,0.06); }
+.browser-chrome { background: #1e1e24; padding: 12px 16px; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid rgba(255,255,255,0.06); }
+.browser-dots { display: flex; gap: 7px; }
+.browser-dots span { width: 11px; height: 11px; border-radius: 50%; }
+.browser-dots .dot-r { background: #FF5F57; }
+.browser-dots .dot-y { background: #FEBC2E; }
+.browser-dots .dot-g { background: #28C840; }
+.browser-url-bar { flex: 1; background: rgba(255,255,255,0.06); border-radius: 6px; padding: 6px 14px; font-family: var(--mono); font-size: 11px; color: var(--text-muted); }
+.browser-body { background: #fff; overflow: hidden; position: relative; }
+.browser-body img { width: 100%; height: auto; display: block; }
+.browser-body::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 45%;
+  background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(14,14,18,0.6) 60%, rgba(14,14,18,1) 100%);
+  pointer-events: none;
+}
+
+/* Dots indicator */
+.mockup-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 28px;
+  position: relative;
+  z-index: 5;
+}
+.mockup-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.15);
+  border: none;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  padding: 0;
+}
+.mockup-dot.active {
+  background: var(--accent);
+  box-shadow: 0 0 10px rgba(201,168,76,0.3);
+  transform: scale(1.2);
+}
+
+@media (max-width: 768px) {
+  .mockup-showcase { height: 280px; perspective: 800px; }
+  .mockup-panel.center { width: 85%; left: 7.5%; }
+  .mockup-panel.left { width: 60%; left: -12%; transform: scale(0.8) rotateY(6deg); }
+  .mockup-panel.right { width: 60%; right: -12%; transform: scale(0.8) rotateY(-6deg); }
+  .browser-chrome { padding: 8px 12px; }
+  .browser-dots span { width: 9px; height: 9px; }
+  .mockup-caption { font-size: 14px; padding: 24px 8px 0; }
+}
 
 /* ANIMATIONS */
 @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
@@ -438,12 +504,6 @@ footer { padding: 40px; border-top: 1px solid var(--border); display: flex; just
   .how-step-num { font-size: 32px; }
   .comparison-cols { grid-template-columns: 1fr; }
   .social-proof-row { gap: 32px; }
-  .mockup-sidebar { display: none; }
-  .mockup-metrics { grid-template-columns: 1fr; }
-  .mockup-ticket { margin: 0 16px 8px; }
-  .mockup-section-label { padding: 0 16px; }
-  .mockup-handover { margin: 0 16px 16px; }
-  .mockup-caption { font-size: 14px; padding: 24px 8px 0; }
   footer { flex-direction: column; gap: 16px; text-align: center; }
   .mobile-cta { display: block; }
 }
@@ -464,7 +524,7 @@ footer { padding: 40px; border-top: 1px solid var(--border); display: flex; just
       <span class="lang-sep">/</span>
       <button class="lang-btn" id="langFR" onclick="switchLang('fr')">FR</button>
     </div>
-    <a href="#" class="nav-cta">
+    <a href="#" class="nav-cta" data-cal-link="simplaizer/appel-avec-moi" data-cal-namespace="appel-avec-moi" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>
       <span class="nav-cta-dot"></span>
       <span data-en="Book a call" data-fr="Réserver un appel">Book a call</span>
     </a>
@@ -473,8 +533,8 @@ footer { padding: 40px; border-top: 1px solid var(--border); display: flex; just
   <!-- HERO -->
   <section class="hero" id="top">
     <h1 class="hero-title" data-en='Stop paying for tools you use at 30%.<br><span class="accent">Build yours.</span>' data-fr='Arrêtez de payer pour des outils que vous utilisez à 30%.<br><span class="accent">Construisez le vôtre.</span>'>Stop paying for tools you use at 30%.<br><span class="accent">Build yours.</span></h1>
-    <p class="hero-sub" data-en="I replace your 6 disconnected tools with one custom system — built around how your team actually works. No monthly fee. You own it." data-fr="Je remplace vos 6 outils déconnectés par un seul système sur-mesure — construit autour de comment votre équipe travaille vraiment. Pas d'abonnement. Il vous appartient.">I replace your 6 disconnected tools with one custom system — built around how your team actually works. No monthly fee. You own it.</p>
-    <a href="#" class="hero-cta">
+    <p class="hero-sub" data-en="Your 6 disconnected tools replaced by one custom system — built around how your team actually works. No monthly fee. You own it." data-fr="Vos 6 outils déconnectés remplacés par un seul système sur-mesure — construit autour de comment votre équipe travaille vraiment. Pas d'abonnement. Il vous appartient.">Your 6 disconnected tools replaced by one custom system — built around how your team actually works. No monthly fee. You own it.</p>
+    <a href="#" class="hero-cta" data-cal-link="simplaizer/appel-avec-moi" data-cal-namespace="appel-avec-moi" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>
       <div class="hero-cta-pill">
         <div class="hero-cta-arrow">→</div>
         <div class="hero-cta-text" data-en="Book a free 20-min call" data-fr="Réserver un appel de 20 min">Book a free 20-min call</div>
@@ -486,98 +546,98 @@ footer { padding: 40px; border-top: 1px solid var(--border); display: flex; just
 
   <div class="divider"></div>
 
-  <!-- MOCKUP -->
+  <!-- MOCKUP SHOWCASE -->
   <section class="mockup-section">
     <div class="solution-header reveal">
       <p class="section-label" data-en="What it looks like" data-fr="À quoi ça ressemble">What it looks like</p>
       <h2 class="section-title" data-en='Built around <span class="accent">your</span> operations.' data-fr='Conçu autour de <span class="accent">vos</span> opérations.'>Built around <span class="accent">your</span> operations.</h2>
     </div>
-    <div class="mockup-wrapper reveal">
-      <div class="mockup-inner">
-        <div class="mockup-sidebar">
-          <div class="mockup-logo">OpsHub</div>
-          <ul class="mockup-nav">
-            <li class="active">Dashboard</li>
-            <li>Maintenance <span class="badge red">3</span></li>
-            <li>Housekeeping</li>
-            <li>Shift handover</li>
-            <li>Guest requests</li>
-          </ul>
-          <div class="mockup-sidebar-sep"></div>
-          <div class="mockup-sidebar-footer">
-            <div class="gmview">GM View</div>
-            <div class="hotel-name">Aria Hotel Budapest</div>
+
+    <div class="mockup-showcase reveal">
+
+      <div class="mockup-panel center" data-index="0">
+        <div class="browser-frame">
+          <div class="browser-chrome">
+            <div class="browser-dots"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
+            <div class="browser-url-bar">app.mon-outil.com/dashboard</div>
           </div>
-        </div>
-        <div class="mockup-main">
-          <div class="mockup-topbar">
-            <div class="mockup-topbar-left">
-              <div class="mockup-greeting" data-en="Good morning, Thomas" data-fr="Bonjour, Thomas">Good morning, Thomas</div>
-              <div class="mockup-topbar-sub" data-en="Friday 13 March  ·  3 open issues require attention" data-fr="Vendredi 13 mars  ·  3 tickets ouverts nécessitent votre attention">Friday 13 March  ·  3 open issues require attention</div>
-            </div>
-            <div class="mockup-urgent-badge" data-en="3 urgent" data-fr="3 urgents">3 urgent</div>
-          </div>
-          <div class="mockup-metrics">
-            <div class="mockup-metric">
-              <div class="mockup-metric-label" data-en="Open tickets" data-fr="Tickets ouverts">Open tickets</div>
-              <div class="mockup-metric-value">7</div>
-              <div class="mockup-metric-sub urgent" data-en="3 urgent" data-fr="3 urgents">3 urgent</div>
-            </div>
-            <div class="mockup-metric">
-              <div class="mockup-metric-label" data-en="Rooms ready" data-fr="Chambres prêtes">Rooms ready</div>
-              <div class="mockup-metric-value">34<span class="sub">/38</span></div>
-              <div class="mockup-metric-sub" data-en="4 in progress" data-fr="4 en cours">4 in progress</div>
-            </div>
-            <div class="mockup-metric">
-              <div class="mockup-metric-label" data-en="Avg resolution" data-fr="Résolution moy.">Avg resolution</div>
-              <div class="mockup-metric-value">18min</div>
-              <div class="mockup-metric-sub accent" data-en="vs 47min before" data-fr="vs 47min avant">vs 47min before</div>
-            </div>
-          </div>
-          <div class="mockup-section-label" data-en="Open issues" data-fr="Tickets ouverts">Open issues</div>
-          <div class="mockup-ticket">
-            <div class="mockup-ticket-dot urgent"></div>
-            <div class="mockup-ticket-body">
-              <div class="mockup-ticket-title" data-en="Shower broken — Room 312" data-fr="Douche cassée — Chambre 312">Shower broken — Room 312</div>
-              <div class="mockup-ticket-meta" data-en="Maintenance  ·  08:14  ·  Marco" data-fr="Maintenance  ·  08:14  ·  Marco">Maintenance  ·  08:14  ·  Marco</div>
-            </div>
-            <div class="mockup-ticket-badge urgent" data-en="Urgent" data-fr="Urgent">Urgent</div>
-          </div>
-          <div class="mockup-ticket">
-            <div class="mockup-ticket-dot pending"></div>
-            <div class="mockup-ticket-body">
-              <div class="mockup-ticket-title" data-en="VIP arrival 14:00 — Room 205" data-fr="Arrivée VIP 14h — Chambre 205">VIP arrival 14:00 — Room 205</div>
-              <div class="mockup-ticket-meta" data-en="Extra pillows + champagne · Housekeeping" data-fr="Oreillers supplémentaires + champagne · Housekeeping">Extra pillows + champagne · Housekeeping</div>
-            </div>
-            <div class="mockup-ticket-badge pending" data-en="Pending" data-fr="En attente">Pending</div>
-          </div>
-          <div class="mockup-ticket">
-            <div class="mockup-ticket-dot done"></div>
-            <div class="mockup-ticket-body">
-              <div class="mockup-ticket-title" data-en="AC noise resolved — Room 108" data-fr="Bruit climatisation résolu — Chambre 108">AC noise resolved — Room 108</div>
-              <div class="mockup-ticket-meta" data-en="Closed 07:52  ·  18 min resolution" data-fr="Fermé 07:52  ·  18 min de résolution">Closed 07:52  ·  18 min resolution</div>
-            </div>
-            <div class="mockup-ticket-badge done" data-en="Done" data-fr="Fait">Done</div>
-          </div>
-          <div class="mockup-section-label" style="margin-top:16px" data-en="Shift handover — night → morning" data-fr="Passation — nuit → matin">Shift handover — night → morning</div>
-          <div class="mockup-handover">
-            <div class="mockup-handover-row">
-              <span class="mockup-handover-pill frontdesk">Front desk</span>
-              <span class="mockup-handover-text" data-en="Guest in 412 — late checkout 14:00 confirmed" data-fr="Client chambre 412 — late checkout 14h confirmé">Guest in 412 — late checkout 14:00 confirmed</span>
-            </div>
-            <div class="mockup-handover-row">
-              <span class="mockup-handover-pill housekeeping">Housekeeping</span>
-              <span class="mockup-handover-text" data-en="Room 312 blocked — do not assign until resolved" data-fr="Chambre 312 bloquée — ne pas attribuer jusqu'à résolution">Room 312 blocked — do not assign until resolved</span>
-            </div>
-            <div class="mockup-handover-row">
-              <span class="mockup-handover-pill fnb">F&B</span>
-              <span class="mockup-handover-text" data-en="Group breakfast 18 pax at 09:30 — setup by 08:45" data-fr="Petit-déjeuner groupe 18 pers. à 09h30 — mise en place 08h45">Group breakfast 18 pax at 09:30 — setup by 08:45</span>
-            </div>
+          <div class="browser-body">
+            <img src="mockup-1.png" alt="Custom dashboard" loading="lazy">
           </div>
         </div>
       </div>
+
+      <div class="mockup-panel right" data-index="1">
+        <div class="browser-frame">
+          <div class="browser-chrome">
+            <div class="browser-dots"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
+            <div class="browser-url-bar">app.mon-outil.com/gestion</div>
+          </div>
+          <div class="browser-body">
+            <img src="mockup-2.png" alt="Custom management system" loading="lazy">
+          </div>
+        </div>
+      </div>
+
+      <div class="mockup-panel left" data-index="2">
+        <div class="browser-frame">
+          <div class="browser-chrome">
+            <div class="browser-dots"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
+            <div class="browser-url-bar">app.mon-outil.com/planning</div>
+          </div>
+          <div class="browser-body">
+            <img src="mockup-3.png" alt="Custom planning system" loading="lazy">
+          </div>
+        </div>
+      </div>
+
+      <div class="mockup-panel hidden" data-index="3">
+        <div class="browser-frame">
+          <div class="browser-chrome">
+            <div class="browser-dots"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
+            <div class="browser-url-bar">app.mon-outil.com/stats</div>
+          </div>
+          <div class="browser-body">
+            <img src="mockup-4.png" alt="Custom statistics dashboard" loading="lazy">
+          </div>
+        </div>
+      </div>
+
+      <div class="mockup-panel hidden" data-index="4">
+        <div class="browser-frame">
+          <div class="browser-chrome">
+            <div class="browser-dots"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
+            <div class="browser-url-bar">app.mon-outil.com/planning</div>
+          </div>
+          <div class="browser-body">
+            <img src="mockup-5.png" alt="Custom shift planning" loading="lazy">
+          </div>
+        </div>
+      </div>
+
+      <div class="mockup-panel hidden" data-index="5">
+        <div class="browser-frame">
+          <div class="browser-chrome">
+            <div class="browser-dots"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
+            <div class="browser-url-bar">app.mon-outil.com/crm</div>
+          </div>
+          <div class="browser-body">
+            <img src="mockup-6.png" alt="Custom CRM system" loading="lazy">
+          </div>
+        </div>
+      </div>
+
     </div>
-    <p class="mockup-caption reveal" data-en="This is a real system I built for a hotel.<br>Yours would look completely different — because your operation is." data-fr="Ceci est un vrai système que j'ai construit pour un hôtel.<br>Le vôtre serait complètement différent — parce que votre activité l'est.">This is a real system I built for a hotel.<br>Yours would look completely different — because your operation is.</p>
+    <div class="mockup-dots">
+      <button class="mockup-dot active" data-index="0"></button>
+      <button class="mockup-dot" data-index="1"></button>
+      <button class="mockup-dot" data-index="2"></button>
+      <button class="mockup-dot" data-index="3"></button>
+      <button class="mockup-dot" data-index="4"></button>
+      <button class="mockup-dot" data-index="5"></button>
+    </div>
+
+    <p class="mockup-caption reveal" data-en="Real systems built for real teams. From the company, for the company.<br>Yours would look completely different — because your operation is." data-fr="De vrais systèmes construits pour de vraies équipes. De l'entreprise, pour l'entreprise.<br>Le vôtre serait complètement différent — parce que votre activité l'est.">Real systems built for real teams. From the company, for the company.<br>Yours would look completely different — because your operation is.</p>
   </section>
 
   <div class="divider"></div>
@@ -588,14 +648,12 @@ footer { padding: 40px; border-top: 1px solid var(--border); display: flex; just
       <p data-en="Already trusted by :" data-fr="Déjà adopté par :">Already trusted by :</p>
     </div>
     <div class="social-proof-row reveal">
-      <div class="social-proof-item"><span class="name">Institut Saint-Irénée</span><span class="city">Lyon</span></div>
       <div class="social-proof-item"><span class="name">Chromosome</span><span class="city">Lyon</span></div>
-      <div class="social-proof-item"><span class="name">Hôtel du Golf</span><span class="city">Saint-Étienne</span></div>
       <div class="social-proof-item"><span class="name">Espace Fauriel</span><span class="city">Saint-Étienne</span></div>
       <div class="social-proof-item"><span class="name">IUT Saint-Étienne</span><span class="city">Saint-Étienne</span></div>
       <div class="social-proof-item"><span class="name">Club de basket</span><span class="city">Saint-Étienne</span></div>
     </div>
-    <p class="social-proof-quote reveal" data-en="Schools. Hotels. Restaurants. Sports clubs. Agencies.<br>If your team runs on WhatsApp and pays for tools nobody uses — we should talk." data-fr="Écoles. Hôtels. Restaurants. Clubs sportifs. Agences.<br>Si votre équipe tourne sur WhatsApp et paie pour des outils que personne n'utilise — on devrait parler.">Schools. Hotels. Restaurants. Sports clubs. Agencies.<br>If your team runs on WhatsApp and pays for tools nobody uses — we should talk.</p>
+    <p class="social-proof-quote reveal" data-en="Schools. Hotels. Restaurants. Sports clubs. Agencies.<br>If your team runs on WhatsApp and pays for tools nobody uses — it's time to change that." data-fr="Écoles. Hôtels. Restaurants. Clubs sportifs. Agences.<br>Si votre équipe tourne sur WhatsApp et paie pour des outils que personne n'utilise — il est temps de changer ça.">Schools. Hotels. Restaurants. Sports clubs. Agencies.<br>If your team runs on WhatsApp and pays for tools nobody uses — it's time to change that.</p>
   </section>
 
   <div class="divider"></div>
@@ -663,14 +721,14 @@ footer { padding: 40px; border-top: 1px solid var(--border); display: flex; just
         <span class="how-step-num">01</span>
         <div>
           <h3 data-en="The Diagnostic · 2 days" data-fr="Le Diagnostic · 2 jours">The Diagnostic · 2 days</h3>
-          <p data-en="I map every tool you use, every process running on memory, every hour lost to friction. You get a full report : what to keep, what to cut, what to build." data-fr="Je cartographie chaque outil utilisé, chaque process qui tourne de mémoire, chaque heure perdue. Vous recevez un rapport complet : quoi garder, quoi supprimer, quoi construire.">I map every tool you use, every process running on memory, every hour lost to friction. You get a full report : what to keep, what to cut, what to build.</p>
+          <p data-en="Every tool mapped. Every process running on memory, identified. Every hour lost to friction, quantified. The result: a full report — what to keep, what to cut, what to build." data-fr="Chaque outil cartographié. Chaque process qui tourne de mémoire, identifié. Chaque heure perdue, quantifiée. Le résultat : un rapport complet — quoi garder, quoi supprimer, quoi construire.">Every tool mapped. Every process running on memory, identified. Every hour lost to friction, quantified. The result: a full report — what to keep, what to cut, what to build.</p>
         </div>
       </div>
       <div class="how-step reveal">
         <span class="how-step-num">02</span>
         <div>
           <h3 data-en="Build · 4 to 6 weeks" data-fr="Construction · 4 à 6 semaines">Build · 4 to 6 weeks</h3>
-          <p data-en="I build the ecosystem around your operation. Not the other way around. Every feature exists for a reason. Nothing you won't use." data-fr="Je construis l'écosystème autour de votre activité. Pas l'inverse. Chaque fonctionnalité existe pour une raison. Rien que vous n'utiliserez pas.">I build the ecosystem around your operation. Not the other way around. Every feature exists for a reason. Nothing you won't use.</p>
+          <p data-en="The ecosystem is built around your operation. Not the other way around. Every feature exists for a reason. Nothing you won't use." data-fr="L'écosystème est construit autour de votre activité. Pas l'inverse. Chaque fonctionnalité existe pour une raison. Rien que vous n'utiliserez pas.">The ecosystem is built around your operation. Not the other way around. Every feature exists for a reason. Nothing you won't use.</p>
         </div>
       </div>
       <div class="how-step reveal">
@@ -719,7 +777,7 @@ footer { padding: 40px; border-top: 1px solid var(--border); display: flex; just
   <section class="case-study">
     <div class="case-study-header reveal">
       <p class="section-label" data-en="Projects" data-fr="Projets">Projects</p>
-      <h2 class="section-title" data-en="What I've already built." data-fr="Ce que j'ai déjà construit.">What I've already built.</h2>
+      <h2 class="section-title" data-en="Already deployed. Already trusted." data-fr="Déjà déployé. Déjà adopté.">Already deployed. Already trusted.</h2>
     </div>
     <div class="case-study-card reveal">
       <h3 data-en="Institut Saint-Irénée · Lyon" data-fr="Institut Saint-Irénée · Lyon">Institut Saint-Irénée · Lyon</h3>
@@ -730,12 +788,20 @@ footer { padding: 40px; border-top: 1px solid var(--border); display: flex; just
       <p data-en="Restaurant group. Full operational ecosystem. Coordination failures: zero." data-fr="Groupe de restaurants. Écosystème opérationnel complet. Défaillances de coordination : zéro.">Restaurant group. Full operational ecosystem. Coordination failures: zero.</p>
     </div>
     <div class="case-study-card reveal">
-      <h3 data-en="Hôtel du Golf · Saint-Étienne" data-fr="Hôtel du Golf · Saint-Étienne">Hôtel du Golf · Saint-Étienne</h3>
-      <p data-en="4-star hotel. I worked front desk here. I know what breaks at 3pm on a full house." data-fr="Hôtel 4 étoiles. J'y ai travaillé à la réception. Je sais ce qui lâche à 15h un jour complet.">4-star hotel. I worked front desk here. I know what breaks at 3pm on a full house.</p>
-    </div>
-    <div class="case-study-card reveal">
       <h3 data-en="IUT Saint-Étienne" data-fr="IUT Saint-Étienne">IUT Saint-Étienne</h3>
       <p data-en="University. Pedagogical CRM for students. Currently in progress." data-fr="Université. CRM pédagogique pour les étudiants. En cours.">University. Pedagogical CRM for students. Currently in progress.</p>
+    </div>
+    <div class="case-study-card reveal">
+      <h3 data-en="A glimpse inside" data-fr="Un aperçu de l'intérieur">A glimpse inside</h3>
+      <p data-en="Every system is different. Here's what some of them look like." data-fr="Chaque système est différent. Voici à quoi certains ressemblent.">Every system is different. Here's what some of them look like.</p>
+      <div class="case-study-gallery">
+        <img src="mockup-1.png" alt="Dashboard" loading="lazy">
+        <img src="mockup-2.png" alt="Management system" loading="lazy">
+        <img src="mockup-3.png" alt="Planning system" loading="lazy">
+        <img src="mockup-4.png" alt="Statistics dashboard" loading="lazy">
+        <img src="mockup-5.png" alt="Shift planning" loading="lazy">
+        <img src="mockup-6.png" alt="CRM system" loading="lazy">
+      </div>
     </div>
   </section>
 
@@ -768,7 +834,7 @@ footer { padding: 40px; border-top: 1px solid var(--border); display: flex; just
   <!-- GUARANTEE -->
   <section class="guarantee reveal">
     <p class="section-label" data-en="Guarantee" data-fr="Garantie" style="text-align:center;">Guarantee</p>
-    <p class="guarantee-text" data-en="If after 4 weeks your team coordination hasn't visibly improved — I work for free until it does." data-fr="Si après 4 semaines la coordination de votre équipe ne s'est pas visiblement améliorée — je travaille gratuitement jusqu'à ce que ce soit le cas.">If after 4 weeks your team coordination hasn't visibly improved — I work for free until it does.</p>
+    <p class="guarantee-text" data-en="If after 4 weeks your team coordination hasn't visibly improved — the work continues at no extra cost until it does." data-fr="Si après 4 semaines la coordination de votre équipe ne s'est pas visiblement améliorée — le travail continue sans coût supplémentaire jusqu'à ce que ce soit le cas.">If after 4 weeks your team coordination hasn't visibly improved — the work continues at no extra cost until it does.</p>
   </section>
 
   <div class="divider"></div>
@@ -782,7 +848,7 @@ footer { padding: 40px; border-top: 1px solid var(--border); display: flex; just
     <div class="faq-list">
       <div class="faq-item">
         <button class="faq-question" data-en="How is this different from Notion, Monday, or Airtable?" data-fr="En quoi c'est différent de Notion, Monday ou Airtable ?">How is this different from Notion, Monday, or Airtable?<span class="faq-icon">+</span></button>
-        <div class="faq-answer"><p data-en="Those are generic platforms you still have to configure, maintain, and adapt to. I build a system that already fits your operation — your vocabulary, your processes, your team structure. No adapting required." data-fr="Ce sont des plateformes génériques que vous devez encore configurer, maintenir et auxquelles vous devez vous adapter. Je construis un système qui correspond déjà à votre activité — votre vocabulaire, vos processus, votre structure d'équipe. Pas d'adaptation nécessaire.">Those are generic platforms you still have to configure, maintain, and adapt to. I build a system that already fits your operation — your vocabulary, your processes, your team structure. No adapting required.</p></div>
+        <div class="faq-answer"><p data-en="Those are generic platforms you still have to configure, maintain, and adapt to. I build a system that already fits your operation — your vocabulary, your processes, your team structure. No adapting required." data-fr="Ce sont des plateformes génériques que vous devez encore configurer, maintenir et auxquelles vous devez vous adapter. NateSystem construit un système qui correspond déjà à votre activité — votre vocabulaire, vos processus, votre structure d'équipe. Pas d'adaptation nécessaire.">Those are generic platforms you still have to configure, maintain, and adapt to. NateSystem builds a system that already fits your operation — your vocabulary, your processes, your team structure. No adapting required.</p></div>
       </div>
       <div class="faq-item">
         <button class="faq-question" data-en="What does it cost?" data-fr="Combien ça coûte ?">What does it cost?<span class="faq-icon">+</span></button>
@@ -790,7 +856,7 @@ footer { padding: 40px; border-top: 1px solid var(--border); display: flex; just
       </div>
       <div class="faq-item">
         <button class="faq-question" data-en="What happens if I need changes after delivery?" data-fr="Que se passe-t-il si j'ai besoin de modifications après la livraison ?">What happens if I need changes after delivery?<span class="faq-icon">+</span></button>
-        <div class="faq-answer"><p data-en="You own the system. Simple changes, your team can handle. For bigger evolutions, I offer optional support blocks — no retainer, no lock-in. You call when you need me." data-fr="Le système vous appartient. Les modifications simples, votre équipe peut les gérer. Pour les évolutions plus importantes, je propose des blocs de support optionnels — pas de retainer, pas d'engagement. Vous appelez quand vous avez besoin.">You own the system. Simple changes, your team can handle. For bigger evolutions, I offer optional support blocks — no retainer, no lock-in. You call when you need me.</p></div>
+        <div class="faq-answer"><p data-en="You own the system. Simple changes, your team can handle. For bigger evolutions, optional support blocks are available — no retainer, no lock-in." data-fr="Le système vous appartient. Les modifications simples, votre équipe peut les gérer. Pour les évolutions plus importantes, des blocs de support optionnels sont disponibles — pas de retainer, pas d'engagement.">You own the system. Simple changes, your team can handle. For bigger evolutions, optional support blocks are available — no retainer, no lock-in.</p></div>
       </div>
       <div class="faq-item">
         <button class="faq-question" data-en="What types of businesses do you work with?" data-fr="Avec quels types d'entreprises travaillez-vous ?">What types of businesses do you work with?<span class="faq-icon">+</span></button>
@@ -798,7 +864,7 @@ footer { padding: 40px; border-top: 1px solid var(--border); display: flex; just
       </div>
       <div class="faq-item">
         <button class="faq-question" data-en="Can my team actually use it without being technical?" data-fr="Mon équipe peut-elle vraiment l'utiliser sans être technique ?">Can my team actually use it without being technical?<span class="faq-icon">+</span></button>
-        <div class="faq-answer"><p data-en="That's the whole point. I build it around how your team already works — their language, their habits. Training is included. Every team I've delivered to was autonomous within the first week." data-fr="C'est tout l'intérêt. Je le construis autour de comment votre équipe travaille déjà — leur langage, leurs habitudes. La formation est incluse. Chaque équipe à qui j'ai livré était autonome dès la première semaine.">That's the whole point. I build it around how your team already works — their language, their habits. Training is included. Every team I've delivered to was autonomous within the first week.</p></div>
+        <div class="faq-answer"><p data-en="That's the whole point. The system is built around how your team already works — their language, their habits. Training is included. Every team delivered to was autonomous within the first week." data-fr="C'est tout l'intérêt. Le système est construit autour de comment votre équipe travaille déjà — leur langage, leurs habitudes. La formation est incluse. Chaque équipe livrée était autonome dès la première semaine.">That's the whole point. The system is built around how your team already works — their language, their habits. Training is included. Every team delivered to was autonomous within the first week.</p></div>
       </div>
     </div>
   </section>
@@ -808,8 +874,8 @@ footer { padding: 40px; border-top: 1px solid var(--border); display: flex; just
   <!-- CTA FINAL -->
   <section class="cta-final">
     <h2 class="section-title reveal" data-en='You&apos;ve been adapting to your tools<br>for <span class="accent">long enough.</span>' data-fr='Vous vous êtes adapté à vos outils<br>depuis <span class="accent">bien trop longtemps.</span>'>You've been adapting to your tools<br>for <span class="accent">long enough.</span></h2>
-    <p class="cta-final-sub reveal" data-en="20 minutes. No pitch. I'll tell you exactly what I'd build — and what it would cost." data-fr="20 minutes. Pas de pitch. Je vous dis exactement ce que je construirais — et combien ça coûterait." style="margin-bottom: 32px;">20 minutes. No pitch. I'll tell you exactly what I'd build — and what it would cost.</p>
-    <a href="#" class="cta-final-button reveal">
+    <p class="cta-final-sub reveal" data-en="20 minutes. No pitch. A clear picture of what would be built — and what it would cost." data-fr="20 minutes. Pas de pitch. Une vision claire de ce qui serait construit — et combien ça coûterait." style="margin-bottom: 32px;">20 minutes. No pitch. A clear picture of what would be built — and what it would cost.</p>
+    <a href="#" class="cta-final-button reveal" data-cal-link="simplaizer/appel-avec-moi" data-cal-namespace="appel-avec-moi" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>
       <span data-en="Book a free diagnostic call" data-fr="Réserver un appel diagnostic gratuit">Book a free diagnostic call</span> <span>→</span>
     </a>
   </section>
@@ -825,7 +891,7 @@ footer { padding: 40px; border-top: 1px solid var(--border); display: flex; just
 </div>
 
 <div class="mobile-cta" id="mobileCta">
-  <a href="#" data-en="Book a free 20-min call →" data-fr="Réserver un appel de 20 min →">Book a free 20-min call →</a>
+  <a href="#" data-en="Book a free 20-min call →" data-fr="Réserver un appel de 20 min →" data-cal-link="simplaizer/appel-avec-moi" data-cal-namespace="appel-avec-moi" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>Book a free 20-min call →</a>
 </div>
 
 <script>
@@ -880,6 +946,46 @@ reveals.forEach((el, i) => {
   observer.observe(el);
 });
 
+// MOCKUP FAN CAROUSEL (5 panels)
+(function() {
+  const panels = document.querySelectorAll('.mockup-panel');
+  const dots = document.querySelectorAll('.mockup-dot');
+  const total = panels.length;
+  let current = 0;
+  let timer;
+
+  function arrange(centerIdx) {
+    current = centerIdx;
+    panels.forEach(p => p.classList.remove('center', 'left', 'right', 'hidden'));
+    dots.forEach(d => d.classList.remove('active'));
+    panels[centerIdx].classList.add('center');
+    panels[(centerIdx + 1) % total].classList.add('right');
+    panels[(centerIdx + total - 1) % total].classList.add('left');
+    // Hide the rest
+    for (let i = 2; i < total - 1; i++) {
+      panels[(centerIdx + i) % total].classList.add('hidden');
+    }
+    dots[centerIdx].classList.add('active');
+  }
+
+  function next() { arrange((current + 1) % total); }
+
+  function startTimer() { clearInterval(timer); timer = setInterval(next, 5000); }
+
+  panels.forEach((p, i) => {
+    p.addEventListener('click', () => {
+      if (!p.classList.contains('center')) { arrange(i); startTimer(); }
+    });
+  });
+
+  dots.forEach((d, i) => {
+    d.addEventListener('click', () => { arrange(i); startTimer(); });
+  });
+
+  arrange(0);
+  startTimer();
+})();
+
 // FAQ ACCORDION
 document.querySelectorAll('.faq-question').forEach(btn => {
   btn.addEventListener('click', () => {
@@ -889,6 +995,11 @@ document.querySelectorAll('.faq-question').forEach(btn => {
     if (!wasOpen) item.classList.add('open');
   });
 });
+
+// CAL.COM EMBED
+(function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+Cal("init", "appel-avec-moi", {origin:"https://app.cal.com"});
+Cal.ns["appel-avec-moi"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
 </script>
 </body>
 </html>

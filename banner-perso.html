@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LinkedIn Personal Banner — NateSystem</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@300&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #0e0e12; margin: 0; padding: 0; overflow: hidden; }
+
+.banner {
+  width: 1584px;
+  height: 396px;
+  background: #0e0e12;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+
+.banner::after {
+  content: '';
+  position: absolute;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1000px;
+  height: 450px;
+  background: radial-gradient(ellipse, rgba(201,168,76,0.10) 0%, transparent 70%);
+  filter: blur(60px);
+  pointer-events: none;
+}
+
+.cross {
+  position: absolute;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: rgba(255,255,255,0.10);
+  pointer-events: none;
+  z-index: 5;
+}
+.cross.tl { top: 20px; left: 24px; }
+.cross.tr { top: 20px; right: 24px; }
+.cross.bl { bottom: 20px; left: 24px; }
+.cross.br { bottom: 20px; right: 24px; }
+
+/* ========== FLOATING MOCKUPS ========== */
+.fm {
+  position: absolute;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 12px 50px rgba(0,0,0,0.35);
+  z-index: 1;
+  opacity: 0.22;
+  pointer-events: none;
+  font-family: 'Montserrat', sans-serif;
+}
+.fm-bar {
+  background: #F3F4F6;
+  padding: 7px 10px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  border-bottom: 1px solid #E5E7EB;
+}
+.fm-bar span { width: 7px; height: 7px; border-radius: 50%; }
+.fm-bar .r { background: #FF5F57; }
+.fm-bar .y { background: #FEBC2E; }
+.fm-bar .g { background: #28C840; }
+.fm-body { padding: 10px; }
+
+/* Card 1: Planning — far left */
+.fm-planning {
+  width: 380px;
+  left: -50px;
+  top: 20px;
+  transform: rotate(-7deg);
+}
+.fm-grid {
+  display: grid;
+  grid-template-columns: 55px repeat(5, 1fr);
+  gap: 0;
+  font-size: 7px;
+}
+.fm-grid .fh {
+  background: #F8F9FA;
+  padding: 5px 3px;
+  text-align: center;
+  color: #9CA3AF;
+  font-weight: 500;
+  border-bottom: 1px solid #E5E7EB;
+  font-size: 7px;
+}
+.fm-grid .fn {
+  padding: 6px 4px;
+  color: #374151;
+  font-weight: 500;
+  border-bottom: 1px solid #F3F4F6;
+  font-size: 8px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.fm-grid .fn .av {
+  width: 14px; height: 14px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 7px; font-weight: 600; color: #fff; flex-shrink: 0;
+}
+.fm-grid .fc {
+  padding: 5px 2px;
+  text-align: center;
+  border-bottom: 1px solid #F3F4F6;
+}
+.fm-grid .fc .p {
+  display: inline-block;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 6.5px;
+  font-weight: 500;
+}
+.ps { background: #DCFCE7; color: #166534; }
+.pc { background: #FEF3C7; color: #92400E; }
+.pb { background: #DBEAFE; color: #1E40AF; }
+.pv { background: #EDE9FE; color: #5B21B6; }
+
+/* Card 2: Stats — far right */
+.fm-stats {
+  width: 360px;
+  right: -40px;
+  top: 15px;
+  transform: rotate(6deg);
+}
+.fm-metrics {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+.fm-m {
+  flex: 1;
+  background: #F8F9FA;
+  border-radius: 6px;
+  padding: 8px;
+  text-align: center;
+}
+.fm-m-v { font-size: 16px; font-weight: 600; color: #1A1A1A; }
+.fm-m-l { font-size: 7px; color: #9CA3AF; text-transform: uppercase; margin-top: 2px; letter-spacing: 0.04em; }
+.fm-bars { display: flex; flex-direction: column; gap: 5px; }
+.fm-br { display: flex; align-items: center; gap: 6px; }
+.fm-bl { font-size: 7px; color: #6B7280; width: 40px; }
+.fm-bt { flex: 1; height: 10px; background: #F3F4F6; border-radius: 5px; overflow: hidden; }
+.fm-bf { height: 100%; border-radius: 5px; }
+.bfg { background: linear-gradient(90deg, #16A34A, #22C55E); }
+.bfb { background: linear-gradient(90deg, #2563EB, #3B82F6); }
+.bfa { background: linear-gradient(90deg, #D97706, #F59E0B); }
+.bfp { background: linear-gradient(90deg, #7C3AED, #8B5CF6); }
+
+/* Card 3: Booking — bottom right */
+.fm-booking {
+  width: 320px;
+  right: 90px;
+  bottom: -30px;
+  transform: rotate(4deg);
+}
+.fm-rows { display: flex; flex-direction: column; gap: 3px; }
+.fm-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 8px;
+  background: #F8F9FA;
+  border-radius: 5px;
+  font-size: 8px;
+}
+.fm-row .t { font-weight: 600; color: #1A1A1A; width: 32px; }
+.fm-row .n { flex: 1; color: #374151; }
+.fm-row .g { color: #9CA3AF; font-size: 7px; }
+.fm-row .tb { background: #DBEAFE; color: #1E40AF; padding: 2px 5px; border-radius: 3px; font-size: 7px; font-weight: 500; }
+.fm-row .st { padding: 2px 5px; border-radius: 3px; font-size: 7px; font-weight: 500; }
+.st-c { background: #DCFCE7; color: #15803D; }
+.st-p { background: #FEF3C7; color: #92400E; }
+
+/* Card 4: Hotel tickets — bottom left */
+.fm-hotel {
+  width: 340px;
+  left: 70px;
+  bottom: -25px;
+  transform: rotate(-5deg);
+}
+.fm-tix { display: flex; flex-direction: column; gap: 4px; }
+.fm-tx {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 8px;
+  background: #F8F9FA;
+  border-radius: 5px;
+  font-size: 8px;
+}
+.fm-tx .dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+.dot-r { background: #DC2626; }
+.dot-a { background: #D97706; }
+.dot-g { background: #16A34A; }
+.fm-tx .txt { flex: 1; color: #374151; }
+.fm-tx .bd { padding: 2px 6px; border-radius: 3px; font-size: 7px; font-weight: 500; }
+.bd-u { background: #FEE2E2; color: #DC2626; }
+.bd-p { background: #FEF3C7; color: #92400E; }
+.bd-d { background: #DCFCE7; color: #15803D; }
+
+/* ========== CONTENT ========== */
+.vignette {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: radial-gradient(ellipse at center, rgba(14,14,18,0.35) 0%, rgba(14,14,18,0.88) 100%);
+  pointer-events: none;
+}
+.noise {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.banner-content {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.banner-tagline {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  font-size: 54px;
+  font-weight: 400;
+  color: #f0f0f2;
+  line-height: 1.25;
+  letter-spacing: -0.5px;
+  text-shadow: 0 2px 40px rgba(14,14,18,0.9), 0 0 80px rgba(14,14,18,0.7);
+}
+.banner-tagline .accent { color: #C9A84C; }
+.accent-line {
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #C9A84C, transparent);
+  margin-top: 24px;
+}
+.banner-sub {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.35);
+  margin-top: 16px;
+  letter-spacing: 0.5px;
+}
+.logo-mark {
+  position: absolute;
+  bottom: 24px;
+  left: 32px;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.logo-n {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  font-size: 22px;
+  color: #f0f0f2;
+}
+.logo-dot {
+  width: 4px; height: 4px;
+  background: #C9A84C;
+  border-radius: 50%;
+  margin-left: -3px;
+  margin-top: 6px;
+  box-shadow: 0 0 8px rgba(201,168,76,0.3);
+}
+.banner-url {
+  position: absolute;
+  bottom: 28px;
+  right: 32px;
+  z-index: 5;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.22);
+  letter-spacing: 1px;
+}
+</style>
+</head>
+<body>
+<div class="banner">
+  <div class="noise"></div>
+  <div class="vignette"></div>
+  <span class="cross tl">+</span>
+  <span class="cross tr">+</span>
+  <span class="cross bl">+</span>
+  <span class="cross br">+</span>
+
+  <!-- FLOATING MOCKUP: Planning -->
+  <div class="fm fm-planning">
+    <div class="fm-bar"><span class="r"></span><span class="y"></span><span class="g"></span></div>
+    <div class="fm-body">
+      <div class="fm-grid">
+        <div class="fh"></div><div class="fh">Lun</div><div class="fh">Mar</div><div class="fh">Mer</div><div class="fh">Jeu</div><div class="fh">Ven</div>
+        <div class="fn"><span class="av" style="background:#2563EB">M</span>Marco</div>
+        <div class="fc"><span class="p ps">Service</span></div><div class="fc"></div><div class="fc"><span class="p ps">Service</span></div><div class="fc"><span class="p pc">Cuisine</span></div><div class="fc"><span class="p pb">Bar</span></div>
+        <div class="fn"><span class="av" style="background:#16A34A">L</span>Luca</div>
+        <div class="fc"><span class="p pb">Bar</span></div><div class="fc"><span class="p ps">Service</span></div><div class="fc"></div><div class="fc"><span class="p ps">Service</span></div><div class="fc"><span class="p pc">Cuisine</span></div>
+        <div class="fn"><span class="av" style="background:#D97706">E</span>Emma</div>
+        <div class="fc"><span class="p pc">Cuisine</span></div><div class="fc"><span class="p pc">Cuisine</span></div><div class="fc"><span class="p pb">Bar</span></div><div class="fc"></div><div class="fc"><span class="p ps">Service</span></div>
+        <div class="fn"><span class="av" style="background:#7C3AED">S</span>Sofia</div>
+        <div class="fc"><span class="p ps">Service</span></div><div class="fc"><span class="p pv">Caisse</span></div><div class="fc"><span class="p pc">Cuisine</span></div><div class="fc"><span class="p pb">Bar</span></div><div class="fc"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FLOATING MOCKUP: Stats -->
+  <div class="fm fm-stats">
+    <div class="fm-bar"><span class="r"></span><span class="y"></span><span class="g"></span></div>
+    <div class="fm-body">
+      <div class="fm-metrics">
+        <div class="fm-m"><div class="fm-m-v">94%</div><div class="fm-m-l">Coverage</div></div>
+        <div class="fm-m"><div class="fm-m-v">287h</div><div class="fm-m-l">Hours</div></div>
+        <div class="fm-m"><div class="fm-m-v">€4.2k</div><div class="fm-m-l">Cost</div></div>
+      </div>
+      <div class="fm-bars">
+        <div class="fm-br"><span class="fm-bl">Service</span><div class="fm-bt"><div class="fm-bf bfg" style="width:96%"></div></div></div>
+        <div class="fm-br"><span class="fm-bl">Cuisine</span><div class="fm-bt"><div class="fm-bf bfa" style="width:91%"></div></div></div>
+        <div class="fm-br"><span class="fm-bl">Bar</span><div class="fm-bt"><div class="fm-bf bfb" style="width:100%"></div></div></div>
+        <div class="fm-br"><span class="fm-bl">Caisse</span><div class="fm-bt"><div class="fm-bf bfp" style="width:85%"></div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FLOATING MOCKUP: Booking -->
+  <div class="fm fm-booking">
+    <div class="fm-bar"><span class="r"></span><span class="y"></span><span class="g"></span></div>
+    <div class="fm-body">
+      <div class="fm-rows">
+        <div class="fm-row"><span class="t">12:00</span><span class="n">Dupont</span><span class="g">4 pers</span><span class="tb">T8</span><span class="st st-c">Confirmé</span></div>
+        <div class="fm-row"><span class="t">12:15</span><span class="n">Martin</span><span class="g">2 pers</span><span class="tb">T3</span><span class="st st-c">Confirmé</span></div>
+        <div class="fm-row"><span class="t">12:30</span><span class="n">Bernard</span><span class="g">6 pers</span><span class="tb">T12</span><span class="st st-p">En attente</span></div>
+        <div class="fm-row"><span class="t">19:00</span><span class="n">Lefèvre</span><span class="g">3 pers</span><span class="tb">T5</span><span class="st st-c">Confirmé</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FLOATING MOCKUP: Hotel -->
+  <div class="fm fm-hotel">
+    <div class="fm-bar"><span class="r"></span><span class="y"></span><span class="g"></span></div>
+    <div class="fm-body">
+      <div class="fm-tix">
+        <div class="fm-tx"><span class="dot dot-r"></span><span class="txt">Shower broken — Room 312</span><span class="bd bd-u">Urgent</span></div>
+        <div class="fm-tx"><span class="dot dot-a"></span><span class="txt">VIP arrival 14:00 — Room 205</span><span class="bd bd-p">Pending</span></div>
+        <div class="fm-tx"><span class="dot dot-g"></span><span class="txt">AC noise resolved — Room 108</span><span class="bd bd-d">Done</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="banner-content">
+    <div class="banner-tagline">
+      Transforming the operational soul<br>
+      <span class="accent">of every growing business.</span>
+    </div>
+    <div class="accent-line"></div>
+  </div>
+
+  <div class="logo-mark">
+    <span class="logo-n">N</span>
+    <span class="logo-dot"></span>
+  </div>
+
+</div>
+</body>
+</html>

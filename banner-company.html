@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LinkedIn Company Banner — NateSystem</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@300&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #0e0e12; margin: 0; padding: 0; overflow: hidden; }
+
+.banner {
+  width: 1128px;
+  height: 191px;
+  background: #0e0e12;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+}
+
+.banner::after {
+  content: '';
+  position: absolute;
+  top: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 700px;
+  height: 300px;
+  background: radial-gradient(ellipse, rgba(201,168,76,0.10) 0%, transparent 70%);
+  filter: blur(40px);
+  pointer-events: none;
+}
+
+.cross {
+  position: absolute;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 8px;
+  color: rgba(255,255,255,0.08);
+  pointer-events: none;
+  z-index: 5;
+}
+.cross.tl { top: 12px; left: 14px; }
+.cross.tr { top: 12px; right: 14px; }
+.cross.bl { bottom: 12px; left: 14px; }
+.cross.br { bottom: 12px; right: 14px; }
+
+/* ========== FLOATING MOCKUPS (compact for 191px height) ========== */
+.fm {
+  position: absolute;
+  background: #fff;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+  z-index: 1;
+  opacity: 0.18;
+  pointer-events: none;
+  font-family: 'Montserrat', sans-serif;
+}
+.fm-bar {
+  background: #F3F4F6;
+  padding: 4px 7px;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  border-bottom: 1px solid #E5E7EB;
+}
+.fm-bar span { width: 5px; height: 5px; border-radius: 50%; }
+.fm-bar .r { background: #FF5F57; }
+.fm-bar .y { background: #FEBC2E; }
+.fm-bar .g { background: #28C840; }
+.fm-body { padding: 6px; }
+
+/* Card 1: Planning — left */
+.fm-planning {
+  width: 240px;
+  left: -20px;
+  top: 10px;
+  transform: rotate(-6deg);
+}
+.fm-grid {
+  display: grid;
+  grid-template-columns: 36px repeat(5, 1fr);
+  gap: 0;
+  font-size: 5.5px;
+}
+.fm-grid .fh {
+  background: #F8F9FA;
+  padding: 3px 2px;
+  text-align: center;
+  color: #9CA3AF;
+  font-weight: 500;
+  border-bottom: 1px solid #E5E7EB;
+}
+.fm-grid .fn {
+  padding: 4px 3px;
+  color: #374151;
+  font-weight: 500;
+  border-bottom: 1px solid #F3F4F6;
+  font-size: 6px;
+}
+.fm-grid .fc {
+  padding: 3px 1px;
+  text-align: center;
+  border-bottom: 1px solid #F3F4F6;
+}
+.fm-grid .fc .p {
+  display: inline-block;
+  padding: 1px 4px;
+  border-radius: 3px;
+  font-size: 5px;
+  font-weight: 500;
+}
+.ps { background: #DCFCE7; color: #166534; }
+.pc { background: #FEF3C7; color: #92400E; }
+.pb { background: #DBEAFE; color: #1E40AF; }
+
+/* Card 2: Stats — right */
+.fm-stats {
+  width: 220px;
+  right: -15px;
+  top: 5px;
+  transform: rotate(5deg);
+}
+.fm-metrics {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 6px;
+}
+.fm-m {
+  flex: 1;
+  background: #F8F9FA;
+  border-radius: 4px;
+  padding: 5px;
+  text-align: center;
+}
+.fm-m-v { font-size: 11px; font-weight: 600; color: #1A1A1A; }
+.fm-m-l { font-size: 5px; color: #9CA3AF; text-transform: uppercase; margin-top: 1px; }
+.fm-bars { display: flex; flex-direction: column; gap: 3px; }
+.fm-br { display: flex; align-items: center; gap: 4px; }
+.fm-bl { font-size: 5px; color: #6B7280; width: 28px; }
+.fm-bt { flex: 1; height: 6px; background: #F3F4F6; border-radius: 3px; overflow: hidden; }
+.fm-bf { height: 100%; border-radius: 3px; }
+.bfg { background: linear-gradient(90deg, #16A34A, #22C55E); }
+.bfb { background: linear-gradient(90deg, #2563EB, #3B82F6); }
+.bfa { background: linear-gradient(90deg, #D97706, #F59E0B); }
+
+/* Card 3: Booking — bottom center-right */
+.fm-booking {
+  width: 200px;
+  right: 160px;
+  bottom: -15px;
+  transform: rotate(3deg);
+}
+.fm-rows { display: flex; flex-direction: column; gap: 2px; }
+.fm-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 5px;
+  background: #F8F9FA;
+  border-radius: 3px;
+  font-size: 5.5px;
+}
+.fm-row .t { font-weight: 600; color: #1A1A1A; width: 22px; }
+.fm-row .n { flex: 1; color: #374151; }
+.fm-row .tb { background: #DBEAFE; color: #1E40AF; padding: 1px 3px; border-radius: 2px; font-size: 5px; font-weight: 500; }
+
+/* Card 4: Hotel — bottom left */
+.fm-hotel {
+  width: 210px;
+  left: 150px;
+  bottom: -18px;
+  transform: rotate(-4deg);
+}
+.fm-tix { display: flex; flex-direction: column; gap: 2px; }
+.fm-tx {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 5px;
+  background: #F8F9FA;
+  border-radius: 3px;
+  font-size: 6px;
+}
+.fm-tx .dot { width: 4px; height: 4px; border-radius: 50%; flex-shrink: 0; }
+.dot-r { background: #DC2626; }
+.dot-a { background: #D97706; }
+.dot-g { background: #16A34A; }
+.fm-tx .txt { flex: 1; color: #374151; }
+.fm-tx .bd { padding: 1px 4px; border-radius: 2px; font-size: 5px; font-weight: 500; }
+.bd-u { background: #FEE2E2; color: #DC2626; }
+.bd-p { background: #FEF3C7; color: #92400E; }
+.bd-d { background: #DCFCE7; color: #15803D; }
+
+/* ========== OVERLAYS & CONTENT ========== */
+.vignette {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: radial-gradient(ellipse at center, rgba(14,14,18,0.30) 0%, rgba(14,14,18,0.90) 100%);
+  pointer-events: none;
+}
+.noise {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.banner-content {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.banner-tagline {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  font-size: 34px;
+  font-weight: 400;
+  color: #f0f0f2;
+  line-height: 1.3;
+  letter-spacing: -0.3px;
+  text-shadow: 0 2px 30px rgba(14,14,18,0.9), 0 0 60px rgba(14,14,18,0.7);
+}
+.banner-tagline .accent { color: #C9A84C; }
+.accent-line {
+  width: 40px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #C9A84C, transparent);
+  margin-top: 14px;
+}
+.banner-sub {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.30);
+  margin-top: 10px;
+  letter-spacing: 0.5px;
+}
+
+.logo-mark {
+  position: absolute;
+  bottom: 14px;
+  left: 18px;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.logo-n {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  font-size: 16px;
+  color: #f0f0f2;
+}
+.logo-dot {
+  width: 3px; height: 3px;
+  background: #C9A84C;
+  border-radius: 50%;
+  margin-left: -2px;
+  margin-top: 5px;
+  box-shadow: 0 0 6px rgba(201,168,76,0.3);
+}
+.banner-url {
+  position: absolute;
+  bottom: 16px;
+  right: 18px;
+  z-index: 5;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.20);
+  letter-spacing: 0.8px;
+}
+</style>
+</head>
+<body>
+<div class="banner">
+  <div class="noise"></div>
+  <div class="vignette"></div>
+  <span class="cross tl">+</span>
+  <span class="cross tr">+</span>
+  <span class="cross bl">+</span>
+  <span class="cross br">+</span>
+
+  <!-- FLOATING MOCKUP: Planning -->
+  <div class="fm fm-planning">
+    <div class="fm-bar"><span class="r"></span><span class="y"></span><span class="g"></span></div>
+    <div class="fm-body">
+      <div class="fm-grid">
+        <div class="fh"></div><div class="fh">Lun</div><div class="fh">Mar</div><div class="fh">Mer</div><div class="fh">Jeu</div><div class="fh">Ven</div>
+        <div class="fn">Marco</div>
+        <div class="fc"><span class="p ps">Service</span></div><div class="fc"></div><div class="fc"><span class="p ps">Service</span></div><div class="fc"><span class="p pc">Cuisine</span></div><div class="fc"><span class="p pb">Bar</span></div>
+        <div class="fn">Luca</div>
+        <div class="fc"><span class="p pb">Bar</span></div><div class="fc"><span class="p ps">Service</span></div><div class="fc"></div><div class="fc"><span class="p ps">Service</span></div><div class="fc"><span class="p pc">Cuisine</span></div>
+        <div class="fn">Emma</div>
+        <div class="fc"><span class="p pc">Cuisine</span></div><div class="fc"><span class="p pc">Cuisine</span></div><div class="fc"><span class="p pb">Bar</span></div><div class="fc"></div><div class="fc"><span class="p ps">Service</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FLOATING MOCKUP: Stats -->
+  <div class="fm fm-stats">
+    <div class="fm-bar"><span class="r"></span><span class="y"></span><span class="g"></span></div>
+    <div class="fm-body">
+      <div class="fm-metrics">
+        <div class="fm-m"><div class="fm-m-v">94%</div><div class="fm-m-l">Coverage</div></div>
+        <div class="fm-m"><div class="fm-m-v">287h</div><div class="fm-m-l">Hours</div></div>
+        <div class="fm-m"><div class="fm-m-v">€4.2k</div><div class="fm-m-l">Cost</div></div>
+      </div>
+      <div class="fm-bars">
+        <div class="fm-br"><span class="fm-bl">Service</span><div class="fm-bt"><div class="fm-bf bfg" style="width:96%"></div></div></div>
+        <div class="fm-br"><span class="fm-bl">Cuisine</span><div class="fm-bt"><div class="fm-bf bfa" style="width:91%"></div></div></div>
+        <div class="fm-br"><span class="fm-bl">Bar</span><div class="fm-bt"><div class="fm-bf bfb" style="width:100%"></div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FLOATING MOCKUP: Booking -->
+  <div class="fm fm-booking">
+    <div class="fm-bar"><span class="r"></span><span class="y"></span><span class="g"></span></div>
+    <div class="fm-body">
+      <div class="fm-rows">
+        <div class="fm-row"><span class="t">12:00</span><span class="n">Dupont</span><span class="tb">T8</span></div>
+        <div class="fm-row"><span class="t">12:15</span><span class="n">Martin</span><span class="tb">T3</span></div>
+        <div class="fm-row"><span class="t">12:30</span><span class="n">Bernard</span><span class="tb">T12</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FLOATING MOCKUP: Hotel -->
+  <div class="fm fm-hotel">
+    <div class="fm-bar"><span class="r"></span><span class="y"></span><span class="g"></span></div>
+    <div class="fm-body">
+      <div class="fm-tix">
+        <div class="fm-tx"><span class="dot dot-r"></span><span class="txt">Shower — Room 312</span><span class="bd bd-u">Urgent</span></div>
+        <div class="fm-tx"><span class="dot dot-a"></span><span class="txt">VIP arrival — Room 205</span><span class="bd bd-p">Pending</span></div>
+        <div class="fm-tx"><span class="dot dot-g"></span><span class="txt">AC resolved — Room 108</span><span class="bd bd-d">Done</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="banner-content">
+    <div class="banner-tagline">
+      Your next level starts with<br>
+      <span class="accent">the right ecosystem.</span>
+    </div>
+    <div class="accent-line"></div>
+  </div>
+
+  <div class="logo-mark">
+    <span class="logo-n">N</span>
+    <span class="logo-dot"></span>
+  </div>
+
+</div>
+</body>
+</html>
