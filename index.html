@@ -486,6 +486,107 @@ footer { padding: 40px; border-top: 1px solid var(--border); display: flex; just
   .mockup-caption { font-size: 14px; padding: 24px 8px 0; }
 }
 
+/* QUALIFICATION FORM */
+.qualify { max-width: 700px; margin: 0 auto; text-align: center; padding: 120px 24px; }
+.qualify .section-title { margin-bottom: 12px; }
+.qualify-sub { font-size: 15px; color: var(--text-secondary); margin-bottom: 48px; font-weight: 300; }
+.qualify-progress {
+  display: flex; justify-content: center; align-items: center; gap: 0; margin-bottom: 48px; flex-wrap: wrap;
+}
+.qualify-step-indicator {
+  display: flex; align-items: center; gap: 8px;
+  font-family: var(--mono); font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase;
+  color: var(--text-muted); transition: color 0.3s; padding: 8px 0; white-space: nowrap;
+}
+.qualify-step-indicator.active { color: var(--accent); }
+.qualify-step-indicator.done { color: var(--text-secondary); }
+.qualify-line { width: 40px; height: 1px; background: var(--border); margin: 0 12px; flex-shrink: 0; }
+.qualify-line.done { background: var(--accent); }
+.qualify-card {
+  background: var(--bg-card); border: 1px solid var(--border); padding: 48px 40px; text-align: left;
+}
+.qualify-card h3 {
+  font-family: var(--sans); font-size: 14px; font-weight: 600; letter-spacing: 1px;
+  text-transform: uppercase; color: var(--accent); margin-bottom: 32px;
+  display: flex; align-items: center; gap: 10px;
+}
+.qualify-card h3 .step-num { font-family: var(--serif); font-style: italic; font-size: 28px; opacity: 0.5; }
+.qualify-field { margin-bottom: 20px; }
+.qualify-field label {
+  display: block; font-family: var(--sans); font-size: 12px; font-weight: 600;
+  letter-spacing: 0.5px; text-transform: uppercase; color: var(--text); margin-bottom: 8px;
+}
+.qualify-field label .optional { color: var(--text-muted); font-weight: 300; text-transform: none; font-size: 11px; }
+.qualify-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+.qualify-input, .qualify-select, .qualify-textarea {
+  width: 100%; padding: 14px 16px; background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border); color: var(--text);
+  font-family: var(--sans); font-size: 14px; transition: border-color 0.3s, box-shadow 0.3s; outline: none;
+}
+.qualify-input:focus, .qualify-select:focus, .qualify-textarea:focus {
+  border-color: rgba(201,168,76,0.5); box-shadow: 0 0 20px rgba(201,168,76,0.08);
+}
+.qualify-input::placeholder, .qualify-textarea::placeholder { color: var(--text-muted); font-weight: 300; }
+.qualify-select {
+  appearance: none; cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2355555f' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px;
+}
+.qualify-select option { background: var(--bg-card); color: var(--text); }
+.qualify-textarea { resize: vertical; min-height: 80px; }
+.qualify-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 32px; }
+.qualify-back {
+  background: none; border: none; color: var(--text-muted); font-family: var(--sans);
+  font-size: 14px; cursor: pointer; display: flex; align-items: center; gap: 8px; transition: color 0.3s;
+}
+.qualify-back:hover { color: var(--text); }
+.qualify-next {
+  display: inline-flex; align-items: center; gap: 12px; padding: 16px 32px;
+  background: transparent; border: 1px solid var(--accent); color: var(--text);
+  font-family: var(--sans); font-size: 14px; font-weight: 600; letter-spacing: 0.5px;
+  text-transform: uppercase; cursor: pointer; transition: all 0.4s;
+}
+.qualify-next:hover { box-shadow: 0 0 20px rgba(201,168,76,0.4); }
+.qualify-verdict-card {
+  background: rgba(201,168,76,0.05); border: 1px solid rgba(201,168,76,0.2); padding: 32px; margin-bottom: 32px;
+}
+.qualify-verdict-card p { font-family: var(--serif); font-style: italic; font-size: 18px; color: var(--text); line-height: 1.6; }
+.qualify-step { display: none; }
+.qualify-step.active { display: block; }
+.qualify-or { font-family: var(--mono); font-size: 11px; color: var(--text-muted); letter-spacing: 2px; text-transform: uppercase; margin: 20px 0; }
+.qualify-callback-btn {
+  display: inline-flex; align-items: center; gap: 10px; padding: 14px 28px;
+  background: transparent; border: 1px solid var(--border); color: var(--text);
+  font-family: var(--sans); font-size: 14px; font-weight: 600; letter-spacing: 0.5px;
+  text-transform: uppercase; cursor: pointer; transition: all 0.3s; text-decoration: none;
+}
+.qualify-callback-btn:hover { border-color: var(--text-muted); }
+.qualify-input-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+.qualify-char-count { text-align: right; font-size: 11px; color: var(--text-muted); margin-top: 4px; font-family: var(--mono); }
+/* Hero inline form */
+.hero-form {
+  display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px;
+  max-width: 560px; width: 100%; margin-bottom: 24px;
+  opacity: 0; animation: fadeUp 0.8s ease 0.7s forwards;
+}
+.hero-form input {
+  width: 100%; padding: 14px 16px; background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border); color: var(--text);
+  font-family: var(--sans); font-size: 13px; transition: border-color 0.3s, box-shadow 0.3s;
+  outline: none; border-radius: 0;
+}
+.hero-form input:focus { border-color: rgba(201,168,76,0.5); box-shadow: 0 0 20px rgba(201,168,76,0.08); }
+.hero-form input::placeholder { color: var(--text-muted); font-weight: 300; }
+
+@media (max-width: 768px) {
+  .hero-form { grid-template-columns: 1fr; max-width: 360px; }
+  .qualify-row, .qualify-input-row { grid-template-columns: 1fr; }
+  .qualify-card { padding: 32px 20px; }
+  .qualify-progress { gap: 4px; }
+  .qualify-line { width: 20px; margin: 0 6px; }
+  .qualify-step-indicator { font-size: 10px; }
+}
+
 /* ANIMATIONS */
 @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
@@ -534,10 +635,15 @@ footer { padding: 40px; border-top: 1px solid var(--border); display: flex; just
   <section class="hero" id="top">
     <h1 class="hero-title" data-en='Stop paying for tools you use at 30%.<br><span class="accent">Build yours.</span>' data-fr='Arrêtez de payer pour des outils que vous utilisez à 30%.<br><span class="accent">Construisez le vôtre.</span>'>Stop paying for tools you use at 30%.<br><span class="accent">Build yours.</span></h1>
     <p class="hero-sub" data-en="Your 6 disconnected tools replaced by one custom system — built around how your team actually works. No monthly fee. You own it." data-fr="Vos 6 outils déconnectés remplacés par un seul système sur-mesure — construit autour de comment votre équipe travaille vraiment. Pas d'abonnement. Il vous appartient.">Your 6 disconnected tools replaced by one custom system — built around how your team actually works. No monthly fee. You own it.</p>
-    <a href="#" class="hero-cta" data-cal-link="simplaizer/appel-avec-moi" data-cal-namespace="appel-avec-moi" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>
+    <div class="hero-form">
+      <input type="text" id="hero-firstname" data-placeholder-en="First name" data-placeholder-fr="Prénom" placeholder="First name">
+      <input type="email" id="hero-email" placeholder="Email">
+      <input type="tel" id="hero-phone" data-placeholder-en="Phone / WhatsApp" data-placeholder-fr="Téléphone / WhatsApp" placeholder="Phone / WhatsApp">
+    </div>
+    <a href="#qualify" class="hero-cta" onclick="heroToQualify(event)">
       <div class="hero-cta-pill">
         <div class="hero-cta-arrow">→</div>
-        <div class="hero-cta-text" data-en="Book a free 20-min call" data-fr="Réserver un appel de 20 min">Book a free 20-min call</div>
+        <div class="hero-cta-text" data-en="Check eligibility" data-fr="Vérifier mon éligibilité">Check eligibility</div>
         <div class="hero-cta-chevron">›</div>
       </div>
     </a>
@@ -871,13 +977,160 @@ footer { padding: 40px; border-top: 1px solid var(--border); display: flex; just
 
   <div class="divider"></div>
 
-  <!-- CTA FINAL -->
-  <section class="cta-final">
-    <h2 class="section-title reveal" data-en='You&apos;ve been adapting to your tools<br>for <span class="accent">long enough.</span>' data-fr='Vous vous êtes adapté à vos outils<br>depuis <span class="accent">bien trop longtemps.</span>'>You've been adapting to your tools<br>for <span class="accent">long enough.</span></h2>
-    <p class="cta-final-sub reveal" data-en="20 minutes. No pitch. A clear picture of what would be built — and what it would cost." data-fr="20 minutes. Pas de pitch. Une vision claire de ce qui serait construit — et combien ça coûterait." style="margin-bottom: 32px;">20 minutes. No pitch. A clear picture of what would be built — and what it would cost.</p>
-    <a href="#" class="cta-final-button reveal" data-cal-link="simplaizer/appel-avec-moi" data-cal-namespace="appel-avec-moi" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>
-      <span data-en="Book a free diagnostic call" data-fr="Réserver un appel diagnostic gratuit">Book a free diagnostic call</span> <span>→</span>
-    </a>
+  <!-- QUALIFICATION FORM -->
+  <section class="qualify" id="qualify">
+    <div class="reveal">
+      <p class="section-label" data-en="Free diagnostic" data-fr="Diagnostic gratuit">Free diagnostic</p>
+      <h2 class="section-title" data-en='Is your business <span class="accent">eligible?</span>' data-fr='Votre entreprise est-elle <span class="accent">éligible ?</span>'>Is your business <span class="accent">eligible?</span></h2>
+      <p class="qualify-sub" data-en="Answer 3 quick questions to find out. Instant response." data-fr="Répondez à 3 questions rapides pour le savoir. Réponse immédiate.">Answer 3 quick questions to find out. Instant response.</p>
+    </div>
+
+    <div class="qualify-progress reveal">
+      <div class="qualify-step-indicator active" data-step="0"><span class="qualify-step-num">01</span> <span data-en="YOU" data-fr="VOUS">YOU</span></div>
+      <div class="qualify-line"></div>
+      <div class="qualify-step-indicator" data-step="1"><span class="qualify-step-num">02</span> <span data-en="YOUR BUSINESS" data-fr="VOTRE ACTIVITÉ">YOUR BUSINESS</span></div>
+      <div class="qualify-line"></div>
+      <div class="qualify-step-indicator" data-step="2"><span class="qualify-step-num">03</span> <span data-en="YOUR OPERATIONS" data-fr="VOS OPÉRATIONS">YOUR OPERATIONS</span></div>
+      <div class="qualify-line"></div>
+      <div class="qualify-step-indicator" data-step="3"><span class="qualify-step-num">04</span> <span data-en="VERDICT" data-fr="VERDICT">VERDICT</span></div>
+    </div>
+
+    <form id="qualifyForm" class="reveal" onsubmit="return false;">
+
+      <!-- Step 0: YOU -->
+      <div class="qualify-step active" data-step="0">
+        <div class="qualify-card">
+          <h3><span class="step-num">01</span> <span data-en="You" data-fr="Vous">You</span></h3>
+          <div class="qualify-input-row">
+            <div class="qualify-field">
+              <label data-en="First name *" data-fr="Prénom *">First name *</label>
+              <input type="text" class="qualify-input" id="q-firstname" required data-placeholder-en="John" data-placeholder-fr="Jean" placeholder="John">
+            </div>
+            <div class="qualify-field">
+              <label>Email *</label>
+              <input type="email" class="qualify-input" id="q-email" required placeholder="you@company.com">
+            </div>
+            <div class="qualify-field">
+              <label data-en="Phone / WhatsApp *" data-fr="Téléphone / WhatsApp *">Phone / WhatsApp *</label>
+              <input type="tel" class="qualify-input" id="q-phone" required placeholder="+33 6...">
+            </div>
+          </div>
+          <div class="qualify-nav">
+            <div></div>
+            <button type="button" class="qualify-next" onclick="qualifyNext(1)" data-en="CONTINUE →" data-fr="CONTINUER →">CONTINUE →</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 1: YOUR BUSINESS -->
+      <div class="qualify-step" data-step="1">
+        <div class="qualify-card">
+          <h3><span class="step-num">02</span> <span data-en="Your business" data-fr="Votre activité">Your business</span></h3>
+          <div class="qualify-field">
+            <label data-en="Company name *" data-fr="Nom de l'entreprise *">Company name *</label>
+            <input type="text" class="qualify-input" id="q-company" required>
+          </div>
+          <div class="qualify-field">
+            <label data-en='Website <span class="optional">(optional)</span>' data-fr='Site web <span class="optional">(optionnel)</span>'>Website <span class="optional">(optional)</span></label>
+            <input type="url" class="qualify-input" id="q-website" placeholder="https://...">
+          </div>
+          <div class="qualify-field">
+            <label data-en="Industry *" data-fr="Secteur d'activité *">Industry *</label>
+            <select class="qualify-select" id="q-industry" required>
+              <option value="" data-en="-- Select --" data-fr="-- Choisissez --">-- Select --</option>
+              <option value="restaurant" data-en="Restaurant / Hospitality" data-fr="Restaurant / Hôtellerie">Restaurant / Hospitality</option>
+              <option value="education" data-en="Education / Training" data-fr="Éducation / Formation">Education / Training</option>
+              <option value="agency" data-en="Agency / Consulting" data-fr="Agence / Conseil">Agency / Consulting</option>
+              <option value="retail" data-en="Retail / Commerce" data-fr="Commerce / Retail">Retail / Commerce</option>
+              <option value="sport" data-en="Sports / Leisure" data-fr="Sport / Loisirs">Sports / Leisure</option>
+              <option value="health" data-en="Health / Wellness" data-fr="Santé / Bien-être">Health / Wellness</option>
+              <option value="other" data-en="Other" data-fr="Autre">Other</option>
+            </select>
+          </div>
+          <div class="qualify-row">
+            <div class="qualify-field">
+              <label data-en="Monthly revenue *" data-fr="CA mensuel *">Monthly revenue *</label>
+              <select class="qualify-select" id="q-revenue" required>
+                <option value="">--</option>
+                <option value="<10k">&lt; 10k€</option>
+                <option value="10-50k">10k€ - 50k€</option>
+                <option value="50-200k">50k€ - 200k€</option>
+                <option value=">200k">&gt; 200k€</option>
+              </select>
+            </div>
+            <div class="qualify-field">
+              <label data-en="Team size *" data-fr="Taille équipe *">Team size *</label>
+              <select class="qualify-select" id="q-team" required>
+                <option value="">--</option>
+                <option value="1-5">1 - 5</option>
+                <option value="6-15">6 - 15</option>
+                <option value="16-50">16 - 50</option>
+                <option value="50+">50+</option>
+              </select>
+            </div>
+            <div class="qualify-field">
+              <label data-en="Years in business *" data-fr="Ancienneté *">Years in business *</label>
+              <select class="qualify-select" id="q-years" required>
+                <option value="">--</option>
+                <option value="<1" data-en="< 1 year" data-fr="< 1 an">&lt; 1 year</option>
+                <option value="1-3" data-en="1-3 years" data-fr="1-3 ans">1-3 years</option>
+                <option value="3-10" data-en="3-10 years" data-fr="3-10 ans">3-10 years</option>
+                <option value="10+" data-en="10+ years" data-fr="10+ ans">10+ years</option>
+              </select>
+            </div>
+          </div>
+          <div class="qualify-nav">
+            <button type="button" class="qualify-back" onclick="qualifyNext(0)" data-en="← BACK" data-fr="← PRÉCÉDENT">← BACK</button>
+            <button type="button" class="qualify-next" onclick="qualifyNext(2)" data-en="CONTINUE →" data-fr="CONTINUER →">CONTINUE →</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 2: YOUR OPERATIONS -->
+      <div class="qualify-step" data-step="2">
+        <div class="qualify-card">
+          <h3><span class="step-num">03</span> <span data-en="Your operations" data-fr="Vos opérations">Your operations</span></h3>
+          <div class="qualify-field">
+            <label data-en="How many tools does your team use daily? *" data-fr="Combien d'outils votre équipe utilise-t-elle au quotidien ? *">How many tools does your team use daily? *</label>
+            <select class="qualify-select" id="q-tools" required>
+              <option value="">--</option>
+              <option value="1-2">1 - 2</option>
+              <option value="3-5">3 - 5</option>
+              <option value="6-10">6 - 10</option>
+              <option value="10+">10+</option>
+            </select>
+          </div>
+          <div class="qualify-field">
+            <label data-en="What's the biggest friction in your daily operations? *" data-fr="Quel est le plus gros point de friction dans vos opérations quotidiennes ? *">What's the biggest friction in your daily operations? *</label>
+            <textarea class="qualify-textarea" id="q-friction" required maxlength="500" data-placeholder-en="e.g. Information is scattered across 5 tools, nothing talks to each other..." data-placeholder-fr="ex. L'information est dispersée sur 5 outils, rien ne communique..."></textarea>
+            <div class="qualify-char-count"><span id="q-friction-count">0</span>/500</div>
+          </div>
+          <div class="qualify-field">
+            <label data-en="If one system handled everything, what would change concretely? *" data-fr="Si un seul système gérait tout, qu'est-ce qui changerait concrètement ? *">If one system handled everything, what would change concretely? *</label>
+            <textarea class="qualify-textarea" id="q-change" required maxlength="500" data-placeholder-en="e.g. We'd stop losing 2h/day searching for information..." data-placeholder-fr="ex. On arrêterait de perdre 2h/jour à chercher de l'information..."></textarea>
+            <div class="qualify-char-count"><span id="q-change-count">0</span>/500</div>
+          </div>
+          <div class="qualify-nav">
+            <button type="button" class="qualify-back" onclick="qualifyNext(1)" data-en="← BACK" data-fr="← PRÉCÉDENT">← BACK</button>
+            <button type="button" class="qualify-next" onclick="qualifySubmit()" data-en="SEE VERDICT →" data-fr="VOIR MON VERDICT →">SEE VERDICT →</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 3: VERDICT -->
+      <div class="qualify-step" data-step="3">
+        <div class="qualify-card" style="text-align:center;">
+          <h3 style="justify-content:center;"><span class="step-num">04</span> <span data-en="Profile analysis" data-fr="Analyse de votre profil">Profile analysis</span></h3>
+          <div class="qualify-verdict-card">
+            <p id="qualifyVerdict"></p>
+          </div>
+          <a href="#" class="qualify-next" style="text-decoration:none;" data-cal-link="simplaizer/appel-avec-moi" data-cal-namespace="appel-avec-moi" data-cal-config='{"layout":"month_view"}' data-en="BOOK THE DIAGNOSTIC CALL →" data-fr="RÉSERVER L'APPEL DIAGNOSTIC →">BOOK THE DIAGNOSTIC CALL →</a>
+          <p class="qualify-or" data-en="or" data-fr="ou">or</p>
+          <a href="#" class="qualify-callback-btn" data-cal-link="simplaizer/appel-avec-moi" data-cal-namespace="appel-avec-moi" data-cal-config='{"layout":"month_view"}' data-en="WE CALL YOU BACK" data-fr="ON VOUS RAPPELLE">WE CALL YOU BACK</a>
+        </div>
+      </div>
+
+    </form>
   </section>
 
   <footer>
@@ -904,6 +1157,10 @@ function switchLang(lang) {
   document.querySelectorAll('[data-en]').forEach(el => {
     const text = el.getAttribute('data-' + lang);
     if (text) el.innerHTML = text;
+  });
+  document.querySelectorAll('[data-placeholder-en]').forEach(el => {
+    const ph = el.getAttribute('data-placeholder-' + lang);
+    if (ph) el.placeholder = ph;
   });
 }
 
@@ -1000,6 +1257,142 @@ document.querySelectorAll('.faq-question').forEach(btn => {
 (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
 Cal("init", "appel-avec-moi", {origin:"https://app.cal.com"});
 Cal.ns["appel-avec-moi"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+
+// HERO → QUALIFY BRIDGE
+function heroToQualify(e) {
+  e.preventDefault();
+  var fn = document.getElementById('hero-firstname').value.trim();
+  var em = document.getElementById('hero-email').value.trim();
+  var ph = document.getElementById('hero-phone').value.trim();
+  if (!fn || !em || !ph) {
+    [['hero-firstname',fn],['hero-email',em],['hero-phone',ph]].forEach(function(pair){
+      document.getElementById(pair[0]).style.borderColor = pair[1] ? '' : 'rgba(201,168,76,0.5)';
+    });
+    return;
+  }
+  document.getElementById('q-firstname').value = fn;
+  document.getElementById('q-email').value = em;
+  document.getElementById('q-phone').value = ph;
+  qualifyNext(1);
+  document.getElementById('qualify').scrollIntoView({ behavior: 'smooth' });
+}
+
+// QUALIFICATION FORM
+function qualifyNext(step) {
+  var steps = document.querySelectorAll('.qualify-step');
+  var indicators = document.querySelectorAll('.qualify-step-indicator');
+  var lines = document.querySelectorAll('.qualify-line');
+  var current = document.querySelector('.qualify-step.active');
+  var currentStep = parseInt(current.dataset.step);
+
+  if (step > currentStep) {
+    var fields = current.querySelectorAll('[required]');
+    var valid = true;
+    fields.forEach(function(f) {
+      if (!f.value.trim()) { valid = false; f.style.borderColor = 'rgba(201,168,76,0.5)'; }
+      else { f.style.borderColor = ''; }
+    });
+    if (!valid) return;
+  }
+
+  steps.forEach(function(s) { s.classList.remove('active'); });
+  indicators.forEach(function(ind, i) {
+    ind.classList.remove('active', 'done');
+    if (i < step) ind.classList.add('done');
+    if (i === step) ind.classList.add('active');
+  });
+  lines.forEach(function(l, i) { l.classList.toggle('done', i < step); });
+  document.querySelector('.qualify-step[data-step="' + step + '"]').classList.add('active');
+  nsTrack('qualify_step', { step: step });
+}
+
+function qualifySubmit() {
+  var current = document.querySelector('.qualify-step.active');
+  var fields = current.querySelectorAll('[required]');
+  var valid = true;
+  fields.forEach(function(f) {
+    if (!f.value.trim()) { valid = false; f.style.borderColor = 'rgba(201,168,76,0.5)'; }
+    else { f.style.borderColor = ''; }
+  });
+  if (!valid) return;
+
+  var d = {
+    first_name: document.getElementById('q-firstname').value,
+    email: document.getElementById('q-email').value,
+    phone: document.getElementById('q-phone').value,
+    company: document.getElementById('q-company').value,
+    website: document.getElementById('q-website').value,
+    industry: document.getElementById('q-industry').value,
+    revenue: document.getElementById('q-revenue').value,
+    team_size: document.getElementById('q-team').value,
+    years: document.getElementById('q-years').value,
+    tools_count: document.getElementById('q-tools').value,
+    friction: document.getElementById('q-friction').value,
+    change: document.getElementById('q-change').value
+  };
+
+  var isHighTools = ['6-10', '10+'].indexOf(d.tools_count) !== -1;
+  var isGoodRevenue = ['50-200k', '>200k'].indexOf(d.revenue) !== -1;
+  var verdict;
+  if (currentLang === 'fr') {
+    if (isHighTools && isGoodRevenue) {
+      verdict = d.first_name + ', votre profil est clairement éligible. Avec ' + d.tools_count + ' outils au quotidien et une équipe de ' + d.team_size + ' personnes, le gain de temps estimé est considérable. Un écosystème sur-mesure pourrait transformer votre façon de travailler — et libérer des heures chaque semaine.';
+    } else if (isHighTools) {
+      verdict = d.first_name + ', votre situation est intéressante. ' + d.tools_count + ' outils au quotidien, c\'est beaucoup de friction. La question n\'est pas si un système sur-mesure vous ferait gagner du temps — c\'est combien.';
+    } else {
+      verdict = d.first_name + ', votre profil mérite qu\'on en parle. Même avec ' + d.tools_count + ' outils, la friction que vous décrivez montre un potentiel d\'optimisation réel. Un appel de 20 minutes permettrait de clarifier ce qui est possible.';
+    }
+  } else {
+    if (isHighTools && isGoodRevenue) {
+      verdict = d.first_name + ', your profile clearly qualifies. With ' + d.tools_count + ' daily tools and a team of ' + d.team_size + ', the estimated time savings are significant. A custom ecosystem could transform how your team works — and free up hours every week.';
+    } else if (isHighTools) {
+      verdict = d.first_name + ', your situation is interesting. ' + d.tools_count + ' tools daily means a lot of friction. The question isn\'t whether a custom system would save you time — it\'s how much.';
+    } else {
+      verdict = d.first_name + ', your profile is worth a conversation. Even with ' + d.tools_count + ' tools, the friction you describe shows real optimization potential. A 20-minute call would clarify what\'s possible.';
+    }
+  }
+  document.getElementById('qualifyVerdict').textContent = verdict;
+
+  fetch('https://olkqdcsvqfgfrnvjslsj.supabase.co/functions/v1/ingest-webhook?source=landing', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      event: 'qualify_submit',
+      contact: { first_name: d.first_name, email: d.email, phone: d.phone },
+      metadata: {
+        company: d.company, website: d.website, industry: d.industry,
+        revenue: d.revenue, team_size: d.team_size, years: d.years,
+        tools_count: d.tools_count, friction: d.friction, change: d.change,
+        session_id: sessionStorage.getItem('ns_sid') || '',
+        device: nsDevice(), page_url: window.location.href
+      }
+    })
+  }).catch(function(){});
+
+  qualifyNext(3);
+}
+
+document.getElementById('q-friction').addEventListener('input', function() {
+  document.getElementById('q-friction-count').textContent = this.value.length;
+});
+document.getElementById('q-change').addEventListener('input', function() {
+  document.getElementById('q-change-count').textContent = this.value.length;
+});
+</script>
+
+<!-- TRACKING -->
+<script>
+(function(){
+  function uuid(){return'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g,function(c){var r=Math.random()*16|0;return(c==='x'?r:r&0x3|0x8).toString(16)})}
+  window.nsDevice=function(){var w=window.innerWidth;if(w<768)return'mobile';if(w<1024)return'tablet';return'desktop'};
+  var sid=sessionStorage.getItem('ns_sid');if(!sid){sid=uuid();sessionStorage.setItem('ns_sid',sid)}
+  var p=new URLSearchParams(window.location.search);
+  window.nsTrack=function(evt,extra){
+    var body={event:evt,contact:{},metadata:Object.assign({page_url:window.location.href,utm_source:p.get('utm_source'),utm_medium:p.get('utm_medium'),utm_campaign:p.get('utm_campaign'),utm_content:p.get('utm_content'),utm_term:p.get('utm_term'),session_id:sid,device:nsDevice()},extra||{})};
+    fetch('https://olkqdcsvqfgfrnvjslsj.supabase.co/functions/v1/ingest-webhook?source=landing',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)}).catch(function(){});
+  };
+  nsTrack('page_view');
+})();
 </script>
 </body>
 </html>
