@@ -106,18 +106,20 @@ body {
 .nav-logo-fixed.scrolled .nav-logo-n { font-size: 22px; }
 
 nav {
-  position: fixed; top: 16px; right: 24px; z-index: 100;
-  padding: 0; width: auto;
-  display: flex; align-items: center; gap: 4px;
+  position: fixed; z-index: 100;
+  padding: 0; display: flex; align-items: center; gap: 4px;
   backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
   background: rgba(14,14,18,0.4); border: 1px solid rgba(255,255,255,0.06);
   border-radius: 100px; transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 }
+nav.nav-center { top: 16px; left: 50%; transform: translateX(-50%); }
+nav.nav-right { top: 16px; right: 24px; }
 nav.scrolled {
-  top: 12px;
   background: rgba(14,14,18,0.85); border-color: rgba(255,255,255,0.1);
   box-shadow: 0 8px 40px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.03) inset;
 }
+nav.nav-center.scrolled { top: 12px; }
+nav.nav-right.scrolled { top: 12px; }
 .lang-toggle {
   display: flex; align-items: center; gap: 0; padding: 4px 8px;
 }
@@ -137,6 +139,14 @@ nav.scrolled {
   letter-spacing: 0.3px; cursor: pointer; transition: all 0.3s ease;
   text-decoration: none; position: relative; overflow: hidden; white-space: nowrap;
 }
+.nav-links { display: flex; align-items: center; gap: 0; }
+.nav-link {
+  padding: 10px 14px; font-family: var(--sans); font-size: 11px; font-weight: 400;
+  color: var(--text-secondary); text-decoration: none; letter-spacing: 0.5px;
+  transition: color 0.3s ease; white-space: nowrap;
+}
+.nav-link:hover { color: var(--text); }
+.nav-sep { width: 1px; height: 16px; background: var(--border); }
 .nav-cta::before { content: ''; position: absolute; inset: 0; background: rgba(201,168,76,0.15); opacity: 0; transition: opacity 0.3s; border-radius: 100px; }
 .nav-cta:hover::before { opacity: 1; }
 .nav-cta:hover { border-color: rgba(201,168,76,0.5); box-shadow: 0 0 24px var(--accent-glow); transform: scale(1.02); }
@@ -602,7 +612,8 @@ footer { padding: 40px; border-top: 1px solid var(--border); display: flex; just
 @media (max-width: 768px) {
   .nav-logo-fixed { top: 14px; left: 14px; }
   .nav-logo-fixed .nav-brand { display: none; }
-  nav { top: 10px; right: 14px; }
+  nav.nav-right { top: 10px; right: 14px; }
+  nav.nav-center { display: none; }
   .lang-btn { padding: 4px 8px; font-size: 10px; }
   .nav-cta { padding: 7px 16px; font-size: 11px; }
   .hero { min-height: 90vh; }
@@ -625,16 +636,19 @@ footer { padding: 40px; border-top: 1px solid var(--border); display: flex; just
     <span class="nav-logo-dot"></span>
     <span class="nav-brand">Nathan Goutagny</span>
   </a>
-  <nav>
+  <nav class="nav-center">
+    <div class="nav-links">
+      <a href="#mockup-section" class="nav-link" data-en="Projects" data-fr="Projets">Projects</a>
+      <a href="#how" class="nav-link" data-en="The method" data-fr="La méthode">The method</a>
+      <a href="#qualify" class="nav-link" data-en="Form" data-fr="Formulaire">Form</a>
+    </div>
+  </nav>
+  <nav class="nav-right">
     <div class="lang-toggle">
       <button class="lang-btn active" id="langEN" onclick="switchLang('en')">EN</button>
       <span class="lang-sep">/</span>
       <button class="lang-btn" id="langFR" onclick="switchLang('fr')">FR</button>
     </div>
-    <a href="#" class="nav-cta" data-cal-link="simplaizer/appel-avec-moi" data-cal-namespace="appel-avec-moi" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>
-      <span class="nav-cta-dot"></span>
-      <span data-en="Book a call" data-fr="Réserver un appel">Book a call</span>
-    </a>
   </nav>
 
   <!-- HERO -->
@@ -657,7 +671,7 @@ footer { padding: 40px; border-top: 1px solid var(--border); display: flex; just
   </section>
 
   <!-- MOCKUP SHOWCASE -->
-  <section class="mockup-section">
+  <section class="mockup-section" id="mockup-section">
     <div class="solution-header reveal">
       <p class="section-label" data-en="What it looks like" data-fr="À quoi ça ressemble">What it looks like</p>
       <h2 class="section-title" data-en='Built around <span class="accent">your</span> operations.' data-fr='Conçu autour de <span class="accent">vos</span> opérations.'>Built around <span class="accent">your</span> operations.</h2>
@@ -984,7 +998,7 @@ footer { padding: 40px; border-top: 1px solid var(--border); display: flex; just
   <div class="divider"></div>
 
   <!-- HOW IT WORKS -->
-  <section class="how-it-works">
+  <section class="how-it-works" id="how">
     <div class="how-header reveal">
       <p class="section-label" data-en="Process" data-fr="Processus">Process</p>
       <h2 class="section-title" data-en="How does it work?" data-fr="Comment ça marche ?">How does it work?</h2>
@@ -1309,11 +1323,11 @@ function switchLang(lang) {
 
 // NAV SCROLL
 const navLogo = document.getElementById('navLogo');
-const nav = document.querySelector('nav');
+const allNavs = document.querySelectorAll('nav');
 window.addEventListener('scroll', () => {
   const scrolled = window.scrollY > 60;
   navLogo.classList.toggle('scrolled', scrolled);
-  nav.classList.toggle('scrolled', scrolled);
+  allNavs.forEach(n => n.classList.toggle('scrolled', scrolled));
 });
 
 // MOBILE CTA
