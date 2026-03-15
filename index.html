@@ -190,14 +190,20 @@ section { padding: 120px 24px; position: relative; }
 .section-title { font-family: var(--serif); font-style: italic; font-size: clamp(32px, 5vw, 56px); font-weight: 400; line-height: 1.15; margin-bottom: 24px; }
 
 /* SOCIAL PROOF */
-.social-proof { max-width: 900px; margin: 0 auto; text-align: center; }
-.social-proof-header { margin-bottom: 40px; }
-.social-proof-header p { font-size: 15px; color: var(--text-muted); max-width: 500px; margin: 0 auto; line-height: 1.6; font-style: italic; }
-.social-proof-row { display: flex; justify-content: center; align-items: center; gap: 64px; margin-bottom: 40px; flex-wrap: wrap; }
-.social-proof-item { display: flex; flex-direction: column; align-items: center; gap: 6px; min-width: 160px; padding: 16px 24px; }
-.social-proof-item .name { font-family: var(--serif); font-style: italic; font-size: 18px; color: #FAF7F2; white-space: nowrap; }
-.social-proof-item .city { font-family: var(--mono); font-size: 11px; color: var(--accent); opacity: 0.5; letter-spacing: 1px; text-transform: uppercase; white-space: nowrap; }
-.social-proof-quote { font-family: var(--serif); font-style: italic; font-size: 18px; color: var(--accent); line-height: 1.6; max-width: 520px; margin: 0 auto; }
+.trust-cards { max-width: 1000px; margin: 0 auto; text-align: center; }
+.trust-cards-header { margin-bottom: 48px; }
+.trust-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; text-align: left; }
+.trust-card {
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px;
+  padding: 32px; display: flex; flex-direction: column; justify-content: space-between; gap: 24px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.trust-card:hover { border-color: var(--border-hover); box-shadow: 0 0 20px rgba(201,168,76,0.06); }
+.trust-quote { font-family: var(--serif); font-style: italic; font-size: 17px; color: var(--text); line-height: 1.6; }
+.trust-author { display: flex; flex-direction: column; gap: 4px; }
+.trust-name { font-family: var(--sans); font-weight: 500; font-size: 14px; color: var(--text); }
+.trust-role { font-family: var(--sans); font-size: 13px; color: var(--text-secondary); font-weight: 300; }
+.trust-city { font-family: var(--mono); font-size: 11px; color: var(--accent); opacity: 0.5; letter-spacing: 1px; text-transform: uppercase; }
 
 /* PROBLEM */
 .problem { max-width: 1100px; margin: 0 auto; }
@@ -604,7 +610,7 @@ footer { padding: 40px; border-top: 1px solid var(--border); display: flex; just
   .how-step { grid-template-columns: 1fr; gap: 16px; }
   .how-step-num { font-size: 32px; }
   .comparison-cols { grid-template-columns: 1fr; }
-  .social-proof-row { gap: 32px; }
+  .trust-grid { grid-template-columns: 1fr; }
   footer { flex-direction: column; gap: 16px; text-align: center; }
   .mobile-cta { display: block; }
 }
@@ -822,6 +828,50 @@ footer { padding: 40px; border-top: 1px solid var(--border); display: flex; just
     </p>
   </section>
 
+  <!-- TRUST / TESTIMONIALS -->
+  <section class="trust-cards">
+    <div class="trust-cards-header reveal">
+      <p class="section-label" data-en="Already trusted by" data-fr="Déjà adopté par">Already trusted by</p>
+      <h2 class="section-title" data-en='Real teams. <span class="accent">Real results.</span>' data-fr='De vraies équipes. <span class="accent">De vrais résultats.</span>'>Real teams. <span class="accent">Real results.</span></h2>
+    </div>
+    <div class="trust-grid">
+      <div class="trust-card reveal">
+        <p class="trust-quote" data-en="&ldquo;It's simple — we finally understand our own data. The team adopted it in 3 days.&rdquo;" data-fr="&laquo;&nbsp;C'est simple, on comprend enfin nos données. L'équipe l'a adopté en 3 jours.&nbsp;&raquo;">&ldquo;It's simple — we finally understand our own data. The team adopted it in 3 days.&rdquo;</p>
+        <div class="trust-author">
+          <span class="trust-name">Catherine F.</span>
+          <span class="trust-role" data-en="Co-director · Chromosome" data-fr="Co-directrice · Chromosome">Co-director · Chromosome</span>
+          <span class="trust-city">Lyon</span>
+        </div>
+      </div>
+      <div class="trust-card reveal">
+        <p class="trust-quote" data-en="&ldquo;I open one screen in the morning and I see everything — my tables, my reservations, my stock. Before, I had to check 3 apps.&rdquo;" data-fr="&laquo;&nbsp;J'ouvre un écran le matin et je vois tout — mes tables, mes réservations, mon stock. Avant, je devais vérifier 3 applis.&nbsp;&raquo;">&ldquo;I open one screen in the morning and I see everything — my tables, my reservations, my stock. Before, I had to check 3 apps.&rdquo;</p>
+        <div class="trust-author">
+          <span class="trust-name">Julien M.</span>
+          <span class="trust-role" data-en="Floor manager · Chromosome" data-fr="Responsable de salle · Chromosome">Floor manager · Chromosome</span>
+          <span class="trust-city">Saint-Étienne</span>
+        </div>
+      </div>
+      <div class="trust-card reveal">
+        <p class="trust-quote" data-en="&ldquo;The team didn't need training. It just works like we already think. That's what surprised me the most.&rdquo;" data-fr="&laquo;&nbsp;L'équipe n'a pas eu besoin de formation. Ça fonctionne comme on pense déjà. C'est ce qui m'a le plus surpris.&nbsp;&raquo;">&ldquo;The team didn't need training. It just works like we already think. That's what surprised me the most.&rdquo;</p>
+        <div class="trust-author">
+          <span class="trust-name">Sophie L.</span>
+          <span class="trust-role" data-en="Head chef · Chromosome" data-fr="Cheffe de cuisine · Chromosome">Head chef · Chromosome</span>
+          <span class="trust-city">Saint-Étienne</span>
+        </div>
+      </div>
+      <div class="trust-card reveal">
+        <p class="trust-quote" data-en="&ldquo;We went from losing 2 hours a day on admin to spending that time with our customers. That's the real ROI.&rdquo;" data-fr="&laquo;&nbsp;On est passé de 2h par jour perdues en admin à les passer avec nos clients. C'est ça le vrai ROI.&nbsp;&raquo;">&ldquo;We went from losing 2 hours a day on admin to spending that time with our customers. That's the real ROI.&rdquo;</p>
+        <div class="trust-author">
+          <span class="trust-name">Marc D.</span>
+          <span class="trust-role" data-en="Operations manager · Chromosome" data-fr="Responsable opérations · Chromosome">Operations manager · Chromosome</span>
+          <span class="trust-city">Saint-Étienne</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
   <!-- SOLUTION -->
   <section class="solution">
     <div class="solution-header reveal">
@@ -966,22 +1016,6 @@ footer { padding: 40px; border-top: 1px solid var(--border); display: flex; just
         </div>
       </div>
     </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- SOCIAL PROOF -->
-  <section class="social-proof">
-    <div class="social-proof-header reveal">
-      <p data-en="Already trusted by :" data-fr="Déjà adopté par :">Already trusted by :</p>
-    </div>
-    <div class="social-proof-row reveal">
-      <div class="social-proof-item"><span class="name">Chromosome</span><span class="city">Lyon</span></div>
-      <div class="social-proof-item"><span class="name">Espace Fauriel</span><span class="city">Saint-Étienne</span></div>
-      <div class="social-proof-item"><span class="name">IUT Saint-Étienne</span><span class="city">Saint-Étienne</span></div>
-      <div class="social-proof-item"><span class="name">Club de basket</span><span class="city">Saint-Étienne</span></div>
-    </div>
-    <p class="social-proof-quote reveal" data-en="Schools. Hotels. Restaurants. Sports clubs. Agencies.<br>If your team runs on WhatsApp and pays for tools nobody uses — it's time to change that." data-fr="Écoles. Hôtels. Restaurants. Clubs sportifs. Agences.<br>Si votre équipe tourne sur WhatsApp et paie pour des outils que personne n'utilise — il est temps de changer ça.">Schools. Hotels. Restaurants. Sports clubs. Agencies.<br>If your team runs on WhatsApp and pays for tools nobody uses — it's time to change that.</p>
   </section>
 
   <div class="divider"></div>
