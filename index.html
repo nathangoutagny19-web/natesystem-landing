@@ -65,8 +65,9 @@
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://www.youtube.com">
-<link rel="preconnect" href="https://i.ytimg.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://www.youtube.com" crossorigin>
+<link rel="preconnect" href="https://i.ytimg.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -665,14 +666,14 @@ footer { padding: 40px; border-top: 1px solid var(--border); display: flex; just
     <span class="nav-logo-dot"></span>
     <span class="nav-brand">Nathan Goutagny</span>
   </a>
-  <nav class="nav-center">
+  <nav class="nav-center" aria-label="Main navigation">
     <div class="nav-links">
       <a href="#mockup-section" class="nav-link" data-en="Projects" data-fr="Projets">Projects</a>
       <a href="#how" class="nav-link" data-en="The method" data-fr="La méthode">The method</a>
       <a href="#qualify" class="nav-link" data-en="Form" data-fr="Formulaire">Form</a>
     </div>
   </nav>
-  <nav class="nav-right">
+  <nav class="nav-right" aria-label="Language selection">
     <div class="lang-toggle">
       <button class="lang-btn active" id="langEN" onclick="switchLang('en')">EN</button>
       <span class="lang-sep">/</span>
@@ -680,6 +681,7 @@ footer { padding: 40px; border-top: 1px solid var(--border); display: flex; just
     </div>
   </nav>
 
+  <main>
   <!-- HERO -->
   <section class="hero" id="top">
     <h1 class="hero-title" data-en='Stop paying for tools you use at 30%.<br><span class="accent">Build yours.</span>' data-fr='Arrêtez de payer pour des outils que vous utilisez à 30%.<br><span class="accent">Construisez le vôtre.</span>'>Stop paying for tools you use at 30%.<br><span class="accent">Build yours.</span></h1>
@@ -797,11 +799,11 @@ footer { padding: 40px; border-top: 1px solid var(--border); display: flex; just
   <section class="case-study">
     <div class="case-study-header reveal">
       <p class="section-label" data-en="Testimonial" data-fr="Témoignage">Testimonial</p>
-      <h2 class="section-title" data-en='&ldquo;It changed the way we <span class="accent">run everything.</span>&rdquo;' data-fr='&laquo;&nbsp;Ça a changé notre façon de <span class="accent">tout gérer.</span>&nbsp;&raquo;'>&ldquo;It changed the way we <span class="accent">run everything.</span>&rdquo;</h2>
+      <h3 class="section-title" data-en='&ldquo;It changed the way we <span class="accent">run everything.</span>&rdquo;' data-fr='&laquo;&nbsp;Ça a changé notre façon de <span class="accent">tout gérer.</span>&nbsp;&raquo;'>&ldquo;It changed the way we <span class="accent">run everything.</span>&rdquo;</h3>
     </div>
     <div class="case-study-card reveal" style="padding:0;overflow:hidden;border:none;">
       <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
-        <iframe src="https://www.youtube.com/embed/aMIjJbzuhDc" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        <iframe src="https://www.youtube.com/embed/aMIjJbzuhDc" title="Témoignage Catherine F. — Co-directrice Chromosome Saint-Étienne" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen loading="lazy"></iframe>
       </div>
     </div>
     <p style="text-align:center;margin-top:20px;font-size:14px;color:var(--text-secondary);font-weight:300;" class="reveal">
@@ -813,7 +815,7 @@ footer { padding: 40px; border-top: 1px solid var(--border); display: flex; just
   <section class="trust-cards">
     <div class="trust-cards-header reveal">
       <p class="section-label" data-en="Already trusted by" data-fr="Déjà adopté par">Already trusted by</p>
-      <h2 class="section-title" data-en='Real teams. <span class="accent">Real results.</span>' data-fr='De vraies équipes. <span class="accent">De vrais résultats.</span>'>Real teams. <span class="accent">Real results.</span></h2>
+      <h3 class="section-title" data-en='Real teams. <span class="accent">Real results.</span>' data-fr='De vraies équipes. <span class="accent">De vrais résultats.</span>'>Real teams. <span class="accent">Real results.</span></h3>
     </div>
     <div class="trust-grid">
       <div class="trust-card reveal">
@@ -893,19 +895,19 @@ footer { padding: 40px; border-top: 1px solid var(--border); display: flex; just
   <section class="solution">
     <div class="solution-header reveal">
       <p class="section-label" data-en="What this is not" data-fr="Ce que ce n'est pas">What this is not</p>
-      <h2 class="section-title" data-en='This is <span class="accent">NOT</span> another SaaS tool.' data-fr='Ce n&rsquo;est <span class="accent">PAS</span> un autre outil SaaS.'>This is <span class="accent">NOT</span> another SaaS tool.</h2>
+      <h3 class="section-title" data-en='This is <span class="accent">NOT</span> another SaaS tool.' data-fr='Ce n&rsquo;est <span class="accent">PAS</span> un autre outil SaaS.'>This is <span class="accent">NOT</span> another SaaS tool.</h3>
     </div>
     <div class="solution-grid">
       <div class="solution-card reveal">
-        <h3 data-en="Not a template you configure" data-fr="Pas un template à configurer">Not a template you configure</h3>
+        <h4 data-en="Not a template you configure" data-fr="Pas un template à configurer">Not a template you configure</h4>
         <p data-en="No Notion database to set up. No Monday board to customize. No Airtable to maintain. The system is built to match your operation exactly — on day one." data-fr="Pas de base Notion à construire. Pas de tableau Monday à personnaliser. Pas d'Airtable à maintenir. Le système est conçu pour correspondre exactement à votre activité — dès le premier jour.">No Notion database to set up. No Monday board to customize. No Airtable to maintain. The system is built to match your operation exactly — on day one.</p>
       </div>
       <div class="solution-card reveal">
-        <h3 data-en="Not a subscription you pay forever" data-fr="Pas un abonnement à vie">Not a subscription you pay forever</h3>
+        <h4 data-en="Not a subscription you pay forever" data-fr="Pas un abonnement à vie">Not a subscription you pay forever</h4>
         <p data-en="One project. One investment. No monthly fee. No vendor lock-in. You own the code, the data, the servers. Cancel every tool it replaces the day it launches." data-fr="Un projet. Un investissement. Pas d'abonnement mensuel. Pas de dépendance. Vous possédez le code, les données, les serveurs. Résiliez chaque outil remplacé dès le lancement.">One project. One investment. No monthly fee. No vendor lock-in. You own the code, the data, the servers. Cancel every tool it replaces the day it launches.</p>
       </div>
       <div class="solution-card reveal">
-        <h3 data-en="Not something your team has to learn" data-fr="Pas quelque chose à apprendre">Not something your team has to learn</h3>
+        <h4 data-en="Not something your team has to learn" data-fr="Pas quelque chose à apprendre">Not something your team has to learn</h4>
         <p data-en="Built around how your team already works — their vocabulary, their habits, their workflows. Training is included. Every team delivered to was autonomous within the first week." data-fr="Construit autour de comment votre équipe travaille déjà — leur vocabulaire, leurs habitudes, leurs flux. La formation est incluse. Chaque équipe livrée était autonome dès la première semaine.">Built around how your team already works — their vocabulary, their habits, their workflows. Training is included. Every team delivered to was autonomous within the first week.</p>
       </div>
     </div>
@@ -996,19 +998,19 @@ footer { padding: 40px; border-top: 1px solid var(--border); display: flex; just
   <section class="solution">
     <div class="solution-header reveal">
       <p class="section-label" data-en="Who is this for" data-fr="Pour qui">Who is this for</p>
-      <h2 class="section-title" data-en='Is your business <span class="accent">the right fit?</span>' data-fr='Votre entreprise est-elle <span class="accent">faite pour ça&nbsp;?</span>'>Is your business <span class="accent">the right fit?</span></h2>
+      <h3 class="section-title" data-en='Is your business <span class="accent">the right fit?</span>' data-fr='Votre entreprise est-elle <span class="accent">faite pour ça&nbsp;?</span>'>Is your business <span class="accent">the right fit?</span></h3>
     </div>
     <div class="solution-grid">
       <div class="solution-card reveal">
-        <h3 data-en="Restaurants &amp; Hotels" data-fr="Restaurants &amp; Hôtels">Restaurants &amp; Hotels</h3>
+        <h4 data-en="Restaurants &amp; Hotels" data-fr="Restaurants &amp; Hôtels">Restaurants &amp; Hotels</h4>
         <p data-en="Shift planning, staff coordination, inventory, reservations — all in one system. Built for hospitality, not for generic business software." data-fr="Planification des équipes, coordination du personnel, inventaire, réservations — dans un seul système. Conçu pour l'hôtellerie-restauration, pas pour les logiciels génériques.">Shift planning, staff coordination, inventory, reservations — all in one system. Built for hospitality, not for generic business software.</p>
       </div>
       <div class="solution-card reveal">
-        <h3 data-en="Schools &amp; Training Centres" data-fr="Écoles &amp; Centres de formation">Schools &amp; Training Centres</h3>
+        <h4 data-en="Schools &amp; Training Centres" data-fr="Écoles &amp; Centres de formation">Schools &amp; Training Centres</h4>
         <p data-en="Student tracking, HR management, scheduling, pedagogical CRM — everything your institution needs, without the enterprise price tag." data-fr="Suivi des élèves, gestion RH, emplois du temps, CRM pédagogique — tout ce dont votre établissement a besoin, sans le prix des grands éditeurs.">Student tracking, HR management, scheduling, pedagogical CRM — everything your institution needs, without the enterprise price tag.</p>
       </div>
       <div class="solution-card reveal">
-        <h3 data-en="Agencies &amp; Consulting Firms" data-fr="Agences &amp; Cabinets de conseil">Agencies &amp; Consulting Firms</h3>
+        <h4 data-en="Agencies &amp; Consulting Firms" data-fr="Agences &amp; Cabinets de conseil">Agencies &amp; Consulting Firms</h4>
         <p data-en="Client management, project tracking, billing, team coordination — one ecosystem that reflects how your firm actually operates, not how a SaaS vendor thinks it should." data-fr="Gestion clients, suivi de projets, facturation, coordination d'équipe — un écosystème qui reflète comment votre cabinet fonctionne vraiment, pas comment un éditeur SaaS pense qu'il devrait.">Client management, project tracking, billing, team coordination — one ecosystem that reflects how your firm actually operates, not how a SaaS vendor thinks it should.</p>
       </div>
     </div>
@@ -1097,7 +1099,7 @@ footer { padding: 40px; border-top: 1px solid var(--border); display: flex; just
   <section class="comparison">
     <div class="comparison-header reveal">
       <p class="section-label" data-en="Transformation" data-fr="Transformation">Transformation</p>
-      <h2 class="section-title" data-en="Before. After." data-fr="Avant. Après.">Before. After.</h2>
+      <h3 class="section-title" data-en="Before. After." data-fr="Avant. Après.">Before. After.</h3>
     </div>
     <div class="comparison-cols reveal">
       <div class="comparison-col before">
@@ -1127,7 +1129,7 @@ footer { padding: 40px; border-top: 1px solid var(--border); display: flex; just
   <section class="faq">
     <div class="faq-header reveal">
       <p class="section-label" data-en="Still hesitating?" data-fr="Encore hésitant ?">Still hesitating?</p>
-      <h2 class="section-title" data-en="Every question, answered." data-fr="Chaque question, répondue.">Every question, answered.</h2>
+      <h3 class="section-title" data-en="Every question, answered." data-fr="Chaque question, répondue.">Every question, answered.</h3>
     </div>
     <div class="faq-list">
       <div class="faq-item">
@@ -1167,7 +1169,7 @@ footer { padding: 40px; border-top: 1px solid var(--border); display: flex; just
   <section class="qualify" id="qualify">
     <div class="reveal">
       <p class="section-label" data-en="Free diagnostic" data-fr="Diagnostic gratuit">Free diagnostic</p>
-      <h2 class="section-title" data-en='Is your business <span class="accent">eligible?</span>' data-fr='Votre entreprise est-elle <span class="accent">éligible ?</span>'>Is your business <span class="accent">eligible?</span></h2>
+      <h3 class="section-title" data-en='Is your business <span class="accent">eligible?</span>' data-fr='Votre entreprise est-elle <span class="accent">éligible ?</span>'>Is your business <span class="accent">eligible?</span></h3>
       <p class="qualify-sub" data-en="Answer 3 quick questions to find out. Instant response." data-fr="Répondez à 3 questions rapides pour le savoir. Réponse immédiate.">Answer 3 quick questions to find out. Instant response.</p>
     </div>
 
@@ -1318,6 +1320,7 @@ footer { padding: 40px; border-top: 1px solid var(--border); display: flex; just
 
     </form>
   </section>
+  </main>
 
   <footer>
     <div class="footer-left">
@@ -1325,7 +1328,7 @@ footer { padding: 40px; border-top: 1px solid var(--border); display: flex; just
       <span class="footer-dot"></span>
       <span class="footer-name">Nathan Goutagny — NateSystem · Lyon · Budapest · 2026</span>
     </div>
-    <p class="footer-right"><a href="https://nathangoutagny.com" target="_blank">nathangoutagny.com</a></p>
+    <p class="footer-right"><a href="https://nathangoutagny.com" target="_blank" rel="noopener noreferrer">nathangoutagny.com</a></p>
   </footer>
 </div>
 
