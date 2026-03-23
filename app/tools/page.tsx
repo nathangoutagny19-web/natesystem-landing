@@ -3,99 +3,80 @@
 import { useState } from 'react'
 import Nav from '@/components/layout/Nav'
 import Footer from '@/components/layout/Footer'
-import MobileCta from '@/components/layout/MobileCta'
-import ToolCard from '@/components/tools/ToolCard'
-import EmailGateModal from '@/components/tools/EmailGateModal'
-import FadeUp from '@/components/ui/FadeUp'
-import { useLang } from '@/components/providers/LangProvider'
+import FilterBar from './components/FilterBar'
+import ResourceCard from './components/ResourceCard'
+import DownloadModal from './components/DownloadModal'
+import { resources, CATEGORIES, Resource } from '@/lib/resources'
 
 export default function ToolsPage() {
-  const { t } = useLang()
-  const [modalTemplate, setModalTemplate] = useState<string | null>(null)
+  const [filter, setFilter] = useState('Tous')
+  const [selectedResource, setSelectedResource] = useState<Resource | null>(null)
+
+  const filtered = filter === 'Tous' ? resources : resources.filter(r => r.category === filter)
 
   return (
-    <main>
+    <main className="min-h-screen" style={{ background: '#F0EAE0' }}>
       <Nav />
 
-      <section style={{ padding: '160px 24px 120px' }}>
-        <div className="mx-auto" style={{ maxWidth: '1100px' }}>
-          <FadeUp className="text-center mb-16">
-            <span className="section-label">{t('nav.tools')}</span>
-            <h1 className="section-title" style={{ maxWidth: '600px', margin: '0 auto 20px' }}>
-              {t('tools.title')}
+      {/* Background grid */}
+      <div
+        className="fixed inset-0 pointer-events-none z-0"
+        style={{
+          backgroundImage:
+            'linear-gradient(rgba(0,0,0,0.055) 1px,transparent 1px), linear-gradient(90deg,rgba(0,0,0,0.055) 1px,transparent 1px)',
+          backgroundSize: '28px 28px',
+        }}
+      />
+
+      <div className="relative z-10">
+        {/* Hero section */}
+        <section className="pt-32 pb-12 px-6 text-center">
+          <div className="max-w-3xl mx-auto">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 leading-tight tracking-tight">
+              Les meilleures ressources IA
+              <br />
+              pour ton \u00e9quipe.
             </h1>
-            <p className="font-sans" style={{ fontSize: '16px', fontWeight: 300, color: 'var(--text-secondary)', maxWidth: '520px', margin: '0 auto', lineHeight: 1.7 }}>
-              {t('tools.sub')}
+            <p className="mt-4 text-lg md:text-xl text-gray-400 italic font-light">
+              Ce que les agences facturent des milliers d&apos;euros. Gratuit ici.
             </p>
-          </FadeUp>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            <FadeUp delay={0}>
-              <ToolCard
-                icon="🔢"
-                title={t('tools.calculator.title')}
-                description={t('tools.calculator.desc')}
-                badge={t('tools.interactive')}
-                href="/tools/saas-calculator"
-                actionLabel={t('tools.start')}
-              />
-            </FadeUp>
-            <FadeUp delay={0.08}>
-              <ToolCard
-                icon="🧠"
-                title={t('tools.quiz.title')}
-                description={t('tools.quiz.desc')}
-                badge={t('tools.interactive')}
-                href="/tools/ai-readiness"
-                actionLabel={t('tools.start')}
-              />
-            </FadeUp>
-            <FadeUp delay={0.16} >
-              <div id="audit">
-                <ToolCard
-                  icon="📋"
-                  title={t('tools.audit.title')}
-                  description={t('tools.audit.desc')}
-                  badge={t('tools.template')}
-                  onClick={() => setModalTemplate(t('tools.audit.title'))}
-                  actionLabel={t('tools.download')}
-                />
-              </div>
-            </FadeUp>
-            <FadeUp delay={0.24}>
-              <div id="process-map">
-                <ToolCard
-                  icon="🗺️"
-                  title={t('tools.processMap.title')}
-                  description={t('tools.processMap.desc')}
-                  badge={t('tools.template')}
-                  onClick={() => setModalTemplate(t('tools.processMap.title'))}
-                  actionLabel={t('tools.download')}
-                />
-              </div>
-            </FadeUp>
-            <FadeUp delay={0.32}>
-              <div id="checklist">
-                <ToolCard
-                  icon="✅"
-                  title={t('tools.checklist.title')}
-                  description={t('tools.checklist.desc')}
-                  badge={t('tools.template')}
-                  onClick={() => setModalTemplate(t('tools.checklist.title'))}
-                  actionLabel={t('tools.download')}
-                />
-              </div>
-            </FadeUp>
+            <p className="mt-3 text-sm text-gray-500 font-light">
+              Skills Claude &middot; Prompts GPT &middot; Guides d&apos;impl\u00e9mentation &middot; 0\u20ac
+            </p>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <Footer />
-      <MobileCta />
+        {/* Filter bar */}
+        <section className="px-6 pb-8">
+          <div className="max-w-5xl mx-auto">
+            <FilterBar categories={CATEGORIES} active={filter} onChange={setFilter} />
+          </div>
+        </section>
 
-      {modalTemplate && (
-        <EmailGateModal templateName={modalTemplate} onClose={() => setModalTemplate(null)} />
-      )}
+        {/* Resource grid */}
+        <section className="px-6 pb-24">
+          <div className="max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+              {filtered.map(resource => (
+                <ResourceCard
+                  key={resource.id}
+                  resource={resource}
+                  onDownload={setSelectedResource}
+                />
+              ))}
+            </div>
+            {filtered.length === 0 && (
+              <p className="text-center text-gray-400 py-16 text-lg">
+                Aucune ressource dans cette cat\u00e9gorie.
+              </p>
+            )}
+          </div>
+        </section>
+
+        <Footer />
+      </div>
+
+      <DownloadModal resource={selectedResource} onClose={() => setSelectedResource(null)} />
     </main>
   )
 }
