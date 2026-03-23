@@ -10,8 +10,7 @@ import Results from '@/components/home/Results'
 import Testimonial from '@/components/home/Testimonial'
 import AgentShowcase from '@/components/home/AgentShowcase'
 import Architecture from '@/components/home/Architecture'
-import AuditOffer from '@/components/home/AuditOffer'
-import Pricing from '@/components/home/Pricing'
+import StrategyCall from '@/components/home/StrategyCall'
 import Integrations from '@/components/home/Integrations'
 import Process from '@/components/home/Process'
 import Guarantees from '@/components/home/Guarantees'
@@ -54,9 +53,7 @@ export default function Home() {
       <Divider />
 
       {/* ——— OFFRE ——— */}
-      <AuditOffer />
-      <Divider />
-      <Pricing />
+      <StrategyCall />
       <Divider />
       <Integrations />
       <Divider />
