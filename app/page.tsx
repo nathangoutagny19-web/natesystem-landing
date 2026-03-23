@@ -4,6 +4,8 @@ import Hero from '@/components/home/Hero'
 import Problem from '@/components/home/Problem'
 import Solution from '@/components/home/Solution'
 import InfraSystem from '@/components/home/InfraSystem'
+import AgentShowcase from '@/components/home/AgentShowcase'
+import Architecture from '@/components/home/Architecture'
 import Integrations from '@/components/home/Integrations'
 import Results from '@/components/home/Results'
 import Testimonial from '@/components/home/Testimonial'
@@ -22,6 +24,10 @@ export default function Home() {
       <Solution />
       <Divider />
       <InfraSystem />
+      <Divider />
+      <AgentShowcase />
+      <Divider />
+      <Architecture />
       <Divider />
       <Integrations />
       <Divider />
