@@ -220,6 +220,20 @@ export const translations = {
   'quiz.seeResults': { en: 'See results', fr: 'Voir les résultats' },
   'quiz.result.title': { en: 'Your AI Readiness Score', fr: 'Votre Score Maturité IA' },
   'quiz.result.cta': { en: 'Get your personalized roadmap', fr: 'Obtenez votre feuille de route personnalisée' },
+
+  // Architecture section
+  'architecture.title': { en: 'A complete AI infrastructure.', fr: 'Une infrastructure IA complète.' },
+  'architecture.titleAccent': { en: 'Not another SaaS.', fr: 'Pas un SaaS de plus.' },
+  'architecture.sub': { en: 'Every component is proprietary, connected to your data, and owned by you.', fr: 'Chaque brique est propriétaire, connectée à vos données, et vous appartient.' },
+  'architecture.metric1': { en: 'Available connectors', fr: 'Connecteurs disponibles' },
+  'architecture.metric2': { en: 'Agent deployment', fr: 'Déploiement agents' },
+  'architecture.metric3': { en: 'Proprietary code', fr: 'Code propriétaire' },
+
+  // Integrations section
+  'integrations.label': { en: 'INTEGRATIONS', fr: 'INTÉGRATIONS' },
+  'integrations.title': { en: 'Connects to', fr: 'Se connecte à' },
+  'integrations.titleAccent': { en: 'all your tools.', fr: 'tous vos outils.' },
+  'integrations.sub': { en: 'Google Workspace, Slack, HubSpot, Notion, and 50+ integrations.', fr: 'Google Workspace, Slack, HubSpot, Notion, et 50+ intégrations.' },
 } as const
 
 export type TranslationKey = keyof typeof translations

@@ -3,6 +3,9 @@ import MobileCta from '@/components/layout/MobileCta'
 import Hero from '@/components/home/Hero'
 import Problem from '@/components/home/Problem'
 import Solution from '@/components/home/Solution'
+import AgentShowcase from '@/components/home/AgentShowcase'
+import Architecture from '@/components/home/Architecture'
+import Integrations from '@/components/home/Integrations'
 import Results from '@/components/home/Results'
 import Testimonial from '@/components/home/Testimonial'
 import Process from '@/components/home/Process'
@@ -18,6 +21,12 @@ export default function Home() {
       <Problem />
       <Divider />
       <Solution />
+      <Divider />
+      <AgentShowcase />
+      <Divider />
+      <Architecture />
+      <Divider />
+      <Integrations />
       <Divider />
       <Results />
       <Divider />
