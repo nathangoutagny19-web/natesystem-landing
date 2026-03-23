@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LinkedIn Personal Banner — NateSystem</title>
+<title>YouTube Banner — NateSystem</title>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@300&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { background: #0e0e12; margin: 0; padding: 0; overflow: hidden; }
 
 .banner {
-  width: 1584px;
-  height: 396px;
+  width: 2560px;
+  height: 1440px;
   background: #0e0e12;
   position: relative;
   overflow: hidden;
@@ -21,6 +21,22 @@ body { background: #0e0e12; margin: 0; padding: 0; overflow: hidden; }
   text-align: center;
 }
 
+/* Safe area guide (1546x423 centered — visible on all devices) */
+.safe-area {
+  position: absolute;
+  width: 1546px;
+  height: 423px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* border: 1px dashed rgba(230,57,70,0.15); */ /* uncomment to debug */
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .banner::before {
   content: '';
   position: absolute;
@@ -28,109 +44,108 @@ body { background: #0e0e12; margin: 0; padding: 0; overflow: hidden; }
   background-image:
     linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-  background-size: 60px 60px;
+  background-size: 80px 80px;
   pointer-events: none;
 }
 
 .banner::after {
   content: '';
   position: absolute;
-  top: -100px;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
-  width: 1000px;
-  height: 450px;
-  background: radial-gradient(ellipse, rgba(230,57,70,0.10) 0%, transparent 70%);
-  filter: blur(60px);
+  transform: translate(-50%, -50%);
+  width: 1400px;
+  height: 700px;
+  background: radial-gradient(ellipse, rgba(230,57,70,0.08) 0%, transparent 70%);
+  filter: blur(80px);
   pointer-events: none;
 }
 
 .cross {
   position: absolute;
   font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
-  color: rgba(255,255,255,0.10);
+  font-size: 12px;
+  color: rgba(255,255,255,0.08);
   pointer-events: none;
   z-index: 5;
 }
-.cross.tl { top: 20px; left: 24px; }
-.cross.tr { top: 20px; right: 24px; }
-.cross.bl { bottom: 20px; left: 24px; }
-.cross.br { bottom: 20px; right: 24px; }
+.cross.tl { top: 30px; left: 36px; }
+.cross.tr { top: 30px; right: 36px; }
+.cross.bl { bottom: 30px; left: 36px; }
+.cross.br { bottom: 30px; right: 36px; }
 
 /* ========== FLOATING MOCKUPS ========== */
 .fm {
   position: absolute;
   background: #fff;
-  border-radius: 10px;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 12px 50px rgba(0,0,0,0.35);
+  box-shadow: 0 16px 60px rgba(0,0,0,0.35);
   z-index: 1;
-  opacity: 0.22;
+  opacity: 0.18;
   pointer-events: none;
   font-family: 'Montserrat', sans-serif;
 }
 .fm-bar {
   background: #F3F4F6;
-  padding: 7px 10px;
+  padding: 8px 12px;
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 6px;
   border-bottom: 1px solid #E5E7EB;
 }
-.fm-bar span { width: 7px; height: 7px; border-radius: 50%; }
+.fm-bar span { width: 8px; height: 8px; border-radius: 50%; }
 .fm-bar .r { background: #FF5F57; }
 .fm-bar .y { background: #FEBC2E; }
 .fm-bar .g { background: #28C840; }
-.fm-body { padding: 10px; }
+.fm-body { padding: 12px; }
 
-/* Card 1: Planning — far left */
+/* Card 1: Planning — left */
 .fm-planning {
-  width: 380px;
-  left: -50px;
-  top: 20px;
+  width: 480px;
+  left: 80px;
+  top: 280px;
   transform: rotate(-7deg);
 }
 .fm-grid {
   display: grid;
-  grid-template-columns: 55px repeat(5, 1fr);
+  grid-template-columns: 65px repeat(5, 1fr);
   gap: 0;
-  font-size: 7px;
+  font-size: 9px;
 }
 .fm-grid .fh {
   background: #F8F9FA;
-  padding: 5px 3px;
+  padding: 6px 4px;
   text-align: center;
   color: #9CA3AF;
   font-weight: 500;
   border-bottom: 1px solid #E5E7EB;
-  font-size: 7px;
 }
 .fm-grid .fn {
-  padding: 6px 4px;
+  padding: 7px 5px;
   color: #374151;
   font-weight: 500;
   border-bottom: 1px solid #F3F4F6;
-  font-size: 8px;
+  font-size: 10px;
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 5px;
 }
 .fm-grid .fn .av {
-  width: 14px; height: 14px; border-radius: 50%;
+  width: 16px; height: 16px; border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
-  font-size: 7px; font-weight: 600; color: #fff; flex-shrink: 0;
+  font-size: 8px; font-weight: 600; color: #fff; flex-shrink: 0;
 }
 .fm-grid .fc {
-  padding: 5px 2px;
+  padding: 6px 2px;
   text-align: center;
   border-bottom: 1px solid #F3F4F6;
 }
 .fm-grid .fc .p {
   display: inline-block;
-  padding: 2px 6px;
+  padding: 2px 7px;
   border-radius: 4px;
-  font-size: 6.5px;
+  font-size: 7.5px;
   font-weight: 500;
 }
 .ps { background: #DCFCE7; color: #166534; }
@@ -138,32 +153,32 @@ body { background: #0e0e12; margin: 0; padding: 0; overflow: hidden; }
 .pb { background: #DBEAFE; color: #1E40AF; }
 .pv { background: #EDE9FE; color: #5B21B6; }
 
-/* Card 2: Stats — far right */
+/* Card 2: Stats — right */
 .fm-stats {
-  width: 360px;
-  right: -40px;
-  top: 15px;
+  width: 440px;
+  right: 100px;
+  top: 260px;
   transform: rotate(6deg);
 }
 .fm-metrics {
   display: flex;
-  gap: 6px;
-  margin-bottom: 10px;
+  gap: 8px;
+  margin-bottom: 12px;
 }
 .fm-m {
   flex: 1;
   background: #F8F9FA;
   border-radius: 6px;
-  padding: 8px;
+  padding: 10px;
   text-align: center;
 }
-.fm-m-v { font-size: 16px; font-weight: 600; color: #1A1A1A; }
-.fm-m-l { font-size: 7px; color: #9CA3AF; text-transform: uppercase; margin-top: 2px; letter-spacing: 0.04em; }
-.fm-bars { display: flex; flex-direction: column; gap: 5px; }
-.fm-br { display: flex; align-items: center; gap: 6px; }
-.fm-bl { font-size: 7px; color: #6B7280; width: 40px; }
-.fm-bt { flex: 1; height: 10px; background: #F3F4F6; border-radius: 5px; overflow: hidden; }
-.fm-bf { height: 100%; border-radius: 5px; }
+.fm-m-v { font-size: 20px; font-weight: 600; color: #1A1A1A; }
+.fm-m-l { font-size: 8px; color: #9CA3AF; text-transform: uppercase; margin-top: 2px; letter-spacing: 0.04em; }
+.fm-bars { display: flex; flex-direction: column; gap: 6px; }
+.fm-br { display: flex; align-items: center; gap: 8px; }
+.fm-bl { font-size: 8px; color: #6B7280; width: 50px; }
+.fm-bt { flex: 1; height: 12px; background: #F3F4F6; border-radius: 6px; overflow: hidden; }
+.fm-bf { height: 100%; border-radius: 6px; }
 .bfg { background: linear-gradient(90deg, #16A34A, #22C55E); }
 .bfb { background: linear-gradient(90deg, #2563EB, #3B82F6); }
 .bfa { background: linear-gradient(90deg, #D97706, #F59E0B); }
@@ -171,62 +186,62 @@ body { background: #0e0e12; margin: 0; padding: 0; overflow: hidden; }
 
 /* Card 3: Booking — bottom right */
 .fm-booking {
-  width: 320px;
-  right: 90px;
-  bottom: -30px;
+  width: 400px;
+  right: 280px;
+  bottom: 260px;
   transform: rotate(4deg);
 }
-.fm-rows { display: flex; flex-direction: column; gap: 3px; }
+.fm-rows { display: flex; flex-direction: column; gap: 4px; }
 .fm-row {
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 5px 8px;
+  gap: 10px;
+  padding: 6px 10px;
   background: #F8F9FA;
   border-radius: 5px;
-  font-size: 8px;
+  font-size: 10px;
 }
-.fm-row .t { font-weight: 600; color: #1A1A1A; width: 32px; }
+.fm-row .t { font-weight: 600; color: #1A1A1A; width: 36px; }
 .fm-row .n { flex: 1; color: #374151; }
-.fm-row .g { color: #9CA3AF; font-size: 7px; }
-.fm-row .tb { background: #DBEAFE; color: #1E40AF; padding: 2px 5px; border-radius: 3px; font-size: 7px; font-weight: 500; }
-.fm-row .st { padding: 2px 5px; border-radius: 3px; font-size: 7px; font-weight: 500; }
+.fm-row .g { color: #9CA3AF; font-size: 8px; }
+.fm-row .tb { background: #DBEAFE; color: #1E40AF; padding: 2px 6px; border-radius: 3px; font-size: 8px; font-weight: 500; }
+.fm-row .st { padding: 2px 6px; border-radius: 3px; font-size: 8px; font-weight: 500; }
 .st-c { background: #DCFCE7; color: #15803D; }
 .st-p { background: #FEF3C7; color: #92400E; }
 
-/* Card 4: Hotel tickets — bottom left */
+/* Card 4: Hotel — bottom left */
 .fm-hotel {
-  width: 340px;
-  left: 70px;
-  bottom: -25px;
+  width: 420px;
+  left: 260px;
+  bottom: 240px;
   transform: rotate(-5deg);
 }
-.fm-tix { display: flex; flex-direction: column; gap: 4px; }
+.fm-tix { display: flex; flex-direction: column; gap: 5px; }
 .fm-tx {
   display: flex;
   align-items: center;
-  gap: 6px;
-  padding: 5px 8px;
+  gap: 8px;
+  padding: 6px 10px;
   background: #F8F9FA;
   border-radius: 5px;
-  font-size: 8px;
+  font-size: 10px;
 }
-.fm-tx .dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+.fm-tx .dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
 .dot-r { background: #DC2626; }
 .dot-a { background: #D97706; }
 .dot-g { background: #16A34A; }
 .fm-tx .txt { flex: 1; color: #374151; }
-.fm-tx .bd { padding: 2px 6px; border-radius: 3px; font-size: 7px; font-weight: 500; }
+.fm-tx .bd { padding: 2px 7px; border-radius: 3px; font-size: 8px; font-weight: 500; }
 .bd-u { background: #FEE2E2; color: #DC2626; }
 .bd-p { background: #FEF3C7; color: #92400E; }
 .bd-d { background: #DCFCE7; color: #15803D; }
 
-/* ========== CONTENT ========== */
+/* ========== OVERLAYS & CONTENT ========== */
 .vignette {
   position: absolute;
   inset: 0;
   z-index: 2;
-  background: radial-gradient(ellipse at center, rgba(14,14,18,0.35) 0%, rgba(14,14,18,0.88) 100%);
+  background: radial-gradient(ellipse at center, rgba(14,14,18,0.30) 0%, rgba(14,14,18,0.92) 100%);
   pointer-events: none;
 }
 .noise {
@@ -237,17 +252,13 @@ body { background: #0e0e12; margin: 0; padding: 0; overflow: hidden; }
   opacity: 0.03;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
-.banner-content {
+
+.banner-tagline {
   position: relative;
   z-index: 3;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.banner-tagline {
   font-family: 'Instrument Serif', Georgia, serif;
   font-style: italic;
-  font-size: 54px;
+  font-size: 68px;
   font-weight: 400;
   color: #f0f0f2;
   line-height: 1.25;
@@ -256,51 +267,56 @@ body { background: #0e0e12; margin: 0; padding: 0; overflow: hidden; }
 }
 .banner-tagline .accent { color: #E63946; }
 .accent-line {
-  width: 60px;
+  position: relative;
+  z-index: 3;
+  width: 80px;
   height: 1px;
   background: linear-gradient(90deg, transparent, #E63946, transparent);
-  margin-top: 24px;
+  margin-top: 28px;
 }
 .banner-sub {
+  position: relative;
+  z-index: 3;
   font-family: 'DM Sans', sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 300;
-  color: rgba(255,255,255,0.35);
-  margin-top: 16px;
+  color: rgba(255,255,255,0.30);
+  margin-top: 18px;
   letter-spacing: 0.5px;
 }
+
 .logo-mark {
   position: absolute;
-  bottom: 24px;
-  left: 32px;
+  bottom: 36px;
+  left: 48px;
   z-index: 5;
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
 }
 .logo-n {
   font-family: 'Instrument Serif', Georgia, serif;
   font-style: italic;
-  font-size: 22px;
+  font-size: 28px;
   color: #f0f0f2;
 }
 .logo-dot {
-  width: 4px; height: 4px;
+  width: 5px; height: 5px;
   background: #E63946;
   border-radius: 50%;
-  margin-left: -3px;
-  margin-top: 6px;
-  box-shadow: 0 0 8px rgba(230,57,70,0.3);
+  margin-left: -4px;
+  margin-top: 8px;
+  box-shadow: 0 0 10px rgba(230,57,70,0.3);
 }
 .banner-url {
   position: absolute;
-  bottom: 28px;
-  right: 32px;
+  bottom: 42px;
+  right: 48px;
   z-index: 5;
   font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 300;
-  color: rgba(255,255,255,0.22);
+  color: rgba(255,255,255,0.20);
   letter-spacing: 1px;
 }
 </style>
@@ -375,12 +391,13 @@ body { background: #0e0e12; margin: 0; padding: 0; overflow: hidden; }
     </div>
   </div>
 
-  <div class="banner-content">
+  <div class="safe-area">
     <div class="banner-tagline">
       Transforming the operational soul<br>
       <span class="accent">of every growing business.</span>
     </div>
     <div class="accent-line"></div>
+    <div class="banner-sub">natesystem.com</div>
   </div>
 
   <div class="logo-mark">
@@ -388,6 +405,7 @@ body { background: #0e0e12; margin: 0; padding: 0; overflow: hidden; }
     <span class="logo-dot"></span>
   </div>
 
+  <span class="banner-url">natesystem.com</span>
 </div>
 </body>
 </html>

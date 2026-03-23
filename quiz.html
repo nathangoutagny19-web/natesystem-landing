@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nate System — Diagnostic Écosystème</title>
+<meta name="description" content="Faites le diagnostic de votre écosystème digital en 2 minutes. Gratuit, sans engagement.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --bg: #0e0e12;
+  --bg-card: #141418;
+  --bg-elevated: #1a1a20;
+  --grid: rgba(255,255,255,0.04);
+  --text: #f0f0f2;
+  --text-secondary: #8a8a96;
+  --text-muted: #55555f;
+  --red: #c83737;
+  --red-glow: rgba(200,55,55,0.15);
+  --red-subtle: rgba(200,55,55,0.08);
+  --border: rgba(255,255,255,0.06);
+  --border-hover: rgba(255,255,255,0.12);
+  --green: #5cb85c;
+  --serif: 'Instrument Serif', Georgia, serif;
+  --sans: 'DM Sans', -apple-system, sans-serif;
+  --mono: 'JetBrains Mono', monospace;
+}
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--sans);
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+/* Background */
+.grid-bg {
+  position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background-image: linear-gradient(var(--grid) 1px, transparent 1px), linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+.grid-bg::after {
+  content: ''; position: absolute; top: -200px; left: 50%; transform: translateX(-50%);
+  width: 800px; height: 600px;
+  background: radial-gradient(ellipse, var(--red-glow) 0%, transparent 70%); filter: blur(80px);
+}
+.noise {
+  position: fixed; inset: 0; z-index: 1; pointer-events: none; opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.content { position: relative; z-index: 2; min-height: 100vh; display: flex; flex-direction: column; }
+
+/* Nav */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 20px 40px;
+  display: flex; justify-content: space-between; align-items: center;
+  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  background: rgba(14,14,18,0.8); border-bottom: 1px solid var(--border);
+}
+.nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.nav-logo-n { font-family: var(--serif); font-style: italic; font-size: 28px; color: var(--text); line-height: 1; }
+.nav-logo-dot { width: 6px; height: 6px; background: var(--red); border-radius: 50%; margin-left: -6px; margin-top: 10px; }
+.nav-timer { font-family: var(--mono); font-size: 12px; color: var(--text-muted); letter-spacing: 1px; }
+
+/* Progress bar */
+.progress-wrap {
+  position: fixed; top: 68px; left: 0; right: 0; z-index: 99;
+  padding: 0 40px; background: rgba(14,14,18,0.9);
+  border-bottom: 1px solid var(--border);
+}
+.progress-inner { max-width: 640px; margin: 0 auto; padding: 16px 0; }
+.progress-bar-bg {
+  width: 100%; height: 3px; background: var(--border); border-radius: 3px; overflow: hidden;
+}
+.progress-bar-fill {
+  height: 100%; background: var(--red); border-radius: 3px;
+  transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 0 12px var(--red-glow);
+}
+.progress-meta {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-top: 8px;
+}
+.progress-step { font-family: var(--mono); font-size: 11px; color: var(--text-muted); letter-spacing: 1px; }
+.progress-label { font-size: 12px; color: var(--text-secondary); }
+
+/* Quiz container */
+.quiz-container {
+  flex: 1; display: flex; align-items: center; justify-content: center;
+  padding: 140px 24px 60px;
+}
+.quiz-card {
+  width: 100%; max-width: 640px;
+}
+
+/* Question step */
+.step {
+  display: none; opacity: 0; transform: translateY(20px);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.step.active { display: block; opacity: 1; transform: translateY(0); }
+.step-question-number {
+  font-family: var(--mono); font-size: 11px; color: var(--red);
+  letter-spacing: 2px; text-transform: uppercase; margin-bottom: 16px;
+}
+.step-question {
+  font-family: var(--serif); font-style: italic; font-size: clamp(28px, 4vw, 38px);
+  line-height: 1.25; margin-bottom: 12px; color: var(--text);
+}
+.step-sub {
+  font-size: 14px; color: var(--text-secondary); line-height: 1.6;
+  margin-bottom: 36px;
+}
+
+/* Options */
+.options { display: flex; flex-direction: column; gap: 12px; }
+.option {
+  display: flex; align-items: center; gap: 16px;
+  padding: 18px 24px; background: var(--bg-card);
+  border: 1px solid var(--border); border-radius: 12px;
+  cursor: pointer; transition: all 0.25s ease; position: relative; overflow: hidden;
+}
+.option::before {
+  content: ''; position: absolute; inset: 0;
+  background: var(--red-subtle); opacity: 0; transition: opacity 0.25s;
+}
+.option:hover { border-color: var(--border-hover); transform: translateY(-1px); }
+.option:hover::before { opacity: 1; }
+.option.selected {
+  border-color: rgba(200,55,55,0.4);
+  background: rgba(200,55,55,0.06);
+}
+.option.selected::before { opacity: 1; }
+.option-radio {
+  width: 20px; height: 20px; border-radius: 50%;
+  border: 2px solid var(--border-hover); flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.25s ease; position: relative; z-index: 1;
+}
+.option.selected .option-radio {
+  border-color: var(--red); background: var(--red);
+}
+.option.selected .option-radio::after {
+  content: ''; width: 6px; height: 6px; border-radius: 50%; background: #fff;
+}
+.option-content { position: relative; z-index: 1; }
+.option-label {
+  font-size: 15px; font-weight: 500; color: var(--text); line-height: 1.4;
+}
+.option-hint {
+  font-size: 12px; color: var(--text-muted); margin-top: 3px;
+}
+
+/* Intro step */
+.intro-wrap { text-align: center; }
+.intro-label {
+  font-family: var(--mono); font-size: 11px; color: var(--red);
+  letter-spacing: 3px; text-transform: uppercase; margin-bottom: 24px;
+}
+.intro-title {
+  font-family: var(--serif); font-style: italic;
+  font-size: clamp(32px, 5vw, 48px); line-height: 1.2; margin-bottom: 20px;
+}
+.intro-sub {
+  font-size: 16px; color: var(--text-secondary); line-height: 1.7;
+  max-width: 480px; margin: 0 auto 40px;
+}
+.intro-features {
+  display: flex; justify-content: center; gap: 32px; margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+.intro-feature {
+  display: flex; align-items: center; gap: 8px;
+  font-family: var(--mono); font-size: 12px; color: var(--text-muted); letter-spacing: 0.5px;
+}
+.intro-feature-dot { width: 5px; height: 5px; background: var(--red); border-radius: 50%; }
+
+/* CTA button */
+.btn-primary {
+  display: inline-flex; align-items: center; justify-content: center; gap: 12px;
+  padding: 18px 48px; background: var(--red); border: none; border-radius: 100px;
+  color: #fff; font-family: var(--sans); font-size: 16px; font-weight: 600;
+  cursor: pointer; transition: all 0.3s ease; text-decoration: none;
+  box-shadow: 0 4px 24px rgba(200,55,55,0.3);
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 40px rgba(200,55,55,0.4); }
+.btn-primary:active { transform: translateY(0); }
+.btn-primary:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
+.btn-primary .arrow { transition: transform 0.3s; }
+.btn-primary:hover .arrow { transform: translateX(4px); }
+
+/* Result page */
+.result-wrap { text-align: center; }
+.result-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 8px 20px; border-radius: 100px; font-family: var(--mono);
+  font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+  margin-bottom: 24px;
+}
+.result-badge.critical { background: rgba(200,55,55,0.15); color: #e85555; border: 1px solid rgba(200,55,55,0.2); }
+.result-badge.warning { background: rgba(230,160,50,0.12); color: #e6a032; border: 1px solid rgba(230,160,50,0.2); }
+.result-badge.ok { background: rgba(92,184,92,0.12); color: var(--green); border: 1px solid rgba(92,184,92,0.2); }
+.result-badge-dot { width: 6px; height: 6px; border-radius: 50%; }
+.result-badge.critical .result-badge-dot { background: #e85555; animation: pulse-dot 2s infinite; }
+.result-badge.warning .result-badge-dot { background: #e6a032; }
+.result-badge.ok .result-badge-dot { background: var(--green); }
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; } 50% { opacity: 0.3; }
+}
+
+.result-title {
+  font-family: var(--serif); font-style: italic;
+  font-size: clamp(28px, 4vw, 40px); line-height: 1.25; margin-bottom: 16px;
+}
+.result-sub {
+  font-size: 15px; color: var(--text-secondary); line-height: 1.7;
+  max-width: 500px; margin: 0 auto 40px;
+}
+
+/* Score cards */
+.result-insights {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+  margin-bottom: 40px;
+}
+.insight-card {
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px;
+  padding: 24px 16px; text-align: center;
+}
+.insight-value {
+  font-family: var(--serif); font-style: italic; font-size: 32px;
+  color: var(--red); margin-bottom: 6px;
+}
+.insight-label {
+  font-size: 12px; color: var(--text-muted); line-height: 1.4;
+}
+
+/* Result details */
+.result-details {
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px;
+  padding: 32px; margin-bottom: 40px; text-align: left;
+}
+.result-details-title {
+  font-family: var(--mono); font-size: 11px; color: var(--red);
+  letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px;
+}
+.result-detail-item {
+  display: flex; gap: 14px; padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+}
+.result-detail-item:last-child { border-bottom: none; }
+.result-detail-icon { font-size: 16px; flex-shrink: 0; margin-top: 2px; }
+.result-detail-text { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+.result-detail-text strong { color: var(--text); font-weight: 600; }
+
+/* CTA section in result */
+.result-cta-section {
+  background: linear-gradient(135deg, rgba(200,55,55,0.08) 0%, rgba(200,55,55,0.02) 100%);
+  border: 1px solid rgba(200,55,55,0.15); border-radius: 16px;
+  padding: 40px 32px; margin-top: 40px;
+}
+.result-cta-title {
+  font-family: var(--serif); font-style: italic;
+  font-size: 24px; line-height: 1.3; margin-bottom: 12px;
+}
+.result-cta-sub {
+  font-size: 14px; color: var(--text-secondary); line-height: 1.6;
+  margin-bottom: 28px;
+}
+.result-cta-features {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 16px;
+  margin-bottom: 28px;
+}
+.result-cta-feature {
+  display: flex; align-items: center; gap: 6px;
+  font-size: 13px; color: var(--text-secondary);
+}
+.result-cta-feature .check { color: var(--green); font-weight: 700; }
+
+/* Form */
+.form-wrap { margin-top: 40px; }
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+.form-field { display: flex; flex-direction: column; gap: 6px; }
+.form-field.full { grid-column: 1 / -1; }
+.form-label { font-size: 12px; color: var(--text-muted); font-weight: 500; }
+.form-input {
+  padding: 14px 18px; background: var(--bg); border: 1px solid var(--border);
+  border-radius: 10px; color: var(--text); font-family: var(--sans); font-size: 14px;
+  transition: all 0.25s ease; outline: none;
+}
+.form-input::placeholder { color: var(--text-muted); }
+.form-input:focus { border-color: rgba(200,55,55,0.4); box-shadow: 0 0 0 3px rgba(200,55,55,0.08); }
+.form-consent {
+  font-size: 11px; color: var(--text-muted); line-height: 1.5;
+  margin-top: 8px; text-align: center;
+}
+
+/* Footer */
+.quiz-footer {
+  text-align: center; padding: 32px 24px;
+  border-top: 1px solid var(--border);
+}
+.quiz-footer-text {
+  font-size: 12px; color: var(--text-muted);
+}
+.quiz-footer-link { color: var(--text-secondary); text-decoration: none; }
+.quiz-footer-link:hover { color: var(--text); }
+
+/* Back button */
+.back-btn {
+  position: absolute; top: 50%; left: -60px; transform: translateY(-50%);
+  background: none; border: none; color: var(--text-muted);
+  cursor: pointer; font-size: 20px; transition: color 0.2s; padding: 8px;
+}
+.back-btn:hover { color: var(--text); }
+
+/* Mobile */
+@media (max-width: 768px) {
+  nav { padding: 16px 20px; }
+  .progress-wrap { padding: 0 20px; top: 56px; }
+  .quiz-container { padding: 120px 20px 40px; }
+  .result-insights { grid-template-columns: 1fr; gap: 12px; }
+  .form-grid { grid-template-columns: 1fr; }
+  .intro-features { flex-direction: column; align-items: center; gap: 16px; }
+  .back-btn { display: none; }
+  .result-details { padding: 24px 20px; }
+  .result-cta-section { padding: 28px 20px; }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-in { animation: fadeInUp 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
+
+/* Loading shimmer on result */
+.shimmer {
+  background: linear-gradient(90deg, var(--bg-card) 25%, var(--bg-elevated) 50%, var(--bg-card) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+@keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+
+/* Confetti / success state */
+.success-icon {
+  width: 64px; height: 64px; border-radius: 50%;
+  background: rgba(200,55,55,0.1); border: 2px solid rgba(200,55,55,0.3);
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: 28px; margin-bottom: 24px;
+}
+</style>
+</head>
+<body>
+
+<div class="grid-bg"></div>
+<div class="noise"></div>
+<div class="content">
+
+<!-- Nav -->
+<nav>
+  <a href="natesystem.html" class="nav-logo">
+    <span class="nav-logo-n">N</span><span class="nav-logo-dot"></span>
+  </a>
+  <span class="nav-timer" id="timer">~ 2 min</span>
+</nav>
+
+<!-- Progress -->
+<div class="progress-wrap" id="progressWrap" style="display:none;">
+  <div class="progress-inner">
+    <div class="progress-bar-bg">
+      <div class="progress-bar-fill" id="progressFill" style="width:0%"></div>
+    </div>
+    <div class="progress-meta">
+      <span class="progress-step" id="progressStep">Question 1 / 6</span>
+      <span class="progress-label" id="progressLabel"></span>
+    </div>
+  </div>
+</div>
+
+<!-- Quiz -->
+<div class="quiz-container">
+  <div class="quiz-card" id="quizCard">
+
+    <!-- INTRO -->
+    <div class="step active" id="step-intro">
+      <div class="intro-wrap">
+        <div class="intro-label">Diagnostic gratuit</div>
+        <h1 class="intro-title">Votre écosystème digital est-il à la hauteur ?</h1>
+        <p class="intro-sub">6 questions pour identifier ce qui freine votre entreprise — et ce qu’on peut construire pour vous.</p>
+        <div class="intro-features">
+          <div class="intro-feature"><span class="intro-feature-dot"></span>Gratuit</div>
+          <div class="intro-feature"><span class="intro-feature-dot"></span>2 minutes</div>
+          <div class="intro-feature"><span class="intro-feature-dot"></span>Résultat personnalisé</div>
+        </div>
+        <button class="btn-primary" onclick="startQuiz()">
+          Commencer le diagnostic <span class="arrow">→</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Q1: Taille -->
+    <div class="step" id="step-1">
+      <div class="step-question-number">Question 01</div>
+      <h2 class="step-question">Combien de personnes dans votre entreprise ?</h2>
+      <p class="step-sub">On adapte nos solutions à votre taille.</p>
+      <div class="options">
+        <div class="option" onclick="selectOption(1, 0, this)">
+          <div class="option-radio"></div>
+          <div class="option-content">
+            <div class="option-label">Moins de 10</div>
+          </div>
+        </div>
+        <div class="option" onclick="selectOption(1, 1, this)">
+          <div class="option-radio"></div>
+          <div class="option-content">
+            <div class="option-label">10 à 25 personnes</div>
+          </div>
+        </div>
+        <div class="option" onclick="selectOption(1, 2, this)">
+          <div class="option-radio"></div>
+          <div class="option-content">
+            <div class="option-label">25 à 50 personnes</div>
+          </div>
+        </div>
+        <div class="option" onclick="selectOption(1, 3, this)">
+          <div class="option-radio"></div>
+          <div class="option-content">
+            <div class="option-label">50 à 70 personnes</div>
+          </div>
+        </div>
+        <div class="option" onclick="selectOption(1, 4, this)">
+          <div class="option-radio"></div>
+          <div class="option-content">
+            <div class="option-label">Plus de 70</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q2: Outils -->
+    <div class="step" id="step-2">
+      <div class="step-question-number">Question 02</div>
+      <h2 class="step-question">Combien d’outils digitaux utilisez-vous au quotidien ?</h2>
+      <p class="step-sub">CRM, compta, gestion projet, emails, tableurs, etc.</p>
+      <div class="options">
+        <div class="option" onclick="selectOption(2, 0, this)">
+          <div class="option-radio"></div>
+          <div class="option-content">
+            <div class="option-label">1 à 3 outils</div>
+            <div class="option-hint">Le strict minimum</div>
+          </div>
+        </div>
+        <div class="option" onclick="selectOption(2, 1, this)">
+          <div class="option-radio"></div>
+          <div class="option-content">
+            <div class="option-label">4 à 7 outils</div>
+            <div class="option-hint">Ça commence à s’empiler</div>
+          </div>
+        </div>
+        <div class="option" onclick="selectOption(2, 2, this)">
+          <div class="option-radio"></div>
+          <div class="option-content">
+            <div class="option-label">8 à 12 outils</div>
+            <div class="option-hint">Beaucoup de frictions possibles</div>
+          </div>
+        </div>
+        <div class="option" onclick="selectOption(2, 3, this)">
+          <div class="option-radio"></div>
+          <div class="option-content">
+            <div class="option-label">Plus de 12 outils</div>
+            <div class="option-hint">La jungle</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q3: Problème -->
+    <div class="step" id="step-3">
+      <div class="step-question-number">Question 03</div>
+      <h2 class="step-question">Quel est votre plus gros frein aujourd’hui ?</h2>
+      <p class="step-sub">Choisissez celui qui vous parle le plus.</p>
+      <div class="options">
+        <div class="option" onclick="selectOption(3, 0, this)">
+          <div class="option-radio"></div>
+          <div class="option-content">
+            <div class="option-label">Les données sont éparpillées entre les outils</div>
+            <div class="option-hint">Rien n’est centralisé, on perd l’info</div>
+          </div>
+        </div>
+        <div class="option" onclick="selectOption(3, 1, this)">
+          <div class="option-radio"></div>
+          <div class="option-content">
+            <div class="option-label">Les process manuels ralentissent tout</div>
+            <div class="option-hint">Trop de copier-coller, trop de saisies</div>
+          </div>
+        </div>
+        <div class="option" onclick="selectOption(3, 2, this)">
+          <div class="option-radio"></div>
+          <div class="option-content">
+            <div class="option-label">On forme en permanence sur trop d’outils</div>
+            <div class="option-hint">Chaque nouveau venu rame pendant des semaines</div>
+          </div>
+        </div>
+        <div class="option" onclick="selectOption(3, 3, this)">
+          <div class="option-radio"></div>
+          <div class="option-content">
+            <div class="option-label">On n’a pas de vision claire sur l’activité</div>
+            <div class="option-hint">Pas de dashboard fiable, décisions au feeling</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q4: Temps perdu -->
+    <div class="step" id="step-4">
+      <div class="step-question-number">Question 04</div>
+      <h2 class="step-question">Combien de temps perdu par semaine sur des frictions outils ?</h2>
+      <p class="step-sub">Estimation : copier-coller, recherches, double saisie, bugs…</p>
+      <div class="options">
+        <div class="option" onclick="selectOption(4, 0, this)">
+          <div class="option-radio"></div>
+          <div class="option-content">
+            <div class="option-label">Moins de 2 heures</div>
+          </div>
+        </div>
+        <div class="option" onclick="selectOption(4, 1, this)">
+          <div class="option-radio"></div>
+          <div class="option-content">
+            <div class="option-label">2 à 5 heures</div>
+            <div class="option-hint">Soit presque une demi-journée</div>
+          </div>
+        </div>
+        <div class="option" onclick="selectOption(4, 2, this)">
+          <div class="option-radio"></div>
+          <div class="option-content">
+            <div class="option-label">5 à 10 heures</div>
+            <div class="option-hint">Plus d’une journée entière par semaine</div>
+          </div>
+        </div>
+        <div class="option" onclick="selectOption(4, 3, this)">
+          <div class="option-radio"></div>
+          <div class="option-content">
+            <div class="option-label">Plus de 10 heures</div>
+            <div class="option-hint">C’est critique</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q5: Tentatives -->
+    <div class="step" id="step-5">
+      <div class="step-question-number">Question 05</div>
+      <h2 class="step-question">Avez-vous déjà essayé de résoudre ce problème ?</h2>
+      <p class="step-sub">Il n’y a pas de mauvaise réponse.</p>
+      <div class="options">
+        <div class="option" onclick="selectOption(5, 0, this)">
+          <div class="option-radio"></div>
+          <div class="option-content">
+            <div class="option-label">Non, on ne savait pas par où commencer</div>
+          </div>
+        </div>
+        <div class="option" onclick="selectOption(5, 1, this)">
+          <div class="option-radio"></div>
+          <div class="option-content">
+            <div class="option-label">Oui, en bricolant en interne</div>
+            <div class="option-hint">Zapier, macros, bidouilles maison</div>
+          </div>
+        </div>
+        <div class="option" onclick="selectOption(5, 2, this)">
+          <div class="option-radio"></div>
+          <div class="option-content">
+            <div class="option-label">Oui, avec un prestataire</div>
+            <div class="option-hint">Intégrateur, développeur, agence…</div>
+          </div>
+        </div>
+        <div class="option" onclick="selectOption(5, 3, this)">
+          <div class="option-radio"></div>
+          <div class="option-content">
+            <div class="option-label">On y réfléchit mais rien de concret</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q6: Priorité -->
+    <div class="step" id="step-6">
+      <div class="step-question-number">Question 06</div>
+      <h2 class="step-question">Résoudre ce problème, c’est une priorité ?</h2>
+      <p class="step-sub">On veut comprendre votre timeline.</p>
+      <div class="options">
+        <div class="option" onclick="selectOption(6, 0, this)">
+          <div class="option-radio"></div>
+          <div class="option-content">
+            <div class="option-label">C’est urgent — on perd de l’argent chaque semaine</div>
+          </div>
+        </div>
+        <div class="option" onclick="selectOption(6, 1, this)">
+          <div class="option-radio"></div>
+          <div class="option-content">
+            <div class="option-label">Dans les 30 prochains jours</div>
+          </div>
+        </div>
+        <div class="option" onclick="selectOption(6, 2, this)">
+          <div class="option-radio"></div>
+          <div class="option-content">
+            <div class="option-label">Dans les 3 prochains mois</div>
+          </div>
+        </div>
+        <div class="option" onclick="selectOption(6, 3, this)">
+          <div class="option-radio"></div>
+          <div class="option-content">
+            <div class="option-label">Pas encore décidé</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Loading -->
+    <div class="step" id="step-loading">
+      <div class="intro-wrap">
+        <div class="success-icon">⚔</div>
+        <h2 class="intro-title">Analyse en cours...</h2>
+        <p class="intro-sub">On génère votre diagnostic personnalisé.</p>
+        <div style="max-width:300px; margin: 0 auto;">
+          <div class="progress-bar-bg" style="height:4px;">
+            <div class="progress-bar-fill" id="loadingBar" style="width:0%; transition: width 2s ease;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RESULT -->
+    <div class="step" id="step-result">
+      <div class="result-wrap">
+        <div class="result-badge" id="resultBadge">
+          <span class="result-badge-dot"></span>
+          <span id="resultBadgeText"></span>
+        </div>
+        <h2 class="result-title" id="resultTitle"></h2>
+        <p class="result-sub" id="resultSub"></p>
+
+        <div class="result-insights" id="resultInsights"></div>
+
+        <div class="result-details" id="resultDetails">
+          <div class="result-details-title">Votre diagnostic</div>
+          <div id="resultDetailItems"></div>
+        </div>
+
+        <div class="result-cta-section">
+          <h3 class="result-cta-title" id="resultCtaTitle"></h3>
+          <p class="result-cta-sub" id="resultCtaSub"></p>
+          <div class="result-cta-features">
+            <div class="result-cta-feature"><span class="check">✓</span> Gratuit</div>
+            <div class="result-cta-feature"><span class="check">✓</span> 30 min</div>
+            <div class="result-cta-feature"><span class="check">✓</span> Sans engagement</div>
+          </div>
+
+          <div class="form-wrap">
+            <div class="form-grid">
+              <div class="form-field">
+                <label class="form-label">Prénom</label>
+                <input type="text" class="form-input" id="fieldName" placeholder="Nathan">
+              </div>
+              <div class="form-field">
+                <label class="form-label">Entreprise</label>
+                <input type="text" class="form-input" id="fieldCompany" placeholder="Votre entreprise">
+              </div>
+              <div class="form-field full">
+                <label class="form-label">Email professionnel</label>
+                <input type="email" class="form-input" id="fieldEmail" placeholder="nathan@entreprise.com">
+              </div>
+              <div class="form-field full">
+                <label class="form-label">Téléphone (optionnel)</label>
+                <input type="tel" class="form-input" id="fieldPhone" placeholder="06 00 00 00 00">
+              </div>
+            </div>
+            <button class="btn-primary" style="width:100%; margin-top:16px;" onclick="submitForm()" id="submitBtn">
+              Réserver mon audit gratuit <span class="arrow">→</span>
+            </button>
+            <p class="form-consent">En soumettant ce formulaire, vous acceptez d’être contacté par Nate System. Aucun spam, promis.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SUCCESS -->
+    <div class="step" id="step-success">
+      <div class="intro-wrap">
+        <div class="success-icon" style="background: rgba(92,184,92,0.1); border-color: rgba(92,184,92,0.3);">✓</div>
+        <h2 class="intro-title">C’est envoyé.</h2>
+        <p class="intro-sub">On revient vers vous dans les 24h avec un créneau pour votre audit gratuit. Vérifiez vos emails (et vos spams).</p>
+        <a href="natesystem.html" class="btn-primary" style="text-decoration:none;">
+          Retour au site <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Footer -->
+<div class="quiz-footer">
+  <p class="quiz-footer-text">
+    <a href="natesystem.html" class="quiz-footer-link">Nate System</a> · Diagnostic Écosystème
+  </p>
+</div>
+
+</div>
+
+<script>
+// State
+let currentStep = 'intro';
+let answers = {};
+const totalQuestions = 6;
+
+// Scoring weights
+const scoring = {
+  1: [0, 2, 3, 2, 0],    // team size: <10=disq, 10-25=good, 25-50=ideal, 50-70=good, >70=disq
+  2: [1, 2, 3, 3],        // tools: more = more pain
+  3: [3, 3, 2, 3],        // problem: all high, training slightly less
+  4: [1, 2, 3, 3],        // time lost: more = worse
+  5: [2, 3, 3, 1],        // attempts: tried=urgent, nothing=cold
+  6: [3, 3, 2, 1]         // priority: urgent=hot
+};
+
+function startQuiz() {
+  document.getElementById('progressWrap').style.display = 'block';
+  goToStep(1);
+}
+
+function goToStep(step) {
+  // Hide current
+  const allSteps = document.querySelectorAll('.step');
+  allSteps.forEach(s => { s.classList.remove('active'); s.style.display = 'none'; });
+
+  const target = typeof step === 'string' ? document.getElementById('step-' + step) : document.getElementById('step-' + step);
+  if (!target) return;
+
+  // Show with animation
+  setTimeout(() => {
+    target.style.display = 'block';
+    requestAnimationFrame(() => {
+      target.classList.add('active');
+    });
+  }, 100);
+
+  currentStep = step;
+
+  // Update progress
+  if (typeof step === 'number') {
+    const pct = ((step - 1) / totalQuestions) * 100;
+    document.getElementById('progressFill').style.width = pct + '%';
+    document.getElementById('progressStep').textContent = 'Question ' + step + ' / ' + totalQuestions;
+
+    const labels = ['', 'Profil', 'Outils', 'Friction', 'Impact', 'Historique', 'Priorité'];
+    document.getElementById('progressLabel').textContent = labels[step] || '';
+  }
+}
+
+function selectOption(question, value, el) {
+  // Visual selection
+  const siblings = el.parentElement.querySelectorAll('.option');
+  siblings.forEach(s => s.classList.remove('selected'));
+  el.classList.add('selected');
+
+  answers[question] = value;
+
+  // Auto-advance after 400ms
+  setTimeout(() => {
+    if (question < totalQuestions) {
+      goToStep(question + 1);
+    } else {
+      showLoading();
+    }
+  }, 400);
+}
+
+function showLoading() {
+  document.getElementById('progressFill').style.width = '100%';
+  document.getElementById('progressStep').textContent = 'Analyse';
+  document.getElementById('progressLabel').textContent = '';
+  goToStep('loading');
+
+  setTimeout(() => {
+    document.getElementById('loadingBar').style.width = '100%';
+  }, 100);
+
+  setTimeout(() => {
+    showResult();
+  }, 2200);
+}
+
+function showResult() {
+  // Calculate score
+  let score = 0;
+  let maxScore = 0;
+  for (let q = 1; q <= totalQuestions; q++) {
+    const val = answers[q];
+    if (val !== undefined && scoring[q]) {
+      score += scoring[q][val] || 0;
+    }
+    if (scoring[q]) {
+      maxScore += Math.max(...scoring[q]);
+    }
+  }
+
+  const pct = Math.round((score / maxScore) * 100);
+
+  // Determine profile
+  let profile;
+  if (pct >= 70) {
+    profile = 'critical';
+  } else if (pct >= 45) {
+    profile = 'warning';
+  } else {
+    profile = 'ok';
+  }
+
+  // Disqualification check
+  const teamSize = answers[1];
+  const isDisqualified = (teamSize === 0 || teamSize === 4);
+
+  // Build result
+  const badge = document.getElementById('resultBadge');
+  const badgeText = document.getElementById('resultBadgeText');
+  const title = document.getElementById('resultTitle');
+  const sub = document.getElementById('resultSub');
+  const insights = document.getElementById('resultInsights');
+  const details = document.getElementById('resultDetailItems');
+  const ctaTitle = document.getElementById('resultCtaTitle');
+  const ctaSub = document.getElementById('resultCtaSub');
+
+  if (isDisqualified) {
+    badge.className = 'result-badge ok';
+    badgeText.textContent = 'Hors cible';
+    title.textContent = 'On n’est peut-être pas le bon fit.';
+    sub.textContent = 'Nate System est conçu pour les TPE/PME de 10 à 70 employés. Votre structure ne correspond pas à notre zone d’expertise, mais on peut quand même échanger.';
+    ctaTitle.textContent = 'Échangeons quand même.';
+    ctaSub.textContent = 'On pourra peut-être vous orienter vers la bonne solution.';
+  } else if (profile === 'critical') {
+    badge.className = 'result-badge critical';
+    badgeText.textContent = 'Zone critique';
+    title.textContent = 'Votre écosystème vous coûte cher.';
+    sub.textContent = 'Chaque semaine, vous perdez du temps et de l’argent à cause d’outils qui ne communiquent pas. C’est exactement ce qu’on règle.';
+    ctaTitle.textContent = 'On règle ça en 5 semaines.';
+    ctaSub.textContent = 'Réservez votre audit gratuit. On cartographie tout, on vous montre exactement quoi construire.';
+  } else if (profile === 'warning') {
+    badge.className = 'result-badge warning';
+    badgeText.textContent = 'Potentiel inexploité';
+    title.textContent = 'Vous avez de la marge de progression.';
+    sub.textContent = 'Votre écosystème fonctionne, mais il y a des frictions invisibles qui freinent votre croissance.';
+    ctaTitle.textContent = 'Découvrez ce qu’on peut améliorer.';
+    ctaSub.textContent = 'Un audit gratuit de 30 min pour identifier les quick wins et les leviers de croissance.';
+  } else {
+    badge.className = 'result-badge ok';
+    badgeText.textContent = 'En bonne voie';
+    title.textContent = 'Votre écosystème tient la route.';
+    sub.textContent = 'Pas de problème urgent, mais on peut toujours optimiser. Parlons-en si vous voulez passer au niveau supérieur.';
+    ctaTitle.textContent = 'Envie d’aller plus loin ?';
+    ctaSub.textContent = 'Un échange de 30 min pour explorer les opportunités d’optimisation.';
+  }
+
+  // Insights cards
+  const toolsLabels = ['1-3', '4-7', '8-12', '12+'];
+  const timeLabels = ['< 2h', '2-5h', '5-10h', '10h+'];
+  const priorityLabels = ['Urgent', '30 jours', '3 mois', 'Indécis'];
+
+  insights.innerHTML = '<div class="insight-card"><div class="insight-value">' + (toolsLabels[answers[2]] || '?') + '</div><div class="insight-label">Outils utilisés</div></div>' +
+    '<div class="insight-card"><div class="insight-value">' + (timeLabels[answers[4]] || '?') + '</div><div class="insight-label">Temps perdu / semaine</div></div>' +
+    '<div class="insight-card"><div class="insight-value">' + pct + '%</div><div class="insight-label">Score de friction</div></div>';
+
+  // Detail items
+  const problemTexts = [
+    'Vos données sont fragmentées entre vos outils. Résultat : perte d’info, doublons, décisions biaisées.',
+    'Vos process reposent sur du manuel. Chaque copier-coller est une source d’erreur et de perte de temps.',
+    'Trop d’outils = trop de formation. Vos équipes perdent en efficacité à chaque nouvel onboarding.',
+    'Sans dashboard centralisé, vous pilotez au feeling. C’est un frein majeur à la croissance.'
+  ];
+  const attemptTexts = [
+    'Vous n’avez pas encore essayé de structurer votre écosystème. C’est le bon moment pour poser les bases.',
+    'Le bricolage interne atteint ses limites. Il est temps de passer à une infrastructure pensée pour durer.',
+    'Vous avez déjà travaillé avec un prestataire. On peut reprendre là où ils se sont arrêtés — ou repartir de zéro.',
+    'Vous êtes en phase de réflexion. C’est le moment idéal pour un audit gratuit.'
+  ];
+
+  let detailsHTML = '';
+  if (!isDisqualified) {
+    detailsHTML += '<div class="result-detail-item"><span class="result-detail-icon">⚠</span><div class="result-detail-text"><strong>Problème principal :</strong> ' + (problemTexts[answers[3]] || '') + '</div></div>';
+    detailsHTML += '<div class="result-detail-item"><span class="result-detail-icon">�</span><div class="result-detail-text"><strong>Historique :</strong> ' + (attemptTexts[answers[5]] || '') + '</div></div>';
+
+    if (answers[4] >= 2) {
+      const hoursPerWeek = answers[4] === 2 ? '5-10' : '10+';
+      detailsHTML += '<div class="result-detail-item"><span class="result-detail-icon">⏱</span><div class="result-detail-text"><strong>Impact estimé :</strong> ' + hoursPerWeek + 'h perdues par semaine, soit <strong>' + (answers[4] === 2 ? '260-520' : '520+') + 'h par an</strong>. C’est l’équivalent d’un poste à temps partiel.</div></div>';
+    }
+  }
+  details.innerHTML = detailsHTML;
+
+  // Hide progress, show result
+  document.getElementById('progressWrap').style.display = 'none';
+  goToStep('result');
+
+  // Scroll to top
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function submitForm() {
+  const name = document.getElementById('fieldName').value.trim();
+  const company = document.getElementById('fieldCompany').value.trim();
+  const email = document.getElementById('fieldEmail').value.trim();
+  const phone = document.getElementById('fieldPhone').value.trim();
+
+  if (!name || !email) {
+    // Shake the button
+    const btn = document.getElementById('submitBtn');
+    btn.style.animation = 'none';
+    btn.offsetHeight;
+    btn.style.animation = 'shake 0.4s ease';
+    return;
+  }
+
+  // Collect all data
+  const data = {
+    name, company, email, phone,
+    answers,
+    score: calculateScore(),
+    timestamp: new Date().toISOString()
+  };
+
+  // Log to console (replace with actual webhook/API later)
+  console.log('QUIZ_SUBMISSION', JSON.stringify(data));
+
+  // Show success
+  goToStep('success');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function calculateScore() {
+  let score = 0;
+  let maxScore = 0;
+  for (let q = 1; q <= totalQuestions; q++) {
+    const val = answers[q];
+    if (val !== undefined && scoring[q]) {
+      score += scoring[q][val] || 0;
+    }
+    if (scoring[q]) {
+      maxScore += Math.max(...scoring[q]);
+    }
+  }
+  return Math.round((score / maxScore) * 100);
+}
+</script>
+</body>
+</html>

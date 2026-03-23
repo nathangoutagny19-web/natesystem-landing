@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>LinkedIn Company Logo Export</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,700;1,300;1,700&display=swap" rel="stylesheet">
+<style>
+  body { margin: 0; background: #1a1a1a; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; font-family: sans-serif; }
+  canvas { border: 1px solid #222; }
+  button { margin-top: 24px; padding: 14px 40px; background: #C9A84C; color: #0A0A0A; border: none; font-size: 16px; font-weight: 600; cursor: pointer; letter-spacing: 1px; }
+  button:hover { background: #d4b65e; }
+</style>
+</head>
+<body>
+<canvas id="c" width="400" height="400"></canvas>
+<button id="dl">Download PNG</button>
+<script>
+document.fonts.ready.then(() => {
+  const c = document.getElementById('c');
+  const ctx = c.getContext('2d');
+
+  // Background
+  ctx.fillStyle = '#141414';
+  ctx.fillRect(0, 0, 400, 400);
+
+  // Grid lines — subtle
+  ctx.strokeStyle = 'rgba(255, 255, 255, 0.06)';
+  ctx.lineWidth = 0.5;
+  const step = 50;
+  for (let x = step; x < 400; x += step) {
+    ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, 400); ctx.stroke();
+  }
+  for (let y = step; y < 400; y += step) {
+    ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(400, y); ctx.stroke();
+  }
+
+  // N — white italic
+  ctx.fillStyle = '#FAF7F2';
+  ctx.font = 'italic 700 220px "Cormorant Garamond"';
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  ctx.fillText('N', 180, 205);
+
+  // Champagne dot
+  ctx.beginPath();
+  ctx.arc(300, 215, 10, 0, Math.PI * 2);
+  ctx.fillStyle = '#C9A84C';
+  ctx.fill();
+});
+
+document.getElementById('dl').addEventListener('click', () => {
+  const a = document.createElement('a');
+  a.download = 'linkedin-logo-400x400.png';
+  a.href = document.getElementById('c').toDataURL('image/png');
+  a.click();
+});
+</script>
+</body>
+</html>
