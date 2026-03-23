@@ -6,7 +6,7 @@ import Link from 'next/link'
 import { useLang } from '@/components/providers/LangProvider'
 import { CAL_LINK } from '@/lib/constants'
 
-/* ——— SVG Icons (monoline, 20×20, brand-coherent) ——— */
+/* ——— SVG Icons (monoline, 18px, brand-coherent) ——— */
 const icons = {
   calculator: (
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -44,6 +44,20 @@ const icons = {
       <polyline points="9 12 11 14 15 10" />
     </svg>
   ),
+  caseStudy: (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+      <polyline points="14 2 14 8 20 8" />
+      <line x1="16" y1="13" x2="8" y2="13" />
+      <line x1="16" y1="17" x2="8" y2="17" />
+    </svg>
+  ),
+  blog: (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 20h9" />
+      <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5z" />
+    </svg>
+  ),
 }
 
 export default function Nav() {
@@ -52,6 +66,7 @@ export default function Nav() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [langOpen, setLangOpen] = useState(false)
   const [mobileToolsOpen, setMobileToolsOpen] = useState(false)
+  const [mobileResourcesOpen, setMobileResourcesOpen] = useState(false)
   const langRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -69,6 +84,10 @@ export default function Nav() {
     document.addEventListener('click', handleClick)
     return () => document.removeEventListener('click', handleClick)
   }, [])
+
+  const pillBg = scrolled ? 'rgba(14,14,18,0.85)' : 'rgba(14,14,18,0.4)'
+  const pillBorder = scrolled ? '1px solid rgba(255,255,255,0.1)' : '1px solid rgba(255,255,255,0.06)'
+  const pillShadow = scrolled ? '0 8px 40px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.03) inset' : 'none'
 
   return (
     <>
@@ -103,26 +122,27 @@ export default function Nav() {
 
       {/* Center nav pill */}
       <nav
-        className="fixed z-[100] hidden md:flex items-center gap-1 rounded-full transition-all duration-500"
+        className="fixed z-[100] hidden md:flex items-center gap-0 rounded-full transition-all duration-500"
         style={{
           top: scrolled ? '12px' : '16px',
           left: '50%',
           transform: 'translateX(-50%)',
           backdropFilter: 'blur(24px)',
           WebkitBackdropFilter: 'blur(24px)',
-          background: scrolled ? 'rgba(14,14,18,0.85)' : 'rgba(14,14,18,0.4)',
-          border: scrolled ? '1px solid rgba(255,255,255,0.1)' : '1px solid rgba(255,255,255,0.06)',
-          boxShadow: scrolled ? '0 8px 40px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.03) inset' : 'none',
+          background: pillBg,
+          border: pillBorder,
+          boxShadow: pillShadow,
+          padding: '4px',
         }}
       >
         <NavLink href="/#prestations">{t('nav.agency')}</NavLink>
-        <span className="w-px h-4" style={{ background: 'var(--border)' }} />
+        <Separator />
 
-        {/* Tools — mega dropdown trigger */}
+        {/* Tools — mega dropdown */}
         <div className="mega-trigger">
           <Link href="/tools" className="nav-link">{t('nav.tools')}</Link>
           <div className="mega-panel">
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-2 gap-x-6 gap-y-1">
               <div>
                 <p className="mega-col-title">{t('mega.interactive')}</p>
                 <MegaItem href="/tools/saas-calculator" icon={icons.calculator} title={t('tools.calculator.title')} desc={t('tools.calculator.desc')} />
@@ -138,10 +158,18 @@ export default function Nav() {
           </div>
         </div>
 
-        <span className="w-px h-4" style={{ background: 'var(--border)' }} />
-        <NavLink href="/resources">{t('nav.resources')}</NavLink>
+        <Separator />
 
-        <span className="w-px h-4" style={{ background: 'var(--border)' }} />
+        {/* Resources — mega dropdown */}
+        <div className="mega-trigger">
+          <Link href="/resources" className="nav-link">{t('nav.resources')}</Link>
+          <div className="mega-panel mega-panel-sm">
+            <MegaItem href="/resources#case-studies" icon={icons.caseStudy} title={t('resources.caseStudies')} desc={t('resources.caseStudies.desc')} />
+            <MegaItem href="/resources#blog" icon={icons.blog} title={t('resources.blog')} desc={t('resources.blog.desc')} />
+          </div>
+        </div>
+
+        <Separator />
 
         {/* CTA */}
         <a href={CAL_LINK} target="_blank" rel="noopener noreferrer" className="nav-cta">
@@ -158,8 +186,8 @@ export default function Nav() {
           right: '24px',
           backdropFilter: 'blur(24px)',
           WebkitBackdropFilter: 'blur(24px)',
-          background: scrolled ? 'rgba(14,14,18,0.85)' : 'rgba(14,14,18,0.4)',
-          border: scrolled ? '1px solid rgba(255,255,255,0.1)' : '1px solid rgba(255,255,255,0.06)',
+          background: pillBg,
+          border: pillBorder,
           boxShadow: scrolled ? '0 8px 40px rgba(0,0,0,0.4)' : 'none',
         }}
       >
@@ -167,7 +195,7 @@ export default function Nav() {
           <button className="lang-current" onClick={() => setLangOpen(!langOpen)}>
             <span className={`lang-flag lang-flag-${lang}`} />
             <span className="font-medium">{lang.toUpperCase()}</span>
-            <svg className="lang-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
               <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
             </svg>
           </button>
@@ -196,18 +224,14 @@ export default function Nav() {
         onClick={() => setMenuOpen(!menuOpen)}
         aria-label="Menu"
       >
-        <span className="block h-[1px] w-6 transition-all duration-300" style={{
-          backgroundColor: 'var(--text)',
-          transform: menuOpen ? 'rotate(45deg) translateY(6px)' : 'none',
-        }} />
-        <span className="block h-[1px] w-6 transition-all duration-300" style={{
-          backgroundColor: 'var(--text)',
-          opacity: menuOpen ? 0 : 1,
-        }} />
-        <span className="block h-[1px] w-6 transition-all duration-300" style={{
-          backgroundColor: 'var(--text)',
-          transform: menuOpen ? 'rotate(-45deg) translateY(-6px)' : 'none',
-        }} />
+        {[0, 1, 2].map(i => (
+          <span key={i} className="block h-[1px] w-6 transition-all duration-300" style={{
+            backgroundColor: 'var(--text)',
+            ...(i === 0 && menuOpen ? { transform: 'rotate(45deg) translateY(6px)' } : {}),
+            ...(i === 1 ? { opacity: menuOpen ? 0 : 1 } : {}),
+            ...(i === 2 && menuOpen ? { transform: 'rotate(-45deg) translateY(-6px)' } : {}),
+          }} />
+        ))}
       </button>
 
       {/* Mobile menu */}
@@ -226,50 +250,42 @@ export default function Nav() {
           <MobileLink href="/#prestations" onClick={() => setMenuOpen(false)}>{t('nav.agency')}</MobileLink>
 
           {/* Tools accordion */}
-          <button
-            className="py-3 text-sm font-light w-full text-left flex justify-between items-center"
-            style={{ fontFamily: 'var(--font-sans)', color: 'var(--text-secondary)', background: 'none', border: 'none', borderBottom: '1px solid var(--border)' }}
-            onClick={() => setMobileToolsOpen(!mobileToolsOpen)}
+          <MobileAccordion
+            label={t('nav.tools')}
+            open={mobileToolsOpen}
+            onToggle={() => setMobileToolsOpen(!mobileToolsOpen)}
           >
-            {t('nav.tools')}
-            <span style={{ transition: 'transform 0.3s', transform: mobileToolsOpen ? 'rotate(180deg)' : 'none', color: 'var(--text-muted)', fontSize: 12 }}>
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" /></svg>
-            </span>
-          </button>
-          {mobileToolsOpen && (
-            <div className="pl-4 flex flex-col gap-0">
-              <MobileLink href="/tools/saas-calculator" onClick={() => setMenuOpen(false)}>{t('tools.calculator.title')}</MobileLink>
-              <MobileLink href="/tools/ai-readiness" onClick={() => setMenuOpen(false)}>{t('tools.quiz.title')}</MobileLink>
-              <MobileLink href="/tools" onClick={() => setMenuOpen(false)}>{t('tools.title')}</MobileLink>
-            </div>
-          )}
+            <MobileLink href="/tools/saas-calculator" onClick={() => setMenuOpen(false)}>{t('tools.calculator.title')}</MobileLink>
+            <MobileLink href="/tools/ai-readiness" onClick={() => setMenuOpen(false)}>{t('tools.quiz.title')}</MobileLink>
+            <MobileLink href="/tools" onClick={() => setMenuOpen(false)}>{t('tools.title')}</MobileLink>
+          </MobileAccordion>
 
-          <MobileLink href="/resources" onClick={() => setMenuOpen(false)}>{t('nav.resources')}</MobileLink>
+          {/* Resources accordion */}
+          <MobileAccordion
+            label={t('nav.resources')}
+            open={mobileResourcesOpen}
+            onToggle={() => setMobileResourcesOpen(!mobileResourcesOpen)}
+          >
+            <MobileLink href="/resources#case-studies" onClick={() => setMenuOpen(false)}>{t('resources.caseStudies')}</MobileLink>
+            <MobileLink href="/resources#blog" onClick={() => setMenuOpen(false)}>{t('resources.blog')}</MobileLink>
+          </MobileAccordion>
 
           {/* Lang switcher mobile */}
           <div className="flex gap-2 mt-4">
-            <button
-              className="px-4 py-2 rounded-lg text-sm font-medium transition-all"
-              style={{
-                background: lang === 'en' ? 'var(--accent-subtle)' : 'transparent',
-                color: lang === 'en' ? 'var(--accent)' : 'var(--text-muted)',
-                border: `1px solid ${lang === 'en' ? 'var(--accent)' : 'var(--border)'}`,
-              }}
-              onClick={() => setLang('en')}
-            >
-              <span className="lang-flag lang-flag-en mr-2" style={{ display: 'inline-block' }} /> EN
-            </button>
-            <button
-              className="px-4 py-2 rounded-lg text-sm font-medium transition-all"
-              style={{
-                background: lang === 'fr' ? 'var(--accent-subtle)' : 'transparent',
-                color: lang === 'fr' ? 'var(--accent)' : 'var(--text-muted)',
-                border: `1px solid ${lang === 'fr' ? 'var(--accent)' : 'var(--border)'}`,
-              }}
-              onClick={() => setLang('fr')}
-            >
-              <span className="lang-flag lang-flag-fr mr-2" style={{ display: 'inline-block' }} /> FR
-            </button>
+            {(['en', 'fr'] as const).map(l => (
+              <button
+                key={l}
+                className="px-4 py-2 rounded-lg text-sm font-medium transition-all"
+                style={{
+                  background: lang === l ? 'var(--accent-subtle)' : 'transparent',
+                  color: lang === l ? 'var(--accent)' : 'var(--text-muted)',
+                  border: `1px solid ${lang === l ? 'var(--accent)' : 'var(--border)'}`,
+                }}
+                onClick={() => setLang(l)}
+              >
+                <span className={`lang-flag lang-flag-${l} mr-2`} style={{ display: 'inline-block' }} /> {l.toUpperCase()}
+              </button>
+            ))}
           </div>
 
           <a
@@ -287,12 +303,14 @@ export default function Nav() {
   )
 }
 
+/* ——— Sub-components ——— */
+
+function Separator() {
+  return <span className="w-px h-4 mx-0.5" style={{ background: 'var(--border)' }} />
+}
+
 function NavLink({ href, children }: { href: string; children: React.ReactNode }) {
-  return (
-    <Link href={href} className="nav-link">
-      {children}
-    </Link>
-  )
+  return <Link href={href} className="nav-link">{children}</Link>
 }
 
 function MegaItem({ href, icon, title, desc }: { href: string; icon: React.ReactNode; title: string; desc: string }) {
@@ -304,6 +322,24 @@ function MegaItem({ href, icon, title, desc }: { href: string; icon: React.React
         <p className="mega-item-desc">{desc}</p>
       </div>
     </Link>
+  )
+}
+
+function MobileAccordion({ label, open, onToggle, children }: { label: string; open: boolean; onToggle: () => void; children: React.ReactNode }) {
+  return (
+    <>
+      <button
+        className="py-3 text-sm font-light w-full text-left flex justify-between items-center"
+        style={{ fontFamily: 'var(--font-sans)', color: 'var(--text-secondary)', background: 'none', border: 'none', borderBottom: '1px solid var(--border)' }}
+        onClick={onToggle}
+      >
+        {label}
+        <span style={{ transition: 'transform 0.3s', transform: open ? 'rotate(180deg)' : 'none', color: 'var(--text-muted)' }}>
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" /></svg>
+        </span>
+      </button>
+      {open && <div className="pl-4 flex flex-col">{children}</div>}
+    </>
   )
 }
 
