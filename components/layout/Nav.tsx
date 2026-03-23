@@ -128,7 +128,7 @@ export default function Nav() {
               <div className="nav-mega nav-mega-sm">
                 <div className="nav-mega-inner nav-mega-inner-single">
                   <MegaItem href="/resources#case-studies" icon={icons.caseStudy} title={t('resources.caseStudies')} desc={t('resources.caseStudies.desc')} />
-                  <MegaItem href="/resources#blog" icon={icons.blog} title={t('resources.blog')} desc={t('resources.blog.desc')} />
+                  <MegaItem href="/blog" icon={icons.blog} title={t('resources.blog')} desc={t('resources.blog.desc')} />
                 </div>
               </div>
             </div>
@@ -196,7 +196,7 @@ export default function Nav() {
 
           <MobileAccordion label={t('nav.resources')} open={mobileResourcesOpen} onToggle={() => setMobileResourcesOpen(!mobileResourcesOpen)}>
             <MobileLink href="/resources#case-studies" onClick={() => setMenuOpen(false)}>{t('resources.caseStudies')}</MobileLink>
-            <MobileLink href="/resources#blog" onClick={() => setMenuOpen(false)}>{t('resources.blog')}</MobileLink>
+            <MobileLink href="/blog" onClick={() => setMenuOpen(false)}>{t('resources.blog')}</MobileLink>
           </MobileAccordion>
 
           <div className="flex gap-2 mt-4">
