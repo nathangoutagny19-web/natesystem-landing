@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import Nav from '@/components/layout/Nav'
 import Footer from '@/components/layout/Footer'
+import { API_URL } from '@/lib/constants'
 import Script from 'next/script'
 
 const ROLES = [
@@ -74,7 +75,7 @@ export default function BookPage() {
 
     // Try to save to Supabase (non-blocking — works if API is available)
     try {
-      await fetch('/api/resources/download', {
+      await fetch(`${API_URL}/api/leads/capture`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

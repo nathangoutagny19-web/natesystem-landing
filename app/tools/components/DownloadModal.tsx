@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef, useCallback } from 'react'
 import { Resource } from '@/lib/resources'
+import { API_URL } from '@/lib/constants'
 
 interface FormData {
   prenom: string
@@ -85,7 +86,7 @@ export default function DownloadModal({ resource, onClose }: { resource: Resourc
     setStatus('loading')
     setErrorMsg('')
     try {
-      const res = await fetch('/api/resources/download', {
+      const res = await fetch(`${API_URL}/api/leads/capture`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ ...form, resourceId: resource.id }),
