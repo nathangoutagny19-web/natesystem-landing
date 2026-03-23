@@ -119,25 +119,22 @@ export default function ResourcesPage() {
               className="mt-6 relative overflow-hidden"
               style={{
                 aspectRatio: '16/9', borderRadius: '12px',
-                background: 'linear-gradient(135deg, var(--accent-subtle) 0%, var(--bg-card) 100%)',
-                border: '1px solid rgba(230,57,70,0.15)',
-                maxWidth: '640px',
+                border: '1px solid var(--border)',
+                maxWidth: '800px',
               }}
             >
-              <div className="absolute inset-0 flex flex-col items-center justify-center">
-                <div className="flex items-center justify-center w-16 h-16 rounded-full mb-4" style={{ border: '1px solid var(--accent)', background: 'var(--accent-subtle)' }}>
-                  <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 ml-1" style={{ color: 'var(--accent)' }}>
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                </div>
-                <p className="font-sans" style={{ fontSize: '14px', color: 'var(--text-secondary)', fontWeight: 500 }}>
-                  Catherine P. — Chromosome
-                </p>
-                <p className="font-sans" style={{ fontSize: '12px', color: 'var(--text-muted)', fontWeight: 300 }}>
-                  {t('resources.comingSoon')}
-                </p>
-              </div>
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/aMIjJbzuhDc?rel=0"
+                title="Témoignage Chromosome — NateSystem"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="absolute inset-0 w-full h-full border-none"
+                style={{ borderRadius: '12px' }}
+              />
             </div>
+            <p className="font-sans mt-3" style={{ fontSize: '13px', color: 'var(--text-muted)', fontWeight: 300 }}>
+              Catherine P. — Gérante, Chromosome Saint-Étienne
+            </p>
           </FadeUp>
         </div>
       </section>
