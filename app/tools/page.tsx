@@ -15,33 +15,26 @@ export default function ToolsPage() {
   const filtered = filter === 'Tous' ? resources : resources.filter(r => r.category === filter)
 
   return (
-    <main className="min-h-screen" style={{ background: '#F0EAE0' }}>
+    <main className="tools-page min-h-screen" style={{ background: 'var(--tools-bg)' }}>
       <Nav />
 
       {/* Background grid */}
-      <div
-        className="fixed inset-0 pointer-events-none z-0"
-        style={{
-          backgroundImage:
-            'linear-gradient(rgba(0,0,0,0.055) 1px,transparent 1px), linear-gradient(90deg,rgba(0,0,0,0.055) 1px,transparent 1px)',
-          backgroundSize: '28px 28px',
-        }}
-      />
+      <div className="tools-grid-bg fixed inset-0 pointer-events-none z-0" />
 
       <div className="relative z-10">
         {/* Hero section */}
         <section className="pt-32 pb-12 px-6 text-center">
           <div className="max-w-3xl mx-auto">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 leading-tight tracking-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tight" style={{ color: 'var(--text)' }}>
               Les meilleures ressources IA
               <br />
-              pour ton \u00e9quipe.
+              pour ton équipe.
             </h1>
-            <p className="mt-4 text-lg md:text-xl text-gray-400 italic font-light">
+            <p className="mt-4 text-lg md:text-xl italic font-light" style={{ color: 'var(--text-muted)' }}>
               Ce que les agences facturent des milliers d&apos;euros. Gratuit ici.
             </p>
-            <p className="mt-3 text-sm text-gray-500 font-light">
-              Skills Claude &middot; Prompts GPT &middot; Guides d&apos;impl\u00e9mentation &middot; 0\u20ac
+            <p className="mt-3 text-sm font-light" style={{ color: 'var(--text-secondary)' }}>
+              Skills Claude · Prompts GPT · Guides d&apos;implémentation · 0€
             </p>
           </div>
         </section>
@@ -66,8 +59,8 @@ export default function ToolsPage() {
               ))}
             </div>
             {filtered.length === 0 && (
-              <p className="text-center text-gray-400 py-16 text-lg">
-                Aucune ressource dans cette cat\u00e9gorie.
+              <p className="text-center py-16 text-lg" style={{ color: 'var(--text-muted)' }}>
+                Aucune ressource dans cette catégorie.
               </p>
             )}
           </div>

@@ -229,6 +229,11 @@ html.light .nav-bar.nav-scrolled {
 
 /* ——— DROPDOWN (mega menu) ——— */
 .nav-dropdown { position: relative; }
+/* Invisible bridge so hover doesn't break when moving to panel */
+.nav-dropdown::after {
+  content: ''; position: absolute; top: 100%; left: 0; right: 0;
+  height: 16px; /* bridges the gap */
+}
 .nav-mega {
   position: absolute; top: calc(100% + 12px); left: 50%;
   transform: translateX(-50%) translateY(6px);
@@ -442,6 +447,56 @@ html.light .modal-input { background: #f5f5f0; }
 @keyframes scrollPulse {
   0%, 100% { opacity: 0.3; }
   50% { opacity: 0.8; }
+}
+
+/* ——— TOOLS PAGE (dark/light aware) ——— */
+:root {
+  --tools-bg: #0e0e12;
+  --tools-card-bg: rgba(255,255,255,0.06);
+  --tools-card-border: rgba(255,255,255,0.08);
+  --tools-tag-bg: rgba(255,255,255,0.08);
+  --tools-tag-text: var(--text-muted);
+  --tools-filter-bg: rgba(255,255,255,0.06);
+  --tools-filter-border: rgba(255,255,255,0.1);
+  --tools-filter-text: var(--text-secondary);
+  --tools-grid-color: rgba(255,255,255,0.04);
+}
+html.light {
+  --tools-bg: #F0EAE0;
+  --tools-card-bg: rgba(255,255,255,0.65);
+  --tools-card-border: rgba(0,0,0,0.08);
+  --tools-tag-bg: rgba(0,0,0,0.05);
+  --tools-tag-text: #777;
+  --tools-filter-bg: rgba(255,255,255,0.5);
+  --tools-filter-border: rgba(0,0,0,0.08);
+  --tools-filter-text: #555;
+  --tools-grid-color: rgba(0,0,0,0.055);
+}
+
+.tools-grid-bg {
+  background-image:
+    linear-gradient(var(--tools-grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--tools-grid-color) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+.tools-card {
+  background: var(--tools-card-bg);
+  border: 1px solid var(--tools-card-border);
+  border-radius: 16px; padding: 24px;
+}
+.tools-tag {
+  background: var(--tools-tag-bg);
+  color: var(--tools-tag-text);
+}
+.tools-filter-pill {
+  background: var(--tools-filter-bg);
+  border: 1px solid var(--tools-filter-border);
+  color: var(--tools-filter-text);
+}
+.tools-filter-pill:hover {
+  background: var(--tools-card-bg);
+  border-color: var(--border-hover);
+  color: var(--text);
 }
 
 /* ——— RESPONSIVE ——— */

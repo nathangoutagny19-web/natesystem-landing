@@ -17,24 +17,15 @@ const typeColors: Record<ResourceType, string> = {
   GUIDE: 'bg-lime-50 text-lime-700',
 }
 
-interface ResourceCardProps {
-  resource: Resource
-  onDownload: (resource: Resource) => void
-}
-
-export default function ResourceCard({ resource, onDownload }: ResourceCardProps) {
+export default function ResourceCard({ resource, onDownload }: { resource: Resource; onDownload: (r: Resource) => void }) {
   return (
-    <div className="group bg-white/65 border border-black/[0.08] rounded-2xl p-6 hover:scale-[1.01] hover:shadow-lg transition-all duration-200">
+    <div className="tools-card group hover:scale-[1.01] hover:shadow-lg transition-all duration-200">
       {/* Top row: category + type badges */}
       <div className="flex items-center justify-between gap-2">
-        <span
-          className={`inline-block px-2.5 py-1 rounded-full text-xs font-medium ${categoryColors[resource.category]}`}
-        >
+        <span className={`inline-block px-2.5 py-1 rounded-full text-xs font-medium ${categoryColors[resource.category]}`}>
           {resource.category}
         </span>
-        <span
-          className={`inline-block px-2.5 py-1 rounded-full text-xs font-medium ${typeColors[resource.type]}`}
-        >
+        <span className={`inline-block px-2.5 py-1 rounded-full text-xs font-medium ${typeColors[resource.type]}`}>
           {resource.type}
         </span>
       </div>
@@ -42,28 +33,26 @@ export default function ResourceCard({ resource, onDownload }: ResourceCardProps
       {/* Special badge */}
       {resource.badge && (
         <div className="mt-2">
-          <span
-            className={`inline-block px-2.5 py-1 rounded-full text-[10px] font-bold tracking-wide text-white ${resource.badgeColor}`}
-          >
+          <span className={`inline-block px-2.5 py-1 rounded-full text-[10px] font-bold tracking-wide text-white ${resource.badgeColor}`}>
             {resource.badge}
           </span>
         </div>
       )}
 
       {/* Title */}
-      <h3 className="text-lg font-black text-gray-900 mt-3 leading-tight">
+      <h3 className="text-lg font-black mt-3 leading-tight" style={{ color: 'var(--text)' }}>
         {resource.title}
       </h3>
 
       {/* Description */}
-      <p className="text-sm text-gray-500 font-light mt-1 line-clamp-2">
+      <p className="text-sm font-light mt-1 line-clamp-2" style={{ color: 'var(--text-secondary)' }}>
         {resource.desc}
       </p>
 
       {/* Bullets */}
       <ul className="mt-3 space-y-1.5">
         {resource.bullets.map((bullet, i) => (
-          <li key={i} className="flex items-start gap-2 text-sm text-gray-600">
+          <li key={i} className="flex items-start gap-2 text-sm" style={{ color: 'var(--text-secondary)' }}>
             <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#ED4245]" />
             {bullet}
           </li>
@@ -73,10 +62,7 @@ export default function ResourceCard({ resource, onDownload }: ResourceCardProps
       {/* Tags */}
       <div className="mt-4 flex flex-wrap gap-1.5">
         {resource.tags.map((tag, i) => (
-          <span
-            key={i}
-            className="bg-gray-100 text-gray-500 text-xs px-2.5 py-1 rounded-full"
-          >
+          <span key={i} className="tools-tag text-xs px-2.5 py-1 rounded-full">
             {tag}
           </span>
         ))}
@@ -87,7 +73,7 @@ export default function ResourceCard({ resource, onDownload }: ResourceCardProps
         onClick={() => onDownload(resource)}
         className="mt-4 w-full bg-[#ED4245] text-white font-semibold py-3 rounded-xl hover:bg-[#d63638] transition-colors"
       >
-        T\u00e9l\u00e9charger gratuitement
+        Télécharger gratuitement →
       </button>
     </div>
   )

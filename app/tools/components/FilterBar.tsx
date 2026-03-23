@@ -17,8 +17,8 @@ export default function FilterBar({ categories, active, onChange }: FilterBarPro
           onClick={() => onChange(cat)}
           className={`shrink-0 px-4 py-2 rounded-full text-sm font-medium transition-colors ${
             active === cat
-              ? 'bg-[#ED4245] text-white'
-              : 'bg-white/50 text-gray-600 border border-black/[0.08] hover:bg-white/80'
+              ? 'bg-[#ED4245] text-white shadow-sm'
+              : 'tools-filter-pill'
           }`}
         >
           {cat}
