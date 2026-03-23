@@ -6,6 +6,46 @@ import Link from 'next/link'
 import { useLang } from '@/components/providers/LangProvider'
 import { CAL_LINK } from '@/lib/constants'
 
+/* ——— SVG Icons (monoline, 20×20, brand-coherent) ——— */
+const icons = {
+  calculator: (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="4" y="2" width="16" height="20" rx="2" />
+      <line x1="8" y1="6" x2="16" y2="6" />
+      <line x1="8" y1="10" x2="10" y2="10" /><line x1="14" y1="10" x2="16" y2="10" />
+      <line x1="8" y1="14" x2="10" y2="14" /><line x1="14" y1="14" x2="16" y2="14" />
+      <line x1="8" y1="18" x2="16" y2="18" />
+    </svg>
+  ),
+  brain: (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 2a5 5 0 0 1 5 5c0 1.5-.7 2.9-1.8 3.8A5 5 0 0 1 17 15a5 5 0 0 1-5 5 5 5 0 0 1-5-5c0-1.6.8-3.1 2-4A5 5 0 0 1 7 7a5 5 0 0 1 5-5z" />
+      <path d="M12 2v20" />
+    </svg>
+  ),
+  clipboard: (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="6" y="4" width="12" height="17" rx="2" />
+      <path d="M9 2h6a1 1 0 0 1 1 1v1H8V3a1 1 0 0 1 1-1z" />
+      <line x1="10" y1="10" x2="14" y2="10" />
+      <line x1="10" y1="14" x2="14" y2="14" />
+    </svg>
+  ),
+  map: (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6" />
+      <line x1="8" y1="2" x2="8" y2="18" />
+      <line x1="16" y1="6" x2="16" y2="22" />
+    </svg>
+  ),
+  check: (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="3" y="3" width="18" height="18" rx="3" />
+      <polyline points="9 12 11 14 15 10" />
+    </svg>
+  ),
+}
+
 export default function Nav() {
   const { lang, setLang, t } = useLang()
   const [scrolled, setScrolled] = useState(false)
@@ -75,11 +115,7 @@ export default function Nav() {
           boxShadow: scrolled ? '0 8px 40px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.03) inset' : 'none',
         }}
       >
-        <NavLink href="/#prestations">{t('nav.services')}</NavLink>
-        <span className="w-px h-4" style={{ background: 'var(--border)' }} />
-        <NavLink href="/#resultats">{t('nav.results')}</NavLink>
-        <span className="w-px h-4" style={{ background: 'var(--border)' }} />
-        <NavLink href="/#process">{t('nav.process')}</NavLink>
+        <NavLink href="/#prestations">{t('nav.agency')}</NavLink>
         <span className="w-px h-4" style={{ background: 'var(--border)' }} />
 
         {/* Tools — mega dropdown trigger */}
@@ -89,14 +125,14 @@ export default function Nav() {
             <div className="grid grid-cols-2 gap-6">
               <div>
                 <p className="mega-col-title">{t('mega.interactive')}</p>
-                <MegaItem href="/tools/saas-calculator" icon="🔢" title={t('tools.calculator.title')} desc={t('tools.calculator.desc')} />
-                <MegaItem href="/tools/ai-readiness" icon="🧠" title={t('tools.quiz.title')} desc={t('tools.quiz.desc')} />
+                <MegaItem href="/tools/saas-calculator" icon={icons.calculator} title={t('tools.calculator.title')} desc={t('tools.calculator.desc')} />
+                <MegaItem href="/tools/ai-readiness" icon={icons.brain} title={t('tools.quiz.title')} desc={t('tools.quiz.desc')} />
               </div>
               <div>
                 <p className="mega-col-title">{t('mega.templates')}</p>
-                <MegaItem href="/tools#audit" icon="📋" title={t('tools.audit.title')} desc={t('tools.audit.desc')} />
-                <MegaItem href="/tools#process-map" icon="🗺️" title={t('tools.processMap.title')} desc={t('tools.processMap.desc')} />
-                <MegaItem href="/tools#checklist" icon="✅" title={t('tools.checklist.title')} desc={t('tools.checklist.desc')} />
+                <MegaItem href="/tools#audit" icon={icons.clipboard} title={t('tools.audit.title')} desc={t('tools.audit.desc')} />
+                <MegaItem href="/tools#process-map" icon={icons.map} title={t('tools.processMap.title')} desc={t('tools.processMap.desc')} />
+                <MegaItem href="/tools#checklist" icon={icons.check} title={t('tools.checklist.title')} desc={t('tools.checklist.desc')} />
               </div>
             </div>
           </div>
@@ -187,24 +223,24 @@ export default function Nav() {
         }}
       >
         <div className="pt-20 px-6 flex flex-col gap-1">
-          <MobileLink href="/#prestations" onClick={() => setMenuOpen(false)}>{t('nav.services')}</MobileLink>
-          <MobileLink href="/#resultats" onClick={() => setMenuOpen(false)}>{t('nav.results')}</MobileLink>
-          <MobileLink href="/#process" onClick={() => setMenuOpen(false)}>{t('nav.process')}</MobileLink>
+          <MobileLink href="/#prestations" onClick={() => setMenuOpen(false)}>{t('nav.agency')}</MobileLink>
 
           {/* Tools accordion */}
           <button
             className="py-3 text-sm font-light w-full text-left flex justify-between items-center"
-            style={{ fontFamily: 'var(--font-sans)', color: 'var(--text-secondary)', borderBottom: '1px solid var(--border)', background: 'none', border: 'none', borderBottomWidth: 1, borderBottomStyle: 'solid', borderBottomColor: 'var(--border)' }}
+            style={{ fontFamily: 'var(--font-sans)', color: 'var(--text-secondary)', background: 'none', border: 'none', borderBottom: '1px solid var(--border)' }}
             onClick={() => setMobileToolsOpen(!mobileToolsOpen)}
           >
             {t('nav.tools')}
-            <span style={{ transition: 'transform 0.3s', transform: mobileToolsOpen ? 'rotate(180deg)' : 'none', color: 'var(--text-muted)', fontSize: 12 }}>▼</span>
+            <span style={{ transition: 'transform 0.3s', transform: mobileToolsOpen ? 'rotate(180deg)' : 'none', color: 'var(--text-muted)', fontSize: 12 }}>
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" /></svg>
+            </span>
           </button>
           {mobileToolsOpen && (
             <div className="pl-4 flex flex-col gap-0">
-              <MobileLink href="/tools/saas-calculator" onClick={() => setMenuOpen(false)}>🔢 {t('tools.calculator.title')}</MobileLink>
-              <MobileLink href="/tools/ai-readiness" onClick={() => setMenuOpen(false)}>🧠 {t('tools.quiz.title')}</MobileLink>
-              <MobileLink href="/tools" onClick={() => setMenuOpen(false)}>→ {t('tools.title')}</MobileLink>
+              <MobileLink href="/tools/saas-calculator" onClick={() => setMenuOpen(false)}>{t('tools.calculator.title')}</MobileLink>
+              <MobileLink href="/tools/ai-readiness" onClick={() => setMenuOpen(false)}>{t('tools.quiz.title')}</MobileLink>
+              <MobileLink href="/tools" onClick={() => setMenuOpen(false)}>{t('tools.title')}</MobileLink>
             </div>
           )}
 
@@ -259,7 +295,7 @@ function NavLink({ href, children }: { href: string; children: React.ReactNode }
   )
 }
 
-function MegaItem({ href, icon, title, desc }: { href: string; icon: string; title: string; desc: string }) {
+function MegaItem({ href, icon, title, desc }: { href: string; icon: React.ReactNode; title: string; desc: string }) {
   return (
     <Link href={href} className="mega-item">
       <span className="mega-item-icon">{icon}</span>

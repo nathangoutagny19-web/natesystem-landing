@@ -1,8 +1,6 @@
 export const translations = {
   // Nav
-  'nav.services': { en: 'Services', fr: 'Prestations' },
-  'nav.results': { en: 'Results', fr: 'Résultats' },
-  'nav.process': { en: 'Process', fr: 'Process' },
+  'nav.agency': { en: 'Agency', fr: 'Agence' },
   'nav.tools': { en: 'Tools', fr: 'Outils' },
   'nav.resources': { en: 'Resources', fr: 'Ressources' },
   'nav.cta': { en: 'Book a free audit', fr: 'Réserver un audit gratuit' },
