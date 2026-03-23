@@ -183,7 +183,7 @@ export default function Nav() {
         initial={false}
         animate={{ opacity: menuOpen ? 1 : 0, pointerEvents: menuOpen ? 'auto' : 'none' }}
         transition={{ duration: 0.3 }}
-        style={{ backdropFilter: 'blur(24px)', WebkitBackdropFilter: 'blur(24px)', background: 'rgba(14,14,18,0.95)' }}
+        style={{ backdropFilter: 'blur(24px)', WebkitBackdropFilter: 'blur(24px)', background: 'var(--mobile-menu-bg, rgba(14,14,18,0.95))' }}
       >
         <div className="pt-20 px-6 flex flex-col gap-1">
           <MobileLink href="/#prestations" onClick={() => setMenuOpen(false)}>{t('nav.agency')}</MobileLink>

@@ -37,6 +37,7 @@ html.light {
   --accent-subtle: rgba(230,57,70,0.06);
   --border: rgba(0,0,0,0.08);
   --border-hover: rgba(0,0,0,0.15);
+  --mobile-menu-bg: rgba(245,245,240,0.95);
 }
 
 /* ——— BASE ——— */
