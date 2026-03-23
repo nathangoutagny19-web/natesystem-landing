@@ -34,7 +34,6 @@ const row2: LogoItem[] = [
   { name: 'HubSpot', slug: 'hubspot', color: '#FF7A59' },
   { name: 'Python', slug: 'python', color: '#3776AB' },
   { name: 'Anthropic', slug: 'anthropic', color: '#191919' },
-  { name: 'Pipedrive', slug: 'pipedrive', color: '#1A1919' },
   { name: 'Linear', slug: 'linear', color: '#5E6AD2' },
   { name: 'Amazon S3', slug: 'amazons3', color: '#569A31' },
   { name: 'Skype', slug: 'skype', color: '#00AFF0' },

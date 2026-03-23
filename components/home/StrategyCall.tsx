@@ -1,7 +1,7 @@
 'use client'
 
 import FadeUp from '@/components/ui/FadeUp'
-import { CAL_LINK } from '@/lib/constants'
+import Link from 'next/link'
 
 export default function StrategyCall() {
   return (
@@ -11,9 +11,7 @@ export default function StrategyCall() {
         <FadeUp className="text-center">
           {/* Top pill */}
           <a
-            href={CAL_LINK}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/book"
             style={{
               display: 'inline-flex', alignItems: 'center', gap: 8,
               padding: '8px 20px', borderRadius: 100,
@@ -83,9 +81,7 @@ export default function StrategyCall() {
           }}>
             {/* Email + CTA row */}
             <a
-              href={CAL_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/book"
               style={{
                 display: 'inline-flex', alignItems: 'center', gap: 12,
                 padding: '16px 40px',
