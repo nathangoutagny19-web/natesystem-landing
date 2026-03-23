@@ -3,8 +3,7 @@ import MobileCta from '@/components/layout/MobileCta'
 import Hero from '@/components/home/Hero'
 import Problem from '@/components/home/Problem'
 import Solution from '@/components/home/Solution'
-import AgentShowcase from '@/components/home/AgentShowcase'
-import Architecture from '@/components/home/Architecture'
+import InfraSystem from '@/components/home/InfraSystem'
 import Integrations from '@/components/home/Integrations'
 import Results from '@/components/home/Results'
 import Testimonial from '@/components/home/Testimonial'
@@ -22,9 +21,7 @@ export default function Home() {
       <Divider />
       <Solution />
       <Divider />
-      <AgentShowcase />
-      <Divider />
-      <Architecture />
+      <InfraSystem />
       <Divider />
       <Integrations />
       <Divider />
