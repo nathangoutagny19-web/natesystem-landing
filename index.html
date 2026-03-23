@@ -165,18 +165,39 @@ nav.scrolled {
 }
 nav.nav-center.scrolled { top: 12px; }
 nav.nav-right.scrolled { top: 12px; }
-.lang-toggle {
-  display: flex; align-items: center; gap: 0; padding: 4px 8px;
+/* LANG DROPDOWN */
+.lang-dropdown { position: relative; padding: 4px 8px; }
+.lang-current {
+  display: flex; align-items: center; gap: 6px; padding: 6px 10px;
+  background: transparent; border: none; cursor: pointer;
+  color: var(--text); font-family: var(--sans); font-size: 12px; font-weight: 400;
+  letter-spacing: 1px; transition: opacity 0.3s;
 }
-.lang-btn {
-  display: flex; align-items: center; justify-content: center;
-  padding: 6px 4px; border-radius: 0; border: none;
-  background: transparent; cursor: pointer; transition: all 0.3s ease;
-  color: #FAF7F2; opacity: 0.4; font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 300; letter-spacing: 2px;
+.lang-current:hover { opacity: 0.7; }
+.lang-flag { width: 20px; height: 14px; border-radius: 2px; display: inline-block; vertical-align: middle; background-size: cover; background-position: center; }
+.lang-flag-en { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 30'%3E%3CclipPath id='a'%3E%3Crect width='60' height='30'/%3E%3C/clipPath%3E%3Cg clip-path='url(%23a)'%3E%3Cpath d='M0 0v30h60V0z' fill='%23012169'/%3E%3Cpath d='M0 0l60 30m0-30L0 30' stroke='%23fff' stroke-width='6'/%3E%3Cpath d='M0 0l60 30m0-30L0 30' stroke='%23C8102E' stroke-width='4' clip-path='url(%23a)'/%3E%3Cpath d='M30 0v30M0 15h60' stroke='%23fff' stroke-width='10'/%3E%3Cpath d='M30 0v30M0 15h60' stroke='%23C8102E' stroke-width='6'/%3E%3C/g%3E%3C/svg%3E"); }
+.lang-flag-fr { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3Crect width='1' height='2' fill='%23002395'/%3E%3Crect x='1' width='1' height='2' fill='%23fff'/%3E%3Crect x='2' width='1' height='2' fill='%23ED2939'/%3E%3C/svg%3E"); }
+.lang-code { font-weight: 500; }
+.lang-chevron { transition: transform 0.3s; color: var(--text-muted); }
+.lang-dropdown.open .lang-chevron { transform: rotate(180deg); }
+.lang-options {
+  position: absolute; top: calc(100% + 4px); right: 0; min-width: 140px;
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px;
+  padding: 4px; opacity: 0; visibility: hidden; transform: translateY(-8px);
+  transition: all 0.25s ease; box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
 }
-.lang-btn:hover { opacity: 0.7; }
-.lang-btn.active { color: #E63946; opacity: 1; }
-.lang-sep { color: #FAF7F2; opacity: 0.3; font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 300; padding: 0 4px; }
+.lang-dropdown.open .lang-options { opacity: 1; visibility: visible; transform: translateY(0); }
+.lang-option {
+  display: flex; align-items: center; gap: 8px; width: 100%; padding: 8px 12px;
+  background: transparent; border: none; border-radius: 8px; cursor: pointer;
+  color: var(--text-secondary); font-family: var(--sans); font-size: 13px; font-weight: 400;
+  transition: all 0.2s;
+}
+.lang-option:hover { background: var(--bg-elevated); color: var(--text); }
+.lang-option.active { color: var(--accent); font-weight: 500; }
+html.light .lang-options { background: #fff; box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+html.light .lang-option:hover { background: #f0f0ec; }
 .nav-cta {
   display: flex; align-items: center; gap: 8px; padding: 12px 24px;
   background: transparent; border: none; border-radius: 12px;
@@ -580,28 +601,24 @@ html.light .grid-bg { opacity: 0.5; }
 html.light .noise { opacity: 0.015; }
 html.light .mobile-cta { background: rgba(245,245,240,0.95); border-color: rgba(0,0,0,0.08); }
 html.light .mobile-cta a { color: var(--accent); }
-html.light .hero-cta-pill { border-color: var(--accent); background: var(--accent); border-radius: 12px; }
+html.light .hero-cta-pill { border-color: #1a1a1a; background: #1a1a1a; border-radius: 12px; }
 html.light .hero-cta-arrow, html.light .hero-cta-text, html.light .hero-cta-chevron { color: #fff; }
-html.light .hero-cta-arrow { border-color: rgba(255,255,255,0.3); }
-html.light .hero-cta-chevron { border-color: rgba(255,255,255,0.3); }
-html.light .cta-final-button { background: var(--accent); color: #fff; }
+html.light .hero-cta-arrow { border-color: rgba(255,255,255,0.15); }
+html.light .hero-cta-chevron { border-color: rgba(255,255,255,0.15); }
+html.light .cta-final-button { background: #1a1a1a; color: #fff; border-color: #1a1a1a; }
 html.light .solution-card { background: var(--bg-card); border-color: var(--border); }
 html.light .how-step { border-color: var(--border); }
 html.light .faq-item { border-color: var(--border); }
 html.light .hero-scroll-line { background: var(--text-muted); }
-html.light .hero-cta:hover .hero-cta-pill { background: #d32f3e; border-color: #d32f3e; box-shadow: 0 4px 20px rgba(230,57,70,0.35); }
-html.light .cta-final-button:hover { background: #d32f3e; border-color: #d32f3e; box-shadow: 0 4px 20px rgba(230,57,70,0.35); color: #fff; }
-html.light .ghost-cta { border-color: var(--accent); color: var(--accent); }
-html.light .ghost-cta:hover { background: var(--accent); color: #fff; box-shadow: 0 4px 20px rgba(230,57,70,0.35); }
-html.light .mobile-cta a { background: var(--accent); color: #fff; border-color: var(--accent); }
-html.light .mobile-cta a:hover { background: #d32f3e; }
-html.light .lang-btn { color: #1a1a1a; }
-html.light .lang-btn.active { color: var(--accent); }
-html.light .lang-sep { color: #1a1a1a; opacity: 0.3; }
+html.light .hero-cta:hover .hero-cta-pill { background: #333; border-color: #333; box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
+html.light .cta-final-button:hover { background: #333; border-color: #333; box-shadow: 0 4px 20px rgba(0,0,0,0.2); color: #fff; }
+html.light .ghost-cta { border-color: #1a1a1a; color: #1a1a1a; }
+html.light .ghost-cta:hover { background: #1a1a1a; color: #fff; box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
+html.light .mobile-cta a { background: #1a1a1a; color: #fff; border-color: #1a1a1a; }
+html.light .mobile-cta a:hover { background: #333; }
 html.light .theme-toggle { background: #e8e8e3; border-color: rgba(0,0,0,0.1); }
 html.light .theme-toggle-knob { background: #1a1a1a; }
 html.light .theme-toggle-knob svg { fill: #f5f5f0; }
-html.light .cta-final-button { border-color: var(--accent); }
 html.light .problem-arrow { color: var(--accent); }
 html.light .divider::after { background: var(--bg); }
 
@@ -639,10 +656,16 @@ html.light .theme-toggle-knob { transform: translateX(26px); }
     </div>
   </nav>
   <nav class="nav-right" aria-label="Language selection">
-    <div class="lang-toggle">
-      <button class="lang-btn active" id="langEN" onclick="switchLang('en')">EN</button>
-      <span class="lang-sep">/</span>
-      <button class="lang-btn" id="langFR" onclick="switchLang('fr')">FR</button>
+    <div class="lang-dropdown" id="langDropdown">
+      <button class="lang-current" id="langCurrent" onclick="document.getElementById('langDropdown').classList.toggle('open')">
+        <span class="lang-flag lang-flag-en" id="langFlag"></span>
+        <span class="lang-code" id="langCode">EN</span>
+        <svg class="lang-chevron" width="10" height="6" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+      </button>
+      <div class="lang-options">
+        <button class="lang-option active" id="langOptEN" onclick="selectLang('en')"><span class="lang-flag lang-flag-en"></span> English</button>
+        <button class="lang-option" id="langOptFR" onclick="selectLang('fr')"><span class="lang-flag lang-flag-fr"></span> Français</button>
+      </div>
     </div>
   </nav>
 
@@ -834,12 +857,17 @@ html.light .theme-toggle-knob { transform: translateX(26px); }
   });
 })();
 
-// LANGUAGE TOGGLE
+// LANGUAGE DROPDOWN
 let currentLang = 'en';
-function switchLang(lang) {
+function selectLang(lang) {
   currentLang = lang;
-  document.getElementById('langEN').classList.toggle('active', lang === 'en');
-  document.getElementById('langFR').classList.toggle('active', lang === 'fr');
+  var codes = { en: 'EN', fr: 'FR' };
+  var flagEl = document.getElementById('langFlag');
+  flagEl.className = 'lang-flag lang-flag-' + lang;
+  document.getElementById('langCode').textContent = codes[lang];
+  document.getElementById('langOptEN').classList.toggle('active', lang === 'en');
+  document.getElementById('langOptFR').classList.toggle('active', lang === 'fr');
+  document.getElementById('langDropdown').classList.remove('open');
   document.querySelectorAll('[data-en]').forEach(el => {
     const text = el.getAttribute('data-' + lang);
     if (text) el.innerHTML = text;
@@ -849,6 +877,11 @@ function switchLang(lang) {
     if (ph) el.placeholder = ph;
   });
 }
+// Close dropdown on outside click
+document.addEventListener('click', function(e) {
+  var dd = document.getElementById('langDropdown');
+  if (dd && !dd.contains(e.target)) dd.classList.remove('open');
+});
 
 // NAV SCROLL
 const navLogo = document.getElementById('navLogo');
