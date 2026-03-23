@@ -1,0 +1,7 @@
+node_modules
+.next
+out
+*.png
+*.jpg
+.claude
+claude-seo
