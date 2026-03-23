@@ -5,7 +5,7 @@ import FadeUp from '@/components/ui/FadeUp'
 import { motion } from 'framer-motion'
 import { useLang } from '@/components/providers/LangProvider'
 
-const YOUTUBE_VIDEO_ID = ''
+const YOUTUBE_VIDEO_ID = 'aMIjJbzuhDc'
 
 export default function Testimonial() {
   const { t } = useLang()

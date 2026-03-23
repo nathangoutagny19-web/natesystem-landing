@@ -12,19 +12,19 @@ const columns = [
     title: 'Connecter',
     description: 'On cartographie vos process et on connecte tous vos outils.',
     nodes: ['Audit des outils', 'Mapping des donnees', 'Connexion API', 'Centralisation'],
-    nodesFr: ['Audit des outils', 'Mapping des donn\u00e9es', 'Connexion API', 'Centralisation'],
+    nodesFr: ['Audit des outils', 'Mapping des données', 'Connexion API', 'Centralisation'],
   },
   {
     title: 'Automatiser',
-    description: 'Des agents IA sp\u00e9cialis\u00e9s d\u00e9ploy\u00e9s sur vos op\u00e9rations.',
+    description: 'Des agents IA spécialisés déployés sur vos opérations.',
     nodes: ['Agent Prospection', 'Agent Reporting', 'Agent Onboarding', 'Agent Support'],
     nodesFr: ['Agent Prospection', 'Agent Reporting', 'Agent Onboarding', 'Agent Support'],
   },
   {
-    title: 'D\u00e9cider',
-    description: 'Des dashboards et alertes pour piloter en temps r\u00e9el.',
-    nodes: ['KPIs temps r\u00e9el', 'Alertes intelligentes', 'Recommandations IA', 'D\u00e9cisions data-driven'],
-    nodesFr: ['KPIs temps r\u00e9el', 'Alertes intelligentes', 'Recommandations IA', 'D\u00e9cisions data-driven'],
+    title: 'Décider',
+    description: 'Des dashboards et alertes pour piloter en temps réel.',
+    nodes: ['KPIs temps réel', 'Alertes intelligentes', 'Recommandations IA', 'Décisions data-driven'],
+    nodesFr: ['KPIs temps réel', 'Alertes intelligentes', 'Recommandations IA', 'Décisions data-driven'],
   },
 ]
 
@@ -35,7 +35,7 @@ const nodeIcons: Record<string, JSX.Element> = {
       <circle cx="7" cy="7" r="5" /><path d="M11 11l3 3" />
     </svg>
   ),
-  'Mapping des donn\u00e9es': (
+  'Mapping des données': (
     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
       <rect x="1" y="1" width="5" height="5" rx="1" /><rect x="10" y="10" width="5" height="5" rx="1" /><path d="M6 3.5h4.5a2 2 0 012 2V10" />
     </svg>
@@ -70,7 +70,7 @@ const nodeIcons: Record<string, JSX.Element> = {
       <path d="M2 10V6a6 6 0 0112 0v4" /><path d="M2 10a2 2 0 01-1-1.73V8.27A2 2 0 012 6.5h0v3.5zM14 10a2 2 0 001-1.73V8.27A2 2 0 0014 6.5h0v3.5z" />
     </svg>
   ),
-  'KPIs temps r\u00e9el': (
+  'KPIs temps réel': (
     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
       <polyline points="1,12 5,6 9,9 15,2" /><polyline points="11,2 15,2 15,6" />
     </svg>
@@ -85,7 +85,7 @@ const nodeIcons: Record<string, JSX.Element> = {
       <circle cx="8" cy="6" r="4" /><path d="M5.5 10v3l2.5-1.5L10.5 13v-3" />
     </svg>
   ),
-  'D\u00e9cisions data-driven': (
+  'Décisions data-driven': (
     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
       <path d="M8 1v14M1 8h14" /><path d="M3 3l10 10M13 3L3 13" />
     </svg>
@@ -182,7 +182,7 @@ function FlywheelDiagram() {
               color: 'var(--text-muted)',
             }}
           >
-            Syst\u00e8me
+            Système
           </span>
           <span
             style={{
@@ -410,7 +410,7 @@ export default function AgentShowcase() {
             className="section-title"
             style={{ maxWidth: '700px', margin: '0 auto 16px' }}
           >
-            Un syst\u00e8me complet,{' '}
+            Un système complet,{' '}
             <span className="accent">pas un outil de plus</span>
           </h2>
           <p
@@ -424,7 +424,7 @@ export default function AgentShowcase() {
               lineHeight: 1.7,
             }}
           >
-            Nos agents IA travaillent ensemble pour connecter, automatiser et piloter vos op\u00e9rations.
+            Nos agents IA travaillent ensemble pour connecter, automatiser et piloter vos opérations.
           </p>
         </FadeUp>
 
