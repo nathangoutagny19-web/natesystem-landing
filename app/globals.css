@@ -217,7 +217,7 @@ html.light .nav-bar.nav-scrolled {
   padding: 10px 24px;
   background: var(--accent); color: #fff;
   font-family: var(--font-sans); font-size: 13px; font-weight: 600;
-  border: none; border-radius: 10px; cursor: pointer;
+  border: none; border-radius: 12px; cursor: pointer;
   text-decoration: none; white-space: nowrap;
   transition: all 0.2s ease;
   box-shadow: 0 2px 8px rgba(230,57,70,0.25);
@@ -232,15 +232,15 @@ html.light .nav-bar.nav-scrolled {
 .nav-dropdown { position: relative; }
 /* Invisible bridge so hover doesn't break when moving to panel */
 .nav-dropdown::after {
-  content: ''; position: absolute; top: 100%; left: 0; right: 0;
-  height: 16px; /* bridges the gap */
+  content: ''; position: absolute; top: 100%; left: -20px; right: -20px;
+  height: 20px; background: transparent; /* bridges the gap */
 }
 .nav-mega {
   position: absolute; top: calc(100% + 12px); left: 50%;
   transform: translateX(-50%) translateY(6px);
   min-width: 520px; padding: 16px;
   background: var(--bg-card);
-  border: 1px solid var(--border-hover); border-radius: 14px;
+  border: 1px solid var(--border-hover); border-radius: 12px;
   box-shadow: 0 16px 48px rgba(0,0,0,0.25);
   opacity: 0; visibility: hidden; pointer-events: none;
   transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s ease;
@@ -483,7 +483,7 @@ html.light {
 .tools-card {
   background: var(--tools-card-bg);
   border: 1px solid var(--tools-card-border);
-  border-radius: 16px; padding: 24px;
+  border-radius: 12px; padding: 24px;
 }
 .tools-tag {
   background: var(--tools-tag-bg);
@@ -640,6 +640,28 @@ html.light {
 .blog-article table th:first-child { border-top-left-radius: 12px; }
 .blog-article table th:last-child { border-top-right-radius: 12px; }
 .blog-article > *:first-child { margin-top: 0; }
+
+/* ——— INFRA SYSTEM STEP GRID ——— */
+.infra-step-grid { display: grid; grid-template-columns: 1fr; gap: 0; }
+.infra-step-content { padding: 20px 20px 24px; }
+@media (min-width: 768px) {
+  .infra-step-grid { grid-template-columns: 80px 1fr; }
+  .infra-step-content { padding: 28px 32px; }
+}
+
+/* ——— PROCESS STEP GRID ——— */
+.process-step-grid { display: grid; grid-template-columns: 1fr; gap: 10px; padding: 28px 20px; }
+@media (min-width: 768px) {
+  .process-step-grid { grid-template-columns: 80px 1fr; gap: 10px; padding: 48px 40px; }
+}
+
+/* ——— MOBILE SECTION PADDING ——— */
+@media (max-width: 768px) {
+  section[id] {
+    padding-top: 80px !important;
+    padding-bottom: 80px !important;
+  }
+}
 
 /* ——— RESPONSIVE ——— */
 @media (max-width: 768px) {

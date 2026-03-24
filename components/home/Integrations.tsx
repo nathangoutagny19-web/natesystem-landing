@@ -122,9 +122,9 @@ export default function Integrations() {
           animation-play-state: paused;
         }
         .integration-logo-card {
-          width: 72px;
-          height: 72px;
-          min-width: 72px;
+          width: clamp(56px, 14vw, 72px);
+          height: clamp(56px, 14vw, 72px);
+          min-width: clamp(56px, 14vw, 72px);
           background: var(--bg-card);
           border: 1px solid var(--border);
           border-radius: 14px;
@@ -151,9 +151,6 @@ export default function Integrations() {
         }
         @media (max-width: 640px) {
           .integration-logo-card {
-            width: 56px !important;
-            height: 56px !important;
-            min-width: 56px !important;
             border-radius: 12px !important;
           }
           .integration-logo-card img {

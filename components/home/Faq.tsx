@@ -46,7 +46,7 @@ export default function Faq() {
       <div className="mx-auto" style={{ maxWidth: '1100px' }}>
         <FadeUp className="text-center mb-16">
           <span className="section-label">QUESTIONS FRÉQUENTES</span>
-          <h2 className="section-title" style={{ maxWidth: '500px', margin: '0 auto' }}>
+          <h2 className="section-title" style={{ maxWidth: '700px', margin: '0 auto' }}>
             On répond <span className="accent">à tout.</span>
           </h2>
         </FadeUp>

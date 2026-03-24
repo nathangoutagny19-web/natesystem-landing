@@ -28,7 +28,7 @@ export default function CostPain() {
                 style={{
                   display: 'flex',
                   alignItems: 'center',
-                  gap: '24px',
+                  gap: '16px',
                   background: 'var(--bg-card)',
                   border: '1px solid var(--border)',
                   borderRadius: '12px',
@@ -40,7 +40,6 @@ export default function CostPain() {
                   style={{
                     fontSize: 'clamp(24px, 3vw, 32px)',
                     color: 'var(--accent)',
-                    minWidth: '100px',
                     textAlign: 'center',
                     fontWeight: 400,
                   }}

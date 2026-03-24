@@ -33,7 +33,7 @@ export default function Hero() {
       <motion.p
         initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.35, ease }}
         className="font-sans"
-        style={{ fontSize: '18px', fontWeight: 300, color: 'var(--text-secondary)', maxWidth: '580px', lineHeight: 1.7, marginBottom: '48px' }}
+        style={{ fontSize: 'clamp(15px, 3vw, 18px)', fontWeight: 300, color: 'var(--text-secondary)', maxWidth: '580px', lineHeight: 1.7, marginBottom: '48px' }}
       >
         {t('hero.sub')}
       </motion.p>

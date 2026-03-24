@@ -163,9 +163,6 @@ export default function InfraSystem() {
             <FadeUp key={layer.number} delay={i * 0.12}>
               <div
                 style={{
-                  display: 'grid',
-                  gridTemplateColumns: '80px 1fr',
-                  gap: 0,
                   background: 'var(--bg-card)',
                   border: '1px solid var(--border)',
                   borderBottom: i < layers.length - 1 ? 'none' : '1px solid var(--border)',
@@ -173,7 +170,7 @@ export default function InfraSystem() {
                   overflow: 'hidden',
                   transition: 'border-color 0.3s',
                 }}
-                className="hover-layer"
+                className="hover-layer infra-step-grid"
               >
                 {/* Number column */}
                 <div style={{
@@ -186,7 +183,7 @@ export default function InfraSystem() {
                 </div>
 
                 {/* Content */}
-                <div style={{ padding: '28px 32px' }}>
+                <div className="infra-step-content">
                   <div style={{ display: 'flex', alignItems: 'baseline', gap: 12, marginBottom: 8 }}>
                     <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: 18, fontWeight: 600, color: 'var(--text)' }}>
                       {layer.title}

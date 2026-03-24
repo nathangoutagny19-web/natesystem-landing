@@ -39,7 +39,7 @@ export default function StrategyCall() {
           </h2>
 
           {/* Founder photo + name */}
-          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 16, marginBottom: 32 }}>
+          <div className="flex flex-col items-center md:flex-row md:items-center" style={{ justifyContent: 'center', gap: 16, marginBottom: 32 }}>
             <div style={{
               width: 56, height: 56, borderRadius: '50%',
               background: 'var(--accent-subtle)', border: '2px solid var(--accent)',
@@ -49,7 +49,7 @@ export default function StrategyCall() {
             }}>
               N
             </div>
-            <div style={{ textAlign: 'left' }}>
+            <div className="text-center md:text-left">
               <p style={{ fontFamily: 'var(--font-sans)', fontSize: 15, fontWeight: 600, color: 'var(--text)' }}>
                 Nathan Goutagny
               </p>

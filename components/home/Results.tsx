@@ -31,7 +31,7 @@ export default function Results() {
       <div className="mx-auto" style={{ maxWidth: '1100px' }}>
         <FadeUp className="text-center mb-16">
           <span className="section-label">{t('results.label')}</span>
-          <h2 className="section-title" style={{ maxWidth: '680px', margin: '0 auto 20px' }}>
+          <h2 className="section-title" style={{ maxWidth: '700px', margin: '0 auto 20px' }}>
             {t('results.title')}{' '}
             <span className="accent">{t('results.titleAccent')}</span>{' '}
             {t('results.title2')}
@@ -89,7 +89,7 @@ function CaseStudyCard({ cs, t }: { cs: any; t: any }) {
       </div>
 
       {/* Before / After */}
-      <div className="grid grid-cols-2 gap-4 mb-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
         <div>
           <p className="font-mono mb-2" style={{ fontSize: '10px', fontWeight: 400, letterSpacing: '2px', textTransform: 'uppercase', color: 'var(--accent)', opacity: 0.7 }}>
             {t('results.before')}

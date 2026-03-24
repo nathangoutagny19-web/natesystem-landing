@@ -51,11 +51,11 @@ export default function ForWho() {
           {/* Positive column */}
           <FadeUp delay={0}>
             <div
+              className="p-6 md:py-10 md:px-8"
               style={{
                 background: 'var(--bg-card)',
                 border: '1px solid var(--border)',
                 borderRadius: 12,
-                padding: '40px 32px',
                 height: '100%',
               }}
             >
@@ -97,11 +97,11 @@ export default function ForWho() {
           {/* Negative column */}
           <FadeUp delay={0.12}>
             <div
+              className="p-6 md:py-10 md:px-8"
               style={{
                 background: 'var(--bg-card)',
                 border: '1px solid var(--border)',
                 borderRadius: 12,
-                padding: '40px 32px',
                 height: '100%',
               }}
             >

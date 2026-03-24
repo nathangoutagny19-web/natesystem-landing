@@ -38,10 +38,8 @@ export default function Process() {
           {steps.map((step, i) => (
             <FadeUp key={step.number} delay={i * 0.12}>
               <motion.div
-                className="grid gap-10 cursor-default"
+                className="process-step-grid cursor-default"
                 style={{
-                  gridTemplateColumns: '80px 1fr',
-                  padding: '48px 40px',
                   background: 'var(--bg-card)',
                   border: '1px solid var(--border)',
                 }}

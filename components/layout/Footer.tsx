@@ -12,7 +12,7 @@ export default function Footer() {
     <footer
       className="mx-auto"
       style={{
-        maxWidth: '1200px',
+        maxWidth: '1100px',
         borderTop: '1px solid var(--border)',
         padding: '40px 24px 48px',
       }}

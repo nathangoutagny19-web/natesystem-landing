@@ -101,16 +101,17 @@ function FlywheelDiagram() {
     <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '64px' }}>
       <div
         style={{
-          width: 280,
-          height: 280,
+          maxWidth: 280,
+          width: '100%',
+          aspectRatio: '1',
           position: 'relative',
         }}
       >
         {/* Slowly rotating arrows */}
         <svg
           viewBox="0 0 280 280"
-          width={280}
-          height={280}
+          width="100%"
+          height="100%"
           style={{
             animation: 'flywheelSpin 60s linear infinite',
           }}
@@ -437,7 +438,7 @@ export default function AgentShowcase() {
         <div
           className="grid gap-6"
           style={{
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(280px, 100%), 1fr))',
             marginBottom: '64px',
           }}
         >
