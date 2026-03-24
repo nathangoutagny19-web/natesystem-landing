@@ -5,8 +5,10 @@ import Footer from '@/components/layout/Footer'
 import MobileCta from '@/components/layout/MobileCta'
 import FadeUp from '@/components/ui/FadeUp'
 import Divider from '@/components/ui/Divider'
+import Link from 'next/link'
 import { useLang } from '@/components/providers/LangProvider'
 import { motion } from 'framer-motion'
+import { blogPosts } from '@/lib/blog'
 
 export default function ResourcesPage() {
   const { lang, t } = useLang()
@@ -32,88 +34,14 @@ export default function ResourcesPage() {
 
       <Divider />
 
-      {/* Case Studies */}
-      <section style={{ padding: '80px 24px' }}>
+      {/* Case Studies — Video first, then Chromosome card */}
+      <section id="case-studies" style={{ padding: '80px 24px' }}>
         <div className="mx-auto" style={{ maxWidth: '900px' }}>
           <FadeUp>
             <span className="section-label">{t('resources.caseStudies')}</span>
           </FadeUp>
 
-          <FadeUp delay={0.1}>
-            <motion.div
-              className="mt-6"
-              style={{
-                background: 'var(--bg-card)', border: '1px solid rgba(230,57,70,0.15)',
-                padding: '40px', borderRadius: '12px', position: 'relative', overflow: 'hidden',
-              }}
-              whileHover={{ borderColor: 'var(--border-hover)', boxShadow: '0 8px 32px rgba(0,0,0,0.15)' }}
-            >
-              <p className="font-mono mb-2" style={{ fontSize: '10px', letterSpacing: '2px', textTransform: 'uppercase', color: 'var(--accent)' }}>
-                Restaurant Group · Saint-Étienne
-              </p>
-              <h3 className="font-serif italic mb-4" style={{ fontSize: '28px', color: 'var(--accent)', lineHeight: 1.2 }}>
-                Chromosome
-              </h3>
-              <p className="font-sans mb-6" style={{ fontSize: '15px', color: 'var(--text-secondary)', lineHeight: 1.8, fontWeight: 300 }}>
-                {lang === 'en'
-                  ? 'How a restaurant group in Saint-Étienne went from 10h/week on team scheduling to 20 minutes — saving €1,000/month and eliminating communication errors completely.'
-                  : 'Comment un groupe de restaurants à Saint-Étienne est passé de 10h/semaine de planification d\'équipe à 20 minutes — économisant 1 000€/mois et éliminant complètement les erreurs de communication.'}
-              </p>
-              <div className="flex items-center gap-6">
-                <Stat value="10h → 20min" label={lang === 'en' ? 'Scheduling time' : 'Temps de planification'} />
-                <Stat value="1 000€" label={lang === 'en' ? 'Monthly savings' : 'Économies mensuelles'} />
-                <Stat value="0" label={lang === 'en' ? 'Errors since deploy' : 'Erreurs depuis le déploiement'} />
-              </div>
-            </motion.div>
-          </FadeUp>
-        </div>
-      </section>
-
-      <Divider />
-
-      {/* Blog */}
-      <section style={{ padding: '80px 24px' }}>
-        <div className="mx-auto" style={{ maxWidth: '900px' }}>
-          <FadeUp>
-            <span className="section-label">{t('resources.blog')}</span>
-          </FadeUp>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
-            {[
-              { en: 'Why SMEs Are Overpaying for SaaS', fr: 'Pourquoi les PME surpayent leurs SaaS' },
-              { en: 'The 3-Step Framework to AI-Ready Operations', fr: 'Le framework en 3 étapes pour des opérations prêtes pour l\'IA' },
-              { en: 'Build vs Buy: When Custom Tools Win', fr: 'Construire vs Acheter : Quand les outils sur-mesure gagnent' },
-            ].map((title, i) => (
-              <FadeUp key={i} delay={i * 0.1}>
-                <motion.div
-                  className="tool-card flex flex-col h-full"
-                  whileHover={{ borderColor: 'var(--border-hover)' }}
-                >
-                  <p className="font-mono mb-3" style={{ fontSize: '10px', letterSpacing: '2px', textTransform: 'uppercase', color: 'var(--text-muted)' }}>
-                    {t('resources.blog')}
-                  </p>
-                  <h3 className="font-serif italic mb-4 flex-1" style={{ fontSize: '20px', color: 'var(--text)', lineHeight: 1.3 }}>
-                    {title[lang]}
-                  </h3>
-                  <p className="font-sans" style={{ fontSize: '13px', color: 'var(--accent)', fontWeight: 500 }}>
-                    {t('resources.comingSoon')}
-                  </p>
-                </motion.div>
-              </FadeUp>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <Divider />
-
-      {/* Video Testimonials */}
-      <section style={{ padding: '80px 24px' }}>
-        <div className="mx-auto" style={{ maxWidth: '900px' }}>
-          <FadeUp>
-            <span className="section-label">{t('resources.video')}</span>
-          </FadeUp>
-
+          {/* Video testimonial */}
           <FadeUp delay={0.1}>
             <div
               className="mt-6 relative overflow-hidden"
@@ -136,6 +64,83 @@ export default function ResourcesPage() {
               Catherine P. — Gérante, Chromosome Saint-Étienne
             </p>
           </FadeUp>
+
+          {/* Chromosome case study card */}
+          <FadeUp delay={0.2}>
+            <motion.div
+              className="mt-8"
+              style={{
+                background: 'var(--bg-card)', border: '1px solid rgba(230,57,70,0.15)',
+                padding: '40px', borderRadius: '12px', position: 'relative', overflow: 'hidden',
+              }}
+              whileHover={{ borderColor: 'var(--border-hover)', boxShadow: '0 8px 32px rgba(0,0,0,0.15)' }}
+            >
+              <p className="font-mono mb-2" style={{ fontSize: '10px', letterSpacing: '2px', textTransform: 'uppercase', color: 'var(--accent)' }}>
+                Restaurant Group · Saint-Étienne
+              </p>
+              <h3 className="font-serif italic mb-4" style={{ fontSize: '28px', color: 'var(--accent)', lineHeight: 1.2 }}>
+                Chromosome
+              </h3>
+              <p className="font-sans mb-6" style={{ fontSize: '15px', color: 'var(--text-secondary)', lineHeight: 1.8, fontWeight: 300 }}>
+                {lang === 'en'
+                  ? 'How a restaurant group in Saint-Étienne went from 10h/week on team scheduling to 20 minutes — saving €1,000/month and eliminating communication errors completely.'
+                  : 'Comment un groupe de restaurants à Saint-Étienne est passé de 10h/semaine de planification d\'équipe à 20 minutes — économisant 1 000€/mois et éliminant complètement les erreurs de communication.'}
+              </p>
+              <div className="flex items-center gap-6 flex-wrap">
+                <Stat value="10h → 20min" label={lang === 'en' ? 'Scheduling time' : 'Temps de planification'} />
+                <Stat value="1 000€" label={lang === 'en' ? 'Monthly savings' : 'Économies mensuelles'} />
+                <Stat value="0" label={lang === 'en' ? 'Errors since deploy' : 'Erreurs depuis le déploiement'} />
+              </div>
+            </motion.div>
+          </FadeUp>
+        </div>
+      </section>
+
+      <Divider />
+
+      {/* Blog — real posts from lib/blog.ts */}
+      <section id="blog" style={{ padding: '80px 24px' }}>
+        <div className="mx-auto" style={{ maxWidth: '900px' }}>
+          <FadeUp>
+            <div className="flex items-center justify-between mb-6">
+              <span className="section-label mb-0">{t('resources.blog')}</span>
+              <Link
+                href="/blog"
+                className="font-sans transition-colors"
+                style={{ fontSize: '13px', color: 'var(--accent)', textDecoration: 'none', fontWeight: 500 }}
+              >
+                {lang === 'en' ? 'View all articles →' : 'Voir tous les articles →'}
+              </Link>
+            </div>
+          </FadeUp>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {blogPosts.slice(0, 3).map((post, i) => (
+              <FadeUp key={post.slug} delay={i * 0.1}>
+                <Link href={`/blog/${post.slug}`} style={{ textDecoration: 'none' }}>
+                  <motion.div
+                    className="tool-card flex flex-col h-full"
+                    whileHover={{ borderColor: 'var(--border-hover)' }}
+                  >
+                    <p className="font-mono mb-2" style={{ fontSize: '10px', letterSpacing: '2px', textTransform: 'uppercase', color: 'var(--accent)' }}>
+                      {post.category}
+                    </p>
+                    <h3 className="font-serif italic mb-3 flex-1" style={{ fontSize: '20px', color: 'var(--text)', lineHeight: 1.3 }}>
+                      {post.title}
+                    </h3>
+                    <p className="font-sans mb-4" style={{ fontSize: '13px', color: 'var(--text-secondary)', lineHeight: 1.6, fontWeight: 300, display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
+                      {post.description}
+                    </p>
+                    <div className="flex items-center gap-3">
+                      <span className="font-mono" style={{ fontSize: '11px', color: 'var(--text-muted)' }}>{post.date}</span>
+                      <span style={{ color: 'var(--text-muted)' }}>·</span>
+                      <span className="font-mono" style={{ fontSize: '11px', color: 'var(--text-muted)' }}>{post.readTime}</span>
+                    </div>
+                  </motion.div>
+                </Link>
+              </FadeUp>
+            ))}
+          </div>
         </div>
       </section>
 
