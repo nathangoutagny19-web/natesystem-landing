@@ -64,12 +64,18 @@ function LogoCard({ item }: { item: LogoItem }) {
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src={`https://cdn.simpleicons.org/${item.slug}`}
+        src={`https://cdn.simpleicons.org/${item.slug}/${item.color.replace('#', '')}`}
         alt={item.name}
         width={28}
         height={28}
         loading="lazy"
-        style={{ opacity: 0.85 }}
+        className="integration-logo-img"
+        onError={(e) => {
+          // Hide broken images
+          (e.target as HTMLImageElement).style.display = 'none'
+          const parent = (e.target as HTMLImageElement).parentElement
+          if (parent) parent.style.display = 'none'
+        }}
       />
     </div>
   )
@@ -144,10 +150,14 @@ export default function Integrations() {
         html.light .integration-logo-card:hover {
           box-shadow: 0 4px 16px rgba(0,0,0,0.08);
         }
-        /* Dark mode: invert dark logos so they're visible */
-        html:not(.light) .integration-logo-card img {
+        /* Dark mode: make all logos white */
+        html:not(.light) .integration-logo-img {
           filter: brightness(0) invert(1);
           opacity: 0.7 !important;
+        }
+        /* Light mode: show colored logos as-is */
+        html.light .integration-logo-img {
+          opacity: 0.9;
         }
         @media (max-width: 640px) {
           .integration-logo-card {

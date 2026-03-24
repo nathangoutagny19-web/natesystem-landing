@@ -553,7 +553,7 @@ export default function Architecture() {
             className="section-title"
             style={{ maxWidth: '700px', margin: '0 auto 24px' }}
           >
-            {t('architecture.title') || 'Une infrastructure IA compl\u00e8te.'}{' '}
+            {t('architecture.title') || 'Une infrastructure IA complète.'}{' '}
             <span className="accent">
               {t('architecture.titleAccent') || 'Pas un SaaS de plus.'}
             </span>
