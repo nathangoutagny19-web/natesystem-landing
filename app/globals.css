@@ -654,6 +654,10 @@ html.light {
 @media (min-width: 768px) {
   .process-step-grid { grid-template-columns: 80px 1fr; gap: 10px; padding: 48px 40px; }
 }
+.process-card-hover:hover {
+  border-color: var(--border-hover) !important;
+  background: var(--bg-elevated) !important;
+}
 
 /* ——— MOBILE SECTION PADDING ——— */
 @media (max-width: 768px) {

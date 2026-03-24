@@ -1,7 +1,6 @@
 'use client'
 
 import FadeUp from '@/components/ui/FadeUp'
-import { motion } from 'framer-motion'
 import { useLang } from '@/components/providers/LangProvider'
 
 export default function Solution() {
@@ -30,11 +29,9 @@ export default function Solution() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-[2px]">
           {pillars.map((p, i) => (
             <FadeUp key={p.number} delay={i * 0.12}>
-              <motion.div
-                className="relative overflow-hidden h-full"
-                style={{ background: 'var(--bg-card)', border: '1px solid var(--border)', padding: '48px 36px 44px' }}
-                whileHover={{ borderColor: 'var(--border-hover)', backgroundColor: 'var(--bg-elevated)' }}
-                transition={{ duration: 0.3 }}
+              <div
+                className="relative overflow-hidden h-full process-card-hover"
+                style={{ background: 'var(--bg-card)', border: '1px solid var(--border)', padding: '48px 36px 44px', transition: 'border-color 0.3s, background 0.3s' }}
               >
                 {/* Top accent line on hover */}
                 <div className="absolute top-0 left-0 right-0 h-px bg-ns-accent scale-x-0 hover:scale-x-100 transition-transform duration-400 origin-left" />
@@ -51,7 +48,7 @@ export default function Solution() {
                 <p className="font-mono" style={{ fontSize: '11px', color: 'var(--accent)', letterSpacing: '1.5px', textTransform: 'uppercase', opacity: 0.7 }}>
                   {p.tags}
                 </p>
-              </motion.div>
+              </div>
             </FadeUp>
           ))}
         </div>

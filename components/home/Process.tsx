@@ -37,14 +37,13 @@ export default function Process() {
         <div className="flex flex-col gap-[2px]">
           {steps.map((step, i) => (
             <FadeUp key={step.number} delay={i * 0.12}>
-              <motion.div
-                className="process-step-grid cursor-default"
+              <div
+                className="process-step-grid cursor-default process-card-hover"
                 style={{
                   background: 'var(--bg-card)',
                   border: '1px solid var(--border)',
+                  transition: 'border-color 0.3s, background 0.3s',
                 }}
-                whileHover={{ borderColor: 'var(--border-hover)', backgroundColor: 'var(--bg-elevated)' }}
-                transition={{ duration: 0.3 }}
               >
                 <span className="font-serif italic" style={{ fontSize: '48px', color: 'var(--accent)', opacity: 0.6 }}>
                   {step.number}
@@ -66,7 +65,7 @@ export default function Process() {
                     → {step.highlight}
                   </p>
                 </div>
-              </motion.div>
+              </div>
             </FadeUp>
           ))}
         </div>
