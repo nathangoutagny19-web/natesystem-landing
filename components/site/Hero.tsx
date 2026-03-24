@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 
-const CAL_LINK = 'https://cal.com/natesystem'
+const CAL_LINK = 'https://cal.com/natesystem/session-strategique'
 
 const TRUSTED_BY = ['Chromosome', 'Institut Saint-Irénée', 'IUT Lyon']
 

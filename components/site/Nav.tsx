@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 
-const CAL_LINK = 'https://cal.com/natesystem'
+const CAL_LINK = 'https://cal.com/natesystem/session-strategique'
 
 const NAV_LINKS = [
   { label: 'Prestations', href: '#prestations' },

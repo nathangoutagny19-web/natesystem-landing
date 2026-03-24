@@ -82,7 +82,7 @@ export async function POST(req: NextRequest) {
             <hr style="border: none; border-top: 1px solid #eee; margin: 28px 0;" />
             <p style="font-size: 15px; color: #1a1a1a; font-weight: 600;">Tu veux qu&rsquo;on impl\u00e9mente \u00e7a dans ta bo\u00eete ?</p>
             <p style="margin-top: 16px;">
-              <a href="https://cal.com/natesystem/audit" style="display: inline-block; padding: 14px 28px; background: #ED4245; color: #fff; text-decoration: none; border-radius: 10px; font-weight: 600; font-size: 14px;">
+              <a href="https://cal.com/natesystem/session-strategique" style="display: inline-block; padding: 14px 28px; background: #ED4245; color: #fff; text-decoration: none; border-radius: 10px; font-weight: 600; font-size: 14px;">
                 R\u00e9server un audit gratuit 30 min
               </a>
             </p>

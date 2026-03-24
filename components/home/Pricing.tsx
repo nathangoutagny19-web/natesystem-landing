@@ -115,7 +115,7 @@ function PricingCard({ title, price, subtitle, features, cta, ctaVariant, badge,
         ))}
       </ul>
 
-      <Button href="https://cal.com/natesystem" variant={ctaVariant} external>
+      <Button href="https://cal.com/natesystem/session-strategique" variant={ctaVariant} external>
         {cta}
       </Button>
     </div>

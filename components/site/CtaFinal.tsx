@@ -4,7 +4,7 @@ import FadeUp from '@/components/ui/FadeUp'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 
-const CAL_LINK = 'https://cal.com/natesystem'
+const CAL_LINK = 'https://cal.com/natesystem/session-strategique'
 
 const FOOTER_LINKS = [
   { label: 'Prestations', href: '#prestations' },
