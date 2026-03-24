@@ -101,14 +101,7 @@ function PipelineNode({
       <foreignObject x="-10" y="-10" width="20" height="20">
         <div style={{ color: 'var(--text-secondary)' }}>{icon}</div>
       </foreignObject>
-      <text
-        y="40"
-        textAnchor="middle"
-        fill="var(--text-secondary)"
-        style={{ fontFamily: 'var(--font-sans)', fontSize: '11px', fontWeight: 300 }}
-      >
-        {label}
-      </text>
+      <title>{label}</title>
     </g>
   )
 }
