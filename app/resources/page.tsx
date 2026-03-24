@@ -84,13 +84,13 @@ export default function ResourcesPage() {
               <p className="font-sans mb-6" style={{ fontSize: '15px', color: 'var(--text-secondary)', lineHeight: 1.8, fontWeight: 300 }}>
                 {lang === 'en'
                   ? 'How a restaurant in Saint-Étienne freed 14 hours per week and replaced 99% of their operational stack with two proprietary platforms they own outright.'
-                  : 'Comment un restaurant à Saint-Étienne a libéré 14 heures par semaine et remplacé 99% de son stack opérationnel par deux plateformes propriétaires qu\'il possède entièrement.'}
+                  : 'Comment un restaurant à Saint-Étienne a libéré 14 heures par semaine et remplacé 99% de son stack opérationnel par deux plateformes internes qu\'il possède entièrement.'}
               </p>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                 <Stat value="11h → 1h" label={lang === 'en' ? 'Per week, per manager' : 'Par semaine, par manager'} />
                 <Stat value="25 480€" label={lang === 'en' ? 'Productivity recovered per year' : 'Productivité récupérée par an'} />
                 <Stat value="~55" label={lang === 'en' ? 'Collaborators — zero friction' : 'Collaborateurs — zéro friction'} />
-                <Stat value="99%" label={lang === 'en' ? 'Ops on owned platforms' : 'Opérations sur plateformes propriétaires'} />
+                <Stat value="99%" label={lang === 'en' ? 'Ops on owned platforms' : 'Opérations sur plateformes internes'} />
               </div>
             </motion.div>
           </FadeUp>

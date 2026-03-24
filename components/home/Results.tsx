@@ -35,13 +35,13 @@ function CaseStudyCard() {
 
   const headline = lang === 'en'
     ? 'How a restaurant in Saint-Étienne freed 14 hours per week and replaced 99% of their operational stack with two proprietary platforms they own outright.'
-    : 'Comment un restaurant à Saint-Étienne a libéré 14 heures par semaine et remplacé 99% de son stack opérationnel par deux plateformes propriétaires qu\'il possède entièrement.'
+    : 'Comment un restaurant à Saint-Étienne a libéré 14 heures par semaine et remplacé 99% de son stack opérationnel par deux plateformes internes qu\'il possède entièrement.'
 
   const metrics = [
     { value: '11h → 1h', label: lang === 'en' ? 'Per week, per manager' : 'Par semaine, par manager' },
     { value: '25 480€', label: lang === 'en' ? 'Productivity recovered per year' : 'Productivité récupérée par an' },
     { value: '~55', label: lang === 'en' ? 'Collaborators — zero friction at transition' : 'Collaborateurs — zéro friction à la transition' },
-    { value: '99%', label: lang === 'en' ? 'Of operations run on platforms they own' : 'Des opérations sur des plateformes qu\'ils possèdent' },
+    { value: '99%', label: lang === 'en' ? 'Of operations run on platforms they own' : 'Des opérations sur des plateformes internes' },
   ]
 
   const footnote = lang === 'en'
