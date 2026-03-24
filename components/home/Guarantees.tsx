@@ -171,7 +171,7 @@ export default function Guarantees() {
         .guarantee-card {
           display: flex; align-items: flex-start; gap: 16px;
           background: var(--bg-card); border: 1px solid var(--border);
-          border-radius: 16px; padding: 24px;
+          border-radius: 16px; padding: 24px; height: 100%;
           transition: transform 0.3s cubic-bezier(0.22,1,0.36,1), border-color 0.3s;
         }
         .guarantee-card:hover {
@@ -181,7 +181,7 @@ export default function Guarantees() {
         .guarantee-absurd {
           background: rgba(230,57,70,0.04);
           border: 1px solid rgba(230,57,70,0.15);
-          border-radius: 16px; padding: 24px;
+          border-radius: 16px; padding: 24px; height: 100%;
           transition: transform 0.3s cubic-bezier(0.22,1,0.36,1),
                       border-color 0.3s, box-shadow 0.3s;
           cursor: default;
@@ -191,6 +191,8 @@ export default function Guarantees() {
           border-color: rgba(230,57,70,0.35);
           box-shadow: 0 0 0 3px rgba(230,57,70,0.15);
         }
+        .guarantee-grid > div { height: 100%; }
+        .guarantee-full { grid-column: 1 / -1; }
       `}</style>
 
       <div className="mx-auto" style={{ maxWidth: '900px' }}>
@@ -210,8 +212,10 @@ export default function Guarantees() {
           }}
           className="guarantee-grid"
         >
-          {standard.map((g, i) => (
-            <FadeUp key={i} delay={i * 0.06}>
+          {standard.map((g, i) => {
+            const isLastOdd = standard.length % 2 !== 0 && i === standard.length - 1
+            return (
+            <FadeUp key={i} delay={i * 0.06} className={isLastOdd ? 'guarantee-full' : ''}>
               <div className="guarantee-card">
                 <div style={{
                   width: 40, height: 40, minWidth: 40,
@@ -231,7 +235,8 @@ export default function Guarantees() {
                 </div>
               </div>
             </FadeUp>
-          ))}
+            )
+          })}
         </div>
 
         {/* 2 absurd guarantees — separate row */}
