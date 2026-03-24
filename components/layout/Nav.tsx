@@ -161,6 +161,12 @@ export default function Nav() {
         </div>
       </header>
 
+      {/* ——— Mobile logo ——— */}
+      <Link href="/" className="fixed top-5 left-6 z-[100] md:hidden flex items-center gap-[6px]" style={{ textDecoration: 'none' }}>
+        <span className="nav-logo-n">N</span>
+        <span className="nav-logo-dot" />
+      </Link>
+
       {/* ——— Mobile hamburger ——— */}
       <button
         className="fixed top-5 right-6 z-[100] md:hidden flex flex-col gap-[5px] p-2 cursor-pointer bg-transparent border-none"
