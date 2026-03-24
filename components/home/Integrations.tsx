@@ -87,7 +87,8 @@ function LogoCard({ item }: { item: LogoItem }) {
 
 function ScrollRow({ items, direction, speed = 35 }: { items: LogoItem[]; direction: 'left' | 'right'; speed?: number }) {
   const animName = direction === 'left' ? 'scroll-left' : 'scroll-right'
-  const doubled = [...items, ...items]
+  // Triple the list to ensure seamless loop even with hidden broken logos
+  const tripled = [...items, ...items, ...items]
 
   return (
     <div
@@ -106,7 +107,7 @@ function ScrollRow({ items, direction, speed = 35 }: { items: LogoItem[]; direct
           animation: `${animName} ${speed}s linear infinite`,
         }}
       >
-        {doubled.map((item, i) => (
+        {tripled.map((item, i) => (
           <LogoCard key={`${item.slug}-${i}`} item={item} />
         ))}
       </div>
@@ -122,10 +123,10 @@ export default function Integrations() {
       <style>{`
         @keyframes scroll-left {
           from { transform: translateX(0); }
-          to { transform: translateX(-50%); }
+          to { transform: translateX(-33.333%); }
         }
         @keyframes scroll-right {
-          from { transform: translateX(-50%); }
+          from { transform: translateX(-33.333%); }
           to { transform: translateX(0); }
         }
         .integrations-carousel:hover .integrations-scroll-track {
