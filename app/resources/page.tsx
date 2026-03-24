@@ -83,13 +83,14 @@ export default function ResourcesPage() {
               </h3>
               <p className="font-sans mb-6" style={{ fontSize: '15px', color: 'var(--text-secondary)', lineHeight: 1.8, fontWeight: 300 }}>
                 {lang === 'en'
-                  ? 'How a restaurant group in Saint-Étienne went from 10h/week on team scheduling to 20 minutes — saving €1,000/month and eliminating communication errors completely.'
-                  : 'Comment un groupe de restaurants à Saint-Étienne est passé de 10h/semaine de planification d\'équipe à 20 minutes — économisant 1 000€/mois et éliminant complètement les erreurs de communication.'}
+                  ? 'How a restaurant in Saint-Étienne freed 14 hours per week and replaced 99% of their operational stack with two proprietary platforms they own outright.'
+                  : 'Comment un restaurant à Saint-Étienne a libéré 14 heures par semaine et remplacé 99% de son stack opérationnel par deux plateformes propriétaires qu\'il possède entièrement.'}
               </p>
-              <div className="flex items-center gap-6 flex-wrap">
-                <Stat value="10h → 20min" label={lang === 'en' ? 'Scheduling time' : 'Temps de planification'} />
-                <Stat value="1 000€" label={lang === 'en' ? 'Monthly savings' : 'Économies mensuelles'} />
-                <Stat value="0" label={lang === 'en' ? 'Errors since deploy' : 'Erreurs depuis le déploiement'} />
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <Stat value="11h → 1h" label={lang === 'en' ? 'Per week, per manager' : 'Par semaine, par manager'} />
+                <Stat value="25 480€" label={lang === 'en' ? 'Productivity recovered per year' : 'Productivité récupérée par an'} />
+                <Stat value="~55" label={lang === 'en' ? 'Collaborators — zero friction' : 'Collaborateurs — zéro friction'} />
+                <Stat value="99%" label={lang === 'en' ? 'Ops on owned platforms' : 'Opérations sur plateformes propriétaires'} />
               </div>
             </motion.div>
           </FadeUp>

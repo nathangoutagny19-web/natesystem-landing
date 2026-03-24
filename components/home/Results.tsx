@@ -7,25 +7,6 @@ import { useLang } from '@/components/providers/LangProvider'
 export default function Results() {
   const { t } = useLang()
 
-  const cs = {
-    tag: 'Restaurant Group · Saint-Étienne',
-    company: 'Chromosome',
-    metricBefore: '10h / week',
-    metricAfter: '20 min',
-    metricLabel: { en: 'Team scheduling time', fr: 'Temps de planification équipe' },
-    before: {
-      en: '10 hours per week lost on team management, schedule rebuilt multiple times, frequent communication errors.',
-      fr: '10 heures par semaine perdues en gestion d\'équipe, planning refait plusieurs fois, erreurs de communication fréquentes.',
-    },
-    after: {
-      en: 'Schedule generated in 20 minutes. €1,000/month saved. Zero communication errors since deployment.',
-      fr: 'Planning généré en 20 minutes. 1 000€/mois économisés. Zéro erreur de communication depuis le déploiement.',
-    },
-    quote: { en: '"It changed the way we run everything."', fr: '"Ça a changé notre façon de tout gérer."' },
-    author: 'Catherine P.',
-    role: 'General Manager, Chromosome Saint-Étienne',
-  }
-
   return (
     <section id="resultats" style={{ padding: '120px 24px' }}>
       <div className="mx-auto" style={{ maxWidth: '1100px' }}>
@@ -42,15 +23,30 @@ export default function Results() {
         </FadeUp>
 
         <FadeUp delay={0.15}>
-          <CaseStudyCard cs={cs} t={t} />
+          <CaseStudyCard />
         </FadeUp>
       </div>
     </section>
   )
 }
 
-function CaseStudyCard({ cs, t }: { cs: any; t: any }) {
+function CaseStudyCard() {
   const { lang } = useLang()
+
+  const headline = lang === 'en'
+    ? 'How a restaurant in Saint-Étienne freed 14 hours per week and replaced 99% of their operational stack with two proprietary platforms they own outright.'
+    : 'Comment un restaurant à Saint-Étienne a libéré 14 heures par semaine et remplacé 99% de son stack opérationnel par deux plateformes propriétaires qu\'il possède entièrement.'
+
+  const metrics = [
+    { value: '11h → 1h', label: lang === 'en' ? 'Per week, per manager' : 'Par semaine, par manager' },
+    { value: '25 480€', label: lang === 'en' ? 'Productivity recovered per year' : 'Productivité récupérée par an' },
+    { value: '~55', label: lang === 'en' ? 'Collaborators — zero friction at transition' : 'Collaborateurs — zéro friction à la transition' },
+    { value: '99%', label: lang === 'en' ? 'Of operations run on platforms they own' : 'Des opérations sur des plateformes qu\'ils possèdent' },
+  ]
+
+  const footnote = lang === 'en'
+    ? 'The kind of result their team still talks about at family dinners — and won\'t let us forget.'
+    : 'Le genre de résultat dont leur équipe parle encore à chaque repas de famille — et qu\'ils ne nous laissent pas oublier.'
 
   return (
     <motion.div
@@ -60,62 +56,56 @@ function CaseStudyCard({ cs, t }: { cs: any; t: any }) {
         border: '1px solid rgba(230,57,70,0.15)',
         padding: '48px 40px',
         position: 'relative',
+        borderRadius: '16px',
       }}
       whileHover={{ boxShadow: '0 12px 48px rgba(0,0,0,0.15)', y: -4 }}
       transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
     >
-      {/* Top accent line */}
-      <div className="absolute top-0 left-0 right-0 h-px" style={{ background: 'var(--accent)', transform: 'scaleX(0)', transition: 'transform 0.4s ease' }} />
-
+      {/* Tag */}
       <p className="font-mono mb-3" style={{ fontSize: '10px', fontWeight: 400, letterSpacing: '2px', textTransform: 'uppercase', color: 'var(--accent)' }}>
-        {cs.tag}
+        Restaurant Group · Saint-Étienne
       </p>
+
+      {/* Company name */}
       <h3 className="font-serif italic mb-6" style={{ fontSize: '28px', fontWeight: 400, color: 'var(--accent)', lineHeight: 1.2 }}>
-        {cs.company}
+        Chromosome
       </h3>
 
-      {/* Metrics */}
-      <div className="flex items-center gap-4 mb-8 pb-6" style={{ borderBottom: '1px solid var(--border)' }}>
-        <p className="font-serif italic" style={{ fontSize: '32px', color: 'var(--text-muted)', textDecoration: 'line-through', opacity: 0.5 }}>
-          {cs.metricBefore}
-        </p>
-        <span style={{ color: 'var(--accent)', fontSize: '20px', fontWeight: 300 }}>→</span>
-        <p className="font-serif italic" style={{ fontSize: '32px', color: 'var(--accent)' }}>
-          {cs.metricAfter}
-        </p>
-        <p className="font-sans font-light text-left ml-auto" style={{ fontSize: '12px', color: 'var(--text-secondary)', maxWidth: '120px', lineHeight: 1.4 }}>
-          {cs.metricLabel[lang]}
-        </p>
-      </div>
+      {/* Headline */}
+      <p className="font-sans mb-8" style={{ fontSize: '15px', color: 'var(--text-secondary)', lineHeight: 1.8, fontWeight: 300 }}>
+        {headline}
+      </p>
 
-      {/* Before / After */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-        <div>
-          <p className="font-mono mb-2" style={{ fontSize: '10px', fontWeight: 400, letterSpacing: '2px', textTransform: 'uppercase', color: 'var(--accent)', opacity: 0.7 }}>
-            {t('results.before')}
-          </p>
-          <p className="font-sans" style={{ fontSize: '13px', color: 'var(--text-secondary)', lineHeight: 1.6, fontWeight: 300 }}>
-            {cs.before[lang]}
-          </p>
-        </div>
-        <div>
-          <p className="font-mono mb-2" style={{ fontSize: '10px', fontWeight: 400, letterSpacing: '2px', textTransform: 'uppercase', color: '#5cb85c', opacity: 0.8 }}>
-            {t('results.after')}
-          </p>
-          <p className="font-sans" style={{ fontSize: '13px', color: 'var(--text)', lineHeight: 1.6, fontWeight: 300 }}>
-            {cs.after[lang]}
-          </p>
-        </div>
+      {/* 4 Metrics */}
+      <div
+        className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8 pb-8"
+        style={{ borderBottom: '1px solid var(--border)' }}
+      >
+        {metrics.map(m => (
+          <div key={m.value}>
+            <p className="font-serif italic" style={{ fontSize: '24px', color: 'var(--accent)', lineHeight: 1.2, marginBottom: '4px' }}>
+              {m.value}
+            </p>
+            <p className="font-sans" style={{ fontSize: '12px', color: 'var(--text-muted)', fontWeight: 300, lineHeight: 1.4 }}>
+              {m.label}
+            </p>
+          </div>
+        ))}
       </div>
 
       {/* Quote */}
-      <div className="pt-5" style={{ borderTop: '1px solid var(--border)' }}>
+      <div className="mb-6">
         <p className="font-serif italic mb-3" style={{ fontSize: '17px', fontWeight: 400, color: 'var(--text)', lineHeight: 1.5 }}>
-          {cs.quote[lang]}
+          {lang === 'en' ? '"It changed the way we run everything."' : '"Ça a changé notre façon de tout gérer."'}
         </p>
-        <p className="font-sans" style={{ fontSize: '13px', fontWeight: 500, color: 'var(--text)' }}>{cs.author}</p>
-        <p className="font-sans" style={{ fontSize: '12px', color: 'var(--text-secondary)', fontWeight: 300 }}>{cs.role}</p>
+        <p className="font-sans" style={{ fontSize: '13px', fontWeight: 500, color: 'var(--text)' }}>Catherine P.</p>
+        <p className="font-sans" style={{ fontSize: '12px', color: 'var(--text-secondary)', fontWeight: 300 }}>General Manager, Chromosome Saint-Étienne</p>
       </div>
+
+      {/* Footnote */}
+      <p className="font-sans italic" style={{ fontSize: '13px', fontWeight: 300, color: 'var(--text-muted)' }}>
+        {footnote}
+      </p>
     </motion.div>
   )
 }
