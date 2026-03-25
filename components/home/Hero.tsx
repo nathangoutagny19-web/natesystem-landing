@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import { useLang } from '@/components/providers/LangProvider'
 import { CAL_LINK } from '@/lib/constants'
 
-const TRUSTED_BY = ['Chromosome', 'Institut Saint-Irénée', 'IUT Lyon']
+const TRUSTED_BY = ['Chromosome', 'SimpleTeam']
 const ease = [0.22, 1, 0.36, 1] as const
 
 export default function Hero() {
