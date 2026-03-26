@@ -28,7 +28,8 @@ const BUDGETS = ['< 5 000€/an', '5 000€ – 10 000€/an', '10 000€ – 25
 const TOOLS_LIST = [
   'Google Workspace', 'Microsoft 365', 'Slack', 'Notion', 'HubSpot', 'Salesforce',
   'Airtable', 'Excel / Sheets', 'Monday', 'Trello', 'Asana', 'Pipedrive',
-  'Odoo', 'Sage / Cegid', 'Autre',
+  'Odoo', 'Sage / Cegid', 'LinkedIn', 'Instagram / Meta', 'WhatsApp Business',
+  'AWS', 'Google Cloud', 'Azure', 'OVH', 'Outils internes / sur-mesure', 'Autre',
 ]
 const SAAS_COUNTS = ['1-3', '4-7', '8-12', '13+', 'Aucune idée']
 const TOOLS_CONNECTED = [
