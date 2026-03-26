@@ -10,6 +10,7 @@
     "generate-banner": "node generate-banner.js"
   },
   "dependencies": {
+    "@calcom/embed-react": "^1.5.3",
     "@supabase/supabase-js": "^2.100.0",
     "framer-motion": "^11.0.8",
     "next": "14.2.30",

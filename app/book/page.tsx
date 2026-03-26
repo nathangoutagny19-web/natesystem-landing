@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
+import Cal, { getCalApi } from '@calcom/embed-react'
 import Nav from '@/components/layout/Nav'
 import Footer from '@/components/layout/Footer'
 import { API_URL } from '@/lib/constants'
@@ -99,8 +100,7 @@ export default function BookPage() {
   })
   const [step, setStep] = useState<Step>('form')
   const [submitting, setSubmitting] = useState(false)
-  const calRef = useRef<HTMLDivElement>(null)
-  const calLoaded = useRef(false)
+  const calInitialized = useRef(false)
 
   const canSubmitForm = form.prenom.trim() && form.email.trim() && form.entreprise.trim() && form.role && form.secteur && form.taille
   const canSubmitAudit1 = audit.tools.length > 0 && !!audit.saasCount && !!audit.toolsConnected
@@ -145,27 +145,14 @@ export default function BookPage() {
     setStep('calendar')
   }
 
-  // Load Cal.com embed when reaching calendar step
+  // Initialize Cal.com UI when calendar step is shown
   useEffect(() => {
-    if (step !== 'calendar' || calLoaded.current) return
-    calLoaded.current = true
-
-    const script = document.createElement('script')
-    script.src = 'https://app.cal.com/embed/embed.js'
-    script.async = true
-    script.onload = () => {
-      // @ts-expect-error Cal is loaded from external script
-      const Cal = window.Cal
-      if (!Cal) return
-      Cal('init', 'session-strategique', { origin: 'https://app.cal.com' })
-      Cal.ns['session-strategique']('inline', {
-        elementOrSelector: '#my-cal-inline-session-strategique',
-        config: { layout: 'month_view', useSlotsViewOnSmallScreen: 'true' },
-        calLink: 'natesystem/session-strategique',
-      })
-      Cal.ns['session-strategique']('ui', { hideEventTypeDetails: false, layout: 'month_view' })
-    }
-    document.head.appendChild(script)
+    if (step !== 'calendar' || calInitialized.current) return
+    calInitialized.current = true
+    ;(async function () {
+      const cal = await getCalApi({ namespace: 'session-strategique' })
+      cal('ui', { hideEventTypeDetails: false, layout: 'month_view' })
+    })()
   }, [step])
 
   const inputClass = 'w-full px-4 py-3 rounded-xl text-sm transition focus:outline-none focus:ring-2 focus:ring-[#E63946]/30 focus:border-[#E63946]'
@@ -327,14 +314,11 @@ export default function BookPage() {
                 </p>
               </div>
 
-              <div
-                ref={calRef}
-                id="my-cal-inline-session-strategique"
-                style={{
-                  width: '100%', minHeight: 650, overflow: 'auto',
-                  borderRadius: 16, border: '1px solid var(--border)',
-                  background: '#fff',
-                }}
+              <Cal
+                namespace="session-strategique"
+                calLink="natesystem/session-strategique"
+                style={{ width: '100%', height: '100%', minHeight: 650, overflow: 'scroll' }}
+                config={{ layout: 'month_view', useSlotsViewOnSmallScreen: 'true' }}
               />
             </>
           )}
