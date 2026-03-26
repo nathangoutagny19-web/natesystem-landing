@@ -154,9 +154,9 @@ export default function Nav() {
             </div>
 
             {/* CTA */}
-            <a href={CAL_LINK} target="_blank" rel="noopener noreferrer" className="nav-cta-btn">
+            <Link href={CAL_LINK} className="nav-cta-btn">
               {t('nav.cta')}
-            </a>
+            </Link>
           </div>
         </div>
       </header>
@@ -217,9 +217,9 @@ export default function Nav() {
             ))}
           </div>
 
-          <a href={CAL_LINK} target="_blank" rel="noopener noreferrer" className="btn-primary mt-6 justify-center">
+          <Link href={CAL_LINK} className="btn-primary mt-6 justify-center">
             <span className="btn-primary-dot" />{t('nav.cta')}
-          </a>
+          </Link>
         </div>
       </motion.div>
     </>

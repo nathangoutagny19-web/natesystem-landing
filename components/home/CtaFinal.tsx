@@ -1,7 +1,7 @@
 'use client'
 
 import FadeUp from '@/components/ui/FadeUp'
-import { motion } from 'framer-motion'
+import Link from 'next/link'
 import { useLang } from '@/components/providers/LangProvider'
 import { CAL_LINK } from '@/lib/constants'
 import Footer from '@/components/layout/Footer'
@@ -37,17 +37,10 @@ export default function CtaFinal() {
         </FadeUp>
 
         <FadeUp delay={0.3}>
-          <motion.a
-            href={CAL_LINK}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-primary inline-flex"
-            style={{ fontSize: '15px', padding: '20px 52px', marginBottom: '28px' }}
-            whileHover={{ scale: 1.03 }}
-          >
+          <Link href={CAL_LINK} className="btn-primary inline-flex" style={{ fontSize: '15px', padding: '20px 52px', marginBottom: '28px' }}>
             <span className="btn-primary-dot" />
             {t('cta.button')} →
-          </motion.a>
+          </Link>
         </FadeUp>
 
         <FadeUp delay={0.4}>

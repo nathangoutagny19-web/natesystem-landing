@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { useLang } from '@/components/providers/LangProvider'
+import Link from 'next/link'
 import { CAL_LINK } from '@/lib/constants'
 
 const TRUSTED_BY = ['Chromosome', 'SimpleTeam']
@@ -40,10 +41,10 @@ export default function Hero() {
 
       {/* CTA */}
       <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.5, ease }}>
-        <a href={CAL_LINK} target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ fontSize: '14px' }}>
+        <Link href={CAL_LINK} className="btn-primary" style={{ fontSize: '14px' }}>
           <span className="btn-primary-dot" />
           {t('hero.cta')} →
-        </a>
+        </Link>
       </motion.div>
 
       {/* Scroll hint + trust bar */}
