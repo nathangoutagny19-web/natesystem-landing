@@ -46,6 +46,15 @@ const CHALLENGES = [
   'Autre',
 ]
 
+const BUDGETS = [
+  'Moins de 5 000€',
+  '5 000€ – 10 000€',
+  '10 000€ – 25 000€',
+  '25 000€ – 50 000€',
+  '50 000€+',
+  'Je ne sais pas encore',
+]
+
 interface FormData {
   prenom: string
   nom: string
@@ -56,13 +65,14 @@ interface FormData {
   secteur: string
   taille: string
   challenge: string
+  budget: string
   details: string
 }
 
 export default function BookPage() {
   const [form, setForm] = useState<FormData>({
     prenom: '', nom: '', email: '', entreprise: '', site: '',
-    role: '', secteur: '', taille: '', challenge: '', details: '',
+    role: '', secteur: '', taille: '', challenge: '', budget: '', details: '',
   })
   const [step, setStep] = useState<'form' | 'calendar'>('form')
   const [submitting, setSubmitting] = useState(false)
@@ -91,6 +101,7 @@ export default function BookPage() {
           site: form.site,
           taille: form.taille,
           challenge: form.challenge,
+          budget: form.budget,
           details: form.details,
         }),
       })
@@ -212,6 +223,19 @@ export default function BookPage() {
                         className="book-pill" data-active={form.challenge === c ? 'true' : undefined}
                       >
                         {c}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="mt-4">
+                  <label className="book-label">Budget envisagé pour cette transformation <span style={{ color: 'var(--accent)' }}>*</span></label>
+                  <div className="flex flex-wrap gap-2 mt-1">
+                    {BUDGETS.map(b => (
+                      <button key={b} type="button" onClick={() => updateField('budget', b)}
+                        className="book-pill" data-active={form.budget === b ? 'true' : undefined}
+                      >
+                        {b}
                       </button>
                     ))}
                   </div>
