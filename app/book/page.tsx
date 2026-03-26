@@ -47,11 +47,11 @@ const CHALLENGES = [
 ]
 
 const BUDGETS = [
-  'Moins de 5 000€',
-  '5 000€ – 10 000€',
-  '10 000€ – 25 000€',
-  '25 000€ – 50 000€',
-  '50 000€+',
+  'Moins de 10 000€/an',
+  '10 000€ – 30 000€/an',
+  '30 000€ – 60 000€/an',
+  '60 000€ – 100 000€/an',
+  '100 000€+/an',
   'Je ne sais pas encore',
 ]
 
@@ -229,7 +229,7 @@ export default function BookPage() {
                 </div>
 
                 <div className="mt-4">
-                  <label className="book-label">Budget envisagé pour cette transformation <span style={{ color: 'var(--accent)' }}>*</span></label>
+                  <label className="book-label">Budget annuel envisagé pour cette transformation <span style={{ color: 'var(--accent)' }}>*</span></label>
                   <div className="flex flex-wrap gap-2 mt-1">
                     {BUDGETS.map(b => (
                       <button key={b} type="button" onClick={() => updateField('budget', b)}
