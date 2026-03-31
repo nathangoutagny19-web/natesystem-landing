@@ -151,6 +151,11 @@ export const translations = {
     en: '5 questions to assess your organization\'s readiness for AI automation.',
     fr: '5 questions pour évaluer la maturité IA de votre organisation.',
   },
+  'tools.timeCalc.title': { en: 'Lost Time Calculator', fr: 'Calculateur de Temps Perdu' },
+  'tools.timeCalc.desc': {
+    en: 'Calculate how many hours and euros your team wastes on repetitive tasks.',
+    fr: 'Calculez combien d\'heures et d\'euros votre équipe perd en tâches répétitives.',
+  },
   'tools.audit.title': { en: 'Operations Audit Template', fr: 'Template Audit Opérationnel' },
   'tools.audit.desc': {
     en: 'The exact framework we use to analyze operations before building.',

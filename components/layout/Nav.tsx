@@ -40,6 +40,11 @@ const icons = {
       <rect x="3" y="3" width="18" height="18" rx="3" /><polyline points="9 12 11 14 15 10" />
     </svg>
   ),
+  clock: (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" />
+    </svg>
+  ),
   caseStudy: (
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
       <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
@@ -109,6 +114,7 @@ export default function Nav() {
                     <p className="nav-mega-label">{t('mega.interactive')}</p>
                     <MegaItem href="/tools/saas-calculator" icon={icons.calculator} title={t('tools.calculator.title')} desc={t('tools.calculator.desc')} />
                     <MegaItem href="/tools/ai-readiness" icon={icons.brain} title={t('tools.quiz.title')} desc={t('tools.quiz.desc')} />
+                    <MegaItem href="/tools/calculateur-temps-perdu" icon={icons.clock} title={t('tools.timeCalc.title')} desc={t('tools.timeCalc.desc')} />
                   </div>
                   <div className="nav-mega-col">
                     <p className="nav-mega-label">{t('mega.templates')}</p>
@@ -197,6 +203,7 @@ export default function Nav() {
           <MobileAccordion label={t('nav.tools')} open={mobileToolsOpen} onToggle={() => setMobileToolsOpen(!mobileToolsOpen)}>
             <MobileLink href="/tools/saas-calculator" onClick={() => setMenuOpen(false)}>{t('tools.calculator.title')}</MobileLink>
             <MobileLink href="/tools/ai-readiness" onClick={() => setMenuOpen(false)}>{t('tools.quiz.title')}</MobileLink>
+            <MobileLink href="/tools/calculateur-temps-perdu" onClick={() => setMenuOpen(false)}>{t('tools.timeCalc.title')}</MobileLink>
             <MobileLink href="/tools" onClick={() => setMenuOpen(false)}>{t('tools.title')}</MobileLink>
           </MobileAccordion>
 
