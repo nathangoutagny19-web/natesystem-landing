@@ -1,6 +1,7 @@
 'use client'
 
 import FadeUp from '@/components/ui/FadeUp'
+import { useLang } from '@/components/providers/LangProvider'
 
 function CheckIcon() {
   return (
@@ -18,32 +19,34 @@ function XIcon() {
   )
 }
 
-const forYou = [
-  'Vous avez une équipe de 5 à 100 personnes',
-  'Vos outils ne se parlent pas entre eux',
-  'Vous perdez du temps sur des tâches répétitives',
-  'Vous voulez scaler sans recruter proportionnellement',
-]
-
-const notForYou = [
-  'Vous cherchez un freelance pour une mission ponctuelle',
-  "Vous n'avez pas de process en place du tout",
-  "Vous attendez des résultats sans implication de votre équipe",
-  'Votre budget total est inférieur à 5 000€',
-]
-
 export default function ForWho() {
+  const { t } = useLang()
+
+  const forYou = [
+    t('forwho.yes.1'),
+    t('forwho.yes.2'),
+    t('forwho.yes.3'),
+    t('forwho.yes.4'),
+  ]
+
+  const notForYou = [
+    t('forwho.no.1'),
+    t('forwho.no.2'),
+    t('forwho.no.3'),
+    t('forwho.no.4'),
+  ]
+
   return (
     <section id="for-who" style={{ padding: '120px 24px' }}>
       <div className="mx-auto" style={{ maxWidth: '1100px' }}>
         <FadeUp className="text-center mb-20">
-          <span className="section-label">POUR QUI</span>
+          <span className="section-label">{t('forwho.label')}</span>
           <h2
             className="section-title"
             style={{ maxWidth: 700, margin: '0 auto 24px' }}
           >
-            {"Est-ce que c'est "}
-            <span className="accent">pour vous ?</span>
+            {t('forwho.title')}{' '}
+            <span className="accent">{t('forwho.titleAccent')}</span>
           </h2>
         </FadeUp>
 
@@ -70,13 +73,13 @@ export default function ForWho() {
                     lineHeight: 1.3,
                   }}
                 >
-                  {"C'est pour vous si..."}
+                  {t('forwho.yes.title')}
                 </h3>
               </div>
               <ul style={{ listStyle: 'none', padding: 0 }}>
-                {forYou.map((item) => (
+                {forYou.map((item, i) => (
                   <li
-                    key={item}
+                    key={i}
                     className="font-sans flex items-start gap-3"
                     style={{
                       fontSize: 14,
@@ -116,13 +119,13 @@ export default function ForWho() {
                     lineHeight: 1.3,
                   }}
                 >
-                  {"Ce n'est pas pour vous si..."}
+                  {t('forwho.no.title')}
                 </h3>
               </div>
               <ul style={{ listStyle: 'none', padding: 0 }}>
-                {notForYou.map((item) => (
+                {notForYou.map((item, i) => (
                   <li
-                    key={item}
+                    key={i}
                     className="font-sans flex items-start gap-3"
                     style={{
                       fontSize: 14,

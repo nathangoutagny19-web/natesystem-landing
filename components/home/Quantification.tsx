@@ -2,21 +2,30 @@
 
 import FadeUp from '@/components/ui/FadeUp'
 import Link from 'next/link'
-
-const lines = [
-  { formula: '3h/jour × 5 collaborateurs', result: '= 15h perdues/jour' },
-  { formula: '15h × 22 jours', result: '= 330h/mois' },
-  { formula: '330h × 35\u00A0€/h', result: '= 11\u00A0550\u00A0€/mois' },
-]
+import { useLang } from '@/components/providers/LangProvider'
 
 export default function Quantification() {
+  const { t } = useLang()
+
+  const lines = [
+    t('quant.line1'),
+    t('quant.line2'),
+    t('quant.line3'),
+  ].map(line => {
+    const eqIndex = line.lastIndexOf('=')
+    return {
+      formula: line.slice(0, eqIndex).trim(),
+      result: '= ' + line.slice(eqIndex + 1).trim(),
+    }
+  })
+
   return (
     <section id="quantification" style={{ padding: '120px 24px' }}>
       <div className="mx-auto" style={{ maxWidth: '1100px' }}>
         <FadeUp className="text-center mb-16">
-          <span className="section-label">QUANTIFICATION</span>
+          <span className="section-label">{t('quant.label')}</span>
           <h2 className="section-title" style={{ maxWidth: '700px', margin: '0 auto' }}>
-            Le vrai coût <span className="accent">de ne rien faire.</span>
+            {t('quant.title')} <span className="accent">{t('quant.titleAccent')}</span>
           </h2>
         </FadeUp>
 
@@ -67,7 +76,7 @@ export default function Quantification() {
                   lineHeight: 1.3,
                 }}
               >
-                138&nbsp;600&nbsp;€/an de productivité perdue.
+                {t('quant.total')}
               </p>
             </div>
 
@@ -81,7 +90,7 @@ export default function Quantification() {
                 lineHeight: 1.5,
               }}
             >
-              Estimation basée sur un coût horaire moyen de 35€ chargé.
+              {t('quant.note')}
             </p>
           </div>
         </FadeUp>
@@ -111,7 +120,7 @@ export default function Quantification() {
               e.currentTarget.style.color = 'var(--text)'
             }}
           >
-            Calculer mon coût réel &rarr;
+            {t('quant.cta')}
           </Link>
         </FadeUp>
       </div>

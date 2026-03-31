@@ -1,23 +1,26 @@
 'use client'
 
 import FadeUp from '@/components/ui/FadeUp'
-
-const painPoints = [
-  { stat: '3h/jour', text: 'Temps perdu à faire communiquer des outils qui ne se parlent pas.' },
-  { stat: '8 SaaS', text: 'En moyenne, dont 5 que vous n\'utilisez qu\'à 20% de leur potentiel.' },
-  { stat: '47%', text: 'Des données critiques vivent dans la tête d\'une seule personne.' },
-  { stat: '2 mois', text: 'Pour former un nouveau collaborateur à vos process non documentés.' },
-  { stat: '15h/sem', text: 'De tâches répétitives que personne n\'aime faire — mais qui coûtent cher.' },
-]
+import { useLang } from '@/components/providers/LangProvider'
 
 export default function CostPain() {
+  const { t } = useLang()
+
+  const painPoints = [
+    { stat: t('costpain.stat1'), text: t('costpain.desc1') },
+    { stat: t('costpain.stat2'), text: t('costpain.desc2') },
+    { stat: t('costpain.stat3'), text: t('costpain.desc3') },
+    { stat: t('costpain.stat4'), text: t('costpain.desc4') },
+    { stat: t('costpain.stat5'), text: t('costpain.desc5') },
+  ]
+
   return (
     <section id="cout" style={{ padding: '120px 24px' }}>
       <div className="mx-auto" style={{ maxWidth: '1100px' }}>
         <FadeUp className="text-center mb-16">
-          <span className="section-label">LE VRAI PROBLÈME</span>
+          <span className="section-label">{t('costpain.label')}</span>
           <h2 className="section-title" style={{ maxWidth: '700px', margin: '0 auto' }}>
-            Ce qui coûte cher <span className="accent">dans votre entreprise.</span>
+            {t('costpain.title')} <span className="accent">{t('costpain.titleAccent')}</span>
           </h2>
         </FadeUp>
 

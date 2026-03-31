@@ -2,8 +2,9 @@
 
 import { useState, useRef, useEffect } from 'react'
 import FadeUp from '@/components/ui/FadeUp'
+import { useLang } from '@/components/providers/LangProvider'
 
-/* ——— Icons (monoline SVG, 20×20) ——— */
+/* --- Icons (monoline SVG, 20x20) --- */
 
 const IconShield = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -31,7 +32,7 @@ const IconTarget = () => (
   </svg>
 )
 
-/* ——— Data ——— */
+/* --- Data --- */
 
 interface Guarantee {
   title: string
@@ -41,49 +42,7 @@ interface Guarantee {
   absurdLabel?: string
 }
 
-const guarantees: Guarantee[] = [
-  {
-    title: 'Garantie ROI',
-    desc: 'On définit ensemble un chiffre avant de commencer. Il est écrit dans le contrat. Si à 12 mois il n\'est pas atteint, on travaille gratuitement jusqu\'à ce qu\'il le soit.',
-    icon: <IconShield />,
-  },
-  {
-    title: 'Garantie Délais',
-    desc: 'Chaque semaine de retard injustifiée sur le périmètre initial signé = -10% sur le solde restant, plafonné à 50%. Ne compte pas : évolutions hors périmètre, retours clients non fournis sous 48h, RDV non honorés.',
-    icon: <IconClock />,
-  },
-  {
-    title: 'Garantie Propriété',
-    desc: '100% du code vous appartient à la livraison. Aucun abonnement pour garder l\'accès. Si NateSystem disparaît demain, votre outil tourne toujours.',
-    icon: <IconCode />,
-  },
-  {
-    title: 'Garantie Productivité',
-    desc: 'On mesure ensemble le temps perdu sur les tâches ciblées avant de commencer. Si 90 jours après livraison votre équipe n\'a pas récupéré au moins 30% de ce temps — on continue gratuitement jusqu\'à ce que ce soit le cas.',
-    icon: <IconGauge />,
-  },
-  {
-    title: 'Garantie Efficacité',
-    desc: 'On identifie ensemble avant démarrage les erreurs opérationnelles récurrentes que l\'infrastructure doit éliminer. Si 90 jours après livraison ces erreurs existent encore — on corrige gratuitement jusqu\'à zéro.',
-    icon: <IconTarget />,
-  },
-  {
-    title: 'La Garantie Famille',
-    desc: 'Dans les 90 jours suivant la livraison, si vous n\'êtes pas suffisamment satisfait pour en parler à chaque repas de famille jusqu\'à ce que tout le monde en soit lassé — on vous offre le restau.',
-    icon: null,
-    absurd: true,
-    absurdLabel: 'Garantie Absurde',
-  },
-  {
-    title: 'La Garantie Concurrent',
-    desc: 'Dans les 90 jours suivant la livraison, si vous n\'êtes pas suffisamment satisfait pour nous supplier de ne pas travailler avec votre concurrent direct — on vous offre le restau.',
-    icon: null,
-    absurd: true,
-    absurdLabel: 'Garantie Absurde',
-  },
-]
-
-/* ——— Typewriter hook ——— */
+/* --- Typewriter hook --- */
 
 function useTypewriter(text: string, active: boolean, speed = 30) {
   const [displayed, setDisplayed] = useState('')
@@ -120,7 +79,7 @@ function useTypewriter(text: string, active: boolean, speed = 30) {
   return { displayed, done }
 }
 
-/* ——— Absurd card component ——— */
+/* --- Absurd card component --- */
 
 function AbsurdCard({ g, delay }: { g: Guarantee; delay: number }) {
   const [hovered, setHovered] = useState(false)
@@ -159,9 +118,53 @@ function AbsurdCard({ g, delay }: { g: Guarantee; delay: number }) {
   )
 }
 
-/* ——— Main component ——— */
+/* --- Main component --- */
 
 export default function Guarantees() {
+  const { t } = useLang()
+
+  const guarantees: Guarantee[] = [
+    {
+      title: t('guarantees.roi.title'),
+      desc: t('guarantees.roi.desc'),
+      icon: <IconShield />,
+    },
+    {
+      title: t('guarantees.delays.title'),
+      desc: t('guarantees.delays.desc'),
+      icon: <IconClock />,
+    },
+    {
+      title: t('guarantees.ownership.title'),
+      desc: t('guarantees.ownership.desc'),
+      icon: <IconCode />,
+    },
+    {
+      title: t('guarantees.productivity.title'),
+      desc: t('guarantees.productivity.desc'),
+      icon: <IconGauge />,
+    },
+    {
+      title: t('guarantees.efficiency.title'),
+      desc: t('guarantees.efficiency.desc'),
+      icon: <IconTarget />,
+    },
+    {
+      title: t('guarantees.family.title'),
+      desc: t('guarantees.family.desc'),
+      icon: null,
+      absurd: true,
+      absurdLabel: t('guarantees.absurdLabel'),
+    },
+    {
+      title: t('guarantees.competitor.title'),
+      desc: t('guarantees.competitor.desc'),
+      icon: null,
+      absurd: true,
+      absurdLabel: t('guarantees.absurdLabel'),
+    },
+  ]
+
   const standard = guarantees.filter(g => !g.absurd)
   const absurd = guarantees.filter(g => g.absurd)
 
@@ -197,13 +200,13 @@ export default function Guarantees() {
 
       <div className="mx-auto" style={{ maxWidth: '900px' }}>
         <FadeUp className="text-center mb-16">
-          <span className="section-label">GARANTIES</span>
+          <span className="section-label">{t('guarantees.label')}</span>
           <h2 className="section-title" style={{ maxWidth: '600px', margin: '0 auto' }}>
-            Zéro risque. <span className="accent">7 garanties.</span>
+            {t('guarantees.title')} <span className="accent">{t('guarantees.titleAccent')}</span>
           </h2>
         </FadeUp>
 
-        {/* 5 standard guarantees — 2-column grid */}
+        {/* 5 standard guarantees - 2-column grid */}
         <div
           style={{
             display: 'grid',
@@ -239,7 +242,7 @@ export default function Guarantees() {
           })}
         </div>
 
-        {/* 2 absurd guarantees — separate row */}
+        {/* 2 absurd guarantees - separate row */}
         <div
           style={{
             display: 'grid',

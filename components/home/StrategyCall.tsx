@@ -2,8 +2,18 @@
 
 import FadeUp from '@/components/ui/FadeUp'
 import Link from 'next/link'
+import { useLang } from '@/components/providers/LangProvider'
 
 export default function StrategyCall() {
+  const { t } = useLang()
+
+  const items = [
+    t('strategy.item1'),
+    t('strategy.item2'),
+    t('strategy.item3'),
+    t('strategy.item4'),
+  ]
+
   return (
     <section id="strategy-call" style={{ padding: '120px 24px' }}>
       <div className="mx-auto" style={{ maxWidth: 700 }}>
@@ -23,7 +33,7 @@ export default function StrategyCall() {
               marginBottom: 24, transition: 'all 0.3s',
             }}
           >
-            Réserver un appel de 30 minutes
+            {t('strategy.label')}
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <circle cx="12" cy="12" r="10" /><path d="M12 8l4 4-4 4M8 12h8" />
             </svg>
@@ -34,8 +44,8 @@ export default function StrategyCall() {
             className="section-title"
             style={{ maxWidth: 600, margin: '24px auto 24px' }}
           >
-            Réservez votre{' '}
-            <span className="accent">appel stratégique.</span>
+            {t('strategy.title')}{' '}
+            <span className="accent">{t('strategy.titleAccent')}</span>
           </h2>
 
           {/* Founder photo + name */}
@@ -54,7 +64,7 @@ export default function StrategyCall() {
                 Nathan Goutagny
               </p>
               <p style={{ fontFamily: 'var(--font-mono)', fontSize: 11, color: 'var(--accent)', letterSpacing: 1 }}>
-                FONDATEUR · NATESYSTEM
+                {t('strategy.founder')}
               </p>
             </div>
           </div>
@@ -65,11 +75,7 @@ export default function StrategyCall() {
             color: 'var(--text-secondary)', lineHeight: 1.7,
             maxWidth: 500, margin: '0 auto 40px',
           }}>
-            Pour les entreprises qui veulent{' '}
-            <strong style={{ fontWeight: 600, color: 'var(--text)' }}>
-              rendre leurs opérations autonomes
-            </strong>
-            {' '}grâce à l&apos;IA — sans recruter et sans dépendre d&apos;un SaaS.
+            {t('strategy.sub')}
           </p>
         </FadeUp>
 
@@ -93,7 +99,7 @@ export default function StrategyCall() {
               }}
               className="strategy-cta-hover"
             >
-              Réserver mon appel stratégique gratuit
+              {t('strategy.cta')}
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>
@@ -104,13 +110,8 @@ export default function StrategyCall() {
               display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 24,
               marginTop: 32, paddingTop: 24, borderTop: '1px solid var(--border)',
             }}>
-              {[
-                'Analyse de vos outils actuels',
-                'Identification des quick wins',
-                'Plan d\'action personnalisé',
-                'Recommandations concrètes',
-              ].map(item => (
-                <div key={item} style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+              {items.map((item, i) => (
+                <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
@@ -129,7 +130,7 @@ export default function StrategyCall() {
             fontFamily: 'var(--font-sans)', fontSize: 13, fontWeight: 300,
             color: 'var(--text-muted)', marginTop: 20, lineHeight: 1.6,
           }}>
-            30 min · Gratuit · Sans engagement · Nathan répond sous 24h
+            {t('strategy.footer')}
           </p>
         </FadeUp>
       </div>
