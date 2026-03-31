@@ -137,6 +137,11 @@ export const translations = {
 
   // Tools page
   'tools.title': { en: 'Free Tools', fr: 'Outils Gratuits' },
+  'tools.hero.title': { en: 'The best AI resources\nfor your team.', fr: 'Les meilleures ressources IA\npour ton équipe.' },
+  'tools.hero.sub': { en: 'What agencies charge thousands of euros for. Free here.', fr: 'Ce que les agences facturent des milliers d\'euros. Gratuit ici.' },
+  'tools.hero.tags': { en: 'Claude Skills · GPT Prompts · Implementation Guides · €0', fr: 'Skills Claude · Prompts GPT · Guides d\'implémentation · 0€' },
+  'tools.download': { en: 'Download for free →', fr: 'Télécharger gratuitement →' },
+  'tools.all': { en: 'All', fr: 'Tous' },
   'tools.sub': {
     en: 'Calculators, quizzes, and templates to help you understand where AI can save you time and money.',
     fr: 'Calculateurs, quiz et templates pour comprendre où l\'IA peut vous faire gagner du temps et de l\'argent.',
@@ -171,7 +176,7 @@ export const translations = {
     en: 'Ensure your tools and data are ready for AI deployment.',
     fr: 'Assurez-vous que vos outils et données sont prêts pour un déploiement IA.',
   },
-  'tools.download': { en: 'Download PDF', fr: 'Télécharger le PDF' },
+  'tools.downloadPdf': { en: 'Download PDF', fr: 'Télécharger le PDF' },
   'tools.start': { en: 'Start', fr: 'Commencer' },
   'tools.interactive': { en: 'Interactive', fr: 'Interactif' },
   'tools.template': { en: 'Template', fr: 'Template' },

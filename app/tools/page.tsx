@@ -7,8 +7,10 @@ import FilterBar from './components/FilterBar'
 import ResourceCard from './components/ResourceCard'
 import DownloadModal from './components/DownloadModal'
 import { resources, CATEGORIES, Resource } from '@/lib/resources'
+import { useLang } from '@/components/providers/LangProvider'
 
 export default function ToolsPage() {
+  const { t } = useLang()
   const [filter, setFilter] = useState('Tous')
   const [selectedResource, setSelectedResource] = useState<Resource | null>(null)
 
@@ -25,16 +27,14 @@ export default function ToolsPage() {
         {/* Hero section */}
         <section className="pt-32 pb-12 px-6 text-center">
           <div className="max-w-3xl mx-auto">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tight" style={{ color: 'var(--text)' }}>
-              Les meilleures ressources IA
-              <br />
-              pour ton équipe.
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tight" style={{ color: 'var(--text)', whiteSpace: 'pre-line' }}>
+              {t('tools.hero.title')}
             </h1>
             <p className="mt-4 text-lg md:text-xl italic font-light" style={{ color: 'var(--text-muted)' }}>
-              Ce que les agences facturent des milliers d&apos;euros. Gratuit ici.
+              {t('tools.hero.sub')}
             </p>
             <p className="mt-3 text-sm font-light" style={{ color: 'var(--text-secondary)' }}>
-              Skills Claude · Prompts GPT · Guides d&apos;implémentation · 0€
+              {t('tools.hero.tags')}
             </p>
           </div>
         </section>

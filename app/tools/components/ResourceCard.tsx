@@ -1,6 +1,7 @@
 'use client'
 
 import { Resource, ResourceCategory, ResourceType } from '@/lib/resources'
+import { useLang } from '@/components/providers/LangProvider'
 
 const categoryColors: Record<ResourceCategory, string> = {
   Marketing: 'bg-pink-50 text-pink-600',
@@ -18,6 +19,7 @@ const typeColors: Record<ResourceType, string> = {
 }
 
 export default function ResourceCard({ resource, onDownload }: { resource: Resource; onDownload: (r: Resource) => void }) {
+  const { t } = useLang()
   return (
     <div className="tools-card group hover:scale-[1.01] hover:shadow-lg transition-all duration-200">
       {/* Top row: category + type badges */}
@@ -73,7 +75,7 @@ export default function ResourceCard({ resource, onDownload }: { resource: Resou
         onClick={() => onDownload(resource)}
         className="mt-4 w-full bg-[#ED4245] text-white font-semibold py-3 rounded-xl hover:bg-[#d63638] transition-colors"
       >
-        Télécharger gratuitement →
+        {t('tools.download')}
       </button>
     </div>
   )

@@ -22,7 +22,7 @@ export function useLang() {
 }
 
 export function LangProvider({ children }: { children: React.ReactNode }) {
-  const [lang, setLangState] = useState<Lang>('en')
+  const [lang, setLangState] = useState<Lang>('fr')
 
   const setLang = useCallback((l: Lang) => {
     setLangState(l)
