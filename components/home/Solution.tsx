@@ -7,9 +7,9 @@ export default function Solution() {
   const { t } = useLang()
 
   const pillars = [
-    { number: '01', title: t('solution.connect'), desc: t('solution.connectDesc'), tags: 'Cartography · Architecture · Data mapping' },
-    { number: '02', title: t('solution.automate'), desc: t('solution.automateDesc'), tags: 'AI agents · Workflows · Internal tools' },
-    { number: '03', title: t('solution.decide'), desc: t('solution.decideDesc'), tags: 'Data-driven · Scalable · Proprietary' },
+    { number: '01', title: t('solution.connect'), desc: t('solution.connectDesc'), tags: t('solution.connectTags') },
+    { number: '02', title: t('solution.automate'), desc: t('solution.automateDesc'), tags: t('solution.automateTags') },
+    { number: '03', title: t('solution.decide'), desc: t('solution.decideDesc'), tags: t('solution.decideTags') },
   ]
 
   return (

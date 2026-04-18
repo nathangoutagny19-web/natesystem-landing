@@ -14,9 +14,8 @@ export default function Problem() {
       <div className="mx-auto" style={{ maxWidth: '1100px' }}>
         <FadeUp className="text-center mb-20">
           <span className="section-label">{t('problem.label')}</span>
-          <h2 className="section-title" style={{ maxWidth: '700px', margin: '0 auto 24px' }}>
-            {t('problem.title1')}<br />
-            {t('problem.title2')}{' '}
+          <h2 className="section-title" style={{ maxWidth: '720px', margin: '0 auto 24px' }}>
+            {t('problem.title1')}{' '}
             <span className="accent">{t('problem.titleAccent')}</span>
           </h2>
           <p className="font-sans" style={{ fontSize: '15px', fontWeight: 300, color: 'var(--text-secondary)', maxWidth: '560px', margin: '0 auto', lineHeight: 1.7 }}>
@@ -24,7 +23,7 @@ export default function Problem() {
           </p>
         </FadeUp>
 
-        <div className="flex flex-col gap-0">
+        <div className="flex flex-col gap-0 mb-10">
           {items.map((text, i) => (
             <FadeUp key={i} delay={i * 0.1}>
               <motion.div
@@ -47,6 +46,24 @@ export default function Problem() {
             </FadeUp>
           ))}
         </div>
+
+        <FadeUp delay={0.4}>
+          <p
+            className="font-serif italic text-center"
+            style={{
+              fontSize: 'clamp(18px, 2.4vw, 22px)',
+              fontWeight: 400,
+              color: 'var(--text)',
+              lineHeight: 1.5,
+              maxWidth: '680px',
+              margin: '0 auto',
+              paddingTop: '24px',
+              borderTop: '1px solid var(--border)',
+            }}
+          >
+            {t('problem.stat')}
+          </p>
+        </FadeUp>
       </div>
     </section>
   )

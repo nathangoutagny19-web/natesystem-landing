@@ -2,18 +2,10 @@ import Nav from '@/components/layout/Nav'
 import MobileCta from '@/components/layout/MobileCta'
 import Hero from '@/components/home/Hero'
 import Problem from '@/components/home/Problem'
-import CostPain from '@/components/home/CostPain'
-import Quantification from '@/components/home/Quantification'
 import Solution from '@/components/home/Solution'
-import InfraSystem from '@/components/home/InfraSystem'
-import Results from '@/components/home/Results'
-import Testimonial from '@/components/home/Testimonial'
-import AgentShowcase from '@/components/home/AgentShowcase'
-import Architecture from '@/components/home/Architecture'
-import StrategyCall from '@/components/home/StrategyCall'
-import Integrations from '@/components/home/Integrations'
+import CaseStudy from '@/components/home/CaseStudy'
 import Process from '@/components/home/Process'
-import Guarantees from '@/components/home/Guarantees'
+import Integrations from '@/components/home/Integrations'
 import ForWho from '@/components/home/ForWho'
 import Faq from '@/components/home/Faq'
 import CtaFinal from '@/components/home/CtaFinal'
@@ -24,52 +16,36 @@ export default function Home() {
     <main>
       <Nav />
 
-      {/* ——— DOULEUR ——— */}
+      {/* 1 — Hero */}
       <Hero />
       <Divider />
 
-      {/* ——— AGGRAVATION ——— */}
+      {/* 2 — Problem (absorbs CostPain + Quantification inline) */}
       <Problem />
       <Divider />
-      <CostPain />
-      <Divider />
-      <Quantification />
-      <Divider />
 
-      {/* ——— SOLUTION ——— */}
+      {/* 3 — Solution (custom software + integrated AI) */}
       <Solution />
       <Divider />
-      <InfraSystem />
+
+      {/* 4 — Case Study Chromosome (video + metrics + quote unified) */}
+      <CaseStudy />
       <Divider />
 
-      {/* ——— PREUVE ——— */}
-      <Results />
-      <Divider />
-      <Testimonial />
-      <Divider />
-      <AgentShowcase />
-      <Divider />
-      <Architecture />
-      <Divider />
-
-      {/* ——— OFFRE ——— */}
-      <StrategyCall />
-      <Divider />
+      {/* 5 — Process + Integrations (how we deliver) */}
+      <Process />
       <Integrations />
       <Divider />
-      <Process />
-      <Divider />
 
-      {/* ——— RISQUE ——— */}
-      <Guarantees />
-      <Divider />
+      {/* 6 — For who + promises strip (qualification + no lock-in) */}
       <ForWho />
       <Divider />
+
+      {/* 7 — FAQ + single final CTA */}
       <Faq />
       <Divider />
-
-      {/* ——— ACTION ——— */}
       <CtaFinal />
+
       <MobileCta />
     </main>
   )

@@ -50,7 +50,7 @@ export default function ForWho() {
           </h2>
         </FadeUp>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
           {/* Positive column */}
           <FadeUp delay={0}>
             <div
@@ -143,6 +143,60 @@ export default function ForWho() {
             </div>
           </FadeUp>
         </div>
+
+        {/* Promises strip (owned-code, no lock-in, fixed price) */}
+        <FadeUp delay={0.2}>
+          <div
+            style={{
+              textAlign: 'center',
+              marginBottom: 20,
+            }}
+          >
+            <span
+              className="font-mono"
+              style={{
+                fontSize: 10,
+                letterSpacing: 2.5,
+                textTransform: 'uppercase',
+                color: 'var(--accent)',
+              }}
+            >
+              {t('forwho.promise.label')}
+            </span>
+          </div>
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+              gap: 14,
+              background: 'var(--accent-subtle)',
+              border: '1px solid rgba(230,57,70,0.18)',
+              borderRadius: 14,
+              padding: '28px 24px',
+            }}
+          >
+            {[t('forwho.promise1'), t('forwho.promise2'), t('forwho.promise3')].map((p) => (
+              <div
+                key={p}
+                className="flex items-start gap-3"
+                style={{ justifyContent: 'center' }}
+              >
+                <CheckIcon />
+                <p
+                  className="font-sans"
+                  style={{
+                    fontSize: 14,
+                    fontWeight: 400,
+                    color: 'var(--text)',
+                    lineHeight: 1.6,
+                  }}
+                >
+                  {p}
+                </p>
+              </div>
+            ))}
+          </div>
+        </FadeUp>
       </div>
     </section>
   )
