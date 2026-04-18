@@ -12,59 +12,64 @@ const QUESTIONS = [
   {
     en: 'How many different software tools does your team use daily?',
     fr: 'Combien d\'outils logiciels différents votre équipe utilise-t-elle au quotidien ?',
+    hu: 'Hány különböző szoftveres eszközt használ a csapata naponta?',
     options: [
-      { en: '1-3 tools', fr: '1-3 outils', score: 1 },
-      { en: '4-6 tools', fr: '4-6 outils', score: 2 },
-      { en: '7-10 tools', fr: '7-10 outils', score: 3 },
-      { en: '10+ tools', fr: '10+ outils', score: 4 },
+      { en: '1-3 tools', fr: '1-3 outils', hu: '1–3 eszköz', score: 1 },
+      { en: '4-6 tools', fr: '4-6 outils', hu: '4–6 eszköz', score: 2 },
+      { en: '7-10 tools', fr: '7-10 outils', hu: '7–10 eszköz', score: 3 },
+      { en: '10+ tools', fr: '10+ outils', hu: '10+ eszköz', score: 4 },
     ],
   },
   {
     en: 'How much time per week does your team spend on manual data entry or copy-paste between tools?',
     fr: 'Combien de temps par semaine votre équipe passe-t-elle à saisir manuellement ou copier-coller entre outils ?',
+    hu: 'Hány órát tölt a csapata hetente kézi adatbevitellel vagy másolás-beillesztéssel az eszközök között?',
     options: [
-      { en: 'Less than 1 hour', fr: 'Moins d\'1 heure', score: 1 },
-      { en: '1-5 hours', fr: '1-5 heures', score: 2 },
-      { en: '5-10 hours', fr: '5-10 heures', score: 3 },
-      { en: '10+ hours', fr: '10+ heures', score: 4 },
+      { en: 'Less than 1 hour', fr: 'Moins d\'1 heure', hu: 'Kevesebb mint 1 óra', score: 1 },
+      { en: '1-5 hours', fr: '1-5 heures', hu: '1–5 óra', score: 2 },
+      { en: '5-10 hours', fr: '5-10 heures', hu: '5–10 óra', score: 3 },
+      { en: '10+ hours', fr: '10+ heures', hu: '10+ óra', score: 4 },
     ],
   },
   {
     en: 'Is your business knowledge documented or stored in people\'s heads?',
     fr: 'Vos connaissances métier sont-elles documentées ou stockées dans la tête des gens ?',
+    hu: 'A szakmai tudása dokumentált vagy az emberek fejében él?',
     options: [
-      { en: 'Fully documented', fr: 'Entièrement documentées', score: 1 },
-      { en: 'Mostly documented', fr: 'Majoritairement documentées', score: 2 },
-      { en: 'Partially documented', fr: 'Partiellement documentées', score: 3 },
-      { en: 'Mostly in people\'s heads', fr: 'Surtout dans les têtes', score: 4 },
+      { en: 'Fully documented', fr: 'Entièrement documentées', hu: 'Teljesen dokumentált', score: 1 },
+      { en: 'Mostly documented', fr: 'Majoritairement documentées', hu: 'Nagyrészt dokumentált', score: 2 },
+      { en: 'Partially documented', fr: 'Partiellement documentées', hu: 'Részben dokumentált', score: 3 },
+      { en: 'Mostly in people\'s heads', fr: 'Surtout dans les têtes', hu: 'Főleg az emberek fejében', score: 4 },
     ],
   },
   {
     en: 'How do you currently handle reporting and dashboards?',
     fr: 'Comment gérez-vous actuellement le reporting et les tableaux de bord ?',
+    hu: 'Hogyan kezeli jelenleg a riportokat és az irányítópultokat?',
     options: [
-      { en: 'Automated real-time dashboards', fr: 'Dashboards automatisés en temps réel', score: 1 },
-      { en: 'Regular reports (weekly/monthly)', fr: 'Rapports réguliers (hebdo/mensuels)', score: 2 },
-      { en: 'Ad-hoc spreadsheets', fr: 'Tableurs ad-hoc', score: 3 },
-      { en: 'No formal reporting', fr: 'Pas de reporting formel', score: 4 },
+      { en: 'Automated real-time dashboards', fr: 'Dashboards automatisés en temps réel', hu: 'Automatizált valós idejű irányítópultok', score: 1 },
+      { en: 'Regular reports (weekly/monthly)', fr: 'Rapports réguliers (hebdo/mensuels)', hu: 'Rendszeres riportok (heti/havi)', score: 2 },
+      { en: 'Ad-hoc spreadsheets', fr: 'Tableurs ad-hoc', hu: 'Eseti táblázatok', score: 3 },
+      { en: 'No formal reporting', fr: 'Pas de reporting formel', hu: 'Nincs formális riportálás', score: 4 },
     ],
   },
   {
     en: 'What happens when a key team member is absent?',
     fr: 'Que se passe-t-il quand un membre clé de l\'équipe est absent ?',
+    hu: 'Mi történik, ha egy kulcsfontosságú csapattag távol van?',
     options: [
-      { en: 'No impact — processes are documented', fr: 'Aucun impact — les processus sont documentés', score: 1 },
-      { en: 'Minor delays', fr: 'Retards mineurs', score: 2 },
-      { en: 'Significant slowdown', fr: 'Ralentissement significatif', score: 3 },
-      { en: 'Critical processes stop', fr: 'Les processus critiques s\'arrêtent', score: 4 },
+      { en: 'No impact — processes are documented', fr: 'Aucun impact — les processus sont documentés', hu: 'Nincs hatás — a folyamatok dokumentáltak', score: 1 },
+      { en: 'Minor delays', fr: 'Retards mineurs', hu: 'Kisebb csúszások', score: 2 },
+      { en: 'Significant slowdown', fr: 'Ralentissement significatif', hu: 'Jelentős lassulás', score: 3 },
+      { en: 'Critical processes stop', fr: 'Les processus critiques s\'arrêtent', hu: 'A kritikus folyamatok leállnak', score: 4 },
     ],
   },
 ]
 
-function getScoreTier(score: number): { en: string; fr: string; color: string } {
-  if (score <= 8) return { en: 'Early Stage — AI can help, but foundations come first', fr: 'Stade initial — L\'IA peut aider, mais les fondations d\'abord', color: '#5cb85c' }
-  if (score <= 14) return { en: 'Ready to Automate — High potential for immediate ROI', fr: 'Prêt à automatiser — Potentiel élevé de ROI immédiat', color: 'var(--accent)' }
-  return { en: 'Urgent — You\'re losing significant time and money', fr: 'Urgent — Vous perdez un temps et un argent considérables', color: '#c0392b' }
+function getScoreTier(score: number): { en: string; fr: string; hu: string; color: string } {
+  if (score <= 8) return { en: 'Early Stage — AI can help, but foundations come first', fr: 'Stade initial — L\'IA peut aider, mais les fondations d\'abord', hu: 'Kezdeti szakasz — Az MI segíthet, de előbb az alapok', color: '#5cb85c' }
+  if (score <= 14) return { en: 'Ready to Automate — High potential for immediate ROI', fr: 'Prêt à automatiser — Potentiel élevé de ROI immédiat', hu: 'Automatizálásra kész — Nagy potenciál azonnali megtérülésre', color: 'var(--accent)' }
+  return { en: 'Urgent — You\'re losing significant time and money', fr: 'Urgent — Vous perdez un temps et un argent considérables', hu: 'Sürgős — Jelentős időt és pénzt veszít', color: '#c0392b' }
 }
 
 export default function AiReadinessPage() {

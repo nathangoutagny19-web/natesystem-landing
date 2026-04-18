@@ -156,6 +156,9 @@ export default function Nav() {
                 <button className={`lang-option ${lang === 'fr' ? 'active' : ''}`} onClick={() => { setLang('fr'); setLangOpen(false) }}>
                   <span className="lang-flag lang-flag-fr" /> Français
                 </button>
+                <button className={`lang-option ${lang === 'hu' ? 'active' : ''}`} onClick={() => { setLang('hu'); setLangOpen(false) }}>
+                  <span className="lang-flag lang-flag-hu" /> Magyar
+                </button>
               </div>
             </div>
 
@@ -212,8 +215,8 @@ export default function Nav() {
             <MobileLink href="/blog" onClick={() => setMenuOpen(false)}>{t('resources.blog')}</MobileLink>
           </MobileAccordion>
 
-          <div className="flex gap-2 mt-4">
-            {(['en', 'fr'] as const).map(l => (
+          <div className="flex gap-2 mt-4 flex-wrap">
+            {(['en', 'fr', 'hu'] as const).map(l => (
               <button key={l} className="px-4 py-2 rounded-lg text-sm font-medium transition-all" style={{
                 background: lang === l ? 'var(--accent-subtle)' : 'transparent',
                 color: lang === l ? 'var(--accent)' : 'var(--text-muted)',

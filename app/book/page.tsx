@@ -5,70 +5,436 @@ import Cal, { getCalApi } from '@calcom/embed-react'
 import Nav from '@/components/layout/Nav'
 import Footer from '@/components/layout/Footer'
 import { API_URL } from '@/lib/constants'
+import { useLang, type Lang } from '@/components/providers/LangProvider'
 
-/* ——— Constants ——— */
+/* ——— Localized copy — labels, options, UI strings ——— */
 
-const ROLES = [
-  'Dirigeant / CEO', 'Directeur Marketing', 'Directeur Commercial',
-  'Directeur Ops / COO', 'DRH / RH', 'DSI / CTO', 'Consultant', 'Autre',
-]
-const SECTEURS = [
-  'Restauration / Hôtellerie', 'Conseil / Services', 'BTP / Immobilier',
-  'Commerce / Retail', 'Industrie', 'Éducation', 'Santé', 'Tech / SaaS', 'Autre',
-]
-const TEAM_SIZES = ['1-5 personnes', '6-20 personnes', '21-50 personnes', '51-100 personnes', '100+ personnes']
-const CHALLENGES = [
-  'Trop d\'outils qui ne communiquent pas', 'Tâches répétitives qui prennent trop de temps',
-  'Données éparpillées et non exploitées', 'Process non documentés',
-  'Difficulté à scaler sans recruter', 'Autre',
-]
-const BUDGETS = ['< 5 000€/an', '5 000€ – 10 000€/an', '10 000€ – 25 000€/an', '25 000€ – 50 000€/an', '50 000€+/an']
+type BookCopy = {
+  // Step 1 — info form
+  step1Label: string
+  step1Title: string
+  step1TitleAccent: string
+  step1Sub: string
+  fieldFirstName: string
+  fieldFirstNamePh: string
+  fieldLastName: string
+  fieldLastNamePh: string
+  fieldEmail: string
+  fieldEmailPh: string
+  fieldCompany: string
+  fieldCompanyPh: string
+  fieldWebsite: string
+  fieldWebsitePh: string
+  fieldRole: string
+  fieldSector: string
+  fieldSelect: string
+  fieldTeamSize: string
+  fieldChallenge: string
+  fieldBudget: string
+  fieldDetails: string
+  fieldDetailsPh: string
+  step1Cta: string
+  step1Reassurance: string
 
-/* Audit questions */
-const TOOLS_LIST = [
-  'Google Workspace', 'Microsoft 365', 'Slack', 'Notion', 'HubSpot', 'Salesforce',
-  'Airtable', 'Excel / Sheets', 'Monday', 'Trello', 'Asana', 'Pipedrive',
-  'Odoo', 'Sage / Cegid', 'LinkedIn', 'Instagram / Meta', 'WhatsApp Business',
-  'AWS', 'Google Cloud', 'Azure', 'OVH', 'Outils internes / sur-mesure', 'Autre',
-]
-const SAAS_COUNTS = ['1-3', '4-7', '8-12', '13+', 'Aucune idée']
-const TOOLS_CONNECTED = [
-  'Oui, via intégrations ou Zapier/Make', 'Partiellement (copier-coller fréquent)',
-  'Non, tout est en silo', 'Je ne sais pas',
-]
-const REPETITIVE_TASKS = [
-  'Saisie / transfert de données', 'Plannings / scheduling', 'Reporting / tableaux de bord',
-  'Relances clients / prospects', 'Facturation / devis', 'Onboarding collaborateurs / clients',
-  'Communication interne', 'Gestion de stock / commandes', 'Autre',
-]
-const HOURS_WASTED = ['Moins de 5h/sem', '5-10h/sem', '10-20h/sem', '20-40h/sem', '40h+/sem']
-const WHO_DOES_IT = [
-  'Le dirigeant', 'Un manager', 'Plusieurs personnes', 'Tout le monde un peu', 'Un assistant / office manager',
-]
-const PROCESS_DOCS = [
-  'Oui, entièrement', 'Partiellement', 'Non — tout est dans la tête des gens', 'On a essayé mais c\'est pas à jour',
-]
-const DATA_LOCATIONS = [
-  'CRM', 'Fichiers Excel / Sheets', 'Emails', 'Dans la tête des gens',
-  'ERP / logiciel métier', 'Papier', 'Base de données', 'Autre',
-]
-const ABSENCE_IMPACT = [
-  'Rien ne bouge — on attend', 'On se débrouille mais c\'est le chaos',
-  'Un collègue prend le relais facilement', 'On a des process de backup documentés',
-]
-const DESIRED_RESULTS = [
-  'Gagner 10h+/semaine', 'Réduire les erreurs opérationnelles',
-  'Ne plus dépendre d\'une personne clé', 'Avoir un tableau de bord en temps réel',
-  'Automatiser la prospection / relances', 'Réduire les coûts SaaS', 'Scaler sans recruter',
-]
-const URGENCY = [
-  'Critique — on perd de l\'argent chaque semaine', 'Important — dans les 3 prochains mois',
-  'Nice to have — quand on aura le temps', 'Je veux juste explorer',
-]
-const TRIED_BEFORE = [
-  'Non, jamais', 'Oui, avec un freelance / consultant',
-  'Oui, avec un outil (Zapier, Make...)', 'Oui, en interne mais ça n\'a pas marché',
-]
+  // Audit steps
+  auditStepLabel: string
+  audit1Title: string
+  audit1TitleAccent: string
+  audit1Sub: string
+  audit1QTools: string
+  audit1QSaas: string
+  audit1QConnected: string
+
+  audit2Title: string
+  audit2TitleAccent: string
+  audit2Sub: string
+  audit2QTasks: string
+  audit2QHours: string
+  audit2QWho: string
+
+  audit3Title: string
+  audit3TitleAccent: string
+  audit3Sub: string
+  audit3QProcess: string
+  audit3QData: string
+  audit3QAbsence: string
+
+  audit4Title: string
+  audit4TitleAccent: string
+  audit4Sub: string
+  audit4QResults: string
+  audit4QUrgency: string
+  audit4QTried: string
+
+  back: string
+  next: string
+  sending: string
+  seeSlots: string
+
+  // Calendar
+  calDone: string
+  calTitle: string
+  calTitleAccent: string
+  calThanks: (firstName: string) => string
+
+  // Options
+  roles: string[]
+  sectors: string[]
+  teamSizes: string[]
+  challenges: string[]
+  budgets: string[]
+  toolsList: string[]
+  saasCounts: string[]
+  toolsConnected: string[]
+  repetitiveTasks: string[]
+  hoursWasted: string[]
+  whoDoesIt: string[]
+  processDocs: string[]
+  dataLocations: string[]
+  absenceImpact: string[]
+  desiredResults: string[]
+  urgency: string[]
+  triedBefore: string[]
+}
+
+const COPY: Record<Lang, BookCopy> = {
+  fr: {
+    step1Label: 'ÉTAPE 1/3 · INFORMATIONS',
+    step1Title: 'Réservez votre',
+    step1TitleAccent: 'session stratégique.',
+    step1Sub: '30 minutes pour analyser vos opérations, identifier les opportunités d\'automatisation, et définir un plan d\'action concret.',
+    fieldFirstName: 'Prénom',
+    fieldFirstNamePh: 'Votre prénom',
+    fieldLastName: 'Nom',
+    fieldLastNamePh: 'Votre nom',
+    fieldEmail: 'Email professionnel',
+    fieldEmailPh: 'prenom@entreprise.com',
+    fieldCompany: 'Entreprise',
+    fieldCompanyPh: 'Nom de l\'entreprise',
+    fieldWebsite: 'Site web',
+    fieldWebsitePh: 'https://...',
+    fieldRole: 'Votre rôle',
+    fieldSector: 'Secteur',
+    fieldSelect: 'Sélectionnez',
+    fieldTeamSize: 'Taille de l\'équipe',
+    fieldChallenge: 'Défi principal',
+    fieldBudget: 'Budget annuel envisagé',
+    fieldDetails: 'Précisions (optionnel)',
+    fieldDetailsPh: 'Décrivez brièvement votre situation...',
+    step1Cta: 'Continuer → Audit express',
+    step1Reassurance: 'Gratuit · Sans engagement · Vos données restent confidentielles',
+    auditStepLabel: 'ÉTAPE 2/3 · AUDIT EXPRESS',
+    audit1Title: 'Vos outils',
+    audit1TitleAccent: 'actuels.',
+    audit1Sub: 'Pour comprendre votre écosystème technique et identifier les quick wins.',
+    audit1QTools: 'Quels outils utilisez-vous au quotidien ?',
+    audit1QSaas: 'Combien d\'abonnements SaaS payez-vous ?',
+    audit1QConnected: 'Vos outils communiquent-ils entre eux ?',
+    audit2Title: 'Vos tâches',
+    audit2TitleAccent: 'répétitives.',
+    audit2Sub: 'Pour identifier ce qui peut être automatisé immédiatement.',
+    audit2QTasks: 'Quelles tâches prennent le plus de temps chaque semaine ?',
+    audit2QHours: 'Combien d\'heures/semaine votre équipe passe sur ces tâches ?',
+    audit2QWho: 'Qui les fait principalement ?',
+    audit3Title: 'Vos process',
+    audit3TitleAccent: '& données.',
+    audit3Sub: 'Pour évaluer la maturité de votre infrastructure actuelle.',
+    audit3QProcess: 'Vos process internes sont-ils documentés ?',
+    audit3QData: 'Où vivent vos données critiques ?',
+    audit3QAbsence: 'Que se passe-t-il quand un collaborateur clé est absent ?',
+    audit4Title: 'Vos objectifs',
+    audit4TitleAccent: '& urgence.',
+    audit4Sub: 'Pour prioriser les recommandations de votre session stratégique.',
+    audit4QResults: 'Quel résultat vous ferait dire "ça valait le coup" dans 90 jours ?',
+    audit4QUrgency: 'Quel est votre niveau d\'urgence ?',
+    audit4QTried: 'Avez-vous déjà essayé de résoudre ce problème ?',
+    back: '← Retour',
+    next: 'Continuer →',
+    sending: 'Envoi...',
+    seeSlots: 'Voir les créneaux disponibles →',
+    calDone: 'AUDIT COMPLÉTÉ',
+    calTitle: 'Choisissez votre',
+    calTitleAccent: 'créneau.',
+    calThanks: (n) => `Merci ${n} ! Nathan préparera votre session à partir de vos réponses.`,
+    roles: ['Dirigeant / CEO', 'Directeur Marketing', 'Directeur Commercial', 'Directeur Ops / COO', 'DRH / RH', 'DSI / CTO', 'Consultant', 'Autre'],
+    sectors: ['Restauration / Hôtellerie', 'Conseil / Services', 'BTP / Immobilier', 'Commerce / Retail', 'Industrie', 'Éducation', 'Santé', 'Tech / SaaS', 'Autre'],
+    teamSizes: ['1-5 personnes', '6-20 personnes', '21-50 personnes', '51-100 personnes', '100+ personnes'],
+    challenges: [
+      'Trop d\'outils qui ne communiquent pas', 'Tâches répétitives qui prennent trop de temps',
+      'Données éparpillées et non exploitées', 'Process non documentés',
+      'Difficulté à scaler sans recruter', 'Autre',
+    ],
+    budgets: ['< 5 000€/an', '5 000€ – 10 000€/an', '10 000€ – 25 000€/an', '25 000€ – 50 000€/an', '50 000€+/an'],
+    toolsList: [
+      'Google Workspace', 'Microsoft 365', 'Slack', 'Notion', 'HubSpot', 'Salesforce',
+      'Airtable', 'Excel / Sheets', 'Monday', 'Trello', 'Asana', 'Pipedrive',
+      'Odoo', 'Sage / Cegid', 'LinkedIn', 'Instagram / Meta', 'WhatsApp Business',
+      'AWS', 'Google Cloud', 'Azure', 'OVH', 'Outils internes / sur-mesure', 'Autre',
+    ],
+    saasCounts: ['1-3', '4-7', '8-12', '13+', 'Aucune idée'],
+    toolsConnected: [
+      'Oui, via intégrations ou Zapier/Make', 'Partiellement (copier-coller fréquent)',
+      'Non, tout est en silo', 'Je ne sais pas',
+    ],
+    repetitiveTasks: [
+      'Saisie / transfert de données', 'Plannings / scheduling', 'Reporting / tableaux de bord',
+      'Relances clients / prospects', 'Facturation / devis', 'Onboarding collaborateurs / clients',
+      'Communication interne', 'Gestion de stock / commandes', 'Autre',
+    ],
+    hoursWasted: ['Moins de 5h/sem', '5-10h/sem', '10-20h/sem', '20-40h/sem', '40h+/sem'],
+    whoDoesIt: [
+      'Le dirigeant', 'Un manager', 'Plusieurs personnes', 'Tout le monde un peu', 'Un assistant / office manager',
+    ],
+    processDocs: [
+      'Oui, entièrement', 'Partiellement', 'Non — tout est dans la tête des gens', 'On a essayé mais c\'est pas à jour',
+    ],
+    dataLocations: [
+      'CRM', 'Fichiers Excel / Sheets', 'Emails', 'Dans la tête des gens',
+      'ERP / logiciel métier', 'Papier', 'Base de données', 'Autre',
+    ],
+    absenceImpact: [
+      'Rien ne bouge — on attend', 'On se débrouille mais c\'est le chaos',
+      'Un collègue prend le relais facilement', 'On a des process de backup documentés',
+    ],
+    desiredResults: [
+      'Gagner 10h+/semaine', 'Réduire les erreurs opérationnelles',
+      'Ne plus dépendre d\'une personne clé', 'Avoir un tableau de bord en temps réel',
+      'Automatiser la prospection / relances', 'Réduire les coûts SaaS', 'Scaler sans recruter',
+    ],
+    urgency: [
+      'Critique — on perd de l\'argent chaque semaine', 'Important — dans les 3 prochains mois',
+      'Nice to have — quand on aura le temps', 'Je veux juste explorer',
+    ],
+    triedBefore: [
+      'Non, jamais', 'Oui, avec un freelance / consultant',
+      'Oui, avec un outil (Zapier, Make...)', 'Oui, en interne mais ça n\'a pas marché',
+    ],
+  },
+  en: {
+    step1Label: 'STEP 1/3 · INFORMATION',
+    step1Title: 'Book your',
+    step1TitleAccent: 'strategy session.',
+    step1Sub: '30 minutes to analyze your operations, identify automation opportunities, and define a concrete action plan.',
+    fieldFirstName: 'First name',
+    fieldFirstNamePh: 'Your first name',
+    fieldLastName: 'Last name',
+    fieldLastNamePh: 'Your last name',
+    fieldEmail: 'Work email',
+    fieldEmailPh: 'firstname@company.com',
+    fieldCompany: 'Company',
+    fieldCompanyPh: 'Company name',
+    fieldWebsite: 'Website',
+    fieldWebsitePh: 'https://...',
+    fieldRole: 'Your role',
+    fieldSector: 'Industry',
+    fieldSelect: 'Select',
+    fieldTeamSize: 'Team size',
+    fieldChallenge: 'Main challenge',
+    fieldBudget: 'Expected annual budget',
+    fieldDetails: 'More info (optional)',
+    fieldDetailsPh: 'Briefly describe your situation...',
+    step1Cta: 'Continue → Express audit',
+    step1Reassurance: 'Free · No commitment · Your data stays confidential',
+    auditStepLabel: 'STEP 2/3 · EXPRESS AUDIT',
+    audit1Title: 'Your current',
+    audit1TitleAccent: 'tools.',
+    audit1Sub: 'To understand your technical ecosystem and identify quick wins.',
+    audit1QTools: 'Which tools do you use daily?',
+    audit1QSaas: 'How many SaaS subscriptions do you pay for?',
+    audit1QConnected: 'Do your tools talk to each other?',
+    audit2Title: 'Your repetitive',
+    audit2TitleAccent: 'tasks.',
+    audit2Sub: 'To identify what can be automated immediately.',
+    audit2QTasks: 'Which tasks take the most time each week?',
+    audit2QHours: 'How many hours/week does your team spend on them?',
+    audit2QWho: 'Who mostly does them?',
+    audit3Title: 'Your processes',
+    audit3TitleAccent: '& data.',
+    audit3Sub: 'To assess the maturity of your current infrastructure.',
+    audit3QProcess: 'Are your internal processes documented?',
+    audit3QData: 'Where does your critical data live?',
+    audit3QAbsence: 'What happens when a key employee is absent?',
+    audit4Title: 'Your goals',
+    audit4TitleAccent: '& urgency.',
+    audit4Sub: 'To prioritize the recommendations for your strategy session.',
+    audit4QResults: 'What result, in 90 days, would make you say "it was worth it"?',
+    audit4QUrgency: 'What is your urgency level?',
+    audit4QTried: 'Have you already tried to solve this problem?',
+    back: '← Back',
+    next: 'Continue →',
+    sending: 'Sending...',
+    seeSlots: 'See available slots →',
+    calDone: 'AUDIT COMPLETED',
+    calTitle: 'Pick your',
+    calTitleAccent: 'time slot.',
+    calThanks: (n) => `Thanks ${n}! Nathan will prepare your session from your answers.`,
+    roles: ['CEO / Founder', 'Marketing Director', 'Sales Director', 'Ops Director / COO', 'HR Director', 'CTO / CIO', 'Consultant', 'Other'],
+    sectors: ['Restaurant / Hospitality', 'Consulting / Services', 'Construction / Real Estate', 'Retail / Commerce', 'Industry', 'Education', 'Healthcare', 'Tech / SaaS', 'Other'],
+    teamSizes: ['1-5 people', '6-20 people', '21-50 people', '51-100 people', '100+ people'],
+    challenges: [
+      'Too many tools that don\'t communicate', 'Repetitive tasks taking too much time',
+      'Scattered, unused data', 'Undocumented processes',
+      'Can\'t scale without hiring', 'Other',
+    ],
+    budgets: ['< €5,000/year', '€5,000 – €10,000/year', '€10,000 – €25,000/year', '€25,000 – €50,000/year', '€50,000+/year'],
+    toolsList: [
+      'Google Workspace', 'Microsoft 365', 'Slack', 'Notion', 'HubSpot', 'Salesforce',
+      'Airtable', 'Excel / Sheets', 'Monday', 'Trello', 'Asana', 'Pipedrive',
+      'Odoo', 'Sage / Cegid', 'LinkedIn', 'Instagram / Meta', 'WhatsApp Business',
+      'AWS', 'Google Cloud', 'Azure', 'OVH', 'Custom / internal tools', 'Other',
+    ],
+    saasCounts: ['1-3', '4-7', '8-12', '13+', 'No idea'],
+    toolsConnected: [
+      'Yes, via integrations or Zapier/Make', 'Partially (frequent copy-paste)',
+      'No, everything is siloed', 'I don\'t know',
+    ],
+    repetitiveTasks: [
+      'Data entry / transfer', 'Scheduling', 'Reporting / dashboards',
+      'Client / prospect follow-ups', 'Invoicing / quoting', 'Client / employee onboarding',
+      'Internal communication', 'Stock / order management', 'Other',
+    ],
+    hoursWasted: ['Less than 5h/week', '5-10h/week', '10-20h/week', '20-40h/week', '40h+/week'],
+    whoDoesIt: [
+      'The CEO', 'A manager', 'Several people', 'A bit of everyone', 'An assistant / office manager',
+    ],
+    processDocs: [
+      'Yes, fully', 'Partially', 'No — it\'s all in people\'s heads', 'We tried but it\'s outdated',
+    ],
+    dataLocations: [
+      'CRM', 'Excel / Sheets files', 'Emails', 'In people\'s heads',
+      'ERP / business software', 'Paper', 'Database', 'Other',
+    ],
+    absenceImpact: [
+      'Nothing moves — we wait', 'We manage but it\'s chaos',
+      'A colleague takes over easily', 'We have documented backup processes',
+    ],
+    desiredResults: [
+      'Save 10h+/week', 'Reduce operational errors',
+      'Stop depending on one key person', 'Have a real-time dashboard',
+      'Automate prospecting / follow-ups', 'Cut SaaS costs', 'Scale without hiring',
+    ],
+    urgency: [
+      'Critical — we lose money every week', 'Important — within the next 3 months',
+      'Nice to have — when we have time', 'Just exploring',
+    ],
+    triedBefore: [
+      'No, never', 'Yes, with a freelancer / consultant',
+      'Yes, with a tool (Zapier, Make...)', 'Yes, internally but it didn\'t work',
+    ],
+  },
+  hu: {
+    step1Label: '1/3. LÉPÉS · INFORMÁCIÓK',
+    step1Title: 'Foglalja le',
+    step1TitleAccent: 'stratégiai hívását.',
+    step1Sub: '30 perc, hogy elemezzük a működését, azonosítsuk az automatizálási lehetőségeket, és konkrét cselekvési tervet határozzunk meg.',
+    fieldFirstName: 'Keresztnév',
+    fieldFirstNamePh: 'Az Ön keresztneve',
+    fieldLastName: 'Vezetéknév',
+    fieldLastNamePh: 'Az Ön vezetékneve',
+    fieldEmail: 'Munkahelyi e-mail',
+    fieldEmailPh: 'vezeteknev@ceg.hu',
+    fieldCompany: 'Cég',
+    fieldCompanyPh: 'Cég neve',
+    fieldWebsite: 'Weboldal',
+    fieldWebsitePh: 'https://...',
+    fieldRole: 'Az Ön szerepköre',
+    fieldSector: 'Iparág',
+    fieldSelect: 'Válasszon',
+    fieldTeamSize: 'Csapat mérete',
+    fieldChallenge: 'Fő kihívás',
+    fieldBudget: 'Tervezett éves büdzsé',
+    fieldDetails: 'További információ (opcionális)',
+    fieldDetailsPh: 'Röviden írja le helyzetét...',
+    step1Cta: 'Tovább → Gyors audit',
+    step1Reassurance: 'Ingyenes · Elkötelezettség nélkül · Adatai bizalmasak maradnak',
+    auditStepLabel: '2/3. LÉPÉS · GYORS AUDIT',
+    audit1Title: 'Jelenlegi',
+    audit1TitleAccent: 'eszközei.',
+    audit1Sub: 'Hogy megértsük a technikai ökoszisztémáját és azonosítsuk a gyors nyereségeket.',
+    audit1QTools: 'Milyen eszközöket használ napi szinten?',
+    audit1QSaas: 'Hány SaaS-előfizetést fizet?',
+    audit1QConnected: 'Beszélnek-e az eszközei egymással?',
+    audit2Title: 'Ismétlődő',
+    audit2TitleAccent: 'feladatai.',
+    audit2Sub: 'Hogy azonosítsuk, mi automatizálható azonnal.',
+    audit2QTasks: 'Mely feladatok viszik el a legtöbb időt hetente?',
+    audit2QHours: 'Hány óra/hét telik el ezzel a csapatánál?',
+    audit2QWho: 'Főleg ki csinálja?',
+    audit3Title: 'Folyamatai',
+    audit3TitleAccent: '& adatai.',
+    audit3Sub: 'Hogy felmérjük a jelenlegi infrastruktúrája érettségét.',
+    audit3QProcess: 'Dokumentáltak-e a belső folyamatai?',
+    audit3QData: 'Hol élnek a kritikus adatai?',
+    audit3QAbsence: 'Mi történik, ha egy kulcsfontosságú munkatárs távol van?',
+    audit4Title: 'Céljai',
+    audit4TitleAccent: '& sürgősség.',
+    audit4Sub: 'Hogy rangsoroljuk a stratégiai hívás ajánlásait.',
+    audit4QResults: 'Milyen eredmény mondatná Önnel 90 nap múlva, hogy "megérte"?',
+    audit4QUrgency: 'Mennyire sürgős?',
+    audit4QTried: 'Próbálta már megoldani ezt a problémát?',
+    back: '← Vissza',
+    next: 'Tovább →',
+    sending: 'Küldés...',
+    seeSlots: 'Elérhető időpontok megtekintése →',
+    calDone: 'AUDIT KÉSZ',
+    calTitle: 'Válassza ki az',
+    calTitleAccent: 'időpontját.',
+    calThanks: (n) => `Köszönjük, ${n}! Nathan a válaszai alapján készíti elő a hívását.`,
+    roles: ['Vezérigazgató / Alapító', 'Marketingigazgató', 'Értékesítési igazgató', 'Műveleti igazgató / COO', 'HR-igazgató', 'CTO / CIO', 'Tanácsadó', 'Egyéb'],
+    sectors: ['Vendéglátás / Szállodaipar', 'Tanácsadás / Szolgáltatások', 'Építőipar / Ingatlan', 'Kereskedelem', 'Ipar', 'Oktatás', 'Egészségügy', 'Tech / SaaS', 'Egyéb'],
+    teamSizes: ['1–5 fő', '6–20 fő', '21–50 fő', '51–100 fő', '100+ fő'],
+    challenges: [
+      'Túl sok eszköz, amely nem beszél egymással', 'Ismétlődő feladatok, amelyek túl sok időt vesznek el',
+      'Szétszórt, kihasználatlan adatok', 'Nem dokumentált folyamatok',
+      'Nem tudunk skálázni új emberek nélkül', 'Egyéb',
+    ],
+    budgets: ['< 5 000 €/év', '5 000 € – 10 000 €/év', '10 000 € – 25 000 €/év', '25 000 € – 50 000 €/év', '50 000 €+/év'],
+    toolsList: [
+      'Google Workspace', 'Microsoft 365', 'Slack', 'Notion', 'HubSpot', 'Salesforce',
+      'Airtable', 'Excel / Sheets', 'Monday', 'Trello', 'Asana', 'Pipedrive',
+      'Odoo', 'Sage / Cegid', 'LinkedIn', 'Instagram / Meta', 'WhatsApp Business',
+      'AWS', 'Google Cloud', 'Azure', 'OVH', 'Egyedi / belső eszközök', 'Egyéb',
+    ],
+    saasCounts: ['1–3', '4–7', '8–12', '13+', 'Fogalmam sincs'],
+    toolsConnected: [
+      'Igen, integrációkon vagy Zapier/Make-en keresztül', 'Részben (gyakori másolás-beillesztés)',
+      'Nem, minden külön silóban van', 'Nem tudom',
+    ],
+    repetitiveTasks: [
+      'Adatrögzítés / áthelyezés', 'Ütemezés', 'Riportálás / irányítópultok',
+      'Ügyfél- / érdeklődő-utánkövetés', 'Számlázás / árajánlatok', 'Munkatársak / ügyfelek beillesztése',
+      'Belső kommunikáció', 'Készlet- / rendeléskezelés', 'Egyéb',
+    ],
+    hoursWasted: ['Kevesebb mint 5 óra/hét', '5–10 óra/hét', '10–20 óra/hét', '20–40 óra/hét', '40 óra+/hét'],
+    whoDoesIt: [
+      'A vezető', 'Egy menedzser', 'Több ember', 'Mindenki egy kicsit', 'Asszisztens / irodavezető',
+    ],
+    processDocs: [
+      'Igen, teljesen', 'Részben', 'Nem — mindenki fejében van', 'Próbáltuk, de elavult',
+    ],
+    dataLocations: [
+      'CRM', 'Excel / Sheets fájlok', 'E-mailek', 'Emberek fejében',
+      'ERP / szakmai szoftver', 'Papíron', 'Adatbázis', 'Egyéb',
+    ],
+    absenceImpact: [
+      'Semmi sem mozdul — várunk', 'Boldogulunk, de káosz van',
+      'Egy kolléga könnyen átveszi', 'Dokumentált tartalékfolyamataink vannak',
+    ],
+    desiredResults: [
+      'Heti 10+ óra megtakarítás', 'Működési hibák csökkentése',
+      'Ne függjek egy kulcsemberen', 'Valós idejű irányítópult',
+      'Értékesítési utánkövetés automatizálása', 'SaaS-költségek csökkentése', 'Skálázás új emberek nélkül',
+    ],
+    urgency: [
+      'Kritikus — minden héten pénzt veszítünk', 'Fontos — a következő 3 hónapban',
+      'Jó lenne — ha lesz időnk', 'Csak tájékozódom',
+    ],
+    triedBefore: [
+      'Nem, soha', 'Igen, szabadúszóval / tanácsadóval',
+      'Igen, eszközzel (Zapier, Make...)', 'Igen, házon belül, de nem működött',
+    ],
+  },
+}
 
 /* ——— Types ——— */
 
@@ -89,6 +455,9 @@ type Step = 'form' | 'audit-1' | 'audit-2' | 'audit-3' | 'audit-4' | 'calendar'
 /* ——— Component ——— */
 
 export default function BookPage() {
+  const { lang } = useLang()
+  const c = COPY[lang]
+
   const [form, setForm] = useState<FormData>({
     prenom: '', nom: '', email: '', entreprise: '', site: '',
     role: '', secteur: '', taille: '', challenge: '', budget: '', details: '',
@@ -127,7 +496,6 @@ export default function BookPage() {
 
   const goToCalendar = async () => {
     setSubmitting(true)
-    // Send all data to backend
     try {
       await fetch(`${API_URL}/api/leads/capture`, {
         method: 'POST',
@@ -137,7 +505,7 @@ export default function BookPage() {
           secteur: form.secteur, resourceId: 'strategy-call', newsletter: false,
           nom: form.nom, entreprise: form.entreprise, site: form.site,
           taille: form.taille, challenge: form.challenge, budget: form.budget,
-          details: form.details, audit,
+          details: form.details, audit, lang,
         }),
       })
     } catch { /* continue silently */ }
@@ -146,7 +514,6 @@ export default function BookPage() {
     setStep('calendar')
   }
 
-  // Initialize Cal.com UI when calendar step is shown
   useEffect(() => {
     if (step !== 'calendar' || calInitialized.current) return
     calInitialized.current = true
@@ -158,7 +525,6 @@ export default function BookPage() {
 
   const inputClass = 'w-full px-4 py-3 rounded-xl text-sm transition focus:outline-none focus:ring-2 focus:ring-[#E63946]/30 focus:border-[#E63946]'
 
-  /* Progress bar */
   const stepIndex = ['form', 'audit-1', 'audit-2', 'audit-3', 'audit-4', 'calendar'].indexOf(step)
   const progress = ((stepIndex + 1) / 6) * 100
 
@@ -166,7 +532,6 @@ export default function BookPage() {
     <main className="min-h-screen" style={{ background: 'var(--bg)' }}>
       <Nav />
 
-      {/* Progress bar */}
       <div style={{ position: 'fixed', top: 0, left: 0, right: 0, height: 3, zIndex: 200, background: 'var(--border)' }}>
         <div style={{ height: '100%', width: `${progress}%`, background: 'var(--accent)', transition: 'width 0.5s ease' }} />
       </div>
@@ -174,128 +539,129 @@ export default function BookPage() {
       <section style={{ padding: '140px 24px 80px' }}>
         <div className="mx-auto" style={{ maxWidth: 640 }}>
 
-          {/* ——— STEP 1: Form ——— */}
           {step === 'form' && (
             <>
               <div className="text-center mb-10">
-                <span className="section-label">ÉTAPE 1/3 · INFORMATIONS</span>
+                <span className="section-label">{c.step1Label}</span>
                 <h1 className="section-title" style={{ margin: '12px auto 16px' }}>
-                  Réservez votre{' '}<span className="accent">session stratégique.</span>
+                  {c.step1Title}{' '}<span className="accent">{c.step1TitleAccent}</span>
                 </h1>
                 <p style={{ fontFamily: 'var(--font-sans)', fontSize: 15, fontWeight: 300, color: 'var(--text-secondary)', lineHeight: 1.7, maxWidth: 480, margin: '0 auto' }}>
-                  30 minutes pour analyser vos opérations, identifier les opportunités d&apos;automatisation, et définir un plan d&apos;action concret.
+                  {c.step1Sub}
                 </p>
               </div>
 
               <form onSubmit={handleFormSubmit} style={{ background: 'var(--bg-card)', border: '1px solid var(--border)', borderRadius: 16, padding: '32px' }}>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <Field label="Prénom" required><input type="text" value={form.prenom} onChange={e => updateField('prenom', e.target.value)} placeholder="Votre prénom" className={inputClass} style={{ background: 'var(--bg-elevated)', border: '1px solid var(--border)', color: 'var(--text)' }} required /></Field>
-                  <Field label="Nom"><input type="text" value={form.nom} onChange={e => updateField('nom', e.target.value)} placeholder="Votre nom" className={inputClass} style={{ background: 'var(--bg-elevated)', border: '1px solid var(--border)', color: 'var(--text)' }} /></Field>
+                  <Field label={c.fieldFirstName} required><input type="text" value={form.prenom} onChange={e => updateField('prenom', e.target.value)} placeholder={c.fieldFirstNamePh} className={inputClass} style={{ background: 'var(--bg-elevated)', border: '1px solid var(--border)', color: 'var(--text)' }} required /></Field>
+                  <Field label={c.fieldLastName}><input type="text" value={form.nom} onChange={e => updateField('nom', e.target.value)} placeholder={c.fieldLastNamePh} className={inputClass} style={{ background: 'var(--bg-elevated)', border: '1px solid var(--border)', color: 'var(--text)' }} /></Field>
                 </div>
-                <Field label="Email professionnel" required className="mt-4"><input type="email" value={form.email} onChange={e => updateField('email', e.target.value)} placeholder="prenom@entreprise.com" className={inputClass} style={{ background: 'var(--bg-elevated)', border: '1px solid var(--border)', color: 'var(--text)' }} required /></Field>
+                <Field label={c.fieldEmail} required className="mt-4"><input type="email" value={form.email} onChange={e => updateField('email', e.target.value)} placeholder={c.fieldEmailPh} className={inputClass} style={{ background: 'var(--bg-elevated)', border: '1px solid var(--border)', color: 'var(--text)' }} required /></Field>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
-                  <Field label="Entreprise" required><input type="text" value={form.entreprise} onChange={e => updateField('entreprise', e.target.value)} placeholder="Nom de l'entreprise" className={inputClass} style={{ background: 'var(--bg-elevated)', border: '1px solid var(--border)', color: 'var(--text)' }} required /></Field>
-                  <Field label="Site web"><input type="text" value={form.site} onChange={e => updateField('site', e.target.value)} placeholder="https://..." className={inputClass} style={{ background: 'var(--bg-elevated)', border: '1px solid var(--border)', color: 'var(--text)' }} /></Field>
+                  <Field label={c.fieldCompany} required><input type="text" value={form.entreprise} onChange={e => updateField('entreprise', e.target.value)} placeholder={c.fieldCompanyPh} className={inputClass} style={{ background: 'var(--bg-elevated)', border: '1px solid var(--border)', color: 'var(--text)' }} required /></Field>
+                  <Field label={c.fieldWebsite}><input type="text" value={form.site} onChange={e => updateField('site', e.target.value)} placeholder={c.fieldWebsitePh} className={inputClass} style={{ background: 'var(--bg-elevated)', border: '1px solid var(--border)', color: 'var(--text)' }} /></Field>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
-                  <Field label="Votre rôle" required>
+                  <Field label={c.fieldRole} required>
                     <select value={form.role} onChange={e => updateField('role', e.target.value)} className={inputClass} style={{ background: 'var(--bg-elevated)', border: '1px solid var(--border)', color: form.role ? 'var(--text)' : 'var(--text-muted)' }} required>
-                      <option value="" disabled>Sélectionnez</option>
-                      {ROLES.map(r => <option key={r} value={r}>{r}</option>)}
+                      <option value="" disabled>{c.fieldSelect}</option>
+                      {c.roles.map(r => <option key={r} value={r}>{r}</option>)}
                     </select>
                   </Field>
-                  <Field label="Secteur" required>
+                  <Field label={c.fieldSector} required>
                     <select value={form.secteur} onChange={e => updateField('secteur', e.target.value)} className={inputClass} style={{ background: 'var(--bg-elevated)', border: '1px solid var(--border)', color: form.secteur ? 'var(--text)' : 'var(--text-muted)' }} required>
-                      <option value="" disabled>Sélectionnez</option>
-                      {SECTEURS.map(s => <option key={s} value={s}>{s}</option>)}
+                      <option value="" disabled>{c.fieldSelect}</option>
+                      {c.sectors.map(s => <option key={s} value={s}>{s}</option>)}
                     </select>
                   </Field>
                 </div>
-                <PillField label="Taille de l'équipe" required options={TEAM_SIZES} value={form.taille} onChange={v => updateField('taille', v)} />
-                <PillField label="Défi principal" options={CHALLENGES} value={form.challenge} onChange={v => updateField('challenge', v)} />
-                <PillField label="Budget annuel envisagé" required options={BUDGETS} value={form.budget} onChange={v => updateField('budget', v)} />
-                <Field label="Précisions (optionnel)" className="mt-4">
-                  <textarea value={form.details} onChange={e => updateField('details', e.target.value)} placeholder="Décrivez brièvement votre situation..." rows={3} className={inputClass} style={{ background: 'var(--bg-elevated)', border: '1px solid var(--border)', color: 'var(--text)', resize: 'vertical' }} />
+                <PillField label={c.fieldTeamSize} required options={c.teamSizes} value={form.taille} onChange={v => updateField('taille', v)} />
+                <PillField label={c.fieldChallenge} options={c.challenges} value={form.challenge} onChange={v => updateField('challenge', v)} />
+                <PillField label={c.fieldBudget} required options={c.budgets} value={form.budget} onChange={v => updateField('budget', v)} />
+                <Field label={c.fieldDetails} className="mt-4">
+                  <textarea value={form.details} onChange={e => updateField('details', e.target.value)} placeholder={c.fieldDetailsPh} rows={3} className={inputClass} style={{ background: 'var(--bg-elevated)', border: '1px solid var(--border)', color: 'var(--text)', resize: 'vertical' }} />
                 </Field>
-                <SubmitButton disabled={!canSubmitForm} label="Continuer → Audit express" />
+                <SubmitButton disabled={!canSubmitForm} label={c.step1Cta} />
                 <p className="text-center mt-3" style={{ fontFamily: 'var(--font-sans)', fontSize: 12, color: 'var(--text-muted)', fontWeight: 300 }}>
-                  Gratuit · Sans engagement · Vos données restent confidentielles
+                  {c.step1Reassurance}
                 </p>
               </form>
             </>
           )}
 
-          {/* ——— AUDIT STEP 1: Stack outils ——— */}
           {step === 'audit-1' && (
             <AuditStep
-              stepLabel="ÉTAPE 2/3 · AUDIT EXPRESS"
-              title="Vos outils"
-              titleAccent="actuels."
-              subtitle="Pour comprendre votre écosystème technique et identifier les quick wins."
+              stepLabel={c.auditStepLabel}
+              title={c.audit1Title}
+              titleAccent={c.audit1TitleAccent}
+              subtitle={c.audit1Sub}
+              backLabel={c.back}
+              nextLabel={c.next}
               onNext={() => { window.scrollTo({ top: 0, behavior: 'smooth' }); setStep('audit-2') }}
               canNext={canSubmitAudit1}
               onBack={() => setStep('form')}
             >
-              <MultiPillField label="Quels outils utilisez-vous au quotidien ?" required options={TOOLS_LIST} selected={audit.tools} onToggle={v => toggleMulti('tools', v)} />
-              <PillField label="Combien d'abonnements SaaS payez-vous ?" required options={SAAS_COUNTS} value={audit.saasCount} onChange={v => setAuditField('saasCount', v)} />
-              <PillField label="Vos outils communiquent-ils entre eux ?" required options={TOOLS_CONNECTED} value={audit.toolsConnected} onChange={v => setAuditField('toolsConnected', v)} />
+              <MultiPillField label={c.audit1QTools} required options={c.toolsList} selected={audit.tools} onToggle={v => toggleMulti('tools', v)} />
+              <PillField label={c.audit1QSaas} required options={c.saasCounts} value={audit.saasCount} onChange={v => setAuditField('saasCount', v)} />
+              <PillField label={c.audit1QConnected} required options={c.toolsConnected} value={audit.toolsConnected} onChange={v => setAuditField('toolsConnected', v)} />
             </AuditStep>
           )}
 
-          {/* ——— AUDIT STEP 2: Tâches répétitives ——— */}
           {step === 'audit-2' && (
             <AuditStep
-              stepLabel="ÉTAPE 2/3 · AUDIT EXPRESS"
-              title="Vos tâches"
-              titleAccent="répétitives."
-              subtitle="Pour identifier ce qui peut être automatisé immédiatement."
+              stepLabel={c.auditStepLabel}
+              title={c.audit2Title}
+              titleAccent={c.audit2TitleAccent}
+              subtitle={c.audit2Sub}
+              backLabel={c.back}
+              nextLabel={c.next}
               onNext={() => { window.scrollTo({ top: 0, behavior: 'smooth' }); setStep('audit-3') }}
               canNext={canSubmitAudit2}
               onBack={() => setStep('audit-1')}
             >
-              <MultiPillField label="Quelles tâches prennent le plus de temps chaque semaine ?" required options={REPETITIVE_TASKS} selected={audit.tasks} onToggle={v => toggleMulti('tasks', v)} />
-              <PillField label="Combien d'heures/semaine votre équipe passe sur ces tâches ?" required options={HOURS_WASTED} value={audit.hoursWasted} onChange={v => setAuditField('hoursWasted', v)} />
-              <PillField label="Qui les fait principalement ?" required options={WHO_DOES_IT} value={audit.whoDoesIt} onChange={v => setAuditField('whoDoesIt', v)} />
+              <MultiPillField label={c.audit2QTasks} required options={c.repetitiveTasks} selected={audit.tasks} onToggle={v => toggleMulti('tasks', v)} />
+              <PillField label={c.audit2QHours} required options={c.hoursWasted} value={audit.hoursWasted} onChange={v => setAuditField('hoursWasted', v)} />
+              <PillField label={c.audit2QWho} required options={c.whoDoesIt} value={audit.whoDoesIt} onChange={v => setAuditField('whoDoesIt', v)} />
             </AuditStep>
           )}
 
-          {/* ——— AUDIT STEP 3: Process & données ——— */}
           {step === 'audit-3' && (
             <AuditStep
-              stepLabel="ÉTAPE 2/3 · AUDIT EXPRESS"
-              title="Vos process"
-              titleAccent="& données."
-              subtitle="Pour évaluer la maturité de votre infrastructure actuelle."
+              stepLabel={c.auditStepLabel}
+              title={c.audit3Title}
+              titleAccent={c.audit3TitleAccent}
+              subtitle={c.audit3Sub}
+              backLabel={c.back}
+              nextLabel={c.next}
               onNext={() => { window.scrollTo({ top: 0, behavior: 'smooth' }); setStep('audit-4') }}
               canNext={canSubmitAudit3}
               onBack={() => setStep('audit-2')}
             >
-              <PillField label="Vos process internes sont-ils documentés ?" required options={PROCESS_DOCS} value={audit.processDocs} onChange={v => setAuditField('processDocs', v)} />
-              <MultiPillField label="Où vivent vos données critiques ?" required options={DATA_LOCATIONS} selected={audit.dataLocations} onToggle={v => toggleMulti('dataLocations', v)} />
-              <PillField label="Que se passe-t-il quand un collaborateur clé est absent ?" required options={ABSENCE_IMPACT} value={audit.absenceImpact} onChange={v => setAuditField('absenceImpact', v)} />
+              <PillField label={c.audit3QProcess} required options={c.processDocs} value={audit.processDocs} onChange={v => setAuditField('processDocs', v)} />
+              <MultiPillField label={c.audit3QData} required options={c.dataLocations} selected={audit.dataLocations} onToggle={v => toggleMulti('dataLocations', v)} />
+              <PillField label={c.audit3QAbsence} required options={c.absenceImpact} value={audit.absenceImpact} onChange={v => setAuditField('absenceImpact', v)} />
             </AuditStep>
           )}
 
-          {/* ——— AUDIT STEP 4: Objectifs & urgence ——— */}
           {step === 'audit-4' && (
             <AuditStep
-              stepLabel="ÉTAPE 2/3 · AUDIT EXPRESS"
-              title="Vos objectifs"
-              titleAccent="& urgence."
-              subtitle="Pour prioriser les recommandations de votre session stratégique."
+              stepLabel={c.auditStepLabel}
+              title={c.audit4Title}
+              titleAccent={c.audit4TitleAccent}
+              subtitle={c.audit4Sub}
+              backLabel={c.back}
               onNext={goToCalendar}
               canNext={canSubmitAudit4}
               onBack={() => setStep('audit-3')}
-              nextLabel={submitting ? 'Envoi...' : 'Voir les créneaux disponibles →'}
+              nextLabel={submitting ? c.sending : c.seeSlots}
               disabled={submitting}
             >
-              <MultiPillField label="Quel résultat vous ferait dire 'ça valait le coup' dans 90 jours ?" required options={DESIRED_RESULTS} selected={audit.desiredResults} onToggle={v => toggleMulti('desiredResults', v)} />
-              <PillField label="Quel est votre niveau d'urgence ?" required options={URGENCY} value={audit.urgency} onChange={v => setAuditField('urgency', v)} />
-              <PillField label="Avez-vous déjà essayé de résoudre ce problème ?" required options={TRIED_BEFORE} value={audit.triedBefore} onChange={v => setAuditField('triedBefore', v)} />
+              <MultiPillField label={c.audit4QResults} required options={c.desiredResults} selected={audit.desiredResults} onToggle={v => toggleMulti('desiredResults', v)} />
+              <PillField label={c.audit4QUrgency} required options={c.urgency} value={audit.urgency} onChange={v => setAuditField('urgency', v)} />
+              <PillField label={c.audit4QTried} required options={c.triedBefore} value={audit.triedBefore} onChange={v => setAuditField('triedBefore', v)} />
             </AuditStep>
           )}
 
-          {/* ——— STEP 3: Calendar ——— */}
           {step === 'calendar' && (
             <>
               <div className="text-center mb-8">
@@ -305,13 +671,13 @@ export default function BookPage() {
                   background: 'rgba(34,197,94,0.1)', border: '1px solid rgba(34,197,94,0.2)',
                 }}>
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22c55e" strokeWidth="2" strokeLinecap="round"><polyline points="20 6 9 17 4 12" /></svg>
-                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: 11, color: '#22c55e', letterSpacing: 1 }}>AUDIT COMPLÉTÉ</span>
+                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: 11, color: '#22c55e', letterSpacing: 1 }}>{c.calDone}</span>
                 </div>
                 <h2 className="section-title" style={{ margin: '0 auto 8px', fontSize: 'clamp(24px, 4vw, 36px)' }}>
-                  Choisissez votre{' '}<span className="accent">créneau.</span>
+                  {c.calTitle}{' '}<span className="accent">{c.calTitleAccent}</span>
                 </h2>
                 <p style={{ fontFamily: 'var(--font-sans)', fontSize: 14, color: 'var(--text-secondary)', fontWeight: 300 }}>
-                  Merci {form.prenom} ! Nathan préparera votre session à partir de vos réponses.
+                  {c.calThanks(form.prenom)}
                 </p>
               </div>
 
@@ -352,7 +718,7 @@ function Field({ label, required, className, children }: { label: string; requir
   )
 }
 
-function PillField({ label, required, options, value, onChange }: { label: string; required?: boolean; options: string[]; value: string; onChange: (v: string) => void }) {
+function PillField({ label, required, options, value, onChange }: { label: string; required?: boolean; options: readonly string[]; value: string; onChange: (v: string) => void }) {
   return (
     <div className="mt-4">
       <label className="book-label">{label} {required && <span style={{ color: 'var(--accent)' }}>*</span>}</label>
@@ -365,7 +731,7 @@ function PillField({ label, required, options, value, onChange }: { label: strin
   )
 }
 
-function MultiPillField({ label, required, options, selected, onToggle }: { label: string; required?: boolean; options: string[]; selected: string[]; onToggle: (v: string) => void }) {
+function MultiPillField({ label, required, options, selected, onToggle }: { label: string; required?: boolean; options: readonly string[]; selected: string[]; onToggle: (v: string) => void }) {
   return (
     <div className="mt-4">
       <label className="book-label">{label} {required && <span style={{ color: 'var(--accent)' }}>*</span>}</label>
@@ -392,10 +758,10 @@ function SubmitButton({ disabled, label }: { disabled: boolean; label: string })
   )
 }
 
-function AuditStep({ stepLabel, title, titleAccent, subtitle, children, onNext, canNext, onBack, nextLabel, disabled }: {
+function AuditStep({ stepLabel, title, titleAccent, subtitle, children, onNext, canNext, onBack, nextLabel, backLabel, disabled }: {
   stepLabel: string; title: string; titleAccent: string; subtitle: string
   children: React.ReactNode; onNext: () => void; canNext: boolean; onBack: () => void
-  nextLabel?: string; disabled?: boolean
+  nextLabel: string; backLabel: string; disabled?: boolean
 }) {
   return (
     <>
@@ -418,7 +784,7 @@ function AuditStep({ stepLabel, title, titleAccent, subtitle, children, onNext, 
             borderRadius: 12, color: 'var(--text-secondary)', fontFamily: 'var(--font-sans)',
             fontSize: 14, fontWeight: 400, cursor: 'pointer', transition: 'all 0.2s',
           }}>
-            ← Retour
+            {backLabel}
           </button>
           <button type="button" onClick={onNext} disabled={!canNext || disabled} className="flex-1 flex items-center justify-center gap-2" style={{
             padding: '14px 32px', background: 'var(--accent)', color: '#fff',
@@ -427,7 +793,7 @@ function AuditStep({ stepLabel, title, titleAccent, subtitle, children, onNext, 
             opacity: canNext && !disabled ? 1 : 0.5, transition: 'all 0.3s',
             boxShadow: '0 4px 16px rgba(230,57,70,0.25)',
           }}>
-            {nextLabel || 'Continuer →'}
+            {nextLabel}
           </button>
         </div>
       </div>

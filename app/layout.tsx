@@ -19,39 +19,48 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'NateSystem — Scale Operations Without Scaling Headcount',
+  title: 'NateSystem — Custom software with integrated AI',
   description:
-    'Intelligent systems integrated into your operations. Your tools connect, your processes automate, your team focuses on what matters. 10h+ saved per week.',
+    'We build the custom software that runs your business — a single command center for your operations, your data, your team. AI integrated only where it replaces real hours of work.',
   keywords: [
-    'infrastructure IA',
-    'agents IA PME',
-    'automatisation processus',
+    'logiciel sur-mesure',
+    'custom software',
+    'egyedi szoftver',
+    'intégration IA',
+    'AI integration',
+    'automatisation opérationnelle',
     'NateSystem',
     'Nathan Goutagny',
-    'transformation digitale PME',
-    'AI infrastructure France',
+    'infrastructure IA',
+    'command center SaaS alternative',
   ],
   authors: [{ name: 'Nathan Goutagny', url: 'https://natesystem.com' }],
   creator: 'Nathan Goutagny',
   metadataBase: new URL('https://natesystem.com'),
   alternates: {
     canonical: 'https://natesystem.com',
+    languages: {
+      'fr-FR': 'https://natesystem.com',
+      'en-US': 'https://natesystem.com',
+      'hu-HU': 'https://natesystem.com',
+    },
   },
   robots: { index: true, follow: true },
   openGraph: {
     type: 'website',
     url: 'https://natesystem.com',
-    title: 'NateSystem — Scale Operations Without Scaling Headcount',
+    title: 'NateSystem — Custom software with integrated AI',
     description:
-      'Scale your operations without scaling headcount. Intelligent systems deployed directly into your business.',
+      'The custom software that runs your business — with AI where it actually matters. Owned by you, forever.',
     siteName: 'NateSystem',
     images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'NateSystem' }],
     locale: 'fr_FR',
+    alternateLocale: ['en_US', 'hu_HU'],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'NateSystem — Scale Operations Without Scaling Headcount',
-    description: 'Intelligent systems deployed directly into your operations.',
+    title: 'NateSystem — Custom software with integrated AI',
+    description: 'The custom software that runs your business — with AI where it actually matters.',
     images: ['/og-image.png'],
   },
 }
