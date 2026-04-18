@@ -6,10 +6,10 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { useLang } from '@/components/providers/LangProvider'
 import { CAL_LINK } from '@/lib/constants'
 
-const APPEAR_DELAY_MS = 30_000
+const APPEAR_DELAY_MS = 12_000
 const TEASER_TYPEWRITER_MS = 35
-const AUTO_EXPAND_MS = 6_000
-const AUTO_COLLAPSE_MS = 18_000
+const AUTO_EXPAND_MS = 5_000
+const AUTO_COLLAPSE_MS = 20_000
 const SNOOZE_KEY = 'ns_work_prompt_snoozed_until'
 const SNOOZE_DAYS = 7
 
@@ -120,8 +120,8 @@ export default function WorkTogetherPrompt() {
       <div
         style={{
           position: 'fixed',
-          right: 'clamp(14px, 3vw, 28px)',
-          bottom: 'clamp(14px, 3vw, 28px)',
+          right: 'clamp(24px, 5vw, 64px)',
+          bottom: 'clamp(24px, 5vh, 72px)',
           zIndex: 70,
           display: 'flex',
           alignItems: 'flex-end',

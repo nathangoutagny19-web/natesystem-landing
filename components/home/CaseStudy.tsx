@@ -1,8 +1,88 @@
 'use client'
 
+import { useState } from 'react'
 import FadeUp from '@/components/ui/FadeUp'
 import { motion } from 'framer-motion'
 import { useLang } from '@/components/providers/LangProvider'
+
+const YOUTUBE_ID = 'aMIjJbzuhDc'
+
+function LiteYouTube({ title }: { title: string }) {
+  const [loaded, setLoaded] = useState(false)
+
+  if (loaded) {
+    return (
+      <iframe
+        src={`https://www.youtube-nocookie.com/embed/${YOUTUBE_ID}?autoplay=1&rel=0&modestbranding=1`}
+        title={title}
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerPolicy="strict-origin-when-cross-origin"
+        allowFullScreen
+        className="absolute inset-0 w-full h-full"
+        style={{ borderRadius: '12px', border: 0 }}
+      />
+    )
+  }
+
+  return (
+    <button
+      type="button"
+      onClick={() => setLoaded(true)}
+      aria-label={title}
+      className="absolute inset-0 w-full h-full group"
+      style={{
+        borderRadius: '12px',
+        border: 0,
+        padding: 0,
+        cursor: 'pointer',
+        overflow: 'hidden',
+        backgroundColor: '#000',
+      }}
+    >
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={`https://i.ytimg.com/vi/${YOUTUBE_ID}/maxresdefault.jpg`}
+        alt=""
+        loading="lazy"
+        className="absolute inset-0 w-full h-full"
+        style={{ objectFit: 'cover', transition: 'transform 0.5s ease' }}
+        onError={(e) => {
+          // maxres may not exist for some videos — fall back to hqdefault
+          ;(e.target as HTMLImageElement).src = `https://i.ytimg.com/vi/${YOUTUBE_ID}/hqdefault.jpg`
+        }}
+      />
+      {/* Subtle dark overlay for legibility */}
+      <span
+        aria-hidden="true"
+        className="absolute inset-0"
+        style={{
+          background: 'linear-gradient(to bottom, rgba(0,0,0,0.12), rgba(0,0,0,0.38))',
+        }}
+      />
+      {/* Play button */}
+      <span
+        aria-hidden="true"
+        className="absolute left-1/2 top-1/2"
+        style={{
+          transform: 'translate(-50%, -50%)',
+          width: 72,
+          height: 72,
+          borderRadius: '50%',
+          background: 'rgba(255,255,255,0.96)',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          boxShadow: '0 8px 24px rgba(0,0,0,0.28)',
+          transition: 'transform 0.25s ease, background 0.25s ease',
+        }}
+      >
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="#E63946" aria-hidden="true">
+          <path d="M8 5v14l11-7z" />
+        </svg>
+      </span>
+    </button>
+  )
+}
 
 export default function CaseStudy() {
   const { t, lang } = useLang()
@@ -90,7 +170,7 @@ export default function CaseStudy() {
               </p>
             </div>
 
-            {/* Video */}
+            {/* Video — lazy-loaded on click, no third-party cookies until play */}
             <div
               className="relative overflow-hidden mb-10"
               style={{
@@ -102,15 +182,8 @@ export default function CaseStudy() {
                 background: '#000',
               }}
             >
-              <iframe
-                src="https://www.youtube.com/embed/aMIjJbzuhDc?rel=0&modestbranding=1"
-                title={lang === 'en' ? 'Chromosome testimonial — NateSystem' : 'Témoignage Chromosome — NateSystem'}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerPolicy="strict-origin-when-cross-origin"
-                allowFullScreen
-                loading="lazy"
-                className="absolute inset-0 w-full h-full"
-                style={{ borderRadius: '12px', border: 0 }}
+              <LiteYouTube
+                title={lang === 'en' ? 'Chromosome testimonial — NateSystem' : lang === 'hu' ? 'Chromosome ajánlás — NateSystem' : 'Témoignage Chromosome — NateSystem'}
               />
             </div>
 
