@@ -1,5 +1,6 @@
 import Nav from '@/components/layout/Nav'
 import MobileCta from '@/components/layout/MobileCta'
+import WorkTogetherPrompt from '@/components/layout/WorkTogetherPrompt'
 import Hero from '@/components/home/Hero'
 import Problem from '@/components/home/Problem'
 import Solution from '@/components/home/Solution'
@@ -47,6 +48,7 @@ export default function Home() {
       <CtaFinal />
 
       <MobileCta />
+      <WorkTogetherPrompt />
     </main>
   )
 }

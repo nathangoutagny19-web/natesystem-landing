@@ -99,15 +99,18 @@ export default function CaseStudy() {
                 border: '1px solid var(--border)',
                 maxWidth: '800px',
                 margin: '0 auto 40px',
+                background: '#000',
               }}
             >
               <iframe
-                src="https://www.youtube-nocookie.com/embed/aMIjJbzuhDc?rel=0"
+                src="https://www.youtube.com/embed/aMIjJbzuhDc?rel=0&modestbranding=1"
                 title={lang === 'en' ? 'Chromosome testimonial — NateSystem' : 'Témoignage Chromosome — NateSystem'}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
                 allowFullScreen
-                className="absolute inset-0 w-full h-full border-none"
-                style={{ borderRadius: '12px' }}
+                loading="lazy"
+                className="absolute inset-0 w-full h-full"
+                style={{ borderRadius: '12px', border: 0 }}
               />
             </div>
 
