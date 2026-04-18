@@ -89,9 +89,9 @@ body {
 .section-title {
   font-family: var(--font-serif);
   font-style: italic;
-  font-size: clamp(32px, 5vw, 56px);
+  font-size: clamp(26px, 3.4vw, 42px);
   font-weight: 400;
-  line-height: 1.15;
+  line-height: 1.2;
   margin-bottom: 24px;
 }
 .section-title .accent { color: var(--accent); }
