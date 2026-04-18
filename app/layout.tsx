@@ -84,8 +84,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             __html: `var _iub=_iub||[];_iub.csConfiguration={"siteId":4481810,"cookiePolicyId":84096013,"lang":"fr","storage":{"useSiteId":true}};`,
           }}
         />
-        <script src="https://cs.iubenda.com/autoblocking/4481810.js" />
-        <script src="//cdn.iubenda.com/cs/gpp/stub.js" />
+        <script async src="https://cs.iubenda.com/autoblocking/4481810.js" />
+        <script async src="//cdn.iubenda.com/cs/gpp/stub.js" />
         <script src="//cdn.iubenda.com/cs/iubenda_cs.js" charSet="UTF-8" async />
         {/* Google Analytics (GA4) */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-JCM93QPKTD" />
