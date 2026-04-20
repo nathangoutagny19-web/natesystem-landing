@@ -102,6 +102,7 @@ export default function Nav() {
           {/* Center links — desktop */}
           <nav className="nav-links">
             <Link href="/#prestations" className="nav-link">{t('nav.agency')}</Link>
+            <Link href="/reviews" className="nav-link">{t('reviews.nav')}</Link>
 
             {/* Tools dropdown */}
             <div className="nav-dropdown">
@@ -202,6 +203,7 @@ export default function Nav() {
       >
         <div className="pt-20 px-6 flex flex-col gap-1">
           <MobileLink href="/#prestations" onClick={() => setMenuOpen(false)}>{t('nav.agency')}</MobileLink>
+          <MobileLink href="/reviews" onClick={() => setMenuOpen(false)}>{t('reviews.nav')}</MobileLink>
 
           <MobileAccordion label={t('nav.tools')} open={mobileToolsOpen} onToggle={() => setMobileToolsOpen(!mobileToolsOpen)}>
             <MobileLink href="/tools/saas-calculator" onClick={() => setMenuOpen(false)}>{t('tools.calculator.title')}</MobileLink>

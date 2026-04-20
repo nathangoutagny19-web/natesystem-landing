@@ -384,6 +384,84 @@ export const translations = {
   'blog.ctaDesc': { en: '30 minutes to identify how to automate your repetitive tasks.', fr: '30 minutes pour identifier comment automatiser vos tâches répétitives.', hu: '30 perc, hogy kiderítsük, hogyan automatizálhatja ismétlődő feladatait.' },
   'blog.ctaButton': { en: 'Book a free session →', fr: 'Réserver une session gratuite →', hu: 'Ingyenes időpont foglalása →' },
 
+  // Reviews sub-brand page
+  'reviews.nav': { en: 'Reviews', fr: 'Reviews', hu: 'Reviews' },
+  'reviews.label': { en: 'NATESYSTEM REVIEWS', fr: 'NATESYSTEM REVIEWS', hu: 'NATESYSTEM REVIEWS' },
+  'reviews.hero.title': { en: 'Turn every guest into a', fr: 'Transformez chaque client en', hu: 'Minden vendégből' },
+  'reviews.hero.titleAccent': { en: '5-star review.', fr: 'avis 5 étoiles.', hu: '5 csillagos értékelés.' },
+  'reviews.hero.sub': {
+    en: 'Online reputation management for restaurants, hotels and hospitality businesses. Built by NateSystem.',
+    fr: 'Gestion de réputation en ligne pour restaurants, hôtels et établissements d\'hospitalité. Construit par NateSystem.',
+    hu: 'Online hírnévkezelés éttermeknek, szállodáknak és vendéglátóhelyeknek. A NateSystem szolgáltatása.',
+  },
+  'reviews.hero.cta': { en: 'Let\'s work together', fr: 'Travaillons ensemble', hu: 'Dolgozzunk együtt' },
+  'reviews.hero.secondary': { en: 'or see how it works ↓', fr: 'ou voir comment ça marche ↓', hu: 'vagy nézze meg, hogyan működik ↓' },
+
+  'reviews.proof.label': { en: 'Real results. Real clients.', fr: 'Vrais résultats. Vrais clients.', hu: 'Valódi eredmények. Valódi ügyfelek.' },
+  'reviews.proof.a.caption': { en: 'Your reviews dashboard', fr: 'Votre tableau de bord avis', hu: 'Az értékelései irányítópultja' },
+  'reviews.proof.b.caption': { en: 'Real client: Budapest fine-dining restaurant, 8 months', fr: 'Client réel : restaurant gastronomique à Budapest, 8 mois', hu: 'Valódi ügyfél: budapesti fine-dining étterem, 8 hónap' },
+  'reviews.proof.c.caption': { en: 'Your guests already love you. Make Google know it.', fr: 'Vos clients vous aiment déjà. Faites-le savoir à Google.', hu: 'A vendégei már szeretik Önt. Tudassa a Google-lel is.' },
+
+  'reviews.what.label': { en: 'What we do', fr: 'Ce qu\'on fait', hu: 'Amit csinálunk' },
+  'reviews.what.collect.title': { en: 'Collect', fr: 'Collecter', hu: 'Gyűjtés' },
+  'reviews.what.collect.desc': {
+    en: 'Automated post-visit campaigns that turn happy guests into Google, TripAdvisor and Booking reviews.',
+    fr: 'Campagnes automatisées après visite qui transforment les clients satisfaits en avis Google, TripAdvisor et Booking.',
+    hu: 'Automatizált látogatás utáni kampányok, amelyek elégedett vendégekből Google-, TripAdvisor- és Booking-értékeléseket készítenek.',
+  },
+  'reviews.what.respond.title': { en: 'Respond', fr: 'Répondre', hu: 'Válasz' },
+  'reviews.what.respond.desc': {
+    en: 'Professional responses to every review, on-brand and within 24 hours.',
+    fr: 'Réponses professionnelles à chaque avis, cohérentes avec votre marque, sous 24 heures.',
+    hu: 'Professzionális válasz minden értékelésre, márkához illően, 24 órán belül.',
+  },
+  'reviews.what.improve.title': { en: 'Improve', fr: 'Améliorer', hu: 'Fejlesztés' },
+  'reviews.what.improve.desc': {
+    en: 'Monthly reputation audits with actionable insights for the owner.',
+    fr: 'Audits de réputation mensuels avec des recommandations concrètes pour le dirigeant.',
+    hu: 'Havi hírnévauditok a tulajdonos számára használható betekintésekkel.',
+  },
+
+  'reviews.numbers.label': { en: 'The numbers', fr: 'Les chiffres', hu: 'A számok' },
+  'reviews.numbers.a.value': { en: '+0.8 ★', fr: '+0,8 ★', hu: '+0,8 ★' },
+  'reviews.numbers.a.label': { en: 'Average rating uplift in 6 months', fr: 'Progression moyenne en 6 mois', hu: 'Átlagos értékelésnövekedés 6 hónap alatt' },
+  'reviews.numbers.b.value': { en: '3×', fr: '3×', hu: '3×' },
+  'reviews.numbers.b.label': { en: 'More Google reviews per month', fr: 'Plus d\'avis Google par mois', hu: 'Több Google-értékelés havonta' },
+  'reviews.numbers.c.value': { en: '24h', fr: '24h', hu: '24 óra' },
+  'reviews.numbers.c.label': { en: 'Response SLA, every day', fr: 'SLA de réponse, chaque jour', hu: 'Válaszidő, minden nap' },
+
+  'reviews.sister.text': {
+    en: 'NateSystem Reviews is part of the NateSystem group. Need a website, SaaS or AI tool?',
+    fr: 'NateSystem Reviews fait partie du groupe NateSystem. Besoin d\'un site, d\'un SaaS ou d\'un outil IA ?',
+    hu: 'A NateSystem Reviews a NateSystem csoport része. Weboldalra, SaaS-ra vagy MI-eszközre van szüksége?',
+  },
+  'reviews.sister.cta': { en: 'Discover NateSystem Digital →', fr: 'Découvrir NateSystem Digital →', hu: 'Fedezze fel a NateSystem Digital-t →' },
+
+  'reviews.form.title': { en: 'Let\'s work together', fr: 'Travaillons ensemble', hu: 'Dolgozzunk együtt' },
+  'reviews.form.sub': {
+    en: 'Tell us about your business. Nathan responds within 24 hours.',
+    fr: 'Parlez-nous de votre établissement. Nathan répond sous 24h.',
+    hu: 'Meséljen a vállalkozásáról. Nathan 24 órán belül válaszol.',
+  },
+  'reviews.form.name': { en: 'Full name', fr: 'Nom complet', hu: 'Teljes név' },
+  'reviews.form.email': { en: 'Email', fr: 'Email', hu: 'E-mail' },
+  'reviews.form.business': { en: 'Restaurant / business name', fr: 'Nom du restaurant / de l\'établissement', hu: 'Étterem / vállalkozás neve' },
+  'reviews.form.country': { en: 'Country', fr: 'Pays', hu: 'Ország' },
+  'reviews.form.country.hu': { en: 'Hungary', fr: 'Hongrie', hu: 'Magyarország' },
+  'reviews.form.country.fr': { en: 'France', fr: 'France', hu: 'Franciaország' },
+  'reviews.form.country.other': { en: 'Other', fr: 'Autre', hu: 'Egyéb' },
+  'reviews.form.rating': { en: 'Current Google rating (optional)', fr: 'Note Google actuelle (optionnel)', hu: 'Jelenlegi Google-értékelés (opcionális)' },
+  'reviews.form.locations': { en: 'Number of locations', fr: 'Nombre d\'établissements', hu: 'Telephelyek száma' },
+  'reviews.form.message': { en: 'What would you like to discuss? (optional)', fr: 'De quoi souhaitez-vous discuter ? (optionnel)', hu: 'Miről szeretne beszélni? (opcionális)' },
+  'reviews.form.submit': { en: 'Book a 30-min discovery call', fr: 'Réserver un appel de découverte de 30 min', hu: '30 perces ismerkedési hívás foglalása' },
+  'reviews.form.sending': { en: 'Sending…', fr: 'Envoi…', hu: 'Küldés…' },
+  'reviews.form.success': {
+    en: 'Thanks! Nathan will reach out within 24 hours to book a slot that works for you.',
+    fr: 'Merci ! Nathan vous recontactera sous 24h pour caler un créneau qui vous convient.',
+    hu: 'Köszönjük! Nathan 24 órán belül felveszi Önnel a kapcsolatot, hogy megfelelő időpontot találjon.',
+  },
+  'reviews.form.bookNow': { en: 'Or book a call now →', fr: 'Ou réserver un appel maintenant →', hu: 'Vagy foglaljon időpontot most →' },
+
   // Work-together widget ("Nate" agent)
   'nate.status': { en: 'Online', fr: 'En ligne', hu: 'Online' },
   'nate.teaser': { en: 'Need custom software?', fr: 'Besoin d\'un logiciel sur-mesure ?', hu: 'Egyedi szoftverre van szüksége?' },
