@@ -1,29 +1,35 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'NateSystem Reviews — Online reputation for restaurants & hospitality',
+  title: 'NateSystem · Reviews — Reputation management for restaurants',
   description:
-    'Turn every guest into a 5-star review. Online reputation management for restaurants, hotels and hospitality businesses — review collection, response, and monthly audits.',
+    'AI-powered review intelligence and monthly consulting for restaurants. We run your reputation — collection, response drafting, 90-day action plans — so you don\'t have to.',
   alternates: {
     canonical: 'https://natesystem.com/reviews',
   },
   openGraph: {
     type: 'website',
     url: 'https://natesystem.com/reviews',
-    title: 'NateSystem Reviews — Online reputation for restaurants & hospitality',
+    title: 'NateSystem · Reviews — Reputation management for restaurants',
     description:
-      'Review collection, response and monthly reputation audits for restaurants, hotels and hospitality businesses.',
+      'AI-powered review intelligence + human consulting. Free €790 audit for partner referrals, delivered in 3 business days.',
     siteName: 'NateSystem Reviews',
-    // TODO: replace with real /public/reviews/og-image.png 1200×630 once asset lands
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'NateSystem Reviews' }],
+    images: [
+      {
+        url: '/reviews/04-audit-pdf.png',
+        width: 1600,
+        height: 1000,
+        alt: 'Sample NateSystem Reviews audit PDF',
+      },
+    ],
     locale: 'en_US',
     alternateLocale: ['fr_FR', 'hu_HU'],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'NateSystem Reviews — Online reputation for restaurants & hospitality',
-    description: 'Turn every guest into a 5-star review.',
-    images: ['/og-image.png'],
+    title: 'NateSystem · Reviews — Reputation management for restaurants',
+    description: 'We run your restaurant\'s reputation, so you don\'t have to.',
+    images: ['/reviews/04-audit-pdf.png'],
   },
 }
 

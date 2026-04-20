@@ -384,83 +384,181 @@ export const translations = {
   'blog.ctaDesc': { en: '30 minutes to identify how to automate your repetitive tasks.', fr: '30 minutes pour identifier comment automatiser vos tâches répétitives.', hu: '30 perc, hogy kiderítsük, hogyan automatizálhatja ismétlődő feladatait.' },
   'blog.ctaButton': { en: 'Book a free session →', fr: 'Réserver une session gratuite →', hu: 'Ingyenes időpont foglalása →' },
 
-  // Reviews sub-brand page
+  // ═══════════════════════════════════════════════════════════════
+  // NateSystem · Reviews — agency-grade landing
+  // ═══════════════════════════════════════════════════════════════
   'reviews.nav': { en: 'Reviews', fr: 'Reviews', hu: 'Reviews' },
-  'reviews.label': { en: 'NATESYSTEM REVIEWS', fr: 'NATESYSTEM REVIEWS', hu: 'NATESYSTEM REVIEWS' },
-  'reviews.hero.title': { en: 'Turn every guest into a', fr: 'Transformez chaque client en', hu: 'Minden vendégből' },
-  'reviews.hero.titleAccent': { en: '5-star review.', fr: 'avis 5 étoiles.', hu: '5 csillagos értékelés.' },
+  'reviews.kicker': { en: 'NATESYSTEM · REVIEWS', fr: 'NATESYSTEM · REVIEWS', hu: 'NATESYSTEM · REVIEWS' },
+
+  // Hero
+  'reviews.hero.title1': { en: 'We run your restaurant\'s reputation,', fr: 'Nous gérons la réputation de votre restaurant,', hu: 'Mi gondoskodunk az étterme hírnevéről,' },
+  'reviews.hero.titleAccent': { en: 'so you don\'t have to.', fr: 'pour que vous n\'ayez pas à le faire.', hu: 'hogy Önnek ne kelljen.' },
   'reviews.hero.sub': {
-    en: 'Online reputation management for restaurants, hotels and hospitality businesses. Built by NateSystem.',
-    fr: 'Gestion de réputation en ligne pour restaurants, hôtels et établissements d\'hospitalité. Construit par NateSystem.',
-    hu: 'Online hírnévkezelés éttermeknek, szállodáknak és vendéglátóhelyeknek. A NateSystem szolgáltatása.',
+    en: 'AI-powered review intelligence, human consulting, monthly reports. Built for restaurants that know reputation is revenue.',
+    fr: 'Intelligence des avis par IA, conseil humain, rapports mensuels. Pour les restaurants qui savent que la réputation, c\'est du chiffre.',
+    hu: 'MI-alapú értékeléselemzés, emberi tanácsadás, havi riportok. Éttermeknek, akik tudják: a hírnév bevétel.',
   },
-  'reviews.hero.cta': { en: 'Let\'s work together', fr: 'Travaillons ensemble', hu: 'Dolgozzunk együtt' },
-  'reviews.hero.secondary': { en: 'or see how it works ↓', fr: 'ou voir comment ça marche ↓', hu: 'vagy nézze meg, hogyan működik ↓' },
-
-  'reviews.proof.label': { en: 'Real results. Real clients.', fr: 'Vrais résultats. Vrais clients.', hu: 'Valódi eredmények. Valódi ügyfelek.' },
-  'reviews.proof.a.caption': { en: 'Your reviews dashboard', fr: 'Votre tableau de bord avis', hu: 'Az értékelései irányítópultja' },
-  'reviews.proof.b.caption': { en: 'Real client: Budapest fine-dining restaurant, 8 months', fr: 'Client réel : restaurant gastronomique à Budapest, 8 mois', hu: 'Valódi ügyfél: budapesti fine-dining étterem, 8 hónap' },
-  'reviews.proof.c.caption': { en: 'Your guests already love you. Make Google know it.', fr: 'Vos clients vous aiment déjà. Faites-le savoir à Google.', hu: 'A vendégei már szeretik Önt. Tudassa a Google-lel is.' },
-
-  'reviews.what.label': { en: 'What we do', fr: 'Ce qu\'on fait', hu: 'Amit csinálunk' },
-  'reviews.what.collect.title': { en: 'Collect', fr: 'Collecter', hu: 'Gyűjtés' },
-  'reviews.what.collect.desc': {
-    en: 'Automated post-visit campaigns that turn happy guests into Google, TripAdvisor and Booking reviews.',
-    fr: 'Campagnes automatisées après visite qui transforment les clients satisfaits en avis Google, TripAdvisor et Booking.',
-    hu: 'Automatizált látogatás utáni kampányok, amelyek elégedett vendégekből Google-, TripAdvisor- és Booking-értékeléseket készítenek.',
-  },
-  'reviews.what.respond.title': { en: 'Respond', fr: 'Répondre', hu: 'Válasz' },
-  'reviews.what.respond.desc': {
-    en: 'Professional responses to every review, on-brand and within 24 hours.',
-    fr: 'Réponses professionnelles à chaque avis, cohérentes avec votre marque, sous 24 heures.',
-    hu: 'Professzionális válasz minden értékelésre, márkához illően, 24 órán belül.',
-  },
-  'reviews.what.improve.title': { en: 'Improve', fr: 'Améliorer', hu: 'Fejlesztés' },
-  'reviews.what.improve.desc': {
-    en: 'Monthly reputation audits with actionable insights for the owner.',
-    fr: 'Audits de réputation mensuels avec des recommandations concrètes pour le dirigeant.',
-    hu: 'Havi hírnévauditok a tulajdonos számára használható betekintésekkel.',
+  'reviews.hero.ctaPrimary': { en: 'Book a free audit', fr: 'Réserver un audit gratuit', hu: 'Ingyenes auditálás foglalása' },
+  'reviews.hero.ctaGhost': { en: 'See what you get', fr: 'Voir ce que vous obtenez', hu: 'Nézze meg, mit kap' },
+  'reviews.hero.socialProof': {
+    en: 'Running for ~30 restaurants in Budapest · average score lift +14 points in 90 days',
+    fr: 'Opéré pour ~30 restaurants à Budapest · progression moyenne de +14 points en 90 jours',
+    hu: '~30 budapesti étteremnek · átlagos pontszám-emelkedés +14 pont 90 nap alatt',
   },
 
-  'reviews.numbers.label': { en: 'The numbers', fr: 'Les chiffres', hu: 'A számok' },
-  'reviews.numbers.a.value': { en: '+0.8 ★', fr: '+0,8 ★', hu: '+0,8 ★' },
-  'reviews.numbers.a.label': { en: 'Average rating uplift in 6 months', fr: 'Progression moyenne en 6 mois', hu: 'Átlagos értékelésnövekedés 6 hónap alatt' },
-  'reviews.numbers.b.value': { en: '3×', fr: '3×', hu: '3×' },
-  'reviews.numbers.b.label': { en: 'More Google reviews per month', fr: 'Plus d\'avis Google par mois', hu: 'Több Google-értékelés havonta' },
-  'reviews.numbers.c.value': { en: '24h', fr: '24h', hu: '24 óra' },
-  'reviews.numbers.c.label': { en: 'Response SLA, every day', fr: 'SLA de réponse, chaque jour', hu: 'Válaszidő, minden nap' },
+  // Problem
+  'reviews.problem.kicker': { en: 'THE REAL COST OF IGNORING REVIEWS', fr: 'LE VRAI COÛT DE NÉGLIGER LES AVIS', hu: 'AZ ÉRTÉKELÉSEK FIGYELMEN KÍVÜL HAGYÁSÁNAK VALÓDI ÁRA' },
+  'reviews.problem.a.value': { en: '47%', fr: '47 %', hu: '47%' },
+  'reviews.problem.a.title': { en: 'Diners check Google first', fr: 'Des clients vérifient Google d\'abord', hu: 'A vendégek előbb a Google-t nézik' },
+  'reviews.problem.a.desc': {
+    en: 'Of Budapest diners check Google reviews before deciding to book — before they even read your menu.',
+    fr: 'Des clients à Budapest vérifient les avis Google avant même de lire votre menu.',
+    hu: 'A budapesti vendégek a foglalás előtt a Google-értékeléseket nézik — még az étlap előtt.',
+  },
+  'reviews.problem.b.value': { en: '1★ drop', fr: '−1 ★', hu: '−1 ★' },
+  'reviews.problem.b.title': { en: 'Cuts revenue 5–9%', fr: 'Coupe le CA de 5 à 9 %', hu: '5–9%-os bevételcsökkenés' },
+  'reviews.problem.b.desc': {
+    en: 'A single star lost on Google Maps can slice 5–9% of yearly revenue (Harvard Business Review).',
+    fr: 'Une étoile perdue sur Google peut effacer 5 à 9 % du chiffre annuel (Harvard Business Review).',
+    hu: 'Egyetlen elvesztett csillag évente 5–9%-kal csökkentheti a bevételt (Harvard Business Review).',
+  },
+  'reviews.problem.c.value': { en: '40 min', fr: '40 min', hu: '40 perc' },
+  'reviews.problem.c.title': { en: 'Avg. wait on a 1★', fr: 'Attente moyenne après un 1 ★', hu: 'Átlagos várakozás 1 ★ után' },
+  'reviews.problem.c.desc': {
+    en: 'Between a 1-star review being posted and us surfacing it to the restaurant, with a response already drafted.',
+    fr: 'Entre la publication d\'un avis 1 étoile et le moment où nous le remontons au restaurant avec une réponse prête.',
+    hu: 'Egy 1-csillagos értékelés megjelenése és a között, hogy jelezzük az étteremnek — már kész válasszal.',
+  },
 
-  'reviews.sister.text': {
-    en: 'NateSystem Reviews is part of the NateSystem group. Need a website, SaaS or AI tool?',
-    fr: 'NateSystem Reviews fait partie du groupe NateSystem. Besoin d\'un site, d\'un SaaS ou d\'un outil IA ?',
-    hu: 'A NateSystem Reviews a NateSystem csoport része. Weboldalra, SaaS-ra vagy MI-eszközre van szüksége?',
+  // Features (What's inside)
+  'reviews.features.kicker': { en: 'WHAT\'S INSIDE', fr: 'CE QUI EST INCLUS', hu: 'MIT TARTALMAZ' },
+  'reviews.features.title1': { en: 'A team running your reputation.', fr: 'Une équipe qui gère votre réputation.', hu: 'Egy csapat, amely a hírnevét kezeli.' },
+  'reviews.features.title2': { en: 'A platform showing you everything.', fr: 'Une plateforme qui vous montre tout.', hu: 'Egy platform, ami mindent megmutat.' },
+  'reviews.features.f1.title': { en: 'AI sentiment analysis', fr: 'Analyse de sentiment par IA', hu: 'MI-alapú hangulatelemzés' },
+  'reviews.features.f1.desc': {
+    en: 'Every review scored for tone, aspect (food, service, ambiance, wait-time) and suspicious patterns.',
+    fr: 'Chaque avis noté selon le ton, l\'aspect (cuisine, service, ambiance, attente) et les signaux suspects.',
+    hu: 'Minden értékelés pontozva hangulat, szempont (étel, kiszolgálás, hangulat, várakozás) és gyanús minták szerint.',
   },
-  'reviews.sister.cta': { en: 'Discover NateSystem Digital →', fr: 'Découvrir NateSystem Digital →', hu: 'Fedezze fel a NateSystem Digital-t →' },
+  'reviews.features.f2.title': { en: 'Strategic action plans', fr: 'Plans d\'action stratégiques', hu: 'Stratégiai cselekvési tervek' },
+  'reviews.features.f2.desc': {
+    en: '8–10 prioritised actions generated from your real data. Not templates, not guesses.',
+    fr: '8 à 10 actions prioritaires issues de vos vraies données. Pas de templates, pas de suppositions.',
+    hu: '8–10 prioritizált művelet az Ön valódi adataiból. Nincsenek sablonok, nincs találgatás.',
+  },
+  'reviews.features.f3.title': { en: 'Response drafting', fr: 'Rédaction des réponses', hu: 'Válaszok megfogalmazása' },
+  'reviews.features.f3.desc': {
+    en: 'Three tone variants per review, in the reviewer\'s language, approved before publishing.',
+    fr: 'Trois variantes de ton par avis, dans la langue de l\'auteur, validées avant publication.',
+    hu: 'Három hangnem-változat értékelésenként, az értékelő nyelvén, publikálás előtti jóváhagyással.',
+  },
+  'reviews.features.f4.title': { en: 'Competitive tracking', fr: 'Veille concurrentielle', hu: 'Versenytárs-figyelés' },
+  'reviews.features.f4.desc': {
+    en: 'Your three closest competitors, reviewed in the same view. You see the gaps, we close them.',
+    fr: 'Vos trois concurrents les plus proches, suivis dans la même vue. Vous voyez les écarts, on les comble.',
+    hu: 'Három legközelebbi versenytársa ugyanabban a nézetben. Ön látja a réseket, mi bezárjuk.',
+  },
+  'reviews.features.f5.title': { en: 'Crisis detection', fr: 'Détection de crise', hu: 'Válságfelismerés' },
+  'reviews.features.f5.desc': {
+    en: 'Three bad reviews in 48h triggers an immediate alert, with a draft response ready.',
+    fr: 'Trois avis négatifs en 48 h déclenchent une alerte immédiate, avec un brouillon de réponse prêt.',
+    hu: 'Három rossz értékelés 48 órán belül azonnali riasztást indít, kész válasz-vázlattal.',
+  },
+  'reviews.features.f6.title': { en: 'Reports + briefings', fr: 'Rapports + briefings', hu: 'Riportok + briefingek' },
+  'reviews.features.f6.desc': {
+    en: 'Monthly PDF reports and weekly briefings you can forward straight to your investors.',
+    fr: 'Rapports PDF mensuels et briefings hebdo que vous pouvez transférer à vos investisseurs.',
+    hu: 'Havi PDF-riportok és heti briefingek, amelyeket akár a befektetőinek is továbbíthat.',
+  },
+  'reviews.features.imgCaption': { en: 'Your agency dashboard — every review, every response, every action.', fr: 'Votre dashboard — chaque avis, chaque réponse, chaque action.', hu: 'Az Ön irányítópultja — minden értékelés, válasz és művelet.' },
 
-  'reviews.form.title': { en: 'Let\'s work together', fr: 'Travaillons ensemble', hu: 'Dolgozzunk együtt' },
-  'reviews.form.sub': {
-    en: 'Tell us about your business. Nathan responds within 24 hours.',
-    fr: 'Parlez-nous de votre établissement. Nathan répond sous 24h.',
-    hu: 'Meséljen a vállalkozásáról. Nathan 24 órán belül válaszol.',
+  // Roadmap
+  'reviews.roadmap.kicker': { en: 'THE ROADMAP', fr: 'LA FEUILLE DE ROUTE', hu: 'AZ ÜTEMTERV' },
+  'reviews.roadmap.title1': { en: 'From 412 reviews to', fr: 'De 412 avis à', hu: '412 értékelésből' },
+  'reviews.roadmap.titleAccent': { en: '10 actions that matter.', fr: '10 actions qui comptent.', hu: '10 cselekvés, amely számít.' },
+  'reviews.roadmap.body': {
+    en: 'We don\'t guess. We extract recurring patterns from every review, cross-reference them with competitor gaps, and produce a prioritised plan. You tick actions off as you execute — we refine it every quarter.',
+    fr: 'On ne devine pas. On extrait les motifs récurrents de chaque avis, on les croise avec les écarts concurrentiels, et on produit un plan priorisé. Vous cochez les actions au fil de l\'exécution — on l\'affine chaque trimestre.',
+    hu: 'Nem találgatunk. Minden értékelésből ismétlődő mintákat emelünk ki, versenytárs-résekkel keresztezzük, és prioritizált tervet készítünk. Ön pipálja a műveleteket — mi negyedévente finomítjuk.',
   },
-  'reviews.form.name': { en: 'Full name', fr: 'Nom complet', hu: 'Teljes név' },
-  'reviews.form.email': { en: 'Email', fr: 'Email', hu: 'E-mail' },
-  'reviews.form.business': { en: 'Restaurant / business name', fr: 'Nom du restaurant / de l\'établissement', hu: 'Étterem / vállalkozás neve' },
-  'reviews.form.country': { en: 'Country', fr: 'Pays', hu: 'Ország' },
-  'reviews.form.country.hu': { en: 'Hungary', fr: 'Hongrie', hu: 'Magyarország' },
-  'reviews.form.country.fr': { en: 'France', fr: 'France', hu: 'Franciaország' },
-  'reviews.form.country.other': { en: 'Other', fr: 'Autre', hu: 'Egyéb' },
-  'reviews.form.rating': { en: 'Current Google rating (optional)', fr: 'Note Google actuelle (optionnel)', hu: 'Jelenlegi Google-értékelés (opcionális)' },
-  'reviews.form.locations': { en: 'Number of locations', fr: 'Nombre d\'établissements', hu: 'Telephelyek száma' },
-  'reviews.form.message': { en: 'What would you like to discuss? (optional)', fr: 'De quoi souhaitez-vous discuter ? (optionnel)', hu: 'Miről szeretne beszélni? (opcionális)' },
-  'reviews.form.submit': { en: 'Book a 30-min discovery call', fr: 'Réserver un appel de découverte de 30 min', hu: '30 perces ismerkedési hívás foglalása' },
-  'reviews.form.sending': { en: 'Sending…', fr: 'Envoi…', hu: 'Küldés…' },
-  'reviews.form.success': {
-    en: 'Thanks! Nathan will reach out within 24 hours to book a slot that works for you.',
-    fr: 'Merci ! Nathan vous recontactera sous 24h pour caler un créneau qui vous convient.',
-    hu: 'Köszönjük! Nathan 24 órán belül felveszi Önnel a kapcsolatot, hogy megfelelő időpontot találjon.',
+  'reviews.roadmap.imgCaption': { en: 'A real 90-day plan. Nothing generic.', fr: 'Un vrai plan 90 jours. Rien de générique.', hu: 'Valódi 90 napos terv. Semmi általános.' },
+
+  // Audit ribbon (Partner Welcome Pack)
+  'reviews.audit.kicker': { en: 'PARTNER WELCOME PACK', fr: 'PARTNER WELCOME PACK', hu: 'PARTNER WELCOME PACK' },
+  'reviews.audit.title1': { en: 'Start with a', fr: 'Commencez par un', hu: 'Kezdje egy' },
+  'reviews.audit.titleAccent': { en: 'free €790 audit.', fr: 'audit gratuit de 790 €.', hu: 'ingyenes 790 € audittal.' },
+  'reviews.audit.body': {
+    en: 'AI-generated, grounded in your actual reviews. Competitive comparison against your three closest neighbours. 90-day roadmap. Delivered as a branded PDF within 3 business days. No commitment.',
+    fr: 'Généré par IA, fondé sur vos vrais avis. Comparaison avec vos trois voisins les plus proches. Feuille de route 90 jours. Livré en PDF sous 3 jours ouvrés. Sans engagement.',
+    hu: 'MI-vel készül, valódi értékeléseiből. Versenytárs-összehasonlítás a három legközelebbi szomszéddal. 90 napos ütemterv. Márkás PDF, 3 munkanapon belül. Elkötelezettség nélkül.',
   },
-  'reviews.form.bookNow': { en: 'Or book a call now →', fr: 'Ou réserver un appel maintenant →', hu: 'Vagy foglaljon időpontot most →' },
+  'reviews.audit.cta': { en: 'Claim your audit', fr: 'Obtenir mon audit', hu: 'Audit igénylése' },
+  'reviews.audit.imgCaption': { en: 'A sample audit PDF — what you receive in 3 business days.', fr: 'Un audit type — ce que vous recevez sous 3 jours ouvrés.', hu: 'Példa audit PDF — amit 3 munkanapon belül megkap.' },
+
+  // Proof numbers
+  'reviews.proof.kicker': { en: 'BY THE NUMBERS', fr: 'LES CHIFFRES', hu: 'SZÁMOKBAN' },
+  'reviews.proof.a.value': { en: '~30', fr: '~30', hu: '~30' },
+  'reviews.proof.a.label': { en: 'Restaurants running', fr: 'Restaurants en activité', hu: 'Aktív étterem' },
+  'reviews.proof.b.value': { en: '+14 pts', fr: '+14 pts', hu: '+14 pont' },
+  'reviews.proof.b.label': { en: 'Avg score lift, 90 days', fr: 'Progression moyenne, 90 jours', hu: 'Átlagos emelkedés, 90 nap' },
+  'reviews.proof.c.value': { en: '5 languages', fr: '5 langues', hu: '5 nyelv' },
+  'reviews.proof.c.label': { en: 'For responses', fr: 'Pour les réponses', hu: 'A válaszokhoz' },
+  'reviews.proof.d.value': { en: '3 days', fr: '3 jours', hu: '3 nap' },
+  'reviews.proof.d.label': { en: 'Audit turnaround', fr: 'Délai de livraison audit', hu: 'Audit átfutási idő' },
+  'reviews.proof.imgCaption': { en: 'Monthly analytics — sentiment, volume, aspects, competitors.', fr: 'Analytics mensuel — sentiment, volume, aspects, concurrents.', hu: 'Havi analitika — hangulat, mennyiség, szempontok, versenytársak.' },
+
+  // How it works
+  'reviews.how.kicker': { en: 'HOW IT WORKS', fr: 'COMMENT ÇA MARCHE', hu: 'HOGYAN MŰKÖDIK' },
+  'reviews.how.title1': { en: 'Four steps.', fr: 'Quatre étapes.', hu: 'Négy lépés.' },
+  'reviews.how.titleAccent': { en: 'No SaaS to learn.', fr: 'Aucun SaaS à apprendre.', hu: 'Nincs tanulandó SaaS.' },
+  'reviews.how.s1.title': { en: 'Discovery call (20 min)', fr: 'Appel de découverte (20 min)', hu: 'Ismerkedési hívás (20 perc)' },
+  'reviews.how.s1.desc': {
+    en: 'We understand your current reputation, pain points, goals. No sales deck, just questions.',
+    fr: 'Nous comprenons votre réputation actuelle, vos douleurs, vos objectifs. Pas de slide commerciale, que des questions.',
+    hu: 'Megismerjük jelenlegi hírnevét, fájdalompontjait, céljait. Nincs eladási prezentáció, csak kérdések.',
+  },
+  'reviews.how.s2.title': { en: 'Free audit', fr: 'Audit gratuit', hu: 'Ingyenes audit' },
+  'reviews.how.s2.desc': {
+    en: 'We import your reviews, run the AI analysis, and deliver a branded PDF within 3 business days.',
+    fr: 'On importe vos avis, on lance l\'analyse IA, on livre un PDF personnalisé sous 3 jours ouvrés.',
+    hu: 'Importáljuk az értékeléseit, lefuttatjuk az MI-elemzést, márkás PDF 3 munkanapon belül.',
+  },
+  'reviews.how.s3.title': { en: 'Setup (2 weeks)', fr: 'Mise en place (2 semaines)', hu: 'Bevezetés (2 hét)' },
+  'reviews.how.s3.desc': {
+    en: 'Platform monitoring, response library, competitor tracking, your private owner portal.',
+    fr: 'Supervision plateforme, bibliothèque de réponses, veille concurrentielle, portail propriétaire privé.',
+    hu: 'Platform-figyelés, válasz-könyvtár, versenytárskövetés, privát tulajdonosi portál.',
+  },
+  'reviews.how.s4.title': { en: 'Monthly execution', fr: 'Exécution mensuelle', hu: 'Havi végrehajtás' },
+  'reviews.how.s4.desc': {
+    en: 'We respond, we report, we refine the plan every quarter. You stay in the loop, not in the weeds.',
+    fr: 'On répond, on reporte, on affine le plan chaque trimestre. Vous restez au courant, sans être noyé.',
+    hu: 'Válaszolunk, riportálunk, negyedévente finomítjuk a tervet. Ön naprakész, anélkül hogy elvesznék a részletekben.',
+  },
+  'reviews.how.imgCaption': { en: 'Every response, drafted before it goes public.', fr: 'Chaque réponse rédigée avant publication.', hu: 'Minden válasz megfogalmazva a publikálás előtt.' },
+
+  // FAQ
+  'reviews.faq.kicker': { en: 'FAQ', fr: 'FAQ', hu: 'GYIK' },
+  'reviews.faq.title1': { en: 'Answers before you', fr: 'Les réponses avant que', hu: 'Válaszok, mielőtt' },
+  'reviews.faq.titleAccent': { en: 'ask.', fr: 'vous ne demandiez.', hu: 'kérdezne.' },
+  'reviews.faq.q1': { en: 'Are we locked into a contract?', fr: 'Sommes-nous engagés dans un contrat ?', hu: 'Szerződéshez vagyunk kötve?' },
+  'reviews.faq.a1': { en: 'Month-to-month. Cancel anytime with 30 days\' notice. No exit fees, ever.', fr: 'Mois par mois. Résiliation à tout moment avec 30 jours de préavis. Aucun frais de sortie.', hu: 'Havi elszámolás. 30 napos felmondással bármikor lemondható. Nincsenek kilépési díjak.' },
+  'reviews.faq.q2': { en: 'Do you work in Hungarian?', fr: 'Travaillez-vous en hongrois ?', hu: 'Magyarul dolgoznak?' },
+  'reviews.faq.a2': { en: 'Yes. We also respond in English, German, French and Italian. The AI matches the reviewer\'s language, and a human validates before publishing.', fr: 'Oui. Nous répondons aussi en anglais, allemand, français et italien. L\'IA adapte la langue de l\'auteur, un humain valide avant publication.', hu: 'Igen. Angolul, németül, franciául és olaszul is válaszolunk. Az MI az értékelő nyelvéhez igazodik, ember jóváhagyja a publikálás előtt.' },
+  'reviews.faq.q3': { en: 'Who owns the data?', fr: 'À qui appartiennent les données ?', hu: 'Kié az adat?' },
+  'reviews.faq.a3': { en: 'You. Full export anytime, in CSV and PDF. If you leave, you leave with everything.', fr: 'À vous. Export complet à tout moment, en CSV et PDF. Si vous partez, vous partez avec tout.', hu: 'Öné. Bármikor teljes export CSV-ben és PDF-ben. Ha távozik, mindent visz.' },
+  'reviews.faq.q4': { en: 'How is the audit really free?', fr: 'Comment l\'audit peut-il être vraiment gratuit ?', hu: 'Hogy lehet az audit tényleg ingyenes?' },
+  'reviews.faq.a4': { en: 'It\'s the Partner Welcome Pack bonus — a real €790 deliverable. We\'re confident the work speaks for itself and brings the best-fit restaurants through.', fr: 'C\'est le bonus Partner Welcome Pack — un vrai livrable à 790 €. Nous sommes sûrs que le travail parle de lui-même.', hu: 'Ez a Partner Welcome Pack bónusza — valódi 790 €-s szolgáltatás. Bízunk benne, hogy a munka magáért beszél.' },
+  'reviews.faq.q5': { en: 'What does it cost after the audit?', fr: 'Combien ça coûte après l\'audit ?', hu: 'Mennyibe kerül az audit után?' },
+  'reviews.faq.a5': { en: 'A flat monthly fee, shared on the discovery call so we can match it to your restaurant\'s volume and needs. No surprises.', fr: 'Un forfait mensuel fixe, communiqué pendant l\'appel de découverte en fonction de votre volume et de vos besoins. Zéro surprise.', hu: 'Fix havi díj, az ismerkedési híváson egyeztetjük étterme forgalmához és igényeihez igazítva. Nincs meglepetés.' },
+
+  // Final CTA
+  'reviews.finalCta.title1': { en: 'Your reputation is already being written.', fr: 'Votre réputation s\'écrit déjà.', hu: 'A hírnéve már most íródik.' },
+  'reviews.finalCta.titleAccent': { en: 'Take control of the story.', fr: 'Reprenez le contrôle de l\'histoire.', hu: 'Vegye kézbe a történetet.' },
+  'reviews.finalCta.cta': { en: 'Book a free audit', fr: 'Réserver un audit gratuit', hu: 'Ingyenes auditálás foglalása' },
+
+  // Sticky mobile
+  'reviews.stickyCta': { en: 'Book a free audit', fr: 'Réserver un audit gratuit', hu: 'Ingyenes auditálás foglalása' },
 
   // Work-together widget ("Nate" agent)
   'nate.status': { en: 'Online', fr: 'En ligne', hu: 'Online' },

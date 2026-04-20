@@ -1,263 +1,323 @@
 /**
- * /reviews — NateSystem Reviews (online reputation for hospitality).
+ * /reviews — NateSystem · Reviews agency landing.
  *
- * Placeholder images: replace the inline SVG cards in <ProofBlock> with
- *   <Image> tags pointing at `/public/reviews/*` once real assets land:
- *     - /public/reviews/dashboard-screenshot.png     1600×900
- *     - /public/reviews/google-maps-rating-evolution.png  1200×800
- *     - /public/reviews/restaurant-interior.jpg       1600×1067
- *     - /public/reviews/og-image.png                  1200×630 (metadata below)
+ * Structure follows the brief in nate-reviews-assets/PROMPT.md:
+ *   1. Hero (with 01-reputation-score.png + red glow)
+ *   2. Problem (3 number cards)
+ *   3. What's inside (6 features, two-column, 03-reviews-feed.png)
+ *   4. Roadmap (02-action-plan.png)
+ *   5. €790 audit ribbon (04-audit-pdf.png)
+ *   6. Proof numbers + analytics (05-analytics.png)
+ *   7. How it works (4 steps, 06-response-draft.png)
+ *   8. FAQ (5 items)
+ *   9. Final CTA ribbon
  *
- * Form target: POST /api/leads/capture with resourceId 'reviews-lead'.
- * Reviews leads land in the same backend pipeline as the rest of the site,
- * tagged by resourceId so they can be filtered.
+ * Sticky mobile "Book a free audit" bar at the bottom.
+ *
+ * Every mockup lives in /public/reviews/ (copied from /nate-reviews-assets/).
+ * Do NOT rename or crop them — they are designed at 1600×1000 with deliberate padding.
  */
 
 'use client'
 
 import { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import Nav from '@/components/layout/Nav'
 import Footer from '@/components/layout/Footer'
 import FadeUp from '@/components/ui/FadeUp'
 import { useLang } from '@/components/providers/LangProvider'
-import { API_URL } from '@/lib/constants'
-
-type FormState = {
-  name: string
-  email: string
-  business: string
-  country: 'Hungary' | 'France' | 'Other' | ''
-  rating: string
-  locations: string
-  message: string
-}
-
-const initialForm: FormState = {
-  name: '', email: '', business: '', country: '',
-  rating: '', locations: '1', message: '',
-}
+import { CAL_LINK } from '@/lib/constants'
 
 export default function ReviewsPage() {
-  const { t, lang } = useLang()
-  const [form, setForm] = useState<FormState>(initialForm)
-  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
-
-  const canSubmit =
-    form.name.trim() &&
-    form.email.trim().includes('@') &&
-    form.business.trim()
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    if (!canSubmit || status === 'sending') return
-    setStatus('sending')
-    try {
-      await fetch(`${API_URL}/api/leads/capture`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          resourceId: 'reviews-lead',
-          prenom: form.name,
-          email: form.email,
-          entreprise: form.business,
-          lang,
-          newsletter: false,
-          reviews: {
-            country: form.country,
-            currentRating: form.rating ? Number(form.rating) : null,
-            locations: form.locations ? Number(form.locations) : 1,
-            message: form.message,
-          },
-        }),
-      })
-      setStatus('success')
-      window.scrollTo({ top: document.getElementById('contact')?.offsetTop ?? 0, behavior: 'smooth' })
-    } catch {
-      // Even on failure, show success — the user isn't blocked, and we can
-      // always recover the lead from email/Analytics. Matches the rest of
-      // the site's capture UX.
-      setStatus('success')
-    }
-  }
-
-  const scrollToForm = () => {
-    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
-  }
-
-  const inputClass =
-    'w-full px-4 py-3 rounded-xl text-sm transition focus:outline-none focus:ring-2 focus:ring-[#E63946]/30 focus:border-[#E63946]'
-  const inputStyle = {
-    background: 'var(--bg-elevated)',
-    border: '1px solid var(--border)',
-    color: 'var(--text)',
-  }
+  const { t } = useLang()
 
   return (
     <main style={{ background: 'var(--bg)' }}>
       <Nav />
 
-      {/* ══ Hero ══ */}
+      {/* ════════════════════════════════════════════════════════════
+         1. HERO
+         ════════════════════════════════════════════════════════════ */}
       <section
-        className="flex flex-col items-center justify-center text-center"
-        style={{ padding: '160px 24px 80px', minHeight: '80vh' }}
+        style={{
+          position: 'relative',
+          padding: '160px 24px 100px',
+          minHeight: '90vh',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          textAlign: 'center',
+        }}
       >
         <FadeUp>
-          <span className="section-label">{t('reviews.label')}</span>
+          <span className="section-label" style={{ letterSpacing: 3 }}>
+            {t('reviews.kicker')}
+          </span>
         </FadeUp>
 
-        <FadeUp delay={0.1}>
+        <FadeUp delay={0.08}>
           <h1
             className="font-serif italic"
             style={{
-              fontSize: 'clamp(30px, 4vw, 52px)',
-              lineHeight: 1.15,
-              maxWidth: 840,
-              margin: '20px auto 24px',
+              fontSize: 'clamp(30px, 4.4vw, 58px)',
+              lineHeight: 1.1,
+              maxWidth: 920,
+              margin: '20px auto 26px',
               color: 'var(--text)',
               fontWeight: 400,
             }}
           >
-            {t('reviews.hero.title')}{' '}
+            {t('reviews.hero.title1')}{' '}
             <span className="accent">{t('reviews.hero.titleAccent')}</span>
           </h1>
         </FadeUp>
 
-        <FadeUp delay={0.2}>
+        <FadeUp delay={0.16}>
           <p
             className="font-sans"
             style={{
-              fontSize: 'clamp(15px, 1.7vw, 17px)',
+              fontSize: 'clamp(15px, 1.6vw, 17px)',
               fontWeight: 300,
               color: 'var(--text-secondary)',
-              maxWidth: 580,
+              maxWidth: 600,
               lineHeight: 1.7,
-              margin: '0 auto 40px',
+              margin: '0 auto 36px',
             }}
           >
             {t('reviews.hero.sub')}
           </p>
         </FadeUp>
 
-        <FadeUp delay={0.3}>
-          <button
-            type="button"
-            onClick={scrollToForm}
-            className="btn-primary"
-            style={{ fontSize: 14, cursor: 'pointer' }}
-          >
-            <span className="btn-primary-dot" />
-            {t('reviews.hero.cta')} →
-          </button>
-        </FadeUp>
-
-        <FadeUp delay={0.4}>
-          <button
-            type="button"
-            onClick={scrollToForm}
-            className="font-sans"
+        <FadeUp delay={0.24}>
+          <div
             style={{
-              marginTop: 18,
-              background: 'transparent',
-              border: 'none',
-              color: 'var(--text-muted)',
-              fontSize: 13,
-              fontWeight: 300,
-              cursor: 'pointer',
+              display: 'flex',
+              gap: 14,
+              flexWrap: 'wrap',
+              justifyContent: 'center',
+              marginBottom: 20,
             }}
           >
-            {t('reviews.hero.secondary')}
-          </button>
+            <Link
+              href={CAL_LINK}
+              className="btn-primary"
+              style={{ fontSize: 14 }}
+            >
+              <span className="btn-primary-dot" />
+              {t('reviews.hero.ctaPrimary')} →
+            </Link>
+            <a
+              href="#features"
+              className="font-sans"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: 8,
+                padding: '14px 26px',
+                border: '1px solid rgba(230,57,70,0.35)',
+                borderRadius: 12,
+                color: 'var(--text)',
+                fontSize: 14,
+                fontWeight: 500,
+                textDecoration: 'none',
+                transition: 'all 0.3s',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderColor = 'var(--accent)'
+                e.currentTarget.style.boxShadow = '0 0 16px rgba(230,57,70,0.2)'
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderColor = 'rgba(230,57,70,0.35)'
+                e.currentTarget.style.boxShadow = 'none'
+              }}
+            >
+              {t('reviews.hero.ctaGhost')}
+            </a>
+          </div>
+        </FadeUp>
+
+        <FadeUp delay={0.32}>
+          <p
+            className="font-mono"
+            style={{
+              fontSize: 11,
+              letterSpacing: 1.8,
+              color: 'var(--text-muted)',
+              marginBottom: 56,
+              textTransform: 'none',
+            }}
+          >
+            {t('reviews.hero.socialProof')}
+          </p>
+        </FadeUp>
+
+        {/* Hero image — 01-reputation-score.png with subtle red glow behind */}
+        <FadeUp delay={0.4}>
+          <div
+            style={{
+              position: 'relative',
+              width: '100%',
+              maxWidth: 980,
+              margin: '0 auto',
+            }}
+          >
+            <div
+              aria-hidden="true"
+              style={{
+                position: 'absolute',
+                inset: '-6% -6% -6% -6%',
+                background:
+                  'radial-gradient(circle at 50% 50%, rgba(230,57,70,0.12), transparent 62%)',
+                pointerEvents: 'none',
+              }}
+            />
+            <Image
+              src="/reviews/01-reputation-score.png"
+              alt="Reputation score dashboard"
+              width={1600}
+              height={1000}
+              priority
+              style={{
+                width: '100%',
+                height: 'auto',
+                borderRadius: 16,
+                border: '1px solid var(--border)',
+                boxShadow: '0 40px 80px -30px rgba(0,0,0,0.4)',
+                position: 'relative',
+              }}
+            />
+          </div>
         </FadeUp>
       </section>
 
-      {/* ══ Proof blocks ══ */}
-      <section style={{ padding: '80px 24px' }}>
+      {/* ════════════════════════════════════════════════════════════
+         2. PROBLEM
+         ════════════════════════════════════════════════════════════ */}
+      <section style={{ padding: '100px 24px' }}>
         <div className="mx-auto" style={{ maxWidth: 1100 }}>
-          <div style={{ marginBottom: 48 }}>
-            <FadeUp className="text-center">
-              <span className="section-label">{t('reviews.proof.label')}</span>
+          <div style={{ marginBottom: 56, textAlign: 'center' }}>
+            <FadeUp>
+              <span className="section-label">{t('reviews.problem.kicker')}</span>
             </FadeUp>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-5">
-            <ProofBlock variant="dashboard" caption={t('reviews.proof.a.caption')} delay={0} />
-            <ProofBlock variant="rating-evolution" caption={t('reviews.proof.b.caption')} delay={0.1} />
-            <ProofBlock variant="interior" caption={t('reviews.proof.c.caption')} delay={0.2} />
-          </div>
-        </div>
-      </section>
-
-      {/* ══ What we do ══ */}
-      <section style={{ padding: '80px 24px' }}>
-        <div className="mx-auto" style={{ maxWidth: 900 }}>
-          <div style={{ marginBottom: 48 }}>
-            <FadeUp className="text-center">
-              <span className="section-label">{t('reviews.what.label')}</span>
-            </FadeUp>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <WhatCard
-              title={t('reviews.what.collect.title')}
-              desc={t('reviews.what.collect.desc')}
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+              gap: 20,
+            }}
+          >
+            <ProblemCard
+              value={t('reviews.problem.a.value')}
+              title={t('reviews.problem.a.title')}
+              desc={t('reviews.problem.a.desc')}
               delay={0}
             />
-            <WhatCard
-              title={t('reviews.what.respond.title')}
-              desc={t('reviews.what.respond.desc')}
-              delay={0.1}
+            <ProblemCard
+              value={t('reviews.problem.b.value')}
+              title={t('reviews.problem.b.title')}
+              desc={t('reviews.problem.b.desc')}
+              delay={0.08}
             />
-            <WhatCard
-              title={t('reviews.what.improve.title')}
-              desc={t('reviews.what.improve.desc')}
-              delay={0.2}
+            <ProblemCard
+              value={t('reviews.problem.c.value')}
+              title={t('reviews.problem.c.title')}
+              desc={t('reviews.problem.c.desc')}
+              delay={0.16}
             />
           </div>
         </div>
       </section>
 
-      {/* ══ Numbers band (TODO: replace placeholders with real data) ══ */}
-      <section style={{ padding: '80px 24px' }}>
+      {/* ════════════════════════════════════════════════════════════
+         3. WHAT'S INSIDE
+         ════════════════════════════════════════════════════════════ */}
+      <section id="features" style={{ padding: '100px 24px' }}>
         <div className="mx-auto" style={{ maxWidth: 1100 }}>
-          <FadeUp>
-            <div
-              style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
-                gap: 0,
-                border: '1px solid var(--border)',
-                borderRadius: 16,
-                overflow: 'hidden',
-                background: 'var(--bg-card)',
-              }}
-            >
-              <NumberCell
-                value={t('reviews.numbers.a.value')}
-                label={t('reviews.numbers.a.label')}
+          <div style={{ marginBottom: 64, textAlign: 'center' }}>
+            <FadeUp>
+              <span className="section-label">{t('reviews.features.kicker')}</span>
+            </FadeUp>
+            <FadeUp delay={0.08}>
+              <h2
+                className="font-serif italic"
+                style={{
+                  fontSize: 'clamp(26px, 3.2vw, 40px)',
+                  lineHeight: 1.2,
+                  maxWidth: 780,
+                  margin: '14px auto 0',
+                  color: 'var(--text)',
+                  fontWeight: 400,
+                }}
+              >
+                {t('reviews.features.title1')}
+                <br />
+                <span className="accent">{t('reviews.features.title2')}</span>
+              </h2>
+            </FadeUp>
+          </div>
+
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'minmax(0, 1fr) minmax(0, 1fr)',
+              gap: 56,
+              alignItems: 'center',
+            }}
+            className="reviews-split"
+          >
+            <FadeUp>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                <FeatureRow title={t('reviews.features.f1.title')} desc={t('reviews.features.f1.desc')} />
+                <FeatureRow title={t('reviews.features.f2.title')} desc={t('reviews.features.f2.desc')} />
+                <FeatureRow title={t('reviews.features.f3.title')} desc={t('reviews.features.f3.desc')} />
+                <FeatureRow title={t('reviews.features.f4.title')} desc={t('reviews.features.f4.desc')} />
+                <FeatureRow title={t('reviews.features.f5.title')} desc={t('reviews.features.f5.desc')} />
+                <FeatureRow title={t('reviews.features.f6.title')} desc={t('reviews.features.f6.desc')} last />
+              </ul>
+            </FadeUp>
+
+            <FadeUp delay={0.12}>
+              <MockupFigure
+                src="/reviews/03-reviews-feed.png"
+                alt="Reviews feed"
+                caption={t('reviews.features.imgCaption')}
               />
-              <NumberCell
-                value={t('reviews.numbers.b.value')}
-                label={t('reviews.numbers.b.label')}
-                bordered
-              />
-              <NumberCell
-                value={t('reviews.numbers.c.value')}
-                label={t('reviews.numbers.c.label')}
-                bordered
-              />
-            </div>
-          </FadeUp>
+            </FadeUp>
+          </div>
         </div>
       </section>
 
-      {/* ══ Contact form ══ */}
-      <section id="contact" style={{ padding: '80px 24px 120px' }}>
-        <div className="mx-auto" style={{ maxWidth: 640 }}>
-          <div style={{ marginBottom: 32 }}>
-            <FadeUp className="text-center">
-              <h2 className="section-title" style={{ margin: '0 auto 14px' }}>
-                {t('reviews.form.title')}
+      {/* ════════════════════════════════════════════════════════════
+         4. ROADMAP
+         ════════════════════════════════════════════════════════════ */}
+      <section style={{ padding: '100px 24px' }}>
+        <div className="mx-auto" style={{ maxWidth: 1100 }}>
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'minmax(0, 1fr) minmax(0, 1fr)',
+              gap: 56,
+              alignItems: 'center',
+            }}
+            className="reviews-split"
+          >
+            <FadeUp>
+              <span className="section-label">{t('reviews.roadmap.kicker')}</span>
+              <h2
+                className="font-serif italic"
+                style={{
+                  fontSize: 'clamp(26px, 3.2vw, 40px)',
+                  lineHeight: 1.2,
+                  color: 'var(--text)',
+                  fontWeight: 400,
+                  margin: '14px 0 22px',
+                }}
+              >
+                {t('reviews.roadmap.title1')}{' '}
+                <span className="accent">{t('reviews.roadmap.titleAccent')}</span>
               </h2>
               <p
                 className="font-sans"
@@ -265,213 +325,300 @@ export default function ReviewsPage() {
                   fontSize: 15,
                   fontWeight: 300,
                   color: 'var(--text-secondary)',
-                  lineHeight: 1.7,
+                  lineHeight: 1.8,
                   maxWidth: 480,
-                  margin: '0 auto',
                 }}
               >
-                {t('reviews.form.sub')}
+                {t('reviews.roadmap.body')}
               </p>
+            </FadeUp>
+
+            <FadeUp delay={0.1}>
+              <MockupFigure
+                src="/reviews/02-action-plan.png"
+                alt="90-day action plan"
+                caption={t('reviews.roadmap.imgCaption')}
+              />
+            </FadeUp>
+          </div>
+        </div>
+      </section>
+
+      {/* ════════════════════════════════════════════════════════════
+         5. €790 AUDIT RIBBON — conversion accelerator
+         ════════════════════════════════════════════════════════════ */}
+      <section
+        style={{
+          padding: '100px 24px',
+          background: 'var(--accent-subtle)',
+          borderTop: '1px solid rgba(230,57,70,0.12)',
+          borderBottom: '1px solid rgba(230,57,70,0.12)',
+        }}
+      >
+        <div className="mx-auto" style={{ maxWidth: 1100 }}>
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'minmax(0, 1fr) minmax(0, 1fr)',
+              gap: 56,
+              alignItems: 'center',
+            }}
+            className="reviews-split"
+          >
+            <FadeUp>
+              <span className="section-label" style={{ color: 'var(--accent)' }}>
+                {t('reviews.audit.kicker')}
+              </span>
+              <h2
+                className="font-serif italic"
+                style={{
+                  fontSize: 'clamp(30px, 3.8vw, 48px)',
+                  lineHeight: 1.15,
+                  color: 'var(--text)',
+                  fontWeight: 400,
+                  margin: '14px 0 20px',
+                }}
+              >
+                {t('reviews.audit.title1')}{' '}
+                <span className="accent">{t('reviews.audit.titleAccent')}</span>
+              </h2>
+              <p
+                className="font-sans"
+                style={{
+                  fontSize: 16,
+                  fontWeight: 300,
+                  color: 'var(--text-secondary)',
+                  lineHeight: 1.75,
+                  maxWidth: 560,
+                  marginBottom: 28,
+                }}
+              >
+                {t('reviews.audit.body')}
+              </p>
+              <Link href={CAL_LINK} className="btn-primary" style={{ fontSize: 14 }}>
+                <span className="btn-primary-dot" />
+                {t('reviews.audit.cta')} →
+              </Link>
+            </FadeUp>
+
+            <FadeUp delay={0.12}>
+              <MockupFigure
+                src="/reviews/04-audit-pdf.png"
+                alt="Sample €790 audit PDF"
+                caption={t('reviews.audit.imgCaption')}
+              />
+            </FadeUp>
+          </div>
+        </div>
+      </section>
+
+      {/* ════════════════════════════════════════════════════════════
+         6. PROOF NUMBERS + ANALYTICS
+         ════════════════════════════════════════════════════════════ */}
+      <section style={{ padding: '100px 24px' }}>
+        <div className="mx-auto" style={{ maxWidth: 1100 }}>
+          <div style={{ marginBottom: 56, textAlign: 'center' }}>
+            <FadeUp>
+              <span className="section-label">{t('reviews.proof.kicker')}</span>
             </FadeUp>
           </div>
 
           <FadeUp>
-            {status === 'success' ? (
-              <div
-                style={{
-                  background: 'var(--bg-card)',
-                  border: '1px solid var(--border)',
-                  borderRadius: 16,
-                  padding: '40px 32px',
-                  textAlign: 'center',
-                }}
-              >
-                <p
-                  className="font-serif italic"
-                  style={{
-                    fontSize: 'clamp(20px, 2.4vw, 26px)',
-                    color: 'var(--text)',
-                    lineHeight: 1.4,
-                    marginBottom: 28,
-                    fontWeight: 400,
-                  }}
-                >
-                  {t('reviews.form.success')}
-                </p>
-                <Link
-                  href="/book"
-                  className="btn-primary inline-flex"
-                  style={{ fontSize: 13, padding: '12px 24px' }}
-                >
-                  <span className="btn-primary-dot" />
-                  {t('reviews.form.bookNow')}
-                </Link>
-              </div>
-            ) : (
-              <form
-                onSubmit={handleSubmit}
-                style={{
-                  background: 'var(--bg-card)',
-                  border: '1px solid var(--border)',
-                  borderRadius: 16,
-                  padding: '32px',
-                }}
-              >
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <Field label={t('reviews.form.name')} required>
-                    <input
-                      type="text"
-                      value={form.name}
-                      onChange={e => setForm({ ...form, name: e.target.value })}
-                      className={inputClass}
-                      style={inputStyle}
-                      required
-                    />
-                  </Field>
-                  <Field label={t('reviews.form.email')} required>
-                    <input
-                      type="email"
-                      value={form.email}
-                      onChange={e => setForm({ ...form, email: e.target.value })}
-                      className={inputClass}
-                      style={inputStyle}
-                      required
-                    />
-                  </Field>
-                </div>
+            <div
+              style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+                gap: 0,
+                border: '1px solid var(--border)',
+                borderRadius: 16,
+                overflow: 'hidden',
+                background: 'var(--bg-card)',
+                marginBottom: 48,
+              }}
+            >
+              <StatCell value={t('reviews.proof.a.value')} label={t('reviews.proof.a.label')} />
+              <StatCell value={t('reviews.proof.b.value')} label={t('reviews.proof.b.label')} bordered />
+              <StatCell value={t('reviews.proof.c.value')} label={t('reviews.proof.c.label')} bordered />
+              <StatCell value={t('reviews.proof.d.value')} label={t('reviews.proof.d.label')} bordered />
+            </div>
+          </FadeUp>
 
-                <div className="mt-4">
-                  <Field label={t('reviews.form.business')} required>
-                    <input
-                      type="text"
-                      value={form.business}
-                      onChange={e => setForm({ ...form, business: e.target.value })}
-                      className={inputClass}
-                      style={inputStyle}
-                      required
-                    />
-                  </Field>
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
-                  <Field label={t('reviews.form.country')}>
-                    <select
-                      value={form.country}
-                      onChange={e =>
-                        setForm({ ...form, country: e.target.value as FormState['country'] })
-                      }
-                      className={inputClass}
-                      style={{
-                        ...inputStyle,
-                        color: form.country ? 'var(--text)' : 'var(--text-muted)',
-                      }}
-                    >
-                      <option value="">—</option>
-                      <option value="Hungary">{t('reviews.form.country.hu')}</option>
-                      <option value="France">{t('reviews.form.country.fr')}</option>
-                      <option value="Other">{t('reviews.form.country.other')}</option>
-                    </select>
-                  </Field>
-                  <Field label={t('reviews.form.locations')}>
-                    <input
-                      type="number"
-                      min={1}
-                      value={form.locations}
-                      onChange={e => setForm({ ...form, locations: e.target.value })}
-                      className={inputClass}
-                      style={inputStyle}
-                    />
-                  </Field>
-                </div>
-
-                <div className="mt-4">
-                  <Field label={t('reviews.form.rating')}>
-                    <input
-                      type="number"
-                      min={0}
-                      max={5}
-                      step={0.1}
-                      placeholder="4.2"
-                      value={form.rating}
-                      onChange={e => setForm({ ...form, rating: e.target.value })}
-                      className={inputClass}
-                      style={inputStyle}
-                    />
-                  </Field>
-                </div>
-
-                <div className="mt-4">
-                  <Field label={t('reviews.form.message')}>
-                    <textarea
-                      value={form.message}
-                      onChange={e => setForm({ ...form, message: e.target.value })}
-                      rows={4}
-                      className={inputClass}
-                      style={{ ...inputStyle, resize: 'vertical' }}
-                    />
-                  </Field>
-                </div>
-
-                <button
-                  type="submit"
-                  disabled={!canSubmit || status === 'sending'}
-                  className="w-full mt-6 flex items-center justify-center gap-2"
-                  style={{
-                    padding: '16px 32px',
-                    background: 'var(--accent)',
-                    color: '#fff',
-                    fontFamily: 'var(--font-sans)',
-                    fontSize: 15,
-                    fontWeight: 600,
-                    borderRadius: 12,
-                    border: 'none',
-                    cursor: canSubmit && status !== 'sending' ? 'pointer' : 'not-allowed',
-                    opacity: canSubmit && status !== 'sending' ? 1 : 0.5,
-                    transition: 'all 0.3s',
-                    boxShadow: '0 4px 16px rgba(230,57,70,0.25)',
-                  }}
-                >
-                  {status === 'sending' ? t('reviews.form.sending') : t('reviews.form.submit')}
-                </button>
-              </form>
-            )}
+          <FadeUp delay={0.12}>
+            <MockupFigure
+              src="/reviews/05-analytics.png"
+              alt="Monthly analytics dashboard"
+              caption={t('reviews.proof.imgCaption')}
+              fullWidth
+            />
           </FadeUp>
         </div>
       </section>
 
-      {/* ══ Sister brand cross-link ══ */}
-      <section style={{ padding: '0 24px 80px' }}>
-        <div
-          className="mx-auto text-center"
-          style={{ maxWidth: 680 }}
-        >
-          <p
-            className="font-sans"
+      {/* ════════════════════════════════════════════════════════════
+         7. HOW IT WORKS
+         ════════════════════════════════════════════════════════════ */}
+      <section style={{ padding: '100px 24px' }}>
+        <div className="mx-auto" style={{ maxWidth: 1100 }}>
+          <div
             style={{
-              fontSize: 13,
-              fontWeight: 300,
-              color: 'var(--text-muted)',
-              lineHeight: 1.7,
+              display: 'grid',
+              gridTemplateColumns: 'minmax(0, 1fr) minmax(0, 1fr)',
+              gap: 56,
+              alignItems: 'center',
             }}
+            className="reviews-split"
           >
-            {t('reviews.sister.text')}{' '}
-            <Link
-              href="/"
-              className="font-sans"
+            <FadeUp>
+              <span className="section-label">{t('reviews.how.kicker')}</span>
+              <h2
+                className="font-serif italic"
+                style={{
+                  fontSize: 'clamp(26px, 3.2vw, 40px)',
+                  lineHeight: 1.2,
+                  color: 'var(--text)',
+                  fontWeight: 400,
+                  margin: '14px 0 32px',
+                }}
+              >
+                {t('reviews.how.title1')}{' '}
+                <span className="accent">{t('reviews.how.titleAccent')}</span>
+              </h2>
+
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 28 }}>
+                <HowStep n={1} title={t('reviews.how.s1.title')} desc={t('reviews.how.s1.desc')} />
+                <HowStep n={2} title={t('reviews.how.s2.title')} desc={t('reviews.how.s2.desc')} />
+                <HowStep n={3} title={t('reviews.how.s3.title')} desc={t('reviews.how.s3.desc')} />
+                <HowStep n={4} title={t('reviews.how.s4.title')} desc={t('reviews.how.s4.desc')} />
+              </div>
+            </FadeUp>
+
+            <FadeUp delay={0.12}>
+              <MockupFigure
+                src="/reviews/06-response-draft.png"
+                alt="Response drafting screen"
+                caption={t('reviews.how.imgCaption')}
+              />
+            </FadeUp>
+          </div>
+        </div>
+      </section>
+
+      {/* ════════════════════════════════════════════════════════════
+         8. FAQ
+         ════════════════════════════════════════════════════════════ */}
+      <section style={{ padding: '100px 24px' }}>
+        <div className="mx-auto" style={{ maxWidth: 820 }}>
+          <div style={{ marginBottom: 48, textAlign: 'center' }}>
+            <FadeUp>
+              <span className="section-label">{t('reviews.faq.kicker')}</span>
+            </FadeUp>
+            <FadeUp delay={0.08}>
+              <h2
+                className="font-serif italic"
+                style={{
+                  fontSize: 'clamp(24px, 3vw, 36px)',
+                  lineHeight: 1.2,
+                  color: 'var(--text)',
+                  fontWeight: 400,
+                  margin: '14px 0 0',
+                }}
+              >
+                {t('reviews.faq.title1')}{' '}
+                <span className="accent">{t('reviews.faq.titleAccent')}</span>
+              </h2>
+            </FadeUp>
+          </div>
+
+          <FaqItem q={t('reviews.faq.q1')} a={t('reviews.faq.a1')} delay={0} />
+          <FaqItem q={t('reviews.faq.q2')} a={t('reviews.faq.a2')} delay={0.05} />
+          <FaqItem q={t('reviews.faq.q3')} a={t('reviews.faq.a3')} delay={0.1} />
+          <FaqItem q={t('reviews.faq.q4')} a={t('reviews.faq.a4')} delay={0.15} />
+          <FaqItem q={t('reviews.faq.q5')} a={t('reviews.faq.a5')} delay={0.2} />
+        </div>
+      </section>
+
+      {/* ════════════════════════════════════════════════════════════
+         9. FINAL CTA RIBBON
+         ════════════════════════════════════════════════════════════ */}
+      <section
+        style={{
+          padding: '120px 24px',
+          background: 'var(--accent-subtle)',
+          borderTop: '1px solid rgba(230,57,70,0.12)',
+          borderBottom: '1px solid rgba(230,57,70,0.12)',
+          textAlign: 'center',
+        }}
+      >
+        <div className="mx-auto" style={{ maxWidth: 820 }}>
+          <FadeUp>
+            <h2
+              className="font-serif italic"
               style={{
-                color: 'var(--accent)',
-                fontWeight: 500,
-                textDecoration: 'none',
-                borderBottom: '1px solid rgba(230,57,70,0.3)',
+                fontSize: 'clamp(28px, 4vw, 52px)',
+                lineHeight: 1.15,
+                color: 'var(--text)',
+                fontWeight: 400,
+                marginBottom: 36,
               }}
             >
-              {t('reviews.sister.cta')}
+              {t('reviews.finalCta.title1')}
+              <br />
+              <span className="accent">{t('reviews.finalCta.titleAccent')}</span>
+            </h2>
+          </FadeUp>
+          <FadeUp delay={0.1}>
+            <Link href={CAL_LINK} className="btn-primary" style={{ fontSize: 15, padding: '20px 44px' }}>
+              <span className="btn-primary-dot" />
+              {t('reviews.finalCta.cta')} →
             </Link>
-          </p>
+          </FadeUp>
         </div>
       </section>
 
       <Footer />
+
+      {/* Sticky mobile CTA */}
+      <div
+        className="reviews-sticky-mobile"
+        style={{
+          position: 'fixed',
+          left: 0,
+          right: 0,
+          bottom: 0,
+          zIndex: 60,
+          padding: '12px 16px calc(12px + env(safe-area-inset-bottom))',
+          background: 'var(--bg)',
+          borderTop: '1px solid var(--border)',
+          backdropFilter: 'blur(12px)',
+          WebkitBackdropFilter: 'blur(12px)',
+        }}
+      >
+        <Link
+          href={CAL_LINK}
+          className="btn-primary"
+          style={{
+            width: '100%',
+            justifyContent: 'center',
+            fontSize: 14,
+            padding: '14px 20px',
+          }}
+        >
+          <span className="btn-primary-dot" />
+          {t('reviews.stickyCta')} →
+        </Link>
+      </div>
+
+      <style>{`
+        @media (max-width: 768px) {
+          .reviews-split {
+            grid-template-columns: 1fr !important;
+            gap: 36px !important;
+          }
+        }
+        @media (min-width: 769px) {
+          .reviews-sticky-mobile { display: none !important; }
+        }
+      `}</style>
     </main>
   )
 }
@@ -480,146 +627,63 @@ export default function ReviewsPage() {
    Sub-components
    ══════════════════════════════════════════════════════════════════ */
 
-function ProofBlock({
-  variant,
+function MockupFigure({
+  src,
+  alt,
   caption,
-  delay,
+  fullWidth,
 }: {
-  variant: 'dashboard' | 'rating-evolution' | 'interior'
+  src: string
+  alt: string
   caption: string
-  delay: number
+  fullWidth?: boolean
 }) {
   return (
-    <FadeUp delay={delay}>
-      <figure style={{ margin: 0 }}>
-        {/*
-          TODO: replace with real asset from /public/reviews/
-          Placeholder SVG kept deliberately editorial (no busy graphic noise).
-        */}
-        <div
-          style={{
-            aspectRatio: variant === 'interior' ? '3/2' : '4/3',
-            background: 'var(--bg-card)',
-            border: '1px solid var(--border)',
-            borderRadius: 12,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            overflow: 'hidden',
-            position: 'relative',
-          }}
-        >
-          <PlaceholderArt variant={variant} />
-        </div>
-        <figcaption
-          className="font-sans"
-          style={{
-            marginTop: 14,
-            fontSize: 12,
-            fontWeight: 300,
-            color: 'var(--text-muted)',
-            lineHeight: 1.5,
-            textAlign: 'center',
-          }}
-        >
-          {caption}
-        </figcaption>
-      </figure>
-    </FadeUp>
+    <figure style={{ margin: 0 }}>
+      <Image
+        src={src}
+        alt={alt}
+        width={1600}
+        height={1000}
+        loading="lazy"
+        style={{
+          width: '100%',
+          maxWidth: fullWidth ? '100%' : 900,
+          height: 'auto',
+          borderRadius: 16,
+          border: '1px solid var(--border)',
+          boxShadow: '0 40px 80px -30px rgba(0,0,0,0.4)',
+          display: 'block',
+        }}
+      />
+      <figcaption
+        className="font-sans"
+        style={{
+          marginTop: 14,
+          fontSize: 12,
+          fontWeight: 300,
+          color: 'var(--text-muted)',
+          lineHeight: 1.5,
+          textAlign: 'center',
+        }}
+      >
+        {caption}
+      </figcaption>
+    </figure>
   )
 }
 
-function PlaceholderArt({ variant }: { variant: 'dashboard' | 'rating-evolution' | 'interior' }) {
-  const accent = 'var(--accent)'
-  const muted = 'var(--text-muted)'
-
-  if (variant === 'dashboard') {
-    return (
-      <svg viewBox="0 0 400 300" width="90%" height="90%" role="presentation" aria-hidden="true">
-        <rect x="16" y="16" width="368" height="42" rx="6" fill="var(--bg-elevated)" />
-        <circle cx="36" cy="37" r="5" fill={accent} />
-        <rect x="52" y="30" width="120" height="6" rx="2" fill={muted} opacity="0.4" />
-        <rect x="52" y="42" width="80" height="4" rx="2" fill={muted} opacity="0.25" />
-        <rect x="16" y="74" width="176" height="92" rx="6" fill="var(--bg-elevated)" />
-        <rect x="200" y="74" width="184" height="92" rx="6" fill="var(--bg-elevated)" />
-        <text x="32" y="112" fontFamily="monospace" fontSize="28" fill={accent}>4.6</text>
-        <text x="32" y="134" fontFamily="monospace" fontSize="10" fill={muted}>AVG RATING</text>
-        <text x="216" y="112" fontFamily="monospace" fontSize="28" fill={accent}>+127</text>
-        <text x="216" y="134" fontFamily="monospace" fontSize="10" fill={muted}>NEW REVIEWS</text>
-        <rect x="16" y="182" width="368" height="98" rx="6" fill="var(--bg-elevated)" />
-        <polyline
-          points="32,260 80,244 128,248 176,230 224,220 272,210 320,196 368,188"
-          fill="none"
-          stroke={accent}
-          strokeWidth="2"
-        />
-      </svg>
-    )
-  }
-
-  if (variant === 'rating-evolution') {
-    return (
-      <svg viewBox="0 0 400 300" width="90%" height="90%" role="presentation" aria-hidden="true">
-        <text x="40" y="56" fontFamily="serif" fontStyle="italic" fontSize="36" fill={muted}>3.8</text>
-        <text x="40" y="78" fontFamily="monospace" fontSize="10" fill={muted}>JAN</text>
-        <text x="310" y="56" fontFamily="serif" fontStyle="italic" fontSize="36" fill={accent}>4.6</text>
-        <text x="310" y="78" fontFamily="monospace" fontSize="10" fill={muted}>AUG</text>
-        <path d="M 70 100 Q 200 110 330 70" stroke={accent} strokeWidth="2" fill="none" />
-        <polyline
-          points="40,230 88,220 136,210 184,188 232,170 280,150 328,130"
-          fill="none"
-          stroke={accent}
-          strokeWidth="2"
-        />
-        {[0, 1, 2, 3, 4, 5, 6].map(i => (
-          <circle
-            key={i}
-            cx={40 + i * 48}
-            cy={230 - i * 16.5}
-            r={3}
-            fill={accent}
-          />
-        ))}
-        <line x1="40" y1="260" x2="360" y2="260" stroke={muted} strokeOpacity="0.25" />
-      </svg>
-    )
-  }
-
-  // interior
-  return (
-    <svg viewBox="0 0 400 270" width="95%" height="95%" role="presentation" aria-hidden="true">
-      <rect width="400" height="270" fill="var(--bg-elevated)" />
-      {/* Abstract interior lines */}
-      <line x1="0" y1="100" x2="400" y2="100" stroke={muted} strokeOpacity="0.2" />
-      <line x1="80" y1="100" x2="80" y2="270" stroke={muted} strokeOpacity="0.2" />
-      <line x1="320" y1="100" x2="320" y2="270" stroke={muted} strokeOpacity="0.2" />
-      {/* Table */}
-      <rect x="140" y="180" width="120" height="6" rx="3" fill={muted} opacity="0.35" />
-      <rect x="150" y="186" width="4" height="40" fill={muted} opacity="0.3" />
-      <rect x="246" y="186" width="4" height="40" fill={muted} opacity="0.3" />
-      {/* Hanging lamps */}
-      <line x1="160" y1="100" x2="160" y2="150" stroke={muted} strokeOpacity="0.3" />
-      <circle cx="160" cy="156" r="6" fill={accent} opacity="0.6" />
-      <line x1="240" y1="100" x2="240" y2="150" stroke={muted} strokeOpacity="0.3" />
-      <circle cx="240" cy="156" r="6" fill={accent} opacity="0.6" />
-      {/* 5 stars glyph bottom-right */}
-      {[0, 1, 2, 3, 4].map(i => (
-        <text
-          key={i}
-          x={300 + i * 14}
-          y="250"
-          fontFamily="serif"
-          fontSize="16"
-          fill={accent}
-        >
-          ★
-        </text>
-      ))}
-    </svg>
-  )
-}
-
-function WhatCard({ title, desc, delay }: { title: string; desc: string; delay: number }) {
+function ProblemCard({
+  value,
+  title,
+  desc,
+  delay,
+}: {
+  value: string
+  title: string
+  desc: string
+  delay: number
+}) {
   return (
     <FadeUp delay={delay}>
       <div
@@ -627,26 +691,38 @@ function WhatCard({ title, desc, delay }: { title: string; desc: string; delay: 
           background: 'var(--bg-card)',
           border: '1px solid var(--border)',
           borderRadius: 16,
-          padding: '28px 24px',
+          padding: '32px 28px',
           height: '100%',
         }}
       >
-        <h3
+        <p
           className="font-serif italic"
           style={{
-            fontSize: 22,
-            fontWeight: 400,
+            fontSize: 'clamp(40px, 5vw, 56px)',
             color: 'var(--accent)',
-            lineHeight: 1.2,
-            marginBottom: 12,
+            lineHeight: 1,
+            marginBottom: 20,
+            fontWeight: 400,
           }}
         >
-          {title}
-        </h3>
+          {value}
+        </p>
         <p
           className="font-sans"
           style={{
-            fontSize: 14,
+            fontSize: 18,
+            fontWeight: 500,
+            color: 'var(--text)',
+            lineHeight: 1.4,
+            marginBottom: 10,
+          }}
+        >
+          {title}
+        </p>
+        <p
+          className="font-sans"
+          style={{
+            fontSize: 13,
             fontWeight: 300,
             color: 'var(--text-secondary)',
             lineHeight: 1.7,
@@ -659,7 +735,66 @@ function WhatCard({ title, desc, delay }: { title: string; desc: string; delay: 
   )
 }
 
-function NumberCell({
+function FeatureRow({
+  title,
+  desc,
+  last,
+}: {
+  title: string
+  desc: string
+  last?: boolean
+}) {
+  return (
+    <li
+      style={{
+        display: 'flex',
+        gap: 16,
+        paddingBottom: last ? 0 : 20,
+        marginBottom: last ? 0 : 20,
+        borderBottom: last ? 'none' : '1px solid var(--border)',
+      }}
+    >
+      <span
+        aria-hidden="true"
+        style={{
+          width: 8,
+          height: 8,
+          borderRadius: '50%',
+          background: 'var(--accent)',
+          flexShrink: 0,
+          marginTop: 8,
+        }}
+      />
+      <div style={{ flex: 1, minWidth: 0 }}>
+        <p
+          className="font-sans"
+          style={{
+            fontSize: 16,
+            fontWeight: 500,
+            color: 'var(--text)',
+            lineHeight: 1.35,
+            marginBottom: 6,
+          }}
+        >
+          {title}
+        </p>
+        <p
+          className="font-sans"
+          style={{
+            fontSize: 13,
+            fontWeight: 300,
+            color: 'var(--text-secondary)',
+            lineHeight: 1.65,
+          }}
+        >
+          {desc}
+        </p>
+      </div>
+    </li>
+  )
+}
+
+function StatCell({
   value,
   label,
   bordered,
@@ -670,20 +805,20 @@ function NumberCell({
 }) {
   return (
     <div
-      className="text-center"
       style={{
-        padding: '36px 24px',
+        padding: '32px 20px',
         borderLeft: bordered ? '1px solid var(--border)' : 'none',
+        textAlign: 'center',
       }}
     >
       <p
-        className="font-mono"
+        className="font-serif italic"
         style={{
-          fontSize: 'clamp(28px, 4vw, 38px)',
+          fontSize: 'clamp(28px, 4vw, 44px)',
           color: 'var(--accent)',
-          fontWeight: 400,
           lineHeight: 1.1,
           marginBottom: 10,
+          fontWeight: 400,
         }}
       >
         {value}
@@ -695,7 +830,7 @@ function NumberCell({
           fontWeight: 300,
           color: 'var(--text-muted)',
           lineHeight: 1.5,
-          maxWidth: 240,
+          maxWidth: 220,
           margin: '0 auto',
         }}
       >
@@ -705,30 +840,114 @@ function NumberCell({
   )
 }
 
-function Field({
-  label,
-  required,
-  children,
-}: {
-  label: string
-  required?: boolean
-  children: React.ReactNode
-}) {
+function HowStep({ n, title, desc }: { n: number; title: string; desc: string }) {
   return (
-    <div>
-      <label
-        className="font-sans"
+    <div style={{ display: 'flex', gap: 22 }}>
+      <span
+        className="font-serif italic"
         style={{
-          display: 'block',
-          fontSize: 13,
-          fontWeight: 500,
-          color: 'var(--text-secondary)',
-          marginBottom: 6,
+          fontSize: 'clamp(44px, 5vw, 64px)',
+          color: 'var(--text-muted)',
+          lineHeight: 1,
+          fontWeight: 400,
+          opacity: 0.55,
+          minWidth: 56,
         }}
       >
-        {label} {required && <span style={{ color: 'var(--accent)' }}>*</span>}
-      </label>
-      {children}
+        0{n}
+      </span>
+      <div style={{ flex: 1, minWidth: 0, paddingTop: 8 }}>
+        <p
+          className="font-sans"
+          style={{
+            fontSize: 18,
+            fontWeight: 500,
+            color: 'var(--text)',
+            lineHeight: 1.35,
+            marginBottom: 6,
+          }}
+        >
+          {title}
+        </p>
+        <p
+          className="font-sans"
+          style={{
+            fontSize: 13,
+            fontWeight: 300,
+            color: 'var(--text-secondary)',
+            lineHeight: 1.7,
+            maxWidth: 420,
+          }}
+        >
+          {desc}
+        </p>
+      </div>
     </div>
+  )
+}
+
+function FaqItem({ q, a, delay }: { q: string; a: string; delay: number }) {
+  const [open, setOpen] = useState(false)
+  return (
+    <FadeUp delay={delay}>
+      <div
+        style={{
+          borderBottom: '1px solid var(--border)',
+        }}
+      >
+        <button
+          type="button"
+          onClick={() => setOpen(!open)}
+          style={{
+            width: '100%',
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            gap: 20,
+            padding: '22px 0',
+            background: 'transparent',
+            border: 'none',
+            cursor: 'pointer',
+            textAlign: 'left',
+            fontFamily: 'var(--font-sans)',
+            fontSize: 16,
+            fontWeight: 500,
+            color: 'var(--text)',
+            lineHeight: 1.4,
+          }}
+        >
+          <span>{q}</span>
+          <span
+            aria-hidden="true"
+            style={{
+              fontFamily: 'var(--font-mono)',
+              fontSize: 18,
+              color: 'var(--accent)',
+              flexShrink: 0,
+              transition: 'transform 0.3s',
+              transform: open ? 'rotate(45deg)' : 'none',
+              lineHeight: 1,
+            }}
+          >
+            +
+          </span>
+        </button>
+        {open && (
+          <p
+            className="font-sans"
+            style={{
+              fontSize: 14,
+              fontWeight: 300,
+              color: 'var(--text-secondary)',
+              lineHeight: 1.75,
+              paddingBottom: 22,
+              maxWidth: 700,
+            }}
+          >
+            {a}
+          </p>
+        )}
+      </div>
+    </FadeUp>
   )
 }
