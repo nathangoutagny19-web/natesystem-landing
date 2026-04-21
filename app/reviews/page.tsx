@@ -24,7 +24,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import Nav from '@/components/layout/Nav'
+import ReviewsNav from '@/components/layout/ReviewsNav'
 import Footer from '@/components/layout/Footer'
 import FadeUp from '@/components/ui/FadeUp'
 import { useLang } from '@/components/providers/LangProvider'
@@ -35,7 +35,7 @@ export default function ReviewsPage() {
 
   return (
     <main style={{ background: 'var(--bg)' }}>
-      <Nav />
+      <ReviewsNav />
 
       {/* ════════════════════════════════════════════════════════════
          1. HERO

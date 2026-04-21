@@ -47,6 +47,20 @@ export default function Footer() {
           <FooterLink href="/resources">{t('nav.resources')}</FooterLink>
         </nav>
 
+        {/* Sister brands */}
+        <div className="flex flex-col items-center md:items-start gap-2">
+          <p
+            className="font-mono"
+            style={{ fontSize: 10, letterSpacing: 2, textTransform: 'uppercase', color: 'var(--text-muted)', fontWeight: 400 }}
+          >
+            NateSystem Group
+          </p>
+          <FooterLink href="/">NateSystem Digital</FooterLink>
+          <FooterLink href="/reviews">
+            NateSystem <span style={{ color: 'var(--accent)', fontFamily: 'var(--font-serif)', fontStyle: 'italic' }}>· Reviews</span>
+          </FooterLink>
+        </div>
+
         {/* Theme toggle + legal */}
         <div className="flex flex-col items-center md:items-end gap-3">
           {/* Theme pill toggle */}
