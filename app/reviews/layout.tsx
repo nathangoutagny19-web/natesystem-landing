@@ -17,9 +17,9 @@ export const metadata: Metadata = {
     images: [
       {
         url: '/reviews/04-audit-pdf.png',
-        width: 1600,
-        height: 1000,
-        alt: 'Sample NateSystem Reviews audit PDF',
+        width: 1488,
+        height: 2104,
+        alt: 'Sample NateSystem Reviews audit PDF — first page',
       },
     ],
     locale: 'en_US',

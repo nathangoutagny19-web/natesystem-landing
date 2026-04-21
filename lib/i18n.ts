@@ -474,8 +474,8 @@ export const translations = {
 
   // Roadmap
   'reviews.roadmap.kicker': { en: 'THE ROADMAP', fr: 'LA FEUILLE DE ROUTE', hu: 'AZ ÜTEMTERV' },
-  'reviews.roadmap.title1': { en: 'From 412 reviews to', fr: 'De 412 avis à', hu: '412 értékelésből' },
-  'reviews.roadmap.titleAccent': { en: '10 actions that matter.', fr: '10 actions qui comptent.', hu: '10 cselekvés, amely számít.' },
+  'reviews.roadmap.title1': { en: 'From 200 reviews to', fr: 'De 200 avis à', hu: '200 értékelésből' },
+  'reviews.roadmap.titleAccent': { en: '8 actions that matter.', fr: '8 actions qui comptent.', hu: '8 cselekvés, amely számít.' },
   'reviews.roadmap.body': {
     en: 'We don\'t guess. We extract recurring patterns from every review, cross-reference them with competitor gaps, and produce a prioritised plan. You tick actions off as you execute — we refine it every quarter.',
     fr: 'On ne devine pas. On extrait les motifs récurrents de chaque avis, on les croise avec les écarts concurrentiels, et on produit un plan priorisé. Vous cochez les actions au fil de l\'exécution — on l\'affine chaque trimestre.',

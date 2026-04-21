@@ -404,8 +404,9 @@ export default function ReviewsPage() {
             <FadeUp delay={0.12}>
               <MockupFigure
                 src="/reviews/04-audit-pdf.png"
-                alt="Sample €790 audit PDF"
+                alt="Sample €790 audit PDF — first page"
                 caption={t('reviews.audit.imgCaption')}
+                portrait
               />
             </FadeUp>
           </div>
@@ -632,28 +633,36 @@ function MockupFigure({
   alt,
   caption,
   fullWidth,
+  portrait,
 }: {
   src: string
   alt: string
   caption: string
   fullWidth?: boolean
+  /** Use portrait A4 dimensions (1488×2104) for the audit PDF capture. */
+  portrait?: boolean
 }) {
+  const width = portrait ? 1488 : 1600
+  const height = portrait ? 2104 : 1000
+  const maxWidth = fullWidth ? '100%' : portrait ? 560 : 900
+
   return (
     <figure style={{ margin: 0 }}>
       <Image
         src={src}
         alt={alt}
-        width={1600}
-        height={1000}
+        width={width}
+        height={height}
         loading="lazy"
         style={{
           width: '100%',
-          maxWidth: fullWidth ? '100%' : 900,
+          maxWidth,
           height: 'auto',
           borderRadius: 16,
           border: '1px solid var(--border)',
           boxShadow: '0 40px 80px -30px rgba(0,0,0,0.4)',
           display: 'block',
+          margin: portrait ? '0 auto' : undefined,
         }}
       />
       <figcaption
