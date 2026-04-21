@@ -483,17 +483,17 @@ export const translations = {
     hu: 'Élő irányítópult egy partner étteremnél. Mind a 200 értékelés, minden platform, automatikus pontozás és útválasztás — hogy a csapatunk arra fordítsa az idejét, amit csak ember tud.',
   },
 
-  // 5.7 — €790 audit ribbon
+  // 5.7 — €997 audit ribbon (offered free only via Partner Welcome Pack)
   'reviews.audit.kicker': { en: 'PARTNER WELCOME PACK', fr: 'PARTNER WELCOME PACK', hu: 'PARTNER WELCOME PACK' },
-  'reviews.audit.title1': { en: 'Start with a', fr: 'Commencez par un', hu: 'Kezdje egy' },
-  'reviews.audit.titleAccent': { en: 'free €790 audit.', fr: 'audit gratuit de 790 €.', hu: 'ingyenes 790 € audittal.' },
+  'reviews.audit.title1': { en: 'A', fr: 'Un', hu: 'Egy' },
+  'reviews.audit.titleAccent': { en: '€997 audit, offered.', fr: 'audit à 997 €, offert.', hu: '997 € audit, ajándékba.' },
   'reviews.audit.body': {
-    en: 'AI-generated, grounded in your actual reviews, benchmarked against your three closest competitors, with a 90-day roadmap. Delivered as a branded PDF within 3 business days. No commitment. No meeting required to receive it.',
-    fr: 'Généré par IA, fondé sur vos vrais avis, benchmarké face à vos trois concurrents les plus proches, avec une feuille de route à 90 jours. Livré en PDF sous 3 jours ouvrés. Sans engagement. Aucun rendez-vous nécessaire pour le recevoir.',
-    hu: 'MI-vel készül, valódi értékeléseiből, három legközelebbi versenytárssal összehasonlítva, 90 napos ütemtervvel. Márkás PDF 3 munkanapon belül. Elkötelezettség nélkül. A megkapásához nem kell megbeszélés.',
+    en: 'A €997 reputation audit we normally invoice — offered to every restaurant referred through our partner Kis Zoltán, or to a handful of direct applicants we accept each month. AI-generated, grounded in your actual reviews, benchmarked against your three closest competitors, with a 90-day roadmap. Delivered as a branded PDF within 3 business days. No commitment.',
+    fr: 'Un audit de réputation à 997 €, que nous facturons normalement — offert à chaque restaurant référé via notre partenaire Kis Zoltán, ou à quelques candidatures directes que nous acceptons chaque mois. Généré par IA, fondé sur vos vrais avis, benchmarké face à vos trois concurrents les plus proches, avec une feuille de route à 90 jours. Livré en PDF sous 3 jours ouvrés. Sans engagement.',
+    hu: 'Egy 997 € értékű hírnévaudit, amelyet általában számlázunk — ajándékba jár minden éttermnek, amelyet partnerünkön, Kis Zoltánon keresztül ajánlanak, vagy annak a néhány közvetlen jelentkezőnek, akiket havonta elfogadunk. MI-vel készül, valódi értékeléseiből, három legközelebbi versenytárssal összehasonlítva, 90 napos ütemtervvel. Márkás PDF 3 munkanapon belül. Elkötelezettség nélkül.',
   },
-  'reviews.audit.cta': { en: 'Claim your audit', fr: 'Obtenir mon audit', hu: 'Audit igénylése' },
-  'reviews.audit.imgCaption': { en: 'The real first page of a partner restaurant\'s €790 audit PDF.', fr: 'La vraie première page du PDF d\'audit €790 d\'un restaurant partenaire.', hu: 'Egy partner étterem 790 € auditjának valódi első oldala.' },
+  'reviews.audit.cta': { en: 'See if you qualify', fr: 'Vérifier mon éligibilité', hu: 'Jogosultság ellenőrzése' },
+  'reviews.audit.imgCaption': { en: 'The real first page of a partner restaurant\'s €997 audit PDF.', fr: 'La vraie première page du PDF d\'audit à 997 € d\'un restaurant partenaire.', hu: 'Egy partner étterem 997 €-s auditjának valódi első oldala.' },
 
   // 5.8 — Proof numbers
   'reviews.proof.kicker': { en: 'BY THE NUMBERS', fr: 'LES CHIFFRES', hu: 'SZÁMOKBAN' },
@@ -545,8 +545,8 @@ export const translations = {
   'reviews.faq.a2': { en: 'Yes. We also respond in English, German, French and Italian. Our agent matches the reviewer\'s language automatically, and a human validates before publishing.', fr: 'Oui. Nous répondons aussi en anglais, allemand, français et italien. Notre agent s\'adapte automatiquement à la langue de l\'auteur, un humain valide avant publication.', hu: 'Igen. Angolul, németül, franciául és olaszul is válaszolunk. Ügynökünk automatikusan az értékelő nyelvéhez igazodik, ember hagyja jóvá publikálás előtt.' },
   'reviews.faq.q3': { en: 'Who owns the data?', fr: 'À qui appartiennent les données ?', hu: 'Kié az adat?' },
   'reviews.faq.a3': { en: 'You. Full export anytime, in CSV and PDF. If you leave, you leave with everything.', fr: 'À vous. Export complet à tout moment, en CSV et PDF. Si vous partez, vous partez avec tout.', hu: 'Öné. Bármikor teljes export CSV-ben és PDF-ben. Ha távozik, mindent visz.' },
-  'reviews.faq.q4': { en: 'How is the audit really free?', fr: 'Comment l\'audit peut-il être vraiment gratuit ?', hu: 'Hogy lehet az audit tényleg ingyenes?' },
-  'reviews.faq.a4': { en: 'It\'s the Partner Welcome Pack bonus — a real €790 deliverable. We\'re confident the work speaks for itself and brings the best-fit restaurants through.', fr: 'C\'est le bonus Partner Welcome Pack — un vrai livrable à 790 €. Nous sommes sûrs que le travail parle de lui-même.', hu: 'Ez a Partner Welcome Pack bónusza — valódi 790 €-s szolgáltatás. Bízunk benne, hogy a munka magáért beszél.' },
+  'reviews.faq.q4': { en: 'Who gets the audit for free?', fr: 'Pour qui l\'audit est-il offert ?', hu: 'Kinek jár ingyen az audit?' },
+  'reviews.faq.a4': { en: 'The €997 audit is offered in two cases: restaurants referred through our partner Kis Zoltán (Partner Welcome Pack), and a small number of direct applicants we accept each month when we have capacity. Everyone else can still commission it at €997. Either way it\'s the same deliverable.', fr: 'L\'audit à 997 € est offert dans deux cas : les restaurants référés par notre partenaire Kis Zoltán (Partner Welcome Pack), et quelques candidatures directes que nous acceptons chaque mois selon notre capacité. Les autres peuvent le commander à 997 €. Dans tous les cas, c\'est le même livrable.', hu: 'A 997 €-s auditot két esetben adjuk ajándékba: a partnerünkön, Kis Zoltánon keresztül ajánlott éttermeknek (Partner Welcome Pack), és néhány közvetlen jelentkezőnek havonta, amikor van kapacitásunk. Mindenki más 997 €-ért rendelheti meg. Mindkét esetben ugyanazt kapja.' },
   'reviews.faq.q5': { en: 'What does it cost after the audit?', fr: 'Combien ça coûte après l\'audit ?', hu: 'Mennyibe kerül az audit után?' },
   'reviews.faq.a5': { en: 'A flat monthly fee, shared on the discovery call so we can match it to your restaurant\'s volume and needs. No surprises.', fr: 'Un forfait mensuel fixe, communiqué pendant l\'appel de découverte en fonction de votre volume et de vos besoins. Zéro surprise.', hu: 'Fix havi díj, az ismerkedési híváson egyeztetjük étterme forgalmához és igényeihez igazítva. Nincs meglepetés.' },
 
