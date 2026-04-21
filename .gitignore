@@ -1,7 +1,11 @@
 node_modules
 .next
 out
-*.png
-*.jpg
 .claude
 claude-seo
+
+# Ignore PNG/JPG at the repo root (legacy mockups, exports) but keep
+# everything that ships with the site under /public.
+/*.png
+/*.jpg
+/nate-reviews-assets/*.png
