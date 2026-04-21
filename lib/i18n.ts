@@ -385,26 +385,27 @@ export const translations = {
   'blog.ctaButton': { en: 'Book a free session →', fr: 'Réserver une session gratuite →', hu: 'Ingyenes időpont foglalása →' },
 
   // ═══════════════════════════════════════════════════════════════
-  // NateSystem · Reviews — agency-grade landing
+  // NateSystem · Reviews — agency-positioned landing (v2)
   // ═══════════════════════════════════════════════════════════════
   'reviews.nav': { en: 'Reviews', fr: 'Reviews', hu: 'Reviews' },
   'reviews.kicker': { en: 'NATESYSTEM · REVIEWS', fr: 'NATESYSTEM · REVIEWS', hu: 'NATESYSTEM · REVIEWS' },
 
   // Hero
-  'reviews.hero.title1': { en: 'We run your restaurant\'s reputation,', fr: 'Nous gérons la réputation de votre restaurant,', hu: 'Mi gondoskodunk az étterme hírnevéről,' },
-  'reviews.hero.titleAccent': { en: 'so you don\'t have to.', fr: 'pour que vous n\'ayez pas à le faire.', hu: 'hogy Önnek ne kelljen.' },
+  'reviews.hero.title1': { en: 'We run your restaurant\'s reputation.', fr: 'Nous gérons la réputation de votre restaurant.', hu: 'Mi gondoskodunk az étterme hírnevéről.' },
+  'reviews.hero.titleAccent': { en: 'You run your restaurant.', fr: 'Vous gérez votre restaurant.', hu: 'Ön az éttermét vezeti.' },
   'reviews.hero.sub': {
-    en: 'AI-powered review intelligence, human consulting, monthly reports. Built for restaurants that know reputation is revenue.',
-    fr: 'Intelligence des avis par IA, conseil humain, rapports mensuels. Pour les restaurants qui savent que la réputation, c\'est du chiffre.',
-    hu: 'MI-alapú értékeléselemzés, emberi tanácsadás, havi riportok. Éttermeknek, akik tudják: a hírnév bevétel.',
+    en: 'A Budapest-based agency managing reviews, responses and reputation for ~30 mid-market restaurants. Every month we lift your score, answer your guests in their language, and report to you in a single PDF.',
+    fr: 'Une agence basée à Budapest qui gère avis, réponses et réputation pour ~30 restaurants mid-market. Chaque mois, nous faisons monter votre note, répondons à vos clients dans leur langue, et vous livrons un PDF unique.',
+    hu: 'Budapesti ügynökség, amely ~30 közepes étterem értékeléseit, válaszait és hírnevét kezeli. Havonta emeljük a pontszámát, válaszolunk a vendégeinek az ő nyelvükön, és egyetlen PDF-ben riportálunk.',
   },
   'reviews.hero.ctaPrimary': { en: 'Book a free audit', fr: 'Réserver un audit gratuit', hu: 'Ingyenes auditálás foglalása' },
-  'reviews.hero.ctaGhost': { en: 'See what you get', fr: 'Voir ce que vous obtenez', hu: 'Nézze meg, mit kap' },
+  'reviews.hero.ctaGhost': { en: 'See what we do', fr: 'Voir ce que l\'on fait', hu: 'Nézze meg, mit csinálunk' },
   'reviews.hero.socialProof': {
-    en: 'Running for ~30 restaurants in Budapest · average score lift +14 points in 90 days',
-    fr: 'Opéré pour ~30 restaurants à Budapest · progression moyenne de +14 points en 90 jours',
-    hu: '~30 budapesti étteremnek · átlagos pontszám-emelkedés +14 pont 90 nap alatt',
+    en: '~30 restaurants in Budapest · +14 points average reputation lift in 90 days',
+    fr: '~30 restaurants à Budapest · +14 points de progression moyenne en 90 jours',
+    hu: '~30 budapesti étterem · +14 pont átlagos hírnév-emelkedés 90 nap alatt',
   },
+  'reviews.hero.imgAlt': { en: 'Behind the scenes — the real-time reputation dashboard we run for partner restaurants', fr: 'Les coulisses — le tableau de bord temps réel que nous opérons pour les restaurants partenaires', hu: 'A kulisszák mögött — a valós idejű hírnév-irányítópult, amit partner éttermeknek üzemeltetünk' },
 
   // Problem
   'reviews.problem.kicker': { en: 'THE REAL COST OF IGNORING REVIEWS', fr: 'LE VRAI COÛT DE NÉGLIGER LES AVIS', hu: 'AZ ÉRTÉKELÉSEK FIGYELMEN KÍVÜL HAGYÁSÁNAK VALÓDI ÁRA' },
@@ -430,87 +431,85 @@ export const translations = {
     hu: 'Egy 1-csillagos értékelés megjelenése és a között, hogy jelezzük az étteremnek — már kész válasszal.',
   },
 
-  // Features (What's inside)
-  'reviews.features.kicker': { en: 'WHAT\'S INSIDE', fr: 'CE QUI EST INCLUS', hu: 'MIT TARTALMAZ' },
-  'reviews.features.title1': { en: 'A team running your reputation.', fr: 'Une équipe qui gère votre réputation.', hu: 'Egy csapat, amely a hírnevét kezeli.' },
-  'reviews.features.title2': { en: 'A platform showing you everything.', fr: 'Une plateforme qui vous montre tout.', hu: 'Egy platform, ami mindent megmutat.' },
-  'reviews.features.f1.title': { en: 'AI sentiment analysis', fr: 'Analyse de sentiment par IA', hu: 'MI-alapú hangulatelemzés' },
-  'reviews.features.f1.desc': {
-    en: 'Every review scored for tone, aspect (food, service, ambiance, wait-time) and suspicious patterns.',
-    fr: 'Chaque avis noté selon le ton, l\'aspect (cuisine, service, ambiance, attente) et les signaux suspects.',
-    hu: 'Minden értékelés pontozva hangulat, szempont (étel, kiszolgálás, hangulat, várakozás) és gyanús minták szerint.',
-  },
-  'reviews.features.f2.title': { en: 'Strategic action plans', fr: 'Plans d\'action stratégiques', hu: 'Stratégiai cselekvési tervek' },
-  'reviews.features.f2.desc': {
-    en: '8–10 prioritised actions generated from your real data. Not templates, not guesses.',
-    fr: '8 à 10 actions prioritaires issues de vos vraies données. Pas de templates, pas de suppositions.',
-    hu: '8–10 prioritizált művelet az Ön valódi adataiból. Nincsenek sablonok, nincs találgatás.',
-  },
-  'reviews.features.f3.title': { en: 'Response drafting', fr: 'Rédaction des réponses', hu: 'Válaszok megfogalmazása' },
-  'reviews.features.f3.desc': {
-    en: 'Three tone variants per review, in the reviewer\'s language, approved before publishing.',
-    fr: 'Trois variantes de ton par avis, dans la langue de l\'auteur, validées avant publication.',
-    hu: 'Három hangnem-változat értékelésenként, az értékelő nyelvén, publikálás előtti jóváhagyással.',
-  },
-  'reviews.features.f4.title': { en: 'Competitive tracking', fr: 'Veille concurrentielle', hu: 'Versenytárs-figyelés' },
-  'reviews.features.f4.desc': {
-    en: 'Your three closest competitors, reviewed in the same view. You see the gaps, we close them.',
-    fr: 'Vos trois concurrents les plus proches, suivis dans la même vue. Vous voyez les écarts, on les comble.',
-    hu: 'Három legközelebbi versenytársa ugyanabban a nézetben. Ön látja a réseket, mi bezárjuk.',
-  },
-  'reviews.features.f5.title': { en: 'Crisis detection', fr: 'Détection de crise', hu: 'Válságfelismerés' },
-  'reviews.features.f5.desc': {
-    en: 'Three bad reviews in 48h triggers an immediate alert, with a draft response ready.',
-    fr: 'Trois avis négatifs en 48 h déclenchent une alerte immédiate, avec un brouillon de réponse prêt.',
-    hu: 'Három rossz értékelés 48 órán belül azonnali riasztást indít, kész válasz-vázlattal.',
-  },
-  'reviews.features.f6.title': { en: 'Reports + briefings', fr: 'Rapports + briefings', hu: 'Riportok + briefingek' },
-  'reviews.features.f6.desc': {
-    en: 'Monthly PDF reports and weekly briefings you can forward straight to your investors.',
-    fr: 'Rapports PDF mensuels et briefings hebdo que vous pouvez transférer à vos investisseurs.',
-    hu: 'Havi PDF-riportok és heti briefingek, amelyeket akár a befektetőinek is továbbíthat.',
-  },
-  'reviews.features.imgCaption': { en: 'Your agency dashboard — every review, every response, every action.', fr: 'Votre dashboard — chaque avis, chaque réponse, chaque action.', hu: 'Az Ön irányítópultja — minden értékelés, válasz és művelet.' },
-
-  // Roadmap
-  'reviews.roadmap.kicker': { en: 'THE ROADMAP', fr: 'LA FEUILLE DE ROUTE', hu: 'AZ ÜTEMTERV' },
+  // 5.3 — Deliverable: 90-day roadmap
+  'reviews.roadmap.kicker': { en: 'THE DELIVERABLE', fr: 'LE LIVRABLE', hu: 'A SZOLGÁLTATÁS' },
   'reviews.roadmap.title1': { en: 'From 200 reviews to', fr: 'De 200 avis à', hu: '200 értékelésből' },
   'reviews.roadmap.titleAccent': { en: '8 actions that matter.', fr: '8 actions qui comptent.', hu: '8 cselekvés, amely számít.' },
-  'reviews.roadmap.body': {
-    en: 'We don\'t guess. We extract recurring patterns from every review, cross-reference them with competitor gaps, and produce a prioritised plan. You tick actions off as you execute — we refine it every quarter.',
-    fr: 'On ne devine pas. On extrait les motifs récurrents de chaque avis, on les croise avec les écarts concurrentiels, et on produit un plan priorisé. Vous cochez les actions au fil de l\'exécution — on l\'affine chaque trimestre.',
-    hu: 'Nem találgatunk. Minden értékelésből ismétlődő mintákat emelünk ki, versenytárs-résekkel keresztezzük, és prioritizált tervet készítünk. Ön pipálja a műveleteket — mi negyedévente finomítjuk.',
+  'reviews.roadmap.body1': {
+    en: 'We don\'t send you templates. Every 90 days we read every review you\'ve had, cross-reference them with your three closest competitors, and write an action plan prioritised by revenue impact.',
+    fr: 'On ne vous envoie pas de templates. Tous les 90 jours, on lit chacun de vos avis, on les recoupe avec vos trois concurrents les plus proches, et on rédige un plan d\'action priorisé par impact sur le chiffre.',
+    hu: 'Nem sablonokat küldünk. 90 naponta átolvassuk minden értékelését, keresztezzük három legközelebbi versenytársával, és bevételi hatás szerint rangsorolt cselekvési tervet írunk.',
   },
-  'reviews.roadmap.imgCaption': { en: 'A real 90-day plan. Nothing generic.', fr: 'Un vrai plan 90 jours. Rien de générique.', hu: 'Valódi 90 napos terv. Semmi általános.' },
+  'reviews.roadmap.body2': {
+    en: 'You tick actions off. We help with the ones that need our hands. The plan is the deliverable — the platform is the tracking surface.',
+    fr: 'Vous cochez les actions. On prend en charge celles qui demandent nos mains. Le plan, c\'est le livrable — la plateforme, c\'est la surface de suivi.',
+    hu: 'Ön pipálja a műveleteket. A kezünket igénylő részeket mi végezzük. A terv a szolgáltatás — a platform csak a követő felület.',
+  },
+  'reviews.roadmap.imgCaption': { en: 'A real 90-day plan for a partner restaurant. 1 of 8 actions completed.', fr: 'Un vrai plan 90 jours pour un restaurant partenaire. 1 action sur 8 terminée.', hu: 'Valódi 90 napos terv egy partner étteremhez. 1/8 művelet kész.' },
 
-  // Audit ribbon (Partner Welcome Pack)
+  // 5.4 — AI analysis (aspect scoring)
+  'reviews.aspect.kicker': { en: 'HOW WE READ YOUR REVIEWS', fr: 'COMMENT NOUS LISONS VOS AVIS', hu: 'HOGYAN OLVASSUK AZ ÉRTÉKELÉSEIT' },
+  'reviews.aspect.title': { en: 'Every review, scored on six dimensions.', fr: 'Chaque avis, noté sur six dimensions.', hu: 'Minden értékelés, hat dimenzió szerint pontozva.' },
+  'reviews.aspect.body': {
+    en: 'Food, service, ambiance, price, cleanliness, wait time. Each review is decomposed — not just positive or negative, but which part of the experience was weak. After 200 reviews, we know exactly where your reputation leaks.',
+    fr: 'Cuisine, service, ambiance, prix, propreté, temps d\'attente. Chaque avis est décomposé — pas juste positif ou négatif, mais quelle partie de l\'expérience a flanché. Après 200 avis, on sait précisément où fuit votre réputation.',
+    hu: 'Étel, kiszolgálás, hangulat, ár, tisztaság, várakozás. Minden értékelést lebontunk — nem csak pozitív vagy negatív, hanem az élmény melyik része volt gyenge. 200 értékelés után pontosan tudjuk, hol szivárog a hírneve.',
+  },
+  'reviews.aspect.imgCaption': { en: 'Real aspect breakdown for a partner restaurant — six dimensions, ranked by score.', fr: 'Décomposition réelle par aspect pour un restaurant partenaire — six dimensions, classées par score.', hu: 'Valódi szempontbontás egy partner étteremnél — hat dimenzió, pontszám szerint rangsorolva.' },
+
+  // 5.5 — SmartReview agent (response drafting)
+  'reviews.respond.kicker': { en: 'HOW WE RESPOND', fr: 'COMMENT NOUS RÉPONDONS', hu: 'HOGYAN VÁLASZOLUNK' },
+  'reviews.respond.title1': { en: 'Every guest gets an answer,', fr: 'Chaque client reçoit une réponse,', hu: 'Minden vendég választ kap,' },
+  'reviews.respond.titleAccent': { en: 'in their language, in your voice.', fr: 'dans leur langue, dans votre voix.', hu: 'az ő nyelvén, az Ön hangján.' },
+  'reviews.respond.body': {
+    en: 'Your brand voice, your dishes, your regular guests — we train the agent on your restaurant. Every response is drafted by AI, reviewed by us, approved by you, and shipped. Hungarian, English, German, French, Italian. Never robotic.',
+    fr: 'Votre voix de marque, vos plats, vos habitués — on entraîne l\'agent sur votre restaurant. Chaque réponse est rédigée par l\'IA, relue par nous, validée par vous, puis publiée. Hongrois, anglais, allemand, français, italien. Jamais robotique.',
+    hu: 'Az Ön márkahangja, fogásai, törzsvendégei — az ügynököt az Ön éttermére tanítjuk. Minden válasz MI-vel fogalmazódik, mi átnézzük, Ön jóváhagyja, majd publikáljuk. Magyar, angol, német, francia, olasz. Soha nem robotikus.',
+  },
+  'reviews.respond.imgCaption': { en: 'The response agent config — brand voice, system prompt, learned Hungarian examples.', fr: 'La configuration de l\'agent — voix de marque, prompt système, exemples hongrois appris.', hu: 'A válaszügynök konfigurációja — márkahang, rendszer-prompt, megtanult magyar példák.' },
+  'reviews.respond.footnote': {
+    en: 'Average time from review to approved response: under 4 hours.',
+    fr: 'Temps moyen d\'un avis à une réponse validée : moins de 4 heures.',
+    hu: 'Átlagos idő értékelésről jóváhagyott válaszig: 4 óránál kevesebb.',
+  },
+
+  // 5.6 — Live evidence (full-width reviews feed)
+  'reviews.live.kicker': { en: 'SEE IT WORK', fr: 'VOYEZ-LE EN ACTION', hu: 'LÁSSA MŰKÖDÉS KÖZBEN' },
+  'reviews.live.title1': { en: 'One review. Six aspects scored.', fr: 'Un avis. Six aspects notés.', hu: 'Egy értékelés. Hat szempont pontozva.' },
+  'reviews.live.titleAccent': { en: 'One response drafted.', fr: 'Une réponse rédigée.', hu: 'Egy válasz megfogalmazva.' },
+  'reviews.live.imgCaption': {
+    en: 'Live dashboard for a partner restaurant. All 200 reviews, every platform, scored and routed automatically — so our team can spend its hours on what only humans can do.',
+    fr: 'Dashboard live d\'un restaurant partenaire. Les 200 avis, toutes plateformes, notés et routés automatiquement — pour que notre équipe passe ses heures sur ce que seuls les humains peuvent faire.',
+    hu: 'Élő irányítópult egy partner étteremnél. Mind a 200 értékelés, minden platform, automatikus pontozás és útválasztás — hogy a csapatunk arra fordítsa az idejét, amit csak ember tud.',
+  },
+
+  // 5.7 — €790 audit ribbon
   'reviews.audit.kicker': { en: 'PARTNER WELCOME PACK', fr: 'PARTNER WELCOME PACK', hu: 'PARTNER WELCOME PACK' },
   'reviews.audit.title1': { en: 'Start with a', fr: 'Commencez par un', hu: 'Kezdje egy' },
   'reviews.audit.titleAccent': { en: 'free €790 audit.', fr: 'audit gratuit de 790 €.', hu: 'ingyenes 790 € audittal.' },
   'reviews.audit.body': {
-    en: 'AI-generated, grounded in your actual reviews. Competitive comparison against your three closest neighbours. 90-day roadmap. Delivered as a branded PDF within 3 business days. No commitment.',
-    fr: 'Généré par IA, fondé sur vos vrais avis. Comparaison avec vos trois voisins les plus proches. Feuille de route 90 jours. Livré en PDF sous 3 jours ouvrés. Sans engagement.',
-    hu: 'MI-vel készül, valódi értékeléseiből. Versenytárs-összehasonlítás a három legközelebbi szomszéddal. 90 napos ütemterv. Márkás PDF, 3 munkanapon belül. Elkötelezettség nélkül.',
+    en: 'AI-generated, grounded in your actual reviews, benchmarked against your three closest competitors, with a 90-day roadmap. Delivered as a branded PDF within 3 business days. No commitment. No meeting required to receive it.',
+    fr: 'Généré par IA, fondé sur vos vrais avis, benchmarké face à vos trois concurrents les plus proches, avec une feuille de route à 90 jours. Livré en PDF sous 3 jours ouvrés. Sans engagement. Aucun rendez-vous nécessaire pour le recevoir.',
+    hu: 'MI-vel készül, valódi értékeléseiből, három legközelebbi versenytárssal összehasonlítva, 90 napos ütemtervvel. Márkás PDF 3 munkanapon belül. Elkötelezettség nélkül. A megkapásához nem kell megbeszélés.',
   },
   'reviews.audit.cta': { en: 'Claim your audit', fr: 'Obtenir mon audit', hu: 'Audit igénylése' },
-  'reviews.audit.imgCaption': { en: 'A sample audit PDF — what you receive in 3 business days.', fr: 'Un audit type — ce que vous recevez sous 3 jours ouvrés.', hu: 'Példa audit PDF — amit 3 munkanapon belül megkap.' },
+  'reviews.audit.imgCaption': { en: 'The real first page of a partner restaurant\'s €790 audit PDF.', fr: 'La vraie première page du PDF d\'audit €790 d\'un restaurant partenaire.', hu: 'Egy partner étterem 790 € auditjának valódi első oldala.' },
 
-  // Proof numbers
+  // 5.8 — Proof numbers
   'reviews.proof.kicker': { en: 'BY THE NUMBERS', fr: 'LES CHIFFRES', hu: 'SZÁMOKBAN' },
   'reviews.proof.a.value': { en: '~30', fr: '~30', hu: '~30' },
   'reviews.proof.a.label': { en: 'Restaurants running', fr: 'Restaurants en activité', hu: 'Aktív étterem' },
   'reviews.proof.b.value': { en: '+14 pts', fr: '+14 pts', hu: '+14 pont' },
   'reviews.proof.b.label': { en: 'Avg score lift, 90 days', fr: 'Progression moyenne, 90 jours', hu: 'Átlagos emelkedés, 90 nap' },
   'reviews.proof.c.value': { en: '5 languages', fr: '5 langues', hu: '5 nyelv' },
-  'reviews.proof.c.label': { en: 'For responses', fr: 'Pour les réponses', hu: 'A válaszokhoz' },
+  'reviews.proof.c.label': { en: 'For guest responses', fr: 'Pour les réponses clients', hu: 'Vendégválaszokhoz' },
   'reviews.proof.d.value': { en: '3 days', fr: '3 jours', hu: '3 nap' },
   'reviews.proof.d.label': { en: 'Audit turnaround', fr: 'Délai de livraison audit', hu: 'Audit átfutási idő' },
-  'reviews.proof.imgCaption': { en: 'Monthly analytics — sentiment, volume, aspects, competitors.', fr: 'Analytics mensuel — sentiment, volume, aspects, concurrents.', hu: 'Havi analitika — hangulat, mennyiség, szempontok, versenytársak.' },
 
-  // How it works
+  // 5.9 — How it works
   'reviews.how.kicker': { en: 'HOW IT WORKS', fr: 'COMMENT ÇA MARCHE', hu: 'HOGYAN MŰKÖDIK' },
   'reviews.how.title1': { en: 'Four steps.', fr: 'Quatre étapes.', hu: 'Négy lépés.' },
-  'reviews.how.titleAccent': { en: 'No SaaS to learn.', fr: 'Aucun SaaS à apprendre.', hu: 'Nincs tanulandó SaaS.' },
+  'reviews.how.titleAccent': { en: 'No software to learn.', fr: 'Aucun logiciel à apprendre.', hu: 'Nincs tanulandó szoftver.' },
   'reviews.how.s1.title': { en: 'Discovery call (20 min)', fr: 'Appel de découverte (20 min)', hu: 'Ismerkedési hívás (20 perc)' },
   'reviews.how.s1.desc': {
     en: 'We understand your current reputation, pain points, goals. No sales deck, just questions.',
@@ -525,17 +524,16 @@ export const translations = {
   },
   'reviews.how.s3.title': { en: 'Setup (2 weeks)', fr: 'Mise en place (2 semaines)', hu: 'Bevezetés (2 hét)' },
   'reviews.how.s3.desc': {
-    en: 'Platform monitoring, response library, competitor tracking, your private owner portal.',
-    fr: 'Supervision plateforme, bibliothèque de réponses, veille concurrentielle, portail propriétaire privé.',
-    hu: 'Platform-figyelés, válasz-könyvtár, versenytárskövetés, privát tulajdonosi portál.',
+    en: 'We monitor every platform, train the response agent on your voice, benchmark your competitors, onboard you into your private portal.',
+    fr: 'On supervise chaque plateforme, on entraîne l\'agent de réponses à votre voix, on benchmark vos concurrents, on vous onboard sur votre portail privé.',
+    hu: 'Minden platformot figyelünk, a válaszügynököt az Ön hangjára tanítjuk, versenytársait benchmarkoljuk, és beléptetjük a privát portálba.',
   },
   'reviews.how.s4.title': { en: 'Monthly execution', fr: 'Exécution mensuelle', hu: 'Havi végrehajtás' },
   'reviews.how.s4.desc': {
-    en: 'We respond, we report, we refine the plan every quarter. You stay in the loop, not in the weeds.',
-    fr: 'On répond, on reporte, on affine le plan chaque trimestre. Vous restez au courant, sans être noyé.',
-    hu: 'Válaszolunk, riportálunk, negyedévente finomítjuk a tervet. Ön naprakész, anélkül hogy elvesznék a részletekben.',
+    en: 'We answer, we report, we refine the plan quarterly — you keep running your restaurant.',
+    fr: 'On répond, on reporte, on affine le plan chaque trimestre — vous continuez à gérer votre restaurant.',
+    hu: 'Válaszolunk, riportálunk, negyedévente finomítjuk a tervet — Ön pedig vezeti az éttermét.',
   },
-  'reviews.how.imgCaption': { en: 'Every response, drafted before it goes public.', fr: 'Chaque réponse rédigée avant publication.', hu: 'Minden válasz megfogalmazva a publikálás előtt.' },
 
   // FAQ
   'reviews.faq.kicker': { en: 'FAQ', fr: 'FAQ', hu: 'GYIK' },
@@ -544,7 +542,7 @@ export const translations = {
   'reviews.faq.q1': { en: 'Are we locked into a contract?', fr: 'Sommes-nous engagés dans un contrat ?', hu: 'Szerződéshez vagyunk kötve?' },
   'reviews.faq.a1': { en: 'Month-to-month. Cancel anytime with 30 days\' notice. No exit fees, ever.', fr: 'Mois par mois. Résiliation à tout moment avec 30 jours de préavis. Aucun frais de sortie.', hu: 'Havi elszámolás. 30 napos felmondással bármikor lemondható. Nincsenek kilépési díjak.' },
   'reviews.faq.q2': { en: 'Do you work in Hungarian?', fr: 'Travaillez-vous en hongrois ?', hu: 'Magyarul dolgoznak?' },
-  'reviews.faq.a2': { en: 'Yes. We also respond in English, German, French and Italian. The AI matches the reviewer\'s language, and a human validates before publishing.', fr: 'Oui. Nous répondons aussi en anglais, allemand, français et italien. L\'IA adapte la langue de l\'auteur, un humain valide avant publication.', hu: 'Igen. Angolul, németül, franciául és olaszul is válaszolunk. Az MI az értékelő nyelvéhez igazodik, ember jóváhagyja a publikálás előtt.' },
+  'reviews.faq.a2': { en: 'Yes. We also respond in English, German, French and Italian. Our agent matches the reviewer\'s language automatically, and a human validates before publishing.', fr: 'Oui. Nous répondons aussi en anglais, allemand, français et italien. Notre agent s\'adapte automatiquement à la langue de l\'auteur, un humain valide avant publication.', hu: 'Igen. Angolul, németül, franciául és olaszul is válaszolunk. Ügynökünk automatikusan az értékelő nyelvéhez igazodik, ember hagyja jóvá publikálás előtt.' },
   'reviews.faq.q3': { en: 'Who owns the data?', fr: 'À qui appartiennent les données ?', hu: 'Kié az adat?' },
   'reviews.faq.a3': { en: 'You. Full export anytime, in CSV and PDF. If you leave, you leave with everything.', fr: 'À vous. Export complet à tout moment, en CSV et PDF. Si vous partez, vous partez avec tout.', hu: 'Öné. Bármikor teljes export CSV-ben és PDF-ben. Ha távozik, mindent visz.' },
   'reviews.faq.q4': { en: 'How is the audit really free?', fr: 'Comment l\'audit peut-il être vraiment gratuit ?', hu: 'Hogy lehet az audit tényleg ingyenes?' },
@@ -554,7 +552,7 @@ export const translations = {
 
   // Final CTA
   'reviews.finalCta.title1': { en: 'Your reputation is already being written.', fr: 'Votre réputation s\'écrit déjà.', hu: 'A hírnéve már most íródik.' },
-  'reviews.finalCta.titleAccent': { en: 'Take control of the story.', fr: 'Reprenez le contrôle de l\'histoire.', hu: 'Vegye kézbe a történetet.' },
+  'reviews.finalCta.titleAccent': { en: 'Let us run it.', fr: 'Laissez-nous la gérer.', hu: 'Bízza ránk.' },
   'reviews.finalCta.cta': { en: 'Book a free audit', fr: 'Réserver un audit gratuit', hu: 'Ingyenes auditálás foglalása' },
 
   // Sticky mobile
