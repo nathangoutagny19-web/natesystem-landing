@@ -30,7 +30,7 @@ type ClientRef =
   | { name: string; type: 'wordmark' }
 
 const clients: ClientRef[] = [
-  { name: 'Chromosome', type: 'wordmark' },
+  { name: 'Chromosome', type: 'logo', src: '/logos/chromosome.png' },
   { name: 'Université Jean Monnet', type: 'logo', src: '/logos/ujm.png' },
   { name: 'Vendéglátás Menedzsment Kft.', type: 'wordmark' },
 ]
@@ -90,38 +90,42 @@ export default function ClientsBar() {
       </div>
 
       <style>{`
+        /* Each cell takes equal width; logos and wordmarks centre into
+           a fixed 56px-tall optical band, so a logo with internal
+           padding doesn't render rikiki next to the long Hungarian
+           wordmark. */
         .clients-row {
           list-style: none;
           padding: 0;
           margin: 0;
-          display: flex;
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
           align-items: center;
-          justify-content: center;
-          gap: 64px;
-          flex-wrap: wrap;
+          column-gap: 24px;
+          row-gap: 32px;
         }
         .clients-item {
           display: flex;
           align-items: center;
           justify-content: center;
-          height: 32px;
+          height: 56px;
           color: #9CA3AF;
-          opacity: 0.7;
-          transition: color 200ms ease-out, opacity 200ms ease-out;
+          opacity: 0.78;
+          transition: color 200ms ease-out, opacity 200ms ease-out, transform 200ms ease-out;
         }
         .clients-item:hover {
           color: var(--text);
           opacity: 1;
         }
         .clients-logo {
-          height: 32px;
+          /* Match the visual weight of the long Hungarian wordmark.
+             max-width caps short logos so they don't blow up on wide
+             screens; height covers the typical case. */
+          height: 56px;
           width: auto;
-          max-height: 32px;
+          max-height: 56px;
+          max-width: 220px;
           object-fit: contain;
-          /* Black PNGs (UJM 2023) sit on a light theme as-is.
-             Grayscale removes any residual chroma, currentColor doesn't
-             affect a raster — but on dark we invert with the same trick
-             used in the integrations strip. */
           filter: grayscale(100%);
           opacity: inherit;
         }
@@ -130,23 +134,28 @@ export default function ClientsBar() {
         }
         .clients-wordmark {
           font-size: 22px;
-          line-height: 32px;
+          line-height: 1.2;
           font-weight: 400;
           color: inherit;
           white-space: nowrap;
+          text-align: center;
         }
         @media (max-width: 768px) {
           .clients-row {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 24px;
+            grid-template-columns: 1fr;
+            column-gap: 0;
+            row-gap: 28px;
           }
           .clients-item {
-            min-width: 0;
+            height: 48px;
+          }
+          .clients-logo {
+            height: 48px;
+            max-height: 48px;
+            max-width: 180px;
           }
           .clients-wordmark {
-            font-size: 18px;
-            line-height: 28px;
+            font-size: 19px;
           }
         }
       `}</style>
