@@ -2,6 +2,7 @@ import Nav from '@/components/layout/Nav'
 import MobileCta from '@/components/layout/MobileCta'
 import WorkTogetherPrompt from '@/components/layout/WorkTogetherPrompt'
 import Hero from '@/components/home/Hero'
+import ClientsBar from '@/components/home/ClientsBar'
 import Problem from '@/components/home/Problem'
 import Solution from '@/components/home/Solution'
 import CaseStudy from '@/components/home/CaseStudy'
@@ -19,6 +20,9 @@ export default function Home() {
 
       {/* 1 — Hero */}
       <Hero />
+
+      {/* 1bis — Clients trust bar (3 references, neutral, no red accent) */}
+      <ClientsBar />
       <Divider />
 
       {/* 2 — Problem (absorbs CostPain + Quantification inline) */}
