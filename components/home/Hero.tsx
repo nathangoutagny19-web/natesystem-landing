@@ -5,7 +5,14 @@ import { useLang } from '@/components/providers/LangProvider'
 import Link from 'next/link'
 import { CAL_LINK } from '@/lib/constants'
 
-const TRUSTED_BY = ['Chromosome', 'SimpleTeam', 'Université Jean Monnet', 'Vendéglátás Menedzsment Kft.']
+type TrustedRef = { label: string; logo?: string; logoHeight?: number }
+
+const TRUSTED_BY: TrustedRef[] = [
+  { label: 'Chromosome' },
+  { label: 'SimpleTeam' },
+  { label: 'Université Jean Monnet', logo: '/logos/ujm.svg', logoHeight: 22 },
+  { label: 'Vendéglátás Menedzsment Kft.' },
+]
 const ease = [0.22, 1, 0.36, 1] as const
 
 export default function Hero() {
@@ -57,11 +64,26 @@ export default function Hero() {
           <span className="font-mono text-[10px] font-light tracking-[2.5px] uppercase" style={{ color: 'var(--text-muted)' }}>
             {t('hero.trusted')}
           </span>
-          {TRUSTED_BY.map((name, i) => (
-            <span key={name} className="flex items-center gap-3">
-              <span className="text-[11px] font-light tracking-[1px]" style={{ fontFamily: 'var(--font-sans)', color: 'var(--text-secondary)' }}>
-                {name}
-              </span>
+          {TRUSTED_BY.map((ref, i) => (
+            <span key={ref.label} className="flex items-center gap-3">
+              {ref.logo ? (
+                /* eslint-disable-next-line @next/next/no-img-element */
+                <img
+                  src={ref.logo}
+                  alt={ref.label}
+                  height={ref.logoHeight ?? 18}
+                  style={{
+                    height: ref.logoHeight ?? 18,
+                    width: 'auto',
+                    color: 'var(--text-secondary)',
+                    opacity: 0.85,
+                  }}
+                />
+              ) : (
+                <span className="text-[11px] font-light tracking-[1px]" style={{ fontFamily: 'var(--font-sans)', color: 'var(--text-secondary)' }}>
+                  {ref.label}
+                </span>
+              )}
               {i < TRUSTED_BY.length - 1 && <span style={{ color: 'var(--accent)', opacity: 0.4, fontSize: '10px' }}>·</span>}
             </span>
           ))}

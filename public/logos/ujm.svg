@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Université Jean Monnet — Saint-Étienne
+  Reconstructed wordmark, single-color (currentColor) for theming.
+  Use:
+    <img src="/logos/ujm.svg" alt="Université Jean Monnet" />
+  Recolor in CSS via `color: var(--text)` etc.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 120" width="360" height="120" fill="none" role="img" aria-label="Université Jean Monnet — Saint-Étienne">
+  <g fill="currentColor">
+    <!-- ── Monogram UJM (left mark) ── -->
+    <!-- Built as a single arch shape: U + J + M fused, in heavy condensed sans -->
+    <g transform="translate(0, 12)">
+      <!-- Outer U arch -->
+      <path d="
+        M 0 0
+        L 15 0
+        L 15 64
+        Q 15 78 28 78
+        Q 41 78 41 64
+        L 41 0
+        L 56 0
+        L 56 65
+        Q 56 92 28 92
+        Q 0 92 0 65
+        Z
+      " />
+      <!-- J descender (inner left of U) — shifted right of U -->
+      <path d="
+        M 60 0
+        L 75 0
+        L 75 70
+        Q 75 84 67 88
+        Q 64 90 60 90
+        L 60 76
+        Q 64 76 64 68
+        L 64 0
+        Z
+      " />
+      <!-- M shape — vertical bars + V-cut top, fused right of J -->
+      <path d="
+        M 80 0
+        L 80 92
+        L 92 92
+        L 92 22
+        L 102 60
+        L 110 60
+        L 120 22
+        L 120 92
+        L 132 92
+        L 132 0
+        L 116 0
+        L 106 40
+        L 96 0
+        Z
+      " />
+    </g>
+
+    <!-- ── Wordmark (right side) ── -->
+    <text
+      x="156"
+      y="40"
+      font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"
+      font-size="22"
+      font-weight="700"
+      letter-spacing="0"
+    >Université</text>
+    <text
+      x="156"
+      y="68"
+      font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"
+      font-size="22"
+      font-weight="700"
+      letter-spacing="0"
+    >Jean Monnet</text>
+    <text
+      x="156"
+      y="98"
+      font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"
+      font-size="20"
+      font-weight="400"
+      letter-spacing="0"
+    >Saint-Étienne</text>
+  </g>
+</svg>
