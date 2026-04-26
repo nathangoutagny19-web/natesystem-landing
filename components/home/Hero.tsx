@@ -10,7 +10,7 @@ type TrustedRef = { label: string; logo?: string; logoHeight?: number }
 const TRUSTED_BY: TrustedRef[] = [
   { label: 'Chromosome' },
   { label: 'SimpleTeam' },
-  { label: 'Université Jean Monnet', logo: '/logos/ujm.svg', logoHeight: 22 },
+  { label: 'Université Jean Monnet', logo: '/logos/ujm.png', logoHeight: 28 },
   { label: 'Vendéglátás Menedzsment Kft.' },
 ]
 const ease = [0.22, 1, 0.36, 1] as const
@@ -72,11 +72,10 @@ export default function Hero() {
                   src={ref.logo}
                   alt={ref.label}
                   height={ref.logoHeight ?? 18}
+                  className="trust-logo"
                   style={{
                     height: ref.logoHeight ?? 18,
                     width: 'auto',
-                    color: 'var(--text-secondary)',
-                    opacity: 0.85,
                   }}
                 />
               ) : (

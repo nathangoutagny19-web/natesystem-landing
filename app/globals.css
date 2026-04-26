@@ -670,6 +670,19 @@ html.light {
   }
 }
 
+/* ——— TRUST BAR LOGOS ——— */
+/* Source PNGs are black-on-transparent. Stay black on the cream/light
+   theme; flip to a soft off-white in dark mode so the wordmark stays
+   legible without going pure white-glare. */
+.trust-logo {
+  opacity: 0.78;
+  transition: opacity 0.2s;
+}
+.trust-logo:hover { opacity: 1; }
+html:not(.light) .trust-logo {
+  filter: invert(1) brightness(0.92);
+}
+
 /* ——— RESPONSIVE ——— */
 @media (max-width: 768px) {
   .mega-panel { display: none; }
