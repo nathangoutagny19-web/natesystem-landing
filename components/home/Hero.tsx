@@ -5,7 +5,7 @@ import { useLang } from '@/components/providers/LangProvider'
 import Link from 'next/link'
 import { CAL_LINK } from '@/lib/constants'
 
-const TRUSTED_BY = ['Chromosome', 'SimpleTeam']
+const TRUSTED_BY = ['Chromosome', 'SimpleTeam', 'IUT Saint-Étienne', 'Vendéglátás Menedzsment Kft.']
 const ease = [0.22, 1, 0.36, 1] as const
 
 export default function Hero() {

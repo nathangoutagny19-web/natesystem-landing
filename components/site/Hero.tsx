@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 
 const CAL_LINK = 'https://cal.com/natesystem/session-strategique'
 
-const TRUSTED_BY = ['Chromosome', 'Institut Saint-Irénée', 'IUT Lyon']
+const TRUSTED_BY = ['Chromosome', 'SimpleTeam', 'IUT Saint-Étienne', 'Vendéglátás Menedzsment Kft.']
 
 export default function Hero() {
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
