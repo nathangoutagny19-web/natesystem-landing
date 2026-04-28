@@ -13,12 +13,6 @@ export default function Process() {
     { number: '03', title: t('process.step3'), duration: t('process.step3Duration'), desc: t('process.step3Desc'), highlight: 'Licence NateSystem' },
   ]
 
-  const guarantees = [
-    { icon: '⏱', text: t('process.guarantee1') },
-    { icon: '📊', text: t('process.guarantee2') },
-    { icon: '🔒', text: t('process.guarantee3') },
-  ]
-
   return (
     <section id="process" style={{ padding: '120px 24px' }}>
       <div className="mx-auto" style={{ maxWidth: '1100px' }}>
@@ -70,22 +64,6 @@ export default function Process() {
           ))}
         </div>
 
-        {/* Guarantee strip */}
-        <FadeUp delay={0.3} className="mt-16">
-          <div
-            className="flex flex-col md:flex-row items-center justify-between gap-4 px-8 py-6"
-            style={{ background: 'var(--accent-subtle)', border: '1px solid rgba(230,57,70,0.2)', borderRadius: '12px' }}
-          >
-            {guarantees.map((g) => (
-              <div key={g.text} className="flex items-center gap-3">
-                <span className="text-lg">{g.icon}</span>
-                <p className="font-sans" style={{ fontSize: '13px', color: 'var(--text)', lineHeight: 1.4, fontWeight: 300 }}>
-                  {g.text}
-                </p>
-              </div>
-            ))}
-          </div>
-        </FadeUp>
       </div>
     </section>
   )
