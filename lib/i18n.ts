@@ -350,16 +350,53 @@ export const translations = {
   'faq.label': { en: 'FAQ', fr: 'QUESTIONS FRÉQUENTES', hu: 'GYIK' },
   'faq.title': { en: 'The honest', fr: 'Les réponses', hu: 'Az őszinte' },
   'faq.titleAccent': { en: 'answers.', fr: 'honnêtes.', hu: 'válaszok.' },
+  // Q1 — what we build
   'faq.q1': { en: 'What do you actually build?', fr: 'Qu\'est-ce que vous construisez concrètement ?', hu: 'Mit építenek valójában?' },
-  'faq.a1': { en: 'Custom business software — the internal platform that runs your operations. Unified database, dashboards, client portals, internal tools. AI is integrated inside it where it replaces real hours of work (inbox triage, stock forecasts, document parsing, smart alerts). It is not "an AI tool" — it is your software, with AI as a feature.', fr: 'Du logiciel métier sur-mesure — la plateforme interne qui fait tourner vos opérations. Base unifiée, dashboards, portails clients, outils internes. L\'IA est intégrée dedans là où elle remplace de vraies heures de travail (tri des emails, prévisions de stock, lecture de documents, alertes intelligentes). Ce n\'est pas "un outil IA" — c\'est votre logiciel, avec l\'IA comme fonctionnalité.', hu: 'Egyedi üzleti szoftvert — a belső platformot, amely a működését irányítja. Egységes adatbázis, irányítópultok, ügyfélportálok, belső eszközök. Az MI ott van beépítve, ahol valódi munkaórákat vált ki (e-mail rendezés, készlet-előrejelzés, dokumentum-feldolgozás, okos riasztások). Ez nem „MI-eszköz" — ez az Ön szoftvere, amelyben az MI egy funkció.' },
-  'faq.q2': { en: 'How much does it cost and how long does it take?', fr: 'Combien ça coûte et combien de temps ça prend ?', hu: 'Mennyibe kerül és mennyi időt vesz igénybe?' },
-  'faq.a2': { en: 'Projects typically run between €8,000 and €35,000 for the initial build, delivered in 6 to 12 weeks depending on scope. Fixed scope, fixed price — no surprise invoices. We agree on the scope before writing a line of code.', fr: 'Les projets vont en général de 8 000€ à 35 000€ pour la première version, livrée en 6 à 12 semaines selon le périmètre. Périmètre fixe, prix fixe — zéro facture surprise. On s\'accorde sur le périmètre avant la première ligne de code.', hu: 'A projektek jellemzően 8 000 € és 35 000 € között mozognak az első verzióhoz, 6–12 hét alatt kerülnek átadásra a hatókör függvényében. Rögzített hatókör, rögzített ár — nulla meglepetésszámla. Az első sor kód előtt megállapodunk a hatókörben.' },
-  'faq.q3': { en: 'What if you disappear tomorrow?', fr: 'Et si vous disparaissez demain ?', hu: 'Mi van, ha holnap eltűnnek?' },
-  'faq.a3': { en: '100% of the code is delivered to you and hosted on your infrastructure. Full documentation included. Any competent developer can pick it up. No subscription, no lock-in, no hostage.', fr: '100% du code vous est livré et hébergé sur votre infrastructure. Documentation complète incluse. N\'importe quel développeur compétent peut reprendre derrière. Zéro abonnement, zéro lock-in, zéro otage.', hu: 'A kód 100%-át átadjuk és az Ön infrastruktúráján fut. Teljes dokumentációval. Bármely hozzáértő fejlesztő tudja folytatni. Nincs előfizetés, nincs függés, nincs túszhelyzet.' },
-  'faq.q4': { en: 'Does this work for my industry?', fr: 'Est-ce que ça marche pour mon secteur ?', hu: 'Működik ez az én iparágamban?' },
-  'faq.a4': { en: 'Yes, as long as you have recurring operations and real data moving through them. We\'ve built software for restaurants, consulting firms, construction, healthcare, retail. The stack adapts — the method doesn\'t change.', fr: 'Oui, dès lors que vous avez des opérations récurrentes et de la vraie donnée qui y circule. On a construit du logiciel pour la restauration, le conseil, le BTP, la santé, le retail. La stack s\'adapte — la méthode ne change pas.', hu: 'Igen, amennyiben vannak ismétlődő műveletek és valódi adat mozog rajtuk keresztül. Építettünk szoftvert éttermeknek, tanácsadó cégeknek, építőiparnak, egészségügynek, kereskedelemnek. A stack alkalmazkodik — a módszer nem változik.' },
-  'faq.q5': { en: 'I don\'t know anything about AI — is that a problem?', fr: 'Je n\'y connais rien en IA — c\'est un problème ?', hu: 'Semmit sem értek az MI-hez — gond ez?' },
-  'faq.a5': { en: 'No. You don\'t need to. We handle the technical layer. You bring the business knowledge — how your activity actually runs, what slows your team down, what you want to see on a screen each morning. That\'s what we need.', fr: 'Non. Vous n\'avez pas besoin. On gère la couche technique. Vous apportez la connaissance métier — comment votre activité tourne vraiment, ce qui ralentit votre équipe, ce que vous voulez voir à l\'écran chaque matin. C\'est ça qu\'on a besoin.', hu: 'Nem. Nem kell. A technikai réteget mi kezeljük. Ön a szakmai tudást adja — hogyan működik valójában a tevékenysége, mi lassítja a csapatát, mit szeretne látni a képernyőn minden reggel. Erre van szükségünk.' },
+  'faq.a1': {
+    en: 'Custom business software — the internal platform that runs your operations. Unified database, dashboards, client portals, internal tools. AI and automation are integrated only where they replace real hours of work, not as decoration.',
+    fr: 'Du logiciel métier sur-mesure — la plateforme interne qui fait tourner vos opérations. Base unifiée, dashboards, portails clients, outils internes. L\'IA et l\'automatisation sont intégrées uniquement là où elles remplacent de vraies heures de travail, pas en décoration.',
+    hu: 'Egyedi üzleti szoftvert — a belső platformot, amely a működését irányítja. Egységes adatbázis, irányítópultok, ügyfélportálok, belső eszközök. Az MI és az automatizálás csak ott kerül beépítésre, ahol valódi munkaórákat vált ki — nem dekorációként.',
+  },
+
+  // Q2 — timeline (price removed, given on the call)
+  'faq.q2': { en: 'How long does it take?', fr: 'Combien de temps ça prend ?', hu: 'Mennyi ideig tart?' },
+  'faq.a2': {
+    en: '6 to 12 weeks for the initial build, depending on scope. We agree on a fixed scope and a fixed delivery date before writing a line of code. Weekly check-ins, monthly demos, no scope creep, no surprise invoices. Pricing is shared on the discovery call so it matches your real needs.',
+    fr: '6 à 12 semaines pour la première version, selon le périmètre. On s\'accorde sur un périmètre fixe et une date de livraison fixe avant la première ligne de code. Points hebdo, démos mensuelles, zéro dérive, zéro facture surprise. Le pricing est partagé pendant l\'appel de découverte pour coller à vos vrais besoins.',
+    hu: '6–12 hét az első verzióhoz, a hatókör függvényében. Egyetlen kódsor előtt megállapodunk rögzített hatókörben és rögzített szállítási dátumban. Heti egyeztetések, havi demók, semmi hatókör-csúszás, semmi meglepetésszámla. Az árazást az ismerkedési híváson egyeztetjük, hogy az Ön valós igényeihez igazítsuk.',
+  },
+
+  // Q3 — reliability + SLA
+  'faq.q3': { en: 'Will the system stay reliable once it\'s live?', fr: 'Le système restera-t-il fiable une fois en production ?', hu: 'Megbízható marad a rendszer az indulás után?' },
+  'faq.a3': {
+    en: '99.9% uptime SLA on production. Active monitoring with automatic alerts, automated backups every 6 hours stored across two regions, 24-hour response window on critical incidents. After the 90-day post-launch period, you choose: an ongoing maintenance contract, or a full hand-off with documentation to your own team.',
+    fr: '99,9 % de SLA de disponibilité en production. Monitoring actif avec alertes automatiques, sauvegardes automatiques toutes les 6 heures stockées sur deux régions, 24 h de fenêtre de réponse sur les incidents critiques. Après la période de 90 jours post-lancement, vous choisissez : un contrat de maintenance, ou une passation complète avec documentation à votre équipe.',
+    hu: '99,9%-os rendelkezésre állási SLA éles üzemben. Aktív monitorozás automatikus riasztásokkal, automatikus mentések 6 óránként két régióban tárolva, 24 órás válaszidő kritikus incidensek esetén. A 90 napos indulás utáni időszakot követően Ön választ: folyamatos karbantartási szerződés, vagy teljes átadás dokumentációval a saját csapatának.',
+  },
+
+  // Q4 — automations + AI catalog (concrete, not buzzwords)
+  'faq.q4': { en: 'What automations and AI features can be integrated?', fr: 'Quelles automatisations et fonctionnalités IA peuvent être intégrées ?', hu: 'Milyen automatizálások és MI-funkciók integrálhatók?' },
+  'faq.a4': {
+    en: 'Wherever it saves real hours. The common ones: automated workflows (orders, invoices, follow-ups, internal handovers), predictive analytics (anticipate stock, no-shows, sales trends), document parsing (read invoices, contracts, forms), intelligent triage (sort, route, draft replies), autonomous agents that execute multi-step tasks across your tools, and conversational interfaces for your team or customers. We pick what\'s worth building for you — not everything because it\'s trendy.',
+    fr: 'Là où ça fait gagner de vraies heures. Les classiques : workflows automatisés (commandes, factures, relances, passations internes), analytics prédictif (anticiper stock, no-shows, tendances de ventes), lecture de documents (factures, contrats, formulaires), tri intelligent (classer, router, rédiger des réponses), agents autonomes qui exécutent des tâches multi-étapes dans vos outils, et interfaces conversationnelles pour vos équipes ou vos clients. On choisit ce qui vaut le coup pour vous — pas tout parce que c\'est à la mode.',
+    hu: 'Ott, ahol valódi órákat takarít meg. A gyakoriak: automatizált munkafolyamatok (rendelések, számlák, utánkövetés, belső átadások), prediktív analitika (készlet, no-show-k, értékesítési trendek előrejelzése), dokumentum-feldolgozás (számlák, szerződések, űrlapok olvasása), intelligens rendezés (sorba állítás, irányítás, válasz-vázlat), autonóm ügynökök, amelyek többlépéses feladatokat hajtanak végre az eszközei között, valamint beszélgetős felületek a csapatának vagy az ügyfeleinek. Azt választjuk, amit érdemes megépíteni Önnek — nem mindent azért, mert trendi.',
+  },
+
+  // Q5 — anti lock-in
+  'faq.q5': { en: 'What if you disappear tomorrow?', fr: 'Et si vous disparaissez demain ?', hu: 'Mi van, ha holnap eltűnnek?' },
+  'faq.a5': {
+    en: '100% of the code is yours and hosted on your infrastructure. Full documentation included. Any competent developer can pick it up. No subscription, no lock-in, no hostage situation.',
+    fr: '100 % du code vous appartient et est hébergé sur votre infrastructure. Documentation complète incluse. N\'importe quel développeur compétent peut reprendre derrière. Zéro abonnement, zéro lock-in, zéro otage.',
+    hu: 'A kód 100%-a az Öné, és az Ön infrastruktúráján fut. Teljes dokumentációval. Bármely hozzáértő fejlesztő tudja folytatni. Nincs előfizetés, nincs függés, nincs túszhelyzet.',
+  },
+
+  // Q6 — industries
+  'faq.q6': { en: 'Does this work for my industry?', fr: 'Est-ce que ça marche pour mon secteur ?', hu: 'Működik ez az én iparágamban?' },
+  'faq.a6': {
+    en: 'Restaurants, consulting, construction, healthcare, retail — wherever there are recurring operations and real data flowing through them. The stack adapts. The method doesn\'t change.',
+    fr: 'Restauration, conseil, BTP, santé, retail — partout où il y a des opérations récurrentes et de la vraie donnée qui y circule. La stack s\'adapte. La méthode ne change pas.',
+    hu: 'Éttermek, tanácsadás, építőipar, egészségügy, kereskedelem — bárhol, ahol ismétlődő műveletek vannak, és valódi adat áramlik rajtuk keresztül. A stack alkalmazkodik. A módszer nem változik.',
+  },
 
   // StrategyCall section
   'strategy.label': { en: 'BOOK A 30-MINUTE CALL', fr: 'RÉSERVER UN APPEL DE 30 MINUTES', hu: 'FOGLALJON 30 PERCES HÍVÁST' },
