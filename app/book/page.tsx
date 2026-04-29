@@ -1,11 +1,11 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
-import Cal, { getCalApi } from '@calcom/embed-react'
+import { useState } from 'react'
 import Nav from '@/components/layout/Nav'
 import Footer from '@/components/layout/Footer'
 import { API_URL } from '@/lib/constants'
 import { useLang, type Lang } from '@/components/providers/LangProvider'
+import { whatsappLink } from '@/lib/whatsapp'
 
 /* ——— Localized copy — labels, options, UI strings ——— */
 
@@ -76,6 +76,7 @@ type BookCopy = {
   calTitle: string
   calTitleAccent: string
   calThanks: (firstName: string) => string
+  calOpenWhatsApp: string
 
   // Options
   roles: string[]
@@ -153,9 +154,10 @@ const COPY: Record<Lang, BookCopy> = {
     sending: 'Envoi...',
     seeSlots: 'Voir les créneaux disponibles →',
     calDone: 'AUDIT COMPLÉTÉ',
-    calTitle: 'Choisissez votre',
-    calTitleAccent: 'créneau.',
-    calThanks: (n) => `Merci ${n} ! Nathan préparera votre session à partir de vos réponses.`,
+    calTitle: 'Direction',
+    calTitleAccent: 'WhatsApp.',
+    calThanks: (n) => `Merci ${n} ! Vos réponses sont enregistrées. On vous redirige vers WhatsApp avec un message déjà prêt — il ne reste qu'à l'envoyer.`,
+    calOpenWhatsApp: 'Ouvrir WhatsApp',
     roles: ['Dirigeant / CEO', 'Directeur Marketing', 'Directeur Commercial', 'Directeur Ops / COO', 'DRH / RH', 'DSI / CTO', 'Consultant', 'Autre'],
     sectors: ['Restauration / Hôtellerie', 'Conseil / Services', 'BTP / Immobilier', 'Commerce / Retail', 'Industrie', 'Éducation', 'Santé', 'Tech / SaaS', 'Autre'],
     teamSizes: ['1-5 personnes', '6-20 personnes', '21-50 personnes', '51-100 personnes', '100+ personnes'],
@@ -265,9 +267,10 @@ const COPY: Record<Lang, BookCopy> = {
     sending: 'Sending...',
     seeSlots: 'See available slots →',
     calDone: 'AUDIT COMPLETED',
-    calTitle: 'Pick your',
-    calTitleAccent: 'time slot.',
-    calThanks: (n) => `Thanks ${n}! Nathan will prepare your session from your answers.`,
+    calTitle: 'Heading to',
+    calTitleAccent: 'WhatsApp.',
+    calThanks: (n) => `Thanks ${n}! Your answers are saved. We're sending you to WhatsApp with a message ready to go — all you have to do is press send.`,
+    calOpenWhatsApp: 'Open WhatsApp',
     roles: ['CEO / Founder', 'Marketing Director', 'Sales Director', 'Ops Director / COO', 'HR Director', 'CTO / CIO', 'Consultant', 'Other'],
     sectors: ['Restaurant / Hospitality', 'Consulting / Services', 'Construction / Real Estate', 'Retail / Commerce', 'Industry', 'Education', 'Healthcare', 'Tech / SaaS', 'Other'],
     teamSizes: ['1-5 people', '6-20 people', '21-50 people', '51-100 people', '100+ people'],
@@ -377,9 +380,10 @@ const COPY: Record<Lang, BookCopy> = {
     sending: 'Küldés...',
     seeSlots: 'Elérhető időpontok megtekintése →',
     calDone: 'AUDIT KÉSZ',
-    calTitle: 'Válassza ki az',
-    calTitleAccent: 'időpontját.',
-    calThanks: (n) => `Köszönjük, ${n}! Nathan a válaszai alapján készíti elő a hívását.`,
+    calTitle: 'Indulás a',
+    calTitleAccent: 'WhatsAppba.',
+    calThanks: (n) => `Köszönjük, ${n}! A válaszai elmentve. Átirányítjuk a WhatsAppba egy előre megírt üzenettel — csak el kell küldenie.`,
+    calOpenWhatsApp: 'WhatsApp megnyitása',
     roles: ['Vezérigazgató / Alapító', 'Marketingigazgató', 'Értékesítési igazgató', 'Műveleti igazgató / COO', 'HR-igazgató', 'CTO / CIO', 'Tanácsadó', 'Egyéb'],
     sectors: ['Vendéglátás / Szállodaipar', 'Tanácsadás / Szolgáltatások', 'Építőipar / Ingatlan', 'Kereskedelem', 'Ipar', 'Oktatás', 'Egészségügy', 'Tech / SaaS', 'Egyéb'],
     teamSizes: ['1–5 fő', '6–20 fő', '21–50 fő', '51–100 fő', '100+ fő'],
@@ -470,7 +474,6 @@ export default function BookPage() {
   })
   const [step, setStep] = useState<Step>('form')
   const [submitting, setSubmitting] = useState(false)
-  const calInitialized = useRef(false)
 
   const canSubmitForm = form.prenom.trim() && form.email.trim() && form.entreprise.trim() && form.role && form.secteur && form.taille
   const canSubmitAudit1 = audit.tools.length > 0 && !!audit.saasCount && !!audit.toolsConnected
@@ -494,6 +497,12 @@ export default function BookPage() {
     setStep('audit-1')
   }
 
+  /**
+   * Form completion now hands off to WhatsApp instead of Cal.com.
+   * The full backend POST is preserved — even if the visitor never
+   * sends the WhatsApp message, the lead is stored. WhatsApp is the
+   * "warm conversion" surface, the backend POST is the safety net.
+   */
   const goToCalendar = async () => {
     setSubmitting(true)
     try {
@@ -508,20 +517,24 @@ export default function BookPage() {
           details: form.details, audit, lang,
         }),
       })
-    } catch { /* continue silently */ }
+    } catch { /* continue silently — WhatsApp is the user-facing handoff */ }
+
+    // Show the post-form thank-you state, then redirect into WhatsApp
+    // with the visitor's first name injected into the message.
+    setStep('calendar')
     setSubmitting(false)
     window.scrollTo({ top: 0, behavior: 'smooth' })
-    setStep('calendar')
-  }
 
-  useEffect(() => {
-    if (step !== 'calendar' || calInitialized.current) return
-    calInitialized.current = true
-    ;(async function () {
-      const cal = await getCalApi({ namespace: 'session-strategique' })
-      cal('ui', { hideEventTypeDetails: false, layout: 'month_view' })
-    })()
-  }, [step])
+    if (typeof window !== 'undefined') {
+      const url = whatsappLink(lang, { firstName: form.prenom })
+      // Small delay so the user sees the success state for a beat,
+      // then we move them to WhatsApp. Most browsers allow this since
+      // it's still part of the same user-initiated click chain.
+      window.setTimeout(() => {
+        window.location.href = url
+      }, 600)
+    }
+  }
 
   const inputClass = 'w-full px-4 py-3 rounded-xl text-sm transition focus:outline-none focus:ring-2 focus:ring-[#E63946]/30 focus:border-[#E63946]'
 
@@ -663,31 +676,35 @@ export default function BookPage() {
           )}
 
           {step === 'calendar' && (
-            <>
-              <div className="text-center mb-8">
-                <div style={{
-                  display: 'inline-flex', alignItems: 'center', gap: 8,
-                  padding: '6px 16px', borderRadius: 100, marginBottom: 16,
-                  background: 'rgba(34,197,94,0.1)', border: '1px solid rgba(34,197,94,0.2)',
-                }}>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22c55e" strokeWidth="2" strokeLinecap="round"><polyline points="20 6 9 17 4 12" /></svg>
-                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: 11, color: '#22c55e', letterSpacing: 1 }}>{c.calDone}</span>
-                </div>
-                <h2 className="section-title" style={{ margin: '0 auto 8px', fontSize: 'clamp(24px, 4vw, 36px)' }}>
-                  {c.calTitle}{' '}<span className="accent">{c.calTitleAccent}</span>
-                </h2>
-                <p style={{ fontFamily: 'var(--font-sans)', fontSize: 14, color: 'var(--text-secondary)', fontWeight: 300 }}>
-                  {c.calThanks(form.prenom)}
-                </p>
+            <div className="text-center" style={{ padding: '40px 0' }}>
+              <div style={{
+                display: 'inline-flex', alignItems: 'center', gap: 8,
+                padding: '6px 16px', borderRadius: 100, marginBottom: 24,
+                background: 'rgba(34,197,94,0.1)', border: '1px solid rgba(34,197,94,0.2)',
+              }}>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22c55e" strokeWidth="2" strokeLinecap="round"><polyline points="20 6 9 17 4 12" /></svg>
+                <span style={{ fontFamily: 'var(--font-mono)', fontSize: 11, color: '#22c55e', letterSpacing: 1 }}>{c.calDone}</span>
               </div>
+              <h2 className="section-title" style={{ margin: '0 auto 16px', fontSize: 'clamp(24px, 4vw, 36px)' }}>
+                {c.calTitle}{' '}<span className="accent">{c.calTitleAccent}</span>
+              </h2>
+              <p
+                className="font-sans"
+                style={{ fontSize: 15, color: 'var(--text-secondary)', fontWeight: 300, lineHeight: 1.7, maxWidth: 480, margin: '0 auto 32px' }}
+              >
+                {c.calThanks(form.prenom)}
+              </p>
 
-              <Cal
-                namespace="session-strategique"
-                calLink="natesystem/session-strategique"
-                style={{ width: '100%', height: '100%', minHeight: 650, overflow: 'scroll' }}
-                config={{ layout: 'month_view', useSlotsViewOnSmallScreen: 'true' }}
-              />
-            </>
+              {/* Manual fallback in case the auto-redirect was blocked */}
+              <a
+                href={whatsappLink(lang, { firstName: form.prenom })}
+                className="btn-primary inline-flex"
+                style={{ fontSize: 14 }}
+              >
+                <span className="btn-primary-dot" />
+                {c.calOpenWhatsApp}
+              </a>
+            </div>
           )}
         </div>
       </section>
