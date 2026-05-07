@@ -5,8 +5,11 @@ import Hero from '@/components/home/Hero'
 import ClientsBar from '@/components/home/ClientsBar'
 import Problem from '@/components/home/Problem'
 import Solution from '@/components/home/Solution'
+import AgentsInAction from '@/components/home/AgentsInAction'
+import Schema from '@/components/home/Schema'
 import CaseStudy from '@/components/home/CaseStudy'
 import Process from '@/components/home/Process'
+import Infrastructure from '@/components/home/Infrastructure'
 import Integrations from '@/components/home/Integrations'
 import ForWho from '@/components/home/ForWho'
 import Faq from '@/components/home/Faq'
@@ -33,12 +36,25 @@ export default function Home() {
       <Solution />
       <Divider />
 
+      {/* 3bis — Agents in action: 3 concrete agent archetypes */}
+      <AgentsInAction />
+
+      {/* 3ter — Animated 5-node operational schema */}
+      <Schema />
+      <Divider />
+
       {/* 4 — Case Study Chromosome (video + metrics + quote unified) */}
       <CaseStudy />
       <Divider />
 
-      {/* 5 — Process + Integrations (how we deliver) */}
+      {/* 5 — Process (audit → build → deploy) */}
       <Process />
+      <Divider />
+
+      {/* 5bis — Infrastructure & sovereignty */}
+      <Infrastructure />
+
+      {/* 5ter — Integrations marquee */}
       <Integrations />
       <Divider />
 

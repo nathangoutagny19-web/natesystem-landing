@@ -19,20 +19,20 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'NateSystem — Custom software with integrated AI',
+  title: 'NateSystem — Logiciel sur-mesure opéré avec vos agents IA',
   description:
-    'We build the custom software that runs your business — a single command center for your operations, your data, your team. AI integrated only where it replaces real hours of work.',
+    'Le logiciel sur-mesure qui pilote votre activité, opéré avec vos agents IA. Un poste de commandement unique. Vos données, votre infrastructure, votre code. Pour toujours.',
   keywords: [
-    'logiciel sur-mesure',
-    'custom software',
-    'egyedi szoftver',
-    'intégration IA',
-    'AI integration',
-    'automatisation opérationnelle',
+    'agent IA pour PME',
+    'logiciel sur-mesure IA',
+    'infrastructure IA souveraine',
+    'agent IA verticalisé',
+    'automatisation IA entreprise',
+    'command center métier',
+    'alternative SaaS PME',
     'NateSystem',
     'Nathan Goutagny',
-    'infrastructure IA',
-    'command center SaaS alternative',
+    'IA agentique entreprise',
   ],
   authors: [{ name: 'Nathan Goutagny', url: 'https://natesystem.com' }],
   creator: 'Nathan Goutagny',
@@ -49,9 +49,9 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     url: 'https://natesystem.com',
-    title: 'NateSystem — Custom software with integrated AI',
+    title: 'NateSystem — Logiciel sur-mesure opéré avec vos agents IA',
     description:
-      'The custom software that runs your business — with AI where it actually matters. Owned by you, forever.',
+      'Le logiciel sur-mesure qui pilote votre activité, opéré avec vos agents IA. Vos données, votre infrastructure, votre code.',
     siteName: 'NateSystem',
     images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'NateSystem' }],
     locale: 'fr_FR',
@@ -59,8 +59,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'NateSystem — Custom software with integrated AI',
-    description: 'The custom software that runs your business — with AI where it actually matters.',
+    title: 'NateSystem — Logiciel sur-mesure opéré avec vos agents IA',
+    description: 'Le logiciel sur-mesure qui pilote votre activité, opéré avec vos agents IA.',
     images: ['/og-image.png'],
   },
 }

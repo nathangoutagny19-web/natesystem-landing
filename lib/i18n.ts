@@ -7,14 +7,14 @@ export const translations = {
   'nav.contact': { en: 'Contact', fr: 'Contact', hu: 'Kapcsolat' },
 
   // Hero
-  'hero.label': { en: 'Custom software · Integrated AI', fr: 'Logiciel sur-mesure · IA intégrée', hu: 'Egyedi szoftver · Beépített MI' },
+  'hero.label': { en: 'Custom software · AI agents', fr: 'Logiciel sur-mesure · Agents IA', hu: 'Egyedi szoftver · MI-ügynökök' },
   'hero.title1': { en: 'The custom software', fr: 'Le logiciel sur-mesure', hu: 'Az egyedi szoftver,' },
   'hero.titleAccent': { en: 'that runs your business.', fr: 'qui pilote votre activité.', hu: 'amely a vállalkozását működteti.' },
-  'hero.title2': { en: 'With AI where it actually matters.', fr: 'Avec l\'IA là où elle compte vraiment.', hu: 'MI-vel ott, ahol tényleg számít.' },
+  'hero.title2': { en: 'Operated by your AI agents.', fr: 'Opéré avec vos agents IA.', hu: 'Az Ön MI-ügynökeivel működtetve.' },
   'hero.sub': {
-    en: 'We build the internal software your business actually needs — a single command center for your operations, your data, your team. AI is built in only where it replaces real hours of work.',
-    fr: 'On construit le logiciel interne dont votre activité a vraiment besoin — un poste de commandement unique pour vos opérations, vos données, votre équipe. L\'IA est intégrée uniquement là où elle remplace de vraies heures de travail.',
-    hu: 'Azt a belső szoftvert építjük, amire a vállalkozásának valóban szüksége van — egyetlen parancsközpont az Ön műveleteihez, adataihoz, csapatához. Az MI csak ott kerül beépítésre, ahol valódi munkaórákat vált ki.',
+    en: 'We build the internal software your business actually needs — a single command center for your operations, your data, your team. With AI agents integrated where they replace real hours of work.',
+    fr: 'On construit le logiciel interne dont votre activité a vraiment besoin — un poste de commandement unique pour vos opérations, vos données, votre équipe. Avec des agents IA intégrés là où ils remplacent de vraies heures de travail.',
+    hu: 'Azt a belső szoftvert építjük, amire a vállalkozásának valóban szüksége van — egyetlen parancsközpont az Ön műveleteihez, adataihoz, csapatához. MI-ügynökökkel ott beépítve, ahol valódi munkaórákat váltanak ki.',
   },
   'hero.cta': { en: 'Let\'s work together', fr: 'Travaillons ensemble', hu: 'Dolgozzunk együtt' },
   'hero.secondary': { en: 'See how it works', fr: 'Voir comment ça marche', hu: 'Nézze meg hogyan működik' },
@@ -79,13 +79,13 @@ export const translations = {
     hu: 'Irányítópultok, rendelési nézetek, ügyfélportálok, belső eszközök — minden képernyő arra a feladatra készül, amelyet szolgál. Nincs funkció-túltengés, nincsenek menük, amiket sosem nyit meg.',
   },
   'solution.automateTags': { en: 'Dashboards · Internal tools · Client portals', fr: 'Dashboards · Outils internes · Portails clients', hu: 'Irányítópultok · Belső eszközök · Ügyfélportálok' },
-  'solution.decide': { en: 'AI where it saves hours', fr: 'IA là où elle fait gagner des heures', hu: 'MI ott, ahol órákat takarít meg' },
+  'solution.decide': { en: 'Your verticalised AI agents', fr: 'Vos agents IA verticalisés', hu: 'Az Ön szakosított MI-ügynökei' },
   'solution.decideDesc': {
-    en: 'Inbox triage, stock forecasting, review summaries, document parsing, smart alerts — AI is a feature of your software, not a gadget bolted on top.',
-    fr: 'Tri des emails, prévision de stock, synthèse des avis, lecture de documents, alertes intelligentes — l\'IA est une fonctionnalité de votre logiciel, pas un gadget greffé dessus.',
-    hu: 'E-mail rendezés, készlet-előrejelzés, vélemények összegzése, dokumentum-feldolgozás, okos riasztások — az MI az Ön szoftverének egy funkciója, nem utólag ráaggatott kütyü.',
+    en: 'Inbox triage, document parsing, market watch, stock forecasting, lead qualification, review summaries, targeted alerts. Configured for your business. Embedded in the software. Deployed on your infrastructure.',
+    fr: 'Tri d\'emails, lecture de documents, veille marché, prévision de stock, qualification des leads, synthèse des avis, alertes ciblées. Configurés sur votre métier. Intégrés au logiciel. Déployés sur votre infrastructure.',
+    hu: 'E-mail rendezés, dokumentum-feldolgozás, piacfigyelés, készlet-előrejelzés, érdeklődő-minősítés, vélemények összegzése, célzott riasztások. Az Ön szakmájára konfigurálva. A szoftverbe építve. Az Ön infrastruktúráján futtatva.',
   },
-  'solution.decideTags': { en: 'Smart triage · Forecasts · Document AI', fr: 'Tri intelligent · Prévisions · IA documentaire', hu: 'Okos rendezés · Előrejelzések · Dokumentum-MI' },
+  'solution.decideTags': { en: 'Watch · Qualification · Documents · Reply', fr: 'Veille · Qualification · Documentaire · Réponse', hu: 'Figyelés · Minősítés · Dokumentumok · Válasz' },
 
   // Case study (unifies results + testimonial)
   'results.label': { en: 'Client case study', fr: 'Cas client', hu: 'Ügyfél esettanulmány' },
@@ -110,33 +110,33 @@ export const translations = {
 
   // Process
   'process.label': { en: 'How we work', fr: 'Comment on travaille', hu: 'Hogyan dolgozunk' },
-  'process.title': { en: 'Three steps.', fr: 'Trois étapes.', hu: 'Három lépés.' },
-  'process.titleAccent': { en: 'One working software.', fr: 'Un logiciel qui tourne.', hu: 'Egy működő szoftver.' },
+  'process.title': { en: 'First we map. Then we build.', fr: 'D\'abord on cartographie. Ensuite on construit.', hu: 'Először feltérképezünk. Aztán építünk.' },
+  'process.titleAccent': { en: 'Then we deploy.', fr: 'Enfin on déploie.', hu: 'Végül bevezetünk.' },
   'process.sub': {
-    en: 'Your teams keep working normally while we build around them.',
-    fr: 'Vos équipes continuent de travailler normalement pendant qu\'on construit autour d\'elles.',
-    hu: 'A csapatai normálisan folytatják a munkát, miközben körülöttük építkezünk.',
+    en: 'Your teams keep working normally while we build around them. Three clear steps, one deliverable per stage.',
+    fr: 'Vos équipes continuent de travailler normalement pendant qu\'on construit autour d\'elles. Trois étapes claires, un livrable à chaque palier.',
+    hu: 'A csapatai normálisan folytatják a munkát, miközben körülöttük építkezünk. Három világos lépés, lépésenként egy szolgáltatás.',
   },
-  'process.step1': { en: 'Free Audit', fr: 'Audit Gratuit', hu: 'Ingyenes auditálás' },
+  'process.step1': { en: 'First — Audit', fr: 'D\'abord — Audit', hu: 'Először — Auditálás' },
   'process.step1Duration': { en: '30 min · No commitment', fr: '30 min · Sans engagement', hu: '30 perc · Nincs elkötelezettség' },
   'process.step1Desc': {
-    en: 'We analyze your processes, map your tools, and identify exactly where AI can deliver immediate ROI.',
-    fr: 'On analyse vos processus, cartographie vos outils, et identifie exactement où l\'IA peut délivrer un ROI immédiat.',
-    hu: 'Elemezzük a folyamatait, feltérképezzük az eszközeit, és pontosan megállapítjuk, hol tud az MI azonnali megtérülést hozni.',
+    en: 'We analyse your operations, map your current tools, identify where AI agents deliver immediate ROI. You leave with a clear, costed, executable plan — even if we don\'t end up working together.',
+    fr: 'On analyse vos opérations, on cartographie vos outils actuels, on identifie où les agents IA délivrent un ROI immédiat. Vous repartez avec un plan clair, chiffré, exécutable — même si on ne travaille pas ensemble.',
+    hu: 'Elemezzük a működését, feltérképezzük a jelenlegi eszközeit, megállapítjuk, hol hoznak az MI-ügynökök azonnali megtérülést. Egy világos, árazott, végrehajtható tervvel távozik — még akkor is, ha végül nem dolgozunk együtt.',
   },
-  'process.step2': { en: 'Build', fr: 'Construction', hu: 'Építés' },
+  'process.step2': { en: 'Then — Build', fr: 'Ensuite — Construction', hu: 'Aztán — Építés' },
   'process.step2Duration': { en: '4 to 8 weeks', fr: '4 à 8 semaines', hu: '4–8 hét' },
   'process.step2Desc': {
-    en: 'We build your custom AI infrastructure — internal platforms, centralized data, and specialized agents.',
-    fr: 'On construit votre infrastructure IA sur-mesure — plateformes internes, données centralisées, et agents spécialisés.',
-    hu: 'Megépítjük az egyedi MI-infrastruktúráját — belső platformok, központosított adatok és specializált ügynökök.',
+    en: 'We build your custom software and configure your AI agents around your business. Unified database, dashboards, specialised agents, integrations. Fixed scope, fixed price, weekly demos.',
+    fr: 'On construit votre logiciel sur-mesure et on configure vos agents IA sur votre métier. Base de données unifiée, dashboards, agents spécialisés, intégrations. Périmètre fixe, prix fixe, démos hebdomadaires.',
+    hu: 'Megépítjük az egyedi szoftverét és konfiguráljuk az MI-ügynökeit a szakmájára. Egységes adatbázis, irányítópultok, szakosított ügynökök, integrációk. Rögzített hatókör, rögzített ár, heti demók.',
   },
-  'process.step3': { en: 'Deploy + Handover', fr: 'Déploiement + Passation', hu: 'Bevezetés + Átadás' },
+  'process.step3': { en: 'Finally — Deploy', fr: 'Enfin — Déploiement', hu: 'Végül — Bevezetés' },
   'process.step3Duration': { en: '30-day support included', fr: 'Support 30 jours inclus', hu: '30 napos támogatás a csomag része' },
   'process.step3Desc': {
-    en: 'We deploy, train your teams, and measure first ROI. Your infrastructure is live, adopted, and evolving.',
-    fr: 'On déploie, forme vos équipes, et mesure le premier ROI. Votre infrastructure est live, adoptée et évolutive.',
-    hu: 'Bevezetjük, betanítjuk a csapatait, és megmérjük az első megtérülést. Az infrastruktúrája él, elfogadott és fejlődik.',
+    en: 'We deploy on your VPS or your cloud. We train your teams. We measure the first ROI. Your software is live, your agents run, your infrastructure belongs to you.',
+    fr: 'On déploie sur votre VPS ou votre cloud. On forme vos équipes. On mesure le premier ROI. Votre logiciel est live, vos agents tournent, votre infrastructure vous appartient.',
+    hu: 'Bevezetjük az Ön VPS-én vagy felhőjén. Betanítjuk a csapatait. Megmérjük az első megtérülést. A szoftvere él, az ügynökei futnak, az infrastruktúra az Öné.',
   },
   'process.guarantee1': { en: 'Guaranteed deadlines or -10%/week late', fr: 'Délais garantis ou -10%/semaine de retard', hu: 'Garantált határidők vagy -10% hetente, ha csúszunk' },
   'process.guarantee2': { en: 'ROI guarantee over 12 months', fr: 'Garantie ROI sur 12 mois', hu: '12 hónapos ROI-garancia' },
@@ -361,9 +361,9 @@ export const translations = {
   // Q2 — timeline (price removed, given on the call)
   'faq.q2': { en: 'How long does it take?', fr: 'Combien de temps ça prend ?', hu: 'Mennyi ideig tart?' },
   'faq.a2': {
-    en: '6 to 12 weeks for the initial build, depending on scope. We agree on a fixed scope and a fixed delivery date before writing a line of code. Weekly check-ins, monthly demos, no scope creep, no surprise invoices. Pricing is shared on the discovery call so it matches your real needs.',
-    fr: '6 à 12 semaines pour la première version, selon le périmètre. On s\'accorde sur un périmètre fixe et une date de livraison fixe avant la première ligne de code. Points hebdo, démos mensuelles, zéro dérive, zéro facture surprise. Le pricing est partagé pendant l\'appel de découverte pour coller à vos vrais besoins.',
-    hu: '6–12 hét az első verzióhoz, a hatókör függvényében. Egyetlen kódsor előtt megállapodunk rögzített hatókörben és rögzített szállítási dátumban. Heti egyeztetések, havi demók, semmi hatókör-csúszás, semmi meglepetésszámla. Az árazást az ismerkedési híváson egyeztetjük, hogy az Ön valós igényeihez igazítsuk.',
+    en: '4 to 8 weeks for the initial build, depending on scope. We agree on a fixed scope and a fixed delivery date before writing a line of code. Weekly check-ins, monthly demos, no scope creep, no surprise invoices. Pricing is shared on the discovery call so it matches your real needs.',
+    fr: '4 à 8 semaines pour la première version, selon le périmètre. On s\'accorde sur un périmètre fixe et une date de livraison fixe avant la première ligne de code. Points hebdo, démos mensuelles, zéro dérive, zéro facture surprise. Le pricing est partagé pendant l\'appel de découverte pour coller à vos vrais besoins.',
+    hu: '4–8 hét az első verzióhoz, a hatókör függvényében. Egyetlen kódsor előtt megállapodunk rögzített hatókörben és rögzített szállítási dátumban. Heti egyeztetések, havi demók, semmi hatókör-csúszás, semmi meglepetésszámla. Az árazást az ismerkedési híváson egyeztetjük, hogy az Ön valós igényeihez igazítsuk.',
   },
 
   // Q3 — reliability + SLA
@@ -607,6 +607,70 @@ export const translations = {
   'nate.cta': { en: 'Open the form', fr: 'Ouvrir le formulaire', hu: 'Űrlap megnyitása' },
   'nate.later': { en: 'Later', fr: 'Plus tard', hu: 'Később' },
   'nate.close': { en: 'Close', fr: 'Fermer', hu: 'Bezárás' },
+
+  // ───────────────────────────────────────────────────────────────
+  // Agents in action — new section between Solution and CaseStudy
+  // ───────────────────────────────────────────────────────────────
+  'agents.label': { en: 'Concretely', fr: 'Concrètement', hu: 'Konkrétan' },
+  'agents.title': { en: 'What your AI agents do', fr: 'Ce que vos agents IA font', hu: 'Amit az MI-ügynökei csinálnak' },
+  'agents.titleAccent': { en: 'in your place.', fr: 'à votre place.', hu: 'Ön helyett.' },
+  'agents.sub': {
+    en: 'Not a generic AI layer. Agents configured for your business, deployed on your infrastructure, executing precise tasks in your place.',
+    fr: 'Pas une couche d\'IA générique. Des agents configurés sur votre métier, déployés sur votre infrastructure, qui exécutent des tâches précises à votre place.',
+    hu: 'Nem egy általános MI-réteg. Az Ön szakmájára konfigurált ügynökök, az Ön infrastruktúráján bevetve, pontos feladatokat végrehajtva Ön helyett.',
+  },
+  'agents.watch.title': { en: 'Watch Agent', fr: 'Agent Veille', hu: 'Figyelő ügynök' },
+  'agents.watch.desc': {
+    en: 'Monitors your business sources continuously. Qualifies opportunities against your criteria. Alerts you only on what deserves your attention.',
+    fr: 'Surveille en continu vos sources métier. Qualifie les opportunités selon vos critères. Vous alerte uniquement sur ce qui mérite votre attention.',
+    hu: 'Folyamatosan figyeli a szakmai forrásait. Az Ön kritériumai szerint minősíti a lehetőségeket. Csak arra riaszt, ami megérdemli a figyelmét.',
+  },
+  'agents.watch.tags': { en: 'Public sources · Domain qualification · Targeted alerts', fr: 'Sources publiques · Qualification métier · Alertes ciblées', hu: 'Nyilvános források · Szakmai minősítés · Célzott riasztások' },
+  'agents.qualify.title': { en: 'Qualification Agent', fr: 'Agent Qualification', hu: 'Minősítő ügynök' },
+  'agents.qualify.desc': {
+    en: 'Reads every inbound. Scores against your criteria. Enriches the record. Routes to the right person. Drafts the first reply.',
+    fr: 'Lit chaque entrant. Score selon vos critères. Enrichit la fiche. Route vers la bonne personne. Rédige la première réponse.',
+    hu: 'Minden bejövőt elolvas. Az Ön kritériumai szerint pontoz. Gazdagítja az adatlapot. A megfelelő személyhez irányítja. Megírja az első választ.',
+  },
+  'agents.qualify.tags': { en: 'Reading · Scoring · Enrichment · Routing', fr: 'Lecture · Scoring · Enrichissement · Routage', hu: 'Olvasás · Pontozás · Gazdagítás · Irányítás' },
+  'agents.docs.title': { en: 'Document Agent', fr: 'Agent Documentaire', hu: 'Dokumentum ügynök' },
+  'agents.docs.desc': {
+    en: 'Reads invoices, contracts, quotes, RFPs. Extracts, structures, classifies. Hands off to a human only the cases that warrant it.',
+    fr: 'Lit factures, contrats, devis, appels d\'offres. Extrait, structure, classe. Passe à l\'humain uniquement les cas qui le méritent.',
+    hu: 'Olvas számlákat, szerződéseket, árajánlatokat, ajánlattételi felhívásokat. Kinyer, strukturál, osztályoz. Csak az indokolt eseteket adja át embernek.',
+  },
+  'agents.docs.tags': { en: 'Reading · Extraction · Classification · Routing', fr: 'Lecture · Extraction · Classification · Routage', hu: 'Olvasás · Kinyerés · Osztályozás · Irányítás' },
+
+  // ───────────────────────────────────────────────────────────────
+  // Schema (animated flow diagram) — node labels
+  // ───────────────────────────────────────────────────────────────
+  'schema.label': { en: 'How it flows', fr: 'Comment ça circule', hu: 'Hogyan áramlik' },
+  'schema.node1': { en: 'Business sources', fr: 'Sources métier', hu: 'Szakmai források' },
+  'schema.node1Sub': { en: 'emails · invoices · reviews', fr: 'emails · factures · avis', hu: 'e-mailek · számlák · vélemények' },
+  'schema.node2': { en: 'AI agent', fr: 'Agent IA', hu: 'MI-ügynök' },
+  'schema.node2Sub': { en: 'reads · qualifies · enriches', fr: 'lit · qualifie · enrichit', hu: 'olvas · minősít · gazdagít' },
+  'schema.node3': { en: 'Custom software', fr: 'Logiciel sur-mesure', hu: 'Egyedi szoftver' },
+  'schema.node3Sub': { en: 'dashboard · routes · stores', fr: 'dashboard · route · stocke', hu: 'irányítópult · irányít · tárol' },
+  'schema.node4': { en: 'Your team', fr: 'Votre équipe', hu: 'Az Ön csapata' },
+  'schema.node4Sub': { en: 'validates · ignores · delegates', fr: 'valide · ignore · délègue', hu: 'jóváhagy · figyelmen kívül · delegál' },
+  'schema.node5': { en: 'Action executed', fr: 'Action exécutée', hu: 'Végrehajtott művelet' },
+  'schema.node5Sub': { en: 'tracked · reported', fr: 'tracée · reportée', hu: 'követve · jelentve' },
+
+  // ───────────────────────────────────────────────────────────────
+  // Infrastructure — new section between Process and Integrations
+  // ───────────────────────────────────────────────────────────────
+  'infra.label': { en: 'INFRASTRUCTURE', fr: 'INFRASTRUCTURE', hu: 'INFRASTRUKTÚRA' },
+  'infra.title': { en: 'Your infrastructure. Your data.', fr: 'Votre infrastructure. Vos données.', hu: 'Az Ön infrastruktúrája. Az Ön adatai.' },
+  'infra.titleAccent': { en: 'Your agents.', fr: 'Vos agents.', hu: 'Az Ön ügynökei.' },
+  'infra.body': {
+    en: 'Everything is deployed on your VPS or your cloud — AWS, OVH, Scaleway, Hetzner. Your data never leaves your perimeter. Your agents run under your control. The AI model — Claude, GPT, or self-hosted — is chosen according to your sovereignty needs.',
+    fr: 'Tout est déployé sur votre VPS ou votre cloud — AWS, OVH, Scaleway, Hetzner. Vos données ne sortent jamais de votre périmètre. Vos agents tournent sous votre contrôle. Le modèle IA — Claude, GPT, ou self-hosted — est choisi selon votre niveau de souveraineté.',
+    hu: 'Minden az Ön VPS-én vagy felhőjén kerül bevezetésre — AWS, OVH, Scaleway, Hetzner. Az adatai soha nem hagyják el a hatókörét. Az ügynökei az Ön ellenőrzése alatt futnak. Az MI-modellt — Claude, GPT vagy önhosztolt — az Ön szuverenitási szintje szerint választjuk.',
+  },
+  'infra.tag1': { en: 'Total data sovereignty', fr: 'Souveraineté data totale', hu: 'Teljes adatszuverenitás' },
+  'infra.tag2': { en: 'Code belongs to you', fr: 'Code vous appartient', hu: 'A kód Önhöz tartozik' },
+  'infra.tag3': { en: 'Models of your choice', fr: 'Modèles au choix', hu: 'Tetszőleges modellek' },
+  'infra.tag4': { en: 'Exportable infrastructure', fr: 'Infra exportable', hu: 'Exportálható infrastruktúra' },
 } as const
 
 export type TranslationKey = keyof typeof translations

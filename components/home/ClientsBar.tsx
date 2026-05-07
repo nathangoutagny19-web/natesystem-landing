@@ -29,10 +29,12 @@ type ClientRef =
   | { name: string; type: 'logo'; src: string }
   | { name: string; type: 'wordmark' }
 
+// Vendéglátás Menedzsment Kft. removed for now — keep this slot empty
+// until the official logo is delivered. Re-add the entry as soon as
+// `/public/logos/vendeglatas.png` lands.
 const clients: ClientRef[] = [
   { name: 'Chromosome', type: 'logo', src: '/logos/chromosome.png' },
   { name: 'Université Jean Monnet', type: 'logo', src: '/logos/ujm.png' },
-  { name: 'Vendéglátás Menedzsment Kft.', type: 'wordmark' },
 ]
 
 export default function ClientsBar() {
@@ -99,9 +101,11 @@ export default function ClientsBar() {
           padding: 0;
           margin: 0;
           display: grid;
-          grid-template-columns: repeat(3, 1fr);
+          /* Auto-fit so the grid scales whether we have 2, 3 or 4 references */
+          grid-template-columns: repeat(auto-fit, minmax(160px, 240px));
+          justify-content: center;
           align-items: center;
-          column-gap: 24px;
+          column-gap: 56px;
           row-gap: 32px;
         }
         .clients-item {
