@@ -29,12 +29,14 @@ type ClientRef =
   | { name: string; type: 'logo'; src: string }
   | { name: string; type: 'wordmark' }
 
-// Vendéglátás Menedzsment Kft. removed for now — keep this slot empty
-// until the official logo is delivered. Re-add the entry as soon as
-// `/public/logos/vendeglatas.png` lands.
+// Vendéglátás Menedzsment Kft. is the Hungarian hospitality reference —
+// kept as wordmark until the official logo lands. When `/public/logos/
+// vendeglatas.png` arrives, flip `type: 'wordmark'` to `type: 'logo'`
+// and add the `src`.
 const clients: ClientRef[] = [
   { name: 'Chromosome', type: 'logo', src: '/logos/chromosome.png' },
   { name: 'Université Jean Monnet', type: 'logo', src: '/logos/ujm.png' },
+  { name: 'Vendéglátás Menedzsment Kft.', type: 'wordmark' },
 ]
 
 export default function ClientsBar() {
