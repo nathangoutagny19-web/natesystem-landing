@@ -7,6 +7,7 @@ import Footer from '@/components/layout/Footer'
 import FilterBar from './components/FilterBar'
 import ResourceCard from './components/ResourceCard'
 import DownloadModal from './components/DownloadModal'
+import LiveDemosBanner from './components/LiveDemosBanner'
 import { resources, CATEGORIES, Resource } from '@/lib/resources'
 import { useLang } from '@/components/providers/LangProvider'
 
@@ -135,6 +136,9 @@ export default function ToolsPage() {
             </Link>
           </div>
         </section>
+
+        {/* Live demos — 2 interactive Lovable apps (actifs + stock) */}
+        <LiveDemosBanner />
 
         {/* Filter bar */}
         <section className="px-6 pb-8">

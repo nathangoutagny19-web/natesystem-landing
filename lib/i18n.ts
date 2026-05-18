@@ -671,6 +671,53 @@ export const translations = {
   'infra.tag2': { en: 'Code belongs to you', fr: 'Code vous appartient', hu: 'A kód Önhöz tartozik' },
   'infra.tag3': { en: 'Models of your choice', fr: 'Modèles au choix', hu: 'Tetszőleges modellek' },
   'infra.tag4': { en: 'Exportable infrastructure', fr: 'Infra exportable', hu: 'Exportálható infrastruktúra' },
+
+  // ───────────────────────────────────────────────────────────────
+  // /tools — Live demos banner
+  // Two interactive demo apps shipped at actifs.natesystem.com and
+  // stack-stock.natesystem.com. Distinct treatment from the
+  // download-able resources grid because they're live experiences,
+  // not zip files behind an email gate.
+  // ───────────────────────────────────────────────────────────────
+  'demos.kicker': { en: 'LIVE DEMOS · INTERACTIVE', fr: 'DÉMOS LIVE · INTERACTIVES', hu: 'ÉLŐ DEMÓK · INTERAKTÍV' },
+  'demos.title': { en: 'Try the actual product.', fr: 'Essayez le produit réel.', hu: 'Próbálja ki a valódi terméket.' },
+  'demos.sub': {
+    en: 'Two fully working demos, no signup, no credit card. Click through with mock data, then talk to me if it fits.',
+    fr: 'Deux démos pleinement fonctionnelles, sans inscription, sans carte. Cliquez avec des données fictives, puis on en parle si ça correspond.',
+    hu: 'Két teljesen működő demó, regisztráció és kártya nélkül. Kattintson át fiktív adatokkal, aztán beszéljünk, ha megfelel.',
+  },
+
+  // Actifs demo
+  'demos.actifs.tag': { en: 'ASSET MANAGEMENT', fr: 'GESTION D\'ACTIFS', hu: 'ESZKÖZKEZELÉS' },
+  'demos.actifs.title': { en: 'Your equipment. Always under control.', fr: 'Vos équipements. Toujours sous contrôle.', hu: 'A berendezései. Mindig kézben.' },
+  'demos.actifs.desc': {
+    en: 'IT, vehicles, furniture, machinery. Centralised inventory, automatic depreciation, replacement alerts before things break expensively.',
+    fr: 'Parc informatique, véhicules, mobilier, machines. Inventaire centralisé, amortissements automatiques, alertes de remplacement avant que ça coûte cher.',
+    hu: 'Informatika, járművek, bútorok, gépek. Központi leltár, automatikus értékcsökkenés, csere-riasztások mielőtt drágába kerülne a hiba.',
+  },
+  'demos.actifs.metric1': { en: '−90% time on inventories', fr: '−90% de temps sur les inventaires', hu: '−90% leltározási idő' },
+  'demos.actifs.metric2': { en: '100% automatic depreciation', fr: '100% d\'amortissements automatiques', hu: '100% automatikus értékcsökkenés' },
+  'demos.actifs.metric3': { en: '3× faster audits', fr: 'Audits 3× plus rapides', hu: '3× gyorsabb auditálás' },
+  'demos.actifs.cta': { en: 'Open the demo →', fr: 'Ouvrir la démo →', hu: 'Demó megnyitása →' },
+
+  // Stock demo
+  'demos.stock.tag': { en: 'INVENTORY PLATFORM', fr: 'PLATEFORME D\'INVENTAIRE', hu: 'KÉSZLETKEZELŐ PLATFORM' },
+  'demos.stock.title': { en: 'The inventory platform that scales your business.', fr: 'La plateforme d\'inventaire qui fait grandir votre entreprise.', hu: 'A készletkezelő platform, amely növeli a vállalkozását.' },
+  'demos.stock.desc': {
+    en: 'Real-time tracking, smart reordering, supplier management, barcode scanning, analytics. The same engine we deploy in production.',
+    fr: 'Suivi temps réel, réapprovisionnements intelligents, gestion fournisseurs, lecture de codes-barres, analytique. Le même moteur que celui qu\'on déploie en production.',
+    hu: 'Valós idejű követés, intelligens újrarendelés, beszállító-kezelés, vonalkód-olvasás, analitika. Ugyanaz a motor, amit éles üzemben telepítünk.',
+  },
+  'demos.stock.metric1': { en: 'Real-time stock visibility', fr: 'Stock visible en temps réel', hu: 'Valós idejű készlet-láthatóság' },
+  'demos.stock.metric2': { en: 'Smart reorder points', fr: 'Points de réappro intelligents', hu: 'Intelligens újrarendelési pontok' },
+  'demos.stock.metric3': { en: 'Barcode-ready', fr: 'Compatible codes-barres', hu: 'Vonalkód-kompatibilis' },
+  'demos.stock.cta': { en: 'Open the demo →', fr: 'Ouvrir la démo →', hu: 'Demó megnyitása →' },
+
+  'demos.note': {
+    en: 'Demos run on mock data. Talk to me if you want a real version on your data.',
+    fr: 'Les démos tournent sur des données fictives. Parlez-moi si vous voulez une vraie version sur vos données.',
+    hu: 'A demók fiktív adatokon futnak. Szóljon, ha valós verziót szeretne a saját adataival.',
+  },
 } as const
 
 export type TranslationKey = keyof typeof translations
