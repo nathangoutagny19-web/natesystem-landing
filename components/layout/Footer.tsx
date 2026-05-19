@@ -71,7 +71,7 @@ export default function Footer() {
           <FooterLink href="/#prestations">{t('footer.link.services')}</FooterLink>
           <FooterLink href="/#probleme">{t('footer.link.problem')}</FooterLink>
           <FooterLink href="/#process">{t('footer.link.process')}</FooterLink>
-          <FooterLink href="/#resultats">{t('footer.link.results')}</FooterLink>
+          <FooterLink href="/#case-study">{t('footer.link.results')}</FooterLink>
           <FooterLink href="/#contact">{t('footer.link.contact')}</FooterLink>
         </FooterCol>
 
