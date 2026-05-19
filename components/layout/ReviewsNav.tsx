@@ -21,7 +21,6 @@ import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import { useLang, type Lang } from '@/components/providers/LangProvider'
 import { useTheme } from '@/components/providers/ThemeProvider'
-import { CAL_LINK } from '@/lib/constants'
 
 const Chevron = () => (
   <svg width="10" height="10" viewBox="0 0 10 10" fill="none" className="chevron-icon">
@@ -29,7 +28,7 @@ const Chevron = () => (
   </svg>
 )
 
-export default function ReviewsNav() {
+export default function ReviewsNav({ onRequestDemo }: { onRequestDemo?: () => void }) {
   const { lang, setLang, t } = useLang()
   const { theme, toggleTheme } = useTheme()
   const [scrolled, setScrolled] = useState(false)
@@ -145,10 +144,15 @@ export default function ReviewsNav() {
               )}
             </button>
 
-            {/* CTA */}
-            <Link href={CAL_LINK} className="nav-cta-btn">
-              {t('reviews.hero.ctaPrimary')}
-            </Link>
+            {/* CTA — opens the demo-request modal owned by the page */}
+            <button
+              type="button"
+              onClick={onRequestDemo}
+              className="nav-cta-btn"
+              style={{ border: 'none', cursor: 'pointer' }}
+            >
+              {t('reviewsDemo.hero.ctaPrimary')}
+            </button>
           </div>
         </div>
       </header>
@@ -264,14 +268,18 @@ export default function ReviewsNav() {
             </button>
           </div>
 
-          <Link
-            href={CAL_LINK}
-            onClick={() => setMenuOpen(false)}
+          <button
+            type="button"
+            onClick={() => {
+              setMenuOpen(false)
+              onRequestDemo?.()
+            }}
             className="btn-primary mt-4 justify-center"
+            style={{ border: 'none', cursor: 'pointer' }}
           >
             <span className="btn-primary-dot" />
-            {t('reviews.hero.ctaPrimary')}
-          </Link>
+            {t('reviewsDemo.hero.ctaPrimary')}
+          </button>
         </div>
       </div>
     </>

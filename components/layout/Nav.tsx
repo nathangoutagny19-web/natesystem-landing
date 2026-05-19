@@ -148,6 +148,13 @@ export default function Nav() {
                       external
                       badge={t('mega.new')}
                     />
+                    <MegaItem
+                      href="/reviews"
+                      icon={icons.clipboard}
+                      title={t('demos.reviews.navTitle')}
+                      desc={t('demos.reviews.navDesc')}
+                      badge={t('mega.gated')}
+                    />
                   </div>
                   <div className="nav-mega-col">
                     <p className="nav-mega-label">{t('mega.templates')}</p>
@@ -256,6 +263,13 @@ export default function Nav() {
               onClick={() => setMenuOpen(false)}
             >
               {t('demos.stock.navTitle')}
+            </MobileLink>
+            <MobileLink
+              href="/reviews"
+              badge={t('mega.gated')}
+              onClick={() => setMenuOpen(false)}
+            >
+              {t('demos.reviews.navTitle')}
             </MobileLink>
             <MobileLink href="/tools" onClick={() => setMenuOpen(false)}>{t('tools.title')}</MobileLink>
           </MobileAccordion>

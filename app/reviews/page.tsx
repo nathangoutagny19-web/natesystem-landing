@@ -1,41 +1,50 @@
 /**
- * /reviews — NateSystem · Reviews (agency-positioned).
+ * /reviews — NateSystem · Reviews (product demo landing).
  *
- * Narrative arc follows nate-reviews-assets/PROMPT.md (v2):
- *   1. Hero — agency framing, not SaaS
- *   2. Problem — cost of ignoring reviews
- *   3. Deliverable — 90-day roadmap (02-action-plan.png)
- *   4. AI analysis layer — six-aspect scoring (03-aspect-analysis.png)
- *   5. SmartReview agent — response drafting (06-responses.png)
- *   6. Live evidence — full-width reviews feed (05-reviews-ai.png)
- *   7. €790 audit ribbon (04-audit-pdf.png — portrait A4)
- *   8. Proof numbers
- *   9. How it works — four steps
- *   10. FAQ — five items
- *   11. Final ribbon — "Let us run it."
+ * Reviews is a software product (review intelligence) we built and run
+ * for our own catalogue. This page is its demo landing: agency framing
+ * is intentionally absent. Access to the live demo is gated behind a
+ * short request form, same pattern as the rest of the demo catalogue —
+ * but unlike /actifs and /stock, the access link is sent by email after
+ * a manual check (no public demo URL).
  *
- * Every mockup is a live production screenshot from the ScrapAvis app
- * (partner restaurant "Kéfrenkos", 200 imported reviews). Do NOT rename,
- * crop or letterbox. Always render at native aspect.
+ * Narrative arc:
+ *   1. Hero — product positioning + request-access CTA
+ *   2. Inside the demo — three modules you can click through
+ *   3. AI aspect analysis (03-aspect-analysis.png)
+ *   4. Response agent (06-responses.png)
+ *   5. 90-day plan from data (02-action-plan.png)
+ *   6. Live evidence — full-width single review (05-reviews-ai.png)
+ *   7. How the demo works — four steps
+ *   8. FAQ — five product/demo questions
+ *   9. Final ribbon — "See the product. Make your own call."
+ *
+ * Every mockup is a real production screenshot from the partner
+ * restaurant "Kéfrenkos" (200 imported reviews). Do NOT crop or
+ * letterbox — render at native aspect.
  */
 
 'use client'
 
 import { useState } from 'react'
-import Link from 'next/link'
 import Image from 'next/image'
 import ReviewsNav from '@/components/layout/ReviewsNav'
 import Footer from '@/components/layout/Footer'
 import FadeUp from '@/components/ui/FadeUp'
+import DemoRequestModal, { DemoRequest } from '@/components/ui/DemoRequestModal'
 import { useLang } from '@/components/providers/LangProvider'
-import { CAL_LINK } from '@/lib/constants'
+
+const REVIEWS_DEMO: DemoRequest = { id: 'reviews', title: 'NateSystem · Reviews' }
 
 export default function ReviewsPage() {
   const { t } = useLang()
+  const [requesting, setRequesting] = useState<DemoRequest | null>(null)
+
+  const openRequest = () => setRequesting(REVIEWS_DEMO)
 
   return (
     <main style={{ background: 'var(--bg)' }}>
-      <ReviewsNav />
+      <ReviewsNav onRequestDemo={openRequest} />
 
       {/* ════════════════════════════════════════════════════════════
          1. HERO
@@ -44,7 +53,7 @@ export default function ReviewsPage() {
         style={{
           position: 'relative',
           padding: '160px 24px 100px',
-          minHeight: '90vh',
+          minHeight: '88vh',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
@@ -53,7 +62,7 @@ export default function ReviewsPage() {
       >
         <FadeUp>
           <span className="section-label" style={{ letterSpacing: 3 }}>
-            {t('reviews.kicker')}
+            {t('reviewsDemo.kicker')}
           </span>
         </FadeUp>
 
@@ -69,9 +78,9 @@ export default function ReviewsPage() {
               fontWeight: 400,
             }}
           >
-            {t('reviews.hero.title1')}
+            {t('reviewsDemo.hero.title1')}
             <br />
-            <span className="accent">{t('reviews.hero.titleAccent')}</span>
+            <span className="accent">{t('reviewsDemo.hero.titleAccent')}</span>
           </h1>
         </FadeUp>
 
@@ -82,12 +91,12 @@ export default function ReviewsPage() {
               fontSize: 'clamp(15px, 1.6vw, 17px)',
               fontWeight: 300,
               color: 'var(--text-secondary)',
-              maxWidth: 640,
+              maxWidth: 700,
               lineHeight: 1.7,
               margin: '0 auto 36px',
             }}
           >
-            {t('reviews.hero.sub')}
+            {t('reviewsDemo.hero.sub')}
           </p>
         </FadeUp>
 
@@ -101,12 +110,12 @@ export default function ReviewsPage() {
               marginBottom: 20,
             }}
           >
-            <Link href={CAL_LINK} className="btn-primary" style={{ fontSize: 14 }}>
+            <button type="button" onClick={openRequest} className="btn-primary" style={{ fontSize: 14, border: 'none', cursor: 'pointer' }}>
               <span className="btn-primary-dot" />
-              {t('reviews.hero.ctaPrimary')} →
-            </Link>
+              {t('reviewsDemo.hero.ctaPrimary')} →
+            </button>
             <a
-              href="#deliverable"
+              href="#inside"
               className="font-sans"
               style={{
                 display: 'inline-flex',
@@ -130,7 +139,7 @@ export default function ReviewsPage() {
                 e.currentTarget.style.boxShadow = 'none'
               }}
             >
-              {t('reviews.hero.ctaGhost')}
+              {t('reviewsDemo.hero.ctaGhost')}
             </a>
           </div>
         </FadeUp>
@@ -145,11 +154,11 @@ export default function ReviewsPage() {
               marginBottom: 56,
             }}
           >
-            {t('reviews.hero.socialProof')}
+            {t('reviewsDemo.hero.note')}
           </p>
         </FadeUp>
 
-        {/* Hero image with subtle red radial glow */}
+        {/* Hero image with subtle accent radial glow */}
         <FadeUp delay={0.4}>
           <div style={{ position: 'relative', width: '100%', maxWidth: 980, margin: '0 auto' }}>
             <div
@@ -164,7 +173,7 @@ export default function ReviewsPage() {
             />
             <Image
               src="/reviews/01-reputation-score.png"
-              alt={t('reviews.hero.imgAlt')}
+              alt={t('reviewsDemo.hero.imgAlt')}
               width={1600}
               height={1000}
               priority
@@ -182,13 +191,29 @@ export default function ReviewsPage() {
       </section>
 
       {/* ════════════════════════════════════════════════════════════
-         2. PROBLEM
+         2. INSIDE THE DEMO — three modules
          ════════════════════════════════════════════════════════════ */}
-      <section style={{ padding: '100px 24px' }}>
+      <section id="inside" style={{ padding: '100px 24px' }}>
         <div className="mx-auto" style={{ maxWidth: 1100 }}>
           <div style={{ marginBottom: 56, textAlign: 'center' }}>
             <FadeUp>
-              <span className="section-label">{t('reviews.problem.kicker')}</span>
+              <span className="section-label">{t('reviewsDemo.inside.kicker')}</span>
+            </FadeUp>
+            <FadeUp delay={0.08}>
+              <h2
+                className="font-serif italic"
+                style={{
+                  fontSize: 'clamp(26px, 3.2vw, 40px)',
+                  lineHeight: 1.2,
+                  color: 'var(--text)',
+                  fontWeight: 400,
+                  margin: '14px auto 0',
+                  maxWidth: 720,
+                }}
+              >
+                {t('reviewsDemo.inside.title1')}{' '}
+                <span className="accent">{t('reviewsDemo.inside.titleAccent')}</span>
+              </h2>
             </FadeUp>
           </div>
 
@@ -199,82 +224,15 @@ export default function ReviewsPage() {
               gap: 20,
             }}
           >
-            <ProblemCard value={t('reviews.problem.a.value')} title={t('reviews.problem.a.title')} desc={t('reviews.problem.a.desc')} delay={0} />
-            <ProblemCard value={t('reviews.problem.b.value')} title={t('reviews.problem.b.title')} desc={t('reviews.problem.b.desc')} delay={0.08} />
-            <ProblemCard value={t('reviews.problem.c.value')} title={t('reviews.problem.c.title')} desc={t('reviews.problem.c.desc')} delay={0.16} />
+            <InsideCard label={t('reviewsDemo.inside.a.label')} desc={t('reviewsDemo.inside.a.desc')} delay={0} />
+            <InsideCard label={t('reviewsDemo.inside.b.label')} desc={t('reviewsDemo.inside.b.desc')} delay={0.08} />
+            <InsideCard label={t('reviewsDemo.inside.c.label')} desc={t('reviewsDemo.inside.c.desc')} delay={0.16} />
           </div>
         </div>
       </section>
 
       {/* ════════════════════════════════════════════════════════════
-         3. DELIVERABLE — 90-day roadmap (02-action-plan.png)
-         ════════════════════════════════════════════════════════════ */}
-      <section id="deliverable" style={{ padding: '100px 24px' }}>
-        <div className="mx-auto" style={{ maxWidth: 1100 }}>
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'minmax(0, 1fr) minmax(0, 1fr)',
-              gap: 56,
-              alignItems: 'center',
-            }}
-            className="reviews-split"
-          >
-            <FadeUp>
-              <span className="section-label">{t('reviews.roadmap.kicker')}</span>
-              <h2
-                className="font-serif italic"
-                style={{
-                  fontSize: 'clamp(26px, 3.2vw, 40px)',
-                  lineHeight: 1.2,
-                  color: 'var(--text)',
-                  fontWeight: 400,
-                  margin: '14px 0 22px',
-                }}
-              >
-                {t('reviews.roadmap.title1')}{' '}
-                <span className="accent">{t('reviews.roadmap.titleAccent')}</span>
-              </h2>
-              <p
-                className="font-sans"
-                style={{
-                  fontSize: 15,
-                  fontWeight: 300,
-                  color: 'var(--text-secondary)',
-                  lineHeight: 1.8,
-                  maxWidth: 500,
-                  marginBottom: 18,
-                }}
-              >
-                {t('reviews.roadmap.body1')}
-              </p>
-              <p
-                className="font-sans"
-                style={{
-                  fontSize: 15,
-                  fontWeight: 300,
-                  color: 'var(--text-secondary)',
-                  lineHeight: 1.8,
-                  maxWidth: 500,
-                }}
-              >
-                {t('reviews.roadmap.body2')}
-              </p>
-            </FadeUp>
-
-            <FadeUp delay={0.1}>
-              <MockupFigure
-                src="/reviews/02-action-plan.png"
-                alt="Real 90-day action plan for a partner restaurant"
-                caption={t('reviews.roadmap.imgCaption')}
-              />
-            </FadeUp>
-          </div>
-        </div>
-      </section>
-
-      {/* ════════════════════════════════════════════════════════════
-         4. AI ANALYSIS — aspect scoring (03-aspect-analysis.png)
+         3. AI ANALYSIS — aspect scoring (03-aspect-analysis.png)
          ════════════════════════════════════════════════════════════ */}
       <section style={{ padding: '100px 24px' }}>
         <div className="mx-auto" style={{ maxWidth: 1100 }}>
@@ -290,13 +248,13 @@ export default function ReviewsPage() {
             <FadeUp delay={0.1}>
               <MockupFigure
                 src="/reviews/03-aspect-analysis.png"
-                alt="Six-dimension aspect analysis for a partner restaurant"
-                caption={t('reviews.aspect.imgCaption')}
+                alt="Six-dimension aspect analysis"
+                caption={t('reviewsDemo.aspect.imgCaption')}
               />
             </FadeUp>
 
             <FadeUp>
-              <span className="section-label">{t('reviews.aspect.kicker')}</span>
+              <span className="section-label">{t('reviewsDemo.aspect.kicker')}</span>
               <h2
                 className="font-serif italic"
                 style={{
@@ -307,7 +265,7 @@ export default function ReviewsPage() {
                   margin: '14px 0 22px',
                 }}
               >
-                {t('reviews.aspect.title')}
+                {t('reviewsDemo.aspect.title')}
               </h2>
               <p
                 className="font-sans"
@@ -319,7 +277,7 @@ export default function ReviewsPage() {
                   maxWidth: 500,
                 }}
               >
-                {t('reviews.aspect.body')}
+                {t('reviewsDemo.aspect.body')}
               </p>
             </FadeUp>
           </div>
@@ -327,7 +285,7 @@ export default function ReviewsPage() {
       </section>
 
       {/* ════════════════════════════════════════════════════════════
-         5. SMARTREVIEW AGENT — response drafting (06-responses.png)
+         4. RESPONSE AGENT (06-responses.png)
          ════════════════════════════════════════════════════════════ */}
       <section style={{ padding: '100px 24px' }}>
         <div className="mx-auto" style={{ maxWidth: 1100 }}>
@@ -341,7 +299,7 @@ export default function ReviewsPage() {
             className="reviews-split"
           >
             <FadeUp>
-              <span className="section-label">{t('reviews.respond.kicker')}</span>
+              <span className="section-label">{t('reviewsDemo.respond.kicker')}</span>
               <h2
                 className="font-serif italic"
                 style={{
@@ -352,9 +310,9 @@ export default function ReviewsPage() {
                   margin: '14px 0 22px',
                 }}
               >
-                {t('reviews.respond.title1')}
+                {t('reviewsDemo.respond.title1')}
                 <br />
-                <span className="accent">{t('reviews.respond.titleAccent')}</span>
+                <span className="accent">{t('reviewsDemo.respond.titleAccent')}</span>
               </h2>
               <p
                 className="font-sans"
@@ -367,7 +325,7 @@ export default function ReviewsPage() {
                   marginBottom: 20,
                 }}
               >
-                {t('reviews.respond.body')}
+                {t('reviewsDemo.respond.body')}
               </p>
               <p
                 className="font-mono"
@@ -377,7 +335,7 @@ export default function ReviewsPage() {
                   color: 'var(--text-muted)',
                 }}
               >
-                {t('reviews.respond.footnote')}
+                {t('reviewsDemo.respond.footnote')}
               </p>
             </FadeUp>
 
@@ -385,8 +343,75 @@ export default function ReviewsPage() {
               <MockupFigure
                 src="/reviews/06-responses.png"
                 alt="AI Response Agent configuration — brand voice, system prompt, learned examples"
-                caption={t('reviews.respond.imgCaption')}
+                caption={t('reviewsDemo.respond.imgCaption')}
               />
+            </FadeUp>
+          </div>
+        </div>
+      </section>
+
+      {/* ════════════════════════════════════════════════════════════
+         5. 90-DAY PLAN (02-action-plan.png)
+         ════════════════════════════════════════════════════════════ */}
+      <section style={{ padding: '100px 24px' }}>
+        <div className="mx-auto" style={{ maxWidth: 1100 }}>
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'minmax(0, 1fr) minmax(0, 1fr)',
+              gap: 56,
+              alignItems: 'center',
+            }}
+            className="reviews-split"
+          >
+            <FadeUp delay={0.1}>
+              <MockupFigure
+                src="/reviews/02-action-plan.png"
+                alt="90-day action plan generated from review data"
+                caption={t('reviewsDemo.roadmap.imgCaption')}
+              />
+            </FadeUp>
+
+            <FadeUp>
+              <span className="section-label">{t('reviewsDemo.roadmap.kicker')}</span>
+              <h2
+                className="font-serif italic"
+                style={{
+                  fontSize: 'clamp(26px, 3.2vw, 40px)',
+                  lineHeight: 1.2,
+                  color: 'var(--text)',
+                  fontWeight: 400,
+                  margin: '14px 0 22px',
+                }}
+              >
+                {t('reviewsDemo.roadmap.title1')}{' '}
+                <span className="accent">{t('reviewsDemo.roadmap.titleAccent')}</span>
+              </h2>
+              <p
+                className="font-sans"
+                style={{
+                  fontSize: 15,
+                  fontWeight: 300,
+                  color: 'var(--text-secondary)',
+                  lineHeight: 1.8,
+                  maxWidth: 500,
+                  marginBottom: 18,
+                }}
+              >
+                {t('reviewsDemo.roadmap.body1')}
+              </p>
+              <p
+                className="font-sans"
+                style={{
+                  fontSize: 15,
+                  fontWeight: 300,
+                  color: 'var(--text-secondary)',
+                  lineHeight: 1.8,
+                  maxWidth: 500,
+                }}
+              >
+                {t('reviewsDemo.roadmap.body2')}
+              </p>
             </FadeUp>
           </div>
         </div>
@@ -399,7 +424,7 @@ export default function ReviewsPage() {
         <div className="mx-auto" style={{ maxWidth: 1100 }}>
           <div style={{ marginBottom: 40, textAlign: 'center' }}>
             <FadeUp>
-              <span className="section-label">{t('reviews.live.kicker')}</span>
+              <span className="section-label">{t('reviewsDemo.live.kicker')}</span>
             </FadeUp>
             <FadeUp delay={0.08}>
               <h2
@@ -413,8 +438,8 @@ export default function ReviewsPage() {
                   maxWidth: 780,
                 }}
               >
-                {t('reviews.live.title1')}{' '}
-                <span className="accent">{t('reviews.live.titleAccent')}</span>
+                {t('reviewsDemo.live.title1')}{' '}
+                <span className="accent">{t('reviewsDemo.live.titleAccent')}</span>
               </h2>
             </FadeUp>
           </div>
@@ -423,7 +448,7 @@ export default function ReviewsPage() {
             <MockupFigure
               src="/reviews/05-reviews-ai.png"
               alt="One review decomposed — six aspects scored, AI summary, response CTA"
-              caption={t('reviews.live.imgCaption')}
+              caption={t('reviewsDemo.live.imgCaption')}
               fullWidth
             />
           </FadeUp>
@@ -431,114 +456,13 @@ export default function ReviewsPage() {
       </section>
 
       {/* ════════════════════════════════════════════════════════════
-         7. €790 AUDIT RIBBON — conversion anchor (04-audit-pdf.png)
-         ════════════════════════════════════════════════════════════ */}
-      <section
-        style={{
-          padding: '100px 24px',
-          background: 'var(--accent-subtle)',
-          borderTop: '1px solid rgba(230,57,70,0.12)',
-          borderBottom: '1px solid rgba(230,57,70,0.12)',
-        }}
-      >
-        <div className="mx-auto" style={{ maxWidth: 1100 }}>
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'minmax(0, 1fr) minmax(0, 1fr)',
-              gap: 56,
-              alignItems: 'center',
-            }}
-            className="reviews-split"
-          >
-            <FadeUp>
-              <span className="section-label" style={{ color: 'var(--accent)' }}>
-                {t('reviews.audit.kicker')}
-              </span>
-              <h2
-                className="font-serif italic"
-                style={{
-                  fontSize: 'clamp(30px, 3.8vw, 48px)',
-                  lineHeight: 1.15,
-                  color: 'var(--text)',
-                  fontWeight: 400,
-                  margin: '14px 0 20px',
-                }}
-              >
-                {t('reviews.audit.title1')}{' '}
-                <span className="accent">{t('reviews.audit.titleAccent')}</span>
-              </h2>
-              <p
-                className="font-sans"
-                style={{
-                  fontSize: 16,
-                  fontWeight: 300,
-                  color: 'var(--text-secondary)',
-                  lineHeight: 1.75,
-                  maxWidth: 560,
-                  marginBottom: 28,
-                }}
-              >
-                {t('reviews.audit.body')}
-              </p>
-              <Link href={CAL_LINK} className="btn-primary" style={{ fontSize: 14 }}>
-                <span className="btn-primary-dot" />
-                {t('reviews.audit.cta')} →
-              </Link>
-            </FadeUp>
-
-            <FadeUp delay={0.12}>
-              <MockupFigure
-                src="/reviews/04-audit-pdf.png"
-                alt="Real first page of a partner restaurant's €790 audit PDF"
-                caption={t('reviews.audit.imgCaption')}
-                portrait
-              />
-            </FadeUp>
-          </div>
-        </div>
-      </section>
-
-      {/* ════════════════════════════════════════════════════════════
-         8. PROOF NUMBERS
-         ════════════════════════════════════════════════════════════ */}
-      <section style={{ padding: '100px 24px' }}>
-        <div className="mx-auto" style={{ maxWidth: 1100 }}>
-          <div style={{ marginBottom: 48, textAlign: 'center' }}>
-            <FadeUp>
-              <span className="section-label">{t('reviews.proof.kicker')}</span>
-            </FadeUp>
-          </div>
-
-          <FadeUp>
-            <div
-              style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-                gap: 0,
-                border: '1px solid var(--border)',
-                borderRadius: 16,
-                overflow: 'hidden',
-                background: 'var(--bg-card)',
-              }}
-            >
-              <StatCell value={t('reviews.proof.a.value')} label={t('reviews.proof.a.label')} />
-              <StatCell value={t('reviews.proof.b.value')} label={t('reviews.proof.b.label')} bordered />
-              <StatCell value={t('reviews.proof.c.value')} label={t('reviews.proof.c.label')} bordered />
-              <StatCell value={t('reviews.proof.d.value')} label={t('reviews.proof.d.label')} bordered />
-            </div>
-          </FadeUp>
-        </div>
-      </section>
-
-      {/* ════════════════════════════════════════════════════════════
-         9. HOW IT WORKS
+         7. HOW THE DEMO WORKS
          ════════════════════════════════════════════════════════════ */}
       <section style={{ padding: '100px 24px' }}>
         <div className="mx-auto" style={{ maxWidth: 820 }}>
           <div style={{ marginBottom: 48, textAlign: 'center' }}>
             <FadeUp>
-              <span className="section-label">{t('reviews.how.kicker')}</span>
+              <span className="section-label">{t('reviewsDemo.how.kicker')}</span>
             </FadeUp>
             <FadeUp delay={0.08}>
               <h2
@@ -552,29 +476,29 @@ export default function ReviewsPage() {
                   maxWidth: 620,
                 }}
               >
-                {t('reviews.how.title1')}{' '}
-                <span className="accent">{t('reviews.how.titleAccent')}</span>
+                {t('reviewsDemo.how.title1')}{' '}
+                <span className="accent">{t('reviewsDemo.how.titleAccent')}</span>
               </h2>
             </FadeUp>
           </div>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: 32 }}>
-            <HowStep n={1} title={t('reviews.how.s1.title')} desc={t('reviews.how.s1.desc')} />
-            <HowStep n={2} title={t('reviews.how.s2.title')} desc={t('reviews.how.s2.desc')} />
-            <HowStep n={3} title={t('reviews.how.s3.title')} desc={t('reviews.how.s3.desc')} />
-            <HowStep n={4} title={t('reviews.how.s4.title')} desc={t('reviews.how.s4.desc')} />
+            <HowStep n={1} title={t('reviewsDemo.how.s1.title')} desc={t('reviewsDemo.how.s1.desc')} />
+            <HowStep n={2} title={t('reviewsDemo.how.s2.title')} desc={t('reviewsDemo.how.s2.desc')} />
+            <HowStep n={3} title={t('reviewsDemo.how.s3.title')} desc={t('reviewsDemo.how.s3.desc')} />
+            <HowStep n={4} title={t('reviewsDemo.how.s4.title')} desc={t('reviewsDemo.how.s4.desc')} />
           </div>
         </div>
       </section>
 
       {/* ════════════════════════════════════════════════════════════
-         10. FAQ
+         8. FAQ
          ════════════════════════════════════════════════════════════ */}
       <section style={{ padding: '100px 24px' }}>
         <div className="mx-auto" style={{ maxWidth: 820 }}>
           <div style={{ marginBottom: 48, textAlign: 'center' }}>
             <FadeUp>
-              <span className="section-label">{t('reviews.faq.kicker')}</span>
+              <span className="section-label">{t('reviewsDemo.faq.kicker')}</span>
             </FadeUp>
             <FadeUp delay={0.08}>
               <h2
@@ -587,22 +511,22 @@ export default function ReviewsPage() {
                   margin: '14px 0 0',
                 }}
               >
-                {t('reviews.faq.title1')}{' '}
-                <span className="accent">{t('reviews.faq.titleAccent')}</span>
+                {t('reviewsDemo.faq.title1')}{' '}
+                <span className="accent">{t('reviewsDemo.faq.titleAccent')}</span>
               </h2>
             </FadeUp>
           </div>
 
-          <FaqItem q={t('reviews.faq.q1')} a={t('reviews.faq.a1')} delay={0} />
-          <FaqItem q={t('reviews.faq.q2')} a={t('reviews.faq.a2')} delay={0.05} />
-          <FaqItem q={t('reviews.faq.q3')} a={t('reviews.faq.a3')} delay={0.1} />
-          <FaqItem q={t('reviews.faq.q4')} a={t('reviews.faq.a4')} delay={0.15} />
-          <FaqItem q={t('reviews.faq.q5')} a={t('reviews.faq.a5')} delay={0.2} />
+          <FaqItem q={t('reviewsDemo.faq.q1')} a={t('reviewsDemo.faq.a1')} delay={0} />
+          <FaqItem q={t('reviewsDemo.faq.q2')} a={t('reviewsDemo.faq.a2')} delay={0.05} />
+          <FaqItem q={t('reviewsDemo.faq.q3')} a={t('reviewsDemo.faq.a3')} delay={0.1} />
+          <FaqItem q={t('reviewsDemo.faq.q4')} a={t('reviewsDemo.faq.a4')} delay={0.15} />
+          <FaqItem q={t('reviewsDemo.faq.q5')} a={t('reviewsDemo.faq.a5')} delay={0.2} />
         </div>
       </section>
 
       {/* ════════════════════════════════════════════════════════════
-         11. FINAL CTA RIBBON — "Let us run it."
+         9. FINAL CTA RIBBON
          ════════════════════════════════════════════════════════════ */}
       <section
         style={{
@@ -625,16 +549,21 @@ export default function ReviewsPage() {
                 marginBottom: 36,
               }}
             >
-              {t('reviews.finalCta.title1')}
+              {t('reviewsDemo.finalCta.title1')}
               <br />
-              <span className="accent">{t('reviews.finalCta.titleAccent')}</span>
+              <span className="accent">{t('reviewsDemo.finalCta.titleAccent')}</span>
             </h2>
           </FadeUp>
           <FadeUp delay={0.1}>
-            <Link href={CAL_LINK} className="btn-primary" style={{ fontSize: 15, padding: '20px 44px' }}>
+            <button
+              type="button"
+              onClick={openRequest}
+              className="btn-primary"
+              style={{ fontSize: 15, padding: '20px 44px', border: 'none', cursor: 'pointer' }}
+            >
               <span className="btn-primary-dot" />
-              {t('reviews.finalCta.cta')} →
-            </Link>
+              {t('reviewsDemo.finalCta.cta')} →
+            </button>
           </FadeUp>
         </div>
       </section>
@@ -657,20 +586,25 @@ export default function ReviewsPage() {
           WebkitBackdropFilter: 'blur(12px)',
         }}
       >
-        <Link
-          href={CAL_LINK}
+        <button
+          type="button"
+          onClick={openRequest}
           className="btn-primary"
           style={{
             width: '100%',
             justifyContent: 'center',
             fontSize: 14,
             padding: '14px 20px',
+            border: 'none',
+            cursor: 'pointer',
           }}
         >
           <span className="btn-primary-dot" />
-          {t('reviews.stickyCta')} →
-        </Link>
+          {t('reviewsDemo.stickyCta')} →
+        </button>
       </div>
+
+      <DemoRequestModal demo={requesting} onClose={() => setRequesting(null)} />
 
       <style>{`
         @media (max-width: 768px) {
@@ -696,36 +630,28 @@ function MockupFigure({
   alt,
   caption,
   fullWidth,
-  portrait,
 }: {
   src: string
   alt: string
   caption: string
   fullWidth?: boolean
-  /** Use portrait A4 dimensions (1488×2104) for the audit PDF capture. */
-  portrait?: boolean
 }) {
-  const width = portrait ? 1488 : 1600
-  const height = portrait ? 2104 : 1000
-  const maxWidth = fullWidth ? '100%' : portrait ? 560 : 900
-
   return (
     <figure style={{ margin: 0 }}>
       <Image
         src={src}
         alt={alt}
-        width={width}
-        height={height}
+        width={1600}
+        height={1000}
         loading="lazy"
         style={{
           width: '100%',
-          maxWidth,
+          maxWidth: fullWidth ? '100%' : 900,
           height: 'auto',
           borderRadius: 16,
           border: '1px solid var(--border)',
           boxShadow: '0 40px 80px -30px rgba(0,0,0,0.4)',
           display: 'block',
-          margin: portrait ? '0 auto' : undefined,
         }}
       />
       <figcaption
@@ -748,17 +674,7 @@ function MockupFigure({
   )
 }
 
-function ProblemCard({
-  value,
-  title,
-  desc,
-  delay,
-}: {
-  value: string
-  title: string
-  desc: string
-  delay: number
-}) {
+function InsideCard({ label, desc, delay }: { label: string; desc: string; delay: number }) {
   return (
     <FadeUp delay={delay}>
       <div
@@ -771,33 +687,22 @@ function ProblemCard({
         }}
       >
         <p
-          className="font-serif italic"
+          className="font-mono"
           style={{
-            fontSize: 'clamp(40px, 5vw, 56px)',
+            fontSize: 11,
+            letterSpacing: 1.8,
+            textTransform: 'uppercase',
             color: 'var(--accent)',
-            lineHeight: 1,
-            marginBottom: 20,
-            fontWeight: 400,
-          }}
-        >
-          {value}
-        </p>
-        <p
-          className="font-sans"
-          style={{
-            fontSize: 18,
-            fontWeight: 500,
-            color: 'var(--text)',
+            marginBottom: 18,
             lineHeight: 1.4,
-            marginBottom: 10,
           }}
         >
-          {title}
+          {label}
         </p>
         <p
           className="font-sans"
           style={{
-            fontSize: 13,
+            fontSize: 14,
             fontWeight: 300,
             color: 'var(--text-secondary)',
             lineHeight: 1.7,
@@ -807,52 +712,6 @@ function ProblemCard({
         </p>
       </div>
     </FadeUp>
-  )
-}
-
-function StatCell({
-  value,
-  label,
-  bordered,
-}: {
-  value: string
-  label: string
-  bordered?: boolean
-}) {
-  return (
-    <div
-      style={{
-        padding: '32px 20px',
-        borderLeft: bordered ? '1px solid var(--border)' : 'none',
-        textAlign: 'center',
-      }}
-    >
-      <p
-        className="font-serif italic"
-        style={{
-          fontSize: 'clamp(28px, 4vw, 44px)',
-          color: 'var(--accent)',
-          lineHeight: 1.1,
-          marginBottom: 10,
-          fontWeight: 400,
-        }}
-      >
-        {value}
-      </p>
-      <p
-        className="font-sans"
-        style={{
-          fontSize: 12,
-          fontWeight: 300,
-          color: 'var(--text-muted)',
-          lineHeight: 1.5,
-          maxWidth: 220,
-          margin: '0 auto',
-        }}
-      >
-        {label}
-      </p>
-    </div>
   )
 }
 

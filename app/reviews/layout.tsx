@@ -1,25 +1,25 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'NateSystem · Reviews — Reputation management for restaurants',
+  title: 'NateSystem · Reviews — Review intelligence software (demo)',
   description:
-    'AI-powered review intelligence and monthly consulting for restaurants. We run your reputation — collection, response drafting, 90-day action plans — so you don\'t have to.',
+    'NateSystem · Reviews is a review intelligence product: AI scoring on six aspects, response drafting in your brand voice, 90-day action plans. The demo runs on mock data — request access via the form.',
   alternates: {
     canonical: 'https://natesystem.com/reviews',
   },
   openGraph: {
     type: 'website',
     url: 'https://natesystem.com/reviews',
-    title: 'NateSystem · Reviews — Reputation management for restaurants',
+    title: 'NateSystem · Reviews — Review intelligence software (demo)',
     description:
-      'AI-powered review intelligence + human consulting. Free €790 audit for partner referrals, delivered in 3 business days.',
+      'Review intelligence software in demo. AI scoring, response drafts, action plans. Request demo access via the form.',
     siteName: 'NateSystem Reviews',
     images: [
       {
-        url: '/reviews/04-audit-pdf.png',
-        width: 1488,
-        height: 2104,
-        alt: 'Sample NateSystem Reviews audit PDF — first page',
+        url: '/reviews/01-reputation-score.png',
+        width: 1600,
+        height: 1000,
+        alt: 'NateSystem · Reviews — reputation score dashboard',
       },
     ],
     locale: 'en_US',
@@ -27,9 +27,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'NateSystem · Reviews — Reputation management for restaurants',
-    description: 'We run your restaurant\'s reputation, so you don\'t have to.',
-    images: ['/reviews/04-audit-pdf.png'],
+    title: 'NateSystem · Reviews — Review intelligence software (demo)',
+    description: 'Review intelligence in demo — request access via the form.',
+    images: ['/reviews/01-reputation-score.png'],
   },
 }
 

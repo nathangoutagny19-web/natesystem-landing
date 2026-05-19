@@ -738,6 +738,301 @@ export const translations = {
     fr: 'Stock temps réel, réappros intelligents, fournisseurs, codes-barres.',
     hu: 'Valós idejű készlet, okos újrarendelés, beszállítók, vonalkód.',
   },
+
+  // Reviews demo — software in demo, request access via form
+  'demos.reviews.tag': { en: 'REVIEW INTELLIGENCE', fr: 'INTELLIGENCE AVIS', hu: 'VÉLEMÉNY-INTELLIGENCIA' },
+  'demos.reviews.title': {
+    en: 'Turn every review into a decision.',
+    fr: 'Transformez chaque avis en décision.',
+    hu: 'Minden véleményből döntés.',
+  },
+  'demos.reviews.desc': {
+    en: 'AI-scored reviews on six aspects, response drafting in your brand voice, 90-day action plans. The product, in demo.',
+    fr: 'Avis notés par IA sur six dimensions, brouillons de réponses dans votre ton, plans d\'action 90 jours. Le produit, en démo.',
+    hu: 'MI által pontozott vélemények hat szempontból, válaszfogalmazás az Ön márkahangján, 90 napos akciótervek. A termék, demóban.',
+  },
+  'demos.reviews.metric1': {
+    en: 'Six-aspect scoring per review',
+    fr: 'Scoring sur six dimensions par avis',
+    hu: 'Hat szempontú pontozás véleményenként',
+  },
+  'demos.reviews.metric2': {
+    en: 'AI response drafts on brand voice',
+    fr: 'Brouillons de réponses dans votre ton',
+    hu: 'MI válaszok az Ön márkahangján',
+  },
+  'demos.reviews.metric3': {
+    en: '90-day action plan from the data',
+    fr: 'Plan d\'action 90 jours depuis vos données',
+    hu: '90 napos akcióterv az adatokból',
+  },
+  'demos.reviews.cta': {
+    en: 'Request demo access →',
+    fr: 'Demander accès démo →',
+    hu: 'Demó hozzáférés kérése →',
+  },
+  'demos.reviews.navTitle': { en: 'Review Intelligence', fr: 'Intelligence avis', hu: 'Vélemény-intelligencia' },
+  'demos.reviews.navDesc': {
+    en: 'AI scoring + response drafts. Demo access on request.',
+    fr: 'Scoring IA + réponses générées. Accès démo sur demande.',
+    hu: 'MI pontozás + válaszok. Demó hozzáférés kérésre.',
+  },
+  'mega.gated': { en: 'ON REQUEST', fr: 'SUR DEMANDE', hu: 'KÉRÉSRE' },
+
+  // /reviews — software-product demo landing
+  'reviewsDemo.metaTitle': {
+    en: 'NateSystem · Reviews — Review intelligence software (demo)',
+    fr: 'NateSystem · Reviews — Logiciel d\'intelligence avis (démo)',
+    hu: 'NateSystem · Reviews — Vélemény-intelligencia szoftver (demó)',
+  },
+  'reviewsDemo.metaDesc': {
+    en: 'Review intelligence software in demo. AI scoring on six aspects, response drafting, action plans. Request demo access via the form.',
+    fr: 'Logiciel d\'intelligence avis en démo. Scoring IA sur six dimensions, réponses générées, plans d\'action. Accès démo via le formulaire.',
+    hu: 'Vélemény-intelligencia szoftver demóban. MI-pontozás hat szempontból, válaszfogalmazás, akciótervek. Demó hozzáférés űrlapon keresztül.',
+  },
+  'reviewsDemo.kicker': {
+    en: 'PRODUCT DEMO · BY REQUEST',
+    fr: 'DÉMO PRODUIT · SUR DEMANDE',
+    hu: 'TERMÉK-DEMÓ · KÉRÉSRE',
+  },
+  'reviewsDemo.hero.title1': {
+    en: 'A software that reads',
+    fr: 'Un logiciel qui lit',
+    hu: 'Egy szoftver, amely olvas',
+  },
+  'reviewsDemo.hero.titleAccent': {
+    en: 'every review for you.',
+    fr: 'chaque avis pour vous.',
+    hu: 'minden véleményt Ön helyett.',
+  },
+  'reviewsDemo.hero.sub': {
+    en: 'NateSystem · Reviews is a review intelligence product. It scores each review on six aspects, drafts responses in your brand voice, and turns the data into a 90-day action plan. The platform is live with mock data — request access to try it.',
+    fr: 'NateSystem · Reviews est un produit d\'intelligence avis. Il note chaque avis sur six dimensions, génère des réponses dans votre ton, et transforme les données en plan d\'action 90 jours. La plateforme tourne avec des données fictives — demandez l\'accès pour l\'essayer.',
+    hu: 'A NateSystem · Reviews egy vélemény-intelligencia termék. Hat szempont alapján pontoz minden véleményt, válaszokat fogalmaz az Ön márkahangján, és az adatokból 90 napos akciótervet készít. A platform él fiktív adatokkal — kérje a hozzáférést a kipróbáláshoz.',
+  },
+  'reviewsDemo.hero.ctaPrimary': {
+    en: 'Request demo access',
+    fr: 'Demander accès démo',
+    hu: 'Demó hozzáférés kérése',
+  },
+  'reviewsDemo.hero.ctaGhost': {
+    en: 'See what\'s inside',
+    fr: 'Voir ce qu\'il y a dedans',
+    hu: 'Nézze meg, mi van benne',
+  },
+  'reviewsDemo.hero.note': {
+    en: 'Demo runs on mock data · Access granted within 24h',
+    fr: 'Démo sur données fictives · Accès sous 24h',
+    hu: 'Demó fiktív adatokkal · Hozzáférés 24 órán belül',
+  },
+  'reviewsDemo.hero.imgAlt': {
+    en: 'Reputation score dashboard — the home view of the Reviews product',
+    fr: 'Tableau de bord — vue d\'accueil du produit Reviews',
+    hu: 'Reputációs pontszám irányítópult — a Reviews termék főnézete',
+  },
+
+  // What's inside — 3 feature cards (replaces problem/cost framing)
+  'reviewsDemo.inside.kicker': { en: 'INSIDE THE DEMO', fr: 'DANS LA DÉMO', hu: 'A DEMÓBAN' },
+  'reviewsDemo.inside.title1': { en: 'Three modules you can', fr: 'Trois modules que vous pouvez', hu: 'Három modul, amit Ön' },
+  'reviewsDemo.inside.titleAccent': { en: 'click through.', fr: 'parcourir au clic.', hu: 'végigkattinthat.' },
+  'reviewsDemo.inside.a.label': { en: '01 · Aspect analysis', fr: '01 · Analyse par aspects', hu: '01 · Szempont-elemzés' },
+  'reviewsDemo.inside.a.desc': {
+    en: 'Every review broken down across food, service, ambiance, value, hygiene, speed. See exactly what customers praise and what they complain about.',
+    fr: 'Chaque avis décomposé en cuisine, service, ambiance, rapport qualité-prix, hygiène, rapidité. Voyez précisément ce qui est loué et ce qui est critiqué.',
+    hu: 'Minden vélemény lebontva étel, kiszolgálás, hangulat, ár-érték, higiénia, gyorsaság szerint. Pontosan lássa, mit dicsérnek és mit kifogásolnak.',
+  },
+  'reviewsDemo.inside.b.label': { en: '02 · Response agent', fr: '02 · Agent de réponse', hu: '02 · Válasz-ügynök' },
+  'reviewsDemo.inside.b.desc': {
+    en: 'A SmartReview agent drafts a response per review in your configured brand voice. You approve, edit, or regenerate — never start from a blank box.',
+    fr: 'Un agent SmartReview rédige une réponse par avis dans votre ton de marque. Vous validez, éditez ou régénérez — plus jamais de page blanche.',
+    hu: 'A SmartReview ügynök minden véleményre választ fogalmaz az Ön beállított márkahangján. Ön jóváhagyja, szerkeszti vagy újragenerálja — soha nem üres dobozból.',
+  },
+  'reviewsDemo.inside.c.label': { en: '03 · 90-day plan', fr: '03 · Plan 90 jours', hu: '03 · 90 napos terv' },
+  'reviewsDemo.inside.c.desc': {
+    en: 'The platform turns the patterns it finds into a 90-day action plan: what to fix first, where the impact lives, how to track it.',
+    fr: 'La plateforme transforme les patterns détectés en plan d\'action 90 jours : quoi corriger en premier, où est l\'impact, comment le suivre.',
+    hu: 'A platform a felismert mintákból 90 napos akciótervet készít: mit javítson először, hol van a hatás, hogyan kövesse.',
+  },
+
+  // Aspect section (kept, repurposed — no more "we'll do it for you")
+  'reviewsDemo.aspect.kicker': { en: 'AI ANALYSIS', fr: 'ANALYSE IA', hu: 'MI-ELEMZÉS' },
+  'reviewsDemo.aspect.title': {
+    en: 'Every review, scored on six dimensions.',
+    fr: 'Chaque avis, noté sur six dimensions.',
+    hu: 'Minden vélemény hat szempontból pontozva.',
+  },
+  'reviewsDemo.aspect.body': {
+    en: 'The platform reads the text of each review and rates food, service, ambiance, value, hygiene, and speed. Aggregate scores roll up to a reputation index you can track week over week.',
+    fr: 'La plateforme lit chaque avis et note cuisine, service, ambiance, rapport qualité-prix, hygiène et rapidité. Les scores agrégés alimentent un indice de réputation suivi semaine après semaine.',
+    hu: 'A platform elolvassa minden vélemény szövegét, és pontozza az ételt, kiszolgálást, hangulatot, ár-értéket, higiéniát és gyorsaságot. Az aggregált pontszámok hétről hétre követhető reputációs indexet adnak.',
+  },
+  'reviewsDemo.aspect.imgCaption': {
+    en: 'Aspect breakdown — live capture from the demo, real partner data anonymised.',
+    fr: 'Décomposition par aspects — capture live de la démo, données réelles anonymisées.',
+    hu: 'Szempontok szerinti bontás — élő képernyőkép a demóból, valódi adat anonimizálva.',
+  },
+
+  // Response agent section
+  'reviewsDemo.respond.kicker': { en: 'RESPONSE AGENT', fr: 'AGENT DE RÉPONSE', hu: 'VÁLASZ-ÜGYNÖK' },
+  'reviewsDemo.respond.title1': { en: 'A response agent', fr: 'Un agent de réponse', hu: 'Egy válasz-ügynök,' },
+  'reviewsDemo.respond.titleAccent': { en: 'configured to your voice.', fr: 'configuré à votre ton.', hu: 'az Ön hangjára szabva.' },
+  'reviewsDemo.respond.body': {
+    en: 'Plug in your brand voice, a system prompt, and a few example replies. The agent drafts a response per review and learns from your edits — so you spend seconds, not minutes, per review.',
+    fr: 'Définissez votre ton de marque, un system prompt et quelques exemples de réponses. L\'agent rédige une réponse par avis et apprend de vos modifications — vous passez quelques secondes, pas quelques minutes, par avis.',
+    hu: 'Adja meg a márkahangját, egy rendszer-promptot és pár példaválaszt. Az ügynök véleményenként választ fogalmaz, és tanul a módosításaiból — másodperceket tölt véleményenként, nem perceket.',
+  },
+  'reviewsDemo.respond.footnote': {
+    en: 'OPENAI · ANTHROPIC · PRIVATE BY DEFAULT',
+    fr: 'OPENAI · ANTHROPIC · PRIVÉ PAR DÉFAUT',
+    hu: 'OPENAI · ANTHROPIC · ALAPÉRTELMEZETT ADATVÉDELEM',
+  },
+  'reviewsDemo.respond.imgCaption': {
+    en: 'Response agent configuration — brand voice, system prompt, learned examples.',
+    fr: 'Configuration de l\'agent — ton de marque, system prompt, exemples appris.',
+    hu: 'Válasz-ügynök beállítás — márkahang, rendszer-prompt, tanult példák.',
+  },
+
+  // 90-day plan section (replaces "deliverable" / "we deliver")
+  'reviewsDemo.roadmap.kicker': { en: 'ACTION PLAN', fr: 'PLAN D\'ACTION', hu: 'AKCIÓTERV' },
+  'reviewsDemo.roadmap.title1': { en: 'From signal to', fr: 'Du signal à', hu: 'A jelektől a' },
+  'reviewsDemo.roadmap.titleAccent': { en: 'a 90-day plan.', fr: 'un plan 90 jours.', hu: '90 napos tervig.' },
+  'reviewsDemo.roadmap.body1': {
+    en: 'The product clusters the recurring complaints and praises into themes, then proposes a 90-day plan: what to fix in the first 30 days, what to test next, what to measure.',
+    fr: 'Le produit regroupe les critiques et compliments récurrents en thèmes, puis propose un plan 90 jours : quoi corriger les 30 premiers jours, quoi tester ensuite, quoi mesurer.',
+    hu: 'A termék témákba sorolja az ismétlődő kritikákat és dicséreteket, majd 90 napos tervet javasol: mit javítson az első 30 napban, mit teszteljen utána, mit mérjen.',
+  },
+  'reviewsDemo.roadmap.body2': {
+    en: 'You stay the owner. The software does the reading, the scoring, and the drafting — you keep the decisions.',
+    fr: 'Vous restez propriétaire. Le logiciel lit, note et rédige — vous gardez les décisions.',
+    hu: 'Ön marad a tulajdonos. A szoftver olvas, pontoz, fogalmaz — Önnél maradnak a döntések.',
+  },
+  'reviewsDemo.roadmap.imgCaption': {
+    en: '90-day action plan generated from real review data.',
+    fr: 'Plan d\'action 90 jours généré depuis des avis réels.',
+    hu: '90 napos akcióterv valódi vélemény-adatokból.',
+  },
+
+  // Live evidence (full-width) — kept, less salesy caption
+  'reviewsDemo.live.kicker': { en: 'INSIDE A SINGLE REVIEW', fr: 'À L\'INTÉRIEUR D\'UN AVIS', hu: 'EGY VÉLEMÉNYEN BELÜL' },
+  'reviewsDemo.live.title1': { en: 'One review,', fr: 'Un avis,', hu: 'Egy vélemény,' },
+  'reviewsDemo.live.titleAccent': { en: 'fully decomposed.', fr: 'entièrement décomposé.', hu: 'teljesen lebontva.' },
+  'reviewsDemo.live.imgCaption': {
+    en: 'Single review view — six-aspect scores, AI summary, response draft.',
+    fr: 'Vue d\'un avis — scores six dimensions, résumé IA, brouillon de réponse.',
+    hu: 'Egyetlen vélemény nézet — hat szempont pontszám, MI összegzés, válaszvázlat.',
+  },
+
+  // How the demo works — 4 steps (replaces agency onboarding)
+  'reviewsDemo.how.kicker': { en: 'HOW THE DEMO WORKS', fr: 'COMMENT MARCHE LA DÉMO', hu: 'HOGYAN MŰKÖDIK A DEMÓ' },
+  'reviewsDemo.how.title1': { en: 'From form to', fr: 'Du formulaire à', hu: 'Az űrlaptól' },
+  'reviewsDemo.how.titleAccent': { en: 'a working session.', fr: 'une session live.', hu: 'az élő munkamenetig.' },
+  'reviewsDemo.how.s1.title': { en: 'You request access', fr: 'Vous demandez l\'accès', hu: 'Ön hozzáférést kér' },
+  'reviewsDemo.how.s1.desc': {
+    en: 'Fill the short form below. Name, email, role, sector — nothing else.',
+    fr: 'Remplissez le court formulaire ci-dessous. Prénom, email, rôle, secteur — rien d\'autre.',
+    hu: 'Töltse ki az alábbi rövid űrlapot. Név, e-mail, szerep, ágazat — semmi több.',
+  },
+  'reviewsDemo.how.s2.title': { en: 'I review the request', fr: 'Je relis la demande', hu: 'Átnézem a kérést' },
+  'reviewsDemo.how.s2.desc': {
+    en: 'I read it myself the same day. No SDR, no automated drip, no shifting calendar holds.',
+    fr: 'Je la lis moi-même dans la journée. Pas de SDR, pas de drip automatique, pas d\'agenda mouvant.',
+    hu: 'Még aznap személyesen elolvasom. Nincs SDR, nincs automatikus drip, nincs csúszó naptár.',
+  },
+  'reviewsDemo.how.s3.title': { en: 'You get the demo link', fr: 'Vous recevez le lien démo', hu: 'Megkapja a demó-linket' },
+  'reviewsDemo.how.s3.desc': {
+    en: 'A signed link to the live demo (mock data from a partner restaurant) lands in your inbox, usually within 24h.',
+    fr: 'Un lien signé vers la démo live (données fictives d\'un restaurant partenaire) arrive en boîte, généralement sous 24h.',
+    hu: 'Egy aláírt link az élő demóhoz (egy partnervendéglő fiktív adataival) általában 24 órán belül érkezik.',
+  },
+  'reviewsDemo.how.s4.title': { en: 'We talk if it fits', fr: 'On en parle si ça colle', hu: 'Beszélgetünk, ha passzol' },
+  'reviewsDemo.how.s4.desc': {
+    en: 'After you\'ve clicked through, you decide if it\'s worth a conversation. No pressure either way.',
+    fr: 'Après votre tour du produit, vous décidez si ça vaut une conversation. Aucune pression.',
+    hu: 'Miután körbenézett a terméken, eldönti, megér-e egy beszélgetést. Semmi nyomás.',
+  },
+
+  // FAQ (kept, but reworked — no more pricing/agency questions)
+  'reviewsDemo.faq.kicker': { en: 'FREQUENT QUESTIONS', fr: 'QUESTIONS FRÉQUENTES', hu: 'GYAKORI KÉRDÉSEK' },
+  'reviewsDemo.faq.title1': { en: 'About the demo', fr: 'À propos de la démo', hu: 'A demóról' },
+  'reviewsDemo.faq.titleAccent': { en: '& the product.', fr: '& du produit.', hu: 'és a termékről.' },
+  'reviewsDemo.faq.q1': { en: 'Is the demo on real data?', fr: 'La démo est-elle sur des données réelles ?', hu: 'Valódi adatokon fut a demó?' },
+  'reviewsDemo.faq.a1': {
+    en: 'No. The demo runs on anonymised review data from a partner restaurant — about 200 imported reviews. Same engine, mock account, no risk to your own data.',
+    fr: 'Non. La démo tourne sur des avis anonymisés d\'un restaurant partenaire — environ 200 avis importés. Même moteur, compte fictif, aucun risque pour vos propres données.',
+    hu: 'Nem. A demó egy partnervendéglő anonimizált vélemény-adatain fut — körülbelül 200 importált véleményen. Ugyanaz a motor, fiktív fiók, nincs kockázat a saját adataira.',
+  },
+  'reviewsDemo.faq.q2': { en: 'How long does access last?', fr: 'Combien de temps dure l\'accès ?', hu: 'Meddig tart a hozzáférés?' },
+  'reviewsDemo.faq.a2': {
+    en: 'Indefinitely for now. You get a signed link you can come back to. If we end up working together, you move to your own instance.',
+    fr: 'Indéfiniment pour l\'instant. Vous recevez un lien signé sur lequel vous pouvez revenir. Si on travaille ensemble, vous passez sur votre propre instance.',
+    hu: 'Egyelőre korlátlan ideig. Aláírt linket kap, amelyhez bármikor visszatérhet. Ha végül együttműködünk, áttér a saját példányára.',
+  },
+  'reviewsDemo.faq.q3': { en: 'Is this a SaaS I can buy today?', fr: 'C\'est un SaaS achetable aujourd\'hui ?', hu: 'Ez egy ma megvásárolható SaaS?' },
+  'reviewsDemo.faq.a3': {
+    en: 'Not yet self-serve. The product is real and runs in production for partner restaurants. If you want a live instance on your data, talk to me after the demo.',
+    fr: 'Pas encore en self-serve. Le produit est réel et tourne en production pour des restaurants partenaires. Si vous voulez une instance live sur vos données, parlons-en après la démo.',
+    hu: 'Még nem önkiszolgáló. A termék valós, és élesben működik partnervendéglőknél. Ha élő példányt szeretne a saját adataival, a demó után beszéljünk.',
+  },
+  'reviewsDemo.faq.q4': { en: 'Will you spam me?', fr: 'Allez-vous me spammer ?', hu: 'Fognak spammelni?' },
+  'reviewsDemo.faq.a4': {
+    en: 'No. I send the link, and one short follow-up after a week. Newsletter is opt-in, unsubscribe in one click.',
+    fr: 'Non. J\'envoie le lien, puis une courte relance après une semaine. La newsletter est opt-in, désabonnement en un clic.',
+    hu: 'Nem. Elküldöm a linket, és egy hét múlva egy rövid emlékeztetőt. A hírlevél opt-in, leiratkozás egy kattintással.',
+  },
+  'reviewsDemo.faq.q5': { en: 'Who built this?', fr: 'Qui a construit ça ?', hu: 'Ki építette ezt?' },
+  'reviewsDemo.faq.a5': {
+    en: 'NateSystem — an internal-software studio. Reviews is one of the products we build for our own catalog. If we work with you, your instance is built and operated by the same team.',
+    fr: 'NateSystem — un studio de logiciel interne. Reviews est un des produits qu\'on construit pour notre propre catalogue. Si on travaille avec vous, votre instance est construite et exploitée par la même équipe.',
+    hu: 'A NateSystem — egy belsőszoftver-stúdió. A Reviews egyike a saját katalógusunkba épített termékeknek. Ha együttműködünk, az Ön példányát ugyanaz a csapat építi és üzemelteti.',
+  },
+
+  // Final CTA ribbon (replaces "let us run it")
+  'reviewsDemo.finalCta.title1': { en: 'See the product.', fr: 'Voyez le produit.', hu: 'Nézze meg a terméket.' },
+  'reviewsDemo.finalCta.titleAccent': {
+    en: 'Make your own call.',
+    fr: 'Faites votre propre choix.',
+    hu: 'Döntse el saját maga.',
+  },
+  'reviewsDemo.finalCta.cta': { en: 'Request demo access', fr: 'Demander accès démo', hu: 'Demó hozzáférés kérése' },
+  'reviewsDemo.stickyCta': { en: 'Request demo access', fr: 'Demander accès démo', hu: 'Demó hozzáférés' },
+
+  // DemoRequestModal copy (reusable)
+  'demoRequest.kicker': { en: 'DEMO REQUEST', fr: 'DEMANDE D\'ACCÈS', hu: 'DEMÓ-KÉRÉS' },
+  'demoRequest.intro': {
+    en: 'Four fields, no calendar. I\'ll send the access link within 24 hours.',
+    fr: 'Quatre champs, pas d\'agenda. J\'envoie le lien d\'accès sous 24 heures.',
+    hu: 'Négy mező, semmi naptár. 24 órán belül elküldöm a hozzáférési linket.',
+  },
+  'demoRequest.field.firstname': { en: 'First name', fr: 'Prénom', hu: 'Keresztnév' },
+  'demoRequest.field.firstname.placeholder': { en: 'Your first name', fr: 'Ton prénom', hu: 'Az Ön keresztneve' },
+  'demoRequest.field.email': { en: 'Work email', fr: 'Email professionnel', hu: 'Munkahelyi e-mail' },
+  'demoRequest.field.role': { en: 'Your role', fr: 'Ton rôle', hu: 'Az Ön szerepe' },
+  'demoRequest.field.role.placeholder': { en: 'Select your role', fr: 'Sélectionne ton rôle', hu: 'Válassza ki a szerepét' },
+  'demoRequest.field.sector': { en: 'Your sector', fr: 'Ton secteur', hu: 'Az Ön ágazata' },
+  'demoRequest.field.sector.placeholder': { en: 'Select your sector', fr: 'Sélectionne ton secteur', hu: 'Válassza ki az ágazatát' },
+  'demoRequest.field.newsletter': {
+    en: 'Send me the Scale Minute — NateSystem\'s weekly note',
+    fr: 'Recevoir la Scale Minute — newsletter hebdo NateSystem',
+    hu: 'Kérem a Scale Minute hetilevelet a NateSystemtől',
+  },
+  'demoRequest.submit': { en: 'Request access', fr: 'Demander l\'accès', hu: 'Hozzáférés kérése' },
+  'demoRequest.submitting': { en: 'Sending…', fr: 'Envoi…', hu: 'Küldés…' },
+  'demoRequest.error': { en: 'Something went wrong. Try again.', fr: 'Une erreur est survenue. Réessaie.', hu: 'Hiba történt. Próbálja újra.' },
+  'demoRequest.footnote': {
+    en: 'No spam · 1-click unsubscribe · Reply within 24h',
+    fr: 'Pas de spam · Désabonnement 1 clic · Réponse sous 24h',
+    hu: 'Nincs spam · Egy kattintásos leiratkozás · Válasz 24 órán belül',
+  },
+  'demoRequest.success.title': {
+    en: 'Got it. Check your inbox in the next 24h.',
+    fr: 'C\'est noté. Surveille ta boîte dans les 24 prochaines heures.',
+    hu: 'Megvan. Ellenőrizze a postafiókját a következő 24 órában.',
+  },
+  'demoRequest.success.body': {
+    en: 'I read every request myself and send the demo link from my own address. If you don\'t see anything in 24h, check spam.',
+    fr: 'Je lis chaque demande moi-même et j\'envoie le lien démo depuis mon adresse perso. Si rien sous 24h, regarde dans les spams.',
+    hu: 'Minden kérést személyesen olvasok, és a demó-linket a saját címemről küldöm. Ha 24 órán belül nem érkezne meg, nézze meg a spam mappát.',
+  },
 } as const
 
 export type TranslationKey = keyof typeof translations
