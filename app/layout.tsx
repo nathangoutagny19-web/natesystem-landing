@@ -19,20 +19,20 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'NateSystem — Logiciel sur-mesure opéré avec vos agents IA',
+  title: 'NateSystem — Logiciel sur-mesure propulsé par l\'IA',
   description:
-    'Le logiciel sur-mesure qui pilote votre activité, opéré avec vos agents IA. Un poste de commandement unique. Vos données, votre infrastructure, votre code. Pour toujours.',
+    'Le logiciel sur-mesure qui pilote votre activité, propulsé par l\'IA — intelligence artificielle agentique, automatisation, data analytics — là où elle remplace de vraies heures de travail. Vos données, votre infrastructure, votre code.',
   keywords: [
-    'agent IA pour PME',
     'logiciel sur-mesure IA',
-    'infrastructure IA souveraine',
-    'agent IA verticalisé',
+    'IA intégrée logiciel métier',
+    'intelligence artificielle agentique PME',
     'automatisation IA entreprise',
+    'data analytics PME',
+    'infrastructure IA souveraine',
     'command center métier',
     'alternative SaaS PME',
     'NateSystem',
     'Nathan Goutagny',
-    'IA agentique entreprise',
   ],
   authors: [{ name: 'Nathan Goutagny', url: 'https://natesystem.com' }],
   creator: 'Nathan Goutagny',
@@ -49,9 +49,9 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     url: 'https://natesystem.com',
-    title: 'NateSystem — Logiciel sur-mesure opéré avec vos agents IA',
+    title: 'NateSystem — Logiciel sur-mesure propulsé par l\'IA',
     description:
-      'Le logiciel sur-mesure qui pilote votre activité, opéré avec vos agents IA. Vos données, votre infrastructure, votre code.',
+      'Le logiciel sur-mesure qui pilote votre activité, propulsé par l\'IA — agentique, automatisation, data analytics — là où ça compte. Vos données, votre infrastructure, votre code.',
     siteName: 'NateSystem',
     images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'NateSystem' }],
     locale: 'fr_FR',
@@ -59,8 +59,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'NateSystem — Logiciel sur-mesure opéré avec vos agents IA',
-    description: 'Le logiciel sur-mesure qui pilote votre activité, opéré avec vos agents IA.',
+    title: 'NateSystem — Logiciel sur-mesure propulsé par l\'IA',
+    description: 'Le logiciel sur-mesure qui pilote votre activité, propulsé par l\'IA là où ça compte.',
     images: ['/og-image.png'],
   },
 }
