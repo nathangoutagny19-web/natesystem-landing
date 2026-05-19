@@ -718,6 +718,26 @@ export const translations = {
     fr: 'Les démos tournent sur des données fictives. Parlez-moi si vous voulez une vraie version sur vos données.',
     hu: 'A demók fiktív adatokon futnak. Szóljon, ha valós verziót szeretne a saját adataival.',
   },
+
+  // ───────────────────────────────────────────────────────────────
+  // Nav mega-dropdown — Live Demos column
+  // Short titles (one or two words) for the dropdown card; long
+  // descriptions stay in the /tools banner.
+  // ───────────────────────────────────────────────────────────────
+  'mega.demos': { en: 'Live Demos', fr: 'Démos Live', hu: 'Élő demók' },
+  'mega.new': { en: 'NEW', fr: 'NOUVEAU', hu: 'ÚJ' },
+  'demos.actifs.navTitle': { en: 'Asset Management', fr: 'Gestion d\'actifs', hu: 'Eszközkezelés' },
+  'demos.actifs.navDesc': {
+    en: 'IT, vehicles, furniture, machinery — centralised with auto depreciation.',
+    fr: 'Parc IT, véhicules, mobilier, machines — centralisés avec amortissement auto.',
+    hu: 'IT, járművek, bútorok, gépek — automatikus értékcsökkenéssel.',
+  },
+  'demos.stock.navTitle': { en: 'Inventory Platform', fr: 'Plateforme d\'inventaire', hu: 'Készletkezelő platform' },
+  'demos.stock.navDesc': {
+    en: 'Real-time stock, smart reorders, suppliers, barcode-ready.',
+    fr: 'Stock temps réel, réappros intelligents, fournisseurs, codes-barres.',
+    hu: 'Valós idejű készlet, okos újrarendelés, beszállítók, vonalkód.',
+  },
 } as const
 
 export type TranslationKey = keyof typeof translations

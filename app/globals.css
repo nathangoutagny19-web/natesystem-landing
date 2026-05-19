@@ -251,6 +251,15 @@ html.light .nav-bar.nav-scrolled {
 }
 .nav-mega-sm { min-width: 340px; }
 
+/* 3-column variant for the Tools dropdown (Interactive · Demos · Templates) */
+.nav-mega-3col { min-width: 820px; }
+.nav-mega-3col .nav-mega-inner { grid-template-columns: 1fr 1fr 1fr; }
+@media (max-width: 1024px) {
+  /* Below 1024px the mobile menu takes over anyway, but keep the dropdown
+     compact on intermediate sizes just in case */
+  .nav-mega-3col { min-width: 0; max-width: 95vw; }
+}
+
 /* Light mode mega */
 html.light .nav-mega {
   background: #fff; border-color: rgba(0,0,0,0.08);

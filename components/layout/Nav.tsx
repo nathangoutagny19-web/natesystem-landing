@@ -56,6 +56,20 @@ const icons = {
       <path d="M12 20h9" /><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5z" />
     </svg>
   ),
+  laptop: (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="3" y="4" width="18" height="12" rx="2" />
+      <line x1="2" y1="20" x2="22" y2="20" />
+    </svg>
+  ),
+  package: (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M16.5 9.4 7.55 4.24" />
+      <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+      <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+      <line x1="12" y1="22.08" x2="12" y2="12" />
+    </svg>
+  ),
 }
 
 const Chevron = () => (
@@ -108,13 +122,32 @@ export default function Nav() {
               <Link href="/tools" className="nav-link nav-link-dropdown">
                 {t('nav.tools')} <Chevron />
               </Link>
-              <div className="nav-mega">
+              <div className="nav-mega nav-mega-3col">
                 <div className="nav-mega-inner">
                   <div className="nav-mega-col">
                     <p className="nav-mega-label">{t('mega.interactive')}</p>
                     <MegaItem href="/tools/saas-calculator" icon={icons.calculator} title={t('tools.calculator.title')} desc={t('tools.calculator.desc')} />
                     <MegaItem href="/tools/ai-readiness" icon={icons.brain} title={t('tools.quiz.title')} desc={t('tools.quiz.desc')} />
                     <MegaItem href="/tools/calculateur-temps-perdu" icon={icons.clock} title={t('tools.timeCalc.title')} desc={t('tools.timeCalc.desc')} />
+                  </div>
+                  <div className="nav-mega-col">
+                    <p className="nav-mega-label">{t('mega.demos')}</p>
+                    <MegaItem
+                      href="https://actifs.natesystem.com"
+                      icon={icons.laptop}
+                      title={t('demos.actifs.navTitle')}
+                      desc={t('demos.actifs.navDesc')}
+                      external
+                      badge={t('mega.new')}
+                    />
+                    <MegaItem
+                      href="https://stack-stock.natesystem.com"
+                      icon={icons.package}
+                      title={t('demos.stock.navTitle')}
+                      desc={t('demos.stock.navDesc')}
+                      external
+                      badge={t('mega.new')}
+                    />
                   </div>
                   <div className="nav-mega-col">
                     <p className="nav-mega-label">{t('mega.templates')}</p>
@@ -207,6 +240,23 @@ export default function Nav() {
             <MobileLink href="/tools/saas-calculator" onClick={() => setMenuOpen(false)}>{t('tools.calculator.title')}</MobileLink>
             <MobileLink href="/tools/ai-readiness" onClick={() => setMenuOpen(false)}>{t('tools.quiz.title')}</MobileLink>
             <MobileLink href="/tools/calculateur-temps-perdu" onClick={() => setMenuOpen(false)}>{t('tools.timeCalc.title')}</MobileLink>
+            {/* Live demos — external Lovable apps, open in new tab */}
+            <MobileLink
+              href="https://actifs.natesystem.com"
+              external
+              badge={t('mega.new')}
+              onClick={() => setMenuOpen(false)}
+            >
+              {t('demos.actifs.navTitle')}
+            </MobileLink>
+            <MobileLink
+              href="https://stack-stock.natesystem.com"
+              external
+              badge={t('mega.new')}
+              onClick={() => setMenuOpen(false)}
+            >
+              {t('demos.stock.navTitle')}
+            </MobileLink>
             <MobileLink href="/tools" onClick={() => setMenuOpen(false)}>{t('tools.title')}</MobileLink>
           </MobileAccordion>
 
@@ -238,14 +288,68 @@ export default function Nav() {
 
 /* ——— Sub-components ——— */
 
-function MegaItem({ href, icon, title, desc }: { href: string; icon: React.ReactNode; title: string; desc: string }) {
-  return (
-    <Link href={href} className="mega-item">
+function MegaItem({
+  href,
+  icon,
+  title,
+  desc,
+  external,
+  badge,
+}: {
+  href: string
+  icon: React.ReactNode
+  title: string
+  desc: string
+  /** Treat as a plain anchor opening in a new tab (e.g. live demo on another subdomain). */
+  external?: boolean
+  /** Optional pill rendered next to the title — used for NEW marker on live demos. */
+  badge?: string
+}) {
+  const titleNode = (
+    <p className="mega-item-title" style={{ display: 'inline-flex', alignItems: 'center', gap: 8 }}>
+      <span>{title}</span>
+      {badge && (
+        <span
+          className="font-mono"
+          style={{
+            fontSize: 9,
+            letterSpacing: 1.5,
+            textTransform: 'uppercase',
+            padding: '2px 6px',
+            borderRadius: 4,
+            background: 'var(--accent-subtle)',
+            color: 'var(--accent)',
+            fontWeight: 600,
+            lineHeight: 1,
+          }}
+        >
+          {badge}
+        </span>
+      )}
+    </p>
+  )
+
+  const body = (
+    <>
       <span className="mega-item-icon">{icon}</span>
       <div>
-        <p className="mega-item-title">{title}</p>
+        {titleNode}
         <p className="mega-item-desc">{desc}</p>
       </div>
+    </>
+  )
+
+  if (external) {
+    return (
+      <a href={href} className="mega-item" target="_blank" rel="noopener noreferrer">
+        {body}
+      </a>
+    )
+  }
+
+  return (
+    <Link href={href} className="mega-item">
+      {body}
     </Link>
   )
 }
@@ -268,11 +372,69 @@ function MobileAccordion({ label, open, onToggle, children }: { label: string; o
   )
 }
 
-function MobileLink({ href, children, onClick }: { href: string; children: React.ReactNode; onClick: () => void }) {
+function MobileLink({
+  href,
+  children,
+  onClick,
+  external,
+  badge,
+}: {
+  href: string
+  children: React.ReactNode
+  onClick: () => void
+  external?: boolean
+  badge?: string
+}) {
+  const sharedStyle: React.CSSProperties = {
+    fontFamily: 'var(--font-sans)',
+    color: 'var(--text-secondary)',
+    borderBottom: '1px solid var(--border)',
+    textDecoration: 'none',
+    display: 'flex',
+    alignItems: 'center',
+    gap: 10,
+  }
+  const content = (
+    <>
+      <span>{children}</span>
+      {badge && (
+        <span
+          className="font-mono"
+          style={{
+            fontSize: 9,
+            letterSpacing: 1.5,
+            textTransform: 'uppercase',
+            padding: '2px 6px',
+            borderRadius: 4,
+            background: 'var(--accent-subtle)',
+            color: 'var(--accent)',
+            fontWeight: 600,
+            lineHeight: 1,
+          }}
+        >
+          {badge}
+        </span>
+      )}
+    </>
+  )
+
+  if (external) {
+    return (
+      <a
+        href={href}
+        onClick={onClick}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="py-3 text-sm font-light"
+        style={sharedStyle}
+      >
+        {content}
+      </a>
+    )
+  }
   return (
-    <Link href={href} onClick={onClick} className="py-3 text-sm font-light" style={{
-      fontFamily: 'var(--font-sans)', color: 'var(--text-secondary)',
-      borderBottom: '1px solid var(--border)', textDecoration: 'none', display: 'block',
-    }}>{children}</Link>
+    <Link href={href} onClick={onClick} className="py-3 text-sm font-light" style={sharedStyle}>
+      {content}
+    </Link>
   )
 }
