@@ -26,17 +26,17 @@
 import { useLang } from '@/components/providers/LangProvider'
 
 type ClientRef =
-  | { name: string; type: 'logo'; src: string }
-  | { name: string; type: 'wordmark' }
+  | { name: string; type: 'logo'; src: string; href: string }
+  | { name: string; type: 'wordmark'; href: string }
 
 // Vendéglátás Menedzsment Kft. is the Hungarian hospitality reference —
 // kept as wordmark until the official logo lands. When `/public/logos/
 // vendeglatas.png` arrives, flip `type: 'wordmark'` to `type: 'logo'`
 // and add the `src`.
 const clients: ClientRef[] = [
-  { name: 'Chromosome', type: 'logo', src: '/logos/chromosome.png' },
-  { name: 'Université Jean Monnet', type: 'logo', src: '/logos/ujm.png' },
-  { name: 'Vendéglátás Menedzsment Kft.', type: 'wordmark' },
+  { name: 'Chromosome', type: 'logo', src: '/logos/chromosome.png', href: 'https://chromosome-saint-etienne.fr/' },
+  { name: 'Université Jean Monnet', type: 'logo', src: '/logos/ujm.png', href: 'https://www.univ-st-etienne.fr/fr/index.html' },
+  { name: 'Vendéglátás Menedzsment Kft.', type: 'wordmark', href: 'https://vendeglatasmenedzsment.hu/' },
 ]
 
 export default function ClientsBar() {
@@ -76,18 +76,26 @@ export default function ClientsBar() {
         <ul className="clients-row">
           {clients.map((c) => (
             <li key={c.name} className="clients-item">
-              {c.type === 'logo' ? (
-                /* eslint-disable-next-line @next/next/no-img-element */
-                <img
-                  src={c.src}
-                  alt={c.name}
-                  className="clients-logo"
-                />
-              ) : (
-                <span className="clients-wordmark font-serif italic">
-                  {c.name}
-                </span>
-              )}
+              <a
+                href={c.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={c.name}
+                className="clients-link"
+              >
+                {c.type === 'logo' ? (
+                  /* eslint-disable-next-line @next/next/no-img-element */
+                  <img
+                    src={c.src}
+                    alt={c.name}
+                    className="clients-logo"
+                  />
+                ) : (
+                  <span className="clients-wordmark font-serif italic">
+                    {c.name}
+                  </span>
+                )}
+              </a>
             </li>
           ))}
         </ul>
@@ -118,6 +126,15 @@ export default function ClientsBar() {
           color: #9CA3AF;
           opacity: 0.78;
           transition: color 200ms ease-out, opacity 200ms ease-out, transform 200ms ease-out;
+        }
+        .clients-link {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          height: 100%;
+          color: inherit;
+          text-decoration: none;
         }
         .clients-item:hover {
           color: var(--text);
