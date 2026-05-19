@@ -158,6 +158,7 @@ export const translations = {
 
   // Footer
   'footer.tagline': { en: 'Custom software · Integrated AI · Owned by you', fr: 'Logiciel sur-mesure · IA intégrée · Vous appartient', hu: 'Egyedi szoftver · Beépített MI · Az Öné' },
+  'footer.contactLabel': { en: 'Get in touch', fr: 'Nous contacter', hu: 'Kapcsolatfelvétel' },
   'footer.legal': { en: 'Legal notice', fr: 'Mentions légales', hu: 'Jogi nyilatkozat' },
 
   // Footer column headers (Dec 2026 — added for SEO maillage)

@@ -63,6 +63,34 @@ export default function Footer() {
           <p className="font-sans" style={{ fontSize: '12px', color: 'var(--text-muted)', maxWidth: '240px', fontWeight: 300, lineHeight: 1.6 }}>
             {t('footer.tagline')}
           </p>
+          <div className="flex flex-col gap-1" style={{ marginTop: 8 }}>
+            <p
+              className="font-mono"
+              style={{
+                fontSize: 10,
+                letterSpacing: 2,
+                textTransform: 'uppercase',
+                color: 'var(--text)',
+                fontWeight: 600,
+              }}
+            >
+              {t('footer.contactLabel')}
+            </p>
+            <a
+              href="mailto:nathan@natesystem.com"
+              className="font-sans footer-link"
+              style={{
+                fontSize: '13px',
+                color: 'var(--text-muted)',
+                textDecoration: 'none',
+                fontWeight: 300,
+                lineHeight: 1.6,
+                transition: 'color 0.2s',
+              }}
+            >
+              nathan@natesystem.com
+            </a>
+          </div>
         </div>
 
         {/* Sections column */}
