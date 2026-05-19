@@ -366,6 +366,10 @@ html.light .lang-option:hover { background: #f5f5f0; }
 html.light .theme-toggle { background: #eeeee9; }
 html.light .theme-toggle-option.active { background: #fff; }
 
+/* ——— FOOTER LINKS ——— */
+.footer-link { transition: color 0.2s; }
+.footer-link:hover { color: var(--text) !important; }
+
 /* ——— MOBILE CTA ——— */
 .mobile-cta {
   display: none; position: fixed; bottom: 0; left: 0; right: 0;

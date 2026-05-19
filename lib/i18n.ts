@@ -160,6 +160,26 @@ export const translations = {
   'footer.tagline': { en: 'Custom software · Integrated AI · Owned by you', fr: 'Logiciel sur-mesure · IA intégrée · Vous appartient', hu: 'Egyedi szoftver · Beépített MI · Az Öné' },
   'footer.legal': { en: 'Legal notice', fr: 'Mentions légales', hu: 'Jogi nyilatkozat' },
 
+  // Footer column headers (Dec 2026 — added for SEO maillage)
+  'footer.col.sections': { en: 'Sections', fr: 'Sections', hu: 'Szekciók' },
+  'footer.col.toolsDemos': { en: 'Tools & demos', fr: 'Outils & démos', hu: 'Eszközök és demók' },
+  'footer.col.resources': { en: 'Resources', fr: 'Ressources', hu: 'Források' },
+  'footer.col.legal': { en: 'Legal', fr: 'Légal', hu: 'Jogi' },
+
+  // Footer link labels — only those not already covered by nav/tools/resources keys
+  'footer.link.home': { en: 'Home', fr: 'Accueil', hu: 'Főoldal' },
+  'footer.link.services': { en: 'Services', fr: 'Prestations', hu: 'Szolgáltatások' },
+  'footer.link.problem': { en: 'The problem', fr: 'Le problème', hu: 'A probléma' },
+  'footer.link.process': { en: 'Process', fr: 'Process', hu: 'Folyamat' },
+  'footer.link.results': { en: 'Results', fr: 'Résultats', hu: 'Eredmények' },
+  'footer.link.contact': { en: 'Contact', fr: 'Contact', hu: 'Kapcsolat' },
+  'footer.link.allTools': { en: 'All tools', fr: 'Tous les outils', hu: 'Összes eszköz' },
+  'footer.link.restaurantAudit': { en: 'Restaurant audit', fr: 'Audit restaurants', hu: 'Vendéglátós audit' },
+  'footer.link.reviewsDemo': { en: 'Reviews (demo)', fr: 'Reviews (démo)', hu: 'Reviews (demó)' },
+  'footer.link.actifsDemo': { en: 'Actifs (demo)', fr: 'Actifs (démo)', hu: 'Actifs (demó)' },
+  'footer.link.stockDemo': { en: 'Stock (demo)', fr: 'Stock (démo)', hu: 'Stock (demó)' },
+  'footer.link.book': { en: 'Book a call', fr: 'Réserver un appel', hu: 'Hívás foglalása' },
+
   // Tools page
   'tools.title': { en: 'Free Tools', fr: 'Outils Gratuits', hu: 'Ingyenes eszközök' },
   'tools.hero.title': { en: 'The best AI resources\nfor your team.', fr: 'Les meilleures ressources IA\npour ton équipe.', hu: 'A legjobb MI-források\ncsapata számára.' },
