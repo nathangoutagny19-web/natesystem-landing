@@ -727,12 +727,12 @@
 }
 
 .pb-card-title {
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-size: 22px;
-  font-weight: 400;
-  line-height: 1.15;
-  margin-bottom: 12px;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 1.45;
+  color: var(--pb-dark);
+  margin-bottom: 16px;
   flex: 1;
 }
 

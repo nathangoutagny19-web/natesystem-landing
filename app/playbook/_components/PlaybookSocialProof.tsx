@@ -56,7 +56,7 @@ export default function PlaybookSocialProof() {
               Fondateur · Logiciel sur-mesure · IA appliquée
             </div>
             <div className="pb-bio-loc">
-              Belleville-en-Beaujolais
+              Lyon
               <a
                 className="pb-bio-link"
                 href="https://www.linkedin.com/in/nathan-goutagny"

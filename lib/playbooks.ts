@@ -53,3 +53,32 @@ const SECTOR_LABELS: Record<string, string> = {
 export function sectorLabelFor(slug: string): string {
   return SECTOR_LABELS[slug] ?? slug
 }
+
+const CARD_TAGLINES: Record<string, string> = {
+  'hoteliers-independants':
+    'Où l’IA libère vraiment du temps dans une exploitation hôtelière — sans toucher à l’expérience client.',
+  'avocats-affaires':
+    'Comment intégrer l’IA dans un cabinet sans toucher au secret professionnel ni au RIN.',
+  'nettoyage-proprete-b2b':
+    'Alléger le dispatch et sécuriser la loi AGEC 2026 sans recruter en exploitation.',
+  'installateurs-photovoltaique':
+    'Alléger l’admin chantier et pré-remplir Consuel et MaPrimeRénov’ automatiquement.',
+  'installateurs-clim-pac':
+    'Piloter la maintenance préventive et la conformité F-Gas sans recruter pour l’admin.',
+  'expertise-comptable':
+    'Remonter la chaîne saisie → révision → conseil avant la facturation électronique 2026.',
+  'architectes':
+    'Absorber la coordination, les comptes-rendus et les notes d’honoraires de votre agence.',
+  'agences-immobilieres':
+    'Qualifier leads SeLoger et estimations DVF sans toucher à votre conformité Tracfin.',
+  'centres-formation':
+    'Pré-remplir les dossiers OPCO et collecter les 32 indicateurs Qualiopi en continu.',
+  'securite-gardiennage':
+    'Générer le planning quotidien et suivre CNAPS, paie 3043, AO — en sous-effectif chronique.',
+  'traiteurs-evenementiel':
+    'Chiffrer plus vite les devis sur-mesure et produire les fiches techniques avec allergènes INCO.',
+}
+
+export function cardTaglineFor(slug: string): string {
+  return CARD_TAGLINES[slug] ?? ''
+}

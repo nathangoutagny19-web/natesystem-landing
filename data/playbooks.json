@@ -5,11 +5,11 @@
       "title": "Le Playbook IA pour Hôteliers Indépendants",
       "pdfPath": "/playbooks/01-hoteliers-independants.pdf",
       "mockupPath": "/playbook-mockups/01-hoteliers-independants.png",
-      "metaDescription": "Comment retirer 20 heures d'admin par semaine de votre hôtel indépendant — sans franchise, sans cabinet de conseil. Playbook gratuit, 30 pages, PDF.",
+      "metaDescription": "Un guide pratique pour utiliser l'IA dans un hôtel indépendant : où elle libère vraiment du temps, ce qu'il faut ignorer, comment passer de l'idée au plan concret. Playbook gratuit, 30 pages, PDF.",
       "hero": {
         "eyebrow": "PLAYBOOK GRATUIT · 30 PAGES · PDF",
-        "h1": "Retirez 22 heures d'admin par semaine de votre hôtel.",
-        "subtitle": "Le playbook IA pour hôteliers indépendants français. Sans franchise, sans cabinet de conseil, sans SaaS supplémentaire. Édition 2026."
+        "h1": "Un playbook IA, pratique, pour les hôteliers indépendants.",
+        "subtitle": "Un guide clair et sans buzzword pour utiliser l'IA là où elle libère vraiment du temps dans votre exploitation — sans franchise, sans cabinet de conseil, sans toucher à l'expérience client."
       },
       "bullets": [
         { "icon": "Clock", "title": "Le vrai problème opérationnel", "text": "Pourquoi 25 heures/semaine partent en admin que l'IA peut prendre en charge dès demain." },
@@ -24,11 +24,11 @@
       "title": "Le Playbook IA pour Cabinets d'Avocats d'Affaires",
       "pdfPath": "/playbooks/02-avocats-affaires.pdf",
       "mockupPath": "/playbook-mockups/02-avocats-affaires.png",
-      "metaDescription": "Comment récupérer 40 % de temps facturable dans votre cabinet d'avocats, sans toucher au secret professionnel. Playbook gratuit, 30 pages, PDF.",
+      "metaDescription": "Un guide pratique pour intégrer l'IA dans un cabinet d'avocats d'affaires sans toucher au secret professionnel ni au RIN. Conforme à la déontologie, hébergement France, prêt pour la facturation électronique 2026. Playbook gratuit, 30 pages, PDF.",
       "hero": {
         "eyebrow": "PLAYBOOK GRATUIT · 30 PAGES · PDF",
-        "h1": "Récupérez 40 % de temps facturable dans votre cabinet.",
-        "subtitle": "Le playbook IA pour cabinets d'avocats d'affaires. Conforme au RIN, au secret professionnel et à la facturation électronique 2026."
+        "h1": "Un playbook IA, pratique, pour les cabinets d'avocats d'affaires.",
+        "subtitle": "Un guide concret pour intégrer l'IA dans votre cabinet sans toucher au secret professionnel ni au RIN. Conforme à la déontologie OEC, hébergement France, prêt pour la facturation électronique du 1er septembre 2026."
       },
       "bullets": [
         { "icon": "Clock", "title": "Le grand non-dit de la profession", "text": "Pourquoi 30 à 45 % du temps travaillé n'est jamais facturé. Et comment l'IA corrige ça." },
@@ -43,11 +43,11 @@
       "title": "Le Playbook IA pour Entreprises de Propreté",
       "pdfPath": "/playbooks/03-nettoyage-proprete-b2b.pdf",
       "mockupPath": "/playbook-mockups/03-nettoyage-proprete-b2b.png",
-      "metaDescription": "Comment retirer 20 heures de dispatch et d'admin par semaine de votre entreprise de propreté. Loi AGEC, facturation électronique : restez maître. Playbook gratuit.",
+      "metaDescription": "Un guide pratique pour utiliser l'IA dans une entreprise de propreté B2B : alléger le dispatch, sécuriser la conformité loi AGEC 2026, tenir la marge sous pression salariale. Playbook gratuit, 30 pages, PDF.",
       "hero": {
         "eyebrow": "PLAYBOOK GRATUIT · 30 PAGES · PDF",
-        "h1": "Pilotez 80 agents sur 40 sites sans vous y noyer.",
-        "subtitle": "Le playbook IA pour entreprises de propreté B2B françaises. Loi AGEC 2026, convention 3043, facturation électronique : tout maîtrisé."
+        "h1": "Un playbook IA, pratique, pour les entreprises de propreté B2B.",
+        "subtitle": "Un guide concret pour utiliser l'IA dans une entreprise de propreté française : alléger le planning quotidien, sécuriser la conformité loi AGEC 2026 et convention 3043, tenir la marge sans recruter."
       },
       "bullets": [
         { "icon": "Clock", "title": "26 heures de dispatch par semaine", "text": "Le coût caché du planning quotidien et du re-dispatching qui empêche votre commercial de vendre." },
@@ -62,11 +62,11 @@
       "title": "Le Playbook IA pour Installateurs Photovoltaïques",
       "pdfPath": "/playbooks/04-installateurs-photovoltaique.pdf",
       "mockupPath": "/playbook-mockups/04-installateurs-photovoltaique.png",
-      "metaDescription": "Comment piloter chantiers, SAV et conformité Consuel sans noyer votre dirigeant dans l'admin. MaPrimeRénov', Enedis Connect, EDF OA : tout pré-rempli. Playbook gratuit.",
+      "metaDescription": "Un guide pratique pour intégrer l'IA chez un installateur photovoltaïque : alléger l'admin chantier, pré-remplir Consuel et MaPrimeRénov', sécuriser le SAV. Playbook gratuit, 30 pages, PDF.",
       "hero": {
         "eyebrow": "PLAYBOOK GRATUIT · 30 PAGES · PDF",
-        "h1": "22 heures par semaine récupérées sur l'admin chantier.",
-        "subtitle": "Le playbook IA pour installateurs photovoltaïques français. Consuel, MaPrimeRénov', prime autoconsommation : dossiers pré-remplis automatiquement."
+        "h1": "Un playbook IA, pratique, pour les installateurs photovoltaïques.",
+        "subtitle": "Un guide concret pour utiliser l'IA dans une PME du photovoltaïque français : alléger les démarches chantier, pré-remplir Consuel, MaPrimeRénov' et la prime autoconsommation, sécuriser le SAV — sans toucher à votre ERP."
       },
       "bullets": [
         { "icon": "Clock", "title": "24 démarches par chantier", "text": "Pourquoi le marché PV a explosé +76 % mais que les marges fondent : c'est l'admin qui plombe tout." },
@@ -81,11 +81,11 @@
       "title": "Le Playbook IA pour Installateurs Clim & PAC",
       "pdfPath": "/playbooks/05-installateurs-clim-pac.pdf",
       "mockupPath": "/playbook-mockups/05-installateurs-clim-pac.png",
-      "metaDescription": "Pilotez maintenance préventive, conformité F-Gas et RGE QualiPAC. Coup de pouce chauffage, MaPrimeRénov' Sérénité : dossiers pré-remplis. Playbook gratuit.",
+      "metaDescription": "Un guide pratique pour intégrer l'IA chez un installateur clim/PAC : piloter la maintenance préventive, suivre la conformité F-Gas et RGE QualiPAC, pré-remplir MaPrimeRénov' Sérénité. Playbook gratuit, 30 pages, PDF.",
       "hero": {
         "eyebrow": "PLAYBOOK GRATUIT · 30 PAGES · PDF",
-        "h1": "23 heures par semaine sur la maintenance et la conformité.",
-        "subtitle": "Le playbook IA pour installateurs clim/PAC français. F-Gas, RGE QualiPAC, MaPrimeRénov' Sérénité, Coup de pouce chauffage : tout suivi automatiquement."
+        "h1": "Un playbook IA, pratique, pour les installateurs clim & PAC.",
+        "subtitle": "Un guide concret pour utiliser l'IA dans une PME clim/PAC française : piloter la maintenance préventive, suivre la conformité F-Gas et RGE QualiPAC, pré-remplir MaPrimeRénov' Sérénité et Coup de pouce chauffage — sans recruter pour l'admin."
       },
       "bullets": [
         { "icon": "Clock", "title": "Le marché PAC a doublé en 3 ans", "text": "Et la marge fond. Comment automatiser le planning maintenance et la conformité fluides pour tenir." },
@@ -100,11 +100,11 @@
       "title": "Le Playbook IA pour Cabinets d'Expertise-Comptable",
       "pdfPath": "/playbooks/06-cabinets-audit-expertise.pdf",
       "mockupPath": "/playbook-mockups/06-cabinets-audit-expertise.png",
-      "metaDescription": "Libérez 25 heures par semaine de votre équipe et remontez sur le conseil avant que les fintechs ne prennent vos dossiers. Facturation électronique 2026 maîtrisée. Playbook gratuit.",
+      "metaDescription": "Un guide pratique pour intégrer l'IA dans un cabinet d'expertise-comptable : remonter la chaîne de valeur saisie → révision → conseil, anticiper la facturation électronique 2026, rester conforme OEC. Playbook gratuit, 30 pages, PDF.",
       "hero": {
         "eyebrow": "PLAYBOOK GRATUIT · 30 PAGES · PDF",
-        "h1": "Remontez en valeur avant que les fintechs prennent vos dossiers.",
-        "subtitle": "Le playbook IA pour cabinets d'expertise-comptable. Conforme OEC, hébergement France, facturation électronique 2026 maîtrisée."
+        "h1": "Un playbook IA, pratique, pour les cabinets d'expertise-comptable.",
+        "subtitle": "Un guide concret pour intégrer l'IA dans votre cabinet sans bouger votre logiciel métier : remonter la chaîne saisie → révision → conseil, anticiper la facturation électronique du 1er septembre 2026, rester conforme OEC avec hébergement France."
       },
       "bullets": [
         { "icon": "Clock", "title": "60 % du temps en saisie", "text": "Le métier d'expert-comptable change. Pourquoi la saisie disparaît et le conseil monte en valeur." },
@@ -119,11 +119,11 @@
       "title": "Le Playbook IA pour Cabinets d'Architectes",
       "pdfPath": "/playbooks/07-architectes.pdf",
       "mockupPath": "/playbook-mockups/07-architectes.png",
-      "metaDescription": "Retirez 20 heures de coordination, notes d'honoraires et comptes-rendus par semaine. Pour rester sur le projet, pas sur l'agenda. Playbook gratuit, 30 pages.",
+      "metaDescription": "Un guide pratique pour intégrer l'IA dans un cabinet d'architectes : absorber la coordination, les comptes-rendus, les notes d'honoraires. Compatible Revit, ArchiCAD, RE2020, BIM. Playbook gratuit, 30 pages, PDF.",
       "hero": {
         "eyebrow": "PLAYBOOK GRATUIT · 30 PAGES · PDF",
-        "h1": "20 heures par semaine rendues à la conception.",
-        "subtitle": "Le playbook IA pour cabinets d'architectes. Comptes-rendus auto, notes d'honoraires par phase, BIM, RE2020, facturation électronique."
+        "h1": "Un playbook IA, pratique, pour les cabinets d'architectes.",
+        "subtitle": "Un guide concret pour utiliser l'IA là où elle absorbe vraiment la coordination, les comptes-rendus et les notes d'honoraires de votre agence — pour que les associés restent sur le projet, pas sur l'agenda. Compatible Revit, ArchiCAD, RE2020, BIM."
       },
       "bullets": [
         { "icon": "Clock", "title": "45 % du temps en coordination", "text": "L'architecte moyen gagne moins que son chef de chantier. La cause : 23h/semaine perdues en admin." },
@@ -138,11 +138,11 @@
       "title": "Le Playbook IA pour Agences Immobilières",
       "pdfPath": "/playbooks/08-agences-immo-residentiel.pdf",
       "mockupPath": "/playbook-mockups/08-agences-immo-residentiel.png",
-      "metaDescription": "Doublez les mandats traités sans recruter, sans bouger votre logiciel métier, sans toucher à votre conformité Tracfin. Playbook gratuit, 30 pages, PDF.",
+      "metaDescription": "Un guide pratique pour intégrer l'IA dans une agence immobilière indépendante : qualifier les leads SeLoger/LBC, produire les estimations DVF, sécuriser la conformité Tracfin et Hoguet. Playbook gratuit, 30 pages, PDF.",
       "hero": {
         "eyebrow": "PLAYBOOK GRATUIT · 30 PAGES · PDF",
-        "h1": "Doublez vos mandats traités sans recruter.",
-        "subtitle": "Le playbook IA pour agences immobilières indépendantes. Loi Climat, Tracfin, Hoguet : conformité totale tout en gagnant 20h/semaine par négociateur."
+        "h1": "Un playbook IA, pratique, pour les agences immobilières.",
+        "subtitle": "Un guide concret pour utiliser l'IA dans une agence indépendante : qualifier les leads SeLoger et LBC, produire les estimations DVF, sécuriser la conformité Tracfin, loi Climat et Hoguet — sans bouger votre logiciel métier."
       },
       "bullets": [
         { "icon": "Clock", "title": "Le marché a perdu 20 % de volume", "text": "Les agences qui survivent captent plus de mandats vendeurs et les vendent plus vite. L'IA est le levier." },
@@ -157,11 +157,11 @@
       "title": "Le Playbook IA pour Centres de Formation Qualiopi",
       "pdfPath": "/playbooks/09-centres-formation-qualiopi.pdf",
       "mockupPath": "/playbook-mockups/09-centres-formation-qualiopi.png",
-      "metaDescription": "Pilotez Qualiopi, gérez 200 dossiers OPCO et passez vos audits sans angoisse. 22h/semaine récupérées, preuves collectées en continu. Playbook gratuit.",
+      "metaDescription": "Un guide pratique pour intégrer l'IA dans un organisme de formation Qualiopi : pré-remplir les dossiers OPCO, collecter les preuves des 32 indicateurs en continu, préparer l'audit sereinement. Playbook gratuit, 30 pages, PDF.",
       "hero": {
         "eyebrow": "PLAYBOOK GRATUIT · 30 PAGES · PDF",
-        "h1": "Passez Qualiopi sans angoisse.",
-        "subtitle": "Le playbook IA pour organismes de formation Qualiopi. Dossiers OPCO pré-remplis, 32 indicateurs collectés en continu, conformité tracée automatiquement."
+        "h1": "Un playbook IA, pratique, pour les centres de formation Qualiopi.",
+        "subtitle": "Un guide concret pour utiliser l'IA dans un organisme de formation : pré-remplir les dossiers OPCO (Constructys, Akto, Atlas), collecter les preuves des 32 indicateurs Qualiopi en continu, préparer l'audit 2026 sereinement."
       },
       "bullets": [
         { "icon": "Clock", "title": "27 heures par semaine en admin", "text": "Dossiers OPCO, preuves Qualiopi, programmes sur-mesure, émargements : le métier ploie." },
@@ -176,11 +176,11 @@
       "title": "Le Playbook IA pour Entreprises de Sécurité",
       "pdfPath": "/playbooks/10-securite-gardiennage.pdf",
       "mockupPath": "/playbook-mockups/10-securite-gardiennage.png",
-      "metaDescription": "Pilotez 80 agents sur 40 sites, conformité CNAPS, paie convention 3043, sans recruter. 25 heures par semaine récupérées. Playbook gratuit, 30 pages.",
+      "metaDescription": "Un guide pratique pour intégrer l'IA dans une entreprise de sécurité privée : générer le planning quotidien, suivre la conformité CNAPS, calculer la paie convention 3043. Playbook gratuit, 30 pages, PDF.",
       "hero": {
         "eyebrow": "PLAYBOOK GRATUIT · 30 PAGES · PDF",
-        "h1": "Opérez en sous-effectif chronique sans perdre la qualité.",
-        "subtitle": "Le playbook IA pour entreprises de sécurité privée. CNAPS, convention 3043, JO héritage, facturation électronique : tout sous contrôle."
+        "h1": "Un playbook IA, pratique, pour les entreprises de sécurité privée.",
+        "subtitle": "Un guide concret pour utiliser l'IA en gardiennage et sécurité privée : générer le planning quotidien, suivre la conformité CNAPS, calculer la paie convention 3043 — pour opérer en sous-effectif chronique sans perdre la qualité ni rater d'AO."
       },
       "bullets": [
         { "icon": "Clock", "title": "60 000 postes vacants par an", "text": "Comment dispatcher 80 agents sur 40 sites quand vous refusez 5 % des marchés faute de personnel." },
@@ -195,11 +195,11 @@
       "title": "Le Playbook IA pour Traiteurs & Événementiel",
       "pdfPath": "/playbooks/11-traiteurs-evenementiel.pdf",
       "mockupPath": "/playbook-mockups/11-traiteurs-evenementiel.png",
-      "metaDescription": "Chiffrez 40 devis par semaine, pilotez 12 événements en parallèle, libérez votre chef d'exploitation des fiches techniques. Playbook gratuit, 30 pages.",
+      "metaDescription": "Un guide pratique pour intégrer l'IA chez un traiteur événementiel : chiffrer rapidement les devis sur-mesure, produire les fiches techniques avec allergènes INCO, consolider les commandes fournisseurs. Playbook gratuit, 30 pages, PDF.",
       "hero": {
         "eyebrow": "PLAYBOOK GRATUIT · 30 PAGES · PDF",
-        "h1": "40 devis sur-mesure par semaine, sans recruter.",
-        "subtitle": "Le playbook IA pour traiteurs événementiel français. HACCP, allergènes, facturation 2026 : tout maîtrisé. 20h/semaine rendues à la création."
+        "h1": "Un playbook IA, pratique, pour les traiteurs & événementiel.",
+        "subtitle": "Un guide concret pour utiliser l'IA dans un traiteur événementiel français : chiffrer plus vite les devis sur-mesure, produire les fiches techniques avec allergènes INCO, consolider les commandes fournisseurs — sans recruter en exploitation."
       },
       "bullets": [
         { "icon": "Clock", "title": "+18 % de volume événements", "text": "Le marché a explosé. Mais répondre à 40 devis/semaine demande de libérer votre chef d'exploitation." },
