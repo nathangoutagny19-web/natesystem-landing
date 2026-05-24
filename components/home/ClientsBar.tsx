@@ -44,10 +44,10 @@ export default function ClientsBar() {
 
   const label =
     lang === 'fr'
-      ? 'OPÉRATEURS QUI ONT REMPLACÉ LEUR STACK SAAS'
+      ? 'ILS NOUS FONT CONFIANCE'
       : lang === 'hu'
-        ? 'OPERÁTOROK, AKIK LECSERÉLTÉK SAAS-RENDSZERÜKET'
-        : 'TRUSTED BY OPERATORS REPLACING REAL SAAS'
+        ? 'BIZALMUKAT BENNÜNK HELYEZTÉK'
+        : 'TRUSTED BY'
 
   return (
     <section
