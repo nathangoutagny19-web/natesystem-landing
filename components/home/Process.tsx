@@ -8,9 +8,9 @@ export default function Process() {
   const { t } = useLang()
 
   const steps = [
-    { number: '01', title: t('process.step1'), duration: t('process.step1Duration'), desc: t('process.step1Desc'), highlight: 'Audit Stratégique — 990€ HT' },
-    { number: '02', title: t('process.step2'), duration: t('process.step2Duration'), desc: t('process.step2Desc'), highlight: 'Infrastructure Setup' },
-    { number: '03', title: t('process.step3'), duration: t('process.step3Duration'), desc: t('process.step3Desc'), highlight: 'Licence NateSystem' },
+    { number: '01', title: t('process.step1'), duration: t('process.step1Duration'), desc: t('process.step1Desc'), highlight: t('process.step1Highlight') },
+    { number: '02', title: t('process.step2'), duration: t('process.step2Duration'), desc: t('process.step2Desc'), highlight: t('process.step2Highlight') },
+    { number: '03', title: t('process.step3'), duration: t('process.step3Duration'), desc: t('process.step3Desc'), highlight: t('process.step3Highlight') },
   ]
 
   return (

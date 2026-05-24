@@ -138,6 +138,9 @@ export const translations = {
     fr: 'On déploie sur votre VPS ou votre cloud. On forme vos équipes. On mesure le premier ROI. Ensuite le système devient autonome — et s\'enrichit dans le temps, en apprenant de chaque interaction qui passe par son cerveau.',
     hu: 'Bevezetjük az Ön VPS-én vagy felhőjén. Betanítjuk a csapatait. Megmérjük az első megtérülést. Aztán a rendszer önállóvá válik — és idővel egyre gazdagabb lesz, minden interakcióból tanulva, ami az agyán átfolyik.',
   },
+  'process.step1Highlight': { en: 'Free strategic audit', fr: 'Audit stratégique offert', hu: 'Ingyenes stratégiai audit' },
+  'process.step2Highlight': { en: 'Infrastructure setup', fr: 'Infrastructure sur-mesure', hu: 'Egyedi infrastruktúra' },
+  'process.step3Highlight': { en: 'Autonomy & continuous learning', fr: 'Autonomie & apprentissage continu', hu: 'Önállóság és folyamatos tanulás' },
   'process.guarantee1': { en: 'Guaranteed deadlines or -10%/week late', fr: 'Délais garantis ou -10%/semaine de retard', hu: 'Garantált határidők vagy -10% hetente, ha csúszunk' },
   'process.guarantee2': { en: 'ROI guarantee over 12 months', fr: 'Garantie ROI sur 12 mois', hu: '12 hónapos ROI-garancia' },
   'process.guarantee3': { en: 'Full source code delivered · Permanent ownership', fr: 'Code source complet livré · Propriété définitive', hu: 'Teljes forráskód átadva · Végleges tulajdonjog' },
@@ -180,8 +183,8 @@ export const translations = {
   // Systems — recurring cases (5 AI systems + 3 custom software)
   // ───────────────────────────────────────────────────────────────
   'systems.label': { en: 'Recurring cases', fr: 'Les cas qui reviennent', hu: 'Visszatérő esetek' },
-  'systems.title': { en: 'What we build,', fr: 'Ce qu\'on construit,', hu: 'Amit építünk,' },
-  'systems.titleAccent': { en: 'over and over.', fr: 'encore et encore.', hu: 'újra és újra.' },
+  'systems.title': { en: 'What we build.', fr: 'Ce qu\'on construit.', hu: 'Amit építünk.' },
+  'systems.titleAccent': { en: 'Concrete results.', fr: 'Des résultats concrets.', hu: 'Konkrét eredmények.' },
   'systems.sub': {
     en: 'AI systems where they replace real hours, and custom software where they replace your SaaS-spaghetti. Nothing is deployed unless we can chiffer its ROI within the first weeks.',
     fr: 'Des systèmes IA là où ils remplacent de vraies heures, et des logiciels métier sur-mesure là où ils remplacent votre SaaS-spaghetti. Rien n\'est déployé si on ne peut pas chiffrer son ROI dans les premières semaines.',
@@ -324,6 +327,51 @@ export const translations = {
     hu: 'Miközben az európai KKV-k egy része elkezdi integrálni az MI-t az operatív működésébe, a másik fizeti a rejtett számlát: a munkaidő akár 30%-át olyan feladatok emésztik fel, amelyeket egy jól felépített infrastruktúra helyettesítene. És még egy hónap, amikor a versenytársak növelik az előnyt.',
   },
   'fomo.cta': { en: 'Book the audit before they widen the gap', fr: 'Réserver l\'audit avant qu\'ils ne creusent l\'écart', hu: 'Foglalja le az auditot, mielőtt növelik az előnyt' },
+
+  // ───────────────────────────────────────────────────────────────
+  // Results — mesurable client outcomes
+  // ───────────────────────────────────────────────────────────────
+  'results2.label': { en: 'Measurable results', fr: 'Résultats mesurables', hu: 'Mérhető eredmények' },
+  'results2.title': { en: 'Real clients.', fr: 'Vrais clients.', hu: 'Valódi ügyfelek.' },
+  'results2.titleAccent': { en: 'Verified numbers.', fr: 'Chiffres vérifiés.', hu: 'Hitelesített számok.' },
+  'results2.sub': {
+    en: 'Every figure below is measured, documented, and verified with the client. No demos. No estimations.',
+    fr: 'Chaque chiffre ci-dessous est mesuré, documenté et vérifié avec le client. Pas de démo. Pas d\'estimation.',
+    hu: 'Az alábbi minden szám mért, dokumentált és az ügyféllel ellenőrzött. Nincs demó. Nincs becslés.',
+  },
+  'results2.r1.num': { en: '×11', fr: '×11', hu: '×11' },
+  'results2.r1.desc': { en: 'less time spent per manager on weekly ops — from 11h to 1h.', fr: 'moins de temps passé par manager sur les opérations hebdo — de 11h à 1h.', hu: 'kevesebb idő menedzserenként a heti műveletekre — 11 óráról 1 órára.' },
+  'results2.r1.client': { en: 'Chromosome · Restaurant group', fr: 'Chromosome · Groupe de restaurants', hu: 'Chromosome · Étteremcsoport' },
+  'results2.r2.num': { en: '—', fr: '—', hu: '—' },
+  'results2.r2.desc': { en: 'Your case here. Next client deployment in progress.', fr: 'Votre cas ici. Prochain déploiement client en cours.', hu: 'Az Ön esete itt. Következő ügyfél-bevezetés folyamatban.' },
+  'results2.r2.client': { en: 'Coming soon', fr: 'Bientôt', hu: 'Hamarosan' },
+  'results2.r3.num': { en: '—', fr: '—', hu: '—' },
+  'results2.r3.desc': { en: 'Your case here. We measure everything we ship.', fr: 'Votre cas ici. On mesure tout ce qu\'on déploie.', hu: 'Az Ön esete itt. Mindent megmérünk, amit szállítunk.' },
+  'results2.r3.client': { en: 'Coming soon', fr: 'Bientôt', hu: 'Hamarosan' },
+
+  // ───────────────────────────────────────────────────────────────
+  // Expertise & Values
+  // ───────────────────────────────────────────────────────────────
+  'expertise.label': { en: 'How we operate', fr: 'Notre façon de faire', hu: 'Ahogyan dolgozunk' },
+  'expertise.title': { en: 'Reliable tools.', fr: 'Des outils fiables.', hu: 'Megbízható eszközök.' },
+  'expertise.titleAccent': { en: 'No one left behind.', fr: 'Personne laissé de côté.', hu: 'Senkit sem hagyunk hátra.' },
+  'expertise.sub': {
+    en: 'Two convictions that shape how we build every system.',
+    fr: 'Deux convictions qui guident la façon dont on construit chaque système.',
+    hu: 'Két meggyőződés, amelyek meghatározzák, hogyan építünk meg minden rendszert.',
+  },
+  'expertise.p1.title': { en: 'Best-in-class tools, secured', fr: 'Les outils les plus fiables du marché', hu: 'A piac legmegbízhatóbb eszközei' },
+  'expertise.p1.desc': {
+    en: 'We use the most reliable and secured tools the market has — Next.js, Supabase, Claude API, Vercel — EU-hosted where possible, GDPR-native, audited. Your data and your code are protected by the same stack the most demanding teams in tech rely on.',
+    fr: 'On utilise les outils les plus fiables et sécurisés du marché — Next.js, Supabase, Claude API, Vercel — hébergés en UE quand c\'est possible, RGPD-natifs, auditables. Vos données et votre code sont protégés par la même stack que les équipes tech les plus exigeantes.',
+    hu: 'A piac legmegbízhatóbb és legbiztonságosabb eszközeit használjuk — Next.js, Supabase, Claude API, Vercel — lehetőség szerint EU-ban tárolt, GDPR-natív, auditálható. Az adatait és a kódját ugyanaz a stack védi, amelyre a legigényesebb tech-csapatok támaszkodnak.',
+  },
+  'expertise.p2.title': { en: 'No one left out of control', fr: 'Personne laissé hors de contrôle', hu: 'Senki sem marad ki az irányításból' },
+  'expertise.p2.desc': {
+    en: 'We don\'t ship and disappear. We train your teams. We accompany them until everyone — from the executive to the last operator — uses the system daily, without doubt, without asking us. That\'s when we consider the mission done.',
+    fr: 'On ne livre pas pour disparaître. On forme vos équipes. On les accompagne jusqu\'à ce que tout le monde — du dirigeant au dernier opérateur — utilise le système au quotidien, sans hésiter, sans avoir à nous demander. C\'est à ce moment-là qu\'on considère la mission terminée.',
+    hu: 'Nem szállítunk és tűnünk el. Betanítjuk a csapatait. Kísérjük őket, amíg mindenki — a vezetőtől az utolsó operátorig — naponta használja a rendszert, kétség nélkül, anélkül, hogy minket kellene kérdeznie. Csak akkor tekintjük a küldetést befejezettnek.',
+  },
 
   // ───────────────────────────────────────────────────────────────
   // About Nathan

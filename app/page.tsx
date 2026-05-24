@@ -8,7 +8,9 @@ import Fomo from '@/components/home/Fomo'
 import Solutions from '@/components/home/Solutions'
 import Process from '@/components/home/Process'
 import Systems from '@/components/home/Systems'
+import ResultsMetrics from '@/components/home/ResultsMetrics'
 import CaseStudy from '@/components/home/CaseStudy'
+import Expertise from '@/components/home/Expertise'
 import AboutNathan from '@/components/home/AboutNathan'
 import Faq from '@/components/home/Faq'
 import CtaFinal from '@/components/home/CtaFinal'
@@ -44,14 +46,22 @@ export default function Home() {
       <Systems />
       <Divider />
 
-      {/* 8 — Témoignages : Catherine Chromosome + emplacement futurs avis */}
+      {/* 8 — Résultats mesurables : vrais chiffres clients */}
+      <ResultsMetrics />
+      <Divider />
+
+      {/* 9 — Témoignages : Catherine Chromosome + emplacement futurs avis */}
       <CaseStudy />
 
-      {/* 9 — À propos Nathan */}
+      {/* 10 — Expertise & valeurs : outils fiables + accompagnement */}
+      <Expertise />
+      <Divider />
+
+      {/* 11 — À propos Nathan */}
       <AboutNathan />
       <Divider />
 
-      {/* 10 — FAQ + CTA final */}
+      {/* 12 — FAQ + CTA final */}
       <Faq />
       <Divider />
       <CtaFinal />

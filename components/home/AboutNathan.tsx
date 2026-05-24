@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { Mail } from 'lucide-react'
 import FadeUp from '@/components/ui/FadeUp'
 import { useLang } from '@/components/providers/LangProvider'
@@ -52,17 +53,20 @@ export default function AboutNathan() {
                 width: 120,
                 height: 120,
                 borderRadius: '50%',
-                background: 'var(--bg-elevated)',
+                overflow: 'hidden',
                 border: '1px solid var(--border)',
-                display: 'grid',
-                placeItems: 'center',
-                fontFamily: 'var(--font-serif)',
-                fontStyle: 'italic',
-                fontSize: 56,
-                color: 'var(--accent)',
+                position: 'relative',
+                flexShrink: 0,
               }}
             >
-              N
+              <Image
+                src="/nathan.png"
+                alt="Nathan Goutagny"
+                fill
+                sizes="120px"
+                style={{ objectFit: 'cover' }}
+                priority
+              />
             </div>
 
             <div>
