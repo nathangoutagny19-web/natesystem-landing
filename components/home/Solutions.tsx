@@ -246,6 +246,49 @@ export default function Solutions() {
           gap: 20px;
           align-items: stretch;
         }
+
+        /* Card hover : lift léger + accent border + glow subtil */
+        .sols-card {
+          transition: transform 280ms cubic-bezier(0.22, 1, 0.36, 1),
+                      border-color 280ms ease,
+                      box-shadow 280ms ease;
+          will-change: transform;
+        }
+        .sols-card:hover {
+          transform: translateY(-4px);
+          border-color: var(--accent) !important;
+          box-shadow: 0 18px 40px -22px var(--accent-glow),
+                      0 1px 2px rgba(0, 0, 0, 0.04);
+        }
+
+        /* CTA hover : remplissage rouge + flèche qui glisse */
+        .sols-cta :global(svg) {
+          transition: transform 220ms ease;
+        }
+        .sols-cta:hover {
+          background: var(--accent) !important;
+          color: #fff !important;
+          border-color: var(--accent) !important;
+        }
+        .sols-cta:hover :global(svg) {
+          transform: translateX(3px);
+        }
+        .sols-cta:focus-visible {
+          outline: 2px solid var(--accent);
+          outline-offset: 2px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .sols-card,
+          .sols-cta,
+          .sols-cta :global(svg) {
+            transition: none;
+          }
+          .sols-card:hover {
+            transform: none;
+          }
+        }
+
         @media (max-width: 980px) {
           .sols-grid {
             grid-template-columns: 1fr;

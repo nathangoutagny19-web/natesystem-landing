@@ -4,13 +4,12 @@ import WorkTogetherPrompt from '@/components/layout/WorkTogetherPrompt'
 import Hero from '@/components/home/Hero'
 import CredibilityBand from '@/components/home/CredibilityBand'
 import ClientsBar from '@/components/home/ClientsBar'
+import Systems from '@/components/home/Systems'
 import Fomo from '@/components/home/Fomo'
 import Solutions from '@/components/home/Solutions'
-import Process from '@/components/home/Process'
-import Systems from '@/components/home/Systems'
-import ResultsMetrics from '@/components/home/ResultsMetrics'
-import CaseStudy from '@/components/home/CaseStudy'
 import Expertise from '@/components/home/Expertise'
+import Process from '@/components/home/Process'
+import CaseStudy from '@/components/home/CaseStudy'
 import AboutNathan from '@/components/home/AboutNathan'
 import Faq from '@/components/home/Faq'
 import CtaFinal from '@/components/home/CtaFinal'
@@ -31,37 +30,33 @@ export default function Home() {
       <ClientsBar />
       <Divider />
 
-      {/* 4 — FOMO chiffrée (Eurostat 2025 / McKinsey / Salesforce) — amorce la décision */}
-      <Fomo />
-
-      {/* 5 — 3 solutions : Plateforme Dédiée / Écosystème IA / Audit */}
-      <Solutions />
-      <Divider />
-
-      {/* 6 — Expertise & valeurs : on rassure juste après l'offre, avant de demander d'engager */}
-      <Expertise />
-      <Divider />
-
-      {/* 7 — Méthode : audit → build → autonome */}
-      <Process />
-      <Divider />
-
-      {/* 8 — Les cas qu'on construit (marquee défilant : 5 systèmes IA + 3 logiciels métier) */}
+      {/* 4 — Les cas qu'on construit (marquee défilant — chaque card porte son ROI chiffré) */}
       <Systems />
       <Divider />
 
-      {/* 9 — Résultats mesurables : vrais chiffres clients */}
-      <ResultsMetrics />
+      {/* 5 — FOMO chiffrée (Eurostat 2025 / McKinsey / Salesforce) — déclic décision */}
+      <Fomo />
+
+      {/* 6 — 3 solutions : Plateforme Dédiée / Écosystème IA / Audit */}
+      <Solutions />
       <Divider />
 
-      {/* 10 — Témoignages : Catherine Chromosome + emplacement futurs avis */}
+      {/* 7 — Expertise & valeurs : on rassure juste après l'offre */}
+      <Expertise />
+      <Divider />
+
+      {/* 8 — Méthode : audit → build → autonome */}
+      <Process />
+      <Divider />
+
+      {/* 9 — Témoignages : Catherine Chromosome + emplacement futurs avis */}
       <CaseStudy />
 
-      {/* 11 — À propos Nathan */}
+      {/* 10 — À propos Nathan */}
       <AboutNathan />
       <Divider />
 
-      {/* 12 — FAQ + CTA final */}
+      {/* 11 — FAQ + CTA final */}
       <Faq />
       <Divider />
       <CtaFinal />
