@@ -6,9 +6,12 @@ import {
   Send,
   RefreshCcw,
   BarChart3,
-  LayoutDashboard,
-  UserSquare2,
+  Utensils,
+  GraduationCap,
   Users,
+  Package,
+  Clock,
+  Star,
   type LucideIcon,
 } from 'lucide-react'
 import FadeUp from '@/components/ui/FadeUp'
@@ -20,6 +23,7 @@ type Card = {
   desc: string
   metric: string
   tag: 'ai' | 'software'
+  sector?: string
 }
 
 export default function Systems() {
@@ -28,15 +32,19 @@ export default function Systems() {
   const tagAI = t('systems.tagAI')
   const tagSoft = t('systems.tagSoft')
 
+  // Alternate AI ↔ Software so the marquee never shows two same-tag cards in a row.
   const cards: Card[] = [
     { icon: Zap, title: t('systems.s1.title'), desc: t('systems.s1.desc'), metric: t('systems.s1.metric'), tag: 'ai' },
-    { icon: LayoutDashboard, title: t('systems.sw1.title'), desc: t('systems.sw1.desc'), metric: t('systems.sw1.metric'), tag: 'software' },
+    { icon: Utensils, title: t('systems.sw1.title'), desc: t('systems.sw1.desc'), metric: t('systems.sw1.metric'), tag: 'software', sector: t('systems.sw1.sector') },
     { icon: FileSearch, title: t('systems.s2.title'), desc: t('systems.s2.desc'), metric: t('systems.s2.metric'), tag: 'ai' },
-    { icon: UserSquare2, title: t('systems.sw2.title'), desc: t('systems.sw2.desc'), metric: t('systems.sw2.metric'), tag: 'software' },
+    { icon: GraduationCap, title: t('systems.sw2.title'), desc: t('systems.sw2.desc'), metric: t('systems.sw2.metric'), tag: 'software', sector: t('systems.sw2.sector') },
     { icon: Send, title: t('systems.s3.title'), desc: t('systems.s3.desc'), metric: t('systems.s3.metric'), tag: 'ai' },
-    { icon: Users, title: t('systems.sw3.title'), desc: t('systems.sw3.desc'), metric: t('systems.sw3.metric'), tag: 'software' },
+    { icon: Users, title: t('systems.sw3.title'), desc: t('systems.sw3.desc'), metric: t('systems.sw3.metric'), tag: 'software', sector: t('systems.sw3.sector') },
     { icon: RefreshCcw, title: t('systems.s4.title'), desc: t('systems.s4.desc'), metric: t('systems.s4.metric'), tag: 'ai' },
+    { icon: Package, title: t('systems.sw4.title'), desc: t('systems.sw4.desc'), metric: t('systems.sw4.metric'), tag: 'software', sector: t('systems.sw4.sector') },
     { icon: BarChart3, title: t('systems.s5.title'), desc: t('systems.s5.desc'), metric: t('systems.s5.metric'), tag: 'ai' },
+    { icon: Clock, title: t('systems.sw5.title'), desc: t('systems.sw5.desc'), metric: t('systems.sw5.metric'), tag: 'software', sector: t('systems.sw5.sector') },
+    { icon: Star, title: t('systems.sw6.title'), desc: t('systems.sw6.desc'), metric: t('systems.sw6.metric'), tag: 'software', sector: t('systems.sw6.sector') },
   ]
 
   // Duplicate the list for seamless infinite scroll
@@ -84,15 +92,15 @@ export default function Systems() {
           mask-image: linear-gradient(
             to right,
             transparent,
-            #000 8%,
-            #000 92%,
+            #000 6%,
+            #000 94%,
             transparent
           );
           -webkit-mask-image: linear-gradient(
             to right,
             transparent,
-            #000 8%,
-            #000 92%,
+            #000 6%,
+            #000 94%,
             transparent
           );
           padding: 8px 0;
@@ -101,17 +109,32 @@ export default function Systems() {
           display: flex;
           gap: 18px;
           width: max-content;
-          animation: systemsScroll 60s linear infinite;
+          animation: systemsScroll 75s linear infinite;
+          will-change: transform;
+        }
+        .systems-marquee :global(.systems-card) {
+          flex: 0 0 320px;
         }
         .systems-marquee:hover {
           animation-play-state: paused;
         }
         @keyframes systemsScroll {
-          from {
-            transform: translateX(0);
+          0% {
+            transform: translate3d(0, 0, 0);
           }
-          to {
-            transform: translateX(-50%);
+          100% {
+            transform: translate3d(-50%, 0, 0);
+          }
+        }
+        @media (max-width: 540px) {
+          .systems-marquee {
+            gap: 12px;
+            animation-duration: 55s;
+          }
+          .systems-marquee :global(.systems-card) {
+            flex: 0 0 270px;
+            padding: 20px 18px;
+            min-height: 250px;
           }
         }
         @media (prefers-reduced-motion: reduce) {
@@ -132,7 +155,6 @@ function SystemCard({ card, tagLabel }: { card: Card; tagLabel: string }) {
     <article
       className="systems-card"
       style={{
-        flex: '0 0 320px',
         background: 'var(--bg-card)',
         border: '1px solid var(--border)',
         borderRadius: 12,
@@ -163,18 +185,35 @@ function SystemCard({ card, tagLabel }: { card: Card; tagLabel: string }) {
         <Icon size={18} strokeWidth={1.6} style={{ color: 'var(--accent)' }} />
       </div>
 
-      <h4
-        className="font-serif italic"
-        style={{
-          fontSize: 19,
-          fontWeight: 400,
-          lineHeight: 1.2,
-          color: 'var(--text)',
-          margin: 0,
-        }}
-      >
-        {card.title}
-      </h4>
+      <div>
+        <h4
+          className="font-serif italic"
+          style={{
+            fontSize: 19,
+            fontWeight: 400,
+            lineHeight: 1.2,
+            color: 'var(--text)',
+            margin: 0,
+          }}
+        >
+          {card.title}
+        </h4>
+        {card.sector && (
+          <p
+            className="font-mono"
+            style={{
+              fontSize: 9.5,
+              letterSpacing: 1.4,
+              color: 'var(--text-muted)',
+              fontWeight: 500,
+              textTransform: 'uppercase',
+              margin: '6px 0 0',
+            }}
+          >
+            {card.sector}
+          </p>
+        )}
+      </div>
 
       <p
         className="font-sans"

@@ -52,6 +52,21 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Mobile safety net — never let any section blow horizontally past viewport */
+@media (max-width: 540px) {
+  main,
+  main > section,
+  main > div {
+    max-width: 100vw;
+    overflow-x: clip;
+  }
+  /* Force section text containers to actually use their padding on small screens */
+  main section .mx-auto,
+  main section > div {
+    max-width: 100%;
+  }
+}
+
 /* ——— GRID BACKGROUND ——— */
 .grid-bg {
   position: fixed; inset: 0; z-index: 0; pointer-events: none;
