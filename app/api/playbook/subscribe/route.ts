@@ -123,7 +123,13 @@ export async function POST(req: NextRequest) {
     supabase = supabaseAdmin()
   } catch (err) {
     console.error('Supabase init error:', err)
-    return NextResponse.json({ error: 'Service indisponible' }, { status: 500 })
+    return NextResponse.json(
+      {
+        error:
+          'Le service est en cours de configuration. Écrivez-nous à nathan@natesystem.com et on vous envoie le playbook dans la minute.',
+      },
+      { status: 503 }
+    )
   }
 
   const { error: upsertError } = await supabase.from('playbook_leads').upsert(
@@ -159,9 +165,9 @@ export async function POST(req: NextRequest) {
     return NextResponse.json(
       {
         error:
-          'Le playbook n\'est pas encore disponible. Réessayez dans quelques minutes.',
+          'Ce playbook est encore en finalisation. Écrivez-nous à nathan@natesystem.com avec le nom du secteur et on vous l\'envoie directement.',
       },
-      { status: 500 }
+      { status: 503 }
     )
   }
 
