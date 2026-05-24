@@ -1,6 +1,6 @@
 'use client'
 
-import { Shield, FileCheck2, Zap, Lock } from 'lucide-react'
+import { ThumbsUp, Zap, FileCheck2, Lock } from 'lucide-react'
 import FadeUp from '@/components/ui/FadeUp'
 import { useLang } from '@/components/providers/LangProvider'
 
@@ -8,9 +8,9 @@ export default function CredibilityBand() {
   const { t } = useLang()
 
   const engagements = [
-    { icon: Shield, text: t('cred.engagement1') },
-    { icon: FileCheck2, text: t('cred.engagement2') },
-    { icon: Zap, text: t('cred.engagement3') },
+    { icon: ThumbsUp, text: t('cred.engagement1') },
+    { icon: Zap, text: t('cred.engagement2') },
+    { icon: FileCheck2, text: t('cred.engagement3') },
     { icon: Lock, text: t('cred.engagement4') },
   ]
 

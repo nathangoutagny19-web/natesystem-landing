@@ -7,7 +7,6 @@ import { useLang } from '@/components/providers/LangProvider'
 import { CAL_LINK } from '@/lib/constants'
 
 type Solution = {
-  recommended?: boolean
   title: string
   target: string
   promise: string
@@ -22,7 +21,6 @@ export default function Solutions() {
 
   const solutions: Solution[] = [
     {
-      recommended: true,
       title: t('sols.s1.title'),
       target: t('sols.s1.target'),
       promise: t('sols.s1.promise'),
@@ -100,10 +98,10 @@ export default function Solutions() {
           {solutions.map((s, i) => (
             <FadeUp key={s.title} delay={i * 0.1}>
               <article
-                className={`sols-card${s.recommended ? ' sols-card-recommended' : ''}`}
+                className="sols-card"
                 style={{
                   background: 'var(--bg-card)',
-                  border: s.recommended ? '2px solid var(--accent)' : '1px solid var(--border)',
+                  border: '1px solid var(--border)',
                   borderRadius: 14,
                   padding: '36px 32px 32px',
                   height: '100%',
@@ -113,27 +111,6 @@ export default function Solutions() {
                   gap: 18,
                 }}
               >
-                {s.recommended && (
-                  <span
-                    className="font-mono"
-                    style={{
-                      position: 'absolute',
-                      top: -12,
-                      left: 24,
-                      background: 'var(--accent)',
-                      color: '#fff',
-                      fontSize: 10,
-                      fontWeight: 700,
-                      letterSpacing: 1.6,
-                      textTransform: 'uppercase',
-                      padding: '5px 10px',
-                      borderRadius: 4,
-                    }}
-                  >
-                    {t('sols.s1.badge')}
-                  </span>
-                )}
-
                 <h3
                   className="font-serif italic"
                   style={{
@@ -146,20 +123,6 @@ export default function Solutions() {
                 >
                   {s.title}
                 </h3>
-
-                <p
-                  className="font-mono"
-                  style={{
-                    fontSize: 10.5,
-                    letterSpacing: 1.5,
-                    color: 'var(--accent)',
-                    fontWeight: 600,
-                    margin: 0,
-                    lineHeight: 1.4,
-                  }}
-                >
-                  {s.target}
-                </p>
 
                 <p
                   className="font-sans"
@@ -245,9 +208,9 @@ export default function Solutions() {
                     alignItems: 'center',
                     justifyContent: 'center',
                     gap: 8,
-                    background: s.recommended ? 'var(--accent)' : 'transparent',
-                    color: s.recommended ? '#fff' : 'var(--text)',
-                    border: s.recommended ? 'none' : '1px solid var(--border-hover)',
+                    background: 'transparent',
+                    color: 'var(--text)',
+                    border: '1px solid var(--border-hover)',
                     padding: '14px 22px',
                     borderRadius: 10,
                     fontSize: 14,
