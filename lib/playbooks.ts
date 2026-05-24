@@ -35,3 +35,21 @@ export function allSlugs(): string[] {
 export function storageObjectFor(slug: string): string {
   return `${slug}.pdf`
 }
+
+const SECTOR_LABELS: Record<string, string> = {
+  'hoteliers-independants': 'Hôtellerie indépendante',
+  'avocats-affaires': 'Cabinets d’avocats d’affaires',
+  'nettoyage-proprete-b2b': 'Propreté B2B',
+  'installateurs-photovoltaique': 'Installateurs photovoltaïque',
+  'installateurs-clim-pac': 'Installateurs clim / PAC',
+  'expertise-comptable': 'Expertise-comptable',
+  'architectes': 'Architectes',
+  'agences-immobilieres': 'Agences immobilières',
+  'centres-formation': 'Centres de formation Qualiopi',
+  'securite-gardiennage': 'Sécurité & gardiennage',
+  'traiteurs-evenementiel': 'Traiteurs & événementiel',
+}
+
+export function sectorLabelFor(slug: string): string {
+  return SECTOR_LABELS[slug] ?? slug
+}

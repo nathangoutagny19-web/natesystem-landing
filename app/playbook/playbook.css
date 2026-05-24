@@ -711,6 +711,21 @@
   margin-bottom: 12px;
 }
 
+.pb-card-sector {
+  display: inline-block;
+  align-self: flex-start;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: var(--pb-red);
+  background: var(--pb-red-soft);
+  padding: 5px 9px;
+  border-radius: 2px;
+  margin-bottom: 16px;
+}
+
 .pb-card-title {
   font-family: var(--font-serif);
   font-style: italic;
@@ -719,6 +734,15 @@
   line-height: 1.15;
   margin-bottom: 12px;
   flex: 1;
+}
+
+.pb-card-meta {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  color: var(--pb-grey);
+  text-transform: uppercase;
+  margin-bottom: 14px;
 }
 
 .pb-card-cta {

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
-import { playbooks } from '@/lib/playbooks'
+import { playbooks, sectorLabelFor } from '@/lib/playbooks'
 import PlaybookFooter from './_components/PlaybookFooter'
 
 export const metadata: Metadata = {
@@ -36,8 +36,9 @@ export default function PlaybookIndexPage() {
       <div className="pb-index-grid">
         {playbooks.map((p) => (
           <Link key={p.slug} href={`/playbook/${p.slug}`} className="pb-card">
-            <span className="pb-card-eyebrow">{p.hero.eyebrow}</span>
+            <span className="pb-card-sector">{sectorLabelFor(p.slug)}</span>
             <h2 className="pb-card-title">{p.hero.h1}</h2>
+            <span className="pb-card-meta">30 pages · PDF · Gratuit</span>
             <span className="pb-card-cta">
               Lire le playbook <ArrowRight size={14} strokeWidth={2} />
             </span>
