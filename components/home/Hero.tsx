@@ -17,11 +17,11 @@ export default function Hero() {
         <span className="section-label" style={{ letterSpacing: '4px' }}>{t('hero.label')}</span>
       </motion.div>
 
-      {/* Title — sans-serif display, scale up for punch */}
+      {/* Title — NateSystem signature: serif italic, scaled up for the new outcome-first H1 */}
       <motion.h1
         initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2, ease }}
-        className="font-sans"
-        style={{ fontSize: 'clamp(40px, 6vw, 72px)', fontWeight: 600, lineHeight: 1.05, letterSpacing: '-0.02em', marginBottom: '28px', maxWidth: '880px', color: 'var(--text)' }}
+        className="font-serif italic font-normal"
+        style={{ fontSize: 'clamp(38px, 5.2vw, 64px)', lineHeight: 1.08, marginBottom: '28px', maxWidth: '820px', color: 'var(--text)' }}
       >
         {t('hero.title1')}{' '}
         <span className="accent" style={{ color: 'var(--accent)' }}>{t('hero.titleAccent')}</span>
