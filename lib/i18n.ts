@@ -304,7 +304,7 @@ export const translations = {
   // ───────────────────────────────────────────────────────────────
   'fomo.label': { en: 'The cost of waiting', fr: 'Le coût d\'attendre', hu: 'A várakozás ára' },
   'fomo.title': { en: 'Your competitors are adopting AI.', fr: 'Vos concurrents adoptent l\'IA.', hu: 'A versenytársai elfogadják az MI-t.' },
-  'fomo.titleAccent': { en: 'You\'re still watching.', fr: 'Vous regardez encore.', hu: 'Ön még mindig nézi.' },
+  'fomo.titleAccent': { en: 'You\'re still hesitating.', fr: 'Vous, vous hésitez encore.', hu: 'Ön pedig még habozik.' },
   'fomo.stat1.num': { en: '20%', fr: '20%', hu: '20%' },
   'fomo.stat1.desc': { en: 'of EU enterprises (10+ employees) use AI in 2025 — up from 13.5% in 2024, a +48% jump in a single year.', fr: 'des entreprises européennes (10+ employés) utilisent l\'IA en 2025 — vs 13,5% en 2024, soit +48% en un an.', hu: 'a 10+ főt foglalkoztató európai vállalatok használják az MI-t 2025-ben — szemben a 2024-es 13,5%-kal, ami +48%-os ugrás egy év alatt.' },
   'fomo.stat1.source': { en: 'Eurostat, Use of AI in enterprises 2025', fr: 'Eurostat, Use of AI in enterprises 2025', hu: 'Eurostat, Use of AI in enterprises 2025' },
