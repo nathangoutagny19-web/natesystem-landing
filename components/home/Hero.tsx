@@ -17,11 +17,11 @@ export default function Hero() {
         <span className="section-label" style={{ letterSpacing: '4px' }}>{t('hero.label')}</span>
       </motion.div>
 
-      {/* Title */}
+      {/* Title — sans-serif display, scale up for punch */}
       <motion.h1
         initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2, ease }}
-        className="font-serif italic font-normal"
-        style={{ fontSize: 'clamp(28px, 3.4vw, 44px)', lineHeight: 1.15, marginBottom: '24px', maxWidth: '720px', color: 'var(--text)' }}
+        className="font-sans"
+        style={{ fontSize: 'clamp(40px, 6vw, 72px)', fontWeight: 600, lineHeight: 1.05, letterSpacing: '-0.02em', marginBottom: '28px', maxWidth: '880px', color: 'var(--text)' }}
       >
         {t('hero.title1')}{' '}
         <span className="accent" style={{ color: 'var(--accent)' }}>{t('hero.titleAccent')}</span>
@@ -33,17 +33,36 @@ export default function Hero() {
       <motion.p
         initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.35, ease }}
         className="font-sans"
-        style={{ fontSize: 'clamp(15px, 3vw, 18px)', fontWeight: 300, color: 'var(--text-secondary)', maxWidth: '580px', lineHeight: 1.7, marginBottom: '48px' }}
+        style={{ fontSize: 'clamp(15px, 3vw, 18px)', fontWeight: 300, color: 'var(--text-secondary)', maxWidth: '620px', lineHeight: 1.6, marginBottom: '40px' }}
       >
         {t('hero.sub')}
       </motion.p>
 
-      {/* CTA */}
-      <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.5, ease }}>
+      {/* CTAs — primary + secondary ghost */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.5, ease }}
+        className="flex flex-wrap items-center justify-center gap-3"
+      >
         <Link href={CAL_LINK} className="btn-primary" style={{ fontSize: '14px' }}>
           <span className="btn-primary-dot" />
           {t('hero.cta')} →
         </Link>
+        <a
+          href="#process"
+          className="font-sans"
+          style={{
+            fontSize: '14px',
+            fontWeight: 500,
+            color: 'var(--text-secondary)',
+            padding: '14px 22px',
+            border: '1px solid var(--border)',
+            borderRadius: '12px',
+            textDecoration: 'none',
+            transition: 'border-color 200ms ease, color 200ms ease',
+          }}
+        >
+          {t('hero.secondary')} →
+        </a>
       </motion.div>
 
       {/* Scroll hint — trust bar moved to dedicated <ClientsBar /> below the hero */}

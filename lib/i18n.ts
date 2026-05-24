@@ -7,16 +7,16 @@ export const translations = {
   'nav.contact': { en: 'Contact', fr: 'Contact', hu: 'Kapcsolat' },
 
   // Hero
-  'hero.label': { en: 'Custom software · Powered by AI', fr: 'Logiciel sur-mesure · Propulsé par l\'IA', hu: 'Egyedi szoftver · MI-vezérelt' },
-  'hero.title1': { en: 'The custom software', fr: 'Le logiciel sur-mesure', hu: 'Az egyedi szoftver,' },
-  'hero.titleAccent': { en: 'that runs your business.', fr: 'qui pilote votre activité.', hu: 'amely a vállalkozását működteti.' },
-  'hero.title2': { en: 'Powered by AI where it counts.', fr: 'Propulsé par l\'IA là où ça compte.', hu: 'MI-vel ott, ahol számít.' },
+  'hero.label': { en: 'Operational software · Applied AI · French SMBs', fr: 'Logiciel opérationnel · IA appliquée · PME françaises', hu: 'Operatív szoftver · Alkalmazott MI · Francia KKV-k' },
+  'hero.title1': { en: 'Multiply your', fr: 'Multipliez vos', hu: 'Sokszorozza meg az' },
+  'hero.titleAccent': { en: 'results.', fr: 'résultats.', hu: 'eredményeit.' },
+  'hero.title2': { en: 'Without hiring more.', fr: 'Sans embaucher plus.', hu: 'Új munkatársak nélkül.' },
   'hero.sub': {
-    en: 'We build the internal software your business actually needs — a single command center for your operations, your data, your team. We add AI — agentic intelligence, automation, data analytics — only where it replaces real hours of work, never as a marketing checkbox.',
-    fr: 'On construit le logiciel interne dont votre activité a vraiment besoin — un poste de commandement unique pour vos opérations, vos données, votre équipe. On y intègre de l\'IA — intelligence artificielle agentique, automatisation, data analytics — uniquement là où elle remplace de vraies heures de travail, jamais pour cocher une case marketing.',
-    hu: 'Azt a belső szoftvert építjük, amire a vállalkozásának valóban szüksége van — egyetlen parancsközpont az Ön műveleteihez, adataihoz, csapatához. MI-t — ágensalapú mesterséges intelligenciát, automatizációt, adatelemzést — csak ott építünk be, ahol valódi munkaórákat helyettesít, sosem marketingfogásból.',
+    en: 'We build the operational software that runs your business, with AI integrated where it replaces real hours of work — never as a marketing checkbox. You stay the owner.',
+    fr: 'On construit votre logiciel opérationnel avec l\'IA intégrée — sans grossir votre équipe. Vous restez propriétaire du code et de l\'infrastructure.',
+    hu: 'Megépítjük az operatív szoftverét beépített MI-vel — csapatbővítés nélkül. Ön marad a kód és az infrastruktúra tulajdonosa.',
   },
-  'hero.cta': { en: 'Let\'s work together', fr: 'Travaillons ensemble', hu: 'Dolgozzunk együtt' },
+  'hero.cta': { en: 'Book a 30-min audit', fr: 'Réserver un audit 30 min', hu: 'Foglaljon 30 perces auditot' },
   'hero.secondary': { en: 'See how it works', fr: 'Voir comment ça marche', hu: 'Nézze meg hogyan működik' },
   'hero.trusted': { en: 'Already building with', fr: 'Déjà à l\'œuvre avec', hu: 'Már velük építünk' },
 
