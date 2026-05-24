@@ -5,6 +5,7 @@ import PlaybookHero from '../_components/PlaybookHero'
 import PlaybookBullets from '../_components/PlaybookBullets'
 import PlaybookTOC from '../_components/PlaybookTOC'
 import PlaybookSocialProof from '../_components/PlaybookSocialProof'
+import PlaybookBrandContext from '../_components/PlaybookBrandContext'
 import PlaybookCTA from '../_components/PlaybookCTA'
 import PlaybookFooter from '../_components/PlaybookFooter'
 
@@ -51,6 +52,7 @@ export default function PlaybookSlugPage({ params }: { params: Params }) {
       <PlaybookBullets bullets={playbook.bullets} />
       <PlaybookTOC />
       <PlaybookSocialProof />
+      <PlaybookBrandContext />
       <PlaybookCTA slug={playbook.slug} />
       <PlaybookFooter />
     </>

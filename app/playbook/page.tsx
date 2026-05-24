@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import { cardTaglineFor, playbooks, sectorLabelFor } from '@/lib/playbooks'
+import PlaybookBrandContext from './_components/PlaybookBrandContext'
 import PlaybookFooter from './_components/PlaybookFooter'
 
 export const metadata: Metadata = {
@@ -22,8 +23,13 @@ export default function PlaybookIndexPage() {
   return (
     <>
       <section className="pb-index-hero">
-        <span className="pb-eyebrow">PLAYBOOKS · GRATUITS · PDF</span>
-        <h1 className="pb-h1" style={{ margin: '20px auto 18px' }}>
+        <span
+          className="pb-eyebrow-soft"
+          style={{ display: 'block', marginBottom: 16 }}
+        >
+          Publiés par NateSystem · Logiciel sur-mesure
+        </span>
+        <h1 className="pb-h1" style={{ margin: '0 auto 18px' }}>
           Un playbook IA, par secteur.
         </h1>
         <p className="pb-lead" style={{ margin: '0 auto 12px' }}>
@@ -45,6 +51,8 @@ export default function PlaybookIndexPage() {
           </Link>
         ))}
       </div>
+
+      <PlaybookBrandContext />
 
       <PlaybookFooter />
     </>

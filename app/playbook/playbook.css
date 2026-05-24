@@ -608,6 +608,39 @@
   margin-left: 8px;
 }
 
+/* ─── Brand context (NateSystem framing) ─── */
+.pb-brand-context {
+  background: rgba(26, 26, 29, 0.03);
+  border-top: 1px solid var(--pb-line);
+  border-bottom: 1px solid var(--pb-line);
+}
+
+.pb-brand-card {
+  background: var(--pb-white);
+  border: 1px solid var(--pb-line);
+  border-left: 3px solid var(--pb-red);
+  border-radius: 8px;
+  padding: 36px 36px 32px;
+}
+
+.pb-brand-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+@media (max-width: 540px) {
+  .pb-brand-card {
+    padding: 28px 22px 24px;
+  }
+  .pb-brand-ctas {
+    flex-direction: column;
+  }
+  .pb-brand-ctas .pb-btn-secondary {
+    width: 100%;
+  }
+}
+
 /* ─── CTA repeat ─── */
 .pb-cta-block {
   background: var(--pb-dark);
