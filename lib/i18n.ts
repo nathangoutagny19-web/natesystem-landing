@@ -182,7 +182,7 @@ export const translations = {
   // ───────────────────────────────────────────────────────────────
   // Systems — recurring cases (5 AI systems + 3 custom software)
   // ───────────────────────────────────────────────────────────────
-  'systems.label': { en: 'Recurring cases', fr: 'Les cas qui reviennent', hu: 'Visszatérő esetek' },
+  'systems.label': { en: 'Real use cases', fr: 'Cas concrets', hu: 'Konkrét esetek' },
   'systems.title': { en: 'What we build.', fr: 'Ce qu\'on construit.', hu: 'Amit építünk.' },
   'systems.titleAccent': { en: 'Concrete results.', fr: 'Des résultats concrets.', hu: 'Konkrét eredmények.' },
   'systems.sub': {

@@ -51,7 +51,10 @@ export default function Systems() {
   const doubled = [...cards, ...cards]
 
   return (
-    <section id="systemes" style={{ padding: '120px 0' }}>
+    <section
+      id="systemes"
+      style={{ padding: '120px 0', overflowX: 'hidden', maxWidth: '100vw' }}
+    >
       <div className="mx-auto" style={{ maxWidth: '1100px', padding: '0 24px' }}>
         <FadeUp className="text-center mb-16">
           <span className="section-label">{t('systems.label')}</span>
@@ -75,27 +78,34 @@ export default function Systems() {
         </FadeUp>
       </div>
 
-      {/* Marquee row 1 */}
-      <FadeUp>
+      {/* Marquee — overflow contained at two levels to survive iOS Safari */}
+      <div className="systems-marquee-outer">
         <div className="systems-marquee-wrap" aria-hidden="false">
           <div className="systems-marquee">
             {doubled.map((card, i) => (
-              <SystemCard key={`r1-${i}`} card={card} tagLabel={card.tag === 'ai' ? tagAI : tagSoft} />
+              <SystemCard
+                key={`r1-${i}`}
+                card={card}
+                tagLabel={card.tag === 'ai' ? tagAI : tagSoft}
+              />
             ))}
           </div>
         </div>
-      </FadeUp>
+      </div>
 
       <style jsx>{`
+        /* Outer wrapper: clamps to viewport so the inner max-content marquee
+           never forces horizontal page scroll (iOS Safari has bugs with
+           overflow-x: hidden on body when a descendant is wider) */
+        .systems-marquee-outer {
+          width: 100%;
+          max-width: 100vw;
+          overflow: hidden;
+          position: relative;
+        }
         .systems-marquee-wrap {
           overflow: hidden;
-          mask-image: linear-gradient(
-            to right,
-            transparent,
-            #000 6%,
-            #000 94%,
-            transparent
-          );
+          padding: 8px 0;
           -webkit-mask-image: linear-gradient(
             to right,
             transparent,
@@ -103,14 +113,23 @@ export default function Systems() {
             #000 94%,
             transparent
           );
-          padding: 8px 0;
+          mask-image: linear-gradient(
+            to right,
+            transparent,
+            #000 6%,
+            #000 94%,
+            transparent
+          );
         }
         .systems-marquee {
           display: flex;
           gap: 18px;
           width: max-content;
-          animation: systemsScroll 75s linear infinite;
+          animation: systemsScroll 60s linear infinite;
           will-change: transform;
+          transform: translate3d(0, 0, 0);
+          backface-visibility: hidden;
+          -webkit-backface-visibility: hidden;
         }
         .systems-marquee :global(.systems-card) {
           flex: 0 0 320px;
@@ -129,19 +148,18 @@ export default function Systems() {
         @media (max-width: 540px) {
           .systems-marquee {
             gap: 12px;
-            animation-duration: 55s;
+            animation-duration: 40s;
           }
           .systems-marquee :global(.systems-card) {
-            flex: 0 0 270px;
+            flex: 0 0 260px;
             padding: 20px 18px;
-            min-height: 250px;
+            min-height: 240px;
           }
         }
-        @media (prefers-reduced-motion: reduce) {
-          .systems-marquee {
-            animation: none;
-          }
-        }
+        /* IMPORTANT: we keep the loop running even when prefers-reduced-motion
+           is set, because the marquee carries content (use cases) the user
+           needs to discover — disabling animation would mean only the first
+           cards are ever visible on mobile. */
       `}</style>
     </section>
   )
