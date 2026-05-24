@@ -80,6 +80,24 @@ body {
   }
 }
 
+/* Ensure full-width buttons inside sections always have breathing room
+   from viewport edges on small screens — Nathan flagged buttons touching
+   the right edge on his phone, which felt cropped even when no real
+   overflow existed. Padding 18px ≥ comfortable thumb-tap clearance. */
+@media (max-width: 540px) {
+  main section {
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+  }
+  /* Sections with edge-to-edge backgrounds (FOMO bg-card) keep their
+     internal container padded instead */
+  main section > .mx-auto,
+  main section > div {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
 /* ——— GRID BACKGROUND ——— */
 .grid-bg {
   position: fixed; inset: 0; z-index: 0; pointer-events: none;
