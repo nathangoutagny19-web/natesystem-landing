@@ -353,18 +353,18 @@ export const translations = {
   // Expertise & Values
   // ───────────────────────────────────────────────────────────────
   'expertise.label': { en: 'How we operate', fr: 'Notre façon de faire', hu: 'Ahogyan dolgozunk' },
-  'expertise.title': { en: 'Reliable tools.', fr: 'Des outils fiables.', hu: 'Megbízható eszközök.' },
+  'expertise.title': { en: 'Reliable technologies.', fr: 'Des technologies fiables.', hu: 'Megbízható technológiák.' },
   'expertise.titleAccent': { en: 'No one left behind.', fr: 'Personne laissé de côté.', hu: 'Senkit sem hagyunk hátra.' },
   'expertise.sub': {
     en: 'Two convictions that shape how we build every system.',
     fr: 'Deux convictions qui guident la façon dont on construit chaque système.',
     hu: 'Két meggyőződés, amelyek meghatározzák, hogyan építünk meg minden rendszert.',
   },
-  'expertise.p1.title': { en: 'Best-in-class tools, secured', fr: 'Les outils les plus fiables du marché', hu: 'A piac legmegbízhatóbb eszközei' },
+  'expertise.p1.title': { en: 'Best-in-class technologies, secured', fr: 'Les technologies les plus fiables du marché', hu: 'A piac legmegbízhatóbb technológiái' },
   'expertise.p1.desc': {
-    en: 'We use the most reliable and secured tools the market has — Next.js, Supabase, Claude API, Vercel — EU-hosted where possible, GDPR-native, audited. Your data and your code are protected by the same stack the most demanding teams in tech rely on.',
-    fr: 'On utilise les outils les plus fiables et sécurisés du marché — Next.js, Supabase, Claude API, Vercel — hébergés en UE quand c\'est possible, RGPD-natifs, auditables. Vos données et votre code sont protégés par la même stack que les équipes tech les plus exigeantes.',
-    hu: 'A piac legmegbízhatóbb és legbiztonságosabb eszközeit használjuk — Next.js, Supabase, Claude API, Vercel — lehetőség szerint EU-ban tárolt, GDPR-natív, auditálható. Az adatait és a kódját ugyanaz a stack védi, amelyre a legigényesebb tech-csapatok támaszkodnak.',
+    en: 'We use the most reliable and secured technologies the market has — Next.js, Supabase, Claude API, Vercel — EU-hosted where possible, GDPR-native, audited. Your data and your code are protected by the same stack the most demanding teams in tech rely on.',
+    fr: 'On utilise les technologies les plus fiables et sécurisées du marché — Next.js, Supabase, Claude API, Vercel — hébergées en UE quand c\'est possible, RGPD-natives, auditables. Vos données et votre code sont protégés par la même stack que les équipes tech les plus exigeantes.',
+    hu: 'A piac legmegbízhatóbb és legbiztonságosabb technológiáit használjuk — Next.js, Supabase, Claude API, Vercel — lehetőség szerint EU-ban tárolt, GDPR-natív, auditálható. Az adatait és a kódját ugyanaz a stack védi, amelyre a legigényesebb tech-csapatok támaszkodnak.',
   },
   'expertise.p2.title': { en: 'No one left out of control', fr: 'Personne laissé hors de contrôle', hu: 'Senki sem marad ki az irányításból' },
   'expertise.p2.desc': {
