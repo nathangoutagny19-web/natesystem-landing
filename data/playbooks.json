@@ -208,6 +208,25 @@
         { "icon": "Utensils", "title": "HACCP + allergènes INCO", "text": "14 allergènes majeurs identifiés automatiquement, fiches allergène événement générées en sortie." },
         { "icon": "Euro", "title": "+30 à +50 % de devis traités", "text": "Sans recruter. C'est ce qui vous permet de capter le marché là où la concurrence sature." }
       ]
+    },
+    {
+      "slug": "metiers-du-vin",
+      "title": "Le Playbook IA pour les Métiers du Vin",
+      "pdfPath": "/playbooks/12-metiers-du-vin.pdf",
+      "mockupPath": "/playbook-mockups/12-metiers-du-vin.png",
+      "metaDescription": "Un guide pratique pour intégrer l'IA dans un domaine viticole, une maison de négoce ou un caviste : DRM, CVI, HVE, export et allocations clients. Playbook gratuit, 30 pages, PDF.",
+      "hero": {
+        "eyebrow": "PLAYBOOK GRATUIT · 30 PAGES · PDF",
+        "h1": "Un playbook IA, pratique, pour les métiers du vin.",
+        "subtitle": "Un guide concret pour utiliser l'IA dans un domaine viticole, une maison de négoce ou un caviste indépendant : alléger la DRM et le CVI, suivre la certification HVE ou Bio, accélérer les allocations clients et l'export — sans toucher à votre approche du vin ni à votre relation négociant."
+      },
+      "bullets": [
+        { "icon": "Clock", "title": "30 % du temps en admin douanière", "text": "DRM mensuelle, CVI, capsules CRD, registres : pourquoi un vigneron passe plus de temps en bureau qu'en cave, et ce que l'IA peut absorber." },
+        { "icon": "Brain", "title": "Ce que l'IA fait vraiment", "text": "Pré-remplissage DRM depuis les ventes, suivi parcelle par parcelle des intrants HVE/Bio, réponse aux demandes allocataires depuis vos millésimes." },
+        { "icon": "Zap", "title": "7 automatisations vigneron & négoce", "text": "DRM, CVI, allocations clients, fiches techniques cuvées, suivi export DEB, relances cavistes, facturation électronique 2026." },
+        { "icon": "Shield", "title": "Conformité HVE, Bio & douanes", "text": "Traçabilité parcellaire pour les audits Ecocert et HVE, registre intrants automatique, alertes 90 jours avant échéance capsules CRD." },
+        { "icon": "Euro", "title": "+15 à +25 % de capacité commerciale", "text": "Sans recruter. Pour que vos commerciaux et vos allocataires passent plus de temps sur le vin et moins sur l'admin." }
+      ]
     }
   ]
 }

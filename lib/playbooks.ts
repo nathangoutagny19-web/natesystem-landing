@@ -48,6 +48,7 @@ const SECTOR_LABELS: Record<string, string> = {
   'centres-formation': 'Centres de formation Qualiopi',
   'securite-gardiennage': 'Sécurité & gardiennage',
   'traiteurs-evenementiel': 'Traiteurs & événementiel',
+  'metiers-du-vin': 'Métiers du vin',
 }
 
 export function sectorLabelFor(slug: string): string {
@@ -77,6 +78,8 @@ const CARD_TAGLINES: Record<string, string> = {
     'Générer le planning quotidien et suivre CNAPS, paie 3043, AO — en sous-effectif chronique.',
   'traiteurs-evenementiel':
     'Chiffrer plus vite les devis sur-mesure et produire les fiches techniques avec allergènes INCO.',
+  'metiers-du-vin':
+    'Alléger la DRM, le CVI et les allocations clients sans toucher à votre approche du vin.',
 }
 
 export function cardTaglineFor(slug: string): string {
