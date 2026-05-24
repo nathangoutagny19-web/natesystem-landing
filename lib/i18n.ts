@@ -7,7 +7,7 @@ export const translations = {
   'nav.contact': { en: 'Contact', fr: 'Contact', hu: 'Kapcsolat' },
 
   // Hero
-  'hero.label': { en: 'Operational software · Applied AI · French SMBs', fr: 'Logiciel opérationnel · IA appliquée · PME françaises', hu: 'Operatív szoftver · Alkalmazott MI · Francia KKV-k' },
+  'hero.label': { en: 'Operational software · AI integration · Digital strategy', fr: 'Logiciel opérationnel · Intégration IA · Stratégie digitale', hu: 'Operatív szoftver · MI-integráció · Digitális stratégia' },
   'hero.title1': { en: 'Multiply your', fr: 'Multipliez vos', hu: 'Sokszorozza meg az' },
   'hero.titleAccent': { en: 'results.', fr: 'résultats.', hu: 'eredményeit.' },
   'hero.title2': { en: 'Without hiring more.', fr: 'Sans embaucher plus.', hu: 'Új munkatársak nélkül.' },
@@ -134,9 +134,9 @@ export const translations = {
   'process.step3': { en: 'Finally — Deploy', fr: 'Enfin — Déploiement', hu: 'Végül — Bevezetés' },
   'process.step3Duration': { en: '30-day support included', fr: 'Support 30 jours inclus', hu: '30 napos támogatás a csomag része' },
   'process.step3Desc': {
-    en: 'We deploy on your VPS or your cloud. We train your teams. We measure the first ROI. Your software is live, the AI runs under your control, your infrastructure belongs to you.',
-    fr: 'On déploie sur votre VPS ou votre cloud. On forme vos équipes. On mesure le premier ROI. Votre logiciel est live, l\'IA tourne sous votre contrôle, votre infrastructure vous appartient.',
-    hu: 'Bevezetjük az Ön VPS-én vagy felhőjén. Betanítjuk a csapatait. Megmérjük az első megtérülést. A szoftvere él, az MI az Ön ellenőrzése alatt fut, az infrastruktúra az Öné.',
+    en: 'We deploy on your VPS or your cloud. We train your teams. We measure the first ROI. Then the system becomes autonomous — and keeps getting richer over time, learning from every interaction it routes through its brain.',
+    fr: 'On déploie sur votre VPS ou votre cloud. On forme vos équipes. On mesure le premier ROI. Ensuite le système devient autonome — et s\'enrichit dans le temps, en apprenant de chaque interaction qui passe par son cerveau.',
+    hu: 'Bevezetjük az Ön VPS-én vagy felhőjén. Betanítjuk a csapatait. Megmérjük az első megtérülést. Aztán a rendszer önállóvá válik — és idővel egyre gazdagabb lesz, minden interakcióból tanulva, ami az agyán átfolyik.',
   },
   'process.guarantee1': { en: 'Guaranteed deadlines or -10%/week late', fr: 'Délais garantis ou -10%/semaine de retard', hu: 'Garantált határidők vagy -10% hetente, ha csúszunk' },
   'process.guarantee2': { en: 'ROI guarantee over 12 months', fr: 'Garantie ROI sur 12 mois', hu: '12 hónapos ROI-garancia' },
@@ -189,6 +189,8 @@ export const translations = {
   },
   'systems.groupAI': { en: 'AI systems', fr: 'Systèmes IA', hu: 'MI-rendszerek' },
   'systems.groupSoft': { en: 'Custom software', fr: 'Logiciels métier sur-mesure', hu: 'Egyedi szoftverek' },
+  'systems.tagAI': { en: 'AI integration', fr: 'Intégration IA', hu: 'MI-integráció' },
+  'systems.tagSoft': { en: 'Custom software', fr: 'Logiciel métier', hu: 'Egyedi szoftver' },
   // 3 software metier cases
   'systems.sw1.title': { en: 'Operational command center', fr: 'Poste de commandement opérationnel', hu: 'Operatív irányítóközpont' },
   'systems.sw1.desc': { en: 'Unified database + custom dashboards that replace 8-14 SaaS subscriptions. One source of truth, every team logs into one tool.', fr: 'Base de données unifiée + dashboards sur-mesure qui remplacent 8 à 14 abonnements SaaS. Une seule vérité, toute l\'équipe sur un seul outil.', hu: 'Egységes adatbázis + egyedi irányítópultok, amelyek 8-14 SaaS-előfizetést helyettesítenek. Egy igazságforrás, az egész csapat egy eszközön.' },
@@ -259,7 +261,7 @@ export const translations = {
   'sols.s2.bullet1': { en: 'Audit of your current processes', fr: 'Audit de vos process actuels', hu: 'Jelenlegi folyamatainak auditja' },
   'sols.s2.bullet2': { en: 'Progressive deployment of the 5 systems', fr: 'Déploiement progressif des 5 systèmes', hu: 'Az 5 rendszer fokozatos bevezetése' },
   'sols.s2.bullet3': { en: 'Team training for autonomy', fr: 'Formation de vos équipes', hu: 'Csapatainak képzése' },
-  'sols.s2.bullet4': { en: 'Compatible with Notion, HubSpot, Pipedrive, Sheets, Slack, Teams', fr: 'Compatible Notion, HubSpot, Pipedrive, Sheets, Slack, Teams', hu: 'Notion, HubSpot, Pipedrive, Sheets, Slack, Teams kompatibilis' },
+  'sols.s2.bullet4': { en: 'Compatible with your existing tools — Notion, HubSpot, Pipedrive, Slack, Teams, and others', fr: 'Compatible avec vos outils existants — Notion, HubSpot, Pipedrive, Slack, Teams, et d\'autres', hu: 'Kompatibilis a meglévő eszközeivel — Notion, HubSpot, Pipedrive, Slack, Teams és mások' },
   'sols.s2.bullet5': { en: 'Your data stays in the EU · GDPR-compatible', fr: 'Vos données restent en UE · Compatible RGPD', hu: 'Adatai az EU-ban maradnak · GDPR-kompatibilis' },
   'sols.s2.bullet6': { en: 'ROI measured from the first week', fr: 'ROI mesuré dès la première semaine', hu: 'A megtérülést az első héttől mérjük' },
   'sols.s2.ideal': {
@@ -298,7 +300,7 @@ export const translations = {
   // FOMO — the cost of waiting (EU stats, sourced)
   // ───────────────────────────────────────────────────────────────
   'fomo.label': { en: 'The cost of waiting', fr: 'Le coût d\'attendre', hu: 'A várakozás ára' },
-  'fomo.title': { en: 'Europe is adopting AI.', fr: 'L\'Europe adopte l\'IA.', hu: 'Európa elfogadja az MI-t.' },
+  'fomo.title': { en: 'Your competitors are adopting AI.', fr: 'Vos concurrents adoptent l\'IA.', hu: 'A versenytársai elfogadják az MI-t.' },
   'fomo.titleAccent': { en: 'You\'re still watching.', fr: 'Vous regardez encore.', hu: 'Ön még mindig nézi.' },
   'fomo.stat1.num': { en: '20%', fr: '20%', hu: '20%' },
   'fomo.stat1.desc': { en: 'of EU enterprises (10+ employees) use AI in 2025 — up from 13.5% in 2024, a +48% jump in a single year.', fr: 'des entreprises européennes (10+ employés) utilisent l\'IA en 2025 — vs 13,5% en 2024, soit +48% en un an.', hu: 'a 10+ főt foglalkoztató európai vállalatok használják az MI-t 2025-ben — szemben a 2024-es 13,5%-kal, ami +48%-os ugrás egy év alatt.' },

@@ -4,11 +4,11 @@ import WorkTogetherPrompt from '@/components/layout/WorkTogetherPrompt'
 import Hero from '@/components/home/Hero'
 import CredibilityBand from '@/components/home/CredibilityBand'
 import ClientsBar from '@/components/home/ClientsBar'
-import Systems from '@/components/home/Systems'
+import Fomo from '@/components/home/Fomo'
 import Solutions from '@/components/home/Solutions'
 import Process from '@/components/home/Process'
+import Systems from '@/components/home/Systems'
 import CaseStudy from '@/components/home/CaseStudy'
-import Fomo from '@/components/home/Fomo'
 import AboutNathan from '@/components/home/AboutNathan'
 import Faq from '@/components/home/Faq'
 import CtaFinal from '@/components/home/CtaFinal'
@@ -29,25 +29,25 @@ export default function Home() {
       <ClientsBar />
       <Divider />
 
-      {/* 4 — Les 5 systèmes qui marchent (avec ROI chiffrés) */}
-      <Systems />
-      <Divider />
+      {/* 4 — FOMO chiffrée (Eurostat 2025 / McKinsey / Salesforce) — amorce la décision */}
+      <Fomo />
 
-      {/* 5 — 3 solutions : Plateforme Dédiée (reco) / Écosystème IA / Audit */}
+      {/* 5 — 3 solutions : Plateforme Dédiée / Écosystème IA / Audit */}
       <Solutions />
       <Divider />
 
-      {/* 6 — Méthode : audit → build → déploiement */}
+      {/* 6 — Méthode : audit → build → autonome */}
       <Process />
       <Divider />
 
-      {/* 7 — Témoignages : Catherine Chromosome + emplacement futurs avis */}
+      {/* 7 — Les cas qu'on construit (marquee défilant : 5 systèmes IA + 3 logiciels métier) */}
+      <Systems />
+      <Divider />
+
+      {/* 8 — Témoignages : Catherine Chromosome + emplacement futurs avis */}
       <CaseStudy />
 
-      {/* 8 — FOMO chiffrée sur sources Eurostat / McKinsey / Salesforce */}
-      <Fomo />
-
-      {/* 9 — À propos Nathan : un seul opérateur, déploiements concrets */}
+      {/* 9 — À propos Nathan */}
       <AboutNathan />
       <Divider />
 

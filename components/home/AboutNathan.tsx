@@ -1,7 +1,23 @@
 'use client'
 
+import { Mail } from 'lucide-react'
 import FadeUp from '@/components/ui/FadeUp'
 import { useLang } from '@/components/providers/LangProvider'
+
+function LinkedInIcon({ size = 15 }: { size?: number }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      aria-hidden="true"
+    >
+      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+    </svg>
+  )
+}
 
 export default function AboutNathan() {
   const { t } = useLang()
@@ -96,34 +112,50 @@ export default function AboutNathan() {
               >
                 {t('about.note')}
               </p>
-              <div className="flex gap-4 items-center">
+              <div className="flex gap-3 items-center flex-wrap">
                 <a
                   href="https://www.linkedin.com/in/nathan-goutagny"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-sans"
+                  aria-label="LinkedIn Nathan Goutagny"
+                  className="about-link"
                   style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: 8,
                     fontSize: 13,
                     fontWeight: 500,
                     color: 'var(--text)',
-                    textDecoration: 'underline',
-                    textDecorationColor: 'var(--border-hover)',
+                    textDecoration: 'none',
+                    padding: '8px 14px',
+                    border: '1px solid var(--border)',
+                    borderRadius: 8,
+                    transition: 'border-color 0.2s ease, background 0.2s ease',
                   }}
                 >
-                  {t('about.linkedin')} ↗
+                  <LinkedInIcon size={15} />
+                  <span>LinkedIn</span>
                 </a>
                 <a
                   href="mailto:nathan@natesystem.com"
-                  className="font-sans"
+                  aria-label="Email Nathan"
+                  className="about-link"
                   style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: 8,
                     fontSize: 13,
                     fontWeight: 500,
                     color: 'var(--text)',
-                    textDecoration: 'underline',
-                    textDecorationColor: 'var(--border-hover)',
+                    textDecoration: 'none',
+                    padding: '8px 14px',
+                    border: '1px solid var(--border)',
+                    borderRadius: 8,
+                    transition: 'border-color 0.2s ease, background 0.2s ease',
                   }}
                 >
-                  nathan@natesystem.com
+                  <Mail size={15} strokeWidth={1.8} />
+                  <span>nathan@natesystem.com</span>
                 </a>
               </div>
             </div>
