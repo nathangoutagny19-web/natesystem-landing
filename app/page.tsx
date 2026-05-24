@@ -2,16 +2,15 @@ import Nav from '@/components/layout/Nav'
 import MobileCta from '@/components/layout/MobileCta'
 import WorkTogetherPrompt from '@/components/layout/WorkTogetherPrompt'
 import Hero from '@/components/home/Hero'
+import CredibilityBand from '@/components/home/CredibilityBand'
 import ClientsBar from '@/components/home/ClientsBar'
-import Problem from '@/components/home/Problem'
-import Solution from '@/components/home/Solution'
-import AgentsInAction from '@/components/home/AgentsInAction'
-import Schema from '@/components/home/Schema'
-import CaseStudy from '@/components/home/CaseStudy'
+import Constat from '@/components/home/Constat'
+import Systems from '@/components/home/Systems'
+import Solutions from '@/components/home/Solutions'
 import Process from '@/components/home/Process'
-import Infrastructure from '@/components/home/Infrastructure'
-import Integrations from '@/components/home/Integrations'
-import ForWho from '@/components/home/ForWho'
+import CaseStudy from '@/components/home/CaseStudy'
+import Fomo from '@/components/home/Fomo'
+import AboutNathan from '@/components/home/AboutNathan'
 import Faq from '@/components/home/Faq'
 import CtaFinal from '@/components/home/CtaFinal'
 import Divider from '@/components/ui/Divider'
@@ -21,48 +20,42 @@ export default function Home() {
     <main>
       <Nav />
 
-      {/* 1 — Hero */}
+      {/* 1 — Hero : promesse business immédiate */}
       <Hero />
 
-      {/* 1bis — Clients trust bar (3 references, neutral, no red accent) */}
+      {/* 2 — Bandeau crédibilité : 4 engagements fermes */}
+      <CredibilityBand />
+
+      {/* 3 — Logos clients */}
       <ClientsBar />
       <Divider />
 
-      {/* 2 — Problem (absorbs CostPain + Quantification inline) */}
-      <Problem />
+      {/* 4 — Le constat : transition narrative vers les 5 systèmes */}
+      <Constat />
+
+      {/* 5 — Les 5 systèmes qui marchent (avec ROI chiffrés) */}
+      <Systems />
       <Divider />
 
-      {/* 3 — Solution (custom software + integrated AI) */}
-      <Solution />
+      {/* 6 — 3 solutions : Plateforme Dédiée (reco) / Écosystème IA / Audit */}
+      <Solutions />
       <Divider />
 
-      {/* 3bis — Agents in action: 3 concrete agent archetypes */}
-      <AgentsInAction />
-
-      {/* 3ter — Animated 5-node operational schema */}
-      <Schema />
-      <Divider />
-
-      {/* 4 — Case Study Chromosome (video + metrics + quote unified) */}
-      <CaseStudy />
-      <Divider />
-
-      {/* 5 — Process (audit → build → deploy) */}
+      {/* 7 — Méthode : audit → build → déploiement */}
       <Process />
       <Divider />
 
-      {/* 5bis — Infrastructure & sovereignty */}
-      <Infrastructure />
+      {/* 8 — Témoignages : Catherine Chromosome + emplacement futurs avis */}
+      <CaseStudy />
 
-      {/* 5ter — Integrations marquee */}
-      <Integrations />
+      {/* 9 — FOMO chiffrée sur sources Eurostat / McKinsey / Salesforce */}
+      <Fomo />
+
+      {/* 10 — À propos Nathan : un seul opérateur, déploiements concrets */}
+      <AboutNathan />
       <Divider />
 
-      {/* 6 — For who + promises strip (qualification + no lock-in) */}
-      <ForWho />
-      <Divider />
-
-      {/* 7 — FAQ + single final CTA */}
+      {/* 11 — FAQ + CTA final */}
       <Faq />
       <Divider />
       <CtaFinal />

@@ -87,10 +87,10 @@ export const translations = {
   },
   'solution.decideTags': { en: 'Agentic AI · Automation · Data analytics', fr: 'IA agentique · Automatisation · Data analytics', hu: 'Ágensalapú MI · Automatizáció · Adatelemzés' },
 
-  // Case study (unifies results + testimonial)
-  'results.label': { en: 'Client case study', fr: 'Cas client', hu: 'Ügyfél esettanulmány' },
-  'results.title': { en: 'Real client.', fr: 'Vrai client.', hu: 'Valódi ügyfél.' },
-  'results.titleAccent': { en: 'Real numbers.', fr: 'Vrais chiffres.', hu: 'Valódi számok.' },
+  // Case study (unifies results + testimonial) — reframed to "what those who built it with us say"
+  'results.label': { en: 'What they say', fr: 'Ce qu\'ils en disent', hu: 'Amit mondanak' },
+  'results.title': { en: 'What our clients say,', fr: 'Ce que disent ceux qui l\'ont', hu: 'Amit azok mondanak,' },
+  'results.titleAccent': { en: 'who built it with us.', fr: 'construit avec nous.', hu: 'akik velünk építették.' },
   'results.title2': { en: '', fr: '', hu: '' },
   'results.sub': {
     en: 'Every number below is measured, documented, and verified with the client.',
@@ -155,6 +155,193 @@ export const translations = {
   'cta.r1': { en: '30 min call', fr: 'Appel de 30 min', hu: '30 perces hívás' },
   'cta.r2': { en: 'No pitch', fr: 'Sans pitch', hu: 'Nincs értékesítési szöveg' },
   'cta.r3': { en: 'Response within 24h', fr: 'Réponse sous 24h', hu: 'Válasz 24 órán belül' },
+
+  // ───────────────────────────────────────────────────────────────
+  // Credibility band (replaces the old "cas client hero" zone)
+  // ───────────────────────────────────────────────────────────────
+  'cred.engagement1': { en: '100% of our clients still in production · 12+ months after delivery', fr: '100% de nos clients en production · 12+ mois après livraison', hu: 'Ügyfeleink 100%-a éles üzemben · 12+ hónappal az átadás után' },
+  'cred.engagement2': { en: 'Source code delivered · You own it 100%', fr: 'Code source livré · Vous êtes propriétaire à 100%', hu: 'Forráskód átadva · 100%-ban az Öné' },
+  'cred.engagement3': { en: 'Measurable impact in under 30 days · Results guarantee', fr: 'Impact mesurable en moins de 30 jours · Garantie résultat', hu: 'Mérhető hatás 30 napon belül · Eredménygarancia' },
+  'cred.engagement4': { en: 'Data hosted in the EU · GDPR-native', fr: 'Données hébergées en UE · RGPD-natif', hu: 'EU-ban tárolt adatok · GDPR-natív' },
+
+  // ───────────────────────────────────────────────────────────────
+  // Constat (narrative bridge before "5 systèmes")
+  // ───────────────────────────────────────────────────────────────
+  'constat.label': { en: 'The reality', fr: 'Le constat', hu: 'A valóság' },
+  'constat.title': { en: 'Autonomous agents look great online.', fr: 'Les agents autonomes font rêver.', hu: 'Az autonóm ügynökök jól néznek ki online.' },
+  'constat.titleAccent': { en: 'Companies don\'t actually want them.', fr: 'Les entreprises n\'en veulent pas.', hu: 'A vállalatok valójában nem akarják őket.' },
+  'constat.body': {
+    en: 'On social media, it\'s a race to multi-agent systems and impressive demos. On the ground, SME executives ask for something else: simple systems that solve a precise problem with a measurable ROI. Here are the five that actually work for our clients.',
+    fr: 'Sur les réseaux, c\'est la course aux systèmes multi-agents et aux démos qui impressionnent. Sur le terrain, les dirigeants de PME nous demandent autre chose : des systèmes simples, qui résolvent un problème précis, avec un ROI mesurable. Voici les cinq qui marchent vraiment chez nos clients.',
+    hu: 'A közösségi médiában multi-ügynök rendszerek és látványos demók versenye folyik. A terepen a KKV-vezetők mást kérnek: egyszerű rendszereket, amelyek pontos problémát oldanak meg mérhető megtérüléssel. Íme az öt, amely valóban működik az ügyfeleinknél.',
+  },
+
+  // ───────────────────────────────────────────────────────────────
+  // Systems — the 5 systems that work
+  // ───────────────────────────────────────────────────────────────
+  'systems.label': { en: 'The 5 systems', fr: 'Les 5 systèmes', hu: 'Az 5 rendszer' },
+  'systems.title': { en: 'Five systems that actually move', fr: 'Cinq systèmes qui font vraiment', hu: 'Öt rendszer, amelyek valóban' },
+  'systems.titleAccent': { en: 'the needle.', fr: 'bouger les chiffres.', hu: 'mozgatják a számokat.' },
+  'systems.sub': {
+    en: 'Nothing is deployed unless we can chiffer its ROI within the first week.',
+    fr: 'On ne déploie aucun système si on ne peut pas chiffrer son ROI dans la première semaine.',
+    hu: 'Semmit sem vezetünk be, amíg nem tudjuk számszerűsíteni a megtérülését az első héten.',
+  },
+  'systems.s1.title': { en: 'Instant qualification', fr: 'Qualification instantanée', hu: 'Azonnali minősítés' },
+  'systems.s1.desc': { en: 'An agent that answers, qualifies and dispatches a lead in under 5 minutes, 24/7.', fr: 'Un agent qui répond, qualifie et dispatche un lead en moins de 5 min, 24/7.', hu: 'Egy ügynök, amely 5 percen belül válaszol, minősít és továbbít egy leadet, a hét minden napján.' },
+  'systems.s1.metric': { en: '+10% conversion = +€20K/year on 100 leads at €2K basket', fr: '+10% conversion = +20 K€/an sur 100 leads à 2 K€', hu: '+10% konverzió = +20 000 € évente 100 leadnél 2000 € átlagos kosárértékkel' },
+  'systems.s2.title': { en: 'Invisible back-office', fr: 'Back-office invisible', hu: 'Láthatatlan back-office' },
+  'systems.s2.desc': { en: 'Document reading, recopying, classifying: half of an admin role absorbed.', fr: 'Lecture de documents, recopie, classement : la moitié d\'un poste admin absorbée.', hu: 'Dokumentumolvasás, átmásolás, osztályozás: egy adminisztratív munkakör fele felszabadul.' },
+  'systems.s2.metric': { en: 'ROI in 2 months on a €40K/year admin role', fr: 'ROI en 2 mois sur un poste à 40 K€/an', hu: '2 hónap alatt megtérül egy 40 000 €/év adminisztratív poszton' },
+  'systems.s3.title': { en: 'Automatic follow-up', fr: 'Relance commerciale automatique', hu: 'Automatikus utánkövetés' },
+  'systems.s3.desc': { en: '3 to 5 personalised messages over 2-3 weeks, that stop the moment the prospect replies.', fr: '3 à 5 messages personnalisés sur 2-3 semaines, qui s\'arrêtent dès que le prospect répond.', hu: '3-5 személyre szabott üzenet 2-3 hét alatt, amelyek leállnak, amint a prospect válaszol.' },
+  'systems.s3.metric': { en: '4% → 12% conversion at our B2B consulting clients', fr: '4% → 12% conversion chez nos clients consultants B2B', hu: '4% → 12% konverzió B2B tanácsadó ügyfeleinknél' },
+  'systems.s4.title': { en: 'Dormant contact reactivation', fr: 'Réactivation des contacts dormants', hu: 'Alvó kapcsolatok újraaktiválása' },
+  'systems.s4.desc': { en: 'Former clients, ghost prospects, inactive subscribers: we wake them up without ad budget.', fr: 'Anciens clients, prospects fantômes, abonnés inactifs : on les réveille sans budget pub.', hu: 'Korábbi ügyfelek, szellem-prospektek, inaktív feliratkozók: hirdetési költségvetés nélkül ébresztjük fel őket.' },
+  'systems.s4.metric': { en: '+€45K/year on 500 contacts at 3% reconversion', fr: '+45 K€/an sur 500 contacts à 3% de reconversion', hu: '+45 000 € évente 500 kapcsolatnál 3% újrakonverzióval' },
+  'systems.s5.title': { en: 'Automatic internal reporting', fr: 'Reporting interne automatique', hu: 'Automatikus belső riportálás' },
+  'systems.s5.desc': { en: 'CRM + accounting + project collection, analysis, push to Slack or Teams. No new dashboard.', fr: 'Collecte CRM + compta + projet, analyse, push dans Slack ou Teams. Pas de nouveau dashboard.', hu: 'CRM + könyvelés + projekt gyűjtés, elemzés, Slack vagy Teams push. Nincs új dashboard.' },
+  'systems.s5.metric': { en: '500 hours/year recovered at a 50-call/day construction SMB', fr: '500h/an récupérées sur une PME BTP de 50 SAV/jour', hu: 'Évente 500 óra visszanyerve egy napi 50 hívást kezelő építőipari KKV-nál' },
+
+  // ───────────────────────────────────────────────────────────────
+  // 3 Solutions (cards à la Exploria)
+  // ───────────────────────────────────────────────────────────────
+  'sols.label': { en: 'Our solutions', fr: 'Nos solutions', hu: 'Megoldásaink' },
+  'sols.title': { en: 'Three entry doors.', fr: 'Trois portes d\'entrée.', hu: 'Három belépési pont.' },
+  'sols.titleAccent': { en: 'One execution standard.', fr: 'Un seul standard d\'exécution.', hu: 'Egyetlen végrehajtási színvonal.' },
+  'sols.sub': {
+    en: 'We start by understanding your situation. Then we recommend the solution that creates real impact.',
+    fr: 'On commence par comprendre votre situation. Ensuite on vous recommande la solution qui crée de l\'impact réel.',
+    hu: 'A helyzetének megértésével kezdünk. Aztán azt a megoldást ajánljuk, amely valódi hatást hoz létre.',
+  },
+  // Solution 1 — Plateforme Dédiée (recommandé)
+  'sols.s1.badge': { en: 'Recommended', fr: 'Recommandé', hu: 'Ajánlott' },
+  'sols.s1.title': { en: 'Dedicated Platform', fr: 'Plateforme Dédiée', hu: 'Dedikált Platform' },
+  'sols.s1.target': { en: 'FOR SMBs OF 5-50 PEOPLE WHO WANT THEIR OWN COMPLETE OPERATIONAL SYSTEM', fr: 'POUR PME 5-50 PERSONNES QUI VEULENT LEUR SYSTÈME MÉTIER COMPLET', hu: '5-50 FŐS KKV-K SZÁMÁRA, AKIK SAJÁT TELJES OPERATÍV RENDSZERT AKARNAK' },
+  'sols.s1.promise': {
+    en: 'We build your custom software with AI integrated — the system that runs your entire business, that belongs to you for life.',
+    fr: 'On construit votre logiciel sur-mesure avec l\'IA intégrée — le système qui pilote toute votre activité, qui vous appartient à vie.',
+    hu: 'Megépítjük az egyedi szoftverét beépített MI-vel — a rendszert, amely az egész vállalkozását működteti, és örökre az Öné.',
+  },
+  'sols.s1.bullet1': { en: 'Complete mapping of your business in audit', fr: 'Cartographie complète de votre métier en audit', hu: 'A szakmájának teljes feltérképezése audit során' },
+  'sols.s1.bullet2': { en: 'Unified database + custom interfaces', fr: 'Base de données unifiée + interfaces sur-mesure', hu: 'Egységes adatbázis + egyedi felületek' },
+  'sols.s1.bullet3': { en: 'AI integrated where it replaces real hours', fr: 'IA intégrée là où elle remplace de vraies heures', hu: 'MI beépítve oda, ahol valódi munkaórákat helyettesít' },
+  'sols.s1.bullet4': { en: 'Source code delivered · 100% ownership', fr: 'Code source livré · Propriétaire à 100%', hu: 'Forráskód átadva · 100%-os tulajdonjog' },
+  'sols.s1.bullet5': { en: 'Modern stack: Next.js + Supabase + Claude API', fr: 'Stack moderne : Next.js + Supabase + Claude API', hu: 'Modern stack: Next.js + Supabase + Claude API' },
+  'sols.s1.bullet6': { en: 'In production in 4 to 8 weeks · Hosted in the EU · GDPR-native', fr: 'En production en 4 à 8 semaines · Hébergé en UE · RGPD-natif', hu: 'Éles üzemben 4-8 hét alatt · EU-s hosting · GDPR-natív' },
+  'sols.s1.ideal': {
+    en: 'Executives who want to escape the SaaS-spaghetti and have a single operational tool that belongs to them — not a subscription for life.',
+    fr: 'Dirigeants qui veulent sortir du SaaS-spaghetti et avoir un seul outil métier qui leur appartient — pas un abonnement à vie.',
+    hu: 'Vezetők, akik ki akarnak szabadulni a SaaS-spagettiből és egyetlen, hozzájuk tartozó operatív eszközt akarnak — nem egy életre szóló előfizetést.',
+  },
+  'sols.s1.cta': { en: 'Start the audit', fr: 'Démarrer l\'audit', hu: 'Audit indítása' },
+  'sols.s1.ctaSub': { en: '30 min · No commitment', fr: '30 min · Sans engagement', hu: '30 perc · Nincs elkötelezettség' },
+  // Solution 2 — Écosystème IA
+  'sols.s2.title': { en: 'AI Ecosystem', fr: 'Écosystème IA', hu: 'MI-ökoszisztéma' },
+  'sols.s2.target': { en: 'FOR COMPANIES THAT ALREADY HAVE THEIR STACK AND WANT TO ADD OPERATIONAL AI', fr: 'POUR ENTREPRISES QUI ONT DÉJÀ LEUR STACK ET VEULENT Y AJOUTER L\'IA OPÉRATIONNELLE', hu: 'OLYAN VÁLLALATOKNAK, AKIKNEK MÁR VAN STACKJÜK ÉS HOZZÁ AKARJÁK ADNI AZ OPERATÍV MI-T' },
+  'sols.s2.promise': {
+    en: 'We integrate the 5 AI systems into your existing tools — without breaking anything, without migrating everything.',
+    fr: 'On intègre les 5 systèmes IA dans vos outils existants — sans tout casser, sans tout migrer.',
+    hu: 'Integráljuk az 5 MI-rendszert a meglévő eszközeibe — anélkül, hogy bármit eltörnénk, anélkül, hogy mindent migrálnánk.',
+  },
+  'sols.s2.bullet1': { en: 'Audit of your current processes', fr: 'Audit de vos process actuels', hu: 'Jelenlegi folyamatainak auditja' },
+  'sols.s2.bullet2': { en: 'Progressive deployment of the 5 systems', fr: 'Déploiement progressif des 5 systèmes', hu: 'Az 5 rendszer fokozatos bevezetése' },
+  'sols.s2.bullet3': { en: 'Team training for autonomy', fr: 'Formation de vos équipes', hu: 'Csapatainak képzése' },
+  'sols.s2.bullet4': { en: 'Compatible with Notion, HubSpot, Pipedrive, Sheets, Slack, Teams', fr: 'Compatible Notion, HubSpot, Pipedrive, Sheets, Slack, Teams', hu: 'Notion, HubSpot, Pipedrive, Sheets, Slack, Teams kompatibilis' },
+  'sols.s2.bullet5': { en: 'Your data stays in the EU · GDPR-compatible', fr: 'Vos données restent en UE · Compatible RGPD', hu: 'Adatai az EU-ban maradnak · GDPR-kompatibilis' },
+  'sols.s2.bullet6': { en: 'ROI measured from the first week', fr: 'ROI mesuré dès la première semaine', hu: 'A megtérülést az első héttől mérjük' },
+  'sols.s2.ideal': {
+    en: 'Teams that want to stop losing 60% of their time on data entry and reporting, without changing tools.',
+    fr: 'Équipes qui veulent arrêter de perdre 60% de leur temps en saisie et reporting, sans changer d\'outils.',
+    hu: 'Csapatok, amelyek nem akarnak idejük 60%-át adatbevitelre és riportálásra fordítani, eszközváltás nélkül.',
+  },
+  'sols.s2.cta': { en: 'Start the audit', fr: 'Démarrer l\'audit', hu: 'Audit indítása' },
+  'sols.s2.ctaSub': { en: '30 min · No commitment', fr: '30 min · Sans engagement', hu: '30 perc · Nincs elkötelezettség' },
+  // Solution 3 — Audit & Plan d'Action
+  'sols.s3.title': { en: 'Audit & Action Plan', fr: 'Audit & Plan d\'Action', hu: 'Audit & Akcióterv' },
+  'sols.s3.target': { en: 'FOR EXECUTIVES WHO WANT A DIAGNOSIS BEFORE INVESTING', fr: 'POUR DIRIGEANTS QUI VEULENT UN DIAGNOSTIC AVANT D\'INVESTIR', hu: 'BEFEKTETÉS ELŐTT DIAGNÓZIST KÉRŐ VEZETŐKNEK' },
+  'sols.s3.promise': {
+    en: 'A deep operational audit of your business, and a costed action plan you can execute with us or in-house.',
+    fr: 'Un audit opérationnel approfondi de votre activité, et un plan d\'action chiffré que vous pouvez exécuter avec nous ou en interne.',
+    hu: 'Vállalkozása mély operatív auditja és egy árazott akcióterv, amelyet velünk vagy házon belül hajthat végre.',
+  },
+  'sols.s3.bullet1': { en: 'Half-day mapping of your processes', fr: 'Demi-journée de mapping de vos process', hu: 'Fél napos folyamatfeltérképezés' },
+  'sols.s3.bullet2': { en: 'Identification of 3-5 priority AI levers', fr: 'Identification des 3-5 leviers IA prioritaires', hu: '3-5 prioritású MI-emelő azonosítása' },
+  'sols.s3.bullet3': { en: 'Costed plan: DIY / NateSystem / mix', fr: 'Plan chiffré : DIY / NateSystem / mix', hu: 'Árazott terv: DIY / NateSystem / vegyes' },
+  'sols.s3.bullet4': { en: 'Tech stack recommendations', fr: 'Recommandations stack technique', hu: 'Technikai stack ajánlások' },
+  'sols.s3.bullet5': { en: '15-25 page document delivered within 7 days', fr: 'Document de 15-25 pages livré sous 7 jours', hu: '15-25 oldalas dokumentum 7 napon belül átadva' },
+  'sols.s3.bullet6': { en: 'You leave with the plan, even without us', fr: 'Vous repartez avec le plan, même sans nous', hu: 'A tervvel távozik, akár velünk, akár nélkülünk' },
+  'sols.s3.ideal': {
+    en: 'Executives who want to understand before committing — to know where AI can actually help and what it would cost.',
+    fr: 'Dirigeants qui veulent comprendre avant d\'engager — savoir où l\'IA peut vraiment aider et combien ça coûte.',
+    hu: 'Vezetők, akik megérteni akarnak, mielőtt elkötelezik magukat — tudni, hol segíthet ténylegesen az MI és mennyibe kerül.',
+  },
+  'sols.s3.cta': { en: 'Book the audit', fr: 'Réserver l\'audit', hu: 'Audit foglalása' },
+  'sols.s3.ctaSub': { en: 'Fixed price · Delivered within 7 days', fr: 'Forfait fixe · Livré sous 7 jours', hu: 'Fix ár · 7 napon belül átadva' },
+  // Common labels
+  'sols.includesLabel': { en: 'What you get', fr: 'Ce que vous obtenez', hu: 'Amit kap' },
+  'sols.idealLabel': { en: 'Ideal for', fr: 'Idéal pour', hu: 'Ideális' },
+
+  // ───────────────────────────────────────────────────────────────
+  // FOMO — the cost of waiting (EU stats, sourced)
+  // ───────────────────────────────────────────────────────────────
+  'fomo.label': { en: 'The cost of waiting', fr: 'Le coût d\'attendre', hu: 'A várakozás ára' },
+  'fomo.title': { en: 'Europe is AI-ising.', fr: 'L\'Europe IA-ise.', hu: 'Európa MI-síti magát.' },
+  'fomo.titleAccent': { en: 'You\'re still watching.', fr: 'Vous regardez encore.', hu: 'Ön még mindig nézi.' },
+  'fomo.stat1.num': { en: '13.5%', fr: '13,5%', hu: '13,5%' },
+  'fomo.stat1.desc': { en: 'of European enterprises (10+ employees) already use AI in 2024 — up from 8% in 2023, a +69% growth in one year.', fr: 'des entreprises européennes (10+ employés) utilisent déjà l\'IA en 2024 — vs 8% en 2023, soit +69% en un an.', hu: 'a 10+ főt foglalkoztató európai vállalatok már 2024-ben használják az MI-t — szemben a 2023-as 8%-kal, ami +69%-os növekedés egy év alatt.' },
+  'fomo.stat1.source': { en: 'Eurostat, Use of AI in enterprises 2024', fr: 'Eurostat, Use of AI in enterprises 2024', hu: 'Eurostat, Use of AI in enterprises 2024' },
+  'fomo.stat1.url': { en: 'https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20251211-2', fr: 'https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20251211-2', hu: 'https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20251211-2' },
+  'fomo.stat2.num': { en: '20-30%', fr: '20-30%', hu: '20-30%' },
+  'fomo.stat2.desc': { en: 'of work time freed by AI for teams that integrate it into their core processes.', fr: 'du temps de travail libéré par l\'IA chez les équipes qui l\'intègrent dans leurs process clés.', hu: 'a munkaidő felszabadul az MI által azokban a csapatokban, amelyek a fő folyamataikba integrálják.' },
+  'fomo.stat2.source': { en: 'McKinsey, A new future of work 2024', fr: 'McKinsey, A new future of work 2024', hu: 'McKinsey, A new future of work 2024' },
+  'fomo.stat2.url': { en: 'https://www.mckinsey.com/mgi/our-research/a-new-future-of-work-the-race-to-deploy-ai', fr: 'https://www.mckinsey.com/mgi/our-research/a-new-future-of-work-the-race-to-deploy-ai', hu: 'https://www.mckinsey.com/mgi/our-research/a-new-future-of-work-the-race-to-deploy-ai' },
+  'fomo.stat3.num': { en: '2×', fr: '2×', hu: '2×' },
+  'fomo.stat3.desc': { en: 'more likely to report annual growth for SMBs that have adopted AI vs those that haven\'t.', fr: 'plus de chances de croissance annuelle pour les PME qui ont adopté l\'IA vs celles qui ne l\'ont pas fait.', hu: 'nagyobb az éves növekedés esélye az MI-t adoptáló KKV-knál azokhoz képest, akik nem tették meg.' },
+  'fomo.stat3.source': { en: 'Salesforce SMB Trends Report 2024', fr: 'Salesforce SMB Trends Report 2024', hu: 'Salesforce SMB Trends Report 2024' },
+  'fomo.stat3.url': { en: 'https://www.salesforce.com/news/stories/smb-trends-report-2024/', fr: 'https://www.salesforce.com/news/stories/smb-trends-report-2024/', hu: 'https://www.salesforce.com/news/stories/smb-trends-report-2024/' },
+  'fomo.stat4.num': { en: '91%', fr: '91%', hu: '91%' },
+  'fomo.stat4.desc': { en: 'of AI-using SMBs report that AI has directly boosted their revenue.', fr: 'des PME qui utilisent l\'IA déclarent qu\'elle a directement boosté leur chiffre d\'affaires.', hu: 'az MI-t használó KKV-k jelentik, hogy az MI közvetlenül növelte a bevételüket.' },
+  'fomo.stat4.source': { en: 'Salesforce SMB Trends Report 2024', fr: 'Salesforce SMB Trends Report 2024', hu: 'Salesforce SMB Trends Report 2024' },
+  'fomo.stat4.url': { en: 'https://www.salesforce.com/news/stories/smb-trends-report-2024/', fr: 'https://www.salesforce.com/news/stories/smb-trends-report-2024/', hu: 'https://www.salesforce.com/news/stories/smb-trends-report-2024/' },
+  'fomo.body': {
+    en: 'While part of European SMBs start integrating AI into their operations, the other pays the hidden bill: up to 30% of work time consumed by tasks that a well-built infrastructure would replace. And one more month where your competitors widen the gap.',
+    fr: 'Pendant qu\'une partie des PME européennes commence à intégrer l\'IA dans leur opérationnel, l\'autre paie la facture cachée : jusqu\'à 30% du temps de travail consommé par des tâches qu\'une infrastructure bien construite remplacerait. Et un mois de plus où vos concurrents creusent l\'écart.',
+    hu: 'Miközben az európai KKV-k egy része elkezdi integrálni az MI-t az operatív működésébe, a másik fizeti a rejtett számlát: a munkaidő akár 30%-át olyan feladatok emésztik fel, amelyeket egy jól felépített infrastruktúra helyettesítene. És még egy hónap, amikor a versenytársak növelik az előnyt.',
+  },
+  'fomo.cta': { en: 'Book the audit before they widen the gap', fr: 'Réserver l\'audit avant qu\'ils ne creusent l\'écart', hu: 'Foglalja le az auditot, mielőtt növelik az előnyt' },
+
+  // ───────────────────────────────────────────────────────────────
+  // About Nathan
+  // ───────────────────────────────────────────────────────────────
+  'about.label': { en: 'Who builds', fr: 'Qui construit', hu: 'Ki építi' },
+  'about.title': { en: 'A single operator.', fr: 'Un seul opérateur.', hu: 'Egyetlen operátor.' },
+  'about.titleAccent': { en: 'Real deployments behind.', fr: 'Des déploiements concrets derrière.', hu: 'Valódi bevezetésekkel a háta mögött.' },
+  'about.name': { en: 'Nathan Goutagny', fr: 'Nathan Goutagny', hu: 'Nathan Goutagny' },
+  'about.role': { en: 'Founder · Custom software · Applied AI · Lyon', fr: 'Fondateur · Logiciel sur-mesure · IA appliquée · Lyon', hu: 'Alapító · Egyedi szoftver · Alkalmazott MI · Lyon' },
+  'about.bio': {
+    en: 'Engineer trained at the intersection of software and applied AI. Years of building operational systems for French and Hungarian SMBs — restaurants, education, consulting. One conviction: software that belongs to the company is worth more than ten SaaS subscriptions for life.',
+    fr: 'Ingénieur formé au croisement du software et de l\'IA appliquée. Années à construire des systèmes opérationnels pour des PME françaises et hongroises — restauration, éducation, conseil. Une conviction : le logiciel qui appartient à l\'entreprise vaut mieux que dix SaaS qu\'elle loue à vie.',
+    hu: 'A szoftver és az alkalmazott MI metszéspontjában képzett mérnök. Évek óta operatív rendszereket épít francia és magyar KKV-knak — éttermek, oktatás, tanácsadás. Egy meggyőződés: a vállalathoz tartozó szoftver többet ér, mint tíz életre szóló SaaS-előfizetés.',
+  },
+  'about.note': {
+    en: 'If you talk to me, I\'m the one coding behind. Not a salesperson, not a junior.',
+    fr: 'Si vous me parlez, c\'est moi qui code derrière. Pas un commercial, pas un junior.',
+    hu: 'Ha velem beszél, én vagyok az, aki a kódot írja mögötte. Nem egy értékesítő, nem egy junior.',
+  },
+  'about.linkedin': { en: 'LinkedIn', fr: 'LinkedIn', hu: 'LinkedIn' },
+
+  // ───────────────────────────────────────────────────────────────
+  // Testimonial reframed
+  // ───────────────────────────────────────────────────────────────
+  'testi.label': { en: 'What they say', fr: 'Ce qu\'ils en disent', hu: 'Amit mondanak' },
+  'testi.title': { en: 'What our clients say,', fr: 'Ce que disent ceux qui l\'ont', hu: 'Amit azok mondanak,' },
+  'testi.titleAccent': { en: 'who built it with us.', fr: 'construit avec nous.', hu: 'akik velünk építették.' },
+  'testi.soon': {
+    en: 'More client voices coming as we ship the next deployments.',
+    fr: 'Bientôt : les retours de nos prochains clients.',
+    hu: 'Hamarosan: a következő ügyfeleink visszajelzései.',
+  },
 
   // Footer
   'footer.tagline': { en: 'Custom software · Integrated AI · Owned by you', fr: 'Logiciel sur-mesure · IA intégrée · Vous appartient', hu: 'Egyedi szoftver · Beépített MI · Az Öné' },
