@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { useLang } from '@/components/providers/LangProvider'
+import { useTheme } from '@/components/providers/ThemeProvider'
 import { CAL_LINK } from '@/lib/constants'
 
 /* ——— SVG Icons (monoline, 18px) ——— */
@@ -80,6 +81,7 @@ const Chevron = () => (
 
 export default function Nav() {
   const { lang, setLang, t } = useLang()
+  const { theme, toggleTheme } = useTheme()
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const [langOpen, setLangOpen] = useState(false)
@@ -289,6 +291,26 @@ export default function Nav() {
                 <span className={`lang-flag lang-flag-${l} mr-2`} style={{ display: 'inline-block' }} /> {l.toUpperCase()}
               </button>
             ))}
+          </div>
+
+          {/* Theme toggle — duplicates the footer one so mobile users don't have to scroll past the MobileCta */}
+          <div className="theme-toggle mt-4" style={{ alignSelf: 'flex-start' }}>
+            <button
+              className={`theme-toggle-option ${theme === 'light' ? 'active' : ''}`}
+              onClick={() => theme !== 'light' && toggleTheme()}
+              aria-label="Switch to light mode"
+              type="button"
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+            </button>
+            <button
+              className={`theme-toggle-option ${theme === 'dark' ? 'active' : ''}`}
+              onClick={() => theme !== 'dark' && toggleTheme()}
+              aria-label="Switch to dark mode"
+              type="button"
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            </button>
           </div>
 
           <Link href={CAL_LINK} className="btn-primary mt-6 justify-center">

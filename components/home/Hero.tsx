@@ -11,10 +11,10 @@ export default function Hero() {
   const { t } = useLang()
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center text-center" style={{ padding: '140px 24px 80px' }}>
+    <section className="relative min-h-screen flex flex-col items-center justify-center text-center hero-section" style={{ padding: '140px 24px 80px' }}>
       {/* Label */}
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1, ease }} className="mb-8">
-        <span className="section-label" style={{ letterSpacing: '4px' }}>{t('hero.label')}</span>
+        <span className="section-label hero-eyebrow">{t('hero.label')}</span>
       </motion.div>
 
       {/* Title — NateSystem signature: serif italic, scaled up for the new outcome-first H1 */}
@@ -72,6 +72,22 @@ export default function Hero() {
       >
         <div className="w-px h-10" style={{ background: 'linear-gradient(to bottom, var(--text-muted), transparent)', animation: 'scrollPulse 2s ease infinite' }} />
       </motion.div>
+
+      <style jsx>{`
+        .hero-eyebrow {
+          letter-spacing: 4px;
+        }
+        @media (max-width: 540px) {
+          .hero-section {
+            padding: 110px 18px 64px !important;
+            min-height: auto;
+          }
+          .hero-eyebrow {
+            letter-spacing: 2px;
+            font-size: 10px;
+          }
+        }
+      `}</style>
     </section>
   )
 }
