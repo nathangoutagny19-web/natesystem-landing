@@ -352,7 +352,7 @@ export const translations = {
   // ───────────────────────────────────────────────────────────────
   // Expertise & Values
   // ───────────────────────────────────────────────────────────────
-  'expertise.label': { en: 'How we operate', fr: 'Notre façon de faire', hu: 'Ahogyan dolgozunk' },
+  'expertise.label': { en: 'The NateSystem recipe', fr: 'La recette NateSystem', hu: 'A NateSystem recept' },
   'expertise.title': { en: 'Reliable technologies.', fr: 'Des technologies fiables.', hu: 'Megbízható technológiák.' },
   'expertise.titleAccent': { en: 'No one left behind.', fr: 'Personne laissé de côté.', hu: 'Senkit sem hagyunk hátra.' },
   'expertise.sub': {
