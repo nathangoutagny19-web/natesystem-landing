@@ -38,24 +38,24 @@ export default function Home() {
       <Solutions />
       <Divider />
 
-      {/* 6 — Méthode : audit → build → autonome */}
+      {/* 6 — Expertise & valeurs : on rassure juste après l'offre, avant de demander d'engager */}
+      <Expertise />
+      <Divider />
+
+      {/* 7 — Méthode : audit → build → autonome */}
       <Process />
       <Divider />
 
-      {/* 7 — Les cas qu'on construit (marquee défilant : 5 systèmes IA + 3 logiciels métier) */}
+      {/* 8 — Les cas qu'on construit (marquee défilant : 5 systèmes IA + 3 logiciels métier) */}
       <Systems />
       <Divider />
 
-      {/* 8 — Résultats mesurables : vrais chiffres clients */}
+      {/* 9 — Résultats mesurables : vrais chiffres clients */}
       <ResultsMetrics />
       <Divider />
 
-      {/* 9 — Témoignages : Catherine Chromosome + emplacement futurs avis */}
+      {/* 10 — Témoignages : Catherine Chromosome + emplacement futurs avis */}
       <CaseStudy />
-
-      {/* 10 — Expertise & valeurs : outils fiables + accompagnement */}
-      <Expertise />
-      <Divider />
 
       {/* 11 — À propos Nathan */}
       <AboutNathan />
