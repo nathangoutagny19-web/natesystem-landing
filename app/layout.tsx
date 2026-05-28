@@ -67,7 +67,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${dmSans.variable} ${jetbrainsMono.variable}`} suppressHydrationWarning>
+    <html lang="fr" className={`${dmSans.variable} ${jetbrainsMono.variable}`} suppressHydrationWarning>
       <head>
         {/* Instrument Serif from Google Fonts (no next/font support for italic-only) */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
