@@ -1,25 +1,58 @@
 'use client'
 
+import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import FadeUp from '@/components/ui/FadeUp'
 import { useLang } from '@/components/providers/LangProvider'
 
 /**
- * ProductShowcase — single, large product mockup right after the hero.
+ * ProductShowcase — interactive prototype embedded right after the hero.
  *
- * One mockup beats a gallery: it creates a focal point that proves
- * "real software was shipped" within 3 seconds of landing. Pattern used
- * by Linear, Vercel, Stripe, Notion.
+ * Desktop : iframe of the actual HTML prototype (visitor can click/scroll
+ * through real pages). Loaded lazily via IntersectionObserver so it never
+ * counts against LCP — the screenshot is shown until the visitor scrolls
+ * into view.
  *
- * Mockup file lives at `public/showcase/dashboard-immo.png`.
- * Caption stays generic (no client name) — it's a demo/prototype, not
- * a verifiable production client.
+ * Mobile (<768px) : iframe is a dead-zone (scroll gets trapped, no zoom).
+ * We fall back to the static screenshot + a button that opens the
+ * prototype in a new tab full-screen.
+ *
+ * Source HTML lives at public/showcase/dashboard-immo.html (single file,
+ * Tailwind CDN + Google Fonts inline, no local assets to wire).
  */
 export default function ProductShowcase() {
   const { t } = useLang()
+  const sectionRef = useRef<HTMLDivElement>(null)
+  const [shouldLoadIframe, setShouldLoadIframe] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const mql = window.matchMedia('(max-width: 767px)')
+    const update = () => setIsMobile(mql.matches)
+    update()
+    mql.addEventListener('change', update)
+    return () => mql.removeEventListener('change', update)
+  }, [])
+
+  useEffect(() => {
+    if (isMobile) return // on mobile we never load the iframe
+    if (!sectionRef.current) return
+    const obs = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          setShouldLoadIframe(true)
+          obs.disconnect()
+        }
+      },
+      { rootMargin: '200px' }
+    )
+    obs.observe(sectionRef.current)
+    return () => obs.disconnect()
+  }, [isMobile])
 
   return (
     <section
+      ref={sectionRef}
       aria-label={t('showcase.label')}
       style={{ padding: '24px 24px 80px', overflow: 'hidden' }}
     >
@@ -27,20 +60,53 @@ export default function ProductShowcase() {
         <FadeUp>
           <div className="showcase-frame">
             <div className="showcase-shadow" aria-hidden="true" />
-            <Image
-              src="/showcase/dashboard-immo.jpeg"
-              alt={t('showcase.altText')}
-              width={1842}
-              height={934}
-              priority
-              sizes="(max-width: 1200px) 100vw, 1100px"
-              style={{
-                width: '100%',
-                height: 'auto',
-                display: 'block',
-                borderRadius: 'inherit',
-              }}
-            />
+
+            {/* Topbar fenêtre style macOS — donne un cadre "vraie app" */}
+            <div className="showcase-chrome">
+              <span className="showcase-dot" style={{ background: '#FF5F57' }} />
+              <span className="showcase-dot" style={{ background: '#FEBC2E' }} />
+              <span className="showcase-dot" style={{ background: '#28C840' }} />
+              <span className="showcase-chrome-url">
+                natesystem.com/clients/maison-voltaire
+              </span>
+            </div>
+
+            {/* Desktop : iframe lazy. Mobile : screenshot + CTA */}
+            {!isMobile && shouldLoadIframe ? (
+              <iframe
+                src="/showcase/dashboard-immo.html"
+                title={t('showcase.altText')}
+                className="showcase-iframe"
+                loading="lazy"
+                sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
+              />
+            ) : (
+              <div className="showcase-static">
+                <Image
+                  src="/showcase/dashboard-immo.jpeg"
+                  alt={t('showcase.altText')}
+                  width={1842}
+                  height={934}
+                  priority={isMobile}
+                  sizes="(max-width: 768px) 100vw, 1100px"
+                  style={{
+                    width: '100%',
+                    height: 'auto',
+                    display: 'block',
+                  }}
+                />
+                {isMobile && (
+                  <a
+                    href="/showcase/dashboard-immo.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="showcase-mobile-cta"
+                  >
+                    {t('showcase.openFullscreen')}
+                  </a>
+                )}
+              </div>
+            )}
           </div>
         </FadeUp>
 
@@ -73,7 +139,23 @@ export default function ProductShowcase() {
               marginRight: 'auto',
             }}
           >
-            {t('showcase.caption')}
+            {t('showcase.caption')}{' '}
+            {!isMobile && (
+              <a
+                href="/showcase/dashboard-immo.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  color: 'var(--accent)',
+                  textDecoration: 'underline',
+                  textDecorationThickness: 1,
+                  textUnderlineOffset: 3,
+                  fontWeight: 500,
+                }}
+              >
+                {t('showcase.openFullscreen')} ↗
+              </a>
+            )}
           </p>
         </FadeUp>
       </div>
@@ -105,6 +187,65 @@ export default function ProductShowcase() {
           pointer-events: none;
           opacity: 0.7;
         }
+
+        /* macOS-style topbar */
+        .showcase-chrome {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          padding: 12px 16px;
+          background: rgba(26, 26, 29, 0.04);
+          border-bottom: 1px solid var(--border);
+        }
+        :global(html.light) .showcase-chrome {
+          background: #f0f0ea;
+        }
+        .showcase-dot {
+          width: 12px;
+          height: 12px;
+          border-radius: 50%;
+          flex-shrink: 0;
+        }
+        .showcase-chrome-url {
+          margin-left: 16px;
+          font-family: var(--font-mono);
+          font-size: 11px;
+          color: var(--text-muted);
+          letter-spacing: 0.5px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+
+        /* The iframe itself — fills its container, fixed aspect ratio */
+        .showcase-iframe {
+          width: 100%;
+          height: clamp(560px, 62vw, 760px);
+          border: 0;
+          display: block;
+          background: var(--bg-card);
+        }
+
+        .showcase-static {
+          position: relative;
+        }
+        .showcase-mobile-cta {
+          position: absolute;
+          left: 50%;
+          bottom: 16px;
+          transform: translateX(-50%);
+          background: var(--accent);
+          color: #fff;
+          font-family: var(--font-sans);
+          font-size: 13px;
+          font-weight: 600;
+          padding: 10px 18px;
+          border-radius: 8px;
+          text-decoration: none;
+          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+          white-space: nowrap;
+        }
+
         @media (prefers-reduced-motion: reduce) {
           .showcase-frame {
             transform: none;
@@ -118,6 +259,13 @@ export default function ProductShowcase() {
           .showcase-frame {
             transform: none;
             border-radius: 10px;
+          }
+          .showcase-chrome {
+            padding: 8px 12px;
+          }
+          .showcase-chrome-url {
+            font-size: 10px;
+            margin-left: 10px;
           }
         }
       `}</style>
