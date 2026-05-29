@@ -67,7 +67,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="fr" className={`${dmSans.variable} ${jetbrainsMono.variable}`} suppressHydrationWarning>
+    <html lang="fr" className={`${dmSans.variable} ${jetbrainsMono.variable} light`} suppressHydrationWarning>
       <head>
         {/* Instrument Serif from Google Fonts (no next/font support for italic-only) */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -87,10 +87,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             __html: `(function(){try{var t=localStorage.getItem('ns-theme');if(t==='light'||t==='dark'){document.documentElement.classList.toggle('light',t==='light')}else{document.documentElement.classList.add('light');localStorage.setItem('ns-theme','light')}}catch(e){}})()`,
           }}
         />
-        {/* Iubenda Cookie Consent */}
+        {/* Iubenda Cookie Consent — config SPA-safe : on initialise une seule fois,
+            on protège contre les réinitialisations partielles lors de la navigation
+            client Next.js qui causaient "Cannot read properties of undefined (reading 'lang')". */}
         <script
           dangerouslySetInnerHTML={{
-            __html: `var _iub=_iub||[];_iub.csConfiguration={"siteId":4481810,"cookiePolicyId":84096013,"lang":"fr","storage":{"useSiteId":true}};`,
+            __html: `var _iub=_iub||[];if(!_iub.csConfiguration){_iub.csConfiguration={siteId:4481810,cookiePolicyId:84096013,lang:"fr",countryDetection:true,perPurposeConsent:true,storage:{useSiteId:true},banner:{position:"float-bottom-center",acceptButtonDisplay:true,customizeButtonDisplay:true,rejectButtonDisplay:true,closeButtonDisplay:false}};}`,
           }}
         />
         <script async src="https://cs.iubenda.com/autoblocking/4481810.js" />

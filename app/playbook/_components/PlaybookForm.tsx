@@ -85,6 +85,7 @@ export default function PlaybookForm({
           type="text"
           className="pb-input"
           autoComplete="given-name"
+          aria-required="true"
           aria-invalid={!!errors.first_name}
           aria-describedby={errors.first_name ? 'pb-first-name-err' : undefined}
           {...register('first_name')}
@@ -107,6 +108,7 @@ export default function PlaybookForm({
           className="pb-input"
           autoComplete="email"
           placeholder="vous@entreprise.fr"
+          aria-required="true"
           aria-invalid={!!errors.email}
           aria-describedby={errors.email ? 'pb-email-err' : undefined}
           {...register('email')}
@@ -121,6 +123,7 @@ export default function PlaybookForm({
       <label className="pb-consent">
         <input
           type="checkbox"
+          aria-required="true"
           aria-invalid={!!errors.rgpd_consent}
           {...register('rgpd_consent')}
         />
