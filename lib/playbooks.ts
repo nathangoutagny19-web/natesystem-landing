@@ -49,6 +49,7 @@ const SECTOR_LABELS: Record<string, string> = {
   'securite-gardiennage': 'Sécurité & gardiennage',
   'traiteurs-evenementiel': 'Traiteurs & événementiel',
   'metiers-du-vin': 'Métiers du vin',
+  'consulting-services': 'Cabinets de conseil',
 }
 
 export function sectorLabelFor(slug: string): string {
@@ -80,6 +81,8 @@ const CARD_TAGLINES: Record<string, string> = {
     'Chiffrer plus vite les devis sur-mesure et produire les fiches techniques avec allergènes INCO.',
   'metiers-du-vin':
     'Alléger la DRM, le CVI et les allocations clients sans toucher à votre approche du vin.',
+  'consulting-services':
+    'Récupérer du temps facturable et sortir plus de propositions sans toucher au secret client.',
 }
 
 export function cardTaglineFor(slug: string): string {

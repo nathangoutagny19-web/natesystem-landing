@@ -227,6 +227,25 @@
         { "icon": "Shield", "title": "Conformité HVE, Bio & douanes", "text": "Traçabilité parcellaire pour les audits Ecocert et HVE, registre intrants automatique, alertes 90 jours avant échéance capsules CRD." },
         { "icon": "Euro", "title": "+15 à +25 % de capacité commerciale", "text": "Sans recruter. Pour que vos commerciaux et vos allocataires passent plus de temps sur le vin et moins sur l'admin." }
       ]
+    },
+    {
+      "slug": "consulting-services",
+      "title": "Le Playbook IA pour Cabinets de Conseil",
+      "pdfPath": "/playbooks/13-consulting-services.pdf",
+      "mockupPath": "/playbook-mockups/13-consulting-services.png",
+      "metaDescription": "Un guide pratique pour intégrer l'IA dans un cabinet de conseil ou services pros B2B : saisie temps auto, propositions pré-rédigées, knowledge management vivant. Conforme au secret client. Playbook gratuit, 30 pages, PDF.",
+      "hero": {
+        "eyebrow": "PLAYBOOK GRATUIT · 30 PAGES · PDF",
+        "h1": "Un playbook IA, pratique, pour les cabinets de conseil.",
+        "subtitle": "Un guide concret pour intégrer l'IA dans un cabinet de conseil ou services pros B2B (stratégie, transformation, management de transition, RH) : récupérer du temps facturable, sortir plus de propositions, faire vivre le knowledge management — sans toucher au secret client."
+      },
+      "bullets": [
+        { "icon": "Clock", "title": "40 % du temps non facturé", "text": "Pourquoi vos seniors perdent 200 K€/an en saisie de temps oubliée, avant-vente, knowledge management ad hoc. Et comment l'IA corrige ça." },
+        { "icon": "Shield", "title": "Secret client & RGPD", "text": "Modèles auto-hébergés ou via API souveraine FR. Les données de vos clients restent dans votre périmètre, auditables, défendables." },
+        { "icon": "Zap", "title": "7 automatisations cabinet", "text": "Saisie temps automatique, propositions pré-rédigées, knowledge management vivant, dashboard associés, workflow staffing, CR clients, conformité." },
+        { "icon": "FileText", "title": "Face à la disruption IA", "text": "ChatGPT et Copilot grignotent vos missions standardisées par le bas. L'IA bien construite est votre levier de remontée en valeur — pas votre concurrent." },
+        { "icon": "Euro", "title": "+12 à +18 points de facturation effective", "text": "Les cabinets qui automatisent en 2026 facturent plus, sortent 2,5× plus de propositions, et gardent leurs meilleurs juniors." }
+      ]
     }
   ]
 }

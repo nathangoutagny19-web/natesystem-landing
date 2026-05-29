@@ -8,12 +8,12 @@ import PlaybookFooter from './_components/PlaybookFooter'
 export const metadata: Metadata = {
   title: 'Playbooks IA — un guide pratique par secteur | NateSystem',
   description:
-    'Douze playbooks IA gratuits, un par secteur français : hôtellerie, avocats, propreté, photovoltaïque, expertise-comptable, architectes, immobilier, formation, sécurité, traiteurs, métiers du vin. 30 pages chacun, PDF.',
+    'Treize playbooks IA gratuits, un par secteur français : hôtellerie, avocats, propreté, photovoltaïque, expertise-comptable, architectes, immobilier, formation, sécurité, traiteurs, métiers du vin, cabinets de conseil. 30 pages chacun, PDF.',
   alternates: { canonical: 'https://natesystem.com/playbook' },
   openGraph: {
     title: 'Playbooks IA — un guide pratique par secteur | NateSystem',
     description:
-      'Douze guides pratiques pour utiliser l’IA dans votre métier, sans buzzword. 30 pages chacun, écrits pour des PME françaises, prêts à lire.',
+      'Treize guides pratiques pour utiliser l’IA dans votre métier, sans buzzword. 30 pages chacun, écrits pour des PME françaises, prêts à lire.',
     url: 'https://natesystem.com/playbook',
     type: 'website',
   },
@@ -33,7 +33,7 @@ export default function PlaybookIndexPage() {
           Un playbook IA, par secteur.
         </h1>
         <p className="pb-lead" style={{ margin: '0 auto 12px' }}>
-          Douze guides pratiques pour utiliser l’IA dans votre métier — sans
+          Treize guides pratiques pour utiliser l’IA dans votre métier — sans
           buzzword, sans hype. Trente pages écrites pour des PME françaises,
           lisibles en vingt-cinq minutes. Choisissez votre secteur.
         </p>
