@@ -20,6 +20,15 @@ export const translations = {
   'hero.secondary': { en: 'See how it works', fr: 'Voir comment ça marche', hu: 'Nézze meg hogyan működik' },
   'hero.trusted': { en: 'Already building with', fr: 'Déjà à l\'œuvre avec', hu: 'Már velük építünk' },
 
+  // Product Showcase (mockup juste après le hero)
+  'showcase.label': { en: 'A system we built', fr: 'Un système qu\'on a construit', hu: 'Egy rendszer, amit megépítettünk' },
+  'showcase.caption': {
+    en: 'Real estate agency · Daily pilot for leads, mandates and latent fees.',
+    fr: 'Agence immobilière · Pilotage quotidien des leads, mandats et honoraires latents.',
+    hu: 'Ingatlanügynökség · Napi vezérlés a leadek, megbízások és lappangó díjak felett.',
+  },
+  'showcase.altText': { en: 'NateSystem dashboard mockup for a real estate agency', fr: 'Mockup NateSystem du tableau de bord pour une agence immobilière', hu: 'NateSystem irányítópult mockup ingatlanügynökség számára' },
+
   // Problem
   'problem.label': { en: 'The Real Problem', fr: 'Le vrai problème', hu: 'A valódi probléma' },
   'problem.title1': { en: 'Your business runs on', fr: 'Votre activité tourne sur', hu: 'A vállalkozása olyan eszközökön működik,' },

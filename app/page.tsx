@@ -2,6 +2,7 @@ import Nav from '@/components/layout/Nav'
 import MobileCta from '@/components/layout/MobileCta'
 import WorkTogetherPrompt from '@/components/layout/WorkTogetherPrompt'
 import Hero from '@/components/home/Hero'
+import ProductShowcase from '@/components/home/ProductShowcase'
 import CredibilityBand from '@/components/home/CredibilityBand'
 import ClientsBar from '@/components/home/ClientsBar'
 import Systems from '@/components/home/Systems'
@@ -23,7 +24,10 @@ export default function Home() {
       {/* 1 — Hero : promesse business immédiate */}
       <Hero />
 
-      {/* 2 — Bandeau crédibilité : 4 engagements fermes */}
+      {/* 2 — Mockup produit pleine largeur (preuve visuelle immédiate) */}
+      <ProductShowcase />
+
+      {/* 3 — Bandeau crédibilité : 4 engagements fermes */}
       <CredibilityBand />
 
       {/* 3 — Logos clients */}
