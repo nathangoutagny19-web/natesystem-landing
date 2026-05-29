@@ -28,7 +28,6 @@ export const translations = {
     hu: 'Ingatlanügynökség · Napi vezérlés a leadek, megbízások és lappangó díjak felett.',
   },
   'showcase.altText': { en: 'NateSystem dashboard mockup for a real estate agency', fr: 'Mockup NateSystem du tableau de bord pour une agence immobilière', hu: 'NateSystem irányítópult mockup ingatlanügynökség számára' },
-  'showcase.openFullscreen': { en: 'Open the demo full-screen', fr: 'Ouvrir la démo en grand', hu: 'Megnyitás teljes képernyőn' },
 
   // Problem
   'problem.label': { en: 'The Real Problem', fr: 'Le vrai problème', hu: 'A valódi probléma' },
