@@ -22,6 +22,13 @@ const nextConfig = {
         destination: '/tools/diagnostic-ia',
         permanent: true,
       },
+      // Restaurant audit retiré du catalogue (hors scope landing principal).
+      // Préserve les liens externes existants en renvoyant vers l'index des outils.
+      {
+        source: '/tools/restaurant-audit',
+        destination: '/tools',
+        permanent: true,
+      },
     ]
   },
 }

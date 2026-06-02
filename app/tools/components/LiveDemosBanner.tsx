@@ -3,9 +3,9 @@
 /**
  * LiveDemosBanner — interactive demos block on /tools.
  *
- * Sits between the restaurant-audit banner and the resources grid.
- * Distinct from the resources cards because these are LIVE working
- * apps — no email gate, no zip download, no DownloadModal.
+ * Sits between the page hero and the resources grid. Distinct from
+ * the resources cards because these are LIVE working apps — no email
+ * gate, no zip download, no DownloadModal.
  *
  * Three cards in a responsive grid:
  *   - Actifs: external Lovable app (https://actifs.natesystem.com)

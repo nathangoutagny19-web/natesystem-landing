@@ -448,7 +448,6 @@ export const translations = {
   'footer.link.results': { en: 'Results', fr: 'Résultats', hu: 'Eredmények' },
   'footer.link.contact': { en: 'Contact', fr: 'Contact', hu: 'Kapcsolat' },
   'footer.link.allTools': { en: 'All tools', fr: 'Tous les outils', hu: 'Összes eszköz' },
-  'footer.link.restaurantAudit': { en: 'Restaurant audit', fr: 'Audit restaurants', hu: 'Vendéglátós audit' },
   'footer.link.reviewsDemo': { en: 'Reviews (demo)', fr: 'Reviews (démo)', hu: 'Reviews (demó)' },
   'footer.link.actifsDemo': { en: 'Actifs (demo)', fr: 'Actifs (démo)', hu: 'Actifs (demó)' },
   'footer.link.stockDemo': { en: 'Stock (demo)', fr: 'Stock (démo)', hu: 'Stock (demó)' },
