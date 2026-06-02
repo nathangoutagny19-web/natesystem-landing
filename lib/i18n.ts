@@ -455,9 +455,9 @@ export const translations = {
 
   // Tools page
   'tools.title': { en: 'Free Tools', fr: 'Outils Gratuits', hu: 'Ingyenes eszközök' },
-  'tools.hero.title': { en: 'The best AI resources\nfor your team.', fr: 'Les meilleures ressources IA\npour ton équipe.', hu: 'A legjobb MI-források\ncsapata számára.' },
-  'tools.hero.sub': { en: 'What agencies charge thousands of euros for. Free here.', fr: 'Ce que les agences facturent des milliers d\'euros. Gratuit ici.', hu: 'Amiért az ügynökségek több ezer eurót kérnek. Itt ingyen.' },
-  'tools.hero.tags': { en: 'Claude Skills · GPT Prompts · Implementation Guides · €0', fr: 'Skills Claude · Prompts GPT · Guides d\'implémentation · 0€', hu: 'Claude Skills · GPT promptok · Bevezetési útmutatók · 0 €' },
+  'tools.hero.title': { en: 'Try the product\nbefore you buy.', fr: 'Essayez le produit\navant de l\'acheter.', hu: 'Próbálja ki a terméket\nvásárlás előtt.' },
+  'tools.hero.sub': { en: 'Live demos, free. Click around with fake data — then we talk if it fits.', fr: 'Démos live, gratuites. Cliquez avec des données fictives — on en parle si ça correspond.', hu: 'Élő demók, ingyen. Kattintson fiktív adatokkal — beszéljünk, ha passzol.' },
+  'tools.hero.tags': { en: 'Diagnostic IA · Live demos · No signup', fr: 'Diagnostic IA · Démos live · Sans inscription', hu: 'IA-diagnosztika · Élő demók · Regisztráció nélkül' },
   'tools.download': { en: 'Download for free →', fr: 'Télécharger gratuitement →', hu: 'Ingyenes letöltés →' },
   'tools.all': { en: 'All', fr: 'Tous', hu: 'Összes' },
   'tools.sub': {
