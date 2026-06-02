@@ -466,6 +466,12 @@ export const translations = {
     fr: 'Calculateurs, quiz et templates pour comprendre où l\'IA peut vous faire gagner du temps et de l\'argent.',
     hu: 'Kalkulátorok, kvízek és sablonok, amelyek segítenek megérteni, hol spórolhat időt és pénzt az MI-vel.',
   },
+  'tools.diagnostic.title': { en: 'The AI Diagnostic', fr: 'Le Diagnostic IA', hu: 'Az MI-diagnosztika' },
+  'tools.diagnostic.desc': {
+    en: 'In 4 minutes, measure what your SMB loses each month in unused SaaS, repetitive time, and missed AI opportunities. Free report, no email.',
+    fr: 'En 4 minutes, mesurez ce que votre PME perd chaque mois en SaaS inutiles, temps répétitif et opportunités IA ratées. Rapport gratuit, sans email.',
+    hu: '4 perc alatt mérje fel, mit veszít a KKV-ja havonta a kihasználatlan SaaS-ekre, ismétlődő időre és kihagyott MI-lehetőségekre. Ingyenes jelentés, e-mail nélkül.',
+  },
   'tools.calculator.title': { en: 'SaaS Waste Calculator', fr: 'Calculateur de Gaspillage SaaS', hu: 'SaaS pazarlás-kalkulátor' },
   'tools.calculator.desc': {
     en: 'Find out how much you\'re wasting on unused SaaS subscriptions every month.',

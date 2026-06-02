@@ -128,9 +128,7 @@ export default function Nav() {
                 <div className="nav-mega-inner">
                   <div className="nav-mega-col">
                     <p className="nav-mega-label">{t('mega.interactive')}</p>
-                    <MegaItem href="/tools/saas-calculator" icon={icons.calculator} title={t('tools.calculator.title')} desc={t('tools.calculator.desc')} />
-                    <MegaItem href="/tools/ai-readiness" icon={icons.brain} title={t('tools.quiz.title')} desc={t('tools.quiz.desc')} />
-                    <MegaItem href="/tools/calculateur-temps-perdu" icon={icons.clock} title={t('tools.timeCalc.title')} desc={t('tools.timeCalc.desc')} />
+                    <MegaItem href="/tools/diagnostic-ia" icon={icons.brain} title={t('tools.diagnostic.title')} desc={t('tools.diagnostic.desc')} />
                   </div>
                   <div className="nav-mega-col">
                     <p className="nav-mega-label">{t('mega.demos')}</p>
@@ -246,9 +244,7 @@ export default function Nav() {
           <MobileLink href="/#prestations" onClick={() => setMenuOpen(false)}>{t('nav.agency')}</MobileLink>
 
           <MobileAccordion label={t('nav.tools')} open={mobileToolsOpen} onToggle={() => setMobileToolsOpen(!mobileToolsOpen)}>
-            <MobileLink href="/tools/saas-calculator" onClick={() => setMenuOpen(false)}>{t('tools.calculator.title')}</MobileLink>
-            <MobileLink href="/tools/ai-readiness" onClick={() => setMenuOpen(false)}>{t('tools.quiz.title')}</MobileLink>
-            <MobileLink href="/tools/calculateur-temps-perdu" onClick={() => setMenuOpen(false)}>{t('tools.timeCalc.title')}</MobileLink>
+            <MobileLink href="/tools/diagnostic-ia" onClick={() => setMenuOpen(false)}>{t('tools.diagnostic.title')}</MobileLink>
             {/* Live demos — external Lovable apps, open in new tab */}
             <MobileLink
               href="https://actifs.natesystem.com"

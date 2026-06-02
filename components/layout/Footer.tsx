@@ -106,9 +106,7 @@ export default function Footer() {
         {/* Tools & demos column */}
         <FooterCol title={t('footer.col.toolsDemos')}>
           <FooterLink href="/tools">{t('footer.link.allTools')}</FooterLink>
-          <FooterLink href="/tools/saas-calculator">{t('tools.calculator.title')}</FooterLink>
-          <FooterLink href="/tools/ai-readiness">{t('tools.quiz.title')}</FooterLink>
-          <FooterLink href="/tools/calculateur-temps-perdu">{t('tools.timeCalc.title')}</FooterLink>
+          <FooterLink href="/tools/diagnostic-ia">{t('tools.diagnostic.title')}</FooterLink>
           <FooterLink href="/tools/restaurant-audit">{t('footer.link.restaurantAudit')}</FooterLink>
           <FooterLink href="/reviews">{t('footer.link.reviewsDemo')}</FooterLink>
           <FooterLink href="https://actifs.natesystem.com" external>{t('footer.link.actifsDemo')}</FooterLink>
