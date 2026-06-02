@@ -71,6 +71,39 @@ const icons = {
       <line x1="12" y1="22.08" x2="12" y2="12" />
     </svg>
   ),
+  book: (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+      <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+    </svg>
+  ),
+  building: (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M3 21h18" />
+      <path d="M5 21V7l8-4v18" />
+      <path d="M19 21V11l-6-4" />
+      <line x1="9" y1="9" x2="9" y2="9.01" />
+      <line x1="9" y1="12" x2="9" y2="12.01" />
+      <line x1="9" y1="15" x2="9" y2="15.01" />
+      <line x1="9" y1="18" x2="9" y2="18.01" />
+    </svg>
+  ),
+  scale: (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M16 16l3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1z" />
+      <path d="M2 16l3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1z" />
+      <path d="M7 21h10" />
+      <path d="M12 3v18" />
+      <path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2" />
+    </svg>
+  ),
+  receipt: (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M4 2v20l3-2 3 2 3-2 3 2 3-2 3 2V2l-3 2-3-2-3 2-3-2-3 2-3-2z" />
+      <line x1="8" y1="9" x2="16" y2="9" />
+      <line x1="8" y1="13" x2="14" y2="13" />
+    </svg>
+  ),
 }
 
 const Chevron = () => (
@@ -157,10 +190,11 @@ export default function Nav() {
                     />
                   </div>
                   <div className="nav-mega-col">
-                    <p className="nav-mega-label">{t('mega.templates')}</p>
-                    <MegaItem href="/tools#audit" icon={icons.clipboard} title={t('tools.audit.title')} desc={t('tools.audit.desc')} />
-                    <MegaItem href="/tools#process-map" icon={icons.map} title={t('tools.processMap.title')} desc={t('tools.processMap.desc')} />
-                    <MegaItem href="/tools#checklist" icon={icons.check} title={t('tools.checklist.title')} desc={t('tools.checklist.desc')} />
+                    <p className="nav-mega-label">{t('mega.playbooks')}</p>
+                    <MegaItem href="/playbook/hoteliers-independants" icon={icons.building} title={t('playbooks.hotels.title')} desc={t('playbooks.hotels.desc')} />
+                    <MegaItem href="/playbook/avocats-affaires" icon={icons.scale} title={t('playbooks.lawyers.title')} desc={t('playbooks.lawyers.desc')} />
+                    <MegaItem href="/playbook/expertise-comptable" icon={icons.receipt} title={t('playbooks.accountants.title')} desc={t('playbooks.accountants.desc')} />
+                    <MegaItem href="/playbook" icon={icons.book} title={t('playbooks.all.title')} desc={t('playbooks.all.desc')} />
                   </div>
                 </div>
               </div>

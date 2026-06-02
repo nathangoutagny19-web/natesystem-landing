@@ -489,23 +489,29 @@ export const translations = {
     fr: 'Calculez combien d\'heures et d\'euros votre équipe perd en tâches répétitives.',
     hu: 'Számítsa ki, hány órát és eurót pazarol a csapata ismétlődő feladatokra.',
   },
-  'tools.audit.title': { en: 'Operations Audit Template', fr: 'Template Audit Opérationnel', hu: 'Műveleti audit sablon' },
-  'tools.audit.desc': {
-    en: 'The exact framework we use to analyze operations before building.',
-    fr: 'Le framework exact que l\'on utilise pour analyser les opérations avant de construire.',
-    hu: 'A pontos keretrendszer, amelyet a működés elemzésére használunk az építés előtt.',
+  'playbooks.hotels.title': { en: 'For independent hotels', fr: 'Pour hôteliers indépendants', hu: 'Független szállodáknak' },
+  'playbooks.hotels.desc': {
+    en: 'Bookings, reviews, revenue management — the AI playbook for boutique hotels.',
+    fr: 'Réservations, avis, revenue management — le playbook IA pour hôtels de charme.',
+    hu: 'Foglalások, vélemények, bevételkezelés — az MI-játékterv boutique szállodáknak.',
   },
-  'tools.processMap.title': { en: 'Process Mapping Guide', fr: 'Guide de Cartographie des Processus', hu: 'Folyamat-feltérképezési útmutató' },
-  'tools.processMap.desc': {
-    en: 'Map your workflows step-by-step to identify automation opportunities.',
-    fr: 'Cartographiez vos workflows étape par étape pour identifier les opportunités d\'automatisation.',
-    hu: 'Térképezze fel munkafolyamatait lépésről lépésre, hogy azonosítsa az automatizálási lehetőségeket.',
+  'playbooks.lawyers.title': { en: 'For business law firms', fr: 'Pour cabinets d\'avocats d\'affaires', hu: 'Üzleti jogi irodáknak' },
+  'playbooks.lawyers.desc': {
+    en: 'Drafting, due diligence, knowledge base — AI built for serious legal work.',
+    fr: 'Rédaction, due diligence, base de connaissances — l\'IA pour le travail juridique sérieux.',
+    hu: 'Szerkesztés, due diligence, tudásbázis — MI komoly jogi munkához.',
   },
-  'tools.checklist.title': { en: 'Integration Checklist', fr: 'Checklist d\'Intégration', hu: 'Integrációs ellenőrzőlista' },
-  'tools.checklist.desc': {
-    en: 'Ensure your tools and data are ready for AI deployment.',
-    fr: 'Assurez-vous que vos outils et données sont prêts pour un déploiement IA.',
-    hu: 'Győződjön meg arról, hogy eszközei és adatai készen állnak az MI bevezetésére.',
+  'playbooks.accountants.title': { en: 'For accounting firms', fr: 'Pour cabinets d\'expertise-comptable', hu: 'Könyvelőirodáknak' },
+  'playbooks.accountants.desc': {
+    en: 'Bookkeeping, advisory, deliverables — the AI stack for modern CPAs.',
+    fr: 'Saisie, conseil, livrables — la stack IA pour experts-comptables modernes.',
+    hu: 'Könyvelés, tanácsadás, szállítások — MI-stack modern könyvelőknek.',
+  },
+  'playbooks.all.title': { en: 'See all 13 playbooks →', fr: 'Voir les 13 playbooks →', hu: 'Mind a 13 játékterv →' },
+  'playbooks.all.desc': {
+    en: 'One sector-specific AI playbook per industry — free, ready to read.',
+    fr: 'Un playbook IA par secteur — gratuit, prêt à lire.',
+    hu: 'Egy MI-játékterv iparáganként — ingyenes, olvasásra kész.',
   },
   'tools.downloadPdf': { en: 'Download PDF', fr: 'Télécharger le PDF', hu: 'PDF letöltése' },
   'tools.start': { en: 'Start', fr: 'Commencer', hu: 'Kezdés' },
@@ -529,7 +535,7 @@ export const translations = {
 
   // Mega dropdown
   'mega.interactive': { en: 'Interactive Tools', fr: 'Outils Interactifs', hu: 'Interaktív eszközök' },
-  'mega.templates': { en: 'Templates', fr: 'Templates', hu: 'Sablonok' },
+  'mega.playbooks': { en: 'Playbooks', fr: 'Playbooks', hu: 'Játéktervek' },
 
   // Email gate
   'email.title': { en: 'Get your free template', fr: 'Obtenez votre template gratuit', hu: 'Kérje ingyenes sablonját' },
