@@ -1,11 +1,12 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { getCalApi } from '@calcom/embed-react'
+import Cal from '@calcom/embed-react'
 import Nav from '@/components/layout/Nav'
 import Footer from '@/components/layout/Footer'
-import { API_URL } from '@/lib/constants'
+import { API_URL, CAL_HANDLE, CAL_NAMESPACE } from '@/lib/constants'
 import { useLang, type Lang } from '@/components/providers/LangProvider'
-import { whatsappLink } from '@/lib/whatsapp'
 
 /* ——— Localized copy — labels, options, UI strings ——— */
 
@@ -75,8 +76,7 @@ type BookCopy = {
   calDone: string
   calTitle: string
   calTitleAccent: string
-  calThanks: (firstName: string) => string
-  calOpenWhatsApp: string
+  calSub: (firstName: string) => string
 
   // Options
   roles: string[]
@@ -102,8 +102,8 @@ const COPY: Record<Lang, BookCopy> = {
   fr: {
     step1Label: 'ÉTAPE 1/3 · INFORMATIONS',
     step1Title: 'Réservez votre',
-    step1TitleAccent: 'session stratégique.',
-    step1Sub: '30 minutes pour analyser vos opérations, identifier les opportunités d\'automatisation, et définir un plan d\'action concret.',
+    step1TitleAccent: 'appel 20 min · offert.',
+    step1Sub: '20 minutes pour évaluer si on peut bosser ensemble. Pire des cas : vous repartez avec une roadmap IA sur-mesure. Meilleur des cas : on bosse ensemble.',
     fieldFirstName: 'Prénom',
     fieldFirstNamePh: 'Votre prénom',
     fieldLastName: 'Nom',
@@ -122,9 +122,9 @@ const COPY: Record<Lang, BookCopy> = {
     fieldBudget: 'Budget annuel envisagé',
     fieldDetails: 'Précisions (optionnel)',
     fieldDetailsPh: 'Décrivez brièvement votre situation...',
-    step1Cta: 'Continuer → Audit express',
+    step1Cta: 'Continuer → Diagnostic flash',
     step1Reassurance: 'Gratuit · Sans engagement · Vos données restent confidentielles',
-    auditStepLabel: 'ÉTAPE 2/3 · AUDIT EXPRESS',
+    auditStepLabel: 'ÉTAPE 2/3 · DIAGNOSTIC FLASH',
     audit1Title: 'Vos outils',
     audit1TitleAccent: 'actuels.',
     audit1Sub: 'Pour comprendre votre écosystème technique et identifier les quick wins.',
@@ -152,12 +152,11 @@ const COPY: Record<Lang, BookCopy> = {
     back: '← Retour',
     next: 'Continuer →',
     sending: 'Envoi...',
-    seeSlots: 'Voir les créneaux disponibles →',
-    calDone: 'AUDIT COMPLÉTÉ',
-    calTitle: 'Direction',
-    calTitleAccent: 'WhatsApp.',
-    calThanks: (n) => `Merci ${n} ! Vos réponses sont enregistrées. On vous redirige vers WhatsApp avec un message déjà prêt — il ne reste qu'à l'envoyer.`,
-    calOpenWhatsApp: 'Ouvrir WhatsApp',
+    seeSlots: 'Voir les créneaux →',
+    calDone: 'DIAGNOSTIC COMPLÉTÉ',
+    calTitle: 'Choisissez',
+    calTitleAccent: 'votre créneau.',
+    calSub: (n) => `Merci ${n} ! Vos réponses sont enregistrées. Réservez un créneau ci-dessous — on se voit dans 20 min.`,
     roles: ['Dirigeant / CEO', 'Directeur Marketing', 'Directeur Commercial', 'Directeur Ops / COO', 'DRH / RH', 'DSI / CTO', 'Consultant', 'Autre'],
     sectors: ['Restauration / Hôtellerie', 'Conseil / Services', 'BTP / Immobilier', 'Commerce / Retail', 'Industrie', 'Éducation', 'Santé', 'Tech / SaaS', 'Autre'],
     teamSizes: ['1-5 personnes', '6-20 personnes', '21-50 personnes', '51-100 personnes', '100+ personnes'],
@@ -215,8 +214,8 @@ const COPY: Record<Lang, BookCopy> = {
   en: {
     step1Label: 'STEP 1/3 · INFORMATION',
     step1Title: 'Book your',
-    step1TitleAccent: 'strategy session.',
-    step1Sub: '30 minutes to analyze your operations, identify automation opportunities, and define a concrete action plan.',
+    step1TitleAccent: '20 min call · free.',
+    step1Sub: '20 minutes to see if we can work together. Worst case: you leave with a custom AI roadmap. Best case: we work together.',
     fieldFirstName: 'First name',
     fieldFirstNamePh: 'Your first name',
     fieldLastName: 'Last name',
@@ -235,9 +234,9 @@ const COPY: Record<Lang, BookCopy> = {
     fieldBudget: 'Expected annual budget',
     fieldDetails: 'More info (optional)',
     fieldDetailsPh: 'Briefly describe your situation...',
-    step1Cta: 'Continue → Express audit',
+    step1Cta: 'Continue → Flash diagnostic',
     step1Reassurance: 'Free · No commitment · Your data stays confidential',
-    auditStepLabel: 'STEP 2/3 · EXPRESS AUDIT',
+    auditStepLabel: 'STEP 2/3 · FLASH DIAGNOSTIC',
     audit1Title: 'Your current',
     audit1TitleAccent: 'tools.',
     audit1Sub: 'To understand your technical ecosystem and identify quick wins.',
@@ -266,11 +265,10 @@ const COPY: Record<Lang, BookCopy> = {
     next: 'Continue →',
     sending: 'Sending...',
     seeSlots: 'See available slots →',
-    calDone: 'AUDIT COMPLETED',
-    calTitle: 'Heading to',
-    calTitleAccent: 'WhatsApp.',
-    calThanks: (n) => `Thanks ${n}! Your answers are saved. We're sending you to WhatsApp with a message ready to go — all you have to do is press send.`,
-    calOpenWhatsApp: 'Open WhatsApp',
+    calDone: 'DIAGNOSTIC COMPLETED',
+    calTitle: 'Pick',
+    calTitleAccent: 'your slot.',
+    calSub: (n) => `Thanks ${n}! Your answers are saved. Book a slot below — see you in 20 min.`,
     roles: ['CEO / Founder', 'Marketing Director', 'Sales Director', 'Ops Director / COO', 'HR Director', 'CTO / CIO', 'Consultant', 'Other'],
     sectors: ['Restaurant / Hospitality', 'Consulting / Services', 'Construction / Real Estate', 'Retail / Commerce', 'Industry', 'Education', 'Healthcare', 'Tech / SaaS', 'Other'],
     teamSizes: ['1-5 people', '6-20 people', '21-50 people', '51-100 people', '100+ people'],
@@ -328,8 +326,8 @@ const COPY: Record<Lang, BookCopy> = {
   hu: {
     step1Label: '1/3. LÉPÉS · INFORMÁCIÓK',
     step1Title: 'Foglalja le',
-    step1TitleAccent: 'stratégiai hívását.',
-    step1Sub: '30 perc, hogy elemezzük a működését, azonosítsuk az automatizálási lehetőségeket, és konkrét cselekvési tervet határozzunk meg.',
+    step1TitleAccent: '20 perces hívását · ingyenes.',
+    step1Sub: '20 perc, hogy lássuk, együtt tudunk-e dolgozni. Legrosszabb esetben távozik egy testreszabott AI-ütemtervvel. Legjobb esetben együtt dolgozunk.',
     fieldFirstName: 'Keresztnév',
     fieldFirstNamePh: 'Az Ön keresztneve',
     fieldLastName: 'Vezetéknév',
@@ -348,9 +346,9 @@ const COPY: Record<Lang, BookCopy> = {
     fieldBudget: 'Tervezett éves büdzsé',
     fieldDetails: 'További információ (opcionális)',
     fieldDetailsPh: 'Röviden írja le helyzetét...',
-    step1Cta: 'Tovább → Gyors audit',
+    step1Cta: 'Tovább → Gyors diagnosztika',
     step1Reassurance: 'Ingyenes · Elkötelezettség nélkül · Adatai bizalmasak maradnak',
-    auditStepLabel: '2/3. LÉPÉS · GYORS AUDIT',
+    auditStepLabel: '2/3. LÉPÉS · GYORS DIAGNOSZTIKA',
     audit1Title: 'Jelenlegi',
     audit1TitleAccent: 'eszközei.',
     audit1Sub: 'Hogy megértsük a technikai ökoszisztémáját és azonosítsuk a gyors nyereségeket.',
@@ -378,12 +376,11 @@ const COPY: Record<Lang, BookCopy> = {
     back: '← Vissza',
     next: 'Tovább →',
     sending: 'Küldés...',
-    seeSlots: 'Elérhető időpontok megtekintése →',
-    calDone: 'AUDIT KÉSZ',
-    calTitle: 'Indulás a',
-    calTitleAccent: 'WhatsAppba.',
-    calThanks: (n) => `Köszönjük, ${n}! A válaszai elmentve. Átirányítjuk a WhatsAppba egy előre megírt üzenettel — csak el kell küldenie.`,
-    calOpenWhatsApp: 'WhatsApp megnyitása',
+    seeSlots: 'Elérhető időpontok →',
+    calDone: 'DIAGNOSZTIKA KÉSZ',
+    calTitle: 'Válasszon',
+    calTitleAccent: 'időpontot.',
+    calSub: (n) => `Köszönjük, ${n}! A válaszai elmentve. Foglaljon időpontot lent — 20 perc múlva találkozunk.`,
     roles: ['Vezérigazgató / Alapító', 'Marketingigazgató', 'Értékesítési igazgató', 'Műveleti igazgató / COO', 'HR-igazgató', 'CTO / CIO', 'Tanácsadó', 'Egyéb'],
     sectors: ['Vendéglátás / Szállodaipar', 'Tanácsadás / Szolgáltatások', 'Építőipar / Ingatlan', 'Kereskedelem', 'Ipar', 'Oktatás', 'Egészségügy', 'Tech / SaaS', 'Egyéb'],
     teamSizes: ['1–5 fő', '6–20 fő', '21–50 fő', '51–100 fő', '100+ fő'],
@@ -475,6 +472,30 @@ export default function BookPage() {
   const [step, setStep] = useState<Step>('form')
   const [submitting, setSubmitting] = useState(false)
 
+  // Init Cal embed UI once on mount + flag layout to hide the floating
+  // WhatsApp pill on the booking page (no double CTA when Cal is open).
+  useEffect(() => {
+    (async () => {
+      const cal = await getCalApi({ namespace: CAL_NAMESPACE })
+      cal('ui', {
+        hideEventTypeDetails: false,
+        layout: 'month_view',
+        cssVarsPerTheme: {
+          dark: {
+            'cal-brand': '#E63946',
+            'cal-bg': '#0e0e12',
+            'cal-bg-emphasis': '#1a1a1f',
+          },
+          light: {
+            'cal-brand': '#E63946',
+          },
+        },
+      })
+    })()
+    document.body.dataset.hideWhatsappFloat = 'true'
+    return () => { delete document.body.dataset.hideWhatsappFloat }
+  }, [])
+
   const canSubmitForm = form.prenom.trim() && form.email.trim() && form.entreprise.trim() && form.role && form.secteur && form.taille
   const canSubmitAudit1 = audit.tools.length > 0 && !!audit.saasCount && !!audit.toolsConnected
   const canSubmitAudit2 = audit.tasks.length > 0 && !!audit.hoursWasted && !!audit.whoDoesIt
@@ -498,10 +519,10 @@ export default function BookPage() {
   }
 
   /**
-   * Form completion now hands off to WhatsApp instead of Cal.com.
-   * The full backend POST is preserved — even if the visitor never
-   * sends the WhatsApp message, the lead is stored. WhatsApp is the
-   * "warm conversion" surface, the backend POST is the safety net.
+   * Form completion → backend lead capture → Cal embed inline.
+   * The full payload is sent even if the visitor never books a slot,
+   * so the lead is stored. The booking flow happens directly in the
+   * page via @calcom/embed-react, pre-filled with name/email/notes.
    */
   const goToCalendar = async () => {
     setSubmitting(true)
@@ -517,23 +538,28 @@ export default function BookPage() {
           details: form.details, audit, lang,
         }),
       })
-    } catch { /* continue silently — WhatsApp is the user-facing handoff */ }
+    } catch { /* continue silently — Cal embed is the user-facing handoff */ }
 
-    // Show the post-form thank-you state, then redirect into WhatsApp
-    // with the visitor's first name injected into the message.
     setStep('calendar')
     setSubmitting(false)
     window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
 
-    if (typeof window !== 'undefined') {
-      const url = whatsappLink(lang, { firstName: form.prenom })
-      // Small delay so the user sees the success state for a beat,
-      // then we move them to WhatsApp. Most browsers allow this since
-      // it's still part of the same user-initiated click chain.
-      window.setTimeout(() => {
-        window.location.href = url
-      }, 600)
-    }
+  /** Compact notes string passed to Cal so Nathan sees context at a glance. */
+  const buildCalNotes = (): string => {
+    const lines: string[] = []
+    if (form.entreprise) lines.push(`Entreprise : ${form.entreprise}`)
+    if (form.role) lines.push(`Rôle : ${form.role}`)
+    if (form.secteur) lines.push(`Secteur : ${form.secteur}`)
+    if (form.taille) lines.push(`Équipe : ${form.taille}`)
+    if (form.challenge) lines.push(`Défi : ${form.challenge}`)
+    if (form.budget) lines.push(`Budget : ${form.budget}`)
+    if (audit.saasCount) lines.push(`SaaS : ${audit.saasCount}`)
+    if (audit.hoursWasted) lines.push(`Heures perdues : ${audit.hoursWasted}`)
+    if (audit.urgency) lines.push(`Urgence : ${audit.urgency}`)
+    if (audit.desiredResults.length) lines.push(`Résultats voulus : ${audit.desiredResults.join(', ')}`)
+    if (form.details) lines.push(`Précisions : ${form.details}`)
+    return lines.join('\n')
   }
 
   const inputClass = 'w-full px-4 py-3 rounded-xl text-sm transition focus:outline-none focus:ring-2 focus:ring-[#E63946]/30 focus:border-[#E63946]'
@@ -550,7 +576,10 @@ export default function BookPage() {
       </div>
 
       <section style={{ padding: '140px 24px 80px' }}>
-        <div className="mx-auto" style={{ maxWidth: 640 }}>
+        <div
+          className="mx-auto"
+          style={{ maxWidth: step === 'calendar' ? 960 : 640 }}
+        >
 
           {step === 'form' && (
             <>
@@ -676,34 +705,49 @@ export default function BookPage() {
           )}
 
           {step === 'calendar' && (
-            <div className="text-center" style={{ padding: '40px 0' }}>
-              <div style={{
-                display: 'inline-flex', alignItems: 'center', gap: 8,
-                padding: '6px 16px', borderRadius: 100, marginBottom: 24,
-                background: 'rgba(34,197,94,0.1)', border: '1px solid rgba(34,197,94,0.2)',
-              }}>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22c55e" strokeWidth="2" strokeLinecap="round"><polyline points="20 6 9 17 4 12" /></svg>
-                <span style={{ fontFamily: 'var(--font-mono)', fontSize: 11, color: '#22c55e', letterSpacing: 1 }}>{c.calDone}</span>
+            <div style={{ padding: '20px 0' }}>
+              <div className="text-center" style={{ marginBottom: 28 }}>
+                <div style={{
+                  display: 'inline-flex', alignItems: 'center', gap: 8,
+                  padding: '6px 16px', borderRadius: 100, marginBottom: 20,
+                  background: 'rgba(34,197,94,0.1)', border: '1px solid rgba(34,197,94,0.2)',
+                }}>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22c55e" strokeWidth="2" strokeLinecap="round"><polyline points="20 6 9 17 4 12" /></svg>
+                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: 11, color: '#22c55e', letterSpacing: 1 }}>{c.calDone}</span>
+                </div>
+                <h2 className="section-title" style={{ margin: '0 auto 12px', fontSize: 'clamp(24px, 4vw, 36px)' }}>
+                  {c.calTitle}{' '}<span className="accent">{c.calTitleAccent}</span>
+                </h2>
+                <p
+                  className="font-sans"
+                  style={{ fontSize: 15, color: 'var(--text-secondary)', fontWeight: 300, lineHeight: 1.7, maxWidth: 520, margin: '0 auto' }}
+                >
+                  {c.calSub(form.prenom)}
+                </p>
               </div>
-              <h2 className="section-title" style={{ margin: '0 auto 16px', fontSize: 'clamp(24px, 4vw, 36px)' }}>
-                {c.calTitle}{' '}<span className="accent">{c.calTitleAccent}</span>
-              </h2>
-              <p
-                className="font-sans"
-                style={{ fontSize: 15, color: 'var(--text-secondary)', fontWeight: 300, lineHeight: 1.7, maxWidth: 480, margin: '0 auto 32px' }}
-              >
-                {c.calThanks(form.prenom)}
-              </p>
 
-              {/* Manual fallback in case the auto-redirect was blocked */}
-              <a
-                href={whatsappLink(lang, { firstName: form.prenom })}
-                className="btn-primary inline-flex"
-                style={{ fontSize: 14 }}
+              <div
+                className="cal-embed-wrap"
+                style={{
+                  background: 'var(--bg-card)',
+                  border: '1px solid var(--border)',
+                  borderRadius: 16,
+                  overflow: 'hidden',
+                  minHeight: 640,
+                }}
               >
-                <span className="btn-primary-dot" />
-                {c.calOpenWhatsApp}
-              </a>
+                <Cal
+                  namespace={CAL_NAMESPACE}
+                  calLink={CAL_HANDLE}
+                  style={{ width: '100%', height: '100%', minHeight: 640, overflow: 'scroll' }}
+                  config={{
+                    layout: 'month_view',
+                    name: `${form.prenom} ${form.nom}`.trim(),
+                    email: form.email,
+                    notes: buildCalNotes(),
+                  }}
+                />
+              </div>
             </div>
           )}
         </div>

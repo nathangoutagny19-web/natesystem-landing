@@ -3,6 +3,7 @@ import { DM_Sans, JetBrains_Mono } from 'next/font/google'
 import './globals.css'
 import { ThemeProvider } from '@/components/providers/ThemeProvider'
 import { LangProvider } from '@/components/providers/LangProvider'
+import WhatsAppFloat from '@/components/layout/WhatsAppFloat'
 
 const dmSans = DM_Sans({
   subsets: ['latin'],
@@ -120,6 +121,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <div className="content">
               {children}
             </div>
+            <WhatsAppFloat />
           </LangProvider>
         </ThemeProvider>
       </body>
