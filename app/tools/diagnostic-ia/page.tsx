@@ -24,7 +24,7 @@ type Stage = 'intro' | 'act1' | 'act2' | 'act3' | 'report'
  * un diagnostic complet du gaspillage opérationnel d'une PME.
  *
  * Structure : intro → 3 actes (4 questions chacun) → rapport.
- * Rapport sans gate email — la conversion vient du CTA "Réserver 30 min"
+ * Rapport sans gate email — la conversion vient du CTA "Réserver 20 min · offert"
  * en fin de rapport, pas d'un capture-form intrusif.
  */
 export default function DiagnosticIaPage() {
@@ -874,7 +874,7 @@ function Report({
         >
           Vous avez un rapport.{' '}
           <span style={{ color: 'var(--accent)' }}>
-            Si vous voulez en discuter, je vous offre 30 min.
+            Si vous voulez en discuter, je vous offre 20 min.
           </span>
         </h3>
         <p
@@ -905,7 +905,7 @@ function Report({
           >
             <span className="btn-primary-dot" />
             <Calendar size={14} />
-            Réserver 30 min
+            Réserver 20 min · offert
           </Link>
           <button
             type="button"

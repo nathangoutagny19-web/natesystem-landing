@@ -115,7 +115,7 @@ function PricingCard({ title, price, subtitle, features, cta, ctaVariant, badge,
         ))}
       </ul>
 
-      <Button href="https://cal.com/natesystem/session-strategique" variant={ctaVariant} external>
+      <Button href="/book" variant={ctaVariant}>
         {cta}
       </Button>
     </div>
@@ -154,7 +154,7 @@ const plans: PricingCardProps[] = [
       'Support 60 jours',
       'Dashboard de suivi',
     ],
-    cta: 'Réserver un audit \u2192',
+    cta: 'Réserver 20 min · offert →',
     ctaVariant: 'primary',
   },
   {

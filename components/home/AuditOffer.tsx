@@ -173,8 +173,8 @@ export default function AuditOffer() {
 
             {/* CTA */}
             <div style={{ marginBottom: 20 }}>
-              <Button href="https://cal.com/natesystem/session-strategique" variant="primary" external>
-                {"Réserver mon audit \u2192"}
+              <Button href="/book" variant="primary">
+                {"Réserver 20 min · offert →"}
               </Button>
             </div>
 

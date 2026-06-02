@@ -69,10 +69,10 @@ function renderEmailHtml({
               <hr style="border:none;border-top:1px solid rgba(26,26,29,0.1);margin:28px 0;" />
               <p style="font-size:15px;line-height:1.55;color:#1a1a1d;margin:0 0 8px;font-weight:600;">Vous voulez en discuter ?</p>
               <p style="font-size:14px;line-height:1.55;color:#3a3a3f;margin:0 0 20px;">
-                30 minutes au téléphone, sans engagement. On regarde où, dans votre activité, l&rsquo;IA remplacerait de vraies heures de travail.
+                20 minutes offertes, sans engagement. Vous repartez avec une roadmap IA — même si on ne bosse pas ensemble.
               </p>
               <p style="margin:0 0 28px;">
-                <a href="https://cal.com/natesystem/session-strategique" style="color:#1a1a1d;text-decoration:underline;font-size:14px;">Réserver 30 min →</a>
+                <a href="https://cal.com/goutagny-nathan-myv1qd/20min" style="color:#1a1a1d;text-decoration:underline;font-size:14px;">Réserver 20 min · offert →</a>
               </p>
               <p style="font-family:'JetBrains Mono',Menlo,monospace;font-size:10px;letter-spacing:1.5px;color:#9a9aa0;text-transform:uppercase;margin:0 0 6px;">— Nathan Goutagny, NateSystem</p>
               <p style="font-size:11px;color:#9a9aa0;margin:24px 0 0;">

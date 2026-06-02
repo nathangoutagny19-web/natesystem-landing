@@ -35,14 +35,9 @@ export default function PlaybookBrandContext() {
             <Link href="/" className="pb-btn-secondary">
               Découvrir NateSystem <ArrowRight size={14} strokeWidth={2} />
             </Link>
-            <a
-              href="https://cal.com/natesystem/session-strategique"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="pb-btn-secondary"
-            >
-              Réserver un audit 30 min
-            </a>
+            <Link href="/book" className="pb-btn-secondary">
+              Réserver 20 min · offert
+            </Link>
           </div>
         </div>
       </div>

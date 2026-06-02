@@ -1105,7 +1105,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>Chez NateSystem, on accompagne les PME à chaque étape de cette progression. De l\'audit initial à l\'infrastructure complète d\'agents IA, en passant par la centralisation des données et la formation des équipes.</p>
 
-<p>La première étape est toujours la même : comprendre où vous en êtes et où vous pourriez être. Prenons 30 minutes pour en parler.</p>
+<p>La première étape est toujours la même : comprendre où vous en êtes et où vous pourriez être. Prenons 20 minutes pour en parler.</p>
 
 <p><strong><a href="/book">Réserver un appel stratégique pour évaluer votre potentiel IA &rarr;</a></strong></p>
 `,
@@ -1657,7 +1657,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>La différence entre celles qui stagnent et celles qui accélèrent tient en un mot : <strong>l'infrastructure</strong>. Pas les outils isolés, pas les gadgets IA à la mode — une vraie infrastructure qui connecte, automatise et optimise vos opérations.</p>
 
-<p>Chez NateSystem, nous commençons toujours par un <strong>audit gratuit de 30 minutes</strong> pour identifier vos 3 processus à plus fort potentiel d'automatisation. Pas de jargon technique, pas d'engagement — juste une analyse claire de ce que l'IA peut faire pour votre entreprise.</p>
+<p>Chez NateSystem, nous commençons toujours par un <strong>appel de consulting offert de 20 minutes</strong> pour identifier vos 3 processus à plus fort potentiel d'automatisation. Pas de jargon technique, pas d'engagement — juste une analyse claire de ce que l'IA peut faire pour votre entreprise. Vous repartez avec une roadmap, même si on ne bosse pas ensemble.</p>
 
 <p><strong><a href="/book">Réserver votre audit gratuit &rarr;</a></strong></p>
 `,

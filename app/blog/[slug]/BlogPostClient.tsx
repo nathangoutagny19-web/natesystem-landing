@@ -207,12 +207,13 @@ export default function BlogPostClient({ post }: { post: BlogPost }) {
                   margin: '0 auto 32px',
                 }}
               >
-                Réservez un appel stratégique gratuit de 30 minutes. On identifie ensemble
-                vos 3 processus à plus fort potentiel d&apos;automatisation.
+                Réservez un appel de consulting offert de 20 minutes. On identifie ensemble
+                vos 3 processus à plus fort potentiel d&apos;automatisation. Vous repartez
+                avec une roadmap, même si on ne bosse pas ensemble.
               </p>
               <Link href="/book" className="btn-primary" style={{ margin: '0 auto' }}>
                 <span className="btn-primary-dot" />
-                Réserver mon audit gratuit
+                Réserver 20 min · offert
               </Link>
             </div>
           </FadeUp>

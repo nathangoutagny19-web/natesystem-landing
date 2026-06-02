@@ -16,7 +16,7 @@ export const translations = {
     fr: 'On construit votre logiciel opérationnel avec l\'IA intégrée — sans grossir votre équipe. Vous restez propriétaire du code et de l\'infrastructure.',
     hu: 'Megépítjük az operatív szoftverét beépített MI-vel — csapatbővítés nélkül. Ön marad a kód és az infrastruktúra tulajdonosa.',
   },
-  'hero.cta': { en: 'Book a 30-min audit', fr: 'Réserver un audit 30 min', hu: 'Foglaljon 30 perces auditot' },
+  'hero.cta': { en: 'Book 20 min · free', fr: 'Réserver 20 min · offert', hu: 'Foglaljon 20 percet · ingyenes' },
   'hero.secondary': { en: 'See how it works', fr: 'Voir comment ça marche', hu: 'Nézze meg hogyan működik' },
   'hero.trusted': { en: 'Already building with', fr: 'Déjà à l\'œuvre avec', hu: 'Már velük építünk' },
 
@@ -127,7 +127,7 @@ export const translations = {
     hu: 'A csapatai normálisan folytatják a munkát, miközben körülöttük építkezünk. Három világos lépés, lépésenként egy szolgáltatás.',
   },
   'process.step1': { en: 'First — Audit', fr: 'D\'abord — Audit', hu: 'Először — Auditálás' },
-  'process.step1Duration': { en: '30 min · No commitment', fr: '30 min · Sans engagement', hu: '30 perc · Nincs elkötelezettség' },
+  'process.step1Duration': { en: '20 min · Free', fr: '20 min · Offert', hu: '20 perc · Ingyenes' },
   'process.step1Desc': {
     en: 'We analyse your operations, map your current tools, identify where AI — agentic, automation, data analytics — delivers immediate ROI. You leave with a clear, costed, executable plan, even if we don\'t end up working together.',
     fr: 'On analyse vos opérations, on cartographie vos outils actuels, on identifie où l\'IA — agentique, automatisation, data analytics — délivre un ROI immédiat. Vous repartez avec un plan clair, chiffré, exécutable, même si on ne travaille pas ensemble.',
@@ -164,7 +164,7 @@ export const translations = {
     hu: 'Egy űrlap. Egy hívás. Világos kép arról, milyen szoftverre van valójában szüksége a vállalkozásának — és mi kell a megépítéséhez.',
   },
   'cta.button': { en: 'Let\'s work together', fr: 'Travaillons ensemble', hu: 'Dolgozzunk együtt' },
-  'cta.r1': { en: '30 min call', fr: 'Appel de 30 min', hu: '30 perces hívás' },
+  'cta.r1': { en: '20 min call · free', fr: 'Appel 20 min · offert', hu: '20 perces hívás · ingyenes' },
   'cta.r2': { en: 'No pitch', fr: 'Sans pitch', hu: 'Nincs értékesítési szöveg' },
   'cta.r3': { en: 'Response within 24h', fr: 'Réponse sous 24h', hu: 'Válasz 24 órán belül' },
 
@@ -276,7 +276,7 @@ export const translations = {
     hu: 'Vezetők, akik ki akarnak szabadulni a SaaS-spagettiből és egyetlen, hozzájuk tartozó operatív eszközt akarnak — nem egy életre szóló előfizetést.',
   },
   'sols.s1.cta': { en: 'Start the audit', fr: 'Démarrer l\'audit', hu: 'Audit indítása' },
-  'sols.s1.ctaSub': { en: '30 min · No commitment', fr: '30 min · Sans engagement', hu: '30 perc · Nincs elkötelezettség' },
+  'sols.s1.ctaSub': { en: '20 min · Free', fr: '20 min · Offert', hu: '20 perc · Ingyenes' },
   // Solution 2 — Écosystème IA
   'sols.s2.title': { en: 'AI Ecosystem', fr: 'Écosystème IA', hu: 'MI-ökoszisztéma' },
   'sols.s2.target': { en: '', fr: '', hu: '' },
@@ -297,7 +297,7 @@ export const translations = {
     hu: 'Csapatok, amelyek nem akarnak idejük 60%-át adatbevitelre és riportálásra fordítani, eszközváltás nélkül.',
   },
   'sols.s2.cta': { en: 'Start the audit', fr: 'Démarrer l\'audit', hu: 'Audit indítása' },
-  'sols.s2.ctaSub': { en: '30 min · No commitment', fr: '30 min · Sans engagement', hu: '30 perc · Nincs elkötelezettség' },
+  'sols.s2.ctaSub': { en: '20 min · Free', fr: '20 min · Offert', hu: '20 perc · Ingyenes' },
   // Solution 3 — Audit & Plan d'Action
   'sols.s3.title': { en: 'Audit & Action Plan', fr: 'Audit & Plan d\'Action', hu: 'Audit & Akcióterv' },
   'sols.s3.target': { en: '', fr: '', hu: '' },
@@ -317,7 +317,7 @@ export const translations = {
     fr: 'Dirigeants qui veulent comprendre avant d\'engager — savoir où l\'IA peut vraiment aider et combien ça coûte.',
     hu: 'Vezetők, akik megérteni akarnak, mielőtt elkötelezik magukat — tudni, hol segíthet ténylegesen az MI és mennyibe kerül.',
   },
-  'sols.s3.cta': { en: 'Book the audit', fr: 'Réserver l\'audit', hu: 'Audit foglalása' },
+  'sols.s3.cta': { en: 'Book 20 min', fr: 'Réserver 20 min', hu: 'Foglaljon 20 percet' },
   'sols.s3.ctaSub': { en: 'Fixed price · Delivered within 7 days', fr: 'Forfait fixe · Livré sous 7 jours', hu: 'Fix ár · 7 napon belül átadva' },
   // Common labels
   'sols.includesLabel': { en: 'What you get', fr: 'Ce que vous obtenez', hu: 'Amit kap' },
@@ -350,7 +350,7 @@ export const translations = {
     fr: 'Pendant qu\'une partie des PME européennes commence à intégrer l\'IA dans leur opérationnel, l\'autre paie la facture cachée : jusqu\'à 30% du temps de travail consommé par des tâches qu\'une infrastructure bien construite remplacerait. Et un mois de plus où vos concurrents creusent l\'écart.',
     hu: 'Miközben az európai KKV-k egy része elkezdi integrálni az MI-t az operatív működésébe, a másik fizeti a rejtett számlát: a munkaidő akár 30%-át olyan feladatok emésztik fel, amelyeket egy jól felépített infrastruktúra helyettesítene. És még egy hónap, amikor a versenytársak növelik az előnyt.',
   },
-  'fomo.cta': { en: 'Book the audit before they widen the gap', fr: 'Réserver l\'audit avant qu\'ils ne creusent l\'écart', hu: 'Foglalja le az auditot, mielőtt növelik az előnyt' },
+  'fomo.cta': { en: 'Book 20 min before they widen the gap', fr: 'Réserver 20 min avant qu\'ils ne creusent l\'écart', hu: 'Foglaljon 20 percet, mielőtt növelik az előnyt' },
 
   // ───────────────────────────────────────────────────────────────
   // Results — mesurable client outcomes
@@ -699,17 +699,17 @@ export const translations = {
   },
 
   // StrategyCall section
-  'strategy.label': { en: 'BOOK A 30-MINUTE CALL', fr: 'RÉSERVER UN APPEL DE 30 MINUTES', hu: 'FOGLALJON 30 PERCES HÍVÁST' },
+  'strategy.label': { en: 'BOOK A 20-MIN CALL · FREE', fr: 'RÉSERVER 20 MIN · OFFERT', hu: 'FOGLALJON 20 PERCES HÍVÁST · INGYENES' },
   'strategy.title': { en: 'Book your', fr: 'Réservez votre', hu: 'Foglalja le a' },
   'strategy.titleAccent': { en: 'strategy call.', fr: 'appel stratégique.', hu: 'stratégiai hívását.' },
   'strategy.founder': { en: 'FOUNDER · NATESYSTEM', fr: 'FONDATEUR · NATESYSTEM', hu: 'ALAPÍTÓ · NATESYSTEM' },
   'strategy.sub': { en: 'For companies that want to make their operations autonomous with AI — without hiring and without depending on a SaaS.', fr: 'Pour les entreprises qui veulent rendre leurs opérations autonomes grâce à l\'IA — sans recruter et sans dépendre d\'un SaaS.', hu: 'Olyan cégeknek, amelyek MI-vel szeretnék önállóvá tenni működésüket — új munkaerő felvétele és SaaS-függőség nélkül.' },
-  'strategy.cta': { en: 'Book my free strategy call', fr: 'Réserver mon appel stratégique gratuit', hu: 'Ingyenes stratégiai hívás foglalása' },
+  'strategy.cta': { en: 'Book my free 20-min call', fr: 'Réserver mon appel 20 min · offert', hu: 'Ingyenes 20 perces hívás foglalása' },
   'strategy.item1': { en: 'Analysis of your current tools', fr: 'Analyse de vos outils actuels', hu: 'Jelenlegi eszközeinek elemzése' },
   'strategy.item2': { en: 'Quick win identification', fr: 'Identification des quick wins', hu: 'Gyors nyeremények azonosítása' },
   'strategy.item3': { en: 'Personalized action plan', fr: 'Plan d\'action personnalisé', hu: 'Személyre szabott cselekvési terv' },
   'strategy.item4': { en: 'Concrete recommendations', fr: 'Recommandations concrètes', hu: 'Konkrét ajánlások' },
-  'strategy.footer': { en: '30 min · Free · No commitment · Nathan responds within 24h', fr: '30 min · Gratuit · Sans engagement · Nathan répond sous 24h', hu: '30 perc · Ingyenes · Elkötelezettség nélkül · Nathan 24 órán belül válaszol' },
+  'strategy.footer': { en: '20 min · Free · No commitment · Nathan responds within 24h', fr: '20 min · Offert · Sans engagement · Nathan répond sous 24h', hu: '20 perc · Ingyenes · Elkötelezettség nélkül · Nathan 24 órán belül válaszol' },
 
   // Blog page
   'blog.label': { en: 'BLOG', fr: 'BLOG', hu: 'BLOG' },
@@ -718,8 +718,8 @@ export const translations = {
   'blog.readArticle': { en: 'Read article →', fr: 'Lire l\'article →', hu: 'Cikk elolvasása →' },
   'blog.back': { en: '← Back to blog', fr: '← Retour au blog', hu: '← Vissza a bloghoz' },
   'blog.ctaTitle': { en: 'Ready to automate your operations?', fr: 'Prêt à automatiser vos opérations ?', hu: 'Kész automatizálni a működését?' },
-  'blog.ctaDesc': { en: '30 minutes to identify how to automate your repetitive tasks.', fr: '30 minutes pour identifier comment automatiser vos tâches répétitives.', hu: '30 perc, hogy kiderítsük, hogyan automatizálhatja ismétlődő feladatait.' },
-  'blog.ctaButton': { en: 'Book a free session →', fr: 'Réserver une session gratuite →', hu: 'Ingyenes időpont foglalása →' },
+  'blog.ctaDesc': { en: '20 minutes to identify how to automate your repetitive tasks.', fr: '20 minutes pour identifier comment automatiser vos tâches répétitives.', hu: '20 perc, hogy kiderítsük, hogyan automatizálhatja ismétlődő feladatait.' },
+  'blog.ctaButton': { en: 'Book 20 min · free →', fr: 'Réserver 20 min · offert →', hu: 'Foglaljon 20 percet · ingyenes →' },
 
   // ═══════════════════════════════════════════════════════════════
   // NateSystem · Reviews — agency-positioned landing (v2)
@@ -735,7 +735,7 @@ export const translations = {
     fr: 'Une agence basée à Budapest qui gère avis, réponses et réputation pour ~30 restaurants mid-market. Chaque mois, nous faisons monter votre note, répondons à vos clients dans leur langue, et vous livrons un PDF unique.',
     hu: 'Budapesti ügynökség, amely ~30 közepes étterem értékeléseit, válaszait és hírnevét kezeli. Havonta emeljük a pontszámát, válaszolunk a vendégeinek az ő nyelvükön, és egyetlen PDF-ben riportálunk.',
   },
-  'reviews.hero.ctaPrimary': { en: 'Book a free audit', fr: 'Réserver un audit gratuit', hu: 'Ingyenes auditálás foglalása' },
+  'reviews.hero.ctaPrimary': { en: 'Book 20 min · free', fr: 'Réserver 20 min · offert', hu: 'Foglaljon 20 percet · ingyenes' },
   'reviews.hero.ctaGhost': { en: 'See what we do', fr: 'Voir ce que l\'on fait', hu: 'Nézze meg, mit csinálunk' },
   'reviews.hero.socialProof': {
     en: '~30 restaurants in Budapest · +14 points average reputation lift in 90 days',
@@ -890,10 +890,10 @@ export const translations = {
   // Final CTA
   'reviews.finalCta.title1': { en: 'Your reputation is already being written.', fr: 'Votre réputation s\'écrit déjà.', hu: 'A hírnéve már most íródik.' },
   'reviews.finalCta.titleAccent': { en: 'Let us run it.', fr: 'Laissez-nous la gérer.', hu: 'Bízza ránk.' },
-  'reviews.finalCta.cta': { en: 'Book a free audit', fr: 'Réserver un audit gratuit', hu: 'Ingyenes auditálás foglalása' },
+  'reviews.finalCta.cta': { en: 'Book 20 min · free', fr: 'Réserver 20 min · offert', hu: 'Foglaljon 20 percet · ingyenes' },
 
   // Sticky mobile
-  'reviews.stickyCta': { en: 'Book a free audit', fr: 'Réserver un audit gratuit', hu: 'Ingyenes auditálás foglalása' },
+  'reviews.stickyCta': { en: 'Book 20 min · free', fr: 'Réserver 20 min · offert', hu: 'Foglaljon 20 percet · ingyenes' },
 
   // Work-together widget ("Nate" agent)
   'nate.status': { en: 'Online', fr: 'En ligne', hu: 'Online' },
