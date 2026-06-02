@@ -519,26 +519,35 @@ export default function BookPage() {
   }
 
   /**
-   * Form completion → backend lead capture → Cal embed inline.
-   * The full payload is sent even if the visitor never books a slot,
-   * so the lead is stored. The booking flow happens directly in the
-   * page via @calcom/embed-react, pre-filled with name/email/notes.
+   * Form completion → fan-out to backend (Supabase) + in-repo notify
+   * (Resend → nathan@) → Cal embed inline. Both POSTs fire in parallel
+   * so neither blocks the other, and both are best-effort (any failure
+   * is swallowed). The Cal embed shows up regardless so the prospect
+   * can book even if our backend is having a bad day.
    */
   const goToCalendar = async () => {
     setSubmitting(true)
-    try {
-      await fetch(`${API_URL}/api/leads/capture`, {
+
+    const payload = {
+      prenom: form.prenom, email: form.email, role: form.role,
+      secteur: form.secteur, resourceId: 'strategy-call', newsletter: false,
+      nom: form.nom, entreprise: form.entreprise, site: form.site,
+      taille: form.taille, challenge: form.challenge, budget: form.budget,
+      details: form.details, audit, lang,
+    }
+
+    await Promise.allSettled([
+      fetch(`${API_URL}/api/leads/capture`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          prenom: form.prenom, email: form.email, role: form.role,
-          secteur: form.secteur, resourceId: 'strategy-call', newsletter: false,
-          nom: form.nom, entreprise: form.entreprise, site: form.site,
-          taille: form.taille, challenge: form.challenge, budget: form.budget,
-          details: form.details, audit, lang,
-        }),
-      })
-    } catch { /* continue silently — Cal embed is the user-facing handoff */ }
+        body: JSON.stringify(payload),
+      }),
+      fetch('/api/book/notify', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      }),
+    ])
 
     setStep('calendar')
     setSubmitting(false)
