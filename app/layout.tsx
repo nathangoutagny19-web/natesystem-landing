@@ -90,10 +90,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
         {/* Iubenda Cookie Consent — config SPA-safe : on initialise une seule fois,
             on protège contre les réinitialisations partielles lors de la navigation
-            client Next.js qui causaient "Cannot read properties of undefined (reading 'lang')". */}
+            client Next.js qui causaient "Cannot read properties of undefined (reading 'lang')".
+            Banner UX : bandeau plein bas (non-intrusif), "Accepter" en rouge NateSystem
+            (CTA principal), "Refuser" en ghost style (légalement présent mais moins
+            mis en avant). RGPD/CNIL compliant : les deux boutons sont visibles, le
+            consentement reste libre et explicite. */}
         <script
           dangerouslySetInnerHTML={{
-            __html: `var _iub=_iub||[];if(!_iub.csConfiguration){_iub.csConfiguration={siteId:4481810,cookiePolicyId:84096013,lang:"fr",countryDetection:true,perPurposeConsent:true,storage:{useSiteId:true},banner:{position:"float-bottom-center",acceptButtonDisplay:true,customizeButtonDisplay:true,rejectButtonDisplay:true,closeButtonDisplay:false}};}`,
+            __html: `var _iub=_iub||[];if(!_iub.csConfiguration){_iub.csConfiguration={siteId:4481810,cookiePolicyId:84096013,lang:"fr",countryDetection:true,perPurposeConsent:true,storage:{useSiteId:true},banner:{position:"bottom",acceptButtonDisplay:true,customizeButtonDisplay:true,rejectButtonDisplay:true,closeButtonDisplay:false,acceptButtonColor:"#E63946",acceptButtonCaptionColor:"#FFFFFF",customizeButtonColor:"transparent",customizeButtonCaptionColor:"#1A1A1D",rejectButtonColor:"transparent",rejectButtonCaptionColor:"#1A1A1D",backgroundColor:"#FFFFFF",textColor:"#1A1A1D",fontSize:"13px",listPurposes:true,closeButtonRejects:false}};}`,
           }}
         />
         <script async src="https://cs.iubenda.com/autoblocking/4481810.js" />
