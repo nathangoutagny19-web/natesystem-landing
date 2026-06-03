@@ -112,6 +112,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             __html: `(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","w4g9vbwe3u");`,
           }}
         />
+        {/* Instantly / Leadsy.ai — anonymous visitor identification for outbound acquisition */}
+        <script
+          id="vtag-ai-js"
+          async
+          src="https://r2.leadsy.ai/tag.js"
+          data-pid="1hn7HHJQniW34BpBT"
+          data-version="062024"
+        />
       </head>
       <body>
         <ThemeProvider>
