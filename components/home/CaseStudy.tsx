@@ -94,7 +94,7 @@ export default function CaseStudy() {
   const metrics = [
     { value: '11h → 1h', label: lang === 'en' ? 'Per week, per manager' : 'Par semaine, par manager' },
     { value: '25 480€', label: lang === 'en' ? 'Productivity recovered per year' : 'Productivité récupérée par an' },
-    { value: '~55', label: lang === 'en' ? 'Collaborators onboarded with zero friction' : 'Collaborateurs intégrés sans friction' },
+    { value: '~55', label: lang === 'en' ? 'Collaborators (volunteers, staff, partners) onboarded with zero friction' : 'Collaborateurs (bénévoles, employés, partenaires) intégrés sans friction' },
     { value: '99%', label: lang === 'en' ? 'Operations on software they own' : 'Opérations sur du logiciel qui leur appartient' },
   ]
 

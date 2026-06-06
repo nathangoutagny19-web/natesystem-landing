@@ -40,7 +40,7 @@ function CaseStudyCard() {
   const metrics = [
     { value: '11h → 1h', label: lang === 'en' ? 'Per week, per manager' : 'Par semaine, par manager' },
     { value: '25 480€', label: lang === 'en' ? 'Productivity recovered per year' : 'Productivité récupérée par an' },
-    { value: '~55', label: lang === 'en' ? 'Collaborators — zero friction at transition' : 'Collaborateurs — zéro friction à la transition' },
+    { value: '~55', label: lang === 'en' ? 'Collaborators (volunteers, staff, partners) — zero friction at transition' : 'Collaborateurs (bénévoles, employés, partenaires) — zéro friction à la transition' },
     { value: '99%', label: lang === 'en' ? 'Of operations run on platforms they own' : 'Des opérations sur des plateformes internes' },
   ]
 

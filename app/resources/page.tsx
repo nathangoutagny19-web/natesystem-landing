@@ -89,7 +89,7 @@ export default function ResourcesPage() {
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                 <Stat value="11h → 1h" label={lang === 'en' ? 'Per week, per manager' : 'Par semaine, par manager'} />
                 <Stat value="25 480€" label={lang === 'en' ? 'Productivity recovered per year' : 'Productivité récupérée par an'} />
-                <Stat value="~55" label={lang === 'en' ? 'Collaborators — zero friction' : 'Collaborateurs — zéro friction'} />
+                <Stat value="~55" label={lang === 'en' ? 'Collaborators (volunteers, staff, partners) — zero friction' : 'Collaborateurs (bénévoles, employés, partenaires) — zéro friction'} />
                 <Stat value="99%" label={lang === 'en' ? 'Ops on owned platforms' : 'Opérations sur plateformes internes'} />
               </div>
             </motion.div>

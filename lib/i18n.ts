@@ -12,9 +12,9 @@ export const translations = {
   'hero.titleAccent': { en: 'results.', fr: 'résultats.', hu: 'eredményeit.' },
   'hero.title2': { en: 'Without hiring more.', fr: 'Sans embaucher plus.', hu: 'Új munkatársak nélkül.' },
   'hero.sub': {
-    en: 'We build the operational software that runs your business, with AI integrated where it replaces real hours of work — never as a marketing checkbox. You stay the owner.',
-    fr: 'On construit votre logiciel opérationnel avec l\'IA intégrée — sans grossir votre équipe. Vous restez propriétaire du code et de l\'infrastructure.',
-    hu: 'Megépítjük az operatív szoftverét beépített MI-vel — csapatbővítés nélkül. Ön marad a kód és az infrastruktúra tulajdonosa.',
+    en: 'Your current tools slow your business down. We build the custom software that drives it forward — with AI integrated where it gives you back time, clarity, and profitability. Without hiring more. You stay the owner.',
+    fr: 'Vos outils actuels ralentissent votre activité. On construit le logiciel sur-mesure qui la fait avancer — avec l\'IA intégrée là où elle vous fait gagner du temps, de la clarté et de la rentabilité. Sans grossir votre équipe. Vous restez propriétaire.',
+    hu: 'Jelenlegi eszközei lassítják a működését. Mi építjük meg azt az egyedi szoftvert, amely előreviszi — beépített MI-vel ott, ahol időt, tisztánlátást és jövedelmezőséget hoz Önnek. Új munkatársak nélkül. Ön marad a tulajdonos.',
   },
   'hero.cta': { en: 'Book 20 min · free', fr: 'Réserver 20 min · offert', hu: 'Foglaljon 20 percet · ingyenes' },
   'hero.secondary': { en: 'See how it works', fr: 'Voir comment ça marche', hu: 'Nézze meg hogyan működik' },
