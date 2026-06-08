@@ -27,11 +27,12 @@ import { useLang } from '@/components/providers/LangProvider'
 
 type ClientRef =
   | { name: string; type: 'logo'; src: string; href: string }
-  // 'logo-themed' ships TWO ready-made variants instead of relying on the
-  // grayscale+invert CSS trick: srcLight = the dark/colour logo shown on the
-  // light theme, srcDark = the white logo shown on the dark theme. Use this
-  // when a logo has detail that invert() would mangle.
-  | { name: string; type: 'logo-themed'; srcLight: string; srcDark: string; href: string }
+  // 'logo-white' is a transparent WHITE logo (alpha-cut, no background box).
+  // It's tinted per-theme via CSS brightness() so it reads as neutral grey on
+  // the light theme and white/light-grey on the dark theme — same optical
+  // weight as the grayscale logos, but without the invert() trick that mangles
+  // detailed artwork.
+  | { name: string; type: 'logo-white'; src: string; href: string }
   | { name: string; type: 'wordmark'; href: string }
 
 // Vendéglátás Menedzsment Kft. is the Hungarian hospitality reference —
@@ -42,9 +43,8 @@ const clients: ClientRef[] = [
   { name: 'Chromosome', type: 'logo', src: '/logos/chromosome.png', href: 'https://chromosome-saint-etienne.fr/' },
   {
     name: 'Les Chartreux',
-    type: 'logo-themed',
-    srcLight: '/logos/chartreux-dark.png',
-    srcDark: '/logos/chartreux-light.png',
+    type: 'logo-white',
+    src: '/logos/chartreux-light.png', // transparent white artwork, tinted by CSS per theme
     href: 'https://www.leschartreux.net/',
   },
   { name: 'Université Jean Monnet', type: 'logo', src: '/logos/ujm.png', href: 'https://www.univ-st-etienne.fr/fr/index.html' },
@@ -85,39 +85,27 @@ export default function ClientsBar() {
           {label}
         </p>
 
+        {/* Desktop: static centred grid. */}
         <ul className="clients-row">
           {clients.map((c) => (
             <li key={c.name} className="clients-item">
-              <a
-                href={c.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={c.name}
-                className="clients-link"
-              >
-                {c.type === 'logo' ? (
-                  /* eslint-disable-next-line @next/next/no-img-element */
-                  <img
-                    src={c.src}
-                    alt={c.name}
-                    className="clients-logo"
-                  />
-                ) : c.type === 'logo-themed' ? (
-                  <>
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={c.srcLight} alt={c.name} className="clients-logo clients-logo--light" />
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={c.srcDark} alt={c.name} className="clients-logo clients-logo--dark" />
-                  </>
-                ) : (
-                  <span className="clients-wordmark font-serif italic">
-                    {c.name}
-                  </span>
-                )}
-              </a>
+              <ClientItem c={c} />
             </li>
           ))}
         </ul>
+
+        {/* Mobile: slow continuous carousel — references stay on ONE line and
+            scroll left forever (track duplicated for a seamless loop) instead
+            of stacking into an ugly column. */}
+        <div className="clients-marquee-wrap" aria-hidden="false">
+          <ul className="clients-marquee">
+            {[...clients, ...clients].map((c, i) => (
+              <li key={`${c.name}-${i}`} className="clients-item">
+                <ClientItem c={c} />
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
 
       <style>{`
@@ -174,15 +162,22 @@ export default function ClientsBar() {
         html:not(.light) .clients-logo {
           filter: grayscale(100%) invert(1) brightness(0.95);
         }
-        /* Themed logos ship their own light/dark artwork — opt them out of
-           the grayscale+invert trick and swap by theme instead. */
-        .clients-logo--light,
-        .clients-logo--dark {
-          filter: none;
+        /* White transparent logo (alpha-cut, no background box). One asset,
+           tinted by theme: darkened to neutral grey on the light theme so it
+           reads against the ivory background, left white/light on the dark
+           theme. Matches the optical weight of the grayscale logos. */
+        .clients-logo--white {
+          filter: brightness(0) opacity(0.72);
         }
-        .clients-logo--dark { display: none; }
-        html:not(.light) .clients-logo--light { display: none; }
-        html:not(.light) .clients-logo--dark { display: block; }
+        html:not(.light) .clients-logo--white {
+          filter: brightness(0) invert(1) opacity(0.85);
+        }
+        .clients-item:hover .clients-logo--white {
+          filter: brightness(0) opacity(1);
+        }
+        html:not(.light) .clients-item:hover .clients-logo--white {
+          filter: brightness(0) invert(1) opacity(1);
+        }
         .clients-wordmark {
           font-size: 22px;
           line-height: 1.2;
@@ -191,25 +186,80 @@ export default function ClientsBar() {
           white-space: nowrap;
           text-align: center;
         }
+        /* Mobile carousel — hidden on desktop, where the grid rules. */
+        .clients-marquee-wrap {
+          display: none;
+        }
+
         @media (max-width: 768px) {
+          /* Hide the static grid, show the scrolling carousel. */
           .clients-row {
-            grid-template-columns: 1fr;
-            column-gap: 0;
-            row-gap: 28px;
+            display: none;
           }
-          .clients-item {
-            height: 48px;
+          .clients-marquee-wrap {
+            display: block;
+            overflow: hidden;
+            width: 100%;
+            max-width: 100vw;
+            -webkit-mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+            mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+          }
+          .clients-marquee {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            width: max-content;
+            gap: 48px;
+            animation: clientsScroll 28s linear infinite;
+            will-change: transform;
+          }
+          .clients-marquee .clients-item {
+            height: 44px;
+            flex: 0 0 auto;
           }
           .clients-logo {
-            height: 48px;
-            max-height: 48px;
-            max-width: 180px;
+            height: 44px;
+            max-height: 44px;
+            max-width: 160px;
           }
           .clients-wordmark {
-            font-size: 19px;
+            font-size: 18px;
+          }
+          @keyframes clientsScroll {
+            0%   { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+          }
+          /* Content carries references the user must discover, so we keep it
+             moving even with reduced-motion — but slow it right down. */
+          @media (prefers-reduced-motion: reduce) {
+            .clients-marquee { animation-duration: 60s; }
           }
         }
       `}</style>
     </section>
+  )
+}
+
+function ClientItem({ c }: { c: ClientRef }) {
+  return (
+    <a
+      href={c.href}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={c.name}
+      className="clients-link"
+    >
+      {c.type === 'logo' ? (
+        /* eslint-disable-next-line @next/next/no-img-element */
+        <img src={c.src} alt={c.name} className="clients-logo" />
+      ) : c.type === 'logo-white' ? (
+        /* eslint-disable-next-line @next/next/no-img-element */
+        <img src={c.src} alt={c.name} className="clients-logo clients-logo--white" />
+      ) : (
+        <span className="clients-wordmark font-serif italic">{c.name}</span>
+      )}
+    </a>
   )
 }
