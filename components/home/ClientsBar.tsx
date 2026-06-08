@@ -27,6 +27,11 @@ import { useLang } from '@/components/providers/LangProvider'
 
 type ClientRef =
   | { name: string; type: 'logo'; src: string; href: string }
+  // 'logo-themed' ships TWO ready-made variants instead of relying on the
+  // grayscale+invert CSS trick: srcLight = the dark/colour logo shown on the
+  // light theme, srcDark = the white logo shown on the dark theme. Use this
+  // when a logo has detail that invert() would mangle.
+  | { name: string; type: 'logo-themed'; srcLight: string; srcDark: string; href: string }
   | { name: string; type: 'wordmark'; href: string }
 
 // Vendéglátás Menedzsment Kft. is the Hungarian hospitality reference —
@@ -35,6 +40,13 @@ type ClientRef =
 // and add the `src`.
 const clients: ClientRef[] = [
   { name: 'Chromosome', type: 'logo', src: '/logos/chromosome.png', href: 'https://chromosome-saint-etienne.fr/' },
+  {
+    name: 'Les Chartreux',
+    type: 'logo-themed',
+    srcLight: '/logos/chartreux-dark.png',
+    srcDark: '/logos/chartreux-light.png',
+    href: 'https://www.leschartreux.net/',
+  },
   { name: 'Université Jean Monnet', type: 'logo', src: '/logos/ujm.png', href: 'https://www.univ-st-etienne.fr/fr/index.html' },
   { name: 'Vendéglátás Menedzsment Kft.', type: 'wordmark', href: 'https://vendeglatasmenedzsment.hu/' },
 ]
@@ -90,6 +102,13 @@ export default function ClientsBar() {
                     alt={c.name}
                     className="clients-logo"
                   />
+                ) : c.type === 'logo-themed' ? (
+                  <>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={c.srcLight} alt={c.name} className="clients-logo clients-logo--light" />
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={c.srcDark} alt={c.name} className="clients-logo clients-logo--dark" />
+                  </>
                 ) : (
                   <span className="clients-wordmark font-serif italic">
                     {c.name}
@@ -155,6 +174,15 @@ export default function ClientsBar() {
         html:not(.light) .clients-logo {
           filter: grayscale(100%) invert(1) brightness(0.95);
         }
+        /* Themed logos ship their own light/dark artwork — opt them out of
+           the grayscale+invert trick and swap by theme instead. */
+        .clients-logo--light,
+        .clients-logo--dark {
+          filter: none;
+        }
+        .clients-logo--dark { display: none; }
+        html:not(.light) .clients-logo--light { display: none; }
+        html:not(.light) .clients-logo--dark { display: block; }
         .clients-wordmark {
           font-size: 22px;
           line-height: 1.2;

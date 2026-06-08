@@ -9,12 +9,12 @@ export const metadata: Metadata = {
   title: 'Playbooks IA — un guide pratique par secteur | NateSystem',
   description:
     'Treize playbooks IA gratuits, un par secteur français : hôtellerie, avocats, propreté, photovoltaïque, expertise-comptable, architectes, immobilier, formation, sécurité, traiteurs, métiers du vin, cabinets de conseil. 30 pages chacun, PDF.',
-  alternates: { canonical: 'https://natesystem.com/playbook' },
+  alternates: { canonical: 'https://www.natesystem.com/playbook' },
   openGraph: {
     title: 'Playbooks IA — un guide pratique par secteur | NateSystem',
     description:
       'Treize guides pratiques pour utiliser l’IA dans votre métier, sans buzzword. 30 pages chacun, écrits pour des PME françaises, prêts à lire.',
-    url: 'https://natesystem.com/playbook',
+    url: 'https://www.natesystem.com/playbook',
     type: 'website',
   },
 }

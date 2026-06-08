@@ -5,11 +5,11 @@ export const metadata: Metadata = {
   description:
     'NateSystem · Reviews is a review intelligence product: AI scoring on six aspects, response drafting in your brand voice, 90-day action plans. The demo runs on mock data — request access via the form.',
   alternates: {
-    canonical: 'https://natesystem.com/reviews',
+    canonical: 'https://www.natesystem.com/reviews',
   },
   openGraph: {
     type: 'website',
-    url: 'https://natesystem.com/reviews',
+    url: 'https://www.natesystem.com/reviews',
     title: 'NateSystem · Reviews — Review intelligence software (demo)',
     description:
       'Review intelligence software in demo. AI scoring, response drafts, action plans. Request demo access via the form.',

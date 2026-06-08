@@ -115,6 +115,7 @@ export default function Footer() {
         {/* Resources column */}
         <FooterCol title={t('footer.col.resources')}>
           <FooterLink href="/blog">{t('resources.blog')}</FooterLink>
+          <FooterLink href="/playbook">{t('footer.link.playbooks')}</FooterLink>
           <FooterLink href="/resources#case-studies">{t('resources.caseStudies')}</FooterLink>
           <FooterLink href="/resources">{t('nav.resources')}</FooterLink>
           <FooterLink href="/book">{t('footer.link.book')}</FooterLink>

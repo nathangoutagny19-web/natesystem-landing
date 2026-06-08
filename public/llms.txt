@@ -1,0 +1,30 @@
+# NateSystem
+
+> Logiciel sur-mesure · IA intégrée · Vous appartient. NateSystem construit le logiciel métier sur-mesure qui pilote l'activité des PME — avec l'IA (agentique, automatisation, data analytics) intégrée uniquement là où elle remplace de vraies heures de travail. Code source livré, propriété à 100 %, hébergé en UE, RGPD-natif, en production en 4 à 8 semaines.
+
+NateSystem est dirigé par Nathan Goutagny (ingénieur logiciel & IA appliquée, basé à Lyon, France). L'offre s'adresse aux dirigeants de PME (5 à 200 salariés) en France, en Hongrie et à l'international.
+
+## Ce que fait NateSystem
+
+- **Plateforme Dédiée** : logiciel sur-mesure complet (base de données unifiée, dashboards, portails clients, outils internes) qui remplace le patchwork de SaaS. Le système appartient au client à vie.
+- **Écosystème IA** : intégration de systèmes d'IA (qualification de leads, back-office automatisé, relance commerciale, réactivation de contacts, reporting interne) dans les outils existants, sans tout migrer.
+- **Audit & Plan d'Action** : audit opérationnel approfondi + plan chiffré (document de 15-25 pages livré sous 7 jours) identifiant les 3-5 leviers IA prioritaires.
+
+## Principes
+
+- L'IA est intégrée uniquement là où elle remplace de vraies heures de travail, jamais comme buzzword.
+- Le client reste propriétaire : code source livré, hébergement sur sa propre infrastructure, zéro lock-in, zéro abonnement otage.
+- Données hébergées en UE, RGPD-natif.
+- Chaque déploiement a un ROI mesurable dès les premières semaines.
+
+## Point de contact
+
+- Site : https://www.natesystem.com
+- Réserver un appel de 20 min (offert) : https://www.natesystem.com/book
+- Email : nathan@natesystem.com
+
+## Ressources
+
+- Blog (guides pratiques IA & automatisation pour PME) : https://www.natesystem.com/blog
+- Playbooks sectoriels gratuits (13 secteurs) : https://www.natesystem.com/playbook
+- Diagnostic IA (outil interactif) : https://www.natesystem.com/tools/diagnostic-ia

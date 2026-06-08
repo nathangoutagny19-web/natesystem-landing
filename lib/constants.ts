@@ -1,5 +1,5 @@
 export const CAL_LINK = '/book'
-export const SITE_URL = 'https://natesystem.com'
+export const SITE_URL = 'https://www.natesystem.com'
 export const API_URL = 'https://natesystem-backend.vercel.app'
 
 // Cal.com booking — appel de consulting 20 min offert

@@ -18,7 +18,7 @@ const bodySchema = z.object({
   utm_campaign: z.string().optional(),
 })
 
-const SITE = 'https://natesystem.com'
+const SITE = 'https://www.natesystem.com'
 
 function unsubscribeUrl(email: string, slug: string): string {
   const token = Buffer.from(`${email}|${slug}`, 'utf-8').toString('base64url')
