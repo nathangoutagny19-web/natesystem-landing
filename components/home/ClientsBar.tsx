@@ -212,7 +212,7 @@ export default function ClientsBar() {
             align-items: center;
             width: max-content;
             gap: 48px;
-            animation: clientsScroll 28s linear infinite;
+            animation: clientsScroll 16s linear infinite;
             will-change: transform;
           }
           .clients-marquee .clients-item {
