@@ -41,7 +41,7 @@ export const blogPosts: BlogPost[] = [
 
 <h2 id="definition">Qu\'est-ce que l\'automatisation IA des opérations ?</h2>
 
-<p>Avant de plonger dans les outils, clarifions de quoi on parle. L\'automatisation IA des opérations, ce n\'est pas simplement "mettre un chatbot sur son site". C\'est l\'utilisation de l\'intelligence artificielle pour <strong>exécuter, optimiser et superviser des processus opérationnels</strong> qui étaient auparavant manuels ou semi-manuels.</p>
+<p>L\'automatisation IA des opérations, c\'est l\'utilisation de l\'intelligence artificielle pour <strong>exécuter, optimiser et superviser des processus opérationnels</strong> qui étaient auparavant manuels ou semi-manuels. Ce n\'est pas simplement "mettre un chatbot sur son site" : l\'IA lit, décide et agit sur vos flux de travail.</p>
 
 <p>Concrètement, ça couvre :</p>
 
@@ -448,7 +448,7 @@ export const blogPosts: BlogPost[] = [
 
 <h2 id="pourquoi">Pourquoi centraliser vos données en 2026</h2>
 
-<p>La centralisation des données n\'est pas un concept nouveau. Ce qui est nouveau, c\'est <strong>pourquoi c\'est devenu urgent</strong>. Trois facteurs convergent en 2026 :</p>
+<p>Centraliser vos données en 2026 est devenu urgent pour trois raisons : l\'IA a besoin de données structurées pour fonctionner, la multiplication des outils SaaS a rendu la synchronisation manuelle ingérable, et vos concurrents qui l\'ont déjà fait décident plus vite que vous. La centralisation n\'est pas un concept nouveau — ce qui est nouveau, c\'est son caractère désormais critique. Détail des trois facteurs :</p>
 
 <p><strong>1. L\'IA a besoin de données structurées.</strong> Tous les outils d\'IA du monde ne peuvent rien faire si vos données sont éparpillées dans 15 fichiers Excel, 3 CRM et la mémoire de votre assistant de direction. Pour déployer un agent IA qui prospecte, qui analyse vos performances, ou qui automatise votre reporting, il faut une source de vérité unique et propre. Sans base de données centralisée, pas d\'IA opérationnelle — point final.</p>
 
@@ -973,7 +973,7 @@ export const blogPosts: BlogPost[] = [
 
 <h2 id="transition">Comment passer de ChatGPT à une infrastructure d\'agents</h2>
 
-<p>La transition ne se fait pas en un jour. Voici la feuille de route en 3 étapes que nous recommandons chez NateSystem.</p>
+<p>Passer de ChatGPT à une infrastructure d\'agents se fait en 3 étapes : identifier un processus répétitif à fort volume, connecter l\'agent à vos données et vos outils, puis l\'autonomiser progressivement sous supervision. La transition ne se fait pas en un jour — voici la feuille de route que nous recommandons chez NateSystem.</p>
 
 <h3>Phase 1 : Identifier et mesurer (2-4 semaines)</h3>
 
