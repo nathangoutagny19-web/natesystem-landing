@@ -72,7 +72,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
       description: post.description,
       datePublished: post.date,
       dateModified: post.date,
-      author: { '@type': 'Person', name: post.author, url: 'https://www.natesystem.com' },
+      author: { '@type': 'Person', '@id': 'https://www.natesystem.com/a-propos#nathan', name: post.author, url: 'https://www.natesystem.com/a-propos' },
       publisher: { '@id': 'https://www.natesystem.com/#organization' },
       mainEntityOfPage: url,
       articleSection: post.category,

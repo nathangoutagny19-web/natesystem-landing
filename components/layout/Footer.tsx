@@ -97,6 +97,7 @@ export default function Footer() {
         <FooterCol title={t('footer.col.sections')}>
           <FooterLink href="/">{t('footer.link.home')}</FooterLink>
           <FooterLink href="/#prestations">{t('footer.link.services')}</FooterLink>
+          <FooterLink href="/a-propos">{t('footer.link.about')}</FooterLink>
           <FooterLink href="/#probleme">{t('footer.link.problem')}</FooterLink>
           <FooterLink href="/#process">{t('footer.link.process')}</FooterLink>
           <FooterLink href="/#case-study">{t('footer.link.results')}</FooterLink>
