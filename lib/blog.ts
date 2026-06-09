@@ -262,7 +262,7 @@ export const blogPosts: BlogPost[] = [
   <li>Maintenance et évolution continue de l\'infrastructure</li>
 </ul>
 
-<p><strong>Tarifs :</strong> Sur devis selon la complexité. Infrastructure de base à partir de 2 000 €/mois (conception + maintenance). <a href="/book">Réservez un appel stratégique</a> pour un chiffrage personnalisé.</p>
+<p><strong>Tarifs :</strong> Sur devis selon la complexité. Infrastructure de base à partir de 2 000 €/mois (conception + maintenance). Voir le détail des <a href="/prix-logiciel-sur-mesure">fourchettes de prix d\'un logiciel sur-mesure</a>, ou <a href="/book">réservez un appel stratégique</a> pour un chiffrage personnalisé.</p>
 
 <h2 id="comparatif">Tableau comparatif</h2>
 
@@ -1483,6 +1483,8 @@ export const blogPosts: BlogPost[] = [
 <p>La migration vers une vraie base de données n'est pas un luxe technique — c'est un <strong>prérequis pour tout ce qui vient ensuite</strong> : automatisation, agents IA, dashboards temps réel, scaling de votre activité. Et plus vous attendez, plus la migration sera complexe (parce que vos Excel continuent de grossir et de se multiplier).</p>
 
 <p>Le meilleur moment pour migrer, c'était il y a un an. Le deuxième meilleur moment, c'est maintenant.</p>
+
+<p>Si vous hésitez entre un outil du marché et une solution qui vous appartient, lisez notre comparatif <a href="/logiciel-sur-mesure-vs-saas">logiciel sur-mesure vs SaaS</a>.</p>
 
 <p><strong><a href="/book">Réserver un appel pour planifier votre migration Excel → Base de données &rarr;</a></strong></p>
 `,

@@ -7,6 +7,7 @@ import Footer from '@/components/layout/Footer'
 import MobileCta from '@/components/layout/MobileCta'
 import Divider from '@/components/ui/Divider'
 import FadeUp from '@/components/ui/FadeUp'
+import RelatedLinks from '@/components/ui/RelatedLinks'
 import { CAL_LINK } from '@/lib/constants'
 
 const tiers = [
@@ -114,6 +115,17 @@ export default function PrixPage() {
           </FadeUp>
         </div>
       </section>
+
+      <Divider />
+
+      <RelatedLinks
+        links={[
+          { href: '/logiciel-sur-mesure-vs-saas', label: 'Sur-mesure ou SaaS ?', desc: 'Le comparatif qui explique où part vraiment votre budget.' },
+          { href: '/blog/cout-reel-outils-non-connectes-pme', label: 'Le coût caché des outils non connectés', desc: 'Ce que vous payez déjà sans le voir.' },
+          { href: '/agence-logiciel-ia-lyon', label: 'Agence à Lyon', desc: 'Qui conçoit et chiffre votre logiciel sur-mesure.' },
+          { href: '/playbook', label: 'Playbooks sectoriels', desc: 'Les leviers concrets par métier.' },
+        ]}
+      />
 
       <Divider />
 

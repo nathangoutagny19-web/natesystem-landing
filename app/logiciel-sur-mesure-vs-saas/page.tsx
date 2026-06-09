@@ -6,6 +6,7 @@ import Footer from '@/components/layout/Footer'
 import MobileCta from '@/components/layout/MobileCta'
 import Divider from '@/components/ui/Divider'
 import FadeUp from '@/components/ui/FadeUp'
+import RelatedLinks from '@/components/ui/RelatedLinks'
 import { CAL_LINK } from '@/lib/constants'
 
 const rows: { criterion: string; saas: string; custom: string }[] = [
@@ -101,6 +102,17 @@ export default function VsPage() {
           </div>
         </div>
       </section>
+
+      <Divider />
+
+      <RelatedLinks
+        links={[
+          { href: '/prix-logiciel-sur-mesure', label: 'Combien coûte le sur-mesure ?', desc: 'Les fourchettes réalistes et le point de bascule vs SaaS.' },
+          { href: '/blog/base-de-donnees-vs-excel-pourquoi-migrer', label: 'Base de données vs Excel', desc: 'Quand vos tableurs deviennent un frein — et quoi faire.' },
+          { href: '/agence-logiciel-ia-lyon', label: 'Agence à Lyon', desc: 'Qui construit votre logiciel sur-mesure et votre IA.' },
+          { href: '/playbook', label: 'Playbooks sectoriels', desc: 'L\'approche appliquée à votre métier.' },
+        ]}
+      />
 
       <Divider />
 

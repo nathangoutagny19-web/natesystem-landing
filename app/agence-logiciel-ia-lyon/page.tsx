@@ -7,6 +7,7 @@ import Footer from '@/components/layout/Footer'
 import MobileCta from '@/components/layout/MobileCta'
 import Divider from '@/components/ui/Divider'
 import FadeUp from '@/components/ui/FadeUp'
+import RelatedLinks from '@/components/ui/RelatedLinks'
 import { CAL_LINK } from '@/lib/constants'
 
 const doors = [
@@ -107,6 +108,17 @@ export default function LyonPage() {
           </FadeUp>
         </div>
       </section>
+
+      <Divider />
+
+      <RelatedLinks
+        links={[
+          { href: '/logiciel-sur-mesure-vs-saas', label: 'Sur-mesure ou SaaS ?', desc: 'Le comparatif honnête, critère par critère.' },
+          { href: '/prix-logiciel-sur-mesure', label: 'Combien ça coûte ?', desc: 'Les fourchettes de prix réalistes pour une PME.' },
+          { href: '/playbook', label: 'Playbooks sectoriels', desc: 'Comment l\'IA s\'applique à votre métier, secteur par secteur.' },
+          { href: '/blog', label: 'Le blog', desc: 'Guides et comparatifs IA & automatisation pour PME.' },
+        ]}
+      />
 
       <Divider />
 
