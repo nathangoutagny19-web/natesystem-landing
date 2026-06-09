@@ -49,6 +49,11 @@ const clients: ClientRef[] = [
   },
   { name: 'Université Jean Monnet', type: 'logo', src: '/logos/ujm.png', href: 'https://www.univ-st-etienne.fr/fr/index.html' },
   { name: 'Vendéglátás Menedzsment Kft.', type: 'wordmark', href: 'https://vendeglatasmenedzsment.hu/' },
+  // SimpleTeam — blue 'S' wordmark. Rendered as `logo-white`: the alpha-cut
+  // artwork is flattened to a solid silhouette by CSS (brightness(0)) so it
+  // reads neutral, then tinted per theme — black on light, white on dark —
+  // never the raw blue, which would clash with the neutral row.
+  { name: 'SimpleTeam', type: 'logo-white', src: '/logos/simpleteam.png', href: 'https://simple-team.com/' },
 ]
 
 export default function ClientsBar() {
@@ -85,18 +90,9 @@ export default function ClientsBar() {
           {label}
         </p>
 
-        {/* Desktop: static centred grid. */}
-        <ul className="clients-row">
-          {clients.map((c) => (
-            <li key={c.name} className="clients-item">
-              <ClientItem c={c} />
-            </li>
-          ))}
-        </ul>
-
-        {/* Mobile: slow continuous carousel — references stay on ONE line and
-            scroll left forever (track duplicated for a seamless loop) instead
-            of stacking into an ugly column. */}
+        {/* One continuous carousel on every viewport — all references stay on
+            ONE line and scroll left forever (track duplicated for a seamless
+            loop). Pauses on hover so a visitor can read a logo. */}
         <div className="clients-marquee-wrap" aria-hidden="false">
           <ul className="clients-marquee">
             {[...clients, ...clients].map((c, i) => (
@@ -109,22 +105,6 @@ export default function ClientsBar() {
       </div>
 
       <style>{`
-        /* Each cell takes equal width; logos and wordmarks centre into
-           a fixed 56px-tall optical band, so a logo with internal
-           padding doesn't render rikiki next to the long Hungarian
-           wordmark. */
-        .clients-row {
-          list-style: none;
-          padding: 0;
-          margin: 0;
-          display: grid;
-          /* Auto-fit so the grid scales whether we have 2, 3 or 4 references */
-          grid-template-columns: repeat(auto-fit, minmax(160px, 240px));
-          justify-content: center;
-          align-items: center;
-          column-gap: 56px;
-          row-gap: 32px;
-        }
         .clients-item {
           display: flex;
           align-items: center;
@@ -186,38 +166,53 @@ export default function ClientsBar() {
           white-space: nowrap;
           text-align: center;
         }
-        /* Mobile carousel — hidden on desktop, where the grid rules. */
+
+        /* Continuous carousel on EVERY viewport — all references on one line,
+           scrolling left forever. Edges faded so logos appear/vanish smoothly
+           instead of being hard-clipped. */
         .clients-marquee-wrap {
-          display: none;
+          display: block;
+          overflow: hidden;
+          width: 100%;
+          max-width: 100%;
+          -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+          mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+        }
+        .clients-marquee {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          display: flex;
+          align-items: center;
+          width: max-content;
+          gap: 80px;
+          animation: clientsScroll 32s linear infinite;
+          will-change: transform;
+        }
+        .clients-marquee .clients-item {
+          flex: 0 0 auto;
+        }
+        /* Pause the scroll while the visitor hovers the strip. */
+        .clients-marquee-wrap:hover .clients-marquee {
+          animation-play-state: paused;
+        }
+        @keyframes clientsScroll {
+          0%   { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
         }
 
         @media (max-width: 768px) {
-          /* Hide the static grid, show the scrolling carousel. */
-          .clients-row {
-            display: none;
-          }
           .clients-marquee-wrap {
-            display: block;
-            overflow: hidden;
-            width: 100%;
             max-width: 100vw;
             -webkit-mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
             mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
           }
           .clients-marquee {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            align-items: center;
-            width: max-content;
             gap: 48px;
-            animation: clientsScroll 16s linear infinite;
-            will-change: transform;
+            animation-duration: 20s;
           }
           .clients-marquee .clients-item {
             height: 44px;
-            flex: 0 0 auto;
           }
           .clients-logo {
             height: 44px;
@@ -227,15 +222,12 @@ export default function ClientsBar() {
           .clients-wordmark {
             font-size: 18px;
           }
-          @keyframes clientsScroll {
-            0%   { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-          }
-          /* Content carries references the user must discover, so we keep it
-             moving even with reduced-motion — but slow it right down. */
-          @media (prefers-reduced-motion: reduce) {
-            .clients-marquee { animation-duration: 60s; }
-          }
+        }
+
+        /* References must stay discoverable, so we keep scrolling even under
+           reduced-motion — just much slower. */
+        @media (prefers-reduced-motion: reduce) {
+          .clients-marquee { animation-duration: 90s; }
         }
       `}</style>
     </section>
