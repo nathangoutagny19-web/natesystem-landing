@@ -8,9 +8,9 @@ export const translations = {
 
   // Hero
   'hero.label': { en: 'Operational software · AI integration · Digital strategy', fr: 'Logiciel opérationnel · Intégration IA · Stratégie digitale', hu: 'Operatív szoftver · MI-integráció · Digitális stratégia' },
-  'hero.title1': { en: 'Multiply your', fr: 'Multipliez vos', hu: 'Sokszorozza meg az' },
-  'hero.titleAccent': { en: 'results.', fr: 'résultats.', hu: 'eredményeit.' },
-  'hero.title2': { en: 'Without hiring more.', fr: 'Sans embaucher plus.', hu: 'Új munkatársak nélkül.' },
+  'hero.title1': { en: 'More profitable.', fr: 'Plus rentable.', hu: 'Jövedelmezőbb.' },
+  'hero.title2': { en: 'More efficient.', fr: 'Plus efficace.', hu: 'Hatékonyabb.' },
+  'hero.titleAccent': { en: 'More reliable.', fr: 'Plus fiable.', hu: 'Megbízhatóbb.' },
   'hero.sub': {
     en: 'Your current tools slow your business down. We build the custom software that drives it forward — with AI integrated where it gives you back time, clarity, and profitability. Without hiring more. You stay the owner.',
     fr: 'Vos outils actuels ralentissent votre activité. On construit le logiciel sur-mesure qui la fait avancer — avec l\'IA intégrée là où elle vous fait gagner du temps, de la clarté et de la rentabilité. Sans grossir votre équipe. Vous restez propriétaire.',
@@ -453,6 +453,7 @@ export const translations = {
   'footer.link.stockDemo': { en: 'Stock (demo)', fr: 'Stock (démo)', hu: 'Stock (demó)' },
   'footer.link.book': { en: 'Book a call', fr: 'Réserver un appel', hu: 'Hívás foglalása' },
   'footer.link.playbooks': { en: 'Sector playbooks', fr: 'Playbooks sectoriels', hu: 'Ágazati playbookok' },
+  'footer.link.about': { en: 'About', fr: 'À propos', hu: 'Rólunk' },
 
   // Tools page
   'tools.title': { en: 'Free Tools', fr: 'Outils Gratuits', hu: 'Ingyenes eszközök' },

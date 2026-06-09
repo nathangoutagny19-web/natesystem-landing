@@ -23,10 +23,8 @@ export default function Hero() {
         className="font-serif italic font-normal"
         style={{ fontSize: 'clamp(38px, 5.2vw, 64px)', lineHeight: 1.08, marginBottom: '28px', maxWidth: '820px', color: 'var(--text)' }}
       >
-        {t('hero.title1')}{' '}
+        {t('hero.title1')}{' '}{t('hero.title2')}{' '}
         <span className="accent" style={{ color: 'var(--accent)' }}>{t('hero.titleAccent')}</span>
-        <br />
-        {t('hero.title2')}
       </motion.h1>
 
       {/* Subtitle */}
