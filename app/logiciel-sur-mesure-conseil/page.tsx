@@ -156,7 +156,7 @@ export default function ConseilPage() {
         links={[
           { href: '/logiciel-sur-mesure-vs-saas', label: 'Sur-mesure ou SaaS ?', desc: 'Pourquoi un système qui vous appartient plutôt qu\'un CRM loué.' },
           { href: '/prix-logiciel-sur-mesure', label: 'Combien ça coûte ?', desc: 'Les fourchettes de prix réalistes.' },
-          { href: '/logiciel-sur-mesure-restauration', label: 'Et pour la restauration ?', desc: 'Un autre secteur, la même méthode.' },
+          { href: '/logiciel-sur-mesure-club-sportif', label: 'Et pour les clubs sportifs ?', desc: 'Un autre secteur, la même méthode.' },
           { href: '/blog/agents-ia-vs-chatgpt-quelle-difference', label: 'Agents IA vs ChatGPT', desc: 'Comprendre ce qui automatise vraiment vos relances.' },
         ]}
       />

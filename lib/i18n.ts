@@ -448,6 +448,7 @@ export const translations = {
   'footer.link.restaurant': { en: 'Software for restaurants', fr: 'Logiciel pour la restauration', hu: 'Szoftver vendéglátásnak' },
   'footer.link.education': { en: 'Software for higher education', fr: 'Logiciel pour l\'enseignement supérieur', hu: 'Szoftver felsőoktatásnak' },
   'footer.link.consulting': { en: 'Software for consulting firms', fr: 'Logiciel pour le conseil', hu: 'Szoftver tanácsadóknak' },
+  'footer.link.sportsclub': { en: 'Software for sports clubs', fr: 'Logiciel pour clubs sportifs', hu: 'Szoftver sportkluboknak' },
 
   // Footer link labels — only those not already covered by nav/tools/resources keys
   'footer.link.home': { en: 'Home', fr: 'Accueil', hu: 'Főoldal' },

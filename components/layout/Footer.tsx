@@ -112,6 +112,7 @@ export default function Footer() {
           <FooterLink href="/logiciel-sur-mesure-restauration">{t('footer.link.restaurant')}</FooterLink>
           <FooterLink href="/logiciel-sur-mesure-enseignement-superieur">{t('footer.link.education')}</FooterLink>
           <FooterLink href="/logiciel-sur-mesure-conseil">{t('footer.link.consulting')}</FooterLink>
+          <FooterLink href="/logiciel-sur-mesure-club-sportif">{t('footer.link.sportsclub')}</FooterLink>
         </FooterCol>
 
         {/* Tools & demos column */}
