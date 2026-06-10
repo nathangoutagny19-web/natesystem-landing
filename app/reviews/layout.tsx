@@ -33,6 +33,26 @@ export const metadata: Metadata = {
   },
 }
 
+// SoftwareApplication schema — NateSystem · Reviews is a review-intelligence
+// product (demo). Eligible for software rich results; clarifies to AI engines.
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  '@id': 'https://www.natesystem.com/reviews#app',
+  name: 'NateSystem · Reviews',
+  url: 'https://www.natesystem.com/reviews',
+  applicationCategory: 'BusinessApplication',
+  operatingSystem: 'Web',
+  description:
+    'Review intelligence software: AI scoring on six aspects, response drafting in your brand voice, 90-day action plans. Demo runs on mock data; request access via the form.',
+  provider: { '@id': 'https://www.natesystem.com/#organization' },
+}
+
 export default function ReviewsLayout({ children }: { children: React.ReactNode }) {
-  return children
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      {children}
+    </>
+  )
 }
