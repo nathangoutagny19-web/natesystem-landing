@@ -48,7 +48,7 @@ export default function PrixPage() {
           <FadeUp>
             <span className="section-label">Prix</span>
             <h1 className="font-serif italic" style={{ fontSize: 'clamp(32px, 5.4vw, 54px)', fontWeight: 400, lineHeight: 1.1, color: 'var(--text)', maxWidth: 760, margin: '14px auto 24px' }}>
-              Combien coûte un logiciel <span className="accent">sur-mesure</span> en 2026 ?
+              Combien coûte un logiciel <span className="accent" style={{ color: 'var(--accent)' }}>sur-mesure</span> en 2026 ?
             </h1>
             <p className="font-sans" style={{ fontSize: 'clamp(15px, 3vw, 18px)', fontWeight: 300, color: 'var(--text-secondary)', maxWidth: 640, margin: '0 auto', lineHeight: 1.65 }}>
               Pour une PME, comptez entre <strong style={{ color: 'var(--text)', fontWeight: 500 }}>15 000 et 50 000 €</strong> pour un
@@ -73,7 +73,7 @@ export default function PrixPage() {
           <div className="prix-grid">
             {tiers.map((t) => (
               <div key={t.title} style={{ background: 'var(--bg-card)', border: '1px solid var(--border)', borderRadius: 14, padding: '30px 28px', height: '100%', display: 'flex', flexDirection: 'column' }}>
-                <p className="font-serif italic accent" style={{ fontSize: 28, fontWeight: 400, lineHeight: 1.1, margin: '0 0 4px' }}>{t.range}</p>
+                <p className="font-serif italic accent" style={{ color: 'var(--accent)', fontSize: 28, fontWeight: 400, lineHeight: 1.1, margin: '0 0 4px' }}>{t.range}</p>
                 <p className="font-mono" style={{ fontSize: 10.5, letterSpacing: 1.2, textTransform: 'uppercase', color: 'var(--text-muted)', fontWeight: 500, margin: '0 0 18px' }}>{t.unit}</p>
                 <h3 className="font-sans" style={{ fontSize: 16, fontWeight: 600, color: 'var(--text)', margin: '0 0 10px' }}>{t.title}</h3>
                 <p className="font-sans" style={{ fontSize: 13.5, color: 'var(--text-secondary)', lineHeight: 1.6, fontWeight: 300, margin: 0 }}>{t.desc}</p>

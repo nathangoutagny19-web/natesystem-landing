@@ -48,7 +48,7 @@ export default function AProposPage() {
               }}
             >
               Nathan Goutagny.{' '}
-              <span className="accent">Un seul opérateur, des déploiements concrets.</span>
+              <span className="accent" style={{ color: 'var(--accent)' }}>Un seul opérateur, des déploiements concrets.</span>
             </h1>
           </FadeUp>
         </div>

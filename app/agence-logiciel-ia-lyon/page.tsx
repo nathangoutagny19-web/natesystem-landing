@@ -47,7 +47,7 @@ export default function LyonPage() {
               style={{ fontSize: 'clamp(32px, 5.4vw, 56px)', fontWeight: 400, lineHeight: 1.08, color: 'var(--text)', maxWidth: 760, margin: '14px auto 24px' }}
             >
               Votre agence de logiciel sur-mesure{' '}
-              <span className="accent">et d&apos;IA, à Lyon.</span>
+              <span className="accent" style={{ color: 'var(--accent)' }}>et d&apos;IA, à Lyon.</span>
             </h1>
             <p className="font-sans" style={{ fontSize: 'clamp(15px, 3vw, 18px)', fontWeight: 300, color: 'var(--text-secondary)', maxWidth: 620, margin: '0 auto 36px', lineHeight: 1.65 }}>
               NateSystem est une agence lyonnaise qui construit le logiciel métier qui pilote votre activité — avec l&apos;IA intégrée

@@ -41,7 +41,7 @@ export default function VsPage() {
           <FadeUp>
             <span className="section-label">Comparatif</span>
             <h1 className="font-serif italic" style={{ fontSize: 'clamp(32px, 5.4vw, 54px)', fontWeight: 400, lineHeight: 1.1, color: 'var(--text)', maxWidth: 760, margin: '14px auto 24px' }}>
-              Logiciel sur-mesure <span className="accent">vs SaaS</span> : lequel choisir ?
+              Logiciel sur-mesure <span className="accent" style={{ color: 'var(--accent)' }}>vs SaaS</span> : lequel choisir ?
             </h1>
             <p className="font-sans" style={{ fontSize: 'clamp(15px, 3vw, 18px)', fontWeight: 300, color: 'var(--text-secondary)', maxWidth: 640, margin: '0 auto', lineHeight: 1.65 }}>
               Le SaaS coûte moins cher à l&apos;entrée mais court à vie et vous fait vous adapter à l&apos;outil. Le sur-mesure

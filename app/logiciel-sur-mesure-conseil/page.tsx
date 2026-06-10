@@ -10,38 +10,37 @@ import FadeUp from '@/components/ui/FadeUp'
 import RelatedLinks from '@/components/ui/RelatedLinks'
 import { CAL_LINK } from '@/lib/constants'
 
-// Real systems deployed for hospitality clients (see home "Systems" section).
-const systems = [
+const modules = [
   {
-    title: 'Cockpit ops & KPI',
-    desc: 'Couverts, masse salariale, KPI quotidiens en temps réel — et un plan d\'action suggéré par l\'IA. Les décisions data se prennent en 2 minutes, plus en 2 heures sur Excel.',
-    metric: 'Décisions en 2 min vs ~2h sur Excel',
+    title: 'Relance commerciale automatique',
+    desc: '3 à 5 messages personnalisés sur 2-3 semaines, qui s\'arrêtent dès que le prospect répond. Vos consultants se concentrent sur les rendez-vous, pas sur les relances.',
+    metric: 'Conversion 4 % → 12 % chez nos clients consultants B2B',
   },
   {
-    title: 'Contrôle des factures F&B',
-    desc: 'Stock temps réel, prix fournisseurs suivis dans le temps, détection automatique des surfacturations et doubles facturations sur les factures entrantes.',
-    metric: '~3-5 % de marge récupérée sur les achats F&B',
+    title: 'Réactivation des dormants',
+    desc: 'Anciens clients, prospects fantômes, contacts oubliés dans le CRM : on les réveille avec un message juste, sans budget publicitaire.',
+    metric: 'Du chiffre récupéré sur une base déjà payée',
   },
   {
-    title: 'Pointeuse & paie',
-    desc: 'Pointage mobile, planning hebdo, suivi des heures sup, exports prêts pour la paie. Remplace les fiches papier et les chaînes Excel.',
-    metric: 'Paie validée en 30 min vs une demi-journée',
+    title: 'Reporting interne automatique',
+    desc: 'Collecte CRM + compta + projets, analyse, et push d\'une synthèse dans Slack ou Teams. Pas de nouveau dashboard à aller consulter.',
+    metric: 'Le pilotage arrive à vous, pas l\'inverse',
   },
   {
-    title: 'Réputation & avis',
-    desc: 'Agrège les avis Google, TripAdvisor, Facebook. L\'IA rédige des réponses dans votre ton. Synthèse mensuelle générée automatiquement par établissement.',
-    metric: 'Temps de réponse aux avis ÷10',
+    title: 'Temps facturable récupéré',
+    desc: 'Chaque heure passée sur de l\'administratif est une heure non facturée. On automatise la saisie, les propositions et le suivi pour rendre ces heures à la facturation.',
+    metric: 'L\'admin absorbé, le facturable préservé',
   },
 ]
 
 const pains = [
-  'Une caisse, un Excel masse salariale, un tableur fournisseurs, des avis éparpillés — rien ne se parle',
-  'Le pilotage hebdo prend des heures à reconstituer à la main',
-  'Les surfacturations fournisseurs passent inaperçues',
-  'Quand un manager part, le process part avec lui',
+  'Des relances qui s\'oublient dès qu\'un dossier client prend le dessus',
+  'Une base de contacts pleine d\'opportunités dormantes que personne ne retravaille',
+  'Le reporting reconstitué à la main, en fin de mois, au lieu d\'être piloté en continu',
+  'Du temps facturable qui part dans la saisie et l\'administratif',
 ]
 
-export default function RestaurationPage() {
+export default function ConseilPage() {
   return (
     <main>
       <Nav />
@@ -49,14 +48,14 @@ export default function RestaurationPage() {
       <section style={{ padding: '160px 24px 40px' }}>
         <div className="mx-auto text-center" style={{ maxWidth: 820 }}>
           <FadeUp>
-            <span className="section-label">Restauration</span>
+            <span className="section-label">Cabinets de conseil</span>
             <h1 className="font-serif italic" style={{ fontSize: 'clamp(32px, 5.4vw, 54px)', fontWeight: 400, lineHeight: 1.1, color: 'var(--text)', maxWidth: 760, margin: '14px auto 24px' }}>
-              Le logiciel sur-mesure qui <span className="accent" style={{ color: 'var(--accent)' }}>pilote votre restaurant.</span>
+              Plus de rendez-vous, <span className="accent" style={{ color: 'var(--accent)' }}>moins d&apos;administratif.</span>
             </h1>
             <p className="font-sans" style={{ fontSize: 'clamp(15px, 3vw, 18px)', fontWeight: 300, color: 'var(--text-secondary)', maxWidth: 640, margin: '0 auto 36px', lineHeight: 1.65 }}>
-              Un seul système réunit couverts, KPI, factures fournisseurs, planning, paie et avis — là où vous jonglez
-              aujourd&apos;hui entre une caisse, des tableurs et des outils qui ne se parlent pas. Avec l&apos;IA intégrée
-              uniquement là où elle remplace de vraies heures.
+              Pour un cabinet de conseil ou un consultant B2B, le logiciel et l&apos;IA sur-mesure automatisent ce qui ronge votre
+              temps facturable : relance commerciale, réactivation des dormants, reporting. L&apos;IA intégrée uniquement là où elle
+              remplace de vraies heures — votre secret client reste intact.
             </p>
             <Link href={CAL_LINK} className="btn-primary" style={{ margin: '0 auto', fontSize: 14 }}>
               <span className="btn-primary-dot" />Réserver 20 min · offert →
@@ -71,9 +70,9 @@ export default function RestaurationPage() {
       <section style={{ padding: '70px 24px' }}>
         <div className="mx-auto" style={{ maxWidth: 760 }}>
           <FadeUp className="text-center mb-10">
-            <span className="section-label">Le quotidien d&apos;un resto qui grandit</span>
+            <span className="section-label">Le quotidien d&apos;un cabinet</span>
             <h2 className="section-title" style={{ maxWidth: 620, margin: '0 auto' }}>
-              Le <span className="accent">SaaS-spaghetti</span> de la restauration
+              Là où le <span className="accent">temps facturable s&apos;évapore</span>
             </h2>
           </FadeUp>
           <ul style={{ listStyle: 'none', padding: 0, margin: '0 auto', maxWidth: 600, display: 'grid', gap: 13 }}>
@@ -89,22 +88,22 @@ export default function RestaurationPage() {
 
       <Divider />
 
-      {/* Systems */}
+      {/* Modules */}
       <section style={{ padding: '70px 24px' }}>
         <div className="mx-auto" style={{ maxWidth: 1100 }}>
           <FadeUp className="text-center mb-12">
-            <span className="section-label">Ce qu&apos;on construit pour la restauration</span>
+            <span className="section-label">Ce qu&apos;on construit pour le conseil</span>
             <h2 className="section-title" style={{ maxWidth: 640, margin: '0 auto' }}>
-              Quatre modules, <span className="accent">un seul système.</span>
+              Quatre leviers, <span className="accent">un seul système.</span>
             </h2>
           </FadeUp>
-          <div className="resto-grid">
-            {systems.map((s) => (
-              <div key={s.title} style={{ background: 'var(--bg-card)', border: '1px solid var(--border)', borderRadius: 14, padding: '28px 26px', height: '100%', display: 'flex', flexDirection: 'column', gap: 12 }}>
-                <h3 className="font-serif italic" style={{ fontSize: 22, fontWeight: 400, lineHeight: 1.15, color: 'var(--text)', margin: 0 }}>{s.title}</h3>
-                <p className="font-sans" style={{ fontSize: 13.5, color: 'var(--text-secondary)', lineHeight: 1.6, fontWeight: 300, margin: 0, flex: 1 }}>{s.desc}</p>
+          <div className="conseil-grid">
+            {modules.map((m) => (
+              <div key={m.title} style={{ background: 'var(--bg-card)', border: '1px solid var(--border)', borderRadius: 14, padding: '28px 26px', height: '100%', display: 'flex', flexDirection: 'column', gap: 12 }}>
+                <h3 className="font-serif italic" style={{ fontSize: 22, fontWeight: 400, lineHeight: 1.15, color: 'var(--text)', margin: 0 }}>{m.title}</h3>
+                <p className="font-sans" style={{ fontSize: 13.5, color: 'var(--text-secondary)', lineHeight: 1.6, fontWeight: 300, margin: 0, flex: 1 }}>{m.desc}</p>
                 <div style={{ borderLeft: '2px solid var(--accent)', paddingLeft: 12, marginTop: 4 }}>
-                  <p className="font-mono" style={{ fontSize: 11, fontWeight: 500, color: 'var(--accent)', lineHeight: 1.4, margin: 0 }}>{s.metric}</p>
+                  <p className="font-mono" style={{ fontSize: 11, fontWeight: 500, color: 'var(--accent)', lineHeight: 1.4, margin: 0 }}>{m.metric}</p>
                 </div>
               </div>
             ))}
@@ -114,17 +113,17 @@ export default function RestaurationPage() {
 
       <Divider />
 
-      {/* Proof — Chromosome */}
+      {/* Proof */}
       <section style={{ padding: '70px 24px' }}>
         <div className="mx-auto" style={{ maxWidth: 760 }}>
           <FadeUp>
             <div style={{ background: 'var(--bg-card)', border: '1px solid var(--border)', borderRadius: 14, padding: '40px 36px', textAlign: 'center' }}>
-              <p className="font-serif italic accent" style={{ color: 'var(--accent)', fontSize: 'clamp(44px, 8vw, 64px)', fontWeight: 400, lineHeight: 1, margin: '0 0 8px' }}>×11</p>
+              <p className="font-serif italic accent" style={{ color: 'var(--accent)', fontSize: 'clamp(40px, 7vw, 58px)', fontWeight: 400, lineHeight: 1, margin: '0 0 8px' }}>4 % → 12 %</p>
               <p className="font-sans" style={{ fontSize: 15, color: 'var(--text)', fontWeight: 400, lineHeight: 1.6, maxWidth: 520, margin: '0 auto 6px' }}>
-                moins de temps passé par manager sur les opérations hebdomadaires — de 11h à 1h.
+                de conversion sur la relance commerciale, chez nos clients consultants B2B — en automatisant ce que personne n&apos;avait le temps de faire.
               </p>
               <p className="font-mono" style={{ fontSize: 11, letterSpacing: 1.2, textTransform: 'uppercase', color: 'var(--text-muted)', fontWeight: 500, margin: 0 }}>
-                Chromosome · Groupe de restaurants
+                Clients consultants B2B
               </p>
             </div>
           </FadeUp>
@@ -138,9 +137,9 @@ export default function RestaurationPage() {
         <div className="mx-auto" style={{ maxWidth: 600 }}>
           <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: 14 }}>
             {[
+              'Votre secret client préservé · données hébergées en UE · RGPD-natif',
               'Code source livré · vous êtes propriétaire à 100 %',
-              'Données hébergées en UE · RGPD-natif',
-              'En production en 4 à 8 semaines · vos équipes continuent de travailler',
+              'En production en 4 à 8 semaines · ROI mesuré dès les premières semaines',
             ].map((g) => (
               <li key={g} className="flex items-start gap-3" style={{ fontSize: 14.5, color: 'var(--text-secondary)', lineHeight: 1.55, fontWeight: 300 }}>
                 <Check size={16} strokeWidth={2.2} style={{ color: 'var(--accent)', flexShrink: 0, marginTop: 3 }} />
@@ -155,10 +154,10 @@ export default function RestaurationPage() {
 
       <RelatedLinks
         links={[
-          { href: '/logiciel-sur-mesure-vs-saas', label: 'Sur-mesure ou SaaS ?', desc: 'Pourquoi sortir de l\'empilement d\'outils du restaurant.' },
+          { href: '/logiciel-sur-mesure-vs-saas', label: 'Sur-mesure ou SaaS ?', desc: 'Pourquoi un système qui vous appartient plutôt qu\'un CRM loué.' },
           { href: '/prix-logiciel-sur-mesure', label: 'Combien ça coûte ?', desc: 'Les fourchettes de prix réalistes.' },
-          { href: '/logiciel-sur-mesure-enseignement-superieur', label: 'Et pour l\'enseignement supérieur ?', desc: 'Un autre secteur, la même méthode.' },
-          { href: '/playbook', label: 'Playbooks sectoriels', desc: 'L\'IA appliquée à d\'autres métiers.' },
+          { href: '/logiciel-sur-mesure-restauration', label: 'Et pour la restauration ?', desc: 'Un autre secteur, la même méthode.' },
+          { href: '/blog/agents-ia-vs-chatgpt-quelle-difference', label: 'Agents IA vs ChatGPT', desc: 'Comprendre ce qui automatise vraiment vos relances.' },
         ]}
       />
 
@@ -170,11 +169,11 @@ export default function RestaurationPage() {
           <FadeUp>
             <div style={{ background: 'var(--bg-card)', border: '1px solid rgba(230,57,70,0.15)', borderRadius: 12, padding: '48px 40px', textAlign: 'center' }}>
               <h2 className="font-serif italic" style={{ fontSize: 'clamp(24px, 4vw, 32px)', fontWeight: 400, marginBottom: 16, color: 'var(--text)' }}>
-                Reprenez le pilotage de votre restaurant.
+                Récupérez votre temps facturable.
               </h2>
               <p className="font-sans" style={{ fontSize: 15, fontWeight: 300, color: 'var(--text-secondary)', lineHeight: 1.7, maxWidth: 520, margin: '0 auto 32px' }}>
-                20 minutes, offert. On regarde vos outils actuels et on identifie ce qu&apos;un seul système vous ferait gagner —
-                en temps, en marge, en clarté. Même si on ne travaille pas ensemble.
+                20 minutes, offert. On regarde où part votre temps et ce que l&apos;automatisation vous ferait gagner — en
+                rendez-vous et en heures facturables. Même si on ne travaille pas ensemble.
               </p>
               <Link href={CAL_LINK} className="btn-primary" style={{ margin: '0 auto' }}>
                 <span className="btn-primary-dot" />Réserver 20 min · offert
@@ -189,14 +188,14 @@ export default function RestaurationPage() {
       <MobileCta />
 
       <style jsx>{`
-        .resto-grid {
+        .conseil-grid {
           display: grid;
           grid-template-columns: repeat(2, minmax(0, 1fr));
           gap: 20px;
           align-items: stretch;
         }
         @media (max-width: 800px) {
-          .resto-grid { grid-template-columns: 1fr; gap: 18px; }
+          .conseil-grid { grid-template-columns: 1fr; gap: 18px; }
         }
       `}</style>
     </main>

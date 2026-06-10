@@ -50,7 +50,7 @@ export default function EducationPage() {
           <FadeUp>
             <span className="section-label">Enseignement supérieur</span>
             <h1 className="font-serif italic" style={{ fontSize: 'clamp(32px, 5.4vw, 54px)', fontWeight: 400, lineHeight: 1.1, color: 'var(--text)', maxWidth: 760, margin: '14px auto 24px' }}>
-              Le CRM pédagogique <span className="accent">qui centralise tout.</span>
+              Le CRM pédagogique <span className="accent" style={{ color: 'var(--accent)' }}>qui centralise tout.</span>
             </h1>
             <p className="font-sans" style={{ fontSize: 'clamp(15px, 3vw, 18px)', fontWeight: 300, color: 'var(--text-secondary)', maxWidth: 640, margin: '0 auto 36px', lineHeight: 1.65 }}>
               Parcours étudiant, suivi de stages, relation alumni — réunis dans un seul outil bâti pour votre établissement,
@@ -154,7 +154,7 @@ export default function EducationPage() {
         links={[
           { href: '/logiciel-sur-mesure-vs-saas', label: 'Sur-mesure ou SaaS ?', desc: 'Pourquoi un CRM pédagogique propriétaire plutôt qu\'un outil générique.' },
           { href: '/prix-logiciel-sur-mesure', label: 'Combien ça coûte ?', desc: 'Les fourchettes de prix réalistes.' },
-          { href: '/logiciel-sur-mesure-restauration', label: 'Et pour la restauration ?', desc: 'Un autre secteur, la même méthode.' },
+          { href: '/logiciel-sur-mesure-conseil', label: 'Et pour le conseil ?', desc: 'Un autre secteur, la même méthode.' },
           { href: '/playbook', label: 'Playbooks sectoriels', desc: 'L\'IA appliquée à d\'autres métiers.' },
         ]}
       />
