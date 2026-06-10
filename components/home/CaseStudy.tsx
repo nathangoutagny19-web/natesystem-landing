@@ -42,7 +42,7 @@ function LiteYouTube({ title }: { title: string }) {
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={`https://i.ytimg.com/vi/${YOUTUBE_ID}/maxresdefault.jpg`}
-        alt=""
+        alt="Témoignage vidéo de Catherine P., General Manager du groupe Chromosome, sur le logiciel sur-mesure déployé par NateSystem"
         loading="lazy"
         className="absolute inset-0 w-full h-full"
         style={{ objectFit: 'cover', transition: 'transform 0.5s ease' }}
