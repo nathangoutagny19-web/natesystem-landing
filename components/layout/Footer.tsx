@@ -38,8 +38,8 @@ export default function Footer() {
         className="footer-grid"
         style={{
           display: 'grid',
-          gridTemplateColumns: 'minmax(0, 1.4fr) repeat(4, minmax(0, 1fr))',
-          gap: 40,
+          gridTemplateColumns: 'minmax(0, 1.4fr) repeat(5, minmax(0, 1fr))',
+          gap: 32,
           alignItems: 'flex-start',
         }}
       >
@@ -102,6 +102,16 @@ export default function Footer() {
           <FooterLink href="/#process">{t('footer.link.process')}</FooterLink>
           <FooterLink href="/#case-study">{t('footer.link.results')}</FooterLink>
           <FooterLink href="/#contact">{t('footer.link.contact')}</FooterLink>
+        </FooterCol>
+
+        {/* Solutions column — conversion + sector SEO pages */}
+        <FooterCol title={t('footer.col.solutions')}>
+          <FooterLink href="/prix-logiciel-sur-mesure">{t('footer.link.pricing')}</FooterLink>
+          <FooterLink href="/logiciel-sur-mesure-vs-saas">{t('footer.link.vsSaas')}</FooterLink>
+          <FooterLink href="/agence-logiciel-ia-lyon">{t('footer.link.lyon')}</FooterLink>
+          <FooterLink href="/logiciel-sur-mesure-restauration">{t('footer.link.restaurant')}</FooterLink>
+          <FooterLink href="/logiciel-sur-mesure-enseignement-superieur">{t('footer.link.education')}</FooterLink>
+          <FooterLink href="/logiciel-sur-mesure-conseil">{t('footer.link.consulting')}</FooterLink>
         </FooterCol>
 
         {/* Tools & demos column */}
@@ -167,6 +177,17 @@ export default function Footer() {
       </div>
 
       <style>{`
+        /* Narrow desktop / tablet: 5 columns + brand block get cramped, so
+           drop the brand block to full width and show 3 link columns. */
+        @media (max-width: 1080px) and (min-width: 769px) {
+          .footer-grid {
+            grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+            gap: 28px 32px !important;
+          }
+          .footer-grid > div:first-child {
+            grid-column: 1 / -1;
+          }
+        }
         @media (max-width: 768px) {
           .footer-grid {
             grid-template-columns: 1fr 1fr !important;

@@ -436,9 +436,18 @@ export const translations = {
 
   // Footer column headers (Dec 2026 — added for SEO maillage)
   'footer.col.sections': { en: 'Sections', fr: 'Sections', hu: 'Szekciók' },
+  'footer.col.solutions': { en: 'Solutions', fr: 'Solutions', hu: 'Megoldások' },
   'footer.col.toolsDemos': { en: 'Tools & demos', fr: 'Outils & démos', hu: 'Eszközök és demók' },
   'footer.col.resources': { en: 'Resources', fr: 'Ressources', hu: 'Források' },
   'footer.col.legal': { en: 'Legal', fr: 'Légal', hu: 'Jogi' },
+
+  // Footer Solutions column — the new conversion + sector SEO pages
+  'footer.link.pricing': { en: 'Custom software pricing', fr: 'Prix logiciel sur-mesure', hu: 'Egyedi szoftver ára' },
+  'footer.link.vsSaas': { en: 'Custom vs SaaS', fr: 'Sur-mesure vs SaaS', hu: 'Egyedi vs SaaS' },
+  'footer.link.lyon': { en: 'Software & AI agency in Lyon', fr: 'Agence logiciel & IA à Lyon', hu: 'Szoftver- és MI-ügynökség Lyonban' },
+  'footer.link.restaurant': { en: 'Software for restaurants', fr: 'Logiciel pour la restauration', hu: 'Szoftver vendéglátásnak' },
+  'footer.link.education': { en: 'Software for higher education', fr: 'Logiciel pour l\'enseignement supérieur', hu: 'Szoftver felsőoktatásnak' },
+  'footer.link.consulting': { en: 'Software for consulting firms', fr: 'Logiciel pour le conseil', hu: 'Szoftver tanácsadóknak' },
 
   // Footer link labels — only those not already covered by nav/tools/resources keys
   'footer.link.home': { en: 'Home', fr: 'Accueil', hu: 'Főoldal' },
