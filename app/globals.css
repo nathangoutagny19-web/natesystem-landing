@@ -755,3 +755,67 @@ html:not(.light) .trust-logo {
   .mega-panel { display: none; }
   .mobile-cta { display: block; }
 }
+
+/* ———————————————————————————————————————————————————————————————
+   IUBENDA COOKIE BANNER — compact, premium, non-intrusive.
+   The default banner stacks the full legal rationale (≈220px) above the
+   buttons, eating ~25% of the viewport. We clamp the rationale to 2 lines,
+   tighten paddings and cap the banner height so it reads as a slim bottom
+   bar. ALL buttons (Accept / Refuse / Customize) stay visible & clickable —
+   GDPR/CNIL compliance is untouched; only the layout is condensed.
+   Iubenda class names are stable hooks. !important is required to override
+   Iubenda's inline/injected styles.
+   ——————————————————————————————————————————————————————————————— */
+#iubenda-cs-banner {
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+}
+#iubenda-cs-banner .iubenda-cs-container {
+  box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.08) !important;
+}
+#iubenda-cs-banner .iubenda-cs-content {
+  padding: 14px 22px !important;
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  gap: 10px 24px !important;
+}
+/* Text block: take the remaining width, but clamp to 2 lines */
+#iubenda-cs-banner .iubenda-cs-rationale {
+  flex: 1 1 420px !important;
+  min-width: 260px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+#iubenda-cs-banner .iubenda-banner-content {
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+  font-size: 12.5px !important;
+  line-height: 1.45 !important;
+  margin: 0 !important;
+}
+/* Buttons: sit on the same row, no top margin */
+#iubenda-cs-banner .iubenda-cs-opt-group {
+  flex: 0 0 auto !important;
+  margin: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+}
+#iubenda-cs-banner .iubenda-cs-small-margin-top {
+  margin-top: 0 !important;
+}
+/* On narrow screens, let it stack but stay tight */
+@media (max-width: 680px) {
+  #iubenda-cs-banner .iubenda-cs-content {
+    padding: 14px 18px !important;
+  }
+  #iubenda-cs-banner .iubenda-banner-content {
+    -webkit-line-clamp: 3 !important;
+  }
+}
