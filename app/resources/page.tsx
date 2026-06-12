@@ -5,6 +5,7 @@ import Footer from '@/components/layout/Footer'
 import MobileCta from '@/components/layout/MobileCta'
 import FadeUp from '@/components/ui/FadeUp'
 import Divider from '@/components/ui/Divider'
+import LiteYouTube from '@/components/ui/LiteYouTube'
 import Link from 'next/link'
 import { useLang } from '@/components/providers/LangProvider'
 import { motion } from 'framer-motion'
@@ -51,14 +52,7 @@ export default function ResourcesPage() {
                 maxWidth: '800px',
               }}
             >
-              <iframe
-                src="https://www.youtube-nocookie.com/embed/aMIjJbzuhDc?rel=0"
-                title="Témoignage Chromosome — NateSystem"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="absolute inset-0 w-full h-full border-none"
-                style={{ borderRadius: '12px' }}
-              />
+              <LiteYouTube id="aMIjJbzuhDc" title="Témoignage Chromosome — NateSystem" />
             </div>
             <p className="font-sans mt-3" style={{ fontSize: '13px', color: 'var(--text-muted)', fontWeight: 300 }}>
               Catherine P. — Gérante, Chromosome Saint-Étienne

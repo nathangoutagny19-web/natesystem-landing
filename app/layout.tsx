@@ -177,7 +177,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             consentement reste libre et explicite. */}
         <script
           dangerouslySetInnerHTML={{
-            __html: `var _iub=_iub||[];if(!_iub.csConfiguration){_iub.csConfiguration={siteId:4481810,cookiePolicyId:84096013,lang:"fr",countryDetection:true,perPurposeConsent:true,storage:{useSiteId:true},banner:{position:"bottom",acceptButtonDisplay:true,customizeButtonDisplay:true,rejectButtonDisplay:true,closeButtonDisplay:false,acceptButtonColor:"#E63946",acceptButtonCaptionColor:"#FFFFFF",customizeButtonColor:"transparent",customizeButtonCaptionColor:"#1A1A1D",rejectButtonColor:"transparent",rejectButtonCaptionColor:"#1A1A1D",backgroundColor:"#FFFFFF",textColor:"#1A1A1D",fontSize:"13px",listPurposes:true,closeButtonRejects:false}};}`,
+            __html: `var _iub=_iub||[];if(!_iub.csConfiguration){_iub.csConfiguration={siteId:4481810,cookiePolicyId:84096013,lang:"fr",countryDetection:true,perPurposeConsent:true,storage:{useSiteId:true},banner:{position:"bottom",backgroundOverlay:false,acceptButtonDisplay:true,customizeButtonDisplay:true,rejectButtonDisplay:true,closeButtonDisplay:false,acceptButtonColor:"#E63946",acceptButtonCaptionColor:"#FFFFFF",customizeButtonColor:"transparent",customizeButtonCaptionColor:"#1A1A1D",rejectButtonColor:"transparent",rejectButtonCaptionColor:"#1A1A1D",backgroundColor:"#FFFFFF",textColor:"#1A1A1D",fontSize:"13px",listPurposes:true,closeButtonRejects:false}};}`,
           }}
         />
         <script async src="https://cs.iubenda.com/autoblocking/4481810.js" />
