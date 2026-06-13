@@ -4,6 +4,7 @@ import './globals.css'
 import { ThemeProvider } from '@/components/providers/ThemeProvider'
 import { LangProvider } from '@/components/providers/LangProvider'
 import WhatsAppFloat from '@/components/layout/WhatsAppFloat'
+import CookieConsent from '@/components/site/CookieConsent'
 
 const dmSans = DM_Sans({
   subsets: ['latin'],
@@ -168,42 +169,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             __html: `(function(){try{var t=localStorage.getItem('ns-theme');if(t==='light'||t==='dark'){document.documentElement.classList.toggle('light',t==='light')}else{document.documentElement.classList.add('light');localStorage.setItem('ns-theme','light')}}catch(e){}})()`,
           }}
         />
-        {/* Iubenda Cookie Consent — config SPA-safe : on initialise une seule fois,
-            on protège contre les réinitialisations partielles lors de la navigation
-            client Next.js qui causaient "Cannot read properties of undefined (reading 'lang')".
-            Banner UX : bandeau plein bas (non-intrusif), "Accepter" en rouge NateSystem
-            (CTA principal), "Refuser" en ghost style (légalement présent mais moins
-            mis en avant). RGPD/CNIL compliant : les deux boutons sont visibles, le
-            consentement reste libre et explicite. */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `var _iub=_iub||[];if(!_iub.csConfiguration){_iub.csConfiguration={siteId:4481810,cookiePolicyId:84096013,lang:"fr",countryDetection:true,perPurposeConsent:true,storage:{useSiteId:true},banner:{position:"bottom",backgroundOverlay:false,acceptButtonDisplay:true,customizeButtonDisplay:true,rejectButtonDisplay:true,closeButtonDisplay:false,acceptButtonColor:"#E63946",acceptButtonCaptionColor:"#FFFFFF",customizeButtonColor:"transparent",customizeButtonCaptionColor:"#1A1A1D",rejectButtonColor:"transparent",rejectButtonCaptionColor:"#1A1A1D",backgroundColor:"#FFFFFF",textColor:"#1A1A1D",fontSize:"13px",listPurposes:true,closeButtonRejects:false}};}`,
-          }}
-        />
-        <script async src="https://cs.iubenda.com/autoblocking/4481810.js" />
-        <script async src="//cdn.iubenda.com/cs/gpp/stub.js" />
-        <script src="//cdn.iubenda.com/cs/iubenda_cs.js" charSet="UTF-8" async />
-        {/* Google Analytics (GA4) */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-JCM93QPKTD" />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JCM93QPKTD');`,
-          }}
-        />
-        {/* Microsoft Clarity */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","w4g9vbwe3u");`,
-          }}
-        />
-        {/* Instantly / Leadsy.ai — anonymous visitor identification for outbound acquisition */}
-        <script
-          id="vtag-ai-js"
-          async
-          src="https://r2.leadsy.ai/tag.js"
-          data-pid="1hn7HHJQniW34BpBT"
-          data-version="062024"
-        />
+        {/* Cookie consent & all analytics/tracking (GA4, Clarity, Leadsy/Instantly)
+            are now handled by the self-hosted <CookieConsent /> component, which
+            only injects those scripts AFTER the visitor clicks "Accepter".
+            Replaced Iubenda (its autoblocking veil + offscreen buttons broke UX). */}
       </head>
       <body>
         <ThemeProvider>
@@ -214,6 +183,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               {children}
             </div>
             <WhatsAppFloat />
+            <CookieConsent />
           </LangProvider>
         </ThemeProvider>
       </body>
