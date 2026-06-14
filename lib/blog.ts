@@ -3396,4 +3396,303 @@ export const blogPosts: BlogPost[] = [
 <p><strong><a href="/book">Réserver 20 min · offert &rarr;</a></strong></p>
 `,
   },
+  {
+    slug: 'logiciel-gestion-hotel-independant-pms',
+    title: 'Logiciel de gestion pour hôtel indépendant : PMS standard ou sur-mesure ?',
+    description: 'Un PMS pilote réservations, check-in, ménage et conformité (fiche de police, taxe de séjour, NF525). Comparatif PMS standard vs sur-mesure pour un hôtel indépendant, et comment réduire la dépendance aux OTA.',
+    date: '2026-06-16',
+    author: 'Nathan Goutagny',
+    readTime: '12 min',
+    category: 'Secteur',
+    tags: ['Hôtellerie', 'PMS', 'Logiciel métier', 'Sur-mesure'],
+    content: `
+<p><strong>Un PMS (Property Management System) est le logiciel qui pilote un hôtel : réservations, check-in/out, planning des chambres, ménage, facturation et obligations légales. Pour un hôtel indépendant, l'enjeu est double — gérer les opérations ET réduire la dépendance aux plateformes de réservation, dont les commissions atteignent 15 à 17 %.</strong></p>
+
+<p>Ce guide explique ce qu'un PMS doit couvrir (y compris les obligations légales que les solutions standards survolent) et quand un outil sur-mesure que vous possédez l'emporte.</p>
+
+<nav>
+<h2>Sommaire</h2>
+<ol>
+  <li><a href="#pms">Qu'est-ce qu'un PMS et à quoi il sert</a></li>
+  <li><a href="#fonctions">Les fonctionnalités clés</a></li>
+  <li><a href="#ota">Channel manager : reprendre la main sur les OTA</a></li>
+  <li><a href="#conformite">Les obligations légales (souvent oubliées)</a></li>
+  <li><a href="#standard-vs">PMS standard vs sur-mesure</a></li>
+  <li><a href="#faq">FAQ</a></li>
+</ol>
+</nav>
+
+<h2 id="pms">Qu'est-ce qu'un PMS et à quoi il sert</h2>
+<p>Le PMS est le poste de commandement de l'hôtel : il centralise le planning des chambres (main courante), les réservations, le check-in/out, la facturation et la coordination du ménage. Sans lui, ces flux vivent dans des outils séparés qui ne se parlent pas — et les double-bookings arrivent. La France compte environ <strong>16 600 hôtels</strong> (661 000 chambres), dont une large majorité d'indépendants.</p>
+
+<h2 id="fonctions">Les fonctionnalités clés</h2>
+<ul>
+  <li>Planning des chambres et main courante</li>
+  <li>Moteur de réservation directe (site de l'hôtel)</li>
+  <li>Check-in / check-out, facturation</li>
+  <li>Gestion du ménage (rooming-list, statut des chambres)</li>
+  <li>Channel manager (synchro avec les plateformes)</li>
+</ul>
+
+<h2 id="ota">Channel manager : reprendre la main sur les OTA</h2>
+<p>Les plateformes (Booking, Expedia…) apportent du volume mais prélèvent des commissions de <strong>15 % (jusqu'à 17 % en programme Preferred)</strong>. Un bon PMS connecte un channel manager ET un moteur de réservation directe, pour pousser les clients à réserver en direct — chaque réservation directe est une commission économisée. Pour un indépendant, c'est un levier de marge majeur.</p>
+
+<h2 id="conformite">Les obligations légales (souvent oubliées)</h2>
+<p>C'est ce que les PMS standards traitent de façon vague, alors que c'est obligatoire :</p>
+<ul>
+  <li><strong>Fiche individuelle de police</strong> pour les clients étrangers (décret du 18/08/2015), à conserver 6 mois</li>
+  <li><strong>Taxe de séjour</strong> — déclaration dématérialisée (mensuelle à Paris/IDF depuis avril 2025)</li>
+  <li><strong>NF525</strong> (logiciel de caisse anti-fraude TVA)</li>
+  <li><strong>RGPD + PCI-DSS</strong> (données clients et paiements)</li>
+</ul>
+<p>Automatiser ces obligations dans le logiciel, plutôt que les gérer à la main, c'est du temps et du risque en moins.</p>
+
+<h2 id="standard-vs">PMS standard vs sur-mesure</h2>
+
+<table>
+  <thead>
+    <tr><th>Critère</th><th>PMS standard (SaaS)</th><th>Sur-mesure propriétaire</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Coût</strong></td><td>Abonnement (souvent par chambre), à vie</td><td>Investissement, puis propriété</td></tr>
+    <tr><td><strong>Adaptation</strong></td><td>Modules verrouillés</td><td>Votre workflow exact</td></tr>
+    <tr><td><strong>Fiche de police / taxe de séjour</strong></td><td>Variable, souvent manuel</td><td>Automatisées</td></tr>
+    <tr><td><strong>Propriété / RGPD</strong></td><td>Données chez l'éditeur</td><td>Code livré · hébergé UE</td></tr>
+  </tbody>
+</table>
+
+<p>Pour un hôtel aux process standards, un PMS du marché suffit. Pour un indépendant qui veut maîtriser ses coûts récurrents, automatiser sa conformité et posséder son outil, le sur-mesure devient pertinent.</p>
+
+<h2 id="faq">FAQ</h2>
+<h3>Un PMS gère-t-il la fiche de police et la taxe de séjour ?</h3>
+<p>Les bons oui, mais souvent de façon partielle. Un outil sur-mesure peut les automatiser entièrement (génération, conservation 6 mois, déclaration).</p>
+<h3>Comment réduire les commissions des plateformes ?</h3>
+<p>En couplant channel manager et moteur de réservation directe pour basculer une part des réservations en direct (0 % de commission).</p>
+<h3>Le sur-mesure est-il réservé aux grands groupes hôteliers ?</h3>
+<p>Non. Un indépendant qui paie un abonnement par chambre depuis des années peut y trouver son compte, surtout sur plusieurs établissements.</p>
+
+<h2>En résumé</h2>
+<p>Un PMS pilote l'hôtel et conditionne votre dépendance aux OTA. Au-delà des fonctions de base, ce sont la conformité (fiche de police, taxe de séjour, NF525) et la propriété qui départagent. Pour un indépendant, un outil sur-mesure peut automatiser le légal et réduire les coûts récurrents.</p>
+
+<p><strong><a href="/book">Réserver 20 min · offert &rarr;</a></strong></p>
+`,
+  },
+  {
+    slug: 'logiciel-gestion-entreprise-nettoyage-proprete',
+    title: 'Logiciel de gestion pour entreprise de nettoyage : ce qui compte vraiment',
+    description: 'Planning multi-sites, pointage géolocalisé des agents (encadré CNIL), facturation récurrente, contrôle qualité : ce qu\'un logiciel de propreté B2B doit couvrir. SaaS standard vs sur-mesure possédé.',
+    date: '2026-06-16',
+    author: 'Nathan Goutagny',
+    readTime: '11 min',
+    category: 'Secteur',
+    tags: ['Propreté', 'Nettoyage B2B', 'Logiciel métier', 'Sur-mesure'],
+    content: `
+<p><strong>Un logiciel de gestion pour entreprise de nettoyage doit relier en un seul flux : planning multi-sites, pointage géolocalisé des agents sur place, facturation récurrente et contrôle qualité. Le pointage géolocalisé est la pièce maîtresse — il alimente la paie, la facturation au réel et la preuve de prestation — mais il est strictement encadré par la CNIL.</strong></p>
+
+<p>Le secteur de la propreté, c'est en France ~14 000 entreprises, 600 000+ salariés et 21 Md€ de chiffre d'affaires (2024). Voici ce qu'un bon logiciel doit couvrir, et quand le posséder vaut mieux que le louer.</p>
+
+<nav>
+<h2>Sommaire</h2>
+<ol>
+  <li><a href="#pains">Les vrais points de douleur du secteur</a></li>
+  <li><a href="#fonctions">Les fonctionnalités essentielles</a></li>
+  <li><a href="#pointage">Le pointage géolocalisé (et le cadre CNIL)</a></li>
+  <li><a href="#standard-vs">SaaS standard vs sur-mesure</a></li>
+  <li><a href="#faq">FAQ</a></li>
+</ol>
+</nav>
+
+<h2 id="pains">Les vrais points de douleur du secteur</h2>
+<p>Une entreprise de propreté jongle avec : la dispersion sur de nombreux sites clients, le temps administratif des factures récurrentes, la traçabilité des prestations (le client a-t-il été servi ?), les remplacements de dernière minute, et le suivi de la rentabilité par chantier. Tout ça vit souvent dans des tableurs et des messages — d'où les erreurs et le temps perdu.</p>
+
+<h2 id="fonctions">Les fonctionnalités essentielles</h2>
+<ul>
+  <li>Planning multi-sites avec gestion des remplacements</li>
+  <li>Pointage mobile géolocalisé des agents</li>
+  <li>Facturation récurrente regroupée par client</li>
+  <li>Contrôle qualité (check-lists, photos)</li>
+  <li>Suivi de rentabilité par chantier</li>
+</ul>
+
+<h2 id="pointage">Le pointage géolocalisé (et le cadre CNIL)</h2>
+<p>Le pointage géolocalisé est le cœur du système : il prouve la présence de l'agent, alimente la paie (CCN propreté IDCC 3043) et permet de facturer au réel. <strong>Mais la géolocalisation des salariés est encadrée par la CNIL</strong> : finalité limitée, information préalable des agents, et désactivation hors temps de travail. Un bon logiciel intègre ces garde-fous par conception — un point que beaucoup d'éditeurs survolent.</p>
+
+<h2 id="standard-vs">SaaS standard vs sur-mesure</h2>
+
+<table>
+  <thead>
+    <tr><th>Critère</th><th>SaaS propreté</th><th>Sur-mesure propriétaire</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Coût</strong></td><td>Licence par agent/site, à vie</td><td>Investissement, puis propriété</td></tr>
+    <tr><td><strong>Flux pointage → paie → facture</strong></td><td>Selon l'éditeur</td><td>En un seul flux, sur-mesure</td></tr>
+    <tr><td><strong>Conformité géoloc (CNIL)</strong></td><td>Variable</td><td>Intégrée par conception</td></tr>
+    <tr><td><strong>Propriété / RGPD</strong></td><td>Données chez l'éditeur</td><td>Code livré · hébergé UE</td></tr>
+  </tbody>
+</table>
+
+<p>Le piège du SaaS propreté : la licence monte avec chaque agent et chaque site ajouté. À l'échelle, posséder un logiciel qui relie pointage, paie et facturation au réel — dans le respect du cadre CNIL — devient plus rentable et plus souple.</p>
+
+<h2 id="faq">FAQ</h2>
+<h3>La géolocalisation des agents est-elle légale ?</h3>
+<p>Oui, si elle respecte le cadre CNIL : finalité précise (preuve de prestation/paie), information préalable, et désactivation hors temps de travail. Le logiciel doit intégrer ces règles.</p>
+<h3>Comment facturer au réel ?</h3>
+<p>En reliant le pointage géolocalisé à la facturation : les heures réellement effectuées sur chaque site alimentent directement la facture du client.</p>
+<h3>Quand passer au sur-mesure ?</h3>
+<p>Quand le coût des licences par agent/site devient lourd et que vous voulez un flux pointage→paie→facture taillé sur votre organisation.</p>
+
+<h2>En résumé</h2>
+<p>Un logiciel de propreté efficace relie planning multi-sites, pointage géolocalisé (encadré CNIL), facturation récurrente et contrôle qualité. À l'échelle, posséder cet outil — au lieu de payer par agent — et maîtriser la conformité géoloc fait la différence.</p>
+
+<p><strong><a href="/book">Réserver 20 min · offert &rarr;</a></strong></p>
+`,
+  },
+  {
+    slug: 'logiciel-gestion-traiteur-evenementiel',
+    title: 'Logiciel de gestion pour traiteur & événementiel : guide 2026',
+    description: 'Devis multi-prestations, food cost en cascade, allergènes (INCO), HACCP, NF525 et facturation électronique : ce qu\'un logiciel traiteur doit couvrir. Excel/ERP généraliste vs sur-mesure.',
+    date: '2026-06-16',
+    author: 'Nathan Goutagny',
+    readTime: '12 min',
+    category: 'Secteur',
+    tags: ['Traiteur', 'Événementiel', 'Logiciel métier', 'Sur-mesure'],
+    content: `
+<p><strong>Un traiteur a une particularité que les logiciels généralistes gèrent mal : la vente est signée des mois à l'avance, mais la production se fait au dernier moment. Un bon logiciel doit relier devis multi-prestations, food cost en cascade, allergènes (règlement INCO), HACCP et facturation conforme — sans quoi tout finit sur Excel.</strong></p>
+
+<p>Le marché traiteur français a bondi de plus de 50 % entre 2016 et 2023 (>3 Md€), dont 71 % réalisés auprès des entreprises. Voici ce qu'un logiciel doit couvrir, et pourquoi le posséder change la donne.</p>
+
+<nav>
+<h2>Sommaire</h2>
+<ol>
+  <li><a href="#different">Ce qui rend le traiteur différent</a></li>
+  <li><a href="#fonctions">Les fonctionnalités incontournables</a></li>
+  <li><a href="#conformite">La conformité 2026-2027 (INCO, NF525, e-facture)</a></li>
+  <li><a href="#standard-vs">ERP généraliste vs logiciel métier</a></li>
+  <li><a href="#faq">FAQ</a></li>
+</ol>
+</nav>
+
+<h2 id="different">Ce qui rend le traiteur différent</h2>
+<p>La vente est <strong>décorrélée de la production</strong> : un devis signé en janvier pour un événement en juin, produit la veille. Ajoutez des devis complexes (multi-prestations, options, nombre de couverts variable), un food cost qui se calcule en cascade (recette → ingrédients → coût), et une forte saisonnalité (juin-septembre). Un outil généraliste ne modélise pas ça.</p>
+
+<h2 id="fonctions">Les fonctionnalités incontournables</h2>
+<ul>
+  <li>Devis interactifs multi-prestations, avec acomptes et signature électronique</li>
+  <li>Food cost en cascade (rentabilité par plat / par événement)</li>
+  <li>Fiches allergènes et traçabilité HACCP</li>
+  <li>Gestion des stocks et planning des extras</li>
+  <li>CRM et facturation</li>
+</ul>
+
+<h2 id="conformite">La conformité 2026-2027 (INCO, NF525, e-facture)</h2>
+<p>Trois obligations à intégrer, pas à bricoler :</p>
+<ul>
+  <li><strong>Allergènes</strong> — règlement UE 1169/2011 (INCO) : les 14 allergènes doivent être déclarés</li>
+  <li><strong>NF525</strong> — certification du logiciel de caisse par organisme accrédité obligatoire au 1er septembre 2026 (amende jusqu'à 7 500 €)</li>
+  <li><strong>Facturation électronique B2B</strong> — réception au 1er septembre 2026, émission pour les PME au 1er septembre 2027 (et 71 % du CA traiteur est B2B)</li>
+</ul>
+
+<h2 id="standard-vs">ERP généraliste vs logiciel métier</h2>
+
+<table>
+  <thead>
+    <tr><th>Critère</th><th>Excel / ERP généraliste</th><th>Sur-mesure métier</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Devis multi-prestations</strong></td><td>Manuel, chronophage</td><td>Modélisé, rapide</td></tr>
+    <tr><td><strong>Food cost en cascade</strong></td><td>À la main</td><td>Calculé automatiquement</td></tr>
+    <tr><td><strong>Allergènes / HACCP</strong></td><td>Hors outil</td><td>Intégrés</td></tr>
+    <tr><td><strong>NF525 + e-facture</strong></td><td>À ajouter</td><td>Conforme par conception</td></tr>
+    <tr><td><strong>Propriété / RGPD</strong></td><td>Variable</td><td>Code livré · hébergé UE</td></tr>
+  </tbody>
+</table>
+
+<h2 id="faq">FAQ</h2>
+<h3>Excel suffit-il pour un traiteur ?</h3>
+<p>Au démarrage. Mais dès que les devis se complexifient et que le food cost compte, Excel devient une source d'erreurs et de temps perdu.</p>
+<h3>Le logiciel doit-il gérer les allergènes ?</h3>
+<p>Oui — c'est une obligation (règlement INCO, 14 allergènes). Mieux vaut les gérer dans l'outil que sur des fiches papier.</p>
+<h3>Que change la NF525 en 2026 ?</h3>
+<p>La certification du logiciel de caisse par un organisme accrédité devient obligatoire (1er septembre 2026), sous peine d'amende. À anticiper dans le choix de l'outil.</p>
+
+<h2>En résumé</h2>
+<p>Le traiteur a un workflow unique (vente ≠ production, food cost, allergènes) que les généralistes modélisent mal. Un logiciel métier — idéalement sur-mesure et possédé — qui intègre devis, food cost, HACCP et conformité 2026 (INCO, NF525, e-facture) fait gagner du temps et sécurise.</p>
+
+<p><strong><a href="/book">Réserver 20 min · offert &rarr;</a></strong></p>
+`,
+  },
+  {
+    slug: 'logiciel-installateur-photovoltaique-crm',
+    title: 'Logiciel pour installateur photovoltaïque : du devis conforme aux aides au Consuel',
+    description: 'Calepinage, CRM, devis conformes aux aides (RGE QualiPV), démarches Enedis/Consuel, marge par chantier : ce qu\'un logiciel d\'installateur PV doit relier. SaaS par utilisateur vs sur-mesure possédé.',
+    date: '2026-06-16',
+    author: 'Nathan Goutagny',
+    readTime: '12 min',
+    category: 'Secteur',
+    tags: ['Photovoltaïque', 'CRM', 'Logiciel métier', 'Sur-mesure'],
+    content: `
+<p><strong>Pour un installateur photovoltaïque, le logiciel doit relier sans ressaisie : calepinage et dimensionnement, CRM, devis conformes aux aides (impossible sans qualification RGE QualiPV), démarches administratives (déclaration préalable, Enedis, Consuel) et suivi de marge par chantier. C'est l'éclatement de ces outils qui ralentit l'encaissement.</strong></p>
+
+<p>Le marché se concentre (5,9 GW raccordés en 2025, record, mais nombre de raccordements en recul après la baisse des aides de mars 2025) — ce qui met une pression directe sur l'efficacité opérationnelle. Voici ce qu'un bon logiciel doit couvrir.</p>
+
+<nav>
+<h2>Sommaire</h2>
+<ol>
+  <li><a href="#pourquoi">Pourquoi un généraliste ne suffit pas</a></li>
+  <li><a href="#fonctions">Les briques spécifiques au PV</a></li>
+  <li><a href="#aides">Devis, aides et RGE QualiPV</a></li>
+  <li><a href="#admin">Démarches Enedis / Consuel</a></li>
+  <li><a href="#standard-vs">SaaS par utilisateur vs sur-mesure</a></li>
+  <li><a href="#faq">FAQ</a></li>
+</ol>
+</nav>
+
+<h2 id="pourquoi">Pourquoi un généraliste ne suffit pas</h2>
+<p>L'installateur PV jongle avec des outils qui ne se parlent pas : un pour le calepinage, un pour le CRM, un pour les devis, un pour la compta. Résultat : de la ressaisie devis → facture, un volume administratif qui retarde l'encaissement, et des données prospects sensibles éparpillées. Un généraliste ne connaît ni le calepinage, ni les aides, ni le Consuel.</p>
+
+<h2 id="fonctions">Les briques spécifiques au PV</h2>
+<ul>
+  <li>Calepinage et simulation d'ombrage / dimensionnement</li>
+  <li>CRM adapté au cycle de vente PV (particuliers)</li>
+  <li>Devis liés aux aides en vigueur</li>
+  <li>Suivi de chantier et démarches administratives</li>
+  <li>Facturation et marge par chantier</li>
+</ul>
+
+<h2 id="aides">Devis, aides et RGE QualiPV</h2>
+<p>Point clé que les logiciels généralistes ignorent : <strong>sans la qualification RGE QualiPV, le client ne touche aucune aide</strong> (prime à l'autoconsommation, MaPrimeRénov', CEE). Le devis doit donc être conforme aux aides et tracer le numéro de qualification. Avec la baisse des aides de mars 2025 (jusqu'à −62 % sur la prime autoconsommation), produire vite des devis justes et conformes devient un avantage compétitif.</p>
+
+<h2 id="admin">Démarches Enedis / Consuel</h2>
+<p>Le volume administratif (déclaration préalable de travaux, demande de raccordement Enedis, attestation Consuel, attestation de TVA réduite) est ce qui ralentit le plus. Un logiciel qui pré-remplit ces dossiers à partir des données du chantier fait gagner des jours — et accélère l'encaissement.</p>
+
+<h2 id="standard-vs">SaaS par utilisateur vs sur-mesure</h2>
+
+<table>
+  <thead>
+    <tr><th>Critère</th><th>SaaS métier (par utilisateur)</th><th>Sur-mesure propriétaire</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Coût</strong></td><td>~30-45 €/utilisateur/mois, à vie</td><td>Investissement, puis propriété</td></tr>
+    <tr><td><strong>Workflow (calepinage→devis→Consuel)</strong></td><td>Standardisé</td><td>Taillé sur votre métier, sans ressaisie</td></tr>
+    <tr><td><strong>Conformité aides / RGE</strong></td><td>Variable</td><td>Devis conformes intégrés</td></tr>
+    <tr><td><strong>Données prospects (particuliers)</strong></td><td>Chez l'éditeur</td><td>Chez vous · UE · RGPD</td></tr>
+  </tbody>
+</table>
+
+<p>Les solutions du marché sont des SaaS facturés par utilisateur : vous louez, vous ne possédez rien. Un outil sur-mesure relie tout le flux (du calepinage au Consuel) sans ressaisie, intègre la conformité aux aides, et garde vos données prospects en UE — un vrai sujet pour des données de particuliers.</p>
+
+<h2 id="faq">FAQ</h2>
+<h3>Le logiciel gère-t-il les démarches Enedis et Consuel ?</h3>
+<p>Un bon outil pré-remplit ces dossiers à partir des données du chantier. En sur-mesure, on automatise exactement votre process administratif.</p>
+<h3>Pourquoi le RGE QualiPV est-il central ?</h3>
+<p>Parce que sans cette qualification, le client ne touche aucune aide. Les devis doivent en tenir compte et tracer le numéro de qualification.</p>
+<h3>Quand le sur-mesure devient-il rentable ?</h3>
+<p>Quand le coût des licences par utilisateur s'accumule et que vous voulez un flux complet (calepinage → devis conforme → Consuel) sans ressaisie, que vous possédez.</p>
+
+<h2>En résumé</h2>
+<p>Dans un marché PV qui se concentre, l'efficacité opérationnelle fait la différence. Un logiciel qui relie calepinage, devis conformes aux aides (RGE QualiPV) et démarches Enedis/Consuel sans ressaisie — idéalement sur-mesure et possédé — accélère l'encaissement et protège vos données prospects.</p>
+
+<p><strong><a href="/book">Réserver 20 min · offert &rarr;</a></strong></p>
+`,
+  },
 ]
