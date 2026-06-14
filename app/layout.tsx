@@ -161,11 +161,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap"
           rel="stylesheet"
         />
-        <link
-          rel="icon"
-          type="image/svg+xml"
-          href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231a1a1a'/%3E%3Ctext x='12' y='48' font-family='Georgia,serif' font-style='italic' font-size='46' font-weight='bold' fill='white'%3EN%3C/text%3E%3Ccircle cx='49' cy='46' r='4' fill='%23E63946'/%3E%3C/svg%3E"
-        />
         {/* Inline theme script — runs before paint to prevent flash */}
         <script
           dangerouslySetInnerHTML={{
