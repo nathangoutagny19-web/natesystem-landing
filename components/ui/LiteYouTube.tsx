@@ -7,8 +7,20 @@ import { useState } from 'react'
  * so Iubenda autoblocking never empties it); the real iframe only loads on click.
  * Also faster than a raw iframe. Reused across home / sector pages / resources.
  */
-export default function LiteYouTube({ id, title }: { id: string; title: string }) {
+export default function LiteYouTube({
+  id,
+  title,
+  vertical = false,
+}: {
+  id: string
+  title: string
+  /** Vertical (9:16) Shorts use the oar2 thumbnail; default is the 16:9 maxres. */
+  vertical?: boolean
+}) {
   const [loaded, setLoaded] = useState(false)
+  const thumb = vertical
+    ? `https://i.ytimg.com/vi/${id}/oar2.jpg`
+    : `https://i.ytimg.com/vi/${id}/maxresdefault.jpg`
 
   if (loaded) {
     return (
@@ -34,7 +46,7 @@ export default function LiteYouTube({ id, title }: { id: string; title: string }
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src={`https://i.ytimg.com/vi/${id}/maxresdefault.jpg`}
+        src={thumb}
         alt={title}
         loading="lazy"
         className="absolute inset-0 w-full h-full"

@@ -5,7 +5,8 @@ import FadeUp from '@/components/ui/FadeUp'
 import { motion } from 'framer-motion'
 import { useLang } from '@/components/providers/LangProvider'
 
-const YOUTUBE_ID = 'aMIjJbzuhDc'
+// Short (vertical 9:16) extract from the podcast — more targeted than the full episode.
+const YOUTUBE_ID = 'OR4-C5RVFxc'
 
 function LiteYouTube({ title }: { title: string }) {
   const [loaded, setLoaded] = useState(false)
@@ -41,13 +42,13 @@ function LiteYouTube({ title }: { title: string }) {
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src={`https://i.ytimg.com/vi/${YOUTUBE_ID}/maxresdefault.jpg`}
-        alt="Témoignage vidéo de Catherine P., General Manager du groupe Chromosome, sur le logiciel sur-mesure déployé par NateSystem"
+        src={`https://i.ytimg.com/vi/${YOUTUBE_ID}/oar2.jpg`}
+        alt="Extrait vidéo : NateSystem, logiciel sur-mesure propulsé par l'IA"
         loading="lazy"
         className="absolute inset-0 w-full h-full"
         style={{ objectFit: 'cover', transition: 'transform 0.5s ease' }}
         onError={(e) => {
-          // maxres may not exist for some videos — fall back to hqdefault
+          // vertical (oar2) thumbnail may be missing — fall back to hqdefault
           ;(e.target as HTMLImageElement).src = `https://i.ytimg.com/vi/${YOUTUBE_ID}/hqdefault.jpg`
         }}
       />
@@ -170,14 +171,17 @@ export default function CaseStudy() {
               </p>
             </div>
 
-            {/* Video — lazy-loaded on click, no third-party cookies until play */}
+            {/* Video — vertical short (9:16), lazy-loaded on click, no third-party
+                cookies until play. Constrained width so it reads as a phone-sized
+                clip, not a giant column. */}
             <div
               className="relative overflow-hidden mb-10"
               style={{
-                aspectRatio: '16/9',
+                aspectRatio: '9/16',
                 borderRadius: '12px',
                 border: '1px solid var(--border)',
-                maxWidth: '800px',
+                width: '100%',
+                maxWidth: '320px',
                 margin: '0 auto 40px',
                 background: '#000',
               }}

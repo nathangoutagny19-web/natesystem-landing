@@ -42,21 +42,19 @@ export default function ResourcesPage() {
             <span className="section-label">{t('resources.caseStudies')}</span>
           </FadeUp>
 
-          {/* Video testimonial */}
+          {/* Video — vertical short (9:16) extract from the podcast */}
           <FadeUp delay={0.1}>
             <div
               className="mt-6 relative overflow-hidden"
               style={{
-                aspectRatio: '16/9', borderRadius: '12px',
+                aspectRatio: '9/16', borderRadius: '12px',
                 border: '1px solid var(--border)',
-                maxWidth: '800px',
+                width: '100%', maxWidth: '320px',
+                marginLeft: 'auto', marginRight: 'auto',
               }}
             >
-              <LiteYouTube id="aMIjJbzuhDc" title="Témoignage Chromosome — NateSystem" />
+              <LiteYouTube id="OR4-C5RVFxc" title="NateSystem — extrait podcast" vertical />
             </div>
-            <p className="font-sans mt-3" style={{ fontSize: '13px', color: 'var(--text-muted)', fontWeight: 300 }}>
-              Catherine P. — Gérante, Chromosome Saint-Étienne
-            </p>
           </FadeUp>
 
           {/* Chromosome case study card */}
