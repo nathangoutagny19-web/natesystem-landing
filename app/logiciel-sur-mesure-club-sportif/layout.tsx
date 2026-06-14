@@ -3,12 +3,12 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Logiciel & IA sur-mesure pour clubs sportifs — NateSystem',
   description:
-    'Logiciel métier et IA sur-mesure pour clubs sportifs : génération automatique des offres de sponsoring (PDF, slides, mail) après vos appels, back-office commercial relié au CRM, gestion des bénévoles. Cas réel : 11h → 1h de gestion par semaine. Audit offert de 20 min.',
+    'Logiciel métier et IA sur-mesure pour clubs sportifs : génération automatique des offres de sponsoring (PDF, slides, mail) après vos appels, back-office commercial relié au CRM, gestion des bénévoles. Démo en 2 minutes + audit offert de 20 min.',
   alternates: { canonical: 'https://www.natesystem.com/logiciel-sur-mesure-club-sportif' },
   openGraph: {
     title: 'Logiciel & IA sur-mesure pour clubs sportifs — NateSystem',
     description:
-      'Génération auto des offres de sponsoring, back-office commercial relié au CRM, gestion des bénévoles — pour clubs sportifs. Cas réel : 11h → 1h de gestion par semaine.',
+      'Génération auto des offres de sponsoring, back-office commercial relié au CRM, gestion des bénévoles — pour clubs sportifs. Démo en 2 minutes.',
     url: 'https://www.natesystem.com/logiciel-sur-mesure-club-sportif',
     type: 'website',
     locale: 'fr_FR',
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Logiciel & IA sur-mesure pour clubs sportifs — NateSystem',
-    description: 'Logiciel & IA sur-mesure pour clubs sportifs. Cas réel : 11h → 1h de gestion par semaine.',
+    description: 'Logiciel & IA sur-mesure pour clubs sportifs : sponsoring, back-office, bénévoles.',
   },
 }
 
@@ -53,7 +53,7 @@ const jsonLd = {
           name: 'Comment l\'IA aide-t-elle un club sportif sur la partie sponsoring ?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'En générant automatiquement les offres de sponsoring et de partenariat — en PDF, slides ou mail — juste après vos appels, reliées à votre CRM. Plus besoin de les composer à la main dans Excel et PowerPoint. Sur un déploiement réel pour un groupe sportif que nous accompagnons, la gestion du back-office commercial est passée de 11 heures à 1 heure par semaine.',
+            text: 'En générant automatiquement les offres de sponsoring et de partenariat — en PDF, slides ou mail — juste après vos appels, reliées à votre CRM. Plus besoin de les composer à la main dans Excel et PowerPoint. L\'objectif : transformer plusieurs heures de back-office commercial par semaine en quelques minutes, dans un système que le club possède.',
           },
         },
         {

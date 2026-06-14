@@ -22,7 +22,7 @@ const modules = [
   {
     title: 'Back-office commercial unifié',
     desc: 'Vos partenaires, vos relances, vos contrats et vos échéances pilotés au même endroit — au lieu d\'un patchwork d\'Excel, WhatsApp et outils génériques.',
-    metric: '11h → 1h de gestion par semaine',
+    metric: 'Des heures de gestion hebdo récupérées',
   },
   {
     title: 'Gestion des bénévoles',
@@ -188,17 +188,18 @@ export default function ClubSportifPage() {
 
       <Divider />
 
-      {/* Proof */}
+      {/* What the system targets — capability, not a client claim */}
       <section style={{ padding: '70px 24px' }}>
         <div className="mx-auto" style={{ maxWidth: 760 }}>
           <FadeUp>
             <div style={{ background: 'var(--bg-card)', border: '1px solid var(--border)', borderRadius: 14, padding: '40px 36px', textAlign: 'center' }}>
-              <p className="font-serif italic accent" style={{ color: 'var(--accent)', fontSize: 'clamp(40px, 7vw, 58px)', fontWeight: 400, lineHeight: 1, margin: '0 0 8px' }}>11h → 1h</p>
-              <p className="font-sans" style={{ fontSize: 15, color: 'var(--text)', fontWeight: 400, lineHeight: 1.6, maxWidth: 520, margin: '0 auto 6px' }}>
-                de gestion du back-office commercial par semaine, sur un déploiement réel — en automatisant la création des offres de sponsoring.
+              <p className="font-serif italic accent" style={{ color: 'var(--accent)', fontSize: 'clamp(28px, 4.5vw, 38px)', fontWeight: 400, lineHeight: 1.2, margin: '0 0 12px' }}>
+                L&apos;essentiel du back-office commercial, automatisé.
               </p>
-              <p className="font-mono" style={{ fontSize: 11, letterSpacing: 1.2, textTransform: 'uppercase', color: 'var(--text-muted)', fontWeight: 500, margin: 0 }}>
-                Groupe sportif accompagné par NateSystem
+              <p className="font-sans" style={{ fontSize: 15, color: 'var(--text-secondary)', fontWeight: 300, lineHeight: 1.65, maxWidth: 540, margin: '0 auto' }}>
+                Génération des offres de sponsoring, suivi des partenaires, gestion des bénévoles : ce que la démo ci-dessus
+                montre, c&apos;est exactement ce qu&apos;un club peut faire piloter par un seul système sur-mesure, à sa main.
+                On part de votre situation pour chiffrer concrètement ce que ça vous ferait gagner.
               </p>
             </div>
           </FadeUp>
