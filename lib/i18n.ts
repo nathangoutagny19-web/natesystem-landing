@@ -464,6 +464,7 @@ export const translations = {
   'footer.link.book': { en: 'Book a call', fr: 'Réserver un appel', hu: 'Hívás foglalása' },
   'footer.link.playbooks': { en: 'Sector playbooks', fr: 'Playbooks sectoriels', hu: 'Ágazati playbookok' },
   'footer.link.about': { en: 'About', fr: 'À propos', hu: 'Rólunk' },
+  'footer.link.glossary': { en: 'Glossary', fr: 'Glossaire', hu: 'Szójegyzék' },
 
   // Tools page
   'tools.title': { en: 'Free Tools', fr: 'Outils Gratuits', hu: 'Ingyenes eszközök' },
