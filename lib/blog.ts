@@ -2784,4 +2784,616 @@ export const blogPosts: BlogPost[] = [
 <p><strong><a href="/book">Réserver 20 min · offert pour identifier vos cas d'usage IA &rarr;</a></strong></p>
 `,
   },
+  {
+    slug: 'make-vs-zapier-vs-n8n-comparatif',
+    title: 'Make vs Zapier vs n8n : quel outil d\'automatisation choisir en 2026 ?',
+    description: 'Comparatif complet Make, Zapier et n8n pour une PME : prix, intégrations, IA, souveraineté des données. Tableau, reco par profil — et la 4e option que les comparatifs oublient.',
+    date: '2026-06-15',
+    author: 'Nathan Goutagny',
+    readTime: '13 min',
+    category: 'Automatisation',
+    tags: ['Automatisation', 'Make', 'Zapier', 'n8n', 'Comparatif'],
+    content: `
+<p><strong>Make, Zapier et n8n sont les trois principaux outils d'automatisation no-code en 2026. Zapier est le plus simple et le mieux intégré, Make le meilleur rapport puissance/prix, n8n le plus puissant et le seul auto-hébergeable (données chez vous).</strong> Lequel choisir dépend de votre niveau technique, de votre volume, et de votre exigence sur la souveraineté des données.</p>
+
+<p>Ce comparatif tranche critère par critère — et aborde une quatrième option que les comparatifs oublient systématiquement : ne pas louer un outil, mais posséder le système.</p>
+
+<nav>
+<h2>Sommaire</h2>
+<ol>
+  <li><a href="#tableau">Le comparatif en un tableau</a></li>
+  <li><a href="#zapier">Zapier : le plus simple</a></li>
+  <li><a href="#make">Make : le meilleur rapport puissance/prix</a></li>
+  <li><a href="#n8n">n8n : le plus puissant et souverain</a></li>
+  <li><a href="#profil">Quel outil selon votre profil</a></li>
+  <li><a href="#limite">La 4e option : posséder plutôt que louer</a></li>
+  <li><a href="#faq">FAQ</a></li>
+</ol>
+</nav>
+
+<h2 id="tableau">Le comparatif en un tableau</h2>
+
+<table>
+  <thead>
+    <tr><th>Critère</th><th>Zapier</th><th>Make</th><th>n8n</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Prix d'entrée</strong></td><td>~20 $/mois (750 tâches)</td><td>~9 €/mois (10 000 ops)</td><td>Gratuit en self-host / ~20 $ cloud</td></tr>
+    <tr><td><strong>Plan gratuit</strong></td><td>100 tâches</td><td>1 000 ops</td><td>Illimité (self-host)</td></tr>
+    <tr><td><strong>Intégrations</strong></td><td>~6 000+ (le plus large)</td><td>~1 500</td><td>~1 000 + nœud HTTP</td></tr>
+    <tr><td><strong>Facturation</strong></td><td>Par tâche</td><td>Par opération</td><td>Par exécution</td></tr>
+    <tr><td><strong>Auto-hébergeable</strong></td><td>Non</td><td>Non</td><td>Oui (open-source)</td></tr>
+    <tr><td><strong>IA native</strong></td><td>Assistant IA</td><td>Modules IA</td><td>Nœuds IA avancés (agents, RAG)</td></tr>
+    <tr><td><strong>Données</strong></td><td>US</td><td>UE possible</td><td>Chez vous (self-host)</td></tr>
+  </tbody>
+</table>
+
+<h2 id="zapier">Zapier : le plus simple</h2>
+<p>Zapier est le pionnier du no-code et reste le plus accessible : son assistant IA construit un workflow à partir d'une description en langage naturel, et son catalogue de 6 000+ intégrations est le plus large du marché. Idéal pour une équipe non-technique qui veut connecter deux outils rapidement. Limite : la facturation par tâche grimpe vite au volume, et les données transitent par les US.</p>
+
+<h2 id="make">Make : le meilleur rapport puissance/prix</h2>
+<p>Make (ex-Integromat) offre une puissance proche de la programmation visuelle (routes conditionnelles, itérateurs, agrégateurs) à un prix nettement plus bas que Zapier. Société européenne, hébergement UE possible. C'est le choix le plus équilibré pour 90 % des PME qui veulent aller au-delà du « si ceci alors cela ».</p>
+
+<h2 id="n8n">n8n : le plus puissant et souverain</h2>
+<p>n8n est open-source et auto-hébergeable : vous l'installez sur votre serveur, vos données ne sortent jamais, et il n'y a pas de limite d'exécutions. Ses nœuds IA natifs (agents, chaînes LLM, RAG, mémoire) en font le plus avancé pour construire de vraies automatisations IA. Contrepartie : il demande un profil technique pour être exploité.</p>
+
+<h2 id="profil">Quel outil selon votre profil</h2>
+<ul>
+  <li><strong>Non-technique, besoin simple</strong> → Zapier</li>
+  <li><strong>Semi-technique, bon rapport q/p</strong> → Make</li>
+  <li><strong>Technique, contrôle des données, gros volume</strong> → n8n self-host</li>
+</ul>
+
+<h2 id="limite">La 4e option : posséder plutôt que louer</h2>
+<p>Ces trois outils ont un point commun que les comparatifs taisent : <strong>ils créent le « SaaS-spaghetti »</strong>. Dix scénarios qui cassent dès qu'une API change, un coût qui explose au volume, et aucune propriété réelle de la mécanique. Parfaits pour prototyper ; risqués pour le cœur durable de votre activité.</p>
+
+<blockquote>Quand une automatisation devient critique, l'alternative est de l'<strong>intégrer dans un logiciel que vous possédez</strong> — code livré, hébergé en UE, IA seulement là où elle remplace de vraies heures. Pas un abonnement de plus à maintenir. Voir <a href="/blog/automatisation-pme-guide-2026">notre guide de l'automatisation PME</a> et <a href="/logiciel-sur-mesure-vs-saas">sur-mesure vs SaaS</a>.</blockquote>
+
+<h2 id="faq">FAQ</h2>
+<h3>Lequel est le moins cher ?</h3>
+<p>n8n en self-host (gratuit, hors coût d'hébergement). Parmi les cloud, Make a le meilleur rapport ops/prix. Zapier devient cher au volume à cause de la facturation par tâche.</p>
+<h3>Lequel pour garder mes données en Europe ?</h3>
+<p>n8n auto-hébergé (données 100 % chez vous) ou Make avec hébergement UE. Zapier est US-based.</p>
+<h3>Peut-on remplacer ces outils par du sur-mesure ?</h3>
+<p>Oui, quand les automatisations deviennent vitales : on les intègre dans un système que vous possédez, plus robuste qu'une chaîne no-code fragile.</p>
+
+<h2>En résumé</h2>
+<p>Zapier pour la simplicité, Make pour l'équilibre, n8n pour la puissance et la souveraineté. Et quand vos automatisations deviennent critiques, posséder le système bat la location d'un outil tiers.</p>
+
+<p><strong><a href="/book">Réserver 20 min · offert &rarr;</a></strong></p>
+`,
+  },
+  {
+    slug: 'combien-coute-chatbot-agent-ia-entreprise',
+    title: 'Combien coûte un chatbot ou un agent IA pour une entreprise ?',
+    description: 'Le prix d\'un agent IA va de 0 € (no-code) à 100 000 €+ (agent autonome intégré). Grille par niveau, coûts cachés, coût des LLM, ROI et comparatif no-code vs sur-mesure.',
+    date: '2026-06-15',
+    author: 'Nathan Goutagny',
+    readTime: '12 min',
+    category: 'Agents IA',
+    tags: ['Agent IA', 'Chatbot', 'Prix', 'ROI'],
+    content: `
+<p><strong>Le prix d'un chatbot ou agent IA pour une entreprise va de 0 € (assistant no-code basique) à plus de 100 000 € (agent autonome intégré à votre ERP). Pour une PME, la zone utile se situe entre 5 000 et 15 000 € pour un agent qui répond sur votre base de connaissances, et 15 000 à 50 000 € pour un agent intégré à vos outils.</strong> La maintenance représente ensuite 20 à 30 % du coût initial par an.</p>
+
+<p>Voici la grille détaillée par niveau, les coûts cachés que personne ne mentionne, et comment raisonner en ROI plutôt qu'en prix.</p>
+
+<nav>
+<h2>Sommaire</h2>
+<ol>
+  <li><a href="#grille">La grille de prix par niveau</a></li>
+  <li><a href="#composantes">Ce qui compose le coût</a></li>
+  <li><a href="#caches">Les coûts cachés</a></li>
+  <li><a href="#llm">Le coût des modèles (LLM)</a></li>
+  <li><a href="#nocode-vs">No-code vs sur-mesure</a></li>
+  <li><a href="#roi">Quel ROI attendre</a></li>
+  <li><a href="#faq">FAQ</a></li>
+</ol>
+</nav>
+
+<h2 id="grille">La grille de prix par niveau</h2>
+
+<table>
+  <thead>
+    <tr><th>Niveau</th><th>Exemple</th><th>Coût indicatif</th><th>Délai</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Basique</strong></td><td>Assistant no-code, FAQ simple</td><td>0 – 2 000 €</td><td>Jours</td></tr>
+    <tr><td><strong>Connaissances (RAG)</strong></td><td>Répond sur vos documents internes</td><td>5 000 – 15 000 €</td><td>3-6 sem.</td></tr>
+    <tr><td><strong>Intégré</strong></td><td>Relié à votre CRM / ERP, agit</td><td>15 000 – 50 000 €</td><td>2-4 mois</td></tr>
+    <tr><td><strong>Agent autonome</strong></td><td>Tâches multi-étapes de bout en bout</td><td>30 000 – 100 000 €+</td><td>3-6 mois</td></tr>
+  </tbody>
+</table>
+
+<p>Pour une PME, le « sweet spot » est le niveau RAG (5 000-12 000 €) : un agent qui connaît vos process et répond juste, sans complexité d'intégration lourde.</p>
+
+<h2 id="composantes">Ce qui compose le coût</h2>
+<ul>
+  <li><strong>Développement</strong> : conception, prompt engineering (60-70 % du succès), tests</li>
+  <li><strong>Modèle (LLM)</strong> : coût à la consommation de tokens</li>
+  <li><strong>Infrastructure</strong> : hébergement, base vectorielle</li>
+  <li><strong>Maintenance</strong> : 20-30 % du coût initial par an</li>
+</ul>
+
+<h2 id="caches">Les coûts cachés</h2>
+<p>Ce qui fait déraper un budget IA : les <strong>intégrations</strong> (+30 à +100 %), le <strong>multilingue</strong> (+20 à +40 %), les <strong>données sensibles RGPD</strong> qui imposent un hébergement souverain (+40 à +80 %), et la <strong>maintenance des prompts</strong> dans le temps. Un agent n'est pas un projet « one-shot » : il s'entretient.</p>
+
+<h2 id="llm">Le coût des modèles (LLM)</h2>
+<p>Le coût par million de tokens (ordre de grandeur) : GPT-4o ≈ 2,50 €/10 €, Claude Sonnet ≈ 3 €/15 €, Mistral Large ≈ 0,50 €/1,50 €. Le coût des API a été divisé par ~10 en deux ans, rendant rentables des cas hier trop chers. Mistral (UE) est aussi un levier RGPD pour garder les données en Europe.</p>
+
+<h2 id="nocode-vs">No-code vs sur-mesure</h2>
+
+<table>
+  <thead>
+    <tr><th>Critère</th><th>No-code / SaaS IA</th><th>Sur-mesure</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Coût d'entrée</strong></td><td>Faible</td><td>Plus élevé</td></tr>
+    <tr><td><strong>Coût à l'échelle</strong></td><td>Monte vite (par siège/token)</td><td>Maîtrisé (API à la conso)</td></tr>
+    <tr><td><strong>Propriété des données</strong></td><td>Chez l'éditeur</td><td>Chez vous</td></tr>
+    <tr><td><strong>RGPD / souveraineté</strong></td><td>Souvent US</td><td>UE possible</td></tr>
+    <tr><td><strong>Personnalisation</strong></td><td>Limitée</td><td>Totale</td></tr>
+  </tbody>
+</table>
+
+<h2 id="roi">Quel ROI attendre</h2>
+<p>Le bon raisonnement n'est pas « combien ça coûte » mais « combien d'heures ça remplace ». Un agent qui absorbe le tri d'emails ou le support de niveau 1 (60-80 % des demandes) se rembourse souvent en <strong>6 à 18 mois</strong>. C'est pourquoi chez NateSystem on ne déploie l'IA que là où elle remplace de vraies heures — jamais en gadget.</p>
+
+<h2 id="faq">FAQ</h2>
+<h3>Un chatbot gratuit, ça existe ?</h3>
+<p>Oui pour des cas basiques (no-code, FAQ). Mais dès qu'il doit connaître vos données ou agir dans vos outils, il faut un vrai projet.</p>
+<h3>Pourquoi de tels écarts de prix ?</h3>
+<p>Parce qu'« agent IA » couvre tout, du widget FAQ à l'agent autonome intégré à l'ERP. Le prix dépend du niveau, des intégrations et des exigences RGPD.</p>
+<h3>Combien coûte la maintenance ?</h3>
+<p>Comptez 20-30 % du coût initial par an (mises à jour, surveillance, ajustement des prompts).</p>
+
+<h2>En résumé</h2>
+<p>De 0 € à 100 000 €+ selon le niveau. Pour une PME, visez le RAG (5-15k€). Raisonnez en heures remplacées, pas en prix d'achat — et surveillez les coûts cachés (intégrations, RGPD, maintenance).</p>
+
+<p><a href="/blog/integrer-ia-entreprise-guide-pme">Guide : intégrer l'IA en entreprise</a> · <a href="/prix-logiciel-sur-mesure">Prix d'un logiciel sur-mesure</a></p>
+
+<p><strong><a href="/book">Réserver 20 min · offert pour chiffrer votre cas &rarr;</a></strong></p>
+`,
+  },
+  {
+    slug: 'supabase-vs-airtable-pme',
+    title: 'Supabase vs Airtable : quelle base de données pour votre PME ?',
+    description: 'Airtable ou Supabase pour gérer vos données ? Comparatif honnête : philosophie, tarification (par siège vs à l\'usage), scalabilité, RGPD. Et le vrai point de bascule vers le sur-mesure.',
+    date: '2026-06-15',
+    author: 'Nathan Goutagny',
+    readTime: '12 min',
+    category: 'Infrastructure',
+    tags: ['Supabase', 'Airtable', 'Base de données', 'PME'],
+    content: `
+<p><strong>Airtable est une base de données no-code, visuelle, facturée par utilisateur, idéale pour les équipes non-techniques. Supabase est une vraie base PostgreSQL facturée à l'usage, sans plafond, faite pour bâtir une application robuste.</strong> Le choix ne dépend pas de votre volume de données, mais de votre besoin de logique métier, de contrôle des accès et de propriété.</p>
+
+<nav>
+<h2>Sommaire</h2>
+<ol>
+  <li><a href="#tableau">Le comparatif en un coup d'œil</a></li>
+  <li><a href="#airtable">Airtable : quand le choisir</a></li>
+  <li><a href="#supabase">Supabase : quand le choisir</a></li>
+  <li><a href="#prix">Tarification : par siège vs à l'usage</a></li>
+  <li><a href="#bascule">Le vrai point de bascule</a></li>
+  <li><a href="#troisieme">La 3e voie : l'application sur-mesure</a></li>
+  <li><a href="#faq">FAQ</a></li>
+</ol>
+</nav>
+
+<h2 id="tableau">Le comparatif en un coup d'œil</h2>
+
+<table>
+  <thead>
+    <tr><th>Critère</th><th>Airtable</th><th>Supabase</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Nature</strong></td><td>Base no-code visuelle</td><td>Base PostgreSQL + backend</td></tr>
+    <tr><td><strong>Prise en main</strong></td><td>Immédiate (façon tableur)</td><td>Technique (SQL)</td></tr>
+    <tr><td><strong>Tarification</strong></td><td>Par siège (20-45 €/utilisateur/mois)</td><td>À l'usage (dès 25 $/mois)</td></tr>
+    <tr><td><strong>Plafond d'enregistrements</strong></td><td>Oui (50k-500k selon plan)</td><td>Aucun</td></tr>
+    <tr><td><strong>Logique métier / sécurité</strong></td><td>Limitée</td><td>Avancée (RLS, fonctions)</td></tr>
+    <tr><td><strong>Auto-hébergeable / UE</strong></td><td>Non (US)</td><td>Oui</td></tr>
+  </tbody>
+</table>
+
+<h2 id="airtable">Airtable : quand le choisir</h2>
+<p>Airtable brille quand des équipes non-techniques doivent organiser des données rapidement : suivi de projets, CRM léger, planning. L'interface tableur est prise en main en minutes. Mais il plafonne : nombre d'enregistrements limité, API bridée (5 req/s par base), pas de logique métier complexe, et un coût qui monte avec chaque siège ajouté.</p>
+
+<h2 id="supabase">Supabase : quand le choisir</h2>
+<p>Supabase est un « Firebase open-source » bâti sur PostgreSQL — la base relationnelle la plus robuste du monde. Vous obtenez une vraie base SQL avec authentification, sécurité par ligne (RLS), API auto-générée, temps réel, et la possibilité d'auto-héberger en UE. C'est le socle quand la donnée devient le cœur de votre activité — mais il demande un profil technique.</p>
+
+<h2 id="prix">Tarification : par siège vs à l'usage</h2>
+<p>La différence économique est structurante. <strong>Airtable facture par utilisateur</strong> : à 20 personnes, la facture grimpe vite, que vous utilisiez beaucoup ou peu. <strong>Supabase facture à l'usage</strong> : vous payez la consommation réelle, sans taxe par siège. Pour une équipe qui grandit, l'écart se creuse.</p>
+
+<h2 id="bascule">Le vrai point de bascule</h2>
+<p>Contrairement à une idée répandue, ce n'est pas le <em>volume</em> de données qui fait passer d'Airtable à Supabase, mais l'<strong>architecture</strong> : le besoin de rôles d'accès granulaires, de logique métier dense, ou le moment où la donnée devient le produit. Tant que vous organisez de l'info, Airtable suffit. Quand vous bâtissez un outil, il faut un vrai backend.</p>
+
+<h2 id="troisieme">La 3e voie : l'application sur-mesure</h2>
+<p>Le piège du faux choix « Airtable vs Supabase brut » : Airtable, c'est louer des sièges sur un outil US plafonné ; Supabase brut, c'est assumer soi-même tout le développement du backend. La 3e voie : une <strong>application métier sur-mesure</strong> bâtie sur des fondations de niveau Supabase (PostgreSQL), dont le code vous est livré et vous appartient, hébergée en UE, sans taxe par siège. Utiliser Airtable comme « outil interne », c'est souvent là que commence le SaaS-spaghetti. Voir <a href="/blog/erp-vs-logiciel-sur-mesure">ERP vs sur-mesure</a>.</p>
+
+<h2 id="faq">FAQ</h2>
+<h3>Airtable peut-il devenir mon logiciel métier ?</h3>
+<p>Au début, oui. Mais il plafonne (enregistrements, API, logique). Quand l'outil devient critique, mieux vaut une application qui vous appartient.</p>
+<h3>Supabase est-il fait pour les non-techniques ?</h3>
+<p>Pas directement — c'est un backend. Les non-techniques bénéficient de Supabase via une application construite par-dessus.</p>
+<h3>Mes données restent-elles en Europe ?</h3>
+<p>Avec Supabase (hébergeable en UE) oui ; Airtable est hébergé aux US.</p>
+
+<h2>En résumé</h2>
+<p>Airtable pour organiser vite à plusieurs, Supabase pour bâtir un vrai socle de données. Et quand l'outil devient le cœur de votre activité, une application sur-mesure que vous possédez bat les deux.</p>
+
+<p><strong><a href="/book">Réserver 20 min · offert &rarr;</a></strong></p>
+`,
+  },
+  {
+    slug: 'alternative-saas-sur-mesure-remplacer-logiciel',
+    title: 'Alternative aux logiciels SaaS : quand le sur-mesure devient rentable',
+    description: 'Vos abonnements SaaS coûtent en moyenne ~4 800 $/employé/an et augmentent de 15-25 %/an. À partir de quel seuil le sur-mesure devient rentable ? Test en 3 questions et comparatif.',
+    date: '2026-06-15',
+    author: 'Nathan Goutagny',
+    readTime: '11 min',
+    category: 'Infrastructure',
+    tags: ['SaaS', 'Sur-mesure', 'Coûts', 'PME'],
+    content: `
+<p><strong>Une PME dépense en moyenne près de 4 800 $ par employé et par an en abonnements logiciels, avec des hausses de 15 à 25 % par an. Au-delà de ~15 000-20 000 €/an de SaaS sur un même périmètre, un logiciel sur-mesure que vous possédez devient économiquement rentable</strong> — et vous arrêtez de louer pour commencer à posséder un actif.</p>
+
+<p>Ce guide explique quand basculer, avec un test en 3 questions et le comparatif location vs propriété.</p>
+
+<nav>
+<h2>Sommaire</h2>
+<ol>
+  <li><a href="#coince">Pourquoi le SaaS finit par coincer</a></li>
+  <li><a href="#actif">Louer un outil vs posséder un actif</a></li>
+  <li><a href="#tableau">SaaS vs sur-mesure : le comparatif</a></li>
+  <li><a href="#test">Le test en 3 questions</a></li>
+  <li><a href="#etendre">Remplacer ou étendre via API</a></li>
+  <li><a href="#faq">FAQ</a></li>
+</ol>
+</nav>
+
+<h2 id="coince">Pourquoi le SaaS finit par coincer</h2>
+<p>Le SaaS est génial pour démarrer. Mais à mesure que vous grandissez : les abonnements s'empilent (la « SaaS-fatigue »), les prix montent de 15-25 %/an sans fonctionnalités proportionnelles, et vous finissez par adapter vos process à des outils génériques que tout le monde utilise. Vous payez de plus en plus pour posséder de moins en moins.</p>
+
+<h2 id="actif">Louer un outil vs posséder un actif</h2>
+<p>C'est le cœur du sujet. Un SaaS est une <strong>location à vie</strong> : vous payez chaque mois, et le jour où vous arrêtez, il ne vous reste rien. Un logiciel sur-mesure est un <strong>actif</strong> : un investissement initial, puis il vous appartient — code, données, infrastructure. Sur 3 ans, 20 utilisateurs sur un SaaS peuvent représenter 30 000 à 80 000 € « sans rien posséder au bout ».</p>
+
+<h2 id="tableau">SaaS vs sur-mesure : le comparatif</h2>
+
+<table>
+  <thead>
+    <tr><th>Critère</th><th>SaaS</th><th>Sur-mesure</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Propriété</strong></td><td>Vous louez</td><td>Vous possédez (code livré)</td></tr>
+    <tr><td><strong>Évolution des coûts</strong></td><td>+15-25 %/an, à vie</td><td>Hébergement + maintenance</td></tr>
+    <tr><td><strong>Hébergement / RGPD</strong></td><td>Souvent US (Cloud Act)</td><td>UE possible</td></tr>
+    <tr><td><strong>Adaptation aux process</strong></td><td>Vous vous adaptez</td><td>L'outil épouse votre métier</td></tr>
+    <tr><td><strong>Dépendance à la roadmap éditeur</strong></td><td>Totale</td><td>Aucune</td></tr>
+  </tbody>
+</table>
+
+<h2 id="test">Le test en 3 questions</h2>
+<ol>
+  <li><strong>Combien payez-vous par an</strong> en abonnements sur ce périmètre ? Au-delà de ~15-20k€/an, le sur-mesure se justifie.</li>
+  <li><strong>Ce process fait-il votre différence ?</strong> Si oui, un outil générique vous bride.</li>
+  <li><strong>Voulez-vous posséder ou louer ?</strong> Si vous comptez garder l'outil 3 ans et plus, la propriété gagne.</li>
+</ol>
+
+<h2 id="etendre">Remplacer ou étendre via API</h2>
+<p>Important : sur-mesure ne veut pas dire « tout refaire de zéro ». On peut remplacer un SaaS coûteux par un outil que vous possédez, OU garder vos outils existants et bâtir une couche sur-mesure par-dessus, reliée par API. L'objectif n'est pas la table rase, c'est de reprendre le contrôle là où ça compte. Voir <a href="/logiciel-sur-mesure-vs-saas">le comparatif détaillé sur-mesure vs SaaS</a>.</p>
+
+<h2 id="faq">FAQ</h2>
+<h3>À partir de quel budget SaaS faut-il envisager le sur-mesure ?</h3>
+<p>En général au-delà de 15-20k€/an d'abonnements sur un même périmètre, l'investissement sur-mesure s'amortit en 2-3 ans.</p>
+<h3>Le sur-mesure, c'est risqué ?</h3>
+<p>Le risque vient surtout du prestataire. Exigez la livraison du code et la réversibilité — voir <a href="/blog/comment-choisir-prestataire-logiciel-ia">comment choisir son prestataire</a>.</p>
+<h3>Dois-je tout migrer d'un coup ?</h3>
+<p>Non. On peut remplacer progressivement, ou étendre l'existant par API. Pas de big bang.</p>
+
+<h2>En résumé</h2>
+<p>Le SaaS est parfait pour démarrer, mais à l'échelle vous louez de plus en plus cher sans rien posséder. Au-delà de 15-20k€/an sur un périmètre qui fait votre différence, le sur-mesure devient un actif rentable.</p>
+
+<p><strong><a href="/book">Réserver 20 min · offert pour faire le calcul &rarr;</a></strong></p>
+`,
+  },
+  {
+    slug: 'rgpd-ia-ou-vont-les-donnees-entreprise',
+    title: 'RGPD et IA : où vont vraiment les données de votre entreprise ?',
+    description: 'L\'IA n\'échappe pas au RGPD. Où transitent vos données avec un outil IA SaaS, ce qu\'impose la CNIL, le risque Cloud Act, et comment garder le contrôle avec une IA souveraine.',
+    date: '2026-06-15',
+    author: 'Nathan Goutagny',
+    readTime: '12 min',
+    category: 'Infrastructure IA',
+    tags: ['RGPD', 'IA', 'Souveraineté', 'CNIL'],
+    content: `
+<p><strong>L'intelligence artificielle n'échappe pas au RGPD : dès qu'un outil IA traite des données personnelles, la CNIL et le règlement européen sur l'IA s'appliquent simultanément. Avec la plupart des outils IA SaaS, vos données transitent par des serveurs américains, exposés au Cloud Act — même quand l'éditeur affiche des serveurs en Europe.</strong> Garder le contrôle est d'abord une question d'architecture.</p>
+
+<p>Ce guide explique où vont réellement vos données, ce qu'impose la CNIL, le piège du Cloud Act, et comment rester souverain.</p>
+
+<nav>
+<h2>Sommaire</h2>
+<ol>
+  <li><a href="#ou">Où vont réellement vos données avec une IA SaaS</a></li>
+  <li><a href="#cnil">Ce qu'impose la CNIL</a></li>
+  <li><a href="#cloudact">Le piège du Cloud Act</a></li>
+  <li><a href="#tableau">IA SaaS US vs IA souveraine</a></li>
+  <li><a href="#controle">Comment garder le contrôle</a></li>
+  <li><a href="#faq">FAQ</a></li>
+</ol>
+</nav>
+
+<h2 id="ou">Où vont réellement vos données avec une IA SaaS</h2>
+<p>Quand vous envoyez un document à un outil IA généraliste, vos données partent sur les serveurs de l'éditeur pour être traitées. Par défaut, les grands fournisseurs n'utilisent pas ces données pour entraîner leurs modèles — mais elles <strong>transitent et sont stockées</strong>, souvent aux États-Unis. Pour des données clients, RH ou contractuelles, c'est un vrai sujet de conformité.</p>
+
+<h2 id="cnil">Ce qu'impose la CNIL</h2>
+<p>La CNIL est claire : <strong>le RGPD et le règlement IA s'appliquent en même temps</strong>. Les obligations clés : finalité déterminée, base légale (souvent l'intérêt légitime, sous 3 conditions), minimisation des données, durée de conservation limitée, respect des droits des personnes, et supervision humaine des décisions. La conformité IA n'est pas une case à cocher — c'est une question de conception.</p>
+
+<h2 id="cloudact">Le piège du Cloud Act</h2>
+<p>Le <strong>Cloud Act</strong> (loi américaine de 2018) permet aux autorités US d'exiger l'accès aux données détenues par une entreprise américaine — <strong>même si les serveurs sont physiquement en Europe</strong>. C'est pourquoi « hébergé en Europe » par un fournisseur US ne suffit pas. L'arrêt Schrems II (CJUE, 2020) a d'ailleurs invalidé le Privacy Shield sur ce fondement. La vraie souveraineté suppose un fournisseur sans lien capitalistique US (logique du label SecNumCloud de l'ANSSI).</p>
+
+<h2 id="tableau">IA SaaS US vs IA souveraine</h2>
+
+<table>
+  <thead>
+    <tr><th>Critère</th><th>IA SaaS US (boîte noire)</th><th>IA intégrée sur infra souveraine</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Hébergement</strong></td><td>US (ou UE mais éditeur US)</td><td>UE, fournisseur souverain</td></tr>
+    <tr><td><strong>Soumis au Cloud Act ?</strong></td><td>Oui</td><td>Non (si pas de lien US)</td></tr>
+    <tr><td><strong>Données réutilisées ?</strong></td><td>Opaque</td><td>Non — vos données restent vôtres</td></tr>
+    <tr><td><strong>Propriété code / données</strong></td><td>Éditeur</td><td>Vous</td></tr>
+    <tr><td><strong>Qui peut y accéder</strong></td><td>Éditeur + autorités US</td><td>Vous seul</td></tr>
+  </tbody>
+</table>
+
+<h2 id="controle">Comment garder le contrôle</h2>
+<p>La réponse structurelle : une IA <strong>intégrée sur votre propre infrastructure ou un cloud UE de confiance</strong>, avec des modèles européens (type Mistral) ou open-weight quand les données sont sensibles. Chiffrement (AES-256, TLS), minimisation dès la conception, et aucun transit par une boîte noire qui agrège. C'est l'approche de NateSystem : votre code et vos données restent chez vous, hébergés en UE, RGPD-natif. Où vont vos données ? Nulle part.</p>
+
+<h2 id="faq">FAQ</h2>
+<h3>Utiliser ChatGPT au travail est-il conforme RGPD ?</h3>
+<p>Pour des données non personnelles, oui. Pour des données clients/RH sensibles, c'est risqué : elles transitent par des serveurs US exposés au Cloud Act. Mieux vaut une solution souveraine.</p>
+<h3>« Hébergé en Europe » suffit-il ?</h3>
+<p>Non si le fournisseur est une entreprise américaine : le Cloud Act s'applique quand même. Il faut un fournisseur sans lien capitalistique US.</p>
+<h3>Comment être conforme tout en utilisant l'IA ?</h3>
+<p>En traitant la conformité comme un sujet d'architecture : modèles UE/open-weight, hébergement souverain, minimisation, supervision humaine. C'est ce que permet une IA intégrée sur-mesure.</p>
+
+<h2>En résumé</h2>
+<p>L'IA est soumise au RGPD, et la plupart des outils SaaS exposent vos données au Cloud Act. La seule réponse structurelle : une IA souveraine, sur votre infrastructure ou un cloud UE de confiance, dont vous gardez la propriété.</p>
+
+<p><a href="/blog/integrer-ia-entreprise-guide-pme">Guide : intégrer l'IA en entreprise</a></p>
+
+<p><strong><a href="/book">Réserver 20 min · offert &rarr;</a></strong></p>
+`,
+  },
+  {
+    slug: 'logiciel-sur-mesure-cabinet-avocats',
+    title: 'Logiciel sur-mesure pour cabinet d\'avocats : guide 2026',
+    description: 'Un avocat passe 30 à 40 % de son temps sur des tâches non facturables. Quel logiciel pour automatiser le cabinet : RPVA, secret professionnel, RGPD, facturation électronique 2026. Standard vs sur-mesure.',
+    date: '2026-06-15',
+    author: 'Nathan Goutagny',
+    readTime: '12 min',
+    category: 'Secteur',
+    tags: ['Avocats', 'Logiciel métier', 'Sur-mesure', 'RGPD'],
+    content: `
+<p><strong>Un avocat consacre 30 à 40 % de son temps à des tâches non facturables : saisie, classement, relances, gestion administrative. Un logiciel de gestion de cabinet (LGC) automatise ces tâches — à condition qu'il s'intègre au RPVA/e-barreau, respecte le secret professionnel et soit conforme RGPD.</strong></p>
+
+<p>Ce guide explique quoi automatiser, comment choisir, et quand un outil sur-mesure que le cabinet possède l'emporte sur un logiciel standard.</p>
+
+<nav>
+<h2>Sommaire</h2>
+<ol>
+  <li><a href="#temps">Le vrai problème : le temps non facturable</a></li>
+  <li><a href="#automatiser">Quelles tâches automatiser</a></li>
+  <li><a href="#criteres">Les critères de choix (dont RPVA)</a></li>
+  <li><a href="#standard-vs">Standard vs sur-mesure</a></li>
+  <li><a href="#rgpd">Secret professionnel & RGPD</a></li>
+  <li><a href="#faq">FAQ</a></li>
+</ol>
+</nav>
+
+<h2 id="temps">Le vrai problème : le temps non facturable</h2>
+<p>Le poste de coût invisible d'un cabinet, c'est le temps que les avocats passent à <strong>ne pas facturer</strong> : ressaisir des informations, classer des pièces, relancer des clients, gérer la facturation. Récupérer ne serait-ce qu'une partie de ces 30-40 %, c'est mécaniquement plus de chiffre d'affaires à effectif constant.</p>
+
+<h2 id="automatiser">Quelles tâches automatiser</h2>
+<ul>
+  <li>Saisie et suivi des temps (la base de la facturation)</li>
+  <li>Classement automatique des emails et pièces par dossier</li>
+  <li>Pré-rédaction d'actes et de courriers récurrents</li>
+  <li>Relances clients et recouvrement</li>
+  <li>Facturation (électronique obligatoire à partir de 2026)</li>
+</ul>
+
+<h2 id="criteres">Les critères de choix (dont RPVA)</h2>
+<p>Deux critères sont quasi éliminatoires pour un cabinet français :</p>
+<ul>
+  <li><strong>L'intégration RPVA / e-barreau</strong> — le réseau privé virtuel des avocats. Le CNB expose désormais des API passerelles sur le nouvel e-barreau, ce qui rend l'intégration possible pour un outil sur-mesure.</li>
+  <li><strong>La synchronisation Outlook / agenda</strong> — sans elle, l'adoption échoue.</li>
+</ul>
+<p>S'ajoutent : la conformité RGPD, le respect du secret professionnel, et la facturation électronique conforme dès 2026.</p>
+
+<h2 id="standard-vs">Standard vs sur-mesure</h2>
+
+<table>
+  <thead>
+    <tr><th>Critère</th><th>LGC standard</th><th>Sur-mesure propriétaire</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Adaptation aux process du cabinet</strong></td><td>Vous vous adaptez à l'outil</td><td>L'outil épouse vos process</td></tr>
+    <tr><td><strong>Coût</strong></td><td>Licences par utilisateur, à vie</td><td>Investissement, puis propriété</td></tr>
+    <tr><td><strong>RPVA / e-barreau</strong></td><td>Selon l'éditeur</td><td>Via API passerelle CNB</td></tr>
+    <tr><td><strong>Propriété & RGPD</strong></td><td>Données chez l'éditeur</td><td>Code livré · hébergé UE</td></tr>
+  </tbody>
+</table>
+
+<p>Les LGC standards forcent le cabinet à se plier à l'éditeur et empilent des licences par utilisateur. Le sur-mesure construit les process réels du cabinet dans un code qu'il possède, avec le RPVA via passerelle CNB et un hébergement UE/RGPD.</p>
+
+<h2 id="rgpd">Secret professionnel & RGPD</h2>
+<p>Pour un cabinet, deux exigences non négociables : le <strong>secret professionnel</strong> (les données clients ne doivent jamais servir à entraîner une IA, et les accès doivent être tracés) et le <strong>RGPD</strong> (hébergement UE, droits des personnes). C'est pourquoi l'IA, ici, ne s'envisage que sur une infrastructure souveraine — voir <a href="/blog/rgpd-ia-ou-vont-les-donnees-entreprise">RGPD et IA : où vont vos données</a>.</p>
+
+<h2 id="faq">FAQ</h2>
+<h3>Un logiciel sur-mesure peut-il se connecter au RPVA ?</h3>
+<p>Oui : le CNB expose des API passerelles sur le nouvel e-barreau, qui permettent à un outil sur-mesure de s'y intégrer.</p>
+<h3>Combien de temps un cabinet peut-il récupérer ?</h3>
+<p>En automatisant la saisie des temps, le classement et les relances, l'objectif est de réduire fortement les 30-40 % de temps non facturable.</p>
+<h3>L'IA respecte-t-elle le secret professionnel ?</h3>
+<p>Seulement si elle est conçue pour : modèles sur infrastructure souveraine, données non réutilisées, accès tracés. Une IA SaaS généraliste ne l'garantit pas.</p>
+
+<h2>En résumé</h2>
+<p>Le bon logiciel de cabinet récupère le temps non facturable, s'intègre au RPVA et respecte le secret professionnel. Pour un cabinet aux process spécifiques, un outil sur-mesure qu'il possède — interfacé au RPVA, hébergé en UE — bat un LGC standard auquel on s'adapte.</p>
+
+<p><strong><a href="/book">Réserver 20 min · offert &rarr;</a></strong></p>
+`,
+  },
+  {
+    slug: 'logiciel-sur-mesure-expertise-comptable',
+    title: 'Logiciel pour cabinet d\'expertise comptable : que peut-on vraiment sur-mesure ?',
+    description: 'FEC, EDI-TVA, liasse fiscale, facturation électronique : le cœur comptable doit rester certifié. Mais la surcouche métier (portail client, suivi de mission, OCR/IA) gagne à être sur-mesure. Guide 2026.',
+    date: '2026-06-15',
+    author: 'Nathan Goutagny',
+    readTime: '11 min',
+    category: 'Secteur',
+    tags: ['Expertise comptable', 'Logiciel métier', 'Sur-mesure', 'OCR'],
+    content: `
+<p><strong>Pour un cabinet d'expertise comptable, le cœur comptable (export FEC, EDI-TVA, liasse fiscale, facturation électronique) doit rester sur un logiciel certifié — ça ne se reconstruit pas sur-mesure. En revanche, la surcouche métier dans laquelle le cabinet travaille vraiment (portail de collecte client, suivi de mission, relances, dashboards) gagne énormément à être sur-mesure et possédée.</strong></p>
+
+<p>Ce guide distingue ce qui doit rester certifié de ce qui mérite d'être construit à votre main.</p>
+
+<nav>
+<h2>Sommaire</h2>
+<ol>
+  <li><a href="#coeur">Le cœur comptable : ce qui doit rester certifié</a></li>
+  <li><a href="#surcouche">La surcouche métier : ce qui gagne à être sur-mesure</a></li>
+  <li><a href="#ia">Où l'IA fait gagner des heures</a></li>
+  <li><a href="#tableau">Compléter vs remplacer</a></li>
+  <li><a href="#faq">FAQ</a></li>
+</ol>
+</nav>
+
+<h2 id="coeur">Le cœur comptable : ce qui doit rester certifié</h2>
+<p>Certaines fonctions sont encadrées par la loi et ne se bricolent pas :</p>
+<ul>
+  <li><strong>Export FEC</strong> (Fichier des Écritures Comptables, art. A47 A-1 du LPF) — obligatoire et normé</li>
+  <li><strong>Logiciel anti-fraude TVA</strong> certifié (NF525 ou attestation)</li>
+  <li><strong>Piste d'audit fiable</strong>, EDI-TVA, liasse fiscale (EDI-TDFC)</li>
+  <li><strong>Facturation électronique</strong> (Factur-X / UBL) qui devient obligatoire</li>
+</ul>
+<p>Ces briques doivent rester sur un éditeur certifié (Cegid, Sage, ACD, MyUnisoft…). Les reconstruire serait un risque légal inutile.</p>
+
+<h2 id="surcouche">La surcouche métier : ce qui gagne à être sur-mesure</h2>
+<p>C'est là que le cabinet perd du temps et que le sur-mesure brille — tout ce dans quoi vous travaillez au quotidien mais qui n'est pas le moteur certifié :</p>
+<ul>
+  <li><strong>Portail de collecte client</strong> (pièces, factures, justificatifs)</li>
+  <li><strong>Suivi de mission et de rentabilité par dossier</strong></li>
+  <li><strong>Relances automatiques</strong> des clients en retard de pièces</li>
+  <li><strong>Dashboards associés</strong> (charge, échéances, rentabilité)</li>
+</ul>
+<p>Cette surcouche, construite sur-mesure et interfacée au cœur certifié, vous appartient et colle à votre organisation — au lieu d'être un module rigide de plus.</p>
+
+<h2 id="ia">Où l'IA fait gagner des heures</h2>
+<p>Le gisement de productivité d'un cabinet : l'<strong>OCR + reconnaissance IA des factures</strong> avec pré-saisie automatique des écritures, le rapprochement, et la lecture des pièces. L'IA ne remplace pas l'expert-comptable — elle absorbe la saisie répétitive pour libérer du temps de conseil. C'est exactement le principe « l'IA seulement là où elle remplace de vraies heures ».</p>
+
+<h2 id="tableau">Compléter vs remplacer</h2>
+
+<table>
+  <thead>
+    <tr><th>Brique</th><th>Approche</th><th>Pourquoi</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>FEC, TVA, liasse, paie/DSN</td><td>Éditeur certifié</td><td>Obligation légale</td></tr>
+    <tr><td>Portail client, suivi mission, relances</td><td>Sur-mesure propriétaire</td><td>Process spécifique, gain de temps</td></tr>
+    <tr><td>OCR / pré-saisie écritures</td><td>IA intégrée</td><td>Remplace des heures de saisie</td></tr>
+  </tbody>
+</table>
+
+<h2 id="faq">FAQ</h2>
+<h3>Peut-on remplacer son logiciel comptable certifié par du sur-mesure ?</h3>
+<p>Non, et ce n'est pas souhaitable : le cœur (FEC, TVA, liasse) doit rester certifié. Le sur-mesure complète ce cœur, il ne le remplace pas.</p>
+<h3>Qu'apporte concrètement le sur-mesure à un cabinet ?</h3>
+<p>La surcouche métier que vous possédez : portail client, suivi de rentabilité par dossier, relances, dashboards — interfacés à votre logiciel certifié.</p>
+<h3>L'IA peut-elle saisir les écritures à ma place ?</h3>
+<p>L'OCR + IA pré-saisit à partir des factures ; l'expert valide. C'est un gain de temps majeur, pas un remplacement du jugement comptable.</p>
+
+<h2>En résumé</h2>
+<p>Gardez le cœur comptable certifié (FEC, TVA, liasse). Construisez sur-mesure la surcouche où vous travaillez vraiment (portail, missions, relances), avec l'OCR/IA pour absorber la saisie. NateSystem complète votre logiciel certifié — il ne le remplace pas.</p>
+
+<p><strong><a href="/book">Réserver 20 min · offert &rarr;</a></strong></p>
+`,
+  },
+  {
+    slug: 'crm-agence-immobiliere-sur-mesure',
+    title: 'CRM pour agence immobilière : standard ou sur-mesure ? Guide 2026',
+    description: 'Registre des mandats (loi Hoguet), signature eIDAS, diffusion multi-portails, rapprochement acquéreurs : ce qu\'un CRM immobilier doit couvrir, et quand le sur-mesure bat le SaaS par agence.',
+    date: '2026-06-15',
+    author: 'Nathan Goutagny',
+    readTime: '11 min',
+    category: 'Secteur',
+    tags: ['Immobilier', 'CRM', 'Sur-mesure', 'Loi Hoguet'],
+    content: `
+<p><strong>Un CRM immobilier doit gérer le registre des mandats conforme à la loi Hoguet (numérotation continue et inaltérable), la diffusion multi-portails, le rapprochement acquéreurs/biens, et la signature électronique eIDAS. La plupart des solutions sont des SaaS facturés par agence — quand le sur-mesure devient intéressant, c'est pour les réseaux multi-agences où ce coût se multiplie.</strong></p>
+
+<nav>
+<h2>Sommaire</h2>
+<ol>
+  <li><a href="#enjeux">Le rôle d'un CRM immobilier en 2026</a></li>
+  <li><a href="#conformite">La conformité légale (Hoguet, ALUR)</a></li>
+  <li><a href="#fonctions">Les fonctions clés</a></li>
+  <li><a href="#standard-vs">SaaS standard vs sur-mesure</a></li>
+  <li><a href="#ia">L'IA dans l'immobilier en 2026</a></li>
+  <li><a href="#faq">FAQ</a></li>
+</ol>
+</nav>
+
+<h2 id="enjeux">Le rôle d'un CRM immobilier en 2026</h2>
+<p>Un CRM immobilier n'est pas qu'un carnet de contacts : c'est l'outil qui pilote la pige, les mandats, le rapprochement entre acquéreurs et biens, la diffusion des annonces et le suivi des transactions — tout en restant conforme à un cadre légal strict.</p>
+
+<h2 id="conformite">La conformité légale (Hoguet, ALUR)</h2>
+<p>Deux obligations structurent le métier :</p>
+<ul>
+  <li><strong>Le registre des mandats</strong> (loi Hoguet n°70-9 du 2 janvier 1970) : numérotation continue et inaltérable, sur registre coté/paraphé ou dématérialisé conforme. C'est la fonction de conformité centrale.</li>
+  <li><strong>La loi ALUR</strong> (2014) : information, mandats, obligation de formation.</li>
+</ul>
+<p>S'ajoutent la signature électronique <strong>eIDAS</strong> et la conformité RGPD (traçabilité, archivage, hébergement).</p>
+
+<h2 id="fonctions">Les fonctions clés</h2>
+<ul>
+  <li>Gestion de la pige et des mandats</li>
+  <li>Rapprochement automatique acquéreurs ↔ biens</li>
+  <li>Diffusion multi-portails (SeLoger, Le Bon Coin…)</li>
+  <li>Mobilité (application terrain)</li>
+  <li>Registre des mandats conforme + signature eIDAS intégrée</li>
+</ul>
+
+<h2 id="standard-vs">SaaS standard vs sur-mesure</h2>
+
+<table>
+  <thead>
+    <tr><th>Critère</th><th>CRM SaaS standard</th><th>Sur-mesure propriétaire</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Coût</strong></td><td>~30-100 €/mois par agence, à vie</td><td>Investissement, puis propriété</td></tr>
+    <tr><td><strong>Réseaux multi-agences</strong></td><td>Le coût se multiplie par agence</td><td>Un seul système possédé</td></tr>
+    <tr><td><strong>Pipeline & rapprochement</strong></td><td>Logique générique</td><td>Votre logique réelle (pige, sources)</td></tr>
+    <tr><td><strong>Registre Hoguet / eIDAS</strong></td><td>Selon l'éditeur</td><td>Intégrés sur-mesure</td></tr>
+    <tr><td><strong>Propriété / RGPD</strong></td><td>Données chez l'éditeur</td><td>Code livré · hébergé UE</td></tr>
+  </tbody>
+</table>
+
+<p>Pour une agence seule, un bon SaaS suffit souvent. Pour un <strong>réseau multi-agences</strong>, le coût par agence se multiplie et la logique générique bride : c'est là qu'un CRM sur-mesure, qui intègre votre vrai pipeline et le registre Hoguet, devient rentable.</p>
+
+<h2 id="ia">L'IA dans l'immobilier en 2026</h2>
+<p>Les usages IA qui font gagner du temps : rédaction automatique des annonces, scoring et priorisation des leads, estimation, et relances. Là encore, l'IA n'a de sens que là où elle remplace de vraies heures — pas comme argument marketing.</p>
+
+<h2 id="faq">FAQ</h2>
+<h3>Un CRM sur-mesure peut-il gérer le registre des mandats légal ?</h3>
+<p>Oui : la numérotation continue et inaltérable exigée par la loi Hoguet s'implémente dans un outil sur-mesure, avec la signature eIDAS intégrée.</p>
+<h3>Quand le sur-mesure est-il rentable en immobilier ?</h3>
+<p>Surtout pour les réseaux multi-agences, où le coût du SaaS par agence se multiplie et où la logique métier (pige, rapprochement) est spécifique.</p>
+<h3>Peut-on diffuser sur SeLoger / Le Bon Coin depuis un outil sur-mesure ?</h3>
+<p>Oui, via les API de diffusion, comme un CRM standard.</p>
+
+<h2>En résumé</h2>
+<p>Un CRM immobilier doit couvrir le registre Hoguet, eIDAS, la diffusion et le rapprochement. Pour une agence seule, le SaaS suffit ; pour un réseau, un outil sur-mesure qui intègre votre vrai pipeline et la conformité, et que vous possédez, l'emporte.</p>
+
+<p><strong><a href="/book">Réserver 20 min · offert &rarr;</a></strong></p>
+`,
+  },
 ]
