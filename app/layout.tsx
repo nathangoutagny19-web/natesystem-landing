@@ -82,8 +82,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               '@type': 'ProfessionalService',
               '@id': 'https://www.natesystem.com/#organization',
               name: 'NateSystem',
+              alternateName: 'Nate System',
               url: 'https://www.natesystem.com',
               email: 'nathan@natesystem.com',
+              logo: 'https://www.natesystem.com/logo.png',
+              image: 'https://www.natesystem.com/logo.png',
               description:
                 'NateSystem construit le logiciel sur-mesure qui pilote votre activité, propulsé par l\'IA — IA agentique, automatisation, data analytics. Vos données, votre infrastructure, votre code. Hébergé en UE, RGPD-natif.',
               founder: {

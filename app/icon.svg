@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- NateSystem favicon — italic serif "N" + red accent dot, brand charter. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" fill="none">
+  <rect width="256" height="256" rx="30.7" ry="30.7" fill="#0e0e12" />
+  <rect x="0.5" y="0.5" width="255" height="255" rx="30.2" ry="30.2" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
+  <text
+    x="52"
+    y="192"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-style="italic"
+    font-size="176"
+    font-weight="400"
+    fill="#f0f0f2"
+  >N</text>
+  <circle cx="175" cy="175" r="13" fill="#E63946" />
+</svg>
