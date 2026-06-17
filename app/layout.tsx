@@ -44,7 +44,6 @@ export const metadata: Metadata = {
     languages: {
       'fr-FR': 'https://www.natesystem.com',
       'en-US': 'https://www.natesystem.com',
-      'hu-HU': 'https://www.natesystem.com',
     },
   },
   robots: { index: true, follow: true },

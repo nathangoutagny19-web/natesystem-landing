@@ -36,12 +36,6 @@ function buildMessage(lang: Lang, { firstName }: BuildOptions): string {
       : `Hi Nathan — I just saw your site and your approach speaks to me. I have a project in mind, can we talk?`
   }
 
-  if (lang === 'hu') {
-    return trimmed
-      ? `Üdvözlöm Nathan, ${trimmed} vagyok — most láttam a weboldalát, és tetszik a megközelítése. Van egy projektem, beszélhetnénk róla?`
-      : `Üdvözlöm Nathan — most láttam a weboldalát, és tetszik a megközelítése. Van egy projektem, beszélhetnénk róla?`
-  }
-
   // 'fr' default
   return trimmed
     ? `Salut Nathan, ${trimmed} ici — je viens de voir ton site et ton approche me parle. J'ai un projet en tête, on en parle ?`

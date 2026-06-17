@@ -62,9 +62,7 @@ export default function ClientsBar() {
   const label =
     lang === 'fr'
       ? 'ILS NOUS FONT CONFIANCE'
-      : lang === 'hu'
-        ? 'BIZALMUKAT BENNÜNK HELYEZTÉK'
-        : 'TRUSTED BY'
+      : 'TRUSTED BY'
 
   return (
     <section

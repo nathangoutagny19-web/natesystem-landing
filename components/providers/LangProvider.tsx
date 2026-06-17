@@ -3,7 +3,7 @@
 import { createContext, useContext, useState, useCallback, useEffect } from 'react'
 import { translations, type TranslationKey } from '@/lib/i18n'
 
-export type Lang = 'en' | 'fr' | 'hu'
+export type Lang = 'en' | 'fr'
 
 const STORAGE_KEY = 'ns_lang'
 const DEFAULT_LANG: Lang = 'fr'
@@ -30,7 +30,7 @@ function detectLang(): Lang {
   // 1. Respect explicit user choice from prior visit
   try {
     const saved = window.localStorage.getItem(STORAGE_KEY)
-    if (saved === 'fr' || saved === 'en' || saved === 'hu') return saved
+    if (saved === 'fr' || saved === 'en') return saved
   } catch {
     // localStorage can throw in private mode — fall through to navigator
   }
@@ -38,7 +38,6 @@ function detectLang(): Lang {
   // 2. Map navigator.language → supported language
   const nav = (window.navigator?.language || '').toLowerCase()
   if (nav.startsWith('fr')) return 'fr'
-  if (nav.startsWith('hu')) return 'hu'
   return 'en'
 }
 

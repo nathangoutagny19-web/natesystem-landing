@@ -10,7 +10,7 @@
  *
  * Ships with:
  *   - Logo mark + "NateSystem · Reviews" wordmark (links to /reviews)
- *   - Language switcher (EN / FR / HU) — same LangProvider as the rest
+ *   - Language switcher (EN / FR) — same LangProvider as the rest
  *   - Theme toggle (light / dark) — same ThemeProvider
  *   - Primary CTA → /book
  *
@@ -95,12 +95,6 @@ export default function ReviewsNav({ onRequestDemo }: { onRequestDemo?: () => vo
                   onClick={() => chooseLang('fr')}
                 >
                   <span className="lang-flag lang-flag-fr" /> Français
-                </button>
-                <button
-                  className={`lang-option ${lang === 'hu' ? 'active' : ''}`}
-                  onClick={() => chooseLang('hu')}
-                >
-                  <span className="lang-flag lang-flag-hu" /> Magyar
                 </button>
               </div>
             </div>
@@ -215,7 +209,7 @@ export default function ReviewsNav({ onRequestDemo }: { onRequestDemo?: () => vo
               Language
             </p>
             <div className="flex gap-2 flex-wrap">
-              {(['en', 'fr', 'hu'] as const).map((l) => (
+              {(['en', 'fr'] as const).map((l) => (
                 <button
                   key={l}
                   className="px-4 py-2 rounded-lg text-sm font-medium transition-all"

@@ -34,23 +34,23 @@ export default function DemoRequestModal({
   const modalRef = useRef<HTMLDivElement>(null)
 
   const ROLES = [
-    { en: 'Owner / CEO', fr: 'Dirigeant·e / CEO', hu: 'Tulajdonos / CEO' },
-    { en: 'Operations', fr: 'Opérations', hu: 'Operáció' },
-    { en: 'Marketing', fr: 'Marketing', hu: 'Marketing' },
-    { en: 'Manager', fr: 'Manager', hu: 'Vezető' },
-    { en: 'Consultant', fr: 'Consultant·e', hu: 'Tanácsadó' },
-    { en: 'Other', fr: 'Autre', hu: 'Egyéb' },
+    { en: 'Owner / CEO', fr: 'Dirigeant·e / CEO' },
+    { en: 'Operations', fr: 'Opérations' },
+    { en: 'Marketing', fr: 'Marketing' },
+    { en: 'Manager', fr: 'Manager' },
+    { en: 'Consultant', fr: 'Consultant·e' },
+    { en: 'Other', fr: 'Autre' },
   ]
   const SECTEURS = [
-    { en: 'Restaurant / Hospitality', fr: 'Restauration / Hôtellerie', hu: 'Vendéglátás / Szálloda' },
-    { en: 'Retail / Commerce', fr: 'Commerce / Retail', hu: 'Kereskedelem' },
-    { en: 'Services / Consulting', fr: 'Conseil / Services', hu: 'Tanácsadás / Szolgáltatás' },
-    { en: 'Real estate / Construction', fr: 'BTP / Immobilier', hu: 'Ingatlan / Építőipar' },
-    { en: 'Industry', fr: 'Industrie', hu: 'Ipar' },
-    { en: 'Health', fr: 'Santé', hu: 'Egészségügy' },
-    { en: 'Education', fr: 'Éducation', hu: 'Oktatás' },
-    { en: 'Tech / SaaS', fr: 'Tech / SaaS', hu: 'Tech / SaaS' },
-    { en: 'Other', fr: 'Autre', hu: 'Egyéb' },
+    { en: 'Restaurant / Hospitality', fr: 'Restauration / Hôtellerie' },
+    { en: 'Retail / Commerce', fr: 'Commerce / Retail' },
+    { en: 'Services / Consulting', fr: 'Conseil / Services' },
+    { en: 'Real estate / Construction', fr: 'BTP / Immobilier' },
+    { en: 'Industry', fr: 'Industrie' },
+    { en: 'Health', fr: 'Santé' },
+    { en: 'Education', fr: 'Éducation' },
+    { en: 'Tech / SaaS', fr: 'Tech / SaaS' },
+    { en: 'Other', fr: 'Autre' },
   ]
 
   const handleEscape = useCallback((e: KeyboardEvent) => {

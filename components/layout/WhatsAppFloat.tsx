@@ -19,7 +19,6 @@ export default function WhatsAppFloat() {
 
   const label =
     lang === 'en' ? 'Chat with Nathan on WhatsApp'
-    : lang === 'hu' ? 'Beszélgessen Nathannel WhatsAppon'
     : 'Discuter avec Nathan sur WhatsApp'
 
   return (
