@@ -1,14 +1,62 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
+import { useEffect, useState } from 'react'
 import { useLang } from '@/components/providers/LangProvider'
 import Link from 'next/link'
 import { CAL_LINK } from '@/lib/constants'
 
 const ease = [0.22, 1, 0.36, 1] as const
 
+/** Cycles through benefit words: each fades/slides in, holds, then out.
+    Mount-gated: renders a plain static first word for SSR + first client
+    paint (so there's never a hydration text mismatch), then upgrades to the
+    animated version once mounted. */
+function RotatingWord({ words }: { words: string[] }) {
+  const [mounted, setMounted] = useState(false)
+  const [i, setI] = useState(0)
+  const reduce = useReducedMotion()
+
+  useEffect(() => setMounted(true), [])
+
+  useEffect(() => {
+    if (!mounted || reduce || words.length <= 1) return
+    const id = setInterval(() => setI((p) => (p + 1) % words.length), 2200)
+    return () => clearInterval(id)
+  }, [mounted, reduce, words.length])
+
+  // Reserve width for the longest word so the layout doesn't jump.
+  const longest = words.reduce((a, b) => (b.length > a.length ? b : a), words[0] ?? '')
+
+  // SSR / first paint / reduced-motion: a stable, always-visible first word.
+  if (!mounted || reduce || words.length <= 1) {
+    return <span className="accent" style={{ color: 'var(--accent)' }}>{words[0]}</span>
+  }
+
+  return (
+    <span style={{ position: 'relative', display: 'inline-block', verticalAlign: 'bottom' }}>
+      {/* invisible sizer keeps the line width stable */}
+      <span aria-hidden className="accent" style={{ visibility: 'hidden', color: 'var(--accent)' }}>{longest}</span>
+      <AnimatePresence mode="wait" initial={false}>
+        <motion.span
+          key={words[i]}
+          className="accent"
+          style={{ color: 'var(--accent)', position: 'absolute', left: 0, bottom: 0, whiteSpace: 'nowrap' }}
+          initial={{ opacity: 0, y: '0.35em' }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: '-0.35em' }}
+          transition={{ duration: 0.45, ease }}
+        >
+          {words[i]}
+        </motion.span>
+      </AnimatePresence>
+    </span>
+  )
+}
+
 export default function Hero() {
   const { t } = useLang()
+  const words = t('hero.titleWords').split('|').map((w) => w.trim()).filter(Boolean)
 
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center text-center hero-section" style={{ padding: '140px 24px 80px' }}>
@@ -23,8 +71,8 @@ export default function Hero() {
         className="font-serif italic font-normal"
         style={{ fontSize: 'clamp(38px, 5.2vw, 64px)', lineHeight: 1.08, marginBottom: '28px', maxWidth: '820px', color: 'var(--text)' }}
       >
-        {t('hero.title1')}{' '}{t('hero.title2')}{' '}
-        <span className="accent" style={{ color: 'var(--accent)' }}>{t('hero.titleAccent')}</span>
+        {t('hero.titlePrefix')}{' '}
+        <RotatingWord words={words} />
       </motion.h1>
 
       {/* Subtitle */}

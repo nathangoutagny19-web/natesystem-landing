@@ -7,10 +7,10 @@ export const translations = {
   'nav.contact': { en: 'Contact', fr: 'Contact' },
 
   // Hero
-  'hero.label': { en: 'Operational software · AI integration · Digital strategy', fr: 'Logiciel opérationnel · Intégration IA · Stratégie digitale' },
-  'hero.title1': { en: 'More profitable.', fr: 'Plus rentable.' },
-  'hero.title2': { en: 'More efficient.', fr: 'Plus efficace.' },
-  'hero.titleAccent': { en: 'More reliable.', fr: 'Plus fiable.' },
+  'hero.label': { en: 'Digital structuring · Custom software · AI integration', fr: 'Structuration digitale · Logiciel sur-mesure · Intégration IA' },
+  'hero.titlePrefix': { en: 'Our digital systems boost your', fr: 'Nos systèmes digitaux vous font gagner en' },
+  // Rotating words (pipe-separated, cycled in the hero). Final benefits the ICP desires, not the mechanisms.
+  'hero.titleWords': { en: 'profitability|productivity|responsiveness|reliability', fr: 'rentabilité|productivité|réactivité|fiabilité' },
   'hero.sub': {
     en: 'Your current tools slow your business down. We build the custom software that drives it forward — with AI integrated where it gives you back time and reliability. A system that accelerates your growth. We stay by your side once it\'s live.',
     fr: 'Vos outils actuels ralentissent votre activité. On construit le logiciel sur-mesure qui la fait avancer — avec l\'IA intégrée là où elle vous fait gagner du temps et de la fiabilité. Un système qui accélère votre croissance. On reste à vos côtés une fois livré.',
