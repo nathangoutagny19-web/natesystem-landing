@@ -19,19 +19,25 @@ function RotatingWord({ words }: { words: string[] }) {
 
   useEffect(() => setMounted(true), [])
 
+  // The word ALWAYS rotates — it's content, not decoration. Reduced-motion only
+  // softens the transition (a quick cut instead of a slide), it never freezes it.
   useEffect(() => {
-    if (!mounted || reduce || words.length <= 1) return
+    if (!mounted || words.length <= 1) return
     const id = setInterval(() => setI((p) => (p + 1) % words.length), 2200)
     return () => clearInterval(id)
-  }, [mounted, reduce, words.length])
+  }, [mounted, words.length])
 
   // Reserve width for the longest word so the layout doesn't jump.
   const longest = words.reduce((a, b) => (b.length > a.length ? b : a), words[0] ?? '')
 
-  // SSR / first paint / reduced-motion: a stable, always-visible first word.
-  if (!mounted || reduce || words.length <= 1) {
+  // SSR / first paint: a stable, always-visible first word (avoids hydration mismatch).
+  if (!mounted || words.length <= 1) {
     return <span className="accent" style={{ color: 'var(--accent)' }}>{words[0]}</span>
   }
+
+  // Reduced motion → no slide, just a fast opacity cut. Full motion → fade + slide.
+  const dur = reduce ? 0.15 : 0.45
+  const offset = reduce ? 0 : '0.35em'
 
   return (
     <span style={{ position: 'relative', display: 'inline-block', verticalAlign: 'bottom' }}>
@@ -42,10 +48,10 @@ function RotatingWord({ words }: { words: string[] }) {
           key={words[i]}
           className="accent"
           style={{ color: 'var(--accent)', position: 'absolute', left: 0, bottom: 0, whiteSpace: 'nowrap' }}
-          initial={{ opacity: 0, y: '0.35em' }}
+          initial={{ opacity: 0, y: offset }}
           animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: '-0.35em' }}
-          transition={{ duration: 0.45, ease }}
+          exit={{ opacity: 0, y: reduce ? 0 : '-0.35em' }}
+          transition={{ duration: dur, ease }}
         >
           {words[i]}
         </motion.span>
