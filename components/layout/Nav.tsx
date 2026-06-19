@@ -157,7 +157,7 @@ export default function Nav() {
               <Link href="/tools" className="nav-link nav-link-dropdown">
                 {t('nav.tools')} <Chevron />
               </Link>
-              <div className="nav-mega nav-mega-3col">
+              <div className="nav-mega nav-mega-2col">
                 <div className="nav-mega-inner">
                   <div className="nav-mega-col">
                     <p className="nav-mega-label">{t('mega.interactive')}</p>
@@ -188,13 +188,6 @@ export default function Nav() {
                       desc={t('demos.reviews.navDesc')}
                       badge={t('mega.gated')}
                     />
-                  </div>
-                  <div className="nav-mega-col">
-                    <p className="nav-mega-label">{t('mega.playbooks')}</p>
-                    <MegaItem href="/playbook/hoteliers-independants" icon={icons.building} title={t('playbooks.hotels.title')} desc={t('playbooks.hotels.desc')} />
-                    <MegaItem href="/playbook/avocats-affaires" icon={icons.scale} title={t('playbooks.lawyers.title')} desc={t('playbooks.lawyers.desc')} />
-                    <MegaItem href="/playbook/expertise-comptable" icon={icons.receipt} title={t('playbooks.accountants.title')} desc={t('playbooks.accountants.desc')} />
-                    <MegaItem href="/playbook" icon={icons.book} title={t('playbooks.all.title')} desc={t('playbooks.all.desc')} />
                   </div>
                 </div>
               </div>
