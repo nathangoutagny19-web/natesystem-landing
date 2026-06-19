@@ -277,6 +277,11 @@ export const translations = {
   },
   'trans.aiLabel': { en: 'AI', fr: 'IA' },
   'trans.aiTag': { en: 'AI powered', fr: 'AI powered' },
+  // Chaos artefacts (left panel) — small friction notes scattered in the pile
+  'trans.chaos.quote': { en: 'Quote #142 · overdue', fr: 'Devis #142 · en retard' },
+  'trans.chaos.money': { en: '−2 400 € lost?', fr: '−2 400 € perdus ?' },
+  'trans.chaos.sms': { en: '12 unread', fr: '12 non lus' },
+  'trans.chaos.forgot': { en: 'call back the client…', fr: 'rappeler le client…' },
 
   // ───────────────────────────────────────────────────────────────
   // Comparatif — NateSystem vs prestataire classique (lève l'objection

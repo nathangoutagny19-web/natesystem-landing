@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { siGmail, siGooglesheets, siGoogledocs, siWhatsapp, siNotion, siTelegram } from 'simple-icons'
+import { siGmail, siGooglesheets, siGoogledocs, siWhatsapp, siNotion, siTelegram, siHubspot, siAirtable } from 'simple-icons'
 import FadeUp from '@/components/ui/FadeUp'
 import { useLang } from '@/components/providers/LangProvider'
 
@@ -21,13 +21,23 @@ type Bubble = {
 }
 
 const BUBBLES: Bubble[] = [
-  { icon: siGooglesheets, top: '2%', left: '2%', size: 46, rot: -10, z: 2, dur: '7.5s', delay: '0s', amp: 6, dx: 3, rotAmp: 3 },
-  { icon: siGmail, top: '-1%', left: '33%', size: 42, rot: 9, z: 3, dur: '8.4s', delay: '-1.4s', amp: 7, dx: -4, rotAmp: -3 },
-  { icon: siGoogledocs, top: '5%', left: '64%', size: 40, rot: -7, z: 2, dur: '9.1s', delay: '-2.1s', amp: 6, dx: 4, rotAmp: 4 },
-  { icon: siWhatsapp, top: '30%', left: '4%', size: 50, rot: 6, z: 4, dur: '6.6s', delay: '-2.6s', amp: 8, dx: 4, rotAmp: 3 },
-  { icon: siTelegram, top: '18%', left: '76%', size: 40, rot: 13, z: 3, dur: '8.9s', delay: '-1.9s', amp: 6, dx: 4, rotAmp: 4 },
-  { icon: siNotion, top: '60%', left: '14%', size: 38, rot: 17, z: 2, dur: '7.8s', delay: '-3.3s', amp: 7, dx: -3, rotAmp: -4 },
-  { icon: siWhatsapp, top: '62%', left: '70%', size: 36, rot: 8, z: 2, dur: '8.2s', delay: '-2.8s', amp: 6, dx: -4, rotAmp: -3 },
+  { icon: siGooglesheets, top: '1%', left: '1%', size: 42, rot: -10, z: 2, dur: '7.5s', delay: '0s', amp: 6, dx: 3, rotAmp: 3 },
+  { icon: siGmail, top: '-2%', left: '28%', size: 38, rot: 9, z: 3, dur: '8.4s', delay: '-1.4s', amp: 7, dx: -4, rotAmp: -3 },
+  { icon: siHubspot, top: '3%', left: '52%', size: 40, rot: -6, z: 3, dur: '7s', delay: '-0.9s', amp: 7, dx: 4, rotAmp: -3 },
+  { icon: siGoogledocs, top: '0%', left: '78%', size: 36, rot: 11, z: 2, dur: '9.1s', delay: '-2.1s', amp: 6, dx: 4, rotAmp: 4 },
+  { icon: siWhatsapp, top: '32%', left: '2%', size: 46, rot: 6, z: 4, dur: '6.6s', delay: '-2.6s', amp: 8, dx: 4, rotAmp: 3 },
+  { icon: siAirtable, top: '40%', left: '40%', size: 36, rot: -8, z: 3, dur: '8.6s', delay: '-3.8s', amp: 6, dx: -3, rotAmp: 4 },
+  { icon: siTelegram, top: '20%', left: '82%', size: 38, rot: 13, z: 3, dur: '8.9s', delay: '-1.9s', amp: 6, dx: 4, rotAmp: 4 },
+  { icon: siNotion, top: '62%', left: '8%', size: 34, rot: 17, z: 2, dur: '7.8s', delay: '-3.3s', amp: 7, dx: -3, rotAmp: -4 },
+  { icon: siWhatsapp, top: '66%', left: '76%', size: 32, rot: 8, z: 2, dur: '8.2s', delay: '-2.8s', amp: 6, dx: -4, rotAmp: -3 },
+]
+
+// Friction artefacts — small note-cards that scream the mess. tone: 'alert' = red-ish.
+const NOTES: { key: string; top: string; left: string; rot: number; z: number; dur: string; delay: string; tone?: 'alert' }[] = [
+  { key: 'trans.chaos.quote', top: '16%', left: '8%', rot: -4, z: 7, dur: '9.2s', delay: '-1.1s', tone: 'alert' },
+  { key: 'trans.chaos.money', top: '52%', left: '52%', rot: 5, z: 7, dur: '8.1s', delay: '-2.4s', tone: 'alert' },
+  { key: 'trans.chaos.sms', top: '70%', left: '36%', rot: -6, z: 6, dur: '7.4s', delay: '-0.6s' },
+  { key: 'trans.chaos.forgot', top: '24%', left: '58%', rot: 3, z: 6, dur: '9.7s', delay: '-3.1s' },
 ]
 
 export default function Transformation() {
@@ -74,8 +84,28 @@ export default function Transformation() {
                   </span>
                 ))}
 
+                {/* Friction artefacts — small note-cards that scream the mess */}
+                {NOTES.map((n) => (
+                  <span
+                    key={n.key}
+                    className="baf-note-wrap"
+                    style={{ top: n.top, left: n.left, transform: `rotate(${n.rot}deg)`, zIndex: n.z }}
+                    aria-hidden="true"
+                  >
+                    <span
+                      className="baf-note-inner"
+                      style={{ ['--dur' as string]: n.dur, ['--d' as string]: n.delay, ['--amp' as string]: '5px', ['--dx' as string]: '-3px', ['--rot' as string]: '2deg' }}
+                    >
+                      <span className={`baf-note${n.tone === 'alert' ? ' baf-note-alert' : ''}`}>
+                        <span className="baf-note-dot" />
+                        {t(n.key as Parameters<typeof t>[0])}
+                      </span>
+                    </span>
+                  </span>
+                ))}
+
                 {/* Speech bubble — gibberish, in the middle of the pile */}
-                <span className="baf-logo baf-speech" style={{ top: '38%', left: '28%', width: 146, zIndex: 6 }} aria-hidden="true">
+                <span className="baf-logo baf-speech" style={{ top: '36%', left: '20%', width: 138, zIndex: 8 }} aria-hidden="true">
                   <span className="baf-speech-inner" style={{ ['--dur' as string]: '9.5s', ['--d' as string]: '-0.4s', ['--amp' as string]: '5px', ['--dx' as string]: '-3px', ['--rot' as string]: '2deg' }}>
                     <span className="baf-speech-card">
                       <span className="baf-speech-tail" />
@@ -228,6 +258,20 @@ export default function Transformation() {
         }
         .baf-gib { display: block; font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.12em; color: var(--text-secondary); opacity: 0.8; line-height: 1.5; }
         .baf-gib-wavy { opacity: 0.65; text-decoration: underline wavy; text-underline-offset: 4px; }
+
+        /* friction note-cards */
+        .baf-note-wrap { position: absolute; display: block; }
+        .baf-note-inner { display: block; animation: baf-float var(--dur, 8.5s) ease-in-out infinite; animation-delay: var(--d, 0s); }
+        .baf-note {
+          display: inline-flex; align-items: center; gap: 7px; white-space: nowrap;
+          font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.02em;
+          color: var(--text-secondary); background: var(--bg-card);
+          border: 1px solid var(--border); border-radius: 8px; padding: 6px 10px;
+          box-shadow: 0 1px 2px rgba(15,23,42,0.04), 0 6px 18px -12px rgba(15,23,42,0.18);
+        }
+        .baf-note-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--text-muted); opacity: 0.6; flex: none; }
+        .baf-note-alert { color: var(--accent); border-color: rgba(230,57,70,0.22); }
+        .baf-note-alert .baf-note-dot { background: var(--accent); opacity: 1; }
 
         /* brand */
         .baf-brand { display: flex; align-items: center; gap: 11px; }
