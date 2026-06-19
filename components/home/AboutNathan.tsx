@@ -41,6 +41,7 @@ export default function AboutNathan() {
               background: 'var(--bg-card)',
               border: '1px solid var(--border)',
               borderRadius: 12,
+              boxShadow: '0 1px 2px rgba(15, 23, 42, 0.04), 0 8px 24px -16px rgba(15, 23, 42, 0.12)',
               padding: '36px',
               display: 'grid',
               gridTemplateColumns: '120px 1fr',

@@ -28,6 +28,7 @@ export default function CredibilityBand() {
               borderRadius: 12,
               padding: 20,
               background: 'var(--bg-card)',
+              boxShadow: '0 1px 2px rgba(15, 23, 42, 0.04), 0 8px 24px -16px rgba(15, 23, 42, 0.12)',
             }}
           >
             {engagements.map(({ icon: Icon, text }, i) => (

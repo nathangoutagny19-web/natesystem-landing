@@ -28,8 +28,14 @@ export default function Process() {
           </p>
         </FadeUp>
 
-        {/* Steps */}
-        <div className="flex flex-col gap-[2px]">
+        {/* Steps — one connected group with app-style rounded corners + fine shadow */}
+        <div
+          className="flex flex-col gap-[2px] overflow-hidden"
+          style={{
+            borderRadius: 12,
+            boxShadow: '0 1px 2px rgba(15, 23, 42, 0.04), 0 8px 24px -16px rgba(15, 23, 42, 0.12)',
+          }}
+        >
           {steps.map((step, i) => (
             <FadeUp key={step.number} delay={i * 0.12}>
               <div
@@ -40,7 +46,23 @@ export default function Process() {
                   transition: 'border-color 0.3s, background 0.3s',
                 }}
               >
-                <span className="font-serif italic" style={{ fontSize: '48px', color: 'var(--accent)', opacity: 0.6 }}>
+                <span
+                  className="font-serif italic"
+                  aria-hidden="true"
+                  style={{
+                    fontSize: '34px',
+                    color: 'var(--accent)',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    width: 56,
+                    height: 56,
+                    borderRadius: 12,
+                    background: 'var(--accent-subtle)',
+                    border: '1px solid rgba(230,57,70,0.18)',
+                    flexShrink: 0,
+                  }}
+                >
                   {step.number}
                 </span>
                 <div>

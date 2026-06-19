@@ -495,7 +495,7 @@ html.light .mobile-cta { background: rgba(245,245,240,0.95); }
 }
 .faq-item.open .faq-icon { transform: rotate(45deg); color: var(--accent); }
 .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
-.faq-item.open .faq-answer { max-height: 300px; }
+.faq-item.open .faq-answer { max-height: 520px; }
 
 /* ——— EMAIL GATE MODAL ——— */
 .modal-overlay {

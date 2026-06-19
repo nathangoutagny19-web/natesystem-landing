@@ -1,12 +1,13 @@
 'use client'
 
 import Link from 'next/link'
-import { ArrowRight, Check } from 'lucide-react'
+import { ArrowRight, Check, ClipboardCheck, Boxes, Brain, type LucideIcon } from 'lucide-react'
 import FadeUp from '@/components/ui/FadeUp'
 import { useLang } from '@/components/providers/LangProvider'
 import { CAL_LINK } from '@/lib/constants'
 
 type Solution = {
+  icon: LucideIcon
   title: string
   target: string
   promise: string
@@ -21,6 +22,7 @@ export default function Solutions() {
 
   const solutions: Solution[] = [
     {
+      icon: ClipboardCheck,
       title: t('sols.s1.title'),
       target: t('sols.s1.target'),
       promise: t('sols.s1.promise'),
@@ -37,6 +39,7 @@ export default function Solutions() {
       ctaSub: t('sols.s1.ctaSub'),
     },
     {
+      icon: Boxes,
       title: t('sols.s2.title'),
       target: t('sols.s2.target'),
       promise: t('sols.s2.promise'),
@@ -53,6 +56,7 @@ export default function Solutions() {
       ctaSub: t('sols.s2.ctaSub'),
     },
     {
+      icon: Brain,
       title: t('sols.s3.title'),
       target: t('sols.s3.target'),
       promise: t('sols.s3.promise'),
@@ -95,7 +99,9 @@ export default function Solutions() {
         </FadeUp>
 
         <div className="sols-grid">
-          {solutions.map((s, i) => (
+          {solutions.map((s, i) => {
+            const Icon = s.icon
+            return (
             <FadeUp key={s.title} delay={i * 0.1}>
               <article
                 className="sols-card"
@@ -111,6 +117,25 @@ export default function Solutions() {
                   gap: 18,
                 }}
               >
+                {/* Icon-in-rounded-square (Impulse-style) — consistent across the 3 cards */}
+                <span
+                  aria-hidden="true"
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    width: 48,
+                    height: 48,
+                    borderRadius: 12,
+                    background: 'var(--accent-subtle)',
+                    border: '1px solid rgba(230,57,70,0.18)',
+                    color: 'var(--accent)',
+                    flexShrink: 0,
+                  }}
+                >
+                  <Icon size={22} strokeWidth={1.8} />
+                </span>
+
                 <h3
                   className="font-serif italic"
                   style={{
@@ -235,7 +260,8 @@ export default function Solutions() {
                 </p>
               </article>
             </FadeUp>
-          ))}
+            )
+          })}
         </div>
       </div>
 
