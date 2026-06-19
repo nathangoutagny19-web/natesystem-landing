@@ -145,6 +145,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   q: 'Est-ce que ça marche pour mon secteur ?',
                   a: 'Restauration, conseil, BTP, santé, retail — partout où il y a des opérations récurrentes et de la vraie donnée qui y circule. La stack s\'adapte. La méthode ne change pas.',
                 },
+                {
+                  q: 'Pourquoi maintenant ? Ça ne peut pas attendre ?',
+                  a: 'Ça peut — mais attendre a un coût. 20% des entreprises européennes (10+ employés) utilisent déjà l\'IA en 2025, contre 13,5% un an plus tôt. Les équipes qui l\'intègrent à leurs process clés libèrent 20 à 30% de leur temps de travail (McKinsey), et les PME qui l\'adoptent ont 2× plus de chances de croître d\'une année sur l\'autre (Salesforce). Chaque mois d\'attente est un mois où vos concurrents creusent l\'écart — et où vos équipes continuent de payer des tâches qu\'une infrastructure bien construite absorberait.',
+                },
+                {
+                  q: 'Quelles technologies utilisez-vous ? Mes données sont-elles en sécurité ?',
+                  a: 'On utilise les technologies les plus fiables et sécurisées du marché — Next.js, Supabase, Claude API, Vercel — hébergées en UE quand c\'est possible, RGPD-natives, auditables. Vos données et votre code sont protégés par la même stack que les équipes tech les plus exigeantes. Et on ne livre pas pour disparaître : on forme vos équipes jusqu\'à ce que tout le monde — du dirigeant au dernier opérateur — utilise le système au quotidien, en toute autonomie.',
+                },
               ].map((item) => ({
                 '@type': 'Question',
                 name: item.q,

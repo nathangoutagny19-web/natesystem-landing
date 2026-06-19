@@ -11,6 +11,7 @@ export default function Process() {
     { number: '01', title: t('process.step1'), duration: t('process.step1Duration'), desc: t('process.step1Desc'), highlight: t('process.step1Highlight') },
     { number: '02', title: t('process.step2'), duration: t('process.step2Duration'), desc: t('process.step2Desc'), highlight: t('process.step2Highlight') },
     { number: '03', title: t('process.step3'), duration: t('process.step3Duration'), desc: t('process.step3Desc'), highlight: t('process.step3Highlight') },
+    { number: '04', title: t('process.step4'), duration: t('process.step4Duration'), desc: t('process.step4Desc'), highlight: t('process.step4Highlight') },
   ]
 
   return (

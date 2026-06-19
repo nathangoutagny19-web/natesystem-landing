@@ -6,9 +6,7 @@ import ProductShowcase from '@/components/home/ProductShowcase'
 import CredibilityBand from '@/components/home/CredibilityBand'
 import ClientsBar from '@/components/home/ClientsBar'
 import Systems from '@/components/home/Systems'
-import Fomo from '@/components/home/Fomo'
 import Solutions from '@/components/home/Solutions'
-import Expertise from '@/components/home/Expertise'
 import Process from '@/components/home/Process'
 import CaseStudy from '@/components/home/CaseStudy'
 import AboutNathan from '@/components/home/AboutNathan'
@@ -35,37 +33,32 @@ export default function Home() {
       <Systems />
       <Divider />
 
-      {/* 5 — FOMO chiffrée (Eurostat 2025 / McKinsey / Salesforce) — déclic décision */}
-      <Fomo />
+      {/* 5 — Témoignage vidéo (short Chromosome) — preuve juste sous les cas concrets */}
+      <CaseStudy />
+      <Divider />
 
-      {/* 6 — 3 solutions : Plateforme Dédiée / Écosystème IA / Audit */}
+      {/* 6 — 3 solutions : Audit / Plateforme digitale / IA agentique */}
       <Solutions />
       <Divider />
 
-      {/* 7 — Expertise & valeurs : on rassure juste après l'offre */}
-      <Expertise />
-      <Divider />
-
-      {/* 8 — Méthode : audit → build → autonome */}
+      {/* 7 — Méthode : audit → build & déploiement → formation → optimisation */}
       <Process />
       <Divider />
 
-      {/* 9 — Témoignages : Catherine Chromosome + emplacement futurs avis */}
-      <CaseStudy />
-
-      {/* 10 — À propos Nathan */}
+      {/* 8 — À propos Nathan */}
       <AboutNathan />
       <Divider />
 
-      {/* 11 — FAQ */}
+      {/* 9 — FAQ (reprend aussi la data "pourquoi maintenant" + le stack technique,
+             ce qui a permis de retirer les sections FOMO et Expertise de la home) */}
       <Faq />
       <Divider />
 
-      {/* 12 — Bandeau crédibilité : 4 engagements fermes (réassurance avant conversion) */}
+      {/* 10 — Bandeau crédibilité : 4 engagements fermes (réassurance avant conversion) */}
       <CredibilityBand />
       <Divider />
 
-      {/* 13 — CTA final */}
+      {/* 11 — Prise de rendez-vous : embed Cal.com inline (zéro friction) */}
       <CtaFinal />
 
       <MobileCta />
