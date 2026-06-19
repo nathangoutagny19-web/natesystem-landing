@@ -316,16 +316,16 @@ export const translations = {
   'sols.s1.cta': { en: 'Start the audit', fr: 'Démarrer l\'audit' },
   'sols.s1.ctaSub': { en: '20 min · Free', fr: '20 min · Offert' },
   // Solution 2 — Plateforme sur-mesure
-  'sols.s2.title': { en: 'Custom platform', fr: 'Plateforme sur-mesure' },
+  'sols.s2.title': { en: 'Digital infrastructure', fr: 'Infrastructure digitale' },
   'sols.s2.target': { en: '', fr: '' },
   'sols.s2.promise': {
     en: 'We bring all your tools and all your data into one platform built for your business — yours, not one more subscription.',
     fr: 'On réunit tous vos outils et toutes vos données dans une seule plateforme conçue pour votre métier — la vôtre, pas un abonnement de plus.',
   },
-  'sols.s2.bullet1': { en: 'All your tools connected in one place', fr: 'Tous vos outils connectés au même endroit' },
-  'sols.s2.bullet2': { en: 'Your data centralised, readable at a glance', fr: 'Vos données centralisées, lisibles d\'un coup d\'œil' },
-  'sols.s2.bullet3': { en: 'Your repetitive tasks automated', fr: 'Vos tâches répétitives automatisées' },
-  'sols.s2.bullet4': { en: 'Your processes streamlined and optimised', fr: 'Vos process fluidifiés et optimisés' },
+  'sols.s2.bullet1': { en: 'A digital backbone that structures how your business runs', fr: 'Une colonne vertébrale digitale qui structure votre activité' },
+  'sols.s2.bullet2': { en: 'All your tools and data connected in one place', fr: 'Tous vos outils et données connectés au même endroit' },
+  'sols.s2.bullet3': { en: 'Your processes structured, streamlined and automated', fr: 'Vos process structurés, fluidifiés et automatisés' },
+  'sols.s2.bullet4': { en: 'Clear roles and workflows — your team knows what to do', fr: 'Rôles et workflows clairs — l\'équipe sait quoi faire' },
   'sols.s2.bullet5': { en: 'The code belongs to you, 100%', fr: 'Le code vous appartient à 100%' },
   'sols.s2.bullet6': { en: 'In production in 4 to 8 weeks · hosted in the EU', fr: 'En production en 4 à 8 semaines · hébergé en UE' },
   'sols.s2.ideal': {
