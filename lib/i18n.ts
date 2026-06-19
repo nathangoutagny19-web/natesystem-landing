@@ -148,8 +148,8 @@ export const translations = {
   'cta.title': { en: 'Tell us what you\'re building.', fr: 'Racontez-nous ce que vous construisez.' },
   'cta.titleAccent': { en: 'We\'ll tell you how to run it.', fr: 'On vous dira comment le faire tourner.' },
   'cta.sub': {
-    en: 'One form. One call. A clear view of the software your business actually needs — and what it would take to build it.',
-    fr: 'Un formulaire. Un appel. Une vision claire du logiciel dont votre activité a vraiment besoin — et de ce qu\'il faudrait pour le construire.',
+    en: 'One call. A clear view of the software your business actually needs — and what it would take to build it. Pick a slot below.',
+    fr: 'Un appel. Une vision claire du logiciel dont votre activité a vraiment besoin — et de ce qu\'il faudrait pour le construire. Choisissez un créneau ci-dessous.',
   },
   'cta.button': { en: 'Let\'s work together', fr: 'Travaillons ensemble' },
   'cta.r1': { en: '20 min call · free', fr: 'Appel 20 min · offert' },
