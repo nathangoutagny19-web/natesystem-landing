@@ -2,6 +2,7 @@ import Nav from '@/components/layout/Nav'
 import MobileCta from '@/components/layout/MobileCta'
 import WorkTogetherPrompt from '@/components/layout/WorkTogetherPrompt'
 import Hero from '@/components/home/Hero'
+import Transformation from '@/components/home/Transformation'
 import CredibilityBand from '@/components/home/CredibilityBand'
 import ClientsBar from '@/components/home/ClientsBar'
 import Systems from '@/components/home/Systems'
@@ -27,7 +28,12 @@ export default function Home() {
       <ClientsBar />
       <Divider />
 
-      {/* 3 — Bloc "cas concrets" : le marquee chiffré, puis le short témoignage.
+      {/* 3 — Transformation Avant/Après : le prospect se reconnaît dans le chaos,
+             puis se projette dans l'après fluide ("c'est mon cas"). */}
+      <Transformation />
+      <Divider />
+
+      {/* 4 — Bloc "cas concrets" : le marquee chiffré, puis le short témoignage.
              Resserrés sans Divider pour lire comme un seul bloc. */}
       <Systems />
       <CaseStudy />

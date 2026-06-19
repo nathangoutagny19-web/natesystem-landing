@@ -231,6 +231,29 @@ export const translations = {
   'systems.s5.metric': { en: '500 hours/year recovered at a 50-call/day construction SMB', fr: '500h/an récupérées sur une PME BTP de 50 SAV/jour' },
 
   // ───────────────────────────────────────────────────────────────
+  // Transformation — Avant / Après (identification + projection)
+  // ───────────────────────────────────────────────────────────────
+  'trans.label': { en: 'The transformation', fr: 'La transformation' },
+  'trans.title': { en: 'From tool-spaghetti', fr: 'De l\'outil-spaghetti' },
+  'trans.titleAccent': { en: 'to a system that runs.', fr: 'au système qui tourne.' },
+  'trans.beforeLabel': { en: 'Before', fr: 'Avant' },
+  'trans.afterLabel': { en: 'After', fr: 'Après' },
+  'trans.before1': { en: 'Excel, WhatsApp and ten tools that don\'t talk to each other', fr: 'Excel, WhatsApp et dix outils qui ne se parlent pas' },
+  'trans.before2': { en: 'Patched-up tools, never really fit for you', fr: 'Des outils bricolés, jamais vraiment adaptés' },
+  'trans.before3': { en: 'It drags on, it costs a lot — unmanaged costs', fr: 'Ça traîne, ça coûte cher — des coûts non maîtrisés' },
+  'trans.before4': { en: 'No clear view of your business', fr: 'Aucune vue claire sur votre activité' },
+  'trans.before5': { en: 'Poor organisation, time lost every day', fr: 'Mauvaise organisation, du temps perdu chaque jour' },
+  'trans.after1': { en: 'One platform, everything in one place', fr: 'Une seule plateforme, tout au même endroit' },
+  'trans.after2': { en: 'Custom-built, tailored to your business', fr: 'Du sur-mesure, taillé pour votre métier' },
+  'trans.after3': { en: 'Managed costs, a measured ROI', fr: 'Des coûts maîtrisés, un ROI chiffré' },
+  'trans.after4': { en: 'Clear dashboards, in real time', fr: 'Des tableaux de bord clairs, en temps réel' },
+  'trans.after5': { en: 'Organised teams, time won back', fr: 'Des équipes organisées, du temps regagné' },
+  'trans.punch': {
+    en: 'Our clients were exactly there. Today, they\'re on the other side.',
+    fr: 'Nos clients étaient exactement là. Aujourd\'hui, ils sont de l\'autre côté.',
+  },
+
+  // ───────────────────────────────────────────────────────────────
   // Comparatif — NateSystem vs prestataire classique (lève l'objection
   // "pourquoi pas une agence / un dev classique ?")
   // ───────────────────────────────────────────────────────────────
