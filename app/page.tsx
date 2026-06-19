@@ -53,17 +53,17 @@ export default function Home() {
       <AboutNathan />
       <Divider />
 
-      {/* 7 — Bandeau crédibilité : 4 engagements fermes (réassurance avant conversion) */}
-      <CredibilityBand />
-      <Divider />
-
-      {/* 8 — Prise de rendez-vous : embed Cal.com inline (zéro friction) */}
+      {/* 7 — Prise de rendez-vous : embed Cal.com inline (zéro friction) */}
       <CtaFinal />
       <Divider />
 
-      {/* 9 — FAQ en dernier (reprend aussi la data "pourquoi maintenant" + le stack
-             technique, ce qui a permis de retirer FOMO et Expertise de la home) */}
+      {/* 8 — FAQ (reprend aussi la data "pourquoi maintenant" + le stack technique,
+             ce qui a permis de retirer FOMO et Expertise de la home) */}
       <Faq />
+      <Divider />
+
+      {/* 9 — Bandeau crédibilité : 4 engagements fermes, tout en bas avant le footer */}
+      <CredibilityBand />
 
       <Footer />
 
