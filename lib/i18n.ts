@@ -275,6 +275,8 @@ export const translations = {
     en: 'Our clients were exactly there. Today, they\'re on the other side.',
     fr: 'Nos clients étaient exactement là. Aujourd\'hui, ils sont de l\'autre côté.',
   },
+  'trans.aiLabel': { en: 'AI', fr: 'IA' },
+  'trans.aiTag': { en: 'AI powered', fr: 'AI powered' },
 
   // ───────────────────────────────────────────────────────────────
   // Comparatif — NateSystem vs prestataire classique (lève l'objection
