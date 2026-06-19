@@ -231,6 +231,38 @@ export const translations = {
   'systems.s5.metric': { en: '500 hours/year recovered at a 50-call/day construction SMB', fr: '500h/an récupérées sur une PME BTP de 50 SAV/jour' },
 
   // ───────────────────────────────────────────────────────────────
+  // Comparatif — NateSystem vs prestataire classique (lève l'objection
+  // "pourquoi pas une agence / un dev classique ?")
+  // ───────────────────────────────────────────────────────────────
+  'cmp.label': { en: 'The honest comparison', fr: 'La comparaison honnête' },
+  'cmp.title': { en: 'Why not a traditional agency', fr: 'Pourquoi pas une agence' },
+  'cmp.titleAccent': { en: 'or developer?', fr: 'ou un dev classique ?' },
+  'cmp.sub': {
+    en: 'The question we hear most. Here\'s the difference — honestly.',
+    fr: 'La question qu\'on nous pose le plus. Voici la différence, honnêtement.',
+  },
+  'cmp.colOther': { en: 'Traditional provider', fr: 'Prestataire classique' },
+  'cmp.colUs': { en: 'NateSystem', fr: 'NateSystem' },
+  'cmp.r1.crit': { en: 'The code', fr: 'Le code' },
+  'cmp.r1.other': { en: 'They keep it — you stay dependent', fr: 'Ils le gardent — vous restez dépendant' },
+  'cmp.r1.us': { en: '100% yours, delivered', fr: '100% à vous, livré' },
+  'cmp.r2.crit': { en: 'What gets built', fr: 'Ce qu\'on construit' },
+  'cmp.r2.other': { en: 'Often a template adapted to you', fr: 'Souvent un template adapté' },
+  'cmp.r2.us': { en: 'Tailored to your business', fr: 'Taillé sur votre métier' },
+  'cmp.r3.crit': { en: 'AI', fr: 'L\'IA' },
+  'cmp.r3.other': { en: 'Absent or a gimmick', fr: 'Absente ou gadget' },
+  'cmp.r3.us': { en: 'Integrated where it saves real hours', fr: 'Intégrée là où elle fait gagner des heures' },
+  'cmp.r4.crit': { en: 'During the project', fr: 'Pendant le projet' },
+  'cmp.r4.other': { en: 'A black box — you wait', fr: 'Boîte noire — vous attendez' },
+  'cmp.r4.us': { en: 'You follow progress in real time', fr: 'Vous suivez en direct' },
+  'cmp.r5.crit': { en: 'After delivery', fr: 'Après la livraison' },
+  'cmp.r5.other': { en: 'They drop you', fr: 'On vous lâche' },
+  'cmp.r5.us': { en: 'Training to autonomy, then we stay', fr: 'Formation jusqu\'à l\'autonomie, puis on reste' },
+  'cmp.r6.crit': { en: 'Your data', fr: 'Vos données' },
+  'cmp.r6.other': { en: 'Often outside the EU', fr: 'Souvent hors UE' },
+  'cmp.r6.us': { en: 'Hosted in the EU, GDPR-native', fr: 'Hébergées en UE, RGPD-natif' },
+
+  // ───────────────────────────────────────────────────────────────
   // 3 Solutions (cards à la Exploria)
   // ───────────────────────────────────────────────────────────────
   'sols.label': { en: 'Our solutions', fr: 'Nos solutions' },
