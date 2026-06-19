@@ -205,10 +205,20 @@ export default function Nav() {
               <Link href="/resources" className="nav-link nav-link-dropdown">
                 {t('nav.resources')} <Chevron />
               </Link>
-              <div className="nav-mega nav-mega-sm">
-                <div className="nav-mega-inner nav-mega-inner-single">
-                  <MegaItem href="/resources#case-studies" icon={icons.caseStudy} title={t('resources.caseStudies')} desc={t('resources.caseStudies.desc')} />
-                  <MegaItem href="/blog" icon={icons.blog} title={t('resources.blog')} desc={t('resources.blog.desc')} />
+              <div className="nav-mega nav-mega-2col">
+                <div className="nav-mega-inner">
+                  <div className="nav-mega-col">
+                    <p className="nav-mega-label">{t('nav.resources')}</p>
+                    <MegaItem href="/resources#case-studies" icon={icons.caseStudy} title={t('resources.caseStudies')} desc={t('resources.caseStudies.desc')} />
+                    <MegaItem href="/blog" icon={icons.blog} title={t('resources.blog')} desc={t('resources.blog.desc')} />
+                  </div>
+                  <div className="nav-mega-col">
+                    <p className="nav-mega-label">{t('mega.playbooks')}</p>
+                    <MegaItem href="/playbook/hoteliers-independants" icon={icons.building} title={t('playbooks.hotels.title')} desc={t('playbooks.hotels.desc')} />
+                    <MegaItem href="/playbook/avocats-affaires" icon={icons.scale} title={t('playbooks.lawyers.title')} desc={t('playbooks.lawyers.desc')} />
+                    <MegaItem href="/playbook/expertise-comptable" icon={icons.receipt} title={t('playbooks.accountants.title')} desc={t('playbooks.accountants.desc')} />
+                    <MegaItem href="/playbook" icon={icons.book} title={t('playbooks.all.title')} desc={t('playbooks.all.desc')} />
+                  </div>
                 </div>
               </div>
             </div>
@@ -306,6 +316,10 @@ export default function Nav() {
           <MobileAccordion label={t('nav.resources')} open={mobileResourcesOpen} onToggle={() => setMobileResourcesOpen(!mobileResourcesOpen)}>
             <MobileLink href="/resources#case-studies" onClick={() => setMenuOpen(false)}>{t('resources.caseStudies')}</MobileLink>
             <MobileLink href="/blog" onClick={() => setMenuOpen(false)}>{t('resources.blog')}</MobileLink>
+            <MobileLink href="/playbook/hoteliers-independants" onClick={() => setMenuOpen(false)}>{t('playbooks.hotels.title')}</MobileLink>
+            <MobileLink href="/playbook/avocats-affaires" onClick={() => setMenuOpen(false)}>{t('playbooks.lawyers.title')}</MobileLink>
+            <MobileLink href="/playbook/expertise-comptable" onClick={() => setMenuOpen(false)}>{t('playbooks.accountants.title')}</MobileLink>
+            <MobileLink href="/playbook" onClick={() => setMenuOpen(false)}>{t('playbooks.all.title')}</MobileLink>
           </MobileAccordion>
 
           <div className="flex gap-2 mt-4 flex-wrap">

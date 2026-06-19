@@ -312,7 +312,7 @@ export const translations = {
   'sols.s2.cta': { en: 'Start the audit', fr: 'Démarrer l\'audit' },
   'sols.s2.ctaSub': { en: '20 min · Free', fr: '20 min · Offert' },
   // Solution 3 — IA agentique
-  'sols.s3.title': { en: 'Agentic AI', fr: 'IA agentique' },
+  'sols.s3.title': { en: 'AI integration', fr: 'Intégration IA' },
   'sols.s3.target': { en: '', fr: '' },
   'sols.s3.promise': {
     en: 'An AI that truly works for you: it has memory, learns your business, carries out tasks end to end and improves over time.',

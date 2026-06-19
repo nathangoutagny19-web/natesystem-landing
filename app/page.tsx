@@ -2,7 +2,6 @@ import Nav from '@/components/layout/Nav'
 import MobileCta from '@/components/layout/MobileCta'
 import WorkTogetherPrompt from '@/components/layout/WorkTogetherPrompt'
 import Hero from '@/components/home/Hero'
-import ProductShowcase from '@/components/home/ProductShowcase'
 import CredibilityBand from '@/components/home/CredibilityBand'
 import ClientsBar from '@/components/home/ClientsBar'
 import Systems from '@/components/home/Systems'
@@ -28,11 +27,9 @@ export default function Home() {
       <ClientsBar />
       <Divider />
 
-      {/* 3 — Bloc "cas concrets" : le marquee chiffré, puis la mockup produit
-             (un exemple concret, bientôt d'autres vidéos), puis le short
-             témoignage. Resserrés sans Divider pour lire comme un seul bloc. */}
+      {/* 3 — Bloc "cas concrets" : le marquee chiffré, puis le short témoignage.
+             Resserrés sans Divider pour lire comme un seul bloc. */}
       <Systems />
-      <ProductShowcase />
       <CaseStudy />
       <Divider />
 
@@ -40,21 +37,21 @@ export default function Home() {
       <Solutions />
       <Divider />
 
-      {/* 5 — Comparatif vs prestataire classique : lève la dernière objection
-             avant la méthode (la marche manquante de l'escalier de conversion) */}
-      <Comparison />
-      <Divider />
-
-      {/* 6 — Méthode : audit → build & déploiement → formation → optimisation */}
+      {/* 5 — Méthode : audit → build & déploiement → formation → optimisation */}
       <Process />
       <Divider />
 
-      {/* 6 — À propos Nathan */}
-      <AboutNathan />
+      {/* 6 — Comparatif vs prestataire classique : lève l'objection juste après
+             avoir montré la méthode */}
+      <Comparison />
       <Divider />
 
-      {/* 7 — Prise de rendez-vous : embed Cal.com inline (zéro friction) */}
+      {/* 6 — Prise de rendez-vous : embed Cal.com inline (zéro friction) */}
       <CtaFinal />
+      <Divider />
+
+      {/* 7 — À propos Nathan : qui construit, juste après l'invitation à réserver */}
+      <AboutNathan />
       <Divider />
 
       {/* 8 — FAQ (reprend aussi la data "pourquoi maintenant" + le stack technique,
