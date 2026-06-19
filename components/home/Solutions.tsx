@@ -102,7 +102,7 @@ export default function Solutions() {
                 style={{
                   background: 'var(--bg-card)',
                   border: '1px solid var(--border)',
-                  borderRadius: 14,
+                  borderRadius: 12,
                   padding: '36px 32px 32px',
                   height: '100%',
                   display: 'flex',
@@ -249,6 +249,8 @@ export default function Solutions() {
 
         /* Card hover : lift léger + accent border + glow subtil */
         .sols-card {
+          /* App-style resting shadow so white cards lift off the cold-grey surface */
+          box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04), 0 4px 12px -8px rgba(15, 23, 42, 0.08);
           transition: transform 280ms cubic-bezier(0.22, 1, 0.36, 1),
                       border-color 280ms ease,
                       box-shadow 280ms ease;

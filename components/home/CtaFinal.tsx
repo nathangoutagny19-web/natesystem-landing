@@ -71,7 +71,7 @@ export default function CtaFinal() {
             style={{
               background: 'var(--bg-card)',
               border: '1px solid var(--border)',
-              borderRadius: 16,
+              borderRadius: 12,
               overflow: 'hidden',
               minHeight: 640,
               textAlign: 'left',

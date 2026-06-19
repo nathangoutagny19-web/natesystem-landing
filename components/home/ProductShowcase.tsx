@@ -95,7 +95,7 @@ export default function ProductShowcase() {
       <style jsx>{`
         .showcase-frame {
           position: relative;
-          border-radius: 14px;
+          border-radius: 12px;
           overflow: hidden;
           border: 1px solid var(--border);
           background: var(--bg-card);

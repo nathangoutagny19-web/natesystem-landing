@@ -63,9 +63,10 @@ export default function Comparison() {
       <style jsx>{`
         .cmp-table {
           border: 1px solid var(--border);
-          border-radius: 16px;
+          border-radius: 12px;
           overflow: hidden;
           background: var(--bg-card);
+          box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04), 0 8px 24px -16px rgba(15, 23, 42, 0.12);
         }
         .cmp-row {
           display: grid;

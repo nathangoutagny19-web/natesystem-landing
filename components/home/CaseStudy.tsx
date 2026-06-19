@@ -112,7 +112,7 @@ export default function CaseStudy() {
             style={{
               background: 'var(--bg-card)',
               border: '1px solid var(--border)',
-              borderRadius: '16px',
+              borderRadius: '12px',
               maxWidth: '960px',
               margin: '0 auto',
               padding: 'clamp(32px, 5vw, 56px)',

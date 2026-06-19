@@ -40,7 +40,7 @@ export default function AboutNathan() {
             style={{
               background: 'var(--bg-card)',
               border: '1px solid var(--border)',
-              borderRadius: 14,
+              borderRadius: 12,
               padding: '36px',
               display: 'grid',
               gridTemplateColumns: '120px 1fr',
