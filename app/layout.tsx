@@ -131,7 +131,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 },
                 {
                   q: 'Le système restera-t-il fiable une fois en production ?',
-                  a: '99,9 % de SLA de disponibilité en production. Monitoring actif avec alertes automatiques, sauvegardes automatiques toutes les 6 heures stockées sur deux régions, 24 h de fenêtre de réponse sur les incidents critiques. Après la période de 90 jours post-lancement, vous choisissez : un contrat de maintenance, ou une passation complète avec documentation à votre équipe.',
+                  a: 'Oui. Il est surveillé en permanence, sauvegardé automatiquement plusieurs fois par jour, et on intervient vite en cas de souci. Concrètement : il tourne, et s\'il y a un pépin, c\'est réglé avant que ça vous gêne. Après les 3 premiers mois, vous choisissez : on continue d\'assurer la maintenance, ou on passe tout à votre équipe avec la documentation.',
                 },
                 {
                   q: 'Quelles automatisations et fonctionnalités IA peuvent être intégrées ?',
@@ -151,7 +151,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 },
                 {
                   q: 'Quelles technologies utilisez-vous ? Mes données sont-elles en sécurité ?',
-                  a: 'On utilise les technologies les plus fiables et sécurisées du marché — Next.js, Supabase, Claude API, Vercel — hébergées en UE quand c\'est possible, RGPD-natives, auditables. Vos données et votre code sont protégés par la même stack que les équipes tech les plus exigeantes. Et on ne livre pas pour disparaître : on forme vos équipes jusqu\'à ce que tout le monde — du dirigeant au dernier opérateur — utilise le système au quotidien, en toute autonomie.',
+                  a: 'On utilise les technologies les plus fiables et reconnues du marché — les mêmes que les grandes entreprises tech. Vos données sont hébergées en Europe, protégées et conformes RGPD. Et tout vous appartient : le code est à vous, vous n\'êtes prisonnier de personne. (Pour les curieux : Next.js, Supabase, Claude API, Vercel — du standard solide.)',
                 },
               ].map((item) => ({
                 '@type': 'Question',

@@ -7,6 +7,7 @@ import CredibilityBand from '@/components/home/CredibilityBand'
 import ClientsBar from '@/components/home/ClientsBar'
 import Systems from '@/components/home/Systems'
 import Solutions from '@/components/home/Solutions'
+import Twist from '@/components/home/Twist'
 import Comparison from '@/components/home/Comparison'
 import Process from '@/components/home/Process'
 import CaseStudy from '@/components/home/CaseStudy'
@@ -43,7 +44,12 @@ export default function Home() {
       <Solutions />
       <Divider />
 
-      {/* 5 — Méthode : audit → build & déploiement → formation → optimisation */}
+      {/* 5 — Twist "On ne fait pas que du logiciel" : le cœur bénéfices,
+             juste avant la méthode */}
+      <Twist />
+      <Divider />
+
+      {/* 6 — Méthode : audit → build & déploiement → formation → optimisation */}
       <Process />
       <Divider />
 

@@ -8,7 +8,7 @@ export const translations = {
 
   // Hero
   'hero.label': { en: 'Digital structuring · Custom software · AI integration', fr: 'Structuration digitale · Logiciel sur-mesure · Intégration IA' },
-  'hero.titlePrefix': { en: 'We build custom software & platforms that boost your', fr: 'On développe des logiciels & plateformes sur-mesure qui vous font gagner en' },
+  'hero.titlePrefix': { en: 'We build custom software & platforms that boost your', fr: 'On construit des logiciels & plateformes sur-mesure qui vous font gagner en' },
   // Rotating words (pipe-separated, cycled in the hero). Final benefits the ICP desires, not the mechanisms.
   'hero.titleWords': { en: 'profitability|productivity|responsiveness|reliability', fr: 'rentabilité|productivité|réactivité|fiabilité' },
   'hero.sub': {
@@ -112,29 +112,29 @@ export const translations = {
     en: 'You always know where we stand and where we\'re going. Four steps, each with a concrete deliverable — and we don\'t consider the job done until your teams are autonomous.',
     fr: 'Vous savez toujours où on en est et où on va. Quatre étapes, un livrable concret à chacune — et on ne considère la mission terminée que lorsque vos équipes sont autonomes.',
   },
-  'process.step1': { en: 'First — Audit', fr: 'D\'abord — Audit' },
-  'process.step1Duration': { en: '20 min · Free', fr: '20 min · Offert' },
+  'process.step1': { en: 'First — Audit & diagnosis', fr: 'D\'abord — Audit & diagnostic' },
+  'process.step1Duration': { en: 'Free discovery call · 20 min', fr: 'Appel découverte offert · 20 min' },
   'process.step1Desc': {
-    en: 'We analyse your operations, map your current tools, identify where AI — agentic, automation, data analytics — delivers immediate ROI. You leave with a clear, costed, executable plan, even if we don\'t end up working together.',
-    fr: 'On analyse vos opérations, on cartographie vos outils actuels, on identifie où l\'IA — agentique, automatisation, data analytics — délivre un ROI immédiat. Vous repartez avec un plan clair, chiffré, exécutable, même si on ne travaille pas ensemble.',
+    en: 'We start with a free 20-minute call to understand your situation. Then, in the audit, we map your processes, structure everything — who does what, in what order — and pinpoint where we can save you time. You leave with a clear, costed plan, even if we don\'t work together.',
+    fr: 'On commence par un appel de 20 min, offert, pour comprendre votre situation. Puis, en audit, on cartographie vos process, on structure tout — qui fait quoi, dans quel ordre — et on repère où on peut vous faire gagner du temps. Vous repartez avec un plan clair et chiffré, même si on ne travaille pas ensemble.',
   },
   'process.step2': { en: 'Then — Build & deploy', fr: 'Ensuite — Construction & déploiement' },
   'process.step2Duration': { en: '4 to 8 weeks', fr: '4 à 8 semaines' },
   'process.step2Desc': {
-    en: 'We build your custom software and integrate AI around your business. Unified database, dashboards, agentic AI, automation, data analytics, integrations. Fixed scope, fixed price, weekly demos. Then we deploy on your infrastructure.',
-    fr: 'On construit votre logiciel sur-mesure et on y intègre l\'IA sur votre métier. Base de données unifiée, dashboards, IA agentique, automatisation, data analytics, intégrations. Périmètre fixe, prix fixe, démos hebdomadaires. Puis on déploie sur votre infrastructure.',
+    en: 'We build your custom software and add AI where it makes you gain. Price and timeline fixed up front, a check-in every week to see progress. Then we install it for you.',
+    fr: 'On construit votre logiciel sur-mesure et on y met l\'IA là où elle vous fait gagner. Prix et délai fixés d\'avance, point chaque semaine pour voir l\'avancée. Puis on l\'installe chez vous.',
   },
   'process.step3': { en: 'Then — Training & support', fr: 'Ensuite — Formation & accompagnement' },
   'process.step3Duration': { en: 'Until full autonomy', fr: 'Jusqu\'à l\'autonomie complète' },
   'process.step3Desc': {
-    en: 'A test period validates everything before go-live. Then we train and support every member of your teams — from the executive to the last operator — until they use the system daily, on their own. Nobody is left behind.',
-    fr: 'Une période de test valide tout avant la mise en service. Ensuite on forme et on accompagne chaque membre de vos équipes — du dirigeant au dernier opérateur — jusqu\'à ce qu\'ils utilisent le système au quotidien, en toute autonomie. Personne n\'est laissé de côté.',
+    en: 'We test everything before launch. Then we train every person on your teams — from the executive to the field — until they use it on their own, without us. Nobody is left behind.',
+    fr: 'On teste tout avant de lancer. Puis on forme chaque personne de vos équipes — du dirigeant au terrain — jusqu\'à ce qu\'ils s\'en servent seuls, sans nous. Personne n\'est laissé de côté.',
   },
   'process.step4': { en: 'Finally — Optimise & improve', fr: 'Enfin — Optimisation & amélioration continue' },
   'process.step4Duration': { en: 'Ongoing · optional', fr: 'En continu · optionnel' },
   'process.step4Desc': {
-    en: 'After a few weeks of real use, we measure the concrete effects, track what works, and adjust. Then, if you want, we stay by your side to optimise and grow your systems at your pace. We don\'t ship and disappear.',
-    fr: 'Après quelques semaines d\'usage réel, on mesure les effets concrets, on suit ce qui marche, et on ajuste. Ensuite, si vous le souhaitez, on reste à vos côtés pour optimiser et faire évoluer vos systèmes à votre rythme. On ne livre pas pour disparaître.',
+    en: 'After a few weeks of real use, we look at what works and adjust. And if you want, we stay by your side to grow your software at your pace.',
+    fr: 'Après quelques semaines d\'usage, on regarde ce qui marche et on ajuste. Et si vous voulez, on reste à vos côtés pour faire évoluer votre logiciel à votre rythme.',
   },
   'process.step1Highlight': { en: 'Free strategic audit', fr: 'Audit stratégique offert' },
   'process.step2Highlight': { en: 'Infrastructure setup', fr: 'Infrastructure sur-mesure' },
@@ -180,11 +180,11 @@ export const translations = {
   // Systems — recurring cases (5 AI systems + 3 custom software)
   // ───────────────────────────────────────────────────────────────
   'systems.label': { en: 'Real use cases', fr: 'Cas concrets' },
-  'systems.title': { en: 'What we build.', fr: 'Ce qu\'on construit.' },
-  'systems.titleAccent': { en: 'Concrete results.', fr: 'Des résultats concrets.' },
+  'systems.title': { en: 'Real proof,', fr: 'Du concret,' },
+  'systems.titleAccent': { en: 'not promises.', fr: 'pas des promesses.' },
   'systems.sub': {
-    en: 'AI systems where they replace real hours, and custom software where they replace your SaaS-spaghetti. Nothing is deployed unless we can chiffer its ROI within the first weeks.',
-    fr: 'Des systèmes IA là où ils remplacent de vraies heures, et des logiciels métier sur-mesure là où ils remplacent votre SaaS-spaghetti. Rien n\'est déployé si on ne peut pas chiffrer son ROI dans les premières semaines.',
+    en: 'Custom software and AI solutions we actually built and deployed. Every number is real, measured with the client — and we never ship anything that doesn\'t save time or money.',
+    fr: 'Des logiciels sur-mesure et des solutions IA qu\'on a vraiment construits et déployés. Chaque chiffre est réel, mesuré avec le client — et on ne lance rien qui ne fasse pas gagner du temps ou de l\'argent.',
   },
   'systems.groupAI': { en: 'AI systems', fr: 'Systèmes IA' },
   'systems.groupSoft': { en: 'Custom software', fr: 'Logiciels métier sur-mesure' },
@@ -230,6 +230,28 @@ export const translations = {
   'systems.s5.title': { en: 'Automatic internal reporting', fr: 'Reporting interne automatique' },
   'systems.s5.desc': { en: 'CRM + accounting + project collection, analysis, push to Slack or Teams. No new dashboard.', fr: 'Collecte CRM + compta + projet, analyse, push dans Slack ou Teams. Pas de nouveau dashboard.' },
   'systems.s5.metric': { en: '500 hours/year recovered at a 50-call/day construction SMB', fr: '500h/an récupérées sur une PME BTP de 50 SAV/jour' },
+
+  // ───────────────────────────────────────────────────────────────
+  // Twist — "On ne fait pas que du logiciel" (le cœur bénéfices, avant la Méthode)
+  // ───────────────────────────────────────────────────────────────
+  'twist.label': { en: 'What really changes', fr: 'Ce qu\'on change vraiment' },
+  'twist.title': { en: 'We don\'t just build software.', fr: 'On ne fait pas que du logiciel.' },
+  'twist.sub': {
+    en: 'Software is the tool. What you gain from it — that\'s what counts.',
+    fr: 'Le logiciel, c\'est l\'outil. Ce que vous y gagnez, c\'est ça qui compte.',
+  },
+  'twist.b1.title': { en: 'Time won back', fr: 'Du temps regagné' },
+  'twist.b1.desc': { en: 'Hours reclaimed every week on admin, data entry and coordination — automated or removed.', fr: 'Des heures reprises chaque semaine sur l\'administratif, la saisie et la coordination — automatisées ou supprimées.' },
+  'twist.b2.title': { en: 'More profitability', fr: 'Plus de rentabilité' },
+  'twist.b2.desc': { en: 'One tool instead of 34 to pay for. Costs under control, margins recovered, fewer costly mistakes.', fr: 'Un seul outil au lieu de 34 logiciels à payer. Coûts maîtrisés, marges récupérées, moins d\'erreurs qui coûtent cher.' },
+  'twist.b3.title': { en: 'Clear decisions', fr: 'Des décisions claires' },
+  'twist.b3.desc': { en: 'Your data organised in real time, in one place. You decide on facts, fast, not on gut feeling.', fr: 'Vos données organisées en temps réel, au même endroit. Vous décidez sur du concret, vite, pas au feeling.' },
+  'twist.b4.title': { en: 'A team in sync', fr: 'Une équipe alignée' },
+  'twist.b4.desc': { en: 'Everyone in one place, everyone knows what to do — and the know-how stays in the system, even when someone leaves. The software takes the routine tasks: your teams free up for what truly creates value, like customer relationships.', fr: 'Tout le monde au même endroit, chacun sait quoi faire — et le savoir reste dans le système, même quand quelqu\'un part. Le logiciel prend les tâches routinières : vos équipes se libèrent pour ce qui crée vraiment de la valeur, comme la relation client.' },
+  'twist.b5.title': { en: 'It runs, calmly', fr: 'Ça tourne, sereinement' },
+  'twist.b5.desc': { en: 'No more lost items, no more chaos. The system is reliable, you pilot with peace of mind.', fr: 'Plus de trucs qui se perdent, plus de chaos. Le système est fiable, vous pilotez tranquille.' },
+  'twist.b6.title': { en: 'AI that improves on its own', fr: 'Une IA qui s\'améliore seule' },
+  'twist.b6.desc': { en: 'Agentic AI with persistent memory: it improves with every use and can take on high-value tasks.', fr: 'Une IA agentique avec mémoire persistante : elle progresse à chaque utilisation et peut gérer des tâches à haute valeur ajoutée.' },
 
   // ───────────────────────────────────────────────────────────────
   // Transformation — Avant / Après (identification + projection)
@@ -289,12 +311,12 @@ export const translations = {
   // ───────────────────────────────────────────────────────────────
   // 3 Solutions (cards à la Exploria)
   // ───────────────────────────────────────────────────────────────
-  'sols.label': { en: 'Our solutions', fr: 'Nos solutions' },
-  'sols.title': { en: 'Three entry doors.', fr: 'Trois portes d\'entrée.' },
-  'sols.titleAccent': { en: 'One execution standard.', fr: 'Un seul standard d\'exécution.' },
+  'sols.label': { en: 'Our approach', fr: 'Notre approche' },
+  'sols.title': { en: 'We understand first.', fr: 'On comprend.' },
+  'sols.titleAccent': { en: 'Then we build custom.', fr: 'On construit sur-mesure.' },
   'sols.sub': {
-    en: 'Rarely one or the other. Starting from the audit, we build the solution that fits your needs: a custom digital ecosystem — your platform, with just the right amount of automation and AI, no more, no less.',
-    fr: 'Rarement l\'un ou l\'autre. À partir de l\'audit, on construit la solution qui colle à vos besoins : un écosystème digital sur-mesure — votre plateforme, avec ce qu\'il faut d\'automatisation et d\'IA, ni plus ni moins.',
+    en: 'We start from your business and how you really work, then assemble what you need: software, a platform, AI where it makes you gain.',
+    fr: 'On part de votre métier, on assemble ce qu\'il vous faut : logiciel, plateforme, IA là où elle vous fait gagner.',
   },
   // Solution 1 — Audit (porte d'entrée)
   'sols.s1.badge': { en: '', fr: '' },
@@ -700,8 +722,8 @@ export const translations = {
   // Q3 — reliability + SLA
   'faq.q3': { en: 'Will the system stay reliable once it\'s live?', fr: 'Le système restera-t-il fiable une fois en production ?' },
   'faq.a3': {
-    en: '99.9% uptime SLA on production. Active monitoring with automatic alerts, automated backups every 6 hours stored across two regions, 24-hour response window on critical incidents. After the 90-day post-launch period, you choose: an ongoing maintenance contract, or a full hand-off with documentation to your own team.',
-    fr: '99,9 % de SLA de disponibilité en production. Monitoring actif avec alertes automatiques, sauvegardes automatiques toutes les 6 heures stockées sur deux régions, 24 h de fenêtre de réponse sur les incidents critiques. Après la période de 90 jours post-lancement, vous choisissez : un contrat de maintenance, ou une passation complète avec documentation à votre équipe.',
+    en: 'Yes. It\'s monitored around the clock, backed up automatically several times a day, and we step in fast if anything goes wrong. In plain terms: it runs, and if there\'s a glitch it\'s fixed before it gets in your way. After the first 3 months, you choose: we keep handling maintenance, or we hand everything over to your team with the documentation.',
+    fr: 'Oui. Il est surveillé en permanence, sauvegardé automatiquement plusieurs fois par jour, et on intervient vite en cas de souci. Concrètement : il tourne, et s\'il y a un pépin, c\'est réglé avant que ça vous gêne. Après les 3 premiers mois, vous choisissez : on continue d\'assurer la maintenance, ou on passe tout à votre équipe avec la documentation.',
   },
 
   // Q4 — automations + AI catalog (concrete, not buzzwords)
@@ -731,8 +753,8 @@ export const translations = {
   },
   'faq.q8': { en: 'What technologies do you use? Is my data safe?', fr: 'Quelles technologies utilisez-vous ? Mes données sont-elles en sécurité ?' },
   'faq.a8': {
-    en: 'We use the most reliable, secure technologies on the market — Next.js, Supabase, Claude API, Vercel — hosted in the EU whenever possible, GDPR-native and auditable. Your data and your code are protected by the same stack the most demanding tech teams rely on. And we don\'t ship and disappear: we train your teams until everyone — from the executive to the last operator — uses the system daily, on their own.',
-    fr: 'On utilise les technologies les plus fiables et sécurisées du marché — Next.js, Supabase, Claude API, Vercel — hébergées en UE quand c\'est possible, RGPD-natives, auditables. Vos données et votre code sont protégés par la même stack que les équipes tech les plus exigeantes. Et on ne livre pas pour disparaître : on forme vos équipes jusqu\'à ce que tout le monde — du dirigeant au dernier opérateur — utilise le système au quotidien, en toute autonomie.',
+    en: 'We use the most reliable, recognised technologies on the market — the same ones big tech companies rely on. Your data is hosted in Europe, protected and GDPR-compliant. And everything is yours: the code belongs to you, you\'re no one\'s prisoner. (For the curious: Next.js, Supabase, Claude API, Vercel — solid standards.)',
+    fr: 'On utilise les technologies les plus fiables et reconnues du marché — les mêmes que les grandes entreprises tech. Vos données sont hébergées en Europe, protégées et conformes RGPD. Et tout vous appartient : le code est à vous, vous n\'êtes prisonnier de personne. (Pour les curieux : Next.js, Supabase, Claude API, Vercel — du standard solide.)',
   },
 
   // StrategyCall section
