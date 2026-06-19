@@ -86,7 +86,7 @@ function LiteYouTube({ title }: { title: string }) {
 }
 
 export default function CaseStudy() {
-  const { t, lang } = useLang()
+  const { lang } = useLang()
 
   const headline = lang === 'en'
     ? 'How a restaurant group in Saint-Étienne replaced 99% of their operational stack with two platforms they own outright — and freed 14 hours a week.'
@@ -104,20 +104,9 @@ export default function CaseStudy() {
     : '"Ça a changé notre façon de tout gérer."'
 
   return (
-    <section id="case-study" style={{ padding: '120px 24px' }}>
+    <section id="case-study" style={{ padding: '24px 24px 80px' }}>
       <div className="mx-auto" style={{ maxWidth: '1100px' }}>
-        <FadeUp className="text-center mb-16">
-          <span className="section-label">{t('results.label')}</span>
-          <h2 className="section-title" style={{ maxWidth: '720px', margin: '0 auto 20px' }}>
-            {t('results.title')}{' '}
-            <span className="accent">{t('results.titleAccent')}</span>
-          </h2>
-          <p className="font-sans" style={{ fontSize: '16px', color: 'var(--text-secondary)', maxWidth: '520px', margin: '0 auto', lineHeight: 1.7, fontWeight: 300 }}>
-            {t('results.sub')}
-          </p>
-        </FadeUp>
-
-        <FadeUp delay={0.12}>
+        <FadeUp>
           <motion.div
             className="overflow-hidden"
             style={{

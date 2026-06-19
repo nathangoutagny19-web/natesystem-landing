@@ -53,7 +53,7 @@ export default function Systems() {
   return (
     <section
       id="systemes"
-      style={{ padding: '120px 0', overflowX: 'hidden', maxWidth: '100vw' }}
+      style={{ padding: '120px 0 56px', overflowX: 'hidden', maxWidth: '100vw' }}
     >
       <div className="mx-auto" style={{ maxWidth: '1100px', padding: '0 24px' }}>
         <FadeUp className="text-center mb-16">

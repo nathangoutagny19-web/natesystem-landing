@@ -5,7 +5,6 @@ import Cal, { getCalApi } from '@calcom/embed-react'
 import FadeUp from '@/components/ui/FadeUp'
 import { useLang } from '@/components/providers/LangProvider'
 import { CAL_HANDLE, CAL_NAMESPACE } from '@/lib/constants'
-import Footer from '@/components/layout/Footer'
 
 export default function CtaFinal() {
   const { t } = useLang()
@@ -87,8 +86,6 @@ export default function CtaFinal() {
           </div>
         </FadeUp>
       </div>
-
-      <Footer />
     </section>
   )
 }

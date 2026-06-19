@@ -12,6 +12,7 @@ import CaseStudy from '@/components/home/CaseStudy'
 import AboutNathan from '@/components/home/AboutNathan'
 import Faq from '@/components/home/Faq'
 import CtaFinal from '@/components/home/CtaFinal'
+import Footer from '@/components/layout/Footer'
 import Divider from '@/components/ui/Divider'
 
 export default function Home() {
@@ -24,42 +25,41 @@ export default function Home() {
 
       {/* 2 — Logos clients (preuve sociale immédiate, juste sous le hero) */}
       <ClientsBar />
-
-      {/* 3 — Mockup produit pleine largeur (preuve visuelle immédiate) */}
-      <ProductShowcase />
       <Divider />
 
-      {/* 4 — Les cas qu'on construit (marquee défilant — chaque card porte son ROI chiffré) */}
+      {/* 3 — Bloc "cas concrets" : le marquee chiffré, puis la mockup produit
+             (un exemple concret, bientôt d'autres vidéos), puis le short
+             témoignage. Resserrés sans Divider pour lire comme un seul bloc. */}
       <Systems />
-      <Divider />
-
-      {/* 5 — Témoignage vidéo (short Chromosome) — preuve juste sous les cas concrets */}
+      <ProductShowcase />
       <CaseStudy />
       <Divider />
 
-      {/* 6 — 3 solutions : Audit / Plateforme digitale / IA agentique */}
+      {/* 4 — 3 solutions : Audit / Plateforme sur-mesure / IA agentique */}
       <Solutions />
       <Divider />
 
-      {/* 7 — Méthode : audit → build & déploiement → formation → optimisation */}
+      {/* 5 — Méthode : audit → build & déploiement → formation → optimisation */}
       <Process />
       <Divider />
 
-      {/* 8 — À propos Nathan */}
+      {/* 6 — À propos Nathan */}
       <AboutNathan />
       <Divider />
 
-      {/* 9 — FAQ (reprend aussi la data "pourquoi maintenant" + le stack technique,
-             ce qui a permis de retirer les sections FOMO et Expertise de la home) */}
-      <Faq />
-      <Divider />
-
-      {/* 10 — Bandeau crédibilité : 4 engagements fermes (réassurance avant conversion) */}
+      {/* 7 — Bandeau crédibilité : 4 engagements fermes (réassurance avant conversion) */}
       <CredibilityBand />
       <Divider />
 
-      {/* 11 — Prise de rendez-vous : embed Cal.com inline (zéro friction) */}
+      {/* 8 — Prise de rendez-vous : embed Cal.com inline (zéro friction) */}
       <CtaFinal />
+      <Divider />
+
+      {/* 9 — FAQ en dernier (reprend aussi la data "pourquoi maintenant" + le stack
+             technique, ce qui a permis de retirer FOMO et Expertise de la home) */}
+      <Faq />
+
+      <Footer />
 
       <MobileCta />
       <WorkTogetherPrompt />
