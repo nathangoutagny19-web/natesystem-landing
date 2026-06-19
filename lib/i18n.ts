@@ -8,13 +8,14 @@ export const translations = {
 
   // Hero
   'hero.label': { en: 'Digital structuring · Custom software · AI integration', fr: 'Structuration digitale · Logiciel sur-mesure · Intégration IA' },
-  'hero.titlePrefix': { en: 'Our web & AI solutions boost your', fr: 'Nos solutions web & IA vous font gagner en' },
+  'hero.titlePrefix': { en: 'We build custom software & platforms that boost your', fr: 'On développe des logiciels & plateformes sur-mesure qui vous font gagner en' },
   // Rotating words (pipe-separated, cycled in the hero). Final benefits the ICP desires, not the mechanisms.
   'hero.titleWords': { en: 'profitability|productivity|responsiveness|reliability', fr: 'rentabilité|productivité|réactivité|fiabilité' },
   'hero.sub': {
     en: 'Your current tools slow your business down. We build the custom infrastructure that drives it forward, powered by AI. A system that accelerates your growth and evolves by your side, just like us.',
     fr: 'Vos outils actuels ralentissent votre activité. On construit l\'infrastructure sur-mesure qui la fait avancer, propulsée par l\'IA. Un système qui accélère votre croissance et évolue à vos côtés, comme nous.',
   },
+  'hero.aiNote': { en: 'And we power it with AI solutions.', fr: 'Et on le propulse par des solutions IA.' },
   'hero.cta': { en: 'Book 20 min · free', fr: 'Réserver 20 min · offert' },
   'hero.secondary': { en: 'See how it works', fr: 'Voir comment ça marche' },
   'hero.trusted': { en: 'Already building with', fr: 'Déjà à l\'œuvre avec' },
@@ -316,7 +317,7 @@ export const translations = {
   'sols.s1.cta': { en: 'Start the audit', fr: 'Démarrer l\'audit' },
   'sols.s1.ctaSub': { en: '20 min · Free', fr: '20 min · Offert' },
   // Solution 2 — Plateforme sur-mesure
-  'sols.s2.title': { en: 'Digital infrastructure', fr: 'Infrastructure digitale' },
+  'sols.s2.title': { en: 'Custom platform', fr: 'Plateforme sur-mesure' },
   'sols.s2.target': { en: '', fr: '' },
   'sols.s2.promise': {
     en: 'We bring all your tools and all your data into one platform built for your business — yours, not one more subscription.',
@@ -335,7 +336,7 @@ export const translations = {
   'sols.s2.cta': { en: 'Start the audit', fr: 'Démarrer l\'audit' },
   'sols.s2.ctaSub': { en: '20 min · Free', fr: '20 min · Offert' },
   // Solution 3 — IA agentique
-  'sols.s3.title': { en: 'AI integration', fr: 'Intégration IA' },
+  'sols.s3.title': { en: 'Agentic AI', fr: 'IA agentique' },
   'sols.s3.target': { en: '', fr: '' },
   'sols.s3.promise': {
     en: 'An AI that truly works for you: it has memory, learns your business, carries out tasks end to end and improves over time.',

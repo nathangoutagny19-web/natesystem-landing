@@ -4,6 +4,7 @@ import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 import { useEffect, useState } from 'react'
 import { useLang } from '@/components/providers/LangProvider'
 import Link from 'next/link'
+import { Sparkles } from 'lucide-react'
 import { CAL_LINK } from '@/lib/constants'
 
 const ease = [0.22, 1, 0.36, 1] as const
@@ -80,6 +81,25 @@ export default function Hero() {
         {t('hero.titlePrefix')}{' '}
         <RotatingWord words={words} />
       </motion.h1>
+
+      {/* AI note — small pill right under the headline: agentic AI is a
+          differentiator we plug in where it counts, not the headline focus. */}
+      <motion.div
+        initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.3, ease }}
+        className="inline-flex items-center gap-2"
+        style={{
+          marginBottom: '28px',
+          padding: '7px 14px',
+          borderRadius: '999px',
+          background: 'var(--accent-subtle)',
+          border: '1px solid rgba(230,57,70,0.18)',
+        }}
+      >
+        <Sparkles size={13} strokeWidth={2} style={{ color: 'var(--accent)', flexShrink: 0 }} />
+        <span className="font-sans" style={{ fontSize: '13px', fontWeight: 400, color: 'var(--text-secondary)' }}>
+          {t('hero.aiNote')}
+        </span>
+      </motion.div>
 
       {/* Subtitle */}
       <motion.p
