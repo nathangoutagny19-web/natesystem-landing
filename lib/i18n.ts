@@ -12,8 +12,8 @@ export const translations = {
   // Rotating words (pipe-separated, cycled in the hero). Final benefits the ICP desires, not the mechanisms.
   'hero.titleWords': { en: 'profitability|productivity|responsiveness|reliability', fr: 'rentabilité|productivité|réactivité|fiabilité' },
   'hero.sub': {
-    en: 'Your current tools slow your business down. We build the custom software that drives it forward — with AI integrated where it gives you back time and reliability. A system that accelerates your growth. We stay by your side once it\'s live.',
-    fr: 'Vos outils actuels ralentissent votre activité. On construit le logiciel sur-mesure qui la fait avancer — avec l\'IA intégrée là où elle vous fait gagner du temps et de la fiabilité. Un système qui accélère votre croissance. On reste à vos côtés une fois livré.',
+    en: 'Your current tools slow your business down. We build the custom infrastructure that drives it forward, powered by AI. A system that accelerates your growth and evolves by your side, just like us.',
+    fr: 'Vos outils actuels ralentissent votre activité. On construit l\'infrastructure sur-mesure qui la fait avancer, propulsée par l\'IA. Un système qui accélère votre croissance et évolue à vos côtés, comme nous.',
   },
   'hero.cta': { en: 'Book 20 min · free', fr: 'Réserver 20 min · offert' },
   'hero.secondary': { en: 'See how it works', fr: 'Voir comment ça marche' },

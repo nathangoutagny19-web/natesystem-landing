@@ -24,17 +24,17 @@ export default function Home() {
       {/* 1 — Hero : promesse business immédiate */}
       <Hero />
 
-      {/* 2 — Mockup produit pleine largeur (preuve visuelle immédiate) */}
+      {/* 2 — Logos clients (preuve sociale immédiate, juste sous le hero) */}
+      <ClientsBar />
+
+      {/* 3 — Mockup produit pleine largeur (preuve visuelle immédiate) */}
       <ProductShowcase />
 
-      {/* 3 — Bandeau crédibilité : 4 engagements fermes */}
+      {/* 4 — Bandeau crédibilité : 4 engagements fermes */}
       <CredibilityBand />
-
-      {/* 3 — Logos clients */}
-      <ClientsBar />
       <Divider />
 
-      {/* 4 — Les cas qu'on construit (marquee défilant — chaque card porte son ROI chiffré) */}
+      {/* 5 — Les cas qu'on construit (marquee défilant — chaque card porte son ROI chiffré) */}
       <Systems />
       <Divider />
 
