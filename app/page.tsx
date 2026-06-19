@@ -29,12 +29,9 @@ export default function Home() {
 
       {/* 3 — Mockup produit pleine largeur (preuve visuelle immédiate) */}
       <ProductShowcase />
-
-      {/* 4 — Bandeau crédibilité : 4 engagements fermes */}
-      <CredibilityBand />
       <Divider />
 
-      {/* 5 — Les cas qu'on construit (marquee défilant — chaque card porte son ROI chiffré) */}
+      {/* 4 — Les cas qu'on construit (marquee défilant — chaque card porte son ROI chiffré) */}
       <Systems />
       <Divider />
 
@@ -60,9 +57,15 @@ export default function Home() {
       <AboutNathan />
       <Divider />
 
-      {/* 11 — FAQ + CTA final */}
+      {/* 11 — FAQ */}
       <Faq />
       <Divider />
+
+      {/* 12 — Bandeau crédibilité : 4 engagements fermes (réassurance avant conversion) */}
+      <CredibilityBand />
+      <Divider />
+
+      {/* 13 — CTA final */}
       <CtaFinal />
 
       <MobileCta />

@@ -152,7 +152,7 @@ export const translations = {
   // ───────────────────────────────────────────────────────────────
   // Credibility band (replaces the old "cas client hero" zone)
   // ───────────────────────────────────────────────────────────────
-  'cred.engagement1': { en: '10h+ recovered per week, on average', fr: 'En moyenne 10h+ récupérées par semaine' },
+  'cred.engagement1': { en: '10h+ recovered per week, on average, by our clients', fr: 'En moyenne 10h+ récupérées par semaine par nos clients' },
   'cred.engagement2': { en: 'Measurable impact in under 30 days · Results guarantee', fr: 'Impact mesurable en moins de 30 jours · Garantie résultat' },
   'cred.engagement3': { en: 'Source code delivered · You own it 100%', fr: 'Code source livré · Vous êtes propriétaire à 100%' },
   'cred.engagement4': { en: 'Data hosted in the EU · GDPR-native', fr: 'Données hébergées en UE · RGPD-natif' },
