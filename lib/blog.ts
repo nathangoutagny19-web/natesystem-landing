@@ -13,6 +13,135 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'cest-quoi-ia-agentique-guide-pme-cas-usage',
+    title: 'C\'est quoi l\'IA agentique ? Le guide pour dirigeants de PME (+ cas d\'usage concrets)',
+    description: 'IA agentique : définition claire, différence avec un chatbot ou l\'IA générative, comment ça marche, et 6 cas d\'usage concrets et chiffrés pour une PME. Le guide terrain pour décider.',
+    date: '2026-06-20',
+    author: 'Nathan Goutagny',
+    readTime: '12 min',
+    category: 'Agents IA',
+    tags: ['IA agentique', 'Agents IA', 'Automatisation', 'Guide'],
+    content: `
+<p>"IA agentique" est partout depuis 18 mois. Sur LinkedIn, dans les pitchs des éditeurs, dans la bouche de tous les prestataires. Mais quand on demande à un dirigeant de PME ce que c'est <em>concrètement</em> — et surtout ce que ça change pour <em>son</em> entreprise — le flou revient vite. Chatbot ? Automatisation ? ChatGPT en mieux ? Un peu de tout ça, et pas vraiment.</p>
+
+<p>Chez NateSystem, on construit des logiciels sur-mesure qui intègrent de l'IA agentique pour des PME (5 à 100 personnes) — quand elle remplace de vraies heures de travail, jamais en gadget. Ce guide est écrit du point de vue terrain : qu'est-ce que l'IA agentique <strong>vraiment</strong>, en quoi elle diffère d'un chatbot, et à quoi elle sert dans une PME, avec des cas d'usage chiffrés.</p>
+
+<nav>
+<h2>Sommaire</h2>
+<ol>
+  <li><a href="#definition">Qu'est-ce que l'IA agentique ?</a></li>
+  <li><a href="#difference">IA agentique vs IA générative vs automatisation classique</a></li>
+  <li><a href="#fonctionnement">Comment fonctionne un agent IA ?</a></li>
+  <li><a href="#cas-usage">6 cas d'usage concrets en PME</a></li>
+  <li><a href="#pour-qui">Pour quelles PME (et quand ce n'est pas pour vous)</a></li>
+  <li><a href="#faq">FAQ</a></li>
+  <li><a href="#conclusion">En résumé</a></li>
+</ol>
+</nav>
+
+<h2 id="definition">Qu'est-ce que l'IA agentique ?</h2>
+
+<p>L'IA agentique est une intelligence artificielle qui <strong>exécute des tâches de bout en bout</strong> dans vos outils, au lieu de se contenter de répondre à une question. Elle a une <strong>mémoire persistante</strong> du contexte de votre activité, elle <strong>décide</strong> de la marche à suivre, elle <strong>agit</strong>, et elle <strong>apprend</strong> de chaque interaction pour s'améliorer avec le temps.</p>
+
+<p>La différence avec un assistant comme ChatGPT est fondamentale : un chatbot <em>vous répond</em> ; un agent IA <em>fait le travail</em>. Vous ne lui demandez pas "comment qualifier ce lead ?" — il qualifie le lead, l'enrichit, le route vers le bon commercial et rédige la première réponse, pendant que vous faites autre chose.</p>
+
+<blockquote>Un chatbot attend votre prochaine question. Un agent agentique poursuit un objectif : il enchaîne des étapes, utilise vos outils, et ne s'arrête que quand la tâche est faite.</blockquote>
+
+<h2 id="difference">IA agentique vs IA générative vs automatisation classique</h2>
+
+<p>Trois technologies qu'on confond souvent. Voici comment elles se distinguent :</p>
+
+<ul>
+  <li><strong>L'automatisation classique (type Zapier/Make) :</strong> "SI ceci arrive, ALORS fais cela." Des règles fixes, prévisibles. Parfaite pour les flux simples, mais incapable de juger ou de s'adapter à un cas inhabituel.</li>
+  <li><strong>L'IA générative (type ChatGPT) :</strong> elle comprend et génère du contenu (texte, résumé, réponse). Elle est brillante pour <em>produire</em>, mais elle attend votre prompt et n'agit pas seule dans vos outils.</li>
+  <li><strong>L'IA agentique :</strong> elle combine les deux et ajoute l'autonomie. Elle <em>comprend</em> ce qui se passe (générative), <em>décide</em> quoi faire, <em>agit</em> dans vos systèmes (comme l'automatisation, mais sans règle rigide), et garde le contexte en mémoire.</li>
+</ul>
+
+<p>En clair : l'automatisation suit un script, l'IA générative rédige, l'IA agentique mène la tâche à bien. En PME, les meilleurs résultats viennent de la combinaison des trois — chaque tâche au bon outil.</p>
+
+<h2 id="fonctionnement">Comment fonctionne un agent IA ?</h2>
+
+<p>Un agent IA repose sur trois briques qui le distinguent d'un simple chatbot :</p>
+
+<ol>
+  <li><strong>La mémoire persistante.</strong> L'agent garde le contexte de votre activité d'une fois sur l'autre : vos clients, vos process, vos préférences, votre ton. Il ne repart pas de zéro à chaque interaction.</li>
+  <li><strong>L'exécution multi-étapes.</strong> Face à un objectif ("traiter ce lead entrant"), il enchaîne les étapes nécessaires — lire, enrichir, scorer, router, rédiger — en utilisant vos outils, pas juste en décrivant ce qu'il faudrait faire.</li>
+  <li><strong>L'apprentissage continu.</strong> Il apprend de vos corrections et de chaque cas traité. Plus vous l'utilisez, plus il colle à votre métier.</li>
+</ol>
+
+<p>Point important : un bon agent travaille <strong>sous supervision</strong>. Pour les tâches sensibles, il prépare et propose, un humain valide. Pour les tâches répétitives à faible risque, il exécute seul. C'est vous qui fixez le curseur.</p>
+
+<h2 id="cas-usage">6 cas d'usage concrets de l'IA agentique en PME</h2>
+
+<p>L'IA agentique n'a d'intérêt que là où elle remplace de vraies heures. Voici six usages que nous déployons réellement, avec des ordres de grandeur observés :</p>
+
+<h3>1. Qualification instantanée des leads</h3>
+<p>Un agent répond, qualifie et dispatche un lead entrant en moins de 5 minutes, 24/7. Il lit le message, score selon vos critères, enrichit la fiche, route vers la bonne personne et rédige la première réponse. Sur 100 leads à 2 000 € de panier, +10 % de conversion représente environ +20 000 €/an.</p>
+
+<h3>2. Lecture et traitement de documents</h3>
+<p>Factures, contrats, devis, formulaires : l'agent lit, extrait, structure et classe. Il ne passe à l'humain que les cas qui le méritent. Concrètement, c'est la moitié d'un poste administratif absorbée — souvent un retour sur investissement en quelques mois sur un poste à 40 000 €/an.</p>
+
+<h3>3. Relance commerciale automatique</h3>
+<p>3 à 5 messages personnalisés sur 2-3 semaines, qui s'arrêtent dès que le prospect répond. Chez des clients consultants B2B, on a observé un passage de 4 % à 12 % de conversion sur les séquences de relance.</p>
+
+<h3>4. Réactivation des contacts dormants</h3>
+<p>Anciens clients, prospects fantômes, abonnés inactifs : l'agent les réveille avec des messages contextualisés, sans budget publicitaire. Sur une base de 500 contacts à 3 % de reconversion, l'impact se chiffre en dizaines de milliers d'euros par an.</p>
+
+<h3>5. Veille et alertes ciblées</h3>
+<p>L'agent surveille en continu vos sources métier (appels d'offres, actualités, signaux), qualifie les opportunités selon vos critères, et ne vous alerte que sur ce qui mérite votre attention. Fini de scroller dix plateformes : l'information utile vient à vous.</p>
+
+<h3>6. Reporting interne automatique</h3>
+<p>Collecte des données (CRM, compta, projets), analyse, et synthèse poussée dans Slack ou Teams — sans nouveau dashboard à consulter. Sur une PME du BTP avec un fort volume d'interventions, ce type d'automatisation a libéré l'équivalent de centaines d'heures par an.</p>
+
+<p>Le marché confirme la tendance : selon McKinsey, les équipes qui intègrent l'IA à leurs process clés libèrent 20 à 30 % de leur temps de travail. Mais la règle d'or reste : on ne déploie un agent que si on peut chiffrer son ROI dans les premières semaines.</p>
+
+<h2 id="pour-qui">Pour quelles PME — et quand ce n'est pas pour vous</h2>
+
+<p>Soyons honnêtes : l'IA agentique n'est pas une baguette magique, et elle n'est pas pour tout le monde.</p>
+
+<p><strong>C'est pertinent si :</strong></p>
+<ul>
+  <li>Vous avez des tâches répétitives à fort volume (leads, documents, relances, support).</li>
+  <li>Vos équipes passent un temps significatif sur du traitement manuel à faible valeur.</li>
+  <li>Vous avez déjà des process en place (même imparfaits) qu'on peut cartographier.</li>
+</ul>
+
+<p><strong>Ce n'est pas (encore) pour vous si :</strong></p>
+<ul>
+  <li>Vos volumes sont trop faibles pour qu'un agent fasse gagner de vraies heures.</li>
+  <li>Vos process changent en permanence et ne sont pas stabilisés.</li>
+  <li>Vous cherchez un effet "vitrine" plutôt qu'un ROI mesurable.</li>
+</ul>
+
+<p>C'est exactement pour ça qu'on commence toujours par un <a href="/services/audit">audit</a> : on identifie où l'IA a un vrai ROI avant de construire quoi que ce soit. Et l'IA agentique s'intègre le plus souvent dans un <a href="/services/logiciel-sur-mesure">logiciel sur-mesure</a>, là où elle a accès à vos données et vos outils.</p>
+
+<h2 id="faq">FAQ</h2>
+
+<h3>Quelle différence entre IA agentique et ChatGPT ?</h3>
+<p>ChatGPT répond à vos questions ; un agent agentique exécute des tâches de bout en bout dans vos outils. Il a une mémoire du contexte de votre activité, il enchaîne des étapes (lire, décider, agir), et il apprend avec le temps. Le chatbot attend votre prochaine question ; l'agent poursuit un objectif jusqu'à ce que la tâche soit faite.</p>
+
+<h3>L'IA agentique est-elle fiable pour des tâches importantes ?</h3>
+<p>Oui, à condition de fixer le bon niveau de supervision. Pour les tâches sensibles, l'agent prépare et propose, un humain valide. Pour les tâches répétitives à faible risque, il exécute seul. Vous gardez le contrôle du curseur, et tout est tracé.</p>
+
+<h3>Mes données sont-elles en sécurité avec un agent IA ?</h3>
+<p>Elles peuvent l'être totalement. Chez NateSystem, l'IA intégrée tourne sur votre infrastructure, vos données restent en UE et conformes RGPD, et le modèle (Claude, GPT ou auto-hébergé) est choisi selon votre niveau de souveraineté. Vos données ne sortent pas de votre périmètre.</p>
+
+<h3>Combien coûte la mise en place d'un agent IA ?</h3>
+<p>Cela dépend du périmètre, mais la bonne approche est de partir d'un cas d'usage au ROI mesurable plutôt que d'un budget. On chiffre l'impact attendu (heures gagnées, euros récupérés) avant de se lancer, et on n'avance que si les chiffres tiennent.</p>
+
+<h3>Faut-il être une grande entreprise pour utiliser l'IA agentique ?</h3>
+<p>Non. Les PME de 5 à 100 personnes sont souvent les mieux placées : elles ont des tâches répétitives concrètes et peuvent décider vite. L'enjeu n'est pas la taille mais le volume de tâches automatisables et la stabilité des process.</p>
+
+<h2 id="conclusion">En résumé</h2>
+
+<p>L'IA agentique, ce n'est pas un chatbot de plus : c'est une IA qui <strong>fait le travail</strong> — elle exécute des tâches de bout en bout, garde le contexte en mémoire, et s'améliore avec le temps. En PME, elle a du sens là où elle remplace de vraies heures : qualification de leads, lecture de documents, relances, veille, reporting. Pas partout, pas en gadget : seulement là où le ROI est mesurable.</p>
+
+<p>La meilleure façon de savoir si elle peut vous aider, c'est de regarder vos vraies tâches. C'est ce qu'on fait en 20 minutes, sans engagement.</p>
+
+<p><strong><a href="/book">Réserver 20 min · offert &rarr;</a></strong></p>
+`,
+  },
+  {
     slug: '10-meilleurs-outils-ia-automatisation-operations-2026',
     title: 'Les 10 meilleurs outils IA pour automatiser vos opérations en 2026',
     description: 'Comparatif expert des 10 meilleurs outils d\'automatisation IA pour les opérations en 2026. Tests, tarifs, fonctionnalités clés et guide de sélection pour PME.',
