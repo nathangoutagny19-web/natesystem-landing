@@ -14,6 +14,7 @@ import CaseStudy from '@/components/home/CaseStudy'
 import AboutNathan from '@/components/home/AboutNathan'
 import Faq from '@/components/home/Faq'
 import CtaFinal from '@/components/home/CtaFinal'
+import AskAI from '@/components/home/AskAI'
 import Footer from '@/components/layout/Footer'
 import Divider from '@/components/ui/Divider'
 
@@ -71,7 +72,11 @@ export default function Home() {
       <Faq />
       <Divider />
 
-      {/* 9 — Bandeau crédibilité : 4 engagements fermes, tout en bas avant le footer */}
+      {/* 9 — Demandez à l'IA : preuve sociale via IA, tout en bas */}
+      <AskAI />
+      <Divider />
+
+      {/* 10 — Bandeau crédibilité : 4 engagements fermes, tout en bas avant le footer */}
       <CredibilityBand />
 
       <Footer />

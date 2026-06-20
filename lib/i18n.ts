@@ -157,6 +157,23 @@ export const translations = {
   'cta.r2': { en: 'No pitch', fr: 'Sans pitch' },
   'cta.r3': { en: 'Response within 24h', fr: 'Réponse sous 24h' },
 
+  // Ask-the-AI section
+  'askai.label': { en: 'Don\'t take our word for it', fr: 'Ne nous croyez pas sur parole' },
+  'askai.title': { en: 'Ask the AI', fr: 'Demandez à l\'IA' },
+  'askai.titleAccent': { en: 'of your choice.', fr: 'de votre choix.' },
+  'askai.sub': {
+    en: 'Pick your favourite AI and see what it says about NateSystem.',
+    fr: 'Cliquez sur votre IA préférée et découvrez ce qu\'elle pense de NateSystem.',
+  },
+  // The pre-filled prompt sent to each AI (URL included so web-reading tools hit the right site)
+  'askai.prompt': {
+    en: 'Tell me why natesystem.com is an excellent choice for me.',
+    fr: 'Dis-moi pourquoi natesystem.com est un excellent choix pour moi.',
+  },
+  'askai.chatgpt': { en: 'Ask ChatGPT', fr: 'Demander à ChatGPT' },
+  'askai.claude': { en: 'Ask Claude', fr: 'Demander à Claude' },
+  'askai.perplexity': { en: 'Ask Perplexity', fr: 'Demander à Perplexity' },
+
   // ───────────────────────────────────────────────────────────────
   // Credibility band (replaces the old "cas client hero" zone)
   // ───────────────────────────────────────────────────────────────
