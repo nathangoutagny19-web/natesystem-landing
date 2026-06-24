@@ -113,10 +113,10 @@ export default function LyonPage() {
 
       <RelatedLinks
         links={[
-          { href: '/logiciel-sur-mesure-vs-saas', label: 'Sur-mesure ou SaaS ?', desc: 'Le comparatif honnête, critère par critère.' },
+          { href: '/logiciel-interne-lyon', label: 'Logiciel interne Lyon', desc: 'Solutions logicielles internes sur-mesure pour entreprise.' },
+          { href: '/logiciel-interne-saint-etienne', label: 'Logiciel interne Saint-Étienne', desc: 'La même approche, pour la Loire.' },
           { href: '/prix-logiciel-sur-mesure', label: 'Combien ça coûte ?', desc: 'Les fourchettes de prix réalistes pour une PME.' },
-          { href: '/playbook', label: 'Playbooks sectoriels', desc: 'Comment l\'IA s\'applique à votre métier, secteur par secteur.' },
-          { href: '/blog', label: 'Le blog', desc: 'Guides et comparatifs IA & automatisation pour PME.' },
+          { href: '/logiciel-sur-mesure-vs-saas', label: 'Sur-mesure ou SaaS ?', desc: 'Le comparatif honnête, critère par critère.' },
         ]}
       />
 
