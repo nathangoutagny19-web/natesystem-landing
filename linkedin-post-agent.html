@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>LinkedIn Post — Agentic AI</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1080px; height: 1080px;
+    background: #0e0e12;
+    position: relative; overflow: hidden;
+    font-family: 'DM Sans', sans-serif;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  body::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    z-index: 0;
+  }
+
+  .container {
+    position: relative; z-index: 1;
+    width: 100%; height: 100%;
+    display: flex; flex-direction: column;
+  }
+
+  /* Header */
+  .header {
+    padding: 36px 48px 0;
+    display: flex; justify-content: space-between; align-items: flex-start;
+  }
+  .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; font-weight: 400;
+    letter-spacing: 4px; text-transform: uppercase;
+    color: #E63946;
+  }
+  .label-line {
+    width: 80px; height: 2px; background: #E63946;
+    margin-top: 8px; border-radius: 1px;
+  }
+  .logo-mark {
+    width: 44px; height: 44px; background: #141418;
+    border-radius: 8px; display: flex; align-items: center;
+    justify-content: center; position: relative;
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+  .logo-n {
+    font-family: 'Instrument Serif', serif; font-style: italic;
+    font-size: 26px; color: #f0f0f2;
+  }
+  .logo-dot {
+    position: absolute; bottom: 8px; right: 8px;
+    width: 5px; height: 5px; border-radius: 50%; background: #E63946;
+  }
+
+  /* Hero */
+  .hero { padding: 24px 48px 0; }
+  .hero h1 {
+    font-family: 'Instrument Serif', serif; font-style: italic;
+    font-size: 42px; color: #f0f0f2; line-height: 1.15;
+    margin-bottom: 12px;
+  }
+  .hero .sub {
+    font-weight: 300; font-size: 15px; color: #8a8a96; line-height: 1.5;
+  }
+
+  /* Columns */
+  .columns {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 24px; padding: 28px 48px 0; flex: 1;
+  }
+  .col-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px; font-weight: 400;
+    letter-spacing: 3px; text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .col-label.accent { color: #E63946; }
+  .col-label.muted { color: #8a8a96; }
+
+  .item-card {
+    background: #141418;
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 8px; padding: 11px 14px;
+    margin-bottom: 6px; display: flex; align-items: center; gap: 10px;
+  }
+  .item-arrow {
+    color: #E63946; font-size: 11px; flex-shrink: 0;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .item-text {
+    font-size: 12px; font-weight: 400; color: #f0f0f2; line-height: 1.3;
+  }
+
+  .check-item {
+    display: flex; align-items: center; gap: 10px;
+    padding: 9px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+  }
+  .check-item:last-of-type { border-bottom: none; }
+  .check-mark {
+    color: #4a9a5a; font-size: 14px; flex-shrink: 0;
+    font-weight: 500;
+  }
+  .check-text {
+    font-size: 12px; font-weight: 300; color: #8a8a96; line-height: 1.3;
+  }
+
+  .badge {
+    background: rgba(74,154,90,0.08);
+    border: 1px solid rgba(74,154,90,0.2);
+    border-radius: 8px; padding: 10px 14px;
+    margin-top: 10px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; color: #4a9a5a;
+    letter-spacing: 0.5px;
+  }
+
+  /* CTA bar */
+  .cta-bar {
+    background: #E63946;
+    padding: 18px 48px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .cta-text {
+    font-weight: 500; font-size: 14px; color: #fff; letter-spacing: 0.2px;
+  }
+  .cta-logo {
+    width: 36px; height: 36px; background: #0e0e12;
+    border-radius: 6px; display: flex; align-items: center;
+    justify-content: center; position: relative;
+  }
+  .cta-logo .logo-n { font-size: 20px; }
+  .cta-logo .logo-dot { bottom: 6px; right: 6px; width: 4px; height: 4px; }
+
+  /* Footer */
+  .footer {
+    padding: 16px 48px 28px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .footer-left { display: flex; align-items: center; gap: 14px; }
+  .footer-photo {
+    width: 48px; height: 48px; border-radius: 50%;
+    border: 2px solid #E63946;
+    background: #1a1a20; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .footer-photo img {
+    width: 100%; height: 100%; object-fit: cover; border-radius: 50%;
+  }
+  .footer-name {
+    font-weight: 500; font-size: 14px; color: #f0f0f2;
+  }
+  .footer-brand {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; color: #E63946;
+    letter-spacing: 2px; margin-top: 2px;
+  }
+  .footer-tagline {
+    font-family: 'Instrument Serif', serif; font-style: italic;
+    font-size: 15px; color: #f0f0f2; opacity: 0.5;
+  }
+
+  /* Corner crosses */
+  .corner {
+    position: absolute;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px; color: rgba(255,255,255,0.06);
+    z-index: 2;
+  }
+  .c-tl { top: 12px; left: 16px; }
+  .c-tr { top: 12px; right: 16px; }
+  .c-bl { bottom: 12px; left: 16px; }
+  .c-br { bottom: 12px; right: 16px; }
+</style>
+</head>
+<body>
+  <span class="corner c-tl">+</span>
+  <span class="corner c-tr">+</span>
+  <span class="corner c-bl">+</span>
+  <span class="corner c-br">+</span>
+
+  <div class="container">
+    <!-- Header -->
+    <div class="header">
+      <div>
+        <div class="label">FORMATION &middot; AGENTIC AI</div>
+        <div class="label-line"></div>
+      </div>
+      <div class="logo-mark">
+        <span class="logo-n">N</span>
+        <span class="logo-dot"></span>
+      </div>
+    </div>
+
+    <!-- Hero -->
+    <div class="hero">
+      <h1>J'ai pass&eacute; 18 mois &agrave; me former<br>&agrave; l'IA agentic.</h1>
+      <p class="sub">J'ai fait le sale boulot &agrave; ta place.<br>Tout est dans ce doc.</p>
+    </div>
+
+    <!-- Two columns -->
+    <div class="columns">
+      <div class="col-left">
+        <div class="col-label accent">CE QUE TU Y TROUVES</div>
+        <div class="item-card"><span class="item-arrow">&rarr;</span><span class="item-text">Ce qu'est vraiment un agent IA</span></div>
+        <div class="item-card"><span class="item-arrow">&rarr;</span><span class="item-text">Les 4 design patterns fondamentaux</span></div>
+        <div class="item-card"><span class="item-arrow">&rarr;</span><span class="item-text">MCP &mdash; ce qui remplace Make et n8n</span></div>
+        <div class="item-card"><span class="item-arrow">&rarr;</span><span class="item-text">Comment &eacute;valuer un agent avant de d&eacute;ployer</span></div>
+        <div class="item-card"><span class="item-arrow">&rarr;</span><span class="item-text">Les erreurs qui font planter en production</span></div>
+        <div class="item-card"><span class="item-arrow">&rarr;</span><span class="item-text">La stack compl&egrave;te 2026</span></div>
+      </div>
+      <div class="col-right">
+        <div class="col-label muted">LES MODULES COMPL&Eacute;T&Eacute;S</div>
+        <div class="check-item"><span class="check-mark">&#10003;</span><span class="check-text">Introduction to Agentic Workflows</span></div>
+        <div class="check-item"><span class="check-mark">&#10003;</span><span class="check-text">Reflection Design Pattern</span></div>
+        <div class="check-item"><span class="check-mark">&#10003;</span><span class="check-text">Tool Use &amp; MCP</span></div>
+        <div class="check-item"><span class="check-mark">&#10003;</span><span class="check-text">Practical Tips &amp; Error Analysis</span></div>
+        <div class="check-item"><span class="check-mark">&#10003;</span><span class="check-text">Highly Autonomous Agents</span></div>
+        <div class="badge">100% Completed &middot; Certificate DeepLearning.ai</div>
+      </div>
+    </div>
+
+    <!-- CTA Bar -->
+    <div class="cta-bar">
+      <span class="cta-text">Commente AGENT &mdash; je t'envoie le doc en DM</span>
+      <div class="cta-logo">
+        <span class="logo-n" style="font-family:'Instrument Serif';font-style:italic;font-size:20px;color:#f0f0f2;">N</span>
+        <span class="logo-dot" style="position:absolute;bottom:6px;right:6px;width:4px;height:4px;border-radius:50%;background:#fff;"></span>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <div class="footer-left">
+        <div class="footer-photo">
+          <img src="profil-photo.png.png" alt="Nathan" onerror="this.style.display='none'" />
+        </div>
+        <div>
+          <div class="footer-name">Nathan Goutagny</div>
+          <div class="footer-brand">NATESYSTEM</div>
+        </div>
+      </div>
+      <div class="footer-tagline">Scale sans recruter.</div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NateSystem · Reviews — Logo Export</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --bg: #0e0e12; --card: #141418; --border: rgba(255,255,255,0.08); --text: #f0f0f2; --muted: #8a8a96; --accent: #E63946; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-serif; padding: 48px 24px; min-height: 100vh; }
+  h1 { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; font-size: 36px; margin: 0 0 8px; }
+  .subtitle { color: var(--muted); font-size: 14px; margin-bottom: 48px; }
+  .wrap { max-width: 1100px; margin: 0 auto; }
+  .row { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 28px; margin-bottom: 20px; }
+  .row-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; flex-wrap: wrap; gap: 12px; }
+  .label { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); }
+  .canvas-wrap { background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 20px; display: flex; justify-content: center; align-items: center; overflow: auto; }
+  .canvas-wrap.light { background: #f5f5f0; }
+  canvas { display: block; max-width: 100%; height: auto; }
+  .actions { display: flex; gap: 10px; flex-wrap: wrap; }
+  button { padding: 11px 22px; background: var(--accent); color: #fff; border: none; border-radius: 12px; font-size: 13px; font-weight: 600; font-family: 'DM Sans', sans-serif; cursor: pointer; letter-spacing: 0.3px; transition: transform 0.2s, box-shadow 0.2s; }
+  button:hover { transform: translateY(-1px); box-shadow: 0 4px 16px rgba(230,57,70,0.3); }
+  button.ghost { background: transparent; color: var(--text); border: 1px solid var(--border); }
+  button.ghost:hover { border-color: rgba(255,255,255,0.2); box-shadow: none; }
+  .meta { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--muted); letter-spacing: 1px; }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <h1>NateSystem <span style="color: var(--accent);">· Reviews</span> — logo export</h1>
+  <p class="subtitle">Click the buttons below to download PNG versions. Pixel ratio is 2× for retina sharpness.</p>
+
+  <!-- Mark only — square icon -->
+  <div class="row">
+    <div class="row-head">
+      <div>
+        <div class="label">MARK ONLY</div>
+        <div class="meta">512×512 · For favicon, avatar, social badges</div>
+      </div>
+      <div class="actions">
+        <button onclick="dl('mark', 'natesystem-reviews-mark.png')">Download PNG</button>
+        <button class="ghost" onclick="dl('mark', 'natesystem-reviews-mark-2x.png', 2)">Download @2×</button>
+      </div>
+    </div>
+    <div class="canvas-wrap">
+      <canvas id="mark" width="512" height="512" style="max-width: 256px;"></canvas>
+    </div>
+  </div>
+
+  <!-- Lockup on dark -->
+  <div class="row">
+    <div class="row-head">
+      <div>
+        <div class="label">LOCKUP — DARK</div>
+        <div class="meta">1600×400 · Full wordmark on brand dark background</div>
+      </div>
+      <div class="actions">
+        <button onclick="dl('lockupDark', 'natesystem-reviews-lockup-dark.png')">Download PNG</button>
+      </div>
+    </div>
+    <div class="canvas-wrap">
+      <canvas id="lockupDark" width="1600" height="400"></canvas>
+    </div>
+  </div>
+
+  <!-- Lockup on light -->
+  <div class="row">
+    <div class="row-head">
+      <div>
+        <div class="label">LOCKUP — LIGHT</div>
+        <div class="meta">1600×400 · For light-mode surfaces and press</div>
+      </div>
+      <div class="actions">
+        <button onclick="dl('lockupLight', 'natesystem-reviews-lockup-light.png')">Download PNG</button>
+      </div>
+    </div>
+    <div class="canvas-wrap light">
+      <canvas id="lockupLight" width="1600" height="400"></canvas>
+    </div>
+  </div>
+
+  <!-- Lockup on transparent -->
+  <div class="row">
+    <div class="row-head">
+      <div>
+        <div class="label">LOCKUP — TRANSPARENT</div>
+        <div class="meta">1600×400 · Overlays anything. "NateSystem" uses currentColor fallback of #f0f0f2</div>
+      </div>
+      <div class="actions">
+        <button onclick="dl('lockupTransparent', 'natesystem-reviews-lockup-transparent.png')">Download PNG</button>
+      </div>
+    </div>
+    <div class="canvas-wrap">
+      <canvas id="lockupTransparent" width="1600" height="400"></canvas>
+    </div>
+  </div>
+</div>
+
+<script>
+const BRAND = {
+  darkBg: '#0e0e12',
+  lightBg: '#f5f5f0',
+  text: '#f0f0f2',
+  textDark: '#1a1a1a',
+  accent: '#E63946',
+  frameStroke: 'rgba(255,255,255,0.08)',
+};
+
+/* ── Draw the mark (rounded square with N + dot) ── */
+function drawMark(ctx, x, y, size) {
+  const radius = size * 0.12;
+  // Rounded square background
+  ctx.fillStyle = BRAND.darkBg;
+  roundRect(ctx, x, y, size, size, radius);
+  ctx.fill();
+
+  // Subtle frame stroke
+  ctx.strokeStyle = BRAND.frameStroke;
+  ctx.lineWidth = Math.max(1, size / 512);
+  roundRect(ctx, x + 0.5, y + 0.5, size - 1, size - 1, radius - 0.5);
+  ctx.stroke();
+
+  // Dot with glow (draw glow first so N sits on top cleanly)
+  const dotR = size * 0.05;
+  const dotX = x + size * 0.685;
+  const dotY = y + size * 0.685;
+
+  // Glow
+  const glowGrad = ctx.createRadialGradient(dotX, dotY, 0, dotX, dotY, dotR * 2.5);
+  glowGrad.addColorStop(0, 'rgba(230,57,70,0.4)');
+  glowGrad.addColorStop(1, 'rgba(230,57,70,0)');
+  ctx.fillStyle = glowGrad;
+  ctx.beginPath();
+  ctx.arc(dotX, dotY, dotR * 2.5, 0, Math.PI * 2);
+  ctx.fill();
+
+  // N — italic serif
+  ctx.fillStyle = BRAND.text;
+  ctx.font = `italic 400 ${size * 0.72}px "Instrument Serif", Georgia, serif`;
+  ctx.textBaseline = 'alphabetic';
+  ctx.textAlign = 'left';
+  ctx.fillText('N', x + size * 0.205, y + size * 0.75);
+
+  // Dot (solid)
+  ctx.fillStyle = BRAND.accent;
+  ctx.beginPath();
+  ctx.arc(dotX, dotY, dotR, 0, Math.PI * 2);
+  ctx.fill();
+}
+
+function roundRect(ctx, x, y, w, h, r) {
+  ctx.beginPath();
+  ctx.moveTo(x + r, y);
+  ctx.arcTo(x + w, y, x + w, y + h, r);
+  ctx.arcTo(x + w, y + h, x, y + h, r);
+  ctx.arcTo(x, y + h, x, y, r);
+  ctx.arcTo(x, y, x + w, y, r);
+  ctx.closePath();
+}
+
+/* ── Draw the full lockup ── */
+function drawLockup(ctx, { width, height, bg, textColor }) {
+  if (bg) {
+    ctx.fillStyle = bg;
+    ctx.fillRect(0, 0, width, height);
+  } else {
+    ctx.clearRect(0, 0, width, height);
+  }
+
+  const markSize = height * 0.6;
+  const markY = (height - markSize) / 2;
+  const markX = width * 0.06;
+  drawMark(ctx, markX, markY, markSize);
+
+  // Wordmark
+  const wordmarkX = markX + markSize + width * 0.035;
+  const baselineY = height * 0.58;
+
+  // "NateSystem" in DM Sans
+  ctx.fillStyle = textColor;
+  const wordSize = height * 0.28;
+  ctx.font = `500 ${wordSize}px "DM Sans", Arial, sans-serif`;
+  ctx.textBaseline = 'alphabetic';
+  ctx.textAlign = 'left';
+  ctx.fillText('NateSystem', wordmarkX, baselineY);
+  const nameWidth = ctx.measureText('NateSystem').width;
+
+  // "· Reviews" in Instrument Serif italic, red
+  ctx.fillStyle = BRAND.accent;
+  ctx.font = `italic 400 ${wordSize}px "Instrument Serif", Georgia, serif`;
+  ctx.fillText(' · Reviews', wordmarkX + nameWidth, baselineY);
+}
+
+/* ── Render everything once the fonts are ready ── */
+document.fonts.ready.then(() => {
+  // Mark
+  const markCanvas = document.getElementById('mark');
+  drawMark(markCanvas.getContext('2d'), 0, 0, 512);
+
+  // Lockup — dark
+  const lockupDark = document.getElementById('lockupDark');
+  drawLockup(lockupDark.getContext('2d'), {
+    width: 1600, height: 400, bg: BRAND.darkBg, textColor: BRAND.text,
+  });
+
+  // Lockup — light
+  const lockupLight = document.getElementById('lockupLight');
+  drawLockup(lockupLight.getContext('2d'), {
+    width: 1600, height: 400, bg: BRAND.lightBg, textColor: BRAND.textDark,
+  });
+
+  // Lockup — transparent (with light-on-dark wordmark fallback)
+  const lockupT = document.getElementById('lockupTransparent');
+  drawLockup(lockupT.getContext('2d'), {
+    width: 1600, height: 400, bg: null, textColor: BRAND.text,
+  });
+});
+
+/* ── Download helper — optional pixel multiplier ── */
+function dl(canvasId, filename, multiplier = 1) {
+  const src = document.getElementById(canvasId);
+  if (multiplier === 1) {
+    triggerDownload(src.toDataURL('image/png'), filename);
+    return;
+  }
+  // Create an upsampled copy by redrawing at higher resolution
+  const out = document.createElement('canvas');
+  out.width = src.width * multiplier;
+  out.height = src.height * multiplier;
+  const octx = out.getContext('2d');
+  // Simple scale — good enough since our source is vector-drawn
+  octx.scale(multiplier, multiplier);
+  if (canvasId === 'mark') {
+    drawMark(octx, 0, 0, src.width);
+  } else {
+    const isDark = canvasId === 'lockupDark';
+    const isLight = canvasId === 'lockupLight';
+    drawLockup(octx, {
+      width: src.width,
+      height: src.height,
+      bg: isDark ? BRAND.darkBg : isLight ? BRAND.lightBg : null,
+      textColor: isLight ? BRAND.textDark : BRAND.text,
+    });
+  }
+  triggerDownload(out.toDataURL('image/png'), filename);
+}
+
+function triggerDownload(dataUrl, filename) {
+  const a = document.createElement('a');
+  a.href = dataUrl;
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+}
+</script>
+</body>
+</html>

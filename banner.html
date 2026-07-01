@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>LinkedIn Banner Generator</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
+<style>
+  body { margin: 0; background: #1a1a1a; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; font-family: sans-serif; }
+  canvas { max-width: 90vw; height: auto; border: 1px solid #222; }
+  button { margin-top: 24px; padding: 14px 40px; background: #C9A84C; color: #0A0A0A; border: none; font-size: 16px; font-weight: 600; cursor: pointer; letter-spacing: 1px; }
+  button:hover { background: #d4b65e; }
+</style>
+</head>
+<body>
+<canvas id="c" width="1584" height="396"></canvas>
+<button id="dl">Download PNG</button>
+<script>
+document.fonts.ready.then(() => {
+  const c = document.getElementById('c');
+  const ctx = c.getContext('2d');
+
+  // Background
+  ctx.fillStyle = '#0A0A0A';
+  ctx.fillRect(0, 0, 1584, 396);
+
+  // Line 1 — cream
+  ctx.fillStyle = '#FAF7F2';
+  ctx.font = '300 54px "Cormorant Garamond"';
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'alphabetic';
+  ctx.fillText('Transforming the operational soul', 792, 165);
+
+  // Line 2 — gold italic
+  ctx.fillStyle = '#C9A84C';
+  ctx.font = 'italic 300 54px "Cormorant Garamond"';
+  ctx.fillText('of independent luxury hotels.', 792, 235);
+
+  // Bottom center — cities
+  ctx.fillStyle = 'rgba(250, 247, 242, 0.35)';
+  ctx.font = '300 13px "Cormorant Garamond"';
+  ctx.textAlign = 'center';
+  ctx.letterSpacing = '5px';
+  ctx.fillText('PARIS  ·  BUDAPEST', 792, 370);
+});
+
+document.getElementById('dl').addEventListener('click', () => {
+  const a = document.createElement('a');
+  a.download = 'linkedin-banner.png';
+  a.href = document.getElementById('c').toDataURL('image/png');
+  a.click();
+});
+</script>
+</body>
+</html>

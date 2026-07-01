@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  NateSystem · Reviews — mark only (icon, favicon, social avatar).
+  256×256 square, brand dark background, rounded 12% per charte.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" fill="none">
+  <defs>
+    <filter id="dotGlow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="14" />
+    </filter>
+  </defs>
+
+  <!-- Rounded square background (12% = ~31px) -->
+  <rect width="256" height="256" rx="30.7" ry="30.7" fill="#0e0e12" />
+
+  <!-- Subtle white frame -->
+  <rect x="0.5" y="0.5" width="255" height="255" rx="30.2" ry="30.2" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
+
+  <!-- Glow halo -->
+  <circle cx="175" cy="175" r="26" fill="#E63946" opacity="0.4" filter="url(#dotGlow)" />
+
+  <!-- Italic serif "N" -->
+  <text
+    x="52"
+    y="192"
+    font-family="'Instrument Serif', Georgia, 'Times New Roman', serif"
+    font-style="italic"
+    font-size="176"
+    font-weight="400"
+    fill="#f0f0f2"
+  >N</text>
+
+  <!-- Accent dot -->
+  <circle cx="175" cy="175" r="13" fill="#E63946" />
+</svg>

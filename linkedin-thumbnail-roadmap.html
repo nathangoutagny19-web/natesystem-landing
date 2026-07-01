@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>NateSystem — Votre Roadmap IA sur-mesure</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-deep: #0a0a0d;
+    --bg-mid: #14080c;
+    --bg-red: #2a0a12;
+    --accent: #E63946;
+    --accent-glow: rgba(230, 57, 70, 0.45);
+    --text: #f5f4f0;
+    --text-muted: rgba(245, 244, 240, 0.55);
+    --border: rgba(245, 244, 240, 0.08);
+    --card-bg: rgba(18, 18, 22, 0.6);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body {
+    width: 1280px;
+    height: 720px;
+    overflow: hidden;
+    background: #000;
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .thumbnail {
+    position: relative;
+    width: 1280px;
+    height: 720px;
+    background:
+      radial-gradient(ellipse 80% 60% at 75% 55%, rgba(230, 57, 70, 0.28) 0%, transparent 60%),
+      radial-gradient(ellipse 100% 80% at 20% 30%, rgba(230, 57, 70, 0.05) 0%, transparent 50%),
+      linear-gradient(135deg, #0a0a0d 0%, #14080c 45%, #2a0a12 100%);
+    overflow: hidden;
+  }
+
+  /* Subtle grid overlay */
+  .grid-overlay {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(245, 244, 240, 0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(245, 244, 240, 0.025) 1px, transparent 1px);
+    background-size: 64px 64px;
+    pointer-events: none;
+    mask-image: radial-gradient(ellipse 100% 70% at 50% 50%, black 30%, transparent 90%);
+  }
+
+  /* Soft red glow */
+  .red-glow {
+    position: absolute;
+    width: 700px;
+    height: 700px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(230, 57, 70, 0.18) 0%, transparent 65%);
+    filter: blur(60px);
+    right: -150px;
+    bottom: -200px;
+    pointer-events: none;
+  }
+  .red-glow-2 {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(230, 57, 70, 0.10) 0%, transparent 70%);
+    filter: blur(40px);
+    left: -100px;
+    top: 200px;
+    pointer-events: none;
+  }
+
+  /* Logo top-left */
+  .logo {
+    position: absolute;
+    top: 40px;
+    left: 56px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    z-index: 10;
+  }
+  .logo-n {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    font-size: 38px;
+    font-weight: 400;
+    color: var(--text);
+    line-height: 1;
+  }
+  .logo-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+    margin-top: 22px;
+    margin-left: -2px;
+    box-shadow: 0 0 10px var(--accent-glow);
+  }
+  .logo-name {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-left: 14px;
+    font-weight: 500;
+  }
+
+  /* Top-right tag */
+  .top-tag {
+    position: absolute;
+    top: 48px;
+    right: 56px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 10;
+  }
+  .top-tag::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 8px var(--accent-glow);
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  /* Main content layout */
+  .content {
+    position: absolute;
+    inset: 0;
+    padding: 130px 80px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 5;
+  }
+
+  .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .eyebrow::before {
+    content: '';
+    width: 32px;
+    height: 1px;
+    background: var(--accent);
+  }
+
+  h1.title {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 82px;
+    line-height: 1.0;
+    letter-spacing: -1.8px;
+    color: var(--text);
+    margin-bottom: 22px;
+    max-width: 720px;
+  }
+  h1.title .accent-word {
+    color: var(--accent);
+  }
+
+  .subtitle {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.5;
+    color: var(--text-muted);
+    letter-spacing: 0.2px;
+    margin-bottom: 36px;
+    max-width: 480px;
+  }
+
+  /* Roadmap card */
+  .roadmap-card {
+    position: absolute;
+    right: 72px;
+    top: 50%;
+    transform: translateY(-46%);
+    width: 478px;
+    height: 308px;
+    background: linear-gradient(145deg, rgba(22, 22, 28, 0.85) 0%, rgba(14, 8, 12, 0.85) 100%);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 36px 32px;
+    backdrop-filter: blur(12px);
+    box-shadow:
+      0 30px 80px rgba(0, 0, 0, 0.5),
+      0 0 0 1px rgba(255, 255, 255, 0.03) inset,
+      0 -1px 0 rgba(255, 255, 255, 0.04) inset;
+    z-index: 6;
+  }
+  .roadmap-card::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 20%;
+    right: 20%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(230, 57, 70, 0.4), transparent);
+  }
+
+  .roadmap-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 36px;
+  }
+  .roadmap-header-left {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+  .roadmap-header-right {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  /* The roadmap SVG container */
+  .roadmap-svg-wrap {
+    position: relative;
+    width: 100%;
+    height: 140px;
+    margin-bottom: 20px;
+  }
+  .roadmap-svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+  }
+
+  /* Step labels */
+  .roadmap-steps {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 6px;
+  }
+  .step-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    width: 80px;
+  }
+  .step-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+  .step-name {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    color: var(--text);
+    font-weight: 500;
+    text-align: center;
+    letter-spacing: 0.2px;
+  }
+
+  /* Bottom CTA line */
+  .cta-line {
+    position: absolute;
+    bottom: 56px;
+    left: 80px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    z-index: 10;
+  }
+  .cta-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 10px var(--accent-glow);
+  }
+  .cta-text {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    font-weight: 400;
+  }
+  .cta-text strong {
+    color: var(--text);
+    font-weight: 500;
+  }
+  .cta-sep {
+    color: rgba(245, 244, 240, 0.25);
+    margin: 0 4px;
+  }
+
+  /* Bottom right URL */
+  .url-mark {
+    position: absolute;
+    bottom: 56px;
+    right: 80px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--text-muted);
+    font-weight: 400;
+    z-index: 10;
+  }
+  .url-mark .arrow {
+    color: var(--accent);
+    margin-right: 6px;
+  }
+
+  /* Corner brackets for premium feel */
+  .corner {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    border: 1px solid rgba(245, 244, 240, 0.15);
+    z-index: 4;
+  }
+  .corner-tl { top: 32px; left: 32px; border-right: none; border-bottom: none; }
+  .corner-tr { top: 32px; right: 32px; border-left: none; border-bottom: none; }
+  .corner-bl { bottom: 32px; left: 32px; border-right: none; border-top: none; }
+  .corner-br { bottom: 32px; right: 32px; border-left: none; border-top: none; }
+</style>
+</head>
+<body>
+<div class="thumbnail">
+  <!-- Background layers -->
+  <div class="grid-overlay"></div>
+  <div class="red-glow"></div>
+  <div class="red-glow-2"></div>
+
+  <!-- Corner brackets -->
+  <div class="corner corner-tl"></div>
+  <div class="corner corner-tr"></div>
+  <div class="corner corner-bl"></div>
+  <div class="corner corner-br"></div>
+
+  <!-- Logo -->
+  <div class="logo">
+    <span class="logo-n">N</span>
+    <span class="logo-dot"></span>
+    <span class="logo-name">NateSystem</span>
+  </div>
+
+  <!-- Top-right status -->
+  <div class="top-tag">Diagnostic offert</div>
+
+  <!-- Main content (left side) -->
+  <div class="content">
+    <div class="eyebrow">Roadmap IA · sur-mesure</div>
+    <h1 class="title">
+      Votre <span class="accent-word">Roadmap&nbsp;IA</span><br/>sur-mesure.
+    </h1>
+    <p class="subtitle">
+      Le chemin clair — de votre stack actuelle<br/>jusqu'à une opération augmentée par l'IA.
+    </p>
+  </div>
+
+  <!-- Roadmap card (right side) -->
+  <div class="roadmap-card">
+    <div class="roadmap-header">
+      <div class="roadmap-header-left">Roadmap_IA · v1.0</div>
+      <div class="roadmap-header-right">● en cours</div>
+    </div>
+
+    <div class="roadmap-svg-wrap">
+      <svg class="roadmap-svg" viewBox="0 0 416 140" preserveAspectRatio="none">
+        <!-- Gradient defs -->
+        <defs>
+          <linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="rgba(245,244,240,0.2)"/>
+            <stop offset="50%" stop-color="rgba(230,57,70,0.7)"/>
+            <stop offset="100%" stop-color="rgba(230,57,70,1)"/>
+          </linearGradient>
+          <filter id="redGlow">
+            <feGaussianBlur stdDeviation="3" result="blur"/>
+            <feMerge>
+              <feMergeNode in="blur"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+        </defs>
+
+        <!-- Background dotted baseline -->
+        <line x1="20" y1="120" x2="396" y2="120" stroke="rgba(245,244,240,0.08)" stroke-width="1" stroke-dasharray="2 4"/>
+
+        <!-- Ascending curve through 4 milestones -->
+        <!-- Points: (20, 110) → (152, 80) → (264, 50) → (396, 20) -->
+        <path
+          d="M 20 110 Q 80 110, 152 80 T 264 50 T 396 20"
+          fill="none"
+          stroke="url(#lineGrad)"
+          stroke-width="2"
+          stroke-linecap="round"
+        />
+
+        <!-- Subtle area under curve -->
+        <path
+          d="M 20 110 Q 80 110, 152 80 T 264 50 T 396 20 L 396 140 L 20 140 Z"
+          fill="url(#lineGrad)"
+          opacity="0.06"
+        />
+
+        <!-- Milestone 1 -->
+        <g filter="url(#redGlow)">
+          <circle cx="20" cy="110" r="6" fill="#0e0e12" stroke="#E63946" stroke-width="2"/>
+          <circle cx="20" cy="110" r="2" fill="#E63946"/>
+        </g>
+        <!-- Milestone 2 -->
+        <g filter="url(#redGlow)">
+          <circle cx="152" cy="80" r="6" fill="#0e0e12" stroke="#E63946" stroke-width="2"/>
+          <circle cx="152" cy="80" r="2" fill="#E63946"/>
+        </g>
+        <!-- Milestone 3 -->
+        <g filter="url(#redGlow)">
+          <circle cx="264" cy="50" r="6" fill="#0e0e12" stroke="#E63946" stroke-width="2"/>
+          <circle cx="264" cy="50" r="2" fill="#E63946"/>
+        </g>
+        <!-- Milestone 4 (final, accentuated) -->
+        <g filter="url(#redGlow)">
+          <circle cx="396" cy="20" r="9" fill="#E63946" opacity="0.15"/>
+          <circle cx="396" cy="20" r="6" fill="#0e0e12" stroke="#E63946" stroke-width="2.5"/>
+          <circle cx="396" cy="20" r="3" fill="#E63946"/>
+        </g>
+
+        <!-- Mini vertical guides from each milestone to baseline -->
+        <line x1="20" y1="116" x2="20" y2="130" stroke="rgba(245,244,240,0.15)" stroke-width="1"/>
+        <line x1="152" y1="86" x2="152" y2="130" stroke="rgba(245,244,240,0.15)" stroke-width="1"/>
+        <line x1="264" y1="56" x2="264" y2="130" stroke="rgba(245,244,240,0.15)" stroke-width="1"/>
+        <line x1="396" y1="29" x2="396" y2="130" stroke="rgba(230,57,70,0.3)" stroke-width="1"/>
+      </svg>
+    </div>
+
+    <div class="roadmap-steps">
+      <div class="step-label">
+        <span class="step-num">01</span>
+        <span class="step-name">Audit</span>
+      </div>
+      <div class="step-label">
+        <span class="step-num">02</span>
+        <span class="step-name">Plan</span>
+      </div>
+      <div class="step-label">
+        <span class="step-num">03</span>
+        <span class="step-name">Build</span>
+      </div>
+      <div class="step-label">
+        <span class="step-num">04</span>
+        <span class="step-name">Autonomie</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom CTA -->
+  <div class="cta-line">
+    <span class="cta-dot"></span>
+    <span class="cta-text">
+      Appel découverte <span class="cta-sep">·</span> <strong>20 min</strong> <span class="cta-sep">·</span> Offert
+    </span>
+  </div>
+
+  <!-- Bottom-right URL -->
+  <div class="url-mark">
+    <span class="arrow">→</span>natesystem.com
+  </div>
+</div>
+</body>
+</html>

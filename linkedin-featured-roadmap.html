@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>NateSystem — Roadmap IA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --accent: #E63946;
+    --accent-glow: rgba(230, 57, 70, 0.45);
+    --text: #f5f4f0;
+    --text-muted: rgba(245, 244, 240, 0.55);
+    --border: rgba(245, 244, 240, 0.08);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body {
+    width: 1200px;
+    height: 628px;
+    overflow: hidden;
+    background: #000;
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .thumbnail {
+    position: relative;
+    width: 1200px;
+    height: 628px;
+    background:
+      radial-gradient(ellipse 75% 80% at 50% 90%, rgba(230, 57, 70, 0.32) 0%, transparent 60%),
+      radial-gradient(ellipse 100% 80% at 20% 25%, rgba(230, 57, 70, 0.05) 0%, transparent 50%),
+      linear-gradient(160deg, #0a0a0d 0%, #14080c 50%, #2a0a12 100%);
+    overflow: hidden;
+  }
+
+  .grid-overlay {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(245, 244, 240, 0.022) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(245, 244, 240, 0.022) 1px, transparent 1px);
+    background-size: 64px 64px;
+    pointer-events: none;
+    mask-image: radial-gradient(ellipse 100% 70% at 50% 50%, black 30%, transparent 90%);
+  }
+
+  .red-glow {
+    position: absolute;
+    width: 800px;
+    height: 800px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(230, 57, 70, 0.20) 0%, transparent 65%);
+    filter: blur(70px);
+    right: -200px;
+    bottom: -300px;
+    pointer-events: none;
+  }
+
+  /* Logo */
+  .logo {
+    position: absolute;
+    top: 36px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    z-index: 10;
+  }
+  .logo-n {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    font-size: 38px;
+    font-weight: 400;
+    color: var(--text);
+    line-height: 1;
+  }
+  .logo-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+    margin-top: 22px;
+    margin-left: -2px;
+    box-shadow: 0 0 10px var(--accent-glow);
+  }
+
+  /* Main content */
+  .content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 80px 60px;
+    z-index: 5;
+  }
+
+  h1.title {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 78px;
+    line-height: 0.98;
+    letter-spacing: -2px;
+    color: var(--text);
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  h1.title .accent-word {
+    color: var(--accent);
+  }
+
+  /* Roadmap visual */
+  .roadmap-visual {
+    width: 880px;
+    margin: 0 auto;
+  }
+
+  .roadmap-svg-wrap {
+    position: relative;
+    width: 100%;
+    height: 110px;
+  }
+  .roadmap-svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+  }
+
+  .roadmap-steps {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 0 0;
+  }
+  .step-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    width: 140px;
+  }
+  .step-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+  .step-name {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    color: var(--text);
+    font-weight: 500;
+    text-align: center;
+    letter-spacing: 0.2px;
+  }
+
+  /* Corner brackets */
+  .corner {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    border: 1px solid rgba(245, 244, 240, 0.15);
+    z-index: 4;
+  }
+  .corner-tl { top: 30px; left: 30px; border-right: none; border-bottom: none; }
+  .corner-tr { top: 30px; right: 30px; border-left: none; border-bottom: none; }
+  .corner-bl { bottom: 30px; left: 30px; border-right: none; border-top: none; }
+  .corner-br { bottom: 30px; right: 30px; border-left: none; border-top: none; }
+</style>
+</head>
+<body>
+<div class="thumbnail">
+  <div class="grid-overlay"></div>
+  <div class="red-glow"></div>
+
+  <div class="corner corner-tl"></div>
+  <div class="corner corner-tr"></div>
+  <div class="corner corner-bl"></div>
+  <div class="corner corner-br"></div>
+
+  <div class="logo">
+    <span class="logo-n">N</span>
+    <span class="logo-dot"></span>
+  </div>
+
+  <div class="content">
+    <h1 class="title">
+      Votre <span class="accent-word">Roadmap&nbsp;IA</span> sur-mesure.
+    </h1>
+
+    <div class="roadmap-visual">
+      <div class="roadmap-svg-wrap">
+        <svg class="roadmap-svg" viewBox="0 0 880 110" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="rgba(245,244,240,0.25)"/>
+              <stop offset="50%" stop-color="rgba(230,57,70,0.7)"/>
+              <stop offset="100%" stop-color="rgba(230,57,70,1)"/>
+            </linearGradient>
+            <filter id="redGlow">
+              <feGaussianBlur stdDeviation="3" result="blur"/>
+              <feMerge>
+                <feMergeNode in="blur"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+          </defs>
+
+          <line x1="40" y1="92" x2="840" y2="92" stroke="rgba(245,244,240,0.08)" stroke-width="1" stroke-dasharray="3 6"/>
+
+          <path
+            d="M 40 84 Q 180 84, 310 56 T 580 28 T 840 10"
+            fill="none"
+            stroke="url(#lineGrad)"
+            stroke-width="2.5"
+            stroke-linecap="round"
+          />
+
+          <path
+            d="M 40 84 Q 180 84, 310 56 T 580 28 T 840 10 L 840 110 L 40 110 Z"
+            fill="url(#lineGrad)"
+            opacity="0.06"
+          />
+
+          <g filter="url(#redGlow)">
+            <circle cx="40" cy="84" r="7" fill="#0e0e12" stroke="#E63946" stroke-width="2"/>
+            <circle cx="40" cy="84" r="3" fill="#E63946"/>
+          </g>
+          <g filter="url(#redGlow)">
+            <circle cx="310" cy="56" r="7" fill="#0e0e12" stroke="#E63946" stroke-width="2"/>
+            <circle cx="310" cy="56" r="3" fill="#E63946"/>
+          </g>
+          <g filter="url(#redGlow)">
+            <circle cx="580" cy="28" r="7" fill="#0e0e12" stroke="#E63946" stroke-width="2"/>
+            <circle cx="580" cy="28" r="3" fill="#E63946"/>
+          </g>
+          <g filter="url(#redGlow)">
+            <circle cx="840" cy="10" r="12" fill="#E63946" opacity="0.18"/>
+            <circle cx="840" cy="10" r="8" fill="#0e0e12" stroke="#E63946" stroke-width="2.5"/>
+            <circle cx="840" cy="10" r="3.5" fill="#E63946"/>
+          </g>
+
+          <line x1="40" y1="91" x2="40" y2="110" stroke="rgba(245,244,240,0.18)" stroke-width="1"/>
+          <line x1="310" y1="63" x2="310" y2="110" stroke="rgba(245,244,240,0.18)" stroke-width="1"/>
+          <line x1="580" y1="35" x2="580" y2="110" stroke="rgba(245,244,240,0.18)" stroke-width="1"/>
+          <line x1="840" y1="22" x2="840" y2="110" stroke="rgba(230,57,70,0.35)" stroke-width="1.5"/>
+        </svg>
+      </div>
+
+      <div class="roadmap-steps">
+        <div class="step-label">
+          <span class="step-num">01</span>
+          <span class="step-name">Audit</span>
+        </div>
+        <div class="step-label">
+          <span class="step-num">02</span>
+          <span class="step-name">Plan</span>
+        </div>
+        <div class="step-label">
+          <span class="step-num">03</span>
+          <span class="step-name">Build</span>
+        </div>
+        <div class="step-label">
+          <span class="step-num">04</span>
+          <span class="step-name">Autonomie</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

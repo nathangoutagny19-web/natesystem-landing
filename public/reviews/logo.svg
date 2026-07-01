@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  NateSystem · Reviews — full lockup logo
+  512×128, transparent background. Works on dark and light surfaces.
+  Brand tokens from charte_graphique/CHARTE_GRAPHIQUE_CLAUDE_CHAT.md:
+    - Mark BG   : #0e0e12  (brand dark)
+    - "N" fill  : #f0f0f2
+    - Dot       : #E63946  (brand accent)
+    - Wordmark  : currentColor so the file recolors via CSS on light mode
+    - "· Reviews" : #E63946 italic serif
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 128" width="512" height="128" fill="none">
+  <defs>
+    <filter id="dotGlow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="6" />
+    </filter>
+  </defs>
+
+  <!-- Logo mark (96×96 rounded square, 12% radius = 11.5px) -->
+  <g transform="translate(8, 16)">
+    <rect width="96" height="96" rx="11.5" ry="11.5" fill="#0e0e12" />
+    <!-- Subtle white frame (rgba(255,255,255,0.08) stroke per charte) -->
+    <rect x="0.5" y="0.5" width="95" height="95" rx="11" ry="11" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
+    <!-- Glow halo behind the dot -->
+    <circle cx="65" cy="66" r="10" fill="#E63946" opacity="0.4" filter="url(#dotGlow)" />
+    <!-- Italic serif "N" -->
+    <text
+      x="20"
+      y="72"
+      font-family="'Instrument Serif', Georgia, 'Times New Roman', serif"
+      font-style="italic"
+      font-size="64"
+      font-weight="400"
+      fill="#f0f0f2"
+    >N</text>
+    <!-- Accent dot -->
+    <circle cx="65" cy="66" r="5" fill="#E63946" />
+  </g>
+
+  <!-- Wordmark: "NateSystem" sans + "· Reviews" serif italic -->
+  <!-- "NateSystem" in currentColor so pages can recolor it with CSS. -->
+  <text
+    x="128"
+    y="72"
+    font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif"
+    font-size="30"
+    font-weight="500"
+    fill="currentColor"
+    style="letter-spacing: 0.5px;"
+  >NateSystem</text>
+
+  <!-- "· Reviews" in Instrument Serif italic, brand red. -->
+  <text
+    x="320"
+    y="72"
+    font-family="'Instrument Serif', Georgia, 'Times New Roman', serif"
+    font-style="italic"
+    font-size="30"
+    font-weight="400"
+    fill="#E63946"
+  >· Reviews</text>
+</svg>

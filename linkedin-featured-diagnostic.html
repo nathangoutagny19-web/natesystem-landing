@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>NateSystem — Combien perdez-vous ?</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --accent: #E63946;
+    --accent-glow: rgba(230, 57, 70, 0.45);
+    --text: #f5f4f0;
+    --text-muted: rgba(245, 244, 240, 0.55);
+    --text-dim: rgba(245, 244, 240, 0.35);
+    --border: rgba(245, 244, 240, 0.08);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body {
+    width: 1200px;
+    height: 628px;
+    overflow: hidden;
+    background: #000;
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .thumbnail {
+    position: relative;
+    width: 1200px;
+    height: 628px;
+    background:
+      radial-gradient(ellipse 75% 80% at 50% 90%, rgba(230, 57, 70, 0.32) 0%, transparent 60%),
+      radial-gradient(ellipse 100% 80% at 20% 25%, rgba(230, 57, 70, 0.05) 0%, transparent 50%),
+      linear-gradient(160deg, #0a0a0d 0%, #14080c 50%, #2a0a12 100%);
+    overflow: hidden;
+  }
+
+  .grid-overlay {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(245, 244, 240, 0.022) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(245, 244, 240, 0.022) 1px, transparent 1px);
+    background-size: 64px 64px;
+    pointer-events: none;
+    mask-image: radial-gradient(ellipse 100% 70% at 50% 50%, black 30%, transparent 90%);
+  }
+
+  .red-glow {
+    position: absolute;
+    width: 900px;
+    height: 800px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(230, 57, 70, 0.20) 0%, transparent 65%);
+    filter: blur(70px);
+    left: 50%;
+    bottom: -350px;
+    transform: translateX(-50%);
+    pointer-events: none;
+  }
+
+  /* Logo */
+  .logo {
+    position: absolute;
+    top: 36px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    z-index: 10;
+  }
+  .logo-n {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    font-size: 38px;
+    font-weight: 400;
+    color: var(--text);
+    line-height: 1;
+  }
+  .logo-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+    margin-top: 22px;
+    margin-left: -2px;
+    box-shadow: 0 0 10px var(--accent-glow);
+  }
+
+  /* Main content */
+  .content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 95px 60px 50px;
+    z-index: 5;
+  }
+
+  .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 4.5px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    font-weight: 500;
+    margin-bottom: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+  }
+  .eyebrow::before,
+  .eyebrow::after {
+    content: '';
+    width: 28px;
+    height: 1px;
+    background: rgba(245, 244, 240, 0.2);
+  }
+
+  h1.title {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 72px;
+    line-height: 0.98;
+    letter-spacing: -2px;
+    color: var(--text);
+    text-align: center;
+    margin-bottom: 56px;
+  }
+  h1.title .accent-word {
+    color: var(--accent);
+  }
+
+  /* KPI section - 3 KPIs in a row */
+  .kpi-row {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 0;
+    width: 100%;
+    max-width: 980px;
+  }
+
+  .kpi-card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 20px;
+    gap: 8px;
+    position: relative;
+  }
+  .kpi-card:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 15%;
+    bottom: 15%;
+    width: 1px;
+    background: var(--border);
+  }
+
+  .kpi-value {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    color: var(--accent);
+  }
+  .kpi-value.neutral {
+    color: var(--text);
+  }
+  .kpi-value-num {
+    font-size: 76px;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -1.5px;
+  }
+  .kpi-value-unit {
+    font-size: 26px;
+    font-style: normal;
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+  }
+
+  .kpi-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    font-weight: 500;
+    text-align: center;
+  }
+
+  /* Corner brackets */
+  .corner {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    border: 1px solid rgba(245, 244, 240, 0.15);
+    z-index: 4;
+  }
+  .corner-tl { top: 30px; left: 30px; border-right: none; border-bottom: none; }
+  .corner-tr { top: 30px; right: 30px; border-left: none; border-bottom: none; }
+  .corner-bl { bottom: 30px; left: 30px; border-right: none; border-top: none; }
+  .corner-br { bottom: 30px; right: 30px; border-left: none; border-top: none; }
+</style>
+</head>
+<body>
+<div class="thumbnail">
+  <div class="grid-overlay"></div>
+  <div class="red-glow"></div>
+
+  <div class="corner corner-tl"></div>
+  <div class="corner corner-tr"></div>
+  <div class="corner corner-bl"></div>
+  <div class="corner corner-br"></div>
+
+  <div class="logo">
+    <span class="logo-n">N</span>
+    <span class="logo-dot"></span>
+  </div>
+
+  <div class="content">
+    <div class="eyebrow">Diagnostic IA</div>
+    <h1 class="title">
+      Exploitez-vous l'IA<br/>à <span class="accent-word">100&nbsp;%</span> de son potentiel&nbsp;?
+    </h1>
+
+    <div class="kpi-row">
+      <div class="kpi-card">
+        <div class="kpi-value">
+          <span class="kpi-value-num">1 240</span>
+          <span class="kpi-value-unit">€</span>
+        </div>
+        <div class="kpi-label">SaaS gaspillé</div>
+      </div>
+
+      <div class="kpi-card">
+        <div class="kpi-value">
+          <span class="kpi-value-num">38</span>
+          <span class="kpi-value-unit">h</span>
+        </div>
+        <div class="kpi-label">Heures perdues</div>
+      </div>
+
+      <div class="kpi-card">
+        <div class="kpi-value neutral">
+          <span class="kpi-value-num">42</span>
+          <span class="kpi-value-unit">/100</span>
+        </div>
+        <div class="kpi-label">Maturité IA</div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
