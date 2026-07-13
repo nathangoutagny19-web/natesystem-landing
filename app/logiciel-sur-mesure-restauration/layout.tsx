@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Logiciel sur-mesure pour la restauration — NateSystem',
   description:
-    'Le logiciel métier qui pilote un restaurant ou un groupe : cockpit KPI temps réel, contrôle des factures fournisseurs, pointeuse & paie, gestion des avis. Cas réel : ×11 sur le temps de pilotage. Audit offert de 20 min.',
+    'Le logiciel métier qui pilote un restaurant ou un groupe : cockpit KPI temps réel, contrôle des factures fournisseurs, pointeuse & paie, gestion des avis. Cas réel : ×11 sur le temps de pilotage. Audit offert.',
   alternates: { canonical: 'https://www.natesystem.com/logiciel-sur-mesure-restauration' },
   openGraph: {
     title: 'Logiciel sur-mesure pour la restauration — NateSystem',

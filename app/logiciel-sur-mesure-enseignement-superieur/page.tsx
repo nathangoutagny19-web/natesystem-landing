@@ -57,7 +57,7 @@ export default function EducationPage() {
               là où vous jonglez aujourd&apos;hui entre des tableurs que chaque service maintient à sa façon. Hébergé en UE, RGPD-natif.
             </p>
             <Link href={CAL_LINK} className="btn-primary" style={{ margin: '0 auto', fontSize: 14 }}>
-              <span className="btn-primary-dot" />Réserver 20 min · offert →
+              <span className="btn-primary-dot" />Réserver un appel · offert →
             </Link>
           </FadeUp>
         </div>
@@ -170,11 +170,11 @@ export default function EducationPage() {
                 Centralisez le suivi de vos étudiants.
               </h2>
               <p className="font-sans" style={{ fontSize: 15, fontWeight: 300, color: 'var(--text-secondary)', lineHeight: 1.7, maxWidth: 520, margin: '0 auto 32px' }}>
-                20 minutes, offert. On regarde vos outils actuels et on identifie ce qu&apos;un CRM pédagogique sur-mesure vous
+                Un appel offert. On regarde vos outils actuels et on identifie ce qu&apos;un CRM pédagogique sur-mesure vous
                 ferait gagner. Même si on ne travaille pas ensemble.
               </p>
               <Link href={CAL_LINK} className="btn-primary" style={{ margin: '0 auto' }}>
-                <span className="btn-primary-dot" />Réserver 20 min · offert
+                <span className="btn-primary-dot" />Réserver un appel · offert
               </Link>
             </div>
           </FadeUp>

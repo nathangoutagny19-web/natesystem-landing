@@ -59,7 +59,7 @@ export default function LogicielSurMesurePage() {
               hébergé en UE, en production en 4 à 8 semaines.
             </p>
             <Link href={CAL_LINK} className="btn-primary" style={{ margin: '0 auto', fontSize: 14 }}>
-              <span className="btn-primary-dot" />Réserver 20 min · offert →
+              <span className="btn-primary-dot" />Réserver un appel · offert →
             </Link>
           </FadeUp>
         </div>
@@ -200,11 +200,11 @@ export default function LogicielSurMesurePage() {
                 Et si tout était au même endroit ?
               </h2>
               <p className="font-sans" style={{ fontSize: 15, fontWeight: 300, color: 'var(--text-secondary)', lineHeight: 1.7, maxWidth: 520, margin: '0 auto 32px' }}>
-                20 minutes, offert. On regarde vos outils actuels et on identifie ce qu&apos;un seul logiciel sur-mesure vous
+                Un appel offert. On regarde vos outils actuels et on identifie ce qu&apos;un seul logiciel sur-mesure vous
                 ferait gagner — en temps, en argent, en clarté. Même si on ne travaille pas ensemble.
               </p>
               <Link href={CAL_LINK} className="btn-primary" style={{ margin: '0 auto' }}>
-                <span className="btn-primary-dot" />Réserver 20 min · offert
+                <span className="btn-primary-dot" />Réserver un appel · offert
               </Link>
             </div>
           </FadeUp>

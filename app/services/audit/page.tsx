@@ -57,7 +57,7 @@ export default function AuditPage() {
               plan d&apos;action clair et chiffré. Vous repartez avec le plan — même si on ne travaille pas ensemble.
             </p>
             <Link href={CAL_LINK} className="btn-primary" style={{ margin: '0 auto', fontSize: 14 }}>
-              <span className="btn-primary-dot" />Réserver 20 min · offert →
+              <span className="btn-primary-dot" />Réserver un appel · offert →
             </Link>
           </FadeUp>
         </div>
@@ -75,7 +75,7 @@ export default function AuditPage() {
           </FadeUp>
           <FadeUp>
             <p className="font-sans" style={{ fontSize: 16, color: 'var(--text-secondary)', lineHeight: 1.75, fontWeight: 300, maxWidth: 680, margin: '0 auto', textAlign: 'center' }}>
-              Tout commence par un appel découverte de 20 min, offert, pour comprendre votre situation. Puis on cartographie
+              Tout commence par un appel découverte, offert, pour comprendre votre situation. Puis on cartographie
               votre façon réelle de travailler, on repère ce qui bloque, et on chiffre ce que vous coûte l&apos;inaction. On
               dessine la cible et on vous remet un plan d&apos;action clair et chiffré.
             </p>
@@ -137,7 +137,7 @@ export default function AuditPage() {
         <div className="mx-auto" style={{ maxWidth: 600 }}>
           <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: 14 }}>
             {[
-              'Appel découverte de 20 min · offert',
+              'Appel découverte · offert',
               'Un plan d\'action clair et chiffré · vous repartez avec',
               'Exécutable avec nous, en interne, ou un mix',
               'Sans engagement · même si on ne travaille pas ensemble',
@@ -173,11 +173,11 @@ export default function AuditPage() {
                 Sachez où agir en premier.
               </h2>
               <p className="font-sans" style={{ fontSize: 15, fontWeight: 300, color: 'var(--text-secondary)', lineHeight: 1.7, maxWidth: 520, margin: '0 auto 32px' }}>
-                20 minutes, offert. On regarde votre activité et on identifie où vous faire gagner du temps et de l&apos;argent.
+                Un appel offert. On regarde votre activité et on identifie où vous faire gagner du temps et de l&apos;argent.
                 Vous repartez avec un plan clair — même si on ne travaille pas ensemble.
               </p>
               <Link href={CAL_LINK} className="btn-primary" style={{ margin: '0 auto' }}>
-                <span className="btn-primary-dot" />Réserver 20 min · offert
+                <span className="btn-primary-dot" />Réserver un appel · offert
               </Link>
             </div>
           </FadeUp>

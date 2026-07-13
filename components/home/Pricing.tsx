@@ -154,7 +154,7 @@ const plans: PricingCardProps[] = [
       'Support 60 jours',
       'Dashboard de suivi',
     ],
-    cta: 'Réserver 20 min · offert →',
+    cta: 'Réserver un appel · offert →',
     ctaVariant: 'primary',
   },
   {

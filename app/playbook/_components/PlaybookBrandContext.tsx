@@ -36,7 +36,7 @@ export default function PlaybookBrandContext() {
               Découvrir NateSystem <ArrowRight size={14} strokeWidth={2} />
             </Link>
             <Link href="/book" className="pb-btn-secondary">
-              Réserver 20 min · offert
+              Réserver un appel · offert
             </Link>
           </div>
         </div>

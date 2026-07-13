@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Logiciel & IA sur-mesure pour clubs sportifs — NateSystem',
   description:
-    'Logiciel métier et IA sur-mesure pour clubs sportifs : génération automatique des offres de sponsoring (PDF, slides, mail) après vos appels, back-office commercial relié au CRM, gestion des bénévoles. Démo en 2 minutes + audit offert de 20 min.',
+    'Logiciel métier et IA sur-mesure pour clubs sportifs : génération automatique des offres de sponsoring (PDF, slides, mail) après vos appels, back-office commercial relié au CRM, gestion des bénévoles. Démo en 2 minutes + audit offert.',
   alternates: { canonical: 'https://www.natesystem.com/logiciel-sur-mesure-club-sportif' },
   openGraph: {
     title: 'Logiciel & IA sur-mesure pour clubs sportifs — NateSystem',

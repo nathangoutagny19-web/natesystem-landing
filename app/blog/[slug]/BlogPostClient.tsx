@@ -207,13 +207,13 @@ export default function BlogPostClient({ post }: { post: BlogPost }) {
                   margin: '0 auto 32px',
                 }}
               >
-                Réservez un appel de consulting offert de 20 minutes. On identifie ensemble
+                Réservez un appel de consulting offert. On identifie ensemble
                 vos 3 processus à plus fort potentiel d&apos;automatisation. Vous repartez
                 avec une roadmap, même si on ne bosse pas ensemble.
               </p>
               <Link href="/book" className="btn-primary" style={{ margin: '0 auto' }}>
                 <span className="btn-primary-dot" />
-                Réserver 20 min · offert
+                Réserver un appel · offert
               </Link>
             </div>
           </FadeUp>

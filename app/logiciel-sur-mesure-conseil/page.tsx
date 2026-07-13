@@ -58,7 +58,7 @@ export default function ConseilPage() {
               remplace de vraies heures — votre secret client reste intact.
             </p>
             <Link href={CAL_LINK} className="btn-primary" style={{ margin: '0 auto', fontSize: 14 }}>
-              <span className="btn-primary-dot" />Réserver 20 min · offert →
+              <span className="btn-primary-dot" />Réserver un appel · offert →
             </Link>
           </FadeUp>
         </div>
@@ -172,11 +172,11 @@ export default function ConseilPage() {
                 Récupérez votre temps facturable.
               </h2>
               <p className="font-sans" style={{ fontSize: 15, fontWeight: 300, color: 'var(--text-secondary)', lineHeight: 1.7, maxWidth: 520, margin: '0 auto 32px' }}>
-                20 minutes, offert. On regarde où part votre temps et ce que l&apos;automatisation vous ferait gagner — en
+                Un appel offert. On regarde où part votre temps et ce que l&apos;automatisation vous ferait gagner — en
                 rendez-vous et en heures facturables. Même si on ne travaille pas ensemble.
               </p>
               <Link href={CAL_LINK} className="btn-primary" style={{ margin: '0 auto' }}>
-                <span className="btn-primary-dot" />Réserver 20 min · offert
+                <span className="btn-primary-dot" />Réserver un appel · offert
               </Link>
             </div>
           </FadeUp>

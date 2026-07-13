@@ -7,7 +7,7 @@ export const CAL_LINK = '/#rendez-vous'
 export const SITE_URL = 'https://www.natesystem.com'
 export const API_URL = 'https://natesystem-backend.vercel.app'
 
-// Cal.com booking — appel de consulting 20 min offert
-export const CAL_HANDLE = 'goutagny-nathan-myv1qd/20min'
-export const CAL_NAMESPACE = '20min'
+// Cal.com booking — appel de consulting offert (event 45 min)
+export const CAL_HANDLE = 'goutagny-nathan-myv1qd/45min'
+export const CAL_NAMESPACE = '45min'
 export const CAL_DIRECT_URL = `https://cal.com/${CAL_HANDLE}`

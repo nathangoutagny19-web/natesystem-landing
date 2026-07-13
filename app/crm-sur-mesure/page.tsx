@@ -66,7 +66,7 @@ export default function CrmSurMesurePage() {
               votre entreprise possède à vie, pas un CRM standard que vous subissez.
             </p>
             <Link href={CAL_LINK} className="btn-primary" style={{ margin: '0 auto', fontSize: 14 }}>
-              <span className="btn-primary-dot" />Réserver 20 min · offert →
+              <span className="btn-primary-dot" />Réserver un appel · offert →
             </Link>
           </FadeUp>
         </div>
@@ -239,12 +239,12 @@ export default function CrmSurMesurePage() {
                 Votre CRM sur-mesure.
               </h2>
               <p className="font-sans" style={{ fontSize: 15, fontWeight: 300, color: 'var(--text-secondary)', lineHeight: 1.7, maxWidth: 520, margin: '0 auto 32px' }}>
-                20 minutes, offert. On regarde comment votre équipe vend et suit ses prospects aujourd'hui, et on
+                Un appel offert. On regarde comment votre équipe vend et suit ses prospects aujourd'hui, et on
                 identifie ce qu'un CRM sur-mesure ferait gagner à votre entreprise — en temps, en deals, en clarté.
                 Même si on ne travaille pas ensemble.
               </p>
               <Link href={CAL_LINK} className="btn-primary" style={{ margin: '0 auto' }}>
-                <span className="btn-primary-dot" />Réserver 20 min · offert
+                <span className="btn-primary-dot" />Réserver un appel · offert
               </Link>
             </div>
           </FadeUp>

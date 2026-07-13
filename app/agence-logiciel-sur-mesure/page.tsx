@@ -66,7 +66,7 @@ export default function AgenceLogicielSurMesurePage() {
               Voici comment reconnaître un bon prestataire.
             </p>
             <Link href={CAL_LINK} className="btn-primary" style={{ margin: '0 auto', fontSize: 14 }}>
-              <span className="btn-primary-dot" />Réserver 20 min · offert →
+              <span className="btn-primary-dot" />Réserver un appel · offert →
             </Link>
           </FadeUp>
         </div>
@@ -241,12 +241,12 @@ export default function AgenceLogicielSurMesurePage() {
                 Parlons de votre projet.
               </h2>
               <p className="font-sans" style={{ fontSize: 15, fontWeight: 300, color: 'var(--text-secondary)', lineHeight: 1.7, maxWidth: 520, margin: '0 auto 32px' }}>
-                20 minutes, offert. On regarde vos outils actuels et on identifie ce qu'un logiciel sur-mesure ferait
+                Un appel offert. On regarde vos outils actuels et on identifie ce qu'un logiciel sur-mesure ferait
                 gagner à votre entreprise — en temps, en argent, en clarté. On vous dira aussi franchement si vous
                 n'en avez pas besoin.
               </p>
               <Link href={CAL_LINK} className="btn-primary" style={{ margin: '0 auto' }}>
-                <span className="btn-primary-dot" />Réserver 20 min · offert
+                <span className="btn-primary-dot" />Réserver un appel · offert
               </Link>
             </div>
           </FadeUp>

@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'IA agentique & data analytics — l\'IA qui travaille pour vous | NateSystem',
   description:
-    'Une IA agentique avec mémoire persistante qui exécute des tâches de bout en bout, apprend votre métier et s\'améliore avec le temps. Data analytics pour décider sur du concret. Intégrée là où elle remplace de vraies heures. Audit offert de 20 min.',
+    'Une IA agentique avec mémoire persistante qui exécute des tâches de bout en bout, apprend votre métier et s\'améliore avec le temps. Data analytics pour décider sur du concret. Intégrée là où elle remplace de vraies heures. Audit offert.',
   alternates: { canonical: 'https://www.natesystem.com/services/ia' },
   openGraph: {
     title: 'IA agentique & data analytics — l\'IA qui travaille pour vous | NateSystem',

@@ -81,7 +81,7 @@ export default function ServicesPage() {
               elle vous fait gagner. Rarement l&apos;un ou l&apos;autre — un écosystème digital taillé pour votre activité.
             </p>
             <Link href={CAL_LINK} className="btn-primary" style={{ margin: '0 auto', fontSize: 14 }}>
-              <span className="btn-primary-dot" />Réserver 20 min · offert →
+              <span className="btn-primary-dot" />Réserver un appel · offert →
             </Link>
           </FadeUp>
         </div>
@@ -126,11 +126,11 @@ export default function ServicesPage() {
                 On part de votre métier.
               </h2>
               <p className="font-sans" style={{ fontSize: 15, fontWeight: 300, color: 'var(--text-secondary)', lineHeight: 1.7, maxWidth: 520, margin: '0 auto 32px' }}>
-                20 minutes, offert. On regarde votre activité et on identifie ce qu&apos;il vous faut vraiment — audit,
+                Un appel offert. On regarde votre activité et on identifie ce qu&apos;il vous faut vraiment — audit,
                 logiciel sur-mesure, IA. Vous repartez avec un plan clair, même si on ne travaille pas ensemble.
               </p>
               <Link href={CAL_LINK} className="btn-primary" style={{ margin: '0 auto' }}>
-                <span className="btn-primary-dot" />Réserver 20 min · offert
+                <span className="btn-primary-dot" />Réserver un appel · offert
               </Link>
             </div>
           </FadeUp>

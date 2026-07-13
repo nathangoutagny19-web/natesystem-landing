@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Logiciel interne Annecy : solution sur-mesure entreprise',
   description:
-    'Logiciel interne à Annecy : NateSystem conçoit des solutions logicielles sur-mesure pour entreprise — gestion, données, équipe. Code livré, propriété 100 %, hébergé en UE. Audit offert de 20 min.',
+    'Logiciel interne à Annecy : NateSystem conçoit des solutions logicielles sur-mesure pour entreprise — gestion, données, équipe. Code livré, propriété 100 %, hébergé en UE. Audit offert.',
   alternates: { canonical: 'https://www.natesystem.com/logiciel-interne-annecy' },
   openGraph: {
     title: 'Logiciel interne Annecy : solution sur-mesure entreprise',

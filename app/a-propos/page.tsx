@@ -137,10 +137,10 @@ export default function AProposPage() {
                 Parlons de ce que vous construisez.
               </h2>
               <p className="font-sans" style={{ fontSize: 15, fontWeight: 300, color: 'var(--text-secondary)', lineHeight: 1.7, maxWidth: 500, margin: '0 auto 32px' }}>
-                20 minutes, offert. On regarde votre situation, et vous repartez avec une vision claire — même si on ne travaille pas ensemble.
+                Un appel offert. On regarde votre situation, et vous repartez avec une vision claire — même si on ne travaille pas ensemble.
               </p>
               <Link href={CAL_LINK} className="btn-primary" style={{ margin: '0 auto' }}>
-                <span className="btn-primary-dot" />Réserver 20 min · offert
+                <span className="btn-primary-dot" />Réserver un appel · offert
               </Link>
             </div>
           </FadeUp>

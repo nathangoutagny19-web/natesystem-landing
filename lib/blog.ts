@@ -101,9 +101,9 @@ export const blogPosts: BlogPost[] = [
 
 <p>Le prix d'un logiciel sur-mesure dépend du périmètre, des intégrations, de l'IA et de votre niveau de structuration — de quelques milliers à quelques dizaines de milliers d'euros pour une première version. Mais la bonne question reste le ROI : combien ça vous fait gagner, et en combien de temps c'est rentabilisé. Un bon prestataire fixe un périmètre et un prix clairs avant de commencer, et vous livre un code que vous possédez.</p>
 
-<p>Le plus simple, c'est qu'on regarde votre cas ensemble et qu'on vous donne une fourchette honnête en 20 minutes.</p>
+<p>Le plus simple, c'est qu'on regarde votre cas ensemble et qu'on vous donne une fourchette honnête, rapidement.</p>
 
-<p><strong><a href="/book">Réserver 20 min · offert &rarr;</a></strong></p>
+<p><strong><a href="/book">Réserver un appel · offert &rarr;</a></strong></p>
 `,
   },
   {
@@ -199,9 +199,9 @@ export const blogPosts: BlogPost[] = [
 
 <p>La première version d'un logiciel métier sur-mesure se livre en 4 à 8 semaines pour une PME, à condition de viser le cœur utile et de fixer le périmètre avant de commencer. Les projets qui s'éternisent sont presque toujours ceux sans périmètre ferme, sans démos régulières, ou qui veulent tout construire d'un coup. Une bonne méthode — audit, périmètre fixe, démos hebdo, première version rapide — élimine l'essentiel du risque.</p>
 
-<p>Le plus simple, c'est qu'on regarde votre projet ensemble et qu'on vous donne un délai réaliste en 20 minutes.</p>
+<p>Le plus simple, c'est qu'on regarde votre projet ensemble et qu'on vous donne un délai réaliste, rapidement.</p>
 
-<p><strong><a href="/book">Réserver 20 min · offert &rarr;</a></strong></p>
+<p><strong><a href="/book">Réserver un appel · offert &rarr;</a></strong></p>
 `,
   },
   {
@@ -234,7 +234,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>On ne commence jamais par le code. On commence par <strong>comprendre votre activité</strong> : comment vous travaillez réellement, ce qui vous fait perdre du temps et de l'argent, et où un logiciel apporterait le plus. C'est le rôle de l'audit, et c'est la première étape de tout projet sérieux.</p>
 
-<p>Concrètement, le point de départ est un appel de découverte de 20 minutes, offert, pour comprendre votre situation. Puis, en audit, on cartographie vos process et on dessine la cible. Vous repartez avec un plan clair et chiffré — <strong>même si on ne construit rien ensemble</strong>.</p>
+<p>Concrètement, le point de départ est un appel de découverte, offert, pour comprendre votre situation. Puis, en audit, on cartographie vos process et on dessine la cible. Vous repartez avec un plan clair et chiffré — <strong>même si on ne construit rien ensemble</strong>.</p>
 
 <blockquote>Construire un logiciel sans audit, c'est automatiser un process bancal. Vous obtenez un outil rapide… qui fait bien la mauvaise chose. L'audit garantit qu'on construit le bon.</blockquote>
 
@@ -255,7 +255,7 @@ export const blogPosts: BlogPost[] = [
 <p>Le déroulé est simple et sans engagement :</p>
 
 <ol>
-  <li><strong>Appel découverte (20 min, offert).</strong> On comprend votre situation, vos outils actuels, vos points de friction.</li>
+  <li><strong>Appel découverte (offert).</strong> On comprend votre situation, vos outils actuels, vos points de friction.</li>
   <li><strong>Cartographie & structuration.</strong> On met à plat vos process et on structure : qui fait quoi, dans quel ordre. On corrige d'abord les problèmes de fond pour éviter d'automatiser des opérations défectueuses.</li>
   <li><strong>Plan d'action chiffré.</strong> On vous remet un plan clair, priorisé par impact, exécutable avec nous, en interne, ou un mix. Vous repartez avec.</li>
 </ol>
@@ -271,10 +271,10 @@ export const blogPosts: BlogPost[] = [
 <h2 id="faq">FAQ</h2>
 
 <h3>Par où commencer pour un logiciel sur-mesure ?</h3>
-<p>Par un audit, jamais par le code. On commence par un appel découverte de 20 min, offert, puis on cartographie vos process et on dessine la cible. Vous repartez avec un plan clair et chiffré, même si vous ne construisez rien ensuite.</p>
+<p>Par un audit, jamais par le code. On commence par un appel découverte, offert, puis on cartographie vos process et on dessine la cible. Vous repartez avec un plan clair et chiffré, même si vous ne construisez rien ensuite.</p>
 
 <h3>L'audit est-il payant ?</h3>
-<p>L'appel de découverte de 20 minutes est offert. L'audit de consulting approfondi (cartographie, structuration, plan d'action) est un vrai travail qui suit. Dans tous les cas, vous repartez avec un plan exécutable, avec nous ou en interne.</p>
+<p>L'appel de découverte est offert. L'audit de consulting approfondi (cartographie, structuration, plan d'action) est un vrai travail qui suit. Dans tous les cas, vous repartez avec un plan exécutable, avec nous ou en interne.</p>
 
 <h3>Peut-on construire un logiciel sans passer par l'audit ?</h3>
 <p>Techniquement oui, mais c'est risqué : sans cartographie des process, on construit à l'aveugle, le périmètre dérape et l'outil risque de ne pas coller à votre réalité. L'audit garantit qu'on construit le bon outil, pas le mauvais.</p>
@@ -284,11 +284,11 @@ export const blogPosts: BlogPost[] = [
 
 <h2 id="conclusion">En résumé</h2>
 
-<p>Un projet de logiciel sur-mesure ne commence pas par le code, mais par l'audit : comprendre votre activité, cartographier vos process, chiffrer l'inaction, et dessiner la cible. C'est ce qui garantit qu'on construit le bon outil, avec un vrai ROI — et qu'on évite le piège d'automatiser un process bancal. Le point de départ est un appel de 20 minutes, offert et sans engagement.</p>
+<p>Un projet de logiciel sur-mesure ne commence pas par le code, mais par l'audit : comprendre votre activité, cartographier vos process, chiffrer l'inaction, et dessiner la cible. C'est ce qui garantit qu'on construit le bon outil, avec un vrai ROI — et qu'on évite le piège d'automatiser un process bancal. Le point de départ est un appel offert et sans engagement.</p>
 
 <p>Le plus simple pour savoir par où commencer, c'est qu'on regarde votre cas ensemble.</p>
 
-<p><strong><a href="/book">Réserver 20 min · offert &rarr;</a></strong></p>
+<p><strong><a href="/book">Réserver un appel · offert &rarr;</a></strong></p>
 `,
   },
   {
@@ -415,9 +415,9 @@ export const blogPosts: BlogPost[] = [
 
 <p>L'IA agentique, ce n'est pas un chatbot de plus : c'est une IA qui <strong>fait le travail</strong> — elle exécute des tâches de bout en bout, garde le contexte en mémoire, et s'améliore avec le temps. En PME, elle a du sens là où elle remplace de vraies heures : qualification de leads, lecture de documents, relances, veille, reporting. Pas partout, pas en gadget : seulement là où le ROI est mesurable.</p>
 
-<p>La meilleure façon de savoir si elle peut vous aider, c'est de regarder vos vraies tâches. C'est ce qu'on fait en 20 minutes, sans engagement.</p>
+<p>La meilleure façon de savoir si elle peut vous aider, c'est de regarder vos vraies tâches. C'est ce qu'on fait avec vous, sans engagement.</p>
 
-<p><strong><a href="/book">Réserver 20 min · offert &rarr;</a></strong></p>
+<p><strong><a href="/book">Réserver un appel · offert &rarr;</a></strong></p>
 `,
   },
   {
@@ -1513,7 +1513,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>Chez NateSystem, on accompagne les PME à chaque étape de cette progression. De l\'audit initial à l\'infrastructure complète d\'agents IA, en passant par la centralisation des données et la formation des équipes.</p>
 
-<p>La première étape est toujours la même : comprendre où vous en êtes et où vous pourriez être. Prenons 20 minutes pour en parler.</p>
+<p>La première étape est toujours la même : comprendre où vous en êtes et où vous pourriez être. Prenons un moment pour en parler.</p>
 
 <p><strong><a href="/book">Réserver un appel stratégique pour évaluer votre potentiel IA &rarr;</a></strong></p>
 `,
@@ -2067,7 +2067,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>La différence entre celles qui stagnent et celles qui accélèrent tient en un mot : <strong>l'infrastructure</strong>. Pas les outils isolés, pas les gadgets IA à la mode — une vraie infrastructure qui connecte, automatise et optimise vos opérations.</p>
 
-<p>Chez NateSystem, nous commençons toujours par un <strong>appel de consulting offert de 20 minutes</strong> pour identifier vos 3 processus à plus fort potentiel d'automatisation. Pas de jargon technique, pas d'engagement — juste une analyse claire de ce que l'IA peut faire pour votre entreprise. Vous repartez avec une roadmap, même si on ne bosse pas ensemble.</p>
+<p>Chez NateSystem, nous commençons toujours par un <strong>appel de consulting offert</strong> pour identifier vos 3 processus à plus fort potentiel d'automatisation. Pas de jargon technique, pas d'engagement — juste une analyse claire de ce que l'IA peut faire pour votre entreprise. Vous repartez avec une roadmap, même si on ne bosse pas ensemble.</p>
 
 <p><strong><a href="/book">Réserver votre audit gratuit &rarr;</a></strong></p>
 `,
@@ -2636,7 +2636,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>Chez NateSystem, le code source est livré, vous êtes propriétaire à 100 %, les données sont hébergées en UE, et l'IA n'est intégrée que là où elle remplace de vraies heures. <a href="/a-propos">Qui construit</a> · <a href="/logiciel-sur-mesure-vs-saas">Sur-mesure vs SaaS</a></p>
 
-<p><strong><a href="/book">Réserver 20 min · offert pour évaluer votre projet &rarr;</a></strong></p>
+<p><strong><a href="/book">Réserver un appel · offert pour évaluer votre projet &rarr;</a></strong></p>
 `,
   },
   {
@@ -2747,7 +2747,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>Un ERP centralise la gestion de l'entreprise dans une base unique — puissant, mais standardisé, coûteux dans la durée et long à déployer. Pour une PME aux process spécifiques, la vraie question n'est pas « quel ERP ? » mais « ai-je besoin d'un ERP complet, ou d'un outil sur-mesure qui ne fait que ce qui compte et m'appartient ? ».</p>
 
-<p><strong><a href="/book">Réserver 20 min · offert pour en discuter &rarr;</a></strong></p>
+<p><strong><a href="/book">Réserver un appel · offert pour en discuter &rarr;</a></strong></p>
 `,
   },
   {
@@ -2847,7 +2847,7 @@ export const blogPosts: BlogPost[] = [
 
 <p><a href="/logiciel-sur-mesure-vs-saas">Comparatif sur-mesure vs SaaS</a> · <a href="/prix-logiciel-sur-mesure">Prix d'un logiciel sur-mesure</a></p>
 
-<p><strong><a href="/book">Réserver 20 min · offert pour chiffrer votre cas &rarr;</a></strong></p>
+<p><strong><a href="/book">Réserver un appel · offert pour chiffrer votre cas &rarr;</a></strong></p>
 `,
   },
   {
@@ -2969,7 +2969,7 @@ export const blogPosts: BlogPost[] = [
 
 <p><a href="/blog/10-meilleurs-outils-ia-automatisation-operations-2026">Les 10 meilleurs outils IA d'automatisation</a></p>
 
-<p><strong><a href="/book">Réserver 20 min · offert pour identifier vos 3 automatisations prioritaires &rarr;</a></strong></p>
+<p><strong><a href="/book">Réserver un appel · offert pour identifier vos 3 automatisations prioritaires &rarr;</a></strong></p>
 `,
   },
   {
@@ -3076,7 +3076,7 @@ export const blogPosts: BlogPost[] = [
 
 <p><a href="/prix-logiciel-sur-mesure">Prix d'un logiciel sur-mesure</a> · <a href="/a-propos">Qui construit</a></p>
 
-<p><strong><a href="/book">Réserver 20 min · offert &rarr;</a></strong></p>
+<p><strong><a href="/book">Réserver un appel · offert &rarr;</a></strong></p>
 `,
   },
   {
@@ -3189,7 +3189,7 @@ export const blogPosts: BlogPost[] = [
 
 <p><a href="/blog/agents-ia-vs-chatgpt-quelle-difference">Agents IA vs ChatGPT</a> · <a href="/logiciel-sur-mesure-conseil">L'IA pour les cabinets de conseil</a></p>
 
-<p><strong><a href="/book">Réserver 20 min · offert pour identifier vos cas d'usage IA &rarr;</a></strong></p>
+<p><strong><a href="/book">Réserver un appel · offert pour identifier vos cas d'usage IA &rarr;</a></strong></p>
 `,
   },
   {
@@ -3268,7 +3268,7 @@ export const blogPosts: BlogPost[] = [
 <h2>En résumé</h2>
 <p>Zapier pour la simplicité, Make pour l'équilibre, n8n pour la puissance et la souveraineté. Et quand vos automatisations deviennent critiques, posséder le système bat la location d'un outil tiers.</p>
 
-<p><strong><a href="/book">Réserver 20 min · offert &rarr;</a></strong></p>
+<p><strong><a href="/book">Réserver un appel · offert &rarr;</a></strong></p>
 `,
   },
   {
@@ -3359,7 +3359,7 @@ export const blogPosts: BlogPost[] = [
 
 <p><a href="/blog/integrer-ia-entreprise-guide-pme">Guide : intégrer l'IA en entreprise</a> · <a href="/prix-logiciel-sur-mesure">Prix d'un logiciel sur-mesure</a></p>
 
-<p><strong><a href="/book">Réserver 20 min · offert pour chiffrer votre cas &rarr;</a></strong></p>
+<p><strong><a href="/book">Réserver un appel · offert pour chiffrer votre cas &rarr;</a></strong></p>
 `,
   },
   {
@@ -3429,7 +3429,7 @@ export const blogPosts: BlogPost[] = [
 <h2>En résumé</h2>
 <p>Airtable pour organiser vite à plusieurs, Supabase pour bâtir un vrai socle de données. Et quand l'outil devient le cœur de votre activité, une application sur-mesure que vous possédez bat les deux.</p>
 
-<p><strong><a href="/book">Réserver 20 min · offert &rarr;</a></strong></p>
+<p><strong><a href="/book">Réserver un appel · offert &rarr;</a></strong></p>
 `,
   },
   {
@@ -3500,7 +3500,7 @@ export const blogPosts: BlogPost[] = [
 <h2>En résumé</h2>
 <p>Le SaaS est parfait pour démarrer, mais à l'échelle vous louez de plus en plus cher sans rien posséder. Au-delà de 15-20k€/an sur un périmètre qui fait votre différence, le sur-mesure devient un actif rentable.</p>
 
-<p><strong><a href="/book">Réserver 20 min · offert pour faire le calcul &rarr;</a></strong></p>
+<p><strong><a href="/book">Réserver un appel · offert pour faire le calcul &rarr;</a></strong></p>
 `,
   },
   {
@@ -3569,7 +3569,7 @@ export const blogPosts: BlogPost[] = [
 
 <p><a href="/blog/integrer-ia-entreprise-guide-pme">Guide : intégrer l'IA en entreprise</a></p>
 
-<p><strong><a href="/book">Réserver 20 min · offert &rarr;</a></strong></p>
+<p><strong><a href="/book">Réserver un appel · offert &rarr;</a></strong></p>
 `,
   },
   {
@@ -3648,7 +3648,7 @@ export const blogPosts: BlogPost[] = [
 <h2>En résumé</h2>
 <p>Le bon logiciel de cabinet récupère le temps non facturable, s'intègre au RPVA et respecte le secret professionnel. Pour un cabinet aux process spécifiques, un outil sur-mesure qu'il possède — interfacé au RPVA, hébergé en UE — bat un LGC standard auquel on s'adapte.</p>
 
-<p><strong><a href="/book">Réserver 20 min · offert &rarr;</a></strong></p>
+<p><strong><a href="/book">Réserver un appel · offert &rarr;</a></strong></p>
 `,
   },
   {
@@ -3723,7 +3723,7 @@ export const blogPosts: BlogPost[] = [
 <h2>En résumé</h2>
 <p>Gardez le cœur comptable certifié (FEC, TVA, liasse). Construisez sur-mesure la surcouche où vous travaillez vraiment (portail, missions, relances), avec l'OCR/IA pour absorber la saisie. NateSystem complète votre logiciel certifié — il ne le remplace pas.</p>
 
-<p><strong><a href="/book">Réserver 20 min · offert &rarr;</a></strong></p>
+<p><strong><a href="/book">Réserver un appel · offert &rarr;</a></strong></p>
 `,
   },
   {
@@ -3801,7 +3801,7 @@ export const blogPosts: BlogPost[] = [
 <h2>En résumé</h2>
 <p>Un CRM immobilier doit couvrir le registre Hoguet, eIDAS, la diffusion et le rapprochement. Pour une agence seule, le SaaS suffit ; pour un réseau, un outil sur-mesure qui intègre votre vrai pipeline et la conformité, et que vous possédez, l'emporte.</p>
 
-<p><strong><a href="/book">Réserver 20 min · offert &rarr;</a></strong></p>
+<p><strong><a href="/book">Réserver un appel · offert &rarr;</a></strong></p>
 `,
   },
   {
@@ -3882,7 +3882,7 @@ export const blogPosts: BlogPost[] = [
 <h2>En résumé</h2>
 <p>Un PMS pilote l'hôtel et conditionne votre dépendance aux OTA. Au-delà des fonctions de base, ce sont la conformité (fiche de police, taxe de séjour, NF525) et la propriété qui départagent. Pour un indépendant, un outil sur-mesure peut automatiser le légal et réduire les coûts récurrents.</p>
 
-<p><strong><a href="/book">Réserver 20 min · offert &rarr;</a></strong></p>
+<p><strong><a href="/book">Réserver un appel · offert &rarr;</a></strong></p>
 `,
   },
   {
@@ -3952,7 +3952,7 @@ export const blogPosts: BlogPost[] = [
 <h2>En résumé</h2>
 <p>Un logiciel de propreté efficace relie planning multi-sites, pointage géolocalisé (encadré CNIL), facturation récurrente et contrôle qualité. À l'échelle, posséder cet outil — au lieu de payer par agent — et maîtriser la conformité géoloc fait la différence.</p>
 
-<p><strong><a href="/book">Réserver 20 min · offert &rarr;</a></strong></p>
+<p><strong><a href="/book">Réserver un appel · offert &rarr;</a></strong></p>
 `,
   },
   {
@@ -4026,7 +4026,7 @@ export const blogPosts: BlogPost[] = [
 <h2>En résumé</h2>
 <p>Le traiteur a un workflow unique (vente ≠ production, food cost, allergènes) que les généralistes modélisent mal. Un logiciel métier — idéalement sur-mesure et possédé — qui intègre devis, food cost, HACCP et conformité 2026 (INCO, NF525, e-facture) fait gagner du temps et sécurise.</p>
 
-<p><strong><a href="/book">Réserver 20 min · offert &rarr;</a></strong></p>
+<p><strong><a href="/book">Réserver un appel · offert &rarr;</a></strong></p>
 `,
   },
   {
@@ -4100,7 +4100,7 @@ export const blogPosts: BlogPost[] = [
 <h2>En résumé</h2>
 <p>Dans un marché PV qui se concentre, l'efficacité opérationnelle fait la différence. Un logiciel qui relie calepinage, devis conformes aux aides (RGE QualiPV) et démarches Enedis/Consuel sans ressaisie — idéalement sur-mesure et possédé — accélère l'encaissement et protège vos données prospects.</p>
 
-<p><strong><a href="/book">Réserver 20 min · offert &rarr;</a></strong></p>
+<p><strong><a href="/book">Réserver un appel · offert &rarr;</a></strong></p>
 `,
   },
 ]

@@ -114,7 +114,7 @@ export default function ClubSportifPage() {
               L&apos;IA intégrée uniquement là où elle remplace de vraies heures.
             </p>
             <Link href={CAL_LINK} className="btn-primary" style={{ margin: '0 auto', fontSize: 14 }}>
-              <span className="btn-primary-dot" />Réserver 20 min · offert →
+              <span className="btn-primary-dot" />Réserver un appel · offert →
             </Link>
           </FadeUp>
         </div>
@@ -248,11 +248,11 @@ export default function ClubSportifPage() {
                 Libérez le temps de votre club.
               </h2>
               <p className="font-sans" style={{ fontSize: 15, fontWeight: 300, color: 'var(--text-secondary)', lineHeight: 1.7, maxWidth: 520, margin: '0 auto 32px' }}>
-                20 minutes, offert. On regarde votre back-office commercial et votre gestion des bénévoles, et on identifie ce
+                Un appel offert. On regarde votre back-office commercial et votre gestion des bénévoles, et on identifie ce
                 qu&apos;un seul système vous ferait gagner. Même si on ne travaille pas ensemble.
               </p>
               <Link href={CAL_LINK} className="btn-primary" style={{ margin: '0 auto' }}>
-                <span className="btn-primary-dot" />Réserver 20 min · offert
+                <span className="btn-primary-dot" />Réserver un appel · offert
               </Link>
             </div>
           </FadeUp>

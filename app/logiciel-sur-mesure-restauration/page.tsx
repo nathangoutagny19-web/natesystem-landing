@@ -59,7 +59,7 @@ export default function RestaurationPage() {
               uniquement là où elle remplace de vraies heures.
             </p>
             <Link href={CAL_LINK} className="btn-primary" style={{ margin: '0 auto', fontSize: 14 }}>
-              <span className="btn-primary-dot" />Réserver 20 min · offert →
+              <span className="btn-primary-dot" />Réserver un appel · offert →
             </Link>
           </FadeUp>
         </div>
@@ -173,11 +173,11 @@ export default function RestaurationPage() {
                 Reprenez le pilotage de votre restaurant.
               </h2>
               <p className="font-sans" style={{ fontSize: 15, fontWeight: 300, color: 'var(--text-secondary)', lineHeight: 1.7, maxWidth: 520, margin: '0 auto 32px' }}>
-                20 minutes, offert. On regarde vos outils actuels et on identifie ce qu&apos;un seul système vous ferait gagner —
+                Un appel offert. On regarde vos outils actuels et on identifie ce qu&apos;un seul système vous ferait gagner —
                 en temps, en marge, en clarté. Même si on ne travaille pas ensemble.
               </p>
               <Link href={CAL_LINK} className="btn-primary" style={{ margin: '0 auto' }}>
-                <span className="btn-primary-dot" />Réserver 20 min · offert
+                <span className="btn-primary-dot" />Réserver un appel · offert
               </Link>
             </div>
           </FadeUp>

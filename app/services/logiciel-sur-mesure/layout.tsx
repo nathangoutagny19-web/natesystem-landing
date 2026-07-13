@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Logiciel & plateforme sur-mesure — NateSystem',
   description:
-    'Le logiciel métier sur-mesure qui réunit vos outils et vos données en une seule plateforme — base unifiée, dashboards, portails, outils internes. Vous êtes propriétaire du code, hébergé en UE. En production en 4 à 8 semaines. Audit offert de 20 min.',
+    'Le logiciel métier sur-mesure qui réunit vos outils et vos données en une seule plateforme — base unifiée, dashboards, portails, outils internes. Vous êtes propriétaire du code, hébergé en UE. En production en 4 à 8 semaines. Audit offert.',
   alternates: { canonical: 'https://www.natesystem.com/services/logiciel-sur-mesure' },
   openGraph: {
     title: 'Logiciel & plateforme sur-mesure — NateSystem',

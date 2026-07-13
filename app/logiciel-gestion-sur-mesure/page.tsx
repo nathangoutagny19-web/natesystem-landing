@@ -66,7 +66,7 @@ export default function LogicielGestionSurMesurePage() {
               entreprise possède à vie.
             </p>
             <Link href={CAL_LINK} className="btn-primary" style={{ margin: '0 auto', fontSize: 14 }}>
-              <span className="btn-primary-dot" />Réserver 20 min · offert →
+              <span className="btn-primary-dot" />Réserver un appel · offert →
             </Link>
           </FadeUp>
         </div>
@@ -239,12 +239,12 @@ export default function LogicielGestionSurMesurePage() {
                 Votre logiciel de gestion, sur-mesure.
               </h2>
               <p className="font-sans" style={{ fontSize: 15, fontWeight: 300, color: 'var(--text-secondary)', lineHeight: 1.7, maxWidth: 520, margin: '0 auto 32px' }}>
-                20 minutes, offert. On regarde comment vous gérez aujourd'hui vos ventes, vos stocks et vos opérations, et
+                Un appel offert. On regarde comment vous gérez aujourd'hui vos ventes, vos stocks et vos opérations, et
                 on identifie ce qu'une solution sur-mesure ferait gagner à votre entreprise — en temps, en argent, en
                 clarté. Même si on ne travaille pas ensemble.
               </p>
               <Link href={CAL_LINK} className="btn-primary" style={{ margin: '0 auto' }}>
-                <span className="btn-primary-dot" />Réserver 20 min · offert
+                <span className="btn-primary-dot" />Réserver un appel · offert
               </Link>
             </div>
           </FadeUp>

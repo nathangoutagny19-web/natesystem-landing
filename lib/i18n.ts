@@ -16,7 +16,7 @@ export const translations = {
     fr: 'Vos outils actuels ralentissent votre activité. On construit l\'infrastructure sur-mesure qui la fait avancer, propulsée par l\'IA. Un système qui accélère votre croissance et évolue à vos côtés, comme nous.',
   },
   'hero.aiNote': { en: 'And we power it with AI solutions.', fr: 'Et on le propulse par des solutions IA.' },
-  'hero.cta': { en: 'Book 20 min · free', fr: 'Réserver 20 min · offert' },
+  'hero.cta': { en: 'Book a call · free', fr: 'Réserver un appel · offert' },
   'hero.secondary': { en: 'See how it works', fr: 'Voir comment ça marche' },
   'hero.trusted': { en: 'Already building with', fr: 'Déjà à l\'œuvre avec' },
 
@@ -113,10 +113,10 @@ export const translations = {
     fr: 'Vous savez toujours où on en est et où on va. Quatre étapes, un livrable concret à chacune — et on ne considère la mission terminée que lorsque vos équipes sont autonomes.',
   },
   'process.step1': { en: 'First — Audit & diagnosis', fr: 'D\'abord — Audit & diagnostic' },
-  'process.step1Duration': { en: 'Free discovery call · 20 min', fr: 'Appel découverte offert · 20 min' },
+  'process.step1Duration': { en: 'Free discovery call', fr: 'Appel découverte offert' },
   'process.step1Desc': {
     en: 'We start with a free 20-minute call to understand your situation. Then, in the audit, we map your processes, structure everything — who does what, in what order — and pinpoint where we can save you time. You leave with a clear, costed plan, even if we don\'t work together.',
-    fr: 'On commence par un appel de 20 min, offert, pour comprendre votre situation. Puis, en audit, on cartographie vos process, on structure tout — qui fait quoi, dans quel ordre — et on repère où on peut vous faire gagner du temps. Vous repartez avec un plan clair et chiffré, même si on ne travaille pas ensemble.',
+    fr: 'On commence par un appel offert, pour comprendre votre situation. Puis, en audit, on cartographie vos process, on structure tout — qui fait quoi, dans quel ordre — et on repère où on peut vous faire gagner du temps. Vous repartez avec un plan clair et chiffré, même si on ne travaille pas ensemble.',
   },
   'process.step2': { en: 'Then — Build & deploy', fr: 'Ensuite — Construction & déploiement' },
   'process.step2Duration': { en: '4 to 8 weeks', fr: '4 à 8 semaines' },
@@ -153,7 +153,7 @@ export const translations = {
     fr: 'Un appel. Une vision claire du logiciel dont votre activité a vraiment besoin — et de ce qu\'il faudrait pour le construire. Choisissez un créneau ci-dessous.',
   },
   'cta.button': { en: 'Let\'s work together', fr: 'Travaillons ensemble' },
-  'cta.r1': { en: '20 min call · free', fr: 'Appel 20 min · offert' },
+  'cta.r1': { en: 'free call', fr: 'Appel offert' },
   'cta.r2': { en: 'No pitch', fr: 'Sans pitch' },
   'cta.r3': { en: 'Response within 24h', fr: 'Réponse sous 24h' },
 
@@ -361,7 +361,7 @@ export const translations = {
     fr: 'Les dirigeants qui veulent comprendre avant de s\'engager — savoir où agir et combien ça coûte.',
   },
   'sols.s1.cta': { en: 'Start the audit', fr: 'Démarrer l\'audit' },
-  'sols.s1.ctaSub': { en: '20 min · Free', fr: '20 min · Offert' },
+  'sols.s1.ctaSub': { en: 'Free', fr: 'Offert' },
   // Solution 2 — Plateforme sur-mesure
   'sols.s2.title': { en: 'Custom platform', fr: 'Plateforme sur-mesure' },
   'sols.s2.target': { en: '', fr: '' },
@@ -380,7 +380,7 @@ export const translations = {
     fr: 'Les dirigeants qui en ont marre de jongler entre Excel, mails et dix logiciels qui ne se parlent pas.',
   },
   'sols.s2.cta': { en: 'Start the audit', fr: 'Démarrer l\'audit' },
-  'sols.s2.ctaSub': { en: '20 min · Free', fr: '20 min · Offert' },
+  'sols.s2.ctaSub': { en: 'Free', fr: 'Offert' },
   // Solution 3 — IA agentique
   'sols.s3.title': { en: 'Agentic AI', fr: 'IA agentique' },
   'sols.s3.target': { en: '', fr: '' },
@@ -399,7 +399,7 @@ export const translations = {
     fr: 'Les dirigeants qui veulent déléguer les tâches répétitives à une IA fiable — pas juste un chatbot.',
   },
   'sols.s3.cta': { en: 'Start the audit', fr: 'Démarrer l\'audit' },
-  'sols.s3.ctaSub': { en: '20 min · Free', fr: '20 min · Offert' },
+  'sols.s3.ctaSub': { en: 'Free', fr: 'Offert' },
   // Common labels
   'sols.includesLabel': { en: 'What you get', fr: 'Ce que vous obtenez' },
   'sols.idealLabel': { en: 'Ideal for', fr: 'Idéal pour' },
@@ -430,7 +430,7 @@ export const translations = {
     en: 'While part of European SMBs start integrating AI into their operations, the other pays the hidden bill: up to 30% of work time consumed by tasks that a well-built infrastructure would replace. And one more month where your competitors widen the gap.',
     fr: 'Pendant qu\'une partie des PME européennes commence à intégrer l\'IA dans leur opérationnel, l\'autre paie la facture cachée : jusqu\'à 30% du temps de travail consommé par des tâches qu\'une infrastructure bien construite remplacerait. Et un mois de plus où vos concurrents creusent l\'écart.',
   },
-  'fomo.cta': { en: 'Book 20 min before they widen the gap', fr: 'Réserver 20 min avant qu\'ils ne creusent l\'écart' },
+  'fomo.cta': { en: 'Book a call before they widen the gap', fr: 'Réserver un appel avant qu\'ils ne creusent l\'écart' },
 
   // ───────────────────────────────────────────────────────────────
   // Results — mesurable client outcomes
@@ -782,17 +782,17 @@ export const translations = {
   },
 
   // StrategyCall section
-  'strategy.label': { en: 'BOOK A 20-MIN CALL · FREE', fr: 'RÉSERVER 20 MIN · OFFERT' },
+  'strategy.label': { en: 'BOOK A CALL · FREE', fr: 'RÉSERVER UN APPEL · OFFERT' },
   'strategy.title': { en: 'Book your', fr: 'Réservez votre' },
   'strategy.titleAccent': { en: 'strategy call.', fr: 'appel stratégique.' },
   'strategy.founder': { en: 'FOUNDER · NATESYSTEM', fr: 'FONDATEUR · NATESYSTEM' },
   'strategy.sub': { en: 'For companies that want to make their operations autonomous with AI — without hiring and without depending on a SaaS.', fr: 'Pour les entreprises qui veulent rendre leurs opérations autonomes grâce à l\'IA — sans recruter et sans dépendre d\'un SaaS.' },
-  'strategy.cta': { en: 'Book my free 20-min call', fr: 'Réserver mon appel 20 min · offert' },
+  'strategy.cta': { en: 'Book my free call', fr: 'Réserver mon appel · offert' },
   'strategy.item1': { en: 'Analysis of your current tools', fr: 'Analyse de vos outils actuels' },
   'strategy.item2': { en: 'Quick win identification', fr: 'Identification des quick wins' },
   'strategy.item3': { en: 'Personalized action plan', fr: 'Plan d\'action personnalisé' },
   'strategy.item4': { en: 'Concrete recommendations', fr: 'Recommandations concrètes' },
-  'strategy.footer': { en: '20 min · Free · No commitment · Nathan responds within 24h', fr: '20 min · Offert · Sans engagement · Nathan répond sous 24h' },
+  'strategy.footer': { en: 'Free · No commitment · Nathan responds within 24h', fr: 'Offert · Sans engagement · Nathan répond sous 24h' },
 
   // Blog page
   'blog.label': { en: 'BLOG', fr: 'BLOG' },
@@ -801,8 +801,8 @@ export const translations = {
   'blog.readArticle': { en: 'Read article →', fr: 'Lire l\'article →' },
   'blog.back': { en: '← Back to blog', fr: '← Retour au blog' },
   'blog.ctaTitle': { en: 'Ready to automate your operations?', fr: 'Prêt à automatiser vos opérations ?' },
-  'blog.ctaDesc': { en: '20 minutes to identify how to automate your repetitive tasks.', fr: '20 minutes pour identifier comment automatiser vos tâches répétitives.' },
-  'blog.ctaButton': { en: 'Book 20 min · free →', fr: 'Réserver 20 min · offert →' },
+  'blog.ctaDesc': { en: 'A call to identify how to automate your repetitive tasks.', fr: 'Un appel pour identifier comment automatiser vos tâches répétitives.' },
+  'blog.ctaButton': { en: 'Book a call · free →', fr: 'Réserver un appel · offert →' },
 
   // ═══════════════════════════════════════════════════════════════
   // NateSystem · Reviews — agency-positioned landing (v2)
@@ -817,7 +817,7 @@ export const translations = {
     en: 'A Budapest-based agency managing reviews, responses and reputation for ~30 mid-market restaurants. Every month we lift your score, answer your guests in their language, and report to you in a single PDF.',
     fr: 'Une agence basée à Budapest qui gère avis, réponses et réputation pour ~30 restaurants mid-market. Chaque mois, nous faisons monter votre note, répondons à vos clients dans leur langue, et vous livrons un PDF unique.',
   },
-  'reviews.hero.ctaPrimary': { en: 'Book 20 min · free', fr: 'Réserver 20 min · offert' },
+  'reviews.hero.ctaPrimary': { en: 'Book a call · free', fr: 'Réserver un appel · offert' },
   'reviews.hero.ctaGhost': { en: 'See what we do', fr: 'Voir ce que l\'on fait' },
   'reviews.hero.socialProof': {
     en: '~30 restaurants in Budapest · +14 points average reputation lift in 90 days',
@@ -918,7 +918,7 @@ export const translations = {
   'reviews.how.kicker': { en: 'HOW IT WORKS', fr: 'COMMENT ÇA MARCHE' },
   'reviews.how.title1': { en: 'Four steps.', fr: 'Quatre étapes.' },
   'reviews.how.titleAccent': { en: 'No software to learn.', fr: 'Aucun logiciel à apprendre.' },
-  'reviews.how.s1.title': { en: 'Discovery call (20 min)', fr: 'Appel de découverte (20 min)' },
+  'reviews.how.s1.title': { en: 'Discovery call', fr: 'Appel de découverte' },
   'reviews.how.s1.desc': {
     en: 'We understand your current reputation, pain points, goals. No sales deck, just questions.',
     fr: 'Nous comprenons votre réputation actuelle, vos douleurs, vos objectifs. Pas de slide commerciale, que des questions.',
@@ -957,10 +957,10 @@ export const translations = {
   // Final CTA
   'reviews.finalCta.title1': { en: 'Your reputation is already being written.', fr: 'Votre réputation s\'écrit déjà.' },
   'reviews.finalCta.titleAccent': { en: 'Let us run it.', fr: 'Laissez-nous la gérer.' },
-  'reviews.finalCta.cta': { en: 'Book 20 min · free', fr: 'Réserver 20 min · offert' },
+  'reviews.finalCta.cta': { en: 'Book a call · free', fr: 'Réserver un appel · offert' },
 
   // Sticky mobile
-  'reviews.stickyCta': { en: 'Book 20 min · free', fr: 'Réserver 20 min · offert' },
+  'reviews.stickyCta': { en: 'Book a call · free', fr: 'Réserver un appel · offert' },
 
   // Work-together widget ("Nate" agent)
   'nate.status': { en: 'Online', fr: 'En ligne' },

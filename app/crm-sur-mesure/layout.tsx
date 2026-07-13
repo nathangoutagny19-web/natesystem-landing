@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'CRM sur-mesure : le logiciel taillé pour votre vente',
   description:
-    'CRM sur-mesure : NateSystem conçoit un logiciel de suivi prospects, relances et pipeline calé sur votre cycle de vente réel, avec IA intégrée. Code livré, propriété 100 %, hébergé en UE. Audit offert de 20 min.',
+    'CRM sur-mesure : NateSystem conçoit un logiciel de suivi prospects, relances et pipeline calé sur votre cycle de vente réel, avec IA intégrée. Code livré, propriété 100 %, hébergé en UE. Audit offert.',
   alternates: { canonical: 'https://www.natesystem.com/crm-sur-mesure' },
   openGraph: {
     title: 'CRM sur-mesure : le logiciel taillé pour votre vente',

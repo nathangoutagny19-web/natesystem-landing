@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Logiciel sur-mesure pour l\'enseignement supérieur — NateSystem',
   description:
-    'CRM pédagogique sur-mesure pour écoles et universités : parcours étudiant, suivi de stages, relance alumni, tout centralisé. Cas réels : 200+ étudiants suivis, 90 %+ d\'adoption. Audit offert de 20 min.',
+    'CRM pédagogique sur-mesure pour écoles et universités : parcours étudiant, suivi de stages, relance alumni, tout centralisé. Cas réels : 200+ étudiants suivis, 90 %+ d\'adoption. Audit offert.',
   alternates: { canonical: 'https://www.natesystem.com/logiciel-sur-mesure-enseignement-superieur' },
   openGraph: {
     title: 'Logiciel sur-mesure pour l\'enseignement supérieur — NateSystem',

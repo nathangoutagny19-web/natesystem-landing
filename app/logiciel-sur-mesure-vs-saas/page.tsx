@@ -125,11 +125,11 @@ export default function VsPage() {
                 Le verdict dépend de vos chiffres.
               </h2>
               <p className="font-sans" style={{ fontSize: 15, fontWeight: 300, color: 'var(--text-secondary)', lineHeight: 1.7, maxWidth: 520, margin: '0 auto 32px' }}>
-                En 20 minutes, on regarde vos abonnements actuels et vos process, et on vous dit franchement si le sur-mesure
+                En un appel, on regarde vos abonnements actuels et vos process, et on vous dit franchement si le sur-mesure
                 est rentable pour vous — ou si un SaaS fait le job. Offert, sans pitch.
               </p>
               <Link href={CAL_LINK} className="btn-primary" style={{ margin: '0 auto' }}>
-                <span className="btn-primary-dot" />Réserver 20 min · offert
+                <span className="btn-primary-dot" />Réserver un appel · offert
               </Link>
             </div>
           </FadeUp>

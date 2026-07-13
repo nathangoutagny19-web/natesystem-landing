@@ -174,7 +174,7 @@ export default function AuditOffer() {
             {/* CTA */}
             <div style={{ marginBottom: 20 }}>
               <Button href="/book" variant="primary">
-                {"Réserver 20 min · offert →"}
+                {"Réserver un appel · offert →"}
               </Button>
             </div>
 

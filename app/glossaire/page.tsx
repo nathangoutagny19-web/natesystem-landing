@@ -130,10 +130,10 @@ export default function GlossairePage() {
             Un terme à clarifier pour votre projet ?
           </h2>
           <p className="font-sans" style={{ fontSize: 14.5, fontWeight: 300, color: 'var(--text-secondary)', lineHeight: 1.7, maxWidth: 520, margin: '0 auto 28px' }}>
-            On parle votre langue, pas le jargon. 20 minutes pour traduire votre besoin en un plan concret. Offert.
+            On parle votre langue, pas le jargon. Un appel pour traduire votre besoin en un plan concret. Offert.
           </p>
           <Link href={CAL_LINK} className="btn-primary" style={{ margin: '0 auto' }}>
-            <span className="btn-primary-dot" />Réserver 20 min · offert
+            <span className="btn-primary-dot" />Réserver un appel · offert
           </Link>
         </div>
       </section>

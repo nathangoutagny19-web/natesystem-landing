@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Agence de logiciel sur-mesure : comment choisir',
   description:
-    'Agence de logiciel sur-mesure : NateSystem conçoit des solutions logicielles pour entreprise — audit, périmètre fixe, livraison en 4 à 8 semaines, code livré et propriété 100 %. Audit offert de 20 min.',
+    'Agence de logiciel sur-mesure : NateSystem conçoit des solutions logicielles pour entreprise — audit, périmètre fixe, livraison en 4 à 8 semaines, code livré et propriété 100 %. Audit offert.',
   alternates: { canonical: 'https://www.natesystem.com/agence-logiciel-sur-mesure' },
   openGraph: {
     title: 'Agence de logiciel sur-mesure : comment choisir',

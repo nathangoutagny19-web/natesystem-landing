@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Audit & consulting — cartographie de vos process | NateSystem',
   description:
-    'L\'audit qui cartographie vos process, identifie ce qui vous fait perdre du temps et de l\'argent, et vous remet un plan d\'action clair et chiffré. Vous repartez avec le plan, même sans nous. Appel découverte offert de 20 min.',
+    'L\'audit qui cartographie vos process, identifie ce qui vous fait perdre du temps et de l\'argent, et vous remet un plan d\'action clair et chiffré. Vous repartez avec le plan, même sans nous. Appel découverte offert.',
   alternates: { canonical: 'https://www.natesystem.com/services/audit' },
   openGraph: {
     title: 'Audit & consulting — cartographie de vos process | NateSystem',
@@ -42,7 +42,7 @@ const jsonLd = {
           name: 'En quoi consiste un audit de process ?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Un audit de process commence par un appel découverte de 20 min, offert, pour comprendre votre situation. Puis on cartographie votre façon réelle de travailler, on repère ce qui bloque ou ralentit, et on chiffre ce que vous coûte l\'inaction. On dessine la cible — vos opérations telles qu\'elles tourneraient avec un logiciel sur-mesure. Vous repartez avec un plan d\'action clair et chiffré.',
+            text: 'Un audit de process commence par un appel découverte, offert, pour comprendre votre situation. Puis on cartographie votre façon réelle de travailler, on repère ce qui bloque ou ralentit, et on chiffre ce que vous coûte l\'inaction. On dessine la cible — vos opérations telles qu\'elles tourneraient avec un logiciel sur-mesure. Vous repartez avec un plan d\'action clair et chiffré.',
           },
         },
         {
@@ -50,7 +50,7 @@ const jsonLd = {
           name: 'L\'audit est-il payant ?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'L\'appel découverte de 20 minutes est offert. L\'audit de consulting approfondi (cartographie des process, structuration, plan d\'action) est un vrai travail qui suit. Dans tous les cas, vous repartez avec un plan clair que vous pouvez exécuter avec nous, en interne, ou avec un mix.',
+            text: 'L\'appel découverte est offert. L\'audit de consulting approfondi (cartographie des process, structuration, plan d\'action) est un vrai travail qui suit. Dans tous les cas, vous repartez avec un plan clair que vous pouvez exécuter avec nous, en interne, ou avec un mix.',
           },
         },
         {

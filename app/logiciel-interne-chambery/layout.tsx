@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Logiciel interne Chambéry : solution sur-mesure entreprise',
   description:
-    'Logiciel interne à Chambéry : NateSystem conçoit des solutions logicielles sur-mesure pour entreprise en Savoie — gestion, données, équipe. Code livré, propriété 100 %, hébergé en UE. Audit offert de 20 min.',
+    'Logiciel interne à Chambéry : NateSystem conçoit des solutions logicielles sur-mesure pour entreprise en Savoie — gestion, données, équipe. Code livré, propriété 100 %, hébergé en UE. Audit offert.',
   alternates: { canonical: 'https://www.natesystem.com/logiciel-interne-chambery' },
   openGraph: {
     title: 'Logiciel interne Chambéry : solution sur-mesure entreprise',

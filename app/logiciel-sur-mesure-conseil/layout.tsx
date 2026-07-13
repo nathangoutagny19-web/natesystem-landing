@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Logiciel & IA sur-mesure pour cabinets de conseil — NateSystem',
   description:
-    'Logiciel métier et IA sur-mesure pour cabinets de conseil et consultants B2B : relance commerciale automatique, réactivation des contacts dormants, reporting interne auto. Cas réel : conversion 4 % → 12 %. Audit offert de 20 min.',
+    'Logiciel métier et IA sur-mesure pour cabinets de conseil et consultants B2B : relance commerciale automatique, réactivation des contacts dormants, reporting interne auto. Cas réel : conversion 4 % → 12 %. Audit offert.',
   alternates: { canonical: 'https://www.natesystem.com/logiciel-sur-mesure-conseil' },
   openGraph: {
     title: 'Logiciel & IA sur-mesure pour cabinets de conseil — NateSystem',

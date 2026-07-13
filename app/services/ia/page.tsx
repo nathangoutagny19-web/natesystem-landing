@@ -58,7 +58,7 @@ export default function IaPage() {
               Vos données restent en UE.
             </p>
             <Link href={CAL_LINK} className="btn-primary" style={{ margin: '0 auto', fontSize: 14 }}>
-              <span className="btn-primary-dot" />Réserver 20 min · offert →
+              <span className="btn-primary-dot" />Réserver un appel · offert →
             </Link>
           </FadeUp>
         </div>
@@ -174,11 +174,11 @@ export default function IaPage() {
                 Déléguez le répétitif à l&apos;IA.
               </h2>
               <p className="font-sans" style={{ fontSize: 15, fontWeight: 300, color: 'var(--text-secondary)', lineHeight: 1.7, maxWidth: 520, margin: '0 auto 32px' }}>
-                20 minutes, offert. On regarde vos tâches répétitives et on identifie où l&apos;IA vous ferait gagner de vraies
+                Un appel offert. On regarde vos tâches répétitives et on identifie où l&apos;IA vous ferait gagner de vraies
                 heures — avec un ROI mesurable. Même si on ne travaille pas ensemble.
               </p>
               <Link href={CAL_LINK} className="btn-primary" style={{ margin: '0 auto' }}>
-                <span className="btn-primary-dot" />Réserver 20 min · offert
+                <span className="btn-primary-dot" />Réserver un appel · offert
               </Link>
             </div>
           </FadeUp>
