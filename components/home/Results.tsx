@@ -40,13 +40,13 @@ function CaseStudyCard() {
   const metrics = [
     { value: '11h → 1h', label: lang === 'en' ? 'Per week, per manager' : 'Par semaine, par manager' },
     { value: '25 480€', label: lang === 'en' ? 'Productivity recovered per year' : 'Productivité récupérée par an' },
-    { value: '~55', label: lang === 'en' ? 'Collaborators (volunteers, staff, partners) — zero friction at transition' : 'Collaborateurs (bénévoles, employés, partenaires) — zéro friction à la transition' },
+    { value: '~55', label: lang === 'en' ? 'Collaborators (volunteers, staff, partners), zero friction at transition' : 'Collaborateurs (bénévoles, employés, partenaires), zéro friction à la transition' },
     { value: '99%', label: lang === 'en' ? 'Of operations run on platforms they own' : 'Des opérations sur des plateformes internes' },
   ]
 
   const footnote = lang === 'en'
-    ? 'The kind of result their team still talks about at family dinners — and won\'t let us forget.'
-    : 'Le genre de résultat dont leur équipe parle encore à chaque repas de famille — et qu\'ils ne nous laissent pas oublier.'
+    ? 'The kind of result their team still talks about at family dinners, and won\'t let us forget.'
+    : 'Le genre de résultat dont leur équipe parle encore à chaque repas de famille, et qu\'ils ne nous laissent pas oublier.'
 
   return (
     <motion.div
@@ -98,7 +98,7 @@ function CaseStudyCard() {
         <p className="font-serif italic mb-3" style={{ fontSize: '17px', fontWeight: 400, color: 'var(--text)', lineHeight: 1.5 }}>
           {lang === 'en' ? '"It changed the way we run everything."' : '"Ça a changé notre façon de tout gérer."'}
         </p>
-        <p className="font-sans" style={{ fontSize: '13px', fontWeight: 500, color: 'var(--text)' }}>Catherine P.</p>
+        <p className="font-sans" style={{ fontSize: '13px', fontWeight: 500, color: 'var(--text)' }}>Catherine F.</p>
         <p className="font-sans" style={{ fontSize: '12px', color: 'var(--text-secondary)', fontWeight: 300 }}>General Manager, Chromosome Saint-Étienne</p>
       </div>
 

@@ -22,7 +22,7 @@ const layers = [
     number: '02',
     title: 'Plateformes internes',
     subtitle: 'Construire',
-    desc: "On développe vos outils sur-mesure — dashboards, CRM interne, portails clients, formulaires intelligents — tout connecté à votre base, tout pensé pour votre équipe.",
+    desc: "On développe vos outils sur-mesure (dashboards, CRM interne, portails clients, formulaires intelligents), tout connecté à votre base et pensé pour votre équipe.",
     details: ['Interfaces personnalisées', 'Dashboards temps réel', 'Outils métier sur-mesure', 'Connecté à toutes vos sources'],
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -37,7 +37,7 @@ const layers = [
     number: '03',
     title: 'Agents IA',
     subtitle: 'Déployer',
-    desc: "On crée une équipe d'agents IA spécialisés — chacun expert dans une tâche précise, comme des employés virtuels qui bossent 24/7 sur vos opérations.",
+    desc: "On crée une équipe d'agents IA spécialisés : chacun expert dans une tâche précise, comme des employés virtuels qui bossent 24/7 sur vos opérations.",
     details: ['Agents spécialisés par métier', 'Connectés à vos données', 'Travaillent 24/7 sans erreur', "S'améliorent avec le temps"],
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -215,7 +215,7 @@ export default function InfraSystem() {
         {/* ——— Bottom note ——— */}
         <FadeUp className="text-center mb-16">
           <p style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', fontSize: 'clamp(20px, 3vw, 28px)', color: 'var(--text)', lineHeight: 1.4, maxWidth: 600, margin: '0 auto 8px' }}>
-            Chaque agent est spécialisé. Comme un employé — mais 24/7.
+            Chaque agent est spécialisé. Comme un employé, mais 24/7.
           </p>
           <p style={{ fontFamily: 'var(--font-sans)', fontSize: 13, color: 'var(--text-muted)', fontWeight: 300 }}>
             Voici des exemples. Chaque entreprise a ses propres agents, adaptés à ses besoins.

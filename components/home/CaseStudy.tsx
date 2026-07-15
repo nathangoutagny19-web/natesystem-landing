@@ -89,8 +89,8 @@ export default function CaseStudy() {
   const { lang } = useLang()
 
   const headline = lang === 'en'
-    ? 'How a restaurant group in Saint-Étienne replaced 99% of their operational stack with two platforms they own outright — and freed 14 hours a week.'
-    : 'Comment un groupe de restauration à Saint-Étienne a remplacé 99% de son stack opérationnel par deux plateformes qu\'il possède — et libéré 14 heures par semaine.'
+    ? 'How a restaurant group in Saint-Étienne replaced 99% of their operational stack with two platforms they own outright, and freed 14 hours a week.'
+    : 'Comment un groupe de restauration à Saint-Étienne a remplacé 99% de son stack opérationnel par deux plateformes qu\'il possède, et libéré 14 heures par semaine.'
 
   const metrics = [
     { value: '11h → 1h', label: lang === 'en' ? 'Per week, per manager' : 'Par semaine, par manager' },
@@ -233,7 +233,7 @@ export default function CaseStudy() {
                 className="font-sans"
                 style={{ fontSize: '13px', fontWeight: 500, color: 'var(--text)', marginBottom: '4px' }}
               >
-                Catherine P.
+                Catherine F.
               </p>
               <p
                 className="font-sans"

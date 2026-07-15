@@ -13,7 +13,7 @@ const CASE_STUDIES = [
     before: '10 heures par semaine perdues en gestion d\'équipe, planning refait plusieurs fois, erreurs de communication fréquentes.',
     after: 'Planning généré en 20 minutes. 1 000€/mois économisés. Zéro erreur de communication depuis le déploiement.',
     quote: '"It changed the way we run everything."',
-    author: 'Catherine P.',
+    author: 'Catherine F.',
     role: 'General Manager, Chromosome Saint-Étienne',
   },
   {

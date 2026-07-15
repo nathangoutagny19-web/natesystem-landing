@@ -42,7 +42,7 @@ export default function Testimonial() {
               textTransform: 'uppercase',
             }}
           >
-            Catherine P. — General Manager, Chromosome Saint-Étienne
+            Catherine F. — General Manager, Chromosome Saint-Étienne
           </p>
         </FadeUp>
 
@@ -83,7 +83,7 @@ export default function Testimonial() {
               letterSpacing: '0.5px',
             }}
           >
-            Catherine P. présente les résultats obtenus avec NateSystem après 3 mois de déploiement.
+            Catherine F. présente les résultats obtenus avec NateSystem après 3 mois de déploiement.
           </p>
         </FadeUp>
       </div>

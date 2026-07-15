@@ -17,7 +17,7 @@ export default function Testimonial() {
             &ldquo;It changed the way we run everything.&rdquo;
           </div>
           <p className="font-sans" style={{ fontSize: '14px', letterSpacing: '1.5px', color: 'var(--text-secondary)', textTransform: 'uppercase', fontWeight: 300 }}>
-            Catherine P. — General Manager, Chromosome Saint-Étienne
+            Catherine F. — General Manager, Chromosome Saint-Étienne
           </p>
         </FadeUp>
 
