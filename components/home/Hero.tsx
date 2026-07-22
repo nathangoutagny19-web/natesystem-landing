@@ -6,6 +6,7 @@ import { useLang } from '@/components/providers/LangProvider'
 import Link from 'next/link'
 import { Sparkles } from 'lucide-react'
 import { CAL_LINK } from '@/lib/constants'
+import VslPlayer from '@/components/ui/VslPlayer'
 
 const ease = [0.22, 1, 0.36, 1] as const
 
@@ -99,6 +100,21 @@ export default function Hero() {
         <span className="font-sans" style={{ fontSize: '13px', fontWeight: 400, color: 'var(--text-secondary)' }}>
           {t('hero.aiNote')}
         </span>
+      </motion.div>
+
+      {/* VSL — self-hosted, plays inline on click (zero page-load cost). */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.4, ease }}
+        className="w-full flex justify-center"
+        style={{ marginBottom: '40px' }}
+      >
+        <VslPlayer
+          src="/vsl.mp4"
+          poster="/vsl-poster.jpg"
+          label="Voir la démo"
+          duration="5 min"
+          title="Démo NateSystem"
+        />
       </motion.div>
 
       {/* Subtitle */}
