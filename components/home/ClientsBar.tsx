@@ -25,14 +25,17 @@
 
 import { useLang } from '@/components/providers/LangProvider'
 
+// `compact` shrinks a specific logo below the row height — for WIDE horizontal
+// logos (icon + wordmark + baseline) that would otherwise read heavier than the
+// compact icon-based marks even at equal height.
 type ClientRef =
-  | { name: string; type: 'logo'; src: string; href: string }
+  | { name: string; type: 'logo'; src: string; href: string; compact?: boolean }
   // 'logo-white' is a transparent WHITE logo (alpha-cut, no background box).
   // It's tinted per-theme via CSS brightness() so it reads as neutral grey on
   // the light theme and white/light-grey on the dark theme — same optical
   // weight as the grayscale logos, but without the invert() trick that mangles
   // detailed artwork.
-  | { name: string; type: 'logo-white'; src: string; href: string }
+  | { name: string; type: 'logo-white'; src: string; href: string; compact?: boolean }
   | { name: string; type: 'wordmark'; href: string }
 
 // Vendéglátás Menedzsment Kft. is the Hungarian hospitality reference —
@@ -58,8 +61,9 @@ const clients: ClientRef[] = [
   // transparent so the row's grayscale/invert treatment renders it neutral
   // on both themes (same as the other `logo` refs).
   { name: 'Goutagny Élagage', type: 'logo', src: '/logos/goutagny.png', href: 'https://www.goutagny-elagage.fr/' },
-  // Association Aloess — artwork already transparent (alpha), grayscaled by the row.
-  { name: 'Association Aloess', type: 'logo', src: '/logos/aloess.png', href: 'https://www.aloess.org/' },
+  // Association Aloess — wide horizontal logo (icon + "aloess" + baseline);
+  // `compact` trims its height so it doesn't dominate the compact marks.
+  { name: 'Association Aloess', type: 'logo', src: '/logos/aloess.png', href: 'https://www.aloess.org/', compact: true },
 ]
 
 export default function ClientsBar() {
@@ -113,7 +117,7 @@ export default function ClientsBar() {
           display: flex;
           align-items: center;
           justify-content: center;
-          height: 56px;
+          height: 46px;
           color: #9CA3AF;
           opacity: 0.78;
           transition: color 200ms ease-out, opacity 200ms ease-out, transform 200ms ease-out;
@@ -135,13 +139,20 @@ export default function ClientsBar() {
           /* Match the visual weight of the long Hungarian wordmark.
              max-width caps short logos so they don't blow up on wide
              screens; height covers the typical case. */
-          height: 56px;
+          height: 46px;
           width: auto;
-          max-height: 56px;
-          max-width: 220px;
+          max-height: 46px;
+          max-width: 200px;
           object-fit: contain;
           filter: grayscale(100%);
           opacity: inherit;
+        }
+        /* Wide horizontal logos: trimmed so their optical weight matches the
+           compact icon-based marks. */
+        .clients-logo--sm {
+          height: 34px;
+          max-height: 34px;
+          max-width: 170px;
         }
         html:not(.light) .clients-logo {
           filter: grayscale(100%) invert(1) brightness(0.95);
@@ -163,7 +174,7 @@ export default function ClientsBar() {
           filter: brightness(0) invert(1) opacity(1);
         }
         .clients-wordmark {
-          font-size: 22px;
+          font-size: 19px;
           line-height: 1.2;
           font-weight: 400;
           color: inherit;
@@ -216,15 +227,20 @@ export default function ClientsBar() {
             animation-duration: 20s;
           }
           .clients-marquee .clients-item {
-            height: 44px;
+            height: 38px;
           }
           .clients-logo {
-            height: 44px;
-            max-height: 44px;
-            max-width: 160px;
+            height: 38px;
+            max-height: 38px;
+            max-width: 150px;
+          }
+          .clients-logo--sm {
+            height: 28px;
+            max-height: 28px;
+            max-width: 130px;
           }
           .clients-wordmark {
-            font-size: 18px;
+            font-size: 15px;
           }
         }
 
@@ -249,10 +265,10 @@ function ClientItem({ c }: { c: ClientRef }) {
     >
       {c.type === 'logo' ? (
         /* eslint-disable-next-line @next/next/no-img-element */
-        <img src={c.src} alt={c.name} className="clients-logo" />
+        <img src={c.src} alt={c.name} className={`clients-logo${c.compact ? ' clients-logo--sm' : ''}`} />
       ) : c.type === 'logo-white' ? (
         /* eslint-disable-next-line @next/next/no-img-element */
-        <img src={c.src} alt={c.name} className="clients-logo clients-logo--white" />
+        <img src={c.src} alt={c.name} className={`clients-logo clients-logo--white${c.compact ? ' clients-logo--sm' : ''}`} />
       ) : (
         <span className="clients-wordmark font-serif italic">{c.name}</span>
       )}
