@@ -54,6 +54,12 @@ const clients: ClientRef[] = [
   // reads neutral, then tinted per theme — black on light, white on dark —
   // never the raw blue, which would clash with the neutral row.
   { name: 'SimpleTeam', type: 'logo-white', src: '/logos/simpleteam.png', href: 'https://simple-team.com/' },
+  // Goutagny Élagage — colored green logo, white background keyed out to
+  // transparent so the row's grayscale/invert treatment renders it neutral
+  // on both themes (same as the other `logo` refs).
+  { name: 'Goutagny Élagage', type: 'logo', src: '/logos/goutagny.png', href: 'https://www.goutagny-elagage.fr/' },
+  // Association Aloess — artwork already transparent (alpha), grayscaled by the row.
+  { name: 'Association Aloess', type: 'logo', src: '/logos/aloess.png', href: 'https://www.aloess.org/' },
 ]
 
 export default function ClientsBar() {
