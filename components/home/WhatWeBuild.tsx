@@ -23,17 +23,13 @@ type Mockup = { slug: string; fr: string; en: string }
 const mockups: Mockup[] = [
   { slug: 'chromosome',      fr: 'Planning & gestion d’équipe · Restauration',    en: 'Scheduling & team management · Hospitality' },
   { slug: 'tcrm',            fr: 'CRM pédagogique · Enseignement',                en: 'Educational CRM · Education' },
-  { slug: 'chartreux-rh',    fr: 'RH & pointeuse · Institution',                  en: 'HR & time tracking · Institution' },
   { slug: 'chartreux-stock', fr: 'Gestion des stocks · Institution',              en: 'Inventory management · Institution' },
   { slug: 'simplebook',      fr: 'Réservations en temps réel · Restauration',     en: 'Real-time bookings · Hospitality' },
   { slug: 'scrapavis',       fr: 'Réputation & avis IA · Hospitalité',            en: 'Reputation & AI reviews · Hospitality' },
   { slug: 'restaurantiq',    fr: 'Portfolio & KPI multi-sites · Conseil',         en: 'Multi-site KPI portfolio · Consulting' },
   { slug: 'estateiq',        fr: 'CRM & agents IA · Immobilier',                  en: 'CRM & AI agents · Real estate' },
   { slug: 'eventiq',         fr: 'Pilotage d’événement · Événementiel',           en: 'Event command center · Events' },
-  { slug: 'hotesses',        fr: 'Vivier & missions · Événementiel',              en: 'Talent pool & missions · Events' },
-  { slug: 'vibratec',        fr: 'Veille & appels d’offres IA · Industrie',       en: 'Tender intelligence AI · Industry' },
   { slug: 'pariselan',       fr: 'Billetterie & CRM · Club sportif',              en: 'Ticketing & CRM · Sports club' },
-  { slug: 'scabb',           fr: 'Gestion des bénévoles · Hospitalité',           en: 'Volunteer management · Hospitality' },
   { slug: 'brasserie',       fr: 'Commandes & facturation · Artisan-commerçant',  en: 'Orders & invoicing · Trade & crafts' },
 ]
 
@@ -199,7 +195,7 @@ export default function WhatWeBuild() {
         @media (max-width: 768px) {
           .build-track {
             gap: 18px;
-            animation-duration: 42s;
+            animation-duration: 24s;
           }
           .build-card {
             width: 210px;

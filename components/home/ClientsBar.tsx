@@ -224,7 +224,7 @@ export default function ClientsBar() {
           }
           .clients-marquee {
             gap: 48px;
-            animation-duration: 20s;
+            animation-duration: 13s;
           }
           .clients-marquee .clients-item {
             height: 38px;
