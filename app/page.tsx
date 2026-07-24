@@ -5,6 +5,7 @@ import Hero from '@/components/home/Hero'
 import Transformation from '@/components/home/Transformation'
 import CredibilityBand from '@/components/home/CredibilityBand'
 import ClientsBar from '@/components/home/ClientsBar'
+import WhatWeBuild from '@/components/home/WhatWeBuild'
 import Systems from '@/components/home/Systems'
 import Solutions from '@/components/home/Solutions'
 import Twist from '@/components/home/Twist'
@@ -28,6 +29,10 @@ export default function Home() {
 
       {/* 2 — Logos clients (preuve sociale immédiate, juste sous le hero) */}
       <ClientsBar />
+
+      {/* 2b — "Ce qu'on construit" : bande de mockups anonymisés (blur), en
+             sens inverse du strip logos → zone de preuve WHO + WHAT. */}
+      <WhatWeBuild />
       <Divider />
 
       {/* 3 — Transformation Avant/Après : le prospect se reconnaît dans le chaos,
