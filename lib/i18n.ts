@@ -8,7 +8,7 @@ export const translations = {
 
   // Hero
   'hero.label': { en: 'Digital structuring · Custom software · AI integration', fr: 'Structuration digitale · Logiciel sur-mesure · Intégration IA' },
-  'hero.titlePrefix': { en: 'We build custom software & platforms that boost your', fr: 'On construit des logiciels & plateformes sur-mesure qui vous font gagner en' },
+  'hero.titlePrefix': { en: 'We build your custom software & platforms that boost your', fr: 'On construit vos logiciels & plateformes sur-mesure qui vous font gagner en' },
   // Rotating words (pipe-separated, cycled in the hero). Final benefits the ICP desires, not the mechanisms.
   'hero.titleWords': { en: 'profitability|productivity|responsiveness|reliability', fr: 'rentabilité|productivité|réactivité|fiabilité' },
   'hero.sub': {
@@ -273,9 +273,9 @@ export const translations = {
   // ───────────────────────────────────────────────────────────────
   // Transformation — Avant / Après (identification + projection)
   // ───────────────────────────────────────────────────────────────
-  'trans.label': { en: 'The transformation', fr: 'La transformation' },
-  'trans.title': { en: 'From tool-spaghetti', fr: 'De l\'outil-spaghetti' },
-  'trans.titleAccent': { en: 'to a system that runs.', fr: 'au système qui tourne.' },
+  'trans.label': { en: 'The digital transformation', fr: 'La transformation digitale' },
+  'trans.title': { en: 'Your tools slow you down.', fr: 'Vos outils vous freinent.' },
+  'trans.titleAccent': { en: 'Soon, they propel you.', fr: 'Bientôt, ils vous propulsent.' },
   'trans.beforeLabel': { en: 'Before', fr: 'Avant' },
   'trans.afterLabel': { en: 'After', fr: 'Après' },
   'trans.before1': { en: 'Excel, WhatsApp and ten tools that don\'t talk to each other', fr: 'Excel, WhatsApp et dix outils qui ne se parlent pas' },
@@ -363,7 +363,7 @@ export const translations = {
   'sols.s1.cta': { en: 'Start the audit', fr: 'Démarrer l\'audit' },
   'sols.s1.ctaSub': { en: 'Free', fr: 'Offert' },
   // Solution 2 — Plateforme sur-mesure
-  'sols.s2.title': { en: 'Custom platform', fr: 'Plateforme sur-mesure' },
+  'sols.s2.title': { en: 'Custom software', fr: 'Logiciel sur-mesure' },
   'sols.s2.target': { en: '', fr: '' },
   'sols.s2.promise': {
     en: 'We bring all your tools and all your data into one platform built for your business. Yours, not one more subscription.',
@@ -382,16 +382,16 @@ export const translations = {
   'sols.s2.cta': { en: 'Start the audit', fr: 'Démarrer l\'audit' },
   'sols.s2.ctaSub': { en: 'Free', fr: 'Offert' },
   // Solution 3 — IA agentique
-  'sols.s3.title': { en: 'Agentic AI', fr: 'IA agentique' },
+  'sols.s3.title': { en: 'AI system', fr: 'Système IA' },
   'sols.s3.target': { en: '', fr: '' },
   'sols.s3.promise': {
-    en: 'An AI that truly works for you: it has memory, learns your business, carries out tasks end to end and improves over time.',
-    fr: 'Une IA qui travaille vraiment pour vous : elle a de la mémoire, elle apprend votre métier, elle exécute des tâches de bout en bout et s\'améliore avec le temps.',
+    en: 'AI solutions tailored to your business: agentic AI with persistent memory, AI agents and automations — plugged in only where they truly save you time.',
+    fr: 'Des solutions IA taillées pour votre métier : IA agentique à mémoire persistante, agents IA et automatisations — branchées uniquement là où elles vous font vraiment gagner.',
   },
-  'sols.s3.bullet1': { en: 'Remembers the context of your business', fr: 'Retient le contexte de votre activité' },
-  'sols.s3.bullet2': { en: 'Runs multi-step tasks inside your tools', fr: 'Exécute des tâches multi-étapes dans vos outils' },
-  'sols.s3.bullet3': { en: 'Learns from every interaction', fr: 'Apprend de chaque interaction' },
-  'sols.s3.bullet4': { en: 'Sorts, drafts and anticipates for you', fr: 'Trie, rédige et anticipe pour vous' },
+  'sols.s3.bullet1': { en: 'Agentic AI with persistent memory: it keeps your business context', fr: 'IA agentique à mémoire persistante : elle retient le contexte de votre activité' },
+  'sols.s3.bullet2': { en: 'AI agents that run multi-step tasks inside your tools', fr: 'Des agents IA qui exécutent des tâches multi-étapes dans vos outils' },
+  'sols.s3.bullet3': { en: 'Automations on your repetitive, time-consuming tasks', fr: 'Des automatisations sur vos tâches répétitives et chronophages' },
+  'sols.s3.bullet4': { en: 'It learns from every interaction and improves over time', fr: 'Elle apprend de chaque interaction et s\'améliore avec le temps' },
   'sols.s3.bullet5': { en: 'Integrated only where it replaces real hours', fr: 'Intégrée uniquement là où elle remplace de vraies heures' },
   'sols.s3.bullet6': { en: 'Your data stays in the EU', fr: 'Vos données restent en UE' },
   'sols.s3.ideal': {
@@ -403,6 +403,29 @@ export const translations = {
   // Common labels
   'sols.includesLabel': { en: 'What you get', fr: 'Ce que vous obtenez' },
   'sols.idealLabel': { en: 'Ideal for', fr: 'Idéal pour' },
+  // Offre phare — Infrastructure digitale (le tout complet)
+  'sols.infra.label': { en: 'The complete offer', fr: 'L\'offre complète' },
+  'sols.infra.title': { en: 'Digital infrastructure', fr: 'Infrastructure digitale' },
+  'sols.infra.desc': {
+    en: 'Everything, end to end. We map your processes, build your custom software and AI, integrate, adjust and train your teams — and we only step back once you\'re fully autonomous.',
+    fr: 'Le tout, de A à Z. On cartographie vos process, on développe vos logiciels sur-mesure et vos solutions IA, on intègre, on ajuste et on forme vos équipes — et on ne se retire que quand vous êtes autonome.',
+  },
+  'sols.infra.step1': { en: 'Audit — processes, workflows, talks with your teams', fr: 'Audit — process, workflows, échanges avec vos équipes' },
+  'sols.infra.step2': { en: 'Build — custom software + AI & web solutions', fr: 'Développement — logiciels sur-mesure + solutions IA & web' },
+  'sols.infra.step3': { en: 'Integration & tuning — setup, evaluation, iterations', fr: 'Intégration & ajustement — mise en place, évaluation, évolutions' },
+  'sols.infra.step4': { en: 'Tracking — we measure what you actually gain', fr: 'Tracking — on mesure ce que vous gagnez vraiment' },
+  'sols.infra.step5': { en: 'Training — your teams brought to full autonomy', fr: 'Formation — vos équipes montées en autonomie' },
+  'sols.infra.step6': { en: 'Autonomy — we step back, we stay reachable', fr: 'Autonomie — on se retire, on reste disponible' },
+  'sols.infra.cta': { en: 'Book a call · free', fr: 'Réserver un appel · offert' },
+  // Offre séparée — Formation IA opérationnelle (wedge DIY)
+  'sols.form.badge': { en: 'New', fr: 'Nouveau' },
+  'sols.form.title': { en: 'Operational AI training', fr: 'Formation IA opérationnelle' },
+  'sols.form.desc': {
+    en: 'Learn to use AI concretely in your job: save time, sharpen relevance, gain reliability. You leave with real use cases ready for your team.',
+    fr: 'Apprenez à utiliser l\'IA concrètement dans votre métier : gagner du temps, de la pertinence, de la fiabilité. Vous repartez avec des cas d\'usage réels, prêts pour votre équipe.',
+  },
+  'sols.form.cta': { en: 'Talk to us about it', fr: 'Nous en parler' },
+  'sols.form.ctaSub': { en: 'On request', fr: 'Sur devis' },
 
   // ───────────────────────────────────────────────────────────────
   // FOMO — the cost of waiting (EU stats, sourced)

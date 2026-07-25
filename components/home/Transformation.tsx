@@ -115,6 +115,23 @@ export default function Transformation() {
                     </span>
                   </span>
                 </span>
+
+                {/* Excel table (screenshot-style) floating in the mess */}
+                <span className="baf-logo" style={{ top: '46%', left: '56%', width: 92, zIndex: 5 }} aria-hidden="true">
+                  <span
+                    className="baf-xls-inner"
+                    style={{ ['--dur' as string]: '8.7s', ['--d' as string]: '-1.7s', ['--amp' as string]: '6px', ['--dx' as string]: '-3px', ['--rot' as string]: '-3deg' }}
+                  >
+                    <span className="baf-xls">
+                      <span className="baf-xls-bar" />
+                      <span className="baf-xls-grid">
+                        {[0, 1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
+                          <span key={i} className={`baf-xls-cell${[0, 4, 7].includes(i) ? ' baf-xls-cell--fill' : ''}`} />
+                        ))}
+                      </span>
+                    </span>
+                  </span>
+                </span>
               </div>
             </div>
 
@@ -325,8 +342,25 @@ export default function Transformation() {
         }
         .baf-pill :global(svg) { width: 11px; height: 11px; color: var(--accent); }
 
+        /* Excel table floating in the mess */
+        .baf-xls-inner { display: block; animation: baf-float var(--dur, 8.7s) ease-in-out infinite; animation-delay: var(--d, 0s); }
+        .baf-xls {
+          display: block; width: 100%; border-radius: 6px; overflow: hidden;
+          border: 1px solid var(--border); background: var(--bg-card);
+          box-shadow: 0 1px 2px rgba(15,23,42,0.04), 0 6px 18px -12px rgba(15,23,42,0.2);
+          filter: grayscale(1); opacity: 0.5; transition: filter .5s ease, opacity .5s ease;
+        }
+        .baf-left:hover .baf-xls { filter: grayscale(0.4); opacity: 0.72; }
+        .baf-left:hover .baf-xls-inner { animation-duration: 1s !important; --amp: 14px; --dx: 10px; --rot: 8deg; }
+        .baf-xls-bar { display: block; height: 11px; background: #1D6F42; }
+        .baf-xls-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
+        .baf-xls-cell { height: 13px; border-top: 1px solid var(--border); border-left: 1px solid var(--border); }
+        .baf-xls-cell:nth-child(3n+1) { border-left: none; }
+        .baf-xls-cell:nth-child(-n+3) { border-top: none; }
+        .baf-xls-cell--fill { background: color-mix(in srgb, var(--text-secondary) 16%, transparent); }
+
         @media (prefers-reduced-motion: reduce) {
-          .baf-logo-inner, .baf-speech-inner, .baf-bar { animation: none !important; transition: none !important; }
+          .baf-logo-inner, .baf-speech-inner, .baf-note-inner, .baf-xls-inner, .baf-bar { animation: none !important; transition: none !important; }
           .baf-bar { transform: scaleY(1); }
         }
       `}</style>
