@@ -12,7 +12,6 @@ import Twist from '@/components/home/Twist'
 import Comparison from '@/components/home/Comparison'
 import Process from '@/components/home/Process'
 import CaseStudy from '@/components/home/CaseStudy'
-import Testimonials from '@/components/home/Testimonials'
 import AboutNathan from '@/components/home/AboutNathan'
 import Faq from '@/components/home/Faq'
 import CtaFinal from '@/components/home/CtaFinal'
@@ -45,7 +44,6 @@ export default function Home() {
              Resserrés sans Divider pour lire comme un seul bloc. */}
       <Systems />
       <CaseStudy />
-      <Testimonials />
       <Divider />
 
       {/* 4 — 3 solutions : Audit / Plateforme sur-mesure / IA agentique */}
