@@ -118,7 +118,8 @@ export default function Nav() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const [langOpen, setLangOpen] = useState(false)
-  const [mobileToolsOpen, setMobileToolsOpen] = useState(false)
+  const [mobileRealisationsOpen, setMobileRealisationsOpen] = useState(false)
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false)
   const [mobileResourcesOpen, setMobileResourcesOpen] = useState(false)
   const langRef = useRef<HTMLDivElement>(null)
 
@@ -148,52 +149,57 @@ export default function Nav() {
             <span className={`nav-logo-text ${scrolled ? 'nav-logo-text-hidden' : ''}`}>NateSystem</span>
           </Link>
 
-          {/* Center links — desktop */}
+          {/* Center links — desktop. Menu cible Lot 1 : Méthode · Réalisations ·
+              Services · À propos · Ressources. « Méthode » pointe vers la section
+              méthode de la home tant que /methode (Lot 2) n'existe pas. */}
           <nav className="nav-links">
-            <Link href="/#prestations" className="nav-link">{t('nav.agency')}</Link>
+            <Link href="/#process" className="nav-link">{t('nav.methode')}</Link>
 
-            {/* Tools dropdown */}
+            {/* Réalisations — cas clients + démos live (des preuves, pas des outils) */}
             <div className="nav-dropdown">
-              <Link href="/tools" className="nav-link nav-link-dropdown">
-                {t('nav.tools')} <Chevron />
+              <Link href="/resources#case-studies" className="nav-link nav-link-dropdown">
+                {t('nav.realisations')} <Chevron />
               </Link>
               <div className="nav-mega nav-mega-2col">
                 <div className="nav-mega-inner">
                   <div className="nav-mega-col">
-                    <p className="nav-mega-label">{t('mega.interactive')}</p>
-                    <MegaItem href="/tools/diagnostic-ia" icon={icons.brain} title={t('tools.diagnostic.title')} desc={t('tools.diagnostic.desc')} />
+                    <p className="nav-mega-label">{t('mega.cases')}</p>
+                    <MegaItem href="/resources#case-studies" icon={icons.caseStudy} title={t('resources.caseStudies')} desc={t('resources.caseStudies.desc')} />
                   </div>
                   <div className="nav-mega-col">
                     <p className="nav-mega-label">{t('mega.demos')}</p>
-                    <MegaItem
-                      href="https://actifs.natesystem.com"
-                      icon={icons.laptop}
-                      title={t('demos.actifs.navTitle')}
-                      desc={t('demos.actifs.navDesc')}
-                      external
-                      badge={t('mega.new')}
-                    />
-                    <MegaItem
-                      href="https://stack-stock.natesystem.com"
-                      icon={icons.package}
-                      title={t('demos.stock.navTitle')}
-                      desc={t('demos.stock.navDesc')}
-                      external
-                      badge={t('mega.new')}
-                    />
-                    <MegaItem
-                      href="/reviews"
-                      icon={icons.clipboard}
-                      title={t('demos.reviews.navTitle')}
-                      desc={t('demos.reviews.navDesc')}
-                      badge={t('mega.gated')}
-                    />
+                    <MegaItem href="https://actifs.natesystem.com" icon={icons.laptop} title={t('demos.actifs.navTitle')} desc={t('demos.actifs.navDesc')} external badge={t('mega.new')} />
+                    <MegaItem href="https://stack-stock.natesystem.com" icon={icons.package} title={t('demos.stock.navTitle')} desc={t('demos.stock.navDesc')} external badge={t('mega.new')} />
+                    <MegaItem href="/reviews" icon={icons.clipboard} title={t('demos.reviews.navTitle')} desc={t('demos.reviews.navDesc')} badge={t('mega.gated')} />
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Resources dropdown */}
+            {/* Services */}
+            <div className="nav-dropdown">
+              <Link href="/services" className="nav-link nav-link-dropdown">
+                {t('nav.services')} <Chevron />
+              </Link>
+              <div className="nav-mega nav-mega-2col">
+                <div className="nav-mega-inner">
+                  <div className="nav-mega-col">
+                    <p className="nav-mega-label">{t('mega.services')}</p>
+                    <MegaItem href={CAL_LINK} icon={icons.map} title={t('nav.svc.sprint')} desc={t('nav.svc.sprintDesc')} />
+                    <MegaItem href="/services/logiciel-sur-mesure" icon={icons.laptop} title={t('nav.svc.logiciel')} desc={t('nav.svc.logicielDesc')} />
+                  </div>
+                  <div className="nav-mega-col">
+                    <p className="nav-mega-label">&nbsp;</p>
+                    <MegaItem href="/services/ia" icon={icons.brain} title={t('nav.svc.ia')} desc={t('nav.svc.iaDesc')} />
+                    <MegaItem href="/services/audit" icon={icons.clipboard} title={t('nav.svc.audit')} desc={t('nav.svc.auditDesc')} />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <Link href="/a-propos" className="nav-link">{t('nav.about')}</Link>
+
+            {/* Ressources */}
             <div className="nav-dropdown">
               <Link href="/resources" className="nav-link nav-link-dropdown">
                 {t('nav.resources')} <Chevron />
@@ -202,14 +208,13 @@ export default function Nav() {
                 <div className="nav-mega-inner">
                   <div className="nav-mega-col">
                     <p className="nav-mega-label">{t('nav.resources')}</p>
-                    <MegaItem href="/resources#case-studies" icon={icons.caseStudy} title={t('resources.caseStudies')} desc={t('resources.caseStudies.desc')} />
                     <MegaItem href="/blog" icon={icons.blog} title={t('resources.blog')} desc={t('resources.blog.desc')} />
+                    <MegaItem href="/glossaire" icon={icons.book} title={t('nav.res.glossary')} desc={t('nav.res.glossaryDesc')} />
+                    <MegaItem href="/prix-logiciel-sur-mesure" icon={icons.receipt} title={t('nav.res.pricing')} desc={t('nav.res.pricingDesc')} />
                   </div>
                   <div className="nav-mega-col">
-                    <p className="nav-mega-label">{t('mega.playbooks')}</p>
-                    <MegaItem href="/playbook/hoteliers-independants" icon={icons.building} title={t('playbooks.hotels.title')} desc={t('playbooks.hotels.desc')} />
-                    <MegaItem href="/playbook/avocats-affaires" icon={icons.scale} title={t('playbooks.lawyers.title')} desc={t('playbooks.lawyers.desc')} />
-                    <MegaItem href="/playbook/expertise-comptable" icon={icons.receipt} title={t('playbooks.accountants.title')} desc={t('playbooks.accountants.desc')} />
+                    <p className="nav-mega-label">{t('nav.res.diag')}</p>
+                    <MegaItem href="/tools/diagnostic-ia" icon={icons.brain} title={t('nav.res.diag')} desc={t('nav.res.diagDesc')} />
                     <MegaItem href="/playbook" icon={icons.book} title={t('playbooks.all.title')} desc={t('playbooks.all.desc')} />
                   </div>
                 </div>
@@ -236,9 +241,9 @@ export default function Nav() {
               </div>
             </div>
 
-            {/* CTA */}
+            {/* CTA unique (Lot 1) */}
             <Link href={CAL_LINK} className="nav-cta-btn">
-              {t('nav.cta')}
+              {t('nav.ctaSprint')}
             </Link>
           </div>
         </div>
@@ -275,43 +280,29 @@ export default function Nav() {
         style={{ backdropFilter: 'blur(24px)', WebkitBackdropFilter: 'blur(24px)', background: 'var(--mobile-menu-bg, rgba(14,14,18,0.95))' }}
       >
         <div className="pt-20 px-6 flex flex-col gap-1">
-          <MobileLink href="/#prestations" onClick={() => setMenuOpen(false)}>{t('nav.agency')}</MobileLink>
+          <MobileLink href="/#process" onClick={() => setMenuOpen(false)}>{t('nav.methode')}</MobileLink>
 
-          <MobileAccordion label={t('nav.tools')} open={mobileToolsOpen} onToggle={() => setMobileToolsOpen(!mobileToolsOpen)}>
-            <MobileLink href="/tools/diagnostic-ia" onClick={() => setMenuOpen(false)}>{t('tools.diagnostic.title')}</MobileLink>
-            {/* Live demos — external Lovable apps, open in new tab */}
-            <MobileLink
-              href="https://actifs.natesystem.com"
-              external
-              badge={t('mega.new')}
-              onClick={() => setMenuOpen(false)}
-            >
-              {t('demos.actifs.navTitle')}
-            </MobileLink>
-            <MobileLink
-              href="https://stack-stock.natesystem.com"
-              external
-              badge={t('mega.new')}
-              onClick={() => setMenuOpen(false)}
-            >
-              {t('demos.stock.navTitle')}
-            </MobileLink>
-            <MobileLink
-              href="/reviews"
-              badge={t('mega.gated')}
-              onClick={() => setMenuOpen(false)}
-            >
-              {t('demos.reviews.navTitle')}
-            </MobileLink>
-            <MobileLink href="/tools" onClick={() => setMenuOpen(false)}>{t('tools.title')}</MobileLink>
+          <MobileAccordion label={t('nav.realisations')} open={mobileRealisationsOpen} onToggle={() => setMobileRealisationsOpen(!mobileRealisationsOpen)}>
+            <MobileLink href="/resources#case-studies" onClick={() => setMenuOpen(false)}>{t('resources.caseStudies')}</MobileLink>
+            <MobileLink href="https://actifs.natesystem.com" external badge={t('mega.new')} onClick={() => setMenuOpen(false)}>{t('demos.actifs.navTitle')}</MobileLink>
+            <MobileLink href="https://stack-stock.natesystem.com" external badge={t('mega.new')} onClick={() => setMenuOpen(false)}>{t('demos.stock.navTitle')}</MobileLink>
+            <MobileLink href="/reviews" badge={t('mega.gated')} onClick={() => setMenuOpen(false)}>{t('demos.reviews.navTitle')}</MobileLink>
           </MobileAccordion>
 
+          <MobileAccordion label={t('nav.services')} open={mobileServicesOpen} onToggle={() => setMobileServicesOpen(!mobileServicesOpen)}>
+            <MobileLink href={CAL_LINK} onClick={() => setMenuOpen(false)}>{t('nav.svc.sprint')}</MobileLink>
+            <MobileLink href="/services/logiciel-sur-mesure" onClick={() => setMenuOpen(false)}>{t('nav.svc.logiciel')}</MobileLink>
+            <MobileLink href="/services/ia" onClick={() => setMenuOpen(false)}>{t('nav.svc.ia')}</MobileLink>
+            <MobileLink href="/services/audit" onClick={() => setMenuOpen(false)}>{t('nav.svc.audit')}</MobileLink>
+          </MobileAccordion>
+
+          <MobileLink href="/a-propos" onClick={() => setMenuOpen(false)}>{t('nav.about')}</MobileLink>
+
           <MobileAccordion label={t('nav.resources')} open={mobileResourcesOpen} onToggle={() => setMobileResourcesOpen(!mobileResourcesOpen)}>
-            <MobileLink href="/resources#case-studies" onClick={() => setMenuOpen(false)}>{t('resources.caseStudies')}</MobileLink>
             <MobileLink href="/blog" onClick={() => setMenuOpen(false)}>{t('resources.blog')}</MobileLink>
-            <MobileLink href="/playbook/hoteliers-independants" onClick={() => setMenuOpen(false)}>{t('playbooks.hotels.title')}</MobileLink>
-            <MobileLink href="/playbook/avocats-affaires" onClick={() => setMenuOpen(false)}>{t('playbooks.lawyers.title')}</MobileLink>
-            <MobileLink href="/playbook/expertise-comptable" onClick={() => setMenuOpen(false)}>{t('playbooks.accountants.title')}</MobileLink>
+            <MobileLink href="/glossaire" onClick={() => setMenuOpen(false)}>{t('nav.res.glossary')}</MobileLink>
+            <MobileLink href="/prix-logiciel-sur-mesure" onClick={() => setMenuOpen(false)}>{t('nav.res.pricing')}</MobileLink>
+            <MobileLink href="/tools/diagnostic-ia" onClick={() => setMenuOpen(false)}>{t('nav.res.diag')}</MobileLink>
             <MobileLink href="/playbook" onClick={() => setMenuOpen(false)}>{t('playbooks.all.title')}</MobileLink>
           </MobileAccordion>
 
@@ -348,7 +339,7 @@ export default function Nav() {
           </div>
 
           <Link href={CAL_LINK} className="btn-primary mt-6 justify-center">
-            <span className="btn-primary-dot" />{t('nav.cta')}
+            <span className="btn-primary-dot" />{t('nav.ctaSprint')}
           </Link>
         </div>
       </motion.div>
