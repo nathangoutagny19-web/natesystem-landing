@@ -20,19 +20,19 @@ type Testimonial = { quote: { fr: string; en: string }; name: string; role: { fr
 const testimonials: Testimonial[] = [
   {
     quote: {
-      fr: 'Face à des logiciels du marché souvent trop complexes, trop chers et mal adaptés aux petites structures, ils ont développé en quelques semaines une plateforme parfaitement adaptée à nos besoins. Si vous recherchez des talents capables de concevoir des solutions digitales sur-mesure, vous pouvez leur faire confiance.',
-      en: "Faced with off-the-shelf software that's often too complex, too expensive and poorly suited to small structures, they built a platform perfectly adapted to our needs in just a few weeks. If you're looking for people who can design custom digital solutions, you can trust them.",
+      fr: 'On ne fait pas du numérique pour faire du numérique. On le met au service d’un vrai problème de gestion.',
+      en: "We don't do digital for the sake of it. We put it at the service of a real management problem.",
     },
-    name: 'Université Jean Monnet',
+    name: 'Catherine F.',
     role: {
-      fr: 'Enseignante · Ressources & Cultures Numériques — Saint-Étienne',
-      en: 'Teacher · Digital Resources & Culture — Saint-Étienne',
+      fr: 'Chromosome · Saint-Étienne',
+      en: 'Chromosome · Saint-Étienne',
     },
   },
   {
     quote: {
-      fr: 'Deux plateformes sur-mesure pour mieux gérer notre restaurant. Tout a été personnalisé selon nos besoins, avec une réactivité optimale.',
-      en: 'Two custom platforms to run our restaurant better. Everything was tailored to our needs, with outstanding responsiveness.',
+      fr: 'Deux plateformes sur-mesure pour mieux gérer notre restaurant. Tout a été personnalisé selon nos besoins, avec une réactivité optimale. On ne pourrait plus s’en passer : on gagne tellement en temps et en clarté.',
+      en: 'Two custom platforms to run our restaurant better. Everything was tailored to our needs, with outstanding responsiveness. We couldn’t do without it now — we gain so much time and clarity.',
     },
     name: 'Chromosome',
     role: { fr: 'Restaurant · Saint-Étienne', en: 'Restaurant · Saint-Étienne' },
