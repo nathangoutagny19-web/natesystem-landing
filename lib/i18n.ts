@@ -12,6 +12,8 @@ export const translations = {
   'nav.services': { en: 'Services', fr: 'Services' },
   'nav.about': { en: 'About', fr: 'À propos' },
   'nav.ctaSprint': { en: 'Start the Diagnostic Sprint', fr: 'Démarrer le Sprint Diagnostic' },
+  // CTA du bouton nav : action simple et comprise par l'ICP (pas le nom de l'offre).
+  'nav.ctaCall': { en: 'Book a call', fr: 'Réserver un appel' },
   'mega.services': { en: 'Our services', fr: 'Nos services' },
   'mega.sectors': { en: 'By industry', fr: 'Par secteur' },
   'mega.cases': { en: 'Client cases', fr: 'Cas clients' },

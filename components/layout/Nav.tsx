@@ -219,9 +219,10 @@ export default function Nav() {
               </div>
             </div>
 
-            {/* CTA unique (Lot 1) */}
+            {/* CTA unique (Lot 1) — action simple « Réserver un appel » (le nom
+                « Sprint Diagnostic » vit sur la page, pas sur le bouton). */}
             <Link href={CAL_LINK} className="nav-cta-btn">
-              {t('nav.ctaSprint')}
+              {t('nav.ctaCall')}
             </Link>
           </div>
         </div>
@@ -309,7 +310,7 @@ export default function Nav() {
           </div>
 
           <Link href={CAL_LINK} className="btn-primary mt-6 justify-center">
-            <span className="btn-primary-dot" />{t('nav.ctaSprint')}
+            <span className="btn-primary-dot" />{t('nav.ctaCall')}
           </Link>
         </div>
       </motion.div>
