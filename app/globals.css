@@ -17,6 +17,7 @@
   --accent-subtle: rgba(230,57,70,0.08);
   --border: rgba(255,255,255,0.06);
   --border-hover: rgba(255,255,255,0.12);
+  --ambient: rgba(255,255,255,0.06);
   --font-serif: 'Instrument Serif', Georgia, serif;
   --font-sans: 'DM Sans', -apple-system, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
@@ -40,6 +41,7 @@ html.light {
   --accent-subtle: rgba(230,57,70,0.06);
   --border: rgba(15,23,42,0.08);
   --border-hover: rgba(15,23,42,0.16);
+  --ambient: rgba(15,23,42,0.05);
   --mobile-menu-bg: rgba(248,250,252,0.95);
 }
 
@@ -106,6 +108,13 @@ body {
   position: fixed; inset: 0; z-index: 0; pointer-events: none;
   background-image: linear-gradient(var(--grid) 1px, transparent 1px), linear-gradient(90deg, var(--grid) 1px, transparent 1px);
   background-size: 60px 60px;
+}
+/* Ambient cursor glow on the page background — lighter in dark mode, darker
+   in light mode. --gx/--gy (px) set by <PointerGlow/>; off-screen default so
+   nothing shows when JS is off (touch / reduced-motion). */
+.grid-bg::before {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(600px circle at var(--gx, -300px) var(--gy, -300px), var(--ambient, transparent), transparent 72%);
 }
 .grid-bg::after {
   content: ''; position: absolute; top: -200px; left: 50%; transform: translateX(-50%);
@@ -196,16 +205,17 @@ html:not(.light) .btn-primary:hover {
 
 .btn-ghost {
   display: inline-flex; align-items: center; gap: 12px;
-  padding: 14px 32px; background: transparent;
-  border: 1px solid rgba(230,57,70,0.3); border-radius: 12px;
+  padding: 14px 32px; background: var(--bg-elevated);
+  border: 1px solid var(--border-hover); border-radius: 12px;
   color: var(--text); font-family: var(--font-sans);
   font-size: 14px; font-weight: 500;
-  cursor: pointer; transition: all 0.4s ease;
+  cursor: pointer; transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
   text-decoration: none; position: relative; overflow: hidden;
 }
 .btn-ghost:hover {
-  border-color: #E63946;
-  box-shadow: 0 0 20px rgba(230,57,70,0.4), 0 0 40px rgba(230,57,70,0.15);
+  border-color: var(--accent);
+  background: var(--bg-card);
+  box-shadow: 0 0 20px rgba(230,57,70,0.28), 0 0 40px rgba(230,57,70,0.12);
 }
 
 /* ——— DIVIDER with + ——— */
@@ -331,14 +341,15 @@ html.light .nav-bar.nav-scrolled {
 
 .btn-primary { --fx-ring: var(--accent); --fx-ring-hot: #ffffff; }
 .nav-cta-btn { --fx-ring: #ffd0d5;        --fx-ring-hot: #ffffff; position: relative; overflow: hidden; }
+.btn-ghost, .sols-cta { --fx-ring: var(--accent); --fx-ring-hot: #ffffff; position: relative; }
 
 @media (hover: hover) and (pointer: fine) {
   /* Magnetic drift toward the cursor (--tx/--ty from <PointerGlow/>) */
-  .btn-primary, .nav-cta-btn {
+  .btn-primary, .nav-cta-btn, .btn-ghost, .sols-cta {
     transform: translate(var(--tx, 0px), var(--ty, 0px)) scale(var(--sc, 1));
-    transition: transform .2s cubic-bezier(.34,1.56,.64,1), box-shadow .25s ease, background .2s ease;
+    transition: transform .2s cubic-bezier(.34,1.56,.64,1), box-shadow .25s ease, background .2s ease, border-color .2s ease, color .2s ease;
   }
-  .btn-primary:hover, .nav-cta-btn:hover {
+  .btn-primary:hover, .nav-cta-btn:hover, .btn-ghost:hover, .sols-cta:hover {
     transform: translate(var(--tx, 0px), var(--ty, 0px)) scale(var(--sc, 1));
   }
   .btn-primary:hover {
@@ -347,10 +358,14 @@ html.light .nav-bar.nav-scrolled {
   .nav-cta-btn:hover {
     box-shadow: 0 0 22px rgba(230,57,70,.55), 0 0 52px rgba(230,57,70,.28), 0 8px 20px -4px rgba(230,57,70,.45);
   }
-  .btn-primary:active, .nav-cta-btn:active { --sc: .96; transition-duration: .08s; }
+  .btn-ghost:hover, .sols-cta:hover {
+    box-shadow: 0 0 18px rgba(230,57,70,.32), 0 0 42px rgba(230,57,70,.16);
+  }
+  .btn-primary:active, .nav-cta-btn:active,
+  .btn-ghost:active, .sols-cta:active { --sc: .96; transition-duration: .08s; }
 
   /* Rotating light around the border — faint at rest, bright + fast on hover */
-  .btn-primary::before, .nav-cta-btn::before {
+  .btn-primary::before, .nav-cta-btn::before, .btn-ghost::before, .sols-cta::before {
     content: ''; position: absolute; inset: 0; border-radius: inherit;
     padding: 2.5px; pointer-events: none; z-index: 2;
     background: conic-gradient(from var(--fx-angle),
@@ -359,10 +374,11 @@ html.light .nav-bar.nav-scrolled {
     -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
             mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
     -webkit-mask-composite: xor; mask-composite: exclude;
-    opacity: .35; transition: opacity .3s ease;
+    opacity: .3; transition: opacity .3s ease;
     animation: fxSpin 3s linear infinite;
   }
-  .btn-primary:hover::before, .nav-cta-btn:hover::before { opacity: 1; }
+  .btn-primary:hover::before, .nav-cta-btn:hover::before,
+  .btn-ghost:hover::before, .sols-cta:hover::before { opacity: 1; }
 
   /* Offer cards: soft cursor-following glow (the "cadre" lights up) */
   .sols-card::after {
@@ -376,7 +392,8 @@ html.light .nav-bar.nav-scrolled {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .btn-primary::before, .nav-cta-btn::before { animation: none; opacity: 0 !important; }
+  .btn-primary::before, .nav-cta-btn::before,
+  .btn-ghost::before, .sols-cta::before { animation: none; opacity: 0 !important; }
 }
 
 /* ——— DROPDOWN (mega menu) ——— */
