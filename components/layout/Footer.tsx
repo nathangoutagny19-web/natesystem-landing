@@ -31,6 +31,8 @@ export default function Footer() {
         maxWidth: '1100px',
         borderTop: '1px solid var(--border)',
         padding: '56px 24px 32px',
+        position: 'relative',
+        overflow: 'hidden',
       }}
     >
       {/* Top row — brand + 4 link columns */}
@@ -41,6 +43,8 @@ export default function Footer() {
           gridTemplateColumns: 'minmax(0, 1.4fr) repeat(5, minmax(0, 1fr))',
           gap: 32,
           alignItems: 'flex-start',
+          position: 'relative',
+          zIndex: 1,
         }}
       >
         {/* Brand block */}
@@ -168,6 +172,8 @@ export default function Footer() {
           gap: 14,
           justifyContent: 'space-between',
           alignItems: 'center',
+          position: 'relative',
+          zIndex: 1,
         }}
       >
         <p className="font-sans" style={{ fontSize: '11px', color: 'var(--text-muted)', fontWeight: 300 }}>
@@ -178,7 +184,28 @@ export default function Footer() {
         </p>
       </div>
 
+      {/* Giant semi-transparent brand watermark, bleeding off the bottom edge
+          (Frontal-style). Decorative only. */}
+      <span aria-hidden="true" className="footer-watermark font-serif italic">NateSystem</span>
+
       <style>{`
+        .footer-watermark {
+          position: absolute;
+          left: 50%;
+          bottom: -0.26em;
+          transform: translateX(-50%);
+          font-weight: 400;
+          font-size: clamp(84px, 19vw, 320px);
+          line-height: 0.9;
+          white-space: nowrap;
+          color: var(--accent);
+          opacity: 0.09;
+          pointer-events: none;
+          user-select: none;
+          z-index: 0;
+          -webkit-mask: linear-gradient(to bottom, #000 30%, rgba(0,0,0,0.12));
+                  mask: linear-gradient(to bottom, #000 30%, rgba(0,0,0,0.12));
+        }
         /* Narrow desktop / tablet: 5 columns + brand block get cramped, so
            drop the brand block to full width and show 3 link columns. */
         @media (max-width: 1080px) and (min-width: 769px) {
