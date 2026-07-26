@@ -3,15 +3,21 @@
 import { useEffect } from 'react'
 
 /**
- * PointerGlow — one delegated pointermove listener that feeds the cursor
- * position (as % of the element) into --mx/--my on hovered buttons and offer
- * cards, driving the CSS spotlight in globals.css.
+ * PointerGlow — one delegated pointermove listener that drives the premium
+ * button/card interactions in globals.css:
+ *   • Magnetic buttons — the element drifts toward the cursor via --tx/--ty.
+ *   • Spotlight — cursor position as % via --mx/--my (offer cards glow).
+ * Vars are cleared the moment the cursor leaves an element, so buttons spring
+ * back to place.
  *
  * Perf/UX guardrails: single listener, rAF-throttled, and a hard no-op on
- * coarse pointers (touch) and reduced-motion — so it never runs where it
- * would waste cycles or bother anyone.
+ * coarse pointers (touch) and reduced-motion.
  */
-const SELECTOR = '.btn-primary, .nav-cta-btn, .sols-card'
+const BTN = '.btn-primary, .nav-cta-btn'
+const ANY = '.btn-primary, .nav-cta-btn, .sols-card'
+const MAG = 7 // px — max magnetic drift
+
+const clamp = (v: number, m: number) => (v < -m ? -m : v > m ? m : v)
 
 export default function PointerGlow() {
   useEffect(() => {
@@ -23,27 +29,41 @@ export default function PointerGlow() {
     }
 
     let raf = 0
+    let current: HTMLElement | null = null
     let pending: { el: HTMLElement; x: number; y: number } | null = null
+
+    const clear = (el: HTMLElement) => {
+      el.style.removeProperty('--tx')
+      el.style.removeProperty('--ty')
+      el.style.removeProperty('--mx')
+      el.style.removeProperty('--my')
+    }
 
     const flush = () => {
       raf = 0
       if (!pending) return
-      pending.el.style.setProperty('--mx', `${pending.x}%`)
-      pending.el.style.setProperty('--my', `${pending.y}%`)
+      const { el, x, y } = pending
       pending = null
+      const r = el.getBoundingClientRect()
+      if (!r.width || !r.height) return
+      el.style.setProperty('--mx', `${((x - r.left) / r.width) * 100}%`)
+      el.style.setProperty('--my', `${((y - r.top) / r.height) * 100}%`)
+      if (el.matches(BTN)) {
+        const tx = clamp(((x - (r.left + r.width / 2)) / (r.width / 2)) * MAG, MAG)
+        const ty = clamp(((y - (r.top + r.height / 2)) / (r.height / 2)) * MAG, MAG)
+        el.style.setProperty('--tx', `${tx.toFixed(1)}px`)
+        el.style.setProperty('--ty', `${ty.toFixed(1)}px`)
+      }
     }
 
     const onMove = (e: PointerEvent) => {
-      const target = e.target as HTMLElement | null
-      const el = target?.closest?.(SELECTOR) as HTMLElement | null
-      if (!el) return
-      const r = el.getBoundingClientRect()
-      if (!r.width || !r.height) return
-      pending = {
-        el,
-        x: ((e.clientX - r.left) / r.width) * 100,
-        y: ((e.clientY - r.top) / r.height) * 100,
+      const el = (e.target as HTMLElement | null)?.closest?.(ANY) as HTMLElement | null
+      if (el !== current) {
+        if (current) clear(current)
+        current = el
       }
+      if (!el) return
+      pending = { el, x: e.clientX, y: e.clientY }
       if (!raf) raf = requestAnimationFrame(flush)
     }
 
@@ -51,6 +71,7 @@ export default function PointerGlow() {
     return () => {
       document.removeEventListener('pointermove', onMove)
       if (raf) cancelAnimationFrame(raf)
+      if (current) clear(current)
     }
   }, [])
 
