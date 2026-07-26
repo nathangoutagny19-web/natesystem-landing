@@ -42,9 +42,11 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://www.natesystem.com'),
   alternates: {
     canonical: 'https://www.natesystem.com',
+    // hreflang FR uniquement : Google exige une URL distincte par langue, donc
+    // pas de 'en-US' vers la même URL (déclaration invalide = pire que rien).
+    // À rétablir avec des routes /fr /en séparées. Voir BRIEF-SITE-V2.md §4.3.
     languages: {
       'fr-FR': 'https://www.natesystem.com',
-      'en-US': 'https://www.natesystem.com',
     },
   },
   robots: { index: true, follow: true },

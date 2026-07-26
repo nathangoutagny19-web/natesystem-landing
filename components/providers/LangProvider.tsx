@@ -27,18 +27,21 @@ export function useLang() {
 function detectLang(): Lang {
   if (typeof window === 'undefined') return DEFAULT_LANG
 
-  // 1. Respect explicit user choice from prior visit
+  // Respect an explicit language choice from a prior visit (the FR/EN selector).
   try {
     const saved = window.localStorage.getItem(STORAGE_KEY)
     if (saved === 'fr' || saved === 'en') return saved
   } catch {
-    // localStorage can throw in private mode — fall through to navigator
+    // localStorage can throw in private mode — fall through to the default.
   }
 
-  // 2. Map navigator.language → supported language
-  const nav = (window.navigator?.language || '').toLowerCase()
-  if (nav.startsWith('fr')) return 'fr'
-  return 'en'
+  // PATCH ASSUMÉ (Lot 0) — pas de détection via navigator.language. Le français
+  // est le rendu par défaut pour tout le monde, crawlers compris, pour ne pas
+  // indexer d'anglais sur des requêtes SEO françaises. Effet accepté : la
+  // version EN est invisible en recherche. NE PAS "réparer" la détection ici :
+  // le correctif propre est des routes localisées /fr /en avec hreflang valide
+  // (il y a un vrai marché anglophone à Budapest). Voir BRIEF-SITE-V2.md §4.3.
+  return DEFAULT_LANG
 }
 
 export function LangProvider({ children }: { children: React.ReactNode }) {
