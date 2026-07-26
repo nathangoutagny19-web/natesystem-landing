@@ -7,7 +7,7 @@ export const translations = {
   'nav.contact': { en: 'Contact', fr: 'Contact' },
 
   // Menu cible (Lot 1 du BRIEF-SITE-V2) — un menu resserré + un CTA unique.
-  'nav.methode': { en: 'Method', fr: 'Méthode' },
+  'nav.methode': { en: 'How we work', fr: 'Notre approche' },
   'nav.realisations': { en: 'Case studies', fr: 'Réalisations' },
   'nav.services': { en: 'Services', fr: 'Services' },
   'nav.about': { en: 'About', fr: 'À propos' },

@@ -120,7 +120,6 @@ export default function Nav() {
   const [langOpen, setLangOpen] = useState(false)
   const [mobileRealisationsOpen, setMobileRealisationsOpen] = useState(false)
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false)
-  const [mobileResourcesOpen, setMobileResourcesOpen] = useState(false)
   const langRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -149,32 +148,11 @@ export default function Nav() {
             <span className={`nav-logo-text ${scrolled ? 'nav-logo-text-hidden' : ''}`}>NateSystem</span>
           </Link>
 
-          {/* Center links — desktop. Menu cible Lot 1 : Méthode · Réalisations ·
-              Services · À propos · Ressources. « Méthode » pointe vers la section
-              méthode de la home tant que /methode (Lot 2) n'existe pas. */}
+          {/* Center links — desktop. Menu cible : Méthode · Services · Réalisations ·
+              Ressources. « Méthode » pointe vers la section méthode de la home tant
+              que /methode (Lot 2) n'existe pas. Ressources = lien direct (pas de méga). */}
           <nav className="nav-links">
             <Link href="/#process" className="nav-link">{t('nav.methode')}</Link>
-
-            {/* Réalisations — cas clients + démos live (des preuves, pas des outils) */}
-            <div className="nav-dropdown">
-              <Link href="/resources#case-studies" className="nav-link nav-link-dropdown">
-                {t('nav.realisations')} <Chevron />
-              </Link>
-              <div className="nav-mega nav-mega-2col">
-                <div className="nav-mega-inner">
-                  <div className="nav-mega-col">
-                    <p className="nav-mega-label">{t('mega.cases')}</p>
-                    <MegaItem href="/resources#case-studies" icon={icons.caseStudy} title={t('resources.caseStudies')} desc={t('resources.caseStudies.desc')} />
-                  </div>
-                  <div className="nav-mega-col">
-                    <p className="nav-mega-label">{t('mega.demos')}</p>
-                    <MegaItem href="https://actifs.natesystem.com" icon={icons.laptop} title={t('demos.actifs.navTitle')} desc={t('demos.actifs.navDesc')} external badge={t('mega.new')} />
-                    <MegaItem href="https://stack-stock.natesystem.com" icon={icons.package} title={t('demos.stock.navTitle')} desc={t('demos.stock.navDesc')} external badge={t('mega.new')} />
-                    <MegaItem href="/reviews" icon={icons.clipboard} title={t('demos.reviews.navTitle')} desc={t('demos.reviews.navDesc')} badge={t('mega.gated')} />
-                  </div>
-                </div>
-              </div>
-            </div>
 
             {/* Services */}
             <div className="nav-dropdown">
@@ -197,29 +175,29 @@ export default function Nav() {
               </div>
             </div>
 
-            <Link href="/a-propos" className="nav-link">{t('nav.about')}</Link>
-
-            {/* Ressources */}
+            {/* Réalisations — cas clients + démos live (des preuves, pas des outils) */}
             <div className="nav-dropdown">
-              <Link href="/resources" className="nav-link nav-link-dropdown">
-                {t('nav.resources')} <Chevron />
+              <Link href="/resources#case-studies" className="nav-link nav-link-dropdown">
+                {t('nav.realisations')} <Chevron />
               </Link>
               <div className="nav-mega nav-mega-2col">
                 <div className="nav-mega-inner">
                   <div className="nav-mega-col">
-                    <p className="nav-mega-label">{t('nav.resources')}</p>
-                    <MegaItem href="/blog" icon={icons.blog} title={t('resources.blog')} desc={t('resources.blog.desc')} />
-                    <MegaItem href="/glossaire" icon={icons.book} title={t('nav.res.glossary')} desc={t('nav.res.glossaryDesc')} />
-                    <MegaItem href="/prix-logiciel-sur-mesure" icon={icons.receipt} title={t('nav.res.pricing')} desc={t('nav.res.pricingDesc')} />
+                    <p className="nav-mega-label">{t('mega.cases')}</p>
+                    <MegaItem href="/resources#case-studies" icon={icons.caseStudy} title={t('resources.caseStudies')} desc={t('resources.caseStudies.desc')} />
                   </div>
                   <div className="nav-mega-col">
-                    <p className="nav-mega-label">{t('nav.res.diag')}</p>
-                    <MegaItem href="/tools/diagnostic-ia" icon={icons.brain} title={t('nav.res.diag')} desc={t('nav.res.diagDesc')} />
-                    <MegaItem href="/playbook" icon={icons.book} title={t('playbooks.all.title')} desc={t('playbooks.all.desc')} />
+                    <p className="nav-mega-label">{t('mega.demos')}</p>
+                    <MegaItem href="https://actifs.natesystem.com" icon={icons.laptop} title={t('demos.actifs.navTitle')} desc={t('demos.actifs.navDesc')} external badge={t('mega.new')} />
+                    <MegaItem href="https://stack-stock.natesystem.com" icon={icons.package} title={t('demos.stock.navTitle')} desc={t('demos.stock.navDesc')} external badge={t('mega.new')} />
+                    <MegaItem href="/reviews" icon={icons.clipboard} title={t('demos.reviews.navTitle')} desc={t('demos.reviews.navDesc')} badge={t('mega.gated')} />
                   </div>
                 </div>
               </div>
             </div>
+
+            {/* Ressources — lien direct vers la page, sans méga */}
+            <Link href="/resources" className="nav-link">{t('nav.resources')}</Link>
           </nav>
 
           {/* Right side — lang + CTA */}
@@ -282,13 +260,6 @@ export default function Nav() {
         <div className="pt-20 px-6 flex flex-col gap-1">
           <MobileLink href="/#process" onClick={() => setMenuOpen(false)}>{t('nav.methode')}</MobileLink>
 
-          <MobileAccordion label={t('nav.realisations')} open={mobileRealisationsOpen} onToggle={() => setMobileRealisationsOpen(!mobileRealisationsOpen)}>
-            <MobileLink href="/resources#case-studies" onClick={() => setMenuOpen(false)}>{t('resources.caseStudies')}</MobileLink>
-            <MobileLink href="https://actifs.natesystem.com" external badge={t('mega.new')} onClick={() => setMenuOpen(false)}>{t('demos.actifs.navTitle')}</MobileLink>
-            <MobileLink href="https://stack-stock.natesystem.com" external badge={t('mega.new')} onClick={() => setMenuOpen(false)}>{t('demos.stock.navTitle')}</MobileLink>
-            <MobileLink href="/reviews" badge={t('mega.gated')} onClick={() => setMenuOpen(false)}>{t('demos.reviews.navTitle')}</MobileLink>
-          </MobileAccordion>
-
           <MobileAccordion label={t('nav.services')} open={mobileServicesOpen} onToggle={() => setMobileServicesOpen(!mobileServicesOpen)}>
             <MobileLink href={CAL_LINK} onClick={() => setMenuOpen(false)}>{t('nav.svc.sprint')}</MobileLink>
             <MobileLink href="/services/logiciel-sur-mesure" onClick={() => setMenuOpen(false)}>{t('nav.svc.logiciel')}</MobileLink>
@@ -296,15 +267,14 @@ export default function Nav() {
             <MobileLink href="/services/audit" onClick={() => setMenuOpen(false)}>{t('nav.svc.audit')}</MobileLink>
           </MobileAccordion>
 
-          <MobileLink href="/a-propos" onClick={() => setMenuOpen(false)}>{t('nav.about')}</MobileLink>
-
-          <MobileAccordion label={t('nav.resources')} open={mobileResourcesOpen} onToggle={() => setMobileResourcesOpen(!mobileResourcesOpen)}>
-            <MobileLink href="/blog" onClick={() => setMenuOpen(false)}>{t('resources.blog')}</MobileLink>
-            <MobileLink href="/glossaire" onClick={() => setMenuOpen(false)}>{t('nav.res.glossary')}</MobileLink>
-            <MobileLink href="/prix-logiciel-sur-mesure" onClick={() => setMenuOpen(false)}>{t('nav.res.pricing')}</MobileLink>
-            <MobileLink href="/tools/diagnostic-ia" onClick={() => setMenuOpen(false)}>{t('nav.res.diag')}</MobileLink>
-            <MobileLink href="/playbook" onClick={() => setMenuOpen(false)}>{t('playbooks.all.title')}</MobileLink>
+          <MobileAccordion label={t('nav.realisations')} open={mobileRealisationsOpen} onToggle={() => setMobileRealisationsOpen(!mobileRealisationsOpen)}>
+            <MobileLink href="/resources#case-studies" onClick={() => setMenuOpen(false)}>{t('resources.caseStudies')}</MobileLink>
+            <MobileLink href="https://actifs.natesystem.com" external badge={t('mega.new')} onClick={() => setMenuOpen(false)}>{t('demos.actifs.navTitle')}</MobileLink>
+            <MobileLink href="https://stack-stock.natesystem.com" external badge={t('mega.new')} onClick={() => setMenuOpen(false)}>{t('demos.stock.navTitle')}</MobileLink>
+            <MobileLink href="/reviews" badge={t('mega.gated')} onClick={() => setMenuOpen(false)}>{t('demos.reviews.navTitle')}</MobileLink>
           </MobileAccordion>
+
+          <MobileLink href="/resources" onClick={() => setMenuOpen(false)}>{t('nav.resources')}</MobileLink>
 
           <div className="flex gap-2 mt-4 flex-wrap">
             {(['en', 'fr'] as const).map(l => (
