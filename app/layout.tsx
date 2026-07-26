@@ -5,6 +5,7 @@ import { ThemeProvider } from '@/components/providers/ThemeProvider'
 import { LangProvider } from '@/components/providers/LangProvider'
 import WhatsAppFloat from '@/components/layout/WhatsAppFloat'
 import CookieConsent from '@/components/site/CookieConsent'
+import PointerGlow from '@/components/ui/PointerGlow'
 
 const dmSans = DM_Sans({
   subsets: ['latin'],
@@ -189,6 +190,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </div>
             <WhatsAppFloat />
             <CookieConsent />
+            <PointerGlow />
           </LangProvider>
         </ThemeProvider>
       </body>

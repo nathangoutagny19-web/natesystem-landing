@@ -319,6 +319,62 @@ html.light .nav-bar.nav-scrolled {
   .btn-primary:active, .nav-cta-btn:active { transform: none; }
 }
 
+/* ═══════════════════════════════════════════════════════════════════════
+   FX — premium pointer interactions (Frontal-inspired, NateSystem palette)
+   1) A light that ROTATES around the border of primary buttons.
+   2) A soft SPOTLIGHT that FOLLOWS the cursor on buttons + offer cards
+      (JS sets --mx/--my via <PointerGlow/>). Fine-pointer only, and fully
+      off under reduced-motion — perf/UX never degrades.
+   ═══════════════════════════════════════════════════════════════════════ */
+@property --fx-angle { syntax: '<angle>'; initial-value: 0deg; inherits: false; }
+@keyframes fxSpin { to { --fx-angle: 360deg; } }
+
+/* Per-button tint tokens */
+.btn-primary  { --fx-ring: var(--accent); --fx-ring-hot: #ffffff; --fx-spot: rgba(230,57,70,0.20); }
+.nav-cta-btn  { --fx-ring: #ff9aa2;        --fx-ring-hot: #ffffff; --fx-spot: rgba(255,255,255,0.32); position: relative; overflow: hidden; }
+
+@media (hover: hover) and (pointer: fine) {
+  /* Rotating light ring (masked to the border only) */
+  .btn-primary::before, .nav-cta-btn::before {
+    content: ''; position: absolute; inset: 0; border-radius: inherit;
+    padding: 1.5px; pointer-events: none; z-index: 0;
+    background: conic-gradient(from var(--fx-angle),
+      transparent 0deg, var(--fx-ring) 45deg, var(--fx-ring-hot) 80deg,
+      var(--fx-ring) 115deg, transparent 160deg, transparent 360deg);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+            mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor; mask-composite: exclude;
+    opacity: 0; transition: opacity .35s ease;
+    animation: fxSpin 4s linear infinite;
+  }
+  .btn-primary:hover::before, .nav-cta-btn:hover::before { opacity: .95; }
+
+  /* Cursor-following spotlight (contained by the button's rounded shape) */
+  .btn-primary::after, .nav-cta-btn::after {
+    content: ''; position: absolute; inset: 0; border-radius: inherit;
+    pointer-events: none; z-index: 0;
+    background: radial-gradient(130px circle at var(--mx, 50%) var(--my, 50%), var(--fx-spot), transparent 62%);
+    opacity: 0; transition: opacity .3s ease;
+  }
+  .btn-primary:hover::after, .nav-cta-btn:hover::after { opacity: 1; }
+
+  /* Cards: a soft border-following glow (the "cadre" that lights up) */
+  .sols-card { --fx-spot: rgba(230,57,70,0.14); }
+  .sols-card::after {
+    content: ''; position: absolute; inset: 0; border-radius: inherit;
+    pointer-events: none; z-index: 0;
+    background: radial-gradient(260px circle at var(--mx, 50%) var(--my, 50%), var(--fx-spot), transparent 60%);
+    opacity: 0; transition: opacity .35s ease;
+  }
+  .sols-card:hover::after { opacity: 1; }
+  /* keep card content above the glow */
+  .sols-card > * { position: relative; z-index: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-primary::before, .nav-cta-btn::before { animation: none; opacity: 0 !important; }
+}
+
 /* ——— DROPDOWN (mega menu) ——— */
 .nav-dropdown { position: relative; }
 /* Invisible bridge so hover doesn't break when moving to panel */
