@@ -404,7 +404,7 @@ export default function Solutions() {
           display: inline-flex; align-items: center; gap: 8px;
           background: var(--accent); color: #fff; border: 1px solid var(--accent);
           padding: 13px 24px; border-radius: 10px; font-size: 14px; font-weight: 600; text-decoration: none;
-          transition: filter .2s ease;
+          transition: filter .2s ease, transform .2s cubic-bezier(0.34,1.56,0.64,1), box-shadow .25s ease;
         }
         .infra-cta :global(svg) { transition: transform .2s ease; }
         .infra-cta:hover { filter: brightness(1.06); }
@@ -438,7 +438,7 @@ export default function Solutions() {
           display: inline-flex; align-items: center; gap: 8px; white-space: nowrap;
           background: transparent; color: var(--text); border: 1px solid var(--border-hover);
           padding: 12px 20px; border-radius: 10px; font-size: 14px; font-weight: 600; text-decoration: none;
-          transition: background .2s ease, border-color .2s ease;
+          transition: background .2s ease, border-color .2s ease, color .2s ease, box-shadow .25s ease, transform .2s cubic-bezier(0.34,1.56,0.64,1);
         }
         .form-cta :global(svg) { transition: transform .2s ease; }
         .form-cta:hover { background: var(--accent); color: #fff; border-color: var(--accent); }

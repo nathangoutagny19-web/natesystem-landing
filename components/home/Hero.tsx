@@ -137,17 +137,8 @@ export default function Hero() {
         </Link>
         <a
           href="#process"
-          className="font-sans"
-          style={{
-            fontSize: '14px',
-            fontWeight: 500,
-            color: 'var(--text-secondary)',
-            padding: '14px 22px',
-            border: '1px solid var(--border)',
-            borderRadius: '12px',
-            textDecoration: 'none',
-            transition: 'border-color 200ms ease, color 200ms ease',
-          }}
+          className="btn-ghost"
+          style={{ fontSize: '14px', fontWeight: 500 }}
         >
           {t('hero.secondary')} →
         </a>

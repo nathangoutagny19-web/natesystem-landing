@@ -17,7 +17,7 @@
   --accent-subtle: rgba(230,57,70,0.08);
   --border: rgba(255,255,255,0.06);
   --border-hover: rgba(255,255,255,0.12);
-  --ambient: rgba(255,255,255,0.06);
+  --grid-hot: rgba(255,255,255,0.18);
   --font-serif: 'Instrument Serif', Georgia, serif;
   --font-sans: 'DM Sans', -apple-system, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
@@ -41,7 +41,7 @@ html.light {
   --accent-subtle: rgba(230,57,70,0.06);
   --border: rgba(15,23,42,0.08);
   --border-hover: rgba(15,23,42,0.16);
-  --ambient: rgba(15,23,42,0.05);
+  --grid-hot: rgba(15,23,42,0.14);
   --mobile-menu-bg: rgba(248,250,252,0.95);
 }
 
@@ -114,7 +114,10 @@ body {
    nothing shows when JS is off (touch / reduced-motion). */
 .grid-bg::before {
   content: ''; position: absolute; inset: 0; pointer-events: none;
-  background: radial-gradient(600px circle at var(--gx, -300px) var(--gy, -300px), var(--ambient, transparent), transparent 72%);
+  background-image: linear-gradient(var(--grid-hot) 1px, transparent 1px), linear-gradient(90deg, var(--grid-hot) 1px, transparent 1px);
+  background-size: 60px 60px;
+  -webkit-mask: radial-gradient(160px circle at var(--gx, -300px) var(--gy, -300px), #000, transparent 68%);
+          mask: radial-gradient(160px circle at var(--gx, -300px) var(--gy, -300px), #000, transparent 68%);
 }
 .grid-bg::after {
   content: ''; position: absolute; top: -200px; left: 50%; transform: translateX(-50%);
@@ -174,7 +177,7 @@ body {
   box-shadow: 0 1px 2px rgba(0,0,0,0.08);
 }
 html:not(.light) .btn-primary {
-  background: #ffffff; border-color: #ffffff; color: #0e0e12;
+  background: #17171b; border-color: rgba(230,57,70,0.5); color: #ffffff;
 }
 @media (max-width: 540px) {
   .btn-primary {
@@ -189,7 +192,7 @@ html:not(.light) .btn-primary {
   box-shadow: 0 10px 26px -10px rgba(0,0,0,0.5), 0 2px 6px rgba(0,0,0,0.14);
 }
 html:not(.light) .btn-primary:hover {
-  background: rgba(255,255,255,0.92);
+  background: #201f26; border-color: var(--accent);
 }
 /* active: presses down — shadow rolls back in, slight squash */
 .btn-primary:active {
@@ -340,32 +343,34 @@ html.light .nav-bar.nav-scrolled {
 @keyframes fxSpin { to { --fx-angle: 360deg; } }
 
 .btn-primary { --fx-ring: var(--accent); --fx-ring-hot: #ffffff; }
-.nav-cta-btn { --fx-ring: #ffd0d5;        --fx-ring-hot: #ffffff; position: relative; overflow: hidden; }
-.btn-ghost, .sols-cta { --fx-ring: var(--accent); --fx-ring-hot: #ffffff; position: relative; }
+.nav-cta-btn, .infra-cta { --fx-ring: #ffd0d5; --fx-ring-hot: #ffffff; position: relative; overflow: hidden; }
+.btn-ghost, .sols-cta, .form-cta { --fx-ring: var(--accent); --fx-ring-hot: #ffffff; position: relative; }
 
 @media (hover: hover) and (pointer: fine) {
   /* Magnetic drift toward the cursor (--tx/--ty from <PointerGlow/>) */
-  .btn-primary, .nav-cta-btn, .btn-ghost, .sols-cta {
+  .btn-primary, .nav-cta-btn, .btn-ghost, .sols-cta, .infra-cta, .form-cta {
     transform: translate(var(--tx, 0px), var(--ty, 0px)) scale(var(--sc, 1));
     transition: transform .2s cubic-bezier(.34,1.56,.64,1), box-shadow .25s ease, background .2s ease, border-color .2s ease, color .2s ease;
   }
-  .btn-primary:hover, .nav-cta-btn:hover, .btn-ghost:hover, .sols-cta:hover {
+  .btn-primary:hover, .nav-cta-btn:hover, .btn-ghost:hover,
+  .sols-cta:hover, .infra-cta:hover, .form-cta:hover {
     transform: translate(var(--tx, 0px), var(--ty, 0px)) scale(var(--sc, 1));
   }
   .btn-primary:hover {
     box-shadow: 0 0 20px rgba(230,57,70,.40), 0 0 46px rgba(230,57,70,.18), 0 10px 26px -10px rgba(0,0,0,.5);
   }
-  .nav-cta-btn:hover {
+  .nav-cta-btn:hover, .infra-cta:hover {
     box-shadow: 0 0 22px rgba(230,57,70,.55), 0 0 52px rgba(230,57,70,.28), 0 8px 20px -4px rgba(230,57,70,.45);
   }
-  .btn-ghost:hover, .sols-cta:hover {
+  .btn-ghost:hover, .sols-cta:hover, .form-cta:hover {
     box-shadow: 0 0 18px rgba(230,57,70,.32), 0 0 42px rgba(230,57,70,.16);
   }
-  .btn-primary:active, .nav-cta-btn:active,
-  .btn-ghost:active, .sols-cta:active { --sc: .96; transition-duration: .08s; }
+  .btn-primary:active, .nav-cta-btn:active, .btn-ghost:active,
+  .sols-cta:active, .infra-cta:active, .form-cta:active { --sc: .96; transition-duration: .08s; }
 
   /* Rotating light around the border — faint at rest, bright + fast on hover */
-  .btn-primary::before, .nav-cta-btn::before, .btn-ghost::before, .sols-cta::before {
+  .btn-primary::before, .nav-cta-btn::before, .btn-ghost::before,
+  .sols-cta::before, .infra-cta::before, .form-cta::before {
     content: ''; position: absolute; inset: 0; border-radius: inherit;
     padding: 2.5px; pointer-events: none; z-index: 2;
     background: conic-gradient(from var(--fx-angle),
@@ -377,8 +382,8 @@ html.light .nav-bar.nav-scrolled {
     opacity: .3; transition: opacity .3s ease;
     animation: fxSpin 3s linear infinite;
   }
-  .btn-primary:hover::before, .nav-cta-btn:hover::before,
-  .btn-ghost:hover::before, .sols-cta:hover::before { opacity: 1; }
+  .btn-primary:hover::before, .nav-cta-btn:hover::before, .btn-ghost:hover::before,
+  .sols-cta:hover::before, .infra-cta:hover::before, .form-cta:hover::before { opacity: 1; }
 
   /* Offer cards: soft cursor-following glow (the "cadre" lights up) */
   .sols-card::after {
@@ -392,8 +397,8 @@ html.light .nav-bar.nav-scrolled {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .btn-primary::before, .nav-cta-btn::before,
-  .btn-ghost::before, .sols-cta::before { animation: none; opacity: 0 !important; }
+  .btn-primary::before, .nav-cta-btn::before, .btn-ghost::before,
+  .sols-cta::before, .infra-cta::before, .form-cta::before { animation: none; opacity: 0 !important; }
 }
 
 /* ——— DROPDOWN (mega menu) ——— */

@@ -14,8 +14,8 @@ import { useEffect } from 'react'
  * Perf/UX guardrails: single listener, rAF-throttled, and a hard no-op on
  * coarse pointers (touch) and reduced-motion.
  */
-const BTN = '.btn-primary, .nav-cta-btn, .btn-ghost, .sols-cta'
-const ANY = '.btn-primary, .nav-cta-btn, .btn-ghost, .sols-cta, .sols-card'
+const BTN = '.btn-primary, .nav-cta-btn, .btn-ghost, .sols-cta, .infra-cta, .form-cta'
+const ANY = '.btn-primary, .nav-cta-btn, .btn-ghost, .sols-cta, .infra-cta, .form-cta, .sols-card'
 const MAG = 7 // px — max magnetic drift
 
 const clamp = (v: number, m: number) => (v < -m ? -m : v > m ? m : v)
