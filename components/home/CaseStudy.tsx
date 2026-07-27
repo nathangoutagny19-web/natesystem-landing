@@ -5,9 +5,11 @@ import FadeUp from '@/components/ui/FadeUp'
 import { motion } from 'framer-motion'
 import { useLang } from '@/components/providers/LangProvider'
 
-// Short (vertical 9:16) extract from the podcast — more targeted than the full episode.
-const YOUTUBE_ID = 'OR4-C5RVFxc'
+// Vidéo témoignage podcast (paysage 16:9) — l'épisode complet Chromosome.
+const YOUTUBE_ID = 'aMIjJbzuhDc'
 
+// Lecteur YouTube "facade" : on ne charge l'iframe (ni les cookies tiers)
+// qu'au clic. Remplit son parent (aspect-ratio géré par le conteneur).
 function LiteYouTube({ title }: { title: string }) {
   const [loaded, setLoaded] = useState(false)
 
@@ -42,42 +44,40 @@ function LiteYouTube({ title }: { title: string }) {
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src={`https://i.ytimg.com/vi/${YOUTUBE_ID}/oar2.jpg`}
-        alt="Extrait vidéo : NateSystem, logiciel sur-mesure propulsé par l'IA"
+        src={`https://i.ytimg.com/vi/${YOUTUBE_ID}/maxresdefault.jpg`}
+        alt={title}
         loading="lazy"
         className="absolute inset-0 w-full h-full"
         style={{ objectFit: 'cover', transition: 'transform 0.5s ease' }}
         onError={(e) => {
-          // vertical (oar2) thumbnail may be missing — fall back to hqdefault
+          // maxresdefault peut manquer → fallback hqdefault
           ;(e.target as HTMLImageElement).src = `https://i.ytimg.com/vi/${YOUTUBE_ID}/hqdefault.jpg`
         }}
       />
-      {/* Subtle dark overlay for legibility */}
+      {/* Voile sombre pour la lisibilité du bouton */}
       <span
         aria-hidden="true"
         className="absolute inset-0"
-        style={{
-          background: 'linear-gradient(to bottom, rgba(0,0,0,0.12), rgba(0,0,0,0.38))',
-        }}
+        style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.10), rgba(0,0,0,0.42))' }}
       />
-      {/* Play button */}
+      {/* Bouton play */}
       <span
         aria-hidden="true"
-        className="absolute left-1/2 top-1/2"
+        className="absolute left-1/2 top-1/2 cs-play"
         style={{
           transform: 'translate(-50%, -50%)',
-          width: 72,
-          height: 72,
+          width: 76,
+          height: 76,
           borderRadius: '50%',
           background: 'rgba(255,255,255,0.96)',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
           boxShadow: '0 8px 24px rgba(0,0,0,0.28)',
-          transition: 'transform 0.25s ease, background 0.25s ease',
+          transition: 'transform 0.25s ease',
         }}
       >
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="#E63946" aria-hidden="true">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="#E63946" aria-hidden="true">
           <path d="M8 5v14l11-7z" />
         </svg>
       </span>
@@ -100,151 +100,128 @@ export default function CaseStudy() {
   ]
 
   const quote = lang === 'en'
-    ? '"It changed the way we run everything."'
-    : '"Ça a changé notre façon de tout gérer."'
+    ? 'It changed the way we run everything.'
+    : 'Ça a changé notre façon de tout gérer.'
+
+  const role = lang === 'en'
+    ? 'General Manager · Chromosome Saint-Étienne'
+    : 'General Manager · Chromosome Saint-Étienne'
 
   return (
     <section id="case-study" style={{ padding: '24px 24px 80px' }}>
-      <div className="mx-auto" style={{ maxWidth: '1100px' }}>
+      <div className="mx-auto" style={{ maxWidth: '1120px' }}>
         <FadeUp>
           <motion.div
-            className="overflow-hidden"
+            className="overflow-hidden cs-card"
             style={{
               background: 'var(--bg-card)',
               border: '1px solid var(--border)',
-              borderRadius: '12px',
-              maxWidth: '960px',
+              borderRadius: '16px',
               margin: '0 auto',
-              padding: 'clamp(32px, 5vw, 56px)',
+              padding: 'clamp(28px, 4.5vw, 56px)',
               position: 'relative',
             }}
           >
             {/* Header */}
-            <div style={{ marginBottom: '32px', textAlign: 'center' }}>
+            <div style={{ marginBottom: 'clamp(28px, 4vw, 44px)', textAlign: 'center' }}>
               <p
                 className="font-mono"
-                style={{
-                  fontSize: '10px',
-                  letterSpacing: '2.5px',
-                  textTransform: 'uppercase',
-                  color: 'var(--accent)',
-                  marginBottom: '12px',
-                }}
+                style={{ fontSize: '10px', letterSpacing: '2.5px', textTransform: 'uppercase', color: 'var(--accent)', marginBottom: '12px' }}
               >
                 Restaurant Group · Saint-Étienne
               </p>
               <h3
                 className="font-serif italic"
-                style={{
-                  fontSize: 'clamp(32px, 5vw, 48px)',
-                  fontWeight: 400,
-                  color: 'var(--accent)',
-                  lineHeight: 1.1,
-                  marginBottom: '20px',
-                }}
+                style={{ fontSize: 'clamp(30px, 4.5vw, 46px)', fontWeight: 400, color: 'var(--accent)', lineHeight: 1.1, marginBottom: '18px' }}
               >
                 Chromosome
               </h3>
               <p
                 className="font-sans"
-                style={{
-                  fontSize: '15px',
-                  color: 'var(--text-secondary)',
-                  lineHeight: 1.8,
-                  fontWeight: 300,
-                  maxWidth: '680px',
-                  margin: '0 auto',
-                }}
+                style={{ fontSize: '15px', color: 'var(--text-secondary)', lineHeight: 1.8, fontWeight: 300, maxWidth: '720px', margin: '0 auto' }}
               >
                 {headline}
               </p>
             </div>
 
-            {/* Video — vertical short (9:16), lazy-loaded on click, no third-party
-                cookies until play. Constrained width so it reads as a phone-sized
-                clip, not a giant column. */}
-            <div
-              className="relative overflow-hidden mb-10"
-              style={{
-                aspectRatio: '9/16',
-                borderRadius: '12px',
-                border: '1px solid var(--border)',
-                width: '100%',
-                maxWidth: '320px',
-                margin: '0 auto 40px',
-                background: '#000',
-              }}
-            >
-              <LiteYouTube
-                title={lang === 'en' ? 'Chromosome testimonial — NateSystem' : 'Témoignage Chromosome — NateSystem'}
-              />
+            {/* Citation (gauche) + vidéo témoignage (droite) — structure OpsKings */}
+            <div className="cs-row">
+              <div className="cs-quote-col">
+                <span className="cs-qmark font-serif" aria-hidden="true">“</span>
+                <blockquote className="cs-quote font-serif">{quote}</blockquote>
+                <div className="cs-attr">
+                  <span className="cs-attr-name font-sans">Catherine F.</span>
+                  <span className="cs-attr-role font-sans">{role}</span>
+                </div>
+              </div>
+
+              <div className="cs-video-col">
+                <div className="cs-video">
+                  <LiteYouTube title={lang === 'en' ? 'Chromosome testimonial — NateSystem' : 'Témoignage Chromosome — NateSystem'} />
+                </div>
+              </div>
             </div>
 
-            {/* Metrics */}
-            <div
-              className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-10 pb-10"
-              style={{ borderBottom: '1px solid var(--border)' }}
-            >
+            {/* Chiffres */}
+            <div className="cs-metrics">
               {metrics.map((m) => (
-                <div key={m.value} className="text-center md:text-left">
-                  <p
-                    className="font-serif italic"
-                    style={{
-                      fontSize: 'clamp(22px, 3vw, 28px)',
-                      color: 'var(--accent)',
-                      lineHeight: 1.15,
-                      marginBottom: '6px',
-                      fontWeight: 400,
-                    }}
-                  >
-                    {m.value}
-                  </p>
-                  <p
-                    className="font-sans"
-                    style={{
-                      fontSize: '12px',
-                      color: 'var(--text-muted)',
-                      fontWeight: 300,
-                      lineHeight: 1.45,
-                    }}
-                  >
-                    {m.label}
-                  </p>
+                <div key={m.value} className="cs-metric">
+                  <p className="cs-metric-value font-serif italic">{m.value}</p>
+                  <p className="cs-metric-label font-sans">{m.label}</p>
                 </div>
               ))}
-            </div>
-
-            {/* Quote */}
-            <div style={{ textAlign: 'center' }}>
-              <p
-                className="font-serif italic"
-                style={{
-                  fontSize: 'clamp(20px, 3vw, 28px)',
-                  fontWeight: 400,
-                  color: 'var(--text)',
-                  lineHeight: 1.4,
-                  maxWidth: '640px',
-                  margin: '0 auto 16px',
-                }}
-              >
-                {quote}
-              </p>
-              <p
-                className="font-sans"
-                style={{ fontSize: '13px', fontWeight: 500, color: 'var(--text)', marginBottom: '4px' }}
-              >
-                Catherine F.
-              </p>
-              <p
-                className="font-sans"
-                style={{ fontSize: '12px', color: 'var(--text-secondary)', fontWeight: 300, letterSpacing: '0.5px' }}
-              >
-                General Manager · Chromosome Saint-Étienne
-              </p>
             </div>
           </motion.div>
         </FadeUp>
       </div>
+
+      <style jsx>{`
+        .cs-row {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 28px;
+          align-items: center;
+          margin-bottom: clamp(32px, 4vw, 48px);
+        }
+        @media (min-width: 860px) {
+          .cs-row { grid-template-columns: 0.9fr 1.1fr; gap: 48px; }
+        }
+
+        /* Colonne citation */
+        .cs-quote-col { display: flex; flex-direction: column; position: relative; }
+        .cs-qmark {
+          font-size: 72px; line-height: 0.7; color: var(--accent);
+          opacity: 0.5; margin-bottom: 4px; height: 40px;
+        }
+        .cs-quote {
+          font-style: italic; font-weight: 400; color: var(--text);
+          font-size: clamp(23px, 2.8vw, 33px); line-height: 1.32;
+          margin: 0 0 22px;
+        }
+        .cs-attr { display: flex; flex-direction: column; gap: 3px; }
+        .cs-attr-name { font-size: 14px; font-weight: 600; color: var(--text); }
+        .cs-attr-role { font-size: 12.5px; font-weight: 300; color: var(--text-secondary); letter-spacing: 0.3px; }
+
+        /* Colonne vidéo — paysage 16:9 */
+        .cs-video {
+          position: relative; width: 100%; aspect-ratio: 16 / 9;
+          border-radius: 12px; overflow: hidden; border: 1px solid var(--border);
+          background: #000;
+          box-shadow: 0 1px 2px rgba(15,23,42,0.04), 0 18px 44px -22px rgba(15,23,42,0.32);
+        }
+
+        /* Chiffres — 4 colonnes, séparés par un filet en haut */
+        .cs-metrics {
+          display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
+          padding-top: clamp(28px, 3.5vw, 40px); border-top: 1px solid var(--border);
+        }
+        @media (min-width: 720px) { .cs-metrics { grid-template-columns: repeat(4, 1fr); } }
+        .cs-metric-value {
+          font-size: clamp(22px, 3vw, 28px); color: var(--accent);
+          line-height: 1.15; margin: 0 0 6px; font-weight: 400;
+        }
+        .cs-metric-label { font-size: 12px; color: var(--text-muted); font-weight: 300; line-height: 1.45; }
+      `}</style>
     </section>
   )
 }
