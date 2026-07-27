@@ -17,7 +17,7 @@ export default function SprintDiagnostic() {
   // Une petite image DANS chaque case (pas de zoom). La Carte = Miro (à venir).
   const deliverables: { icon: typeof Map; name: string; desc: string; img?: string; fit?: 'contain' | 'cover' }[] = [
     { icon: Map, name: t('v2.sprint.d1.name'), desc: t('v2.sprint.d1.desc') }, // La Carte → Miro (fichier à venir)
-    { icon: MousePointerClick, name: t('v2.sprint.d2.name'), desc: t('v2.sprint.d2.desc'), img: 'proto-front', fit: 'contain' },
+    { icon: MousePointerClick, name: t('v2.sprint.d2.name'), desc: t('v2.sprint.d2.desc'), img: 'proto-front', fit: 'cover' },
     { icon: FileText, name: t('v2.sprint.d3.name'), desc: t('v2.sprint.d3.desc'), img: 'feuille-photo', fit: 'cover' },
   ]
 
