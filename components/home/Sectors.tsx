@@ -2,53 +2,91 @@
 
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { ArrowRight } from 'lucide-react'
 import FadeUp from '@/components/ui/FadeUp'
 import { useLang } from '@/components/providers/LangProvider'
 
-type Category = {
+// Socle commun — ce que nos solutions apportent, quel que soit le secteur.
+const BASE_FR = [
+  'Données centralisées et claires',
+  'Business plus rentable',
+  'Leads mieux qualifiés',
+  'Hyper-personnalisation',
+  'Meilleure expérience client',
+  'Rapidité & réactivité',
+]
+const BASE_EN = [
+  'Centralised, clear data',
+  'More profitable business',
+  'Better-qualified leads',
+  'Hyper-personalisation',
+  'Better client experience',
+  'Speed & responsiveness',
+]
+
+type Sector = {
   nameFr: string; nameEn: string
-  subFr: string[]; subEn: string[]
   painFr: string; painEn: string
   buildsFr: string[]; buildsEn: string[]
 }
 
-// Regroupés par catégories (demande Nathan : « classer par catégories, pas en avoir trop »).
-const CATS: Category[] = [
+// ~8 secteurs, certains regroupés (« pas en avoir énormément »).
+const SECTORS: Sector[] = [
   {
-    nameFr: 'Hospitality & événementiel', nameEn: 'Hospitality & events',
-    subFr: ['Restauration', 'Hôtellerie', 'Clubs', 'Événementiel'],
-    subEn: ['Restaurants', 'Hotels', 'Clubs', 'Events'],
-    painFr: 'Réservations, plannings, staff et stocks éclatés sur dix outils qui ne se parlent pas — et tout se joue dans l’urgence du service.',
-    painEn: 'Bookings, rotas, staff and stock scattered across ten tools that don’t talk — and it all plays out in the rush of service.',
-    buildsFr: ['Base unifiée résa · staff · stock', 'Plannings & équipes en temps réel', 'Marges et coûts suivis au jour le jour'],
-    buildsEn: ['Unified base: booking · staff · stock', 'Real-time rotas & teams', 'Margins and costs tracked day by day'],
+    nameFr: 'Hôtellerie, restauration & événementiel', nameEn: 'Hospitality & events',
+    painFr: 'Réservations, plannings, staff et stocks éclatés sur dix outils qui ne se parlent pas — tout se joue dans l’urgence du service.',
+    painEn: 'Bookings, rotas, staff and stock scattered across ten tools that don’t talk — it all plays out in the rush of service.',
+    buildsFr: ['Backend de réservation + mails de confirmation auto', 'Plannings staff & bénévoles en temps réel', 'CRM clients + marges suivies au jour le jour'],
+    buildsEn: ['Booking backend + automatic confirmation emails', 'Real-time staff & volunteer rotas', 'Client CRM + margins tracked day by day'],
   },
   {
-    nameFr: 'Conseil & services pro', nameEn: 'Consulting & pro services',
-    subFr: ['Consulting', 'Services pro', 'Marketing & pub', 'Recrutement & staffing'],
-    subEn: ['Consulting', 'Pro services', 'Marketing & ads', 'Recruiting & staffing'],
-    painFr: 'La méthode, les livrables et le suivi client enfermés dans des Excel et quelques têtes — du temps perdu sur du répétitif à chaque mission.',
-    painEn: 'Method, deliverables and client follow-up locked in spreadsheets and a few heads — time lost on repetitive work on every engagement.',
-    buildsFr: ['Portail projets · livrables · clients', 'Reporting & relances automatisés', 'Agents IA qui rédigent CR et propositions'],
-    buildsEn: ['Projects · deliverables · clients portal', 'Automated reporting & follow-ups', 'AI agents drafting notes and proposals'],
+    nameFr: 'Bureaux d’études, ingénierie & industrie', nameEn: 'Engineering & manufacturing',
+    painFr: 'Affaires, documents techniques, production et heures suivis en parallèle — jamais au même endroit, jamais fiable.',
+    painEn: 'Projects, technical docs, production and hours tracked in parallel — never in one place, never reliable.',
+    buildsFr: ['Suivi d’affaires · temps passés · production', 'Gestion documentaire & chiffrage assistés', 'Traçabilité et contrôle qualité digitalisés'],
+    buildsEn: ['Project · time · production tracking', 'Assisted document management & quoting', 'Digitised traceability & quality control'],
   },
   {
-    nameFr: 'Industrie, technique & terrain', nameEn: 'Industry, engineering & field',
-    subFr: ['Industrie & production', 'Bureaux d’études', 'BTP & construction', 'Services à domicile'],
-    subEn: ['Manufacturing', 'Engineering offices', 'Construction & trades', 'Home services'],
-    painFr: 'Affaires, chantiers, production et heures suivis en parallèle sur des fichiers et du papier — jamais au même endroit, jamais fiable.',
-    painEn: 'Projects, sites, production and hours tracked in parallel on files and paper — never in one place, never reliable.',
-    buildsFr: ['Suivi d’affaires · chantiers · production', 'App terrain pour vos équipes', 'Devis · conformité · docs auto-remplis'],
-    buildsEn: ['Tracking: projects · sites · production', 'Field app for your teams', 'Quotes · compliance · auto-filled docs'],
+    nameFr: 'Immobilier', nameEn: 'Real estate',
+    painFr: 'Leads, biens et mandats dispersés, de la donnée qui dort un peu partout.',
+    painEn: 'Leads, listings and mandates scattered, data sleeping all over the place.',
+    buildsFr: ['Qualification & relance automatique des leads', 'Pipeline biens · mandats · vendeurs', 'Estimations et pige assistées par IA'],
+    buildsEn: ['Automatic lead qualification & follow-up', 'Pipeline: listings · mandates · sellers', 'AI-assisted valuations & prospecting'],
   },
   {
-    nameFr: 'Logistique & immobilier', nameEn: 'Logistics & real estate',
-    subFr: ['Logistique & supply chain', 'Immobilier'],
-    subEn: ['Logistics & supply chain', 'Real estate'],
-    painFr: 'Flux, stocks, biens et mandats dispersés dans des outils qui ne remontent rien de fiable — de la donnée qui dort un peu partout.',
-    painEn: 'Flows, stock, listings and mandates scattered across tools that surface nothing reliable — data sleeping all over the place.',
-    buildsFr: ['Stock · flux · biens en temps réel', 'Suivi expéditions ou mandats centralisé', 'Analytique & relances automatiques'],
-    buildsEn: ['Real-time stock · flows · listings', 'Centralised shipment or mandate tracking', 'Analytics & automatic follow-ups'],
+    nameFr: 'Services à domicile, construction & BTP', nameEn: 'Home services & construction',
+    painFr: 'Chantiers, interventions, devis et conformité gérés au téléphone et dans des classeurs.',
+    painEn: 'Sites, jobs, quotes and compliance managed on the phone and in binders.',
+    buildsFr: ['Suivi chantiers & planning des interventions', 'Devis · factures · situations en un clic', 'App terrain + conformité auto-remplie'],
+    buildsEn: ['Site tracking & job scheduling', 'Quotes · invoices · progress bills in one click', 'Field app + auto-filled compliance'],
+  },
+  {
+    nameFr: 'RH & staffing', nameEn: 'HR & staffing',
+    painFr: 'Candidats, missions et relances suivis dans des tableurs qui débordent.',
+    painEn: 'Candidates, gigs and follow-ups tracked in spreadsheets bursting at the seams.',
+    buildsFr: ['ATS sur-mesure candidats · missions', 'Matching & relances automatiques', 'Portail client + feuilles d’heures'],
+    buildsEn: ['Custom ATS: candidates · gigs', 'Automatic matching & follow-ups', 'Client portal + timesheets'],
+  },
+  {
+    nameFr: 'Services financiers', nameEn: 'Financial services',
+    painFr: 'Données clients éparpillées et conformité qui grignote un temps fou.',
+    painEn: 'Client data scattered and compliance eating up huge amounts of time.',
+    buildsFr: ['Base clients unifiée & sécurisée', 'Reporting & conformité automatisés', 'Relances et suivi de dossiers assistés'],
+    buildsEn: ['Unified, secure client base', 'Automated reporting & compliance', 'Assisted follow-ups & case tracking'],
+  },
+  {
+    nameFr: 'Logistique & supply chain', nameEn: 'Logistics & supply chain',
+    painFr: 'Flux, stocks et transport suivis dans des outils qui ne remontent rien de fiable.',
+    painEn: 'Flows, stock and transport tracked in tools that surface nothing reliable.',
+    buildsFr: ['Stock & réappros en temps réel', 'Suivi expéditions & transporteurs', 'Analytique flux, ruptures & coûts'],
+    buildsEn: ['Real-time stock & reordering', 'Shipment & carrier tracking', 'Flow, stockout & cost analytics'],
+  },
+  {
+    nameFr: 'Marketing & publicité', nameEn: 'Marketing & advertising',
+    painFr: 'Briefs, production et reporting client dispersés, du temps perdu sur du répétitif.',
+    painEn: 'Briefs, production and client reporting scattered, time lost on repetitive work.',
+    buildsFr: ['Pipeline campagnes & assets centralisé', 'Reporting client automatisé', 'Génération de contenu assistée par IA'],
+    buildsEn: ['Centralised campaign & asset pipeline', 'Automated client reporting', 'AI-assisted content generation'],
   },
 ]
 
@@ -56,142 +94,86 @@ export default function Sectors() {
   const { lang } = useLang()
   const d = (fr: string, en: string) => (lang === 'en' ? en : fr)
   const [active, setActive] = useState(0)
-  const cur = CATS[active]
+  const cur = SECTORS[active]
 
   return (
     <section id="secteurs" style={{ padding: '40px 24px 104px' }}>
-      <div className="mx-auto" style={{ maxWidth: '1000px' }}>
-        <FadeUp className="text-center mb-14">
+      <div className="mx-auto" style={{ maxWidth: '1100px' }}>
+        <FadeUp className="text-center mb-16">
           <span className="section-label">{d('Les secteurs qu’on sert', 'Industries we serve')}</span>
           <h2 className="font-serif italic" style={{ fontSize: 'clamp(26px, 3.6vw, 38px)', fontWeight: 400, color: 'var(--text)', lineHeight: 1.2, margin: '4px 0 16px' }}>
             {d('Le secteur change. ', 'The sector changes. ')}
             <span className="accent">{d('La méthode, non.', 'The method doesn’t.')}</span>
           </h2>
           <p className="font-sans" style={{ fontSize: '15px', fontWeight: 300, color: 'var(--text-secondary)', maxWidth: '600px', margin: '0 auto', lineHeight: 1.7 }}>
-            {d('Choisissez votre univers — on vous montre le bordel typique, et ce qu’on construit pour y mettre fin.',
-               'Pick your world — we show you the typical mess, and what we build to end it.')}
+            {d('Un socle commun pour tous — puis on personnalise pour votre métier. Cliquez sur le vôtre.',
+               'A shared foundation for everyone — then we tailor it to your trade. Click yours.')}
           </p>
         </FadeUp>
 
         <FadeUp delay={0.1}>
-          {/* Onglets par catégorie */}
-          <div className="secx-tabs" role="tablist" aria-label={d('Catégories', 'Categories')}>
-            {CATS.map((c, i) => (
-              <button
-                key={c.nameFr}
-                role="tab"
-                aria-selected={i === active}
-                className={`secx-tab${i === active ? ' on' : ''}`}
-                onClick={() => setActive(i)}
-                onMouseEnter={() => setActive(i)}
-                type="button"
-              >
-                {d(c.nameFr, c.nameEn)}
-              </button>
-            ))}
-          </div>
+          <div className="sec-x">
+            {/* Liste des secteurs — cliquable */}
+            <div className="sec-list" role="tablist" aria-label={d('Secteurs', 'Industries')}>
+              {SECTORS.map((s, i) => {
+                const on = i === active
+                return (
+                  <button
+                    key={s.nameFr}
+                    role="tab"
+                    aria-selected={on}
+                    className={`sec-row${on ? ' sec-row-on' : ''}`}
+                    onClick={() => setActive(i)}
+                    onMouseEnter={() => setActive(i)}
+                  >
+                    <span className="font-mono sec-row-idx">{String(i + 1).padStart(2, '0')}</span>
+                    <span className="font-sans sec-row-name">{d(s.nameFr, s.nameEn)}</span>
+                    <ArrowRight size={15} strokeWidth={2} className="sec-row-arrow" />
+                  </button>
+                )
+              })}
+            </div>
 
-          {/* Panneau animé */}
-          <div className="secx-panel">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={active}
-                initial={{ opacity: 0, y: 14 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-              >
-                <div className="secx-panel-inner">
-                  <div className="secx-panel-left">
-                    <p className="font-mono secx-idx">
-                      {d('Univers', 'World')} · {String(active + 1).padStart(2, '0')}/{String(CATS.length).padStart(2, '0')}
-                    </p>
-                    <h3 className="font-serif italic secx-name">{d(cur.nameFr, cur.nameEn)}</h3>
-                    <div className="secx-subs">
-                      {(lang === 'en' ? cur.subEn : cur.subFr).map((s) => (
-                        <span key={s} className="font-mono secx-chip">{s}</span>
-                      ))}
-                    </div>
-                    <p className="font-sans secx-pain">{d(cur.painFr, cur.painEn)}</p>
+            {/* Panneau animé */}
+            <div className="sec-panel">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={active}
+                  initial={{ opacity: 0, y: 14 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
+                >
+                  <span className="font-mono sec-panel-idx">
+                    {d('Secteur', 'Industry')} · {String(active + 1).padStart(2, '0')}/{String(SECTORS.length).padStart(2, '0')}
+                  </span>
+                  <h3 className="font-serif italic sec-panel-title">{d(cur.nameFr, cur.nameEn)}</h3>
+                  <p className="font-sans sec-panel-pain">{d(cur.painFr, cur.painEn)}</p>
+
+                  {/* Socle commun — le même pour tous */}
+                  <span className="font-mono sec-panel-label">{d('Ce que ça vous apporte — à tous les coups', 'What it brings you — every time')}</span>
+                  <div className="sec-base">
+                    {(lang === 'en' ? BASE_EN : BASE_FR).map((b) => (
+                      <span key={b} className="sec-base-chip">{b}</span>
+                    ))}
                   </div>
-                  <div className="secx-panel-right">
-                    <p className="font-mono secx-label">{d('Ce qu’on construit', 'What we build')}</p>
-                    <ul className="secx-builds">
-                      {(lang === 'en' ? cur.buildsEn : cur.buildsFr).map((b) => (
-                        <li key={b} className="font-sans secx-build">
-                          <span className="secx-dot" aria-hidden="true" />
-                          {b}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </motion.div>
-            </AnimatePresence>
+
+                  {/* Personnalisation secteur */}
+                  <span className="font-mono sec-panel-label">{d('Et concrètement, pour votre secteur', 'And concretely, for your sector')}</span>
+                  <ul className="sec-builds">
+                    {(lang === 'en' ? cur.buildsEn : cur.buildsFr).map((b) => (
+                      <li key={b} className="sec-build font-sans">
+                        <span className="sec-build-dot" aria-hidden="true" />
+                        {b}
+                      </li>
+                    ))}
+                  </ul>
+                </motion.div>
+              </AnimatePresence>
+            </div>
           </div>
         </FadeUp>
       </div>
-
-      <style jsx>{`
-        .secx-tabs {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 10px;
-          justify-content: center;
-          margin-bottom: 32px;
-        }
-        .secx-tab {
-          font-family: var(--font-sans);
-          font-size: 14.5px;
-          font-weight: 500;
-          color: var(--text-secondary);
-          padding: 10px 18px;
-          border-radius: 999px;
-          border: 1px solid var(--border);
-          background: var(--bg-card);
-          cursor: pointer;
-          transition: color 0.25s ease, background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
-        }
-        .secx-tab:hover { border-color: var(--border-hover); color: var(--text); }
-        .secx-tab.on {
-          color: #fff;
-          background: var(--accent);
-          border-color: var(--accent);
-          box-shadow: 0 10px 26px -12px var(--accent-glow);
-        }
-
-        .secx-panel { max-width: 900px; margin: 0 auto; }
-        .secx-panel-inner {
-          display: grid;
-          grid-template-columns: 1.3fr 0.7fr;
-          gap: 40px;
-          align-items: start;
-          background: var(--bg-card);
-          border: 1px solid var(--border);
-          border-radius: 18px;
-          padding: 34px 36px;
-        }
-        .secx-idx { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); font-weight: 600; }
-        .secx-name { font-size: clamp(24px, 3vw, 32px); font-weight: 400; color: var(--text); margin: 8px 0 16px; line-height: 1.15; }
-        .secx-subs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
-        .secx-chip {
-          font-size: 11px; letter-spacing: 0.3px;
-          color: var(--text-secondary);
-          background: var(--bg-elevated);
-          border: 1px solid var(--border);
-          border-radius: 6px;
-          padding: 5px 10px;
-        }
-        .secx-pain { font-size: 15px; font-weight: 300; line-height: 1.65; color: var(--text-secondary); max-width: 460px; }
-        .secx-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 14px; }
-        .secx-builds { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px; }
-        .secx-build { display: flex; gap: 10px; font-size: 14px; font-weight: 300; color: var(--text); line-height: 1.45; align-items: flex-start; }
-        .secx-dot { flex: none; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); margin-top: 7px; }
-
-        @media (max-width: 760px) {
-          .secx-panel-inner { grid-template-columns: 1fr; gap: 24px; padding: 26px 22px; }
-        }
-      `}</style>
     </section>
   )
 }
