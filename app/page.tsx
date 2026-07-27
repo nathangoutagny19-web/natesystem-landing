@@ -8,6 +8,7 @@ import ClientsBar from '@/components/home/ClientsBar'
 import WhatWeBuild from '@/components/home/WhatWeBuild'
 import Systems from '@/components/home/Systems'
 import CaseStudy from '@/components/home/CaseStudy'
+import MiniDiagnosticCta from '@/components/home/MiniDiagnosticCta'
 import Process from '@/components/home/Process'
 import AboutNathan from '@/components/home/AboutNathan'
 import Guarantees from '@/components/home/Guarantees'
@@ -45,6 +46,9 @@ export default function Home() {
              puis gains + schéma APRÈS, reliés par une flèche dessinée. Se termine sur
              la bascule « nos clients étaient là, aujourd'hui ils sont de l'autre côté ». */}
       <Transformation />
+
+      {/* 3b — Encart mini-diagnostic gratuit, juste sous la bascule avant/après */}
+      <MiniDiagnosticCta />
 
       {/* 4 — La preuve, juste sous la bascule : la vidéo témoignage Chromosome */}
       <CaseStudy />
