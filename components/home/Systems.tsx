@@ -25,6 +25,7 @@ type Card = {
   metric: string
   tag: 'ai' | 'software'
   sector?: string
+  mockup: string
 }
 
 export default function Systems() {
@@ -35,17 +36,17 @@ export default function Systems() {
 
   // Alternate AI ↔ Software so the marquee never shows two same-tag cards in a row.
   const cards: Card[] = [
-    { icon: Zap, title: t('systems.s1.title'), desc: t('systems.s1.desc'), metric: t('systems.s1.metric'), tag: 'ai' },
-    { icon: Utensils, title: t('systems.sw1.title'), desc: t('systems.sw1.desc'), metric: t('systems.sw1.metric'), tag: 'software', sector: t('systems.sw1.sector') },
-    { icon: FileSearch, title: t('systems.s2.title'), desc: t('systems.s2.desc'), metric: t('systems.s2.metric'), tag: 'ai' },
-    { icon: GraduationCap, title: t('systems.sw2.title'), desc: t('systems.sw2.desc'), metric: t('systems.sw2.metric'), tag: 'software', sector: t('systems.sw2.sector') },
-    { icon: Send, title: t('systems.s3.title'), desc: t('systems.s3.desc'), metric: t('systems.s3.metric'), tag: 'ai' },
-    { icon: Users, title: t('systems.sw3.title'), desc: t('systems.sw3.desc'), metric: t('systems.sw3.metric'), tag: 'software', sector: t('systems.sw3.sector') },
-    { icon: RefreshCcw, title: t('systems.s4.title'), desc: t('systems.s4.desc'), metric: t('systems.s4.metric'), tag: 'ai' },
-    { icon: Package, title: t('systems.sw4.title'), desc: t('systems.sw4.desc'), metric: t('systems.sw4.metric'), tag: 'software', sector: t('systems.sw4.sector') },
-    { icon: BarChart3, title: t('systems.s5.title'), desc: t('systems.s5.desc'), metric: t('systems.s5.metric'), tag: 'ai' },
-    { icon: Clock, title: t('systems.sw5.title'), desc: t('systems.sw5.desc'), metric: t('systems.sw5.metric'), tag: 'software', sector: t('systems.sw5.sector') },
-    { icon: Star, title: t('systems.sw6.title'), desc: t('systems.sw6.desc'), metric: t('systems.sw6.metric'), tag: 'software', sector: t('systems.sw6.sector') },
+    { icon: Zap, title: t('systems.s1.title'), desc: t('systems.s1.desc'), metric: t('systems.s1.metric'), tag: 'ai', mockup: 'scrapavis' },
+    { icon: Utensils, title: t('systems.sw1.title'), desc: t('systems.sw1.desc'), metric: t('systems.sw1.metric'), tag: 'software', sector: t('systems.sw1.sector'), mockup: 'chromosome' },
+    { icon: FileSearch, title: t('systems.s2.title'), desc: t('systems.s2.desc'), metric: t('systems.s2.metric'), tag: 'ai', mockup: 'estateiq' },
+    { icon: GraduationCap, title: t('systems.sw2.title'), desc: t('systems.sw2.desc'), metric: t('systems.sw2.metric'), tag: 'software', sector: t('systems.sw2.sector'), mockup: 'tcrm' },
+    { icon: Send, title: t('systems.s3.title'), desc: t('systems.s3.desc'), metric: t('systems.s3.metric'), tag: 'ai', mockup: 'restaurantiq' },
+    { icon: Users, title: t('systems.sw3.title'), desc: t('systems.sw3.desc'), metric: t('systems.sw3.metric'), tag: 'software', sector: t('systems.sw3.sector'), mockup: 'eventiq' },
+    { icon: RefreshCcw, title: t('systems.s4.title'), desc: t('systems.s4.desc'), metric: t('systems.s4.metric'), tag: 'ai', mockup: 'brasserie' },
+    { icon: Package, title: t('systems.sw4.title'), desc: t('systems.sw4.desc'), metric: t('systems.sw4.metric'), tag: 'software', sector: t('systems.sw4.sector'), mockup: 'chartreux-stock' },
+    { icon: BarChart3, title: t('systems.s5.title'), desc: t('systems.s5.desc'), metric: t('systems.s5.metric'), tag: 'ai', mockup: 'pariselan' },
+    { icon: Clock, title: t('systems.sw5.title'), desc: t('systems.sw5.desc'), metric: t('systems.sw5.metric'), tag: 'software', sector: t('systems.sw5.sector'), mockup: 'simplebook' },
+    { icon: Star, title: t('systems.sw6.title'), desc: t('systems.sw6.desc'), metric: t('systems.sw6.metric'), tag: 'software', sector: t('systems.sw6.sector'), mockup: 'restaurantiq' },
   ]
 
   // Duplicate the list for seamless infinite scroll
@@ -258,6 +259,32 @@ function SystemCard({ card, tagLabel }: { card: Card; tagLabel: string }) {
             {card.sector}
           </p>
         )}
+      </div>
+
+      {/* Petit aperçu produit flouté (RGPD-safe, décoratif — un différent par carte) */}
+      <div
+        aria-hidden="true"
+        style={{
+          position: 'relative',
+          height: 88,
+          borderRadius: 8,
+          overflow: 'hidden',
+          border: '1px solid var(--border)',
+          background: 'var(--bg-elevated)',
+        }}
+      >
+        <div
+          style={{
+            position: 'absolute',
+            inset: 0,
+            backgroundImage: `url(/realisations/mockups/${card.mockup}.webp)`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'top center',
+            filter: 'blur(3px)',
+            transform: 'scale(1.08)',
+            opacity: 0.85,
+          }}
+        />
       </div>
 
       <p
