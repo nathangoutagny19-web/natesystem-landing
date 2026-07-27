@@ -33,6 +33,76 @@ const ITEMS: Item[] = [
   },
 ]
 
+/* ——— Visuels SVG hand-rolled, animés quand la ligne est active ——— */
+
+// 1. Cartographie façon Miro : nœuds/bulles reliés
+function VizMap() {
+  return (
+    <svg viewBox="0 0 200 130" fill="none" className="wwx-viz-svg" aria-hidden="true">
+      <path className="viz-link" d="M45 32 L100 66" />
+      <path className="viz-link" d="M152 28 L100 66" />
+      <path className="viz-link" d="M100 66 L50 102" />
+      <path className="viz-link" d="M100 66 L158 98" />
+      <rect className="viz-node viz-node-a" style={{ transitionDelay: '0s' }} x="30" y="20" width="34" height="24" rx="6" />
+      <rect className="viz-node" style={{ transitionDelay: '0.06s' }} x="134" y="16" width="36" height="24" rx="6" />
+      <rect className="viz-node viz-node-a" style={{ transitionDelay: '0.12s' }} x="80" y="54" width="40" height="26" rx="6" />
+      <rect className="viz-node" style={{ transitionDelay: '0.18s' }} x="32" y="90" width="36" height="24" rx="6" />
+      <rect className="viz-node" style={{ transitionDelay: '0.24s' }} x="140" y="86" width="36" height="24" rx="6" />
+    </svg>
+  )
+}
+
+// 2. Prototype logiciel : fenêtre dashboard + barres
+function VizProto() {
+  return (
+    <svg viewBox="0 0 200 130" fill="none" className="wwx-viz-svg" aria-hidden="true">
+      <rect className="viz-win" x="22" y="14" width="156" height="102" rx="10" />
+      <line className="viz-bar-top" x1="22" y1="34" x2="178" y2="34" />
+      <circle className="viz-dot" cx="34" cy="24" r="2.4" />
+      <circle className="viz-dot" cx="43" cy="24" r="2.4" />
+      <circle className="viz-dot" cx="52" cy="24" r="2.4" />
+      <rect className="viz-kpi" x="34" y="44" width="54" height="20" rx="4" />
+      <rect className="viz-kpi" x="98" y="44" width="68" height="20" rx="4" />
+      <rect className="viz-grow" style={{ transitionDelay: '0s' }} x="40" y="74" width="16" height="30" rx="3" />
+      <rect className="viz-grow" style={{ transitionDelay: '0.06s' }} x="66" y="74" width="16" height="30" rx="3" />
+      <rect className="viz-grow viz-grow-a" style={{ transitionDelay: '0.12s' }} x="92" y="74" width="16" height="30" rx="3" />
+      <rect className="viz-grow" style={{ transitionDelay: '0.18s' }} x="118" y="74" width="16" height="30" rx="3" />
+      <rect className="viz-grow viz-grow-a" style={{ transitionDelay: '0.24s' }} x="144" y="74" width="16" height="30" rx="3" />
+    </svg>
+  )
+}
+
+// 3. Courbes en hausse
+function VizGrowth() {
+  return (
+    <svg viewBox="0 0 200 130" fill="none" className="wwx-viz-svg" aria-hidden="true">
+      <line className="viz-axis" x1="24" y1="20" x2="24" y2="108" />
+      <line className="viz-axis" x1="24" y1="108" x2="180" y2="108" />
+      <path className="viz-curve" d="M28 96 L64 78 L98 86 L134 52 L172 30" />
+      <path className="viz-arrow" d="M172 30 L160 34 M172 30 L168 42" />
+      <circle className="viz-tip" cx="172" cy="30" r="4" />
+    </svg>
+  )
+}
+
+// 4. Quelqu'un qui enseigne : tableau + personne
+function VizTeach() {
+  return (
+    <svg viewBox="0 0 200 130" fill="none" className="wwx-viz-svg" aria-hidden="true">
+      <rect className="viz-board" x="70" y="16" width="112" height="72" rx="8" />
+      <line className="viz-write" style={{ transitionDelay: '0s' }} x1="84" y1="34" x2="150" y2="34" />
+      <line className="viz-write" style={{ transitionDelay: '0.12s' }} x1="84" y1="48" x2="168" y2="48" />
+      <line className="viz-write" style={{ transitionDelay: '0.24s' }} x1="84" y1="62" x2="132" y2="62" />
+      {/* personne */}
+      <circle className="viz-person" cx="34" cy="52" r="11" />
+      <path className="viz-person" d="M16 104 C 16 78, 52 78, 52 104" />
+      <path className="viz-point" d="M46 60 L70 46" />
+    </svg>
+  )
+}
+
+const VIZ = [VizMap, VizProto, VizGrowth, VizTeach]
+
 export default function WhatWeDo() {
   const { lang } = useLang()
   const d = (fr: string, en: string) => (lang === 'en' ? en : fr)
@@ -40,7 +110,7 @@ export default function WhatWeDo() {
 
   return (
     <section id="ce-quon-fait" style={{ padding: '120px 24px' }}>
-      <div className="mx-auto" style={{ maxWidth: '1000px' }}>
+      <div className="mx-auto" style={{ maxWidth: '1040px' }}>
         <FadeUp className="text-center mb-16">
           <span className="section-label">{d('Ce qu’on fait', 'What we do')}</span>
           <h2 className="section-title" style={{ maxWidth: '720px', margin: '0 auto 20px' }}>
@@ -55,34 +125,36 @@ export default function WhatWeDo() {
 
         <FadeUp delay={0.1}>
           <div className="wwx-list">
-            {ITEMS.map((it, i) => (
-              <button
-                key={it.titleFr}
-                className={`wwx-row${active === i ? ' on' : ''}`}
-                onMouseEnter={() => setActive(i)}
-                onMouseLeave={() => setActive(null)}
-                onFocus={() => setActive(i)}
-                onBlur={() => setActive(null)}
-                type="button"
-              >
-                <span className="font-mono wwx-num">{String(i + 1).padStart(2, '0')}</span>
+            {ITEMS.map((it, i) => {
+              const Viz = VIZ[i]
+              return (
+                <button
+                  key={it.titleFr}
+                  className={`wwx-row${active === i ? ' on' : ''}`}
+                  onMouseEnter={() => setActive(i)}
+                  onMouseLeave={() => setActive(null)}
+                  onFocus={() => setActive(i)}
+                  onBlur={() => setActive(null)}
+                  type="button"
+                >
+                  <span className="font-mono wwx-num">{String(i + 1).padStart(2, '0')}</span>
 
-                <span className="wwx-main">
-                  <span className="wwx-title-wrap">
-                    <span className="font-serif italic wwx-title">{d(it.titleFr, it.titleEn)}</span>
-                    {/* Soulignement dessiné à la main — se trace au survol (signature NateSystem) */}
-                    <svg className="wwx-underline" viewBox="0 0 300 12" preserveAspectRatio="none" fill="none" aria-hidden="true">
-                      <path d="M2 8 C 60 2, 110 2, 156 6 S 250 12, 298 5" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
-                    </svg>
+                  <span className="wwx-main">
+                    <span className="wwx-title-wrap">
+                      <span className="font-serif italic wwx-title">{d(it.titleFr, it.titleEn)}</span>
+                      <svg className="wwx-underline" viewBox="0 0 300 12" preserveAspectRatio="none" fill="none" aria-hidden="true">
+                        <path d="M2 8 C 60 2, 110 2, 156 6 S 250 12, 298 5" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
+                      </svg>
+                    </span>
+                    <span className="wwx-desc-wrap">
+                      <span className="font-sans wwx-desc">{d(it.descFr, it.descEn)}</span>
+                    </span>
                   </span>
-                  <span className="wwx-desc-wrap">
-                    <span className="font-sans wwx-desc">{d(it.descFr, it.descEn)}</span>
-                  </span>
-                </span>
 
-                <span className="wwx-arrow" aria-hidden="true">→</span>
-              </button>
-            ))}
+                  <span className="wwx-viz" aria-hidden="true"><Viz /></span>
+                </button>
+              )
+            })}
           </div>
         </FadeUp>
       </div>
@@ -92,32 +164,33 @@ export default function WhatWeDo() {
         .wwx-row {
           width: 100%;
           display: grid;
-          grid-template-columns: 54px 1fr 28px;
-          align-items: start;
+          grid-template-columns: 54px 1fr 200px;
+          align-items: center;
           gap: 22px;
-          padding: 30px 10px;
+          padding: 26px 10px;
           border-bottom: 1px solid var(--border);
           background: none;
           text-align: left;
           cursor: pointer;
           transition: background 0.35s ease, padding-left 0.35s ease;
         }
-        .wwx-row.on { background: linear-gradient(90deg, var(--accent-subtle), transparent 62%); padding-left: 18px; }
+        .wwx-row.on { background: linear-gradient(90deg, var(--accent-subtle), transparent 70%); padding-left: 18px; }
 
         .wwx-num {
           font-size: 14px;
           letter-spacing: 1px;
           color: var(--text-muted);
+          align-self: start;
           padding-top: 12px;
           transition: color 0.35s ease;
         }
         .wwx-row.on .wwx-num { color: var(--accent); }
 
-        .wwx-main { min-width: 0; }
+        .wwx-main { min-width: 0; align-self: center; }
         .wwx-title-wrap { position: relative; display: inline-block; }
         .wwx-title {
           display: block;
-          font-size: clamp(25px, 3.4vw, 37px);
+          font-size: clamp(24px, 3.2vw, 35px);
           font-weight: 400;
           color: var(--text);
           line-height: 1.15;
@@ -127,11 +200,8 @@ export default function WhatWeDo() {
 
         .wwx-underline {
           position: absolute;
-          left: 0;
-          right: -4px;
-          bottom: -9px;
-          width: calc(100% + 4px);
-          height: 11px;
+          left: 0; right: -4px; bottom: -9px;
+          width: calc(100% + 4px); height: 11px;
           color: var(--accent);
           pointer-events: none;
         }
@@ -142,14 +212,13 @@ export default function WhatWeDo() {
         }
         .wwx-row.on .wwx-underline path { stroke-dashoffset: 0; }
 
-        /* Description — repliée par défaut (épuré), se révèle au survol */
         .wwx-desc-wrap {
           display: grid;
           grid-template-rows: 0fr;
           transition: grid-template-rows 0.42s ease, margin-top 0.42s ease;
           margin-top: 0;
         }
-        .wwx-row.on .wwx-desc-wrap { grid-template-rows: 1fr; margin-top: 16px; }
+        .wwx-row.on .wwx-desc-wrap { grid-template-rows: 1fr; margin-top: 14px; }
         .wwx-desc {
           display: block;
           overflow: hidden;
@@ -157,26 +226,68 @@ export default function WhatWeDo() {
           font-weight: 300;
           line-height: 1.65;
           color: var(--text-secondary);
-          max-width: 620px;
+          max-width: 560px;
           opacity: 0;
           transition: opacity 0.42s ease;
         }
         .wwx-row.on .wwx-desc { opacity: 1; }
 
-        .wwx-arrow {
-          font-size: 20px;
-          color: var(--text-muted);
-          padding-top: 10px;
+        /* ——— Visuel animé à droite ——— */
+        .wwx-viz {
+          justify-self: end;
+          width: 200px;
+          height: 130px;
           opacity: 0;
-          transform: translateX(-8px);
-          transition: opacity 0.35s ease, transform 0.35s ease, color 0.35s ease;
+          transform: translateX(12px) scale(0.96);
+          transition: opacity 0.4s ease, transform 0.45s ease;
+          pointer-events: none;
         }
-        .wwx-row.on .wwx-arrow { opacity: 1; transform: translateX(0); color: var(--accent); }
+        .wwx-row.on .wwx-viz { opacity: 1; transform: translateX(0) scale(1); }
+      `}</style>
 
-        /* Mobile — pas de survol : tout est ouvert, plus compact */
-        @media (max-width: 760px) {
+      {/* Styles globaux des visuels — transitions (pas de keyframes : plus fiable sous styled-jsx global) */}
+      <style jsx global>{`
+        .wwx-viz-svg { width: 100%; height: 100%; overflow: visible; }
+        .wwx-viz-svg [class^='viz-'] { vector-effect: non-scaling-stroke; }
+
+        /* état de repos (invisible / non tracé) + transition */
+        .viz-link { stroke: var(--border-hover); stroke-width: 1.5; stroke-dasharray: 130; stroke-dashoffset: 130; transition: stroke-dashoffset 0.6s ease; }
+        .viz-node { fill: var(--bg-elevated); stroke: var(--border-hover); stroke-width: 1.5; opacity: 0; transform-box: fill-box; transform-origin: center; transform: scale(0.4); transition: opacity 0.4s ease, transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1); }
+        .viz-node-a { stroke: var(--accent); fill: var(--accent-subtle); }
+        .viz-win { stroke: var(--border-hover); stroke-width: 1.5; fill: var(--bg-elevated); }
+        .viz-bar-top { stroke: var(--border-hover); stroke-width: 1.5; }
+        .viz-dot { fill: var(--text-muted); }
+        .viz-kpi { fill: none; stroke: var(--border-hover); stroke-width: 1.5; }
+        .viz-grow { fill: var(--border-hover); transform-box: fill-box; transform-origin: bottom; transform: scaleY(0); transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
+        .viz-grow-a { fill: var(--accent); }
+        .viz-axis { stroke: var(--border-hover); stroke-width: 1.5; }
+        .viz-curve { stroke: var(--accent); stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 260; stroke-dashoffset: 260; transition: stroke-dashoffset 0.7s ease; }
+        .viz-arrow { stroke: var(--accent); stroke-width: 2.5; stroke-linecap: round; opacity: 0; transition: opacity 0.3s ease 0.5s; }
+        .viz-tip { fill: var(--accent); opacity: 0; transform-box: fill-box; transform-origin: center; transform: scale(0); transition: opacity 0.3s ease 0.45s, transform 0.3s ease 0.45s; }
+        .viz-board { stroke: var(--border-hover); stroke-width: 1.5; fill: var(--bg-elevated); }
+        .viz-write { stroke: var(--accent); stroke-width: 2; stroke-linecap: round; stroke-dasharray: 130; stroke-dashoffset: 130; transition: stroke-dashoffset 0.5s ease; }
+        .viz-person { stroke: var(--text-secondary); stroke-width: 2; fill: none; opacity: 0; transform-box: fill-box; transform-origin: center; transform: scale(0.5); transition: opacity 0.4s ease, transform 0.4s ease; }
+        .viz-point { stroke: var(--accent); stroke-width: 2; stroke-linecap: round; stroke-dasharray: 40; stroke-dashoffset: 40; transition: stroke-dashoffset 0.4s ease 0.2s; }
+
+        /* état actif = valeurs cibles (les transitions font le reste) */
+        .wwx-row.on .viz-link { stroke-dashoffset: 0; }
+        .wwx-row.on .viz-node { opacity: 1; transform: scale(1); }
+        .wwx-row.on .viz-grow { transform: scaleY(1); }
+        .wwx-row.on .viz-curve { stroke-dashoffset: 0; }
+        .wwx-row.on .viz-arrow { opacity: 1; }
+        .wwx-row.on .viz-tip { opacity: 1; transform: scale(1); }
+        .wwx-row.on .viz-write { stroke-dashoffset: 0; }
+        .wwx-row.on .viz-person { opacity: 1; transform: scale(1); }
+        .wwx-row.on .viz-point { stroke-dashoffset: 0; }
+
+        @media (max-width: 820px) {
+          .wwx-viz { display: none; }
+        }
+      `}</style>
+
+      <style jsx>{`
+        @media (max-width: 820px) {
           .wwx-row { grid-template-columns: 40px 1fr; gap: 14px; padding: 24px 4px; }
-          .wwx-row .wwx-arrow { display: none; }
           .wwx-num { padding-top: 8px; }
           .wwx-desc-wrap { grid-template-rows: 1fr; margin-top: 12px; }
           .wwx-desc { opacity: 1; }
