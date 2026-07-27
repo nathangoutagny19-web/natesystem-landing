@@ -39,9 +39,6 @@ export default function Home() {
 
       {/* 2 — Logos clients (preuve sociale immédiate, juste sous le hero) */}
       <ClientsBar />
-
-      {/* 2b — "Ce qu'on construit" : bande de mockups anonymisés (blur) */}
-      <WhatWeBuild />
       <Divider />
 
       {/* 3 — Transformation Avant/Après (diagonale) : schéma AVANT + coûts chiffrés,
@@ -49,8 +46,13 @@ export default function Home() {
              la bascule « nos clients étaient là, aujourd'hui ils sont de l'autre côté ». */}
       <Transformation />
 
-      {/* 4 — La preuve, juste sous la bascule : le short témoignage Chromosome */}
+      {/* 4 — La preuve, juste sous la bascule : la vidéo témoignage Chromosome */}
       <CaseStudy />
+      <Divider />
+
+      {/* 4b — "Ce qu'on construit" : bande de mockups anonymisés (blur), descendue
+             sous la vidéo témoignage (choix Nathan). */}
+      <WhatWeBuild />
       <Divider />
 
       {/* 5 — Cas concrets chiffrés : le marquee des systèmes livrés */}

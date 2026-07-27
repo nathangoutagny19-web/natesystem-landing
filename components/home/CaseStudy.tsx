@@ -16,7 +16,7 @@ function LiteYouTube({ title }: { title: string }) {
   if (loaded) {
     return (
       <iframe
-        src={`https://www.youtube-nocookie.com/embed/${YOUTUBE_ID}?autoplay=1&rel=0&modestbranding=1`}
+        src={`https://www.youtube.com/embed/${YOUTUBE_ID}?autoplay=1&rel=0&modestbranding=1`}
         title={title}
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         referrerPolicy="strict-origin-when-cross-origin"
@@ -100,8 +100,8 @@ export default function CaseStudy() {
   ]
 
   const quote = lang === 'en'
-    ? 'It changed the way we run everything.'
-    : 'Ça a changé notre façon de tout gérer.'
+    ? 'It changed the way we run everything — we couldn\'t do without it now. The time and clarity we\'ve gained are huge, and the team is far more at ease.'
+    : 'Ça a changé notre façon de tout gérer, on ne peut plus s\'en passer aujourd\'hui. Le gain de temps et de clarté est énorme, et l\'équipe est beaucoup plus sereine.'
 
   const role = lang === 'en'
     ? 'General Manager · Chromosome Saint-Étienne'
@@ -195,7 +195,7 @@ export default function CaseStudy() {
         }
         .cs-quote {
           font-style: italic; font-weight: 400; color: var(--text);
-          font-size: clamp(23px, 2.8vw, 33px); line-height: 1.32;
+          font-size: clamp(19px, 2.2vw, 27px); line-height: 1.4;
           margin: 0 0 22px;
         }
         .cs-attr { display: flex; flex-direction: column; gap: 3px; }
