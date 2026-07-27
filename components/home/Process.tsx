@@ -1,11 +1,13 @@
 'use client'
 
+import Link from 'next/link'
 import FadeUp from '@/components/ui/FadeUp'
 import { motion } from 'framer-motion'
 import { useLang } from '@/components/providers/LangProvider'
 
 export default function Process() {
-  const { t } = useLang()
+  const { t, lang } = useLang()
+  const d = (fr: string, en: string) => (lang === 'en' ? en : fr)
 
   const steps = [
     { number: '01', title: t('process.step1'), duration: t('process.step1Duration'), desc: t('process.step1Desc'), highlight: t('process.step1Highlight') },
@@ -87,6 +89,14 @@ export default function Process() {
           ))}
         </div>
 
+        {/* CTA vers la page méthode détaillée (la Radiographie interactive) */}
+        <FadeUp>
+          <div className="hww-cta-wrap">
+            <Link href="/methode" className="btn-ghost">
+              {d('Voir comment on travaille en détail', 'See how we work in detail')} &rarr;
+            </Link>
+          </div>
+        </FadeUp>
       </div>
     </section>
   )

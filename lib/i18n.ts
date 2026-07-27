@@ -568,6 +568,10 @@ export const translations = {
   // Footer
   'footer.tagline': { en: 'Custom software · Integrated AI · Owned by you', fr: 'Logiciel sur-mesure · IA intégrée · Vous appartient' },
   'footer.contactLabel': { en: 'Get in touch', fr: 'Nous contacter' },
+  'footer.founder': {
+    en: 'Founded and coded by Nathan Goutagny. The person you talk to is the one who builds — and you keep 100 % of the code.',
+    fr: 'Fondé et codé par Nathan Goutagny. Celui qui vous parle est celui qui construit — et vous gardez 100 % du code.',
+  },
   'footer.legal': { en: 'Legal notice', fr: 'Mentions légales' },
 
   // Footer column headers (Dec 2026 — added for SEO maillage)

@@ -94,7 +94,34 @@ export default function Footer() {
             >
               nathan@natesystem.com
             </a>
+            <a
+              href="https://www.linkedin.com/in/nathan-goutagny/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-sans footer-link"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: 7,
+                fontSize: '13px',
+                color: 'var(--text-muted)',
+                textDecoration: 'none',
+                fontWeight: 300,
+                lineHeight: 1.6,
+                transition: 'color 0.2s',
+              }}
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+              </svg>
+              LinkedIn
+            </a>
           </div>
+
+          {/* Fondateur — l'« à propos » vit ici (déplacé de la home). Jamais « seul ». */}
+          <p className="font-sans" style={{ fontSize: '12px', color: 'var(--text-muted)', fontWeight: 300, lineHeight: 1.6, marginTop: 12, maxWidth: 240 }}>
+            {t('footer.founder')}
+          </p>
         </div>
 
         {/* Sections column */}

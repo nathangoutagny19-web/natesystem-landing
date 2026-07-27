@@ -9,8 +9,10 @@ import WhatWeBuild from '@/components/home/WhatWeBuild'
 import Systems from '@/components/home/Systems'
 import CaseStudy from '@/components/home/CaseStudy'
 import MiniDiagnosticCta from '@/components/home/MiniDiagnosticCta'
+import WhatWeDo from '@/components/home/WhatWeDo'
 import Process from '@/components/home/Process'
-import AboutNathan from '@/components/home/AboutNathan'
+import Different from '@/components/home/Different'
+import Sectors from '@/components/home/Sectors'
 import Guarantees from '@/components/home/Guarantees'
 import Faq from '@/components/home/Faq'
 import CtaFinal from '@/components/home/CtaFinal'
@@ -21,86 +23,88 @@ import Footer from '@/components/layout/Footer'
 import Divider from '@/components/ui/Divider'
 
 /**
- * HOME — le HAUT (Hero → vidéo Chromosome) est validé par Nathan, on n'y touche pas.
- * Toute la refonte (Lot 3) porte sur ce qui vient APRÈS la vidéo Chromosome :
- *   coût du bordel → offre d'entrée (Sprint Diagnostic) → méthode → secteurs →
- *   comparatif 4 colonnes → qui construit → garanties → FAQ → prise de RDV.
- * Sections retirées de la home : Solutions + Twist (redondantes) et l'ancien
- * Comparison 1v1 (remplacé par ComparisonV2 4 colonnes).
+ * HOME — remodelage inspiré OpsKings/Frontal, sauce NateSystem.
+ * Le HAUT (Hero → mini-diagnostic → vidéo témoignage Chromosome) est validé.
+ * Corps : Ce qu'on fait → Comment on travaille (→ /methode) → Ce qu'on construit
+ *   → Cas concrets chiffrés → Ce qui nous rend différents (vidéo) → Le Diagnostic
+ *   (offre) + secteurs → prise de RDV (Cal.com) → comparatif → garanties → FAQ →
+ *   IA → crédibilité. « Qui code » (Nathan) est déplacé dans le footer.
  */
 export default function Home() {
   return (
     <main>
       <Nav />
 
-      {/* ─────────── HAUT VALIDÉ — NE PAS TOUCHER (jusqu'à la vidéo Chromosome) ─────────── */}
+      {/* ─────────── HAUT VALIDÉ (jusqu'à la vidéo témoignage) ─────────── */}
 
-      {/* 1 — Hero : promesse business immédiate + VSL */}
+      {/* 1 — Hero : promesse business + VSL */}
       <Hero />
 
-      {/* 2 — Logos clients (preuve sociale immédiate, juste sous le hero) */}
+      {/* 2 — Logos clients */}
       <ClientsBar />
       <Divider />
 
-      {/* 3 — Transformation Avant/Après (diagonale) : schéma AVANT + coûts chiffrés,
-             puis gains + schéma APRÈS, reliés par une flèche dessinée. Se termine sur
-             la bascule « nos clients étaient là, aujourd'hui ils sont de l'autre côté ». */}
+      {/* 3 — Avant/Après (diagonale) + bascule « ils sont de l'autre côté » */}
       <Transformation />
 
-      {/* 3b — Encart mini-diagnostic gratuit, juste sous la bascule avant/après */}
+      {/* 3b — Encart mini-diagnostic gratuit, sous la bascule */}
       <MiniDiagnosticCta />
 
-      {/* 4 — La preuve, juste sous la bascule : la vidéo témoignage Chromosome */}
+      {/* 4 — La preuve : vidéo témoignage Chromosome */}
       <CaseStudy />
       <Divider />
 
-      {/* 4b — "Ce qu'on construit" : bande de mockups anonymisés (blur), descendue
-             sous la vidéo témoignage (choix Nathan). */}
-      <WhatWeBuild />
+      {/* ─────────── CORPS REMODELÉ ─────────── */}
+
+      {/* 5 — Ce qu'on fait (What we do) : 4 piliers */}
+      <WhatWeDo />
       <Divider />
 
-      {/* 5 — Cas concrets chiffrés : le marquee des systèmes livrés */}
-      <Systems />
-      <Divider />
-
-      {/* ─────────── REFONTE — APRÈS LA VIDÉO CHROMOSOME (Lot 3) ─────────── */}
-
-      {/* 5 — La méthode en résumé (audit → build → formation → optimisation) */}
+      {/* 6 — Comment on travaille (méthode résumée) + CTA vers /methode détaillée */}
       <Process />
       <Divider />
 
-      {/* 6 — L'offre d'entrée « Le Diagnostic » (juste après la méthode) →
-             CTA principal vers la prise de RDV + porte self-serve diagnostic. */}
+      {/* 7 — Ce qu'on construit (What we ship) : bande de mockups anonymisés */}
+      <WhatWeBuild />
+      <Divider />
+
+      {/* 8 — Cas concrets chiffrés : marquee des systèmes livrés + lien /case-studies */}
+      <Systems />
+      <Divider />
+
+      {/* 9 — Ce qui nous rend différents : vidéo + différenciateurs */}
+      <Different />
+      <Divider />
+
+      {/* 10 — Commence maintenant : l'offre d'entrée « Le Diagnostic » + secteurs servis */}
       <SprintDiagnostic />
+      <Sectors />
       <Divider />
 
-      {/* 7 — Comparatif honnête 4 colonnes : Freelance / Agence traditionnelle / SaaS / NateSystem */}
-      <ComparisonV2 />
-      <Divider />
-
-      {/* 8 — Qui construit : Nathan + le contrepoids (code livré, propriété 100 %) */}
-      <AboutNathan />
-      <Divider />
-
-      {/* 9 — Les garanties fermes */}
-      <Guarantees />
-      <Divider />
-
-      {/* 10 — FAQ (reprend "pourquoi maintenant" + le stack technique) */}
-      <Faq />
-      <Divider />
-
-      {/* 11 — Prise de rendez-vous : embed Cal.com inline (ancre #rendez-vous) — le closer */}
+      {/* 11 — Prise de rendez-vous : embed Cal.com (ancre #rendez-vous) — juste après l'offre */}
       <CtaFinal />
       <Divider />
 
-      {/* 12 — Demandez à l'IA : preuve sociale via IA */}
+      {/* 12 — Comparatif honnête 4 colonnes */}
+      <ComparisonV2 />
+      <Divider />
+
+      {/* 13 — Les garanties fermes */}
+      <Guarantees />
+      <Divider />
+
+      {/* 14 — FAQ */}
+      <Faq />
+      <Divider />
+
+      {/* 15 — Demandez à l'IA : preuve sociale via IA */}
       <AskAI />
       <Divider />
 
-      {/* 13 — Bandeau crédibilité : 4 engagements fermes, juste avant le footer */}
+      {/* 16 — Bandeau crédibilité, juste avant le footer */}
       <CredibilityBand />
 
+      {/* Footer — inclut désormais le bloc fondateur (Nathan + LinkedIn) en bas-gauche */}
       <Footer />
 
       <MobileCta />
