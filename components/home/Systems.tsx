@@ -36,17 +36,17 @@ export default function Systems() {
 
   // Alternate AI ↔ Software so the marquee never shows two same-tag cards in a row.
   const cards: Card[] = [
-    { icon: Zap, title: t('systems.s1.title'), desc: t('systems.s1.desc'), metric: t('systems.s1.metric'), tag: 'ai', mockup: 'demos/actifs' },
-    { icon: Utensils, title: t('systems.sw1.title'), desc: t('systems.sw1.desc'), metric: t('systems.sw1.metric'), tag: 'software', sector: t('systems.sw1.sector'), mockup: 'prototype/proto-front' },
-    { icon: FileSearch, title: t('systems.s2.title'), desc: t('systems.s2.desc'), metric: t('systems.s2.metric'), tag: 'ai', mockup: 'demos/reviews' },
-    { icon: GraduationCap, title: t('systems.sw2.title'), desc: t('systems.sw2.desc'), metric: t('systems.sw2.metric'), tag: 'software', sector: t('systems.sw2.sector'), mockup: 'demos/stock' },
-    { icon: Send, title: t('systems.s3.title'), desc: t('systems.s3.desc'), metric: t('systems.s3.metric'), tag: 'ai', mockup: 'demos/actifs' },
-    { icon: Users, title: t('systems.sw3.title'), desc: t('systems.sw3.desc'), metric: t('systems.sw3.metric'), tag: 'software', sector: t('systems.sw3.sector'), mockup: 'prototype/proto-front' },
-    { icon: RefreshCcw, title: t('systems.s4.title'), desc: t('systems.s4.desc'), metric: t('systems.s4.metric'), tag: 'ai', mockup: 'demos/reviews' },
-    { icon: Package, title: t('systems.sw4.title'), desc: t('systems.sw4.desc'), metric: t('systems.sw4.metric'), tag: 'software', sector: t('systems.sw4.sector'), mockup: 'demos/stock' },
-    { icon: BarChart3, title: t('systems.s5.title'), desc: t('systems.s5.desc'), metric: t('systems.s5.metric'), tag: 'ai', mockup: 'demos/actifs' },
-    { icon: Clock, title: t('systems.sw5.title'), desc: t('systems.sw5.desc'), metric: t('systems.sw5.metric'), tag: 'software', sector: t('systems.sw5.sector'), mockup: 'prototype/proto-front' },
-    { icon: Star, title: t('systems.sw6.title'), desc: t('systems.sw6.desc'), metric: t('systems.sw6.metric'), tag: 'software', sector: t('systems.sw6.sector'), mockup: 'demos/reviews' },
+    { icon: Zap, title: t('systems.s1.title'), desc: t('systems.s1.desc'), metric: t('systems.s1.metric'), tag: 'ai', mockup: 'systems/sys1' },
+    { icon: Utensils, title: t('systems.sw1.title'), desc: t('systems.sw1.desc'), metric: t('systems.sw1.metric'), tag: 'software', sector: t('systems.sw1.sector'), mockup: 'systems/sys2' },
+    { icon: FileSearch, title: t('systems.s2.title'), desc: t('systems.s2.desc'), metric: t('systems.s2.metric'), tag: 'ai', mockup: 'systems/sys3' },
+    { icon: GraduationCap, title: t('systems.sw2.title'), desc: t('systems.sw2.desc'), metric: t('systems.sw2.metric'), tag: 'software', sector: t('systems.sw2.sector'), mockup: 'systems/sys4' },
+    { icon: Send, title: t('systems.s3.title'), desc: t('systems.s3.desc'), metric: t('systems.s3.metric'), tag: 'ai', mockup: 'systems/sys5' },
+    { icon: Users, title: t('systems.sw3.title'), desc: t('systems.sw3.desc'), metric: t('systems.sw3.metric'), tag: 'software', sector: t('systems.sw3.sector'), mockup: 'systems/sys6' },
+    { icon: RefreshCcw, title: t('systems.s4.title'), desc: t('systems.s4.desc'), metric: t('systems.s4.metric'), tag: 'ai', mockup: 'systems/sys7' },
+    { icon: Package, title: t('systems.sw4.title'), desc: t('systems.sw4.desc'), metric: t('systems.sw4.metric'), tag: 'software', sector: t('systems.sw4.sector'), mockup: 'systems/sys8' },
+    { icon: BarChart3, title: t('systems.s5.title'), desc: t('systems.s5.desc'), metric: t('systems.s5.metric'), tag: 'ai', mockup: 'systems/sys9' },
+    { icon: Clock, title: t('systems.sw5.title'), desc: t('systems.sw5.desc'), metric: t('systems.sw5.metric'), tag: 'software', sector: t('systems.sw5.sector'), mockup: 'systems/sys10' },
+    { icon: Star, title: t('systems.sw6.title'), desc: t('systems.sw6.desc'), metric: t('systems.sw6.metric'), tag: 'software', sector: t('systems.sw6.sector'), mockup: 'systems/sys11' },
   ]
 
   // Duplicate the list for seamless infinite scroll
@@ -231,7 +231,7 @@ function SystemCard({ card, tagLabel }: { card: Card; tagLabel: string }) {
         <Icon size={18} strokeWidth={1.6} style={{ color: 'var(--accent)' }} />
       </div>
 
-      <div>
+      <div style={{ height: 62, overflow: 'hidden' }}>
         <h4
           className="font-serif italic"
           style={{
@@ -240,6 +240,10 @@ function SystemCard({ card, tagLabel }: { card: Card; tagLabel: string }) {
             lineHeight: 1.2,
             color: 'var(--text)',
             margin: 0,
+            display: '-webkit-box',
+            WebkitLineClamp: 2,
+            WebkitBoxOrient: 'vertical',
+            overflow: 'hidden',
           }}
         >
           {card.title}

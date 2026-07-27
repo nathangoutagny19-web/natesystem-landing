@@ -146,25 +146,26 @@ export default function SprintDiagnostic() {
                         </p>
                       </div>
                     </div>
-                    {d.img && (d.mock ? (
-                      // Screenshot produit → mockup navigateur, vu en entier (0 zoom/rognage), petit & clean
+                    {d.img && (
+                      // Toutes les images des livrables : même cadre, même hauteur, vues EN ENTIER (0 rognage)
                       <div style={{ padding: '12px 14px', background: 'var(--bg-elevated)', borderTop: '1px solid var(--border)' }}>
-                        <div style={{ height: 104 }}>
-                          <ScreenMock src={`/realisations/prototype/${d.img}.jpg`} alt={d.name} />
+                        <div style={{ height: 108 }}>
+                          {d.mock ? (
+                            <ScreenMock src={`/realisations/prototype/${d.img}.jpg`} alt={d.name} />
+                          ) : (
+                            <div style={{ position: 'relative', height: '100%', borderRadius: 10, overflow: 'hidden', border: '1px solid var(--border)', background: 'var(--bg-card)' }}>
+                              <Image
+                                src={`/realisations/prototype/${d.img}.jpg`}
+                                alt={d.name}
+                                fill
+                                sizes="(max-width: 900px) 90vw, 440px"
+                                style={{ objectFit: 'contain' }}
+                              />
+                            </div>
+                          )}
                         </div>
                       </div>
-                    ) : (
-                      // Vraie photo → cadrage cover naturel
-                      <div style={{ position: 'relative', width: '100%', height: 116, background: 'var(--bg-elevated)', borderTop: '1px solid var(--border)' }}>
-                        <Image
-                          src={`/realisations/prototype/${d.img}.jpg`}
-                          alt={d.name}
-                          fill
-                          sizes="(max-width: 900px) 90vw, 440px"
-                          style={{ objectFit: 'cover', objectPosition: 'center top' }}
-                        />
-                      </div>
-                    ))}
+                    )}
                   </div>
                 </FadeUp>
               )
