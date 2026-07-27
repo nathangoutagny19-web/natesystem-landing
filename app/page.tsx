@@ -13,7 +13,7 @@ import WhatWeDo from '@/components/home/WhatWeDo'
 import Process from '@/components/home/Process'
 import Different from '@/components/home/Different'
 import Sectors from '@/components/home/Sectors'
-import Guarantees from '@/components/home/Guarantees'
+import FunnyGuarantee from '@/components/home/FunnyGuarantee'
 import Faq from '@/components/home/Faq'
 import CtaFinal from '@/components/home/CtaFinal'
 import AskAI from '@/components/home/AskAI'
@@ -96,8 +96,9 @@ export default function Home() {
       <ComparisonV2 />
       <Divider />
 
-      {/* 13 — Les garanties fermes */}
-      <Guarantees />
+      {/* 13 — La garantie « funny » (clin d'œil resto) — la section Garanties
+             fermes a été retirée, on garde juste ce clin d'œil humain. */}
+      <FunnyGuarantee />
       <Divider />
 
       {/* 14 — FAQ */}
