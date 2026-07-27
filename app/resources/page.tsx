@@ -7,6 +7,7 @@ import FadeUp from '@/components/ui/FadeUp'
 import Divider from '@/components/ui/Divider'
 import LiteYouTube from '@/components/ui/LiteYouTube'
 import Link from 'next/link'
+import Image from 'next/image'
 import { useLang } from '@/components/providers/LangProvider'
 import { motion } from 'framer-motion'
 import { blogPosts } from '@/lib/blog'
@@ -16,7 +17,7 @@ import { playbooks, sectorLabelFor, cardTaglineFor } from '@/lib/playbooks'
 const TESTIMONIAL_VIDEO_ID = 'aMIjJbzuhDc'
 
 // Démos live + outil interactif.
-type Demo = { title: string; descFr: string; descEn: string; badge: 'new' | 'gated'; href: string; external?: boolean }
+type Demo = { title: string; descFr: string; descEn: string; badge: 'new' | 'gated'; href: string; external?: boolean; img: string }
 const DEMOS: Demo[] = [
   {
     title: 'Gestion d’actifs',
@@ -25,6 +26,7 @@ const DEMOS: Demo[] = [
     badge: 'new',
     href: 'https://actifs.natesystem.com',
     external: true,
+    img: 'actifs',
   },
   {
     title: 'Plateforme d’inventaire',
@@ -33,6 +35,7 @@ const DEMOS: Demo[] = [
     badge: 'new',
     href: 'https://stack-stock.natesystem.com',
     external: true,
+    img: 'stock',
   },
   {
     title: 'Intelligence avis',
@@ -40,6 +43,7 @@ const DEMOS: Demo[] = [
     descEn: 'Reviews scored by AI on six dimensions, reply drafts in your tone, 90-day action plan. Demo access on request.',
     badge: 'gated',
     href: '/reviews',
+    img: 'reviews',
   },
 ]
 
@@ -154,9 +158,12 @@ export default function ResourcesPage() {
                   <h3 className="font-serif italic" style={{ fontSize: '21px', fontWeight: 400, color: 'var(--text)', lineHeight: 1.25, margin: '2px 0 10px' }}>
                     {demo.title}
                   </h3>
-                  <p className="font-sans" style={{ fontSize: '13.5px', fontWeight: 300, color: 'var(--text-secondary)', lineHeight: 1.6, flex: 1 }}>
+                  <p className="font-sans" style={{ fontSize: '13.5px', fontWeight: 300, color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: 14 }}>
                     {d(demo.descFr, demo.descEn)}
                   </p>
+                  <div className="res-demo-shot" style={{ marginTop: 'auto' }}>
+                    <Image src={`/realisations/demos/${demo.img}.jpg`} alt={demo.title} fill sizes="(max-width: 940px) 100vw, 340px" style={{ objectFit: 'cover', objectPosition: 'top center' }} />
+                  </div>
                   <span className="res-card-cta font-sans">
                     {demo.badge === 'gated' ? d('Demander l’accès', 'Request access') : d('Ouvrir la démo', 'Open the demo')} &rarr;
                   </span>
