@@ -22,14 +22,14 @@ export default function Process({ home = false }: { home?: boolean }) {
         <FadeUp className="text-center mb-20">
           {home ? (
             <>
-              <span className="section-label">{d('Ce qu’on fait', 'What we do')}</span>
+              <span className="section-label">{d('Notre méthode', 'Our method')}</span>
               <h2 className="section-title" style={{ maxWidth: '700px', margin: '0 auto 24px' }}>
-                {d('Une infrastructure, ', 'One infrastructure, ')}
-                <span className="accent">{d('pas des rustines.', 'not band-aids.')}</span>
+                {d('Une méthode claire, ', 'A clear method, ')}
+                <span className="accent">{d('sans surprise.', 'no surprises.')}</span>
               </h2>
               <p className="font-sans" style={{ fontSize: '15px', fontWeight: 300, color: 'var(--text-secondary)', maxWidth: '560px', margin: '0 auto', lineHeight: 1.7 }}>
-                {d('On remplace les outils génériques qui ne collent pas par du sur-mesure que vous possédez. L’IA et l’automatisation sont intégrées uniquement là où elles font gagner de vraies heures.',
-                   'We replace ill-fitting generic tools with custom software you own. AI and automation are embedded only where they save real hours.')}
+                {d('Vous savez toujours où on en est et où on va. Quatre étapes, un livrable concret à chacune. Et on ne considère la mission terminée que lorsque vos équipes sont autonomes.',
+                   'You always know where we are and where we’re headed. Four steps, one concrete deliverable at each. And the job isn’t done until your teams are autonomous.')}
               </p>
             </>
           ) : (
