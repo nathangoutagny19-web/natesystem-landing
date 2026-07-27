@@ -17,7 +17,7 @@ export default function SprintDiagnostic() {
 
   // Une image DANS chaque case, en mode mockup (screenshot) ou photo. La Carte = Miro (à venir).
   const deliverables: { icon: typeof Map; name: string; desc: string; img?: string; mock?: boolean }[] = [
-    { icon: Map, name: t('v2.sprint.d1.name'), desc: t('v2.sprint.d1.desc') }, // La Carte → Miro (fichier à venir)
+    { icon: Map, name: t('v2.sprint.d1.name'), desc: t('v2.sprint.d1.desc'), img: 'carte-miro', mock: true }, // La Carte → Miro
     { icon: MousePointerClick, name: t('v2.sprint.d2.name'), desc: t('v2.sprint.d2.desc'), img: 'proto-front', mock: true },
     { icon: FileText, name: t('v2.sprint.d3.name'), desc: t('v2.sprint.d3.desc'), img: 'feuille-photo' },
   ]
@@ -147,15 +147,15 @@ export default function SprintDiagnostic() {
                       </div>
                     </div>
                     {d.img && (d.mock ? (
-                      // Screenshot produit → mockup navigateur contenu avec marge (jamais zoomé)
-                      <div style={{ padding: 16, background: 'var(--bg-elevated)', borderTop: '1px solid var(--border)' }}>
-                        <div style={{ height: 168 }}>
+                      // Screenshot produit → mockup navigateur, vu en entier (0 zoom/rognage), petit & clean
+                      <div style={{ padding: '12px 14px', background: 'var(--bg-elevated)', borderTop: '1px solid var(--border)' }}>
+                        <div style={{ height: 104 }}>
                           <ScreenMock src={`/realisations/prototype/${d.img}.jpg`} alt={d.name} />
                         </div>
                       </div>
                     ) : (
                       // Vraie photo → cadrage cover naturel
-                      <div style={{ position: 'relative', width: '100%', height: 176, background: 'var(--bg-elevated)', borderTop: '1px solid var(--border)' }}>
+                      <div style={{ position: 'relative', width: '100%', height: 116, background: 'var(--bg-elevated)', borderTop: '1px solid var(--border)' }}>
                         <Image
                           src={`/realisations/prototype/${d.img}.jpg`}
                           alt={d.name}
@@ -186,7 +186,7 @@ export default function SprintDiagnostic() {
           display: grid;
           grid-template-columns: 1.05fr 0.95fr;
           gap: 56px;
-          align-items: start;
+          align-items: center;
         }
         .sprint-cards {
           display: flex;

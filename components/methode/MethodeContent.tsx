@@ -51,7 +51,7 @@ export default function MethodeContent() {
   ]
 
   const deliverables: { icon: LucideIcon; name: string; desc: string; img?: string; mock?: boolean }[] = [
-    { icon: Map, name: t('v2.sprint.d1.name'), desc: t('v2.sprint.d1.desc') },
+    { icon: Map, name: t('v2.sprint.d1.name'), desc: t('v2.sprint.d1.desc'), img: 'carte-miro', mock: true },
     { icon: MousePointerClick, name: t('v2.sprint.d2.name'), desc: t('v2.sprint.d2.desc'), img: 'proto-front', mock: true },
     { icon: FileText, name: t('v2.sprint.d3.name'), desc: t('v2.sprint.d3.desc'), img: 'feuille-photo' },
   ]
