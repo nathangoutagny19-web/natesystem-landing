@@ -5,7 +5,7 @@ import FadeUp from '@/components/ui/FadeUp'
 import { motion } from 'framer-motion'
 import { useLang } from '@/components/providers/LangProvider'
 
-export default function Process() {
+export default function Process({ home = false }: { home?: boolean }) {
   const { t, lang } = useLang()
   const d = (fr: string, en: string) => (lang === 'en' ? en : fr)
 
@@ -20,14 +20,30 @@ export default function Process() {
     <section id="process" style={{ padding: '120px 24px' }}>
       <div className="mx-auto" style={{ maxWidth: '1100px' }}>
         <FadeUp className="text-center mb-20">
-          <span className="section-label">{t('process.label')}</span>
-          <h2 className="section-title" style={{ maxWidth: '700px', margin: '0 auto 24px' }}>
-            {t('process.title')}{' '}
-            <span className="accent">{t('process.titleAccent')}</span>
-          </h2>
-          <p className="font-sans" style={{ fontSize: '15px', fontWeight: 300, color: 'var(--text-secondary)', maxWidth: '500px', margin: '0 auto', lineHeight: 1.7 }}>
-            {t('process.sub')}
-          </p>
+          {home ? (
+            <>
+              <span className="section-label">{d('Ce qu’on fait', 'What we do')}</span>
+              <h2 className="section-title" style={{ maxWidth: '700px', margin: '0 auto 24px' }}>
+                {d('Une infrastructure, ', 'One infrastructure, ')}
+                <span className="accent">{d('pas des rustines.', 'not band-aids.')}</span>
+              </h2>
+              <p className="font-sans" style={{ fontSize: '15px', fontWeight: 300, color: 'var(--text-secondary)', maxWidth: '560px', margin: '0 auto', lineHeight: 1.7 }}>
+                {d('On remplace les outils génériques qui ne collent pas par du sur-mesure que vous possédez. L’IA et l’automatisation sont intégrées uniquement là où elles font gagner de vraies heures.',
+                   'We replace ill-fitting generic tools with custom software you own. AI and automation are embedded only where they save real hours.')}
+              </p>
+            </>
+          ) : (
+            <>
+              <span className="section-label">{t('process.label')}</span>
+              <h2 className="section-title" style={{ maxWidth: '700px', margin: '0 auto 24px' }}>
+                {t('process.title')}{' '}
+                <span className="accent">{t('process.titleAccent')}</span>
+              </h2>
+              <p className="font-sans" style={{ fontSize: '15px', fontWeight: 300, color: 'var(--text-secondary)', maxWidth: '500px', margin: '0 auto', lineHeight: 1.7 }}>
+                {t('process.sub')}
+              </p>
+            </>
+          )}
         </FadeUp>
 
         {/* Steps — one connected group with app-style rounded corners + fine shadow */}

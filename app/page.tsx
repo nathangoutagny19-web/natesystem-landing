@@ -62,7 +62,7 @@ export default function Home() {
       <Divider />
 
       {/* 6 — Comment on travaille (méthode résumée) + CTA vers /methode détaillée */}
-      <Process />
+      <Process home />
       <Divider />
 
       {/* 7 — Ce qu'on construit (What we ship) : bande de mockups anonymisés */}
