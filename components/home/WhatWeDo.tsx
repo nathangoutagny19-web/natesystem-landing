@@ -1,6 +1,6 @@
 'use client'
 
-import { Laptop, Cpu, Workflow, GraduationCap, type LucideIcon } from 'lucide-react'
+import { Search, Boxes, Cpu, GraduationCap, type LucideIcon } from 'lucide-react'
 import FadeUp from '@/components/ui/FadeUp'
 import { useLang } from '@/components/providers/LangProvider'
 
@@ -8,32 +8,32 @@ type Item = { icon: LucideIcon; titleFr: string; titleEn: string; descFr: string
 
 const ITEMS: Item[] = [
   {
-    icon: Laptop,
-    titleFr: 'Logiciel sur-mesure',
-    titleEn: 'Custom software',
-    descFr: 'La plateforme interne qui fait tourner vos opérations : base unifiée, dashboards, portails, outils métier. Taillée pour votre process, pas l’inverse.',
-    descEn: 'The internal platform that runs your operations: unified data, dashboards, portals, business tools. Built around your process, not the other way round.',
+    icon: Search,
+    titleFr: 'Consulting & cartographie',
+    titleEn: 'Consulting & mapping',
+    descFr: 'On analyse vos process, opérations et workflows — de l’arrivée d’un prospect au client qui recommande. On cartographie tout, puis on repère où vous gagnez le plus.',
+    descEn: 'We analyse your processes, operations and workflows — from a prospect’s arrival to a client who refers you. We map it all, then pinpoint where you gain the most.',
+  },
+  {
+    icon: Boxes,
+    titleFr: 'Développement sur-mesure',
+    titleEn: 'Custom development',
+    descFr: 'Logiciels métier, ERP, portails, cockpits — construits autour de vos opérations, pas l’inverse. Vos données unifiées, votre code qui vous appartient.',
+    descEn: 'Business software, ERP, portals, cockpits — built around your operations, not the other way round. Your data unified, your code owned by you.',
   },
   {
     icon: Cpu,
-    titleFr: 'Système IA',
-    titleEn: 'AI system',
-    descFr: 'De l’IA intégrée là où elle remplace de vraies heures : lecture de documents, tri intelligent, agents qui exécutent des tâches multi-étapes dans vos outils.',
-    descEn: 'AI embedded where it replaces real hours: document reading, smart triage, agents that run multi-step tasks inside your tools.',
-  },
-  {
-    icon: Workflow,
-    titleFr: 'Automatisation',
-    titleEn: 'Automation',
-    descFr: 'Les tâches répétitives qui tournent seules : commandes, factures, relances, passations. Vos équipes récupèrent des heures chaque semaine.',
-    descEn: 'The repetitive tasks that run themselves: orders, invoices, follow-ups, handoffs. Your teams win back hours every week.',
+    titleFr: 'Transformation & IA',
+    titleEn: 'Digital & AI',
+    descFr: 'De l’IA et de l’automatisation intégrées par-dessus votre système, uniquement là où elles remplacent de vraies heures. Jamais en décoration.',
+    descEn: 'AI and automation layered on top of your system, only where they replace real hours. Never for show.',
   },
   {
     icon: GraduationCap,
-    titleFr: 'Formation IA',
-    titleEn: 'AI training',
-    descFr: 'On rend vos équipes autonomes sur l’outil et sur l’IA au quotidien. Vous n’êtes prisonnier de personne, surtout pas de nous.',
-    descEn: 'We make your teams autonomous on the tool and on AI day-to-day. You’re nobody’s hostage — least of all ours.',
+    titleFr: 'Formation & accompagnement',
+    titleEn: 'Training & support',
+    descFr: 'On forme vos équipes, du dirigeant au terrain, à utiliser ces outils au quotidien — jusqu’à l’autonomie complète.',
+    descEn: 'We train your teams, from leadership to the field, to use these tools day-to-day — all the way to full autonomy.',
   },
 ]
 

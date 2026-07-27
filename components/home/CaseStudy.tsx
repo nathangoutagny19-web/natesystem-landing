@@ -94,7 +94,6 @@ export default function CaseStudy() {
 
   const metrics = [
     { value: '11h → 1h', label: lang === 'en' ? 'Per week, per manager' : 'Par semaine, par manager' },
-    { value: '14h', label: lang === 'en' ? 'Freed up every week' : 'Libérées chaque semaine' },
     { value: '~55', label: lang === 'en' ? 'Collaborators (volunteers, staff, partners) onboarded with zero friction' : 'Collaborateurs (bénévoles, employés, partenaires) intégrés sans friction' },
     { value: '99%', label: lang === 'en' ? 'Operations on software they own' : 'Opérations sur du logiciel qui leur appartient' },
   ]
@@ -215,7 +214,7 @@ export default function CaseStudy() {
           display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
           padding-top: clamp(28px, 3.5vw, 40px); border-top: 1px solid var(--border);
         }
-        @media (min-width: 720px) { .cs-metrics { grid-template-columns: repeat(4, 1fr); } }
+        @media (min-width: 720px) { .cs-metrics { grid-template-columns: repeat(3, 1fr); } }
         .cs-metric-value {
           font-size: clamp(22px, 3vw, 28px); color: var(--accent);
           line-height: 1.15; margin: 0 0 6px; font-weight: 400;

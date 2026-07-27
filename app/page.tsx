@@ -46,12 +46,13 @@ export default function Home() {
 
       {/* 3 — Avant/Après (diagonale) + bascule « ils sont de l'autre côté » */}
       <Transformation />
-
-      {/* 3b — Encart mini-diagnostic gratuit, sous la bascule */}
-      <MiniDiagnosticCta />
+      <Divider />
 
       {/* 4 — La preuve : vidéo témoignage Chromosome */}
       <CaseStudy />
+
+      {/* 4b — Encart mini-diagnostic gratuit, juste après le témoignage (plus petit) */}
+      <MiniDiagnosticCta />
       <Divider />
 
       {/* ─────────── CORPS REMODELÉ ─────────── */}

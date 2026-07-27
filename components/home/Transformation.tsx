@@ -43,9 +43,9 @@ const NOTES: { key: string; top: string; left: string; rot: number; z: number; d
 // AVANT = les chiffres qui piquent (repris de CostPain, jugés plus pertinents par Nathan).
 // Chiffres illustratifs — voir règle d'or BRIEF §7.2 (à confirmer/marquer estimation le jour venu).
 const COST_STATS = [1, 2, 3, 4, 5] as const
-// APRÈS = les gains, même format que l'AVANT (valeur serif rouge + description),
-// en miroir 1:1 des coûts.
-const GAIN_STATS = [1, 2, 3, 4, 5] as const
+// APRÈS = 3 points forts (valeur serif rouge + description) qui répondent aux
+// coûts de l'AVANT. Choix Nathan : condenser à 3.
+const GAIN_STATS = [1, 2, 3] as const
 
 export default function Transformation() {
   const { t } = useLang()
@@ -244,7 +244,7 @@ export default function Transformation() {
             <svg viewBox="0 0 150 190" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
                 className="baf-arrow-path"
-                d="M88 10 C 120 40, 96 80, 66 96 C 40 110, 60 145, 106 152"
+                d="M88 10 C 120 40, 96 80, 66 96 C 40 110, 58 146, 108 150"
                 stroke="var(--accent)"
                 strokeWidth="3"
                 strokeLinecap="round"
@@ -252,7 +252,7 @@ export default function Transformation() {
               />
               <path
                 className="baf-arrow-head"
-                d="M106 152 l -15 -9 M106 152 l -15 9"
+                d="M108 150 L 92 142 M108 150 L 96 164"
                 stroke="var(--accent)"
                 strokeWidth="3"
                 strokeLinecap="round"
