@@ -222,12 +222,12 @@ export const translations = {
   // ───────────────────────────────────────────────────────────────
   // Systems — recurring cases (5 AI systems + 3 custom software)
   // ───────────────────────────────────────────────────────────────
-  'systems.label': { en: 'Real use cases', fr: 'Cas concrets' },
-  'systems.title': { en: 'Real proof,', fr: 'Du concret,' },
-  'systems.titleAccent': { en: 'not promises.', fr: 'pas des promesses.' },
+  'systems.label': { en: 'Example solutions', fr: 'Exemples de solutions' },
+  'systems.title': { en: 'Deployed in these sectors,', fr: 'Déjà déployé dans ces secteurs,' },
+  'systems.titleAccent': { en: 'winning every day.', fr: 'rentable tous les jours.' },
   'systems.sub': {
-    en: 'Custom software and AI solutions we actually built and deployed. Every number is real, measured with the client. And we never ship anything that doesn\'t save time or money.',
-    fr: 'Des logiciels sur-mesure et des solutions IA qu\'on a vraiment construits et déployés. Chaque chiffre est réel, mesuré avec le client. Et on ne lance rien qui ne fasse pas gagner du temps ou de l\'argent.',
+    en: 'A glimpse of what we build and run — systems that save our clients time and money, every single day.',
+    fr: 'Un aperçu de ce qu\'on construit et fait tourner — des systèmes qui font gagner du temps et de l\'argent à nos clients, tous les jours.',
   },
   'systems.allCases': { en: 'See all our case studies', fr: 'Voir tous nos cas clients' },
   'systems.groupAI': { en: 'AI systems', fr: 'Systèmes IA' },

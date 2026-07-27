@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { ClipboardCheck, Boxes, Brain, ArrowRight, type LucideIcon } from 'lucide-react'
+import { Clock, TrendingUp, Repeat, Smile, Database, ClipboardCheck, Boxes, Brain, ArrowRight, type LucideIcon } from 'lucide-react'
 import Nav from '@/components/layout/Nav'
 import Footer from '@/components/layout/Footer'
 import MobileCta from '@/components/layout/MobileCta'
@@ -16,7 +16,7 @@ const servicesJsonLd = {
       '@type': 'CollectionPage',
       '@id': 'https://www.natesystem.com/services#page',
       name: 'Nos services',
-      description: 'Les services NateSystem : audit & consulting, logiciel & plateforme sur-mesure, IA agentique & data analytics.',
+      description: 'Les services NateSystem : audit & consulting, logiciel & plateforme sur-mesure, IA agentique & data analytics — au service d\'un socle de résultats commun à toute entreprise.',
       isPartOf: { '@id': 'https://www.natesystem.com/#organization' },
     },
     {
@@ -37,14 +37,23 @@ const servicesJsonLd = {
   ],
 }
 
-type Pillar = { icon: LucideIcon; eyebrow: string; title: string; desc: string; href: string }
+// Le socle de résultats — commun à toute entreprise (choix Nathan).
+type Outcome = { icon: LucideIcon; title: string; desc: string }
+const outcomes: Outcome[] = [
+  { icon: Clock, title: 'Du temps récupéré', desc: 'Le répétitif tourne seul. Vos équipes arrêtent de recopier, relancer et chercher — et se concentrent sur ce qui compte vraiment.' },
+  { icon: TrendingUp, title: 'Plus de deals, plus gros', desc: 'Un pipeline propre, des relances qui partent toutes seules, plus rien qui passe à la trappe. Vous signez plus, et mieux.' },
+  { icon: Repeat, title: 'Des clients qui restent', desc: 'Un suivi sans faille : rien ne se perd, vos clients le sentent, et ils continuent avec vous plus longtemps.' },
+  { icon: Smile, title: 'Une meilleure expérience client', desc: 'Réponses plus rapides, dossiers au carré, fini le « je vous rappelle ». L\'image d\'une boîte qui gère.' },
+  { icon: Database, title: 'Une équipe alignée', desc: 'Tout le monde sur la même donnée, centralisée et à jour. Plus de versions qui s\'écrasent ni de « c\'était où, déjà ? ».' },
+]
 
+type Pillar = { icon: LucideIcon; eyebrow: string; title: string; desc: string; href: string }
 const pillars: Pillar[] = [
   {
     icon: ClipboardCheck,
     eyebrow: 'On comprend',
     title: 'Audit & consulting',
-    desc: 'On cartographie vos process, on repère ce qui vous fait perdre du temps et de l\'argent, et on vous remet un plan d\'action clair et chiffré.',
+    desc: 'On cartographie vos process, on repère ce qui vous fait perdre du temps et de l\'argent, et on vous remet un plan clair et chiffré.',
     href: '/services/audit',
   },
   {
@@ -57,8 +66,8 @@ const pillars: Pillar[] = [
   {
     icon: Brain,
     eyebrow: 'On propulse',
-    title: 'IA agentique & data analytics',
-    desc: 'Une IA qui exécute des tâches de bout en bout, apprend votre métier et s\'améliore. De la data analytics pour décider sur du concret.',
+    title: 'IA & automatisation',
+    desc: 'De l\'IA et de l\'automatisation là où elles remplacent de vraies heures — jamais en décoration. De la data pour décider sur du concret.',
     href: '/services/ia',
   },
 ]
@@ -69,16 +78,17 @@ export default function ServicesPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesJsonLd) }} />
       <Nav />
 
+      {/* Hero — mené par le résultat */}
       <section style={{ padding: '160px 24px 40px' }}>
         <div className="mx-auto text-center" style={{ maxWidth: 820 }}>
           <FadeUp>
             <span className="section-label">Nos services</span>
             <h1 className="font-serif italic" style={{ fontSize: 'clamp(32px, 5.4vw, 54px)', fontWeight: 400, lineHeight: 1.1, color: 'var(--text)', maxWidth: 780, margin: '14px auto 24px' }}>
-              On comprend. <span className="accent" style={{ color: 'var(--accent)' }}>On construit sur-mesure.</span>
+              Quel que soit votre métier, <span className="accent" style={{ color: 'var(--accent)' }}>le même résultat.</span>
             </h1>
-            <p className="font-sans" style={{ fontSize: 'clamp(15px, 3vw, 18px)', fontWeight: 300, color: 'var(--text-secondary)', maxWidth: 640, margin: '0 auto 36px', lineHeight: 1.65 }}>
-              On part de votre métier, on assemble ce qu&apos;il vous faut : audit, logiciel & plateforme sur-mesure, IA là où
-              elle vous fait gagner. Rarement l&apos;un ou l&apos;autre — un écosystème digital taillé pour votre activité.
+            <p className="font-sans" style={{ fontSize: 'clamp(15px, 3vw, 18px)', fontWeight: 300, color: 'var(--text-secondary)', maxWidth: 660, margin: '0 auto 36px', lineHeight: 1.65 }}>
+              On monte l&apos;infrastructure qui vous fait gagner du temps, signer plus et mieux, et garder vos clients.
+              La techno et les modules s&apos;adaptent à votre réalité — jamais l&apos;inverse.
             </p>
             <Link href={CAL_LINK} className="btn-primary" style={{ margin: '0 auto', fontSize: 14 }}>
               <span className="btn-primary-dot" />Réserver un appel · offert →
@@ -89,9 +99,53 @@ export default function ServicesPage() {
 
       <Divider />
 
-      {/* The 3 pillars */}
+      {/* Le socle de résultats */}
       <section style={{ padding: '70px 24px' }}>
         <div className="mx-auto" style={{ maxWidth: 1100 }}>
+          <FadeUp className="text-center mb-16">
+            <span className="section-label">Ce que ça change</span>
+            <h2 className="font-serif italic" style={{ fontSize: 'clamp(26px, 3.6vw, 38px)', fontWeight: 400, color: 'var(--text)', lineHeight: 1.2, margin: '4px auto 16px', maxWidth: 720 }}>
+              Le même socle de résultats, <span className="accent" style={{ color: 'var(--accent)' }}>dans toute entreprise.</span>
+            </h2>
+          </FadeUp>
+
+          <div className="svc-out-grid">
+            {outcomes.map((o, i) => {
+              const Icon = o.icon
+              return (
+                <FadeUp key={o.title} delay={Math.min(i * 0.07, 0.35)}>
+                  <div className="svc-out">
+                    <span className="svc-out-ico" aria-hidden="true"><Icon size={20} strokeWidth={1.7} /></span>
+                    <h3 className="font-sans svc-out-title">{o.title}</h3>
+                    <p className="font-sans svc-out-desc">{o.desc}</p>
+                  </div>
+                </FadeUp>
+              )
+            })}
+          </div>
+
+          <FadeUp>
+            <p className="font-sans svc-note">
+              Ça, c&apos;est le socle — vrai pour n&apos;importe quelle entreprise. Le reste dépend de votre réalité :
+              un moteur de recherche IA sur votre documentation, un agent qui relance vos devis, un portail pour vos clients…
+              On part de votre métier. On ne vend pas une recette figée.
+            </p>
+          </FadeUp>
+        </div>
+      </section>
+
+      <Divider />
+
+      {/* Comment on y arrive — les 3 piliers (moyens, pas la promesse) */}
+      <section style={{ padding: '70px 24px' }}>
+        <div className="mx-auto" style={{ maxWidth: 1100 }}>
+          <FadeUp className="text-center mb-16">
+            <span className="section-label">Comment on y arrive</span>
+            <h2 className="font-serif italic" style={{ fontSize: 'clamp(26px, 3.6vw, 38px)', fontWeight: 400, color: 'var(--text)', lineHeight: 1.2, margin: '4px auto 0', maxWidth: 720 }}>
+              Une infrastructure, <span className="accent" style={{ color: 'var(--accent)' }}>montée pour vous.</span>
+            </h2>
+          </FadeUp>
+
           <div className="svc-pillars">
             {pillars.map((p, i) => {
               const Icon = p.icon
@@ -102,7 +156,7 @@ export default function ServicesPage() {
                       <Icon size={22} strokeWidth={1.8} />
                     </span>
                     <p className="font-mono svc-pillar-eyebrow">{p.eyebrow}</p>
-                    <h2 className="font-serif italic svc-pillar-title">{p.title}</h2>
+                    <h3 className="font-serif italic svc-pillar-title">{p.title}</h3>
                     <p className="font-sans svc-pillar-desc">{p.desc}</p>
                     <span className="font-mono svc-pillar-link">
                       En savoir plus <ArrowRight size={14} strokeWidth={2} />
@@ -126,8 +180,8 @@ export default function ServicesPage() {
                 On part de votre métier.
               </h2>
               <p className="font-sans" style={{ fontSize: 15, fontWeight: 300, color: 'var(--text-secondary)', lineHeight: 1.7, maxWidth: 520, margin: '0 auto 32px' }}>
-                Un appel offert. On regarde votre activité et on identifie ce qu&apos;il vous faut vraiment — audit,
-                logiciel sur-mesure, IA. Vous repartez avec un plan clair, même si on ne travaille pas ensemble.
+                Un appel offert. On regarde votre activité et on vous dit, concrètement, ce qui vous ferait gagner le plus —
+                et comment on le construirait. Vous repartez avec un plan clair, même si on ne travaille pas ensemble.
               </p>
               <Link href={CAL_LINK} className="btn-primary" style={{ margin: '0 auto' }}>
                 <span className="btn-primary-dot" />Réserver un appel · offert

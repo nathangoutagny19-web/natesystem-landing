@@ -1016,15 +1016,39 @@ html:not(.light) .trust-logo {
 /* ——— Home: How we work CTA (Process → /methode) ——— */
 .hww-cta-wrap { text-align: center; margin-top: 40px; }
 
-/* ——— Garantie funny (clin d'œil resto) ——— */
+/* ——— Garantie funny (clin d'œil resto, avec photo) ——— */
 .funguar {
-  max-width: 640px; text-align: center; position: relative;
-  background: rgba(230,57,70,0.045);
-  border: 1.5px dashed rgba(230,57,70,0.38);
-  border-radius: 22px; padding: clamp(32px, 5vw, 48px) clamp(24px, 4vw, 44px);
+  max-width: 900px; display: grid; grid-template-columns: 1fr; overflow: hidden;
+  background: var(--bg-card); border: 1px solid rgba(230,57,70,0.22); border-radius: 22px;
+  box-shadow: 0 1px 2px rgba(15,23,42,0.04), 0 20px 50px -30px rgba(15,23,42,0.35);
 }
-.funguar-emoji { font-size: 46px; line-height: 1; display: block; margin-bottom: 16px; }
-.funguar-label { display: inline-block; font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 14px; }
-.funguar-title { font-size: clamp(24px, 3.4vw, 34px); font-weight: 400; color: var(--text); line-height: 1.15; margin: 0 0 16px; }
-.funguar-text { font-size: 15.5px; font-weight: 300; color: var(--text-secondary); line-height: 1.65; max-width: 500px; margin: 0 auto 18px; }
+@media (min-width: 720px) { .funguar { grid-template-columns: 0.95fr 1.05fr; } }
+.funguar-photo { position: relative; width: 100%; min-height: 220px; }
+@media (min-width: 720px) { .funguar-photo { min-height: 100%; } }
+.funguar-body { padding: clamp(30px, 4vw, 44px); }
+.funguar-label { display: inline-block; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 14px; }
+.funguar-title { font-size: clamp(24px, 3vw, 32px); font-weight: 400; color: var(--text); line-height: 1.15; margin: 0 0 16px; }
+.funguar-text { font-size: 15px; font-weight: 300; color: var(--text-secondary); line-height: 1.65; margin: 0 0 18px; }
 .funguar-fineprint { font-size: 11px; color: var(--text-muted); font-weight: 300; letter-spacing: 0.2px; }
+
+/* ——— /SERVICES : cartes "résultats" (socle commun) ——— */
+.svc-out-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+@media (min-width: 640px) { .svc-out-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 980px) { .svc-out-grid { grid-template-columns: repeat(3, 1fr); } }
+.svc-out {
+  display: flex; flex-direction: column; gap: 12px; height: 100%;
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 26px 24px;
+  transition: transform .3s cubic-bezier(.22,1,.36,1), border-color .3s ease;
+}
+.svc-out:hover { transform: translateY(-3px); border-color: var(--border-hover); }
+.svc-out-ico {
+  width: 42px; height: 42px; border-radius: 11px; display: inline-flex; align-items: center; justify-content: center;
+  background: var(--accent-subtle); border: 1px solid rgba(230,57,70,0.2); color: var(--accent);
+}
+.svc-out-title { font-size: 17px; font-weight: 600; color: var(--text); margin: 2px 0 0; }
+.svc-out-desc { font-size: 13.5px; font-weight: 300; color: var(--text-secondary); line-height: 1.6; margin: 0; }
+.svc-note {
+  max-width: 720px; margin: 32px auto 0; text-align: center;
+  font-size: 13.5px; font-weight: 300; color: var(--text-muted); line-height: 1.7;
+  border-top: 1px solid var(--border); padding-top: 26px;
+}

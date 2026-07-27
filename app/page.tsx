@@ -68,11 +68,7 @@ export default function Home() {
       <WhatWeBuild />
       <Divider />
 
-      {/* 8 — Cas concrets chiffrés : marquee des systèmes livrés + lien /case-studies */}
-      <Systems />
-      <Divider />
-
-      {/* 9 — Ce qui nous rend différents : vidéo + différenciateurs */}
+      {/* 8 — Ce qui nous rend différents : vidéo + différenciateurs */}
       <Different />
       <Divider />
 
@@ -88,11 +84,16 @@ export default function Home() {
       <CtaFinal />
       <Divider />
 
-      {/* 12 — Les secteurs qu'on sert (cross-secteur) */}
+      {/* 12 — Les secteurs qu'on sert (sélecteur interactif) */}
       <Sectors />
       <Divider />
 
-      {/* 12 — Comparatif honnête 4 colonnes */}
+      {/* 12b — Exemples de solutions déployées dans ces secteurs (Systems),
+             déplacé juste sous les secteurs (choix Nathan). */}
+      <Systems />
+      <Divider />
+
+      {/* 13 — Comparatif honnête 4 colonnes */}
       <ComparisonV2 />
       <Divider />
 
