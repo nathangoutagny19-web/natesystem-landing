@@ -118,7 +118,6 @@ export default function Nav() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const [langOpen, setLangOpen] = useState(false)
-  const [mobileRealisationsOpen, setMobileRealisationsOpen] = useState(false)
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false)
   const langRef = useRef<HTMLDivElement>(null)
 
@@ -175,26 +174,9 @@ export default function Nav() {
               </div>
             </div>
 
-            {/* Réalisations — cas clients + démos live (des preuves, pas des outils) */}
-            <div className="nav-dropdown">
-              <Link href="/resources#videos" className="nav-link nav-link-dropdown">
-                {t('nav.realisations')} <Chevron />
-              </Link>
-              <div className="nav-mega nav-mega-2col">
-                <div className="nav-mega-inner">
-                  <div className="nav-mega-col">
-                    <p className="nav-mega-label">{t('mega.cases')}</p>
-                    <MegaItem href="/resources#videos" icon={icons.caseStudy} title={t('resources.caseStudies')} desc={t('resources.caseStudies.desc')} />
-                  </div>
-                  <div className="nav-mega-col">
-                    <p className="nav-mega-label">{t('mega.demos')}</p>
-                    <MegaItem href="https://actifs.natesystem.com" icon={icons.laptop} title={t('demos.actifs.navTitle')} desc={t('demos.actifs.navDesc')} external badge={t('mega.new')} />
-                    <MegaItem href="https://stack-stock.natesystem.com" icon={icons.package} title={t('demos.stock.navTitle')} desc={t('demos.stock.navDesc')} external badge={t('mega.new')} />
-                    <MegaItem href="/reviews" icon={icons.clipboard} title={t('demos.reviews.navTitle')} desc={t('demos.reviews.navDesc')} badge={t('mega.gated')} />
-                  </div>
-                </div>
-              </div>
-            </div>
+            {/* Réalisations — lien direct vers la page Case Studies (pas de méga).
+                Les démos live vivent désormais sur /resources. */}
+            <Link href="/case-studies" className="nav-link">{t('nav.realisations')}</Link>
 
             {/* Ressources — lien direct vers la page, sans méga */}
             <Link href="/resources" className="nav-link">{t('nav.resources')}</Link>
@@ -268,12 +250,7 @@ export default function Nav() {
             <MobileLink href="/services/audit" onClick={() => setMenuOpen(false)}>{t('nav.svc.audit')}</MobileLink>
           </MobileAccordion>
 
-          <MobileAccordion label={t('nav.realisations')} open={mobileRealisationsOpen} onToggle={() => setMobileRealisationsOpen(!mobileRealisationsOpen)}>
-            <MobileLink href="/resources#videos" onClick={() => setMenuOpen(false)}>{t('resources.caseStudies')}</MobileLink>
-            <MobileLink href="https://actifs.natesystem.com" external badge={t('mega.new')} onClick={() => setMenuOpen(false)}>{t('demos.actifs.navTitle')}</MobileLink>
-            <MobileLink href="https://stack-stock.natesystem.com" external badge={t('mega.new')} onClick={() => setMenuOpen(false)}>{t('demos.stock.navTitle')}</MobileLink>
-            <MobileLink href="/reviews" badge={t('mega.gated')} onClick={() => setMenuOpen(false)}>{t('demos.reviews.navTitle')}</MobileLink>
-          </MobileAccordion>
+          <MobileLink href="/case-studies" onClick={() => setMenuOpen(false)}>{t('nav.realisations')}</MobileLink>
 
           <MobileLink href="/resources" onClick={() => setMenuOpen(false)}>{t('nav.resources')}</MobileLink>
 
