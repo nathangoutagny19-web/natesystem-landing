@@ -14,10 +14,11 @@ import { useLang } from '@/components/providers/LangProvider'
 export default function SprintDiagnostic() {
   const { t } = useLang()
 
-  const deliverables = [
-    { icon: Map, name: t('v2.sprint.d1.name'), desc: t('v2.sprint.d1.desc') },
-    { icon: MousePointerClick, name: t('v2.sprint.d2.name'), desc: t('v2.sprint.d2.desc') },
-    { icon: FileText, name: t('v2.sprint.d3.name'), desc: t('v2.sprint.d3.desc') },
+  // Une petite image DANS chaque case (pas de zoom). La Carte = Miro (à venir).
+  const deliverables: { icon: typeof Map; name: string; desc: string; img?: string; fit?: 'contain' | 'cover' }[] = [
+    { icon: Map, name: t('v2.sprint.d1.name'), desc: t('v2.sprint.d1.desc') }, // La Carte → Miro (fichier à venir)
+    { icon: MousePointerClick, name: t('v2.sprint.d2.name'), desc: t('v2.sprint.d2.desc'), img: 'proto-front', fit: 'contain' },
+    { icon: FileText, name: t('v2.sprint.d3.name'), desc: t('v2.sprint.d3.desc'), img: 'feuille-photo', fit: 'cover' },
   ]
 
   return (
@@ -100,62 +101,61 @@ export default function SprintDiagnostic() {
             </div>
           </FadeUp>
 
-          {/* Right — le prototype (dashboards fanned) + les 3 livrables */}
+          {/* Right — les 3 livrables, chacun avec sa petite image DANS la case */}
           <div className="sprint-cards">
-            <FadeUp>
-              <div className="fanned" aria-hidden="true">
-                <div className="fanned-card fanned-back">
-                  <Image src="/realisations/prototype/proto-back.jpg" alt="" fill sizes="(max-width: 900px) 90vw, 460px" style={{ objectFit: 'cover', objectPosition: 'top left' }} />
-                </div>
-                <div className="fanned-card fanned-front">
-                  <Image src="/realisations/prototype/proto-front.jpg" alt={t('v2.sprint.d2.name')} fill sizes="(max-width: 900px) 90vw, 460px" style={{ objectFit: 'cover', objectPosition: 'top' }} />
-                </div>
-              </div>
-            </FadeUp>
-
             {deliverables.map((d, i) => {
               const Icon = d.icon
               return (
                 <FadeUp key={d.name} delay={0.1 + i * 0.1}>
                   <div
                     style={{
-                      display: 'flex',
-                      gap: 16,
-                      alignItems: 'flex-start',
                       background: 'var(--bg-card)',
                       border: '1px solid var(--border)',
                       borderRadius: 12,
-                      padding: '22px 22px',
+                      overflow: 'hidden',
                     }}
                   >
-                    <span
-                      aria-hidden="true"
-                      style={{
-                        flex: 'none',
-                        width: 44,
-                        height: 44,
-                        borderRadius: 11,
-                        background: 'var(--accent-subtle)',
-                        border: '1px solid rgba(230,57,70,0.18)',
-                        color: 'var(--accent)',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                      }}
-                    >
-                      <Icon size={20} strokeWidth={1.8} />
-                    </span>
-                    <div>
-                      <p className="font-mono" style={{ fontSize: 10, letterSpacing: 1.5, textTransform: 'uppercase', color: 'var(--accent)', margin: '2px 0 8px', fontWeight: 600 }}>
-                        {String(i + 1).padStart(2, '0')} / 03
-                      </p>
-                      <p className="font-serif italic" style={{ fontSize: 20, fontWeight: 400, color: 'var(--text)', margin: '0 0 6px' }}>
-                        {d.name}
-                      </p>
-                      <p className="font-sans" style={{ fontSize: 13.5, lineHeight: 1.55, color: 'var(--text-secondary)', fontWeight: 300, margin: 0 }}>
-                        {d.desc}
-                      </p>
+                    <div style={{ display: 'flex', gap: 16, alignItems: 'flex-start', padding: '22px 22px 18px' }}>
+                      <span
+                        aria-hidden="true"
+                        style={{
+                          flex: 'none',
+                          width: 44,
+                          height: 44,
+                          borderRadius: 11,
+                          background: 'var(--accent-subtle)',
+                          border: '1px solid rgba(230,57,70,0.18)',
+                          color: 'var(--accent)',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                        }}
+                      >
+                        <Icon size={20} strokeWidth={1.8} />
+                      </span>
+                      <div>
+                        <p className="font-mono" style={{ fontSize: 10, letterSpacing: 1.5, textTransform: 'uppercase', color: 'var(--accent)', margin: '2px 0 8px', fontWeight: 600 }}>
+                          {String(i + 1).padStart(2, '0')} / 03
+                        </p>
+                        <p className="font-serif italic" style={{ fontSize: 20, fontWeight: 400, color: 'var(--text)', margin: '0 0 6px' }}>
+                          {d.name}
+                        </p>
+                        <p className="font-sans" style={{ fontSize: 13.5, lineHeight: 1.55, color: 'var(--text-secondary)', fontWeight: 300, margin: 0 }}>
+                          {d.desc}
+                        </p>
+                      </div>
                     </div>
+                    {d.img && (
+                      <div style={{ position: 'relative', width: '100%', height: 176, background: 'var(--bg-elevated)', borderTop: '1px solid var(--border)' }}>
+                        <Image
+                          src={`/realisations/prototype/${d.img}.jpg`}
+                          alt={d.name}
+                          fill
+                          sizes="(max-width: 900px) 90vw, 440px"
+                          style={{ objectFit: d.fit, objectPosition: 'center top', padding: d.fit === 'contain' ? '10px' : 0 }}
+                        />
+                      </div>
+                    )}
                   </div>
                 </FadeUp>
               )
@@ -183,21 +183,6 @@ export default function SprintDiagnostic() {
           display: flex;
           flex-direction: column;
           gap: 14px;
-        }
-        /* Prototype — dashboards "fanned" (front net + back qui dépasse) */
-        .fanned { position: relative; width: 100%; aspect-ratio: 4 / 3; margin-bottom: 8px; }
-        .fanned-card {
-          position: absolute; width: 86%; aspect-ratio: 16 / 10;
-          border-radius: 12px; overflow: hidden; border: 1px solid var(--border);
-          background: #fff;
-        }
-        .fanned-back {
-          top: 0; left: 0; z-index: 1; transform: rotate(-4.5deg) scale(0.97);
-          box-shadow: 0 10px 26px -12px rgba(15,23,42,0.34);
-        }
-        .fanned-front {
-          bottom: 0; right: 0; z-index: 2; transform: rotate(2deg);
-          box-shadow: 0 20px 46px -18px rgba(15,23,42,0.5);
         }
         @media (max-width: 900px) {
           .sprint-grid {
