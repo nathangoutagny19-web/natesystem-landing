@@ -114,6 +114,7 @@ const Chevron = () => (
 
 export default function Nav() {
   const { lang, setLang, t } = useLang()
+  const d = (fr: string, en: string) => (lang === 'en' ? en : fr)
   const { theme, toggleTheme } = useTheme()
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
@@ -153,33 +154,58 @@ export default function Nav() {
           <nav className="nav-links">
             <Link href="/methode" className="nav-link">{t('nav.methode')}</Link>
 
-            {/* Services */}
+            {/* Services — méga avec panneau photo (façon concurrents, sauce NateSystem) */}
             <div className="nav-dropdown">
               <Link href="/services" className="nav-link nav-link-dropdown">
                 {t('nav.services')} <Chevron />
               </Link>
-              <div className="nav-mega nav-mega-2col">
+              <div className="nav-mega nav-mega-feature">
                 <div className="nav-mega-inner">
                   <div className="nav-mega-col">
                     <p className="nav-mega-label">{t('mega.services')}</p>
                     <MegaItem href={CAL_LINK} icon={icons.map} title={t('nav.svc.sprint')} desc={t('nav.svc.sprintDesc')} />
                     <MegaItem href="/services/logiciel-sur-mesure" icon={icons.laptop} title={t('nav.svc.logiciel')} desc={t('nav.svc.logicielDesc')} />
-                  </div>
-                  <div className="nav-mega-col">
-                    <p className="nav-mega-label">&nbsp;</p>
                     <MegaItem href="/services/ia" icon={icons.brain} title={t('nav.svc.ia')} desc={t('nav.svc.iaDesc')} />
                     <MegaItem href="/services/audit" icon={icons.clipboard} title={t('nav.svc.audit')} desc={t('nav.svc.auditDesc')} />
                   </div>
+                  <MegaFeature
+                    href="/case-studies/chromosome"
+                    img="/realisations/prototype/proto-front.jpg"
+                    label={d('Réalisation', 'Case study')}
+                    title={d('Un cockpit taillé sur-mesure', 'A cockpit built to measure')}
+                    cta={d('Voir le cas Chromosome', 'See the Chromosome case')}
+                  />
                 </div>
               </div>
             </div>
 
-            {/* Réalisations — lien direct vers la page Case Studies (pas de méga).
-                Les démos live vivent désormais sur /resources. */}
+            {/* Réalisations — lien direct vers la page Case Studies */}
             <Link href="/case-studies" className="nav-link">{t('nav.realisations')}</Link>
 
-            {/* Ressources — lien direct vers la page, sans méga */}
-            <Link href="/resources" className="nav-link">{t('nav.resources')}</Link>
+            {/* Ressources — méga avec panneau photo */}
+            <div className="nav-dropdown">
+              <Link href="/resources" className="nav-link nav-link-dropdown">
+                {t('nav.resources')} <Chevron />
+              </Link>
+              <div className="nav-mega nav-mega-feature">
+                <div className="nav-mega-inner">
+                  <div className="nav-mega-col">
+                    <p className="nav-mega-label">{d('Ressources', 'Resources')}</p>
+                    <MegaItem href="/playbook" icon={icons.book} title={d('Playbooks par métier', 'Playbooks by trade')} desc={d('Des guides concrets, secteur par secteur.', 'Concrete guides, sector by sector.')} />
+                    <MegaItem href="/blog" icon={icons.blog} title="Blog" desc={d('Nos analyses sur l’IA et le sur-mesure.', 'Our takes on AI and custom software.')} />
+                    <MegaItem href="/tools/diagnostic-ia" icon={icons.brain} title={t('tools.diagnostic.title')} desc={d('Où partent vos heures — en 3 min.', 'Where your hours go — in 3 min.')} />
+                    <MegaItem href="/resources#videos" icon={icons.laptop} title={d('Vidéos & démos live', 'Videos & live demos')} desc={d('Témoignage client + apps à tester.', 'Client testimonial + apps to try.')} />
+                  </div>
+                  <MegaFeature
+                    href="/resources#videos"
+                    img="/realisations/demos/actifs.jpg"
+                    label={d('Démos live', 'Live demos')}
+                    title={d('Essayez nos apps en vrai', 'Try our apps for real')}
+                    cta={d('Vidéos & outils', 'Videos & tools')}
+                  />
+                </div>
+              </div>
+            </div>
           </nav>
 
           {/* Right side — lang + CTA */}
@@ -359,6 +385,32 @@ function MegaItem({
   return (
     <Link href={href} className="mega-item">
       {body}
+    </Link>
+  )
+}
+
+function MegaFeature({
+  href,
+  img,
+  label,
+  title,
+  cta,
+}: {
+  href: string
+  img: string
+  label: string
+  title: string
+  cta: string
+}) {
+  return (
+    <Link href={href} className="mega-feature">
+      <span className="mega-feature-img" style={{ backgroundImage: `url(${img})` }} aria-hidden="true" />
+      <span className="mega-feature-overlay" aria-hidden="true" />
+      <span className="mega-feature-body">
+        <span className="mega-feature-label">{label}</span>
+        <span className="mega-feature-title">{title}</span>
+        <span className="mega-feature-cta">{cta} &rarr;</span>
+      </span>
     </Link>
   )
 }
