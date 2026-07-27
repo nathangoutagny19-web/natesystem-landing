@@ -8,6 +8,7 @@ import Footer from '@/components/layout/Footer'
 import MobileCta from '@/components/layout/MobileCta'
 import Divider from '@/components/ui/Divider'
 import FadeUp from '@/components/ui/FadeUp'
+import ScreenMock from '@/components/ui/ScreenMock'
 import Process from '@/components/home/Process'
 import WhatWeBuild from '@/components/home/WhatWeBuild'
 import Faq from '@/components/home/Faq'
@@ -49,10 +50,10 @@ export default function MethodeContent() {
     },
   ]
 
-  const deliverables: { icon: LucideIcon; name: string; desc: string; img?: string; fit?: 'contain' | 'cover' }[] = [
+  const deliverables: { icon: LucideIcon; name: string; desc: string; img?: string; mock?: boolean }[] = [
     { icon: Map, name: t('v2.sprint.d1.name'), desc: t('v2.sprint.d1.desc') },
-    { icon: MousePointerClick, name: t('v2.sprint.d2.name'), desc: t('v2.sprint.d2.desc'), img: 'proto-front', fit: 'contain' },
-    { icon: FileText, name: t('v2.sprint.d3.name'), desc: t('v2.sprint.d3.desc'), img: 'feuille-photo', fit: 'cover' },
+    { icon: MousePointerClick, name: t('v2.sprint.d2.name'), desc: t('v2.sprint.d2.desc'), img: 'proto-front', mock: true },
+    { icon: FileText, name: t('v2.sprint.d3.name'), desc: t('v2.sprint.d3.desc'), img: 'feuille-photo' },
   ]
 
   return (
@@ -157,17 +158,23 @@ export default function MethodeContent() {
                         {del.desc}
                       </p>
                     </div>
-                    {del.img && (
+                    {del.img && (del.mock ? (
+                      <div style={{ marginTop: 'auto', padding: 16, background: 'var(--bg-elevated)', borderTop: '1px solid var(--border)' }}>
+                        <div style={{ height: 158 }}>
+                          <ScreenMock src={`/realisations/prototype/${del.img}.jpg`} alt={del.name} />
+                        </div>
+                      </div>
+                    ) : (
                       <div style={{ position: 'relative', width: '100%', height: 172, marginTop: 'auto', background: 'var(--bg-elevated)', borderTop: '1px solid var(--border)' }}>
                         <Image
                           src={`/realisations/prototype/${del.img}.jpg`}
                           alt={del.name}
                           fill
                           sizes="(max-width: 900px) 90vw, 340px"
-                          style={{ objectFit: del.fit, objectPosition: 'center top', padding: del.fit === 'contain' ? '10px' : 0 }}
+                          style={{ objectFit: 'cover', objectPosition: 'center top' }}
                         />
                       </div>
-                    )}
+                    ))}
                   </div>
                 </FadeUp>
               )

@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { useLang } from '@/components/providers/LangProvider'
 import { useTheme } from '@/components/providers/ThemeProvider'
 import { CAL_LINK } from '@/lib/constants'
+import ScreenMock from '@/components/ui/ScreenMock'
 
 /* ——— SVG Icons (monoline, 18px) ——— */
 const icons = {
@@ -404,8 +405,9 @@ function MegaFeature({
 }) {
   return (
     <Link href={href} className="mega-feature">
-      <span className="mega-feature-img" style={{ backgroundImage: `url(${img})` }} aria-hidden="true" />
-      <span className="mega-feature-overlay" aria-hidden="true" />
+      <span className="mega-feature-mock">
+        <ScreenMock src={img} alt={title} />
+      </span>
       <span className="mega-feature-body">
         <span className="mega-feature-label">{label}</span>
         <span className="mega-feature-title">{title}</span>

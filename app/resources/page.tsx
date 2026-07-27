@@ -7,7 +7,7 @@ import FadeUp from '@/components/ui/FadeUp'
 import Divider from '@/components/ui/Divider'
 import LiteYouTube from '@/components/ui/LiteYouTube'
 import Link from 'next/link'
-import Image from 'next/image'
+import ScreenMock from '@/components/ui/ScreenMock'
 import { useLang } from '@/components/providers/LangProvider'
 import { motion } from 'framer-motion'
 import { blogPosts } from '@/lib/blog'
@@ -161,8 +161,10 @@ export default function ResourcesPage() {
                   <p className="font-sans" style={{ fontSize: '13.5px', fontWeight: 300, color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: 14 }}>
                     {d(demo.descFr, demo.descEn)}
                   </p>
-                  <div className="res-demo-shot" style={{ marginTop: 'auto' }}>
-                    <Image src={`/realisations/demos/${demo.img}.jpg`} alt={demo.title} fill sizes="(max-width: 940px) 100vw, 340px" style={{ objectFit: 'cover', objectPosition: 'top center' }} />
+                  <div style={{ marginTop: 'auto', paddingTop: 12 }}>
+                    <div style={{ height: 138 }}>
+                      <ScreenMock src={`/realisations/demos/${demo.img}.jpg`} alt={demo.title} />
+                    </div>
                   </div>
                   <span className="res-card-cta font-sans">
                     {demo.badge === 'gated' ? d('Demander l’accès', 'Request access') : d('Ouvrir la démo', 'Open the demo')} &rarr;

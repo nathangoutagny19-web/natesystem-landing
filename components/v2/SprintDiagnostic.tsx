@@ -4,6 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Map, MousePointerClick, FileText, ArrowRight } from 'lucide-react'
 import FadeUp from '@/components/ui/FadeUp'
+import ScreenMock from '@/components/ui/ScreenMock'
 import { useLang } from '@/components/providers/LangProvider'
 
 /**
@@ -14,11 +15,11 @@ import { useLang } from '@/components/providers/LangProvider'
 export default function SprintDiagnostic() {
   const { t } = useLang()
 
-  // Une petite image DANS chaque case (pas de zoom). La Carte = Miro (à venir).
-  const deliverables: { icon: typeof Map; name: string; desc: string; img?: string; fit?: 'contain' | 'cover' }[] = [
+  // Une image DANS chaque case, en mode mockup (screenshot) ou photo. La Carte = Miro (à venir).
+  const deliverables: { icon: typeof Map; name: string; desc: string; img?: string; mock?: boolean }[] = [
     { icon: Map, name: t('v2.sprint.d1.name'), desc: t('v2.sprint.d1.desc') }, // La Carte → Miro (fichier à venir)
-    { icon: MousePointerClick, name: t('v2.sprint.d2.name'), desc: t('v2.sprint.d2.desc'), img: 'proto-front', fit: 'cover' },
-    { icon: FileText, name: t('v2.sprint.d3.name'), desc: t('v2.sprint.d3.desc'), img: 'feuille-photo', fit: 'cover' },
+    { icon: MousePointerClick, name: t('v2.sprint.d2.name'), desc: t('v2.sprint.d2.desc'), img: 'proto-front', mock: true },
+    { icon: FileText, name: t('v2.sprint.d3.name'), desc: t('v2.sprint.d3.desc'), img: 'feuille-photo' },
   ]
 
   return (
@@ -145,17 +146,25 @@ export default function SprintDiagnostic() {
                         </p>
                       </div>
                     </div>
-                    {d.img && (
+                    {d.img && (d.mock ? (
+                      // Screenshot produit → mockup navigateur contenu avec marge (jamais zoomé)
+                      <div style={{ padding: 16, background: 'var(--bg-elevated)', borderTop: '1px solid var(--border)' }}>
+                        <div style={{ height: 168 }}>
+                          <ScreenMock src={`/realisations/prototype/${d.img}.jpg`} alt={d.name} />
+                        </div>
+                      </div>
+                    ) : (
+                      // Vraie photo → cadrage cover naturel
                       <div style={{ position: 'relative', width: '100%', height: 176, background: 'var(--bg-elevated)', borderTop: '1px solid var(--border)' }}>
                         <Image
                           src={`/realisations/prototype/${d.img}.jpg`}
                           alt={d.name}
                           fill
                           sizes="(max-width: 900px) 90vw, 440px"
-                          style={{ objectFit: d.fit, objectPosition: 'center top', padding: d.fit === 'contain' ? '10px' : 0 }}
+                          style={{ objectFit: 'cover', objectPosition: 'center top' }}
                         />
                       </div>
-                    )}
+                    ))}
                   </div>
                 </FadeUp>
               )
