@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { Map, MousePointerClick, FileText, ArrowRight } from 'lucide-react'
 import FadeUp from '@/components/ui/FadeUp'
 import { useLang } from '@/components/providers/LangProvider'
@@ -13,10 +14,11 @@ import { useLang } from '@/components/providers/LangProvider'
 export default function SprintDiagnostic() {
   const { t } = useLang()
 
+  // Chaque livrable a une petite photo (mockup anonymisé/flouté, RGPD-safe).
   const deliverables = [
-    { icon: Map, name: t('v2.sprint.d1.name'), desc: t('v2.sprint.d1.desc') },
-    { icon: MousePointerClick, name: t('v2.sprint.d2.name'), desc: t('v2.sprint.d2.desc') },
-    { icon: FileText, name: t('v2.sprint.d3.name'), desc: t('v2.sprint.d3.desc') },
+    { icon: Map, name: t('v2.sprint.d1.name'), desc: t('v2.sprint.d1.desc'), img: 'eventiq' },
+    { icon: MousePointerClick, name: t('v2.sprint.d2.name'), desc: t('v2.sprint.d2.desc'), img: 'restaurantiq' },
+    { icon: FileText, name: t('v2.sprint.d3.name'), desc: t('v2.sprint.d3.desc'), img: 'estateiq' },
   ]
 
   return (
@@ -107,39 +109,55 @@ export default function SprintDiagnostic() {
                 <FadeUp key={d.name} delay={0.1 + i * 0.1}>
                   <div
                     style={{
-                      display: 'flex',
-                      gap: 16,
-                      alignItems: 'flex-start',
                       background: 'var(--bg-card)',
                       border: '1px solid var(--border)',
                       borderRadius: 12,
-                      padding: '22px 22px',
+                      overflow: 'hidden',
                     }}
                   >
-                    <span
-                      aria-hidden="true"
-                      style={{
-                        flex: 'none',
-                        width: 44,
-                        height: 44,
-                        borderRadius: 11,
-                        background: 'var(--accent-subtle)',
-                        border: '1px solid rgba(230,57,70,0.18)',
-                        color: 'var(--accent)',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                      }}
-                    >
-                      <Icon size={20} strokeWidth={1.8} />
-                    </span>
-                    <div>
-                      <p className="font-serif italic" style={{ fontSize: 20, fontWeight: 400, color: 'var(--text)', margin: '2px 0 6px' }}>
-                        {d.name}
-                      </p>
-                      <p className="font-sans" style={{ fontSize: 13.5, lineHeight: 1.55, color: 'var(--text-secondary)', fontWeight: 300, margin: 0 }}>
-                        {d.desc}
-                      </p>
+                    {/* Bandeau-photo : mockup anonymisé illustrant le livrable */}
+                    <div style={{ position: 'relative', width: '100%', height: 104, background: 'var(--bg-elevated)' }}>
+                      <Image
+                        src={`/realisations/mockups/${d.img}.webp`}
+                        alt=""
+                        fill
+                        sizes="(max-width: 900px) 100vw, 440px"
+                        style={{ objectFit: 'cover', objectPosition: 'top center' }}
+                      />
+                      <span
+                        aria-hidden="true"
+                        style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(14,14,18,0.05), var(--bg-card))' }}
+                      />
+                    </div>
+                    <div style={{ display: 'flex', gap: 16, alignItems: 'flex-start', padding: '18px 22px 22px' }}>
+                      <span
+                        aria-hidden="true"
+                        style={{
+                          flex: 'none',
+                          width: 44,
+                          height: 44,
+                          borderRadius: 11,
+                          background: 'var(--accent-subtle)',
+                          border: '1px solid rgba(230,57,70,0.18)',
+                          color: 'var(--accent)',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          marginTop: -34,
+                          boxShadow: '0 4px 14px -6px rgba(0,0,0,0.4)',
+                          backdropFilter: 'blur(2px)',
+                        }}
+                      >
+                        <Icon size={20} strokeWidth={1.8} />
+                      </span>
+                      <div>
+                        <p className="font-serif italic" style={{ fontSize: 20, fontWeight: 400, color: 'var(--text)', margin: '2px 0 6px' }}>
+                          {d.name}
+                        </p>
+                        <p className="font-sans" style={{ fontSize: 13.5, lineHeight: 1.55, color: 'var(--text-secondary)', fontWeight: 300, margin: 0 }}>
+                          {d.desc}
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </FadeUp>

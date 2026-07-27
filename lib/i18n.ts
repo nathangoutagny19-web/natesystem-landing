@@ -1422,7 +1422,7 @@ export const translations = {
   'v2.hero.proof': { en: 'On average, 10+ hours a week recovered for our clients.', fr: 'En moyenne 10 h+ par semaine récupérées chez nos clients.' },
   'v2.hero.cta': { en: 'Book a call', fr: 'Réserver un appel' },
 
-  'v2.sprint.eyebrow': { en: 'THE ENTRY OFFER', fr: 'L\'OFFRE D\'ENTRÉE' },
+  'v2.sprint.eyebrow': { en: 'First step · no commitment', fr: 'Première étape · sans engagement' },
   'v2.sprint.title': { en: 'The Diagnostic', fr: 'Le Diagnostic' },
   'v2.sprint.format': { en: '2 weeks · 3 to 5 calls · nothing to prepare', fr: '2 semaines · 3 à 5 appels · rien à préparer' },
   'v2.sprint.intro': { en: 'You prepare nothing, you fill in nothing. You talk — we do the work.', fr: 'Vous ne préparez rien, vous ne remplissez rien. Vous parlez — on fait le travail.' },
