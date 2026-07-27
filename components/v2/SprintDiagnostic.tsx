@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { Map, MousePointerClick, FileText, ArrowRight } from 'lucide-react'
 import FadeUp from '@/components/ui/FadeUp'
 import { useLang } from '@/components/providers/LangProvider'
@@ -99,8 +100,19 @@ export default function SprintDiagnostic() {
             </div>
           </FadeUp>
 
-          {/* Right — the 3 deliverables */}
+          {/* Right — le prototype (dashboards fanned) + les 3 livrables */}
           <div className="sprint-cards">
+            <FadeUp>
+              <div className="fanned" aria-hidden="true">
+                <div className="fanned-card fanned-back">
+                  <Image src="/realisations/prototype/proto-back.jpg" alt="" fill sizes="(max-width: 900px) 90vw, 460px" style={{ objectFit: 'cover', objectPosition: 'top left' }} />
+                </div>
+                <div className="fanned-card fanned-front">
+                  <Image src="/realisations/prototype/proto-front.jpg" alt={t('v2.sprint.d2.name')} fill sizes="(max-width: 900px) 90vw, 460px" style={{ objectFit: 'cover', objectPosition: 'top' }} />
+                </div>
+              </div>
+            </FadeUp>
+
             {deliverables.map((d, i) => {
               const Icon = d.icon
               return (
@@ -171,6 +183,21 @@ export default function SprintDiagnostic() {
           display: flex;
           flex-direction: column;
           gap: 14px;
+        }
+        /* Prototype — dashboards "fanned" (front net + back qui dépasse) */
+        .fanned { position: relative; width: 100%; aspect-ratio: 4 / 3; margin-bottom: 8px; }
+        .fanned-card {
+          position: absolute; width: 86%; aspect-ratio: 16 / 10;
+          border-radius: 12px; overflow: hidden; border: 1px solid var(--border);
+          background: #fff;
+        }
+        .fanned-back {
+          top: 0; left: 0; z-index: 1; transform: rotate(-4.5deg) scale(0.97);
+          box-shadow: 0 10px 26px -12px rgba(15,23,42,0.34);
+        }
+        .fanned-front {
+          bottom: 0; right: 0; z-index: 2; transform: rotate(2deg);
+          box-shadow: 0 20px 46px -18px rgba(15,23,42,0.5);
         }
         @media (max-width: 900px) {
           .sprint-grid {
