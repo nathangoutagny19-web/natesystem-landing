@@ -252,7 +252,7 @@ export default function Transformation() {
               />
               <path
                 className="baf-arrow-head"
-                d="M108 150 L 92 142 M108 150 L 96 164"
+                d="M108 150 L 92 141 M108 150 L 90 157"
                 stroke="var(--accent)"
                 strokeWidth="3"
                 strokeLinecap="round"
