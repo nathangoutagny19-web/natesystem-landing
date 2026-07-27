@@ -565,6 +565,38 @@ html.light .mega-item-icon {
 }
 .mega-feature:hover .mega-feature-cta { color: var(--accent); gap: 8px; }
 
+/* Footer CTA du méga — rappelle « voir le reste » + « prendre un appel » */
+.nav-mega-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 12px;
+  padding: 12px 6px 2px;
+  border-top: 1px solid var(--border);
+}
+.nav-mega-foot-link {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.3px;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.nav-mega-foot-link:hover { color: var(--text); }
+.nav-mega-foot-cta {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.3px;
+  color: var(--accent);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: gap 0.2s ease;
+}
+.nav-mega-foot-cta:hover { gap: 8px; }
+
 /* ——— LANG DROPDOWN ——— */
 .lang-dropdown { position: relative; }
 .lang-current {

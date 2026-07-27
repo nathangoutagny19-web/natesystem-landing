@@ -177,6 +177,10 @@ export default function Nav() {
                     cta={d('Voir le cas Chromosome', 'See the Chromosome case')}
                   />
                 </div>
+                <div className="nav-mega-foot">
+                  <Link href="/services" className="nav-mega-foot-link">{d('Tous nos services', 'All our services')} &rarr;</Link>
+                  <Link href={CAL_LINK} className="nav-mega-foot-cta">{d('Réserver un appel', 'Book a call')} &rarr;</Link>
+                </div>
               </div>
             </div>
 
@@ -204,6 +208,10 @@ export default function Nav() {
                     title={d('Essayez nos apps en vrai', 'Try our apps for real')}
                     cta={d('Vidéos & outils', 'Videos & tools')}
                   />
+                </div>
+                <div className="nav-mega-foot">
+                  <Link href="/resources" className="nav-mega-foot-link">{d('Toutes les ressources', 'All resources')} &rarr;</Link>
+                  <Link href={CAL_LINK} className="nav-mega-foot-cta">{d('Réserver un appel', 'Book a call')} &rarr;</Link>
                 </div>
               </div>
             </div>
