@@ -262,14 +262,6 @@ export default function Transformation() {
           </div>
         </div>
 
-        <FadeUp delay={0.24}>
-          <p
-            className="font-serif italic text-center"
-            style={{ fontSize: 'clamp(20px, 3vw, 26px)', fontWeight: 400, color: 'var(--text)', lineHeight: 1.4, maxWidth: '640px', margin: '56px auto 0' }}
-          >
-            {t('trans.punch')}
-          </p>
-        </FadeUp>
       </div>
 
       <style jsx>{`

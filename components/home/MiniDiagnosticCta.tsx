@@ -5,32 +5,33 @@ import FadeUp from '@/components/ui/FadeUp'
 import { useLang } from '@/components/providers/LangProvider'
 
 /**
- * Petit encart "mini-diagnostic gratuit", placé juste sous la bascule
- * avant/après ("Nos clients étaient là, aujourd'hui de l'autre côté").
- * Plein de valeur, gratuit, mais compact — pas une grosse section.
- * CTA → /tools/diagnostic-ia.
+ * Invitation au diagnostic gratuit, juste après l'avant/après.
+ * Choix Nathan : PAS d'encadré — un grand texte + le bouton en dessous, centré.
+ * Remplace l'ancienne bascule « nos clients étaient là… ».
  */
 export default function MiniDiagnosticCta() {
   const { lang } = useLang()
   const d = (fr: string, en: string) => (lang === 'en' ? en : fr)
 
   return (
-    <section style={{ padding: '8px 24px 8px' }}>
-      <FadeUp className="mx-auto" >
-        <div className="mini-diag mx-auto">
-          <div className="mini-diag-copy">
-            <span className="font-mono mini-diag-eyebrow">
-              {d('Gratuit · 4 min · sans e-mail', 'Free · 4 min · no email')}
-            </span>
-            <h3 className="font-serif italic mini-diag-title">
-              {d('Et vous, où en êtes-vous ?', 'And you — where do you stand?')}
-            </h3>
-            <p className="font-sans mini-diag-sub">
-              {d('Le mini-diagnostic chiffre ce que votre stack SaaS gaspille, les heures que votre équipe perd et votre maturité IA — avec 3 leviers priorisés.',
-                 'The mini-diagnostic quantifies what your SaaS stack wastes, the hours your team loses and your AI maturity — with 3 prioritised levers.')}
-            </p>
-          </div>
-          <Link href="/tools/diagnostic-ia" className="btn-primary mini-diag-cta">
+    <section style={{ padding: '8px 24px 96px' }}>
+      <FadeUp className="mx-auto text-center" >
+        <div className="mx-auto" style={{ maxWidth: 820 }}>
+          <h3
+            className="font-serif italic"
+            style={{ fontSize: 'clamp(23px, 3.4vw, 36px)', fontWeight: 400, lineHeight: 1.3, color: 'var(--text)', margin: 0 }}
+          >
+            {d('On vous offre un ', 'We give you a ')}
+            <span className="accent">{d('diagnostic gratuit, sans e-mail', 'free diagnostic, no email')}</span>
+            {d(' — pour voir exactement où partent vos heures et votre argent.', ' — to see exactly where your hours and money go.')}
+          </h3>
+          <p
+            className="font-sans"
+            style={{ fontSize: 14, fontWeight: 300, color: 'var(--text-secondary)', lineHeight: 1.6, maxWidth: 560, margin: '18px auto 30px' }}
+          >
+            {d('4 minutes, chiffré, avec 3 leviers priorisés. Sans engagement.', '4 minutes, quantified, with 3 prioritised levers. No commitment.')}
+          </p>
+          <Link href="/tools/diagnostic-ia" className="btn-primary" style={{ fontSize: 14 }}>
             <span className="btn-primary-dot" />
             {d('Faire le diagnostic gratuit', 'Take the free diagnostic')} &rarr;
           </Link>
