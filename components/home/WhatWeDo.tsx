@@ -8,8 +8,8 @@ type Item = { titleFr: string; titleEn: string; descFr: string; descEn: string }
 
 const ITEMS: Item[] = [
   {
-    titleFr: 'Consulting & cartographie',
-    titleEn: 'Consulting & mapping',
+    titleFr: 'Consulting opérationnel',
+    titleEn: 'Operational consulting',
     descFr: 'On analyse vos process, opérations et workflows — de l’arrivée d’un prospect au client qui recommande. On cartographie tout, puis on repère où vous gagnez le plus.',
     descEn: 'We analyse your processes, operations and workflows — from a prospect’s arrival to a client who refers you. We map it all, then pinpoint where you gain the most.',
   },
@@ -112,10 +112,10 @@ export default function WhatWeDo() {
     <section id="ce-quon-fait" style={{ padding: '120px 24px' }}>
       <div className="mx-auto" style={{ maxWidth: '1040px' }}>
         <FadeUp className="text-center mb-16">
-          <span className="section-label">{d('Ce qu’on fait', 'What we do')}</span>
+          <span className="section-label">{d('Nos services', 'Our services')}</span>
           <h2 className="section-title" style={{ maxWidth: '720px', margin: '0 auto 20px' }}>
-            {d('Une infrastructure, ', 'One infrastructure, ')}
-            <span className="accent">{d('pas des rustines.', 'not band-aids.')}</span>
+            {d('Une expertise, ', 'Real expertise, ')}
+            <span className="accent">{d('forgée sur le terrain.', 'forged in the field.')}</span>
           </h2>
           <p className="font-sans" style={{ fontSize: '15px', fontWeight: 300, color: 'var(--text-secondary)', maxWidth: '620px', margin: '0 auto', lineHeight: 1.7 }}>
             {d('On remplace les outils génériques qui ne collent pas par du sur-mesure que vous possédez. L’IA et l’automatisation sont intégrées uniquement là où elles font gagner de vraies heures.',
