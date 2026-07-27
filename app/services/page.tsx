@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { Clock, TrendingUp, Repeat, Smile, Database, ClipboardCheck, Boxes, Brain, ArrowRight, type LucideIcon } from 'lucide-react'
+import { Clock, TrendingUp, Repeat, Smile, Database, Search, Boxes, Cpu, GraduationCap, ArrowRight, type LucideIcon } from 'lucide-react'
 import Nav from '@/components/layout/Nav'
 import Footer from '@/components/layout/Footer'
 import MobileCta from '@/components/layout/MobileCta'
@@ -50,25 +50,32 @@ const outcomes: Outcome[] = [
 type Pillar = { icon: LucideIcon; eyebrow: string; title: string; desc: string; href: string }
 const pillars: Pillar[] = [
   {
-    icon: ClipboardCheck,
+    icon: Search,
     eyebrow: 'On comprend',
-    title: 'Audit & consulting',
-    desc: 'On cartographie vos process, on repère ce qui vous fait perdre du temps et de l\'argent, et on vous remet un plan clair et chiffré.',
+    title: 'Consulting & cartographie',
+    desc: 'On analyse vos process, opérations et workflows — de l\'arrivée d\'un prospect au client qui recommande. On cartographie tout, on repère où vous gagnez le plus.',
     href: '/services/audit',
   },
   {
     icon: Boxes,
     eyebrow: 'On construit',
-    title: 'Logiciel & plateforme sur-mesure',
-    desc: 'On réunit vos outils et vos données dans une seule plateforme conçue pour votre métier. Vous êtes propriétaire du code, hébergé en UE.',
+    title: 'Développement sur-mesure',
+    desc: 'Logiciels métier, ERP, portails, cockpits — construits autour de vos opérations, pas l\'inverse. Vos données unifiées, votre code qui vous appartient.',
     href: '/services/logiciel-sur-mesure',
   },
   {
-    icon: Brain,
+    icon: Cpu,
     eyebrow: 'On propulse',
-    title: 'IA & automatisation',
-    desc: 'De l\'IA et de l\'automatisation là où elles remplacent de vraies heures — jamais en décoration. De la data pour décider sur du concret.',
+    title: 'Transformation & IA',
+    desc: 'De l\'IA et de l\'automatisation par-dessus votre système, uniquement là où elles remplacent de vraies heures. Jamais en décoration.',
     href: '/services/ia',
+  },
+  {
+    icon: GraduationCap,
+    eyebrow: 'On rend autonome',
+    title: 'Formation & accompagnement',
+    desc: 'On forme vos équipes, du dirigeant au terrain, à utiliser ces outils au quotidien — jusqu\'à l\'autonomie complète.',
+    href: CAL_LINK,
   },
 ]
 
@@ -198,8 +205,8 @@ export default function ServicesPage() {
       <style jsx>{`
         .svc-pillars {
           display: grid;
-          grid-template-columns: repeat(3, minmax(0, 1fr));
-          gap: 20px;
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+          gap: 18px;
           align-items: stretch;
         }
         .svc-pillar-card {
@@ -232,7 +239,8 @@ export default function ServicesPage() {
         .svc-pillar-card :global(svg) { transition: transform 220ms ease; }
         .svc-pillar-card:hover .svc-pillar-link :global(svg) { transform: translateX(3px); }
 
-        @media (max-width: 900px) { .svc-pillars { grid-template-columns: 1fr; gap: 18px; } }
+        @media (max-width: 1080px) { .svc-pillars { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 560px) { .svc-pillars { grid-template-columns: 1fr; } }
       `}</style>
     </main>
   )
