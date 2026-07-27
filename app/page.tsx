@@ -76,13 +76,20 @@ export default function Home() {
       <Different />
       <Divider />
 
-      {/* 10 — Commence maintenant : l'offre d'entrée « Le Diagnostic » + secteurs servis */}
-      <SprintDiagnostic />
-      <Sectors />
+      {/* 9b — Bandeau crédibilité (4 engagements), juste sous « Ce qui nous rend
+             différents » (choix Nathan). [[À CONFIRMER : bandeau = crédibilité ?]] */}
+      <CredibilityBand />
       <Divider />
 
-      {/* 11 — Prise de rendez-vous : embed Cal.com (ancre #rendez-vous) — juste après l'offre */}
+      {/* 10 — Commence maintenant : l'offre d'entrée « Le Diagnostic » */}
+      <SprintDiagnostic />
+
+      {/* 11 — Embed Cal.com SEUL (entête retirée), juste après l'offre d'entrée */}
       <CtaFinal />
+      <Divider />
+
+      {/* 12 — Les secteurs qu'on sert (cross-secteur) */}
+      <Sectors />
       <Divider />
 
       {/* 12 — Comparatif honnête 4 colonnes */}
@@ -99,10 +106,6 @@ export default function Home() {
 
       {/* 15 — Demandez à l'IA : preuve sociale via IA */}
       <AskAI />
-      <Divider />
-
-      {/* 16 — Bandeau crédibilité, juste avant le footer */}
-      <CredibilityBand />
 
       {/* Footer — inclut désormais le bloc fondateur (Nathan + LinkedIn) en bas-gauche */}
       <Footer />

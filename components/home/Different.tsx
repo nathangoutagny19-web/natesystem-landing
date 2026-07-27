@@ -1,6 +1,6 @@
 'use client'
 
-import { ShieldCheck, Code2, MapPin, LineChart, type LucideIcon } from 'lucide-react'
+import { Target, Zap, KeyRound, ShieldCheck, type LucideIcon } from 'lucide-react'
 import FadeUp from '@/components/ui/FadeUp'
 import LiteYouTube from '@/components/ui/LiteYouTube'
 import { useLang } from '@/components/providers/LangProvider'
@@ -11,32 +11,32 @@ type Point = { icon: LucideIcon; titleFr: string; titleEn: string; descFr: strin
 
 const POINTS: Point[] = [
   {
-    icon: Code2,
-    titleFr: 'Le code est à vous, à 100 %',
-    titleEn: 'The code is 100 % yours',
-    descFr: 'Livré, hébergé chez vous, documenté. Zéro abonnement pour y accéder, zéro lock-in. N’importe quel dev compétent peut reprendre derrière.',
-    descEn: 'Delivered, hosted on your side, documented. No subscription to access it, no lock-in. Any competent dev can pick up from there.',
+    icon: Target,
+    titleFr: 'Orienté résultat, zéro bricolage',
+    titleEn: 'Result-driven, zero patching',
+    descFr: 'Approche 100 % orientée résultat : que du solide qui tourne et qui rapporte. Jamais de rustine ni de truc à moitié fait.',
+    descEn: 'A 100 % result-driven approach: only solid software that runs and pays off. Never a band-aid or a half-built thing.',
+  },
+  {
+    icon: Zap,
+    titleFr: 'Rapidité & réactivité',
+    titleEn: 'Speed & reactivity',
+    descFr: 'Exécution rapide, feedback en continu. Vous voyez avancer chaque semaine, et on réagit vite dès qu’il faut ajuster.',
+    descEn: 'Fast execution, continuous feedback. You see progress every week, and we react fast the moment something needs adjusting.',
+  },
+  {
+    icon: KeyRound,
+    titleFr: 'Vous restez autonome',
+    titleEn: 'You stay autonomous',
+    descFr: 'Dès les premiers résultats atteints, on vous laisse la main : équipes autonomes, code documenté à vous. Vous ne dépendez de personne.',
+    descEn: 'As soon as the first results land, we hand over: autonomous teams, documented code you own. You depend on no one.',
   },
   {
     icon: ShieldCheck,
-    titleFr: 'Codé par le fondateur',
-    titleEn: 'Founder-coded',
-    descFr: 'Pas de commercial, pas de junior qui sous-traite. Celui qui vous parle est celui qui construit — et il répond de chaque livraison.',
-    descEn: 'No sales rep, no junior subcontracting. The person you talk to is the one who builds — and answers for every delivery.',
-  },
-  {
-    icon: MapPin,
-    titleFr: 'Hébergé en UE, RGPD-natif',
-    titleEn: 'EU-hosted, GDPR-native',
-    descFr: 'Vos données restent en Europe, protégées et conformes. Pas de zone grise sur où elles vivent.',
-    descEn: 'Your data stays in Europe, protected and compliant. No grey area on where it lives.',
-  },
-  {
-    icon: LineChart,
-    titleFr: 'Chaque résultat mesuré',
-    titleEn: 'Every result measured',
-    descFr: 'On chiffre le gain avec vous, avant et après. Pas de promesse en l’air : des heures et des euros, documentés.',
-    descEn: 'We quantify the gain with you, before and after. No vague promises: hours and euros, documented.',
+    titleFr: 'La garantie résultat',
+    titleEn: 'The results guarantee',
+    descFr: 'Si les résultats promis ne sont pas là, on continue à travailler dessus jusqu’à les atteindre. Une garantie qui couvre aussi les délais, la propriété du code et la qualité.',
+    descEn: 'If the promised results aren’t there, we keep working until they are. A guarantee that also covers deadlines, code ownership and quality.',
   },
 ]
 
