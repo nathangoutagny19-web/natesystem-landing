@@ -244,7 +244,7 @@ export default function Transformation() {
             <svg viewBox="0 0 150 190" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
                 className="baf-arrow-path"
-                d="M90 8 C 114 30, 106 56, 72 64 C 48 70, 36 86, 50 106 C 62 124, 58 150, 108 160"
+                d="M90 8 C 114 30, 106 56, 72 64 C 48 70, 34 88, 52 108 C 70 130, 62 152, 106 154"
                 stroke="var(--accent)"
                 strokeWidth="3"
                 strokeLinecap="round"
@@ -252,7 +252,7 @@ export default function Transformation() {
               />
               <path
                 className="baf-arrow-head"
-                d="M108 160 l -18 -3 M108 160 l -4 -18"
+                d="M106 154 l -15 -9 M106 154 l -15 9"
                 stroke="var(--accent)"
                 strokeWidth="3"
                 strokeLinecap="round"

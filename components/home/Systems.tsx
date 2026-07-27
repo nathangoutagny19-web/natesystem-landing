@@ -14,6 +14,7 @@ import {
   Star,
   type LucideIcon,
 } from 'lucide-react'
+import Link from 'next/link'
 import FadeUp from '@/components/ui/FadeUp'
 import { useLang } from '@/components/providers/LangProvider'
 
@@ -91,6 +92,32 @@ export default function Systems() {
             ))}
           </div>
         </div>
+      </div>
+
+      {/* Petit CTA vers la page Réalisations complète */}
+      <div className="mx-auto text-center" style={{ maxWidth: '1100px', padding: '32px 24px 0' }}>
+        <FadeUp>
+          <Link
+            href="/case-studies"
+            className="font-mono"
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: 7,
+              fontSize: 12.5,
+              letterSpacing: 0.4,
+              color: 'var(--text-secondary)',
+              textDecoration: 'none',
+              borderBottom: '1px solid var(--border)',
+              paddingBottom: 3,
+              transition: 'color 0.25s ease, border-color 0.25s ease',
+            }}
+            onMouseEnter={(e) => { e.currentTarget.style.color = 'var(--accent)'; e.currentTarget.style.borderColor = 'var(--accent)' }}
+            onMouseLeave={(e) => { e.currentTarget.style.color = 'var(--text-secondary)'; e.currentTarget.style.borderColor = 'var(--border)' }}
+          >
+            {t('systems.allCases')} &rarr;
+          </Link>
+        </FadeUp>
       </div>
 
       <style jsx>{`

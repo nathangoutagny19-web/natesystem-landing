@@ -229,6 +229,7 @@ export const translations = {
     en: 'Custom software and AI solutions we actually built and deployed. Every number is real, measured with the client. And we never ship anything that doesn\'t save time or money.',
     fr: 'Des logiciels sur-mesure et des solutions IA qu\'on a vraiment construits et déployés. Chaque chiffre est réel, mesuré avec le client. Et on ne lance rien qui ne fasse pas gagner du temps ou de l\'argent.',
   },
+  'systems.allCases': { en: 'See all our case studies', fr: 'Voir tous nos cas clients' },
   'systems.groupAI': { en: 'AI systems', fr: 'Systèmes IA' },
   'systems.groupSoft': { en: 'Custom software', fr: 'Logiciels métier sur-mesure' },
   'systems.tagAI': { en: 'AI integration', fr: 'Intégration IA' },
