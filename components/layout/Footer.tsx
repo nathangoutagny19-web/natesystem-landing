@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { useLang } from '@/components/providers/LangProvider'
 import { useTheme } from '@/components/providers/ThemeProvider'
 
@@ -67,59 +68,59 @@ export default function Footer() {
           <p className="font-sans" style={{ fontSize: '12px', color: 'var(--text-muted)', maxWidth: '240px', fontWeight: 300, lineHeight: 1.6 }}>
             {t('footer.tagline')}
           </p>
-          <div className="flex flex-col gap-1" style={{ marginTop: 8 }}>
-            <p
-              className="font-mono"
-              style={{
-                fontSize: 10,
-                letterSpacing: 2,
-                textTransform: 'uppercase',
-                color: 'var(--text)',
-                fontWeight: 600,
-              }}
-            >
-              {t('footer.contactLabel')}
-            </p>
-            <a
-              href="mailto:nathan@natesystem.com"
-              className="font-sans footer-link"
-              style={{
-                fontSize: '13px',
-                color: 'var(--text-muted)',
-                textDecoration: 'none',
-                fontWeight: 300,
-                lineHeight: 1.6,
-                transition: 'color 0.2s',
-              }}
-            >
-              nathan@natesystem.com
-            </a>
+
+          {/* Carte fondateur — avatar + nom + rôle (l'« à propos » vit ici). Jamais « seul ». */}
+          <div className="footer-founder-card">
+            <div className="footer-avatar">
+              <Image src="/nathan.png" alt="Nathan Goutagny" fill sizes="52px" style={{ objectFit: 'cover' }} />
+            </div>
+            <div>
+              <div className="font-sans" style={{ fontSize: 14.5, fontWeight: 600, color: 'var(--text)', lineHeight: 1.15 }}>
+                Nathan Goutagny
+              </div>
+              <div
+                className="font-mono"
+                style={{ fontSize: 10, letterSpacing: 1.6, textTransform: 'uppercase', color: 'var(--accent)', marginTop: 5, fontWeight: 500 }}
+              >
+                {t('footer.founderRole')}
+              </div>
+            </div>
+          </div>
+
+          {/* Réseaux — LinkedIn + YouTube + e-mail (icônes) */}
+          <div className="footer-socials">
             <a
               href="https://www.linkedin.com/in/nathan-goutagny/"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-sans footer-link"
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: 7,
-                fontSize: '13px',
-                color: 'var(--text-muted)',
-                textDecoration: 'none',
-                fontWeight: 300,
-                lineHeight: 1.6,
-                transition: 'color 0.2s',
-              }}
+              className="footer-soc"
+              aria-label="LinkedIn — Nathan Goutagny"
             >
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
               </svg>
-              LinkedIn
+            </a>
+            <a
+              href="https://www.youtube.com/channel/UC4FHx5cD7xsePnIVZ13abmw"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-soc"
+              aria-label="YouTube — Nathan Goutagny"
+            >
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+              </svg>
+            </a>
+            <a href="mailto:nathan@natesystem.com" className="footer-soc" aria-label="E-mail — nathan@natesystem.com">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <rect x="2" y="4" width="20" height="16" rx="2" />
+                <path d="m22 7-10 6L2 7" />
+              </svg>
             </a>
           </div>
 
-          {/* Fondateur — l'« à propos » vit ici (déplacé de la home). Jamais « seul ». */}
-          <p className="font-sans" style={{ fontSize: '12px', color: 'var(--text-muted)', fontWeight: 300, lineHeight: 1.6, marginTop: 12, maxWidth: 240 }}>
+          {/* Fondateur — texte */}
+          <p className="font-sans" style={{ fontSize: '12px', color: 'var(--text-muted)', fontWeight: 300, lineHeight: 1.6, marginTop: 6, maxWidth: 240 }}>
             {t('footer.founder')}
           </p>
         </div>
@@ -216,6 +217,18 @@ export default function Footer() {
       <span aria-hidden="true" className="footer-watermark font-serif italic">NateSystem</span>
 
       <style>{`
+        .footer-founder-card { display: flex; align-items: center; gap: 12px; margin-top: 10px; }
+        .footer-avatar {
+          width: 52px; height: 52px; border-radius: 50%; overflow: hidden;
+          position: relative; border: 1px solid var(--border); flex-shrink: 0;
+        }
+        .footer-socials { display: flex; gap: 8px; margin-top: 4px; }
+        .footer-soc {
+          width: 36px; height: 36px; display: inline-flex; align-items: center; justify-content: center;
+          border-radius: 9px; background: var(--bg-elevated); border: 1px solid var(--border);
+          color: var(--text-secondary); transition: color .2s, border-color .2s, transform .2s;
+        }
+        .footer-soc:hover { color: var(--accent); border-color: var(--accent); transform: translateY(-2px); }
         .footer-watermark {
           position: absolute;
           left: 50%;
