@@ -29,7 +29,7 @@ export default function MiniDiagnosticCta() {
             className="font-sans"
             style={{ fontSize: 14, fontWeight: 300, color: 'var(--text-secondary)', lineHeight: 1.6, maxWidth: 560, margin: '18px auto 30px' }}
           >
-            {d('4 minutes, chiffré, avec 3 leviers priorisés. Sans engagement.', '4 minutes, quantified, with 3 prioritised levers. No commitment.')}
+            {d('60 secondes, chiffré, avec 3 leviers priorisés. Sans engagement.', '60 seconds, quantified, with 3 prioritised levers. No commitment.')}
           </p>
           <Link href="/tools/diagnostic-ia" className="btn-primary" style={{ fontSize: 14 }}>
             <span className="btn-primary-dot" />
