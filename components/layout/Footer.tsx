@@ -133,7 +133,7 @@ export default function Footer() {
           <FooterLink href="/blog">{t('resources.blog')}</FooterLink>
           <FooterLink href="/playbook">{t('footer.link.playbooks')}</FooterLink>
           <FooterLink href="/glossaire">{t('footer.link.glossary')}</FooterLink>
-          <FooterLink href="/resources#case-studies">{t('resources.caseStudies')}</FooterLink>
+          <FooterLink href="/resources#videos">{t('resources.caseStudies')}</FooterLink>
           <FooterLink href="/resources">{t('nav.resources')}</FooterLink>
           <FooterLink href="/book">{t('footer.link.book')}</FooterLink>
         </FooterCol>

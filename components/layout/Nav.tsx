@@ -177,14 +177,14 @@ export default function Nav() {
 
             {/* Réalisations — cas clients + démos live (des preuves, pas des outils) */}
             <div className="nav-dropdown">
-              <Link href="/resources#case-studies" className="nav-link nav-link-dropdown">
+              <Link href="/resources#videos" className="nav-link nav-link-dropdown">
                 {t('nav.realisations')} <Chevron />
               </Link>
               <div className="nav-mega nav-mega-2col">
                 <div className="nav-mega-inner">
                   <div className="nav-mega-col">
                     <p className="nav-mega-label">{t('mega.cases')}</p>
-                    <MegaItem href="/resources#case-studies" icon={icons.caseStudy} title={t('resources.caseStudies')} desc={t('resources.caseStudies.desc')} />
+                    <MegaItem href="/resources#videos" icon={icons.caseStudy} title={t('resources.caseStudies')} desc={t('resources.caseStudies.desc')} />
                   </div>
                   <div className="nav-mega-col">
                     <p className="nav-mega-label">{t('mega.demos')}</p>
@@ -269,7 +269,7 @@ export default function Nav() {
           </MobileAccordion>
 
           <MobileAccordion label={t('nav.realisations')} open={mobileRealisationsOpen} onToggle={() => setMobileRealisationsOpen(!mobileRealisationsOpen)}>
-            <MobileLink href="/resources#case-studies" onClick={() => setMenuOpen(false)}>{t('resources.caseStudies')}</MobileLink>
+            <MobileLink href="/resources#videos" onClick={() => setMenuOpen(false)}>{t('resources.caseStudies')}</MobileLink>
             <MobileLink href="https://actifs.natesystem.com" external badge={t('mega.new')} onClick={() => setMenuOpen(false)}>{t('demos.actifs.navTitle')}</MobileLink>
             <MobileLink href="https://stack-stock.natesystem.com" external badge={t('mega.new')} onClick={() => setMenuOpen(false)}>{t('demos.stock.navTitle')}</MobileLink>
             <MobileLink href="/reviews" badge={t('mega.gated')} onClick={() => setMenuOpen(false)}>{t('demos.reviews.navTitle')}</MobileLink>

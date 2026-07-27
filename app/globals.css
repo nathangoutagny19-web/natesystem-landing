@@ -880,3 +880,43 @@ html:not(.light) .trust-logo {
   .mega-panel { display: none; }
   .mobile-cta { display: block; }
 }
+
+/* ——— /RESOURCES page (styled-jsx ne scope pas les motion.div → styles globaux) ——— */
+.res-video-row { display: grid; grid-template-columns: 1fr; gap: 28px; align-items: center; }
+@media (min-width: 900px) { .res-video-row { grid-template-columns: 0.85fr 1.15fr; gap: 44px; } }
+.res-video {
+  position: relative; width: 100%; aspect-ratio: 16 / 9;
+  border-radius: 12px; overflow: hidden; border: 1px solid var(--border); background: #000;
+  box-shadow: 0 1px 2px rgba(15,23,42,0.04), 0 18px 44px -22px rgba(15,23,42,0.32);
+}
+.res-grid-3 { display: grid; grid-template-columns: 1fr; gap: 16px; }
+@media (min-width: 620px) { .res-grid-3 { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 940px) { .res-grid-3 { grid-template-columns: repeat(3, 1fr); } }
+.res-card {
+  display: flex; flex-direction: column; height: 100%;
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: 14px; padding: 22px;
+  transition: transform 0.3s cubic-bezier(0.22,1,0.36,1), border-color 0.3s ease;
+}
+.res-card:hover { transform: translateY(-2px); border-color: var(--border-hover); }
+.res-card-badge-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; gap: 8px; }
+.res-badge { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted); }
+.res-pill {
+  font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent);
+  background: var(--accent-subtle); border: 1px solid rgba(230,57,70,0.22);
+  padding: 3px 8px; border-radius: 999px;
+}
+.res-pill-gated { color: var(--text-secondary); background: transparent; border-color: var(--border); }
+.res-card-cta { font-size: 13px; font-weight: 500; color: var(--accent); margin-top: 16px; }
+.res-feature {
+  display: flex; flex-direction: column; gap: 18px;
+  background: var(--bg-card); border: 1px solid rgba(230,57,70,0.18);
+  border-radius: 16px; padding: clamp(24px, 3vw, 36px);
+  transition: transform 0.3s cubic-bezier(0.22,1,0.36,1), border-color 0.3s ease;
+}
+@media (min-width: 720px) { .res-feature { flex-direction: row; align-items: center; justify-content: space-between; } }
+.res-feature:hover { transform: translateY(-2px); border-color: var(--border-hover); }
+.res-feature-cta {
+  flex: none; font-size: 14px; font-weight: 600; color: var(--accent);
+  border: 1px solid rgba(230,57,70,0.3); border-radius: 999px; padding: 12px 22px; white-space: nowrap;
+}
