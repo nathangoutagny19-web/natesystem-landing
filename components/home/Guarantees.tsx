@@ -81,12 +81,12 @@ function useTypewriter(text: string, active: boolean, speed = 30) {
 
 /* --- Absurd card component --- */
 
-function AbsurdCard({ g, delay }: { g: Guarantee; delay: number }) {
+function AbsurdCard({ g, delay, fullWidth }: { g: Guarantee; delay: number; fullWidth?: boolean }) {
   const [hovered, setHovered] = useState(false)
   const { displayed } = useTypewriter(g.desc, hovered)
 
   return (
-    <FadeUp delay={delay}>
+    <FadeUp delay={delay} className={fullWidth ? 'guarantee-full' : ''}>
       <div
         className="guarantee-absurd"
         onMouseEnter={() => setHovered(true)}
@@ -140,21 +140,9 @@ export default function Guarantees() {
       icon: <IconCode />,
     },
     {
-      title: t('guarantees.productivity.title'),
-      desc: t('guarantees.productivity.desc'),
-      icon: <IconGauge />,
-    },
-    {
       title: t('guarantees.efficiency.title'),
       desc: t('guarantees.efficiency.desc'),
       icon: <IconTarget />,
-    },
-    {
-      title: t('guarantees.family.title'),
-      desc: t('guarantees.family.desc'),
-      icon: null,
-      absurd: true,
-      absurdLabel: t('guarantees.absurdLabel'),
     },
     {
       title: t('guarantees.competitor.title'),
@@ -253,7 +241,7 @@ export default function Guarantees() {
           className="guarantee-grid"
         >
           {absurd.map((g, i) => (
-            <AbsurdCard key={i} g={g} delay={0.35 + i * 0.08} />
+            <AbsurdCard key={i} g={g} delay={0.35 + i * 0.08} fullWidth={absurd.length === 1} />
           ))}
         </div>
       </div>

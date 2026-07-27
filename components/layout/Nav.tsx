@@ -148,11 +148,11 @@ export default function Nav() {
             <span className={`nav-logo-text ${scrolled ? 'nav-logo-text-hidden' : ''}`}>NateSystem</span>
           </Link>
 
-          {/* Center links — desktop. Menu cible : Méthode · Services · Réalisations ·
-              Ressources. « Méthode » pointe vers la section méthode de la home tant
-              que /methode (Lot 2) n'existe pas. Ressources = lien direct (pas de méga). */}
+          {/* Center links — desktop. Menu cible : Notre approche · Services ·
+              Réalisations · Ressources. « Notre approche » = page /methode (Lot 2).
+              Ressources = lien direct (pas de méga). */}
           <nav className="nav-links">
-            <Link href="/#process" className="nav-link">{t('nav.methode')}</Link>
+            <Link href="/methode" className="nav-link">{t('nav.methode')}</Link>
 
             {/* Services */}
             <div className="nav-dropdown">
@@ -259,7 +259,7 @@ export default function Nav() {
         style={{ backdropFilter: 'blur(24px)', WebkitBackdropFilter: 'blur(24px)', background: 'var(--mobile-menu-bg, rgba(14,14,18,0.95))' }}
       >
         <div className="pt-20 px-6 flex flex-col gap-1">
-          <MobileLink href="/#process" onClick={() => setMenuOpen(false)}>{t('nav.methode')}</MobileLink>
+          <MobileLink href="/methode" onClick={() => setMenuOpen(false)}>{t('nav.methode')}</MobileLink>
 
           <MobileAccordion label={t('nav.services')} open={mobileServicesOpen} onToggle={() => setMobileServicesOpen(!mobileServicesOpen)}>
             <MobileLink href={CAL_LINK} onClick={() => setMenuOpen(false)}>{t('nav.svc.sprint')}</MobileLink>
