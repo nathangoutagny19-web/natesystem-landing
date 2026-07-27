@@ -37,6 +37,17 @@ export default function CaseStudiesPage() {
       {/* Cas client — Chromosome (structure OpsKings : citation + vidéo + chiffres) */}
       <CaseStudy />
 
+      {/* Lien vers l'étude de cas écrite (Problème → Solution → Résultats) */}
+      <section style={{ padding: '8px 24px 8px' }}>
+        <div className="mx-auto text-center" style={{ maxWidth: '620px' }}>
+          <FadeUp>
+            <Link href="/case-studies/chromosome" className="btn-ghost">
+              {d('Lire l’étude de cas complète', 'Read the full case study')} &rarr;
+            </Link>
+          </FadeUp>
+        </div>
+      </section>
+
       <Divider />
 
       {/* CTA de clôture */}
