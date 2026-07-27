@@ -505,7 +505,7 @@ html.light .mega-item-icon {
   flex: 1;
   min-height: 0;
   background-color: #fff;
-  background-size: cover;
+  background-size: contain;
   background-position: top center;
   background-repeat: no-repeat;
 }
