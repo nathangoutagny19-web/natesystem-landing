@@ -36,17 +36,17 @@ export default function Systems() {
 
   // Alternate AI ↔ Software so the marquee never shows two same-tag cards in a row.
   const cards: Card[] = [
-    { icon: Zap, title: t('systems.s1.title'), desc: t('systems.s1.desc'), metric: t('systems.s1.metric'), tag: 'ai', mockup: 'scrapavis' },
-    { icon: Utensils, title: t('systems.sw1.title'), desc: t('systems.sw1.desc'), metric: t('systems.sw1.metric'), tag: 'software', sector: t('systems.sw1.sector'), mockup: 'chromosome' },
-    { icon: FileSearch, title: t('systems.s2.title'), desc: t('systems.s2.desc'), metric: t('systems.s2.metric'), tag: 'ai', mockup: 'estateiq' },
-    { icon: GraduationCap, title: t('systems.sw2.title'), desc: t('systems.sw2.desc'), metric: t('systems.sw2.metric'), tag: 'software', sector: t('systems.sw2.sector'), mockup: 'tcrm' },
-    { icon: Send, title: t('systems.s3.title'), desc: t('systems.s3.desc'), metric: t('systems.s3.metric'), tag: 'ai', mockup: 'restaurantiq' },
-    { icon: Users, title: t('systems.sw3.title'), desc: t('systems.sw3.desc'), metric: t('systems.sw3.metric'), tag: 'software', sector: t('systems.sw3.sector'), mockup: 'eventiq' },
-    { icon: RefreshCcw, title: t('systems.s4.title'), desc: t('systems.s4.desc'), metric: t('systems.s4.metric'), tag: 'ai', mockup: 'brasserie' },
-    { icon: Package, title: t('systems.sw4.title'), desc: t('systems.sw4.desc'), metric: t('systems.sw4.metric'), tag: 'software', sector: t('systems.sw4.sector'), mockup: 'chartreux-stock' },
-    { icon: BarChart3, title: t('systems.s5.title'), desc: t('systems.s5.desc'), metric: t('systems.s5.metric'), tag: 'ai', mockup: 'pariselan' },
-    { icon: Clock, title: t('systems.sw5.title'), desc: t('systems.sw5.desc'), metric: t('systems.sw5.metric'), tag: 'software', sector: t('systems.sw5.sector'), mockup: 'simplebook' },
-    { icon: Star, title: t('systems.sw6.title'), desc: t('systems.sw6.desc'), metric: t('systems.sw6.metric'), tag: 'software', sector: t('systems.sw6.sector'), mockup: 'restaurantiq' },
+    { icon: Zap, title: t('systems.s1.title'), desc: t('systems.s1.desc'), metric: t('systems.s1.metric'), tag: 'ai', mockup: 'demos/actifs' },
+    { icon: Utensils, title: t('systems.sw1.title'), desc: t('systems.sw1.desc'), metric: t('systems.sw1.metric'), tag: 'software', sector: t('systems.sw1.sector'), mockup: 'prototype/proto-front' },
+    { icon: FileSearch, title: t('systems.s2.title'), desc: t('systems.s2.desc'), metric: t('systems.s2.metric'), tag: 'ai', mockup: 'demos/reviews' },
+    { icon: GraduationCap, title: t('systems.sw2.title'), desc: t('systems.sw2.desc'), metric: t('systems.sw2.metric'), tag: 'software', sector: t('systems.sw2.sector'), mockup: 'demos/stock' },
+    { icon: Send, title: t('systems.s3.title'), desc: t('systems.s3.desc'), metric: t('systems.s3.metric'), tag: 'ai', mockup: 'demos/actifs' },
+    { icon: Users, title: t('systems.sw3.title'), desc: t('systems.sw3.desc'), metric: t('systems.sw3.metric'), tag: 'software', sector: t('systems.sw3.sector'), mockup: 'prototype/proto-front' },
+    { icon: RefreshCcw, title: t('systems.s4.title'), desc: t('systems.s4.desc'), metric: t('systems.s4.metric'), tag: 'ai', mockup: 'demos/reviews' },
+    { icon: Package, title: t('systems.sw4.title'), desc: t('systems.sw4.desc'), metric: t('systems.sw4.metric'), tag: 'software', sector: t('systems.sw4.sector'), mockup: 'demos/stock' },
+    { icon: BarChart3, title: t('systems.s5.title'), desc: t('systems.s5.desc'), metric: t('systems.s5.metric'), tag: 'ai', mockup: 'demos/actifs' },
+    { icon: Clock, title: t('systems.sw5.title'), desc: t('systems.sw5.desc'), metric: t('systems.sw5.metric'), tag: 'software', sector: t('systems.sw5.sector'), mockup: 'prototype/proto-front' },
+    { icon: Star, title: t('systems.sw6.title'), desc: t('systems.sw6.desc'), metric: t('systems.sw6.metric'), tag: 'software', sector: t('systems.sw6.sector'), mockup: 'demos/reviews' },
   ]
 
   // Duplicate the list for seamless infinite scroll
@@ -208,7 +208,7 @@ function SystemCard({ card, tagLabel }: { card: Card; tagLabel: string }) {
         display: 'flex',
         flexDirection: 'column',
         gap: 14,
-        minHeight: 280,
+        height: 470,
       }}
     >
       <div className="flex items-center justify-between">
@@ -261,30 +261,31 @@ function SystemCard({ card, tagLabel }: { card: Card; tagLabel: string }) {
         )}
       </div>
 
-      {/* Petit aperçu produit flouté (RGPD-safe, décoratif — un différent par carte) */}
+      {/* Aperçu produit — mockup navigateur ENTIER (contain), légèrement flouté (déco, RGPD-safe) */}
       <div
         aria-hidden="true"
         style={{
-          position: 'relative',
-          height: 88,
           borderRadius: 8,
           overflow: 'hidden',
           border: '1px solid var(--border)',
           background: 'var(--bg-elevated)',
         }}
       >
-        <div
-          style={{
-            position: 'absolute',
-            inset: 0,
-            backgroundImage: `url(/realisations/mockups/${card.mockup}.webp)`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'top center',
-            filter: 'blur(3px)',
-            transform: 'scale(1.08)',
-            opacity: 0.85,
-          }}
-        />
+        <div style={{ height: 18, display: 'flex', alignItems: 'center', gap: 4, padding: '0 9px', background: 'var(--bg-card)', borderBottom: '1px solid var(--border)' }}>
+          <span style={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--text-muted)', opacity: 0.5 }} />
+          <span style={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--text-muted)', opacity: 0.5 }} />
+          <span style={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--text-muted)', opacity: 0.5 }} />
+        </div>
+        <div style={{ height: 136, background: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={`/realisations/${card.mockup}.jpg`}
+            alt=""
+            aria-hidden="true"
+            loading="lazy"
+            style={{ width: '100%', height: '100%', objectFit: 'contain', objectPosition: 'top center', filter: 'blur(1.3px)' }}
+          />
+        </div>
       </div>
 
       <p
@@ -296,6 +297,10 @@ function SystemCard({ card, tagLabel }: { card: Card; tagLabel: string }) {
           fontWeight: 300,
           flex: 1,
           margin: 0,
+          display: '-webkit-box',
+          WebkitLineClamp: 3,
+          WebkitBoxOrient: 'vertical',
+          overflow: 'hidden',
         }}
       >
         {card.desc}
