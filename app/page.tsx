@@ -5,7 +5,6 @@ import Hero from '@/components/home/Hero'
 import Transformation from '@/components/home/Transformation'
 import CredibilityBand from '@/components/home/CredibilityBand'
 import ClientsBar from '@/components/home/ClientsBar'
-import WhatWeBuild from '@/components/home/WhatWeBuild'
 import Systems from '@/components/home/Systems'
 import CaseStudy from '@/components/home/CaseStudy'
 import MiniDiagnosticCta from '@/components/home/MiniDiagnosticCta'
@@ -63,10 +62,6 @@ export default function Home() {
 
       {/* 6 — Comment on travaille (méthode résumée) + CTA vers /methode détaillée */}
       <Process home />
-      <Divider />
-
-      {/* 7 — Ce qu'on construit (What we ship) : bande de mockups anonymisés */}
-      <WhatWeBuild />
       <Divider />
 
       {/* 8 — Ce qui nous rend différents : vidéo + différenciateurs */}
