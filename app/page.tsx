@@ -44,15 +44,17 @@ export default function Home() {
       <WhatWeBuild />
       <Divider />
 
-      {/* 3 — Transformation Avant/Après (diagonale) : schéma AVANT + ce qui coûte cher,
-             puis résultats + schéma APRÈS, reliés par une flèche dessinée. Le « coût du
-             bordel » est désormais fusionné ici (plus de section CostPain séparée). */}
+      {/* 3 — Transformation Avant/Après (diagonale) : schéma AVANT + coûts chiffrés,
+             puis gains + schéma APRÈS, reliés par une flèche dessinée. Se termine sur
+             la bascule « nos clients étaient là, aujourd'hui ils sont de l'autre côté ». */}
       <Transformation />
+
+      {/* 4 — La preuve, juste sous la bascule : le short témoignage Chromosome */}
+      <CaseStudy />
       <Divider />
 
-      {/* 4 — Cas concrets : le marquee chiffré + le short témoignage Chromosome */}
+      {/* 5 — Cas concrets chiffrés : le marquee des systèmes livrés */}
       <Systems />
-      <CaseStudy />
       <Divider />
 
       {/* ─────────── REFONTE — APRÈS LA VIDÉO CHROMOSOME (Lot 3) ─────────── */}
