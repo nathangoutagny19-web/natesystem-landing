@@ -11,6 +11,8 @@ type Block = {
   icon: LucideIcon
   Viz: () => React.JSX.Element
   fan?: boolean
+  img?: string
+  photo?: string
   eyebrowFr: string; eyebrowEn: string
   titleFr: string; titleEn: string
   paraFr: string; paraEn: string
@@ -22,12 +24,13 @@ const BLOCKS: Block[] = [
     n: '01',
     icon: Search,
     Viz: VizCarte,
+    img: 'methode/miro-full',
     eyebrowFr: 'La cartographie', eyebrowEn: 'The mapping',
     titleFr: 'On met tout à plat', titleEn: 'We lay it all out',
-    paraFr: 'Tout ce qui vit dans les têtes — la vôtre, celle de votre équipe, celle du collaborateur clé qui partirait avec la moitié de votre process — on le sort et on le met sur papier. En 3 à 5 appels sur deux semaines, on analyse toute l’opération, de bout en bout : de l’arrivée d’un lead au client qui vous en envoie un autre. Le résultat : une carte claire de votre activité, qui devient le socle de tout ce qu’on construit.',
-    paraEn: 'Everything that lives in people’s heads — yours, your team’s, the key person who’d walk out with half your process — gets pulled out and put on paper. Over 3–5 calls in two weeks, we analyse the whole operation, end to end: from a lead entering your world to a client sending you the next one. The output: a clear map of your business that becomes the backbone of everything we build.',
-    bulletsFr: ['Cartographie complète — chaque service, chaque workflow', 'Audit sous-système — chaque partie examinée à part', 'Un langage commun — toute l’équipe voit enfin la même image'],
-    bulletsEn: ['Full process mapping — every department, every workflow', 'Sub-system audit — each part examined on its own', 'A shared language — the whole team finally sees the same picture'],
+    paraFr: 'Tout ce qui vit dans les têtes, la vôtre, celle de votre équipe, celle du collaborateur clé qui partirait avec la moitié de votre process, on le sort et on le met sur papier. En quelques appels sur deux semaines, on analyse toute l’opération, de bout en bout : de l’arrivée d’un lead au client qui vous en envoie un autre. Le résultat : une carte claire de votre activité, qui devient le socle de tout ce qu’on construit.',
+    paraEn: 'Everything that lives in people’s heads, yours, your team’s, the key person who’d walk out with half your process, gets pulled out and put on paper. Over a few calls in two weeks, we analyse the whole operation, end to end: from a lead entering your world to a client sending you the next one. The output: a clear map of your business that becomes the backbone of everything we build.',
+    bulletsFr: ['Cartographie complète, chaque service, chaque workflow', 'Audit sous-système, chaque partie examinée à part', 'Un langage commun, toute l’équipe voit enfin la même image'],
+    bulletsEn: ['Full process mapping, every department, every workflow', 'Sub-system audit, each part examined on its own', 'A shared language, the whole team finally sees the same picture'],
   },
   {
     n: '02',
@@ -36,10 +39,10 @@ const BLOCKS: Block[] = [
     fan: true,
     eyebrowFr: 'Le système sur-mesure · front-end', eyebrowEn: 'The custom system · front-end',
     titleFr: 'L’interface que vos équipes pilotent', titleEn: 'The interface your teams run',
-    paraFr: 'La partie visible : l’interface, le cockpit, le logiciel taillé exactement pour votre façon de travailler — pas l’inverse. Tout le monde s’y connecte, chacun voit ce qu’il doit voir. Chaque client, chaque projet, chaque commande, chaque membre d’équipe, au même endroit.',
-    paraEn: 'The visible part: the interface, the cockpit, the software built exactly for how you work — not the other way round. Everyone logs in, everyone sees what they need. Every client, project, order and team member, in one place.',
-    bulletsFr: ['Une interface pensée pour votre métier, pas un template', 'Un système, une connexion — toute l’entreprise sur la même page', 'Des vues par rôle — chacun voit ce dont il a besoin, rien d’autre'],
-    bulletsEn: ['An interface designed for your trade, not a template', 'One system, one login — the whole company on the same page', 'Role-based views — each person sees what they need, nothing else'],
+    paraFr: 'La partie visible : l’interface, le cockpit, le logiciel taillé exactement pour votre façon de travailler, pas l’inverse. Tout le monde s’y connecte, chacun voit ce qu’il doit voir. Chaque client, chaque projet, chaque commande, chaque membre d’équipe, au même endroit.',
+    paraEn: 'The visible part: the interface, the cockpit, the software built exactly for how you work, not the other way round. Everyone logs in, everyone sees what they need. Every client, project, order and team member, in one place.',
+    bulletsFr: ['Une interface pensée pour votre métier, pas un template', 'Un système, une connexion, toute l’entreprise sur la même page', 'Des vues par rôle, chacun voit ce dont il a besoin, rien d’autre'],
+    bulletsEn: ['An interface designed for your trade, not a template', 'One system, one login, the whole company on the same page', 'Role-based views, each person sees what they need, nothing else'],
   },
   {
     n: '03',
@@ -56,23 +59,25 @@ const BLOCKS: Block[] = [
     n: '04',
     icon: RefreshCcw,
     Viz: VizFeuille,
+    img: 'prototype/proto-front',
     eyebrowFr: 'L’amélioration continue', eyebrowEn: 'Continuous improvement',
     titleFr: 'On fait évoluer, en continu', titleEn: 'We keep it evolving',
-    paraFr: 'Rien n’est figé. Après quelques semaines d’usage, on regarde ce qui marche vraiment et on ajuste. Le système grandit avec votre activité — nouvelles fonctions, nouveaux automatismes, à votre rythme. Et si vous voulez, on reste à vos côtés pour le faire évoluer.',
-    paraEn: 'Nothing is set in stone. After a few weeks of use, we look at what actually works and adjust. The system grows with your business — new features, new automations, at your pace. And if you want, we stay by your side to keep it evolving.',
-    bulletsFr: ['On mesure l’usage réel et on optimise', 'De nouvelles capacités ajoutées quand vous en avez besoin', 'Un système qui grandit avec vous — jamais figé'],
-    bulletsEn: ['We measure real usage and optimise', 'New capabilities added when you need them', 'A system that grows with you — never frozen'],
+    paraFr: 'Rien n’est figé. Après quelques semaines d’usage, on regarde ce qui marche vraiment et on ajuste. Le système grandit avec votre activité, nouvelles fonctions, nouveaux automatismes, à votre rythme. Et si vous voulez, on reste à vos côtés pour le faire évoluer.',
+    paraEn: 'Nothing is set in stone. After a few weeks of use, we look at what actually works and adjust. The system grows with your business, new features, new automations, at your pace. And if you want, we stay by your side to keep it evolving.',
+    bulletsFr: ['On mesure l’usage réel et on optimise', 'De nouvelles capacités ajoutées quand vous en avez besoin', 'Un système qui grandit avec vous, jamais figé'],
+    bulletsEn: ['We measure real usage and optimise', 'New capabilities added when you need them', 'A system that grows with you, never frozen'],
   },
   {
     n: '05',
     icon: GraduationCap,
     Viz: VizTeach,
+    photo: 'prototype/diag-feuille',
     eyebrowFr: 'Jusqu’à l’autonomie', eyebrowEn: 'Until you’re autonomous',
     titleFr: 'Formation & accompagnement', titleEn: 'Training & support',
-    paraFr: 'C’est là qu’on est vraiment différents : on vous rend autonomes. Au lieu de vous garder en dépendance, on forme vos équipes — du dirigeant au terrain — jusqu’à ce qu’elles pilotent l’outil seules. Le code et l’infrastructure vous appartiennent à 100 %, documentés. On reste dispo si vous voulez, mais vous n’êtes jamais coincé avec personne.',
-    paraEn: 'This is where we’re truly different: we make you autonomous. Instead of keeping you dependent, we train your teams — from leadership to the field — until they run the tool on their own. The code and infrastructure are 100% yours, documented. We stay available if you want, but you’re never locked in with anyone.',
-    bulletsFr: ['Formation de toute l’équipe, du dirigeant au terrain', 'Code + infrastructure 100 % à vous, documentés', 'On part quand vous êtes autonomes — jamais avant'],
-    bulletsEn: ['Training for the whole team, leadership to the field', 'Code + infrastructure 100% yours, documented', 'We leave when you’re autonomous — never before'],
+    paraFr: 'C’est là qu’on est vraiment différents : on vous rend autonomes. Au lieu de vous garder en dépendance, on forme vos équipes, du dirigeant au terrain, jusqu’à ce qu’elles pilotent l’outil seules. Le code et l’infrastructure vous appartiennent à 100 %, documentés. On reste dispo si vous voulez, mais vous n’êtes jamais coincé avec personne.',
+    paraEn: 'This is where we’re truly different: we make you autonomous. Instead of keeping you dependent, we train your teams, from leadership to the field, until they run the tool on their own. The code and infrastructure are 100% yours, documented. We stay available if you want, but you’re never locked in with anyone.',
+    bulletsFr: ['Formation de toute l’équipe, du dirigeant au terrain', 'Code + infrastructure 100 % à vous, documentés', 'On part quand vous êtes autonomes, jamais avant'],
+    bulletsEn: ['Training for the whole team, leadership to the field', 'Code + infrastructure 100% yours, documented', 'We leave when you’re autonomous, never before'],
   },
 ]
 
@@ -108,10 +113,17 @@ export default function MethodeFeatures() {
                   </ul>
                 </div>
 
-                {/* Illustration : éventail de mockups (bloc 02) ou mockup navigateur + illustration SVG */}
+                {/* Illustration : éventail · vraie capture · photo · ou illustration SVG */}
                 <div className="mf-viz">
                   {b.fan ? (
                     <FanMockups />
+                  ) : b.photo ? (
+                    <div className="mf-photo" role="img" aria-label={d(b.titleFr, b.titleEn)} style={{ backgroundImage: `url(/realisations/${b.photo}.jpg)` }} />
+                  ) : b.img ? (
+                    <div className="mf-mock">
+                      <div className="mf-mock-bar" aria-hidden="true"><i /><i /><i /></div>
+                      <div className="mf-mock-shot" role="img" aria-label={d(b.titleFr, b.titleEn)} style={{ backgroundImage: `url(/realisations/${b.img}.jpg)` }} />
+                    </div>
                   ) : (
                     <div className="mf-mock">
                       <div className="mf-mock-bar" aria-hidden="true"><i /><i /><i /></div>
@@ -169,6 +181,23 @@ export default function MethodeFeatures() {
         .mf-mock-bar i { width: 9px; height: 9px; border-radius: 50%; background: var(--text-muted); opacity: 0.5; }
         .mf-mock-screen { aspect-ratio: 16 / 10; background: var(--bg-elevated); }
         .mf-mock-screen :global(.dg-viz-svg) { width: 100%; height: 100%; display: block; }
+        /* Vraie capture (contenue en entier) dans le mockup */
+        .mf-mock-shot {
+          aspect-ratio: 16 / 10;
+          background-color: #fff;
+          background-size: contain;
+          background-position: center;
+          background-repeat: no-repeat;
+        }
+        /* Vraie photo, cadre plein (cover), sans barre navigateur */
+        .mf-photo {
+          aspect-ratio: 16 / 10;
+          border-radius: 14px;
+          border: 1px solid var(--border);
+          background-size: cover;
+          background-position: center;
+          box-shadow: 0 24px 60px -30px rgba(0, 0, 0, 0.5);
+        }
 
         @media (max-width: 860px) {
           .mf-block { grid-template-columns: 1fr; gap: 32px; padding: 44px 0; }

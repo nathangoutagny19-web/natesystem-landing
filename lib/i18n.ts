@@ -1498,9 +1498,9 @@ export const translations = {
 
   /* ─────────── Page /methode « Notre approche » (Lot 2) ─────────── */
   'methode.hero.eyebrow': { en: 'HOW WE WORK', fr: 'NOTRE APPROCHE' },
-  'methode.hero.title': { en: 'We audit, map, build, integrate —', fr: 'On audite, cartographie, construit, intègre —' },
-  'methode.hero.titleAccent': { en: 'and keep it evolving.', fr: 'et fait évoluer.' },
-  'methode.hero.sub': { en: 'Most providers ask you for a spec sheet. We start by understanding where your hours and your money really go — then, and only then, we build.', fr: 'La plupart des prestataires vous demandent un cahier des charges. Nous, on commence par comprendre où partent vraiment vos heures et votre argent — et ensuite seulement, on construit.' },
+  'methode.hero.title': { en: 'We audit, map, build, integrate.', fr: 'On audite, cartographie, construit, intègre.' },
+  'methode.hero.titleAccent': { en: 'And keep it evolving.', fr: 'Et on fait évoluer.' },
+  'methode.hero.sub': { en: 'We start by understanding where your hours and your money really go, then we build the software that recovers them. Fast, and without jargon.', fr: 'On commence par comprendre où partent vraiment vos heures et votre argent, puis on construit le logiciel qui les récupère. Vite, et sans jargon.' },
   'methode.hero.cta': { en: 'Book a call · free', fr: 'Réserver un appel · offert' },
 
   'radio.eyebrow': { en: 'THE X-RAY', fr: 'LA RADIOGRAPHIE' },

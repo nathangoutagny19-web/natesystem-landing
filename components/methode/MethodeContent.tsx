@@ -20,7 +20,7 @@ export default function MethodeContent() {
 
   const stats = [
     { v: d('2 semaines', '2 weeks'), l: d('pour la radiographie', 'for the X-ray') },
-    { v: d('3 à 5 appels', '3–5 calls'), l: d('rien à préparer', 'nothing to prepare') },
+    { v: d('Sans engagement', 'No commitment'), l: d('rien à préparer', 'nothing to prepare') },
     { v: d('1 prototype', '1 prototype'), l: d('cliquable, avant de signer', 'clickable, before you sign') },
   ]
 
@@ -70,7 +70,7 @@ export default function MethodeContent() {
           <FadeUp>
             <span className="section-label">{d('Le principe', 'The principle')}</span>
             <h2 className="section-title" style={{ maxWidth: 760, margin: '0 auto' }}>
-              {d('Cartographier, construire, automatiser, faire évoluer — ', 'Map, build, automate, evolve — ')}<span className="accent">{d('et vous rendre autonome.', 'and hand you autonomy.')}</span>
+              {d('Cartographier, construire, automatiser, faire évoluer. ', 'Map, build, automate, evolve. ')}<span className="accent">{d('Et vous rendre autonome.', 'And hand you autonomy.')}</span>
             </h2>
           </FadeUp>
         </div>
