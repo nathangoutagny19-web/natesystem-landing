@@ -20,8 +20,8 @@ const ITEMS: Item[] = [
     descEn: 'We develop the software you’re missing — business app, ERP, portal, cockpit — built around your operations, not the other way round. Your data unified, your code owned by you.',
   },
   {
-    titleFr: 'Transformation & IA',
-    titleEn: 'Digital & AI',
+    titleFr: 'Digitalisation & IA',
+    titleEn: 'Digitalisation & AI',
     descFr: 'De l’IA et de l’automatisation intégrées par-dessus votre système, uniquement là où elles remplacent de vraies heures. Jamais en décoration.',
     descEn: 'AI and automation layered on top of your system, only where they replace real hours. Never for show.',
   },
@@ -137,7 +137,7 @@ export default function WhatWeDo() {
                   onBlur={() => setActive(null)}
                   type="button"
                 >
-                  <span className="font-mono wwx-num">{String(i + 1).padStart(2, '0')}</span>
+                  <span className="wwx-mark" aria-hidden="true" />
 
                   <span className="wwx-main">
                     <span className="wwx-title-wrap">
@@ -176,15 +176,16 @@ export default function WhatWeDo() {
         }
         .wwx-row.on { background: linear-gradient(90deg, var(--accent-subtle), transparent 70%); padding-left: 18px; }
 
-        .wwx-num {
-          font-size: 14px;
-          letter-spacing: 1px;
-          color: var(--text-muted);
+        .wwx-mark {
           align-self: start;
-          padding-top: 12px;
-          transition: color 0.35s ease;
+          margin-top: 22px;
+          width: 22px;
+          height: 2px;
+          border-radius: 2px;
+          background: var(--border-hover);
+          transition: background 0.35s ease, width 0.35s ease;
         }
-        .wwx-row.on .wwx-num { color: var(--accent); }
+        .wwx-row.on .wwx-mark { background: var(--accent); width: 34px; }
 
         .wwx-main { min-width: 0; align-self: center; }
         .wwx-title-wrap { position: relative; display: inline-block; }
@@ -287,8 +288,8 @@ export default function WhatWeDo() {
 
       <style jsx>{`
         @media (max-width: 820px) {
-          .wwx-row { grid-template-columns: 40px 1fr; gap: 14px; padding: 24px 4px; }
-          .wwx-num { padding-top: 8px; }
+          .wwx-row { grid-template-columns: 32px 1fr; gap: 14px; padding: 24px 4px; }
+          .wwx-mark { margin-top: 16px; }
           .wwx-desc-wrap { grid-template-rows: 1fr; margin-top: 12px; }
           .wwx-desc { opacity: 1; }
           .wwx-underline path { stroke-dashoffset: 0; }
