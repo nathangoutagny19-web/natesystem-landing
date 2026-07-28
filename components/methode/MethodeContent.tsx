@@ -11,6 +11,7 @@ import FadeUp from '@/components/ui/FadeUp'
 import ScreenMock from '@/components/ui/ScreenMock'
 import Process from '@/components/home/Process'
 import WhatWeBuild from '@/components/home/WhatWeBuild'
+import MethodeFeatures from '@/components/methode/MethodeFeatures'
 import Faq from '@/components/home/Faq'
 import Radiographie from '@/components/methode/Radiographie'
 import { useLang } from '@/components/providers/LangProvider'
@@ -89,32 +90,18 @@ export default function MethodeContent() {
 
       <Divider />
 
-      {/* 3 piliers — Cartographier · Unifier · Automatiser */}
-      <section style={{ padding: '90px 24px' }}>
-        <div className="mx-auto" style={{ maxWidth: 1080 }}>
-          <FadeUp className="text-center mb-14">
+      {/* Le principe en 3 temps — blocs alternés (inspiré OpsKings how-we-work, sauce NateSystem) */}
+      <section style={{ padding: '80px 24px 20px' }}>
+        <div className="mx-auto text-center" style={{ maxWidth: 700 }}>
+          <FadeUp>
             <span className="section-label">{d('Le principe', 'The principle')}</span>
             <h2 className="section-title" style={{ maxWidth: 640, margin: '0 auto' }}>
-              {d('Cartographier. Unifier. ', 'Map. Unify. ')}<span className="accent">{d('Automatiser.', 'Automate.')}</span>
+              {d('Cartographier. Construire. ', 'Map. Build. ')}<span className="accent">{d('Scaler.', 'Scale.')}</span>
             </h2>
           </FadeUp>
-          <div className="methode-pillars">
-            {pillars.map((p, i) => {
-              const Icon = p.icon
-              return (
-                <FadeUp key={p.titleFr} delay={i * 0.08}>
-                  <div className="methode-pillar">
-                    <span className="methode-pillar-num font-mono">{String(i + 1).padStart(2, '0')}</span>
-                    <span className="methode-pillar-ico" aria-hidden="true"><Icon size={20} strokeWidth={1.7} /></span>
-                    <h3 className="font-serif italic methode-pillar-title">{d(p.titleFr, p.titleEn)}</h3>
-                    <p className="font-sans methode-pillar-desc">{d(p.descFr, p.descEn)}</p>
-                  </div>
-                </FadeUp>
-              )
-            })}
-          </div>
         </div>
       </section>
+      <MethodeFeatures />
 
       <Divider />
 
