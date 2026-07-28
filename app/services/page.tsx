@@ -1,12 +1,13 @@
 'use client'
 
 import Link from 'next/link'
-import { Clock, TrendingUp, Repeat, Smile, Database, Zap, Search, Boxes, Cpu, GraduationCap, ArrowRight, type LucideIcon } from 'lucide-react'
+import { Clock, TrendingUp, Repeat, Smile, Database, Zap, type LucideIcon } from 'lucide-react'
 import Nav from '@/components/layout/Nav'
 import Footer from '@/components/layout/Footer'
 import MobileCta from '@/components/layout/MobileCta'
 import Divider from '@/components/ui/Divider'
 import FadeUp from '@/components/ui/FadeUp'
+import ServicesFeatures from '@/components/services/ServicesFeatures'
 import { CAL_LINK } from '@/lib/constants'
 
 const servicesJsonLd = {
@@ -16,7 +17,7 @@ const servicesJsonLd = {
       '@type': 'CollectionPage',
       '@id': 'https://www.natesystem.com/services#page',
       name: 'Nos services',
-      description: 'Les services NateSystem : audit & consulting, logiciel & plateforme sur-mesure, IA agentique & data analytics — au service d\'un socle de résultats commun à toute entreprise.',
+      description: 'Les services NateSystem : audit & consulting, logiciel & plateforme sur-mesure, IA agentique & data analytics, au service d\'un socle de résultats commun à toute entreprise.',
       isPartOf: { '@id': 'https://www.natesystem.com/#organization' },
     },
     {
@@ -25,6 +26,7 @@ const servicesJsonLd = {
         { '@type': 'ListItem', position: 1, name: 'Audit & consulting', url: 'https://www.natesystem.com/services/audit' },
         { '@type': 'ListItem', position: 2, name: 'Logiciel & plateforme sur-mesure', url: 'https://www.natesystem.com/services/logiciel-sur-mesure' },
         { '@type': 'ListItem', position: 3, name: 'IA agentique & data analytics', url: 'https://www.natesystem.com/services/ia' },
+        { '@type': 'ListItem', position: 4, name: 'Formation & accompagnement', url: 'https://www.natesystem.com/services/formation' },
       ],
     },
     {
@@ -37,7 +39,7 @@ const servicesJsonLd = {
   ],
 }
 
-// Le socle de résultats — commun à toute entreprise (choix Nathan).
+// Le socle de résultats, commun à toute entreprise (choix Nathan).
 type Outcome = { icon: LucideIcon; title: string; desc: string }
 const outcomes: Outcome[] = [
   { icon: Clock, title: 'Du temps récupéré', desc: 'Le répétitif tourne seul. Vos équipes arrêtent de recopier, relancer et chercher, et se concentrent sur ce qui compte vraiment.' },
@@ -48,45 +50,13 @@ const outcomes: Outcome[] = [
   { icon: Zap, title: 'Des équipes plus réactives', desc: 'Chacun sait quoi faire et où le trouver. Moins d\'allers-retours, plus de productivité : les rôles sont clairs, l\'efficacité suit, et l\'équipe avance vite et bien.' },
 ]
 
-type Pillar = { icon: LucideIcon; eyebrow: string; title: string; desc: string; href: string }
-const pillars: Pillar[] = [
-  {
-    icon: Search,
-    eyebrow: 'On comprend',
-    title: 'Consulting & cartographie',
-    desc: 'On analyse vos process, opérations et workflows — de l\'arrivée d\'un prospect au client qui recommande. On cartographie tout, on repère où vous gagnez le plus.',
-    href: '/services/audit',
-  },
-  {
-    icon: Boxes,
-    eyebrow: 'On construit',
-    title: 'Développement sur-mesure',
-    desc: 'Logiciels métier, ERP, portails, cockpits — construits autour de vos opérations, pas l\'inverse. Vos données unifiées, votre code qui vous appartient.',
-    href: '/services/logiciel-sur-mesure',
-  },
-  {
-    icon: Cpu,
-    eyebrow: 'On propulse',
-    title: 'Transformation & IA',
-    desc: 'De l\'IA et de l\'automatisation par-dessus votre système, uniquement là où elles remplacent de vraies heures. Jamais en décoration.',
-    href: '/services/ia',
-  },
-  {
-    icon: GraduationCap,
-    eyebrow: 'On rend autonome',
-    title: 'Formation & accompagnement',
-    desc: 'On forme vos équipes, du dirigeant au terrain, à utiliser ces outils au quotidien — jusqu\'à l\'autonomie complète.',
-    href: CAL_LINK,
-  },
-]
-
 export default function ServicesPage() {
   return (
     <main>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesJsonLd) }} />
       <Nav />
 
-      {/* Hero — mené par le résultat */}
+      {/* Hero, mené par le résultat */}
       <section style={{ padding: '160px 24px 40px' }}>
         <div className="mx-auto text-center" style={{ maxWidth: 820 }}>
           <FadeUp>
@@ -96,7 +66,7 @@ export default function ServicesPage() {
             </h1>
             <p className="font-sans" style={{ fontSize: 'clamp(15px, 3vw, 18px)', fontWeight: 300, color: 'var(--text-secondary)', maxWidth: 660, margin: '0 auto 36px', lineHeight: 1.65 }}>
               On monte l&apos;infrastructure qui vous fait gagner du temps, signer plus et mieux, et garder vos clients.
-              La techno et les modules s&apos;adaptent à votre réalité — jamais l&apos;inverse.
+              La techno et les modules s&apos;adaptent à votre réalité, jamais l&apos;inverse.
             </p>
             <Link href={CAL_LINK} className="btn-primary" style={{ margin: '0 auto', fontSize: 14 }}>
               <span className="btn-primary-dot" />Réserver un appel · offert →
@@ -134,7 +104,7 @@ export default function ServicesPage() {
 
           <FadeUp>
             <p className="font-sans svc-note">
-              Ça, c&apos;est le socle — vrai pour n&apos;importe quelle entreprise. Le reste dépend de votre réalité :
+              Ça, c&apos;est le socle, vrai pour n&apos;importe quelle entreprise. Le reste dépend de votre réalité :
               un moteur de recherche IA sur votre documentation, un agent qui relance vos devis, un portail pour vos clients…
               On part de votre métier. On ne vend pas une recette figée.
             </p>
@@ -144,38 +114,18 @@ export default function ServicesPage() {
 
       <Divider />
 
-      {/* Comment on y arrive — les 3 piliers (moyens, pas la promesse) */}
-      <section style={{ padding: '70px 24px' }}>
-        <div className="mx-auto" style={{ maxWidth: 1100 }}>
-          <FadeUp className="text-center mb-16">
+      {/* Nos services, 4 blocs alternés (style /methode), chacun vers sa sous-page */}
+      <section style={{ padding: '70px 24px 0' }}>
+        <div className="mx-auto text-center" style={{ maxWidth: 720 }}>
+          <FadeUp>
             <span className="section-label">Comment on y arrive</span>
             <h2 className="font-serif italic" style={{ fontSize: 'clamp(26px, 3.6vw, 38px)', fontWeight: 400, color: 'var(--text)', lineHeight: 1.2, margin: '4px auto 0', maxWidth: 720 }}>
               Une infrastructure, <span className="accent" style={{ color: 'var(--accent)' }}>montée pour vous.</span>
             </h2>
           </FadeUp>
-
-          <div className="svc-pillars">
-            {pillars.map((p, i) => {
-              const Icon = p.icon
-              return (
-                <FadeUp key={p.title} delay={i * 0.1}>
-                  <Link href={p.href} className="svc-pillar-card">
-                    <span className="svc-pillar-ico" aria-hidden="true">
-                      <Icon size={22} strokeWidth={1.8} />
-                    </span>
-                    <p className="font-mono svc-pillar-eyebrow">{p.eyebrow}</p>
-                    <h3 className="font-serif italic svc-pillar-title">{p.title}</h3>
-                    <p className="font-sans svc-pillar-desc">{p.desc}</p>
-                    <span className="font-mono svc-pillar-link">
-                      En savoir plus <ArrowRight size={14} strokeWidth={2} />
-                    </span>
-                  </Link>
-                </FadeUp>
-              )
-            })}
-          </div>
         </div>
       </section>
+      <ServicesFeatures />
 
       <Divider />
 
