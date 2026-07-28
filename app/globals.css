@@ -575,6 +575,7 @@ html.light .mega-item-icon {
   padding: 12px 6px 2px;
   border-top: 1px solid var(--border);
 }
+.nav-mega-more { display: flex; align-items: center; gap: 18px; }
 .nav-mega-foot-link {
   font-family: var(--font-mono);
   font-size: 11px;

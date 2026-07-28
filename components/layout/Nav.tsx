@@ -178,43 +178,21 @@ export default function Nav() {
                   />
                 </div>
                 <div className="nav-mega-foot">
-                  <Link href="/services" className="nav-mega-foot-link">{d('Tous nos services', 'All our services')} &rarr;</Link>
+                  <div className="nav-mega-more">
+                    <Link href="/case-studies" className="nav-mega-foot-link">{t('nav.realisations')}</Link>
+                    <Link href="/resources" className="nav-mega-foot-link">{t('nav.resources')}</Link>
+                    <Link href="/methode" className="nav-mega-foot-link">{t('nav.methode')}</Link>
+                  </div>
                   <Link href={CAL_LINK} className="nav-mega-foot-cta">{d('Réserver un appel', 'Book a call')} &rarr;</Link>
                 </div>
               </div>
             </div>
 
-            {/* Réalisations — lien direct vers la page Case Studies */}
+            {/* Réalisations — lien direct */}
             <Link href="/case-studies" className="nav-link">{t('nav.realisations')}</Link>
 
-            {/* Ressources — méga avec panneau photo */}
-            <div className="nav-dropdown">
-              <Link href="/resources" className="nav-link nav-link-dropdown">
-                {t('nav.resources')} <Chevron />
-              </Link>
-              <div className="nav-mega nav-mega-feature">
-                <div className="nav-mega-inner">
-                  <div className="nav-mega-col">
-                    <p className="nav-mega-label">{d('Ressources', 'Resources')}</p>
-                    <MegaItem href="/playbook" icon={icons.book} title={d('Playbooks par métier', 'Playbooks by trade')} desc={d('Des guides concrets, secteur par secteur.', 'Concrete guides, sector by sector.')} />
-                    <MegaItem href="/blog" icon={icons.blog} title="Blog" desc={d('Nos analyses sur l’IA et le sur-mesure.', 'Our takes on AI and custom software.')} />
-                    <MegaItem href="/tools/diagnostic-ia" icon={icons.brain} title={t('tools.diagnostic.title')} desc={d('Où partent vos heures — en 3 min.', 'Where your hours go — in 3 min.')} />
-                    <MegaItem href="/resources#videos" icon={icons.laptop} title={d('Vidéos & démos live', 'Videos & live demos')} desc={d('Témoignage client + apps à tester.', 'Client testimonial + apps to try.')} />
-                  </div>
-                  <MegaFeature
-                    href="/resources#videos"
-                    img="/realisations/demos/actifs.jpg"
-                    label={d('Démos live', 'Live demos')}
-                    title={d('Essayez nos apps en vrai', 'Try our apps for real')}
-                    cta={d('Vidéos & outils', 'Videos & tools')}
-                  />
-                </div>
-                <div className="nav-mega-foot">
-                  <Link href="/resources" className="nav-mega-foot-link">{d('Toutes les ressources', 'All resources')} &rarr;</Link>
-                  <Link href={CAL_LINK} className="nav-mega-foot-cta">{d('Réserver un appel', 'Book a call')} &rarr;</Link>
-                </div>
-              </div>
-            </div>
+            {/* Ressources — lien direct (seul Services garde un déroulant) */}
+            <Link href="/resources" className="nav-link">{t('nav.resources')}</Link>
           </nav>
 
           {/* Right side — lang + CTA */}
