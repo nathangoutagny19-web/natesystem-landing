@@ -54,17 +54,6 @@ const BLOCKS: Block[] = [
   },
   {
     n: '04',
-    icon: GraduationCap,
-    Viz: VizTeach,
-    eyebrowFr: 'Jusqu’à l’autonomie', eyebrowEn: 'Until you’re autonomous',
-    titleFr: 'On vous rend autonomes', titleEn: 'We make you autonomous',
-    paraFr: 'C’est là qu’on est vraiment différents. Au lieu de vous garder en dépendance, on forme vos équipes — du dirigeant au terrain — jusqu’à ce qu’elles pilotent l’outil seules. Le code et l’infrastructure vous appartiennent à 100 %, documentés. On reste dispo si vous voulez, mais vous n’êtes jamais coincé avec personne.',
-    paraEn: 'This is where we’re truly different. Instead of keeping you dependent, we train your teams — from leadership to the field — until they run the tool on their own. The code and infrastructure are 100% yours, documented. We stay available if you want, but you’re never locked in with anyone.',
-    bulletsFr: ['Formation de toute l’équipe, du dirigeant au terrain', 'Code + infrastructure 100 % à vous, documentés', 'On part quand vous êtes autonomes — jamais avant'],
-    bulletsEn: ['Training for the whole team, leadership to the field', 'Code + infrastructure 100% yours, documented', 'We leave when you’re autonomous — never before'],
-  },
-  {
-    n: '05',
     icon: RefreshCcw,
     Viz: VizFeuille,
     eyebrowFr: 'L’amélioration continue', eyebrowEn: 'Continuous improvement',
@@ -73,6 +62,17 @@ const BLOCKS: Block[] = [
     paraEn: 'Nothing is set in stone. After a few weeks of use, we look at what actually works and adjust. The system grows with your business — new features, new automations, at your pace. And if you want, we stay by your side to keep it evolving.',
     bulletsFr: ['On mesure l’usage réel et on optimise', 'De nouvelles capacités ajoutées quand vous en avez besoin', 'Un système qui grandit avec vous — jamais figé'],
     bulletsEn: ['We measure real usage and optimise', 'New capabilities added when you need them', 'A system that grows with you — never frozen'],
+  },
+  {
+    n: '05',
+    icon: GraduationCap,
+    Viz: VizTeach,
+    eyebrowFr: 'Jusqu’à l’autonomie', eyebrowEn: 'Until you’re autonomous',
+    titleFr: 'Formation & accompagnement', titleEn: 'Training & support',
+    paraFr: 'C’est là qu’on est vraiment différents : on vous rend autonomes. Au lieu de vous garder en dépendance, on forme vos équipes — du dirigeant au terrain — jusqu’à ce qu’elles pilotent l’outil seules. Le code et l’infrastructure vous appartiennent à 100 %, documentés. On reste dispo si vous voulez, mais vous n’êtes jamais coincé avec personne.',
+    paraEn: 'This is where we’re truly different: we make you autonomous. Instead of keeping you dependent, we train your teams — from leadership to the field — until they run the tool on their own. The code and infrastructure are 100% yours, documented. We stay available if you want, but you’re never locked in with anyone.',
+    bulletsFr: ['Formation de toute l’équipe, du dirigeant au terrain', 'Code + infrastructure 100 % à vous, documentés', 'On part quand vous êtes autonomes — jamais avant'],
+    bulletsEn: ['Training for the whole team, leadership to the field', 'Code + infrastructure 100% yours, documented', 'We leave when you’re autonomous — never before'],
   },
 ]
 

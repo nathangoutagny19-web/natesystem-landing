@@ -70,7 +70,7 @@ export default function MethodeContent() {
           <FadeUp>
             <span className="section-label">{d('Le principe', 'The principle')}</span>
             <h2 className="section-title" style={{ maxWidth: 760, margin: '0 auto' }}>
-              {d('Cartographier, construire, automatiser, former — ', 'Map, build, automate, train — ')}<span className="accent">{d('et faire évoluer.', 'and keep evolving.')}</span>
+              {d('Cartographier, construire, automatiser, faire évoluer — ', 'Map, build, automate, evolve — ')}<span className="accent">{d('et vous rendre autonome.', 'and hand you autonomy.')}</span>
             </h2>
           </FadeUp>
         </div>
