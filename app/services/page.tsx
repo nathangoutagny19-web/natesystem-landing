@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { Clock, TrendingUp, Repeat, Smile, Database, Search, Boxes, Cpu, GraduationCap, ArrowRight, type LucideIcon } from 'lucide-react'
+import { Clock, TrendingUp, Repeat, Smile, Database, Zap, Search, Boxes, Cpu, GraduationCap, ArrowRight, type LucideIcon } from 'lucide-react'
 import Nav from '@/components/layout/Nav'
 import Footer from '@/components/layout/Footer'
 import MobileCta from '@/components/layout/MobileCta'
@@ -40,11 +40,12 @@ const servicesJsonLd = {
 // Le socle de résultats — commun à toute entreprise (choix Nathan).
 type Outcome = { icon: LucideIcon; title: string; desc: string }
 const outcomes: Outcome[] = [
-  { icon: Clock, title: 'Du temps récupéré', desc: 'Le répétitif tourne seul. Vos équipes arrêtent de recopier, relancer et chercher — et se concentrent sur ce qui compte vraiment.' },
+  { icon: Clock, title: 'Du temps récupéré', desc: 'Le répétitif tourne seul. Vos équipes arrêtent de recopier, relancer et chercher, et se concentrent sur ce qui compte vraiment.' },
   { icon: TrendingUp, title: 'Plus de deals, plus gros', desc: 'Un pipeline propre, des relances qui partent toutes seules, plus rien qui passe à la trappe. Vous signez plus, et mieux.' },
   { icon: Repeat, title: 'Des clients qui restent', desc: 'Un suivi sans faille : rien ne se perd, vos clients le sentent, et ils continuent avec vous plus longtemps.' },
   { icon: Smile, title: 'Une meilleure expérience client', desc: 'Réponses plus rapides, dossiers au carré, fini le « je vous rappelle ». L\'image d\'une boîte qui gère.' },
   { icon: Database, title: 'Une équipe alignée', desc: 'Tout le monde sur la même donnée, centralisée et à jour. Plus de versions qui s\'écrasent ni de « c\'était où, déjà ? ».' },
+  { icon: Zap, title: 'Des équipes plus réactives', desc: 'Chacun sait quoi faire et où le trouver. Moins d\'allers-retours, plus de productivité : les rôles sont clairs, l\'efficacité suit, et l\'équipe avance vite et bien.' },
 ]
 
 type Pillar = { icon: LucideIcon; eyebrow: string; title: string; desc: string; href: string }
