@@ -1,204 +1,179 @@
 'use client'
 
 import Link from 'next/link'
-import Image from 'next/image'
-import { Map, MousePointerClick, FileText, ArrowRight } from 'lucide-react'
+import { Map, MousePointerClick, FileText } from 'lucide-react'
 import FadeUp from '@/components/ui/FadeUp'
-import ScreenMock from '@/components/ui/ScreenMock'
 import { useLang } from '@/components/providers/LangProvider'
 
 /**
- * Le Sprint Diagnostic — l'offre d'entrée nommée (REFONTE §4.3).
- * Layout asymétrique 2 colonnes (casse le gabarit "titre centré + cartes") :
- * gauche = le pitch + promesse + CTA ; droite = les 3 livrables numérotés.
+ * Le Diagnostic — l'offre d'entrée (REFONTE §4.3).
+ * Réimaginée : header centré + 3 livrables en ligne, chacun avec un mockup 16:9
+ * (image vue en entier, jamais rognée), cartes compactes et alignées.
  */
 export default function SprintDiagnostic() {
   const { t } = useLang()
 
-  // Une image DANS chaque case, en mode mockup (screenshot) ou photo. La Carte = Miro (à venir).
-  const deliverables: { icon: typeof Map; name: string; desc: string; img?: string; mock?: boolean }[] = [
-    { icon: Map, name: t('v2.sprint.d1.name'), desc: t('v2.sprint.d1.desc'), img: 'carte-miro', mock: true }, // La Carte → Miro
-    { icon: MousePointerClick, name: t('v2.sprint.d2.name'), desc: t('v2.sprint.d2.desc'), img: 'proto-front', mock: true },
-    { icon: FileText, name: t('v2.sprint.d3.name'), desc: t('v2.sprint.d3.desc'), img: 'feuille-photo' },
+  const deliverables = [
+    { icon: Map, name: t('v2.sprint.d1.name'), desc: t('v2.sprint.d1.desc'), img: 'diag-carte' },
+    { icon: MousePointerClick, name: t('v2.sprint.d2.name'), desc: t('v2.sprint.d2.desc'), img: 'diag-proto' },
+    { icon: FileText, name: t('v2.sprint.d3.name'), desc: t('v2.sprint.d3.desc'), img: 'diag-feuille' },
   ]
 
   return (
     <section id="sprint-diagnostic" style={{ padding: '110px 24px' }}>
-      <div className="mx-auto" style={{ maxWidth: 1100 }}>
-        <div className="sprint-grid">
-          {/* Left — the pitch */}
-          <FadeUp>
-            <div>
-              <span
-                className="font-mono"
-                style={{ fontSize: 11, letterSpacing: 2.5, textTransform: 'uppercase', color: 'var(--accent)', fontWeight: 600 }}
-              >
-                {t('v2.sprint.eyebrow')}
-              </span>
-              <h2
-                className="font-serif italic"
-                style={{ fontSize: 'clamp(30px, 4vw, 46px)', fontWeight: 400, lineHeight: 1.1, color: 'var(--text)', margin: '14px 0 18px' }}
-              >
-                {t('v2.sprint.title')}
-              </h2>
-              <span
-                className="font-mono"
-                style={{
-                  display: 'inline-block',
-                  fontSize: 12,
-                  letterSpacing: 0.5,
-                  color: 'var(--text)',
-                  background: 'var(--accent-subtle)',
-                  border: '1px solid rgba(230,57,70,0.22)',
-                  borderRadius: 999,
-                  padding: '6px 14px',
-                  marginBottom: 22,
-                }}
-              >
-                {t('v2.sprint.format')}
-              </span>
-              <p className="font-sans" style={{ fontSize: 15, lineHeight: 1.65, color: 'var(--text-secondary)', fontWeight: 300, marginBottom: 20, maxWidth: 460 }}>
-                {t('v2.sprint.intro')}
-              </p>
-              <p
-                className="font-serif italic"
-                style={{ fontSize: 18, lineHeight: 1.5, color: 'var(--text)', borderLeft: '2px solid var(--accent)', paddingLeft: 16, marginBottom: 30, maxWidth: 480 }}
-              >
-                {t('v2.sprint.promise')}
-              </p>
-              <Link href="#rendez-vous" className="btn-primary" style={{ fontSize: 14 }}>
-                <span className="btn-primary-dot" />
-                {t('v2.sprint.cta')} →
-              </Link>
-              {/* Porte secondaire self-serve → le Diagnostic IA (Lot 4) */}
-              <div style={{ marginTop: 16 }}>
-                <Link
-                  href="/tools/diagnostic-ia"
-                  className="font-mono"
-                  style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: 6,
-                    fontSize: 12.5,
-                    letterSpacing: 0.3,
-                    color: 'var(--text-secondary)',
-                    textDecoration: 'none',
-                    borderBottom: '1px solid var(--border)',
-                    paddingBottom: 2,
-                    transition: 'color 0.25s ease, border-color 0.25s ease',
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.color = 'var(--accent)'
-                    e.currentTarget.style.borderColor = 'var(--accent)'
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.color = 'var(--text-secondary)'
-                    e.currentTarget.style.borderColor = 'var(--border)'
-                  }}
-                >
-                  {t('v2.sprint.selfserve')} →
-                </Link>
-              </div>
-            </div>
-          </FadeUp>
-
-          {/* Right — les 3 livrables, chacun avec sa petite image DANS la case */}
-          <div className="sprint-cards">
-            {deliverables.map((d, i) => {
-              const Icon = d.icon
-              return (
-                <FadeUp key={d.name} delay={0.1 + i * 0.1}>
-                  <div
-                    style={{
-                      background: 'var(--bg-card)',
-                      border: '1px solid var(--border)',
-                      borderRadius: 12,
-                      overflow: 'hidden',
-                    }}
-                  >
-                    <div style={{ display: 'flex', gap: 16, alignItems: 'flex-start', padding: '22px 22px 18px' }}>
-                      <span
-                        aria-hidden="true"
-                        style={{
-                          flex: 'none',
-                          width: 44,
-                          height: 44,
-                          borderRadius: 11,
-                          background: 'var(--accent-subtle)',
-                          border: '1px solid rgba(230,57,70,0.18)',
-                          color: 'var(--accent)',
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                        }}
-                      >
-                        <Icon size={20} strokeWidth={1.8} />
-                      </span>
-                      <div>
-                        <p className="font-mono" style={{ fontSize: 10, letterSpacing: 1.5, textTransform: 'uppercase', color: 'var(--accent)', margin: '2px 0 8px', fontWeight: 600 }}>
-                          {String(i + 1).padStart(2, '0')} / 03
-                        </p>
-                        <p className="font-serif italic" style={{ fontSize: 20, fontWeight: 400, color: 'var(--text)', margin: '0 0 6px' }}>
-                          {d.name}
-                        </p>
-                        <p className="font-sans" style={{ fontSize: 13.5, lineHeight: 1.55, color: 'var(--text-secondary)', fontWeight: 300, margin: 0 }}>
-                          {d.desc}
-                        </p>
-                      </div>
-                    </div>
-                    {d.img && (
-                      // Toutes les images des livrables : même cadre, même hauteur, vues EN ENTIER (0 rognage)
-                      <div style={{ padding: '12px 14px', background: 'var(--bg-elevated)', borderTop: '1px solid var(--border)' }}>
-                        <div style={{ height: 108 }}>
-                          {d.mock ? (
-                            <ScreenMock src={`/realisations/prototype/${d.img}.jpg`} alt={d.name} />
-                          ) : (
-                            <div style={{ position: 'relative', height: '100%', borderRadius: 10, overflow: 'hidden', border: '1px solid var(--border)', background: 'var(--bg-card)' }}>
-                              <Image
-                                src={`/realisations/prototype/${d.img}.jpg`}
-                                alt={d.name}
-                                fill
-                                sizes="(max-width: 900px) 90vw, 440px"
-                                style={{ objectFit: 'contain' }}
-                              />
-                            </div>
-                          )}
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                </FadeUp>
-              )
-            })}
-            <FadeUp delay={0.4}>
-              <div className="flex items-center gap-2" style={{ paddingLeft: 6, color: 'var(--text-muted)' }}>
-                <ArrowRight size={14} strokeWidth={2} style={{ color: 'var(--accent)' }} />
-                <span className="font-mono" style={{ fontSize: 11, letterSpacing: 1, textTransform: 'uppercase' }}>
-                  {t('v2.sprint.format')}
-                </span>
-              </div>
-            </FadeUp>
+      <div className="mx-auto" style={{ maxWidth: 1080 }}>
+        {/* Header centré */}
+        <FadeUp className="text-center">
+          <span
+            className="font-mono"
+            style={{ fontSize: 11, letterSpacing: 2.5, textTransform: 'uppercase', color: 'var(--accent)', fontWeight: 600 }}
+          >
+            {t('v2.sprint.eyebrow')}
+          </span>
+          <h2
+            className="font-serif italic"
+            style={{ fontSize: 'clamp(30px, 4vw, 46px)', fontWeight: 400, lineHeight: 1.1, color: 'var(--text)', margin: '12px 0 16px' }}
+          >
+            {t('v2.sprint.title')}
+          </h2>
+          <span
+            className="font-mono"
+            style={{
+              display: 'inline-block',
+              fontSize: 12,
+              letterSpacing: 0.5,
+              color: 'var(--text)',
+              background: 'var(--accent-subtle)',
+              border: '1px solid rgba(230,57,70,0.22)',
+              borderRadius: 999,
+              padding: '6px 14px',
+              marginBottom: 20,
+            }}
+          >
+            {t('v2.sprint.format')}
+          </span>
+          <p
+            className="font-serif italic"
+            style={{ fontSize: 18, lineHeight: 1.5, color: 'var(--text-secondary)', maxWidth: 560, margin: '0 auto 30px' }}
+          >
+            {t('v2.sprint.promise')}
+          </p>
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 14 }}>
+            <Link href="#rendez-vous" className="btn-primary" style={{ fontSize: 14 }}>
+              <span className="btn-primary-dot" />
+              {t('v2.sprint.cta')} →
+            </Link>
+            <Link href="/tools/diagnostic-ia" className="dg-selfserve font-mono">
+              {t('v2.sprint.selfserve')} →
+            </Link>
           </div>
+        </FadeUp>
+
+        {/* 3 livrables en ligne — mockup 16:9 + texte */}
+        <div className="dg-cards">
+          {deliverables.map((d, i) => {
+            const Icon = d.icon
+            return (
+              <FadeUp key={d.name} delay={0.1 + i * 0.1}>
+                <div className="dg-card">
+                  <div className="dg-mock">
+                    <div className="dg-mock-inner">
+                      <div className="dg-mock-bar" aria-hidden="true">
+                        <i /><i /><i />
+                      </div>
+                      <div
+                        className="dg-mock-img"
+                        role="img"
+                        aria-label={d.name}
+                        style={{ backgroundImage: `url(/realisations/prototype/${d.img}.jpg)` }}
+                      />
+                    </div>
+                  </div>
+                  <div className="dg-body">
+                    <span className="dg-num font-mono">
+                      <Icon size={13} strokeWidth={2} />
+                      {String(i + 1).padStart(2, '0')} / 03
+                    </span>
+                    <h3 className="dg-name font-serif italic">{d.name}</h3>
+                    <p className="dg-desc font-sans">{d.desc}</p>
+                  </div>
+                </div>
+              </FadeUp>
+            )
+          })}
         </div>
       </div>
 
       <style jsx>{`
-        .sprint-grid {
-          display: grid;
-          grid-template-columns: 1.05fr 0.95fr;
-          gap: 56px;
-          align-items: center;
+        .dg-selfserve {
+          font-size: 12.5px;
+          letter-spacing: 0.3px;
+          color: var(--text-secondary);
+          text-decoration: none;
+          border-bottom: 1px solid var(--border);
+          padding-bottom: 2px;
+          transition: color 0.25s ease, border-color 0.25s ease;
         }
-        .sprint-cards {
+        .dg-selfserve:hover { color: var(--accent); border-color: var(--accent); }
+
+        .dg-cards {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 20px;
+          margin-top: 56px;
+        }
+        .dg-card {
+          background: var(--bg-card);
+          border: 1px solid var(--border);
+          border-radius: 14px;
+          overflow: hidden;
           display: flex;
           flex-direction: column;
-          gap: 14px;
+          transition: border-color 0.25s ease, transform 0.25s ease;
         }
-        @media (max-width: 900px) {
-          .sprint-grid {
-            grid-template-columns: 1fr;
-            gap: 40px;
-          }
+        .dg-card:hover { border-color: var(--border-hover); transform: translateY(-3px); }
+
+        .dg-mock { padding: 12px 12px 0; }
+        .dg-mock-inner {
+          border-radius: 8px;
+          overflow: hidden;
+          border: 1px solid var(--border);
+          background: var(--bg-elevated);
+        }
+        .dg-mock-bar {
+          height: 20px;
+          display: flex;
+          align-items: center;
+          gap: 4px;
+          padding: 0 9px;
+          background: var(--bg-card);
+          border-bottom: 1px solid var(--border);
+        }
+        .dg-mock-bar i { width: 6px; height: 6px; border-radius: 50%; background: var(--text-muted); opacity: 0.5; }
+        .dg-mock-img {
+          aspect-ratio: 16 / 9;
+          background-color: #fff;
+          background-size: cover;
+          background-position: top center;
+          background-repeat: no-repeat;
+        }
+
+        .dg-body { padding: 16px 18px 20px; }
+        .dg-num {
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          font-size: 10px;
+          letter-spacing: 1.5px;
+          text-transform: uppercase;
+          color: var(--accent);
+          font-weight: 600;
+        }
+        .dg-name { display: block; font-size: 20px; font-weight: 400; color: var(--text); margin: 8px 0 6px; line-height: 1.2; }
+        .dg-desc { font-size: 13px; line-height: 1.55; font-weight: 300; color: var(--text-secondary); margin: 0; }
+
+        @media (max-width: 820px) {
+          .dg-cards { grid-template-columns: 1fr; max-width: 440px; margin-left: auto; margin-right: auto; }
         }
       `}</style>
     </section>
