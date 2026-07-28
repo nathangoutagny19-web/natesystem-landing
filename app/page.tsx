@@ -90,16 +90,16 @@ export default function Home() {
       <ComparisonV2 />
       <Divider />
 
-      {/* 13 — La garantie « funny » (clin d'œil resto) — la section Garanties
-             fermes a été retirée, on garde juste ce clin d'œil humain. */}
-      <FunnyGuarantee />
-      <Divider />
-
       {/* 14 — FAQ */}
       <Faq />
       <Divider />
 
-      {/* 15 — Demandez à l'IA : preuve sociale via IA */}
+      {/* 15 — La garantie « funny » (clin d'œil resto) — déplacée tout à la fin,
+             juste avant « Demandez à l'IA » (choix Nathan). */}
+      <FunnyGuarantee />
+      <Divider />
+
+      {/* 16 — Demandez à l'IA : preuve sociale via IA */}
       <AskAI />
 
       {/* Footer — inclut désormais le bloc fondateur (Nathan + LinkedIn) en bas-gauche */}
