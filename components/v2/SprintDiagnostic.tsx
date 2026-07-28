@@ -54,19 +54,10 @@ export default function SprintDiagnostic() {
           </span>
           <p
             className="font-serif italic"
-            style={{ fontSize: 18, lineHeight: 1.5, color: 'var(--text-secondary)', maxWidth: 560, margin: '0 auto 30px' }}
+            style={{ fontSize: 18, lineHeight: 1.5, color: 'var(--text-secondary)', maxWidth: 560, margin: '0 auto' }}
           >
             {t('v2.sprint.promise')}
           </p>
-          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 14 }}>
-            <Link href="#rendez-vous" className="btn-primary" style={{ fontSize: 14 }}>
-              <span className="btn-primary-dot" />
-              {t('v2.sprint.cta')} →
-            </Link>
-            <Link href="/tools/diagnostic-ia" className="dg-selfserve font-mono">
-              {t('v2.sprint.selfserve')} →
-            </Link>
-          </div>
         </FadeUp>
 
         {/* 3 livrables en ligne — mockup 16:9 + texte */}
@@ -102,6 +93,19 @@ export default function SprintDiagnostic() {
             )
           })}
         </div>
+
+        {/* CTA — juste sous les 3 livrables */}
+        <FadeUp className="text-center" delay={0.4}>
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 14, marginTop: 48 }}>
+            <Link href="#rendez-vous" className="btn-primary" style={{ fontSize: 14 }}>
+              <span className="btn-primary-dot" />
+              {t('v2.sprint.cta')} →
+            </Link>
+            <Link href="/tools/diagnostic-ia" className="dg-selfserve font-mono">
+              {t('v2.sprint.selfserve')} →
+            </Link>
+          </div>
+        </FadeUp>
       </div>
 
       <style jsx>{`
