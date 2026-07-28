@@ -60,7 +60,7 @@ const BLOCKS: Block[] = [
     n: '04',
     icon: RefreshCcw,
     Viz: VizFeuille,
-    img: 'prototype/proto-front',
+    photo: 'methode/meet-call',
     eyebrowFr: 'L’amélioration continue', eyebrowEn: 'Continuous improvement',
     titleFr: 'On fait évoluer, en continu', titleEn: 'We keep it evolving',
     paraFr: 'Rien n’est figé. Après quelques semaines d’usage, on regarde ce qui marche vraiment et on ajuste. Le système grandit avec votre activité, nouvelles fonctions, nouveaux automatismes, à votre rythme. Et si vous voulez, on reste à vos côtés pour le faire évoluer.',
