@@ -78,7 +78,7 @@ export default function ResourcesPage() {
           <FadeUp>
             <span className="section-label">{d('Vidéos', 'Videos')}</span>
             <h2 className="font-serif italic" style={{ fontSize: 'clamp(28px, 4vw, 40px)', fontWeight: 400, color: 'var(--text)', lineHeight: 1.15, margin: '4px 0 10px' }}>
-              {d('Nos clients, en vrai.', 'Our clients, unfiltered.')}
+              {d('Discussions sans filtres avec nos clients', 'Unfiltered conversations with our clients')}
             </h2>
             <p className="font-sans" style={{ fontSize: '14px', fontWeight: 300, color: 'var(--text-muted)', lineHeight: 1.6, maxWidth: '620px' }}>
               {d('Témoignages clients aujourd’hui — vidéos éducation & vlogs internes à venir.', 'Client testimonials today — education videos & internal vlogs coming soon.')}
