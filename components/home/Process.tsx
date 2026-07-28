@@ -84,12 +84,6 @@ export default function Process({ home = false }: { home?: boolean }) {
                   {step.number}
                 </span>
                 <div>
-                  <p className="font-mono inline-block px-3 py-1 rounded-full mb-3" style={{
-                    fontSize: '10px', fontWeight: 400, letterSpacing: '1.5px', textTransform: 'uppercase',
-                    color: 'var(--accent)', background: 'var(--accent-subtle)', border: '1px solid rgba(230,57,70,0.2)',
-                  }}>
-                    {step.duration}
-                  </p>
                   <h3 className="font-serif italic mb-3" style={{ fontSize: '26px', fontWeight: 400, color: 'var(--text)', lineHeight: 1.2 }}>
                     {step.title}
                   </h3>
@@ -99,6 +93,12 @@ export default function Process({ home = false }: { home?: boolean }) {
                   <p className="font-mono" style={{ fontSize: '13px', color: 'var(--accent)', letterSpacing: '0.5px' }}>
                     → {step.highlight}
                   </p>
+                </div>
+
+                {/* Deadline / durée — dans son propre cadre à droite */}
+                <div className="process-deadline">
+                  <span className="font-mono process-deadline-label">{d('Délai', 'Timeline')}</span>
+                  <span className="font-mono process-deadline-val">{step.duration}</span>
                 </div>
               </div>
             </FadeUp>
