@@ -1439,6 +1439,9 @@ export const translations = {
   'v2.sprint.promise': { en: 'In 2 weeks you know exactly where your hours and money go — and you click through the software that recovers them, before you\'ve signed anything.', fr: 'En 2 semaines, vous savez exactement où partent vos heures et votre argent — et vous cliquez dans le logiciel qui les récupère, avant d\'avoir signé quoi que ce soit.' },
   'v2.sprint.cta': { en: 'Book a call · free', fr: 'Réserver un appel · offert' },
   'v2.sprint.selfserve': { en: 'Or run the online diagnostic — 3 min, no email', fr: 'Ou lancez le diagnostic en ligne — 3 min, sans e-mail' },
+  'v2.sprint.afterA': { en: 'What then? Two options: we keep going together, or we stop here. ', fr: 'Ensuite ? Deux options : on continue ensemble, ou on s\'arrête là. ' },
+  'v2.sprint.afterB': { en: 'Zero pressure, zero commitment.', fr: 'Zéro pression, zéro engagement.' },
+  'v2.sprint.afterC': { en: ' What you see is already yours.', fr: ' Ce que vous voyez est déjà à vous.' },
 
   'v2.cmp.eyebrow': { en: 'THE HONEST COMPARISON', fr: 'LA COMPARAISON HONNÊTE' },
   'v2.cmp.title': { en: 'Your real alternatives,', fr: 'Vos vraies alternatives,' },

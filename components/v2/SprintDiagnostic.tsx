@@ -94,9 +94,21 @@ export default function SprintDiagnostic() {
           })}
         </div>
 
-        {/* CTA — juste sous les 3 livrables */}
+        {/* Phrase honnête — juste après les cartes, avant le CTA */}
+        <FadeUp className="text-center" delay={0.35}>
+          <p
+            className="font-sans"
+            style={{ fontSize: 15.5, lineHeight: 1.7, fontWeight: 300, color: 'var(--text-secondary)', maxWidth: 640, margin: '48px auto 0' }}
+          >
+            {t('v2.sprint.afterA')}
+            <span style={{ color: 'var(--text)', fontWeight: 400 }}>{t('v2.sprint.afterB')}</span>
+            {t('v2.sprint.afterC')}
+          </p>
+        </FadeUp>
+
+        {/* CTA — juste sous la phrase */}
         <FadeUp className="text-center" delay={0.4}>
-          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 14, marginTop: 48 }}>
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 14, marginTop: 30 }}>
             <Link href="#rendez-vous" className="btn-primary" style={{ fontSize: 14 }}>
               <span className="btn-primary-dot" />
               {t('v2.sprint.cta')} →
