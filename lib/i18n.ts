@@ -1498,8 +1498,8 @@ export const translations = {
 
   /* ─────────── Page /methode « Notre approche » (Lot 2) ─────────── */
   'methode.hero.eyebrow': { en: 'HOW WE WORK', fr: 'NOTRE APPROCHE' },
-  'methode.hero.title': { en: 'We build nothing before we\'ve', fr: 'On ne construit rien avant d\'avoir' },
-  'methode.hero.titleAccent': { en: 'X-rayed how your business runs.', fr: 'radiographié votre activité.' },
+  'methode.hero.title': { en: 'We audit, map, build, integrate —', fr: 'On audite, cartographie, construit, intègre —' },
+  'methode.hero.titleAccent': { en: 'and keep it evolving.', fr: 'et fait évoluer.' },
   'methode.hero.sub': { en: 'Most providers ask you for a spec sheet. We start by understanding where your hours and your money really go — then, and only then, we build.', fr: 'La plupart des prestataires vous demandent un cahier des charges. Nous, on commence par comprendre où partent vraiment vos heures et votre argent — et ensuite seulement, on construit.' },
   'methode.hero.cta': { en: 'Book a call · free', fr: 'Réserver un appel · offert' },
 

@@ -1,9 +1,9 @@
 'use client'
 
-import { Search, Boxes, Cpu, type LucideIcon } from 'lucide-react'
+import { Search, Boxes, Cpu, GraduationCap, type LucideIcon } from 'lucide-react'
 import FadeUp from '@/components/ui/FadeUp'
 import { useLang } from '@/components/providers/LangProvider'
-import { VizCarte, VizProto, VizFeuille } from '@/components/v2/DiagViz'
+import { VizCarte, VizGrowth, VizTeach } from '@/components/v2/DiagViz'
 import FanMockups from '@/components/methode/FanMockups'
 
 type Block = {
@@ -32,7 +32,7 @@ const BLOCKS: Block[] = [
   {
     n: '02',
     icon: Boxes,
-    Viz: VizProto,
+    Viz: VizGrowth,
     fan: true,
     eyebrowFr: 'Votre cockpit sur-mesure', eyebrowEn: 'Your custom cockpit',
     titleFr: 'Vos données, réunies', titleEn: 'Your data, unified',
@@ -44,13 +44,24 @@ const BLOCKS: Block[] = [
   {
     n: '03',
     icon: Cpu,
-    Viz: VizFeuille,
-    eyebrowFr: 'Opérations pilotées par l’IA', eyebrowEn: 'AI-powered operations',
-    titleFr: 'Automatiser, puis scaler', titleEn: 'Automate, then scale',
-    paraFr: 'Une fois le socle solide, on ajoute l’automatisation et l’IA — uniquement là où elles remplacent de vraies heures. Version simple : trois jours passent, quelqu’un a raté une échéance, le système envoie l’alerte tout seul. Version avancée : vous envoyez une note vocale, le système interroge vos données, exécute l’action et confirme que c’est fait. Puis on optimise, en continu.',
-    paraEn: 'Once the foundation holds, we layer in automation and AI — only where they replace real hours. Simple version: three days pass, someone missed a deadline, the system fires the alert on its own. Advanced version: you send a voice note, the system queries your data, takes the action, and confirms it’s done. Then we optimise, continuously.',
-    bulletsFr: ['L’admin et la saisie manuelle, automatisés', 'Des workflows IA qui rendent du temps à l’équipe', 'Des déclencheurs et alertes qui attrapent les problèmes tôt'],
-    bulletsEn: ['Admin and manual data-entry, automated', 'AI workflows that buy back team capacity', 'Triggers and alerts that catch problems early'],
+    Viz: VizGrowth,
+    eyebrowFr: 'L’IA au bon endroit', eyebrowEn: 'AI where it counts',
+    titleFr: 'Automatiser le répétitif', titleEn: 'Automate the repetitive',
+    paraFr: 'On ajoute l’IA et l’automatisation uniquement là où elles remplacent de vraies heures — jamais en décoration. Une échéance ratée ? Le système alerte tout seul. Une note vocale ? Il interroge vos données, exécute l’action et confirme. Chaque automatisation existe parce que votre activité en a besoin, pas parce que c’est à la mode.',
+    paraEn: 'We add AI and automation only where they replace real hours — never for show. A missed deadline? The system alerts on its own. A voice note? It queries your data, takes the action and confirms. Every automation exists because your operation needs it, not because it’s trendy.',
+    bulletsFr: ['L’admin et la saisie manuelle, automatisés', 'Des agents IA branchés sur vos vraies données', 'Des alertes qui attrapent les problèmes avant vous'],
+    bulletsEn: ['Admin and manual data-entry, automated', 'AI agents plugged into your real data', 'Alerts that catch problems before you do'],
+  },
+  {
+    n: '04',
+    icon: GraduationCap,
+    Viz: VizTeach,
+    eyebrowFr: 'Jusqu’à l’autonomie', eyebrowEn: 'Until you’re autonomous',
+    titleFr: 'On vous rend autonomes', titleEn: 'We make you autonomous',
+    paraFr: 'C’est là qu’on est vraiment différents. Au lieu de vous garder en dépendance, on forme vos équipes — du dirigeant au terrain — jusqu’à ce qu’elles pilotent l’outil seules. Le code et l’infrastructure vous appartiennent à 100 %, documentés. On reste dispo si vous voulez, mais vous n’êtes jamais coincé avec personne.',
+    paraEn: 'This is where we’re truly different. Instead of keeping you dependent, we train your teams — from leadership to the field — until they run the tool on their own. The code and infrastructure are 100% yours, documented. We stay available if you want, but you’re never locked in with anyone.',
+    bulletsFr: ['Formation de toute l’équipe, du dirigeant au terrain', 'Code + infrastructure 100 % à vous, documentés', 'On part quand vous êtes autonomes — jamais avant'],
+    bulletsEn: ['Training for the whole team, leadership to the field', 'Code + infrastructure 100% yours, documented', 'We leave when you’re autonomous — never before'],
   },
 ]
 

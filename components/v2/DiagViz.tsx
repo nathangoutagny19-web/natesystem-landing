@@ -93,6 +93,46 @@ export function VizProto() {
   )
 }
 
+/* IA & automatisation : courbes en hausse + déclencheurs */
+export function VizGrowth() {
+  return (
+    <Frame>
+      <line x1="30" y1="26" x2="30" y2="150" stroke={C.line} strokeWidth="1.5" />
+      <line x1="30" y1="150" x2="292" y2="150" stroke={C.line} strokeWidth="1.5" />
+      {/* aire + courbe */}
+      <path d="M40 132 L92 112 L140 120 L192 82 L244 54 L282 38" fill="none" stroke={C.accent} strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" />
+      {[40, 92, 140, 192, 244, 282].map((x, i) => {
+        const y = [132, 112, 120, 82, 54, 38][i]
+        return <circle key={x} cx={x} cy={y} r={i === 5 ? 4 : 2.6} fill={i === 5 ? C.accent : C.fill} stroke={i === 5 ? C.accent : C.line} strokeWidth="1.4" />
+      })}
+      {/* flèche montée */}
+      <path d="M282 38 L270 42 M282 38 L278 50" stroke={C.accent} strokeWidth="2.4" strokeLinecap="round" />
+      {/* badge « déclencheur » */}
+      <rect x="150" y="26" width="92" height="24" rx="7" fill={C.accentSoft} stroke={C.accent} strokeWidth="1.2" />
+      <circle cx="166" cy="38" r="3.4" fill={C.accent} />
+      <rect x="176" y="33" width="52" height="4" rx="2" fill={C.accent} />
+      <rect x="176" y="41" width="38" height="3" rx="1.5" fill={C.soft} />
+    </Frame>
+  )
+}
+
+/* Formation & autonomie : tableau + personne */
+export function VizTeach() {
+  return (
+    <Frame>
+      <rect x="96" y="26" width="150" height="94" rx="8" fill={C.fill} stroke={C.line} strokeWidth="1.5" />
+      <rect x="112" y="46" width="88" height="5" rx="2.5" fill={C.accent} />
+      <rect x="112" y="62" width="112" height="4" rx="2" fill={C.soft} />
+      <rect x="112" y="76" width="72" height="4" rx="2" fill={C.soft} />
+      <rect x="112" y="90" width="98" height="4" rx="2" fill={C.soft} />
+      {/* personne */}
+      <circle cx="48" cy="74" r="15" fill={C.accentSoft} stroke={C.accent} strokeWidth="1.6" />
+      <path d="M22 140 C 22 104, 74 104, 74 140" fill={C.fill} stroke={C.line} strokeWidth="1.6" />
+      <path d="M64 84 L96 66" stroke={C.accent} strokeWidth="2" strokeLinecap="round" strokeDasharray="3 3" />
+    </Frame>
+  )
+}
+
 /* 3 — La Feuille de route : timeline / phases + budget (€) */
 export function VizFeuille() {
   const phases = [
