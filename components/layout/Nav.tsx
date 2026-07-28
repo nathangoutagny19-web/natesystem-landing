@@ -164,10 +164,10 @@ export default function Nav() {
                 <div className="nav-mega-inner">
                   <div className="nav-mega-col">
                     <p className="nav-mega-label">{t('mega.services')}</p>
-                    <MegaItem href={CAL_LINK} icon={icons.map} title={t('nav.svc.sprint')} desc={t('nav.svc.sprintDesc')} />
+                    <MegaItem href="/services/audit" icon={icons.clipboard} title={t('nav.svc.sprint')} desc={t('nav.svc.sprintDesc')} />
                     <MegaItem href="/services/logiciel-sur-mesure" icon={icons.laptop} title={t('nav.svc.logiciel')} desc={t('nav.svc.logicielDesc')} />
                     <MegaItem href="/services/ia" icon={icons.brain} title={t('nav.svc.ia')} desc={t('nav.svc.iaDesc')} />
-                    <MegaItem href="/services/audit" icon={icons.clipboard} title={t('nav.svc.audit')} desc={t('nav.svc.auditDesc')} />
+                    <MegaItem href={CAL_LINK} icon={icons.book} title={t('nav.svc.audit')} desc={t('nav.svc.auditDesc')} />
                   </div>
                   <MegaFeature
                     href="/case-studies/chromosome"
@@ -257,10 +257,10 @@ export default function Nav() {
           <MobileLink href="/methode" onClick={() => setMenuOpen(false)}>{t('nav.methode')}</MobileLink>
 
           <MobileAccordion label={t('nav.services')} open={mobileServicesOpen} onToggle={() => setMobileServicesOpen(!mobileServicesOpen)}>
-            <MobileLink href={CAL_LINK} onClick={() => setMenuOpen(false)}>{t('nav.svc.sprint')}</MobileLink>
+            <MobileLink href="/services/audit" onClick={() => setMenuOpen(false)}>{t('nav.svc.sprint')}</MobileLink>
             <MobileLink href="/services/logiciel-sur-mesure" onClick={() => setMenuOpen(false)}>{t('nav.svc.logiciel')}</MobileLink>
             <MobileLink href="/services/ia" onClick={() => setMenuOpen(false)}>{t('nav.svc.ia')}</MobileLink>
-            <MobileLink href="/services/audit" onClick={() => setMenuOpen(false)}>{t('nav.svc.audit')}</MobileLink>
+            <MobileLink href={CAL_LINK} onClick={() => setMenuOpen(false)}>{t('nav.svc.audit')}</MobileLink>
           </MobileAccordion>
 
           <MobileLink href="/case-studies" onClick={() => setMenuOpen(false)}>{t('nav.realisations')}</MobileLink>
