@@ -97,7 +97,7 @@ export default function Sectors() {
   const cur = SECTORS[active]
 
   return (
-    <section id="secteurs" style={{ padding: '40px 24px 104px' }}>
+    <section id="secteurs" style={{ padding: '40px 24px 24px' }}>
       <div className="mx-auto" style={{ maxWidth: '1100px' }}>
         <FadeUp className="text-center mb-16">
           <span className="section-label">{d('Les secteurs qu’on sert', 'Industries we serve')}</span>

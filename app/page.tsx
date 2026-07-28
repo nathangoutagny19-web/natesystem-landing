@@ -80,12 +80,9 @@ export default function Home() {
       <CtaFinal />
       <Divider />
 
-      {/* 12 — Les secteurs qu'on sert (sélecteur interactif) */}
+      {/* 12 — Les secteurs qu'on sert (sélecteur interactif) + juste dessous le
+             bandeau « Déployé. Mesuré. Rentabilisé. » (Systems), sans coupure. */}
       <Sectors />
-      <Divider />
-
-      {/* 12b — Exemples de solutions déployées dans ces secteurs (Systems),
-             déplacé juste sous les secteurs (choix Nathan). */}
       <Systems />
       <Divider />
 

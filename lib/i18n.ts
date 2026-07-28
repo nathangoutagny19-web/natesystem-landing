@@ -223,6 +223,9 @@ export const translations = {
   // Systems — recurring cases (5 AI systems + 3 custom software)
   // ───────────────────────────────────────────────────────────────
   'systems.label': { en: 'Example solutions', fr: 'Exemples de solutions' },
+  'systems.deployed': { en: 'Deployed.', fr: 'Déployé.' },
+  'systems.measured': { en: 'Measured.', fr: 'Mesuré.' },
+  'systems.profitable': { en: 'Profitable.', fr: 'Rentabilisé.' },
   'systems.title': { en: 'Deployed in these sectors,', fr: 'Déjà déployé dans ces secteurs,' },
   'systems.titleAccent': { en: 'winning every day.', fr: 'rentable tous les jours.' },
   'systems.sub': {

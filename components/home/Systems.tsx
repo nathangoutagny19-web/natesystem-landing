@@ -55,28 +55,16 @@ export default function Systems() {
   return (
     <section
       id="systemes"
-      style={{ padding: '120px 0 56px', overflowX: 'hidden', maxWidth: '100vw' }}
+      style={{ padding: '40px 0 56px', overflowX: 'hidden', maxWidth: '100vw' }}
     >
       <div className="mx-auto" style={{ maxWidth: '1100px', padding: '0 24px' }}>
-        <FadeUp className="text-center mb-16">
-          <span className="section-label">{t('systems.label')}</span>
-          <h2 className="section-title" style={{ maxWidth: '680px', margin: '0 auto 20px' }}>
-            {t('systems.title')}{' '}
-            <span className="accent">{t('systems.titleAccent')}</span>
-          </h2>
-          <p
-            className="font-sans"
-            style={{
-              fontSize: '15px',
-              fontWeight: 300,
-              color: 'var(--text-secondary)',
-              maxWidth: '620px',
-              margin: '0 auto',
-              lineHeight: 1.7,
-            }}
+        <FadeUp className="text-center mb-12">
+          <h2
+            className="font-serif italic"
+            style={{ fontSize: 'clamp(26px, 3.6vw, 40px)', fontWeight: 400, color: 'var(--text)', lineHeight: 1.2, margin: 0 }}
           >
-            {t('systems.sub')}
-          </p>
+            {t('systems.deployed')} {t('systems.measured')} <span className="accent">{t('systems.profitable')}</span>
+          </h2>
         </FadeUp>
       </div>
 
