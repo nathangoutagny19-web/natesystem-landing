@@ -2,18 +2,15 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { Map, MousePointerClick, FileText, Layers, Zap, type LucideIcon } from 'lucide-react'
+import { Map, MousePointerClick, FileText, type LucideIcon } from 'lucide-react'
 import Nav from '@/components/layout/Nav'
 import Footer from '@/components/layout/Footer'
 import MobileCta from '@/components/layout/MobileCta'
 import Divider from '@/components/ui/Divider'
 import FadeUp from '@/components/ui/FadeUp'
 import ScreenMock from '@/components/ui/ScreenMock'
-import Process from '@/components/home/Process'
-import WhatWeBuild from '@/components/home/WhatWeBuild'
 import MethodeFeatures from '@/components/methode/MethodeFeatures'
 import Faq from '@/components/home/Faq'
-import Radiographie from '@/components/methode/Radiographie'
 import { useLang } from '@/components/providers/LangProvider'
 import { CAL_LINK } from '@/lib/constants'
 
@@ -27,29 +24,6 @@ export default function MethodeContent() {
     { v: d('1 prototype', '1 prototype'), l: d('cliquable, avant de signer', 'clickable, before you sign') },
   ]
 
-  const pillars: { icon: LucideIcon; titleFr: string; titleEn: string; descFr: string; descEn: string }[] = [
-    {
-      icon: Map,
-      titleFr: 'Cartographier',
-      titleEn: 'Map',
-      descFr: 'On met tout à plat : chaque étape, de l’arrivée d’un prospect au client qui recommande. Ce qui vit dans les têtes passe sur le papier.',
-      descEn: 'We lay it all out: every step, from a prospect’s arrival to a client who refers you. What lives in people’s heads goes onto paper.',
-    },
-    {
-      icon: Layers,
-      titleFr: 'Unifier',
-      titleEn: 'Unify',
-      descFr: 'Vos données éparpillées rejoignent une seule source, à jour en temps réel. Fini les dix outils qui ne se parlent pas.',
-      descEn: 'Your scattered data joins a single source, live in real time. No more ten tools that don’t talk to each other.',
-    },
-    {
-      icon: Zap,
-      titleFr: 'Automatiser',
-      titleEn: 'Automate',
-      descFr: 'L’IA et l’automatisation prennent le répétitif — uniquement là où elles remplacent de vraies heures. Jamais en décoration.',
-      descEn: 'AI and automation take the repetitive work — only where they replace real hours. Never for show.',
-    },
-  ]
 
   const deliverables: { icon: LucideIcon; name: string; desc: string; img?: string; mock?: boolean }[] = [
     { icon: Map, name: t('v2.sprint.d1.name'), desc: t('v2.sprint.d1.desc'), img: 'carte-miro', mock: true },
@@ -102,16 +76,6 @@ export default function MethodeContent() {
         </div>
       </section>
       <MethodeFeatures />
-
-      <Divider />
-
-      {/* La Radiographie interactive (la carte d'onboarding) */}
-      <Radiographie />
-
-      <Divider />
-
-      {/* Les 4 temps (Process réutilisé) */}
-      <Process />
 
       <Divider />
 
@@ -169,11 +133,6 @@ export default function MethodeContent() {
           </div>
         </div>
       </section>
-
-      <Divider />
-
-      {/* Ce qu'on construit (what we ship) */}
-      <WhatWeBuild />
 
       <Divider />
 
