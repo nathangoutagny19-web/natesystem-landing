@@ -1529,9 +1529,9 @@ export const translations = {
   'radio.scene.yours': { en: '100% yours', fr: '100 % à vous' },
   'radio.scene.doc': { en: 'Docs', fr: 'Doc' },
 
-  'methode.deliv.label': { en: 'WHAT YOU LEAVE WITH', fr: 'CE AVEC QUOI VOUS REPARTEZ' },
-  'methode.deliv.title': { en: 'Three concrete deliverables — before any commitment.', fr: 'Trois livrables concrets — avant le moindre engagement.' },
-  'methode.deliv.sub': { en: 'Even if we never work together, you keep them.', fr: 'Même si on ne travaille jamais ensemble, ils sont à vous.' },
+  'methode.deliv.label': { en: 'THE DELIVERABLES', fr: 'LES LIVRABLES' },
+  'methode.deliv.title': { en: 'Everything, built for you.', fr: 'Tout est sur-mesure.' },
+  'methode.deliv.sub': { en: 'From the X-ray of your business to the costed action plan, every deliverable is tailored to you.', fr: 'De la radiographie de votre activité au plan d’action chiffré, chaque livrable est taillé pour vous.' },
 
   'methode.cta.title': { en: 'We start by understanding. Not by selling.', fr: 'On commence par comprendre. Pas par vendre.' },
   'methode.cta.sub': { en: 'A free call. We look at how your business runs and tell you straight what would actually move the needle — even if it\'s not us who builds it.', fr: 'Un appel offert. On regarde comment votre activité tourne et on vous dit franchement ce qui bougerait vraiment les choses — même si ce n\'est pas nous qui le construisons.' },

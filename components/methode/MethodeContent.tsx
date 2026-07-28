@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { Map, MousePointerClick, FileText, type LucideIcon } from 'lucide-react'
+import { Map, Boxes, Cpu, FileText, Clock, TrendingUp, Smile, Database, ShieldCheck, type LucideIcon } from 'lucide-react'
 import Nav from '@/components/layout/Nav'
 import Footer from '@/components/layout/Footer'
 import MobileCta from '@/components/layout/MobileCta'
@@ -25,10 +25,18 @@ export default function MethodeContent() {
   ]
 
 
-  const deliverables: { icon: LucideIcon; name: string; desc: string; img?: string; mock?: boolean }[] = [
-    { icon: Map, name: t('v2.sprint.d1.name'), desc: t('v2.sprint.d1.desc'), img: 'carte-miro', mock: true },
-    { icon: MousePointerClick, name: t('v2.sprint.d2.name'), desc: t('v2.sprint.d2.desc'), img: 'proto-front', mock: true },
-    { icon: FileText, name: t('v2.sprint.d3.name'), desc: t('v2.sprint.d3.desc'), img: 'feuille-photo' },
+  const deliverables: { icon: LucideIcon; name: string; desc: string; img: string; mock?: boolean }[] = [
+    { icon: Map, name: d('La radiographie de votre entreprise', 'Your business, X-rayed'), desc: d('Comment votre activité tourne réellement : tout ce qui vit dans les têtes, mis sur papier.', 'How your business actually runs: everything living in people’s heads, put on paper.'), img: 'methode/miro-full', mock: true },
+    { icon: Boxes, name: d('Systèmes & logiciels sur-mesure', 'Custom systems & software'), desc: d('Le cockpit taillé pour votre métier, avec vos données réunies au même endroit.', 'The cockpit built for your trade, with your data in one place.'), img: 'prototype/proto-front', mock: true },
+    { icon: Cpu, name: d('IA & automatisation sur-mesure', 'Custom AI & automation'), desc: d('L’IA et l’automatisation branchées sur vos vraies données, là où elles font gagner des heures.', 'AI and automation plugged into your real data, where they save real hours.'), img: 'methode/coding' },
+    { icon: FileText, name: d('Feuille de route & plan d’action', 'Roadmap & action plan'), desc: d('Quoi construire, dans quel ordre, pour combien. Un plan clair, sur-mesure.', 'What to build, in what order, for how much. A clear, custom plan.'), img: 'prototype/diag-feuille' },
+  ]
+
+  const results: { icon: LucideIcon; title: string; sub: string }[] = [
+    { icon: Clock, title: d('Du temps gagné', 'Time saved'), sub: d('chaque semaine, sur le répétitif', 'every week, on the repetitive') },
+    { icon: TrendingUp, title: d('Des deals plus gros', 'Bigger deals'), sub: d('un pipeline qui convertit', 'a pipeline that converts') },
+    { icon: Smile, title: d('Une meilleure exp. client', 'A better client experience'), sub: d('et des clients qui restent', 'and clients who stay') },
+    { icon: Database, title: d('La bonne data', 'The right data'), sub: d('au bon endroit, au bon moment', 'in the right place, at the right time') },
   ]
 
   return (
@@ -109,13 +117,13 @@ export default function MethodeContent() {
                     {del.img && (del.mock ? (
                       <div style={{ marginTop: 'auto', padding: 16, background: 'var(--bg-elevated)', borderTop: '1px solid var(--border)' }}>
                         <div style={{ height: 158 }}>
-                          <ScreenMock src={`/realisations/prototype/${del.img}.jpg`} alt={del.name} />
+                          <ScreenMock src={`/realisations/${del.img}.jpg`} alt={del.name} />
                         </div>
                       </div>
                     ) : (
                       <div style={{ position: 'relative', width: '100%', height: 172, marginTop: 'auto', background: 'var(--bg-elevated)', borderTop: '1px solid var(--border)' }}>
                         <Image
-                          src={`/realisations/prototype/${del.img}.jpg`}
+                          src={`/realisations/${del.img}.jpg`}
                           alt={del.name}
                           fill
                           sizes="(max-width: 900px) 90vw, 340px"
@@ -128,6 +136,52 @@ export default function MethodeContent() {
               )
             })}
           </div>
+        </div>
+      </section>
+
+      <Divider />
+
+      {/* Le vrai livrable : le résultat + la garantie */}
+      <section style={{ padding: '96px 24px' }}>
+        <div className="mx-auto" style={{ maxWidth: 1000 }}>
+          <FadeUp className="text-center mb-12">
+            <span className="section-label">{d('Le vrai livrable', 'The real deliverable')}</span>
+            <h2 className="section-title" style={{ maxWidth: 640, margin: '0 auto 14px' }}>
+              {d('Mais surtout : ', 'But above all: ')}<span className="accent">{d('le résultat.', 'the result.')}</span>
+            </h2>
+            <p className="font-sans" style={{ fontSize: 15, fontWeight: 300, color: 'var(--text-secondary)', maxWidth: 480, margin: '0 auto' }}>
+              {d('Les livrables, c’est bien. Ce que vous gardez vraiment, c’est ça :', 'Deliverables are nice. What you truly keep is this:')}
+            </p>
+          </FadeUp>
+
+          <div className="methode-results">
+            {results.map((r) => {
+              const Icon = r.icon
+              return (
+                <FadeUp key={r.title}>
+                  <div className="methode-result">
+                    <span className="methode-result-ico" aria-hidden="true"><Icon size={20} strokeWidth={1.7} /></span>
+                    <span className="font-serif italic methode-result-title">{r.title}</span>
+                    <span className="font-sans methode-result-sub">{r.sub}</span>
+                  </div>
+                </FadeUp>
+              )
+            })}
+          </div>
+
+          {/* La garantie résultat */}
+          <FadeUp delay={0.15}>
+            <div className="methode-guarantee">
+              <span className="methode-guarantee-ico" aria-hidden="true"><ShieldCheck size={22} strokeWidth={1.7} /></span>
+              <div>
+                <p className="font-mono methode-guarantee-label">{d('La garantie résultat', 'The result guarantee')}</p>
+                <p className="font-serif italic methode-guarantee-text">
+                  {d('On définit ensemble l’objectif et le délai. On l’atteint dans les temps, ou on continue à travailler gratuitement jusqu’à ce que ce soit le cas.',
+                     'We set the goal and the timeline together. We hit it on time, or we keep working for free until we do.')}
+                </p>
+              </div>
+            </div>
+          </FadeUp>
         </div>
       </section>
 
@@ -186,7 +240,7 @@ export default function MethodeContent() {
         .methode-pillar-desc { font-size: 14px; line-height: 1.6; font-weight: 300; color: var(--text-secondary); margin: 0; }
 
         /* Livrables */
-        .methode-deliv-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; align-items: stretch; }
+        .methode-deliv-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; align-items: stretch; max-width: 900px; margin: 0 auto; }
         .methode-deliv-card {
           display: flex; flex-direction: column; height: 100%; overflow: hidden;
           background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px;
@@ -199,9 +253,47 @@ export default function MethodeContent() {
           width: 44px; height: 44px; border-radius: 11px; margin-bottom: 16px;
           background: var(--accent-subtle); border: 1px solid rgba(230,57,70,0.18); color: var(--accent);
         }
+        /* Le vrai résultat */
+        .methode-results {
+          display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin-bottom: 32px;
+        }
+        .methode-result {
+          display: flex; flex-direction: column; align-items: flex-start; gap: 6px;
+          padding: 22px 20px; height: 100%;
+          background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px;
+          transition: transform 260ms ease, border-color 260ms ease;
+        }
+        .methode-result:hover { transform: translateY(-3px); border-color: rgba(230,57,70,0.28); }
+        .methode-result-ico {
+          display: inline-flex; align-items: center; justify-content: center;
+          width: 42px; height: 42px; border-radius: 11px; margin-bottom: 6px;
+          background: var(--accent-subtle); border: 1px solid rgba(230,57,70,0.18); color: var(--accent);
+        }
+        .methode-result-title { font-size: 19px; font-weight: 400; color: var(--text); line-height: 1.2; }
+        .methode-result-sub { font-size: 13px; font-weight: 300; color: var(--text-secondary); line-height: 1.45; }
+
+        /* La garantie résultat */
+        .methode-guarantee {
+          display: flex; align-items: flex-start; gap: 20px;
+          padding: 30px 32px; border-radius: 16px;
+          background: linear-gradient(120deg, var(--accent-subtle), transparent 70%);
+          border: 1px solid rgba(230,57,70,0.28);
+        }
+        .methode-guarantee-ico {
+          flex: none; display: inline-flex; align-items: center; justify-content: center;
+          width: 48px; height: 48px; border-radius: 12px;
+          background: var(--accent); color: #fff;
+        }
+        .methode-guarantee-label {
+          font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); font-weight: 600; margin: 2px 0 8px;
+        }
+        .methode-guarantee-text { font-size: clamp(18px, 2.4vw, 22px); font-weight: 400; color: var(--text); line-height: 1.45; margin: 0; max-width: 720px; }
+
         @media (max-width: 900px) {
           .methode-pillars { grid-template-columns: 1fr; gap: 16px; }
           .methode-deliv-grid { grid-template-columns: 1fr; gap: 16px; }
+          .methode-results { grid-template-columns: repeat(2, 1fr); }
+          .methode-guarantee { flex-direction: column; gap: 14px; padding: 26px 22px; }
         }
       `}</style>
     </main>
