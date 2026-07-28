@@ -95,8 +95,8 @@ export default function MethodeContent() {
         <div className="mx-auto text-center" style={{ maxWidth: 700 }}>
           <FadeUp>
             <span className="section-label">{d('Le principe', 'The principle')}</span>
-            <h2 className="section-title" style={{ maxWidth: 720, margin: '0 auto' }}>
-              {d('Cartographier. Construire. Automatiser. ', 'Map. Build. Automate. ')}<span className="accent">{d('Rendre autonome.', 'Hand over autonomy.')}</span>
+            <h2 className="section-title" style={{ maxWidth: 760, margin: '0 auto' }}>
+              {d('Cartographier, construire, automatiser, former — ', 'Map, build, automate, train — ')}<span className="accent">{d('et faire évoluer.', 'and keep evolving.')}</span>
             </h2>
           </FadeUp>
         </div>

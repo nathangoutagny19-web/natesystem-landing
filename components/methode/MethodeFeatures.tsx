@@ -1,9 +1,9 @@
 'use client'
 
-import { Search, Boxes, Cpu, GraduationCap, type LucideIcon } from 'lucide-react'
+import { Search, Boxes, Cpu, GraduationCap, RefreshCcw, type LucideIcon } from 'lucide-react'
 import FadeUp from '@/components/ui/FadeUp'
 import { useLang } from '@/components/providers/LangProvider'
-import { VizCarte, VizGrowth, VizTeach } from '@/components/v2/DiagViz'
+import { VizCarte, VizGrowth, VizTeach, VizFeuille } from '@/components/v2/DiagViz'
 import FanMockups from '@/components/methode/FanMockups'
 
 type Block = {
@@ -34,23 +34,23 @@ const BLOCKS: Block[] = [
     icon: Boxes,
     Viz: VizGrowth,
     fan: true,
-    eyebrowFr: 'Votre cockpit sur-mesure', eyebrowEn: 'Your custom cockpit',
-    titleFr: 'Vos données, réunies', titleEn: 'Your data, unified',
-    paraFr: 'Une fois qu’on sait comment vous tournez, on construit le cockpit sur-mesure. Pensez-le comme un logiciel conçu exactement pour votre façon de travailler — pas l’inverse. Tout le monde s’y connecte, chacun voit ce qu’il doit voir. Chaque client, chaque projet, chaque commande, chaque membre d’équipe, au même endroit.',
-    paraEn: 'Once we know how you run, we build the custom cockpit. Think of it as software designed specifically for how you actually operate — not the other way round. Everyone logs in, everyone sees what they need. Every client, every project, every order, every team member, in one place.',
-    bulletsFr: ['Un système, une connexion — toute l’entreprise sur la même page', 'Vos workflows métier intégrés au cœur du système', 'Des vues par rôle — chacun voit ce dont il a besoin, rien d’autre'],
-    bulletsEn: ['One system, one login — the whole company on the same page', 'Your business workflows built into the system', 'Role-based views — each person sees what they need, nothing else'],
+    eyebrowFr: 'Le système sur-mesure · front-end', eyebrowEn: 'The custom system · front-end',
+    titleFr: 'L’interface que vos équipes pilotent', titleEn: 'The interface your teams run',
+    paraFr: 'La partie visible : l’interface, le cockpit, le logiciel taillé exactement pour votre façon de travailler — pas l’inverse. Tout le monde s’y connecte, chacun voit ce qu’il doit voir. Chaque client, chaque projet, chaque commande, chaque membre d’équipe, au même endroit.',
+    paraEn: 'The visible part: the interface, the cockpit, the software built exactly for how you work — not the other way round. Everyone logs in, everyone sees what they need. Every client, project, order and team member, in one place.',
+    bulletsFr: ['Une interface pensée pour votre métier, pas un template', 'Un système, une connexion — toute l’entreprise sur la même page', 'Des vues par rôle — chacun voit ce dont il a besoin, rien d’autre'],
+    bulletsEn: ['An interface designed for your trade, not a template', 'One system, one login — the whole company on the same page', 'Role-based views — each person sees what they need, nothing else'],
   },
   {
     n: '03',
     icon: Cpu,
     Viz: VizGrowth,
-    eyebrowFr: 'L’IA au bon endroit', eyebrowEn: 'AI where it counts',
-    titleFr: 'Automatiser le répétitif', titleEn: 'Automate the repetitive',
-    paraFr: 'On ajoute l’IA et l’automatisation uniquement là où elles remplacent de vraies heures — jamais en décoration. Une échéance ratée ? Le système alerte tout seul. Une note vocale ? Il interroge vos données, exécute l’action et confirme. Chaque automatisation existe parce que votre activité en a besoin, pas parce que c’est à la mode.',
-    paraEn: 'We add AI and automation only where they replace real hours — never for show. A missed deadline? The system alerts on its own. A voice note? It queries your data, takes the action and confirms. Every automation exists because your operation needs it, not because it’s trendy.',
-    bulletsFr: ['L’admin et la saisie manuelle, automatisés', 'Des agents IA branchés sur vos vraies données', 'Des alertes qui attrapent les problèmes avant vous'],
-    bulletsEn: ['Admin and manual data-entry, automated', 'AI agents plugged into your real data', 'Alerts that catch problems before you do'],
+    eyebrowFr: 'Le moteur · back-end & IA', eyebrowEn: 'The engine · back-end & AI',
+    titleFr: 'L’automatisation & l’IA en coulisses', titleEn: 'Automation & AI behind the scenes',
+    paraFr: 'La partie invisible qui fait le vrai travail : vos données unifiées, les workflows, les agents IA. On automatise uniquement là où ça remplace de vraies heures. Une échéance ratée ? Le système alerte. Une note vocale ? Il interroge vos données, exécute l’action et confirme.',
+    paraEn: 'The invisible part that does the real work: your unified data, the workflows, the AI agents. We automate only where it replaces real hours. A missed deadline? The system alerts. A voice note? It queries your data, takes the action and confirms.',
+    bulletsFr: ['Vos données unifiées, à jour en temps réel', 'L’admin et la saisie manuelle, automatisés', 'Des agents IA branchés sur vos vraies données'],
+    bulletsEn: ['Your data unified, live in real time', 'Admin and manual data-entry, automated', 'AI agents plugged into your real data'],
   },
   {
     n: '04',
@@ -62,6 +62,17 @@ const BLOCKS: Block[] = [
     paraEn: 'This is where we’re truly different. Instead of keeping you dependent, we train your teams — from leadership to the field — until they run the tool on their own. The code and infrastructure are 100% yours, documented. We stay available if you want, but you’re never locked in with anyone.',
     bulletsFr: ['Formation de toute l’équipe, du dirigeant au terrain', 'Code + infrastructure 100 % à vous, documentés', 'On part quand vous êtes autonomes — jamais avant'],
     bulletsEn: ['Training for the whole team, leadership to the field', 'Code + infrastructure 100% yours, documented', 'We leave when you’re autonomous — never before'],
+  },
+  {
+    n: '05',
+    icon: RefreshCcw,
+    Viz: VizFeuille,
+    eyebrowFr: 'L’amélioration continue', eyebrowEn: 'Continuous improvement',
+    titleFr: 'On fait évoluer, en continu', titleEn: 'We keep it evolving',
+    paraFr: 'Rien n’est figé. Après quelques semaines d’usage, on regarde ce qui marche vraiment et on ajuste. Le système grandit avec votre activité — nouvelles fonctions, nouveaux automatismes, à votre rythme. Et si vous voulez, on reste à vos côtés pour le faire évoluer.',
+    paraEn: 'Nothing is set in stone. After a few weeks of use, we look at what actually works and adjust. The system grows with your business — new features, new automations, at your pace. And if you want, we stay by your side to keep it evolving.',
+    bulletsFr: ['On mesure l’usage réel et on optimise', 'De nouvelles capacités ajoutées quand vous en avez besoin', 'Un système qui grandit avec vous — jamais figé'],
+    bulletsEn: ['We measure real usage and optimise', 'New capabilities added when you need them', 'A system that grows with you — never frozen'],
   },
 ]
 
