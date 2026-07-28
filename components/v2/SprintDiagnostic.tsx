@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { Map, MousePointerClick, FileText } from 'lucide-react'
 import FadeUp from '@/components/ui/FadeUp'
 import { useLang } from '@/components/providers/LangProvider'
+import { VizCarte, VizProto, VizFeuille } from '@/components/v2/DiagViz'
 
 /**
  * Le Diagnostic — l'offre d'entrée (REFONTE §4.3).
@@ -14,9 +15,9 @@ export default function SprintDiagnostic() {
   const { t } = useLang()
 
   const deliverables = [
-    { icon: Map, name: t('v2.sprint.d1.name'), desc: t('v2.sprint.d1.desc'), img: 'diag-carte' },
-    { icon: MousePointerClick, name: t('v2.sprint.d2.name'), desc: t('v2.sprint.d2.desc'), img: 'diag-proto' },
-    { icon: FileText, name: t('v2.sprint.d3.name'), desc: t('v2.sprint.d3.desc'), img: 'diag-feuille' },
+    { icon: Map, name: t('v2.sprint.d1.name'), desc: t('v2.sprint.d1.desc'), Viz: VizCarte },
+    { icon: MousePointerClick, name: t('v2.sprint.d2.name'), desc: t('v2.sprint.d2.desc'), Viz: VizProto },
+    { icon: FileText, name: t('v2.sprint.d3.name'), desc: t('v2.sprint.d3.desc'), Viz: VizFeuille },
   ]
 
   return (
@@ -64,6 +65,7 @@ export default function SprintDiagnostic() {
         <div className="dg-cards">
           {deliverables.map((d, i) => {
             const Icon = d.icon
+            const Viz = d.Viz
             return (
               <FadeUp key={d.name} delay={0.1 + i * 0.1}>
                 <div className="dg-card">
@@ -72,12 +74,9 @@ export default function SprintDiagnostic() {
                       <div className="dg-mock-bar" aria-hidden="true">
                         <i /><i /><i />
                       </div>
-                      <div
-                        className="dg-mock-img"
-                        role="img"
-                        aria-label={d.name}
-                        style={{ backgroundImage: `url(/realisations/prototype/${d.img}.jpg)` }}
-                      />
+                      <div className="dg-mock-viz" role="img" aria-label={d.name}>
+                        <Viz />
+                      </div>
                     </div>
                   </div>
                   <div className="dg-body">
@@ -166,13 +165,12 @@ export default function SprintDiagnostic() {
           border-bottom: 1px solid var(--border);
         }
         .dg-mock-bar i { width: 6px; height: 6px; border-radius: 50%; background: var(--text-muted); opacity: 0.5; }
-        .dg-mock-img {
+        .dg-mock-viz {
           aspect-ratio: 16 / 9;
-          background-color: #fff;
-          background-size: cover;
-          background-position: top center;
-          background-repeat: no-repeat;
+          background: var(--bg-elevated);
+          display: block;
         }
+        .dg-mock-viz :global(.dg-viz-svg) { width: 100%; height: 100%; display: block; }
 
         .dg-body { padding: 16px 18px 20px; }
         .dg-num {
