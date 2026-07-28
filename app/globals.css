@@ -522,10 +522,11 @@ html.light .mega-item-icon {
   .nav-mega-feature { min-width: 0; max-width: 95vw; }
 }
 
+/* Deux cartes featured empilées à droite du méga */
+.nav-mega-features { display: flex; flex-direction: column; gap: 12px; }
 .mega-feature {
   display: flex;
   flex-direction: column;
-  min-height: 216px;
   border-radius: 12px;
   overflow: hidden;
   text-decoration: none;
@@ -535,15 +536,26 @@ html.light .mega-item-icon {
 .mega-feature:hover { border-color: var(--border-hover); }
 /* Le screenshot vit dans un mockup navigateur, contenu avec de la marge (jamais zoomé bord-à-bord) */
 .mega-feature-mock {
-  flex: 1;
-  min-height: 0;
-  padding: 14px 14px 0;
+  padding: 12px 12px 0;
 }
 .mega-feature-mock .screenmock {
+  height: 116px;
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .mega-feature:hover .mega-feature-mock .screenmock { transform: translateY(-3px); }
-.mega-feature-body { padding: 12px 16px 15px; }
+/* Variante photo (vraie photo → cover, pas de barre navigateur) */
+.mega-feature-cover {
+  display: block;
+  height: 116px;
+  margin: 12px 12px 0;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.mega-feature:hover .mega-feature-cover { transform: translateY(-3px); }
+.mega-feature-body { padding: 11px 14px 13px; }
 .mega-feature-label {
   display: block;
   font-family: var(--font-mono);

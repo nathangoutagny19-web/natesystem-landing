@@ -169,18 +169,26 @@ export default function Nav() {
                     <MegaItem href="/services/ia" icon={icons.brain} title={t('nav.svc.ia')} desc={t('nav.svc.iaDesc')} />
                     <MegaItem href={CAL_LINK} icon={icons.book} title={t('nav.svc.audit')} desc={t('nav.svc.auditDesc')} />
                   </div>
-                  <MegaFeature
-                    href="/case-studies/chromosome"
-                    img="/realisations/prototype/proto-front.jpg"
-                    label={d('Réalisation', 'Case study')}
-                    title={d('Un cockpit taillé sur-mesure', 'A cockpit built to measure')}
-                    cta={d('Voir le cas Chromosome', 'See the Chromosome case')}
-                  />
+                  <div className="nav-mega-features">
+                    <MegaFeature
+                      href="/resources"
+                      img="/realisations/prototype/proto-front.jpg"
+                      label={d('Ressources', 'Resources')}
+                      title={d('Utilisez nos apps, gratuitement', 'Use our apps, for free')}
+                      cta={d('Voir les ressources', 'See resources')}
+                    />
+                    <MegaFeature
+                      photo
+                      href="/case-studies/chromosome"
+                      img="/realisations/prototype/diag-feuille.jpg"
+                      label={d('Réalisation', 'Case study')}
+                      title={d('Le cas Chromosome', 'The Chromosome case')}
+                      cta={d('Voir le cas client', 'See the case study')}
+                    />
+                  </div>
                 </div>
                 <div className="nav-mega-foot">
                   <div className="nav-mega-more">
-                    <Link href="/case-studies" className="nav-mega-foot-link">{t('nav.realisations')}</Link>
-                    <Link href="/resources" className="nav-mega-foot-link">{t('nav.resources')}</Link>
                     <Link href="/methode" className="nav-mega-foot-link">{t('nav.methode')}</Link>
                   </div>
                   <Link href={CAL_LINK} className="nav-mega-foot-cta">{d('Réserver un appel', 'Book a call')} &rarr;</Link>
@@ -382,18 +390,25 @@ function MegaFeature({
   label,
   title,
   cta,
+  photo,
 }: {
   href: string
   img: string
   label: string
   title: string
   cta: string
+  /** Real photo → shown as a cover image instead of a browser mockup. */
+  photo?: boolean
 }) {
   return (
-    <Link href={href} className="mega-feature">
-      <span className="mega-feature-mock">
-        <ScreenMock src={img} alt={title} />
-      </span>
+    <Link href={href} className={`mega-feature${photo ? ' mega-feature-photo' : ''}`}>
+      {photo ? (
+        <span className="mega-feature-cover" style={{ backgroundImage: `url(${img})` }} aria-hidden="true" />
+      ) : (
+        <span className="mega-feature-mock">
+          <ScreenMock src={img} alt={title} />
+        </span>
+      )}
       <span className="mega-feature-body">
         <span className="mega-feature-label">{label}</span>
         <span className="mega-feature-title">{title}</span>
