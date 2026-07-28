@@ -94,12 +94,6 @@ export default function Process({ home = false }: { home?: boolean }) {
                     → {step.highlight}
                   </p>
                 </div>
-
-                {/* Deadline / durée — dans son propre cadre à droite */}
-                <div className="process-deadline">
-                  <span className="font-mono process-deadline-label">{d('Délai', 'Timeline')}</span>
-                  <span className="font-mono process-deadline-val">{step.duration}</span>
-                </div>
               </div>
             </FadeUp>
           ))}
