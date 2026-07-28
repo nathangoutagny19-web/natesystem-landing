@@ -189,7 +189,7 @@ export default function Nav() {
                 </div>
                 <div className="nav-mega-foot">
                   <div className="nav-mega-more">
-                    <Link href="/methode" className="nav-mega-foot-link">{t('nav.methode')}</Link>
+                    <Link href="/methode" className="nav-mega-foot-link">{d('Voir comment on travaille', 'See how we work')}</Link>
                   </div>
                   <Link href={CAL_LINK} className="nav-mega-foot-cta">{d('Réserver un appel', 'Book a call')} &rarr;</Link>
                 </div>
