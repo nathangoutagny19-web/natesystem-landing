@@ -48,6 +48,7 @@ const BLOCKS: Block[] = [
     n: '03',
     icon: Cpu,
     Viz: VizGrowth,
+    photo: 'methode/coding',
     eyebrowFr: 'Le moteur · back-end & IA', eyebrowEn: 'The engine · back-end & AI',
     titleFr: 'L’automatisation & l’IA en coulisses', titleEn: 'Automation & AI behind the scenes',
     paraFr: 'La partie invisible qui fait le vrai travail : vos données unifiées, les workflows, les agents IA. On automatise uniquement là où ça remplace de vraies heures. Une échéance ratée ? Le système alerte. Une note vocale ? Il interroge vos données, exécute l’action et confirme.',
