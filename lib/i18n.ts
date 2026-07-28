@@ -165,7 +165,7 @@ export const translations = {
   'process.step1Highlight': { en: '1 to 15 days', fr: '1 à 15 jours' },
   'process.step2Highlight': { en: '30 to 60 days', fr: '30 à 60 jours' },
   'process.step3Highlight': { en: 'Until full autonomy', fr: 'Jusqu\'à l\'autonomie complète' },
-  'process.step4Highlight': { en: 'Monthly retainer', fr: 'Forfait mensuel' },
+  'process.step4Highlight': { en: 'Retainer', fr: 'Forfait' },
   'process.guarantee1': { en: 'Guaranteed deadlines or -10%/week late', fr: 'Délais garantis ou -10%/semaine de retard' },
   'process.guarantee2': { en: 'ROI guarantee over 12 months', fr: 'Garantie ROI sur 12 mois' },
   'process.guarantee3': { en: 'Full source code delivered · Permanent ownership', fr: 'Code source complet livré · Propriété définitive' },
