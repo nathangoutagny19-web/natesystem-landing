@@ -64,14 +64,11 @@ export default function MethodeContent() {
 
       <Divider />
 
-      {/* Le principe en 3 temps — blocs alternés (inspiré OpsKings how-we-work, sauce NateSystem) */}
-      <section style={{ padding: '80px 24px 20px' }}>
+      {/* Le principe — blocs alternés (inspiré OpsKings how-we-work, sauce NateSystem) */}
+      <section style={{ padding: '56px 24px 0' }}>
         <div className="mx-auto text-center" style={{ maxWidth: 700 }}>
           <FadeUp>
-            <span className="section-label">{d('Le principe', 'The principle')}</span>
-            <h2 className="section-title" style={{ maxWidth: 760, margin: '0 auto' }}>
-              {d('Cartographier, construire, automatiser, faire évoluer. ', 'Map, build, automate, evolve. ')}<span className="accent">{d('Et vous rendre autonome.', 'And hand you autonomy.')}</span>
-            </h2>
+            <span className="section-label" style={{ marginBottom: 0 }}>{d('Le principe', 'The principle')}</span>
           </FadeUp>
         </div>
       </section>
