@@ -3,6 +3,7 @@ export const translations = {
   'nav.agency': { en: 'Agency', fr: 'Agence' },
   'nav.tools': { en: 'Tools', fr: 'Outils' },
   'nav.resources': { en: 'Resources', fr: 'Ressources' },
+  'nav.freeTools': { en: 'Free tools', fr: 'Outils gratuits' },
   'nav.cta': { en: 'Let\'s work together', fr: 'Travaillons ensemble' },
   'nav.contact': { en: 'Contact', fr: 'Contact' },
 

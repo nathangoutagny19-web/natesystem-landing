@@ -201,6 +201,9 @@ export default function Nav() {
 
             {/* Ressources, lien direct (seul Services garde un déroulant) */}
             <Link href="/resources" className="nav-link">{t('nav.resources')}</Link>
+
+            {/* Outils gratuits, lien direct (aimant à leads SEO) */}
+            <Link href="/outils" className="nav-link">{t('nav.freeTools')}</Link>
           </nav>
 
           {/* Right side, lang + CTA */}
@@ -274,6 +277,8 @@ export default function Nav() {
           <MobileLink href="/case-studies" onClick={() => setMenuOpen(false)}>{t('nav.realisations')}</MobileLink>
 
           <MobileLink href="/resources" onClick={() => setMenuOpen(false)}>{t('nav.resources')}</MobileLink>
+
+          <MobileLink href="/outils" onClick={() => setMenuOpen(false)}>{t('nav.freeTools')}</MobileLink>
 
           <div className="flex gap-2 mt-4 flex-wrap">
             {(['en', 'fr'] as const).map(l => (

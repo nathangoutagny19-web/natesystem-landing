@@ -149,6 +149,7 @@ export default function Footer() {
 
         {/* Tools & demos column */}
         <FooterCol title={t('footer.col.toolsDemos')}>
+          <FooterLink href="/outils">{t('nav.freeTools')}</FooterLink>
           <FooterLink href="/tools">{t('footer.link.allTools')}</FooterLink>
           <FooterLink href="/tools/diagnostic-ia">{t('tools.diagnostic.title')}</FooterLink>
           <FooterLink href="/reviews">{t('footer.link.reviewsDemo')}</FooterLink>
