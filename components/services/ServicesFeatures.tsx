@@ -4,7 +4,6 @@ import Link from 'next/link'
 import { Search, Boxes, Cpu, GraduationCap, ArrowRight, type LucideIcon } from 'lucide-react'
 import FadeUp from '@/components/ui/FadeUp'
 import { useLang } from '@/components/providers/LangProvider'
-import { VizCarte, VizTeach } from '@/components/v2/DiagViz'
 import FanMockups from '@/components/methode/FanMockups'
 
 type Block = {
@@ -12,7 +11,6 @@ type Block = {
   icon: LucideIcon
   href: string
   linkFr: string; linkEn: string
-  Viz?: () => React.JSX.Element
   fan?: boolean
   img?: string
   photo?: string
@@ -55,7 +53,7 @@ const BLOCKS: Block[] = [
   },
   {
     n: '04', icon: GraduationCap, href: '/services/formation', linkFr: 'Voir la formation', linkEn: 'See training',
-    Viz: VizTeach,
+    photo: 'prototype/diag-feuille',
     eyebrowFr: 'On rend autonome', eyebrowEn: 'We hand over autonomy',
     titleFr: 'Formation & accompagnement', titleEn: 'Training & support',
     paraFr: 'On forme vos équipes, du dirigeant au terrain, jusqu’à ce qu’elles pilotent l’outil seules. Le code et l’infrastructure vous appartiennent, documentés. On reste dispo si vous voulez, mais vous n’êtes jamais coincé avec personne.',
@@ -74,7 +72,6 @@ export default function ServicesFeatures() {
       <div className="mx-auto" style={{ maxWidth: 1120 }}>
         {BLOCKS.map((b, i) => {
           const Icon = b.icon
-          const Viz = b.Viz
           return (
             <FadeUp key={b.n}>
               <div className={`sf-block${i % 2 === 1 ? ' sf-block-rev' : ''}`}>
@@ -108,11 +105,6 @@ export default function ServicesFeatures() {
                     <div className="sf-mock">
                       <div className="sf-mock-bar" aria-hidden="true"><i /><i /><i /></div>
                       <div className="sf-mock-shot" role="img" aria-label={d(b.titleFr, b.titleEn)} style={{ backgroundImage: `url(/realisations/${b.img}.jpg)` }} />
-                    </div>
-                  ) : Viz ? (
-                    <div className="sf-mock">
-                      <div className="sf-mock-bar" aria-hidden="true"><i /><i /><i /></div>
-                      <div className="sf-mock-screen"><Viz /></div>
                     </div>
                   ) : null}
                 </div>
