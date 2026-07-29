@@ -2,10 +2,8 @@
 
 import { Target, Infinity as InfinityIcon, Zap, KeyRound, ShieldCheck, type LucideIcon } from 'lucide-react'
 import FadeUp from '@/components/ui/FadeUp'
-import LiteYouTube from '@/components/ui/LiteYouTube'
+import VslPlayer from '@/components/ui/VslPlayer'
 import { useLang } from '@/components/providers/LangProvider'
-
-const VIDEO_ID = '6Sg4_wkyOa8'
 
 type Point = { icon: LucideIcon; titleFr: string; titleEn: string; descFr: string; descEn: string }
 
@@ -63,8 +61,14 @@ export default function Different() {
         </FadeUp>
 
         <div className="diff-row">
-          <div className="diff-video">
-            <LiteYouTube id={VIDEO_ID} title={d('Ce qui rend NateSystem différent', 'What makes NateSystem different')} />
+          <div className="diff-video-wrap">
+            <VslPlayer
+              src="/different.mp4"
+              poster="/different-poster.jpg"
+              label={d('Regarder la vidéo', 'Watch the video')}
+              duration="3 min"
+              title={d('Ce qui rend NateSystem différent', 'What makes NateSystem different')}
+            />
           </div>
 
           <div className="diff-points">
