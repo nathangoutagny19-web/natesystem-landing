@@ -11,6 +11,8 @@ export const metadata: Metadata = {
     'tableau prévisionnel trésorerie entreprise',
     'outils gratuits PME',
     'gestion de stock en ligne gratuit',
+    'logiciel gestion de parc informatique gratuit',
+    'suivi des actifs entreprise',
   ],
   alternates: { canonical: 'https://www.natesystem.com/outils' },
   openGraph: {
@@ -59,6 +61,17 @@ const jsonLd = {
       description:
         'Outil de prévision de trésorerie gratuit pour entreprise. Sachez à quel mois votre trésorerie passe dans le rouge : TVA, salaires, cotisations, échéances et retards de paiement inclus. Tableau prévisionnel clair, sans inscription.',
       url: 'https://natesystem-treso.vercel.app',
+      offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
+      provider: { '@id': 'https://www.natesystem.com/#organization' },
+    },
+    {
+      '@type': 'SoftwareApplication',
+      name: 'NateSystem Gestion d’actifs',
+      applicationCategory: 'BusinessApplication',
+      operatingSystem: 'Web',
+      description:
+        'Logiciel de gestion de parc et d’actifs gratuit pour PME. Centralisez tout votre matériel (IT, véhicules, machines, mobilier) avec amortissements automatiques, alertes de remplacement et historique par équipement. Sans inscription.',
+      url: 'https://actifs.natesystem.com',
       offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
       provider: { '@id': 'https://www.natesystem.com/#organization' },
     },

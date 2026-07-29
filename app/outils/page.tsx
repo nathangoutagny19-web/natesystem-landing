@@ -51,6 +51,15 @@ const TOOLS: Tool[] = [
     alt: 'Diagnostic IA gratuit NateSystem : test de maturité IA avec 3 jauges par pilier (processus, données, adoption)',
     cta: 'Faire le test',
   },
+  {
+    name: 'Gestion d’actifs',
+    tag: 'Suivi de parc',
+    problem: 'Vous ne savez plus qui a quel matériel, ni quand le remplacer ? Suivez votre parc (IT, véhicules, machines) avec amortissements et alertes.',
+    href: 'https://actifs.natesystem.com',
+    img: 'demos/actifs',
+    alt: 'Logiciel de gestion de parc et d’actifs gratuit NateSystem : suivi du matériel avec amortissements automatiques et alertes de remplacement',
+    cta: 'Essayer la démo',
+  },
 ]
 
 export default function OutilsPage() {
@@ -80,7 +89,7 @@ export default function OutilsPage() {
 
       {/* Grille des outils */}
       <section style={{ padding: '64px 24px' }}>
-        <div className="mx-auto" style={{ maxWidth: 1100 }}>
+        <div className="mx-auto" style={{ maxWidth: 1200 }}>
           <div className="outils-grid">
             {TOOLS.map((tool, i) => (
               <FadeUp key={tool.name} delay={Math.min(i * 0.08, 0.3)}>
@@ -185,6 +194,25 @@ export default function OutilsPage() {
                 <Link href="/outils/pret-pour-lia" style={{ color: 'var(--accent)', textDecoration: 'none' }}>Faire le test →</Link>
               </p>
             </article>
+
+            <article style={{ marginTop: 56 }}>
+              <span className="section-label">Gestion d’actifs</span>
+              <h2 className="font-serif italic outil-desc-title">Un logiciel de gestion de parc et d’actifs gratuit.</h2>
+              <p className="outil-desc-p">
+                Ordinateurs, véhicules, machines, mobilier : dans une PME qui grandit, on finit par ne plus savoir qui a quoi, ni
+                ce qui est encore sous garantie, ni quand remplacer. NateSystem Gestion d’actifs est un logiciel de gestion de
+                parc gratuit qui centralise tout votre matériel au même endroit, avec son état, son affectation et sa valeur.
+              </p>
+              <p className="outil-desc-p">
+                Amortissements calculés automatiquement, alertes de fin de vie et de remplacement, historique par équipement :
+                vous arrêtez de piloter votre parc dans un tableur qui n’est jamais à jour. La démo tourne sur des données
+                fictives, en accès direct, sans inscription.
+              </p>
+              <p className="outil-desc-p">
+                C’est le même moteur qu’on adapte au parc réel de nos clients. Si vous voulez suivre vos propres catégories, vos
+                règles d’amortissement et vos alertes, c’est exactement ce qu’on construit sur-mesure.
+              </p>
+            </article>
           </FadeUp>
         </div>
       </section>
@@ -218,8 +246,8 @@ export default function OutilsPage() {
       <style jsx>{`
         .outils-grid {
           display: grid;
-          grid-template-columns: repeat(3, minmax(0, 1fr));
-          gap: 22px;
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+          gap: 18px;
           align-items: stretch;
         }
         .outil-card {
@@ -229,27 +257,27 @@ export default function OutilsPage() {
           background: var(--bg-card);
           border: 1px solid var(--border);
           border-radius: 16px;
-          padding: 26px 24px 24px;
+          padding: 22px 20px 20px;
           box-shadow: 0 1px 2px rgba(15,23,42,0.04), 0 8px 24px -16px rgba(15,23,42,0.12);
           transition: transform 280ms cubic-bezier(0.22,1,0.36,1), border-color 280ms ease;
         }
         .outil-card:hover { transform: translateY(-3px); border-color: rgba(230,57,70,0.28); }
         .outil-card-soon { opacity: 0.92; }
-        .outil-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
-        .outil-tag { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); font-weight: 600; }
+        .outil-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 11px; }
+        .outil-tag { font-size: 9.5px; letter-spacing: 1.6px; text-transform: uppercase; color: var(--accent); font-weight: 600; }
         .outil-badge-soon {
           font-size: 9.5px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-muted);
           border: 1px solid var(--border); border-radius: 999px; padding: 3px 9px;
         }
-        .outil-name { font-size: 24px; font-weight: 400; color: var(--text); line-height: 1.15; margin: 0 0 10px; }
-        .outil-problem { font-size: 14px; font-weight: 300; color: var(--text-secondary); line-height: 1.6; margin: 0 0 20px; flex: 1; }
-        .outil-shot { height: 168px; margin-bottom: 22px; }
+        .outil-name { font-size: 21px; font-weight: 400; color: var(--text); line-height: 1.15; margin: 0 0 9px; }
+        .outil-problem { font-size: 13px; font-weight: 300; color: var(--text-secondary); line-height: 1.55; margin: 0 0 18px; flex: 1; }
+        .outil-shot { height: 132px; margin-bottom: 18px; }
         .outil-shot-placeholder {
           display: flex; align-items: center; justify-content: center;
           border-radius: 10px; border: 1px dashed var(--border-hover); background: var(--bg-elevated);
         }
         .outil-shot-placeholder span { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-muted); }
-        .outil-cta { align-self: flex-start; font-size: 13px; }
+        .outil-cta { align-self: flex-start; font-size: 12.5px; padding-left: 16px; padding-right: 16px; }
         .outil-cta-soon {
           align-self: flex-start; font-size: 12px; letter-spacing: 0.5px; text-transform: uppercase;
           color: var(--text-muted); border: 1px solid var(--border); border-radius: 12px; padding: 12px 20px;
@@ -258,9 +286,15 @@ export default function OutilsPage() {
         .outil-desc-title { font-size: clamp(22px, 3vw, 30px); font-weight: 400; color: var(--text); line-height: 1.2; margin: 4px 0 16px; }
         .outil-desc-p { font-size: 15.5px; font-weight: 300; color: var(--text-secondary); line-height: 1.75; margin: 0 0 16px; }
 
-        @media (max-width: 900px) {
-          .outils-grid { grid-template-columns: 1fr; gap: 18px; }
+        @media (max-width: 1040px) {
+          .outils-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+        }
+        @media (max-width: 560px) {
+          .outils-grid { grid-template-columns: 1fr; }
           .outil-problem { flex: none; }
+          .outil-name { font-size: 23px; }
+          .outil-problem { font-size: 14px; }
+          .outil-shot { height: 150px; }
         }
       `}</style>
     </main>
