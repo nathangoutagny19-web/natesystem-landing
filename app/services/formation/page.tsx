@@ -8,6 +8,7 @@ import MobileCta from '@/components/layout/MobileCta'
 import Divider from '@/components/ui/Divider'
 import FadeUp from '@/components/ui/FadeUp'
 import RelatedLinks from '@/components/ui/RelatedLinks'
+import ServiceFit from '@/components/services/ServiceFit'
 import { CAL_LINK } from '@/lib/constants'
 
 const included = [
@@ -139,6 +140,23 @@ export default function FormationPage() {
           { href: '/services/logiciel-sur-mesure', label: 'Le système sur-mesure', desc: 'L\'outil qu\'on vous apprend à piloter.' },
           { href: '/services/audit', label: 'Le consulting', desc: 'On repère d\'abord où vous gagnez le plus.' },
           { href: '/case-studies', label: 'Nos réalisations', desc: 'Des équipes qui pilotent leur outil seules.' },
+        ]}
+      />
+
+      <Divider />
+
+      <ServiceFit
+        forYou={[
+          'Vous voulez que vos équipes soient vraiment autonomes',
+          'Vous en avez assez de dépendre d\'un prestataire pour tout',
+          'Vous tenez à posséder votre outil et le savoir qui va avec',
+          'Vous voulez pouvoir former vos futures recrues vous-même',
+        ]}
+        notForYou={[
+          'Vous préférez tout déléguer sans jamais mettre les mains dedans',
+          'Vous voulez garder un prestataire à vie, quoi qu\'il arrive',
+          'Vous ne pouvez pas mobiliser un peu vos équipes',
+          'L\'autonomie ne vous intéresse pas vraiment',
         ]}
       />
 

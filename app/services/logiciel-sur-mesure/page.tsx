@@ -8,6 +8,7 @@ import MobileCta from '@/components/layout/MobileCta'
 import Divider from '@/components/ui/Divider'
 import FadeUp from '@/components/ui/FadeUp'
 import RelatedLinks from '@/components/ui/RelatedLinks'
+import ServiceFit from '@/components/services/ServiceFit'
 import { CAL_LINK } from '@/lib/constants'
 
 // What we actually build inside a custom platform.
@@ -186,6 +187,23 @@ export default function LogicielSurMesurePage() {
           { href: '/prix-logiciel-sur-mesure', label: 'Combien ça coûte ?', desc: 'Les fourchettes de prix réalistes.' },
           { href: '/logiciel-sur-mesure-restauration', label: 'Exemple : la restauration', desc: 'Un secteur concret, la même méthode.' },
           { href: '/glossaire', label: 'Glossaire', desc: 'Les termes du logiciel sur-mesure et de l\'IA.' },
+        ]}
+      />
+
+      <Divider />
+
+      <ServiceFit
+        forYou={[
+          'Les outils génériques ne collent pas à votre façon de travailler',
+          'Vous jonglez avec plusieurs logiciels qui ne se parlent pas',
+          'Vous voulez posséder votre outil, et son code',
+          'Vous avez un process clair, prêt à être digitalisé',
+        ]}
+        notForYou={[
+          'Un SaaS standard couvre déjà 100 % de vos besoins',
+          'Vous cherchez le moins cher, peu importe l\'ajustement',
+          'Vous voulez du livré en 3 jours, sans cadrage',
+          'Vous ne voulez pas impliquer vos équipes',
         ]}
       />
 

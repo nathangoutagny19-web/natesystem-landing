@@ -8,6 +8,7 @@ import MobileCta from '@/components/layout/MobileCta'
 import Divider from '@/components/ui/Divider'
 import FadeUp from '@/components/ui/FadeUp'
 import RelatedLinks from '@/components/ui/RelatedLinks'
+import ServiceFit from '@/components/services/ServiceFit'
 import { CAL_LINK } from '@/lib/constants'
 
 const capabilities = [
@@ -160,6 +161,23 @@ export default function IaPage() {
           { href: '/services/audit', label: 'L\'audit & consulting', desc: 'On identifie où l\'IA a du ROI.' },
           { href: '/tools/diagnostic-ia', label: 'Diagnostic IA', desc: 'Mesurez en 4 min où l\'IA peut vous aider.' },
           { href: '/glossaire', label: 'Glossaire', desc: 'IA agentique, automatisation, data analytics.' },
+        ]}
+      />
+
+      <Divider />
+
+      <ServiceFit
+        forYou={[
+          'Vos équipes croulent sous des tâches répétitives',
+          'Vous avez du volume : documents, leads, demandes à traiter',
+          'Vous voulez une IA utile, branchée sur vos vraies données',
+          'Vous tenez à garder vos données en Europe',
+        ]}
+        notForYou={[
+          'Vous voulez de l\'IA juste pour dire que vous en faites',
+          'Vous n\'avez pas encore de données un minimum structurées',
+          'Vous cherchez un chatbot générique à 20 €/mois',
+          'Le ROI vous importe peu, seule la hype compte',
         ]}
       />
 

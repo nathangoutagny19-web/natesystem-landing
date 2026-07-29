@@ -8,6 +8,7 @@ import MobileCta from '@/components/layout/MobileCta'
 import Divider from '@/components/ui/Divider'
 import FadeUp from '@/components/ui/FadeUp'
 import RelatedLinks from '@/components/ui/RelatedLinks'
+import ServiceFit from '@/components/services/ServiceFit'
 import { CAL_LINK } from '@/lib/constants'
 
 const steps = [
@@ -159,6 +160,23 @@ export default function AuditPage() {
           { href: '/services/ia', label: 'L\'IA agentique', desc: 'Là où l\'IA fait gagner de vraies heures.' },
           { href: '/prix-logiciel-sur-mesure', label: 'Combien ça coûte ?', desc: 'Les fourchettes de prix réalistes.' },
           { href: '/tools/diagnostic-ia', label: 'Diagnostic IA', desc: 'Mesurez en 4 min où l\'IA peut vous aider.' },
+        ]}
+      />
+
+      <Divider />
+
+      <ServiceFit
+        forYou={[
+          'Vous sentez que vous perdez du temps, sans savoir vraiment où',
+          'Vos données sont éparpillées sur une pile d\'outils',
+          'Vous voulez un plan clair avant d\'investir un euro',
+          'Vous êtes prêt à regarder votre activité en face',
+        ]}
+        notForYou={[
+          'Vous cherchez juste un devis, sans prendre le temps d\'échanger',
+          'Tout tourne déjà parfaitement chez vous',
+          'Vous voulez un outil sur étagère, pas du sur-mesure',
+          'Vous ne pouvez pas consacrer deux semaines au diagnostic',
         ]}
       />
 
