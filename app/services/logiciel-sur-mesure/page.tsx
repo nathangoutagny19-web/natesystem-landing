@@ -194,16 +194,16 @@ export default function LogicielSurMesurePage() {
 
       <ServiceFit
         forYou={[
-          'Les outils génériques ne collent pas à votre façon de travailler',
-          'Vous jonglez avec plusieurs logiciels qui ne se parlent pas',
-          'Vous voulez posséder votre outil, et son code',
-          'Vous avez un process clair, prêt à être digitalisé',
+          'Vous voyez ça comme un investissement sur le long terme',
+          'Vous voulez vraiment faire avancer votre activité',
+          'Vous êtes prêt à mettre vos process à plat avec nous (même flous, on les clarifie ensemble)',
+          'Vous voulez un outil qui vous appartient et grandit avec vous',
         ]}
         notForYou={[
-          'Un SaaS standard couvre déjà 100 % de vos besoins',
-          'Vous cherchez le moins cher, peu importe l\'ajustement',
-          'Vous voulez du livré en 3 jours, sans cadrage',
-          'Vous ne voulez pas impliquer vos équipes',
+          'Un SaaS standard couvre déjà tous vos besoins',
+          'Vous cherchez avant tout le moins cher, peu importe le résultat',
+          'Vous voulez du livré en 3 jours, sans aucun cadrage',
+          'Vous ne voulez impliquer personne dans le projet',
         ]}
       />
 
