@@ -138,7 +138,7 @@ export default function ServicesPage() {
                 On part de votre métier.
               </h2>
               <p className="font-sans" style={{ fontSize: 15, fontWeight: 300, color: 'var(--text-secondary)', lineHeight: 1.7, maxWidth: 520, margin: '0 auto 32px' }}>
-                Un appel offert. On regarde votre activité et on vous dit, concrètement, ce qui vous ferait gagner le plus —
+                Un appel offert. On regarde votre activité et on vous dit, concrètement, ce qui vous ferait gagner le plus,
                 et comment on le construirait. Vous repartez avec un plan clair, même si on ne travaille pas ensemble.
               </p>
               <Link href={CAL_LINK} className="btn-primary" style={{ margin: '0 auto' }}>

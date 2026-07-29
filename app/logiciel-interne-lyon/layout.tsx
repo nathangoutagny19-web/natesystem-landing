@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Logiciel interne Lyon : solutions sur-mesure pour entreprise',
   description:
-    'Logiciel interne à Lyon : NateSystem conçoit des solutions logicielles sur-mesure pour entreprise — gestion, données, équipe. Code livré, propriété 100 %, hébergé en UE. Audit offert.',
+    'Logiciel interne à Lyon : NateSystem conçoit des solutions logicielles sur-mesure pour entreprise, gestion, données, équipe. Code livré, propriété 100 %, hébergé en UE. Audit offert.',
   alternates: { canonical: 'https://www.natesystem.com/logiciel-interne-lyon' },
   openGraph: {
     title: 'Logiciel interne Lyon : solutions sur-mesure pour entreprise',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
 }
 
-// LocalBusiness + Service + FAQ + Breadcrumb, scoped to Lyon — drives the local
+// LocalBusiness + Service + FAQ + Breadcrumb, scoped to Lyon, drives the local
 // pack and AI association for "logiciel interne Lyon".
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -28,7 +28,7 @@ const jsonLd = {
     {
       '@type': ['Organization', 'LocalBusiness'],
       '@id': 'https://www.natesystem.com/logiciel-interne-lyon#business',
-      name: 'NateSystem — Logiciel interne Lyon',
+      name: 'NateSystem, Logiciel interne Lyon',
       url: 'https://www.natesystem.com/logiciel-interne-lyon',
       description:
         'Agence de logiciel interne sur-mesure à Lyon : solutions logicielles métier pour entreprise, intégration IA, gestion des données et des process.',

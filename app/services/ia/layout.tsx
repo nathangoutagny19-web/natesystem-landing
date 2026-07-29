@@ -1,12 +1,12 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'IA agentique & data analytics — l\'IA qui travaille pour vous | NateSystem',
+  title: 'IA agentique & data analytics, l\'IA qui travaille pour vous | NateSystem',
   description:
     'Une IA agentique avec mémoire persistante qui exécute des tâches de bout en bout, apprend votre métier et s\'améliore avec le temps. Data analytics pour décider sur du concret. Intégrée là où elle remplace de vraies heures. Audit offert.',
   alternates: { canonical: 'https://www.natesystem.com/services/ia' },
   openGraph: {
-    title: 'IA agentique & data analytics — l\'IA qui travaille pour vous | NateSystem',
+    title: 'IA agentique & data analytics, l\'IA qui travaille pour vous | NateSystem',
     description:
       'IA agentique : mémoire persistante, exécution de tâches de bout en bout, apprentissage continu. Data analytics pour piloter sur du concret. Intégrée là où elle remplace de vraies heures.',
     url: 'https://www.natesystem.com/services/ia',
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'IA agentique & data analytics — l\'IA qui travaille pour vous | NateSystem',
+    title: 'IA agentique & data analytics, l\'IA qui travaille pour vous | NateSystem',
     description: 'Une IA agentique qui exécute des tâches, apprend votre métier et s\'améliore avec le temps.',
   },
 }
@@ -32,7 +32,7 @@ const jsonLd = {
       serviceType: 'IA agentique, agents autonomes, automatisation, lecture de documents, data analytics, intégration IA',
       audience: { '@type': 'BusinessAudience', audienceType: 'PME et ETI (5 à 100 collaborateurs) avec des tâches répétitives à fort volume' },
       description:
-        'Intégration d\'IA agentique et de data analytics dans votre activité : une IA avec mémoire persistante qui exécute des tâches de bout en bout, apprend votre métier et s\'améliore avec le temps. Agents autonomes, automatisation, lecture de documents, analytics prédictif — intégrés uniquement là où ils remplacent de vraies heures de travail. Vos données restent en UE.',
+        'Intégration d\'IA agentique et de data analytics dans votre activité : une IA avec mémoire persistante qui exécute des tâches de bout en bout, apprend votre métier et s\'améliore avec le temps. Agents autonomes, automatisation, lecture de documents, analytics prédictif, intégrés uniquement là où ils remplacent de vraies heures de travail. Vos données restent en UE.',
     },
     {
       '@type': 'FAQPage',
@@ -42,7 +42,7 @@ const jsonLd = {
           name: 'Qu\'est-ce que l\'IA agentique ?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'L\'IA agentique est une IA qui ne se contente pas de répondre : elle exécute des tâches de bout en bout dans vos outils, avec une mémoire persistante du contexte de votre activité. Elle apprend de chaque interaction et s\'améliore avec le temps. Concrètement, elle prend en charge des tâches répétitives, parfois à forte valeur — comme qualifier un lead, lire un document, router une demande, rédiger une première réponse.',
+            text: 'L\'IA agentique est une IA qui ne se contente pas de répondre : elle exécute des tâches de bout en bout dans vos outils, avec une mémoire persistante du contexte de votre activité. Elle apprend de chaque interaction et s\'améliore avec le temps. Concrètement, elle prend en charge des tâches répétitives, parfois à forte valeur, comme qualifier un lead, lire un document, router une demande, rédiger une première réponse.',
           },
         },
         {
@@ -66,7 +66,7 @@ const jsonLd = {
           name: 'Mes données sont-elles en sécurité avec l\'IA ?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Vos données sont hébergées en Europe, protégées et conformes RGPD. L\'IA intégrée tourne sous votre contrôle, sur votre infrastructure. Le modèle — Claude, GPT ou auto-hébergé — est choisi selon votre niveau de souveraineté. Vos données ne sortent pas de votre périmètre.',
+            text: 'Vos données sont hébergées en Europe, protégées et conformes RGPD. L\'IA intégrée tourne sous votre contrôle, sur votre infrastructure. Le modèle, Claude, GPT ou auto-hébergé, est choisi selon votre niveau de souveraineté. Vos données ne sortent pas de votre périmètre.',
           },
         },
       ],

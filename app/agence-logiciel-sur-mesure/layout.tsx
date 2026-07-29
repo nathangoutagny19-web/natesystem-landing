@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Agence de logiciel sur-mesure : comment choisir',
   description:
-    'Agence de logiciel sur-mesure : NateSystem conçoit des solutions logicielles pour entreprise — audit, périmètre fixe, livraison en 4 à 8 semaines, code livré et propriété 100 %. Audit offert.',
+    'Agence de logiciel sur-mesure : NateSystem conçoit des solutions logicielles pour entreprise, audit, périmètre fixe, livraison en 4 à 8 semaines, code livré et propriété 100 %. Audit offert.',
   alternates: { canonical: 'https://www.natesystem.com/agence-logiciel-sur-mesure' },
   openGraph: {
     title: 'Agence de logiciel sur-mesure : comment choisir',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
 }
 
-// Service + FAQ + Breadcrumb — national query page (intention : trouver le bon
+// Service + FAQ + Breadcrumb, national query page (intention : trouver le bon
 // prestataire). Pas de LocalBusiness : la requête n'est pas géolocalisée.
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -55,7 +55,7 @@ const jsonLd = {
           name: 'Comment choisir la bonne agence de développement sur-mesure ?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Vérifiez quatre points : un audit du besoin avant tout devis, un périmètre et un prix fixes (pas de facturation au temps passé qui dérape), la livraison du code source (vous êtes propriétaire, pas locataire), et un hébergement en UE conforme au RGPD. Un bon prestataire vous dit aussi quand un logiciel standard suffirait — il ne vend pas du sur-mesure pour le principe.',
+            text: 'Vérifiez quatre points : un audit du besoin avant tout devis, un périmètre et un prix fixes (pas de facturation au temps passé qui dérape), la livraison du code source (vous êtes propriétaire, pas locataire), et un hébergement en UE conforme au RGPD. Un bon prestataire vous dit aussi quand un logiciel standard suffirait, il ne vend pas du sur-mesure pour le principe.',
           },
         },
         {

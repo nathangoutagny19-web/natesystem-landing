@@ -72,7 +72,7 @@ export default function MethodeContent() {
 
       <Divider />
 
-      {/* Le principe — blocs alternés (inspiré OpsKings how-we-work, sauce NateSystem) */}
+      {/* Le principe, blocs alternés (inspiré OpsKings how-we-work, sauce NateSystem) */}
       <section style={{ padding: '56px 24px 0' }}>
         <div className="mx-auto text-center" style={{ maxWidth: 700 }}>
           <FadeUp>

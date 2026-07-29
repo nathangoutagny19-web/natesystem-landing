@@ -1,44 +1,44 @@
 'use client'
 
 /**
- * ClientsBar — sober logo strip rendered just under the hero CTA.
+ * ClientsBar, sober logo strip rendered just under the hero CTA.
  *
  * Replaces the inline trust line in Hero. Lives as its own component so
  * adding logos later is a config-only change (no JSX to touch).
  *
  * Visual rules (per Nathan's spec, B2B premium register, Linear/Resend
- * style — NOT NateSystem-accent territory; we deliberately stay in
+ * style, NOT NateSystem-accent territory; we deliberately stay in
  * neutrals so the eye doesn't pingpong between the hero CTA and this
  * row):
- *   • Top label   — JetBrains Mono 11px uppercase, wide tracking, muted
- *   • Row         — 3 references, gap 64px desktop / 24px mobile (2×2)
- *   • Each item   — exact 32px height, neutral grey at 70% opacity,
+ *   • Top label  , JetBrains Mono 11px uppercase, wide tracking, muted
+ *   • Row        , 3 references, gap 64px desktop / 24px mobile (2×2)
+ *   • Each item  , exact 32px height, neutral grey at 70% opacity,
  *                   200ms ease-out hover lift to full text colour.
- *   • Logos       — grayscale + currentColor so the wordmark adopts
+ *   • Logos      , grayscale + currentColor so the wordmark adopts
  *                   the row's neutral hue.
- *   • Wordmarks   — Instrument Serif italic 22px, vertically centred
+ *   • Wordmarks  , Instrument Serif italic 22px, vertically centred
  *                   on the same 32px line as the SVG logos.
  *
  * Localized label uses i18n keys (`reviews.*` namespace was hero-only
- * before; this is generic — added under `clients.label`).
+ * before; this is generic, added under `clients.label`).
  */
 
 import { useLang } from '@/components/providers/LangProvider'
 
-// `compact` shrinks a specific logo below the row height — for WIDE horizontal
+// `compact` shrinks a specific logo below the row height, for WIDE horizontal
 // logos (icon + wordmark + baseline) that would otherwise read heavier than the
 // compact icon-based marks even at equal height.
 type ClientRef =
   | { name: string; type: 'logo'; src: string; href: string; compact?: boolean }
   // 'logo-white' is a transparent WHITE logo (alpha-cut, no background box).
   // It's tinted per-theme via CSS brightness() so it reads as neutral grey on
-  // the light theme and white/light-grey on the dark theme — same optical
+  // the light theme and white/light-grey on the dark theme, same optical
   // weight as the grayscale logos, but without the invert() trick that mangles
   // detailed artwork.
   | { name: string; type: 'logo-white'; src: string; href: string; compact?: boolean }
   | { name: string; type: 'wordmark'; href: string }
 
-// Vendéglátás Menedzsment Kft. is the Hungarian hospitality reference —
+// Vendéglátás Menedzsment Kft. is the Hungarian hospitality reference,
 // kept as wordmark until the official logo lands. When `/public/logos/
 // vendeglatas.png` arrives, flip `type: 'wordmark'` to `type: 'logo'`
 // and add the `src`.
@@ -52,16 +52,16 @@ const clients: ClientRef[] = [
   },
   { name: 'Université Jean Monnet', type: 'logo', src: '/logos/ujm.png', href: 'https://www.univ-st-etienne.fr/fr/index.html' },
   { name: 'Vendéglátás Menedzsment Kft.', type: 'wordmark', href: 'https://vendeglatasmenedzsment.hu/' },
-  // SimpleTeam — blue 'S' wordmark. Rendered as `logo-white`: the alpha-cut
+  // SimpleTeam, blue 'S' wordmark. Rendered as `logo-white`: the alpha-cut
   // artwork is flattened to a solid silhouette by CSS (brightness(0)) so it
-  // reads neutral, then tinted per theme — black on light, white on dark —
+  // reads neutral, then tinted per theme, black on light, white on dark,
   // never the raw blue, which would clash with the neutral row.
   { name: 'SimpleTeam', type: 'logo-white', src: '/logos/simpleteam.png', href: 'https://simple-team.com/' },
-  // Goutagny Élagage — colored green logo, white background keyed out to
+  // Goutagny Élagage, colored green logo, white background keyed out to
   // transparent so the row's grayscale/invert treatment renders it neutral
   // on both themes (same as the other `logo` refs).
   { name: 'Goutagny Élagage', type: 'logo', src: '/logos/goutagny.png', href: 'https://www.goutagny-elagage.fr/' },
-  // Association Aloess — wide horizontal logo (icon + "aloess" + baseline);
+  // Association Aloess, wide horizontal logo (icon + "aloess" + baseline);
   // `compact` trims its height so it doesn't dominate the compact marks.
   { name: 'Association Aloess', type: 'logo', src: '/logos/aloess.png', href: 'https://www.aloess.org/', compact: true },
 ]
@@ -98,7 +98,7 @@ export default function ClientsBar() {
           {label}
         </p>
 
-        {/* One continuous carousel on every viewport — all references stay on
+        {/* One continuous carousel on every viewport, all references stay on
             ONE line and scroll left forever (track duplicated for a seamless
             loop). Pauses on hover so a visitor can read a logo. */}
         <div className="clients-marquee-wrap" aria-hidden="false">
@@ -182,7 +182,7 @@ export default function ClientsBar() {
           text-align: center;
         }
 
-        /* Continuous carousel on EVERY viewport — all references on one line,
+        /* Continuous carousel on EVERY viewport, all references on one line,
            scrolling left forever. Edges faded so logos appear/vanish smoothly
            instead of being hard-clipped. */
         .clients-marquee-wrap {
@@ -245,7 +245,7 @@ export default function ClientsBar() {
         }
 
         /* References must stay discoverable, so we keep scrolling even under
-           reduced-motion — just much slower. */
+           reduced-motion, just much slower. */
         @media (prefers-reduced-motion: reduce) {
           .clients-marquee { animation-duration: 90s; }
         }

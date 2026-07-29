@@ -69,7 +69,7 @@ export default function Hero() {
           marginBottom: '52px',
         }}
       >
-        We deploy intelligent AI systems directly into your operations —
+        We deploy intelligent AI systems directly into your operations,
         connecting your tools, automating your processes, and letting your team
         focus on what actually matters.
       </motion.p>

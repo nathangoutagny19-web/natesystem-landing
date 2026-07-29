@@ -1,17 +1,17 @@
 'use client'
 
 /**
- * LiveDemosBanner — interactive demos block on /tools.
+ * LiveDemosBanner, interactive demos block on /tools.
  *
  * Sits between the page hero and the resources grid. Distinct from
- * the resources cards because these are LIVE working apps — no email
+ * the resources cards because these are LIVE working apps, no email
  * gate, no zip download, no DownloadModal.
  *
  * Three cards in a responsive grid:
  *   - Actifs: external Lovable app (https://actifs.natesystem.com)
  *   - Stock:  external Lovable app (https://stack-stock.natesystem.com)
  *   - Reviews: gated by request-access form (DemoRequestModal). Unlike
- *     the two above, Reviews has no public demo URL — access is granted
+ *     the two above, Reviews has no public demo URL, access is granted
  *     by email after the form is submitted. The card opens the modal
  *     instead of navigating away.
  *
@@ -24,7 +24,7 @@ import { useLang } from '@/components/providers/LangProvider'
 import DemoRequestModal, { DemoRequest } from '@/components/ui/DemoRequestModal'
 
 interface DemoCard {
-  /** If gated, no href is used — the card opens the request modal. */
+  /** If gated, no href is used, the card opens the request modal. */
   href?: string
   /** Demo to request when the card is gated. */
   request?: DemoRequest
@@ -152,7 +152,7 @@ export default function LiveDemosBanner() {
           </p>
         </div>
 
-        {/* Demo cards — 3-up on wide, stack on mobile */}
+        {/* Demo cards, 3-up on wide, stack on mobile */}
         <div
           style={{
             display: 'grid',
@@ -270,7 +270,7 @@ export default function LiveDemosBanner() {
               </>
             )
 
-            // Gated card — button that opens the request modal
+            // Gated card, button that opens the request modal
             if (demo.request) {
               const req = demo.request
               return (
@@ -288,7 +288,7 @@ export default function LiveDemosBanner() {
               )
             }
 
-            // External card — anchor opens the Lovable app in a new tab
+            // External card, anchor opens the Lovable app in a new tab
             return (
               <a
                 key={demo.href}

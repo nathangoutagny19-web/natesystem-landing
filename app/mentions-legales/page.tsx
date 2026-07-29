@@ -2,9 +2,9 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Mentions légales — NateSystem',
+  title: 'Mentions légales, NateSystem',
   description:
-    'Mentions légales et politique de confidentialité de NateSystem — Nathan Goutagny, entrepreneur individuel, Lyon, France.',
+    'Mentions légales et politique de confidentialité de NateSystem, Nathan Goutagny, entrepreneur individuel, Lyon, France.',
   robots: { index: false, follow: true },
 }
 
@@ -24,7 +24,7 @@ export default function MentionsLegales() {
         </h1>
 
         <Section title="Responsable du traitement">
-          <p><strong>Nathan Goutagny — NateSystem</strong></p>
+          <p><strong>Nathan Goutagny, NateSystem</strong></p>
           <p>Entrepreneur Individuel<br />SIRET : 92949816000035<br />Lyon, France</p>
           <p>Contact : <a href="mailto:nathan@natesystem.com" style={{ color: 'var(--accent)', textDecoration: 'none' }}>nathan@natesystem.com</a></p>
         </Section>
@@ -52,7 +52,7 @@ export default function MentionsLegales() {
         </Section>
 
         <Section title="Propriété intellectuelle">
-          <p>L&apos;ensemble du contenu de ce site (textes, images, design, code) est la propriété exclusive de Nathan Goutagny — NateSystem. Toute reproduction ou utilisation sans autorisation préalable est interdite.</p>
+          <p>L&apos;ensemble du contenu de ce site (textes, images, design, code) est la propriété exclusive de Nathan Goutagny, NateSystem. Toute reproduction ou utilisation sans autorisation préalable est interdite.</p>
         </Section>
 
         <Section title="Limitation de responsabilité">
@@ -64,7 +64,7 @@ export default function MentionsLegales() {
         <div className="flex items-center gap-1">
           <span className="font-serif italic" style={{ fontSize: '20px', color: 'var(--text)' }}>N</span>
           <span style={{ width: '4px', height: '4px', borderRadius: '50%', backgroundColor: 'var(--accent)', display: 'inline-block', marginLeft: '-2px', marginBottom: '2px' }} />
-          <span style={{ marginLeft: '8px', fontFamily: 'var(--font-sans)' }}>NateSystem — Nathan Goutagny</span>
+          <span style={{ marginLeft: '8px', fontFamily: 'var(--font-sans)' }}>NateSystem, Nathan Goutagny</span>
         </div>
         <Link href="/" style={{ color: 'var(--accent)', textDecoration: 'none', fontFamily: 'var(--font-sans)', opacity: 0.7, fontSize: '12px' }}>
           ← Retour au site

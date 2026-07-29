@@ -20,7 +20,7 @@ const terms: Term[] = [
   { term: 'IA générative', def: 'Intelligence artificielle qui produit du contenu (texte, image, code) à partir d\'une consigne. Elle répond et génère à la demande, là où un agent exécute une tâche complète.', href: '/blog/ia-generative-vs-agents-ia-autonomes-guide-dirigeants', linkLabel: 'IA générative vs agents IA' },
   { term: 'LLM (Large Language Model)', def: 'Grand modèle de langage entraîné sur d\'énormes volumes de texte (GPT, Claude, Mistral…). C\'est le moteur derrière la plupart des outils d\'IA générative et des agents.' },
   { term: 'RAG (Retrieval-Augmented Generation)', def: 'Technique qui connecte un LLM à votre base de connaissances : l\'IA va chercher l\'information dans vos documents avant de répondre, ce qui la rend fiable sur VOS données.' },
-  { term: 'Prompt engineering', def: 'Art de formuler les consignes données à une IA pour obtenir un résultat juste. C\'est souvent 60 à 70 % de la réussite d\'un projet IA — plus que le choix du modèle.' },
+  { term: 'Prompt engineering', def: 'Art de formuler les consignes données à une IA pour obtenir un résultat juste. C\'est souvent 60 à 70 % de la réussite d\'un projet IA, plus que le choix du modèle.' },
   { term: 'Automatisation', def: 'Exécution automatique de tâches répétitives (facturation, relances, reporting) sans intervention humaine. Selon McKinsey, ~30 % du temps de travail est automatisable.', href: '/blog/automatisation-pme-guide-2026', linkLabel: 'Guide de l\'automatisation PME' },
   { term: 'No-code', def: 'Outils permettant de créer des automatisations ou des applications sans programmer (Make, Zapier, Airtable). Parfait pour prototyper, mais plafonné quand le besoin devient critique.', href: '/blog/make-vs-zapier-vs-n8n-comparatif', linkLabel: 'Make vs Zapier vs n8n' },
   { term: 'API', def: 'Interface qui permet à deux logiciels d\'échanger des données automatiquement. En 2026, la capacité d\'intégration via API est devenue le premier critère de choix d\'un logiciel de gestion.' },
@@ -37,7 +37,7 @@ const terms: Term[] = [
   { term: 'Hébergement UE', def: 'Stockage des données sur des serveurs situés en Union européenne, soumis au RGPD. Un argument de conformité de plus en plus décisif, notamment pour le secteur public.' },
   { term: 'Base de données', def: 'Système qui stocke et organise les données de l\'entreprise de façon structurée. Une base centralisée est le socle indispensable à toute IA opérationnelle.', href: '/blog/construire-base-donnees-centralisee-pme-guide', linkLabel: 'Construire une base centralisée' },
   { term: 'PostgreSQL', def: 'Base de données relationnelle open-source réputée pour sa robustesse. C\'est le socle technique recommandé pour bâtir un logiciel métier évolutif.' },
-  { term: 'Supabase', def: 'Plateforme open-source bâtie sur PostgreSQL (base, authentification, API, temps réel). Auto-hébergeable en UE — un bon socle pour une application sur-mesure.', href: '/blog/supabase-vs-airtable-pme', linkLabel: 'Supabase vs Airtable' },
+  { term: 'Supabase', def: 'Plateforme open-source bâtie sur PostgreSQL (base, authentification, API, temps réel). Auto-hébergeable en UE, un bon socle pour une application sur-mesure.', href: '/blog/supabase-vs-airtable-pme', linkLabel: 'Supabase vs Airtable' },
   { term: 'Webhook', def: 'Mécanisme qui notifie un logiciel en temps réel quand un événement se produit dans un autre. Brique de base des automatisations entre outils.' },
   { term: 'Dashboard', def: 'Tableau de bord qui affiche les indicateurs clés (KPI) de l\'activité en temps réel, pour décider vite sans aller chercher l\'information dans plusieurs outils.' },
   { term: 'KPI', def: 'Key Performance Indicator : indicateur de performance qui mesure l\'avancée vers un objectif (chiffre d\'affaires, temps de traitement, taux de conversion).' },
@@ -52,7 +52,7 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'DefinedTermSet',
   '@id': 'https://www.natesystem.com/glossaire#glossary',
-  name: 'Glossaire NateSystem — logiciel sur-mesure, IA & automatisation',
+  name: 'Glossaire NateSystem, logiciel sur-mesure, IA & automatisation',
   url: 'https://www.natesystem.com/glossaire',
   inLanguage: 'fr-FR',
   hasDefinedTerm: terms.map((t) => ({
@@ -81,7 +81,7 @@ export default function GlossairePage() {
             Le vocabulaire du logiciel sur-mesure et de l&apos;<span className="accent" style={{ color: 'var(--accent)' }}>IA, en clair.</span>
           </h1>
           <p className="font-sans" style={{ fontSize: 16, fontWeight: 300, color: 'var(--text-secondary)', maxWidth: 600, margin: '0 auto', lineHeight: 1.65 }}>
-            Les termes du logiciel métier, de l&apos;intelligence artificielle et de l&apos;automatisation, définis simplement —
+            Les termes du logiciel métier, de l&apos;intelligence artificielle et de l&apos;automatisation, définis simplement,
             pour des dirigeants de PME, sans jargon inutile.
           </p>
         </div>

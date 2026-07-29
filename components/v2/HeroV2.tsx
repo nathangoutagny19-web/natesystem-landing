@@ -7,13 +7,13 @@ import { useLang } from '@/components/providers/LangProvider'
 const ease = [0.22, 1, 0.36, 1] as const
 
 /**
- * HeroV2 — outcome/pain first (Piste A du REFONTE-2026-07.md §4.2).
+ * HeroV2, outcome/pain first (Piste A du REFONTE-2026-07.md §4.2).
  * Structure : positionnement (le "trou") → titre = la douleur vécue →
  * sous-titre = le modèle en 3 temps → une preuve chiffrée → UN SEUL CTA.
  *
  * Piste B (alternative, résultat d'abord) si on préfère un titre plus court :
  *   « On construit l'infrastructure qui fait tourner votre activité. »
- *   (garder le même sous-titre + la même preuve.) — à trancher avec Nathan.
+ *   (garder le même sous-titre + la même preuve.), à trancher avec Nathan.
  */
 export default function HeroV2() {
   const { t } = useLang()

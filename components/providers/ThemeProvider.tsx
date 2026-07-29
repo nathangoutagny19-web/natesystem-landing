@@ -29,7 +29,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
       document.documentElement.classList.toggle('light', stored === 'light')
       setTheme(stored)
     } else {
-      // No stored pref — default to light (inline script already added 'light' class)
+      // No stored pref, default to light (inline script already added 'light' class)
       document.documentElement.classList.add('light')
       localStorage.setItem('ns-theme', 'light')
       setTheme('light')

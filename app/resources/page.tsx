@@ -30,8 +30,8 @@ const DEMOS: Demo[] = [
   },
   {
     title: 'Gestion d’actifs',
-    descFr: 'Parc IT, véhicules, mobilier, machines — centralisés avec amortissements automatiques et alertes de remplacement.',
-    descEn: 'IT assets, vehicles, furniture, machines — centralised with automatic depreciation and replacement alerts.',
+    descFr: 'Parc IT, véhicules, mobilier, machines, centralisés avec amortissements automatiques et alertes de remplacement.',
+    descEn: 'IT assets, vehicles, furniture, machines, centralised with automatic depreciation and replacement alerts.',
     badge: 'new',
     href: 'https://actifs.natesystem.com',
     external: true,
@@ -81,7 +81,7 @@ export default function ResourcesPage() {
 
       <Divider />
 
-      {/* ═══ 1 — VIDÉOS : témoignage / podcast (paysage) ═══ */}
+      {/* ═══ 1, VIDÉOS : témoignage / podcast (paysage) ═══ */}
       <section id="videos" style={{ padding: '80px 24px' }}>
         <div className="mx-auto" style={{ maxWidth: '1120px' }}>
           <FadeUp>
@@ -90,7 +90,7 @@ export default function ResourcesPage() {
               {d('Discussions sans filtres avec nos clients', 'Unfiltered conversations with our clients')}
             </h2>
             <p className="font-sans" style={{ fontSize: '14px', fontWeight: 300, color: 'var(--text-muted)', lineHeight: 1.6, maxWidth: '620px' }}>
-              {d('Témoignages clients aujourd’hui — vidéos éducation & vlogs internes à venir.', 'Client testimonials today — education videos & internal vlogs coming soon.')}
+              {d('Témoignages clients aujourd’hui, vidéos éducation & vlogs internes à venir.', 'Client testimonials today, education videos & internal vlogs coming soon.')}
             </p>
           </FadeUp>
 
@@ -110,7 +110,7 @@ export default function ResourcesPage() {
               </div>
 
               <div className="res-video">
-                <LiteYouTube id={TESTIMONIAL_VIDEO_ID} title={d('Témoignage Chromosome — NateSystem', 'Chromosome testimonial — NateSystem')} />
+                <LiteYouTube id={TESTIMONIAL_VIDEO_ID} title={d('Témoignage Chromosome, NateSystem', 'Chromosome testimonial, NateSystem')} />
               </div>
             </div>
           </FadeUp>
@@ -119,7 +119,7 @@ export default function ResourcesPage() {
 
       <Divider />
 
-      {/* ═══ 2 — OUTILS & DÉMOS LIVE ═══ */}
+      {/* ═══ 2, OUTILS & DÉMOS LIVE ═══ */}
       <section id="outils" style={{ padding: '80px 24px' }}>
         <div className="mx-auto" style={{ maxWidth: '1120px' }}>
           <FadeUp>
@@ -128,11 +128,11 @@ export default function ResourcesPage() {
               {d('Essayez le produit réel.', 'Try the real product.')}
             </h2>
             <p className="font-sans" style={{ fontSize: '14px', fontWeight: 300, color: 'var(--text-muted)', lineHeight: 1.6, maxWidth: '620px' }}>
-              {d('Des démos pleinement fonctionnelles (données fictives) et un diagnostic interactif. Pas des captures — le vrai produit.', 'Fully working demos (dummy data) and an interactive diagnostic. Not screenshots — the real thing.')}
+              {d('Des démos pleinement fonctionnelles (données fictives) et un diagnostic interactif. Pas des captures, le vrai produit.', 'Fully working demos (dummy data) and an interactive diagnostic. Not screenshots, the real thing.')}
             </p>
           </FadeUp>
 
-          {/* Diagnostic IA — carte mise en avant */}
+          {/* Diagnostic IA, carte mise en avant */}
           <FadeUp delay={0.1}>
             <Link href="/tools/diagnostic-ia" style={{ textDecoration: 'none' }}>
               <motion.div className="res-feature" whileHover={{ borderColor: 'var(--border-hover)' }} style={{ marginTop: 32 }}>
@@ -196,7 +196,7 @@ export default function ResourcesPage() {
 
       <Divider />
 
-      {/* ═══ 3 — PLAYBOOKS PAR MÉTIER (lead magnets, au-dessus du blog) ═══ */}
+      {/* ═══ 3, PLAYBOOKS PAR MÉTIER (lead magnets, au-dessus du blog) ═══ */}
       <section id="playbooks" style={{ padding: '80px 24px' }}>
         <div className="mx-auto" style={{ maxWidth: '1120px' }}>
           <FadeUp>
@@ -232,7 +232,7 @@ export default function ResourcesPage() {
 
       <Divider />
 
-      {/* ═══ 4 — BLOG ═══ */}
+      {/* ═══ 4, BLOG ═══ */}
       <section id="blog" style={{ padding: '80px 24px' }}>
         <div className="mx-auto" style={{ maxWidth: '1120px' }}>
           <FadeUp>

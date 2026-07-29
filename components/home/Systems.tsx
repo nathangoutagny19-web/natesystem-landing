@@ -73,7 +73,7 @@ export default function Systems() {
         </FadeUp>
       </div>
 
-      {/* Marquee — overflow contained at two levels to survive iOS Safari */}
+      {/* Marquee, overflow contained at two levels to survive iOS Safari */}
       <div className="systems-marquee-outer">
         <div className="systems-marquee-wrap" aria-hidden="false">
           <div className="systems-marquee">
@@ -184,7 +184,7 @@ export default function Systems() {
         }
         /* IMPORTANT: we keep the loop running even when prefers-reduced-motion
            is set, because the marquee carries content (use cases) the user
-           needs to discover — disabling animation would mean only the first
+           needs to discover, disabling animation would mean only the first
            cards are ever visible on mobile. */
       `}</style>
     </section>
@@ -263,7 +263,7 @@ function SystemCard({ card, tagLabel }: { card: Card; tagLabel: string }) {
         )}
       </div>
 
-      {/* Aperçu produit — mockup navigateur ENTIER (contain), légèrement flouté (déco, RGPD-safe) */}
+      {/* Aperçu produit, mockup navigateur ENTIER (contain), légèrement flouté (déco, RGPD-safe) */}
       <div
         aria-hidden="true"
         style={{

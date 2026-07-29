@@ -4,7 +4,7 @@ import FadeUp from '@/components/ui/FadeUp'
 import { useLang } from '@/components/providers/LangProvider'
 
 /**
- * "Ask the AI of your choice" — social-proof via AI.
+ * "Ask the AI of your choice", social-proof via AI.
  * Each button opens ChatGPT / Claude / Perplexity with a pre-filled prompt
  * (URL included so web-reading tools land on the right site). Buttons use the
  * tactile press feel; brand glyphs are simple sketch marks in accent red.
@@ -62,7 +62,7 @@ export default function AskAI() {
           justify-content: center;
           gap: 12px;
         }
-        /* tactile press button — same physics as the site's primary buttons */
+        /* tactile press button, same physics as the site's primary buttons */
         .askai-btn {
           display: inline-flex; align-items: center; gap: 9px;
           padding: 13px 22px;
@@ -104,7 +104,7 @@ export default function AskAI() {
   )
 }
 
-/* Sketch-style brand glyphs (organic stroke, accent red — not the official
+/* Sketch-style brand glyphs (organic stroke, accent red, not the official
    coloured logos, kept on-brand and minimal). */
 const sk = { fill: 'none', stroke: 'currentColor', strokeWidth: 1.7, strokeLinecap: 'round' as const, strokeLinejoin: 'round' as const }
 

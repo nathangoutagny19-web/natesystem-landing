@@ -14,8 +14,8 @@ const POINTS: Point[] = [
     icon: Target,
     titleFr: 'Orienté résultat, zéro bricolage',
     titleEn: 'Result-driven, zero patching',
-    descFr: 'On déploie d’abord ce qui est déjà éprouvé et qui rapporte — logique 80/20 — puis on optimise. Que du solide qui tourne. Jamais d’outil à la mode, de rustine ni de truc à moitié fait.',
-    descEn: 'We first ship what’s already proven and pays off — an 80/20 logic — then we optimise. Only solid things that run. Never a trendy tool, a band-aid or a half-built thing.',
+    descFr: 'On déploie d’abord ce qui est déjà éprouvé et qui rapporte, logique 80/20, puis on optimise. Que du solide qui tourne. Jamais d’outil à la mode, de rustine ni de truc à moitié fait.',
+    descEn: 'We first ship what’s already proven and pays off, an 80/20 logic, then we optimise. Only solid things that run. Never a trendy tool, a band-aid or a half-built thing.',
   },
   {
     icon: InfinityIcon,
@@ -28,8 +28,8 @@ const POINTS: Point[] = [
     icon: Zap,
     titleFr: 'Rapidité & réactivité',
     titleEn: 'Speed & reactivity',
-    descFr: 'Réponse en moins de 15 minutes pendant la semaine d’onboarding, un point en visio chaque semaine, du feedback en continu. On écoute, on ajuste, on exécute vite — et vous voyez le logiciel avancer.',
-    descEn: 'A reply in under 15 minutes during onboarding week, a weekly video check-in, continuous feedback. We listen, adjust and execute fast — and you watch the software move forward.',
+    descFr: 'Réponse en moins de 15 minutes pendant la semaine d’onboarding, un point en visio chaque semaine, du feedback en continu. On écoute, on ajuste, on exécute vite, et vous voyez le logiciel avancer.',
+    descEn: 'A reply in under 15 minutes during onboarding week, a weekly video check-in, continuous feedback. We listen, adjust and execute fast, and you watch the software move forward.',
   },
   {
     icon: KeyRound,

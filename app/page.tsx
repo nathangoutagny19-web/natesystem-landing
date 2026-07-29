@@ -22,7 +22,7 @@ import Footer from '@/components/layout/Footer'
 import Divider from '@/components/ui/Divider'
 
 /**
- * HOME — remodelage inspiré OpsKings/Frontal, sauce NateSystem.
+ * HOME, remodelage inspiré OpsKings/Frontal, sauce NateSystem.
  * Le HAUT (Hero → mini-diagnostic → vidéo témoignage Chromosome) est validé.
  * Corps : Ce qu'on fait → Comment on travaille (→ /methode) → Ce qu'on construit
  *   → Cas concrets chiffrés → Ce qui nous rend différents (vidéo) → Le Diagnostic
@@ -36,75 +36,75 @@ export default function Home() {
 
       {/* ─────────── HAUT VALIDÉ (jusqu'à la vidéo témoignage) ─────────── */}
 
-      {/* 1 — Hero : promesse business + VSL */}
+      {/* 1, Hero : promesse business + VSL */}
       <Hero />
 
-      {/* 2 — Logos clients */}
+      {/* 2, Logos clients */}
       <ClientsBar />
       <Divider />
 
-      {/* 3 — Avant/Après (diagonale) + bascule « ils sont de l'autre côté » */}
+      {/* 3, Avant/Après (diagonale) + bascule « ils sont de l'autre côté » */}
       <Transformation />
       <Divider />
 
-      {/* 3b — Bandeau « Déployé. Mesuré. Rentabilisé. » (Systems) + CTA « Je veux le mien » */}
+      {/* 3b, Bandeau « Déployé. Mesuré. Rentabilisé. » (Systems) + CTA « Je veux le mien » */}
       <Systems />
       <Divider />
 
-      {/* 4 — La preuve : vidéo témoignage Chromosome */}
+      {/* 4, La preuve : vidéo témoignage Chromosome */}
       <CaseStudy />
 
-      {/* 4b — Encart mini-diagnostic gratuit, juste après le témoignage (plus petit) */}
+      {/* 4b, Encart mini-diagnostic gratuit, juste après le témoignage (plus petit) */}
       <MiniDiagnosticCta />
       <Divider />
 
       {/* ─────────── CORPS REMODELÉ ─────────── */}
 
-      {/* 5 — Ce qu'on fait (What we do) : 4 piliers */}
+      {/* 5, Ce qu'on fait (What we do) : 4 piliers */}
       <WhatWeDo />
       <Divider />
 
-      {/* 6 — Comment on travaille (méthode résumée) + CTA vers /methode détaillée */}
+      {/* 6, Comment on travaille (méthode résumée) + CTA vers /methode détaillée */}
       <Process home />
       <Divider />
 
-      {/* 8 — Ce qui nous rend différents : vidéo + différenciateurs */}
+      {/* 8, Ce qui nous rend différents : vidéo + différenciateurs */}
       <Different />
       <Divider />
 
-      {/* 9b — Bandeau crédibilité (4 engagements), juste sous « Ce qui nous rend
+      {/* 9b, Bandeau crédibilité (4 engagements), juste sous « Ce qui nous rend
              différents » (choix Nathan). [[À CONFIRMER : bandeau = crédibilité ?]] */}
       <CredibilityBand />
       <Divider />
 
-      {/* 10 — Commence maintenant : l'offre d'entrée « Le Diagnostic » */}
+      {/* 10, Commence maintenant : l'offre d'entrée « Le Diagnostic » */}
       <SprintDiagnostic />
 
-      {/* 11 — Embed Cal.com SEUL (entête retirée), juste après l'offre d'entrée */}
+      {/* 11, Embed Cal.com SEUL (entête retirée), juste après l'offre d'entrée */}
       <CtaFinal />
       <Divider />
 
-      {/* 12 — Les secteurs qu'on sert (sélecteur interactif) */}
+      {/* 12, Les secteurs qu'on sert (sélecteur interactif) */}
       <Sectors />
       <Divider />
 
-      {/* 13 — Comparatif honnête 4 colonnes */}
+      {/* 13, Comparatif honnête 4 colonnes */}
       <ComparisonV2 />
       <Divider />
 
-      {/* 14 — FAQ */}
+      {/* 14, FAQ */}
       <Faq />
       <Divider />
 
-      {/* 15 — La garantie « funny » (clin d'œil resto) — déplacée tout à la fin,
+      {/* 15, La garantie « funny » (clin d'œil resto), déplacée tout à la fin,
              juste avant « Demandez à l'IA » (choix Nathan). */}
       <FunnyGuarantee />
       <Divider />
 
-      {/* 16 — Demandez à l'IA : preuve sociale via IA */}
+      {/* 16, Demandez à l'IA : preuve sociale via IA */}
       <AskAI />
 
-      {/* Footer — inclut désormais le bloc fondateur (Nathan + LinkedIn) en bas-gauche */}
+      {/* Footer, inclut désormais le bloc fondateur (Nathan + LinkedIn) en bas-gauche */}
       <Footer />
 
       <MobileCta />

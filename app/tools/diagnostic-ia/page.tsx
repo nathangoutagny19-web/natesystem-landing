@@ -17,14 +17,14 @@ import {
 type Stage = 'intro' | 'act1' | 'act2' | 'act3' | 'report'
 
 /**
- * Le Diagnostic IA — par NateSystem.
+ * Le Diagnostic IA, par NateSystem.
  *
  * Outil unique qui consolide les 3 anciennes calculettes
  * (saas-calculator, calculateur-temps-perdu, ai-readiness) en
  * un diagnostic complet du gaspillage opérationnel d'une PME.
  *
  * Structure : intro → 3 actes (4 questions chacun) → rapport.
- * Rapport sans gate email — la conversion vient du CTA "Réserver un appel · offert"
+ * Rapport sans gate email, la conversion vient du CTA "Réserver un appel · offert"
  * en fin de rapport, pas d'un capture-form intrusif.
  */
 export default function DiagnosticIaPage() {
@@ -432,9 +432,9 @@ function Act2({ answers, setAnswer, onNext, onPrev }: ActProps) {
         value={answers.automationLevel}
         onChange={(v) => setAnswer('automationLevel', v)}
         options={[
-          { value: 'none', label: 'Jamais — tout est manuel' },
+          { value: 'none', label: 'Jamais, tout est manuel' },
           { value: 'some', label: 'Un peu (Zapier, Make, ChatGPT)' },
-          { value: 'lots', label: 'Beaucoup — c\'est en place et ça tourne' },
+          { value: 'lots', label: 'Beaucoup, c\'est en place et ça tourne' },
         ]}
       />
 
@@ -816,13 +816,13 @@ function Report({
           </BulletPoint>
           <BulletPoint>
             <strong>{result.hoursLostAnnual.toLocaleString('fr-FR')} h/an</strong>{' '}
-            perdues en tâches répétitives — soit environ{' '}
+            perdues en tâches répétitives, soit environ{' '}
             <strong>{result.timeWasteAnnualEuros.toLocaleString('fr-FR')} €</strong>{' '}
             de salaire chargé non productif.
           </BulletPoint>
           <BulletPoint>
             Votre maturité IA est de{' '}
-            <strong>{result.aiMaturityScore}/100</strong> —{' '}
+            <strong>{result.aiMaturityScore}/100</strong>,{' '}
             {tierLabel[result.maturityTier].toLowerCase()}.
           </BulletPoint>
         </ul>
@@ -852,7 +852,7 @@ function Report({
         </div>
       </section>
 
-      {/* CTA final — pas du pitch */}
+      {/* CTA final, pas du pitch */}
       <section
         style={{
           background: 'var(--bg-card)',

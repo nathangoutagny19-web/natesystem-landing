@@ -8,10 +8,10 @@ import Footer from '@/components/layout/Footer'
 import { API_URL, CAL_HANDLE, CAL_NAMESPACE } from '@/lib/constants'
 import { useLang, type Lang } from '@/components/providers/LangProvider'
 
-/* ——— Localized copy — labels, options, UI strings ——— */
+/* ——— Localized copy, labels, options, UI strings ——— */
 
 type BookCopy = {
-  // Step 1 — info form
+  // Step 1, info form
   step1Label: string
   step1Title: string
   step1TitleAccent: string
@@ -156,7 +156,7 @@ const COPY: Record<Lang, BookCopy> = {
     calDone: 'DIAGNOSTIC COMPLÉTÉ',
     calTitle: 'Choisissez',
     calTitleAccent: 'votre créneau.',
-    calSub: (n) => `Merci ${n} ! Vos réponses sont enregistrées. Réservez un créneau ci-dessous — on se voit très vite.`,
+    calSub: (n) => `Merci ${n} ! Vos réponses sont enregistrées. Réservez un créneau ci-dessous, on se voit très vite.`,
     roles: ['Dirigeant / CEO', 'Directeur Marketing', 'Directeur Commercial', 'Directeur Ops / COO', 'DRH / RH', 'DSI / CTO', 'Consultant', 'Autre'],
     sectors: ['Restauration / Hôtellerie', 'Conseil / Services', 'BTP / Immobilier', 'Commerce / Retail', 'Industrie', 'Éducation', 'Santé', 'Tech / SaaS', 'Autre'],
     teamSizes: ['1-5 personnes', '6-20 personnes', '21-50 personnes', '51-100 personnes', '100+ personnes'],
@@ -187,14 +187,14 @@ const COPY: Record<Lang, BookCopy> = {
       'Le dirigeant', 'Un manager', 'Plusieurs personnes', 'Tout le monde un peu', 'Un assistant / office manager',
     ],
     processDocs: [
-      'Oui, entièrement', 'Partiellement', 'Non — tout est dans la tête des gens', 'On a essayé mais c\'est pas à jour',
+      'Oui, entièrement', 'Partiellement', 'Non, tout est dans la tête des gens', 'On a essayé mais c\'est pas à jour',
     ],
     dataLocations: [
       'CRM', 'Fichiers Excel / Sheets', 'Emails', 'Dans la tête des gens',
       'ERP / logiciel métier', 'Papier', 'Base de données', 'Autre',
     ],
     absenceImpact: [
-      'Rien ne bouge — on attend', 'On se débrouille mais c\'est le chaos',
+      'Rien ne bouge, on attend', 'On se débrouille mais c\'est le chaos',
       'Un collègue prend le relais facilement', 'On a des process de backup documentés',
     ],
     desiredResults: [
@@ -203,8 +203,8 @@ const COPY: Record<Lang, BookCopy> = {
       'Automatiser la prospection / relances', 'Réduire les coûts SaaS', 'Scaler sans recruter',
     ],
     urgency: [
-      'Critique — on perd de l\'argent chaque semaine', 'Important — dans les 3 prochains mois',
-      'Nice to have — quand on aura le temps', 'Je veux juste explorer',
+      'Critique, on perd de l\'argent chaque semaine', 'Important, dans les 3 prochains mois',
+      'Nice to have, quand on aura le temps', 'Je veux juste explorer',
     ],
     triedBefore: [
       'Non, jamais', 'Oui, avec un freelance / consultant',
@@ -268,7 +268,7 @@ const COPY: Record<Lang, BookCopy> = {
     calDone: 'DIAGNOSTIC COMPLETED',
     calTitle: 'Pick',
     calTitleAccent: 'your slot.',
-    calSub: (n) => `Thanks ${n}! Your answers are saved. Book a slot below — see you soon.`,
+    calSub: (n) => `Thanks ${n}! Your answers are saved. Book a slot below, see you soon.`,
     roles: ['CEO / Founder', 'Marketing Director', 'Sales Director', 'Ops Director / COO', 'HR Director', 'CTO / CIO', 'Consultant', 'Other'],
     sectors: ['Restaurant / Hospitality', 'Consulting / Services', 'Construction / Real Estate', 'Retail / Commerce', 'Industry', 'Education', 'Healthcare', 'Tech / SaaS', 'Other'],
     teamSizes: ['1-5 people', '6-20 people', '21-50 people', '51-100 people', '100+ people'],
@@ -299,14 +299,14 @@ const COPY: Record<Lang, BookCopy> = {
       'The CEO', 'A manager', 'Several people', 'A bit of everyone', 'An assistant / office manager',
     ],
     processDocs: [
-      'Yes, fully', 'Partially', 'No — it\'s all in people\'s heads', 'We tried but it\'s outdated',
+      'Yes, fully', 'Partially', 'No, it\'s all in people\'s heads', 'We tried but it\'s outdated',
     ],
     dataLocations: [
       'CRM', 'Excel / Sheets files', 'Emails', 'In people\'s heads',
       'ERP / business software', 'Paper', 'Database', 'Other',
     ],
     absenceImpact: [
-      'Nothing moves — we wait', 'We manage but it\'s chaos',
+      'Nothing moves, we wait', 'We manage but it\'s chaos',
       'A colleague takes over easily', 'We have documented backup processes',
     ],
     desiredResults: [
@@ -315,8 +315,8 @@ const COPY: Record<Lang, BookCopy> = {
       'Automate prospecting / follow-ups', 'Cut SaaS costs', 'Scale without hiring',
     ],
     urgency: [
-      'Critical — we lose money every week', 'Important — within the next 3 months',
-      'Nice to have — when we have time', 'Just exploring',
+      'Critical, we lose money every week', 'Important, within the next 3 months',
+      'Nice to have, when we have time', 'Just exploring',
     ],
     triedBefore: [
       'No, never', 'Yes, with a freelancer / consultant',

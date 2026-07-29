@@ -1,12 +1,12 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Audit & consulting — cartographie de vos process | NateSystem',
+  title: 'Audit & consulting, cartographie de vos process | NateSystem',
   description:
     'L\'audit qui cartographie vos process, identifie ce qui vous fait perdre du temps et de l\'argent, et vous remet un plan d\'action clair et chiffré. Vous repartez avec le plan, même sans nous. Appel découverte offert.',
   alternates: { canonical: 'https://www.natesystem.com/services/audit' },
   openGraph: {
-    title: 'Audit & consulting — cartographie de vos process | NateSystem',
+    title: 'Audit & consulting, cartographie de vos process | NateSystem',
     description:
       'On cartographie vos process, on repère ce qui bloque, on chiffre le coût de l\'inaction, et on vous remet un plan d\'action clair. Vous repartez avec le plan, même sans nous.',
     url: 'https://www.natesystem.com/services/audit',
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Audit & consulting — cartographie de vos process | NateSystem',
+    title: 'Audit & consulting, cartographie de vos process | NateSystem',
     description: 'On cartographie vos process et on vous remet un plan d\'action clair et chiffré.',
   },
 }
@@ -42,7 +42,7 @@ const jsonLd = {
           name: 'En quoi consiste un audit de process ?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Un audit de process commence par un appel découverte, offert, pour comprendre votre situation. Puis on cartographie votre façon réelle de travailler, on repère ce qui bloque ou ralentit, et on chiffre ce que vous coûte l\'inaction. On dessine la cible — vos opérations telles qu\'elles tourneraient avec un logiciel sur-mesure. Vous repartez avec un plan d\'action clair et chiffré.',
+            text: 'Un audit de process commence par un appel découverte, offert, pour comprendre votre situation. Puis on cartographie votre façon réelle de travailler, on repère ce qui bloque ou ralentit, et on chiffre ce que vous coûte l\'inaction. On dessine la cible, vos opérations telles qu\'elles tourneraient avec un logiciel sur-mesure. Vous repartez avec un plan d\'action clair et chiffré.',
           },
         },
         {

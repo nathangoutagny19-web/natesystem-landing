@@ -66,7 +66,7 @@ export default function CookieConsent() {
     try {
       choice = localStorage.getItem(STORAGE_KEY)
     } catch {
-      /* localStorage blocked — show the banner */
+      /* localStorage blocked, show the banner */
     }
     if (choice === 'granted') {
       loadTrackingScripts()

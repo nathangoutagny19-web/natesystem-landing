@@ -6,7 +6,7 @@ import { motion } from 'framer-motion'
 const PAIN_POINTS = [
   {
     title: '8 SaaS actifs. Tu en utilises 3 vraiment.',
-    detail: 'Chaque abonnement coûte, ralentit l\'onboarding, et crée de la friction — sans créer de valeur.',
+    detail: 'Chaque abonnement coûte, ralentit l\'onboarding, et crée de la friction, sans créer de valeur.',
   },
   {
     title: '2h/jour à faire communiquer des outils qui ne se parlent pas.',
@@ -67,7 +67,7 @@ export default function Problem() {
             }}
           >
             Every PME we work with has the same four problems. They&apos;re not
-            unique to your sector. They&apos;re structural — and they&apos;re solvable.
+            unique to your sector. They&apos;re structural, and they&apos;re solvable.
           </p>
         </FadeUp>
 

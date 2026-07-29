@@ -72,7 +72,7 @@ export default function WorkTogetherPrompt() {
       const until = Date.now() + SNOOZE_DAYS * 24 * 60 * 60 * 1000
       window.localStorage.setItem(SNOOZE_KEY, String(until))
     } catch {
-      // private mode — safe to ignore
+      // private mode, safe to ignore
     }
     setMode('hidden')
   }

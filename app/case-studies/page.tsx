@@ -34,7 +34,7 @@ export default function CaseStudiesPage() {
         </div>
       </section>
 
-      {/* Cas client — Chromosome (structure OpsKings : citation + vidéo + chiffres) */}
+      {/* Cas client, Chromosome (structure OpsKings : citation + vidéo + chiffres) */}
       <CaseStudy />
 
       {/* Lien vers l'étude de cas écrite (Problème → Solution → Résultats) */}

@@ -7,7 +7,7 @@ import { useLang } from '@/components/providers/LangProvider'
 import { VizCarte, VizProto, VizFeuille } from '@/components/v2/DiagViz'
 
 /**
- * Le Diagnostic — l'offre d'entrée (REFONTE §4.3).
+ * Le Diagnostic, l'offre d'entrée (REFONTE §4.3).
  * Réimaginée : header centré + 3 livrables en ligne, chacun avec un mockup 16:9
  * (image vue en entier, jamais rognée), cartes compactes et alignées.
  */
@@ -61,7 +61,7 @@ export default function SprintDiagnostic() {
           </p>
         </FadeUp>
 
-        {/* 3 livrables en ligne — mockup 16:9 + texte */}
+        {/* 3 livrables en ligne, mockup 16:9 + texte */}
         <div className="dg-cards">
           {deliverables.map((d, i) => {
             const Icon = d.icon
@@ -93,7 +93,7 @@ export default function SprintDiagnostic() {
           })}
         </div>
 
-        {/* Phrase honnête — juste après les cartes, avant le CTA */}
+        {/* Phrase honnête, juste après les cartes, avant le CTA */}
         <FadeUp className="text-center" delay={0.35}>
           <p
             className="font-sans"
@@ -105,7 +105,7 @@ export default function SprintDiagnostic() {
           </p>
         </FadeUp>
 
-        {/* CTA — juste sous la phrase */}
+        {/* CTA, juste sous la phrase */}
         <FadeUp className="text-center" delay={0.4}>
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 14, marginTop: 30 }}>
             <Link href="#rendez-vous" className="btn-primary" style={{ fontSize: 14 }}>

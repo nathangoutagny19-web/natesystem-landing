@@ -7,7 +7,7 @@ export type RelatedLink = {
   href: string
   label: string
   desc: string
-  /** External (other subdomain / site) — opens in a new tab. */
+  /** External (other subdomain / site), opens in a new tab. */
   external?: boolean
 }
 

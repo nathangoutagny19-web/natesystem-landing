@@ -38,7 +38,7 @@ const pains = [
   'Vous sentez que ça bloque, mais vous ne savez pas exactement où',
   'Vous voulez digitaliser, mais sans automatiser un process bancal',
   'On vous a déjà vendu des outils qui n\'ont rien changé',
-  'Vous voulez savoir où agir en premier — et combien ça coûte',
+  'Vous voulez savoir où agir en premier, et combien ça coûte',
 ]
 
 export default function AuditPage() {
@@ -55,7 +55,7 @@ export default function AuditPage() {
             </h1>
             <p className="font-sans" style={{ fontSize: 'clamp(15px, 3vw, 18px)', fontWeight: 300, color: 'var(--text-secondary)', maxWidth: 660, margin: '0 auto 36px', lineHeight: 1.65 }}>
               On cartographie vos process, on repère ce qui vous fait perdre du temps et de l&apos;argent, et on vous remet un
-              plan d&apos;action clair et chiffré. Vous repartez avec le plan — même si on ne travaille pas ensemble.
+              plan d&apos;action clair et chiffré. Vous repartez avec le plan, même si on ne travaille pas ensemble.
             </p>
             <Link href={CAL_LINK} className="btn-primary" style={{ margin: '0 auto', fontSize: 14 }}>
               <span className="btn-primary-dot" />Réserver un appel · offert →
@@ -98,7 +98,7 @@ export default function AuditPage() {
           <ul style={{ listStyle: 'none', padding: 0, margin: '0 auto', maxWidth: 600, display: 'grid', gap: 13 }}>
             {pains.map((p) => (
               <li key={p} className="flex items-start gap-3" style={{ fontSize: 14.5, color: 'var(--text-secondary)', lineHeight: 1.55, fontWeight: 300 }}>
-                <span style={{ color: 'var(--accent)', flexShrink: 0, marginTop: 1, fontWeight: 600 }}>—</span>
+                <span style={{ color: 'var(--accent)', flexShrink: 0, marginTop: 1, fontWeight: 600 }}>·</span>
                 <span>{p}</span>
               </li>
             ))}
@@ -192,7 +192,7 @@ export default function AuditPage() {
               </h2>
               <p className="font-sans" style={{ fontSize: 15, fontWeight: 300, color: 'var(--text-secondary)', lineHeight: 1.7, maxWidth: 520, margin: '0 auto 32px' }}>
                 Un appel offert. On regarde votre activité et on identifie où vous faire gagner du temps et de l&apos;argent.
-                Vous repartez avec un plan clair — même si on ne travaille pas ensemble.
+                Vous repartez avec un plan clair, même si on ne travaille pas ensemble.
               </p>
               <Link href={CAL_LINK} className="btn-primary" style={{ margin: '0 auto' }}>
                 <span className="btn-primary-dot" />Réserver un appel · offert

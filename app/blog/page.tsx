@@ -31,7 +31,7 @@ export default function BlogPage() {
               }}
             >
               Analyses, cas pratiques et stratégies concrètes pour intégrer
-              l&apos;IA dans vos opérations — sans jargon technique.
+              l&apos;IA dans vos opérations, sans jargon technique.
             </p>
           </FadeUp>
         </div>

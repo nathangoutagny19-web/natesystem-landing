@@ -1,7 +1,7 @@
 'use client'
 
 /**
- * AgentsInAction — concrete examples of what the deployed agents do.
+ * AgentsInAction, concrete examples of what the deployed agents do.
  *
  * Sits between Solution and CaseStudy. Visually mirrors Solution
  * (same numbered-card grid, same hover line, same tag treatment) so

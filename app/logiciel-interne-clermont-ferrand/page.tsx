@@ -36,7 +36,7 @@ const solutions = [
 const pains = [
   'Excel, mails et dix outils qui ne se parlent pas dans votre entreprise',
   'Des heures perdues chaque semaine à recopier les données d\'un logiciel à l\'autre',
-  'Aucune vue claire sur votre activité — vous pilotez à l\'aveugle',
+  'Aucune vue claire sur votre activité, vous pilotez à l\'aveugle',
   'Les solutions du marché ne collent jamais vraiment à votre métier',
 ]
 
@@ -52,7 +52,7 @@ export default function LogicielInterneClermontFerrandPage() {
     <main>
       <Nav />
 
-      {/* Hero — H1 with primary keyword + bonus */}
+      {/* Hero, H1 with primary keyword + bonus */}
       <section style={{ padding: '160px 24px 40px' }}>
         <div className="mx-auto text-center" style={{ maxWidth: 820 }}>
           <FadeUp>
@@ -62,7 +62,7 @@ export default function LogicielInterneClermontFerrandPage() {
             </h1>
             <p className="font-sans" style={{ fontSize: 'clamp(15px, 3vw, 18px)', fontWeight: 300, color: 'var(--text-secondary)', maxWidth: 660, margin: '0 auto 36px', lineHeight: 1.65 }}>
               NateSystem conçoit des solutions logicielles internes sur-mesure pour les entreprises de Clermont-Ferrand et
-              du Puy-de-Dôme — de l'industrie aux services. Un seul logiciel pour réunir vos outils, vos données et
+              du Puy-de-Dôme, de l'industrie aux services. Un seul logiciel pour réunir vos outils, vos données et
               votre équipe, que votre entreprise possède à vie.
             </p>
             <Link href={CAL_LINK} className="btn-primary" style={{ margin: '0 auto', fontSize: 14 }}>
@@ -74,7 +74,7 @@ export default function LogicielInterneClermontFerrandPage() {
 
       <Divider />
 
-      {/* Direct answer — what is internal software (GEO + intro answer) */}
+      {/* Direct answer, what is internal software (GEO + intro answer) */}
       <section style={{ padding: '70px 24px' }}>
         <div className="mx-auto" style={{ maxWidth: 760 }}>
           <FadeUp className="text-center mb-8">
@@ -107,7 +107,7 @@ export default function LogicielInterneClermontFerrandPage() {
           <ul style={{ listStyle: 'none', padding: 0, margin: '0 auto', maxWidth: 600, display: 'grid', gap: 13 }}>
             {pains.map((p) => (
               <li key={p} className="flex items-start gap-3" style={{ fontSize: 14.5, color: 'var(--text-secondary)', lineHeight: 1.55, fontWeight: 300 }}>
-                <span style={{ color: 'var(--accent)', flexShrink: 0, marginTop: 1, fontWeight: 600 }}>—</span>
+                <span style={{ color: 'var(--accent)', flexShrink: 0, marginTop: 1, fontWeight: 600 }}>·</span>
                 <span>{p}</span>
               </li>
             ))}
@@ -154,7 +154,7 @@ export default function LogicielInterneClermontFerrandPage() {
             <p className="font-sans" style={{ fontSize: 15.5, color: 'var(--text-secondary)', lineHeight: 1.75, fontWeight: 300, maxWidth: 680, margin: '0 auto 16px', textAlign: 'center' }}>
               Clermont-Ferrand, capitale de l'Auvergne, vit d'un tissu économique solide : industrie
               (pneumatique, agroalimentaire), services et PME régionales. Ces entreprises ont des process exigeants et
-              beaucoup de données à gérer — mais l'offre numérique locale reste rare. C'est un vrai potentiel :
+              beaucoup de données à gérer, mais l'offre numérique locale reste rare. C'est un vrai potentiel :
               un logiciel interne sur-mesure y fait souvent une différence immédiate sur l'organisation et le
               pilotage de l'équipe.
             </p>
@@ -186,7 +186,7 @@ export default function LogicielInterneClermontFerrandPage() {
 
       <Divider />
 
-      {/* FAQ — required by the tool + FAQPage schema in layout */}
+      {/* FAQ, required by the tool + FAQPage schema in layout */}
       <section style={{ padding: '70px 24px' }}>
         <div className="mx-auto" style={{ maxWidth: 760 }}>
           <FadeUp className="text-center mb-10">
@@ -243,7 +243,7 @@ export default function LogicielInterneClermontFerrandPage() {
               </h2>
               <p className="font-sans" style={{ fontSize: 15, fontWeight: 300, color: 'var(--text-secondary)', lineHeight: 1.7, maxWidth: 520, margin: '0 auto 32px' }}>
                 Un appel offert. On regarde vos outils actuels et on identifie ce qu'un logiciel interne sur-mesure
-                ferait gagner à votre entreprise — en temps, en argent, en clarté. Même si on ne travaille pas ensemble.
+                ferait gagner à votre entreprise, en temps, en argent, en clarté. Même si on ne travaille pas ensemble.
               </p>
               <Link href={CAL_LINK} className="btn-primary" style={{ margin: '0 auto' }}>
                 <span className="btn-primary-dot" />Réserver un appel · offert

@@ -1,27 +1,27 @@
 /**
- * /reviews — NateSystem · Reviews (product demo landing).
+ * /reviews, NateSystem · Reviews (product demo landing).
  *
  * Reviews is a software product (review intelligence) we built and run
  * for our own catalogue. This page is its demo landing: agency framing
  * is intentionally absent. Access to the live demo is gated behind a
- * short request form, same pattern as the rest of the demo catalogue —
+ * short request form, same pattern as the rest of the demo catalogue,
  * but unlike /actifs and /stock, the access link is sent by email after
  * a manual check (no public demo URL).
  *
  * Narrative arc:
- *   1. Hero — product positioning + request-access CTA
- *   2. Inside the demo — three modules you can click through
+ *   1. Hero, product positioning + request-access CTA
+ *   2. Inside the demo, three modules you can click through
  *   3. AI aspect analysis (03-aspect-analysis.png)
  *   4. Response agent (06-responses.png)
  *   5. 90-day plan from data (02-action-plan.png)
- *   6. Live evidence — full-width single review (05-reviews-ai.png)
- *   7. How the demo works — four steps
- *   8. FAQ — five product/demo questions
- *   9. Final ribbon — "See the product. Make your own call."
+ *   6. Live evidence, full-width single review (05-reviews-ai.png)
+ *   7. How the demo works, four steps
+ *   8. FAQ, five product/demo questions
+ *   9. Final ribbon, "See the product. Make your own call."
  *
  * Every mockup is a real production screenshot from the partner
  * restaurant "Kéfrenkos" (200 imported reviews). Do NOT crop or
- * letterbox — render at native aspect.
+ * letterbox, render at native aspect.
  */
 
 'use client'
@@ -191,7 +191,7 @@ export default function ReviewsPage() {
       </section>
 
       {/* ════════════════════════════════════════════════════════════
-         2. INSIDE THE DEMO — three modules
+         2. INSIDE THE DEMO, three modules
          ════════════════════════════════════════════════════════════ */}
       <section id="inside" style={{ padding: '100px 24px' }}>
         <div className="mx-auto" style={{ maxWidth: 1100 }}>
@@ -232,7 +232,7 @@ export default function ReviewsPage() {
       </section>
 
       {/* ════════════════════════════════════════════════════════════
-         3. AI ANALYSIS — aspect scoring (03-aspect-analysis.png)
+         3. AI ANALYSIS, aspect scoring (03-aspect-analysis.png)
          ════════════════════════════════════════════════════════════ */}
       <section style={{ padding: '100px 24px' }}>
         <div className="mx-auto" style={{ maxWidth: 1100 }}>
@@ -342,7 +342,7 @@ export default function ReviewsPage() {
             <FadeUp delay={0.1}>
               <MockupFigure
                 src="/reviews/06-responses.png"
-                alt="AI Response Agent configuration — brand voice, system prompt, learned examples"
+                alt="AI Response Agent configuration, brand voice, system prompt, learned examples"
                 caption={t('reviewsDemo.respond.imgCaption')}
               />
             </FadeUp>
@@ -418,7 +418,7 @@ export default function ReviewsPage() {
       </section>
 
       {/* ════════════════════════════════════════════════════════════
-         6. LIVE EVIDENCE — full-width (05-reviews-ai.png)
+         6. LIVE EVIDENCE, full-width (05-reviews-ai.png)
          ════════════════════════════════════════════════════════════ */}
       <section style={{ padding: '100px 24px' }}>
         <div className="mx-auto" style={{ maxWidth: 1100 }}>
@@ -447,7 +447,7 @@ export default function ReviewsPage() {
           <FadeUp delay={0.1}>
             <MockupFigure
               src="/reviews/05-reviews-ai.png"
-              alt="One review decomposed — six aspects scored, AI summary, response CTA"
+              alt="One review decomposed, six aspects scored, AI summary, response CTA"
               caption={t('reviewsDemo.live.imgCaption')}
               fullWidth
             />

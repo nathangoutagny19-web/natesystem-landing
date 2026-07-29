@@ -55,7 +55,7 @@ export default function IaPage() {
             </h1>
             <p className="font-sans" style={{ fontSize: 'clamp(15px, 3vw, 18px)', fontWeight: 300, color: 'var(--text-secondary)', maxWidth: 660, margin: '0 auto 36px', lineHeight: 1.65 }}>
               Une IA agentique avec mémoire persistante : elle exécute des tâches de bout en bout, apprend votre métier et
-              s&apos;améliore avec le temps. Intégrée uniquement là où elle remplace de vraies heures — jamais en gadget.
+              s&apos;améliore avec le temps. Intégrée uniquement là où elle remplace de vraies heures, jamais en gadget.
               Vos données restent en UE.
             </p>
             <Link href={CAL_LINK} className="btn-primary" style={{ margin: '0 auto', fontSize: 14 }}>
@@ -79,7 +79,7 @@ export default function IaPage() {
             <p className="font-sans" style={{ fontSize: 16, color: 'var(--text-secondary)', lineHeight: 1.75, fontWeight: 300, maxWidth: 680, margin: '0 auto', textAlign: 'center' }}>
               C&apos;est une IA qui ne se contente pas de répondre : elle exécute des tâches de bout en bout dans vos outils,
               avec une mémoire persistante du contexte de votre activité. Elle apprend de chaque interaction et s&apos;améliore
-              avec le temps — qualifier un lead, lire un document, router une demande, rédiger une première réponse.
+              avec le temps, qualifier un lead, lire un document, router une demande, rédiger une première réponse.
             </p>
           </FadeUp>
         </div>
@@ -99,7 +99,7 @@ export default function IaPage() {
           <ul style={{ listStyle: 'none', padding: 0, margin: '0 auto', maxWidth: 600, display: 'grid', gap: 13 }}>
             {pains.map((p) => (
               <li key={p} className="flex items-start gap-3" style={{ fontSize: 14.5, color: 'var(--text-secondary)', lineHeight: 1.55, fontWeight: 300 }}>
-                <span style={{ color: 'var(--accent)', flexShrink: 0, marginTop: 1, fontWeight: 600 }}>—</span>
+                <span style={{ color: 'var(--accent)', flexShrink: 0, marginTop: 1, fontWeight: 600 }}>·</span>
                 <span>{p}</span>
               </li>
             ))}
@@ -193,7 +193,7 @@ export default function IaPage() {
               </h2>
               <p className="font-sans" style={{ fontSize: 15, fontWeight: 300, color: 'var(--text-secondary)', lineHeight: 1.7, maxWidth: 520, margin: '0 auto 32px' }}>
                 Un appel offert. On regarde vos tâches répétitives et on identifie où l&apos;IA vous ferait gagner de vraies
-                heures — avec un ROI mesurable. Même si on ne travaille pas ensemble.
+                heures, avec un ROI mesurable. Même si on ne travaille pas ensemble.
               </p>
               <Link href={CAL_LINK} className="btn-primary" style={{ margin: '0 auto' }}>
                 <span className="btn-primary-dot" />Réserver un appel · offert

@@ -42,7 +42,7 @@ export default function Testimonial() {
               textTransform: 'uppercase',
             }}
           >
-            Catherine F. — General Manager, Chromosome Saint-Étienne
+            Catherine F., General Manager, Chromosome Saint-Étienne
           </p>
         </FadeUp>
 
@@ -58,7 +58,7 @@ export default function Testimonial() {
                 {videoLoaded && (
                   <iframe
                     src={`https://www.youtube-nocookie.com/embed/${YOUTUBE_VIDEO_ID}?autoplay=1&rel=0&modestbranding=1`}
-                    title="NateSystem — Témoignage client Chromosome"
+                    title="NateSystem, Témoignage client Chromosome"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                     className="absolute inset-0 w-full h-full"

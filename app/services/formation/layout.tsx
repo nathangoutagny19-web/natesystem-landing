@@ -1,12 +1,12 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Formation & accompagnement — jusqu\'à l\'autonomie complète | NateSystem',
+  title: 'Formation & accompagnement, jusqu\'à l\'autonomie complète | NateSystem',
   description:
     'On forme vos équipes, du dirigeant au terrain, à piloter leur logiciel sur-mesure, jusqu\'à l\'autonomie complète. Documentation complète, code et infrastructure 100 % à vous. Vous ne dépendez de personne. Appel offert.',
   alternates: { canonical: 'https://www.natesystem.com/services/formation' },
   openGraph: {
-    title: 'Formation & accompagnement — jusqu\'à l\'autonomie complète | NateSystem',
+    title: 'Formation & accompagnement, jusqu\'à l\'autonomie complète | NateSystem',
     description:
       'Formation sur votre propre outil, du dirigeant au terrain. Documentation complète, code à vous. On part quand vos équipes sont autonomes.',
     url: 'https://www.natesystem.com/services/formation',
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Formation & accompagnement — jusqu\'à l\'autonomie complète | NateSystem',
+    title: 'Formation & accompagnement, jusqu\'à l\'autonomie complète | NateSystem',
     description: 'On forme vos équipes à piloter leur outil, jusqu\'à l\'autonomie complète. Vous ne dépendez de personne.',
   },
 }

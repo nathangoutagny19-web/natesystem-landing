@@ -203,7 +203,7 @@ export default function Integrations() {
               className="integrations-carousel"
               style={{ display: 'flex', flexDirection: 'column', gap: 14 }}
             >
-              {/* Single marquee row (was 3 rows) — merged source list, slow scroll */}
+              {/* Single marquee row (was 3 rows), merged source list, slow scroll */}
               <ScrollRow items={[...row1, ...row2, ...row3]} direction="left" speed={60} />
             </div>
           </FadeUp>

@@ -103,7 +103,7 @@ export default function Solutions() {
           </p>
         </FadeUp>
 
-        {/* Offre phare — Infrastructure digitale (le tout complet, ~offre premium) */}
+        {/* Offre phare, Infrastructure digitale (le tout complet, ~offre premium) */}
         <FadeUp>
           <div className="infra-band">
             <span className="infra-eyebrow font-mono">{t('sols.infra.label')}</span>
@@ -142,7 +142,7 @@ export default function Solutions() {
                   gap: 18,
                 }}
               >
-                {/* Icon-in-rounded-square (Impulse-style) — consistent across the 3 cards */}
+                {/* Icon-in-rounded-square (Impulse-style), consistent across the 3 cards */}
                 <span
                   aria-hidden="true"
                   style={{
@@ -290,7 +290,7 @@ export default function Solutions() {
           })}
         </div>
 
-        {/* Offre séparée — Formation IA opérationnelle (wedge DIY, plus léger) */}
+        {/* Offre séparée, Formation IA opérationnelle (wedge DIY, plus léger) */}
         <FadeUp delay={0.1}>
           <div className="form-band">
             <span className="form-icon" aria-hidden="true"><GraduationCap size={22} strokeWidth={1.8} /></span>

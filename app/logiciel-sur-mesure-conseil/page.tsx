@@ -55,7 +55,7 @@ export default function ConseilPage() {
             <p className="font-sans" style={{ fontSize: 'clamp(15px, 3vw, 18px)', fontWeight: 300, color: 'var(--text-secondary)', maxWidth: 640, margin: '0 auto 36px', lineHeight: 1.65 }}>
               Pour un cabinet de conseil ou un consultant B2B, le logiciel et l&apos;IA sur-mesure automatisent ce qui ronge votre
               temps facturable : relance commerciale, réactivation des dormants, reporting. L&apos;IA intégrée uniquement là où elle
-              remplace de vraies heures — votre secret client reste intact.
+              remplace de vraies heures, votre secret client reste intact.
             </p>
             <Link href={CAL_LINK} className="btn-primary" style={{ margin: '0 auto', fontSize: 14 }}>
               <span className="btn-primary-dot" />Réserver un appel · offert →
@@ -78,7 +78,7 @@ export default function ConseilPage() {
           <ul style={{ listStyle: 'none', padding: 0, margin: '0 auto', maxWidth: 600, display: 'grid', gap: 13 }}>
             {pains.map((p) => (
               <li key={p} className="flex items-start gap-3" style={{ fontSize: 14.5, color: 'var(--text-secondary)', lineHeight: 1.55, fontWeight: 300 }}>
-                <span style={{ color: 'var(--accent)', flexShrink: 0, marginTop: 1, fontWeight: 600 }}>—</span>
+                <span style={{ color: 'var(--accent)', flexShrink: 0, marginTop: 1, fontWeight: 600 }}>·</span>
                 <span>{p}</span>
               </li>
             ))}
@@ -120,7 +120,7 @@ export default function ConseilPage() {
             <div style={{ background: 'var(--bg-card)', border: '1px solid var(--border)', borderRadius: 14, padding: '40px 36px', textAlign: 'center' }}>
               <p className="font-serif italic accent" style={{ color: 'var(--accent)', fontSize: 'clamp(40px, 7vw, 58px)', fontWeight: 400, lineHeight: 1, margin: '0 0 8px' }}>4 % → 12 %</p>
               <p className="font-sans" style={{ fontSize: 15, color: 'var(--text)', fontWeight: 400, lineHeight: 1.6, maxWidth: 520, margin: '0 auto 6px' }}>
-                de conversion sur la relance commerciale, chez nos clients consultants B2B — en automatisant ce que personne n&apos;avait le temps de faire.
+                de conversion sur la relance commerciale, chez nos clients consultants B2B, en automatisant ce que personne n&apos;avait le temps de faire.
               </p>
               <p className="font-mono" style={{ fontSize: 11, letterSpacing: 1.2, textTransform: 'uppercase', color: 'var(--text-muted)', fontWeight: 500, margin: 0 }}>
                 Clients consultants B2B
@@ -172,7 +172,7 @@ export default function ConseilPage() {
                 Récupérez votre temps facturable.
               </h2>
               <p className="font-sans" style={{ fontSize: 15, fontWeight: 300, color: 'var(--text-secondary)', lineHeight: 1.7, maxWidth: 520, margin: '0 auto 32px' }}>
-                Un appel offert. On regarde où part votre temps et ce que l&apos;automatisation vous ferait gagner — en
+                Un appel offert. On regarde où part votre temps et ce que l&apos;automatisation vous ferait gagner, en
                 rendez-vous et en heures facturables. Même si on ne travaille pas ensemble.
               </p>
               <Link href={CAL_LINK} className="btn-primary" style={{ margin: '0 auto' }}>

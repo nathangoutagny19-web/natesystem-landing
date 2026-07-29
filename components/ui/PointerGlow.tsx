@@ -3,12 +3,12 @@
 import { useEffect } from 'react'
 
 /**
- * PointerGlow — one delegated pointermove listener that drives the premium
+ * PointerGlow, one delegated pointermove listener that drives the premium
  * pointer interactions in globals.css:
- *   • Ambient — a soft glow that follows the cursor on the page background
+ *   • Ambient, a soft glow that follows the cursor on the page background
  *     (--gx/--gy on <html>, lighter in dark mode / darker in light mode).
- *   • Magnetic buttons — the element drifts toward the cursor via --tx/--ty.
- *   • Spotlight — cursor position as % via --mx/--my (buttons + offer cards).
+ *   • Magnetic buttons, the element drifts toward the cursor via --tx/--ty.
+ *   • Spotlight, cursor position as % via --mx/--my (buttons + offer cards).
  * Element vars are cleared the moment the cursor leaves, so buttons spring back.
  *
  * Perf/UX guardrails: single listener, rAF-throttled, and a hard no-op on
@@ -16,7 +16,7 @@ import { useEffect } from 'react'
  */
 const BTN = '.btn-primary, .nav-cta-btn, .btn-ghost, .sols-cta, .infra-cta, .form-cta'
 const ANY = '.btn-primary, .nav-cta-btn, .btn-ghost, .sols-cta, .infra-cta, .form-cta, .sols-card'
-const MAG = 7 // px — max magnetic drift
+const MAG = 7 // px, max magnetic drift
 
 const clamp = (v: number, m: number) => (v < -m ? -m : v > m ? m : v)
 

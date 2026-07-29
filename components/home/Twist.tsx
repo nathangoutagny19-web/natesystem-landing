@@ -4,7 +4,7 @@ import FadeUp from '@/components/ui/FadeUp'
 import { useLang } from '@/components/providers/LangProvider'
 
 /**
- * "We don't just build software" — the benefit core.
+ * "We don't just build software", the benefit core.
  * Hand-drawn / sketch icons (custom organic-stroke SVGs, no template square)
  * that draw themselves on card hover. Charter accent red, dark-mode safe.
  */
@@ -15,14 +15,14 @@ type SketchIcon = (props: { className?: string }) => JSX.Element
    fill none, stroke currentColor. The dash-draw animation runs on hover. */
 const stroke = { fill: 'none', stroke: 'currentColor', strokeWidth: 1.7, strokeLinecap: 'round' as const, strokeLinejoin: 'round' as const }
 
-// 1 — Time: a hand-drawn clock
+// 1, Time: a hand-drawn clock
 const IcoTime: SketchIcon = ({ className }) => (
   <svg viewBox="0 0 48 48" className={className} {...stroke}>
     <path className="sk" d="M24 7c9.2-.3 17 7.2 17 16.8 0 9.8-7.7 17.4-17.2 17.2C14.4 40.8 7 33.3 7 24 7 14.8 14.6 7.2 24 7Z" />
     <path className="sk" d="M24 14.5c.2 3.4.1 6.7.3 9.8l7 4.2" />
   </svg>
 )
-// 2 — Profitability: rising sketch arrow + a coin
+// 2, Profitability: rising sketch arrow + a coin
 const IcoMoney: SketchIcon = ({ className }) => (
   <svg viewBox="0 0 48 48" className={className} {...stroke}>
     <path className="sk" d="M7 32c4-1 7.5-7 12-10.5S28 16 31 19" />
@@ -30,7 +30,7 @@ const IcoMoney: SketchIcon = ({ className }) => (
     <path className="sk" d="M33 36.5c4.7.3 8.6-3.2 8.4-7.4-.2-3.9-3.9-6.8-8-6.4-3.7.3-6.4 3.4-6 7 .3 3.2 2.7 5.6 5.6 6.8Z" />
   </svg>
 )
-// 3 — Clear decisions: target / focus
+// 3, Clear decisions: target / focus
 const IcoTarget: SketchIcon = ({ className }) => (
   <svg viewBox="0 0 48 48" className={className} {...stroke}>
     <path className="sk" d="M24 9c8.6-.2 15.6 6.7 15.4 15.3C39.2 32.7 32.4 39.2 24 39 15.8 38.8 9 32.2 9 24 9 15.6 15.7 9.2 24 9Z" />
@@ -38,7 +38,7 @@ const IcoTarget: SketchIcon = ({ className }) => (
     <path className="sk" d="M24 22.6c1.1 0 2.1.9 2 2.1-.1 1-1 1.8-2 1.7-1-.1-1.8-1-1.7-2 .1-1 .8-1.7 1.7-1.8Z" />
   </svg>
 )
-// 4 — Team aligned: three people
+// 4, Team aligned: three people
 const IcoTeam: SketchIcon = ({ className }) => (
   <svg viewBox="0 0 48 48" className={className} {...stroke}>
     <path className="sk" d="M19 19.5c3.1-.2 5.6 2.3 5.4 5.4-.2 2.8-2.5 4.8-5.4 4.7-2.8-.1-5-2.4-4.9-5.2.1-2.6 2.2-4.7 4.9-4.9Z" />
@@ -47,14 +47,14 @@ const IcoTeam: SketchIcon = ({ className }) => (
     <path className="sk" d="M33.5 31c3.6.2 6.4 2.8 6.9 6.3" />
   </svg>
 )
-// 5 — Calm reliability: shield with a check
+// 5, Calm reliability: shield with a check
 const IcoShield: SketchIcon = ({ className }) => (
   <svg viewBox="0 0 48 48" className={className} {...stroke}>
     <path className="sk" d="M24 7.5c4.3 2.6 8.8 4 13.8 4.3.6 6.8.2 13-2.4 18.2-2.5 5-6.4 8.3-11.4 11-5-2.6-9-6-11.5-11C9.9 24.8 9.6 18.6 10.2 11.8 15.2 11.5 19.7 10.1 24 7.5Z" />
     <path className="sk" d="M18 23.5c2 1.8 3.6 3.7 5 5.8 2.2-4 4.9-7.3 8-10.2" />
   </svg>
 )
-// 6 — Self-improving AI: a spark / star
+// 6, Self-improving AI: a spark / star
 const IcoSpark: SketchIcon = ({ className }) => (
   <svg viewBox="0 0 48 48" className={className} {...stroke}>
     <path className="sk" d="M22 8c1.3 4.6 2.4 9 5 11.6 2.5 2.6 6.8 3.7 11.4 5-4.5 1.4-8.8 2.5-11.4 5.1-2.6 2.6-3.7 7-5 11.5-1.3-4.5-2.4-8.9-5-11.5-2.6-2.6-7-3.7-11.5-5.1 4.6-1.3 9-2.4 11.6-5C19.7 17 20.8 12.6 22 8Z" />
@@ -129,7 +129,7 @@ export default function Twist() {
           box-shadow: 0 14px 34px -18px rgba(230, 57, 70, 0.28), 0 1px 2px rgba(15, 23, 42, 0.04);
         }
 
-        /* hand-drawn icon — no template square, just the sketch in accent red */
+        /* hand-drawn icon, no template square, just the sketch in accent red */
         .twist-ico {
           display: inline-flex;
           width: 44px; height: 44px;

@@ -1,21 +1,21 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Logiciel & IA sur-mesure pour clubs sportifs — NateSystem',
+  title: 'Logiciel & IA sur-mesure pour clubs sportifs, NateSystem',
   description:
     'Logiciel métier et IA sur-mesure pour clubs sportifs : génération automatique des offres de sponsoring (PDF, slides, mail) après vos appels, back-office commercial relié au CRM, gestion des bénévoles. Démo en 2 minutes + audit offert.',
   alternates: { canonical: 'https://www.natesystem.com/logiciel-sur-mesure-club-sportif' },
   openGraph: {
-    title: 'Logiciel & IA sur-mesure pour clubs sportifs — NateSystem',
+    title: 'Logiciel & IA sur-mesure pour clubs sportifs, NateSystem',
     description:
-      'Génération auto des offres de sponsoring, back-office commercial relié au CRM, gestion des bénévoles — pour clubs sportifs. Démo en 2 minutes.',
+      'Génération auto des offres de sponsoring, back-office commercial relié au CRM, gestion des bénévoles, pour clubs sportifs. Démo en 2 minutes.',
     url: 'https://www.natesystem.com/logiciel-sur-mesure-club-sportif',
     type: 'website',
     locale: 'fr_FR',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Logiciel & IA sur-mesure pour clubs sportifs — NateSystem',
+    title: 'Logiciel & IA sur-mesure pour clubs sportifs, NateSystem',
     description: 'Logiciel & IA sur-mesure pour clubs sportifs : sponsoring, back-office, bénévoles.',
   },
 }
@@ -53,7 +53,7 @@ const jsonLd = {
           name: 'Comment l\'IA aide-t-elle un club sportif sur la partie sponsoring ?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'En générant automatiquement les offres de sponsoring et de partenariat — en PDF, slides ou mail — juste après vos appels, reliées à votre CRM. Plus besoin de les composer à la main dans Excel et PowerPoint. L\'objectif : transformer plusieurs heures de back-office commercial par semaine en quelques minutes, dans un système que le club possède.',
+            text: 'En générant automatiquement les offres de sponsoring et de partenariat, en PDF, slides ou mail, juste après vos appels, reliées à votre CRM. Plus besoin de les composer à la main dans Excel et PowerPoint. L\'objectif : transformer plusieurs heures de back-office commercial par semaine en quelques minutes, dans un système que le club possède.',
           },
         },
         {
@@ -61,7 +61,7 @@ const jsonLd = {
           name: 'Peut-on aussi gérer les bénévoles avec ce type de logiciel ?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Oui. La gestion des bénévoles — planning, attribution des rôles, check-in, communication interne — s\'intègre dans la même infrastructure que le back-office commercial, plutôt que dans un patchwork d\'Excel et de WhatsApp. Un seul système, propriété du club, hébergé en UE.',
+            text: 'Oui. La gestion des bénévoles, planning, attribution des rôles, check-in, communication interne, s\'intègre dans la même infrastructure que le back-office commercial, plutôt que dans un patchwork d\'Excel et de WhatsApp. Un seul système, propriété du club, hébergé en UE.',
           },
         },
       ],

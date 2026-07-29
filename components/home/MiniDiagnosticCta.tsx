@@ -6,7 +6,7 @@ import { useLang } from '@/components/providers/LangProvider'
 
 /**
  * Invitation au diagnostic gratuit, juste après l'avant/après.
- * Choix Nathan : PAS d'encadré — un grand texte + le bouton en dessous, centré.
+ * Choix Nathan : PAS d'encadré, un grand texte + le bouton en dessous, centré.
  * Remplace l'ancienne bascule « nos clients étaient là… ».
  */
 export default function MiniDiagnosticCta() {
@@ -23,7 +23,7 @@ export default function MiniDiagnosticCta() {
           >
             {d('On vous offre un ', 'We give you a ')}
             <span className="accent">{d('diagnostic gratuit, sans e-mail', 'free diagnostic, no email')}</span>
-            {d(' — pour voir où partent vos heures et votre argent.', ' — to see where your hours and money go.')}
+            {d(', pour voir où partent vos heures et votre argent.', ', to see where your hours and money go.')}
           </h3>
           <p
             className="font-sans"

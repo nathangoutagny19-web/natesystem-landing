@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Logiciel interne Villeurbanne : solution sur-mesure entreprise',
   description:
-    'Logiciel interne à Villeurbanne : NateSystem conçoit des solutions logicielles sur-mesure pour entreprise — gestion, données, équipe. Code livré, propriété 100 %, hébergé en UE. Audit offert.',
+    'Logiciel interne à Villeurbanne : NateSystem conçoit des solutions logicielles sur-mesure pour entreprise, gestion, données, équipe. Code livré, propriété 100 %, hébergé en UE. Audit offert.',
   alternates: { canonical: 'https://www.natesystem.com/logiciel-interne-villeurbanne' },
   openGraph: {
     title: 'Logiciel interne Villeurbanne : solution sur-mesure entreprise',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
 }
 
-// LocalBusiness + Service + FAQ + Breadcrumb, scoped to Villeurbanne — drives the
+// LocalBusiness + Service + FAQ + Breadcrumb, scoped to Villeurbanne, drives the
 // local pack and AI association for "logiciel interne Villeurbanne".
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -28,7 +28,7 @@ const jsonLd = {
     {
       '@type': ['Organization', 'LocalBusiness'],
       '@id': 'https://www.natesystem.com/logiciel-interne-villeurbanne#business',
-      name: 'NateSystem — Logiciel interne Villeurbanne',
+      name: 'NateSystem, Logiciel interne Villeurbanne',
       url: 'https://www.natesystem.com/logiciel-interne-villeurbanne',
       description:
         'Agence de logiciel interne sur-mesure à Villeurbanne : solutions logicielles métier pour entreprise, intégration IA, gestion des données et des process.',

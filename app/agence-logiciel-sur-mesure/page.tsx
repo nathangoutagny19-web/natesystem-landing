@@ -13,7 +13,7 @@ import { CAL_LINK } from '@/lib/constants'
 const solutions = [
   {
     title: 'Un audit avant de coder',
-    desc: 'Un bon prestataire commence par comprendre votre métier et vos process réels, pas par vous vendre une techno. On chiffre l\'impact — heures et euros gagnés — avant le moindre devis.',
+    desc: 'Un bon prestataire commence par comprendre votre métier et vos process réels, pas par vous vendre une techno. On chiffre l\'impact, heures et euros gagnés, avant le moindre devis.',
     metric: 'Le besoin d\'abord, le code ensuite',
   },
   {
@@ -52,7 +52,7 @@ export default function AgenceLogicielSurMesurePage() {
     <main>
       <Nav />
 
-      {/* Hero — H1 with primary keyword + bonus */}
+      {/* Hero, H1 with primary keyword + bonus */}
       <section style={{ padding: '160px 24px 40px' }}>
         <div className="mx-auto text-center" style={{ maxWidth: 820 }}>
           <FadeUp>
@@ -62,7 +62,7 @@ export default function AgenceLogicielSurMesurePage() {
             </h1>
             <p className="font-sans" style={{ fontSize: 'clamp(15px, 3vw, 18px)', fontWeight: 300, color: 'var(--text-secondary)', maxWidth: 660, margin: '0 auto 36px', lineHeight: 1.65 }}>
               NateSystem est une agence de développement de logiciel sur-mesure pour les entreprises et PME en France.
-              On conçoit des solutions logicielles métier — avec ou sans IA — que votre entreprise possède à vie.
+              On conçoit des solutions logicielles métier, avec ou sans IA, que votre entreprise possède à vie.
               Voici comment reconnaître un bon prestataire.
             </p>
             <Link href={CAL_LINK} className="btn-primary" style={{ margin: '0 auto', fontSize: 14 }}>
@@ -74,7 +74,7 @@ export default function AgenceLogicielSurMesurePage() {
 
       <Divider />
 
-      {/* Direct answer — what is a custom software agency (GEO + intro answer) */}
+      {/* Direct answer, what is a custom software agency (GEO + intro answer) */}
       <section style={{ padding: '70px 24px' }}>
         <div className="mx-auto" style={{ maxWidth: 760 }}>
           <FadeUp className="text-center mb-8">
@@ -108,7 +108,7 @@ export default function AgenceLogicielSurMesurePage() {
           <ul style={{ listStyle: 'none', padding: 0, margin: '0 auto', maxWidth: 600, display: 'grid', gap: 13 }}>
             {pains.map((p) => (
               <li key={p} className="flex items-start gap-3" style={{ fontSize: 14.5, color: 'var(--text-secondary)', lineHeight: 1.55, fontWeight: 300 }}>
-                <span style={{ color: 'var(--accent)', flexShrink: 0, marginTop: 1, fontWeight: 600 }}>—</span>
+                <span style={{ color: 'var(--accent)', flexShrink: 0, marginTop: 1, fontWeight: 600 }}>·</span>
                 <span>{p}</span>
               </li>
             ))}
@@ -118,7 +118,7 @@ export default function AgenceLogicielSurMesurePage() {
 
       <Divider />
 
-      {/* Solutions — what a good agency does */}
+      {/* Solutions, what a good agency does */}
       <section style={{ padding: '70px 24px' }}>
         <div className="mx-auto" style={{ maxWidth: 1100 }}>
           <FadeUp className="text-center mb-12">
@@ -185,7 +185,7 @@ export default function AgenceLogicielSurMesurePage() {
 
       <Divider />
 
-      {/* FAQ — required by the tool + FAQPage schema in layout */}
+      {/* FAQ, required by the tool + FAQPage schema in layout */}
       <section style={{ padding: '70px 24px' }}>
         <div className="mx-auto" style={{ maxWidth: 760 }}>
           <FadeUp className="text-center mb-10">
@@ -242,7 +242,7 @@ export default function AgenceLogicielSurMesurePage() {
               </h2>
               <p className="font-sans" style={{ fontSize: 15, fontWeight: 300, color: 'var(--text-secondary)', lineHeight: 1.7, maxWidth: 520, margin: '0 auto 32px' }}>
                 Un appel offert. On regarde vos outils actuels et on identifie ce qu'un logiciel sur-mesure ferait
-                gagner à votre entreprise — en temps, en argent, en clarté. On vous dira aussi franchement si vous
+                gagner à votre entreprise, en temps, en argent, en clarté. On vous dira aussi franchement si vous
                 n'en avez pas besoin.
               </p>
               <Link href={CAL_LINK} className="btn-primary" style={{ margin: '0 auto' }}>

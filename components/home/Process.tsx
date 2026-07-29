@@ -46,7 +46,7 @@ export default function Process({ home = false }: { home?: boolean }) {
           )}
         </FadeUp>
 
-        {/* Steps — one connected group with app-style rounded corners + fine shadow */}
+        {/* Steps, one connected group with app-style rounded corners + fine shadow */}
         <div
           className="flex flex-col gap-[2px] overflow-hidden"
           style={{

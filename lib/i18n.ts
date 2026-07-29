@@ -6,7 +6,7 @@ export const translations = {
   'nav.cta': { en: 'Let\'s work together', fr: 'Travaillons ensemble' },
   'nav.contact': { en: 'Contact', fr: 'Contact' },
 
-  // Menu cible (Lot 1 du BRIEF-SITE-V2) — un menu resserré + un CTA unique.
+  // Menu cible (Lot 1 du BRIEF-SITE-V2), un menu resserré + un CTA unique.
   'nav.methode': { en: 'Our method', fr: 'Notre méthode' },
   'nav.realisations': { en: 'Case studies', fr: 'Réalisations' },
   'nav.services': { en: 'Services', fr: 'Services' },
@@ -111,7 +111,7 @@ export const translations = {
   },
   'solution.decideTags': { en: 'Agentic AI · Automation · Data analytics', fr: 'IA agentique · Automatisation · Data analytics' },
 
-  // Case study (unifies results + testimonial) — reframed to "what those who built it with us say"
+  // Case study (unifies results + testimonial), reframed to "what those who built it with us say"
   'results.label': { en: 'What they say', fr: 'Ce qu\'ils en disent' },
   'results.title': { en: 'What our clients say,', fr: 'Ce que disent ceux qui l\'ont' },
   'results.titleAccent': { en: 'who built it with us.', fr: 'construit avec nous.' },
@@ -141,14 +141,14 @@ export const translations = {
   'process.step1': { en: 'The Diagnostic: mapping & analysis', fr: 'Le Diagnostic : cartographie & analyse' },
   'process.step1Duration': { en: 'Free discovery call', fr: 'Appel découverte offert' },
   'process.step1Desc': {
-    en: 'We map how your whole business runs — from a prospect’s arrival to a client who refers you: acquisition, delivery, internal management. We examine every step in detail and as a whole, to pinpoint where you lose time and money. You leave with a clear map of your workflows — and a first clickable prototype of your future tool, even if we don’t work together.',
-    fr: 'On cartographie tout le fonctionnement de votre entreprise — de l’arrivée d’un prospect au client qui recommande : acquisition, delivery, gestion interne. On examine chaque étape en détail et en vue d’ensemble, pour repérer où vous perdez du temps et de l’argent. Vous repartez avec une carte claire de vos workflows — et un premier prototype cliquable de votre futur outil, même si on ne travaille pas ensemble.',
+    en: 'We map how your whole business runs, from a prospect’s arrival to a client who refers you: acquisition, delivery, internal management. We examine every step in detail and as a whole, to pinpoint where you lose time and money. You leave with a clear map of your workflows, and a first clickable prototype of your future tool, even if we don’t work together.',
+    fr: 'On cartographie tout le fonctionnement de votre entreprise, de l’arrivée d’un prospect au client qui recommande : acquisition, delivery, gestion interne. On examine chaque étape en détail et en vue d’ensemble, pour repérer où vous perdez du temps et de l’argent. Vous repartez avec une carte claire de vos workflows, et un premier prototype cliquable de votre futur outil, même si on ne travaille pas ensemble.',
   },
   'process.step2': { en: 'Then: custom build', fr: 'Ensuite : développement sur-mesure' },
   'process.step2Duration': { en: '4 to 8 weeks', fr: '4 à 8 semaines' },
   'process.step2Desc': {
-    en: 'We build the software, portal or cockpit tailored to your processes — and unify your data into a single source, live in real time. We add AI and automation only where they save you real hours. A usable MVP is ready in under 30 days, the full build in 30 to 60. Price and timeline fixed up front, a check-in every week.',
-    fr: 'On construit le(s) logiciel(s), portail ou cockpit taillés pour vos process — et on unifie vos données dans une seule source, à jour en temps réel. On y ajoute l’IA et l’automatisation uniquement là où elles vous font gagner de vraies heures. Un MVP utilisable est prêt en moins de 30 jours, le développement complet en 30 à 60. Prix et délai fixés d’avance, point chaque semaine.',
+    en: 'We build the software, portal or cockpit tailored to your processes, and unify your data into a single source, live in real time. We add AI and automation only where they save you real hours. A usable MVP is ready in under 30 days, the full build in 30 to 60. Price and timeline fixed up front, a check-in every week.',
+    fr: 'On construit le(s) logiciel(s), portail ou cockpit taillés pour vos process, et on unifie vos données dans une seule source, à jour en temps réel. On y ajoute l’IA et l’automatisation uniquement là où elles vous font gagner de vraies heures. Un MVP utilisable est prêt en moins de 30 jours, le développement complet en 30 à 60. Prix et délai fixés d’avance, point chaque semaine.',
   },
   'process.step3': { en: 'Then: training & support', fr: 'Ensuite : formation & accompagnement' },
   'process.step3Duration': { en: 'Until full autonomy', fr: 'Jusqu\'à l\'autonomie complète' },
@@ -220,7 +220,7 @@ export const translations = {
   },
 
   // ───────────────────────────────────────────────────────────────
-  // Systems — recurring cases (5 AI systems + 3 custom software)
+  // Systems, recurring cases (5 AI systems + 3 custom software)
   // ───────────────────────────────────────────────────────────────
   'systems.label': { en: 'Example solutions', fr: 'Exemples de solutions' },
   'systems.deployed': { en: 'Deployed.', fr: 'Déployé.' },
@@ -229,15 +229,15 @@ export const translations = {
   'systems.title': { en: 'Deployed in these sectors,', fr: 'Déjà déployé dans ces secteurs,' },
   'systems.titleAccent': { en: 'winning every day.', fr: 'rentable tous les jours.' },
   'systems.sub': {
-    en: 'A glimpse of what we build and run — systems that save our clients time and money, every single day.',
-    fr: 'Un aperçu de ce qu\'on construit et fait tourner — des systèmes qui font gagner du temps et de l\'argent à nos clients, tous les jours.',
+    en: 'A glimpse of what we build and run, systems that save our clients time and money, every single day.',
+    fr: 'Un aperçu de ce qu\'on construit et fait tourner, des systèmes qui font gagner du temps et de l\'argent à nos clients, tous les jours.',
   },
   'systems.allCases': { en: 'See all our case studies', fr: 'Voir tous nos cas clients' },
   'systems.groupAI': { en: 'AI systems', fr: 'Systèmes IA' },
   'systems.groupSoft': { en: 'Custom software', fr: 'Logiciels métier sur-mesure' },
   'systems.tagAI': { en: 'AI integration', fr: 'Intégration IA' },
   'systems.tagSoft': { en: 'Custom software', fr: 'Logiciel métier' },
-  // 6 real-client logiciel métier cases (anonymized — sector tag instead of client name)
+  // 6 real-client logiciel métier cases (anonymized, sector tag instead of client name)
   'systems.sw1.sector': { en: 'Hospitality', fr: 'Restauration' },
   'systems.sw2.sector': { en: 'Public university', fr: 'Université publique' },
   'systems.sw3.sector': { en: 'Events & non-profit', fr: 'Événementiel & associatif' },
@@ -279,7 +279,7 @@ export const translations = {
   'systems.s5.metric': { en: '500 hours/year recovered at a 50-call/day construction SMB', fr: '500h/an récupérées sur une PME BTP de 50 SAV/jour' },
 
   // ───────────────────────────────────────────────────────────────
-  // Twist — "On ne fait pas que du logiciel" (le cœur bénéfices, avant la Méthode)
+  // Twist, "On ne fait pas que du logiciel" (le cœur bénéfices, avant la Méthode)
   // ───────────────────────────────────────────────────────────────
   'twist.label': { en: 'What really changes', fr: 'Ce qu\'on change vraiment' },
   'twist.title': { en: 'We don\'t just build software.', fr: 'On ne fait pas que du logiciel.' },
@@ -301,7 +301,7 @@ export const translations = {
   'twist.b6.desc': { en: 'Agentic AI with persistent memory: it improves with every use and can take on high-value tasks.', fr: 'Une IA agentique avec mémoire persistante : elle progresse à chaque utilisation et peut gérer des tâches à haute valeur ajoutée.' },
 
   // ───────────────────────────────────────────────────────────────
-  // Transformation — Avant / Après (identification + projection)
+  // Transformation, Avant / Après (identification + projection)
   // ───────────────────────────────────────────────────────────────
   'trans.label': { en: 'The digital transformation', fr: 'La transformation digitale' },
   'trans.title': { en: 'Your tools slow you down.', fr: 'Vos outils vous freinent.' },
@@ -312,7 +312,7 @@ export const translations = {
   'trans.gainTitle': { en: 'What you get back', fr: 'Ce que vous récupérez' },
   'trans.before1': { en: 'Excel, WhatsApp and ten tools that don\'t talk to each other', fr: 'Excel, WhatsApp et dix outils qui ne se parlent pas' },
   'trans.before2': { en: 'Patched-up tools, never really fit for you', fr: 'Des outils bricolés, jamais vraiment adaptés' },
-  'trans.before3': { en: 'It drags on, it costs a lot — unmanaged costs', fr: 'Ça traîne, ça coûte cher — des coûts non maîtrisés' },
+  'trans.before3': { en: 'It drags on, it costs a lot, unmanaged costs', fr: 'Ça traîne, ça coûte cher, des coûts non maîtrisés' },
   'trans.before4': { en: 'No clear view of your business', fr: 'Aucune vue claire sur votre activité' },
   'trans.before5': { en: 'Poor organisation, time lost every day', fr: 'Mauvaise organisation, du temps perdu chaque jour' },
   'trans.after1': { en: 'One platform, everything in one place', fr: 'Une seule plateforme, tout au même endroit' },
@@ -320,13 +320,13 @@ export const translations = {
   'trans.after3': { en: 'Managed costs, a measured ROI', fr: 'Des coûts maîtrisés, un ROI chiffré' },
   'trans.after4': { en: 'Clear dashboards, in real time', fr: 'Des tableaux de bord clairs, en temps réel' },
   'trans.after5': { en: 'Organised teams, time won back', fr: 'Des équipes organisées, du temps regagné' },
-  // APRÈS — les gains, en miroir 1:1 des coûts (même format : valeur serif rouge + description)
+  // APRÈS, les gains, en miroir 1:1 des coûts (même format : valeur serif rouge + description)
   'trans.gainVal1': { en: 'Built for you', fr: 'Taillé pour vous' },
-  'trans.gainDesc1': { en: 'Software built around your operations — not a generic SaaS you use half of. Every view, every number, every automation exists because your business needs it. You decide right, at the right moment.', fr: 'Un logiciel construit autour de vos opérations — pas un SaaS générique utilisé à moitié. Chaque vue, chaque chiffre, chaque automatisation existe parce que votre activité en a besoin. Vous décidez juste, au bon moment.' },
+  'trans.gainDesc1': { en: 'Software built around your operations, not a generic SaaS you use half of. Every view, every number, every automation exists because your business needs it. You decide right, at the right moment.', fr: 'Un logiciel construit autour de vos opérations, pas un SaaS générique utilisé à moitié. Chaque vue, chaque chiffre, chaque automatisation existe parce que votre activité en a besoin. Vous décidez juste, au bon moment.' },
   'trans.gainVal2': { en: 'One cockpit', fr: 'Un cockpit' },
-  'trans.gainDesc2': { en: 'One screen that centralises your data in real time. The right info at the right moment — no checking 4 tools, no calling the expert who’s on holiday. It updates itself, and it tells the truth.', fr: 'Un seul écran qui centralise votre data en temps réel. La bonne info au bon moment, sans checker 4 outils ni rappeler l’expert parti en vacances. Ça se met à jour tout seul — et ça dit la vérité.' },
+  'trans.gainDesc2': { en: 'One screen that centralises your data in real time. The right info at the right moment, no checking 4 tools, no calling the expert who’s on holiday. It updates itself, and it tells the truth.', fr: 'Un seul écran qui centralise votre data en temps réel. La bonne info au bon moment, sans checker 4 outils ni rappeler l’expert parti en vacances. Ça se met à jour tout seul, et ça dit la vérité.' },
   'trans.gainVal3': { en: '100 % yours', fr: '100 % à vous' },
-  'trans.gainDesc3': { en: 'The code belongs to you — you depend on no one. And we train your teams to run it, all the way to autonomy.', fr: 'Le code vous appartient, vous ne dépendez de personne. Et on forme vos équipes pour le prendre en main, jusqu’à l’autonomie.' },
+  'trans.gainDesc3': { en: 'The code belongs to you, you depend on no one. And we train your teams to run it, all the way to autonomy.', fr: 'Le code vous appartient, vous ne dépendez de personne. Et on forme vos équipes pour le prendre en main, jusqu’à l’autonomie.' },
   'trans.gainVal4': { en: 'In days', fr: 'En jours' },
   'trans.gainDesc4': { en: 'A new hire gets up to speed in a few days, not months.', fr: 'Un nouveau prend l\'outil en main en quelques jours, plus en mois.' },
   'trans.gainVal5': { en: 'Automated', fr: 'Automatisé' },
@@ -337,14 +337,14 @@ export const translations = {
   },
   'trans.aiLabel': { en: 'AI', fr: 'IA' },
   'trans.aiTag': { en: 'AI powered', fr: 'AI powered' },
-  // Chaos artefacts (left panel) — small friction notes scattered in the pile
+  // Chaos artefacts (left panel), small friction notes scattered in the pile
   'trans.chaos.quote': { en: 'Quote #142 · overdue', fr: 'Devis #142 · en retard' },
   'trans.chaos.money': { en: '−2 400 € lost?', fr: '−2 400 € perdus ?' },
   'trans.chaos.sms': { en: '12 unread', fr: '12 non lus' },
   'trans.chaos.forgot': { en: 'call back the client…', fr: 'rappeler le client…' },
 
   // ───────────────────────────────────────────────────────────────
-  // Comparatif — NateSystem vs prestataire classique (lève l'objection
+  // Comparatif, NateSystem vs prestataire classique (lève l'objection
   // "pourquoi pas une agence / un dev classique ?")
   // ───────────────────────────────────────────────────────────────
   'cmp.label': { en: 'The honest comparison', fr: 'La comparaison honnête' },
@@ -385,7 +385,7 @@ export const translations = {
     en: 'We start from your business and how you really work, then assemble what you need: software, a platform, AI where it makes you gain.',
     fr: 'On part de votre métier, on assemble ce qu\'il vous faut : logiciel, plateforme, IA là où elle vous fait gagner.',
   },
-  // Solution 1 — Audit (porte d'entrée)
+  // Solution 1, Audit (porte d'entrée)
   'sols.s1.badge': { en: '', fr: '' },
   'sols.s1.title': { en: 'Audit & action plan', fr: 'Audit & plan d\'action' },
   'sols.s1.target': { en: '', fr: '' },
@@ -405,7 +405,7 @@ export const translations = {
   },
   'sols.s1.cta': { en: 'Start the audit', fr: 'Démarrer l\'audit' },
   'sols.s1.ctaSub': { en: 'Free', fr: 'Offert' },
-  // Solution 2 — Plateforme sur-mesure
+  // Solution 2, Plateforme sur-mesure
   'sols.s2.title': { en: 'Custom software', fr: 'Logiciel sur-mesure' },
   'sols.s2.target': { en: '', fr: '' },
   'sols.s2.promise': {
@@ -424,12 +424,12 @@ export const translations = {
   },
   'sols.s2.cta': { en: 'Start the audit', fr: 'Démarrer l\'audit' },
   'sols.s2.ctaSub': { en: 'Free', fr: 'Offert' },
-  // Solution 3 — IA agentique
+  // Solution 3, IA agentique
   'sols.s3.title': { en: 'AI system', fr: 'Système IA' },
   'sols.s3.target': { en: '', fr: '' },
   'sols.s3.promise': {
-    en: 'AI solutions tailored to your business: agentic AI with persistent memory, AI agents and automations — plugged in only where they truly save you time.',
-    fr: 'Des solutions IA taillées pour votre métier : IA agentique à mémoire persistante, agents IA et automatisations — branchées uniquement là où elles vous font vraiment gagner.',
+    en: 'AI solutions tailored to your business: agentic AI with persistent memory, AI agents and automations, plugged in only where they truly save you time.',
+    fr: 'Des solutions IA taillées pour votre métier : IA agentique à mémoire persistante, agents IA et automatisations, branchées uniquement là où elles vous font vraiment gagner.',
   },
   'sols.s3.bullet1': { en: 'Agentic AI with persistent memory: it keeps your business context', fr: 'IA agentique à mémoire persistante : elle retient le contexte de votre activité' },
   'sols.s3.bullet2': { en: 'AI agents that run multi-step tasks inside your tools', fr: 'Des agents IA qui exécutent des tâches multi-étapes dans vos outils' },
@@ -446,21 +446,21 @@ export const translations = {
   // Common labels
   'sols.includesLabel': { en: 'What you get', fr: 'Ce que vous obtenez' },
   'sols.idealLabel': { en: 'Ideal for', fr: 'Idéal pour' },
-  // Offre phare — Infrastructure digitale (le tout complet)
+  // Offre phare, Infrastructure digitale (le tout complet)
   'sols.infra.label': { en: 'The complete offer', fr: 'L\'offre complète' },
   'sols.infra.title': { en: 'Digital infrastructure', fr: 'Infrastructure digitale' },
   'sols.infra.desc': {
-    en: 'Everything, end to end. We map your processes, build your custom software and AI, integrate, adjust and train your teams — and we only step back once you\'re fully autonomous.',
-    fr: 'Le tout, de A à Z. On cartographie vos process, on développe vos logiciels sur-mesure et vos solutions IA, on intègre, on ajuste et on forme vos équipes — et on ne se retire que quand vous êtes autonome.',
+    en: 'Everything, end to end. We map your processes, build your custom software and AI, integrate, adjust and train your teams, and we only step back once you\'re fully autonomous.',
+    fr: 'Le tout, de A à Z. On cartographie vos process, on développe vos logiciels sur-mesure et vos solutions IA, on intègre, on ajuste et on forme vos équipes, et on ne se retire que quand vous êtes autonome.',
   },
-  'sols.infra.step1': { en: 'Audit — processes, workflows, talks with your teams', fr: 'Audit — process, workflows, échanges avec vos équipes' },
-  'sols.infra.step2': { en: 'Build — custom software + AI & web solutions', fr: 'Développement — logiciels sur-mesure + solutions IA & web' },
-  'sols.infra.step3': { en: 'Integration & tuning — setup, evaluation, iterations', fr: 'Intégration & ajustement — mise en place, évaluation, évolutions' },
-  'sols.infra.step4': { en: 'Tracking — we measure what you actually gain', fr: 'Tracking — on mesure ce que vous gagnez vraiment' },
-  'sols.infra.step5': { en: 'Training — your teams brought to full autonomy', fr: 'Formation — vos équipes montées en autonomie' },
-  'sols.infra.step6': { en: 'Autonomy — we step back, we stay reachable', fr: 'Autonomie — on se retire, on reste disponible' },
+  'sols.infra.step1': { en: 'Audit, processes, workflows, talks with your teams', fr: 'Audit, process, workflows, échanges avec vos équipes' },
+  'sols.infra.step2': { en: 'Build, custom software + AI & web solutions', fr: 'Développement, logiciels sur-mesure + solutions IA & web' },
+  'sols.infra.step3': { en: 'Integration & tuning, setup, evaluation, iterations', fr: 'Intégration & ajustement, mise en place, évaluation, évolutions' },
+  'sols.infra.step4': { en: 'Tracking, we measure what you actually gain', fr: 'Tracking, on mesure ce que vous gagnez vraiment' },
+  'sols.infra.step5': { en: 'Training, your teams brought to full autonomy', fr: 'Formation, vos équipes montées en autonomie' },
+  'sols.infra.step6': { en: 'Autonomy, we step back, we stay reachable', fr: 'Autonomie, on se retire, on reste disponible' },
   'sols.infra.cta': { en: 'Book a call · free', fr: 'Réserver un appel · offert' },
-  // Offre séparée — Formation IA opérationnelle (wedge DIY)
+  // Offre séparée, Formation IA opérationnelle (wedge DIY)
   'sols.form.badge': { en: 'New', fr: 'Nouveau' },
   'sols.form.title': { en: 'Operational AI training', fr: 'Formation IA opérationnelle' },
   'sols.form.desc': {
@@ -471,7 +471,7 @@ export const translations = {
   'sols.form.ctaSub': { en: 'On request', fr: 'Sur devis' },
 
   // ───────────────────────────────────────────────────────────────
-  // FOMO — the cost of waiting (EU stats, sourced)
+  // FOMO, the cost of waiting (EU stats, sourced)
   // ───────────────────────────────────────────────────────────────
   'fomo.label': { en: 'The cost of waiting', fr: 'Le coût d\'attendre' },
   'fomo.title': { en: 'Your competitors are adopting AI.', fr: 'Vos concurrents adoptent l\'IA.' },
@@ -499,7 +499,7 @@ export const translations = {
   'fomo.cta': { en: 'Book a call before they widen the gap', fr: 'Réserver un appel avant qu\'ils ne creusent l\'écart' },
 
   // ───────────────────────────────────────────────────────────────
-  // Results — mesurable client outcomes
+  // Results, mesurable client outcomes
   // ───────────────────────────────────────────────────────────────
   'results2.label': { en: 'Measurable results', fr: 'Résultats mesurables' },
   'results2.title': { en: 'Real clients.', fr: 'Vrais clients.' },
@@ -573,19 +573,19 @@ export const translations = {
   'footer.contactLabel': { en: 'Get in touch', fr: 'Nous contacter' },
   'footer.founderRole': { en: 'Founder · NateSystem', fr: 'Fondateur · NateSystem' },
   'footer.founder': {
-    en: 'Founded and coded by Nathan Goutagny. The person you talk to is the one who builds — and you keep 100 % of the code.',
-    fr: 'Fondé et codé par Nathan Goutagny. Celui qui vous parle est celui qui construit — et vous gardez 100 % du code.',
+    en: 'Founded and coded by Nathan Goutagny. The person you talk to is the one who builds, and you keep 100 % of the code.',
+    fr: 'Fondé et codé par Nathan Goutagny. Celui qui vous parle est celui qui construit, et vous gardez 100 % du code.',
   },
   'footer.legal': { en: 'Legal notice', fr: 'Mentions légales' },
 
-  // Footer column headers (Dec 2026 — added for SEO maillage)
+  // Footer column headers (Dec 2026, added for SEO maillage)
   'footer.col.sections': { en: 'Sections', fr: 'Sections' },
   'footer.col.solutions': { en: 'Solutions', fr: 'Solutions' },
   'footer.col.toolsDemos': { en: 'Tools & demos', fr: 'Outils & démos' },
   'footer.col.resources': { en: 'Resources', fr: 'Ressources' },
   'footer.col.legal': { en: 'Legal', fr: 'Légal' },
 
-  // Footer Solutions column — the new conversion + sector SEO pages
+  // Footer Solutions column, the new conversion + sector SEO pages
   'footer.link.pricing': { en: 'Custom software pricing', fr: 'Prix logiciel sur-mesure' },
   'footer.link.vsSaas': { en: 'Custom vs SaaS', fr: 'Sur-mesure vs SaaS' },
   'footer.link.lyon': { en: 'Software & AI agency in Lyon', fr: 'Agence logiciel & IA à Lyon' },
@@ -594,7 +594,7 @@ export const translations = {
   'footer.link.consulting': { en: 'Software for consulting firms', fr: 'Logiciel pour le conseil' },
   'footer.link.sportsclub': { en: 'Software for sports clubs', fr: 'Logiciel pour clubs sportifs' },
 
-  // Footer link labels — only those not already covered by nav/tools/resources keys
+  // Footer link labels, only those not already covered by nav/tools/resources keys
   'footer.link.home': { en: 'Home', fr: 'Accueil' },
   'footer.link.services': { en: 'Services', fr: 'Prestations' },
   'footer.link.problem': { en: 'The problem', fr: 'Le problème' },
@@ -613,7 +613,7 @@ export const translations = {
   // Tools page
   'tools.title': { en: 'Free Tools', fr: 'Outils Gratuits' },
   'tools.hero.title': { en: 'Try the product\nbefore you buy.', fr: 'Essayez le produit\navant de l\'acheter.' },
-  'tools.hero.sub': { en: 'Live demos, free. Click around with fake data — then we talk if it fits.', fr: 'Démos live, gratuites. Cliquez avec des données fictives — on en parle si ça correspond.' },
+  'tools.hero.sub': { en: 'Live demos, free. Click around with fake data, then we talk if it fits.', fr: 'Démos live, gratuites. Cliquez avec des données fictives, on en parle si ça correspond.' },
   'tools.hero.tags': { en: 'Diagnostic IA · Live demos · No signup', fr: 'Diagnostic IA · Démos live · Sans inscription' },
   'tools.download': { en: 'Download for free →', fr: 'Télécharger gratuitement →' },
   'tools.all': { en: 'All', fr: 'Tous' },
@@ -643,23 +643,23 @@ export const translations = {
   },
   'playbooks.hotels.title': { en: 'For independent hotels', fr: 'Pour hôteliers indépendants' },
   'playbooks.hotels.desc': {
-    en: 'Bookings, reviews, revenue management — the AI playbook for boutique hotels.',
-    fr: 'Réservations, avis, revenue management — le playbook IA pour hôtels de charme.',
+    en: 'Bookings, reviews, revenue management, the AI playbook for boutique hotels.',
+    fr: 'Réservations, avis, revenue management, le playbook IA pour hôtels de charme.',
   },
   'playbooks.lawyers.title': { en: 'For business law firms', fr: 'Pour cabinets d\'avocats d\'affaires' },
   'playbooks.lawyers.desc': {
-    en: 'Drafting, due diligence, knowledge base — AI built for serious legal work.',
-    fr: 'Rédaction, due diligence, base de connaissances — l\'IA pour le travail juridique sérieux.',
+    en: 'Drafting, due diligence, knowledge base, AI built for serious legal work.',
+    fr: 'Rédaction, due diligence, base de connaissances, l\'IA pour le travail juridique sérieux.',
   },
   'playbooks.accountants.title': { en: 'For accounting firms', fr: 'Pour cabinets d\'expertise-comptable' },
   'playbooks.accountants.desc': {
-    en: 'Bookkeeping, advisory, deliverables — the AI stack for modern CPAs.',
-    fr: 'Saisie, conseil, livrables — la stack IA pour experts-comptables modernes.',
+    en: 'Bookkeeping, advisory, deliverables, the AI stack for modern CPAs.',
+    fr: 'Saisie, conseil, livrables, la stack IA pour experts-comptables modernes.',
   },
   'playbooks.all.title': { en: 'See all 13 playbooks →', fr: 'Voir les 13 playbooks →' },
   'playbooks.all.desc': {
-    en: 'One sector-specific AI playbook per industry — free, ready to read.',
-    fr: 'Un playbook IA par secteur — gratuit, prêt à lire.',
+    en: 'One sector-specific AI playbook per industry, free, ready to read.',
+    fr: 'Un playbook IA par secteur, gratuit, prêt à lire.',
   },
   'tools.downloadPdf': { en: 'Download PDF', fr: 'Télécharger le PDF' },
   'tools.start': { en: 'Start', fr: 'Commencer' },
@@ -673,7 +673,7 @@ export const translations = {
     fr: 'Études de cas, articles et insights sur la construction d\'opérations intelligentes.',
   },
   'resources.caseStudies': { en: 'Case Studies', fr: 'Études de cas' },
-  'resources.caseStudies.desc': { en: 'Real results from real clients — measured and documented.', fr: 'Des résultats réels chez de vrais clients — mesurés et documentés.' },
+  'resources.caseStudies.desc': { en: 'Real results from real clients, measured and documented.', fr: 'Des résultats réels chez de vrais clients, mesurés et documentés.' },
   'resources.blog': { en: 'Blog', fr: 'Blog' },
   'resources.blog.desc': { en: 'Insights on AI, automation, and scaling operations.', fr: 'Insights sur l\'IA, l\'automatisation et le scaling des opérations.' },
   'resources.video': { en: 'Video Testimonials', fr: 'Témoignages Vidéo' },
@@ -703,7 +703,7 @@ export const translations = {
   'calc.calculate': { en: 'Calculate waste', fr: 'Calculer le gaspillage' },
   'calc.result.waste': { en: 'Monthly waste', fr: 'Gaspillage mensuel' },
   'calc.result.annual': { en: 'Annual waste', fr: 'Gaspillage annuel' },
-  'calc.result.cta': { en: 'Let\'s fix this — book a free audit', fr: 'Corrigeons ça — réservez un audit gratuit' },
+  'calc.result.cta': { en: 'Let\'s fix this, book a free audit', fr: 'Corrigeons ça, réservez un audit gratuit' },
 
   // Quiz
   'quiz.title': { en: 'AI Readiness Quiz', fr: 'Quiz Maturité IA' },
@@ -800,42 +800,42 @@ export const translations = {
   'faq.label': { en: 'FAQ', fr: 'QUESTIONS FRÉQUENTES' },
   'faq.title': { en: 'The honest', fr: 'Les réponses' },
   'faq.titleAccent': { en: 'answers.', fr: 'honnêtes.' },
-  // Q1 — what we build
+  // Q1, what we build
   'faq.q1': { en: 'What do you actually build?', fr: 'Qu\'est-ce que vous construisez concrètement ?' },
   'faq.a1': {
     en: 'Custom business software: the internal platform that runs your operations. Unified database, dashboards, client portals, internal tools. AI and automation are integrated only where they replace real hours of work, not as decoration.',
     fr: 'Du logiciel métier sur-mesure : la plateforme interne qui fait tourner vos opérations. Base unifiée, dashboards, portails clients, outils internes. L\'IA et l\'automatisation sont intégrées uniquement là où elles remplacent de vraies heures de travail, pas en décoration.',
   },
 
-  // Q2 — timeline (price removed, given on the call)
+  // Q2, timeline (price removed, given on the call)
   'faq.q2': { en: 'How long does it take?', fr: 'Combien de temps ça prend ?' },
   'faq.a2': {
     en: '4 to 8 weeks for the initial build, depending on scope. We agree on a fixed scope and a fixed delivery date before writing a line of code. Weekly check-ins, monthly demos, no scope creep, no surprise invoices. Pricing is shared on the discovery call so it matches your real needs.',
     fr: '4 à 8 semaines pour la première version, selon le périmètre. On s\'accorde sur un périmètre fixe et une date de livraison fixe avant la première ligne de code. Points hebdo, démos mensuelles, zéro dérive, zéro facture surprise. Le pricing est partagé pendant l\'appel de découverte pour coller à vos vrais besoins.',
   },
 
-  // Q3 — reliability + SLA
+  // Q3, reliability + SLA
   'faq.q3': { en: 'Will the system stay reliable once it\'s live?', fr: 'Le système restera-t-il fiable une fois en production ?' },
   'faq.a3': {
     en: 'Yes. It\'s monitored around the clock, backed up automatically several times a day, and we step in fast if anything goes wrong. In plain terms: it runs, and if there\'s a glitch it\'s fixed before it gets in your way. After the first 3 months, you choose: we keep handling maintenance, or we hand everything over to your team with the documentation.',
     fr: 'Oui. Il est surveillé en permanence, sauvegardé automatiquement plusieurs fois par jour, et on intervient vite en cas de souci. Concrètement : il tourne, et s\'il y a un pépin, c\'est réglé avant que ça vous gêne. Après les 3 premiers mois, vous choisissez : on continue d\'assurer la maintenance, ou on passe tout à votre équipe avec la documentation.',
   },
 
-  // Q4 — automations + AI catalog (concrete, not buzzwords)
+  // Q4, automations + AI catalog (concrete, not buzzwords)
   'faq.q4': { en: 'What automations and AI features can be integrated?', fr: 'Quelles automatisations et fonctionnalités IA peuvent être intégrées ?' },
   'faq.a4': {
     en: 'Wherever it saves real hours. The common ones: automated workflows (orders, invoices, follow-ups, internal handovers), predictive analytics (anticipate stock, no-shows, sales trends), document parsing (read invoices, contracts, forms), intelligent triage (sort, route, draft replies), autonomous agents that execute multi-step tasks across your tools, and conversational interfaces for your team or customers. We pick what\'s worth building for you, not everything because it\'s trendy.',
     fr: 'Là où ça fait gagner de vraies heures. Les classiques : workflows automatisés (commandes, factures, relances, passations internes), analytics prédictif (anticiper stock, no-shows, tendances de ventes), lecture de documents (factures, contrats, formulaires), tri intelligent (classer, router, rédiger des réponses), agents autonomes qui exécutent des tâches multi-étapes dans vos outils, et interfaces conversationnelles pour vos équipes ou vos clients. On choisit ce qui vaut le coup pour vous, pas tout parce que c\'est à la mode.',
   },
 
-  // Q5 — anti lock-in
+  // Q5, anti lock-in
   'faq.q5': { en: 'What if you disappear tomorrow?', fr: 'Et si vous disparaissez demain ?' },
   'faq.a5': {
     en: '100% of the code is yours and hosted on your infrastructure. Full documentation included. Any competent developer can pick it up. No subscription, no lock-in, no hostage situation.',
     fr: '100 % du code vous appartient et est hébergé sur votre infrastructure. Documentation complète incluse. N\'importe quel développeur compétent peut reprendre derrière. Zéro abonnement, zéro lock-in, zéro otage.',
   },
 
-  // Q6 — industries
+  // Q6, industries
   'faq.q6': { en: 'Does this work for my industry?', fr: 'Est-ce que ça marche pour mon secteur ?' },
   'faq.a6': {
     en: 'Restaurants, consulting, construction, healthcare, retail: wherever there are recurring operations and real data flowing through them. The stack adapts. The method doesn\'t change.',
@@ -876,7 +876,7 @@ export const translations = {
   'blog.ctaButton': { en: 'Book a call · free →', fr: 'Réserver un appel · offert →' },
 
   // ═══════════════════════════════════════════════════════════════
-  // NateSystem · Reviews — agency-positioned landing (v2)
+  // NateSystem · Reviews, agency-positioned landing (v2)
   // ═══════════════════════════════════════════════════════════════
   'reviews.nav': { en: 'Reviews', fr: 'Reviews' },
   'reviews.kicker': { en: 'NATESYSTEM · REVIEWS', fr: 'NATESYSTEM · REVIEWS' },
@@ -894,14 +894,14 @@ export const translations = {
     en: '~30 restaurants in Budapest · +14 points average reputation lift in 90 days',
     fr: '~30 restaurants à Budapest · +14 points de progression moyenne en 90 jours',
   },
-  'reviews.hero.imgAlt': { en: 'Behind the scenes — the real-time reputation dashboard we run for partner restaurants', fr: 'Les coulisses — le tableau de bord temps réel que nous opérons pour les restaurants partenaires' },
+  'reviews.hero.imgAlt': { en: 'Behind the scenes, the real-time reputation dashboard we run for partner restaurants', fr: 'Les coulisses, le tableau de bord temps réel que nous opérons pour les restaurants partenaires' },
 
   // Problem
   'reviews.problem.kicker': { en: 'THE REAL COST OF IGNORING REVIEWS', fr: 'LE VRAI COÛT DE NÉGLIGER LES AVIS' },
   'reviews.problem.a.value': { en: '47%', fr: '47 %' },
   'reviews.problem.a.title': { en: 'Diners check Google first', fr: 'Des clients vérifient Google d\'abord' },
   'reviews.problem.a.desc': {
-    en: 'Of Budapest diners check Google reviews before deciding to book — before they even read your menu.',
+    en: 'Of Budapest diners check Google reviews before deciding to book, before they even read your menu.',
     fr: 'Des clients à Budapest vérifient les avis Google avant même de lire votre menu.',
   },
   'reviews.problem.b.value': { en: '1★ drop', fr: '−1 ★' },
@@ -917,7 +917,7 @@ export const translations = {
     fr: 'Entre la publication d\'un avis 1 étoile et le moment où nous le remontons au restaurant avec une réponse prête.',
   },
 
-  // 5.3 — Deliverable: 90-day roadmap
+  // 5.3, Deliverable: 90-day roadmap
   'reviews.roadmap.kicker': { en: 'THE DELIVERABLE', fr: 'LE LIVRABLE' },
   'reviews.roadmap.title1': { en: 'From 200 reviews to', fr: 'De 200 avis à' },
   'reviews.roadmap.titleAccent': { en: '8 actions that matter.', fr: '8 actions qui comptent.' },
@@ -926,55 +926,55 @@ export const translations = {
     fr: 'On ne vous envoie pas de templates. Tous les 90 jours, on lit chacun de vos avis, on les recoupe avec vos trois concurrents les plus proches, et on rédige un plan d\'action priorisé par impact sur le chiffre.',
   },
   'reviews.roadmap.body2': {
-    en: 'You tick actions off. We help with the ones that need our hands. The plan is the deliverable — the platform is the tracking surface.',
-    fr: 'Vous cochez les actions. On prend en charge celles qui demandent nos mains. Le plan, c\'est le livrable — la plateforme, c\'est la surface de suivi.',
+    en: 'You tick actions off. We help with the ones that need our hands. The plan is the deliverable, the platform is the tracking surface.',
+    fr: 'Vous cochez les actions. On prend en charge celles qui demandent nos mains. Le plan, c\'est le livrable, la plateforme, c\'est la surface de suivi.',
   },
   'reviews.roadmap.imgCaption': { en: 'A real 90-day plan for a partner restaurant. 1 of 8 actions completed.', fr: 'Un vrai plan 90 jours pour un restaurant partenaire. 1 action sur 8 terminée.' },
 
-  // 5.4 — AI analysis (aspect scoring)
+  // 5.4, AI analysis (aspect scoring)
   'reviews.aspect.kicker': { en: 'HOW WE READ YOUR REVIEWS', fr: 'COMMENT NOUS LISONS VOS AVIS' },
   'reviews.aspect.title': { en: 'Every review, scored on six dimensions.', fr: 'Chaque avis, noté sur six dimensions.' },
   'reviews.aspect.body': {
-    en: 'Food, service, ambiance, price, cleanliness, wait time. Each review is decomposed — not just positive or negative, but which part of the experience was weak. After 200 reviews, we know exactly where your reputation leaks.',
-    fr: 'Cuisine, service, ambiance, prix, propreté, temps d\'attente. Chaque avis est décomposé — pas juste positif ou négatif, mais quelle partie de l\'expérience a flanché. Après 200 avis, on sait précisément où fuit votre réputation.',
+    en: 'Food, service, ambiance, price, cleanliness, wait time. Each review is decomposed, not just positive or negative, but which part of the experience was weak. After 200 reviews, we know exactly where your reputation leaks.',
+    fr: 'Cuisine, service, ambiance, prix, propreté, temps d\'attente. Chaque avis est décomposé, pas juste positif ou négatif, mais quelle partie de l\'expérience a flanché. Après 200 avis, on sait précisément où fuit votre réputation.',
   },
-  'reviews.aspect.imgCaption': { en: 'Real aspect breakdown for a partner restaurant — six dimensions, ranked by score.', fr: 'Décomposition réelle par aspect pour un restaurant partenaire — six dimensions, classées par score.' },
+  'reviews.aspect.imgCaption': { en: 'Real aspect breakdown for a partner restaurant, six dimensions, ranked by score.', fr: 'Décomposition réelle par aspect pour un restaurant partenaire, six dimensions, classées par score.' },
 
-  // 5.5 — SmartReview agent (response drafting)
+  // 5.5, SmartReview agent (response drafting)
   'reviews.respond.kicker': { en: 'HOW WE RESPOND', fr: 'COMMENT NOUS RÉPONDONS' },
   'reviews.respond.title1': { en: 'Every guest gets an answer,', fr: 'Chaque client reçoit une réponse,' },
   'reviews.respond.titleAccent': { en: 'in their language, in your voice.', fr: 'dans leur langue, dans votre voix.' },
   'reviews.respond.body': {
-    en: 'Your brand voice, your dishes, your regular guests — we train the agent on your restaurant. Every response is drafted by AI, reviewed by us, approved by you, and shipped. Hungarian, English, German, French, Italian. Never robotic.',
-    fr: 'Votre voix de marque, vos plats, vos habitués — on entraîne l\'agent sur votre restaurant. Chaque réponse est rédigée par l\'IA, relue par nous, validée par vous, puis publiée. Hongrois, anglais, allemand, français, italien. Jamais robotique.',
+    en: 'Your brand voice, your dishes, your regular guests, we train the agent on your restaurant. Every response is drafted by AI, reviewed by us, approved by you, and shipped. Hungarian, English, German, French, Italian. Never robotic.',
+    fr: 'Votre voix de marque, vos plats, vos habitués, on entraîne l\'agent sur votre restaurant. Chaque réponse est rédigée par l\'IA, relue par nous, validée par vous, puis publiée. Hongrois, anglais, allemand, français, italien. Jamais robotique.',
   },
-  'reviews.respond.imgCaption': { en: 'The response agent config — brand voice, system prompt, learned Hungarian examples.', fr: 'La configuration de l\'agent — voix de marque, prompt système, exemples hongrois appris.' },
+  'reviews.respond.imgCaption': { en: 'The response agent config, brand voice, system prompt, learned Hungarian examples.', fr: 'La configuration de l\'agent, voix de marque, prompt système, exemples hongrois appris.' },
   'reviews.respond.footnote': {
     en: 'Average time from review to approved response: under 4 hours.',
     fr: 'Temps moyen d\'un avis à une réponse validée : moins de 4 heures.',
   },
 
-  // 5.6 — Live evidence (full-width reviews feed)
+  // 5.6, Live evidence (full-width reviews feed)
   'reviews.live.kicker': { en: 'SEE IT WORK', fr: 'VOYEZ-LE EN ACTION' },
   'reviews.live.title1': { en: 'One review. Six aspects scored.', fr: 'Un avis. Six aspects notés.' },
   'reviews.live.titleAccent': { en: 'One response drafted.', fr: 'Une réponse rédigée.' },
   'reviews.live.imgCaption': {
-    en: 'Live dashboard for a partner restaurant. All 200 reviews, every platform, scored and routed automatically — so our team can spend its hours on what only humans can do.',
-    fr: 'Dashboard live d\'un restaurant partenaire. Les 200 avis, toutes plateformes, notés et routés automatiquement — pour que notre équipe passe ses heures sur ce que seuls les humains peuvent faire.',
+    en: 'Live dashboard for a partner restaurant. All 200 reviews, every platform, scored and routed automatically, so our team can spend its hours on what only humans can do.',
+    fr: 'Dashboard live d\'un restaurant partenaire. Les 200 avis, toutes plateformes, notés et routés automatiquement, pour que notre équipe passe ses heures sur ce que seuls les humains peuvent faire.',
   },
 
-  // 5.7 — €997 audit ribbon (offered free only via Partner Welcome Pack)
+  // 5.7, €997 audit ribbon (offered free only via Partner Welcome Pack)
   'reviews.audit.kicker': { en: 'PARTNER WELCOME PACK', fr: 'PARTNER WELCOME PACK' },
   'reviews.audit.title1': { en: 'A', fr: 'Un' },
   'reviews.audit.titleAccent': { en: '€997 audit, offered.', fr: 'audit à 997 €, offert.' },
   'reviews.audit.body': {
-    en: 'A €997 reputation audit we normally invoice — offered to every restaurant referred through our partner Kis Zoltán, or to a handful of direct applicants we accept each month. AI-generated, grounded in your actual reviews, benchmarked against your three closest competitors, with a 90-day roadmap. Delivered as a branded PDF within 3 business days. No commitment.',
-    fr: 'Un audit de réputation à 997 €, que nous facturons normalement — offert à chaque restaurant référé via notre partenaire Kis Zoltán, ou à quelques candidatures directes que nous acceptons chaque mois. Généré par IA, fondé sur vos vrais avis, benchmarké face à vos trois concurrents les plus proches, avec une feuille de route à 90 jours. Livré en PDF sous 3 jours ouvrés. Sans engagement.',
+    en: 'A €997 reputation audit we normally invoice, offered to every restaurant referred through our partner Kis Zoltán, or to a handful of direct applicants we accept each month. AI-generated, grounded in your actual reviews, benchmarked against your three closest competitors, with a 90-day roadmap. Delivered as a branded PDF within 3 business days. No commitment.',
+    fr: 'Un audit de réputation à 997 €, que nous facturons normalement, offert à chaque restaurant référé via notre partenaire Kis Zoltán, ou à quelques candidatures directes que nous acceptons chaque mois. Généré par IA, fondé sur vos vrais avis, benchmarké face à vos trois concurrents les plus proches, avec une feuille de route à 90 jours. Livré en PDF sous 3 jours ouvrés. Sans engagement.',
   },
   'reviews.audit.cta': { en: 'See if you qualify', fr: 'Vérifier mon éligibilité' },
   'reviews.audit.imgCaption': { en: 'The real first page of a partner restaurant\'s €997 audit PDF.', fr: 'La vraie première page du PDF d\'audit à 997 € d\'un restaurant partenaire.' },
 
-  // 5.8 — Proof numbers
+  // 5.8, Proof numbers
   'reviews.proof.kicker': { en: 'BY THE NUMBERS', fr: 'LES CHIFFRES' },
   'reviews.proof.a.value': { en: '~30', fr: '~30' },
   'reviews.proof.a.label': { en: 'Restaurants running', fr: 'Restaurants en activité' },
@@ -985,7 +985,7 @@ export const translations = {
   'reviews.proof.d.value': { en: '3 days', fr: '3 jours' },
   'reviews.proof.d.label': { en: 'Audit turnaround', fr: 'Délai de livraison audit' },
 
-  // 5.9 — How it works
+  // 5.9, How it works
   'reviews.how.kicker': { en: 'HOW IT WORKS', fr: 'COMMENT ÇA MARCHE' },
   'reviews.how.title1': { en: 'Four steps.', fr: 'Quatre étapes.' },
   'reviews.how.titleAccent': { en: 'No software to learn.', fr: 'Aucun logiciel à apprendre.' },
@@ -1006,8 +1006,8 @@ export const translations = {
   },
   'reviews.how.s4.title': { en: 'Monthly execution', fr: 'Exécution mensuelle' },
   'reviews.how.s4.desc': {
-    en: 'We answer, we report, we refine the plan quarterly — you keep running your restaurant.',
-    fr: 'On répond, on reporte, on affine le plan chaque trimestre — vous continuez à gérer votre restaurant.',
+    en: 'We answer, we report, we refine the plan quarterly, you keep running your restaurant.',
+    fr: 'On répond, on reporte, on affine le plan chaque trimestre, vous continuez à gérer votre restaurant.',
   },
 
   // FAQ
@@ -1038,15 +1038,15 @@ export const translations = {
   'nate.teaser': { en: 'Need custom software?', fr: 'Besoin d\'un logiciel sur-mesure ?' },
   'nate.name': { en: 'Nate · Assistant', fr: 'Nate · Assistant' },
   'nate.message': {
-    en: 'Tell me what you\'re building — I\'ll tell you how to run it.',
-    fr: 'Dites-moi ce que vous construisez — je vous dirai comment le faire tourner.',
+    en: 'Tell me what you\'re building, I\'ll tell you how to run it.',
+    fr: 'Dites-moi ce que vous construisez, je vous dirai comment le faire tourner.',
   },
   'nate.cta': { en: 'Open the form', fr: 'Ouvrir le formulaire' },
   'nate.later': { en: 'Later', fr: 'Plus tard' },
   'nate.close': { en: 'Close', fr: 'Fermer' },
 
   // ───────────────────────────────────────────────────────────────
-  // Agents in action — new section between Solution and CaseStudy
+  // Agents in action, new section between Solution and CaseStudy
   // ───────────────────────────────────────────────────────────────
   'agents.label': { en: 'Concretely', fr: 'Concrètement' },
   'agents.title': { en: 'The roles AI takes', fr: 'Les rôles que l\'IA prend' },
@@ -1075,7 +1075,7 @@ export const translations = {
   'agents.docs.tags': { en: 'Reading · Extraction · Classification · Routing', fr: 'Lecture · Extraction · Classification · Routage' },
 
   // ───────────────────────────────────────────────────────────────
-  // Schema (animated flow diagram) — node labels
+  // Schema (animated flow diagram), node labels
   // ───────────────────────────────────────────────────────────────
   'schema.label': { en: 'How it flows', fr: 'Comment ça circule' },
   'schema.node1': { en: 'Business sources', fr: 'Sources métier' },
@@ -1090,7 +1090,7 @@ export const translations = {
   'schema.node5Sub': { en: 'tracked · reported', fr: 'tracée · reportée' },
 
   // ───────────────────────────────────────────────────────────────
-  // Infrastructure — new section between Process and Integrations
+  // Infrastructure, new section between Process and Integrations
   // ───────────────────────────────────────────────────────────────
   'infra.label': { en: 'INFRASTRUCTURE', fr: 'INFRASTRUCTURE' },
   'infra.title': { en: 'Your infrastructure. Your data.', fr: 'Votre infrastructure. Vos données.' },
@@ -1105,7 +1105,7 @@ export const translations = {
   'infra.tag4': { en: 'Exportable infrastructure', fr: 'Infra exportable' },
 
   // ───────────────────────────────────────────────────────────────
-  // /tools — Live demos banner
+  // /tools, Live demos banner
   // Two interactive demo apps shipped at actifs.natesystem.com and
   // stack-stock.natesystem.com. Distinct treatment from the
   // download-able resources grid because they're live experiences,
@@ -1148,7 +1148,7 @@ export const translations = {
   },
 
   // ───────────────────────────────────────────────────────────────
-  // Nav mega-dropdown — Live Demos column
+  // Nav mega-dropdown, Live Demos column
   // Short titles (one or two words) for the dropdown card; long
   // descriptions stay in the /tools banner.
   // ───────────────────────────────────────────────────────────────
@@ -1156,8 +1156,8 @@ export const translations = {
   'mega.new': { en: 'NEW', fr: 'NOUVEAU' },
   'demos.actifs.navTitle': { en: 'Asset Management', fr: 'Gestion d\'actifs' },
   'demos.actifs.navDesc': {
-    en: 'IT, vehicles, furniture, machinery — centralised with auto depreciation.',
-    fr: 'Parc IT, véhicules, mobilier, machines — centralisés avec amortissement auto.',
+    en: 'IT, vehicles, furniture, machinery, centralised with auto depreciation.',
+    fr: 'Parc IT, véhicules, mobilier, machines, centralisés avec amortissement auto.',
   },
   'demos.stock.navTitle': { en: 'Inventory Platform', fr: 'Plateforme d\'inventaire' },
   'demos.stock.navDesc': {
@@ -1165,7 +1165,7 @@ export const translations = {
     fr: 'Stock temps réel, réappros intelligents, fournisseurs, codes-barres.',
   },
 
-  // Reviews demo — software in demo, request access via form
+  // Reviews demo, software in demo, request access via form
   'demos.reviews.tag': { en: 'REVIEW INTELLIGENCE', fr: 'INTELLIGENCE AVIS' },
   'demos.reviews.title': {
     en: 'Turn every review into a decision.',
@@ -1198,10 +1198,10 @@ export const translations = {
   },
   'mega.gated': { en: 'ON REQUEST', fr: 'SUR DEMANDE' },
 
-  // /reviews — software-product demo landing
+  // /reviews, software-product demo landing
   'reviewsDemo.metaTitle': {
-    en: 'NateSystem · Reviews — Review intelligence software (demo)',
-    fr: 'NateSystem · Reviews — Logiciel d\'intelligence avis (démo)',
+    en: 'NateSystem · Reviews, Review intelligence software (demo)',
+    fr: 'NateSystem · Reviews, Logiciel d\'intelligence avis (démo)',
   },
   'reviewsDemo.metaDesc': {
     en: 'Review intelligence software in demo. AI scoring on six aspects, response drafting, action plans. Request demo access via the form.',
@@ -1220,8 +1220,8 @@ export const translations = {
     fr: 'chaque avis pour vous.',
   },
   'reviewsDemo.hero.sub': {
-    en: 'NateSystem · Reviews is a review intelligence product. It scores each review on six aspects, drafts responses in your brand voice, and turns the data into a 90-day action plan. The platform is live with mock data — request access to try it.',
-    fr: 'NateSystem · Reviews est un produit d\'intelligence avis. Il note chaque avis sur six dimensions, génère des réponses dans votre ton, et transforme les données en plan d\'action 90 jours. La plateforme tourne avec des données fictives — demandez l\'accès pour l\'essayer.',
+    en: 'NateSystem · Reviews is a review intelligence product. It scores each review on six aspects, drafts responses in your brand voice, and turns the data into a 90-day action plan. The platform is live with mock data, request access to try it.',
+    fr: 'NateSystem · Reviews est un produit d\'intelligence avis. Il note chaque avis sur six dimensions, génère des réponses dans votre ton, et transforme les données en plan d\'action 90 jours. La plateforme tourne avec des données fictives, demandez l\'accès pour l\'essayer.',
   },
   'reviewsDemo.hero.ctaPrimary': {
     en: 'Request demo access',
@@ -1236,11 +1236,11 @@ export const translations = {
     fr: 'Démo sur données fictives · Accès sous 24h',
   },
   'reviewsDemo.hero.imgAlt': {
-    en: 'Reputation score dashboard — the home view of the Reviews product',
-    fr: 'Tableau de bord — vue d\'accueil du produit Reviews',
+    en: 'Reputation score dashboard, the home view of the Reviews product',
+    fr: 'Tableau de bord, vue d\'accueil du produit Reviews',
   },
 
-  // What's inside — 3 feature cards (replaces problem/cost framing)
+  // What's inside, 3 feature cards (replaces problem/cost framing)
   'reviewsDemo.inside.kicker': { en: 'INSIDE THE DEMO', fr: 'DANS LA DÉMO' },
   'reviewsDemo.inside.title1': { en: 'Three modules you can', fr: 'Trois modules que vous pouvez' },
   'reviewsDemo.inside.titleAccent': { en: 'click through.', fr: 'parcourir au clic.' },
@@ -1251,8 +1251,8 @@ export const translations = {
   },
   'reviewsDemo.inside.b.label': { en: '02 · Response agent', fr: '02 · Agent de réponse' },
   'reviewsDemo.inside.b.desc': {
-    en: 'A SmartReview agent drafts a response per review in your configured brand voice. You approve, edit, or regenerate — never start from a blank box.',
-    fr: 'Un agent SmartReview rédige une réponse par avis dans votre ton de marque. Vous validez, éditez ou régénérez — plus jamais de page blanche.',
+    en: 'A SmartReview agent drafts a response per review in your configured brand voice. You approve, edit, or regenerate, never start from a blank box.',
+    fr: 'Un agent SmartReview rédige une réponse par avis dans votre ton de marque. Vous validez, éditez ou régénérez, plus jamais de page blanche.',
   },
   'reviewsDemo.inside.c.label': { en: '03 · 90-day plan', fr: '03 · Plan 90 jours' },
   'reviewsDemo.inside.c.desc': {
@@ -1260,7 +1260,7 @@ export const translations = {
     fr: 'La plateforme transforme les patterns détectés en plan d\'action 90 jours : quoi corriger en premier, où est l\'impact, comment le suivre.',
   },
 
-  // Aspect section (kept, repurposed — no more "we'll do it for you")
+  // Aspect section (kept, repurposed, no more "we'll do it for you")
   'reviewsDemo.aspect.kicker': { en: 'AI ANALYSIS', fr: 'ANALYSE IA' },
   'reviewsDemo.aspect.title': {
     en: 'Every review, scored on six dimensions.',
@@ -1271,8 +1271,8 @@ export const translations = {
     fr: 'La plateforme lit chaque avis et note cuisine, service, ambiance, rapport qualité-prix, hygiène et rapidité. Les scores agrégés alimentent un indice de réputation suivi semaine après semaine.',
   },
   'reviewsDemo.aspect.imgCaption': {
-    en: 'Aspect breakdown — live capture from the demo, real partner data anonymised.',
-    fr: 'Décomposition par aspects — capture live de la démo, données réelles anonymisées.',
+    en: 'Aspect breakdown, live capture from the demo, real partner data anonymised.',
+    fr: 'Décomposition par aspects, capture live de la démo, données réelles anonymisées.',
   },
 
   // Response agent section
@@ -1280,16 +1280,16 @@ export const translations = {
   'reviewsDemo.respond.title1': { en: 'A response agent', fr: 'Un agent de réponse' },
   'reviewsDemo.respond.titleAccent': { en: 'configured to your voice.', fr: 'configuré à votre ton.' },
   'reviewsDemo.respond.body': {
-    en: 'Plug in your brand voice, a system prompt, and a few example replies. The agent drafts a response per review and learns from your edits — so you spend seconds, not minutes, per review.',
-    fr: 'Définissez votre ton de marque, un system prompt et quelques exemples de réponses. L\'agent rédige une réponse par avis et apprend de vos modifications — vous passez quelques secondes, pas quelques minutes, par avis.',
+    en: 'Plug in your brand voice, a system prompt, and a few example replies. The agent drafts a response per review and learns from your edits, so you spend seconds, not minutes, per review.',
+    fr: 'Définissez votre ton de marque, un system prompt et quelques exemples de réponses. L\'agent rédige une réponse par avis et apprend de vos modifications, vous passez quelques secondes, pas quelques minutes, par avis.',
   },
   'reviewsDemo.respond.footnote': {
     en: 'OPENAI · ANTHROPIC · PRIVATE BY DEFAULT',
     fr: 'OPENAI · ANTHROPIC · PRIVÉ PAR DÉFAUT',
   },
   'reviewsDemo.respond.imgCaption': {
-    en: 'Response agent configuration — brand voice, system prompt, learned examples.',
-    fr: 'Configuration de l\'agent — ton de marque, system prompt, exemples appris.',
+    en: 'Response agent configuration, brand voice, system prompt, learned examples.',
+    fr: 'Configuration de l\'agent, ton de marque, system prompt, exemples appris.',
   },
 
   // 90-day plan section (replaces "deliverable" / "we deliver")
@@ -1301,31 +1301,31 @@ export const translations = {
     fr: 'Le produit regroupe les critiques et compliments récurrents en thèmes, puis propose un plan 90 jours : quoi corriger les 30 premiers jours, quoi tester ensuite, quoi mesurer.',
   },
   'reviewsDemo.roadmap.body2': {
-    en: 'You stay the owner. The software does the reading, the scoring, and the drafting — you keep the decisions.',
-    fr: 'Vous restez propriétaire. Le logiciel lit, note et rédige — vous gardez les décisions.',
+    en: 'You stay the owner. The software does the reading, the scoring, and the drafting, you keep the decisions.',
+    fr: 'Vous restez propriétaire. Le logiciel lit, note et rédige, vous gardez les décisions.',
   },
   'reviewsDemo.roadmap.imgCaption': {
     en: '90-day action plan generated from real review data.',
     fr: 'Plan d\'action 90 jours généré depuis des avis réels.',
   },
 
-  // Live evidence (full-width) — kept, less salesy caption
+  // Live evidence (full-width), kept, less salesy caption
   'reviewsDemo.live.kicker': { en: 'INSIDE A SINGLE REVIEW', fr: 'À L\'INTÉRIEUR D\'UN AVIS' },
   'reviewsDemo.live.title1': { en: 'One review,', fr: 'Un avis,' },
   'reviewsDemo.live.titleAccent': { en: 'fully decomposed.', fr: 'entièrement décomposé.' },
   'reviewsDemo.live.imgCaption': {
-    en: 'Single review view — six-aspect scores, AI summary, response draft.',
-    fr: 'Vue d\'un avis — scores six dimensions, résumé IA, brouillon de réponse.',
+    en: 'Single review view, six-aspect scores, AI summary, response draft.',
+    fr: 'Vue d\'un avis, scores six dimensions, résumé IA, brouillon de réponse.',
   },
 
-  // How the demo works — 4 steps (replaces agency onboarding)
+  // How the demo works, 4 steps (replaces agency onboarding)
   'reviewsDemo.how.kicker': { en: 'HOW THE DEMO WORKS', fr: 'COMMENT MARCHE LA DÉMO' },
   'reviewsDemo.how.title1': { en: 'From form to', fr: 'Du formulaire à' },
   'reviewsDemo.how.titleAccent': { en: 'a working session.', fr: 'une session live.' },
   'reviewsDemo.how.s1.title': { en: 'You request access', fr: 'Vous demandez l\'accès' },
   'reviewsDemo.how.s1.desc': {
-    en: 'Fill the short form below. Name, email, role, sector — nothing else.',
-    fr: 'Remplissez le court formulaire ci-dessous. Prénom, email, rôle, secteur — rien d\'autre.',
+    en: 'Fill the short form below. Name, email, role, sector, nothing else.',
+    fr: 'Remplissez le court formulaire ci-dessous. Prénom, email, rôle, secteur, rien d\'autre.',
   },
   'reviewsDemo.how.s2.title': { en: 'I review the request', fr: 'Je relis la demande' },
   'reviewsDemo.how.s2.desc': {
@@ -1343,14 +1343,14 @@ export const translations = {
     fr: 'Après votre tour du produit, vous décidez si ça vaut une conversation. Aucune pression.',
   },
 
-  // FAQ (kept, but reworked — no more pricing/agency questions)
+  // FAQ (kept, but reworked, no more pricing/agency questions)
   'reviewsDemo.faq.kicker': { en: 'FREQUENT QUESTIONS', fr: 'QUESTIONS FRÉQUENTES' },
   'reviewsDemo.faq.title1': { en: 'About the demo', fr: 'À propos de la démo' },
   'reviewsDemo.faq.titleAccent': { en: '& the product.', fr: '& du produit.' },
   'reviewsDemo.faq.q1': { en: 'Is the demo on real data?', fr: 'La démo est-elle sur des données réelles ?' },
   'reviewsDemo.faq.a1': {
-    en: 'No. The demo runs on anonymised review data from a partner restaurant — about 200 imported reviews. Same engine, mock account, no risk to your own data.',
-    fr: 'Non. La démo tourne sur des avis anonymisés d\'un restaurant partenaire — environ 200 avis importés. Même moteur, compte fictif, aucun risque pour vos propres données.',
+    en: 'No. The demo runs on anonymised review data from a partner restaurant, about 200 imported reviews. Same engine, mock account, no risk to your own data.',
+    fr: 'Non. La démo tourne sur des avis anonymisés d\'un restaurant partenaire, environ 200 avis importés. Même moteur, compte fictif, aucun risque pour vos propres données.',
   },
   'reviewsDemo.faq.q2': { en: 'How long does access last?', fr: 'Combien de temps dure l\'accès ?' },
   'reviewsDemo.faq.a2': {
@@ -1369,8 +1369,8 @@ export const translations = {
   },
   'reviewsDemo.faq.q5': { en: 'Who built this?', fr: 'Qui a construit ça ?' },
   'reviewsDemo.faq.a5': {
-    en: 'NateSystem — an internal-software studio. Reviews is one of the products we build for our own catalog. If we work with you, your instance is built and operated by the same team.',
-    fr: 'NateSystem — un studio de logiciel interne. Reviews est un des produits qu\'on construit pour notre propre catalogue. Si on travaille avec vous, votre instance est construite et exploitée par la même équipe.',
+    en: 'NateSystem, an internal-software studio. Reviews is one of the products we build for our own catalog. If we work with you, your instance is built and operated by the same team.',
+    fr: 'NateSystem, un studio de logiciel interne. Reviews est un des produits qu\'on construit pour notre propre catalogue. Si on travaille avec vous, votre instance est construite et exploitée par la même équipe.',
   },
 
   // Final CTA ribbon (replaces "let us run it")
@@ -1396,8 +1396,8 @@ export const translations = {
   'demoRequest.field.sector': { en: 'Your sector', fr: 'Ton secteur' },
   'demoRequest.field.sector.placeholder': { en: 'Select your sector', fr: 'Sélectionne ton secteur' },
   'demoRequest.field.newsletter': {
-    en: 'Send me the Scale Minute — NateSystem\'s weekly note',
-    fr: 'Recevoir la Scale Minute — newsletter hebdo NateSystem',
+    en: 'Send me the Scale Minute, NateSystem\'s weekly note',
+    fr: 'Recevoir la Scale Minute, newsletter hebdo NateSystem',
   },
   'demoRequest.submit': { en: 'Request access', fr: 'Demander l\'accès' },
   'demoRequest.submitting': { en: 'Sending…', fr: 'Envoi…' },
@@ -1416,7 +1416,7 @@ export const translations = {
   },
 
   // ─────────────────────────────────────────────────────────────────────────
-  // V2 — alternative home (route /v2, noindex). New strings only, prefixed v2.
+  // V2, alternative home (route /v2, noindex). New strings only, prefixed v2.
   // ─────────────────────────────────────────────────────────────────────────
   'v2.position': { en: 'For SMBs too structured for a freelancer, too small for a big consultancy.', fr: 'Pour les PME trop structurées pour un freelance, trop petites pour une ESN.' },
 
@@ -1429,16 +1429,16 @@ export const translations = {
   'v2.sprint.eyebrow': { en: 'First step · no commitment', fr: 'Première étape · sans engagement' },
   'v2.sprint.title': { en: 'The Diagnostic', fr: 'Le Diagnostic' },
   'v2.sprint.format': { en: '2 weeks · 3 to 5 calls · nothing to prepare', fr: '2 semaines · 3 à 5 appels · rien à préparer' },
-  'v2.sprint.intro': { en: 'You prepare nothing, you fill in nothing. You talk — we do the work.', fr: 'Vous ne préparez rien, vous ne remplissez rien. Vous parlez — on fait le travail.' },
+  'v2.sprint.intro': { en: 'You prepare nothing, you fill in nothing. You talk, we do the work.', fr: 'Vous ne préparez rien, vous ne remplissez rien. Vous parlez, on fait le travail.' },
   'v2.sprint.d1.name': { en: 'The Map', fr: 'La Carte' },
-  'v2.sprint.d1.desc': { en: 'How your business really runs — everything living in people\'s heads, put on paper.', fr: 'Comment votre activité tourne réellement — tout ce qui est dans les têtes, mis sur papier.' },
+  'v2.sprint.d1.desc': { en: 'How your business really runs, everything living in people\'s heads, put on paper.', fr: 'Comment votre activité tourne réellement, tout ce qui est dans les têtes, mis sur papier.' },
   'v2.sprint.d2.name': { en: 'The Prototype', fr: 'Le Prototype' },
-  'v2.sprint.d2.desc': { en: 'Clickable, built around your business — before any commitment.', fr: 'Cliquable, construit autour de votre métier — avant tout engagement.' },
+  'v2.sprint.d2.desc': { en: 'Clickable, built around your business, before any commitment.', fr: 'Cliquable, construit autour de votre métier, avant tout engagement.' },
   'v2.sprint.d3.name': { en: 'The Costed Roadmap', fr: 'La Feuille de route chiffrée' },
   'v2.sprint.d3.desc': { en: 'What to build, in what order, for how much.', fr: 'Quoi construire, dans quel ordre, pour combien.' },
-  'v2.sprint.promise': { en: 'In 2 weeks you know exactly where your hours and money go — and you click through the software that recovers them, before you\'ve signed anything.', fr: 'En 2 semaines, vous savez exactement où partent vos heures et votre argent — et vous cliquez dans le logiciel qui les récupère, avant d\'avoir signé quoi que ce soit.' },
+  'v2.sprint.promise': { en: 'In 2 weeks you know exactly where your hours and money go, and you click through the software that recovers them, before you\'ve signed anything.', fr: 'En 2 semaines, vous savez exactement où partent vos heures et votre argent, et vous cliquez dans le logiciel qui les récupère, avant d\'avoir signé quoi que ce soit.' },
   'v2.sprint.cta': { en: 'Book a call · free', fr: 'Réserver un appel · offert' },
-  'v2.sprint.selfserve': { en: 'Or run the online diagnostic — 3 min, no email', fr: 'Ou lancez le diagnostic en ligne — 3 min, sans e-mail' },
+  'v2.sprint.selfserve': { en: 'Or run the online diagnostic, 3 min, no email', fr: 'Ou lancez le diagnostic en ligne, 3 min, sans e-mail' },
   'v2.sprint.afterA': { en: 'What then? Two options: we keep going together, or we stop here. ', fr: 'Ensuite ? Deux options : on continue ensemble, ou on s\'arrête là. ' },
   'v2.sprint.afterB': { en: 'Zero pressure, zero commitment.', fr: 'Zéro pression, zéro engagement.' },
   'v2.sprint.afterC': { en: ' What you see is already yours.', fr: ' Ce que vous voyez est déjà à vous.' },
@@ -1511,16 +1511,16 @@ export const translations = {
 
   'radio.s1.name': { en: 'Map', fr: 'Cartographier' },
   'radio.s1.tag': { en: 'We look', fr: 'On regarde' },
-  'radio.s1.desc': { en: 'We lay out how your business really runs — every task, every tool, every piece of data living in a notebook, a spreadsheet or someone\'s head.', fr: 'On met à plat comment votre activité tourne vraiment — chaque tâche, chaque outil, chaque donnée qui vit dans un cahier, un tableur ou la tête de quelqu\'un.' },
+  'radio.s1.desc': { en: 'We lay out how your business really runs, every task, every tool, every piece of data living in a notebook, a spreadsheet or someone\'s head.', fr: 'On met à plat comment votre activité tourne vraiment, chaque tâche, chaque outil, chaque donnée qui vit dans un cahier, un tableur ou la tête de quelqu\'un.' },
   'radio.s2.name': { en: 'Unify', fr: 'Unifier' },
   'radio.s2.tag': { en: 'We gather', fr: 'On rassemble' },
   'radio.s2.desc': { en: 'Your data, scattered across five tools, comes back into a single base built for your trade. One source of truth, no more double entry.', fr: 'Vos données éparpillées dans cinq outils reviennent dans une seule base, conçue pour votre métier. Une source de vérité, fini la double-saisie.' },
   'radio.s3.name': { en: 'Automate', fr: 'Automatiser' },
   'radio.s3.tag': { en: 'We lighten', fr: 'On allège' },
-  'radio.s3.desc': { en: 'AI and automation take on the repetitive work — but only where they replace real working hours. Never a gadget bolted on to look modern.', fr: 'L\'IA et l\'automatisation prennent le répétitif — mais seulement là où elles remplacent de vraies heures de travail. Jamais un gadget posé pour faire moderne.' },
+  'radio.s3.desc': { en: 'AI and automation take on the repetitive work, but only where they replace real working hours. Never a gadget bolted on to look modern.', fr: 'L\'IA et l\'automatisation prennent le répétitif, mais seulement là où elles remplacent de vraies heures de travail. Jamais un gadget posé pour faire moderne.' },
   'radio.s4.name': { en: 'Hand over', fr: 'Former' },
   'radio.s4.tag': { en: 'We step back', fr: 'On passe la main' },
-  'radio.s4.desc': { en: 'Your team runs the tool, the documentation is complete, 100% of the code is yours. We stay if you want us to — but you\'re never a hostage.', fr: 'Votre équipe pilote l\'outil, la documentation est complète, 100 % du code vous appartient. On reste si vous voulez, mais vous n\'êtes jamais prisonnier.' },
+  'radio.s4.desc': { en: 'Your team runs the tool, the documentation is complete, 100% of the code is yours. We stay if you want us to, but you\'re never a hostage.', fr: 'Votre équipe pilote l\'outil, la documentation est complète, 100 % du code vous appartient. On reste si vous voulez, mais vous n\'êtes jamais prisonnier.' },
 
   'radio.scene.sources': { en: 'Spreadsheets · Notebooks · WhatsApp · Emails · In people\'s heads', fr: 'Tableurs · Cahiers · WhatsApp · Mails · Dans les têtes' },
   'radio.scene.hub': { en: 'Your base', fr: 'Votre base' },
@@ -1534,7 +1534,7 @@ export const translations = {
   'methode.deliv.sub': { en: 'From the X-ray of your business to the costed action plan, every deliverable is tailored to you.', fr: 'De la radiographie de votre activité au plan d’action chiffré, chaque livrable est taillé pour vous.' },
 
   'methode.cta.title': { en: 'We start by understanding. Not by selling.', fr: 'On commence par comprendre. Pas par vendre.' },
-  'methode.cta.sub': { en: 'A free call. We look at how your business runs and tell you straight what would actually move the needle — even if it\'s not us who builds it.', fr: 'Un appel offert. On regarde comment votre activité tourne et on vous dit franchement ce qui bougerait vraiment les choses — même si ce n\'est pas nous qui le construisons.' },
+  'methode.cta.sub': { en: 'A free call. We look at how your business runs and tell you straight what would actually move the needle, even if it\'s not us who builds it.', fr: 'Un appel offert. On regarde comment votre activité tourne et on vous dit franchement ce qui bougerait vraiment les choses, même si ce n\'est pas nous qui le construisons.' },
   'methode.cta.button': { en: 'Book a call · free', fr: 'Réserver un appel · offert' },
 } as const
 

@@ -1,12 +1,12 @@
 'use client'
 
 /**
- * WhatWeBuild — "Ce qu'on construit" mockup band, rendered directly under
+ * WhatWeBuild, "Ce qu'on construit" mockup band, rendered directly under
  * <ClientsBar />. Forms a paired "proof zone": the logo strip above says WHO
  * trusts us (named), this band shows WHAT we build (anonymised).
  *
  * Privacy-by-design (per Nathan's spec): every mockup is a heavily-blurred,
- * downscaled webp — no client name, email, personal data or logo is legible,
+ * downscaled webp, no client name, email, personal data or logo is legible,
  * so nothing here is attributable to a client from the outside. Labels are
  * generic (function · sector), never a client name.
  *
@@ -103,7 +103,7 @@ export default function WhatWeBuild() {
           align-items: stretch;
           width: max-content;
           gap: 26px;
-          /* scrolls RIGHT — opposite to the logo strip above */
+          /* scrolls RIGHT, opposite to the logo strip above */
           animation: buildScroll 60s linear infinite;
           will-change: transform;
         }
@@ -195,7 +195,7 @@ export default function WhatWeBuild() {
           }
         }
 
-        /* Keep the mockups discoverable under reduced-motion — near-frozen
+        /* Keep the mockups discoverable under reduced-motion, near-frozen
            rather than fully stopped so off-screen cards still drift into view. */
         @media (prefers-reduced-motion: reduce) {
           .build-track { animation-duration: 180s; }

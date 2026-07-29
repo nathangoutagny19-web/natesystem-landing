@@ -1,17 +1,17 @@
 'use client'
 
 /**
- * ReviewsNav — standalone top bar for /reviews.
+ * ReviewsNav, standalone top bar for /reviews.
  *
  * Intentionally NOT the main site Nav: Reviews is a sub-brand with a
  * different audience (restaurants, referred by partner Kis Zoltán).
  * This keeps /reviews visually independent so the upcoming move to
- * its own domain costs nothing — the page is already autonomous.
+ * its own domain costs nothing, the page is already autonomous.
  *
  * Ships with:
  *   - Logo mark + "NateSystem · Reviews" wordmark (links to /reviews)
- *   - Language switcher (EN / FR) — same LangProvider as the rest
- *   - Theme toggle (light / dark) — same ThemeProvider
+ *   - Language switcher (EN / FR), same LangProvider as the rest
+ *   - Theme toggle (light / dark), same ThemeProvider
  *   - Primary CTA → /book
  *
  * No dropdowns, no nav links, no site-wide cross-surface clutter.
@@ -74,7 +74,7 @@ export default function ReviewsNav({ onRequestDemo }: { onRequestDemo?: () => vo
             </span>
           </Link>
 
-          {/* Right side — lang + theme + CTA (desktop) */}
+          {/* Right side, lang + theme + CTA (desktop) */}
           <div className="nav-right">
             {/* Lang */}
             <div ref={langRef} className={`lang-dropdown ${langOpen ? 'open' : ''}`}>
@@ -138,7 +138,7 @@ export default function ReviewsNav({ onRequestDemo }: { onRequestDemo?: () => vo
               )}
             </button>
 
-            {/* CTA — opens the demo-request modal owned by the page */}
+            {/* CTA, opens the demo-request modal owned by the page */}
             <button
               type="button"
               onClick={onRequestDemo}

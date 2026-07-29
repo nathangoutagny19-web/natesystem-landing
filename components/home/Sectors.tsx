@@ -6,7 +6,7 @@ import { ArrowRight } from 'lucide-react'
 import FadeUp from '@/components/ui/FadeUp'
 import { useLang } from '@/components/providers/LangProvider'
 
-// Socle commun — ce que nos solutions apportent, quel que soit le secteur.
+// Socle commun, ce que nos solutions apportent, quel que soit le secteur.
 const BASE_FR = [
   'Données centralisées et claires',
   'Business plus rentable',
@@ -34,15 +34,15 @@ type Sector = {
 const SECTORS: Sector[] = [
   {
     nameFr: 'Hôtellerie, restauration & événementiel', nameEn: 'Hospitality & events',
-    painFr: 'Réservations, plannings, staff et stocks éclatés sur dix outils qui ne se parlent pas — tout se joue dans l’urgence du service.',
-    painEn: 'Bookings, rotas, staff and stock scattered across ten tools that don’t talk — it all plays out in the rush of service.',
+    painFr: 'Réservations, plannings, staff et stocks éclatés sur dix outils qui ne se parlent pas, tout se joue dans l’urgence du service.',
+    painEn: 'Bookings, rotas, staff and stock scattered across ten tools that don’t talk, it all plays out in the rush of service.',
     buildsFr: ['Backend de réservation + mails de confirmation auto', 'Plannings staff & bénévoles en temps réel', 'CRM clients + marges suivies au jour le jour'],
     buildsEn: ['Booking backend + automatic confirmation emails', 'Real-time staff & volunteer rotas', 'Client CRM + margins tracked day by day'],
   },
   {
     nameFr: 'Bureaux d’études, ingénierie & industrie', nameEn: 'Engineering & manufacturing',
-    painFr: 'Affaires, documents techniques, production et heures suivis en parallèle — jamais au même endroit, jamais fiable.',
-    painEn: 'Projects, technical docs, production and hours tracked in parallel — never in one place, never reliable.',
+    painFr: 'Affaires, documents techniques, production et heures suivis en parallèle, jamais au même endroit, jamais fiable.',
+    painEn: 'Projects, technical docs, production and hours tracked in parallel, never in one place, never reliable.',
     buildsFr: ['Suivi d’affaires · temps passés · production', 'Gestion documentaire & chiffrage assistés', 'Traçabilité et contrôle qualité digitalisés'],
     buildsEn: ['Project · time · production tracking', 'Assisted document management & quoting', 'Digitised traceability & quality control'],
   },
@@ -106,14 +106,14 @@ export default function Sectors() {
             <span className="accent">{d('La méthode, non.', 'The method doesn’t.')}</span>
           </h2>
           <p className="font-sans" style={{ fontSize: '15px', fontWeight: 300, color: 'var(--text-secondary)', maxWidth: '600px', margin: '0 auto', lineHeight: 1.7 }}>
-            {d('Un socle commun pour tous — puis on personnalise pour votre métier. Cliquez sur le vôtre.',
-               'A shared foundation for everyone — then we tailor it to your trade. Click yours.')}
+            {d('Un socle commun pour tous, puis on personnalise pour votre métier. Cliquez sur le vôtre.',
+               'A shared foundation for everyone, then we tailor it to your trade. Click yours.')}
           </p>
         </FadeUp>
 
         <FadeUp delay={0.1}>
           <div className="sec-x">
-            {/* Liste des secteurs — cliquable */}
+            {/* Liste des secteurs, cliquable */}
             <div className="sec-list" role="tablist" aria-label={d('Secteurs', 'Industries')}>
               {SECTORS.map((s, i) => {
                 const on = i === active
@@ -150,8 +150,8 @@ export default function Sectors() {
                   <h3 className="font-serif italic sec-panel-title">{d(cur.nameFr, cur.nameEn)}</h3>
                   <p className="font-sans sec-panel-pain">{d(cur.painFr, cur.painEn)}</p>
 
-                  {/* Socle commun — le même pour tous */}
-                  <span className="font-mono sec-panel-label">{d('Ce que ça vous apporte — à tous les coups', 'What it brings you — every time')}</span>
+                  {/* Socle commun, le même pour tous */}
+                  <span className="font-mono sec-panel-label">{d('Ce que ça vous apporte, à tous les coups', 'What it brings you, every time')}</span>
                   <div className="sec-base">
                     {(lang === 'en' ? BASE_EN : BASE_FR).map((b) => (
                       <span key={b} className="sec-base-chip">{b}</span>

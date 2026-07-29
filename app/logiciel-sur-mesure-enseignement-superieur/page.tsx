@@ -13,7 +13,7 @@ import { CAL_LINK } from '@/lib/constants'
 const modules = [
   {
     title: 'Parcours étudiant centralisé',
-    desc: 'Chaque étudiant, son parcours, ses notes, ses échanges, son statut — dans une seule fiche. Fini les multi-tableurs où l\'information se perd entre deux services.',
+    desc: 'Chaque étudiant, son parcours, ses notes, ses échanges, son statut, dans une seule fiche. Fini les multi-tableurs où l\'information se perd entre deux services.',
     metric: '200+ étudiants suivis dans un seul outil',
   },
   {
@@ -23,7 +23,7 @@ const modules = [
   },
   {
     title: 'Relation alumni',
-    desc: 'Garder le lien avec les anciens, suivre leur insertion, alimenter votre réseau et vos statistiques d\'employabilité — sans ressaisie manuelle.',
+    desc: 'Garder le lien avec les anciens, suivre leur insertion, alimenter votre réseau et vos statistiques d\'employabilité, sans ressaisie manuelle.',
     metric: 'Insertion suivie automatiquement',
   },
   {
@@ -53,7 +53,7 @@ export default function EducationPage() {
               Le CRM pédagogique <span className="accent" style={{ color: 'var(--accent)' }}>qui centralise tout.</span>
             </h1>
             <p className="font-sans" style={{ fontSize: 'clamp(15px, 3vw, 18px)', fontWeight: 300, color: 'var(--text-secondary)', maxWidth: 640, margin: '0 auto 36px', lineHeight: 1.65 }}>
-              Parcours étudiant, suivi de stages, relation alumni — réunis dans un seul outil bâti pour votre établissement,
+              Parcours étudiant, suivi de stages, relation alumni, réunis dans un seul outil bâti pour votre établissement,
               là où vous jonglez aujourd&apos;hui entre des tableurs que chaque service maintient à sa façon. Hébergé en UE, RGPD-natif.
             </p>
             <Link href={CAL_LINK} className="btn-primary" style={{ margin: '0 auto', fontSize: 14 }}>
@@ -77,7 +77,7 @@ export default function EducationPage() {
           <ul style={{ listStyle: 'none', padding: 0, margin: '0 auto', maxWidth: 600, display: 'grid', gap: 13 }}>
             {pains.map((p) => (
               <li key={p} className="flex items-start gap-3" style={{ fontSize: 14.5, color: 'var(--text-secondary)', lineHeight: 1.55, fontWeight: 300 }}>
-                <span style={{ color: 'var(--accent)', flexShrink: 0, marginTop: 1, fontWeight: 600 }}>—</span>
+                <span style={{ color: 'var(--accent)', flexShrink: 0, marginTop: 1, fontWeight: 600 }}>·</span>
                 <span>{p}</span>
               </li>
             ))}
@@ -112,7 +112,7 @@ export default function EducationPage() {
 
       <Divider />
 
-      {/* Proof — references */}
+      {/* Proof, references */}
       <section style={{ padding: '70px 24px' }}>
         <div className="mx-auto" style={{ maxWidth: 760 }}>
           <FadeUp>

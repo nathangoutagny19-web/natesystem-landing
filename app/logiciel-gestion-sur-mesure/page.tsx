@@ -37,7 +37,7 @@ const pains = [
   'Un ERP standard trop rigide, où vous adaptez votre métier à l\'outil au lieu de l\'inverse',
   'Des stocks, des ventes et un planning éclatés entre Excel, mails et plusieurs logiciels',
   'Des heures perdues à recopier les mêmes données d\'un outil à l\'autre',
-  'Aucune vue d\'ensemble sur votre activité — vous pilotez votre entreprise à l\'aveugle',
+  'Aucune vue d\'ensemble sur votre activité, vous pilotez votre entreprise à l\'aveugle',
 ]
 
 const guarantees = [
@@ -52,7 +52,7 @@ export default function LogicielGestionSurMesurePage() {
     <main>
       <Nav />
 
-      {/* Hero — H1 with primary keyword + bonus */}
+      {/* Hero, H1 with primary keyword + bonus */}
       <section style={{ padding: '160px 24px 40px' }}>
         <div className="mx-auto text-center" style={{ maxWidth: 820 }}>
           <FadeUp>
@@ -62,7 +62,7 @@ export default function LogicielGestionSurMesurePage() {
             </h1>
             <p className="font-sans" style={{ fontSize: 'clamp(15px, 3vw, 18px)', fontWeight: 300, color: 'var(--text-secondary)', maxWidth: 680, margin: '0 auto 36px', lineHeight: 1.65 }}>
               Au lieu d'un ERP standard rigide, NateSystem conçoit une solution de gestion sur-mesure qui réunit ventes,
-              opérations, stocks et équipe en un seul logiciel. Construit autour de vos process réels — et que votre
+              opérations, stocks et équipe en un seul logiciel. Construit autour de vos process réels, et que votre
               entreprise possède à vie.
             </p>
             <Link href={CAL_LINK} className="btn-primary" style={{ margin: '0 auto', fontSize: 14 }}>
@@ -74,7 +74,7 @@ export default function LogicielGestionSurMesurePage() {
 
       <Divider />
 
-      {/* Direct answer — what is a custom management software (GEO) */}
+      {/* Direct answer, what is a custom management software (GEO) */}
       <section style={{ padding: '70px 24px' }}>
         <div className="mx-auto" style={{ maxWidth: 760 }}>
           <FadeUp className="text-center mb-8">
@@ -108,7 +108,7 @@ export default function LogicielGestionSurMesurePage() {
           <ul style={{ listStyle: 'none', padding: 0, margin: '0 auto', maxWidth: 600, display: 'grid', gap: 13 }}>
             {pains.map((p) => (
               <li key={p} className="flex items-start gap-3" style={{ fontSize: 14.5, color: 'var(--text-secondary)', lineHeight: 1.55, fontWeight: 300 }}>
-                <span style={{ color: 'var(--accent)', flexShrink: 0, marginTop: 1, fontWeight: 600 }}>—</span>
+                <span style={{ color: 'var(--accent)', flexShrink: 0, marginTop: 1, fontWeight: 600 }}>·</span>
                 <span>{p}</span>
               </li>
             ))}
@@ -155,11 +155,11 @@ export default function LogicielGestionSurMesurePage() {
             <p className="font-sans" style={{ fontSize: 15.5, color: 'var(--text-secondary)', lineHeight: 1.75, fontWeight: 300, maxWidth: 680, margin: '0 auto 16px', textAlign: 'center' }}>
               Un ERP du marché vous impose ses écrans et ses process : vous adaptez votre métier à l'outil, vous payez
               des modules inutilisés, et vous le louez à vie. Une solution de gestion sur-mesure ne contient que ce dont
-              votre entreprise a besoin, épouse vos process réels, et vous appartient — code livré, hébergé en UE.
+              votre entreprise a besoin, épouse vos process réels, et vous appartient, code livré, hébergé en UE.
             </p>
             <p className="font-sans" style={{ fontSize: 15.5, color: 'var(--text-secondary)', lineHeight: 1.75, fontWeight: 300, maxWidth: 680, margin: '0 auto', textAlign: 'center' }}>
               Pour comparer les deux approches en détail, voyez notre page <Link href="/erp-vs-logiciel-sur-mesure" style={{ color: 'var(--accent)', textDecoration: 'none' }}>ERP vs logiciel sur-mesure</Link>.
-              Le choix dépend de votre activité, de vos volumes et de votre budget — on en parle pendant l'audit.
+              Le choix dépend de votre activité, de vos volumes et de votre budget, on en parle pendant l'audit.
             </p>
           </FadeUp>
         </div>
@@ -183,7 +183,7 @@ export default function LogicielGestionSurMesurePage() {
 
       <Divider />
 
-      {/* FAQ — mirrors FAQPage schema in layout */}
+      {/* FAQ, mirrors FAQPage schema in layout */}
       <section style={{ padding: '70px 24px' }}>
         <div className="mx-auto" style={{ maxWidth: 760 }}>
           <FadeUp className="text-center mb-10">
@@ -240,7 +240,7 @@ export default function LogicielGestionSurMesurePage() {
               </h2>
               <p className="font-sans" style={{ fontSize: 15, fontWeight: 300, color: 'var(--text-secondary)', lineHeight: 1.7, maxWidth: 520, margin: '0 auto 32px' }}>
                 Un appel offert. On regarde comment vous gérez aujourd'hui vos ventes, vos stocks et vos opérations, et
-                on identifie ce qu'une solution sur-mesure ferait gagner à votre entreprise — en temps, en argent, en
+                on identifie ce qu'une solution sur-mesure ferait gagner à votre entreprise, en temps, en argent, en
                 clarté. Même si on ne travaille pas ensemble.
               </p>
               <Link href={CAL_LINK} className="btn-primary" style={{ margin: '0 auto' }}>

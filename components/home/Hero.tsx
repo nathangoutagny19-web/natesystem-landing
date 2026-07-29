@@ -21,7 +21,7 @@ function RotatingWord({ words }: { words: string[] }) {
 
   useEffect(() => setMounted(true), [])
 
-  // The word ALWAYS rotates — it's content, not decoration. Reduced-motion only
+  // The word ALWAYS rotates, it's content, not decoration. Reduced-motion only
   // softens the transition (a quick cut instead of a slide), it never freezes it.
   useEffect(() => {
     if (!mounted || words.length <= 1) return
@@ -73,7 +73,7 @@ export default function Hero() {
         <span className="section-label hero-eyebrow">{t('hero.label')}</span>
       </motion.div>
 
-      {/* Title — NateSystem signature: serif italic, scaled up for the new outcome-first H1 */}
+      {/* Title, NateSystem signature: serif italic, scaled up for the new outcome-first H1 */}
       <motion.h1
         initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2, ease }}
         className="font-serif italic font-normal"
@@ -83,7 +83,7 @@ export default function Hero() {
         <RotatingWord words={words} />
       </motion.h1>
 
-      {/* AI note — small pill right under the headline: agentic AI is a
+      {/* AI note, small pill right under the headline: agentic AI is a
           differentiator we plug in where it counts, not the headline focus. */}
       <motion.div
         initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.3, ease }}
@@ -102,7 +102,7 @@ export default function Hero() {
         </span>
       </motion.div>
 
-      {/* VSL — self-hosted, plays inline on click (zero page-load cost). */}
+      {/* VSL, self-hosted, plays inline on click (zero page-load cost). */}
       <motion.div
         initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.4, ease }}
         className="w-full flex justify-center"
@@ -126,7 +126,7 @@ export default function Hero() {
         {t('hero.sub')}
       </motion.p>
 
-      {/* CTAs — primary + secondary ghost */}
+      {/* CTAs, primary + secondary ghost */}
       <motion.div
         initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.5, ease }}
         className="flex flex-wrap items-center justify-center gap-3"
@@ -144,7 +144,7 @@ export default function Hero() {
         </a>
       </motion.div>
 
-      {/* Scroll hint — trust bar moved to dedicated <ClientsBar /> below the hero */}
+      {/* Scroll hint, trust bar moved to dedicated <ClientsBar /> below the hero */}
       <motion.div
         initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 1.2 }}
         className="absolute bottom-10 left-0 right-0 flex flex-col items-center gap-4"

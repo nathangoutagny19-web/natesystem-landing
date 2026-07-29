@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Logiciel interne Annecy : solution sur-mesure entreprise',
   description:
-    'Logiciel interne à Annecy : NateSystem conçoit des solutions logicielles sur-mesure pour entreprise — gestion, données, équipe. Code livré, propriété 100 %, hébergé en UE. Audit offert.',
+    'Logiciel interne à Annecy : NateSystem conçoit des solutions logicielles sur-mesure pour entreprise, gestion, données, équipe. Code livré, propriété 100 %, hébergé en UE. Audit offert.',
   alternates: { canonical: 'https://www.natesystem.com/logiciel-interne-annecy' },
   openGraph: {
     title: 'Logiciel interne Annecy : solution sur-mesure entreprise',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
 }
 
-// LocalBusiness + Service + FAQ + Breadcrumb, scoped to Annecy — drives the local
+// LocalBusiness + Service + FAQ + Breadcrumb, scoped to Annecy, drives the local
 // pack and AI association for "logiciel interne Annecy".
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -28,7 +28,7 @@ const jsonLd = {
     {
       '@type': ['Organization', 'LocalBusiness'],
       '@id': 'https://www.natesystem.com/logiciel-interne-annecy#business',
-      name: 'NateSystem — Logiciel interne Annecy',
+      name: 'NateSystem, Logiciel interne Annecy',
       url: 'https://www.natesystem.com/logiciel-interne-annecy',
       description:
         'Agence de logiciel interne sur-mesure à Annecy : solutions logicielles métier pour entreprise, intégration IA, gestion des données et des process en Haute-Savoie.',

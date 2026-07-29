@@ -70,7 +70,7 @@ function renderEmailHtml({
               <hr style="border:none;border-top:1px solid rgba(26,26,29,0.1);margin:28px 0;" />
               <p style="font-size:15px;line-height:1.55;color:#1a1a1d;margin:0 0 8px;font-weight:600;">Vous voulez en discuter ?</p>
               <p style="font-size:14px;line-height:1.55;color:#3a3a3f;margin:0 0 20px;">
-                Un appel offert, sans engagement. Vous repartez avec une roadmap IA — même si on ne bosse pas ensemble.
+                Un appel offert, sans engagement. Vous repartez avec une roadmap IA, même si on ne bosse pas ensemble.
               </p>
               <p style="margin:0 0 28px;">
                 <a href="${CAL_DIRECT_URL}" style="color:#1a1a1d;text-decoration:underline;font-size:14px;">Réserver un appel · offert →</a>
@@ -199,7 +199,7 @@ export async function POST(req: NextRequest) {
       // Non-fatal: lead is saved, user has the link on thank-you page.
     }
   } else {
-    console.warn('RESEND_API_KEY missing — skipping email send')
+    console.warn('RESEND_API_KEY missing, skipping email send')
   }
 
   return NextResponse.json({ success: true })

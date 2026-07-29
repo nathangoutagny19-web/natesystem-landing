@@ -25,12 +25,12 @@ const modules = [
   },
   {
     title: 'Portails & outils internes',
-    desc: 'Portails clients, espaces fournisseurs, outils métier — chaque écran pensé pour la tâche qu\'il sert. Pas de feature bloat, pas de menus qu\'on n\'ouvre jamais.',
+    desc: 'Portails clients, espaces fournisseurs, outils métier, chaque écran pensé pour la tâche qu\'il sert. Pas de feature bloat, pas de menus qu\'on n\'ouvre jamais.',
     metric: 'Chaque rôle a exactement ce qu\'il lui faut',
   },
   {
     title: 'Automatisations & IA intégrée',
-    desc: 'Workflows automatisés, lecture de documents, relances, alertes — l\'IA intégrée uniquement là où elle remplace de vraies heures de travail.',
+    desc: 'Workflows automatisés, lecture de documents, relances, alertes, l\'IA intégrée uniquement là où elle remplace de vraies heures de travail.',
     metric: 'Des heures regagnées chaque semaine',
   },
 ]
@@ -38,7 +38,7 @@ const modules = [
 const pains = [
   'Excel, mails et dix outils qui ne se parlent pas',
   'Des heures perdues chaque semaine à tout recopier d\'un outil à l\'autre',
-  'Aucune vue claire sur votre activité — vous pilotez à l\'aveugle',
+  'Aucune vue claire sur votre activité, vous pilotez à l\'aveugle',
   'Quand quelqu\'un part, son savoir part avec lui',
 ]
 
@@ -55,7 +55,7 @@ export default function LogicielSurMesurePage() {
               Un seul logiciel sur-mesure pour <span className="accent" style={{ color: 'var(--accent)' }}>piloter votre activité.</span>
             </h1>
             <p className="font-sans" style={{ fontSize: 'clamp(15px, 3vw, 18px)', fontWeight: 300, color: 'var(--text-secondary)', maxWidth: 660, margin: '0 auto 36px', lineHeight: 1.65 }}>
-              On réunit vos outils et vos données dans une seule plateforme conçue pour votre métier — base unifiée,
+              On réunit vos outils et vos données dans une seule plateforme conçue pour votre métier, base unifiée,
               dashboards, portails, outils internes. La vôtre, pas un abonnement de plus. Vous êtes propriétaire du code,
               hébergé en UE, en production en 4 à 8 semaines.
             </p>
@@ -68,7 +68,7 @@ export default function LogicielSurMesurePage() {
 
       <Divider />
 
-      {/* Direct answer — what is custom software (GEO-friendly) */}
+      {/* Direct answer, what is custom software (GEO-friendly) */}
       <section style={{ padding: '70px 24px' }}>
         <div className="mx-auto" style={{ maxWidth: 760 }}>
           <FadeUp className="text-center mb-8">
@@ -100,7 +100,7 @@ export default function LogicielSurMesurePage() {
           <ul style={{ listStyle: 'none', padding: 0, margin: '0 auto', maxWidth: 600, display: 'grid', gap: 13 }}>
             {pains.map((p) => (
               <li key={p} className="flex items-start gap-3" style={{ fontSize: 14.5, color: 'var(--text-secondary)', lineHeight: 1.55, fontWeight: 300 }}>
-                <span style={{ color: 'var(--accent)', flexShrink: 0, marginTop: 1, fontWeight: 600 }}>—</span>
+                <span style={{ color: 'var(--accent)', flexShrink: 0, marginTop: 1, fontWeight: 600 }}>·</span>
                 <span>{p}</span>
               </li>
             ))}
@@ -135,7 +135,7 @@ export default function LogicielSurMesurePage() {
 
       <Divider />
 
-      {/* Sur-mesure vs SaaS — mini, with internal link */}
+      {/* Sur-mesure vs SaaS, mini, with internal link */}
       <section style={{ padding: '70px 24px' }}>
         <div className="mx-auto" style={{ maxWidth: 760 }}>
           <FadeUp>
@@ -219,7 +219,7 @@ export default function LogicielSurMesurePage() {
               </h2>
               <p className="font-sans" style={{ fontSize: 15, fontWeight: 300, color: 'var(--text-secondary)', lineHeight: 1.7, maxWidth: 520, margin: '0 auto 32px' }}>
                 Un appel offert. On regarde vos outils actuels et on identifie ce qu&apos;un seul logiciel sur-mesure vous
-                ferait gagner — en temps, en argent, en clarté. Même si on ne travaille pas ensemble.
+                ferait gagner, en temps, en argent, en clarté. Même si on ne travaille pas ensemble.
               </p>
               <Link href={CAL_LINK} className="btn-primary" style={{ margin: '0 auto' }}>
                 <span className="btn-primary-dot" />Réserver un appel · offert

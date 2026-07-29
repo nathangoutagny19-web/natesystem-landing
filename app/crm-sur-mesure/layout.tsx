@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
 }
 
-// Service + FAQ + Breadcrumb (query page, national — pas de LocalBusiness).
+// Service + FAQ + Breadcrumb (query page, national, pas de LocalBusiness).
 const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [

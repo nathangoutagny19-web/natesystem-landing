@@ -1,7 +1,7 @@
 'use client'
 
 /**
- * Infrastructure — sovereignty + ownership block.
+ * Infrastructure, sovereignty + ownership block.
  *
  * Sits between Process and Integrations. Tone: declarative, no
  * antagonism. Lists the cloud providers and the AI models we

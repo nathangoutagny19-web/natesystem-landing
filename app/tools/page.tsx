@@ -7,7 +7,7 @@ import LiveDemosBanner from './components/LiveDemosBanner'
 import { useLang } from '@/components/providers/LangProvider'
 
 // Lead-magnets grid (FilterBar + ResourceCard + DownloadModal) intentionally
-// hidden until the 12 ZIP packs are actually produced — the public/resources/
+// hidden until the 12 ZIP packs are actually produced, the public/resources/
 // archives are still placeholders. The component files stay on disk so they
 // can be re-imported in one commit when content ships.
 
@@ -37,7 +37,7 @@ export default function ToolsPage() {
           </div>
         </section>
 
-        {/* Diagnostic IA — interactive tool that delivers a real PDF report */}
+        {/* Diagnostic IA, interactive tool that delivers a real PDF report */}
         <section className="px-6 pb-12">
           <div className="max-w-5xl mx-auto">
             <Link
@@ -96,7 +96,7 @@ export default function ToolsPage() {
           </div>
         </section>
 
-        {/* Live demos — 2 interactive Lovable apps (actifs + stock) */}
+        {/* Live demos, 2 interactive Lovable apps (actifs + stock) */}
         <LiveDemosBanner />
 
         {/* Lead-magnet grid + DownloadModal disabled until real packs exist.

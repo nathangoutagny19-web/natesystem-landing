@@ -149,13 +149,13 @@ export default function Nav() {
             <span className={`nav-logo-text ${scrolled ? 'nav-logo-text-hidden' : ''}`}>NateSystem</span>
           </Link>
 
-          {/* Center links — desktop. Menu cible : Notre approche · Services ·
+          {/* Center links, desktop. Menu cible : Notre approche · Services ·
               Réalisations · Ressources. « Notre approche » = page /methode (Lot 2).
               Ressources = lien direct (pas de méga). */}
           <nav className="nav-links">
             <Link href="/methode" className="nav-link">{t('nav.methode')}</Link>
 
-            {/* Services — méga avec panneau photo (façon concurrents, sauce NateSystem) */}
+            {/* Services, méga avec panneau photo (façon concurrents, sauce NateSystem) */}
             <div className="nav-dropdown">
               <Link href="/services" className="nav-link nav-link-dropdown">
                 {t('nav.services')} <Chevron />
@@ -196,14 +196,14 @@ export default function Nav() {
               </div>
             </div>
 
-            {/* Réalisations — lien direct */}
+            {/* Réalisations, lien direct */}
             <Link href="/case-studies" className="nav-link">{t('nav.realisations')}</Link>
 
-            {/* Ressources — lien direct (seul Services garde un déroulant) */}
+            {/* Ressources, lien direct (seul Services garde un déroulant) */}
             <Link href="/resources" className="nav-link">{t('nav.resources')}</Link>
           </nav>
 
-          {/* Right side — lang + CTA */}
+          {/* Right side, lang + CTA */}
           <div className="nav-right">
             {/* Lang */}
             <div ref={langRef} className={`lang-dropdown ${langOpen ? 'open' : ''}`}>
@@ -222,7 +222,7 @@ export default function Nav() {
               </div>
             </div>
 
-            {/* CTA unique (Lot 1) — action simple « Réserver un appel » (le nom
+            {/* CTA unique (Lot 1), action simple « Réserver un appel » (le nom
                 « Sprint Diagnostic » vit sur la page, pas sur le bouton). */}
             <Link href={CAL_LINK} className="nav-cta-btn">
               {t('nav.ctaCall')}
@@ -287,7 +287,7 @@ export default function Nav() {
             ))}
           </div>
 
-          {/* Theme toggle — duplicates the footer one so mobile users don't have to scroll past the MobileCta */}
+          {/* Theme toggle, duplicates the footer one so mobile users don't have to scroll past the MobileCta */}
           <div className="theme-toggle mt-4" style={{ alignSelf: 'flex-start' }}>
             <button
               className={`theme-toggle-option ${theme === 'light' ? 'active' : ''}`}
@@ -332,7 +332,7 @@ function MegaItem({
   desc: string
   /** Treat as a plain anchor opening in a new tab (e.g. live demo on another subdomain). */
   external?: boolean
-  /** Optional pill rendered next to the title — used for NEW marker on live demos. */
+  /** Optional pill rendered next to the title, used for NEW marker on live demos. */
   badge?: string
 }) {
   const titleNode = (

@@ -34,7 +34,7 @@ const solutions = [
 ]
 
 const pains = [
-  'Des prospects suivis dans Excel, des mails et la tête de chacun — rien de centralisé',
+  'Des prospects suivis dans Excel, des mails et la tête de chacun, rien de centralisé',
   'Des relances oubliées et des opportunités qui se perdent faute de suivi',
   'Un CRM standard que personne ne remplit parce qu\'il ne colle pas à votre vente',
   'Aucune vue claire sur le pipeline : vous pilotez votre activité commerciale à l\'aveugle',
@@ -52,7 +52,7 @@ export default function CrmSurMesurePage() {
     <main>
       <Nav />
 
-      {/* Hero — H1 with primary keyword + bonus */}
+      {/* Hero, H1 with primary keyword + bonus */}
       <section style={{ padding: '160px 24px 40px' }}>
         <div className="mx-auto text-center" style={{ maxWidth: 820 }}>
           <FadeUp>
@@ -74,7 +74,7 @@ export default function CrmSurMesurePage() {
 
       <Divider />
 
-      {/* Direct answer — what is a custom CRM (GEO + intro answer) */}
+      {/* Direct answer, what is a custom CRM (GEO + intro answer) */}
       <section style={{ padding: '70px 24px' }}>
         <div className="mx-auto" style={{ maxWidth: 760 }}>
           <FadeUp className="text-center mb-8">
@@ -86,7 +86,7 @@ export default function CrmSurMesurePage() {
             <p className="font-sans" style={{ fontSize: 16, color: 'var(--text-secondary)', lineHeight: 1.75, fontWeight: 300, maxWidth: 680, margin: '0 auto', textAlign: 'center' }}>
               Un CRM sur-mesure est un logiciel de gestion commerciale conçu autour du cycle de vente réel de votre
               entreprise, au lieu d'un CRM standard que vous adaptez tant bien que mal. Il réunit en une seule solution
-              le suivi des prospects et clients, les relances, le pipeline et les intégrations à vos autres outils —
+              le suivi des prospects et clients, les relances, le pipeline et les intégrations à vos autres outils,
               exactement comme votre équipe vend. NateSystem conçoit ces solutions logicielles sur-mesure pour que votre
               entreprise en soit propriétaire.
             </p>
@@ -108,7 +108,7 @@ export default function CrmSurMesurePage() {
           <ul style={{ listStyle: 'none', padding: 0, margin: '0 auto', maxWidth: 600, display: 'grid', gap: 13 }}>
             {pains.map((p) => (
               <li key={p} className="flex items-start gap-3" style={{ fontSize: 14.5, color: 'var(--text-secondary)', lineHeight: 1.55, fontWeight: 300 }}>
-                <span style={{ color: 'var(--accent)', flexShrink: 0, marginTop: 1, fontWeight: 600 }}>—</span>
+                <span style={{ color: 'var(--accent)', flexShrink: 0, marginTop: 1, fontWeight: 600 }}>·</span>
                 <span>{p}</span>
               </li>
             ))}
@@ -143,7 +143,7 @@ export default function CrmSurMesurePage() {
 
       <Divider />
 
-      {/* Context — custom vs standard CRM */}
+      {/* Context, custom vs standard CRM */}
       <section style={{ padding: '70px 24px' }}>
         <div className="mx-auto" style={{ maxWidth: 760 }}>
           <FadeUp className="text-center mb-8">
@@ -154,7 +154,7 @@ export default function CrmSurMesurePage() {
           <FadeUp>
             <p className="font-sans" style={{ fontSize: 15.5, color: 'var(--text-secondary)', lineHeight: 1.75, fontWeight: 300, maxWidth: 680, margin: '0 auto 16px', textAlign: 'center' }}>
               La plupart des CRM standard imposent leur logique : vous pliez votre vente à l'outil, vous payez des
-              modules inutiles et vous louez le tout à vie. Un CRM sur-mesure fait l'inverse — il épouse vos étapes,
+              modules inutiles et vous louez le tout à vie. Un CRM sur-mesure fait l'inverse, il épouse vos étapes,
               votre équipe l'adopte parce qu'il parle son langage, et votre entreprise en est propriétaire.
             </p>
             <p className="font-sans" style={{ fontSize: 15.5, color: 'var(--text-secondary)', lineHeight: 1.75, fontWeight: 300, maxWidth: 680, margin: '0 auto', textAlign: 'center' }}>
@@ -183,7 +183,7 @@ export default function CrmSurMesurePage() {
 
       <Divider />
 
-      {/* FAQ — required by the tool + FAQPage schema in layout */}
+      {/* FAQ, required by the tool + FAQPage schema in layout */}
       <section style={{ padding: '70px 24px' }}>
         <div className="mx-auto" style={{ maxWidth: 760 }}>
           <FadeUp className="text-center mb-10">
@@ -240,7 +240,7 @@ export default function CrmSurMesurePage() {
               </h2>
               <p className="font-sans" style={{ fontSize: 15, fontWeight: 300, color: 'var(--text-secondary)', lineHeight: 1.7, maxWidth: 520, margin: '0 auto 32px' }}>
                 Un appel offert. On regarde comment votre équipe vend et suit ses prospects aujourd'hui, et on
-                identifie ce qu'un CRM sur-mesure ferait gagner à votre entreprise — en temps, en deals, en clarté.
+                identifie ce qu'un CRM sur-mesure ferait gagner à votre entreprise, en temps, en deals, en clarté.
                 Même si on ne travaille pas ensemble.
               </p>
               <Link href={CAL_LINK} className="btn-primary" style={{ margin: '0 auto' }}>

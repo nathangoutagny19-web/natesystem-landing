@@ -17,7 +17,7 @@ const doors = [
   },
   {
     title: 'Écosystème IA',
-    desc: 'L\'intégration de l\'IA — agentique, automatisation, data analytics — dans vos outils existants, là où elle remplace de vraies heures. Sans tout migrer.',
+    desc: 'L\'intégration de l\'IA, agentique, automatisation, data analytics, dans vos outils existants, là où elle remplace de vraies heures. Sans tout migrer.',
   },
   {
     title: 'Audit & Plan d\'Action',
@@ -50,7 +50,7 @@ export default function LyonPage() {
               <span className="accent" style={{ color: 'var(--accent)' }}>et d&apos;IA, à Lyon.</span>
             </h1>
             <p className="font-sans" style={{ fontSize: 'clamp(15px, 3vw, 18px)', fontWeight: 300, color: 'var(--text-secondary)', maxWidth: 620, margin: '0 auto 36px', lineHeight: 1.65 }}>
-              NateSystem est une agence lyonnaise qui construit le logiciel métier qui pilote votre activité — avec l&apos;IA intégrée
+              NateSystem est une agence lyonnaise qui construit le logiciel métier qui pilote votre activité, avec l&apos;IA intégrée
               là où elle vous fait gagner du temps. Vos données, votre infrastructure, votre code. Vous restez propriétaire.
             </p>
             <Link href={CAL_LINK} className="btn-primary" style={{ margin: '0 auto', fontSize: 14 }}>
@@ -62,7 +62,7 @@ export default function LyonPage() {
 
       <Divider />
 
-      {/* What we do — 3 doors */}
+      {/* What we do, 3 doors */}
       <section style={{ padding: '80px 24px' }}>
         <div className="mx-auto" style={{ maxWidth: 1100 }}>
           <FadeUp className="text-center mb-12">
@@ -93,7 +93,7 @@ export default function LyonPage() {
             </h2>
             <p className="font-sans text-center" style={{ fontSize: 15, fontWeight: 300, color: 'var(--text-secondary)', lineHeight: 1.7, maxWidth: 620, margin: '0 auto 36px' }}>
               Un interlocuteur unique, joignable, qui code lui-même votre système. Pas de sous-traitance, pas de couche commerciale.
-              On accompagne des PME à Lyon, en France et en Hongrie — restauration, enseignement supérieur, conseil, événementiel.
+              On accompagne des PME à Lyon, en France et en Hongrie, restauration, enseignement supérieur, conseil, événementiel.
             </p>
           </FadeUp>
           <FadeUp delay={0.1}>
@@ -132,7 +132,7 @@ export default function LyonPage() {
               </h2>
               <p className="font-sans" style={{ fontSize: 15, fontWeight: 300, color: 'var(--text-secondary)', lineHeight: 1.7, maxWidth: 500, margin: '0 auto 32px' }}>
                 Un appel offert. On regarde votre situation et vous repartez avec une vision claire du logiciel dont votre
-                activité a besoin — même si on ne travaille pas ensemble.
+                activité a besoin, même si on ne travaille pas ensemble.
               </p>
               <Link href={CAL_LINK} className="btn-primary" style={{ margin: '0 auto' }}>
                 <span className="btn-primary-dot" />Réserver un appel · offert

@@ -32,10 +32,10 @@ const tiers = [
 ]
 
 const factors = [
-  'Le périmètre fonctionnel — nombre d\'écrans, de vues et de workflows',
+  'Le périmètre fonctionnel, nombre d\'écrans, de vues et de workflows',
   'Le nombre d\'intégrations avec vos outils existants',
   'La complexité de votre logique métier',
-  'La présence ou non d\'IA — agents, automatisation, data analytics',
+  'La présence ou non d\'IA, agents, automatisation, data analytics',
 ]
 
 export default function PrixPage() {
@@ -53,7 +53,7 @@ export default function PrixPage() {
             <p className="font-sans" style={{ fontSize: 'clamp(15px, 3vw, 18px)', fontWeight: 300, color: 'var(--text-secondary)', maxWidth: 640, margin: '0 auto', lineHeight: 1.65 }}>
               Pour une PME, comptez entre <strong style={{ color: 'var(--text)', fontWeight: 500 }}>15 000 et 50 000 €</strong> pour un
               premier logiciel métier, ou <strong style={{ color: 'var(--text)', fontWeight: 500 }}>à partir de 2 000 €/mois</strong> pour
-              une infrastructure complète avec IA. Le prix exact dépend de quatre facteurs — voici lesquels, et les repères honnêtes.
+              une infrastructure complète avec IA. Le prix exact dépend de quatre facteurs, voici lesquels, et les repères honnêtes.
             </p>
           </FadeUp>
         </div>
@@ -82,7 +82,7 @@ export default function PrixPage() {
           </div>
           <FadeUp>
             <p className="font-sans text-center" style={{ fontSize: 12.5, color: 'var(--text-muted)', fontWeight: 300, margin: '24px auto 0', maxWidth: 600, lineHeight: 1.6 }}>
-              Ces fourchettes sont des repères de marché. Votre chiffrage précis — périmètre fixe, prix fixe — se fait lors de l&apos;appel.
+              Ces fourchettes sont des repères de marché. Votre chiffrage précis, périmètre fixe, prix fixe, se fait lors de l&apos;appel.
             </p>
           </FadeUp>
         </div>
@@ -109,7 +109,7 @@ export default function PrixPage() {
           <FadeUp delay={0.1}>
             <p className="font-sans text-center" style={{ fontSize: 14, color: 'var(--text-secondary)', fontWeight: 300, lineHeight: 1.7, margin: '32px auto 0', maxWidth: 600 }}>
               Un repère utile : comparez le prix à ce que vous payez <strong style={{ color: 'var(--text)', fontWeight: 500 }}>déjà</strong> en
-              abonnements SaaS. Le sur-mesure coûte plus à l&apos;entrée, mais il vous appartient — là où le SaaS court à vie. Le point
+              abonnements SaaS. Le sur-mesure coûte plus à l&apos;entrée, mais il vous appartient, là où le SaaS court à vie. Le point
               de bascule se situe souvent entre 2 et 4 ans.
             </p>
           </FadeUp>
@@ -139,7 +139,7 @@ export default function PrixPage() {
               </h2>
               <p className="font-sans" style={{ fontSize: 15, fontWeight: 300, color: 'var(--text-secondary)', lineHeight: 1.7, maxWidth: 520, margin: '0 auto 32px' }}>
                 On regarde votre périmètre et vos outils actuels, et on vous donne une fourchette claire pour votre cas précis.
-                Offert, sans pitch — vous repartez avec le chiffre, même si on ne travaille pas ensemble.
+                Offert, sans pitch, vous repartez avec le chiffre, même si on ne travaille pas ensemble.
               </p>
               <Link href={CAL_LINK} className="btn-primary" style={{ margin: '0 auto' }}>
                 <span className="btn-primary-dot" />Réserver un appel · offert

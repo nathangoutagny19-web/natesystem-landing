@@ -7,7 +7,7 @@ import { useLang } from '@/components/providers/LangProvider'
 import { CAL_HANDLE, CAL_NAMESPACE } from '@/lib/constants'
 
 /**
- * CtaFinalV2 — même embed Cal.com que CtaFinal (id="rendez-vous", brand rouge),
+ * CtaFinalV2, même embed Cal.com que CtaFinal (id="rendez-vous", brand rouge),
  * mais recadré autour du Sprint Diagnostic : « Vous ne sautez jamais dans le
  * vide » (REFONTE §CTA). Réutilise les réassurances existantes cta.r1/r2/r3.
  */

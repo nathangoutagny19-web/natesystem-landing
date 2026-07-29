@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Application web sur-mesure : votre outil métier en ligne',
   description:
-    'Application web sur-mesure : NateSystem conçoit votre outil métier en ligne — accessible navigateur, multi-utilisateurs, temps réel. Code livré, propriété 100 %, hébergé en UE. Audit offert.',
+    'Application web sur-mesure : NateSystem conçoit votre outil métier en ligne, accessible navigateur, multi-utilisateurs, temps réel. Code livré, propriété 100 %, hébergé en UE. Audit offert.',
   alternates: { canonical: 'https://www.natesystem.com/application-web-sur-mesure' },
   openGraph: {
     title: 'Application web sur-mesure : votre outil métier en ligne',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
 }
 
-// Service + FAQ + Breadcrumb (national, pas de LocalBusiness) — cible la requête
+// Service + FAQ + Breadcrumb (national, pas de LocalBusiness), cible la requête
 // "application web sur-mesure" et l'association IA pour cette intention métier.
 const jsonLd = {
   '@context': 'https://schema.org',

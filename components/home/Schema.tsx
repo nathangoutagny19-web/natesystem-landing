@@ -1,7 +1,7 @@
 'use client'
 
 /**
- * Schema — animated 5-node flow diagram.
+ * Schema, animated 5-node flow diagram.
  *
  * Visualises the operational loop:
  *   Sources → AI agent → Software → Team → Action

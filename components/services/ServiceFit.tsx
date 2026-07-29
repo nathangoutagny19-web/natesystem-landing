@@ -5,7 +5,7 @@ import FadeUp from '@/components/ui/FadeUp'
 
 /**
  * Tableau de qualification 2 colonnes : « C'est pour vous si » / « Ce n'est pas pour vous si ».
- * En bas de chaque sous-page service — cadrage honnête du fit.
+ * En bas de chaque sous-page service, cadrage honnête du fit.
  */
 export default function ServiceFit({ forYou, notForYou }: { forYou: string[]; notForYou: string[] }) {
   return (

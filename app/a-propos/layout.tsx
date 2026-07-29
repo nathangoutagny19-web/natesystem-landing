@@ -1,26 +1,26 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'À propos — Nathan Goutagny, fondateur de NateSystem',
+  title: 'À propos, Nathan Goutagny, fondateur de NateSystem',
   description:
-    'Nathan Goutagny, ingénieur logiciel & IA appliquée basé à Lyon. Fondateur de NateSystem. Des années à construire des systèmes opérationnels sur-mesure pour des PME françaises et hongroises — restauration, enseignement supérieur, conseil.',
+    'Nathan Goutagny, ingénieur logiciel & IA appliquée basé à Lyon. Fondateur de NateSystem. Des années à construire des systèmes opérationnels sur-mesure pour des PME françaises et hongroises, restauration, enseignement supérieur, conseil.',
   alternates: { canonical: 'https://www.natesystem.com/a-propos' },
   openGraph: {
-    title: 'À propos — Nathan Goutagny, fondateur de NateSystem',
+    title: 'À propos, Nathan Goutagny, fondateur de NateSystem',
     description:
-      'Ingénieur logiciel & IA appliquée à Lyon. Fondateur de NateSystem. Si vous me parlez, c\'est moi qui code derrière — pas un commercial, pas un junior.',
+      'Ingénieur logiciel & IA appliquée à Lyon. Fondateur de NateSystem. Si vous me parlez, c\'est moi qui code derrière, pas un commercial, pas un junior.',
     url: 'https://www.natesystem.com/a-propos',
     type: 'profile',
     locale: 'fr_FR',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'À propos — Nathan Goutagny, fondateur de NateSystem',
+    title: 'À propos, Nathan Goutagny, fondateur de NateSystem',
     description: 'Ingénieur logiciel & IA appliquée à Lyon. Fondateur de NateSystem.',
   },
 }
 
-// Person JSON-LD — E-E-A-T anchor. Articles' author links resolve here; AI
+// Person JSON-LD, E-E-A-T anchor. Articles' author links resolve here; AI
 // engines read this to attribute expertise to a real, identified person.
 const personJsonLd = {
   '@context': 'https://schema.org',

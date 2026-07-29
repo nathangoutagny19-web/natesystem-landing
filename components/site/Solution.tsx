@@ -8,7 +8,7 @@ const PILLARS = [
     number: '01',
     title: 'Connect',
     description:
-      'We map your processes, identify your data architecture, and build the foundation of your custom AI ecosystem. Every tool, every workflow, every data source — understood before a single line of code.',
+      'We map your processes, identify your data architecture, and build the foundation of your custom AI ecosystem. Every tool, every workflow, every data source, understood before a single line of code.',
     detail: 'Cartography · Architecture · Data mapping',
   },
   {
@@ -22,7 +22,7 @@ const PILLARS = [
     number: '03',
     title: 'Decide',
     description:
-      'Your team makes better decisions, faster, with less effort — backed by real-time data and intelligent automation. Operations become a competitive advantage, not a bottleneck.',
+      'Your team makes better decisions, faster, with less effort, backed by real-time data and intelligent automation. Operations become a competitive advantage, not a bottleneck.',
     detail: 'Data-driven · Scalable · Proprietary',
   },
 ]
@@ -61,7 +61,7 @@ export default function Solution() {
             }}
           >
             Not a SaaS subscription. Not a consultant. A complete AI
-            infrastructure — proprietary, connected to your data, owned by you.
+            infrastructure, proprietary, connected to your data, owned by you.
           </p>
         </FadeUp>
 

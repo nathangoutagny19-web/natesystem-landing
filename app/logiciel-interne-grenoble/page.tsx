@@ -37,7 +37,7 @@ const pains = [
   'Excel, mails et dix outils qui ne se parlent pas dans votre entreprise',
   'Des heures perdues chaque semaine à recopier les données d\'un logiciel à l\'autre',
   'Des process industriels ou techniques complexes qu\'aucun logiciel standard ne couvre vraiment',
-  'Aucune vue claire sur votre activité — vous pilotez à l\'aveugle',
+  'Aucune vue claire sur votre activité, vous pilotez à l\'aveugle',
 ]
 
 const guarantees = [
@@ -52,7 +52,7 @@ export default function LogicielInterneGrenoblePage() {
     <main>
       <Nav />
 
-      {/* Hero — H1 with primary keyword + bonus */}
+      {/* Hero, H1 with primary keyword + bonus */}
       <section style={{ padding: '160px 24px 40px' }}>
         <div className="mx-auto text-center" style={{ maxWidth: 820 }}>
           <FadeUp>
@@ -63,7 +63,7 @@ export default function LogicielInterneGrenoblePage() {
             <p className="font-sans" style={{ fontSize: 'clamp(15px, 3vw, 18px)', fontWeight: 300, color: 'var(--text-secondary)', maxWidth: 660, margin: '0 auto 36px', lineHeight: 1.65 }}>
               NateSystem conçoit des solutions logicielles internes sur-mesure pour les entreprises de Grenoble et de
               l'Isère. Dans un bassin marqué par l'industrie, la microélectronique et la deep tech, on construit
-              le logiciel qui réunit vos outils, vos données et votre équipe — que votre entreprise possède à vie.
+              le logiciel qui réunit vos outils, vos données et votre équipe, que votre entreprise possède à vie.
             </p>
             <Link href={CAL_LINK} className="btn-primary" style={{ margin: '0 auto', fontSize: 14 }}>
               <span className="btn-primary-dot" />Réserver un appel · offert →
@@ -74,7 +74,7 @@ export default function LogicielInterneGrenoblePage() {
 
       <Divider />
 
-      {/* Direct answer — what is internal software (GEO + intro answer) */}
+      {/* Direct answer, what is internal software (GEO + intro answer) */}
       <section style={{ padding: '70px 24px' }}>
         <div className="mx-auto" style={{ maxWidth: 760 }}>
           <FadeUp className="text-center mb-8">
@@ -107,7 +107,7 @@ export default function LogicielInterneGrenoblePage() {
           <ul style={{ listStyle: 'none', padding: 0, margin: '0 auto', maxWidth: 600, display: 'grid', gap: 13 }}>
             {pains.map((p) => (
               <li key={p} className="flex items-start gap-3" style={{ fontSize: 14.5, color: 'var(--text-secondary)', lineHeight: 1.55, fontWeight: 300 }}>
-                <span style={{ color: 'var(--accent)', flexShrink: 0, marginTop: 1, fontWeight: 600 }}>—</span>
+                <span style={{ color: 'var(--accent)', flexShrink: 0, marginTop: 1, fontWeight: 600 }}>·</span>
                 <span>{p}</span>
               </li>
             ))}
@@ -152,7 +152,7 @@ export default function LogicielInterneGrenoblePage() {
           </FadeUp>
           <FadeUp>
             <p className="font-sans" style={{ fontSize: 15.5, color: 'var(--text-secondary)', lineHeight: 1.75, fontWeight: 300, maxWidth: 680, margin: '0 auto 16px', textAlign: 'center' }}>
-              Grenoble est un pôle technologique et industriel majeur — microélectronique, recherche, deep tech, industrie.
+              Grenoble est un pôle technologique et industriel majeur, microélectronique, recherche, deep tech, industrie.
               On y trouve un tissu dense d'entreprises innovantes et de PME industrielles aux process complexes, que les
               logiciels du marché ne couvrent presque jamais. NateSystem conçoit le logiciel interne qui colle à ces
               process réels et à la donnée propre à votre métier.
@@ -185,7 +185,7 @@ export default function LogicielInterneGrenoblePage() {
 
       <Divider />
 
-      {/* FAQ — required by the tool + FAQPage schema in layout */}
+      {/* FAQ, required by the tool + FAQPage schema in layout */}
       <section style={{ padding: '70px 24px' }}>
         <div className="mx-auto" style={{ maxWidth: 760 }}>
           <FadeUp className="text-center mb-10">
@@ -199,7 +199,7 @@ export default function LogicielInterneGrenoblePage() {
               },
               {
                 q: 'Un logiciel interne convient-il aux PME industrielles et technologiques de Grenoble ?',
-                a: 'Oui. Les entreprises de l\'écosystème grenoblois — industrie, microélectronique, deep tech — ont souvent des process complexes qu\'aucun logiciel standard ne couvre vraiment. Un logiciel interne sur-mesure est conçu autour de ces process et de la donnée propre à votre métier, sans vous obliger à plier votre activité à un outil générique.',
+                a: 'Oui. Les entreprises de l\'écosystème grenoblois, industrie, microélectronique, deep tech, ont souvent des process complexes qu\'aucun logiciel standard ne couvre vraiment. Un logiciel interne sur-mesure est conçu autour de ces process et de la donnée propre à votre métier, sans vous obliger à plier votre activité à un outil générique.',
               },
               {
                 q: 'Combien coûte un logiciel interne à Grenoble ?',
@@ -242,7 +242,7 @@ export default function LogicielInterneGrenoblePage() {
               </h2>
               <p className="font-sans" style={{ fontSize: 15, fontWeight: 300, color: 'var(--text-secondary)', lineHeight: 1.7, maxWidth: 520, margin: '0 auto 32px' }}>
                 Un appel offert. On regarde vos outils actuels et on identifie ce qu'un logiciel interne sur-mesure
-                ferait gagner à votre entreprise — en temps, en argent, en clarté. Même si on ne travaille pas ensemble.
+                ferait gagner à votre entreprise, en temps, en argent, en clarté. Même si on ne travaille pas ensemble.
               </p>
               <Link href={CAL_LINK} className="btn-primary" style={{ margin: '0 auto' }}>
                 <span className="btn-primary-dot" />Réserver un appel · offert

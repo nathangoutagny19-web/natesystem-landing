@@ -14,7 +14,7 @@ import { CAL_LINK } from '@/lib/constants'
 const systems = [
   {
     title: 'Cockpit ops & KPI',
-    desc: 'Couverts, masse salariale, KPI quotidiens en temps réel — et un plan d\'action suggéré par l\'IA. Les décisions data se prennent en 2 minutes, plus en 2 heures sur Excel.',
+    desc: 'Couverts, masse salariale, KPI quotidiens en temps réel, et un plan d\'action suggéré par l\'IA. Les décisions data se prennent en 2 minutes, plus en 2 heures sur Excel.',
     metric: 'Décisions en 2 min vs ~2h sur Excel',
   },
   {
@@ -35,7 +35,7 @@ const systems = [
 ]
 
 const pains = [
-  'Une caisse, un Excel masse salariale, un tableur fournisseurs, des avis éparpillés — rien ne se parle',
+  'Une caisse, un Excel masse salariale, un tableur fournisseurs, des avis éparpillés, rien ne se parle',
   'Le pilotage hebdo prend des heures à reconstituer à la main',
   'Les surfacturations fournisseurs passent inaperçues',
   'Quand un manager part, le process part avec lui',
@@ -54,7 +54,7 @@ export default function RestaurationPage() {
               Le logiciel sur-mesure qui <span className="accent" style={{ color: 'var(--accent)' }}>pilote votre restaurant.</span>
             </h1>
             <p className="font-sans" style={{ fontSize: 'clamp(15px, 3vw, 18px)', fontWeight: 300, color: 'var(--text-secondary)', maxWidth: 640, margin: '0 auto 36px', lineHeight: 1.65 }}>
-              Un seul système réunit couverts, KPI, factures fournisseurs, planning, paie et avis — là où vous jonglez
+              Un seul système réunit couverts, KPI, factures fournisseurs, planning, paie et avis, là où vous jonglez
               aujourd&apos;hui entre une caisse, des tableurs et des outils qui ne se parlent pas. Avec l&apos;IA intégrée
               uniquement là où elle remplace de vraies heures.
             </p>
@@ -79,7 +79,7 @@ export default function RestaurationPage() {
           <ul style={{ listStyle: 'none', padding: 0, margin: '0 auto', maxWidth: 600, display: 'grid', gap: 13 }}>
             {pains.map((p) => (
               <li key={p} className="flex items-start gap-3" style={{ fontSize: 14.5, color: 'var(--text-secondary)', lineHeight: 1.55, fontWeight: 300 }}>
-                <span style={{ color: 'var(--accent)', flexShrink: 0, marginTop: 1, fontWeight: 600 }}>—</span>
+                <span style={{ color: 'var(--accent)', flexShrink: 0, marginTop: 1, fontWeight: 600 }}>·</span>
                 <span>{p}</span>
               </li>
             ))}
@@ -114,14 +114,14 @@ export default function RestaurationPage() {
 
       <Divider />
 
-      {/* Proof — Chromosome */}
+      {/* Proof, Chromosome */}
       <section style={{ padding: '70px 24px' }}>
         <div className="mx-auto" style={{ maxWidth: 760 }}>
           <FadeUp>
             <div style={{ background: 'var(--bg-card)', border: '1px solid var(--border)', borderRadius: 14, padding: '40px 36px', textAlign: 'center' }}>
               <p className="font-serif italic accent" style={{ color: 'var(--accent)', fontSize: 'clamp(44px, 8vw, 64px)', fontWeight: 400, lineHeight: 1, margin: '0 0 8px' }}>×11</p>
               <p className="font-sans" style={{ fontSize: 15, color: 'var(--text)', fontWeight: 400, lineHeight: 1.6, maxWidth: 520, margin: '0 auto 6px' }}>
-                moins de temps passé par manager sur les opérations hebdomadaires — de 11h à 1h.
+                moins de temps passé par manager sur les opérations hebdomadaires, de 11h à 1h.
               </p>
               <p className="font-mono" style={{ fontSize: 11, letterSpacing: 1.2, textTransform: 'uppercase', color: 'var(--text-muted)', fontWeight: 500, margin: 0 }}>
                 Chromosome · Groupe de restaurants
@@ -173,7 +173,7 @@ export default function RestaurationPage() {
                 Reprenez le pilotage de votre restaurant.
               </h2>
               <p className="font-sans" style={{ fontSize: 15, fontWeight: 300, color: 'var(--text-secondary)', lineHeight: 1.7, maxWidth: 520, margin: '0 auto 32px' }}>
-                Un appel offert. On regarde vos outils actuels et on identifie ce qu&apos;un seul système vous ferait gagner —
+                Un appel offert. On regarde vos outils actuels et on identifie ce qu&apos;un seul système vous ferait gagner,
                 en temps, en marge, en clarté. Même si on ne travaille pas ensemble.
               </p>
               <Link href={CAL_LINK} className="btn-primary" style={{ margin: '0 auto' }}>

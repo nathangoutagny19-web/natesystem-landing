@@ -21,7 +21,7 @@ function LinkedInIcon({ size = 15 }: { size?: number }) {
 // Credibility points reflect real, documented deployments (see case studies).
 const proof = [
   { k: 'Lyon, France', v: 'Basé à Lyon · interventions FR & HU' },
-  { k: 'Restauration', v: 'Cockpit ops & KPI, contrôle de factures, RH, réputation — groupe Chromosome (×11 sur le temps de pilotage hebdo)' },
+  { k: 'Restauration', v: 'Cockpit ops & KPI, contrôle de factures, RH, réputation, groupe Chromosome (×11 sur le temps de pilotage hebdo)' },
   { k: 'Enseignement supérieur', v: 'CRM pédagogique, 200+ étudiants suivis, 90 %+ d\'adoption' },
   { k: 'Conseil & événementiel', v: 'Relance commerciale automatisée, gestion d\'équipes & bénévoles' },
 ]
@@ -81,7 +81,7 @@ export default function AProposPage() {
                 </p>
                 <p className="font-sans" style={{ fontSize: 15.5, color: 'var(--text-secondary)', lineHeight: 1.75, fontWeight: 300, margin: '0 0 16px' }}>
                   Ingénieur formé au croisement du software et de l&apos;IA appliquée. Des années à construire des systèmes
-                  opérationnels pour des PME françaises et hongroises — restauration, enseignement supérieur, conseil.
+                  opérationnels pour des PME françaises et hongroises, restauration, enseignement supérieur, conseil.
                   Une conviction simple : le logiciel qui appartient à l&apos;entreprise vaut mieux que dix SaaS qu&apos;elle loue à vie.
                 </p>
                 <p className="font-sans" style={{ fontSize: 14, color: 'var(--text)', fontWeight: 500, fontStyle: 'italic', borderLeft: '2px solid var(--accent)', paddingLeft: 14, margin: '0 0 22px', lineHeight: 1.6 }}>
@@ -137,7 +137,7 @@ export default function AProposPage() {
                 Parlons de ce que vous construisez.
               </h2>
               <p className="font-sans" style={{ fontSize: 15, fontWeight: 300, color: 'var(--text-secondary)', lineHeight: 1.7, maxWidth: 500, margin: '0 auto 32px' }}>
-                Un appel offert. On regarde votre situation, et vous repartez avec une vision claire — même si on ne travaille pas ensemble.
+                Un appel offert. On regarde votre situation, et vous repartez avec une vision claire, même si on ne travaille pas ensemble.
               </p>
               <Link href={CAL_LINK} className="btn-primary" style={{ margin: '0 auto' }}>
                 <span className="btn-primary-dot" />Réserver un appel · offert

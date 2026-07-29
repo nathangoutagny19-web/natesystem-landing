@@ -17,7 +17,7 @@ export default function Testimonial() {
             &ldquo;It changed the way we run everything.&rdquo;
           </div>
           <p className="font-sans" style={{ fontSize: '14px', letterSpacing: '1.5px', color: 'var(--text-secondary)', textTransform: 'uppercase', fontWeight: 300 }}>
-            Catherine F. — General Manager, Chromosome Saint-Étienne
+            Catherine F., General Manager, Chromosome Saint-Étienne
           </p>
         </FadeUp>
 
@@ -32,7 +32,7 @@ export default function Testimonial() {
           >
             <iframe
               src="https://www.youtube-nocookie.com/embed/aMIjJbzuhDc?rel=0"
-              title="Témoignage Chromosome — NateSystem"
+              title="Témoignage Chromosome, NateSystem"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
               className="absolute inset-0 w-full h-full border-none"

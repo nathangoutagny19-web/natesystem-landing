@@ -24,7 +24,7 @@ export async function generateMetadata({
   if (!playbook) return {}
   const url = `https://www.natesystem.com/playbook/${params.slug}`
   return {
-    title: `${playbook.title} — NateSystem`,
+    title: `${playbook.title}, NateSystem`,
     description: playbook.metaDescription,
     alternates: { canonical: url },
     openGraph: {
@@ -47,7 +47,7 @@ export default function PlaybookSlugPage({ params }: { params: Params }) {
   if (!playbook) notFound()
 
   const url = `https://www.natesystem.com/playbook/${playbook.slug}`
-  // Breadcrumb structured data (JSON-LD) — invisible, helps Google show the
+  // Breadcrumb structured data (JSON-LD), invisible, helps Google show the
   // Accueil › Playbooks › [secteur] trail and feeds AI answer engines.
   const jsonLd = {
     '@context': 'https://schema.org',

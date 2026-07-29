@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Logiciel interne Saint-Étienne : solution sur-mesure entreprise',
   description:
-    'Logiciel interne à Saint-Étienne : NateSystem conçoit des solutions logicielles sur-mesure pour entreprise — gestion, données, équipe. Code livré, propriété 100 %, hébergé en UE. Audit offert.',
+    'Logiciel interne à Saint-Étienne : NateSystem conçoit des solutions logicielles sur-mesure pour entreprise, gestion, données, équipe. Code livré, propriété 100 %, hébergé en UE. Audit offert.',
   alternates: { canonical: 'https://www.natesystem.com/logiciel-interne-saint-etienne' },
   openGraph: {
     title: 'Logiciel interne Saint-Étienne : solution sur-mesure entreprise',
@@ -26,7 +26,7 @@ const jsonLd = {
     {
       '@type': ['Organization', 'LocalBusiness'],
       '@id': 'https://www.natesystem.com/logiciel-interne-saint-etienne#business',
-      name: 'NateSystem — Logiciel interne Saint-Étienne',
+      name: 'NateSystem, Logiciel interne Saint-Étienne',
       url: 'https://www.natesystem.com/logiciel-interne-saint-etienne',
       description:
         'Agence de logiciel interne sur-mesure pour Saint-Étienne : solutions logicielles métier pour entreprise, intégration IA, gestion des données et des process.',

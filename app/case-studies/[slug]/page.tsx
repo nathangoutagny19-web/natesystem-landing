@@ -12,11 +12,11 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   if (!study) return {}
   const url = `https://www.natesystem.com/case-studies/${study.slug}`
   return {
-    title: `${study.title} — ${study.sector}, ${study.location} | Étude de cas NateSystem`,
+    title: `${study.title}, ${study.sector}, ${study.location} | Étude de cas NateSystem`,
     description: study.metaDescription,
     alternates: { canonical: url },
     openGraph: {
-      title: `${study.title} — étude de cas NateSystem`,
+      title: `${study.title}, étude de cas NateSystem`,
       description: study.metaDescription,
       url,
       type: 'article',
@@ -33,7 +33,7 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
     '@graph': [
       {
         '@type': 'Article',
-        headline: `${study.title} — ${study.sector}`,
+        headline: `${study.title}, ${study.sector}`,
         description: study.metaDescription,
         about: study.title,
         isPartOf: { '@id': 'https://www.natesystem.com/#organization' },

@@ -4,7 +4,7 @@ import FadeUp from '@/components/ui/FadeUp'
 import { useLang } from '@/components/providers/LangProvider'
 
 /**
- * SectorPain — « Pour votre métier » (REFONTE §10 / OpsKings 1.7).
+ * SectorPain, « Pour votre métier » (REFONTE §10 / OpsKings 1.7).
  * « Mêmes problèmes, langages différents. » Un paragraphe de douleur à la 2ᵉ
  * personne par secteur, pas une liste de références. En-tête aligné à gauche
  * (casse le gabarit "titre centré") + grille de blocs métier.
@@ -12,7 +12,7 @@ import { useLang } from '@/components/providers/LangProvider'
 export default function SectorPain() {
   const { t } = useLang()
 
-  // Ordre volontaire : jamais la restauration en tête (règle Nathan — pas de
+  // Ordre volontaire : jamais la restauration en tête (règle Nathan, pas de
   // restauration en niche vitrine). Elle reste une carte parmi d'autres, en fin.
   const sectors = [
     { title: t('v2.sector.conseil.title'), body: t('v2.sector.conseil.body') },

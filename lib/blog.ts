@@ -22,9 +22,9 @@ export const blogPosts: BlogPost[] = [
     category: 'Guide',
     tags: ['Logiciel sur-mesure', 'Prix', 'Guide', 'PME'],
     content: `
-<p>C'est LA question qu'on nous pose en premier, et c'est normal : "combien ça coûte, un logiciel sur-mesure ?" La réponse honnête, c'est "ça dépend" — mais une réponse "ça dépend" sans fourchette ni repère, c'est inutile. Alors voici des chiffres concrets, ce qui les fait bouger, et comment éviter de payer trop (ou de se faire avoir).</p>
+<p>C'est LA question qu'on nous pose en premier, et c'est normal : "combien ça coûte, un logiciel sur-mesure ?" La réponse honnête, c'est "ça dépend", mais une réponse "ça dépend" sans fourchette ni repère, c'est inutile. Alors voici des chiffres concrets, ce qui les fait bouger, et comment éviter de payer trop (ou de se faire avoir).</p>
 
-<p>Chez NateSystem, on construit des logiciels et plateformes sur-mesure pour des PME de 5 à 100 personnes. Ce guide donne des fourchettes réalistes basées sur des projets réels, pas des prix marketing. Le pricing exact se cale toujours pendant l'appel de découverte, en fonction de vos vrais besoins — mais vous repartez d'ici avec des repères clairs.</p>
+<p>Chez NateSystem, on construit des logiciels et plateformes sur-mesure pour des PME de 5 à 100 personnes. Ce guide donne des fourchettes réalistes basées sur des projets réels, pas des prix marketing. Le pricing exact se cale toujours pendant l'appel de découverte, en fonction de vos vrais besoins, mais vous repartez d'ici avec des repères clairs.</p>
 
 <nav>
 <h2>Sommaire</h2>
@@ -44,7 +44,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>Le bon réflexe n'est pas de raisonner en budget mais en <strong>retour sur investissement</strong> : combien d'heures et d'euros le logiciel vous fait gagner par an, comparé à son coût. Un outil qui libère 10 heures par semaine sur des postes coûteux se rembourse souvent en quelques mois.</p>
 
-<blockquote>La vraie question n'est pas "combien ça coûte" mais "combien ça me fait gagner — et en combien de temps c'est rentabilisé". Un bon prestataire chiffre l'impact avant de chiffrer le devis.</blockquote>
+<blockquote>La vraie question n'est pas "combien ça coûte" mais "combien ça me fait gagner, et en combien de temps c'est rentabilisé". Un bon prestataire chiffre l'impact avant de chiffrer le devis.</blockquote>
 
 <h2 id="facteurs">Ce qui fait varier le prix</h2>
 
@@ -64,7 +64,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>Un SaaS paraît moins cher au départ : quelques dizaines d'euros par mois et par utilisateur. Mais ce calcul oublie deux choses.</p>
 
-<p>D'abord, <strong>l'addition des abonnements</strong>. Une PME utilise en moyenne une douzaine d'outils SaaS. Multipliés par le nombre d'utilisateurs et étalés sur plusieurs années, ces abonnements représentent souvent bien plus qu'un logiciel sur-mesure — sans que vous possédiez quoi que ce soit au bout.</p>
+<p>D'abord, <strong>l'addition des abonnements</strong>. Une PME utilise en moyenne une douzaine d'outils SaaS. Multipliés par le nombre d'utilisateurs et étalés sur plusieurs années, ces abonnements représentent souvent bien plus qu'un logiciel sur-mesure, sans que vous possédiez quoi que ce soit au bout.</p>
 
 <p>Ensuite, <strong>le coût caché des outils qui ne se parlent pas</strong> : les heures perdues à recopier des données d'un outil à l'autre, les erreurs, les tâches qui traînent. Ce coût ne figure sur aucune facture, mais il est bien réel.</p>
 
@@ -99,7 +99,7 @@ export const blogPosts: BlogPost[] = [
 
 <h2 id="conclusion">En résumé</h2>
 
-<p>Le prix d'un logiciel sur-mesure dépend du périmètre, des intégrations, de l'IA et de votre niveau de structuration — de quelques milliers à quelques dizaines de milliers d'euros pour une première version. Mais la bonne question reste le ROI : combien ça vous fait gagner, et en combien de temps c'est rentabilisé. Un bon prestataire fixe un périmètre et un prix clairs avant de commencer, et vous livre un code que vous possédez.</p>
+<p>Le prix d'un logiciel sur-mesure dépend du périmètre, des intégrations, de l'IA et de votre niveau de structuration, de quelques milliers à quelques dizaines de milliers d'euros pour une première version. Mais la bonne question reste le ROI : combien ça vous fait gagner, et en combien de temps c'est rentabilisé. Un bon prestataire fixe un périmètre et un prix clairs avant de commencer, et vous livre un code que vous possédez.</p>
 
 <p>Le plus simple, c'est qu'on regarde votre cas ensemble et qu'on vous donne une fourchette honnête, rapidement.</p>
 
@@ -116,7 +116,7 @@ export const blogPosts: BlogPost[] = [
     category: 'Guide',
     tags: ['Logiciel sur-mesure', 'Guide', 'PME', 'Méthode'],
     content: `
-<p>Quand un dirigeant envisage un logiciel sur-mesure, deux peurs reviennent toujours : le prix, et le temps. "Ça va prendre six mois, me perturber, et finir en retard." C'est une peur légitime — beaucoup de projets logiciels dérapent. Mais ça n'a rien d'une fatalité si la méthode est bonne.</p>
+<p>Quand un dirigeant envisage un logiciel sur-mesure, deux peurs reviennent toujours : le prix, et le temps. "Ça va prendre six mois, me perturber, et finir en retard." C'est une peur légitime, beaucoup de projets logiciels dérapent. Mais ça n'a rien d'une fatalité si la méthode est bonne.</p>
 
 <p>Chez NateSystem, on livre la première version d'un logiciel métier en 4 à 8 semaines. Voici comment, ce qui fait varier ce délai, et comment reconnaître un projet bien cadré d'un projet qui va s'éterniser.</p>
 
@@ -136,7 +136,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>Pour une PME, la première version d'un logiciel métier sur-mesure se livre généralement en <strong>4 à 8 semaines</strong>, selon le périmètre. Pas six mois, pas un an : une première version utile, en production, sur laquelle vos équipes travaillent vraiment, en quelques semaines.</p>
 
-<p>La clé, c'est de viser une <strong>première version qui résout le problème principal</strong>, pas de tout construire d'un coup. On déploie le cœur utile vite, vos équipes l'utilisent, et on fait évoluer ensuite — à votre rythme. C'est l'inverse du projet "tunnel" qui disparaît six mois avant de sortir un monstre que personne n'utilise.</p>
+<p>La clé, c'est de viser une <strong>première version qui résout le problème principal</strong>, pas de tout construire d'un coup. On déploie le cœur utile vite, vos équipes l'utilisent, et on fait évoluer ensuite, à votre rythme. C'est l'inverse du projet "tunnel" qui disparaît six mois avant de sortir un monstre que personne n'utilise.</p>
 
 <blockquote>Un bon projet sur-mesure fixe le périmètre et la date de livraison AVANT la première ligne de code. Si on vous parle de délai "à voir au fil de l'eau", méfiez-vous.</blockquote>
 
@@ -145,7 +145,7 @@ export const blogPosts: BlogPost[] = [
 <p>Un projet bien mené suit quatre temps clairs :</p>
 
 <ol>
-  <li><strong>Audit & cartographie (en amont).</strong> On comprend votre façon réelle de travailler, on cartographie les process, on fixe le périmètre. C'est cette base claire qui garantit qu'on construit le bon outil — et qu'on ne perd pas de temps ensuite.</li>
+  <li><strong>Audit & cartographie (en amont).</strong> On comprend votre façon réelle de travailler, on cartographie les process, on fixe le périmètre. C'est cette base claire qui garantit qu'on construit le bon outil, et qu'on ne perd pas de temps ensuite.</li>
   <li><strong>Construction (4 à 8 semaines).</strong> On construit avec un périmètre et un prix fixes, un point chaque semaine pour voir l'avancée. Vos équipes continuent de travailler normalement pendant ce temps.</li>
   <li><strong>Test & déploiement.</strong> Une période de test valide tout avant la mise en service. Puis on installe sur votre infrastructure.</li>
   <li><strong>Formation & évolution.</strong> On forme vos équipes jusqu'à l'autonomie, puis on fait évoluer l'outil à votre rythme si vous le souhaitez.</li>
@@ -190,14 +190,14 @@ export const blogPosts: BlogPost[] = [
 <p>Non. On construit autour de vos équipes pendant qu'elles continuent de travailler normalement. Le basculement ne se fait qu'après une période de test, et on forme tout le monde jusqu'à l'autonomie.</p>
 
 <h3>Que se passe-t-il si le projet prend du retard ?</h3>
-<p>Avec un périmètre fixe et des démos hebdomadaires, le risque de dérive est très réduit — vous voyez l'avancée chaque semaine. Un bon prestataire s'engage sur des délais et ne laisse pas un projet s'éterniser.</p>
+<p>Avec un périmètre fixe et des démos hebdomadaires, le risque de dérive est très réduit, vous voyez l'avancée chaque semaine. Un bon prestataire s'engage sur des délais et ne laisse pas un projet s'éterniser.</p>
 
 <h3>Peut-on faire évoluer le logiciel après la première version ?</h3>
 <p>Oui, c'est même le but. On livre le cœur utile vite, puis on fait évoluer à votre rythme : nouvelles fonctions, nouveaux modules, selon vos besoins. Comme le code vous appartient, vous n'êtes prisonnier de personne pour ces évolutions.</p>
 
 <h2 id="conclusion">En résumé</h2>
 
-<p>La première version d'un logiciel métier sur-mesure se livre en 4 à 8 semaines pour une PME, à condition de viser le cœur utile et de fixer le périmètre avant de commencer. Les projets qui s'éternisent sont presque toujours ceux sans périmètre ferme, sans démos régulières, ou qui veulent tout construire d'un coup. Une bonne méthode — audit, périmètre fixe, démos hebdo, première version rapide — élimine l'essentiel du risque.</p>
+<p>La première version d'un logiciel métier sur-mesure se livre en 4 à 8 semaines pour une PME, à condition de viser le cœur utile et de fixer le périmètre avant de commencer. Les projets qui s'éternisent sont presque toujours ceux sans périmètre ferme, sans démos régulières, ou qui veulent tout construire d'un coup. Une bonne méthode, audit, périmètre fixe, démos hebdo, première version rapide, élimine l'essentiel du risque.</p>
 
 <p>Le plus simple, c'est qu'on regarde votre projet ensemble et qu'on vous donne un délai réaliste, rapidement.</p>
 
@@ -207,16 +207,16 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'logiciel-sur-mesure-par-ou-commencer-audit',
     title: 'Logiciel sur-mesure : par où commencer ? Le rôle de l\'audit',
-    description: 'Vous voulez un logiciel sur-mesure pour votre PME mais ne savez pas par où commencer ? Pourquoi tout part de l\'audit : cartographier vos process, chiffrer l\'inaction, et construire le bon outil — pas le mauvais.',
+    description: 'Vous voulez un logiciel sur-mesure pour votre PME mais ne savez pas par où commencer ? Pourquoi tout part de l\'audit : cartographier vos process, chiffrer l\'inaction, et construire le bon outil, pas le mauvais.',
     date: '2026-06-20',
     author: 'Nathan Goutagny',
     readTime: '9 min',
     category: 'Guide',
     tags: ['Logiciel sur-mesure', 'Audit', 'Guide', 'PME'],
     content: `
-<p>Vous sentez que vos outils vous ralentissent. Vous vous dites qu'un logiciel fait pour votre métier vous ferait gagner du temps. Mais par où commencer ? La tentation, c'est de foncer vers le développement. C'est l'erreur n°1 — et la meilleure façon de construire le mauvais outil.</p>
+<p>Vous sentez que vos outils vous ralentissent. Vous vous dites qu'un logiciel fait pour votre métier vous ferait gagner du temps. Mais par où commencer ? La tentation, c'est de foncer vers le développement. C'est l'erreur n°1, et la meilleure façon de construire le mauvais outil.</p>
 
-<p>Chez NateSystem, tout part de l'audit. Pas par formalisme : parce que c'est lui qui garantit qu'on construit le bon logiciel, au bon endroit, avec un vrai retour sur investissement. Voici pourquoi, et ce qu'un bon audit vous apporte — même si vous ne travaillez pas avec nous ensuite.</p>
+<p>Chez NateSystem, tout part de l'audit. Pas par formalisme : parce que c'est lui qui garantit qu'on construit le bon logiciel, au bon endroit, avec un vrai retour sur investissement. Voici pourquoi, et ce qu'un bon audit vous apporte, même si vous ne travaillez pas avec nous ensuite.</p>
 
 <nav>
 <h2>Sommaire</h2>
@@ -234,7 +234,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>On ne commence jamais par le code. On commence par <strong>comprendre votre activité</strong> : comment vous travaillez réellement, ce qui vous fait perdre du temps et de l'argent, et où un logiciel apporterait le plus. C'est le rôle de l'audit, et c'est la première étape de tout projet sérieux.</p>
 
-<p>Concrètement, le point de départ est un appel de découverte, offert, pour comprendre votre situation. Puis, en audit, on cartographie vos process et on dessine la cible. Vous repartez avec un plan clair et chiffré — <strong>même si on ne construit rien ensemble</strong>.</p>
+<p>Concrètement, le point de départ est un appel de découverte, offert, pour comprendre votre situation. Puis, en audit, on cartographie vos process et on dessine la cible. Vous repartez avec un plan clair et chiffré, <strong>même si on ne construit rien ensemble</strong>.</p>
 
 <blockquote>Construire un logiciel sans audit, c'est automatiser un process bancal. Vous obtenez un outil rapide… qui fait bien la mauvaise chose. L'audit garantit qu'on construit le bon.</blockquote>
 
@@ -244,11 +244,11 @@ export const blogPosts: BlogPost[] = [
 
 <ul>
   <li><strong>Il cartographie vos process réels.</strong> Qui fait quoi, dans quel ordre, avec quelles infos. On met à plat votre fonctionnement pour voir clairement ce qui bloque, ce qui ralentit, ce qui se perd.</li>
-  <li><strong>Il chiffre le coût de l'inaction.</strong> Les heures perdues, les marges qui fuient, les tâches qui traînent. On met un chiffre sur ce que vous coûte de ne rien changer — c'est ce qui justifie (ou non) l'investissement.</li>
+  <li><strong>Il chiffre le coût de l'inaction.</strong> Les heures perdues, les marges qui fuient, les tâches qui traînent. On met un chiffre sur ce que vous coûte de ne rien changer, c'est ce qui justifie (ou non) l'investissement.</li>
   <li><strong>Il dessine la cible.</strong> Vos opérations telles qu'elles tourneraient avec le bon logiciel et l'IA là où elle aide. Concret, à l'échelle de votre métier.</li>
 </ul>
 
-<p>Sans cette base, on construit à l'aveugle. Avec elle, on construit exactement ce qu'il faut — et on évite de payer pour des fonctions inutiles.</p>
+<p>Sans cette base, on construit à l'aveugle. Avec elle, on construit exactement ce qu'il faut, et on évite de payer pour des fonctions inutiles.</p>
 
 <h2 id="deroule">Comment se déroule l'audit</h2>
 
@@ -264,7 +264,7 @@ export const blogPosts: BlogPost[] = [
 
 <h2 id="erreur">L'erreur de foncer vers le développement</h2>
 
-<p>Beaucoup de PME (et de prestataires) sautent l'audit pour "gagner du temps". C'est une fausse économie. Sans cartographie, on construit sur des process flous, on découvre les vrais besoins en cours de route, le périmètre gonfle, et le projet dérape. On finit avec un outil qui ne colle pas — ou pire, qui automatise un mauvais fonctionnement à grande échelle.</p>
+<p>Beaucoup de PME (et de prestataires) sautent l'audit pour "gagner du temps". C'est une fausse économie. Sans cartographie, on construit sur des process flous, on découvre les vrais besoins en cours de route, le périmètre gonfle, et le projet dérape. On finit avec un outil qui ne colle pas, ou pire, qui automatise un mauvais fonctionnement à grande échelle.</p>
 
 <p>L'audit n'est pas une perte de temps : c'est ce qui fait gagner du temps sur tout le reste du projet, et ce qui garantit le retour sur investissement.</p>
 
@@ -284,7 +284,7 @@ export const blogPosts: BlogPost[] = [
 
 <h2 id="conclusion">En résumé</h2>
 
-<p>Un projet de logiciel sur-mesure ne commence pas par le code, mais par l'audit : comprendre votre activité, cartographier vos process, chiffrer l'inaction, et dessiner la cible. C'est ce qui garantit qu'on construit le bon outil, avec un vrai ROI — et qu'on évite le piège d'automatiser un process bancal. Le point de départ est un appel offert et sans engagement.</p>
+<p>Un projet de logiciel sur-mesure ne commence pas par le code, mais par l'audit : comprendre votre activité, cartographier vos process, chiffrer l'inaction, et dessiner la cible. C'est ce qui garantit qu'on construit le bon outil, avec un vrai ROI, et qu'on évite le piège d'automatiser un process bancal. Le point de départ est un appel offert et sans engagement.</p>
 
 <p>Le plus simple pour savoir par où commencer, c'est qu'on regarde votre cas ensemble.</p>
 
@@ -301,9 +301,9 @@ export const blogPosts: BlogPost[] = [
     category: 'Agents IA',
     tags: ['IA agentique', 'Agents IA', 'Automatisation', 'Guide'],
     content: `
-<p>"IA agentique" est partout depuis 18 mois. Sur LinkedIn, dans les pitchs des éditeurs, dans la bouche de tous les prestataires. Mais quand on demande à un dirigeant de PME ce que c'est <em>concrètement</em> — et surtout ce que ça change pour <em>son</em> entreprise — le flou revient vite. Chatbot ? Automatisation ? ChatGPT en mieux ? Un peu de tout ça, et pas vraiment.</p>
+<p>"IA agentique" est partout depuis 18 mois. Sur LinkedIn, dans les pitchs des éditeurs, dans la bouche de tous les prestataires. Mais quand on demande à un dirigeant de PME ce que c'est <em>concrètement</em>, et surtout ce que ça change pour <em>son</em> entreprise, le flou revient vite. Chatbot ? Automatisation ? ChatGPT en mieux ? Un peu de tout ça, et pas vraiment.</p>
 
-<p>Chez NateSystem, on construit des logiciels sur-mesure qui intègrent de l'IA agentique pour des PME (5 à 100 personnes) — quand elle remplace de vraies heures de travail, jamais en gadget. Ce guide est écrit du point de vue terrain : qu'est-ce que l'IA agentique <strong>vraiment</strong>, en quoi elle diffère d'un chatbot, et à quoi elle sert dans une PME, avec des cas d'usage chiffrés.</p>
+<p>Chez NateSystem, on construit des logiciels sur-mesure qui intègrent de l'IA agentique pour des PME (5 à 100 personnes), quand elle remplace de vraies heures de travail, jamais en gadget. Ce guide est écrit du point de vue terrain : qu'est-ce que l'IA agentique <strong>vraiment</strong>, en quoi elle diffère d'un chatbot, et à quoi elle sert dans une PME, avec des cas d'usage chiffrés.</p>
 
 <nav>
 <h2>Sommaire</h2>
@@ -322,7 +322,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>L'IA agentique est une intelligence artificielle qui <strong>exécute des tâches de bout en bout</strong> dans vos outils, au lieu de se contenter de répondre à une question. Elle a une <strong>mémoire persistante</strong> du contexte de votre activité, elle <strong>décide</strong> de la marche à suivre, elle <strong>agit</strong>, et elle <strong>apprend</strong> de chaque interaction pour s'améliorer avec le temps.</p>
 
-<p>La différence avec un assistant comme ChatGPT est fondamentale : un chatbot <em>vous répond</em> ; un agent IA <em>fait le travail</em>. Vous ne lui demandez pas "comment qualifier ce lead ?" — il qualifie le lead, l'enrichit, le route vers le bon commercial et rédige la première réponse, pendant que vous faites autre chose.</p>
+<p>La différence avec un assistant comme ChatGPT est fondamentale : un chatbot <em>vous répond</em> ; un agent IA <em>fait le travail</em>. Vous ne lui demandez pas "comment qualifier ce lead ?", il qualifie le lead, l'enrichit, le route vers le bon commercial et rédige la première réponse, pendant que vous faites autre chose.</p>
 
 <blockquote>Un chatbot attend votre prochaine question. Un agent agentique poursuit un objectif : il enchaîne des étapes, utilise vos outils, et ne s'arrête que quand la tâche est faite.</blockquote>
 
@@ -336,7 +336,7 @@ export const blogPosts: BlogPost[] = [
   <li><strong>L'IA agentique :</strong> elle combine les deux et ajoute l'autonomie. Elle <em>comprend</em> ce qui se passe (générative), <em>décide</em> quoi faire, <em>agit</em> dans vos systèmes (comme l'automatisation, mais sans règle rigide), et garde le contexte en mémoire.</li>
 </ul>
 
-<p>En clair : l'automatisation suit un script, l'IA générative rédige, l'IA agentique mène la tâche à bien. En PME, les meilleurs résultats viennent de la combinaison des trois — chaque tâche au bon outil.</p>
+<p>En clair : l'automatisation suit un script, l'IA générative rédige, l'IA agentique mène la tâche à bien. En PME, les meilleurs résultats viennent de la combinaison des trois, chaque tâche au bon outil.</p>
 
 <h2 id="fonctionnement">Comment fonctionne un agent IA ?</h2>
 
@@ -344,7 +344,7 @@ export const blogPosts: BlogPost[] = [
 
 <ol>
   <li><strong>La mémoire persistante.</strong> L'agent garde le contexte de votre activité d'une fois sur l'autre : vos clients, vos process, vos préférences, votre ton. Il ne repart pas de zéro à chaque interaction.</li>
-  <li><strong>L'exécution multi-étapes.</strong> Face à un objectif ("traiter ce lead entrant"), il enchaîne les étapes nécessaires — lire, enrichir, scorer, router, rédiger — en utilisant vos outils, pas juste en décrivant ce qu'il faudrait faire.</li>
+  <li><strong>L'exécution multi-étapes.</strong> Face à un objectif ("traiter ce lead entrant"), il enchaîne les étapes nécessaires, lire, enrichir, scorer, router, rédiger, en utilisant vos outils, pas juste en décrivant ce qu'il faudrait faire.</li>
   <li><strong>L'apprentissage continu.</strong> Il apprend de vos corrections et de chaque cas traité. Plus vous l'utilisez, plus il colle à votre métier.</li>
 </ol>
 
@@ -358,7 +358,7 @@ export const blogPosts: BlogPost[] = [
 <p>Un agent répond, qualifie et dispatche un lead entrant en moins de 5 minutes, 24/7. Il lit le message, score selon vos critères, enrichit la fiche, route vers la bonne personne et rédige la première réponse. Sur 100 leads à 2 000 € de panier, +10 % de conversion représente environ +20 000 €/an.</p>
 
 <h3>2. Lecture et traitement de documents</h3>
-<p>Factures, contrats, devis, formulaires : l'agent lit, extrait, structure et classe. Il ne passe à l'humain que les cas qui le méritent. Concrètement, c'est la moitié d'un poste administratif absorbée — souvent un retour sur investissement en quelques mois sur un poste à 40 000 €/an.</p>
+<p>Factures, contrats, devis, formulaires : l'agent lit, extrait, structure et classe. Il ne passe à l'humain que les cas qui le méritent. Concrètement, c'est la moitié d'un poste administratif absorbée, souvent un retour sur investissement en quelques mois sur un poste à 40 000 €/an.</p>
 
 <h3>3. Relance commerciale automatique</h3>
 <p>3 à 5 messages personnalisés sur 2-3 semaines, qui s'arrêtent dès que le prospect répond. Chez des clients consultants B2B, on a observé un passage de 4 % à 12 % de conversion sur les séquences de relance.</p>
@@ -370,11 +370,11 @@ export const blogPosts: BlogPost[] = [
 <p>L'agent surveille en continu vos sources métier (appels d'offres, actualités, signaux), qualifie les opportunités selon vos critères, et ne vous alerte que sur ce qui mérite votre attention. Fini de scroller dix plateformes : l'information utile vient à vous.</p>
 
 <h3>6. Reporting interne automatique</h3>
-<p>Collecte des données (CRM, compta, projets), analyse, et synthèse poussée dans Slack ou Teams — sans nouveau dashboard à consulter. Sur une PME du BTP avec un fort volume d'interventions, ce type d'automatisation a libéré l'équivalent de centaines d'heures par an.</p>
+<p>Collecte des données (CRM, compta, projets), analyse, et synthèse poussée dans Slack ou Teams, sans nouveau dashboard à consulter. Sur une PME du BTP avec un fort volume d'interventions, ce type d'automatisation a libéré l'équivalent de centaines d'heures par an.</p>
 
 <p>Le marché confirme la tendance : selon McKinsey, les équipes qui intègrent l'IA à leurs process clés libèrent 20 à 30 % de leur temps de travail. Mais la règle d'or reste : on ne déploie un agent que si on peut chiffrer son ROI dans les premières semaines.</p>
 
-<h2 id="pour-qui">Pour quelles PME — et quand ce n'est pas pour vous</h2>
+<h2 id="pour-qui">Pour quelles PME, et quand ce n'est pas pour vous</h2>
 
 <p>Soyons honnêtes : l'IA agentique n'est pas une baguette magique, et elle n'est pas pour tout le monde.</p>
 
@@ -413,7 +413,7 @@ export const blogPosts: BlogPost[] = [
 
 <h2 id="conclusion">En résumé</h2>
 
-<p>L'IA agentique, ce n'est pas un chatbot de plus : c'est une IA qui <strong>fait le travail</strong> — elle exécute des tâches de bout en bout, garde le contexte en mémoire, et s'améliore avec le temps. En PME, elle a du sens là où elle remplace de vraies heures : qualification de leads, lecture de documents, relances, veille, reporting. Pas partout, pas en gadget : seulement là où le ROI est mesurable.</p>
+<p>L'IA agentique, ce n'est pas un chatbot de plus : c'est une IA qui <strong>fait le travail</strong>, elle exécute des tâches de bout en bout, garde le contexte en mémoire, et s'améliore avec le temps. En PME, elle a du sens là où elle remplace de vraies heures : qualification de leads, lecture de documents, relances, veille, reporting. Pas partout, pas en gadget : seulement là où le ROI est mesurable.</p>
 
 <p>La meilleure façon de savoir si elle peut vous aider, c'est de regarder vos vraies tâches. C'est ce qu'on fait avec vous, sans engagement.</p>
 
@@ -432,7 +432,7 @@ export const blogPosts: BlogPost[] = [
     content: `
 <p>En 2026, il existe plus de 14 000 outils SaaS intégrant de l\'IA. Quatorze mille. Quand un dirigeant de PME tape "automatisation IA" dans Google, il tombe sur une avalanche de listes sponsorisées, de comparatifs biaisés et de landing pages qui promettent toutes de "révolutionner vos opérations". Résultat : <strong>paralysie décisionnelle</strong>. On teste 3 outils, on n\'en implémente aucun correctement, et on finit par revenir aux bons vieux process manuels en se disant que "l\'IA, c\'est pas encore pour nous".</p>
 
-<p>J\'ai passé les 18 derniers mois à tester, implémenter et comparer des dizaines d\'outils d\'automatisation IA pour nos clients PME chez NateSystem. Pas des démos de 15 minutes — des déploiements réels, avec de vraies données, de vrais utilisateurs, et de vrais budgets. Ce guide est le résultat de cette expérience terrain. Pas de liens affiliés, pas de classement payé : <strong>juste ce qui fonctionne vraiment pour automatiser les opérations d\'une PME en 2026</strong>.</p>
+<p>J\'ai passé les 18 derniers mois à tester, implémenter et comparer des dizaines d\'outils d\'automatisation IA pour nos clients PME chez NateSystem. Pas des démos de 15 minutes, des déploiements réels, avec de vraies données, de vrais utilisateurs, et de vrais budgets. Ce guide est le résultat de cette expérience terrain. Pas de liens affiliés, pas de classement payé : <strong>juste ce qui fonctionne vraiment pour automatiser les opérations d\'une PME en 2026</strong>.</p>
 
 <nav>
 <h2>Sommaire</h2>
@@ -455,14 +455,14 @@ export const blogPosts: BlogPost[] = [
 
 <ul>
   <li><strong>L\'automatisation des flux de travail :</strong> quand un événement se produit (nouveau lead, commande reçue, email entrant), une chaîne d\'actions s\'exécute automatiquement sans intervention humaine.</li>
-  <li><strong>Le traitement intelligent des données :</strong> l\'IA lit, comprend, classe et enrichit vos données — emails, factures, documents, formulaires — au lieu que vos employés le fassent à la main.</li>
+  <li><strong>Le traitement intelligent des données :</strong> l\'IA lit, comprend, classe et enrichit vos données, emails, factures, documents, formulaires, au lieu que vos employés le fassent à la main.</li>
   <li><strong>La prise de décision assistée :</strong> l\'IA analyse les données historiques et recommande des actions (quel lead relancer, quel stock commander, quel prix appliquer).</li>
-  <li><strong>Les agents autonomes :</strong> des programmes IA qui exécutent des tâches complexes de bout en bout — prospection, reporting, support client — avec une supervision humaine minimale.</li>
+  <li><strong>Les agents autonomes :</strong> des programmes IA qui exécutent des tâches complexes de bout en bout, prospection, reporting, support client, avec une supervision humaine minimale.</li>
 </ul>
 
 <blockquote>L\'automatisation "classique" (type Zapier) dit : "SI ceci arrive, ALORS fais cela." L\'automatisation IA dit : "Comprends ce qui se passe, décide quoi faire, et fais-le." La différence est fondamentale.</blockquote>
 
-<p>En 2026, les PME les plus performantes ne choisissent plus entre automatisation classique et IA — elles combinent les deux. Les flux simples et prévisibles passent par de l\'automatisation règle par règle. Les tâches qui demandent du jugement, de la compréhension du contexte ou de l\'adaptation passent par l\'IA.</p>
+<p>En 2026, les PME les plus performantes ne choisissent plus entre automatisation classique et IA, elles combinent les deux. Les flux simples et prévisibles passent par de l\'automatisation règle par règle. Les tâches qui demandent du jugement, de la compréhension du contexte ou de l\'adaptation passent par l\'IA.</p>
 
 <h2 id="methodologie">Comment j\'ai testé et sélectionné ces outils</h2>
 
@@ -471,7 +471,7 @@ export const blogPosts: BlogPost[] = [
 <ol>
   <li><strong>Facilité de prise en main (20%) :</strong> un dirigeant ou un ops manager non-technique peut-il configurer un premier workflow en moins de 2 heures ? Si la courbe d\'apprentissage est trop raide, l\'outil finira dans le cimetière des "on a payé mais personne ne l\'utilise".</li>
   <li><strong>Qualité de l\'IA intégrée (20%) :</strong> l\'IA est-elle réellement utile ou est-ce juste un badge marketing ? L\'outil peut-il comprendre du texte non structuré, prendre des décisions, s\'adapter au contexte ?</li>
-  <li><strong>Intégrations disponibles (15%) :</strong> combien d\'outils peut-il connecter nativement ? Les PME utilisent en moyenne 12 à 15 outils SaaS — l\'outil d\'automatisation doit pouvoir les relier.</li>
+  <li><strong>Intégrations disponibles (15%) :</strong> combien d\'outils peut-il connecter nativement ? Les PME utilisent en moyenne 12 à 15 outils SaaS, l\'outil d\'automatisation doit pouvoir les relier.</li>
   <li><strong>Rapport qualité/prix (15%) :</strong> le pricing est-il adapté aux PME ? Beaucoup d\'outils affichent des tarifs alléchants puis explosent dès qu\'on dépasse 100 exécutions par mois.</li>
   <li><strong>Fiabilité et support (10%) :</strong> quand un workflow plante à 3h du matin sur un process critique, que se passe-t-il ? Y a-t-il des alertes, des logs, un support réactif ?</li>
   <li><strong>Scalabilité (10%) :</strong> l\'outil tient-il la route quand on passe de 50 à 5 000 exécutions par mois ? Le pricing reste-t-il raisonnable ?</li>
@@ -486,7 +486,7 @@ export const blogPosts: BlogPost[] = [
 
 <p><strong>Idéal pour :</strong> les PME qui veulent des automatisations visuelles puissantes sans code, avec un contrôle granulaire sur chaque étape.</p>
 
-<p>Make reste, en 2026, l\'outil d\'automatisation le plus équilibré du marché. Son interface visuelle en "scénarios" permet de construire des workflows complexes en glisser-déposer, tout en offrant une profondeur technique que Zapier n\'atteint pas. Depuis l\'ajout de ses modules IA natifs fin 2025, Make peut intégrer des appels à Claude, GPT-4o ou Mistral directement dans vos scénarios — sans passer par des API externes.</p>
+<p>Make reste, en 2026, l\'outil d\'automatisation le plus équilibré du marché. Son interface visuelle en "scénarios" permet de construire des workflows complexes en glisser-déposer, tout en offrant une profondeur technique que Zapier n\'atteint pas. Depuis l\'ajout de ses modules IA natifs fin 2025, Make peut intégrer des appels à Claude, GPT-4o ou Mistral directement dans vos scénarios, sans passer par des API externes.</p>
 
 <p>Ce qui distingue vraiment Make, c\'est sa gestion des données. Les "routes" permettent de créer des logiques conditionnelles complexes (si le lead vient de LinkedIn ET a plus de 50 employés ET est en France, ALORS…), les itérateurs traitent des listes entières en une seule exécution, et les agrégateurs compilent les résultats. C\'est de la programmation visuelle, pas juste du "si-alors".</p>
 
@@ -507,11 +507,11 @@ export const blogPosts: BlogPost[] = [
 
 <p>Zapier est le pionnier de l\'automatisation no-code, et en 2026, il a considérablement rattrapé son retard sur Make côté IA. Son nouvel assistant IA permet de décrire un workflow en langage naturel ("quand je reçois un email de candidature, extrais le nom et l\'email, crée une fiche dans Notion, et envoie un accusé de réception") et Zapier le construit automatiquement. Pour des automatisations simples à moyennement complexes, c\'est imbattable en termes de rapidité de mise en place.</p>
 
-<p>Le point faible historique de Zapier — sa linéarité (un déclencheur → une chaîne d\'actions) — a été partiellement corrigé avec les "Paths" et les "Loops", mais Make reste supérieur pour les logiques vraiment complexes. En revanche, Zapier a le plus grand catalogue d\'intégrations du marché (plus de 7 000 apps), ce qui en fait souvent le seul choix quand vous utilisez un outil de niche.</p>
+<p>Le point faible historique de Zapier, sa linéarité (un déclencheur → une chaîne d\'actions), a été partiellement corrigé avec les "Paths" et les "Loops", mais Make reste supérieur pour les logiques vraiment complexes. En revanche, Zapier a le plus grand catalogue d\'intégrations du marché (plus de 7 000 apps), ce qui en fait souvent le seul choix quand vous utilisez un outil de niche.</p>
 
 <p><strong>Fonctionnalités clés :</strong></p>
 <ul>
-  <li>Plus de 7 000 intégrations — le catalogue le plus large du marché</li>
+  <li>Plus de 7 000 intégrations, le catalogue le plus large du marché</li>
   <li>Assistant IA pour créer des Zaps en langage naturel</li>
   <li>Zapier Tables : base de données intégrée pour stocker et manipuler des données entre les étapes</li>
   <li>Zapier Interfaces : création de formulaires et dashboards connectés aux workflows</li>
@@ -530,7 +530,7 @@ export const blogPosts: BlogPost[] = [
 
 <p><strong>Fonctionnalités clés :</strong></p>
 <ul>
-  <li>Open-source et self-hostable — contrôle total sur vos données</li>
+  <li>Open-source et self-hostable, contrôle total sur vos données</li>
   <li>Pas de limite d\'exécutions en self-hosted</li>
   <li>Nœuds IA avancés : agents, chaînes LLM, RAG, mémoire vectorielle</li>
   <li>Plus de 400 intégrations natives + nœud HTTP pour tout le reste</li>
@@ -543,7 +543,7 @@ export const blogPosts: BlogPost[] = [
 
 <p><strong>Idéal pour :</strong> le traitement de documents complexes, la rédaction professionnelle, l\'analyse de données et les tâches nécessitant un raisonnement approfondi.</p>
 
-<p>Claude n\'est pas un outil d\'automatisation au sens classique — c\'est un modèle d\'IA générative. Mais en 2026, il est devenu un composant essentiel de quasiment toutes les infrastructures d\'automatisation que nous déployons chez NateSystem. Pourquoi ? Parce que Claude excelle là où les outils d\'automatisation traditionnels échouent : <strong>comprendre le contexte, raisonner sur des informations complexes, et produire des outputs de qualité professionnelle</strong>.</p>
+<p>Claude n\'est pas un outil d\'automatisation au sens classique, c\'est un modèle d\'IA générative. Mais en 2026, il est devenu un composant essentiel de quasiment toutes les infrastructures d\'automatisation que nous déployons chez NateSystem. Pourquoi ? Parce que Claude excelle là où les outils d\'automatisation traditionnels échouent : <strong>comprendre le contexte, raisonner sur des informations complexes, et produire des outputs de qualité professionnelle</strong>.</p>
 
 <p>Concrètement, on utilise Claude via API dans nos workflows Make ou n8n pour : analyser des contrats et en extraire les clauses clés, rédiger des propositions commerciales personnalisées à partir de données CRM, qualifier des leads en analysant leur site web et leur activité LinkedIn, résumer des réunions et en extraire les actions à mener. La fenêtre de contexte étendue de Claude permet de traiter des documents de 200+ pages en une seule requête.</p>
 
@@ -556,13 +556,13 @@ export const blogPosts: BlogPost[] = [
   <li>Intégration native dans Make, n8n et la plupart des outils d\'automatisation</li>
 </ul>
 
-<p><strong>Tarifs :</strong> API à la consommation — environ 3-15 $/million de tokens selon le modèle. Pour une utilisation PME typique (500-2 000 requêtes/mois), comptez 50-200 €/mois. Abonnement Pro à 20 $/mois pour un usage individuel.</p>
+<p><strong>Tarifs :</strong> API à la consommation, environ 3-15 $/million de tokens selon le modèle. Pour une utilisation PME typique (500-2 000 requêtes/mois), comptez 50-200 €/mois. Abonnement Pro à 20 $/mois pour un usage individuel.</p>
 
 <h3>5. ChatGPT Enterprise</h3>
 
 <p><strong>Idéal pour :</strong> les entreprises qui veulent déployer l\'IA générative à l\'échelle de toute l\'organisation avec une gouvernance centralisée.</p>
 
-<p>ChatGPT Enterprise est la réponse d\'OpenAI aux besoins des entreprises. L\'intérêt principal par rapport à Claude n\'est pas tant la qualité du modèle (les deux sont excellents) que <strong>l\'écosystème</strong> : GPTs personnalisés partagés dans l\'entreprise, navigation web intégrée, exécution de code, analyse de fichiers, et surtout — la capacité pour chaque employé d\'utiliser l\'IA dans son quotidien sans configuration technique.</p>
+<p>ChatGPT Enterprise est la réponse d\'OpenAI aux besoins des entreprises. L\'intérêt principal par rapport à Claude n\'est pas tant la qualité du modèle (les deux sont excellents) que <strong>l\'écosystème</strong> : GPTs personnalisés partagés dans l\'entreprise, navigation web intégrée, exécution de code, analyse de fichiers, et surtout, la capacité pour chaque employé d\'utiliser l\'IA dans son quotidien sans configuration technique.</p>
 
 <p>Pour une PME, ChatGPT Enterprise est pertinent quand l\'objectif est de <strong>démocratiser l\'IA dans toute l\'équipe</strong> plutôt que d\'automatiser des process spécifiques. Chaque employé peut créer ses propres GPTs pour ses tâches récurrentes, analyser ses données, rédiger ses emails, préparer ses réunions. L\'impact sur la productivité individuelle est réel et mesurable.</p>
 
@@ -581,17 +581,17 @@ export const blogPosts: BlogPost[] = [
 
 <p><strong>Idéal pour :</strong> les équipes qui utilisent déjà Notion comme hub central et veulent ajouter une couche d\'IA sans changer d\'outil.</p>
 
-<p>Notion AI n\'est pas un outil d\'automatisation à proprement parler — c\'est une surcouche IA sur un outil de productivité. Mais pour les PME qui ont fait de Notion leur wiki, leur gestionnaire de projets et leur CRM léger, c\'est un game changer. L\'IA de Notion peut résumer vos pages, générer des comptes-rendus de réunion, remplir automatiquement des propriétés de base de données, et créer du contenu à partir de vos templates.</p>
+<p>Notion AI n\'est pas un outil d\'automatisation à proprement parler, c\'est une surcouche IA sur un outil de productivité. Mais pour les PME qui ont fait de Notion leur wiki, leur gestionnaire de projets et leur CRM léger, c\'est un game changer. L\'IA de Notion peut résumer vos pages, générer des comptes-rendus de réunion, remplir automatiquement des propriétés de base de données, et créer du contenu à partir de vos templates.</p>
 
 <p>La vraie force de Notion AI en 2026, c\'est sa fonctionnalité "Q&A" : posez une question en langage naturel, et l\'IA cherche la réponse dans l\'ensemble de votre workspace. "Quel est le chiffre d\'affaires du client X au Q3 ?" → réponse instantanée si l\'info est quelque part dans Notion. Pour une PME qui centralise ses données dans Notion, c\'est comme avoir un assistant qui connaît toute l\'entreprise.</p>
 
 <p><strong>Fonctionnalités clés :</strong></p>
 <ul>
-  <li>Q&A sur l\'ensemble du workspace — trouvez n\'importe quelle info en langage naturel</li>
+  <li>Q&A sur l\'ensemble du workspace, trouvez n\'importe quelle info en langage naturel</li>
   <li>Auto-fill de propriétés de bases de données via IA</li>
   <li>Résumés automatiques de pages et de bases de données</li>
   <li>Traduction instantanée en 15+ langues</li>
-  <li>Intégration native — pas de configuration, ça fonctionne dans votre Notion existant</li>
+  <li>Intégration native, pas de configuration, ça fonctionne dans votre Notion existant</li>
 </ul>
 
 <p><strong>Tarifs :</strong> Notion AI est un add-on à 10 $/membre/mois en plus de votre abonnement Notion (gratuit à 12 $/membre/mois selon le plan). Soit 10-22 $/membre/mois tout compris.</p>
@@ -600,7 +600,7 @@ export const blogPosts: BlogPost[] = [
 
 <p><strong>Idéal pour :</strong> les équipes sales/marketing qui utilisent déjà HubSpot et veulent automatiser la qualité des données et les workflows opérationnels.</p>
 
-<p>HubSpot Operations Hub est souvent sous-estimé, mais c\'est l\'un des outils les plus puissants pour les PME dont le CRM est au cœur des opérations. Sa force : <strong>la qualité des données</strong>. Déduplication automatique, formatage standardisé (noms en majuscules, numéros de téléphone normalisés), enrichissement via IA, et détection des anomalies. Quand votre CRM est propre, tout le reste fonctionne mieux — vos emails arrivent, vos rapports sont fiables, vos automatisations ne plantent pas sur des données manquantes.</p>
+<p>HubSpot Operations Hub est souvent sous-estimé, mais c\'est l\'un des outils les plus puissants pour les PME dont le CRM est au cœur des opérations. Sa force : <strong>la qualité des données</strong>. Déduplication automatique, formatage standardisé (noms en majuscules, numéros de téléphone normalisés), enrichissement via IA, et détection des anomalies. Quand votre CRM est propre, tout le reste fonctionne mieux, vos emails arrivent, vos rapports sont fiables, vos automatisations ne plantent pas sur des données manquantes.</p>
 
 <p>Le module "Programmable Automation" permet d\'exécuter du code JavaScript directement dans les workflows HubSpot, ce qui ouvre des possibilités infinies : appels API, transformations de données complexes, logique métier personnalisée. Combiné avec les workflows standards (envoi d\'email, création de tâche, mise à jour de propriété), vous pouvez automatiser la quasi-totalité de vos opérations commerciales.</p>
 
@@ -659,7 +659,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>Divulgation complète : c\'est notre solution. Je l\'inclus dans ce comparatif parce qu\'elle répond à un besoin que les 9 outils précédents ne couvrent pas individuellement : <strong>l\'intégration complète</strong>. Les outils ci-dessus sont excellents dans leur domaine respectif, mais une PME qui veut vraiment automatiser ses opérations finit par empiler Make + Claude + Airtable + HubSpot + Slack… et passe autant de temps à faire fonctionner tout ça ensemble qu\'elle en gagnait sur les tâches individuelles.</p>
 
-<p>NateSystem conçoit et déploie des infrastructures IA complètes pour PME : base de données centralisée, agents IA autonomes, automatisations interconnectées, dashboards de pilotage. On utilise les meilleurs outils de cette liste (Make, n8n, Claude, Supabase) mais on les assemble en une infrastructure cohérente, testée et maintenue. Le dirigeant ne gère pas 8 abonnements et 15 intégrations — il a un système qui fonctionne.</p>
+<p>NateSystem conçoit et déploie des infrastructures IA complètes pour PME : base de données centralisée, agents IA autonomes, automatisations interconnectées, dashboards de pilotage. On utilise les meilleurs outils de cette liste (Make, n8n, Claude, Supabase) mais on les assemble en une infrastructure cohérente, testée et maintenue. Le dirigeant ne gère pas 8 abonnements et 15 intégrations, il a un système qui fonctionne.</p>
 
 <p><strong>Fonctionnalités clés :</strong></p>
 <ul>
@@ -786,7 +786,7 @@ export const blogPosts: BlogPost[] = [
   <li><strong>Résultats ce trimestre :</strong> n8n ou infrastructure custom. Investissez dans les fondations pour un système durable.</li>
 </ul>
 
-<blockquote>Le meilleur outil n\'est pas le plus puissant — c\'est celui que votre équipe utilise réellement. Un Zapier bien configuré vaut mieux qu\'un n8n abandonné après 2 semaines.</blockquote>
+<blockquote>Le meilleur outil n\'est pas le plus puissant, c\'est celui que votre équipe utilise réellement. Un Zapier bien configuré vaut mieux qu\'un n8n abandonné après 2 semaines.</blockquote>
 
 <h2 id="faq">FAQ</h2>
 
@@ -796,7 +796,7 @@ export const blogPosts: BlogPost[] = [
 
 <h3>Est-ce que l\'IA va remplacer mes employés ?</h3>
 
-<p>Non. L\'IA automatise les <strong>tâches</strong>, pas les <strong>postes</strong>. Un commercial qui passe 3h/jour sur la saisie CRM et la rédaction d\'emails de relance va récupérer ces 3h pour faire ce qu\'il fait de mieux : vendre. Les entreprises qui automatisent intelligemment ne licencient pas — elles <strong>réaffectent les compétences humaines là où elles ont le plus de valeur</strong>.</p>
+<p>Non. L\'IA automatise les <strong>tâches</strong>, pas les <strong>postes</strong>. Un commercial qui passe 3h/jour sur la saisie CRM et la rédaction d\'emails de relance va récupérer ces 3h pour faire ce qu\'il fait de mieux : vendre. Les entreprises qui automatisent intelligemment ne licencient pas, elles <strong>réaffectent les compétences humaines là où elles ont le plus de valeur</strong>.</p>
 
 <h3>Quel ROI attendre et en combien de temps ?</h3>
 
@@ -812,7 +812,7 @@ export const blogPosts: BlogPost[] = [
 
 <h2 id="conclusion">Conclusion</h2>
 
-<p>Le meilleur outil d\'automatisation IA en 2026 n\'existe pas — parce que la bonne réponse dépend de votre contexte. Ce qui existe, c\'est le <strong>bon assemblage d\'outils</strong> pour votre entreprise, votre équipe et vos objectifs.</p>
+<p>Le meilleur outil d\'automatisation IA en 2026 n\'existe pas, parce que la bonne réponse dépend de votre contexte. Ce qui existe, c\'est le <strong>bon assemblage d\'outils</strong> pour votre entreprise, votre équipe et vos objectifs.</p>
 
 <p>Si vous retenez une seule chose de ce guide : <strong>commencez par un problème, pas par un outil</strong>. Identifiez le process qui vous coûte le plus de temps (ou d\'erreurs), automatisez-le avec l\'outil le plus simple qui fait le job, mesurez le résultat, puis élargissez.</p>
 
@@ -833,9 +833,9 @@ export const blogPosts: BlogPost[] = [
     content: `
 <p>Votre comptable utilise un fichier Excel. Votre commercial utilise HubSpot. Votre directeur des opérations a ses propres Google Sheets. Les emails clients sont dans Outlook, les factures dans un logiciel de comptabilité, et les specs produits dans un dossier Dropbox que personne ne retrouve. Chaque outil a "ses" données, et aucun ne parle aux autres.</p>
 
-<p>Résultat : quand quelqu\'un pose une question simple — "Quel est le CA de ce client sur les 12 derniers mois, combien de tickets support il a ouverts, et est-ce qu\'il a payé ses factures ?" — il faut <strong>45 minutes, 4 outils et 3 personnes</strong> pour assembler la réponse. Et encore, si les données sont à jour.</p>
+<p>Résultat : quand quelqu\'un pose une question simple, "Quel est le CA de ce client sur les 12 derniers mois, combien de tickets support il a ouverts, et est-ce qu\'il a payé ses factures ?", il faut <strong>45 minutes, 4 outils et 3 personnes</strong> pour assembler la réponse. Et encore, si les données sont à jour.</p>
 
-<p>Ce problème porte un nom : la <strong>fragmentation des données</strong>. Et en 2026, c\'est le frein n°1 à la croissance des PME. Pas le manque de clients, pas le manque de budget — le manque de visibilité sur ce qui se passe réellement dans l\'entreprise. Ce guide vous montre comment résoudre ce problème, étape par étape, sans projet informatique de 18 mois et sans budget à 6 chiffres.</p>
+<p>Ce problème porte un nom : la <strong>fragmentation des données</strong>. Et en 2026, c\'est le frein n°1 à la croissance des PME. Pas le manque de clients, pas le manque de budget, le manque de visibilité sur ce qui se passe réellement dans l\'entreprise. Ce guide vous montre comment résoudre ce problème, étape par étape, sans projet informatique de 18 mois et sans budget à 6 chiffres.</p>
 
 <nav>
 <h2>Sommaire</h2>
@@ -856,9 +856,9 @@ export const blogPosts: BlogPost[] = [
 
 <h2 id="pourquoi">Pourquoi centraliser vos données en 2026</h2>
 
-<p>Centraliser vos données en 2026 est devenu urgent pour trois raisons : l\'IA a besoin de données structurées pour fonctionner, la multiplication des outils SaaS a rendu la synchronisation manuelle ingérable, et vos concurrents qui l\'ont déjà fait décident plus vite que vous. La centralisation n\'est pas un concept nouveau — ce qui est nouveau, c\'est son caractère désormais critique. Détail des trois facteurs :</p>
+<p>Centraliser vos données en 2026 est devenu urgent pour trois raisons : l\'IA a besoin de données structurées pour fonctionner, la multiplication des outils SaaS a rendu la synchronisation manuelle ingérable, et vos concurrents qui l\'ont déjà fait décident plus vite que vous. La centralisation n\'est pas un concept nouveau, ce qui est nouveau, c\'est son caractère désormais critique. Détail des trois facteurs :</p>
 
-<p><strong>1. L\'IA a besoin de données structurées.</strong> Tous les outils d\'IA du monde ne peuvent rien faire si vos données sont éparpillées dans 15 fichiers Excel, 3 CRM et la mémoire de votre assistant de direction. Pour déployer un agent IA qui prospecte, qui analyse vos performances, ou qui automatise votre reporting, il faut une source de vérité unique et propre. Sans base de données centralisée, pas d\'IA opérationnelle — point final.</p>
+<p><strong>1. L\'IA a besoin de données structurées.</strong> Tous les outils d\'IA du monde ne peuvent rien faire si vos données sont éparpillées dans 15 fichiers Excel, 3 CRM et la mémoire de votre assistant de direction. Pour déployer un agent IA qui prospecte, qui analyse vos performances, ou qui automatise votre reporting, il faut une source de vérité unique et propre. Sans base de données centralisée, pas d\'IA opérationnelle, point final.</p>
 
 <p><strong>2. La multiplication des outils SaaS a empiré le problème.</strong> La PME française moyenne utilise 12 à 15 outils SaaS en 2026. Chacun avec sa propre base de données, ses propres formats, ses propres conventions. Quand vous aviez 3 outils, la synchronisation manuelle était gérable. Avec 15, c\'est mathématiquement impossible.</p>
 
@@ -870,15 +870,15 @@ export const blogPosts: BlogPost[] = [
 
 <p>Comment savoir si la fragmentation des données est un vrai problème dans votre entreprise, ou juste un inconfort mineur ? Voici les 5 signaux d\'alerte :</p>
 
-<p><strong>1. Vous passez plus de temps à chercher l\'information qu\'à l\'utiliser.</strong> Si assembler un rapport mensuel prend 2 jours, ce n\'est pas un problème de reporting — c\'est un problème de données. L\'information existe, mais elle est dispersée dans tellement d\'endroits qu\'il faut un archéologue pour la retrouver.</p>
+<p><strong>1. Vous passez plus de temps à chercher l\'information qu\'à l\'utiliser.</strong> Si assembler un rapport mensuel prend 2 jours, ce n\'est pas un problème de reporting, c\'est un problème de données. L\'information existe, mais elle est dispersée dans tellement d\'endroits qu\'il faut un archéologue pour la retrouver.</p>
 
 <p><strong>2. Vos chiffres ne correspondent jamais entre eux.</strong> Le commercial dit 150 000 € de pipeline. Le directeur financier dit 120 000 €. Le CRM affiche 137 000 €. Qui a raison ? Personne, parce que chacun regarde des données différentes, avec des définitions différentes, à des moments différents. C\'est le symptôme classique de l\'absence de source de vérité unique.</p>
 
-<p><strong>3. Vous avez des "traducteurs" dans l\'équipe.</strong> Il y a toujours quelqu\'un qui "connaît le fichier Excel". Qui sait que "dans la colonne H, il faut ignorer les lignes en rouge parce que ce sont les anciens clients, sauf ceux qui ont un astérisque parce que ceux-là sont revenus". Cette connaissance implicite est une bombe à retardement — quand cette personne part en vacances ou quitte l\'entreprise, tout s\'effondre.</p>
+<p><strong>3. Vous avez des "traducteurs" dans l\'équipe.</strong> Il y a toujours quelqu\'un qui "connaît le fichier Excel". Qui sait que "dans la colonne H, il faut ignorer les lignes en rouge parce que ce sont les anciens clients, sauf ceux qui ont un astérisque parce que ceux-là sont revenus". Cette connaissance implicite est une bombe à retardement, quand cette personne part en vacances ou quitte l\'entreprise, tout s\'effondre.</p>
 
 <p><strong>4. Vous ne pouvez pas répondre à une question simple en moins de 5 minutes.</strong> "Combien de clients actifs avons-nous ?" Si la réponse nécessite de croiser 3 outils et d\'appeler 2 personnes, vos données sont un problème. Un dirigeant devrait pouvoir répondre à n\'importe quelle question opérationnelle en quelques clics.</p>
 
-<p><strong>5. L\'IA "ne fonctionne pas" chez vous.</strong> Vous avez testé ChatGPT, essayé d\'automatiser avec Make, tenté de mettre en place un agent IA… et rien ne marche vraiment. Ce n\'est pas l\'IA qui est défaillante — ce sont vos données. L\'IA sans données structurées, c\'est un moteur sans carburant.</p>
+<p><strong>5. L\'IA "ne fonctionne pas" chez vous.</strong> Vous avez testé ChatGPT, essayé d\'automatiser avec Make, tenté de mettre en place un agent IA… et rien ne marche vraiment. Ce n\'est pas l\'IA qui est défaillante, ce sont vos données. L\'IA sans données structurées, c\'est un moteur sans carburant.</p>
 
 <h2 id="etape1">Étape 1 : Auditer vos sources de données actuelles</h2>
 
@@ -928,7 +928,7 @@ export const blogPosts: BlogPost[] = [
 
 <p><strong>Profil idéal :</strong> PME de 5-30 personnes, pas de développeur en interne, budget limité, besoin de résultats rapides.</p>
 
-<p>Airtable est une base de données relationnelle avec une interface de tableur. Vos équipes retrouvent le confort d\'Excel avec la puissance d\'une vraie base de données : relations entre tables, vues filtrées, automatisations, API. La migration depuis Excel est naturelle — les gens comprennent l\'interface immédiatement.</p>
+<p>Airtable est une base de données relationnelle avec une interface de tableur. Vos équipes retrouvent le confort d\'Excel avec la puissance d\'une vraie base de données : relations entre tables, vues filtrées, automatisations, API. La migration depuis Excel est naturelle, les gens comprennent l\'interface immédiatement.</p>
 
 <p><strong>Forces :</strong> prise en main immédiate, templates prêts à l\'emploi, automations intégrées, excellentes vues visuelles.</p>
 <p><strong>Limites :</strong> plafonné à 250 000 enregistrements par base, performances qui se dégradent au-delà de 50 000 lignes, coût qui monte vite avec le nombre d\'utilisateurs, pas de requêtes SQL complexes.</p>
@@ -937,7 +937,7 @@ export const blogPosts: BlogPost[] = [
 
 <p><strong>Profil idéal :</strong> PME de 10-200 personnes, un profil technique en interne ou un prestataire, budget modéré, ambition de croissance.</p>
 
-<p>Supabase est un "Firebase open-source" basé sur PostgreSQL — la base de données relationnelle la plus robuste du monde. Vous obtenez une vraie base de données SQL avec une API REST automatique, une authentification intégrée, du temps réel, et un stockage de fichiers. C\'est ce qu\'on utilise le plus souvent chez NateSystem pour nos clients.</p>
+<p>Supabase est un "Firebase open-source" basé sur PostgreSQL, la base de données relationnelle la plus robuste du monde. Vous obtenez une vraie base de données SQL avec une API REST automatique, une authentification intégrée, du temps réel, et un stockage de fichiers. C\'est ce qu\'on utilise le plus souvent chez NateSystem pour nos clients.</p>
 
 <p><strong>Forces :</strong> pas de limite de volume, performances constantes, requêtes SQL puissantes, API générée automatiquement, hébergement EU disponible, coût prévisible.</p>
 <p><strong>Limites :</strong> nécessite des compétences techniques pour la configuration initiale, pas d\'interface tableur native (mais des outils comme NocoDB ou Baserow peuvent servir de front-end), courbe d\'apprentissage pour le SQL.</p>
@@ -957,11 +957,11 @@ export const blogPosts: BlogPost[] = [
 
 <h2 id="etape3">Étape 3 : Migrer sans tout casser</h2>
 
-<p>La migration est l\'étape qui fait peur à tout le monde — et à raison. Mal gérée, elle peut paralyser votre entreprise pendant des semaines. Bien gérée, elle prend 1 à 3 semaines et se fait sans interruption de service. Voici les règles.</p>
+<p>La migration est l\'étape qui fait peur à tout le monde, et à raison. Mal gérée, elle peut paralyser votre entreprise pendant des semaines. Bien gérée, elle prend 1 à 3 semaines et se fait sans interruption de service. Voici les règles.</p>
 
 <h3>Règle 1 : Ne migrez pas tout d\'un coup</h3>
 
-<p>Commencez par <strong>un seul jeu de données</strong> — typiquement, vos fiches clients. C\'est la donnée la plus transversale et celle dont tout le monde a besoin. Une fois les clients centralisés et validés, ajoutez les commandes, puis les factures, puis les leads, etc.</p>
+<p>Commencez par <strong>un seul jeu de données</strong>, typiquement, vos fiches clients. C\'est la donnée la plus transversale et celle dont tout le monde a besoin. Une fois les clients centralisés et validés, ajoutez les commandes, puis les factures, puis les leads, etc.</p>
 
 <h3>Règle 2 : Nettoyez AVANT de migrer</h3>
 
@@ -976,11 +976,11 @@ export const blogPosts: BlogPost[] = [
 
 <h3>Règle 3 : Faites coexister l\'ancien et le nouveau</h3>
 
-<p>Pendant la transition, maintenez les deux systèmes en parallèle. Les équipes continuent de travailler dans l\'ancien système pendant que vous configurez et testez le nouveau. La bascule se fait quand tout est validé — pas avant. Prévoyez 1 à 2 semaines de coexistence.</p>
+<p>Pendant la transition, maintenez les deux systèmes en parallèle. Les équipes continuent de travailler dans l\'ancien système pendant que vous configurez et testez le nouveau. La bascule se fait quand tout est validé, pas avant. Prévoyez 1 à 2 semaines de coexistence.</p>
 
 <h3>Règle 4 : Testez avec de vraies données, pas des données de test</h3>
 
-<p>Importez un échantillon réel (100-500 enregistrements) et faites tester par les utilisateurs finaux. Pas par le prestataire technique, pas par le dirigeant — par les personnes qui utiliseront le système au quotidien. Leurs retours sont l\'indicateur de réussite, pas les tests techniques.</p>
+<p>Importez un échantillon réel (100-500 enregistrements) et faites tester par les utilisateurs finaux. Pas par le prestataire technique, pas par le dirigeant, par les personnes qui utiliseront le système au quotidien. Leurs retours sont l\'indicateur de réussite, pas les tests techniques.</p>
 
 <h3>Règle 5 : Documentez la correspondance ancien → nouveau</h3>
 
@@ -999,7 +999,7 @@ export const blogPosts: BlogPost[] = [
   <li><strong>Facturation → Base de données :</strong> chaque facture émise, chaque paiement reçu remonte dans la base. Indispensable pour avoir une vue 360° du client.</li>
   <li><strong>Email → Base de données :</strong> les emails importants (réponses clients, confirmations, réclamations) sont tagués et stockés avec la fiche client correspondante.</li>
   <li><strong>Site web → Base de données :</strong> formulaires de contact, inscriptions, téléchargements créent directement des enregistrements dans la base.</li>
-  <li><strong>Outils métier → Base de données :</strong> selon votre secteur — gestion de stock, planning, ticketing, etc.</li>
+  <li><strong>Outils métier → Base de données :</strong> selon votre secteur, gestion de stock, planning, ticketing, etc.</li>
 </ol>
 
 <h3>Les outils de connexion</h3>
@@ -1022,7 +1022,7 @@ export const blogPosts: BlogPost[] = [
   <li><strong>Orchestrateur :</strong> Make ou n8n (gère les flux entre les outils)</li>
   <li><strong>CRM :</strong> HubSpot ou Pipedrive (synchronisé bidirectionnellement)</li>
   <li><strong>Dashboard :</strong> application custom ou Metabase (lit la base en temps réel)</li>
-  <li><strong>IA :</strong> Claude via API (analyse, génération, décision — alimenté par la base centrale)</li>
+  <li><strong>IA :</strong> Claude via API (analyse, génération, décision, alimenté par la base centrale)</li>
 </ul>
 
 <p>Cette architecture coûte entre 100 et 500 €/mois en infrastructure, selon le volume de données et d\'exécutions. C\'est accessible à n\'importe quelle PME.</p>
@@ -1103,7 +1103,7 @@ export const blogPosts: BlogPost[] = [
   <li>ROI du projet : atteint en <strong>6 semaines</strong></li>
 </ul>
 
-<blockquote>Le plus gros impact n\'était même pas le temps gagné — c\'était la confiance. Pour la première fois, Chromosome avait des chiffres fiables pour prendre des décisions. Plus de "je crois que", "il me semble que", "d\'après mon fichier". Juste des faits.</blockquote>
+<blockquote>Le plus gros impact n\'était même pas le temps gagné, c\'était la confiance. Pour la première fois, Chromosome avait des chiffres fiables pour prendre des décisions. Plus de "je crois que", "il me semble que", "d\'après mon fichier". Juste des faits.</blockquote>
 
 <h2 id="erreurs">Les erreurs à éviter</h2>
 
@@ -1127,11 +1127,11 @@ export const blogPosts: BlogPost[] = [
 
 <h3>Quel budget prévoir ?</h3>
 
-<p>Infrastructure : 50-300 €/mois (Supabase + Make + hébergement). Accompagnement initial : 3 000-10 000 € selon la complexité. C\'est un investissement qui se rembourse en 1-3 mois grâce au temps économisé et aux erreurs évitées. Chez NateSystem, l\'audit initial est inclus dans nos packages — <a href="/book">réservez un appel</a> pour en discuter.</p>
+<p>Infrastructure : 50-300 €/mois (Supabase + Make + hébergement). Accompagnement initial : 3 000-10 000 € selon la complexité. C\'est un investissement qui se rembourse en 1-3 mois grâce au temps économisé et aux erreurs évitées. Chez NateSystem, l\'audit initial est inclus dans nos packages, <a href="/book">réservez un appel</a> pour en discuter.</p>
 
 <h3>Peut-on centraliser sans compétence technique en interne ?</h3>
 
-<p>Avec Airtable, oui — un dirigeant ou un ops manager peut construire et gérer la base. Avec Supabase ou une solution custom, il faut soit un profil technique en interne, soit un prestataire. La solution hybride (prestataire pour la construction + formation de l\'équipe pour la gestion quotidienne) est souvent la plus efficace.</p>
+<p>Avec Airtable, oui, un dirigeant ou un ops manager peut construire et gérer la base. Avec Supabase ou une solution custom, il faut soit un profil technique en interne, soit un prestataire. La solution hybride (prestataire pour la construction + formation de l\'équipe pour la gestion quotidienne) est souvent la plus efficace.</p>
 
 <h3>Comment convaincre mon équipe d\'abandonner leurs fichiers Excel ?</h3>
 
@@ -1139,11 +1139,11 @@ export const blogPosts: BlogPost[] = [
 
 <h3>Et si on a déjà un ERP ?</h3>
 
-<p>Un ERP (Sage, SAP, Odoo…) centralise certaines données métier, mais rarement toutes. Les leads marketing, les communications client, les données de prospection, les KPIs de performance ne sont généralement pas dans l\'ERP. La base de données centralisée complète l\'ERP — elle ne le remplace pas. On connecte l\'ERP à la base via API ou Make, et la base devient la couche d\'agrégation qui lie tout ensemble.</p>
+<p>Un ERP (Sage, SAP, Odoo…) centralise certaines données métier, mais rarement toutes. Les leads marketing, les communications client, les données de prospection, les KPIs de performance ne sont généralement pas dans l\'ERP. La base de données centralisée complète l\'ERP, elle ne le remplace pas. On connecte l\'ERP à la base via API ou Make, et la base devient la couche d\'agrégation qui lie tout ensemble.</p>
 
 <h2 id="conclusion">Conclusion</h2>
 
-<p>La fragmentation des données n\'est pas un problème technique — c\'est un problème stratégique. Tant que vos données sont dispersées dans 15 outils et 30 fichiers, vous pilotez votre entreprise à l\'aveugle. Vous ne pouvez pas automatiser ce que vous ne mesurez pas, et vous ne pouvez pas mesurer ce que vous ne centralisez pas.</p>
+<p>La fragmentation des données n\'est pas un problème technique, c\'est un problème stratégique. Tant que vos données sont dispersées dans 15 outils et 30 fichiers, vous pilotez votre entreprise à l\'aveugle. Vous ne pouvez pas automatiser ce que vous ne mesurez pas, et vous ne pouvez pas mesurer ce que vous ne centralisez pas.</p>
 
 <p>La bonne nouvelle : centraliser les données d\'une PME n\'est plus un projet de 18 mois et 200 000 €. Avec les outils disponibles en 2026, c\'est un projet de <strong>quelques semaines, quelques milliers d\'euros, et un ROI en moins de 3 mois</strong>.</p>
 
@@ -1164,11 +1164,11 @@ export const blogPosts: BlogPost[] = [
     category: 'Agents IA',
     tags: ['IA générative', 'Agents IA', 'Stratégie', 'Direction'],
     content: `
-<p>Quand un dirigeant de PME dit "on utilise l\'IA", ça veut généralement dire qu\'il a un abonnement ChatGPT et que 3 personnes dans l\'équipe l\'utilisent pour rédiger des emails. C\'est un bon début — mais c\'est un peu comme dire "on utilise l\'informatique" parce qu\'on a une calculatrice. La vraie puissance de l\'IA en 2026 ne réside pas dans les chatbots conversationnels, aussi impressionnants soient-ils. Elle réside dans les <strong>agents IA autonomes</strong> — des systèmes qui exécutent des tâches complexes de bout en bout, sans supervision humaine permanente.</p>
+<p>Quand un dirigeant de PME dit "on utilise l\'IA", ça veut généralement dire qu\'il a un abonnement ChatGPT et que 3 personnes dans l\'équipe l\'utilisent pour rédiger des emails. C\'est un bon début, mais c\'est un peu comme dire "on utilise l\'informatique" parce qu\'on a une calculatrice. La vraie puissance de l\'IA en 2026 ne réside pas dans les chatbots conversationnels, aussi impressionnants soient-ils. Elle réside dans les <strong>agents IA autonomes</strong>, des systèmes qui exécutent des tâches complexes de bout en bout, sans supervision humaine permanente.</p>
 
 <p>Le problème, c\'est que la confusion entre IA générative et agents IA est quasi totale dans le monde des PME. Les deux utilisent des modèles de langage, les deux "parlent", les deux semblent intelligents. Mais la ressemblance s\'arrête là. Confondre les deux, c\'est comme confondre un GPS et un chauffeur privé : l\'un vous dit où aller, l\'autre vous y emmène.</p>
 
-<p>Ce guide est conçu pour les dirigeants qui veulent comprendre cette distinction — pas pour la culture générale, mais pour <strong>prendre les bonnes décisions d\'investissement</strong>. Où mettre vos euros ? Quand choisir l\'un plutôt que l\'autre ? Et surtout : comment passer de "on utilise ChatGPT" à "on a une infrastructure IA opérationnelle" ?</p>
+<p>Ce guide est conçu pour les dirigeants qui veulent comprendre cette distinction, pas pour la culture générale, mais pour <strong>prendre les bonnes décisions d\'investissement</strong>. Où mettre vos euros ? Quand choisir l\'un plutôt que l\'autre ? Et surtout : comment passer de "on utilise ChatGPT" à "on a une infrastructure IA opérationnelle" ?</p>
 
 <nav>
 <h2>Sommaire</h2>
@@ -1188,7 +1188,7 @@ export const blogPosts: BlogPost[] = [
 
 <h2 id="ia-generative">IA générative : ce que c\'est vraiment</h2>
 
-<p>L\'IA générative désigne les modèles capables de <strong>produire du contenu</strong> : texte, images, code, audio, vidéo. Les exemples les plus connus sont ChatGPT (OpenAI), Claude (Anthropic), Gemini (Google) et Mistral. Ce sont des modèles de langage massifs (LLM — Large Language Models) entraînés sur des milliards de documents pour comprendre et générer du texte de manière fluide.</p>
+<p>L\'IA générative désigne les modèles capables de <strong>produire du contenu</strong> : texte, images, code, audio, vidéo. Les exemples les plus connus sont ChatGPT (OpenAI), Claude (Anthropic), Gemini (Google) et Mistral. Ce sont des modèles de langage massifs (LLM, Large Language Models) entraînés sur des milliards de documents pour comprendre et générer du texte de manière fluide.</p>
 
 <h3>Ce que l\'IA générative fait bien</h3>
 
@@ -1211,7 +1211,7 @@ export const blogPosts: BlogPost[] = [
   <li><strong>Dépendance au prompt :</strong> la qualité du résultat dépend entièrement de la qualité de la question. Un prompt mal formulé → un résultat médiocre. Chaque utilisateur doit apprendre à "parler" à l\'IA, ce qui crée une courbe d\'apprentissage et des résultats inégaux dans l\'équipe.</li>
 </ul>
 
-<blockquote>L\'IA générative est un outil puissant. Mais c\'est un outil passif — il attend vos instructions, il produit un résultat, et il s\'arrête. Il ne prend pas d\'initiative, il ne surveille rien, il n\'agit pas de lui-même.</blockquote>
+<blockquote>L\'IA générative est un outil puissant. Mais c\'est un outil passif, il attend vos instructions, il produit un résultat, et il s\'arrête. Il ne prend pas d\'initiative, il ne surveille rien, il n\'agit pas de lui-même.</blockquote>
 
 <h2 id="agents-ia">Agents IA autonomes : la prochaine étape</h2>
 
@@ -1223,8 +1223,8 @@ export const blogPosts: BlogPost[] = [
 
 <ol>
   <li><strong>Un modèle de langage (le "cerveau") :</strong> Claude, GPT-4o ou un autre LLM qui fournit la capacité de raisonnement et de compréhension du langage.</li>
-  <li><strong>Une mémoire (le "contexte") :</strong> une base de données qui stocke toutes les informations pertinentes — historique des interactions, données clients, contexte métier, décisions précédentes. L\'agent "connaît" votre entreprise.</li>
-  <li><strong>Des outils (les "mains") :</strong> des connexions à vos systèmes — CRM, email, base de données, calendrier, facturation. L\'agent peut lire ET écrire dans ces systèmes.</li>
+  <li><strong>Une mémoire (le "contexte") :</strong> une base de données qui stocke toutes les informations pertinentes, historique des interactions, données clients, contexte métier, décisions précédentes. L\'agent "connaît" votre entreprise.</li>
+  <li><strong>Des outils (les "mains") :</strong> des connexions à vos systèmes, CRM, email, base de données, calendrier, facturation. L\'agent peut lire ET écrire dans ces systèmes.</li>
   <li><strong>Une logique de décision (le "jugement") :</strong> des règles et des objectifs qui guident le comportement de l\'agent. Quand contacter un lead ? Quand escalader à un humain ? Quel ton utiliser ?</li>
   <li><strong>Une boucle d\'exécution (l\'"autonomie") :</strong> l\'agent observe, décide, agit, observe le résultat, ajuste. En continu, sans intervention humaine pour chaque étape.</li>
 </ol>
@@ -1235,16 +1235,16 @@ export const blogPosts: BlogPost[] = [
 
 <ul>
   <li><strong>Agent de prospection :</strong> identifie des leads qualifiés sur LinkedIn et dans des bases de données publiques, enrichit leurs profils, rédige des messages de prise de contact personnalisés, les envoie, analyse les réponses, planifie les relances, et escalade au commercial quand le lead est chaud. Tout ça pendant que vous dormez.</li>
-  <li><strong>Agent de support client :</strong> reçoit les demandes (email, chat, formulaire), comprend la demande, cherche la réponse dans la documentation et l\'historique, répond immédiatement pour les cas simples, escalade aux humains pour les cas complexes — avec un résumé du contexte et une proposition de réponse.</li>
+  <li><strong>Agent de support client :</strong> reçoit les demandes (email, chat, formulaire), comprend la demande, cherche la réponse dans la documentation et l\'historique, répond immédiatement pour les cas simples, escalade aux humains pour les cas complexes, avec un résumé du contexte et une proposition de réponse.</li>
   <li><strong>Agent de reporting :</strong> chaque lundi matin, l\'agent compile les données de la semaine précédente (ventes, leads, tickets, performances), génère un rapport avec les tendances et les alertes, et l\'envoie par email à la direction. Aucune intervention humaine.</li>
-  <li><strong>Agent d\'<a href="/blog/comment-automatiser-onboarding-client-ia">onboarding client</a> :</strong> quand un nouveau client signe, l\'agent gère toute la séquence d\'accueil — emails personnalisés, documents, suivi d\'activation, détection d\'inactivité, relances.</li>
+  <li><strong>Agent d\'<a href="/blog/comment-automatiser-onboarding-client-ia">onboarding client</a> :</strong> quand un nouveau client signe, l\'agent gère toute la séquence d\'accueil, emails personnalisés, documents, suivi d\'activation, détection d\'inactivité, relances.</li>
 </ul>
 
 <h3>Ce qui distingue un agent IA d\'un simple workflow automatisé</h3>
 
 <p>Un workflow Make ou Zapier fait aussi des choses automatiquement. La différence clé : un workflow suit des règles fixes. "SI email reçu ET contient \'urgent\' ALORS transférer à X." C\'est binaire, rigide, prévisible.</p>
 
-<p>Un agent IA <strong>comprend le contexte et s\'adapte</strong>. Il ne cherche pas le mot "urgent" dans l\'email — il comprend que le client est mécontent en lisant le ton du message, consulte l\'historique pour voir que c\'est la 3e réclamation en un mois, et décide d\'escalader au directeur commercial (pas juste au support) parce que le risque de churn est élevé. Cette capacité de jugement contextuel est ce qui rend les agents IA fondamentalement différents.</p>
+<p>Un agent IA <strong>comprend le contexte et s\'adapte</strong>. Il ne cherche pas le mot "urgent" dans l\'email, il comprend que le client est mécontent en lisant le ton du message, consulte l\'historique pour voir que c\'est la 3e réclamation en un mois, et décide d\'escalader au directeur commercial (pas juste au support) parce que le risque de churn est élevé. Cette capacité de jugement contextuel est ce qui rend les agents IA fondamentalement différents.</p>
 
 <h2 id="comparatif">Tableau comparatif détaillé</h2>
 
@@ -1259,13 +1259,13 @@ export const blogPosts: BlogPost[] = [
   <tbody>
     <tr>
       <td><strong>Autonomie</strong></td>
-      <td>Nulle — attend une instruction à chaque étape</td>
-      <td>Élevée — exécute des tâches complètes seul</td>
+      <td>Nulle, attend une instruction à chaque étape</td>
+      <td>Élevée, exécute des tâches complètes seul</td>
     </tr>
     <tr>
       <td><strong>Mémoire</strong></td>
       <td>Limitée à la conversation en cours</td>
-      <td>Persistante — connaît votre entreprise et son historique</td>
+      <td>Persistante, connaît votre entreprise et son historique</td>
     </tr>
     <tr>
       <td><strong>Accès aux données</strong></td>
@@ -1279,8 +1279,8 @@ export const blogPosts: BlogPost[] = [
     </tr>
     <tr>
       <td><strong>Spécialisation</strong></td>
-      <td>Généraliste — bon en tout, expert en rien</td>
-      <td>Spécialisé — configuré pour un domaine précis de votre business</td>
+      <td>Généraliste, bon en tout, expert en rien</td>
+      <td>Spécialisé, configuré pour un domaine précis de votre business</td>
     </tr>
     <tr>
       <td><strong>Coût de mise en place</strong></td>
@@ -1299,8 +1299,8 @@ export const blogPosts: BlogPost[] = [
     </tr>
     <tr>
       <td><strong>Maintenance</strong></td>
-      <td>Aucune — c\'est un service cloud</td>
-      <td>Continue — monitoring, ajustements, mises à jour</td>
+      <td>Aucune, c\'est un service cloud</td>
+      <td>Continue, monitoring, ajustements, mises à jour</td>
     </tr>
     <tr>
       <td><strong>Scalabilité</strong></td>
@@ -1381,7 +1381,7 @@ export const blogPosts: BlogPost[] = [
 
 <h2 id="transition">Comment passer de ChatGPT à une infrastructure d\'agents</h2>
 
-<p>Passer de ChatGPT à une infrastructure d\'agents se fait en 3 étapes : identifier un processus répétitif à fort volume, connecter l\'agent à vos données et vos outils, puis l\'autonomiser progressivement sous supervision. La transition ne se fait pas en un jour — voici la feuille de route que nous recommandons chez NateSystem.</p>
+<p>Passer de ChatGPT à une infrastructure d\'agents se fait en 3 étapes : identifier un processus répétitif à fort volume, connecter l\'agent à vos données et vos outils, puis l\'autonomiser progressivement sous supervision. La transition ne se fait pas en un jour, voici la feuille de route que nous recommandons chez NateSystem.</p>
 
 <h3>Phase 1 : Identifier et mesurer (2-4 semaines)</h3>
 
@@ -1402,7 +1402,7 @@ export const blogPosts: BlogPost[] = [
 <ul>
   <li><strong><a href="/blog/construire-base-donnees-centralisee-pme-guide">Centraliser vos données</a> :</strong> l\'agent a besoin d\'une source de vérité unique. Si vos données sont éparpillées dans 15 fichiers Excel, l\'agent ne peut pas fonctionner.</li>
   <li><strong>Documenter vos process :</strong> un agent IA a besoin de règles claires. "Comment on qualifie un lead ?" "Quel est le process de relance des impayés ?" Si c\'est dans la tête de Jean-Pierre, il faut le mettre par écrit.</li>
-  <li><strong>Connecter vos outils :</strong> CRM, email, base de données, facturation — tout doit être accessible via API. C\'est le travail d\'un orchestrateur comme Make ou n8n.</li>
+  <li><strong>Connecter vos outils :</strong> CRM, email, base de données, facturation, tout doit être accessible via API. C\'est le travail d\'un orchestrateur comme Make ou n8n.</li>
 </ul>
 
 <h3>Phase 3 : Déployer et itérer (2-4 semaines par agent)</h3>
@@ -1451,7 +1451,7 @@ export const blogPosts: BlogPost[] = [
   <li><strong>ROI :</strong> 3-6x, atteint en 3-6 mois</li>
 </ul>
 
-<p>Le pattern est clair : <strong>l\'IA générative a un ROI immédiat mais plafonné</strong>. Les agents IA ont un coût d\'entrée plus élevé mais un potentiel de gain beaucoup plus important. Et l\'infrastructure complète est le multiplicateur le plus puissant — mais c\'est aussi l\'investissement le plus conséquent.</p>
+<p>Le pattern est clair : <strong>l\'IA générative a un ROI immédiat mais plafonné</strong>. Les agents IA ont un coût d\'entrée plus élevé mais un potentiel de gain beaucoup plus important. Et l\'infrastructure complète est le multiplicateur le plus puissant, mais c\'est aussi l\'investissement le plus conséquent.</p>
 
 <h2 id="dirigeants">Ce que les dirigeants doivent savoir avant d\'investir</h2>
 
@@ -1463,7 +1463,7 @@ export const blogPosts: BlogPost[] = [
 
 <h3>2. Avez-vous un process clair à automatiser ?</h3>
 
-<p>Un agent IA automatise un process existant — il n\'en invente pas. Si votre process de prospection change chaque semaine, si votre qualification de leads dépend de l\'humeur du commercial, si votre reporting est "on verra", l\'agent IA ne pourra pas aider. Documentez d\'abord, automatisez ensuite.</p>
+<p>Un agent IA automatise un process existant, il n\'en invente pas. Si votre process de prospection change chaque semaine, si votre qualification de leads dépend de l\'humeur du commercial, si votre reporting est "on verra", l\'agent IA ne pourra pas aider. Documentez d\'abord, automatisez ensuite.</p>
 
 <h3>3. Qui va superviser l\'agent ?</h3>
 
@@ -1481,7 +1481,7 @@ export const blogPosts: BlogPost[] = [
 
 <h3>L\'IA générative va-t-elle finir par faire tout ce que font les agents IA ?</h3>
 
-<p>Non, parce que le problème n\'est pas la qualité du modèle — c\'est l\'architecture. Même un modèle parfait reste passif sans mémoire, sans connexions aux données, et sans capacité d\'action. Les modèles s\'améliorent, mais un agent IA sera toujours nécessaire pour transformer cette intelligence en action opérationnelle.</p>
+<p>Non, parce que le problème n\'est pas la qualité du modèle, c\'est l\'architecture. Même un modèle parfait reste passif sans mémoire, sans connexions aux données, et sans capacité d\'action. Les modèles s\'améliorent, mais un agent IA sera toujours nécessaire pour transformer cette intelligence en action opérationnelle.</p>
 
 <h3>Peut-on construire un agent IA soi-même ?</h3>
 
@@ -1489,7 +1489,7 @@ export const blogPosts: BlogPost[] = [
 
 <h3>Est-ce que mes données seront en sécurité ?</h3>
 
-<p>C\'est une question légitime et critique. Les agents IA accèdent à vos données business — il faut donc des garanties solides. Chez NateSystem, nous utilisons des API IA qui ne stockent pas les données (Claude API, by default), des bases de données hébergées en Europe, et du chiffrement bout en bout. Exigez ces garanties de tout prestataire. Si quelqu\'un vous dit "ne vous inquiétez pas pour la sécurité", inquiétez-vous.</p>
+<p>C\'est une question légitime et critique. Les agents IA accèdent à vos données business, il faut donc des garanties solides. Chez NateSystem, nous utilisons des API IA qui ne stockent pas les données (Claude API, by default), des bases de données hébergées en Europe, et du chiffrement bout en bout. Exigez ces garanties de tout prestataire. Si quelqu\'un vous dit "ne vous inquiétez pas pour la sécurité", inquiétez-vous.</p>
 
 <h3>Combien de temps avant de voir des résultats ?</h3>
 
@@ -1497,11 +1497,11 @@ export const blogPosts: BlogPost[] = [
 
 <h3>Faut-il commencer par l\'IA générative ou directement par les agents ?</h3>
 
-<p>Commencez par l\'IA générative — toujours. Donnez un accès ChatGPT ou Claude à votre équipe, laissez-les explorer pendant 1-2 mois. Cela crée la culture IA dans l\'entreprise, identifie les cas d\'usage les plus pertinents, et révèle les limites de l\'approche manuelle. Ces limites sont exactement les points de départ pour vos premiers agents IA.</p>
+<p>Commencez par l\'IA générative, toujours. Donnez un accès ChatGPT ou Claude à votre équipe, laissez-les explorer pendant 1-2 mois. Cela crée la culture IA dans l\'entreprise, identifie les cas d\'usage les plus pertinents, et révèle les limites de l\'approche manuelle. Ces limites sont exactement les points de départ pour vos premiers agents IA.</p>
 
 <h2 id="conclusion">Conclusion</h2>
 
-<p>L\'IA générative et les agents IA autonomes ne sont pas en compétition — ils sont <strong>complémentaires et séquentiels</strong>. L\'IA générative est votre point d\'entrée : accessible, immédiatement rentable, et formateur pour votre équipe. Les agents IA sont votre accélérateur : plus coûteux à mettre en place, mais avec un impact opérationnel 10x supérieur.</p>
+<p>L\'IA générative et les agents IA autonomes ne sont pas en compétition, ils sont <strong>complémentaires et séquentiels</strong>. L\'IA générative est votre point d\'entrée : accessible, immédiatement rentable, et formateur pour votre équipe. Les agents IA sont votre accélérateur : plus coûteux à mettre en place, mais avec un impact opérationnel 10x supérieur.</p>
 
 <p>La vraie question pour un dirigeant de PME en 2026 n\'est pas "IA générative ou agents IA ?" mais <strong>"où en suis-je dans la progression, et quelle est ma prochaine étape ?"</strong></p>
 
@@ -1528,15 +1528,15 @@ export const blogPosts: BlogPost[] = [
     category: 'Automatisation',
     tags: ['Onboarding', 'Agents IA', 'Relation client', 'Automatisation'],
     content: `
-<p>L'onboarding client est le moment le plus critique de votre relation commerciale. C'est dans les 30 premiers jours que tout se joue : l'adoption de votre produit, la confiance dans votre service, et surtout — la décision de rester ou de partir. Pourtant, plus de 90% des PME françaises gèrent encore cette phase manuellement. Des emails envoyés à la main (quand on y pense), des documents Word personnalisés à la va-vite, un suivi dans un fichier Excel que personne ne met à jour.</p>
+<p>L'onboarding client est le moment le plus critique de votre relation commerciale. C'est dans les 30 premiers jours que tout se joue : l'adoption de votre produit, la confiance dans votre service, et surtout, la décision de rester ou de partir. Pourtant, plus de 90% des PME françaises gèrent encore cette phase manuellement. Des emails envoyés à la main (quand on y pense), des documents Word personnalisés à la va-vite, un suivi dans un fichier Excel que personne ne met à jour.</p>
 
-<p>Résultat ? Des clients livrés à eux-mêmes, des informations qui n'arrivent jamais, et un taux de churn qui explose dans le premier trimestre. La bonne nouvelle, c'est qu'en 2026, <strong>l'IA permet d'automatiser entièrement l'onboarding client</strong> — sans perdre la touche humaine. Voici comment.</p>
+<p>Résultat ? Des clients livrés à eux-mêmes, des informations qui n'arrivent jamais, et un taux de churn qui explose dans le premier trimestre. La bonne nouvelle, c'est qu'en 2026, <strong>l'IA permet d'automatiser entièrement l'onboarding client</strong>, sans perdre la touche humaine. Voici comment.</p>
 
 <h2>Pourquoi l'onboarding client est votre plus gros point de fuite</h2>
 
 <p>Les chiffres sont brutaux : <strong>1 client sur 3 churne dans les 90 premiers jours</strong> suivant la signature. Pas parce que votre produit est mauvais, mais parce que le client n'a jamais été correctement accompagné dans sa prise en main.</p>
 
-<p>Prenons un instant pour comparer les coûts. Acquérir un nouveau client coûte en moyenne <strong>5 à 7 fois plus cher</strong> que de retenir un client existant. Chaque client perdu en phase d'onboarding, c'est tout votre investissement marketing et commercial qui part en fumée — plus le bouche-à-oreille négatif qui s'ensuit.</p>
+<p>Prenons un instant pour comparer les coûts. Acquérir un nouveau client coûte en moyenne <strong>5 à 7 fois plus cher</strong> que de retenir un client existant. Chaque client perdu en phase d'onboarding, c'est tout votre investissement marketing et commercial qui part en fumée, plus le bouche-à-oreille négatif qui s'ensuit.</p>
 
 <p>Les erreurs classiques que je vois dans les PME :</p>
 
@@ -1544,7 +1544,7 @@ export const blogPosts: BlogPost[] = [
   <li><strong>Emails manuels :</strong> le fondateur ou un chargé de compte envoie les infos "quand il a le temps". Résultat : le client attend 3 jours pour recevoir ses accès.</li>
   <li><strong>Excel de suivi :</strong> un tableau partagé avec des colonnes "email envoyé ?", "docs transmis ?", "premier appel fait ?". Personne ne le remplit, ou alors avec 2 semaines de retard.</li>
   <li><strong>Aucun process standard :</strong> chaque commercial onboarde "à sa façon". Le client A reçoit un guide complet, le client B reçoit un email de 3 lignes.</li>
-  <li><strong>Pas de détection d'inactivité :</strong> si un client ne se connecte pas pendant 2 semaines, personne ne le remarque — jusqu'à ce qu'il demande un remboursement.</li>
+  <li><strong>Pas de détection d'inactivité :</strong> si un client ne se connecte pas pendant 2 semaines, personne ne le remarque, jusqu'à ce qu'il demande un remboursement.</li>
 </ul>
 
 <blockquote>L'onboarding n'est pas un "nice to have". C'est le pont entre la vente et la rétention. Sans pont solide, vos clients tombent dans le vide.</blockquote>
@@ -1565,7 +1565,7 @@ export const blogPosts: BlogPost[] = [
   <li><strong>J+30 :</strong> Bilan du premier mois. Métriques clés, suggestions d'optimisation, et proposition de montée en gamme si pertinent.</li>
 </ul>
 
-<p>Chaque email est <strong>généré dynamiquement par l'IA</strong> en fonction des données du client — pas un template générique envoyé à tout le monde.</p>
+<p>Chaque email est <strong>généré dynamiquement par l'IA</strong> en fonction des données du client, pas un template générique envoyé à tout le monde.</p>
 
 <h3>Documents générés sur-mesure</h3>
 
@@ -1597,7 +1597,7 @@ export const blogPosts: BlogPost[] = [
 
 <h3>Étape 1 : Cartographier votre process actuel</h3>
 
-<p>Avant d'automatiser quoi que ce soit, documentez ce que vous faites aujourd'hui — même si c'est dans votre tête. Posez-vous ces questions :</p>
+<p>Avant d'automatiser quoi que ce soit, documentez ce que vous faites aujourd'hui, même si c'est dans votre tête. Posez-vous ces questions :</p>
 
 <ul>
   <li>Que se passe-t-il entre la signature du contrat et la première utilisation ?</li>
@@ -1670,17 +1670,17 @@ export const blogPosts: BlogPost[] = [
 
 <p><strong>Résultat :</strong> Chromosome a pu onboarder <strong>3 fois plus de partenaires</strong> sans recruter de personnel supplémentaire. Le temps libéré a été réinvesti dans le développement commercial.</p>
 
-<blockquote>L'automatisation de l'onboarding ne remplace pas la relation humaine — elle libère du temps pour que la relation humaine se concentre sur ce qui compte vraiment.</blockquote>
+<blockquote>L'automatisation de l'onboarding ne remplace pas la relation humaine, elle libère du temps pour que la relation humaine se concentre sur ce qui compte vraiment.</blockquote>
 
 <h2>Les outils nécessaires</h2>
 
 <p>Pour construire un onboarding automatisé avec l'IA, vous avez besoin de 4 briques :</p>
 
 <ul>
-  <li><strong>Une base de données centralisée</strong> (Supabase, Airtable, ou custom) — c'est le socle qui stocke toutes les infos clients et l'état d'avancement de chaque onboarding. Sans base structurée, pas d'automatisation possible. Voir notre article sur <a href="/blog/7-signes-entreprise-prete-infrastructure-ia">les 7 signes que votre entreprise est prête</a>.</li>
-  <li><strong>Un agent IA connecté</strong> (Claude, GPT-4, ou agent custom) — c'est le cerveau qui orchestre les actions, personnalise les contenus, et détecte les signaux d'alerte.</li>
-  <li><strong>Un système d'email transactionnel</strong> (Resend, SendGrid, ou Brevo) — pour envoyer les emails automatiquement, avec un bon taux de délivrabilité.</li>
-  <li><strong>Un dashboard de suivi</strong> (interface custom, Notion, ou outil interne) — pour que votre équipe visualise l'état de chaque client en temps réel.</li>
+  <li><strong>Une base de données centralisée</strong> (Supabase, Airtable, ou custom), c'est le socle qui stocke toutes les infos clients et l'état d'avancement de chaque onboarding. Sans base structurée, pas d'automatisation possible. Voir notre article sur <a href="/blog/7-signes-entreprise-prete-infrastructure-ia">les 7 signes que votre entreprise est prête</a>.</li>
+  <li><strong>Un agent IA connecté</strong> (Claude, GPT-4, ou agent custom), c'est le cerveau qui orchestre les actions, personnalise les contenus, et détecte les signaux d'alerte.</li>
+  <li><strong>Un système d'email transactionnel</strong> (Resend, SendGrid, ou Brevo), pour envoyer les emails automatiquement, avec un bon taux de délivrabilité.</li>
+  <li><strong>Un dashboard de suivi</strong> (interface custom, Notion, ou outil interne), pour que votre équipe visualise l'état de chaque client en temps réel.</li>
 </ul>
 
 <p>Chez NateSystem, on intègre ces 4 briques dans une infrastructure unifiée pour que tout fonctionne ensemble dès le premier jour. Découvrez <a href="/tools">nos outils gratuits</a> pour commencer à évaluer votre potentiel d'automatisation.</p>
@@ -1693,7 +1693,7 @@ export const blogPosts: BlogPost[] = [
 
 <h3>Quel budget prévoir ?</h3>
 
-<p>Les coûts d'infrastructure sont faibles : entre 50 et 200 euros par mois pour les outils (base de données, emails transactionnels, hébergement de l'agent). Le vrai investissement, c'est la conception et le développement initial. Chez NateSystem, c'est inclus dans nos packages d'infrastructure IA — pas de surprise.</p>
+<p>Les coûts d'infrastructure sont faibles : entre 50 et 200 euros par mois pour les outils (base de données, emails transactionnels, hébergement de l'agent). Le vrai investissement, c'est la conception et le développement initial. Chez NateSystem, c'est inclus dans nos packages d'infrastructure IA, pas de surprise.</p>
 
 <h3>Ça fonctionne pour quel type de business ?</h3>
 
@@ -1701,11 +1701,11 @@ export const blogPosts: BlogPost[] = [
 
 <h3>Est-ce que les clients vont sentir que c'est automatisé ?</h3>
 
-<p>Non, si c'est bien fait. L'IA génère des contenus personnalisés, pas des templates génériques. Chaque email mentionne le contexte spécifique du client, ses objectifs, son secteur. Les clients ont l'impression d'avoir un chargé de compte dédié — alors que c'est un agent IA qui gère 100 onboardings en parallèle.</p>
+<p>Non, si c'est bien fait. L'IA génère des contenus personnalisés, pas des templates génériques. Chaque email mentionne le contexte spécifique du client, ses objectifs, son secteur. Les clients ont l'impression d'avoir un chargé de compte dédié, alors que c'est un agent IA qui gère 100 onboardings en parallèle.</p>
 
 <h2>Conclusion</h2>
 
-<p>L'onboarding client, c'est le moment de vérité. C'est là que votre client décide — consciemment ou non — s'il va rester 6 mois ou 3 ans. Automatiser cette phase avec l'IA, ce n'est pas déshumaniser la relation : c'est <strong>garantir que chaque client reçoit la meilleure expérience possible</strong>, systématiquement, sans dépendre de la charge de travail de votre équipe.</p>
+<p>L'onboarding client, c'est le moment de vérité. C'est là que votre client décide, consciemment ou non, s'il va rester 6 mois ou 3 ans. Automatiser cette phase avec l'IA, ce n'est pas déshumaniser la relation : c'est <strong>garantir que chaque client reçoit la meilleure expérience possible</strong>, systématiquement, sans dépendre de la charge de travail de votre équipe.</p>
 
 <p>Les PME qui automatisent leur onboarding aujourd'hui prennent une avance considérable sur celles qui continuent à envoyer des emails "quand elles y pensent".</p>
 
@@ -1722,7 +1722,7 @@ export const blogPosts: BlogPost[] = [
     category: 'Infrastructure',
     tags: ['Base de données', 'Excel', 'Migration', 'PME', 'Productivité'],
     content: `
-<p>73% des PME françaises utilisent encore Excel comme base de données principale. Fiches clients, suivi de projets, inventaire, facturation — tout dans des fichiers que 3 personnes modifient en même temps sans savoir qui a la bonne version. Et quand le fichier plante parce qu'il fait 45 Mo avec 12 onglets et 300 formules croisées, c'est la panique.</p>
+<p>73% des PME françaises utilisent encore Excel comme base de données principale. Fiches clients, suivi de projets, inventaire, facturation, tout dans des fichiers que 3 personnes modifient en même temps sans savoir qui a la bonne version. Et quand le fichier plante parce qu'il fait 45 Mo avec 12 onglets et 300 formules croisées, c'est la panique.</p>
 
 <p>Si vous lisez cet article, il y a de fortes chances que vous ayez au moins un fichier Excel "critique" dans votre entreprise. Celui que tout le monde utilise, que personne ne comprend entièrement, et dont la perte serait catastrophique. Il est temps d'en parler sérieusement.</p>
 
@@ -1730,7 +1730,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>Disons-le clairement : <strong>Excel n'est pas une base de données</strong>. C'est un tableur. Il a été conçu pour faire des calculs, pas pour stocker et gérer des données relationnelles. Et cette confusion coûte aux PME des milliers d'heures et d'euros chaque année.</p>
 
-<p>Voici ce qu'Excel ne sait pas faire — et qu'une vraie base de données fait nativement :</p>
+<p>Voici ce qu'Excel ne sait pas faire, et qu'une vraie base de données fait nativement :</p>
 
 <ul>
   <li><strong>Pas de relations entre les données :</strong> dans Excel, chaque onglet est une île. Impossible de dire "ce client a passé ces 3 commandes, qui ont généré ces 3 factures, avec ces échanges email". Vous finissez par dupliquer les informations partout, avec des incohérences inévitables.</li>
@@ -1751,10 +1751,10 @@ export const blogPosts: BlogPost[] = [
   <li><strong>Accès simultané :</strong> 50 personnes peuvent travailler en même temps sur les mêmes données sans conflit. Chaque modification est atomique et cohérente.</li>
   <li><strong>Permissions granulaires :</strong> le commercial voit les leads et les deals. Le comptable voit les factures et les paiements. Le dirigeant voit tout. Chacun a la vue dont il a besoin, rien de plus.</li>
   <li><strong>API native :</strong> votre base de données expose une API que n'importe quel outil peut consommer. Votre site web affiche les données en temps réel. Votre agent IA lit et écrit directement. Votre dashboard se met à jour automatiquement.</li>
-  <li><strong>Historique complet :</strong> chaque modification est tracée : qui, quoi, quand. Vous pouvez restaurer n'importe quelle version antérieure. Audit, conformité, traçabilité — tout est couvert.</li>
+  <li><strong>Historique complet :</strong> chaque modification est tracée : qui, quoi, quand. Vous pouvez restaurer n'importe quelle version antérieure. Audit, conformité, traçabilité, tout est couvert.</li>
 </ul>
 
-<p>En résumé, une base de données transforme vos données en <strong>un actif structuré, accessible et exploitable</strong> — au lieu d'un fichier fragile que tout le monde craint de casser.</p>
+<p>En résumé, une base de données transforme vos données en <strong>un actif structuré, accessible et exploitable</strong>, au lieu d'un fichier fragile que tout le monde craint de casser.</p>
 
 <h2>Les 3 options concrètes pour migrer</h2>
 
@@ -1786,7 +1786,7 @@ export const blogPosts: BlogPost[] = [
   <li><strong>Pour qui :</strong> PME sérieuses qui veulent une infrastructure complète, propriétaire, et prête pour l'IA</li>
   <li><strong>Avantages :</strong> base de données + interface sur-mesure + agents IA connectés, hébergée sur vos serveurs ou cloud dédié, aucune limite technique, propriété totale des données</li>
   <li><strong>Limites :</strong> investissement initial plus important (mais rentabilisé rapidement)</li>
-  <li><strong>Coût :</strong> inclus dans le package infrastructure NateSystem — pas de coût de base de données séparé</li>
+  <li><strong>Coût :</strong> inclus dans le package infrastructure NateSystem, pas de coût de base de données séparé</li>
   <li><strong>Verdict :</strong> la solution pérenne pour les PME qui voient grand</li>
 </ul>
 
@@ -1815,7 +1815,7 @@ export const blogPosts: BlogPost[] = [
   <li>Quels champs dans chaque table ? (nom, email, date de création, statut...)</li>
 </ul>
 
-<p>Un bon modèle de données, c'est la fondation de tout. Prenez le temps de le faire correctement — c'est ce qui détermine si votre base sera un plaisir ou un cauchemar à utiliser.</p>
+<p>Un bon modèle de données, c'est la fondation de tout. Prenez le temps de le faire correctement, c'est ce qui détermine si votre base sera un plaisir ou un cauchemar à utiliser.</p>
 
 <h3>Étape 3 : Importer avec des scripts automatisés</h3>
 
@@ -1832,7 +1832,7 @@ export const blogPosts: BlogPost[] = [
 
 <h3>Étape 4 : Connecter vos outils existants</h3>
 
-<p>Une fois la base en place, connectez-la à votre écosystème : CRM, outil d'email, dashboard, site web. C'est là que la magie opère — vos données circulent automatiquement entre les outils, sans intervention humaine.</p>
+<p>Une fois la base en place, connectez-la à votre écosystème : CRM, outil d'email, dashboard, site web. C'est là que la magie opère, vos données circulent automatiquement entre les outils, sans intervention humaine.</p>
 
 <p><strong>Conseil crucial :</strong> gardez l'ancien Excel en lecture seule pendant 30 jours après la migration. Ne le supprimez pas. Certaines personnes auront besoin de temps pour adopter le nouveau système, et avoir l'ancien disponible en référence facilite la transition. Au bout de 30 jours, archivez-le définitivement.</p>
 
@@ -1843,7 +1843,7 @@ export const blogPosts: BlogPost[] = [
 <ul>
   <li><strong>Airtable :</strong> 0-20 euros/mois par utilisateur. Rapide à mettre en place, mais les limites arrivent vite (50k lignes, formules limitées, pas de vraie API).</li>
   <li><strong>Supabase :</strong> 0-25 euros/mois. Beaucoup plus de capacité, vraie base PostgreSQL, API complète. Le meilleur rapport qualité/prix du marché.</li>
-  <li><strong>Infrastructure custom NateSystem :</strong> inclus dans le package d'infrastructure IA. Pas de coût séparé pour la base de données — elle fait partie intégrante de votre système. C'est la solution la plus économique à long terme parce que tout est intégré.</li>
+  <li><strong>Infrastructure custom NateSystem :</strong> inclus dans le package d'infrastructure IA. Pas de coût séparé pour la base de données, elle fait partie intégrante de votre système. C'est la solution la plus économique à long terme parce que tout est intégré.</li>
 </ul>
 
 <p>Pour calculer combien vos outils actuels vous coûtent vraiment (y compris le temps perdu sur Excel), utilisez notre <a href="/tools/saas-calculator">calculateur de coût SaaS</a>.</p>
@@ -1862,7 +1862,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>Excel ne fournit aucune de ces trois choses. Une base de données les fournit toutes nativement.</p>
 
-<p>C'est pour cette raison que <strong>chez NateSystem, on commence toujours par la base de données</strong>. Pas par l'IA. Pas par les automatisations. Par les fondations. Une fois que vos données sont structurées, propres et accessibles via API, déployer des agents IA devient naturel — presque trivial.</p>
+<p>C'est pour cette raison que <strong>chez NateSystem, on commence toujours par la base de données</strong>. Pas par l'IA. Pas par les automatisations. Par les fondations. Une fois que vos données sont structurées, propres et accessibles via API, déployer des agents IA devient naturel, presque trivial.</p>
 
 <p>L'inverse est impossible. Essayer de connecter un agent IA à des fichiers Excel, c'est comme essayer de construire un immeuble sur du sable. Ça ne tient pas. Pour approfondir ce sujet, lisez notre article sur <a href="/blog/cout-reel-outils-non-connectes-pme">le coût réel des outils non connectés</a>.</p>
 
@@ -1888,7 +1888,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>Excel a rendu d'immenses services aux PME pendant 30 ans. Mais en 2026, l'utiliser comme base de données principale, c'est comme utiliser un fax pour communiquer : ça fonctionne techniquement, mais ça vous freine considérablement.</p>
 
-<p>La migration vers une vraie base de données n'est pas un luxe technique — c'est un <strong>prérequis pour tout ce qui vient ensuite</strong> : automatisation, agents IA, dashboards temps réel, scaling de votre activité. Et plus vous attendez, plus la migration sera complexe (parce que vos Excel continuent de grossir et de se multiplier).</p>
+<p>La migration vers une vraie base de données n'est pas un luxe technique, c'est un <strong>prérequis pour tout ce qui vient ensuite</strong> : automatisation, agents IA, dashboards temps réel, scaling de votre activité. Et plus vous attendez, plus la migration sera complexe (parce que vos Excel continuent de grossir et de se multiplier).</p>
 
 <p>Le meilleur moment pour migrer, c'était il y a un an. Le deuxième meilleur moment, c'est maintenant.</p>
 
@@ -1932,9 +1932,9 @@ export const blogPosts: BlogPost[] = [
 
 <p>Résultat : vos équipes passent leur temps à <strong>copier-coller des informations</strong> d'un outil à l'autre. Un nouveau client arrive ? Il faut le saisir dans 3 systèmes différents. Une facture est payée ? Quelqu'un doit manuellement mettre à jour le tableau de suivi.</p>
 
-<blockquote>Si votre équipe utilise plus de 5 outils SaaS sans intégration native entre eux, vous avez un problème d'infrastructure — pas un problème de personnel.</blockquote>
+<blockquote>Si votre équipe utilise plus de 5 outils SaaS sans intégration native entre eux, vous avez un problème d'infrastructure, pas un problème de personnel.</blockquote>
 
-<p><strong>Ce que l'IA change :</strong> une infrastructure IA connecte vos outils via des API et des agents automatisés. Un agent peut surveiller votre boîte email, créer automatiquement le contact dans votre CRM, déclencher la séquence d'onboarding, et mettre à jour votre tableau de bord — le tout sans intervention humaine.</p>
+<p><strong>Ce que l'IA change :</strong> une infrastructure IA connecte vos outils via des API et des agents automatisés. Un agent peut surveiller votre boîte email, créer automatiquement le contact dans votre CRM, déclencher la séquence d'onboarding, et mettre à jour votre tableau de bord, le tout sans intervention humaine.</p>
 
 <p>Vous pouvez évaluer combien cette déconnexion vous coûte avec notre <a href="/tools/saas-calculator">calculateur de coût SaaS</a>.</p>
 
@@ -1968,7 +1968,7 @@ export const blogPosts: BlogPost[] = [
   <li>Son pipeline de deals est-il visible par l'équipe ou dans un fichier personnel ?</li>
 </ul>
 
-<p>Si la réponse à la majorité de ces questions est négative, vous avez un <strong>problème de knowledge management</strong> — et c'est exactement ce qu'une infrastructure IA résout en premier.</p>
+<p>Si la réponse à la majorité de ces questions est négative, vous avez un <strong>problème de knowledge management</strong>, et c'est exactement ce qu'une infrastructure IA résout en premier.</p>
 
 <blockquote>Une bonne infrastructure IA capture, structure et redistribue la connaissance de votre entreprise automatiquement. Elle transforme l'expertise individuelle en capital organisationnel.</blockquote>
 
@@ -1976,7 +1976,7 @@ export const blogPosts: BlogPost[] = [
 
 <h2 id="signe-4">Signe 4 : Vos données sont dans des Excel que personne ne maintient</h2>
 
-<p>Vous le connaissez, ce fichier Excel. Il s'appelle "suivi_clients_v3_FINAL_VRAI.xlsx". Il a 47 onglets. La dernière mise à jour date de 3 semaines. Et c'est Marie du marketing qui le maintient — quand elle y pense.</p>
+<p>Vous le connaissez, ce fichier Excel. Il s'appelle "suivi_clients_v3_FINAL_VRAI.xlsx". Il a 47 onglets. La dernière mise à jour date de 3 semaines. Et c'est Marie du marketing qui le maintient, quand elle y pense.</p>
 
 <p>Les signes classiques :</p>
 
@@ -1987,7 +1987,7 @@ export const blogPosts: BlogPost[] = [
   <li>Vous prenez des décisions basées sur des chiffres qui ont potentiellement 2 semaines de retard</li>
 </ul>
 
-<p><strong>Pourquoi c'est un signe de maturité IA :</strong> si vous avez des données (même mal organisées), vous avez la matière première. L'infrastructure IA va justement <strong>centraliser, nettoyer et automatiser</strong> le flux de ces données. Pas besoin de données parfaites au départ — il faut juste qu'elles existent.</p>
+<p><strong>Pourquoi c'est un signe de maturité IA :</strong> si vous avez des données (même mal organisées), vous avez la matière première. L'infrastructure IA va justement <strong>centraliser, nettoyer et automatiser</strong> le flux de ces données. Pas besoin de données parfaites au départ, il faut juste qu'elles existent.</p>
 
 <p>Un agent IA peut se connecter à vos différentes sources (CRM, email, comptabilité), extraire les données pertinentes, les normaliser dans un format cohérent, et produire des dashboards actualisés en temps réel.</p>
 
@@ -2043,14 +2043,14 @@ export const blogPosts: BlogPost[] = [
   <li>Vos clients commencent à vous comparer avec des entreprises "plus modernes"</li>
 </ul>
 
-<p>L'IA n'est plus un avantage compétitif — c'est en train de devenir le <strong>minimum requis</strong>. Les entreprises qui ne l'adoptent pas ne resteront pas "comme avant". Elles seront progressivement dépassées par celles qui l'intègrent dans leurs opérations.</p>
+<p>L'IA n'est plus un avantage compétitif, c'est en train de devenir le <strong>minimum requis</strong>. Les entreprises qui ne l'adoptent pas ne resteront pas "comme avant". Elles seront progressivement dépassées par celles qui l'intègrent dans leurs opérations.</p>
 
 <p>La bonne nouvelle : vous n'avez pas besoin de tout faire d'un coup. Une infrastructure IA se déploie par étapes, en commençant par les processus à plus fort impact.</p>
 
 <h2 id="faq">Questions fréquentes</h2>
 
 <h3>Combien de signes faut-il cocher pour être prêt ?</h3>
-<p>Si vous en cochez <strong>4 sur 7</strong>, vous êtes dans la zone de maturité idéale. Moins de 3, concentrez-vous d'abord sur la structuration de vos processus. 5 ou plus, c'est urgent — chaque mois de retard vous coûte de l'argent.</p>
+<p>Si vous en cochez <strong>4 sur 7</strong>, vous êtes dans la zone de maturité idéale. Moins de 3, concentrez-vous d'abord sur la structuration de vos processus. 5 ou plus, c'est urgent, chaque mois de retard vous coûte de l'argent.</p>
 
 <h3>Quel budget prévoir pour une infrastructure IA ?</h3>
 <p>Pour une PME de 5 à 50 personnes, comptez entre 3 000 et 15 000 euros pour le déploiement initial, puis 500 à 2 000 euros/mois de maintenance. Le ROI se mesure généralement en semaines, pas en mois.</p>
@@ -2063,11 +2063,11 @@ export const blogPosts: BlogPost[] = [
 
 <h2 id="conclusion">Conclusion : passez de la réflexion à l'action</h2>
 
-<p>Si vous avez lu cet article jusqu'ici, c'est que vous avez reconnu votre entreprise dans au moins quelques-uns de ces signes. C'est normal — la majorité des PME en croissance vivent ces situations.</p>
+<p>Si vous avez lu cet article jusqu'ici, c'est que vous avez reconnu votre entreprise dans au moins quelques-uns de ces signes. C'est normal, la majorité des PME en croissance vivent ces situations.</p>
 
-<p>La différence entre celles qui stagnent et celles qui accélèrent tient en un mot : <strong>l'infrastructure</strong>. Pas les outils isolés, pas les gadgets IA à la mode — une vraie infrastructure qui connecte, automatise et optimise vos opérations.</p>
+<p>La différence entre celles qui stagnent et celles qui accélèrent tient en un mot : <strong>l'infrastructure</strong>. Pas les outils isolés, pas les gadgets IA à la mode, une vraie infrastructure qui connecte, automatise et optimise vos opérations.</p>
 
-<p>Chez NateSystem, nous commençons toujours par un <strong>appel de consulting offert</strong> pour identifier vos 3 processus à plus fort potentiel d'automatisation. Pas de jargon technique, pas d'engagement — juste une analyse claire de ce que l'IA peut faire pour votre entreprise. Vous repartez avec une roadmap, même si on ne bosse pas ensemble.</p>
+<p>Chez NateSystem, nous commençons toujours par un <strong>appel de consulting offert</strong> pour identifier vos 3 processus à plus fort potentiel d'automatisation. Pas de jargon technique, pas d'engagement, juste une analyse claire de ce que l'IA peut faire pour votre entreprise. Vous repartez avec une roadmap, même si on ne bosse pas ensemble.</p>
 
 <p><strong><a href="/book">Réserver votre audit gratuit &rarr;</a></strong></p>
 `,
@@ -2154,8 +2154,8 @@ export const blogPosts: BlogPost[] = [
     </tr>
     <tr>
       <td><strong>Initiative</strong></td>
-      <td>Réactif — attend vos instructions</td>
-      <td>Proactif — détecte et agit seul</td>
+      <td>Réactif, attend vos instructions</td>
+      <td>Proactif, détecte et agit seul</td>
     </tr>
     <tr>
       <td><strong>Spécialisation</strong></td>
@@ -2270,7 +2270,7 @@ export const blogPosts: BlogPost[] = [
 <p>La transition se fait en 4 étapes :</p>
 
 <h3>Étape 1 : Identifiez vos processus répétitifs</h3>
-<p>Listez toutes les tâches que vous ou votre équipe faites de manière récurrente. Pour chacune, notez : la fréquence, le temps passé, les outils impliqués, et le niveau de complexité. Concentrez-vous sur les tâches à <strong>haute fréquence et faible complexité</strong> — c'est là que le ROI est le plus rapide.</p>
+<p>Listez toutes les tâches que vous ou votre équipe faites de manière récurrente. Pour chacune, notez : la fréquence, le temps passé, les outils impliqués, et le niveau de complexité. Concentrez-vous sur les tâches à <strong>haute fréquence et faible complexité</strong>, c'est là que le ROI est le plus rapide.</p>
 
 <h3>Étape 2 : Priorisez par impact</h3>
 <p>Classez vos processus par impact potentiel : temps gagné x fréquence x nombre de personnes concernées. Les 3 premiers de votre liste sont vos candidats prioritaires pour l'automatisation par agents.</p>
@@ -2284,7 +2284,7 @@ export const blogPosts: BlogPost[] = [
 <h2 id="faq">Questions fréquentes</h2>
 
 <h3>Les agents IA vont-ils remplacer mes employés ?</h3>
-<p>Non. Les agents IA remplacent les <strong>tâches</strong>, pas les personnes. Vos employés passent de l'exécution répétitive à des missions à plus haute valeur : relation client, stratégie, créativité, décision. Dans nos déploiements, aucune entreprise n'a licencié suite à l'automatisation — elles ont toutes réaffecté les équipes sur des missions plus impactantes.</p>
+<p>Non. Les agents IA remplacent les <strong>tâches</strong>, pas les personnes. Vos employés passent de l'exécution répétitive à des missions à plus haute valeur : relation client, stratégie, créativité, décision. Dans nos déploiements, aucune entreprise n'a licencié suite à l'automatisation, elles ont toutes réaffecté les équipes sur des missions plus impactantes.</p>
 
 <h3>Est-ce que mes données sont sécurisées avec un agent IA ?</h3>
 <p>C'est une question légitime et cruciale. Chez NateSystem, nous déployons des agents qui traitent vos données <strong>dans votre propre infrastructure</strong> ou via des API sécurisées avec chiffrement de bout en bout. Vos données ne sont jamais utilisées pour entraîner des modèles tiers.</p>
@@ -2327,7 +2327,7 @@ export const blogPosts: BlogPost[] = [
   <li><a href="#probleme">Le problème invisible : 8 outils qui ne se parlent pas</a></li>
   <li><a href="#calcul">Le calcul : combien ça coûte réellement</a></li>
   <li><a href="#couts-caches">Les 5 coûts cachés des outils déconnectés</a></li>
-  <li><a href="#etude-de-cas">Étude de cas : Chromosome — de 10h à 20 minutes</a></li>
+  <li><a href="#etude-de-cas">Étude de cas : Chromosome, de 10h à 20 minutes</a></li>
   <li><a href="#solution">La solution : centraliser, connecter, automatiser</a></li>
   <li><a href="#calculer">Comment calculer votre propre coût</a></li>
   <li><a href="#faq">FAQ</a></li>
@@ -2376,7 +2376,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>C'est le coût le plus visible, celui que nous venons de calculer. Chaque fois qu'un employé copie une information d'un outil vers un autre, c'est du temps gaspillé. Mais au-delà du temps brut, c'est aussi une <strong>rupture de concentration</strong>. Des études montrent qu'après une interruption de tâche, il faut en moyenne 23 minutes pour retrouver sa concentration initiale.</p>
 
-<p>Si un commercial est interrompu 10 fois par jour pour de la saisie, ce sont <strong>3h50 de concentration perdue</strong> — en plus du temps de saisie lui-même.</p>
+<p>Si un commercial est interrompu 10 fois par jour pour de la saisie, ce sont <strong>3h50 de concentration perdue</strong>, en plus du temps de saisie lui-même.</p>
 
 <h3>2. Les erreurs humaines et leurs conséquences</h3>
 
@@ -2423,9 +2423,9 @@ export const blogPosts: BlogPost[] = [
   <li>Le reporting mensuel qui arrive le 15, alors que les décisions devaient être prises le 5</li>
 </ul>
 
-<blockquote>Les outils déconnectés ne vous font pas seulement perdre du temps. Ils vous font perdre des clients, des contrats et des parts de marché — sans que vous le sachiez.</blockquote>
+<blockquote>Les outils déconnectés ne vous font pas seulement perdre du temps. Ils vous font perdre des clients, des contrats et des parts de marché, sans que vous le sachiez.</blockquote>
 
-<h2 id="etude-de-cas">Étude de cas : Chromosome — de 10h à 20 minutes de planification</h2>
+<h2 id="etude-de-cas">Étude de cas : Chromosome, de 10h à 20 minutes de planification</h2>
 
 <p>Chromosome est une entreprise de services événementiels en Rhône-Alpes. Avant notre intervention, leur processus de planification d'événement ressemblait à ceci :</p>
 
@@ -2467,7 +2467,7 @@ export const blogPosts: BlogPost[] = [
 <h3>Brique 3 : Automatiser les processus</h3>
 <p>Les agents IA prennent en charge les processus de bout en bout. Pas juste le transfert de données, mais la <strong>logique métier</strong> : qualification, décision, action, suivi. Chaque agent est configuré selon vos règles, vos critères, votre façon de travailler.</p>
 
-<p>Le résultat : vos outils existants deviennent les briques d'une infrastructure unifiée. Vous ne changez pas d'outils — vous les rendez intelligents.</p>
+<p>Le résultat : vos outils existants deviennent les briques d'une infrastructure unifiée. Vous ne changez pas d'outils, vous les rendez intelligents.</p>
 
 <h2 id="calculer">Comment calculer votre propre coût</h2>
 
@@ -2497,11 +2497,11 @@ export const blogPosts: BlogPost[] = [
 <p>Les premières automatisations sont visibles en <strong>2 à 3 semaines</strong> après le début du déploiement. Le ROI complet se matérialise généralement entre 1 et 3 mois, selon la complexité de vos processus.</p>
 
 <h3>Est-ce adapté aux petites équipes (moins de 10 personnes) ?</h3>
-<p>Oui, et c'est même là que l'impact relatif est le plus fort. Dans une équipe de 5 personnes, libérer 2h/jour par personne équivaut à embaucher une personne supplémentaire — sans le coût du recrutement.</p>
+<p>Oui, et c'est même là que l'impact relatif est le plus fort. Dans une équipe de 5 personnes, libérer 2h/jour par personne équivaut à embaucher une personne supplémentaire, sans le coût du recrutement.</p>
 
 <h2 id="conclusion">Conclusion : arrêtez de payer pour ce que vos outils ne font pas</h2>
 
-<p>Vous payez déjà pour vos outils SaaS. Individuellement, ils valent chacun leur abonnement. Mais le <strong>vide entre eux</strong> — ce no man's land où vos employés passent des heures chaque jour — c'est le vrai gouffre financier.</p>
+<p>Vous payez déjà pour vos outils SaaS. Individuellement, ils valent chacun leur abonnement. Mais le <strong>vide entre eux</strong>, ce no man's land où vos employés passent des heures chaque jour, c'est le vrai gouffre financier.</p>
 
 <p>Calculer ce coût est la première étape. Y remédier est la seconde. Et la bonne nouvelle, c'est que les solutions existent, sont accessibles aux PME, et génèrent un ROI mesurable en quelques semaines.</p>
 
@@ -2522,7 +2522,7 @@ export const blogPosts: BlogPost[] = [
     content: `
 <p>Choisir un prestataire pour développer un logiciel ou intégrer de l'IA, c'est confier une partie du moteur de votre entreprise à quelqu'un d'externe. Le mauvais choix coûte cher : <strong>selon McKinsey, seulement 1 projet logiciel sur 200 atteint les résultats attendus dans les délais et le budget prévus.</strong> Le bon choix, lui, vous donne un avantage opérationnel durable.</p>
 
-<p>Ce guide vous donne les critères concrets, les questions à poser en rendez-vous, les pièges à éviter, et une grille d'évaluation pour comparer vos prestataires sur une base objective — pas sur un feeling.</p>
+<p>Ce guide vous donne les critères concrets, les questions à poser en rendez-vous, les pièges à éviter, et une grille d'évaluation pour comparer vos prestataires sur une base objective, pas sur un feeling.</p>
 
 <nav>
 <h2>Sommaire</h2>
@@ -2540,7 +2540,7 @@ export const blogPosts: BlogPost[] = [
 
 <h2 id="pourquoi">Pourquoi ce choix est plus stratégique qu'il n'y paraît</h2>
 
-<p>Un prestataire logiciel ne vous vend pas un livrable, il devient un <strong>partenaire opérationnel</strong> : il connaît vos process, héberge vos données, et conditionne votre capacité à évoluer. Si la relation tourne mal — ou si le prestataire disparaît — vous pouvez vous retrouver bloqué avec un outil que personne ne peut reprendre.</p>
+<p>Un prestataire logiciel ne vous vend pas un livrable, il devient un <strong>partenaire opérationnel</strong> : il connaît vos process, héberge vos données, et conditionne votre capacité à évoluer. Si la relation tourne mal, ou si le prestataire disparaît, vous pouvez vous retrouver bloqué avec un outil que personne ne peut reprendre.</p>
 
 <p>C'est pour ça que les bons critères ne sont pas seulement techniques (« sait-il coder ? ») mais aussi contractuels et stratégiques : <strong>propriété, réversibilité, dépendance.</strong> Ce sont eux qui font la différence entre un investissement et un piège.</p>
 
@@ -2548,13 +2548,13 @@ export const blogPosts: BlogPost[] = [
 
 <ol>
   <li><strong>La compréhension de votre métier.</strong> Un bon prestataire pose des questions sur vos opérations <em>avant</em> de chiffrer. S'il vous envoie un devis sans avoir compris votre activité, fuyez.</li>
-  <li><strong>La propriété du code.</strong> À la fin du projet, le code source vous appartient-il ? (Détaillé plus bas — c'est le critère le plus négligé.)</li>
+  <li><strong>La propriété du code.</strong> À la fin du projet, le code source vous appartient-il ? (Détaillé plus bas, c'est le critère le plus négligé.)</li>
   <li><strong>La réversibilité.</strong> Pouvez-vous récupérer votre outil, vos données et la documentation pour les confier à un autre si besoin ? Sans réversibilité, vous êtes captif.</li>
   <li><strong>Les SLA contractualisés.</strong> Délais de réponse et de résolution écrits noir sur blanc, pas des promesses orales.</li>
   <li><strong>La sécurité et l'hébergement.</strong> Où sont hébergées vos données ? En UE ? Le prestataire est-il RGPD-natif (sauvegardes, chiffrement, accès par rôle) ?</li>
   <li><strong>Les références et la spécialisation.</strong> A-t-il déjà livré dans votre secteur ou sur un besoin similaire ? Demandez des cas concrets et chiffrés.</li>
   <li><strong>La stabilité de l'équipe.</strong> Qui code réellement ? Un interlocuteur unique et technique, ou une chaîne de sous-traitance opaque ?</li>
-  <li><strong>La transparence tarifaire.</strong> Périmètre fixe, prix fixe, jalons clairs — ou facturation au fil de l'eau qui dérive ?</li>
+  <li><strong>La transparence tarifaire.</strong> Périmètre fixe, prix fixe, jalons clairs, ou facturation au fil de l'eau qui dérive ?</li>
   <li><strong>L'intégration à l'existant.</strong> Peut-il connecter le nouvel outil à vos logiciels actuels (CRM, compta, ERP) via API ?</li>
   <li><strong>La qualité du premier contact.</strong> Réactivité, clarté, honnêteté sur ce qui est faisable ou non. Le premier échange est un échantillon de toute la relation.</li>
 </ol>
@@ -2563,7 +2563,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>C'est la question la plus importante, et la plus oubliée. Avec un <strong>SaaS</strong>, vous ne possédez rien : vous louez un accès, à vie, et vos données vivent chez l'éditeur. Avec une <strong>agence en régie classique</strong>, le code peut rester la propriété du prestataire selon le contrat. Avec un prestataire en <strong>sur-mesure propriétaire</strong>, le code source vous est livré et vous appartient à 100 %.</p>
 
-<blockquote>La bonne question à poser : « À la fin du projet, est-ce que je reçois le code source, la documentation, et les accès à l'infrastructure — et puis-je les confier à un autre développeur ? » Si la réponse est non ou floue, vous construisez sur du sable.</blockquote>
+<blockquote>La bonne question à poser : « À la fin du projet, est-ce que je reçois le code source, la documentation, et les accès à l'infrastructure, et puis-je les confier à un autre développeur ? » Si la réponse est non ou floue, vous construisez sur du sable.</blockquote>
 
 <h2 id="types">SaaS, régie ou sur-mesure propriétaire : le comparatif</h2>
 
@@ -2587,7 +2587,7 @@ export const blogPosts: BlogPost[] = [
   <li>Le code source me sera-t-il livré, et m'appartiendra-t-il à 100 % ?</li>
   <li>Où seront hébergées mes données ? En UE ?</li>
   <li>Quels SLA proposez-vous, et sont-ils contractualisés ?</li>
-  <li>Qui codera réellement mon projet — vous, ou un sous-traitant ?</li>
+  <li>Qui codera réellement mon projet, vous, ou un sous-traitant ?</li>
   <li>Avez-vous déjà livré un projet similaire ? Avec quels résultats chiffrés ?</li>
   <li>Comment se passe la passation si on arrête de travailler ensemble ?</li>
   <li>Le périmètre et le prix sont-ils fixes, ou facturés au fil de l'eau ?</li>
@@ -2628,7 +2628,7 @@ export const blogPosts: BlogPost[] = [
 <p>Pour une PME, comptez généralement entre 15 000 et 50 000 € d'investissement initial selon le périmètre, puis l'hébergement et la maintenance. Détail des fourchettes sur notre page <a href="/prix-logiciel-sur-mesure">prix d'un logiciel sur-mesure</a>.</p>
 
 <h3>Comment vérifier qu'un prestataire IA est sérieux ?</h3>
-<p>Mêmes critères, plus deux spécifiques : où transitent les données envoyées à l'IA (idéalement des modèles hébergés en UE), et l'IA est-elle intégrée là où elle remplace de vraies heures de travail — ou juste comme argument marketing ?</p>
+<p>Mêmes critères, plus deux spécifiques : où transitent les données envoyées à l'IA (idéalement des modèles hébergés en UE), et l'IA est-elle intégrée là où elle remplace de vraies heures de travail, ou juste comme argument marketing ?</p>
 
 <h2>En résumé</h2>
 
@@ -2649,9 +2649,9 @@ export const blogPosts: BlogPost[] = [
     category: 'Infrastructure',
     tags: ['ERP', 'Logiciel de gestion', 'PME', 'Définition'],
     content: `
-<p>Un <strong>ERP (Enterprise Resource Planning), ou PGI (progiciel de gestion intégré) en français, est un logiciel qui centralise toutes les fonctions de gestion d'une entreprise — finance, stocks, RH, ventes, production — dans une base de données unique.</strong> Au lieu d'avoir un outil par service qui ne se parle pas aux autres, l'ERP fait tout circuler dans un seul système.</p>
+<p>Un <strong>ERP (Enterprise Resource Planning), ou PGI (progiciel de gestion intégré) en français, est un logiciel qui centralise toutes les fonctions de gestion d'une entreprise, finance, stocks, RH, ventes, production, dans une base de données unique.</strong> Au lieu d'avoir un outil par service qui ne se parle pas aux autres, l'ERP fait tout circuler dans un seul système.</p>
 
-<p>C'est la promesse. Mais pour une PME, un ERP n'est pas toujours le bon choix : il peut être surdimensionné, coûteux et long à déployer. Ce guide explique ce qu'est vraiment un ERP, ce qu'il contient, combien il coûte — et quand un outil sur-mesure plus léger est préférable.</p>
+<p>C'est la promesse. Mais pour une PME, un ERP n'est pas toujours le bon choix : il peut être surdimensionné, coûteux et long à déployer. Ce guide explique ce qu'est vraiment un ERP, ce qu'il contient, combien il coûte, et quand un outil sur-mesure plus léger est préférable.</p>
 
 <nav>
 <h2>Sommaire</h2>
@@ -2669,7 +2669,7 @@ export const blogPosts: BlogPost[] = [
 
 <h2 id="definition">Définition : qu'est-ce qu'un ERP exactement ?</h2>
 
-<p>Un ERP est un <strong>progiciel de gestion intégré</strong> : un logiciel unique qui réunit, dans une seule base de données, les processus de plusieurs services. Quand un commercial enregistre une commande, le stock se met à jour, la facture se prépare, et la comptabilité voit l'écriture — automatiquement, sans ressaisie. C'est ça, l'« intégration » de l'ERP : une seule source de vérité partagée par toute l'entreprise.</p>
+<p>Un ERP est un <strong>progiciel de gestion intégré</strong> : un logiciel unique qui réunit, dans une seule base de données, les processus de plusieurs services. Quand un commercial enregistre une commande, le stock se met à jour, la facture se prépare, et la comptabilité voit l'écriture, automatiquement, sans ressaisie. C'est ça, l'« intégration » de l'ERP : une seule source de vérité partagée par toute l'entreprise.</p>
 
 <h2 id="fonctionnement">Comment fonctionne un ERP</h2>
 
@@ -2678,12 +2678,12 @@ export const blogPosts: BlogPost[] = [
 <h2 id="modules">Les modules essentiels d'un ERP</h2>
 
 <ul>
-  <li><strong>Finance & comptabilité</strong> — écritures, facturation, trésorerie</li>
-  <li><strong>Gestion commerciale & CRM</strong> — devis, commandes, clients</li>
-  <li><strong>Stocks & logistique (WMS)</strong> — entrées/sorties, inventaire</li>
-  <li><strong>Production (GPAO)</strong> — ordres de fabrication, nomenclatures</li>
-  <li><strong>RH & paie</strong> — contrats, planning, exports paie</li>
-  <li><strong>Achats</strong> — fournisseurs, commandes, réceptions</li>
+  <li><strong>Finance & comptabilité</strong>, écritures, facturation, trésorerie</li>
+  <li><strong>Gestion commerciale & CRM</strong>, devis, commandes, clients</li>
+  <li><strong>Stocks & logistique (WMS)</strong>, entrées/sorties, inventaire</li>
+  <li><strong>Production (GPAO)</strong>, ordres de fabrication, nomenclatures</li>
+  <li><strong>RH & paie</strong>, contrats, planning, exports paie</li>
+  <li><strong>Achats</strong>, fournisseurs, commandes, réceptions</li>
 </ul>
 
 <h2 id="benefices">Les bénéfices réels pour une PME</h2>
@@ -2727,7 +2727,7 @@ export const blogPosts: BlogPost[] = [
   <li>Vous dépendez de l'éditeur pour toute évolution</li>
 </ul>
 
-<blockquote>Pour beaucoup de PME, un <strong>outil sur-mesure plus léger</strong> — qui ne couvre que les process qui comptent vraiment et que l'entreprise possède — délivre l'essentiel des bénéfices de l'ERP sans le poids ni la dépendance. On compare les deux approches dans <a href="/blog/erp-vs-logiciel-sur-mesure">ERP vs logiciel sur-mesure</a>.</blockquote>
+<blockquote>Pour beaucoup de PME, un <strong>outil sur-mesure plus léger</strong>, qui ne couvre que les process qui comptent vraiment et que l'entreprise possède, délivre l'essentiel des bénéfices de l'ERP sans le poids ni la dépendance. On compare les deux approches dans <a href="/blog/erp-vs-logiciel-sur-mesure">ERP vs logiciel sur-mesure</a>.</blockquote>
 
 <h2 id="faq">FAQ</h2>
 
@@ -2745,7 +2745,7 @@ export const blogPosts: BlogPost[] = [
 
 <h2>En résumé</h2>
 
-<p>Un ERP centralise la gestion de l'entreprise dans une base unique — puissant, mais standardisé, coûteux dans la durée et long à déployer. Pour une PME aux process spécifiques, la vraie question n'est pas « quel ERP ? » mais « ai-je besoin d'un ERP complet, ou d'un outil sur-mesure qui ne fait que ce qui compte et m'appartient ? ».</p>
+<p>Un ERP centralise la gestion de l'entreprise dans une base unique, puissant, mais standardisé, coûteux dans la durée et long à déployer. Pour une PME aux process spécifiques, la vraie question n'est pas « quel ERP ? » mais « ai-je besoin d'un ERP complet, ou d'un outil sur-mesure qui ne fait que ce qui compte et m'appartient ? ».</p>
 
 <p><strong><a href="/book">Réserver un appel · offert pour en discuter &rarr;</a></strong></p>
 `,
@@ -2760,7 +2760,7 @@ export const blogPosts: BlogPost[] = [
     category: 'Infrastructure',
     tags: ['ERP', 'Logiciel sur-mesure', 'Comparatif', 'PME'],
     content: `
-<p><strong>Un ERP standard est un produit que vous louez et auquel vous adaptez vos process ; un logiciel sur-mesure est bâti autour de votre métier et vous appartient.</strong> Entre les deux, le no-code propose un compromis — puissant au début, plafonné ensuite. Lequel choisir dépend de quatre choses : la spécificité de vos process, votre horizon de coût, votre besoin d'intégration, et qui doit posséder l'outil.</p>
+<p><strong>Un ERP standard est un produit que vous louez et auquel vous adaptez vos process ; un logiciel sur-mesure est bâti autour de votre métier et vous appartient.</strong> Entre les deux, le no-code propose un compromis, puissant au début, plafonné ensuite. Lequel choisir dépend de quatre choses : la spécificité de vos process, votre horizon de coût, votre besoin d'intégration, et qui doit posséder l'outil.</p>
 
 <p>Ce comparatif tranche, critère par critère, avec le tableau de décision et le coût total sur 3 ans.</p>
 
@@ -2805,7 +2805,7 @@ export const blogPosts: BlogPost[] = [
 
 <h2 id="nocode">Le piège du no-code : le plafond de verre</h2>
 
-<p>Le no-code est séduisant : un outil monté en quelques jours, sans développeur. Mais il a un plafond. Dès que vos besoins se complexifient — une logique métier fine, un volume de données important, une intégration profonde — vous heurtez les limites de la plateforme. Et vous ne pouvez pas « sortir » votre outil : il vit chez l'éditeur, vous en êtes captif. Le no-code est excellent pour prototyper, risqué pour bâtir le cœur durable de votre activité.</p>
+<p>Le no-code est séduisant : un outil monté en quelques jours, sans développeur. Mais il a un plafond. Dès que vos besoins se complexifient, une logique métier fine, un volume de données important, une intégration profonde, vous heurtez les limites de la plateforme. Et vous ne pouvez pas « sortir » votre outil : il vit chez l'éditeur, vous en êtes captif. Le no-code est excellent pour prototyper, risqué pour bâtir le cœur durable de votre activité.</p>
 
 <h2 id="cout">Le coût total sur 3 ans (TCO)</h2>
 
@@ -2816,17 +2816,17 @@ export const blogPosts: BlogPost[] = [
   <li><strong>Sur-mesure</strong> : un investissement initial plus élevé, puis seulement l'hébergement et la maintenance. La courbe s'aplatit.</li>
 </ul>
 
-<p>Le <strong>point de bascule</strong> se situe souvent entre 2 et 4 ans selon le nombre d'utilisateurs et d'abonnements remplacés. Au-delà, le sur-mesure devient nettement moins cher — et vous possédez un actif. On détaille les fourchettes sur <a href="/prix-logiciel-sur-mesure">prix d'un logiciel sur-mesure</a>.</p>
+<p>Le <strong>point de bascule</strong> se situe souvent entre 2 et 4 ans selon le nombre d'utilisateurs et d'abonnements remplacés. Au-delà, le sur-mesure devient nettement moins cher, et vous possédez un actif. On détaille les fourchettes sur <a href="/prix-logiciel-sur-mesure">prix d'un logiciel sur-mesure</a>.</p>
 
 <h2 id="tendance">La tendance 2026 : l'écosystème connecté</h2>
 
-<p>La tendance forte de 2026 : les PME délaissent l'ERP monolithique au profit d'<strong>écosystèmes d'outils interconnectés</strong>. La conséquence directe : <strong>la capacité d'intégration via API devient le premier critère de choix</strong> d'un logiciel de gestion. Un outil qui ne se connecte pas aux autres est un futur silo — exactement le problème que l'ERP était censé résoudre.</p>
+<p>La tendance forte de 2026 : les PME délaissent l'ERP monolithique au profit d'<strong>écosystèmes d'outils interconnectés</strong>. La conséquence directe : <strong>la capacité d'intégration via API devient le premier critère de choix</strong> d'un logiciel de gestion. Un outil qui ne se connecte pas aux autres est un futur silo, exactement le problème que l'ERP était censé résoudre.</p>
 
 <h2 id="decision">Lequel choisir selon votre situation</h2>
 
 <ul>
   <li><strong>ERP standard</strong> si vos process sont très standards, que vous avez le budget récurrent et le temps d'une implémentation de 6-12 mois.</li>
-  <li><strong>No-code</strong> pour prototyper vite ou un besoin simple et temporaire — en sachant que vous serez captif.</li>
+  <li><strong>No-code</strong> pour prototyper vite ou un besoin simple et temporaire, en sachant que vous serez captif.</li>
   <li><strong>Sur-mesure propriétaire</strong> si vos process font votre différence, que vous voulez posséder votre outil, et que le coût cumulé de vos abonnements actuels devient déraisonnable.</li>
 </ul>
 
@@ -2843,7 +2843,7 @@ export const blogPosts: BlogPost[] = [
 
 <h2>En résumé</h2>
 
-<p>L'ERP standardise, le no-code plafonne, le sur-mesure vous appartient. Pour une PME dont les process font la différence, posséder un outil bâti sur son métier — et capable de se connecter à tout le reste — bat un progiciel loué auquel on s'adapte. Tout dépend de votre horizon : sur 3 ans et plus, la propriété gagne presque toujours.</p>
+<p>L'ERP standardise, le no-code plafonne, le sur-mesure vous appartient. Pour une PME dont les process font la différence, posséder un outil bâti sur son métier, et capable de se connecter à tout le reste, bat un progiciel loué auquel on s'adapte. Tout dépend de votre horizon : sur 3 ans et plus, la propriété gagne presque toujours.</p>
 
 <p><a href="/logiciel-sur-mesure-vs-saas">Comparatif sur-mesure vs SaaS</a> · <a href="/prix-logiciel-sur-mesure">Prix d'un logiciel sur-mesure</a></p>
 
@@ -2860,7 +2860,7 @@ export const blogPosts: BlogPost[] = [
     category: 'Automatisation',
     tags: ['Automatisation', 'PME', 'IA', 'Productivité'],
     content: `
-<p><strong>Selon McKinsey, environ 30 % du temps de travail est consacré à des tâches répétitives automatisables.</strong> Pour une PME de 10 personnes, c'est l'équivalent de trois temps pleins absorbés par de la saisie, des relances et du reporting manuel. L'automatisation récupère ce temps — et le retour sur investissement est l'un des plus rapides du numérique.</p>
+<p><strong>Selon McKinsey, environ 30 % du temps de travail est consacré à des tâches répétitives automatisables.</strong> Pour une PME de 10 personnes, c'est l'équivalent de trois temps pleins absorbés par de la saisie, des relances et du reporting manuel. L'automatisation récupère ce temps, et le retour sur investissement est l'un des plus rapides du numérique.</p>
 
 <p>Ce guide montre par où commencer concrètement : les trois façons d'automatiser, dix automatisations qui rapportent, une méthode en cinq étapes, les budgets réels, et le moment où il faut passer du bricolage no-code à un système sur-mesure.</p>
 
@@ -2883,7 +2883,7 @@ export const blogPosts: BlogPost[] = [
   <li><strong>30 % du temps de travail</strong> est automatisable (McKinsey).</li>
   <li>Une automatisation bien conçue génère couramment un <strong>ROI de 300 à 500 % la première année</strong>.</li>
   <li>Les <strong>erreurs humaines chutent d'environ 90 %</strong> sur les process automatisés.</li>
-  <li>Gain typique : <strong>5 h/semaine par employé ≈ 8 000 €/an</strong>. Sur une équipe de 10, on parle d'environ 20 000 €/an — l'équivalent d'un mi-temps récupéré.</li>
+  <li>Gain typique : <strong>5 h/semaine par employé ≈ 8 000 €/an</strong>. Sur une équipe de 10, on parle d'environ 20 000 €/an, l'équivalent d'un mi-temps récupéré.</li>
   <li>Le <strong>payback</strong> d'une automatisation se mesure souvent en 1 à 3 mois.</li>
 </ul>
 
@@ -2892,7 +2892,7 @@ export const blogPosts: BlogPost[] = [
 <ol>
   <li><strong>Le no-code</strong> (Make, Zapier, n8n) : relier vos outils entre eux par des « si ceci, alors cela ». Rapide à mettre en place.</li>
   <li><strong>Les API</strong> : connexions directes et fiables entre vos logiciels, pour les flux critiques.</li>
-  <li><strong>L'IA générative</strong> : pour les tâches qui demandent de comprendre du texte — tri d'emails, lecture de documents, rédaction. C'est ce qui distingue l'automatisation moderne de l'ancienne.</li>
+  <li><strong>L'IA générative</strong> : pour les tâches qui demandent de comprendre du texte, tri d'emails, lecture de documents, rédaction. C'est ce qui distingue l'automatisation moderne de l'ancienne.</li>
 </ol>
 
 <h2 id="dix">10 automatisations concrètes par service</h2>
@@ -2924,7 +2924,7 @@ export const blogPosts: BlogPost[] = [
 
 <ol>
   <li><strong>Cartographier</strong> vos process et repérer les tâches répétitives.</li>
-  <li><strong>Prioriser</strong> selon la matrice impact / complexité — commencez par fort impact, faible complexité.</li>
+  <li><strong>Prioriser</strong> selon la matrice impact / complexité, commencez par fort impact, faible complexité.</li>
   <li><strong>Vérifier les prérequis</strong> techniques (vos outils ont-ils des API ? vos données sont-elles propres ?).</li>
   <li><strong>Prototyper</strong> une automatisation, la tester sur un cas réel.</li>
   <li><strong>Documenter et industrialiser</strong> pour que ça tienne dans le temps.</li>
@@ -2952,7 +2952,7 @@ export const blogPosts: BlogPost[] = [
 <h2 id="faq">FAQ</h2>
 
 <h3>Par quoi commencer pour automatiser ?</h3>
-<p>Par la tâche qui combine fort impact et faible complexité — souvent la facturation/relances ou le tri des emails. Une victoire rapide finance la suite.</p>
+<p>Par la tâche qui combine fort impact et faible complexité, souvent la facturation/relances ou le tri des emails. Une victoire rapide finance la suite.</p>
 
 <h3>L'automatisation va-t-elle remplacer mes employés ?</h3>
 <p>Non. Elle automatise des <strong>tâches</strong>, pas des postes. Le temps récupéré est réinvesti là où l'humain a le plus de valeur (vente, relation client, décision).</p>
@@ -2982,7 +2982,7 @@ export const blogPosts: BlogPost[] = [
     category: 'Infrastructure',
     tags: ['Logiciel interne', 'Build vs Buy', 'Sur-mesure', 'PME'],
     content: `
-<p>Quand un outil du marché ne colle pas à votre façon de travailler, trois chemins s'ouvrent : <strong>développer un logiciel en interne</strong> (recruter une équipe), <strong>acheter un SaaS</strong> et s'y adapter, ou <strong>externaliser un développement sur-mesure</strong> dont vous gardez la propriété. Le débat est trop souvent réduit aux deux premiers — alors que le troisième neutralise leurs inconvénients respectifs.</p>
+<p>Quand un outil du marché ne colle pas à votre façon de travailler, trois chemins s'ouvrent : <strong>développer un logiciel en interne</strong> (recruter une équipe), <strong>acheter un SaaS</strong> et s'y adapter, ou <strong>externaliser un développement sur-mesure</strong> dont vous gardez la propriété. Le débat est trop souvent réduit aux deux premiers, alors que le troisième neutralise leurs inconvénients respectifs.</p>
 
 <p>Ce guide compare les trois honnêtement : ce que chacun apporte, ce qu'il coûte vraiment, et comment décider.</p>
 
@@ -3016,7 +3016,7 @@ export const blogPosts: BlogPost[] = [
   <li>Risque RH : le départ d'un développeur clé peut paralyser l'outil</li>
 </ul>
 
-<p>C'est pourquoi un principe revient souvent : <strong>sauf si le logiciel EST votre produit vendu, monter une équipe interne coûte généralement plus cher que les alternatives</strong> — les coûts cachés de l'interne dépassent vite ceux du marché.</p>
+<p>C'est pourquoi un principe revient souvent : <strong>sauf si le logiciel EST votre produit vendu, monter une équipe interne coûte généralement plus cher que les alternatives</strong>, les coûts cachés de l'interne dépassent vite ceux du marché.</p>
 
 <h2 id="saas">Acheter un SaaS : rapide mais locatif</h2>
 
@@ -3157,17 +3157,17 @@ export const blogPosts: BlogPost[] = [
   </tbody>
 </table>
 
-<p>Le coût des API a été divisé par environ 10 en deux ans, ce qui rend des cas d'usage hier coûteux désormais rentables. Le vrai succès tient moins au modèle qu'à la qualité de l'intégration et des consignes (le « prompt engineering ») — souvent 60 à 70 % du résultat.</p>
+<p>Le coût des API a été divisé par environ 10 en deux ans, ce qui rend des cas d'usage hier coûteux désormais rentables. Le vrai succès tient moins au modèle qu'à la qualité de l'intégration et des consignes (le « prompt engineering »), souvent 60 à 70 % du résultat.</p>
 
 <h2 id="donnees">La souveraineté des données (le point décisif)</h2>
 
-<p>Par défaut, les grands fournisseurs n'utilisent pas vos données pour entraîner leurs modèles — mais ces données <strong>transitent par des serveurs aux États-Unis</strong>. Pour des données sensibles (clients, RH, contrats), c'est un sujet sérieux, surtout pour les PME visant le secteur public ou réglementé.</p>
+<p>Par défaut, les grands fournisseurs n'utilisent pas vos données pour entraîner leurs modèles, mais ces données <strong>transitent par des serveurs aux États-Unis</strong>. Pour des données sensibles (clients, RH, contrats), c'est un sujet sérieux, surtout pour les PME visant le secteur public ou réglementé.</p>
 
-<blockquote>C'est précisément l'argument de l'intégration sur-mesure : utiliser des modèles hébergés en UE, garder vos données chez vous, et rester RGPD par conception. La souveraineté n'est pas un détail technique — c'est de plus en plus un argument commercial.</blockquote>
+<blockquote>C'est précisément l'argument de l'intégration sur-mesure : utiliser des modèles hébergés en UE, garder vos données chez vous, et rester RGPD par conception. La souveraineté n'est pas un détail technique, c'est de plus en plus un argument commercial.</blockquote>
 
 <h2 id="limites">Ce que l'IA ne peut pas (encore) faire</h2>
 
-<p>L'IA excelle sur le langage, la classification et la synthèse. Elle reste faillible sur le raisonnement critique, les décisions à fort enjeu sans supervision, et tout ce qui demande une vraie responsabilité humaine. La bonne approche : l'IA exécute et propose, l'humain valide et décide. C'est pour ça que chez NateSystem, l'IA n'est intégrée <strong>que là où elle remplace de vraies heures</strong> — jamais comme gadget.</p>
+<p>L'IA excelle sur le langage, la classification et la synthèse. Elle reste faillible sur le raisonnement critique, les décisions à fort enjeu sans supervision, et tout ce qui demande une vraie responsabilité humaine. La bonne approche : l'IA exécute et propose, l'humain valide et décide. C'est pour ça que chez NateSystem, l'IA n'est intégrée <strong>que là où elle remplace de vraies heures</strong>, jamais comme gadget.</p>
 
 <h2 id="faq">FAQ</h2>
 
@@ -3185,7 +3185,7 @@ export const blogPosts: BlogPost[] = [
 
 <h2>En résumé</h2>
 
-<p>Intégrer l'IA, ce n'est pas empiler des outils — c'est la brancher là où elle remplace de vraies heures, sur vos données, sous votre contrôle. Commencez par un cas d'usage rentable (emails, leads, documents), validez par un POC en quelques semaines, et choisissez la souveraineté des données comme critère, pas comme option.</p>
+<p>Intégrer l'IA, ce n'est pas empiler des outils, c'est la brancher là où elle remplace de vraies heures, sur vos données, sous votre contrôle. Commencez par un cas d'usage rentable (emails, leads, documents), validez par un POC en quelques semaines, et choisissez la souveraineté des données comme critère, pas comme option.</p>
 
 <p><a href="/blog/agents-ia-vs-chatgpt-quelle-difference">Agents IA vs ChatGPT</a> · <a href="/logiciel-sur-mesure-conseil">L'IA pour les cabinets de conseil</a></p>
 
@@ -3195,7 +3195,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'make-vs-zapier-vs-n8n-comparatif',
     title: 'Make vs Zapier vs n8n : quel outil d\'automatisation choisir en 2026 ?',
-    description: 'Comparatif complet Make, Zapier et n8n pour une PME : prix, intégrations, IA, souveraineté des données. Tableau, reco par profil — et la 4e option que les comparatifs oublient.',
+    description: 'Comparatif complet Make, Zapier et n8n pour une PME : prix, intégrations, IA, souveraineté des données. Tableau, reco par profil, et la 4e option que les comparatifs oublient.',
     date: '2026-06-15',
     author: 'Nathan Goutagny',
     readTime: '13 min',
@@ -3204,7 +3204,7 @@ export const blogPosts: BlogPost[] = [
     content: `
 <p><strong>Make, Zapier et n8n sont les trois principaux outils d'automatisation no-code en 2026. Zapier est le plus simple et le mieux intégré, Make le meilleur rapport puissance/prix, n8n le plus puissant et le seul auto-hébergeable (données chez vous).</strong> Lequel choisir dépend de votre niveau technique, de votre volume, et de votre exigence sur la souveraineté des données.</p>
 
-<p>Ce comparatif tranche critère par critère — et aborde une quatrième option que les comparatifs oublient systématiquement : ne pas louer un outil, mais posséder le système.</p>
+<p>Ce comparatif tranche critère par critère, et aborde une quatrième option que les comparatifs oublient systématiquement : ne pas louer un outil, mais posséder le système.</p>
 
 <nav>
 <h2>Sommaire</h2>
@@ -3255,7 +3255,7 @@ export const blogPosts: BlogPost[] = [
 <h2 id="limite">La 4e option : posséder plutôt que louer</h2>
 <p>Ces trois outils ont un point commun que les comparatifs taisent : <strong>ils créent le « SaaS-spaghetti »</strong>. Dix scénarios qui cassent dès qu'une API change, un coût qui explose au volume, et aucune propriété réelle de la mécanique. Parfaits pour prototyper ; risqués pour le cœur durable de votre activité.</p>
 
-<blockquote>Quand une automatisation devient critique, l'alternative est de l'<strong>intégrer dans un logiciel que vous possédez</strong> — code livré, hébergé en UE, IA seulement là où elle remplace de vraies heures. Pas un abonnement de plus à maintenir. Voir <a href="/blog/automatisation-pme-guide-2026">notre guide de l'automatisation PME</a> et <a href="/logiciel-sur-mesure-vs-saas">sur-mesure vs SaaS</a>.</blockquote>
+<blockquote>Quand une automatisation devient critique, l'alternative est de l'<strong>intégrer dans un logiciel que vous possédez</strong>, code livré, hébergé en UE, IA seulement là où elle remplace de vraies heures. Pas un abonnement de plus à maintenir. Voir <a href="/blog/automatisation-pme-guide-2026">notre guide de l'automatisation PME</a> et <a href="/logiciel-sur-mesure-vs-saas">sur-mesure vs SaaS</a>.</blockquote>
 
 <h2 id="faq">FAQ</h2>
 <h3>Lequel est le moins cher ?</h3>
@@ -3344,7 +3344,7 @@ export const blogPosts: BlogPost[] = [
 </table>
 
 <h2 id="roi">Quel ROI attendre</h2>
-<p>Le bon raisonnement n'est pas « combien ça coûte » mais « combien d'heures ça remplace ». Un agent qui absorbe le tri d'emails ou le support de niveau 1 (60-80 % des demandes) se rembourse souvent en <strong>6 à 18 mois</strong>. C'est pourquoi chez NateSystem on ne déploie l'IA que là où elle remplace de vraies heures — jamais en gadget.</p>
+<p>Le bon raisonnement n'est pas « combien ça coûte » mais « combien d'heures ça remplace ». Un agent qui absorbe le tri d'emails ou le support de niveau 1 (60-80 % des demandes) se rembourse souvent en <strong>6 à 18 mois</strong>. C'est pourquoi chez NateSystem on ne déploie l'IA que là où elle remplace de vraies heures, jamais en gadget.</p>
 
 <h2 id="faq">FAQ</h2>
 <h3>Un chatbot gratuit, ça existe ?</h3>
@@ -3355,7 +3355,7 @@ export const blogPosts: BlogPost[] = [
 <p>Comptez 20-30 % du coût initial par an (mises à jour, surveillance, ajustement des prompts).</p>
 
 <h2>En résumé</h2>
-<p>De 0 € à 100 000 €+ selon le niveau. Pour une PME, visez le RAG (5-15k€). Raisonnez en heures remplacées, pas en prix d'achat — et surveillez les coûts cachés (intégrations, RGPD, maintenance).</p>
+<p>De 0 € à 100 000 €+ selon le niveau. Pour une PME, visez le RAG (5-15k€). Raisonnez en heures remplacées, pas en prix d'achat, et surveillez les coûts cachés (intégrations, RGPD, maintenance).</p>
 
 <p><a href="/blog/integrer-ia-entreprise-guide-pme">Guide : intégrer l'IA en entreprise</a> · <a href="/prix-logiciel-sur-mesure">Prix d'un logiciel sur-mesure</a></p>
 
@@ -3407,7 +3407,7 @@ export const blogPosts: BlogPost[] = [
 <p>Airtable brille quand des équipes non-techniques doivent organiser des données rapidement : suivi de projets, CRM léger, planning. L'interface tableur est prise en main en minutes. Mais il plafonne : nombre d'enregistrements limité, API bridée (5 req/s par base), pas de logique métier complexe, et un coût qui monte avec chaque siège ajouté.</p>
 
 <h2 id="supabase">Supabase : quand le choisir</h2>
-<p>Supabase est un « Firebase open-source » bâti sur PostgreSQL — la base relationnelle la plus robuste du monde. Vous obtenez une vraie base SQL avec authentification, sécurité par ligne (RLS), API auto-générée, temps réel, et la possibilité d'auto-héberger en UE. C'est le socle quand la donnée devient le cœur de votre activité — mais il demande un profil technique.</p>
+<p>Supabase est un « Firebase open-source » bâti sur PostgreSQL, la base relationnelle la plus robuste du monde. Vous obtenez une vraie base SQL avec authentification, sécurité par ligne (RLS), API auto-générée, temps réel, et la possibilité d'auto-héberger en UE. C'est le socle quand la donnée devient le cœur de votre activité, mais il demande un profil technique.</p>
 
 <h2 id="prix">Tarification : par siège vs à l'usage</h2>
 <p>La différence économique est structurante. <strong>Airtable facture par utilisateur</strong> : à 20 personnes, la facture grimpe vite, que vous utilisiez beaucoup ou peu. <strong>Supabase facture à l'usage</strong> : vous payez la consommation réelle, sans taxe par siège. Pour une équipe qui grandit, l'écart se creuse.</p>
@@ -3422,7 +3422,7 @@ export const blogPosts: BlogPost[] = [
 <h3>Airtable peut-il devenir mon logiciel métier ?</h3>
 <p>Au début, oui. Mais il plafonne (enregistrements, API, logique). Quand l'outil devient critique, mieux vaut une application qui vous appartient.</p>
 <h3>Supabase est-il fait pour les non-techniques ?</h3>
-<p>Pas directement — c'est un backend. Les non-techniques bénéficient de Supabase via une application construite par-dessus.</p>
+<p>Pas directement, c'est un backend. Les non-techniques bénéficient de Supabase via une application construite par-dessus.</p>
 <h3>Mes données restent-elles en Europe ?</h3>
 <p>Avec Supabase (hébergeable en UE) oui ; Airtable est hébergé aux US.</p>
 
@@ -3442,7 +3442,7 @@ export const blogPosts: BlogPost[] = [
     category: 'Infrastructure',
     tags: ['SaaS', 'Sur-mesure', 'Coûts', 'PME'],
     content: `
-<p><strong>Une PME dépense en moyenne près de 4 800 $ par employé et par an en abonnements logiciels, avec des hausses de 15 à 25 % par an. Au-delà de ~15 000-20 000 €/an de SaaS sur un même périmètre, un logiciel sur-mesure que vous possédez devient économiquement rentable</strong> — et vous arrêtez de louer pour commencer à posséder un actif.</p>
+<p><strong>Une PME dépense en moyenne près de 4 800 $ par employé et par an en abonnements logiciels, avec des hausses de 15 à 25 % par an. Au-delà de ~15 000-20 000 €/an de SaaS sur un même périmètre, un logiciel sur-mesure que vous possédez devient économiquement rentable</strong>, et vous arrêtez de louer pour commencer à posséder un actif.</p>
 
 <p>Ce guide explique quand basculer, avec un test en 3 questions et le comparatif location vs propriété.</p>
 
@@ -3462,7 +3462,7 @@ export const blogPosts: BlogPost[] = [
 <p>Le SaaS est génial pour démarrer. Mais à mesure que vous grandissez : les abonnements s'empilent (la « SaaS-fatigue »), les prix montent de 15-25 %/an sans fonctionnalités proportionnelles, et vous finissez par adapter vos process à des outils génériques que tout le monde utilise. Vous payez de plus en plus pour posséder de moins en moins.</p>
 
 <h2 id="actif">Louer un outil vs posséder un actif</h2>
-<p>C'est le cœur du sujet. Un SaaS est une <strong>location à vie</strong> : vous payez chaque mois, et le jour où vous arrêtez, il ne vous reste rien. Un logiciel sur-mesure est un <strong>actif</strong> : un investissement initial, puis il vous appartient — code, données, infrastructure. Sur 3 ans, 20 utilisateurs sur un SaaS peuvent représenter 30 000 à 80 000 € « sans rien posséder au bout ».</p>
+<p>C'est le cœur du sujet. Un SaaS est une <strong>location à vie</strong> : vous payez chaque mois, et le jour où vous arrêtez, il ne vous reste rien. Un logiciel sur-mesure est un <strong>actif</strong> : un investissement initial, puis il vous appartient, code, données, infrastructure. Sur 3 ans, 20 utilisateurs sur un SaaS peuvent représenter 30 000 à 80 000 € « sans rien posséder au bout ».</p>
 
 <h2 id="tableau">SaaS vs sur-mesure : le comparatif</h2>
 
@@ -3493,7 +3493,7 @@ export const blogPosts: BlogPost[] = [
 <h3>À partir de quel budget SaaS faut-il envisager le sur-mesure ?</h3>
 <p>En général au-delà de 15-20k€/an d'abonnements sur un même périmètre, l'investissement sur-mesure s'amortit en 2-3 ans.</p>
 <h3>Le sur-mesure, c'est risqué ?</h3>
-<p>Le risque vient surtout du prestataire. Exigez la livraison du code et la réversibilité — voir <a href="/blog/comment-choisir-prestataire-logiciel-ia">comment choisir son prestataire</a>.</p>
+<p>Le risque vient surtout du prestataire. Exigez la livraison du code et la réversibilité, voir <a href="/blog/comment-choisir-prestataire-logiciel-ia">comment choisir son prestataire</a>.</p>
 <h3>Dois-je tout migrer d'un coup ?</h3>
 <p>Non. On peut remplacer progressivement, ou étendre l'existant par API. Pas de big bang.</p>
 
@@ -3513,7 +3513,7 @@ export const blogPosts: BlogPost[] = [
     category: 'Infrastructure IA',
     tags: ['RGPD', 'IA', 'Souveraineté', 'CNIL'],
     content: `
-<p><strong>L'intelligence artificielle n'échappe pas au RGPD : dès qu'un outil IA traite des données personnelles, la CNIL et le règlement européen sur l'IA s'appliquent simultanément. Avec la plupart des outils IA SaaS, vos données transitent par des serveurs américains, exposés au Cloud Act — même quand l'éditeur affiche des serveurs en Europe.</strong> Garder le contrôle est d'abord une question d'architecture.</p>
+<p><strong>L'intelligence artificielle n'échappe pas au RGPD : dès qu'un outil IA traite des données personnelles, la CNIL et le règlement européen sur l'IA s'appliquent simultanément. Avec la plupart des outils IA SaaS, vos données transitent par des serveurs américains, exposés au Cloud Act, même quand l'éditeur affiche des serveurs en Europe.</strong> Garder le contrôle est d'abord une question d'architecture.</p>
 
 <p>Ce guide explique où vont réellement vos données, ce qu'impose la CNIL, le piège du Cloud Act, et comment rester souverain.</p>
 
@@ -3530,13 +3530,13 @@ export const blogPosts: BlogPost[] = [
 </nav>
 
 <h2 id="ou">Où vont réellement vos données avec une IA SaaS</h2>
-<p>Quand vous envoyez un document à un outil IA généraliste, vos données partent sur les serveurs de l'éditeur pour être traitées. Par défaut, les grands fournisseurs n'utilisent pas ces données pour entraîner leurs modèles — mais elles <strong>transitent et sont stockées</strong>, souvent aux États-Unis. Pour des données clients, RH ou contractuelles, c'est un vrai sujet de conformité.</p>
+<p>Quand vous envoyez un document à un outil IA généraliste, vos données partent sur les serveurs de l'éditeur pour être traitées. Par défaut, les grands fournisseurs n'utilisent pas ces données pour entraîner leurs modèles, mais elles <strong>transitent et sont stockées</strong>, souvent aux États-Unis. Pour des données clients, RH ou contractuelles, c'est un vrai sujet de conformité.</p>
 
 <h2 id="cnil">Ce qu'impose la CNIL</h2>
-<p>La CNIL est claire : <strong>le RGPD et le règlement IA s'appliquent en même temps</strong>. Les obligations clés : finalité déterminée, base légale (souvent l'intérêt légitime, sous 3 conditions), minimisation des données, durée de conservation limitée, respect des droits des personnes, et supervision humaine des décisions. La conformité IA n'est pas une case à cocher — c'est une question de conception.</p>
+<p>La CNIL est claire : <strong>le RGPD et le règlement IA s'appliquent en même temps</strong>. Les obligations clés : finalité déterminée, base légale (souvent l'intérêt légitime, sous 3 conditions), minimisation des données, durée de conservation limitée, respect des droits des personnes, et supervision humaine des décisions. La conformité IA n'est pas une case à cocher, c'est une question de conception.</p>
 
 <h2 id="cloudact">Le piège du Cloud Act</h2>
-<p>Le <strong>Cloud Act</strong> (loi américaine de 2018) permet aux autorités US d'exiger l'accès aux données détenues par une entreprise américaine — <strong>même si les serveurs sont physiquement en Europe</strong>. C'est pourquoi « hébergé en Europe » par un fournisseur US ne suffit pas. L'arrêt Schrems II (CJUE, 2020) a d'ailleurs invalidé le Privacy Shield sur ce fondement. La vraie souveraineté suppose un fournisseur sans lien capitalistique US (logique du label SecNumCloud de l'ANSSI).</p>
+<p>Le <strong>Cloud Act</strong> (loi américaine de 2018) permet aux autorités US d'exiger l'accès aux données détenues par une entreprise américaine, <strong>même si les serveurs sont physiquement en Europe</strong>. C'est pourquoi « hébergé en Europe » par un fournisseur US ne suffit pas. L'arrêt Schrems II (CJUE, 2020) a d'ailleurs invalidé le Privacy Shield sur ce fondement. La vraie souveraineté suppose un fournisseur sans lien capitalistique US (logique du label SecNumCloud de l'ANSSI).</p>
 
 <h2 id="tableau">IA SaaS US vs IA souveraine</h2>
 
@@ -3547,7 +3547,7 @@ export const blogPosts: BlogPost[] = [
   <tbody>
     <tr><td><strong>Hébergement</strong></td><td>US (ou UE mais éditeur US)</td><td>UE, fournisseur souverain</td></tr>
     <tr><td><strong>Soumis au Cloud Act ?</strong></td><td>Oui</td><td>Non (si pas de lien US)</td></tr>
-    <tr><td><strong>Données réutilisées ?</strong></td><td>Opaque</td><td>Non — vos données restent vôtres</td></tr>
+    <tr><td><strong>Données réutilisées ?</strong></td><td>Opaque</td><td>Non, vos données restent vôtres</td></tr>
     <tr><td><strong>Propriété code / données</strong></td><td>Éditeur</td><td>Vous</td></tr>
     <tr><td><strong>Qui peut y accéder</strong></td><td>Éditeur + autorités US</td><td>Vous seul</td></tr>
   </tbody>
@@ -3582,7 +3582,7 @@ export const blogPosts: BlogPost[] = [
     category: 'Secteur',
     tags: ['Avocats', 'Logiciel métier', 'Sur-mesure', 'RGPD'],
     content: `
-<p><strong>Un avocat consacre 30 à 40 % de son temps à des tâches non facturables : saisie, classement, relances, gestion administrative. Un logiciel de gestion de cabinet (LGC) automatise ces tâches — à condition qu'il s'intègre au RPVA/e-barreau, respecte le secret professionnel et soit conforme RGPD.</strong></p>
+<p><strong>Un avocat consacre 30 à 40 % de son temps à des tâches non facturables : saisie, classement, relances, gestion administrative. Un logiciel de gestion de cabinet (LGC) automatise ces tâches, à condition qu'il s'intègre au RPVA/e-barreau, respecte le secret professionnel et soit conforme RGPD.</strong></p>
 
 <p>Ce guide explique quoi automatiser, comment choisir, et quand un outil sur-mesure que le cabinet possède l'emporte sur un logiciel standard.</p>
 
@@ -3613,8 +3613,8 @@ export const blogPosts: BlogPost[] = [
 <h2 id="criteres">Les critères de choix (dont RPVA)</h2>
 <p>Deux critères sont quasi éliminatoires pour un cabinet français :</p>
 <ul>
-  <li><strong>L'intégration RPVA / e-barreau</strong> — le réseau privé virtuel des avocats. Le CNB expose désormais des API passerelles sur le nouvel e-barreau, ce qui rend l'intégration possible pour un outil sur-mesure.</li>
-  <li><strong>La synchronisation Outlook / agenda</strong> — sans elle, l'adoption échoue.</li>
+  <li><strong>L'intégration RPVA / e-barreau</strong>, le réseau privé virtuel des avocats. Le CNB expose désormais des API passerelles sur le nouvel e-barreau, ce qui rend l'intégration possible pour un outil sur-mesure.</li>
+  <li><strong>La synchronisation Outlook / agenda</strong>, sans elle, l'adoption échoue.</li>
 </ul>
 <p>S'ajoutent : la conformité RGPD, le respect du secret professionnel, et la facturation électronique conforme dès 2026.</p>
 
@@ -3635,7 +3635,7 @@ export const blogPosts: BlogPost[] = [
 <p>Les LGC standards forcent le cabinet à se plier à l'éditeur et empilent des licences par utilisateur. Le sur-mesure construit les process réels du cabinet dans un code qu'il possède, avec le RPVA via passerelle CNB et un hébergement UE/RGPD.</p>
 
 <h2 id="rgpd">Secret professionnel & RGPD</h2>
-<p>Pour un cabinet, deux exigences non négociables : le <strong>secret professionnel</strong> (les données clients ne doivent jamais servir à entraîner une IA, et les accès doivent être tracés) et le <strong>RGPD</strong> (hébergement UE, droits des personnes). C'est pourquoi l'IA, ici, ne s'envisage que sur une infrastructure souveraine — voir <a href="/blog/rgpd-ia-ou-vont-les-donnees-entreprise">RGPD et IA : où vont vos données</a>.</p>
+<p>Pour un cabinet, deux exigences non négociables : le <strong>secret professionnel</strong> (les données clients ne doivent jamais servir à entraîner une IA, et les accès doivent être tracés) et le <strong>RGPD</strong> (hébergement UE, droits des personnes). C'est pourquoi l'IA, ici, ne s'envisage que sur une infrastructure souveraine, voir <a href="/blog/rgpd-ia-ou-vont-les-donnees-entreprise">RGPD et IA : où vont vos données</a>.</p>
 
 <h2 id="faq">FAQ</h2>
 <h3>Un logiciel sur-mesure peut-il se connecter au RPVA ?</h3>
@@ -3646,7 +3646,7 @@ export const blogPosts: BlogPost[] = [
 <p>Seulement si elle est conçue pour : modèles sur infrastructure souveraine, données non réutilisées, accès tracés. Une IA SaaS généraliste ne l'garantit pas.</p>
 
 <h2>En résumé</h2>
-<p>Le bon logiciel de cabinet récupère le temps non facturable, s'intègre au RPVA et respecte le secret professionnel. Pour un cabinet aux process spécifiques, un outil sur-mesure qu'il possède — interfacé au RPVA, hébergé en UE — bat un LGC standard auquel on s'adapte.</p>
+<p>Le bon logiciel de cabinet récupère le temps non facturable, s'intègre au RPVA et respecte le secret professionnel. Pour un cabinet aux process spécifiques, un outil sur-mesure qu'il possède, interfacé au RPVA, hébergé en UE, bat un LGC standard auquel on s'adapte.</p>
 
 <p><strong><a href="/book">Réserver un appel · offert &rarr;</a></strong></p>
 `,
@@ -3661,7 +3661,7 @@ export const blogPosts: BlogPost[] = [
     category: 'Secteur',
     tags: ['Expertise comptable', 'Logiciel métier', 'Sur-mesure', 'OCR'],
     content: `
-<p><strong>Pour un cabinet d'expertise comptable, le cœur comptable (export FEC, EDI-TVA, liasse fiscale, facturation électronique) doit rester sur un logiciel certifié — ça ne se reconstruit pas sur-mesure. En revanche, la surcouche métier dans laquelle le cabinet travaille vraiment (portail de collecte client, suivi de mission, relances, dashboards) gagne énormément à être sur-mesure et possédée.</strong></p>
+<p><strong>Pour un cabinet d'expertise comptable, le cœur comptable (export FEC, EDI-TVA, liasse fiscale, facturation électronique) doit rester sur un logiciel certifié, ça ne se reconstruit pas sur-mesure. En revanche, la surcouche métier dans laquelle le cabinet travaille vraiment (portail de collecte client, suivi de mission, relances, dashboards) gagne énormément à être sur-mesure et possédée.</strong></p>
 
 <p>Ce guide distingue ce qui doit rester certifié de ce qui mérite d'être construit à votre main.</p>
 
@@ -3679,7 +3679,7 @@ export const blogPosts: BlogPost[] = [
 <h2 id="coeur">Le cœur comptable : ce qui doit rester certifié</h2>
 <p>Certaines fonctions sont encadrées par la loi et ne se bricolent pas :</p>
 <ul>
-  <li><strong>Export FEC</strong> (Fichier des Écritures Comptables, art. A47 A-1 du LPF) — obligatoire et normé</li>
+  <li><strong>Export FEC</strong> (Fichier des Écritures Comptables, art. A47 A-1 du LPF), obligatoire et normé</li>
   <li><strong>Logiciel anti-fraude TVA</strong> certifié (NF525 ou attestation)</li>
   <li><strong>Piste d'audit fiable</strong>, EDI-TVA, liasse fiscale (EDI-TDFC)</li>
   <li><strong>Facturation électronique</strong> (Factur-X / UBL) qui devient obligatoire</li>
@@ -3687,17 +3687,17 @@ export const blogPosts: BlogPost[] = [
 <p>Ces briques doivent rester sur un éditeur certifié (Cegid, Sage, ACD, MyUnisoft…). Les reconstruire serait un risque légal inutile.</p>
 
 <h2 id="surcouche">La surcouche métier : ce qui gagne à être sur-mesure</h2>
-<p>C'est là que le cabinet perd du temps et que le sur-mesure brille — tout ce dans quoi vous travaillez au quotidien mais qui n'est pas le moteur certifié :</p>
+<p>C'est là que le cabinet perd du temps et que le sur-mesure brille, tout ce dans quoi vous travaillez au quotidien mais qui n'est pas le moteur certifié :</p>
 <ul>
   <li><strong>Portail de collecte client</strong> (pièces, factures, justificatifs)</li>
   <li><strong>Suivi de mission et de rentabilité par dossier</strong></li>
   <li><strong>Relances automatiques</strong> des clients en retard de pièces</li>
   <li><strong>Dashboards associés</strong> (charge, échéances, rentabilité)</li>
 </ul>
-<p>Cette surcouche, construite sur-mesure et interfacée au cœur certifié, vous appartient et colle à votre organisation — au lieu d'être un module rigide de plus.</p>
+<p>Cette surcouche, construite sur-mesure et interfacée au cœur certifié, vous appartient et colle à votre organisation, au lieu d'être un module rigide de plus.</p>
 
 <h2 id="ia">Où l'IA fait gagner des heures</h2>
-<p>Le gisement de productivité d'un cabinet : l'<strong>OCR + reconnaissance IA des factures</strong> avec pré-saisie automatique des écritures, le rapprochement, et la lecture des pièces. L'IA ne remplace pas l'expert-comptable — elle absorbe la saisie répétitive pour libérer du temps de conseil. C'est exactement le principe « l'IA seulement là où elle remplace de vraies heures ».</p>
+<p>Le gisement de productivité d'un cabinet : l'<strong>OCR + reconnaissance IA des factures</strong> avec pré-saisie automatique des écritures, le rapprochement, et la lecture des pièces. L'IA ne remplace pas l'expert-comptable, elle absorbe la saisie répétitive pour libérer du temps de conseil. C'est exactement le principe « l'IA seulement là où elle remplace de vraies heures ».</p>
 
 <h2 id="tableau">Compléter vs remplacer</h2>
 
@@ -3716,12 +3716,12 @@ export const blogPosts: BlogPost[] = [
 <h3>Peut-on remplacer son logiciel comptable certifié par du sur-mesure ?</h3>
 <p>Non, et ce n'est pas souhaitable : le cœur (FEC, TVA, liasse) doit rester certifié. Le sur-mesure complète ce cœur, il ne le remplace pas.</p>
 <h3>Qu'apporte concrètement le sur-mesure à un cabinet ?</h3>
-<p>La surcouche métier que vous possédez : portail client, suivi de rentabilité par dossier, relances, dashboards — interfacés à votre logiciel certifié.</p>
+<p>La surcouche métier que vous possédez : portail client, suivi de rentabilité par dossier, relances, dashboards, interfacés à votre logiciel certifié.</p>
 <h3>L'IA peut-elle saisir les écritures à ma place ?</h3>
 <p>L'OCR + IA pré-saisit à partir des factures ; l'expert valide. C'est un gain de temps majeur, pas un remplacement du jugement comptable.</p>
 
 <h2>En résumé</h2>
-<p>Gardez le cœur comptable certifié (FEC, TVA, liasse). Construisez sur-mesure la surcouche où vous travaillez vraiment (portail, missions, relances), avec l'OCR/IA pour absorber la saisie. NateSystem complète votre logiciel certifié — il ne le remplace pas.</p>
+<p>Gardez le cœur comptable certifié (FEC, TVA, liasse). Construisez sur-mesure la surcouche où vous travaillez vraiment (portail, missions, relances), avec l'OCR/IA pour absorber la saisie. NateSystem complète votre logiciel certifié, il ne le remplace pas.</p>
 
 <p><strong><a href="/book">Réserver un appel · offert &rarr;</a></strong></p>
 `,
@@ -3736,7 +3736,7 @@ export const blogPosts: BlogPost[] = [
     category: 'Secteur',
     tags: ['Immobilier', 'CRM', 'Sur-mesure', 'Loi Hoguet'],
     content: `
-<p><strong>Un CRM immobilier doit gérer le registre des mandats conforme à la loi Hoguet (numérotation continue et inaltérable), la diffusion multi-portails, le rapprochement acquéreurs/biens, et la signature électronique eIDAS. La plupart des solutions sont des SaaS facturés par agence — quand le sur-mesure devient intéressant, c'est pour les réseaux multi-agences où ce coût se multiplie.</strong></p>
+<p><strong>Un CRM immobilier doit gérer le registre des mandats conforme à la loi Hoguet (numérotation continue et inaltérable), la diffusion multi-portails, le rapprochement acquéreurs/biens, et la signature électronique eIDAS. La plupart des solutions sont des SaaS facturés par agence, quand le sur-mesure devient intéressant, c'est pour les réseaux multi-agences où ce coût se multiplie.</strong></p>
 
 <nav>
 <h2>Sommaire</h2>
@@ -3751,7 +3751,7 @@ export const blogPosts: BlogPost[] = [
 </nav>
 
 <h2 id="enjeux">Le rôle d'un CRM immobilier en 2026</h2>
-<p>Un CRM immobilier n'est pas qu'un carnet de contacts : c'est l'outil qui pilote la pige, les mandats, le rapprochement entre acquéreurs et biens, la diffusion des annonces et le suivi des transactions — tout en restant conforme à un cadre légal strict.</p>
+<p>Un CRM immobilier n'est pas qu'un carnet de contacts : c'est l'outil qui pilote la pige, les mandats, le rapprochement entre acquéreurs et biens, la diffusion des annonces et le suivi des transactions, tout en restant conforme à un cadre légal strict.</p>
 
 <h2 id="conformite">La conformité légale (Hoguet, ALUR)</h2>
 <p>Deux obligations structurent le métier :</p>
@@ -3788,7 +3788,7 @@ export const blogPosts: BlogPost[] = [
 <p>Pour une agence seule, un bon SaaS suffit souvent. Pour un <strong>réseau multi-agences</strong>, le coût par agence se multiplie et la logique générique bride : c'est là qu'un CRM sur-mesure, qui intègre votre vrai pipeline et le registre Hoguet, devient rentable.</p>
 
 <h2 id="ia">L'IA dans l'immobilier en 2026</h2>
-<p>Les usages IA qui font gagner du temps : rédaction automatique des annonces, scoring et priorisation des leads, estimation, et relances. Là encore, l'IA n'a de sens que là où elle remplace de vraies heures — pas comme argument marketing.</p>
+<p>Les usages IA qui font gagner du temps : rédaction automatique des annonces, scoring et priorisation des leads, estimation, et relances. Là encore, l'IA n'a de sens que là où elle remplace de vraies heures, pas comme argument marketing.</p>
 
 <h2 id="faq">FAQ</h2>
 <h3>Un CRM sur-mesure peut-il gérer le registre des mandats légal ?</h3>
@@ -3814,7 +3814,7 @@ export const blogPosts: BlogPost[] = [
     category: 'Secteur',
     tags: ['Hôtellerie', 'PMS', 'Logiciel métier', 'Sur-mesure'],
     content: `
-<p><strong>Un PMS (Property Management System) est le logiciel qui pilote un hôtel : réservations, check-in/out, planning des chambres, ménage, facturation et obligations légales. Pour un hôtel indépendant, l'enjeu est double — gérer les opérations ET réduire la dépendance aux plateformes de réservation, dont les commissions atteignent 15 à 17 %.</strong></p>
+<p><strong>Un PMS (Property Management System) est le logiciel qui pilote un hôtel : réservations, check-in/out, planning des chambres, ménage, facturation et obligations légales. Pour un hôtel indépendant, l'enjeu est double, gérer les opérations ET réduire la dépendance aux plateformes de réservation, dont les commissions atteignent 15 à 17 %.</strong></p>
 
 <p>Ce guide explique ce qu'un PMS doit couvrir (y compris les obligations légales que les solutions standards survolent) et quand un outil sur-mesure que vous possédez l'emporte.</p>
 
@@ -3831,7 +3831,7 @@ export const blogPosts: BlogPost[] = [
 </nav>
 
 <h2 id="pms">Qu'est-ce qu'un PMS et à quoi il sert</h2>
-<p>Le PMS est le poste de commandement de l'hôtel : il centralise le planning des chambres (main courante), les réservations, le check-in/out, la facturation et la coordination du ménage. Sans lui, ces flux vivent dans des outils séparés qui ne se parlent pas — et les double-bookings arrivent. La France compte environ <strong>16 600 hôtels</strong> (661 000 chambres), dont une large majorité d'indépendants.</p>
+<p>Le PMS est le poste de commandement de l'hôtel : il centralise le planning des chambres (main courante), les réservations, le check-in/out, la facturation et la coordination du ménage. Sans lui, ces flux vivent dans des outils séparés qui ne se parlent pas, et les double-bookings arrivent. La France compte environ <strong>16 600 hôtels</strong> (661 000 chambres), dont une large majorité d'indépendants.</p>
 
 <h2 id="fonctions">Les fonctionnalités clés</h2>
 <ul>
@@ -3843,13 +3843,13 @@ export const blogPosts: BlogPost[] = [
 </ul>
 
 <h2 id="ota">Channel manager : reprendre la main sur les OTA</h2>
-<p>Les plateformes (Booking, Expedia…) apportent du volume mais prélèvent des commissions de <strong>15 % (jusqu'à 17 % en programme Preferred)</strong>. Un bon PMS connecte un channel manager ET un moteur de réservation directe, pour pousser les clients à réserver en direct — chaque réservation directe est une commission économisée. Pour un indépendant, c'est un levier de marge majeur.</p>
+<p>Les plateformes (Booking, Expedia…) apportent du volume mais prélèvent des commissions de <strong>15 % (jusqu'à 17 % en programme Preferred)</strong>. Un bon PMS connecte un channel manager ET un moteur de réservation directe, pour pousser les clients à réserver en direct, chaque réservation directe est une commission économisée. Pour un indépendant, c'est un levier de marge majeur.</p>
 
 <h2 id="conformite">Les obligations légales (souvent oubliées)</h2>
 <p>C'est ce que les PMS standards traitent de façon vague, alors que c'est obligatoire :</p>
 <ul>
   <li><strong>Fiche individuelle de police</strong> pour les clients étrangers (décret du 18/08/2015), à conserver 6 mois</li>
-  <li><strong>Taxe de séjour</strong> — déclaration dématérialisée (mensuelle à Paris/IDF depuis avril 2025)</li>
+  <li><strong>Taxe de séjour</strong>, déclaration dématérialisée (mensuelle à Paris/IDF depuis avril 2025)</li>
   <li><strong>NF525</strong> (logiciel de caisse anti-fraude TVA)</li>
   <li><strong>RGPD + PCI-DSS</strong> (données clients et paiements)</li>
 </ul>
@@ -3895,7 +3895,7 @@ export const blogPosts: BlogPost[] = [
     category: 'Secteur',
     tags: ['Propreté', 'Nettoyage B2B', 'Logiciel métier', 'Sur-mesure'],
     content: `
-<p><strong>Un logiciel de gestion pour entreprise de nettoyage doit relier en un seul flux : planning multi-sites, pointage géolocalisé des agents sur place, facturation récurrente et contrôle qualité. Le pointage géolocalisé est la pièce maîtresse — il alimente la paie, la facturation au réel et la preuve de prestation — mais il est strictement encadré par la CNIL.</strong></p>
+<p><strong>Un logiciel de gestion pour entreprise de nettoyage doit relier en un seul flux : planning multi-sites, pointage géolocalisé des agents sur place, facturation récurrente et contrôle qualité. Le pointage géolocalisé est la pièce maîtresse, il alimente la paie, la facturation au réel et la preuve de prestation, mais il est strictement encadré par la CNIL.</strong></p>
 
 <p>Le secteur de la propreté, c'est en France ~14 000 entreprises, 600 000+ salariés et 21 Md€ de chiffre d'affaires (2024). Voici ce qu'un bon logiciel doit couvrir, et quand le posséder vaut mieux que le louer.</p>
 
@@ -3911,7 +3911,7 @@ export const blogPosts: BlogPost[] = [
 </nav>
 
 <h2 id="pains">Les vrais points de douleur du secteur</h2>
-<p>Une entreprise de propreté jongle avec : la dispersion sur de nombreux sites clients, le temps administratif des factures récurrentes, la traçabilité des prestations (le client a-t-il été servi ?), les remplacements de dernière minute, et le suivi de la rentabilité par chantier. Tout ça vit souvent dans des tableurs et des messages — d'où les erreurs et le temps perdu.</p>
+<p>Une entreprise de propreté jongle avec : la dispersion sur de nombreux sites clients, le temps administratif des factures récurrentes, la traçabilité des prestations (le client a-t-il été servi ?), les remplacements de dernière minute, et le suivi de la rentabilité par chantier. Tout ça vit souvent dans des tableurs et des messages, d'où les erreurs et le temps perdu.</p>
 
 <h2 id="fonctions">Les fonctionnalités essentielles</h2>
 <ul>
@@ -3923,7 +3923,7 @@ export const blogPosts: BlogPost[] = [
 </ul>
 
 <h2 id="pointage">Le pointage géolocalisé (et le cadre CNIL)</h2>
-<p>Le pointage géolocalisé est le cœur du système : il prouve la présence de l'agent, alimente la paie (CCN propreté IDCC 3043) et permet de facturer au réel. <strong>Mais la géolocalisation des salariés est encadrée par la CNIL</strong> : finalité limitée, information préalable des agents, et désactivation hors temps de travail. Un bon logiciel intègre ces garde-fous par conception — un point que beaucoup d'éditeurs survolent.</p>
+<p>Le pointage géolocalisé est le cœur du système : il prouve la présence de l'agent, alimente la paie (CCN propreté IDCC 3043) et permet de facturer au réel. <strong>Mais la géolocalisation des salariés est encadrée par la CNIL</strong> : finalité limitée, information préalable des agents, et désactivation hors temps de travail. Un bon logiciel intègre ces garde-fous par conception, un point que beaucoup d'éditeurs survolent.</p>
 
 <h2 id="standard-vs">SaaS standard vs sur-mesure</h2>
 
@@ -3939,7 +3939,7 @@ export const blogPosts: BlogPost[] = [
   </tbody>
 </table>
 
-<p>Le piège du SaaS propreté : la licence monte avec chaque agent et chaque site ajouté. À l'échelle, posséder un logiciel qui relie pointage, paie et facturation au réel — dans le respect du cadre CNIL — devient plus rentable et plus souple.</p>
+<p>Le piège du SaaS propreté : la licence monte avec chaque agent et chaque site ajouté. À l'échelle, posséder un logiciel qui relie pointage, paie et facturation au réel, dans le respect du cadre CNIL, devient plus rentable et plus souple.</p>
 
 <h2 id="faq">FAQ</h2>
 <h3>La géolocalisation des agents est-elle légale ?</h3>
@@ -3950,7 +3950,7 @@ export const blogPosts: BlogPost[] = [
 <p>Quand le coût des licences par agent/site devient lourd et que vous voulez un flux pointage→paie→facture taillé sur votre organisation.</p>
 
 <h2>En résumé</h2>
-<p>Un logiciel de propreté efficace relie planning multi-sites, pointage géolocalisé (encadré CNIL), facturation récurrente et contrôle qualité. À l'échelle, posséder cet outil — au lieu de payer par agent — et maîtriser la conformité géoloc fait la différence.</p>
+<p>Un logiciel de propreté efficace relie planning multi-sites, pointage géolocalisé (encadré CNIL), facturation récurrente et contrôle qualité. À l'échelle, posséder cet outil, au lieu de payer par agent, et maîtriser la conformité géoloc fait la différence.</p>
 
 <p><strong><a href="/book">Réserver un appel · offert &rarr;</a></strong></p>
 `,
@@ -3965,7 +3965,7 @@ export const blogPosts: BlogPost[] = [
     category: 'Secteur',
     tags: ['Traiteur', 'Événementiel', 'Logiciel métier', 'Sur-mesure'],
     content: `
-<p><strong>Un traiteur a une particularité que les logiciels généralistes gèrent mal : la vente est signée des mois à l'avance, mais la production se fait au dernier moment. Un bon logiciel doit relier devis multi-prestations, food cost en cascade, allergènes (règlement INCO), HACCP et facturation conforme — sans quoi tout finit sur Excel.</strong></p>
+<p><strong>Un traiteur a une particularité que les logiciels généralistes gèrent mal : la vente est signée des mois à l'avance, mais la production se fait au dernier moment. Un bon logiciel doit relier devis multi-prestations, food cost en cascade, allergènes (règlement INCO), HACCP et facturation conforme, sans quoi tout finit sur Excel.</strong></p>
 
 <p>Le marché traiteur français a bondi de plus de 50 % entre 2016 et 2023 (>3 Md€), dont 71 % réalisés auprès des entreprises. Voici ce qu'un logiciel doit couvrir, et pourquoi le posséder change la donne.</p>
 
@@ -3995,9 +3995,9 @@ export const blogPosts: BlogPost[] = [
 <h2 id="conformite">La conformité 2026-2027 (INCO, NF525, e-facture)</h2>
 <p>Trois obligations à intégrer, pas à bricoler :</p>
 <ul>
-  <li><strong>Allergènes</strong> — règlement UE 1169/2011 (INCO) : les 14 allergènes doivent être déclarés</li>
-  <li><strong>NF525</strong> — certification du logiciel de caisse par organisme accrédité obligatoire au 1er septembre 2026 (amende jusqu'à 7 500 €)</li>
-  <li><strong>Facturation électronique B2B</strong> — réception au 1er septembre 2026, émission pour les PME au 1er septembre 2027 (et 71 % du CA traiteur est B2B)</li>
+  <li><strong>Allergènes</strong>, règlement UE 1169/2011 (INCO) : les 14 allergènes doivent être déclarés</li>
+  <li><strong>NF525</strong>, certification du logiciel de caisse par organisme accrédité obligatoire au 1er septembre 2026 (amende jusqu'à 7 500 €)</li>
+  <li><strong>Facturation électronique B2B</strong>, réception au 1er septembre 2026, émission pour les PME au 1er septembre 2027 (et 71 % du CA traiteur est B2B)</li>
 </ul>
 
 <h2 id="standard-vs">ERP généraliste vs logiciel métier</h2>
@@ -4019,12 +4019,12 @@ export const blogPosts: BlogPost[] = [
 <h3>Excel suffit-il pour un traiteur ?</h3>
 <p>Au démarrage. Mais dès que les devis se complexifient et que le food cost compte, Excel devient une source d'erreurs et de temps perdu.</p>
 <h3>Le logiciel doit-il gérer les allergènes ?</h3>
-<p>Oui — c'est une obligation (règlement INCO, 14 allergènes). Mieux vaut les gérer dans l'outil que sur des fiches papier.</p>
+<p>Oui, c'est une obligation (règlement INCO, 14 allergènes). Mieux vaut les gérer dans l'outil que sur des fiches papier.</p>
 <h3>Que change la NF525 en 2026 ?</h3>
 <p>La certification du logiciel de caisse par un organisme accrédité devient obligatoire (1er septembre 2026), sous peine d'amende. À anticiper dans le choix de l'outil.</p>
 
 <h2>En résumé</h2>
-<p>Le traiteur a un workflow unique (vente ≠ production, food cost, allergènes) que les généralistes modélisent mal. Un logiciel métier — idéalement sur-mesure et possédé — qui intègre devis, food cost, HACCP et conformité 2026 (INCO, NF525, e-facture) fait gagner du temps et sécurise.</p>
+<p>Le traiteur a un workflow unique (vente ≠ production, food cost, allergènes) que les généralistes modélisent mal. Un logiciel métier, idéalement sur-mesure et possédé, qui intègre devis, food cost, HACCP et conformité 2026 (INCO, NF525, e-facture) fait gagner du temps et sécurise.</p>
 
 <p><strong><a href="/book">Réserver un appel · offert &rarr;</a></strong></p>
 `,
@@ -4041,7 +4041,7 @@ export const blogPosts: BlogPost[] = [
     content: `
 <p><strong>Pour un installateur photovoltaïque, le logiciel doit relier sans ressaisie : calepinage et dimensionnement, CRM, devis conformes aux aides (impossible sans qualification RGE QualiPV), démarches administratives (déclaration préalable, Enedis, Consuel) et suivi de marge par chantier. C'est l'éclatement de ces outils qui ralentit l'encaissement.</strong></p>
 
-<p>Le marché se concentre (5,9 GW raccordés en 2025, record, mais nombre de raccordements en recul après la baisse des aides de mars 2025) — ce qui met une pression directe sur l'efficacité opérationnelle. Voici ce qu'un bon logiciel doit couvrir.</p>
+<p>Le marché se concentre (5,9 GW raccordés en 2025, record, mais nombre de raccordements en recul après la baisse des aides de mars 2025), ce qui met une pression directe sur l'efficacité opérationnelle. Voici ce qu'un bon logiciel doit couvrir.</p>
 
 <nav>
 <h2>Sommaire</h2>
@@ -4071,7 +4071,7 @@ export const blogPosts: BlogPost[] = [
 <p>Point clé que les logiciels généralistes ignorent : <strong>sans la qualification RGE QualiPV, le client ne touche aucune aide</strong> (prime à l'autoconsommation, MaPrimeRénov', CEE). Le devis doit donc être conforme aux aides et tracer le numéro de qualification. Avec la baisse des aides de mars 2025 (jusqu'à −62 % sur la prime autoconsommation), produire vite des devis justes et conformes devient un avantage compétitif.</p>
 
 <h2 id="admin">Démarches Enedis / Consuel</h2>
-<p>Le volume administratif (déclaration préalable de travaux, demande de raccordement Enedis, attestation Consuel, attestation de TVA réduite) est ce qui ralentit le plus. Un logiciel qui pré-remplit ces dossiers à partir des données du chantier fait gagner des jours — et accélère l'encaissement.</p>
+<p>Le volume administratif (déclaration préalable de travaux, demande de raccordement Enedis, attestation Consuel, attestation de TVA réduite) est ce qui ralentit le plus. Un logiciel qui pré-remplit ces dossiers à partir des données du chantier fait gagner des jours, et accélère l'encaissement.</p>
 
 <h2 id="standard-vs">SaaS par utilisateur vs sur-mesure</h2>
 
@@ -4087,7 +4087,7 @@ export const blogPosts: BlogPost[] = [
   </tbody>
 </table>
 
-<p>Les solutions du marché sont des SaaS facturés par utilisateur : vous louez, vous ne possédez rien. Un outil sur-mesure relie tout le flux (du calepinage au Consuel) sans ressaisie, intègre la conformité aux aides, et garde vos données prospects en UE — un vrai sujet pour des données de particuliers.</p>
+<p>Les solutions du marché sont des SaaS facturés par utilisateur : vous louez, vous ne possédez rien. Un outil sur-mesure relie tout le flux (du calepinage au Consuel) sans ressaisie, intègre la conformité aux aides, et garde vos données prospects en UE, un vrai sujet pour des données de particuliers.</p>
 
 <h2 id="faq">FAQ</h2>
 <h3>Le logiciel gère-t-il les démarches Enedis et Consuel ?</h3>
@@ -4098,7 +4098,7 @@ export const blogPosts: BlogPost[] = [
 <p>Quand le coût des licences par utilisateur s'accumule et que vous voulez un flux complet (calepinage → devis conforme → Consuel) sans ressaisie, que vous possédez.</p>
 
 <h2>En résumé</h2>
-<p>Dans un marché PV qui se concentre, l'efficacité opérationnelle fait la différence. Un logiciel qui relie calepinage, devis conformes aux aides (RGE QualiPV) et démarches Enedis/Consuel sans ressaisie — idéalement sur-mesure et possédé — accélère l'encaissement et protège vos données prospects.</p>
+<p>Dans un marché PV qui se concentre, l'efficacité opérationnelle fait la différence. Un logiciel qui relie calepinage, devis conformes aux aides (RGE QualiPV) et démarches Enedis/Consuel sans ressaisie, idéalement sur-mesure et possédé, accélère l'encaissement et protège vos données prospects.</p>
 
 <p><strong><a href="/book">Réserver un appel · offert &rarr;</a></strong></p>
 `,

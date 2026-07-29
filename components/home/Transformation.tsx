@@ -6,11 +6,11 @@ import FadeUp from '@/components/ui/FadeUp'
 import { useLang } from '@/components/providers/LangProvider'
 
 /**
- * Before / After — layout "diagonale".
+ * Before / After, layout "diagonale".
  * Ligne 1 (AVANT) : le schéma du chaos à GAUCHE + ce qui coûte cher (tirets) à DROITE.
  * Ligne 2 (APRÈS) : les résultats (tirets) à GAUCHE + le dashboard propre à DROITE.
  * Une flèche rouge "dessin à la main" relie l'avant à l'après au centre.
- * Les deux visuels sont ceux validés par Nathan — on ne change que l'agencement.
+ * Les deux visuels sont ceux validés par Nathan, on ne change que l'agencement.
  * Charte via CSS vars, dark-mode + responsive. Flèche masquée en mobile.
  */
 
@@ -32,7 +32,7 @@ const BUBBLES: Bubble[] = [
   { icon: siWhatsapp, top: '66%', left: '76%', size: 32, rot: 8, z: 2, dur: '8.2s', delay: '-2.8s', amp: 6, dx: -4, rotAmp: -3 },
 ]
 
-// Friction artefacts — small note-cards that scream the mess. tone: 'alert' = red-ish.
+// Friction artefacts, small note-cards that scream the mess. tone: 'alert' = red-ish.
 const NOTES: { key: string; top: string; left: string; rot: number; z: number; dur: string; delay: string; tone?: 'alert' }[] = [
   { key: 'trans.chaos.quote', top: '16%', left: '8%', rot: -4, z: 7, dur: '9.2s', delay: '-1.1s', tone: 'alert' },
   { key: 'trans.chaos.money', top: '52%', left: '52%', rot: 5, z: 7, dur: '8.1s', delay: '-2.4s', tone: 'alert' },
@@ -41,7 +41,7 @@ const NOTES: { key: string; top: string; left: string; rot: number; z: number; d
 ]
 
 // AVANT = les chiffres qui piquent (repris de CostPain, jugés plus pertinents par Nathan).
-// Chiffres illustratifs — voir règle d'or BRIEF §7.2 (à confirmer/marquer estimation le jour venu).
+// Chiffres illustratifs, voir règle d'or BRIEF §7.2 (à confirmer/marquer estimation le jour venu).
 const COST_STATS = [1, 2, 3, 4, 5] as const
 // APRÈS = 3 points forts (valeur serif rouge + description) qui répondent aux
 // coûts de l'AVANT. Choix Nathan : condenser à 3.
@@ -62,7 +62,7 @@ export default function Transformation() {
         </FadeUp>
 
         <div className="baf-flow">
-          {/* ═══ LIGNE 1 — AVANT : schéma (gauche) + ce qui coûte cher (droite) ═══ */}
+          {/* ═══ LIGNE 1, AVANT : schéma (gauche) + ce qui coûte cher (droite) ═══ */}
           <FadeUp delay={0.1}>
             <div className="baf-row">
               {/* Visuel : le chaos */}
@@ -107,7 +107,7 @@ export default function Transformation() {
                     </span>
                   ))}
 
-                  {/* Speech bubble — gibberish */}
+                  {/* Speech bubble, gibberish */}
                   <span className="baf-logo baf-speech" style={{ top: '36%', left: '20%', width: 138, zIndex: 8 }} aria-hidden="true">
                     <span className="baf-speech-inner" style={{ ['--dur' as string]: '9.5s', ['--d' as string]: '-0.4s', ['--amp' as string]: '5px', ['--dx' as string]: '-3px', ['--rot' as string]: '2deg' }}>
                       <span className="baf-speech-card">
@@ -157,7 +157,7 @@ export default function Transformation() {
             </div>
           </FadeUp>
 
-          {/* ═══ LIGNE 2 — APRÈS : résultats (gauche) + dashboard (droite) ═══ */}
+          {/* ═══ LIGNE 2, APRÈS : résultats (gauche) + dashboard (droite) ═══ */}
           <FadeUp delay={0.18}>
             <div className="baf-row baf-row-rev">
               {/* Copie : ce qui vous propulse */}
@@ -311,7 +311,7 @@ export default function Transformation() {
         .baf-tiret { flex: none; font-weight: 500; line-height: 1.4; }
         .baf-tiret-gain { color: var(--accent); }
 
-        /* AVANT — liste chiffrée (chiffre serif rouge + description) */
+        /* AVANT, liste chiffrée (chiffre serif rouge + description) */
         .baf-costlist { gap: 17px; }
         .baf-cost-item { display: flex; align-items: baseline; gap: 15px; }
         .baf-cost-stat {
@@ -328,7 +328,7 @@ export default function Transformation() {
         .baf-dot-before { background: var(--text-muted); opacity: 0.6; }
         .baf-dot-after { background: var(--accent); }
 
-        /* Flèche dessinée main — centrée, cache-toi en mobile */
+        /* Flèche dessinée main, centrée, cache-toi en mobile */
         .baf-arrow {
           display: none;
           position: absolute; left: 50%; top: 50%;
@@ -341,7 +341,7 @@ export default function Transformation() {
 
         .baf-stage { position: absolute; inset: 20px 12px 16px 12px; }
 
-        /* floating real brand logos — desaturated */
+        /* floating real brand logos, desaturated */
         .baf-logo { position: absolute; display: block; }
         .baf-logo-inner {
           width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;

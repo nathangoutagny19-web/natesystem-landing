@@ -1,5 +1,5 @@
 /**
- * Éventail de mockups (vrais dashboards) — façon OpsKings « single source of truth »,
+ * Éventail de mockups (vrais dashboards), façon OpsKings « single source of truth »,
  * sauce NateSystem. 3 cartes navigateur en éventail, contenues dans le bloc.
  * Utilisé pour illustrer la partie « Système sur-mesure » sur /methode.
  */

@@ -5,7 +5,7 @@ import FadeUp from '@/components/ui/FadeUp'
 import { motion } from 'framer-motion'
 import { useLang } from '@/components/providers/LangProvider'
 
-// Vidéo témoignage podcast (paysage 16:9) — l'épisode complet Chromosome.
+// Vidéo témoignage podcast (paysage 16:9), l'épisode complet Chromosome.
 const YOUTUBE_ID = 'aMIjJbzuhDc'
 
 // Lecteur YouTube "facade" : on ne charge l'iframe (ni les cookies tiers)
@@ -99,7 +99,7 @@ export default function CaseStudy() {
   ]
 
   const quote = lang === 'en'
-    ? 'It changed the way we run everything — we couldn\'t do without it now. The time and clarity we\'ve gained are huge, and the team is far more at ease.'
+    ? 'It changed the way we run everything, we couldn\'t do without it now. The time and clarity we\'ve gained are huge, and the team is far more at ease.'
     : 'Ça a changé notre façon de tout gérer, on ne peut plus s\'en passer aujourd\'hui. Le gain de temps et de clarté est énorme, et l\'équipe est beaucoup plus sereine.'
 
   const role = lang === 'en'
@@ -143,7 +143,7 @@ export default function CaseStudy() {
               </p>
             </div>
 
-            {/* Citation (gauche) + vidéo témoignage (droite) — structure OpsKings */}
+            {/* Citation (gauche) + vidéo témoignage (droite), structure OpsKings */}
             <div className="cs-row">
               <div className="cs-quote-col">
                 <span className="cs-qmark font-serif" aria-hidden="true">“</span>
@@ -156,7 +156,7 @@ export default function CaseStudy() {
 
               <div className="cs-video-col">
                 <div className="cs-video">
-                  <LiteYouTube title={lang === 'en' ? 'Chromosome testimonial — NateSystem' : 'Témoignage Chromosome — NateSystem'} />
+                  <LiteYouTube title={lang === 'en' ? 'Chromosome testimonial, NateSystem' : 'Témoignage Chromosome, NateSystem'} />
                 </div>
               </div>
             </div>
@@ -201,7 +201,7 @@ export default function CaseStudy() {
         .cs-attr-name { font-size: 14px; font-weight: 600; color: var(--text); }
         .cs-attr-role { font-size: 12.5px; font-weight: 300; color: var(--text-secondary); letter-spacing: 0.3px; }
 
-        /* Colonne vidéo — paysage 16:9 */
+        /* Colonne vidéo, paysage 16:9 */
         .cs-video {
           position: relative; width: 100%; aspect-ratio: 16 / 9;
           border-radius: 12px; overflow: hidden; border: 1px solid var(--border);
@@ -209,7 +209,7 @@ export default function CaseStudy() {
           box-shadow: 0 1px 2px rgba(15,23,42,0.04), 0 18px 44px -22px rgba(15,23,42,0.32);
         }
 
-        /* Chiffres — 4 colonnes, séparés par un filet en haut */
+        /* Chiffres, 4 colonnes, séparés par un filet en haut */
         .cs-metrics {
           display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
           padding-top: clamp(28px, 3.5vw, 40px); border-top: 1px solid var(--border);

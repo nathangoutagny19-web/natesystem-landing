@@ -7,7 +7,7 @@ import PlaybookFooter from '../_components/PlaybookFooter'
 type SearchParams = { token?: string; email?: string; slug?: string }
 
 export const metadata: Metadata = {
-  title: 'Désabonnement — NateSystem',
+  title: 'Désabonnement, NateSystem',
   robots: { index: false, follow: false },
 }
 

@@ -5,14 +5,14 @@ import FadeUp from '@/components/ui/FadeUp'
 import { useLang } from '@/components/providers/LangProvider'
 
 /**
- * ProductShowcase — single, large product mockup right after the hero.
+ * ProductShowcase, single, large product mockup right after the hero.
  *
  * One mockup beats a gallery: it creates a focal point that proves
  * "real software was shipped" within 3 seconds of landing. Pattern used
  * by Linear, Vercel, Stripe, Notion.
  *
  * Mockup file lives at `public/showcase/dashboard-immo.jpeg`.
- * Caption stays generic — it's a demo/prototype, not a verifiable
+ * Caption stays generic, it's a demo/prototype, not a verifiable
  * production client.
  *
  * NOTE: a previous iteration embedded the HTML prototype in an iframe
@@ -32,7 +32,7 @@ export default function ProductShowcase() {
           <div className="showcase-frame">
             <div className="showcase-shadow" aria-hidden="true" />
 
-            {/* macOS-style chrome — signals "this is a real product" */}
+            {/* macOS-style chrome, signals "this is a real product" */}
             <div className="showcase-chrome">
               <span className="showcase-dot" style={{ background: '#FF5F57' }} />
               <span className="showcase-dot" style={{ background: '#FEBC2E' }} />

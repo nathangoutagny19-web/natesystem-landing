@@ -5,7 +5,7 @@ import FadeUp from '@/components/ui/FadeUp'
 import { useLang } from '@/components/providers/LangProvider'
 
 /**
- * La garantie « funny » — ce qui restait de la section Garanties (supprimée).
+ * La garantie « funny », ce qui restait de la section Garanties (supprimée).
  * Ton rigolo + humain, avec une vraie photo resto (« on vous offre le resto »).
  */
 export default function FunnyGuarantee() {

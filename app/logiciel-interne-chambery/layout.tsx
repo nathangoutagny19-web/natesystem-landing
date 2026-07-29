@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Logiciel interne Chambéry : solution sur-mesure entreprise',
   description:
-    'Logiciel interne à Chambéry : NateSystem conçoit des solutions logicielles sur-mesure pour entreprise en Savoie — gestion, données, équipe. Code livré, propriété 100 %, hébergé en UE. Audit offert.',
+    'Logiciel interne à Chambéry : NateSystem conçoit des solutions logicielles sur-mesure pour entreprise en Savoie, gestion, données, équipe. Code livré, propriété 100 %, hébergé en UE. Audit offert.',
   alternates: { canonical: 'https://www.natesystem.com/logiciel-interne-chambery' },
   openGraph: {
     title: 'Logiciel interne Chambéry : solution sur-mesure entreprise',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
 }
 
-// LocalBusiness + Service + FAQ + Breadcrumb, scoped to Chambéry — drives the local
+// LocalBusiness + Service + FAQ + Breadcrumb, scoped to Chambéry, drives the local
 // pack and AI association for "logiciel interne Chambéry".
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -28,7 +28,7 @@ const jsonLd = {
     {
       '@type': ['Organization', 'LocalBusiness'],
       '@id': 'https://www.natesystem.com/logiciel-interne-chambery#business',
-      name: 'NateSystem — Logiciel interne Chambéry',
+      name: 'NateSystem, Logiciel interne Chambéry',
       url: 'https://www.natesystem.com/logiciel-interne-chambery',
       description:
         'Agence de logiciel interne sur-mesure à Chambéry : solutions logicielles métier pour entreprise en Savoie, intégration IA, gestion des données et des process.',

@@ -10,12 +10,12 @@ import RelatedLinks from '@/components/ui/RelatedLinks'
 import { CAL_LINK } from '@/lib/constants'
 
 const rows: { criterion: string; saas: string; custom: string }[] = [
-  { criterion: 'Coût à l\'entrée', saas: 'Faible — abonnement mensuel', custom: 'Plus élevé — investissement initial' },
+  { criterion: 'Coût à l\'entrée', saas: 'Faible, abonnement mensuel', custom: 'Plus élevé, investissement initial' },
   { criterion: 'Coût dans la durée', saas: 'Croît avec les utilisateurs, à vie', custom: 'Hébergement + maintenance seulement' },
   { criterion: 'Propriété', saas: 'Vous louez un accès', custom: 'Code et données 100 % à vous' },
   { criterion: 'Adaptation à vos process', saas: 'Vous vous adaptez à l\'outil', custom: 'L\'outil épouse votre métier' },
   { criterion: 'Outils qui se parlent', saas: 'Patchwork à connecter', custom: 'Un seul système unifié' },
-  { criterion: 'Lock-in', saas: 'Élevé — migration coûteuse', custom: 'Aucun — vous reprenez la main' },
+  { criterion: 'Lock-in', saas: 'Élevé, migration coûteuse', custom: 'Aucun, vous reprenez la main' },
   { criterion: 'Données', saas: 'Chez l\'éditeur', custom: 'Hébergées chez vous · UE · RGPD' },
 ]
 
@@ -108,7 +108,7 @@ export default function VsPage() {
       <RelatedLinks
         links={[
           { href: '/prix-logiciel-sur-mesure', label: 'Combien coûte le sur-mesure ?', desc: 'Les fourchettes réalistes et le point de bascule vs SaaS.' },
-          { href: '/blog/base-de-donnees-vs-excel-pourquoi-migrer', label: 'Base de données vs Excel', desc: 'Quand vos tableurs deviennent un frein — et quoi faire.' },
+          { href: '/blog/base-de-donnees-vs-excel-pourquoi-migrer', label: 'Base de données vs Excel', desc: 'Quand vos tableurs deviennent un frein, et quoi faire.' },
           { href: '/agence-logiciel-ia-lyon', label: 'Agence à Lyon', desc: 'Qui construit votre logiciel sur-mesure et votre IA.' },
           { href: '/playbook', label: 'Playbooks sectoriels', desc: 'L\'approche appliquée à votre métier.' },
         ]}
@@ -126,7 +126,7 @@ export default function VsPage() {
               </h2>
               <p className="font-sans" style={{ fontSize: 15, fontWeight: 300, color: 'var(--text-secondary)', lineHeight: 1.7, maxWidth: 520, margin: '0 auto 32px' }}>
                 En un appel, on regarde vos abonnements actuels et vos process, et on vous dit franchement si le sur-mesure
-                est rentable pour vous — ou si un SaaS fait le job. Offert, sans pitch.
+                est rentable pour vous, ou si un SaaS fait le job. Offert, sans pitch.
               </p>
               <Link href={CAL_LINK} className="btn-primary" style={{ margin: '0 auto' }}>
                 <span className="btn-primary-dot" />Réserver un appel · offert

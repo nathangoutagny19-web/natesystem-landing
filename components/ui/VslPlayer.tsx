@@ -9,7 +9,7 @@ import { Play } from 'lucide-react'
  * videos, our branding only.
  *
  * Perf: the <video> is only mounted once the poster is clicked, so the file
- * is NEVER fetched on page load — the hero stays as light as before. Until
+ * is NEVER fetched on page load, the hero stays as light as before. Until
  * then it's just a poster image + a play button, in the exact same frame.
  */
 export default function VslPlayer({

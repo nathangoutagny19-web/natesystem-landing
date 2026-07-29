@@ -125,7 +125,7 @@ export default function DownloadModal({ resource, onClose }: { resource: Resourc
               </svg>
             </div>
             <h3 className="text-lg font-bold" style={{ color: 'var(--text)' }}>
-              Vérifie ta boîte — ton pack arrive dans 2 minutes !
+              Vérifie ta boîte, ton pack arrive dans 2 minutes !
             </h3>
           </div>
         ) : (
@@ -174,7 +174,7 @@ export default function DownloadModal({ resource, onClose }: { resource: Resourc
 
               <label className="flex items-start gap-3 cursor-pointer">
                 <input type="checkbox" checked={form.newsletter} onChange={e => updateField('newsletter', e.target.checked)} className="mt-0.5 h-4 w-4 rounded text-[#ED4245] focus:ring-[#ED4245]" style={{ borderColor: 'var(--border)' }} />
-                <span className="text-sm" style={{ color: 'var(--text-secondary)' }}>Recevoir la Scale Minute — newsletter hebdo NateSystem</span>
+                <span className="text-sm" style={{ color: 'var(--text-secondary)' }}>Recevoir la Scale Minute, newsletter hebdo NateSystem</span>
               </label>
 
               {status === 'error' && (

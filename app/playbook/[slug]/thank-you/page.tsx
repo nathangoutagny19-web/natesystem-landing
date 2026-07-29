@@ -14,7 +14,7 @@ type Params = { slug: string }
 type SearchParams = { email?: string }
 
 export const metadata: Metadata = {
-  title: 'Merci — votre playbook arrive',
+  title: 'Merci, votre playbook arrive',
   robots: { index: false, follow: false },
 }
 
@@ -62,7 +62,7 @@ export default async function ThankYouPage({
           {email && <span style={{ color: 'var(--pb-red)' }}>{email}</span>}.
         </h1>
         <p className="pb-lead" style={{ margin: '0 auto 28px' }}>
-          Vérifiez votre boîte de réception dans les 30 prochaines secondes — y compris
+          Vérifiez votre boîte de réception dans les 30 prochaines secondes, y compris
           le dossier spam. Si vous voulez le PDF immédiatement, voici le lien direct&nbsp;:
         </p>
         {downloadUrl ? (

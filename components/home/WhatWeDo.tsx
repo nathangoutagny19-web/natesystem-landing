@@ -10,14 +10,14 @@ const ITEMS: Item[] = [
   {
     titleFr: 'Consulting opérationnel',
     titleEn: 'Operational consulting',
-    descFr: 'On analyse vos process, opérations et workflows — de l’arrivée d’un prospect au client qui recommande. On cartographie tout, puis on repère où vous gagnez le plus.',
-    descEn: 'We analyse your processes, operations and workflows — from a prospect’s arrival to a client who refers you. We map it all, then pinpoint where you gain the most.',
+    descFr: 'On analyse vos process, opérations et workflows, de l’arrivée d’un prospect au client qui recommande. On cartographie tout, puis on repère où vous gagnez le plus.',
+    descEn: 'We analyse your processes, operations and workflows, from a prospect’s arrival to a client who refers you. We map it all, then pinpoint where you gain the most.',
   },
   {
     titleFr: 'Système sur-mesure',
     titleEn: 'Custom system',
-    descFr: 'On développe le logiciel qui vous manque — métier, ERP, portail, cockpit — construit autour de vos opérations, pas l’inverse. Vos données unifiées, votre code qui vous appartient.',
-    descEn: 'We develop the software you’re missing — business app, ERP, portal, cockpit — built around your operations, not the other way round. Your data unified, your code owned by you.',
+    descFr: 'On développe le logiciel qui vous manque, métier, ERP, portail, cockpit, construit autour de vos opérations, pas l’inverse. Vos données unifiées, votre code qui vous appartient.',
+    descEn: 'We develop the software you’re missing, business app, ERP, portal, cockpit, built around your operations, not the other way round. Your data unified, your code owned by you.',
   },
   {
     titleFr: 'Digitalisation & IA',
@@ -28,8 +28,8 @@ const ITEMS: Item[] = [
   {
     titleFr: 'Formation & accompagnement',
     titleEn: 'Training & support',
-    descFr: 'On forme vos équipes, du dirigeant au terrain, à utiliser ces outils au quotidien — jusqu’à l’autonomie complète.',
-    descEn: 'We train your teams, from leadership to the field, to use these tools day-to-day — all the way to full autonomy.',
+    descFr: 'On forme vos équipes, du dirigeant au terrain, à utiliser ces outils au quotidien, jusqu’à l’autonomie complète.',
+    descEn: 'We train your teams, from leadership to the field, to use these tools day-to-day, all the way to full autonomy.',
   },
 ]
 
@@ -246,7 +246,7 @@ export default function WhatWeDo() {
         .wwx-row.on .wwx-viz { opacity: 1; transform: translateX(0) scale(1); }
       `}</style>
 
-      {/* Styles globaux des visuels — transitions (pas de keyframes : plus fiable sous styled-jsx global) */}
+      {/* Styles globaux des visuels, transitions (pas de keyframes : plus fiable sous styled-jsx global) */}
       <style jsx global>{`
         .wwx-viz-svg { width: 100%; height: 100%; overflow: visible; }
         .wwx-viz-svg [class^='viz-'] { vector-effect: non-scaling-stroke; }

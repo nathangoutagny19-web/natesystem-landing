@@ -9,15 +9,15 @@ const STEPS = [
     title: 'Free Audit',
     duration: '30 min · No commitment',
     description:
-      'We analyze your processes, map your tools, and identify exactly where AI can deliver immediate and measurable ROI. You leave with a complete roadmap — regardless of what comes next.',
-    highlight: 'Audit Stratégique — 990€ HT',
+      'We analyze your processes, map your tools, and identify exactly where AI can deliver immediate and measurable ROI. You leave with a complete roadmap, regardless of what comes next.',
+    highlight: 'Audit Stratégique, 990€ HT',
   },
   {
     number: '02',
     title: 'Build',
     duration: '4 to 8 weeks',
     description:
-      'We build your custom AI infrastructure — internal platforms, centralized data architecture, and specialized agents trained on your specific operations. Proprietary. 100% yours.',
+      'We build your custom AI infrastructure, internal platforms, centralized data architecture, and specialized agents trained on your specific operations. Proprietary. 100% yours.',
     highlight: 'Infrastructure Setup',
   },
   {
@@ -25,7 +25,7 @@ const STEPS = [
     title: 'Deploy + Handover',
     duration: '30-day support included',
     description:
-      'We deploy, train your teams, and measure first ROI. Your infrastructure is live, adopted, and evolving. You can then extend it with the NateSystem License — your dedicated external tech team.',
+      'We deploy, train your teams, and measure first ROI. Your infrastructure is live, adopted, and evolving. You can then extend it with the NateSystem License, your dedicated external tech team.',
     highlight: 'Licence NateSystem',
   },
 ]
@@ -69,7 +69,7 @@ export default function Process() {
           </p>
         </FadeUp>
 
-        {/* Steps — horizontal desktop, vertical mobile */}
+        {/* Steps, horizontal desktop, vertical mobile */}
         <div className="relative">
           {/* Connecting line (desktop only) */}
           <div

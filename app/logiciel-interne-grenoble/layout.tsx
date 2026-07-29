@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Logiciel interne Grenoble : solution sur-mesure entreprise',
   description:
-    'Logiciel interne à Grenoble : NateSystem conçoit des solutions logicielles sur-mesure pour entreprise — gestion, données, équipe. Code livré, propriété 100 %, hébergé en UE. Audit offert.',
+    'Logiciel interne à Grenoble : NateSystem conçoit des solutions logicielles sur-mesure pour entreprise, gestion, données, équipe. Code livré, propriété 100 %, hébergé en UE. Audit offert.',
   alternates: { canonical: 'https://www.natesystem.com/logiciel-interne-grenoble' },
   openGraph: {
     title: 'Logiciel interne Grenoble : solution sur-mesure entreprise',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
 }
 
-// LocalBusiness + Service + FAQ + Breadcrumb, scoped to Grenoble — drives the local
+// LocalBusiness + Service + FAQ + Breadcrumb, scoped to Grenoble, drives the local
 // pack and AI association for "logiciel interne Grenoble".
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -28,7 +28,7 @@ const jsonLd = {
     {
       '@type': ['Organization', 'LocalBusiness'],
       '@id': 'https://www.natesystem.com/logiciel-interne-grenoble#business',
-      name: 'NateSystem — Logiciel interne Grenoble',
+      name: 'NateSystem, Logiciel interne Grenoble',
       url: 'https://www.natesystem.com/logiciel-interne-grenoble',
       description:
         'Agence de logiciel interne sur-mesure à Grenoble : solutions logicielles métier pour entreprise et PME industrielles, intégration IA, gestion des données et des process.',
@@ -66,7 +66,7 @@ const jsonLd = {
           name: 'Un logiciel interne convient-il aux PME industrielles et technologiques de Grenoble ?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Oui. Les entreprises de l\'écosystème grenoblois — industrie, microélectronique, deep tech — ont souvent des process complexes qu\'aucun logiciel standard ne couvre vraiment. Un logiciel interne sur-mesure est précisément conçu autour de ces process et de la donnée propre à votre métier, sans vous obliger à plier votre activité à un outil générique.',
+            text: 'Oui. Les entreprises de l\'écosystème grenoblois, industrie, microélectronique, deep tech, ont souvent des process complexes qu\'aucun logiciel standard ne couvre vraiment. Un logiciel interne sur-mesure est précisément conçu autour de ces process et de la donnée propre à votre métier, sans vous obliger à plier votre activité à un outil générique.',
           },
         },
         {

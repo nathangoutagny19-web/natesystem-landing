@@ -22,9 +22,9 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'NateSystem — Logiciel sur-mesure propulsé par l\'IA',
+  title: 'NateSystem, Logiciel sur-mesure propulsé par l\'IA',
   description:
-    'Le logiciel sur-mesure qui pilote votre activité, propulsé par l\'IA — intelligence artificielle agentique, automatisation, data analytics — là où elle remplace de vraies heures de travail. Vos données, votre infrastructure, votre code.',
+    'Le logiciel sur-mesure qui pilote votre activité, propulsé par l\'IA, intelligence artificielle agentique, automatisation, data analytics, là où elle remplace de vraies heures de travail. Vos données, votre infrastructure, votre code.',
   keywords: [
     'logiciel sur-mesure IA',
     'IA intégrée logiciel métier',
@@ -53,9 +53,9 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     url: 'https://www.natesystem.com',
-    title: 'NateSystem — Logiciel sur-mesure propulsé par l\'IA',
+    title: 'NateSystem, Logiciel sur-mesure propulsé par l\'IA',
     description:
-      'Le logiciel sur-mesure qui pilote votre activité, propulsé par l\'IA — agentique, automatisation, data analytics — là où ça compte. Vos données, votre infrastructure, votre code.',
+      'Le logiciel sur-mesure qui pilote votre activité, propulsé par l\'IA, agentique, automatisation, data analytics, là où ça compte. Vos données, votre infrastructure, votre code.',
     siteName: 'NateSystem',
     images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'NateSystem' }],
     locale: 'fr_FR',
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'NateSystem — Logiciel sur-mesure propulsé par l\'IA',
+    title: 'NateSystem, Logiciel sur-mesure propulsé par l\'IA',
     description: 'Le logiciel sur-mesure qui pilote votre activité, propulsé par l\'IA là où ça compte.',
     images: ['/og-image.png'],
   },
@@ -73,7 +73,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="fr" className={`${dmSans.variable} ${jetbrainsMono.variable} light`} suppressHydrationWarning>
       <head>
-        {/* Organization + LocalBusiness schema (JSON-LD) — invisible to users,
+        {/* Organization + LocalBusiness schema (JSON-LD), invisible to users,
             powers Google rich results and AI citability (ChatGPT / Perplexity /
             AI Overviews). Knowledge-graph anchor for the whole site. */}
         <script
@@ -90,7 +90,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               logo: 'https://www.natesystem.com/logo.png',
               image: 'https://www.natesystem.com/logo.png',
               description:
-                'NateSystem construit le logiciel sur-mesure qui pilote votre activité, propulsé par l\'IA — IA agentique, automatisation, data analytics. Vos données, votre infrastructure, votre code. Hébergé en UE, RGPD-natif.',
+                'NateSystem construit le logiciel sur-mesure qui pilote votre activité, propulsé par l\'IA, IA agentique, automatisation, data analytics. Vos données, votre infrastructure, votre code. Hébergé en UE, RGPD-natif.',
               founder: {
                 '@type': 'Person',
                 name: 'Nathan Goutagny',
@@ -115,7 +115,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             }),
           }}
         />
-        {/* FAQPage schema (JSON-LD) — mirrors the home FAQ section verbatim (FR).
+        {/* FAQPage schema (JSON-LD), mirrors the home FAQ section verbatim (FR).
             Eligible for FAQ rich results and feeds AI answer engines. Invisible. */}
         <script
           type="application/ld+json"
@@ -126,7 +126,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               mainEntity: [
                 {
                   q: 'Qu\'est-ce que vous construisez concrètement ?',
-                  a: 'Du logiciel métier sur-mesure — la plateforme interne qui fait tourner vos opérations. Base unifiée, dashboards, portails clients, outils internes. L\'IA et l\'automatisation sont intégrées uniquement là où elles remplacent de vraies heures de travail, pas en décoration.',
+                  a: 'Du logiciel métier sur-mesure, la plateforme interne qui fait tourner vos opérations. Base unifiée, dashboards, portails clients, outils internes. L\'IA et l\'automatisation sont intégrées uniquement là où elles remplacent de vraies heures de travail, pas en décoration.',
                 },
                 {
                   q: 'Combien de temps ça prend ?',
@@ -138,7 +138,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 },
                 {
                   q: 'Quelles automatisations et fonctionnalités IA peuvent être intégrées ?',
-                  a: 'Là où ça fait gagner de vraies heures. Les classiques : workflows automatisés (commandes, factures, relances, passations internes), analytics prédictif (anticiper stock, no-shows, tendances de ventes), lecture de documents (factures, contrats, formulaires), tri intelligent (classer, router, rédiger des réponses), agents autonomes qui exécutent des tâches multi-étapes dans vos outils, et interfaces conversationnelles pour vos équipes ou vos clients. On choisit ce qui vaut le coup pour vous — pas tout parce que c\'est à la mode.',
+                  a: 'Là où ça fait gagner de vraies heures. Les classiques : workflows automatisés (commandes, factures, relances, passations internes), analytics prédictif (anticiper stock, no-shows, tendances de ventes), lecture de documents (factures, contrats, formulaires), tri intelligent (classer, router, rédiger des réponses), agents autonomes qui exécutent des tâches multi-étapes dans vos outils, et interfaces conversationnelles pour vos équipes ou vos clients. On choisit ce qui vaut le coup pour vous, pas tout parce que c\'est à la mode.',
                 },
                 {
                   q: 'Et si vous disparaissez demain ?',
@@ -146,15 +146,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 },
                 {
                   q: 'Est-ce que ça marche pour mon secteur ?',
-                  a: 'Restauration, conseil, BTP, santé, retail — partout où il y a des opérations récurrentes et de la vraie donnée qui y circule. La stack s\'adapte. La méthode ne change pas.',
+                  a: 'Restauration, conseil, BTP, santé, retail, partout où il y a des opérations récurrentes et de la vraie donnée qui y circule. La stack s\'adapte. La méthode ne change pas.',
                 },
                 {
                   q: 'Pourquoi maintenant ? Ça ne peut pas attendre ?',
-                  a: 'Ça peut — mais attendre a un coût. 20% des entreprises européennes (10+ employés) utilisent déjà l\'IA en 2025, contre 13,5% un an plus tôt. Les équipes qui l\'intègrent à leurs process clés libèrent 20 à 30% de leur temps de travail (McKinsey), et les PME qui l\'adoptent ont 2× plus de chances de croître d\'une année sur l\'autre (Salesforce). Chaque mois d\'attente est un mois où vos concurrents creusent l\'écart — et où vos équipes continuent de payer des tâches qu\'une infrastructure bien construite absorberait.',
+                  a: 'Ça peut, mais attendre a un coût. 20% des entreprises européennes (10+ employés) utilisent déjà l\'IA en 2025, contre 13,5% un an plus tôt. Les équipes qui l\'intègrent à leurs process clés libèrent 20 à 30% de leur temps de travail (McKinsey), et les PME qui l\'adoptent ont 2× plus de chances de croître d\'une année sur l\'autre (Salesforce). Chaque mois d\'attente est un mois où vos concurrents creusent l\'écart, et où vos équipes continuent de payer des tâches qu\'une infrastructure bien construite absorberait.',
                 },
                 {
                   q: 'Quelles technologies utilisez-vous ? Mes données sont-elles en sécurité ?',
-                  a: 'On utilise les technologies les plus fiables et reconnues du marché — les mêmes que les grandes entreprises tech. Vos données sont hébergées en Europe, protégées et conformes RGPD. Et tout vous appartient : le code est à vous, vous n\'êtes prisonnier de personne. (Pour les curieux : Next.js, Supabase, Claude API, Vercel — du standard solide.)',
+                  a: 'On utilise les technologies les plus fiables et reconnues du marché, les mêmes que les grandes entreprises tech. Vos données sont hébergées en Europe, protégées et conformes RGPD. Et tout vous appartient : le code est à vous, vous n\'êtes prisonnier de personne. (Pour les curieux : Next.js, Supabase, Claude API, Vercel, du standard solide.)',
                 },
               ].map((item) => ({
                 '@type': 'Question',
@@ -171,7 +171,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap"
           rel="stylesheet"
         />
-        {/* Inline theme script — runs before paint to prevent flash */}
+        {/* Inline theme script, runs before paint to prevent flash */}
         <script
           dangerouslySetInnerHTML={{
             __html: `(function(){try{var t=localStorage.getItem('ns-theme');if(t==='light'||t==='dark'){document.documentElement.classList.toggle('light',t==='light')}else{document.documentElement.classList.add('light');localStorage.setItem('ns-theme','light')}}catch(e){}})()`,

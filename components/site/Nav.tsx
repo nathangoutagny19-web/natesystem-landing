@@ -49,7 +49,7 @@ export default function Nav() {
           <a
             href="/"
             className="flex items-center gap-2 no-underline group"
-            aria-label="NateSystem — Accueil"
+            aria-label="NateSystem, Accueil"
           >
             <span
               className="font-display italic text-[22px] leading-none"

@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Logiciel interne Clermont-Ferrand : solution sur-mesure',
   description:
-    'Logiciel interne à Clermont-Ferrand : NateSystem conçoit des solutions logicielles sur-mesure pour entreprise — gestion, données, équipe. Code livré, propriété 100 %, hébergé en UE. Audit offert.',
+    'Logiciel interne à Clermont-Ferrand : NateSystem conçoit des solutions logicielles sur-mesure pour entreprise, gestion, données, équipe. Code livré, propriété 100 %, hébergé en UE. Audit offert.',
   alternates: { canonical: 'https://www.natesystem.com/logiciel-interne-clermont-ferrand' },
   openGraph: {
     title: 'Logiciel interne Clermont-Ferrand : solution sur-mesure',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
 }
 
-// LocalBusiness + Service + FAQ + Breadcrumb, scoped to Clermont-Ferrand — drives the local
+// LocalBusiness + Service + FAQ + Breadcrumb, scoped to Clermont-Ferrand, drives the local
 // pack and AI association for "logiciel interne Clermont-Ferrand".
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -28,7 +28,7 @@ const jsonLd = {
     {
       '@type': ['Organization', 'LocalBusiness'],
       '@id': 'https://www.natesystem.com/logiciel-interne-clermont-ferrand#business',
-      name: 'NateSystem — Logiciel interne Clermont-Ferrand',
+      name: 'NateSystem, Logiciel interne Clermont-Ferrand',
       url: 'https://www.natesystem.com/logiciel-interne-clermont-ferrand',
       description:
         'Agence de logiciel interne sur-mesure pour Clermont-Ferrand : solutions logicielles métier pour entreprise, intégration IA, gestion des données et des process.',

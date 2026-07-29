@@ -3,12 +3,12 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Logiciel sur-mesure vs SaaS : lequel choisir pour votre PME ?',
   description:
-    'Comparatif honnête entre logiciel métier sur-mesure et abonnement SaaS pour une PME : coût réel, propriété, adaptation, lock-in, données. Quand chacun a du sens — et comment décider.',
+    'Comparatif honnête entre logiciel métier sur-mesure et abonnement SaaS pour une PME : coût réel, propriété, adaptation, lock-in, données. Quand chacun a du sens, et comment décider.',
   alternates: { canonical: 'https://www.natesystem.com/logiciel-sur-mesure-vs-saas' },
   openGraph: {
     title: 'Logiciel sur-mesure vs SaaS : lequel choisir pour votre PME ?',
     description:
-      'Comparatif honnête : coût réel, propriété, adaptation, lock-in, données. Quand le sur-mesure bat le SaaS — et quand non.',
+      'Comparatif honnête : coût réel, propriété, adaptation, lock-in, données. Quand le sur-mesure bat le SaaS, et quand non.',
     url: 'https://www.natesystem.com/logiciel-sur-mesure-vs-saas',
     type: 'article',
     locale: 'fr_FR',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
 }
 
-// FAQPage + Breadcrumb JSON-LD — the comparison's key questions, citable by AI.
+// FAQPage + Breadcrumb JSON-LD, the comparison's key questions, citable by AI.
 const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [

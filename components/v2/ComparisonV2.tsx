@@ -4,7 +4,7 @@ import FadeUp from '@/components/ui/FadeUp'
 import { useLang } from '@/components/providers/LangProvider'
 
 /**
- * ComparisonV2 — variante 4 colonnes de la comparaison honnête (REFONTE §7).
+ * ComparisonV2, variante 4 colonnes de la comparaison honnête (REFONTE §7).
  * Ajoute les vraies alternatives du prospect : Freelance / ESN / SaaS / NateSystem.
  * Colonne NateSystem mise en avant (fond accent-subtle). La table scrolle
  * horizontalement dans son propre conteneur sur mobile (jamais le body).

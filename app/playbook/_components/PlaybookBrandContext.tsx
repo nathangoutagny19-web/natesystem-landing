@@ -18,7 +18,7 @@ export default function PlaybookBrandContext() {
             style={{ maxWidth: 'none', marginBottom: 16 }}
           >
             NateSystem construit le logiciel sur-mesure qui pilote l&apos;activité
-            des PME françaises — un poste de commandement unique pour vos
+            des PME françaises, un poste de commandement unique pour vos
             opérations, votre donnée, votre équipe. L&apos;IA y est intégrée là où
             elle remplace de vraies heures de travail, jamais pour cocher une
             case marketing.

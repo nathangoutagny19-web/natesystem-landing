@@ -1,5 +1,5 @@
 /**
- * Diagnostic IA — logique de scoring pure (sans React).
+ * Diagnostic IA, logique de scoring pure (sans React).
  *
  * Prend les 12 réponses du questionnaire et retourne :
  *   - 3 KPI principaux (€ gaspillés SaaS / heures perdues / score maturité IA)
@@ -19,19 +19,19 @@ const DUPLICATE_SAAS_COST = 50 // €/mois moyen par doublon SaaS détecté
 // ─────────────────────────────────────────────────────────────────────
 
 export type DiagnosticAnswers = {
-  // ACTE 1 — Stack SaaS
+  // ACTE 1, Stack SaaS
   saasCount: number // Q1 : nb d'outils SaaS payants (1-30)
   saasUsedCount: number // Q2 : nb réellement utilisés (≤ Q1)
   saasMonthlyCost: number // Q3 : coût mensuel total en €
   duplicatesCount: number // Q4 : nb de doublons connus
 
-  // ACTE 2 — Temps perdu
+  // ACTE 2, Temps perdu
   employees: number // Q5 : nb de personnes dans l'équipe
   hoursPerWeekPerPerson: number // Q6 : heures/sem/pers en répétitif
   monthlySalaryCost: number // Q7 : coût mensuel chargé moyen par employé
   automationLevel: 'none' | 'some' | 'lots' // Q8 : automatisation passée
 
-  // ACTE 3 — Maturité IA
+  // ACTE 3, Maturité IA
   aiUsage: 'no' | 'individual' | 'team' // Q9 : ChatGPT/Claude au quotidien
   processDocumented: 'no' | 'partial' | 'yes' // Q10 : process documentés
   dataCentralized: 'no' | 'partial' | 'yes' // Q11 : données centralisées
@@ -88,23 +88,23 @@ function computeHoursLostMonthly(a: DiagnosticAnswers): number {
 function computeAiMaturityScore(a: DiagnosticAnswers): number {
   let score = 0
 
-  // Q8 — Automatisation passée (max 25)
+  // Q8, Automatisation passée (max 25)
   if (a.automationLevel === 'lots') score += 25
   else if (a.automationLevel === 'some') score += 12
 
-  // Q9 — Utilisation IA (max 25)
+  // Q9, Utilisation IA (max 25)
   if (a.aiUsage === 'team') score += 25
   else if (a.aiUsage === 'individual') score += 12
 
-  // Q10 — Process documentés (max 20)
+  // Q10, Process documentés (max 20)
   if (a.processDocumented === 'yes') score += 20
   else if (a.processDocumented === 'partial') score += 10
 
-  // Q11 — Données centralisées (max 20)
+  // Q11, Données centralisées (max 20)
   if (a.dataCentralized === 'yes') score += 20
   else if (a.dataCentralized === 'partial') score += 10
 
-  // Q12 — Sentiment de retard (max 10, inversé : plus on se sent en retard, moins on score)
+  // Q12, Sentiment de retard (max 10, inversé : plus on se sent en retard, moins on score)
   if (a.aiLagFeeling === 'none') score += 10
   else if (a.aiLagFeeling === 'a-bit') score += 6
   else if (a.aiLagFeeling === 'yes') score += 3

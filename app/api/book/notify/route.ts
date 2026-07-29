@@ -5,7 +5,7 @@ export const runtime = 'nodejs'
 export const dynamic = 'force-dynamic'
 
 /**
- * /api/book/notify — fan-out a "new /book lead" email to Nathan.
+ * /api/book/notify, fan-out a "new /book lead" email to Nathan.
  *
  * The /book flow already POSTs the full payload to the legacy backend
  * (natesystem-backend.vercel.app/api/leads/capture → Supabase). This
@@ -72,8 +72,8 @@ const esc = (s: unknown) =>
     .replace(/"/g, '&quot;')
 
 const fmt = (v: string | string[] | undefined): string => {
-  if (!v) return '<span style="color:#999;">—</span>'
-  if (Array.isArray(v)) return v.length ? esc(v.join(', ')) : '<span style="color:#999;">—</span>'
+  if (!v) return '<span style="color:#999;">·</span>'
+  if (Array.isArray(v)) return v.length ? esc(v.join(', ')) : '<span style="color:#999;">·</span>'
   return esc(v)
 }
 
@@ -101,7 +101,7 @@ export async function POST(req: NextRequest) {
       ? '🔥 '
       : ''
 
-    const subject = `${urgencyTag}Nouveau lead /book — ${fullName}${entreprise ? ` (${entreprise})` : ''}`
+    const subject = `${urgencyTag}Nouveau lead /book, ${fullName}${entreprise ? ` (${entreprise})` : ''}`
 
     const html = `
 <!DOCTYPE html>
@@ -203,10 +203,10 @@ export async function POST(req: NextRequest) {
 </body>
 </html>`
 
-    const text = `Nouveau lead /book — ${fullName}${entreprise ? ` (${entreprise})` : ''}
+    const text = `Nouveau lead /book, ${fullName}${entreprise ? ` (${entreprise})` : ''}
 Email : ${email}
 ${site ? `Site : ${site}\n` : ''}
-— Identité —
+— Identité,
 Rôle : ${role || '—'}
 Secteur : ${secteur || '—'}
 Équipe : ${taille || '—'}
@@ -214,22 +214,22 @@ Défi : ${challenge || '—'}
 Budget : ${budget || '—'}
 Langue : ${lang}
 
-— Stack actuelle —
+— Stack actuelle,
 Outils : ${audit.tools?.join(', ') || '—'}
 Nb SaaS payés : ${audit.saasCount || '—'}
 Outils connectés : ${audit.toolsConnected || '—'}
 
-— Temps perdu —
+— Temps perdu,
 Tâches répétitives : ${audit.tasks?.join(', ') || '—'}
 Heures/sem perdues : ${audit.hoursWasted || '—'}
 Qui les fait : ${audit.whoDoesIt || '—'}
 
-— Process & données —
+— Process & données,
 Process documentés : ${audit.processDocs || '—'}
 Où vivent les données : ${audit.dataLocations?.join(', ') || '—'}
 Impact absence clé : ${audit.absenceImpact || '—'}
 
-— Objectifs & urgence —
+— Objectifs & urgence,
 Résultats voulus 90j : ${audit.desiredResults?.join(', ') || '—'}
 Urgence : ${audit.urgency || '—'}
 Déjà tenté : ${audit.triedBefore || '—'}

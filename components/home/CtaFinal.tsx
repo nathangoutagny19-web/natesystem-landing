@@ -6,7 +6,7 @@ import FadeUp from '@/components/ui/FadeUp'
 import { CAL_HANDLE, CAL_NAMESPACE } from '@/lib/constants'
 
 /**
- * Prise de rendez-vous — embed Cal.com SEUL (choix Nathan : l'entête
+ * Prise de rendez-vous, embed Cal.com SEUL (choix Nathan : l'entête
  * « Travaillons ensemble / Racontez-nous… » est retirée). Placé juste après
  * l'offre d'entrée « Le Diagnostic ». id="rendez-vous" conservé (ancre CAL_LINK).
  */

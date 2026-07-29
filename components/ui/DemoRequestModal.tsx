@@ -116,7 +116,7 @@ export default function DemoRequestModal({
       if (!res.ok) throw new Error('Erreur')
       setStatus('success')
     } catch {
-      // Backend may be flaky; we still confirm to the user — the lead is logged either side.
+      // Backend may be flaky; we still confirm to the user, the lead is logged either side.
       setStatus('success')
     }
   }

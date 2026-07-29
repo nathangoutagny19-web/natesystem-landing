@@ -16,22 +16,22 @@ const YOUTUBE_ID = '4ae5mATIjhw'
 const modules = [
   {
     title: 'Offres de sponsoring automatiques',
-    desc: 'Après chaque appel partenaire, l\'outil génère l\'offre de sponsoring — en PDF, slides ou mail — instantanément, dans votre identité, reliée à votre CRM. Fini les heures passées sur Excel et PowerPoint.',
+    desc: 'Après chaque appel partenaire, l\'outil génère l\'offre de sponsoring, en PDF, slides ou mail, instantanément, dans votre identité, reliée à votre CRM. Fini les heures passées sur Excel et PowerPoint.',
     metric: 'Une offre prête en minutes, pas en heures',
   },
   {
     title: 'Back-office commercial unifié',
-    desc: 'Vos partenaires, vos relances, vos contrats et vos échéances pilotés au même endroit — au lieu d\'un patchwork d\'Excel, WhatsApp et outils génériques.',
+    desc: 'Vos partenaires, vos relances, vos contrats et vos échéances pilotés au même endroit, au lieu d\'un patchwork d\'Excel, WhatsApp et outils génériques.',
     metric: 'Des heures de gestion hebdo récupérées',
   },
   {
     title: 'Gestion des bénévoles',
-    desc: 'Planning, attribution des rôles, check-in en temps réel, communication interne — intégrés à la même infrastructure, sans Excel + WhatsApp en chaos.',
+    desc: 'Planning, attribution des rôles, check-in en temps réel, communication interne, intégrés à la même infrastructure, sans Excel + WhatsApp en chaos.',
     metric: 'Coordination divisée, no-shows en baisse',
   },
   {
     title: 'Un système qui vous appartient',
-    desc: 'Tout est réuni dans un logiciel sur-mesure dont le club est propriétaire — pas un abonnement de plus, pas de données chez un tiers.',
+    desc: 'Tout est réuni dans un logiciel sur-mesure dont le club est propriétaire, pas un abonnement de plus, pas de données chez un tiers.',
     metric: 'Code livré · hébergé en UE',
   },
 ]
@@ -109,8 +109,8 @@ export default function ClubSportifPage() {
               Générez vos offres de sponsoring <span className="accent" style={{ color: 'var(--accent)' }}>en minutes, pas en heures.</span>
             </h1>
             <p className="font-sans" style={{ fontSize: 'clamp(15px, 3vw, 18px)', fontWeight: 300, color: 'var(--text-secondary)', maxWidth: 640, margin: '0 auto 36px', lineHeight: 1.65 }}>
-              Pour un club sportif, le logiciel et l&apos;IA sur-mesure automatisent le back-office commercial — création des
-              offres partenaires reliée au CRM — et la gestion des bénévoles. Un seul système, qui appartient au club.
+              Pour un club sportif, le logiciel et l&apos;IA sur-mesure automatisent le back-office commercial, création des
+              offres partenaires reliée au CRM, et la gestion des bénévoles. Un seul système, qui appartient au club.
               L&apos;IA intégrée uniquement là où elle remplace de vraies heures.
             </p>
             <Link href={CAL_LINK} className="btn-primary" style={{ margin: '0 auto', fontSize: 14 }}>
@@ -153,7 +153,7 @@ export default function ClubSportifPage() {
           <ul style={{ listStyle: 'none', padding: 0, margin: '0 auto', maxWidth: 600, display: 'grid', gap: 13 }}>
             {pains.map((p) => (
               <li key={p} className="flex items-start gap-3" style={{ fontSize: 14.5, color: 'var(--text-secondary)', lineHeight: 1.55, fontWeight: 300 }}>
-                <span style={{ color: 'var(--accent)', flexShrink: 0, marginTop: 1, fontWeight: 600 }}>—</span>
+                <span style={{ color: 'var(--accent)', flexShrink: 0, marginTop: 1, fontWeight: 600 }}>·</span>
                 <span>{p}</span>
               </li>
             ))}
@@ -188,7 +188,7 @@ export default function ClubSportifPage() {
 
       <Divider />
 
-      {/* What the system targets — capability, not a client claim */}
+      {/* What the system targets, capability, not a client claim */}
       <section style={{ padding: '70px 24px' }}>
         <div className="mx-auto" style={{ maxWidth: 760 }}>
           <FadeUp>

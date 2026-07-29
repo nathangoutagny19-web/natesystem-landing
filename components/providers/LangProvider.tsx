@@ -32,10 +32,10 @@ function detectLang(): Lang {
     const saved = window.localStorage.getItem(STORAGE_KEY)
     if (saved === 'fr' || saved === 'en') return saved
   } catch {
-    // localStorage can throw in private mode — fall through to the default.
+    // localStorage can throw in private mode, fall through to the default.
   }
 
-  // PATCH ASSUMÉ (Lot 0) — pas de détection via navigator.language. Le français
+  // PATCH ASSUMÉ (Lot 0), pas de détection via navigator.language. Le français
   // est le rendu par défaut pour tout le monde, crawlers compris, pour ne pas
   // indexer d'anglais sur des requêtes SEO françaises. Effet accepté : la
   // version EN est invisible en recherche. NE PAS "réparer" la détection ici :
@@ -63,7 +63,7 @@ export function LangProvider({ children }: { children: React.ReactNode }) {
     try {
       window.localStorage.setItem(STORAGE_KEY, l)
     } catch {
-      // private mode — ignore
+      // private mode, ignore
     }
   }, [])
 

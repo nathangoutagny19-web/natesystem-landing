@@ -58,7 +58,7 @@ export function sectorLabelFor(slug: string): string {
 
 const CARD_TAGLINES: Record<string, string> = {
   'hoteliers-independants':
-    'Où l’IA libère vraiment du temps dans une exploitation hôtelière — sans toucher à l’expérience client.',
+    'Où l’IA libère vraiment du temps dans une exploitation hôtelière, sans toucher à l’expérience client.',
   'avocats-affaires':
     'Comment intégrer l’IA dans un cabinet sans toucher au secret professionnel ni au RIN.',
   'nettoyage-proprete-b2b':
@@ -76,7 +76,7 @@ const CARD_TAGLINES: Record<string, string> = {
   'centres-formation':
     'Pré-remplir les dossiers OPCO et collecter les 32 indicateurs Qualiopi en continu.',
   'securite-gardiennage':
-    'Générer le planning quotidien et suivre CNAPS, paie 3043, AO — en sous-effectif chronique.',
+    'Générer le planning quotidien et suivre CNAPS, paie 3043, AO, en sous-effectif chronique.',
   'traiteurs-evenementiel':
     'Chiffrer plus vite les devis sur-mesure et produire les fiches techniques avec allergènes INCO.',
   'metiers-du-vin':

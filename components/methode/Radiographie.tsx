@@ -5,7 +5,7 @@ import FadeUp from '@/components/ui/FadeUp'
 import { useLang } from '@/components/providers/LangProvider'
 
 /**
- * La Radiographie — pièce maîtresse de /methode.
+ * La Radiographie, pièce maîtresse de /methode.
  * On applique NOTRE propre méthode sur une activité type, en démo : on
  * « radiographie » le bordel (sources éparpillées) puis on le résout en 4 temps.
  * 4 étapes cliquables à gauche · une scène SVG « rayons X » à droite qui se

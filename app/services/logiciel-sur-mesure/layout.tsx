@@ -1,12 +1,12 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Logiciel & plateforme sur-mesure — NateSystem',
+  title: 'Logiciel & plateforme sur-mesure, NateSystem',
   description:
-    'Le logiciel métier sur-mesure qui réunit vos outils et vos données en une seule plateforme — base unifiée, dashboards, portails, outils internes. Vous êtes propriétaire du code, hébergé en UE. En production en 4 à 8 semaines. Audit offert.',
+    'Le logiciel métier sur-mesure qui réunit vos outils et vos données en une seule plateforme, base unifiée, dashboards, portails, outils internes. Vous êtes propriétaire du code, hébergé en UE. En production en 4 à 8 semaines. Audit offert.',
   alternates: { canonical: 'https://www.natesystem.com/services/logiciel-sur-mesure' },
   openGraph: {
-    title: 'Logiciel & plateforme sur-mesure — NateSystem',
+    title: 'Logiciel & plateforme sur-mesure, NateSystem',
     description:
       'Un seul logiciel sur-mesure pour piloter votre activité : base de données unifiée, dashboards, portails clients, outils internes. Code livré, hébergé en UE, en 4 à 8 semaines.',
     url: 'https://www.natesystem.com/services/logiciel-sur-mesure',
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Logiciel & plateforme sur-mesure — NateSystem',
+    title: 'Logiciel & plateforme sur-mesure, NateSystem',
     description: 'Un seul logiciel sur-mesure qui pilote votre activité. Vous êtes propriétaire, hébergé en UE.',
   },
 }
@@ -32,7 +32,7 @@ const jsonLd = {
       serviceType: 'Développement de logiciel métier sur-mesure, plateforme interne, base de données unifiée, dashboards, portails et outils internes',
       audience: { '@type': 'BusinessAudience', audienceType: 'PME et ETI (5 à 100 collaborateurs) avec des opérations récurrentes' },
       description:
-        'Conception et déploiement d\'un logiciel métier sur-mesure : on réunit vos outils et vos données dans une seule plateforme conçue pour votre activité — base de données unifiée, dashboards, portails clients, outils internes. Le code source vous appartient, hébergé sur votre infrastructure en UE, en production en 4 à 8 semaines.',
+        'Conception et déploiement d\'un logiciel métier sur-mesure : on réunit vos outils et vos données dans une seule plateforme conçue pour votre activité, base de données unifiée, dashboards, portails clients, outils internes. Le code source vous appartient, hébergé sur votre infrastructure en UE, en production en 4 à 8 semaines.',
     },
     {
       '@type': 'FAQPage',

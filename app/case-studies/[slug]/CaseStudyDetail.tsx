@@ -111,7 +111,7 @@ export default function CaseStudyDetail({ study }: { study: CaseStudy }) {
                   border: '1px solid var(--border)',
                 }}
               >
-                <LiteYouTube id={study.videoId} title={`Témoignage vidéo — ${study.title}`} />
+                <LiteYouTube id={study.videoId} title={`Témoignage vidéo, ${study.title}`} />
               </div>
             </FadeUp>
           </div>
@@ -198,7 +198,7 @@ export default function CaseStudyDetail({ study }: { study: CaseStudy }) {
               Envie du même résultat chez vous ?
             </h2>
             <p className="font-sans" style={{ fontSize: '15px', fontWeight: 300, color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: 26 }}>
-              On commence par un diagnostic — on regarde où partent vos heures avant de proposer quoi que ce soit.
+              On commence par un diagnostic, on regarde où partent vos heures avant de proposer quoi que ce soit.
             </p>
             <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
               <Link href={CAL_LINK} className="btn-primary">

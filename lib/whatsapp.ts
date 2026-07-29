@@ -1,7 +1,7 @@
 /**
  * WhatsApp-first conversion: every CTA on the site funnels to a chat
  * with Nathan, pre-filled with a contextual message in the user's
- * language. The /book qualification form is preserved upstream — it
+ * language. The /book qualification form is preserved upstream, it
  * still POSTs the full payload to the backend, then drops the user
  * into WhatsApp with their first name injected into the message.
  *
@@ -32,12 +32,12 @@ function buildMessage(lang: Lang, { firstName }: BuildOptions): string {
 
   if (lang === 'en') {
     return trimmed
-      ? `Hi Nathan, ${trimmed} here — I just saw your site and your approach speaks to me. I have a project in mind, can we talk?`
-      : `Hi Nathan — I just saw your site and your approach speaks to me. I have a project in mind, can we talk?`
+      ? `Hi Nathan, ${trimmed} here, I just saw your site and your approach speaks to me. I have a project in mind, can we talk?`
+      : `Hi Nathan, I just saw your site and your approach speaks to me. I have a project in mind, can we talk?`
   }
 
   // 'fr' default
   return trimmed
-    ? `Salut Nathan, ${trimmed} ici — je viens de voir ton site et ton approche me parle. J'ai un projet en tête, on en parle ?`
-    : `Salut Nathan — je viens de voir ton site et ton approche me parle. J'ai un projet en tête, on en parle ?`
+    ? `Salut Nathan, ${trimmed} ici, je viens de voir ton site et ton approche me parle. J'ai un projet en tête, on en parle ?`
+    : `Salut Nathan, je viens de voir ton site et ton approche me parle. J'ai un projet en tête, on en parle ?`
 }

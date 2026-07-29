@@ -82,7 +82,7 @@ export default function Fomo() {
                     fontWeight: 400,
                   }}
                 >
-                  — {s.source} ↗
+                 , {s.source} ↗
                 </a>
               </article>
             </FadeUp>

@@ -1,5 +1,5 @@
 /**
- * Illustrations UI abstraites (hand-rolled SVG, sauce NateSystem) pour Le Diagnostic —
+ * Illustrations UI abstraites (hand-rolled SVG, sauce NateSystem) pour Le Diagnostic,
  * façon OpsKings mais rouge/mono/serif : cartographie, prototype dashboard, feuille de route.
  * Chaque viz remplit un cadre 16:9 dans le mockup navigateur.
  */
@@ -20,7 +20,7 @@ function Frame({ children }: { children: React.ReactNode }) {
   )
 }
 
-/* 1 — La Carte : cartographie / flowchart (nœuds reliés) */
+/* 1, La Carte : cartographie / flowchart (nœuds reliés) */
 export function VizCarte() {
   const node = (x: number, y: number, w: number, accent = false) => (
     <g>
@@ -50,7 +50,7 @@ export function VizCarte() {
   )
 }
 
-/* 2 — Le Prototype : dashboard cliquable (sidebar + KPIs + courbe + donut) */
+/* 2, Le Prototype : dashboard cliquable (sidebar + KPIs + courbe + donut) */
 export function VizProto() {
   return (
     <Frame>
@@ -133,7 +133,7 @@ export function VizTeach() {
   )
 }
 
-/* 3 — La Feuille de route : timeline / phases + budget (€) */
+/* 3, La Feuille de route : timeline / phases + budget (€) */
 export function VizFeuille() {
   const phases = [
     { x: 40, on: true },
@@ -157,7 +157,7 @@ export function VizFeuille() {
           <path d={`M${p.x + 30} 74 L${p.x + 30} 92`} stroke={p.on ? C.accent : C.line} strokeWidth="1.3" strokeDasharray="2 3" />
         </g>
       ))}
-      {/* budget € — barres croissantes sous la timeline */}
+      {/* budget €, barres croissantes sous la timeline */}
       {[0, 1, 2, 3].map((i) => (
         <rect key={i} x={44 + i * 20} y={150 - i * 8} width="12" height={12 + i * 8} rx="2" fill={i === 3 ? C.accentSoft : C.fill} stroke={i === 3 ? C.accent : C.line} strokeWidth="1.1" />
       ))}

@@ -8,7 +8,7 @@ const SIZE = 56
 const MARGIN = 24
 
 /**
- * Floating WhatsApp button — bottom-right, DRAGGABLE.
+ * Floating WhatsApp button, bottom-right, DRAGGABLE.
  *
  * Opens a WhatsApp chat with Nathan pre-filled in the visitor's language.
  * The visitor can drag it anywhere (position persisted in localStorage);
