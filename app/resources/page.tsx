@@ -20,6 +20,14 @@ const TESTIMONIAL_VIDEO_ID = 'aMIjJbzuhDc'
 type Demo = { title: string; descFr: string; descEn: string; badge: 'new' | 'gated'; href: string; external?: boolean; img: string }
 const DEMOS: Demo[] = [
   {
+    title: 'Diagnostic IA',
+    descFr: 'Votre entreprise est-elle prête pour l’IA ? 12 questions, 3 piliers (processus, données, adoption), un score et un verdict franc en 2 minutes.',
+    descEn: 'Is your business ready for AI? 12 questions, 3 pillars (process, data, adoption), a score and a straight verdict in 2 minutes.',
+    badge: 'new',
+    href: '/outils/pret-pour-lia',
+    img: 'diagnostic-ia',
+  },
+  {
     title: 'Prévision de trésorerie',
     descFr: 'À quel mois votre trésorerie passe dans le rouge, et de combien. Le simulateur chiffre les leviers pour combler le trou, sur vos vrais chiffres.',
     descEn: 'Which month your cash goes red, and by how much. The simulator quantifies the levers to close the gap, on your real numbers.',

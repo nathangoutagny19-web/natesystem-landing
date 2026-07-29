@@ -45,12 +45,11 @@ const TOOLS: Tool[] = [
   {
     name: 'Diagnostic IA',
     tag: 'Maturité IA',
-    problem: 'Votre entreprise est-elle prête pour l’IA ? Le test en 2 minutes, sans jargon.',
-    href: null,
-    img: null,
-    alt: '',
-    cta: 'Bientôt disponible',
-    soon: true,
+    problem: 'Votre entreprise est-elle prête pour l’IA ? Le test en 2 minutes, sans jargon : processus, données, adoption.',
+    href: '/outils/pret-pour-lia',
+    img: 'demos/diagnostic-ia',
+    alt: 'Diagnostic IA gratuit NateSystem : test de maturité IA avec 3 jauges par pilier (processus, données, adoption)',
+    cta: 'Faire le test',
   },
 ]
 
@@ -104,9 +103,15 @@ export default function OutilsPage() {
                   )}
 
                   {tool.href ? (
-                    <a href={tool.href} target="_blank" rel="noopener noreferrer" className="btn-primary outil-cta">
-                      <span className="btn-primary-dot" />{tool.cta} &rarr;
-                    </a>
+                    tool.href.startsWith('/') ? (
+                      <Link href={tool.href} className="btn-primary outil-cta">
+                        <span className="btn-primary-dot" />{tool.cta} &rarr;
+                      </Link>
+                    ) : (
+                      <a href={tool.href} target="_blank" rel="noopener noreferrer" className="btn-primary outil-cta">
+                        <span className="btn-primary-dot" />{tool.cta} &rarr;
+                      </a>
+                    )
                   ) : (
                     <span className="outil-cta-soon font-mono">{tool.cta}</span>
                   )}
@@ -169,12 +174,15 @@ export default function OutilsPage() {
               <h2 className="font-serif italic outil-desc-title">Votre entreprise est-elle prête pour l’IA ?</h2>
               <p className="outil-desc-p">
                 L’IA, tout le monde en parle, mais peu de dirigeants savent par où commencer chez eux. Notre Diagnostic IA
-                (bientôt disponible) répond à une question simple : où l’IA vous ferait gagner de vraies heures, et où ce serait
-                juste un gadget ?
+                répond à une question simple : votre entreprise est-elle vraiment prête ? En 12 questions honnêtes, réparties sur
+                3 piliers (processus clairs, données fiables, adoption par les équipes), vous obtenez un score par pilier et un
+                verdict franc.
               </p>
               <p className="outil-desc-p">
-                En 2 minutes, sans jargon, vous obtenez une lecture claire de votre maturité IA et des premiers chantiers qui
-                auraient le plus d’impact pour votre activité. Un point de départ concret, pas une brochure.
+                En 2 minutes, sans jargon et sans inscription, vous voyez où l’IA vous ferait gagner de vraies heures, et où ce
+                serait juste un gadget, avec un premier pas concret adapté à votre point le plus faible. Un point de départ
+                honnête, pas une brochure.{' '}
+                <Link href="/outils/pret-pour-lia" style={{ color: 'var(--accent)', textDecoration: 'none' }}>Faire le test →</Link>
               </p>
             </article>
           </FadeUp>

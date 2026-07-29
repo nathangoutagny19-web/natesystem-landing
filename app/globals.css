@@ -1198,3 +1198,10 @@ html:not(.light) .trust-logo {
   border-radius: 10px; overflow: hidden; border: 1px solid var(--border);
   background: var(--bg-elevated); margin-bottom: 14px;
 }
+
+/* ——— Diagnostic IA quiz (/outils/pret-pour-lia) : fade d'entrée par étape ——— */
+@keyframes qFadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: none; }
+}
+.q-fade { animation: qFadeIn 0.42s cubic-bezier(0.22, 1, 0.36, 1); }
