@@ -54,8 +54,9 @@ export default function FormationPage() {
               On vous forme, jusqu&apos;à <span className="accent" style={{ color: 'var(--accent)' }}>l&apos;autonomie complète.</span>
             </h1>
             <p className="font-sans" style={{ fontSize: 'clamp(15px, 3vw, 18px)', fontWeight: 300, color: 'var(--text-secondary)', maxWidth: 660, margin: '0 auto 36px', lineHeight: 1.65 }}>
-              Un logiciel, ça ne se livre pas, ça s&apos;adopte. On forme vos équipes, du dirigeant au terrain, jusqu&apos;à ce qu&apos;elles
-              pilotent l&apos;outil seules. Le code et l&apos;infrastructure vous appartiennent. Vous n&apos;êtes jamais coincé avec personne.
+              Construire l&apos;outil, c&apos;est la partie facile. Le faire <strong style={{ fontWeight: 500, color: 'var(--text)' }}>adopter par toute votre équipe</strong>,
+              c&apos;est le vrai job, et il compte autant pour nous que la construction. On forme tout le monde, du dirigeant au terrain,
+              jusqu&apos;à ce que l&apos;outil tourne sans nous. Le code et l&apos;infrastructure vous appartiennent : vous ne dépendez de personne.
             </p>
             <Link href={CAL_LINK} className="btn-primary" style={{ margin: '0 auto', fontSize: 14 }}>
               <span className="btn-primary-dot" />Réserver un appel · offert →

@@ -28,8 +28,8 @@ const ITEMS: Item[] = [
   {
     titleFr: 'Formation & accompagnement',
     titleEn: 'Training & support',
-    descFr: 'On forme vos équipes, du dirigeant au terrain, à utiliser ces outils au quotidien, jusqu’à l’autonomie complète.',
-    descEn: 'We train your teams, from leadership to the field, to use these tools day-to-day, all the way to full autonomy.',
+    descFr: 'Construire l’outil, c’est facile ; le faire adopter par toute votre équipe, c’est le vrai job. On forme tout le monde, du dirigeant au terrain, jusqu’à l’autonomie complète.',
+    descEn: 'Building the tool is easy; getting your whole team to adopt it is the real job. We train everyone, from leadership to the field, all the way to full autonomy.',
   },
 ]
 
