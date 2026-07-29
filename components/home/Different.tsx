@@ -1,6 +1,6 @@
 'use client'
 
-import { Target, Zap, KeyRound, ShieldCheck, type LucideIcon } from 'lucide-react'
+import { Target, Infinity as InfinityIcon, Zap, KeyRound, ShieldCheck, type LucideIcon } from 'lucide-react'
 import FadeUp from '@/components/ui/FadeUp'
 import LiteYouTube from '@/components/ui/LiteYouTube'
 import { useLang } from '@/components/providers/LangProvider'
@@ -16,6 +16,13 @@ const POINTS: Point[] = [
     titleEn: 'Result-driven, zero patching',
     descFr: 'On déploie d’abord ce qui est déjà éprouvé et qui rapporte — logique 80/20 — puis on optimise. Que du solide qui tourne. Jamais d’outil à la mode, de rustine ni de truc à moitié fait.',
     descEn: 'We first ship what’s already proven and pays off — an 80/20 logic — then we optimise. Only solid things that run. Never a trendy tool, a band-aid or a half-built thing.',
+  },
+  {
+    icon: InfinityIcon,
+    titleFr: 'Pensé pour durer',
+    titleEn: 'Built to last',
+    descFr: 'On est là pour le long terme. On construit votre solution vraiment autour de vos process, vos workflows, vos équipes et votre métier, pour qu’elle soit la plus efficace possible et qu’elle tienne dans le temps. Pas un coup one-shot : une infrastructure qui vous accompagne sur des années.',
+    descEn: 'We’re here for the long run. We build your solution truly around your processes, workflows, teams and trade, so it’s as effective as possible and lasts over time. Not a one-off: an infrastructure that supports you for years.',
   },
   {
     icon: Zap,
