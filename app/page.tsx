@@ -6,7 +6,6 @@ import Transformation from '@/components/home/Transformation'
 import CredibilityBand from '@/components/home/CredibilityBand'
 import ClientsBar from '@/components/home/ClientsBar'
 import Systems from '@/components/home/Systems'
-import WhatWeBuild from '@/components/home/WhatWeBuild'
 import CaseStudy from '@/components/home/CaseStudy'
 import MiniDiagnosticCta from '@/components/home/MiniDiagnosticCta'
 import WhatWeDo from '@/components/home/WhatWeDo'
@@ -48,8 +47,8 @@ export default function Home() {
       <Transformation />
       <Divider />
 
-      {/* 3b — Bandeau des systèmes déjà déployés (marquee) + CTA */}
-      <WhatWeBuild />
+      {/* 3b — Bandeau « Déployé. Mesuré. Rentabilisé. » (Systems) + CTA « Je veux le mien » */}
+      <Systems />
       <Divider />
 
       {/* 4 — La preuve : vidéo témoignage Chromosome */}
@@ -85,10 +84,8 @@ export default function Home() {
       <CtaFinal />
       <Divider />
 
-      {/* 12 — Les secteurs qu'on sert (sélecteur interactif) + juste dessous le
-             bandeau « Déployé. Mesuré. Rentabilisé. » (Systems), sans coupure. */}
+      {/* 12 — Les secteurs qu'on sert (sélecteur interactif) */}
       <Sectors />
-      <Systems />
       <Divider />
 
       {/* 13 — Comparatif honnête 4 colonnes */}

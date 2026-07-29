@@ -17,6 +17,7 @@ import {
 import Link from 'next/link'
 import FadeUp from '@/components/ui/FadeUp'
 import { useLang } from '@/components/providers/LangProvider'
+import { CAL_LINK } from '@/lib/constants'
 
 type Card = {
   icon: LucideIcon
@@ -29,7 +30,8 @@ type Card = {
 }
 
 export default function Systems() {
-  const { t } = useLang()
+  const { t, lang } = useLang()
+  const d = (fr: string, en: string) => (lang === 'en' ? en : fr)
 
   const tagAI = t('systems.tagAI')
   const tagSoft = t('systems.tagSoft')
@@ -61,10 +63,13 @@ export default function Systems() {
         <FadeUp className="text-center mb-12">
           <h2
             className="font-serif italic"
-            style={{ fontSize: 'clamp(26px, 3.6vw, 40px)', fontWeight: 400, color: 'var(--text)', lineHeight: 1.2, margin: 0 }}
+            style={{ fontSize: 'clamp(26px, 3.6vw, 40px)', fontWeight: 400, color: 'var(--text)', lineHeight: 1.2, margin: '0 0 14px' }}
           >
             {t('systems.deployed')} {t('systems.measured')} <span className="accent">{t('systems.profitable')}</span>
           </h2>
+          <p className="font-sans" style={{ fontSize: 15, fontWeight: 300, color: 'var(--text-secondary)', maxWidth: 560, margin: '0 auto', lineHeight: 1.7 }}>
+            {d('Boostez votre activité avec nos systèmes.', 'Boost your business with our systems.')}
+          </p>
         </FadeUp>
       </div>
 
@@ -83,9 +88,14 @@ export default function Systems() {
         </div>
       </div>
 
-      {/* Petit CTA vers la page Réalisations complète */}
-      <div className="mx-auto text-center" style={{ maxWidth: '1100px', padding: '32px 24px 0' }}>
+      {/* CTA principal « Je veux le mien » + lien secondaire vers les cas clients */}
+      <div className="mx-auto text-center" style={{ maxWidth: '1100px', padding: '40px 24px 0', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 16 }}>
         <FadeUp>
+          <Link href={CAL_LINK} className="btn-primary">
+            <span className="btn-primary-dot" />{d('Je veux le mien', 'I want mine')} &rarr;
+          </Link>
+        </FadeUp>
+        <FadeUp delay={0.05}>
           <Link
             href="/case-studies"
             className="font-mono"
