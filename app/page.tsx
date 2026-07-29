@@ -6,6 +6,7 @@ import Transformation from '@/components/home/Transformation'
 import CredibilityBand from '@/components/home/CredibilityBand'
 import ClientsBar from '@/components/home/ClientsBar'
 import Systems from '@/components/home/Systems'
+import WhatWeBuild from '@/components/home/WhatWeBuild'
 import CaseStudy from '@/components/home/CaseStudy'
 import MiniDiagnosticCta from '@/components/home/MiniDiagnosticCta'
 import WhatWeDo from '@/components/home/WhatWeDo'
@@ -45,6 +46,10 @@ export default function Home() {
 
       {/* 3 — Avant/Après (diagonale) + bascule « ils sont de l'autre côté » */}
       <Transformation />
+      <Divider />
+
+      {/* 3b — Bandeau des systèmes déjà déployés (marquee) + CTA */}
+      <WhatWeBuild />
       <Divider />
 
       {/* 4 — La preuve : vidéo témoignage Chromosome */}

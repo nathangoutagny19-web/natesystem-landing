@@ -15,7 +15,9 @@
  * loop. Reduced-motion → near-frozen so the mockups stay discoverable.
  */
 
+import Link from 'next/link'
 import { useLang } from '@/components/providers/LangProvider'
+import { CAL_LINK } from '@/lib/constants'
 
 type Mockup = { slug: string; fr: string; en: string }
 
@@ -35,33 +37,18 @@ const mockups: Mockup[] = [
 
 export default function WhatWeBuild() {
   const { lang } = useLang()
-  const label = lang === 'fr' ? 'CE QU’ON CONSTRUIT' : 'WHAT WE BUILD'
-  const sub =
-    lang === 'fr'
-      ? 'Un aperçu des logiciels sur-mesure qu’on conçoit et déploie.'
-      : 'A glimpse of the custom software we design and ship.'
+  const d = (fr: string, en: string) => (lang === 'en' ? en : fr)
+  const sub = d('Un aperçu des logiciels sur-mesure qu’on conçoit et met en production.', 'A glimpse of the custom software we design and ship to production.')
 
   return (
-    <section aria-label={label} style={{ padding: '4px 0 56px' }}>
+    <section aria-label={d('Déjà en production', 'Already in production')} style={{ padding: '96px 0 56px' }}>
       <div className="mx-auto" style={{ maxWidth: 1100, padding: '0 24px', textAlign: 'center' }}>
-        <p
-          className="font-mono"
-          style={{
-            fontSize: 11,
-            letterSpacing: 3,
-            textTransform: 'uppercase',
-            color: 'var(--text-muted)',
-            opacity: 0.55,
-            marginBottom: 10,
-            fontWeight: 300,
-          }}
-        >
-          {label}
-        </p>
-        <p
-          className="font-serif italic"
-          style={{ fontSize: 18, lineHeight: 1.4, color: 'var(--text-secondary)', marginBottom: 28 }}
-        >
+        <span className="section-label">{d('Déjà en production', 'Already in production')}</span>
+        <h2 className="font-serif italic" style={{ fontSize: 'clamp(26px, 3.6vw, 40px)', fontWeight: 400, color: 'var(--text)', lineHeight: 1.15, margin: '4px auto 14px', maxWidth: 760 }}>
+          {d('Des systèmes qui font passer un cap. ', 'Systems that take you to the next level. ')}
+          <span className="accent">{d('Déjà déployés.', 'Already shipped.')}</span>
+        </h2>
+        <p className="font-sans" style={{ fontSize: 15, fontWeight: 300, color: 'var(--text-secondary)', maxWidth: 600, margin: '0 auto 30px', lineHeight: 1.7 }}>
           {sub}
         </p>
       </div>
@@ -90,6 +77,12 @@ export default function WhatWeBuild() {
             </li>
           ))}
         </ul>
+      </div>
+
+      <div className="mx-auto text-center" style={{ maxWidth: 1100, padding: '36px 24px 0' }}>
+        <Link href={CAL_LINK} className="btn-primary">
+          <span className="btn-primary-dot" />{d('Je veux le mien', 'I want mine')} &rarr;
+        </Link>
       </div>
 
       <style>{`
