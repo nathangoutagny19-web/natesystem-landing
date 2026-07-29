@@ -20,6 +20,15 @@ const TESTIMONIAL_VIDEO_ID = 'aMIjJbzuhDc'
 type Demo = { title: string; descFr: string; descEn: string; badge: 'new' | 'gated'; href: string; external?: boolean; img: string }
 const DEMOS: Demo[] = [
   {
+    title: 'Prévision de trésorerie',
+    descFr: 'À quel mois votre trésorerie passe dans le rouge, et de combien. Le simulateur chiffre les leviers pour combler le trou, sur vos vrais chiffres.',
+    descEn: 'Which month your cash goes red, and by how much. The simulator quantifies the levers to close the gap, on your real numbers.',
+    badge: 'new',
+    href: 'https://natesystem-treso.vercel.app',
+    external: true,
+    img: 'treso',
+  },
+  {
     title: 'Gestion d’actifs',
     descFr: 'Parc IT, véhicules, mobilier, machines — centralisés avec amortissements automatiques et alertes de remplacement.',
     descEn: 'IT assets, vehicles, furniture, machines — centralised with automatic depreciation and replacement alerts.',
