@@ -550,7 +550,7 @@ export const translations = {
   // About Nathan
   // ───────────────────────────────────────────────────────────────
   'about.label': { en: 'Who builds', fr: 'Qui construit' },
-  'about.title': { en: 'A single operator.', fr: 'Un seul opérateur.' },
+  'about.title': { en: 'The founder codes.', fr: 'Le fondateur code.' },
   'about.titleAccent': { en: 'Real deployments behind.', fr: 'Des déploiements concrets derrière.' },
   'about.name': { en: 'Nathan Goutagny', fr: 'Nathan Goutagny' },
   'about.role': { en: 'Founder · Custom software · Applied AI · Lyon', fr: 'Fondateur · Logiciel sur-mesure · IA appliquée · Lyon' },
