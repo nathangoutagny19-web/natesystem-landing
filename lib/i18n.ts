@@ -35,7 +35,7 @@ export const translations = {
 
   // Hero
   'hero.label': { en: 'Digital structuring · Custom software · AI integration', fr: 'Structuration digitale · Logiciel sur-mesure · Intégration IA' },
-  'hero.titlePrefix': { en: 'We build your custom software & platforms that boost your', fr: 'On construit vos logiciels & plateformes sur-mesure qui vous font gagner en' },
+  'hero.titlePrefix': { en: 'We build your custom software & AI systems that boost your', fr: 'On construit vos logiciels & systèmes IA sur-mesure qui vous font gagner en' },
   // Rotating words (pipe-separated, cycled in the hero). Final benefits the ICP desires, not the mechanisms.
   'hero.titleWords': { en: 'profitability|productivity|responsiveness|reliability', fr: 'rentabilité|productivité|réactivité|fiabilité' },
   'hero.sub': {
