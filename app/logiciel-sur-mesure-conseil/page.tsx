@@ -128,6 +128,33 @@ export default function ConseilPage() {
               </p>
             </div>
           </FadeUp>
+
+          <FadeUp delay={0.08}>
+            <div style={{ background: 'var(--bg-card)', border: '1px solid var(--border)', borderRadius: 14, padding: '40px 36px', marginTop: 20 }}>
+              <p className="font-mono" style={{ fontSize: 11, letterSpacing: 1.2, textTransform: 'uppercase', color: 'var(--accent)', fontWeight: 500, margin: '0 0 14px' }}>
+                Cabinet de conseil B2B · Budapest
+              </p>
+              <h3 className="font-serif italic" style={{ fontSize: 'clamp(22px, 3vw, 30px)', fontWeight: 400, color: 'var(--text)', lineHeight: 1.2, margin: '0 0 22px' }}>
+                Il a mis 25 ans d&apos;expertise dans une IA, et s&apos;est rendu à ses clients.
+              </h3>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: 12 }}>
+                {[
+                  '280 KPIs transformés en rapports clients personnalisés, générés automatiquement',
+                  '25 ans de savoir et de parcours capitalisés dans un système sur-mesure',
+                  'Un portail client dédié, pour une expérience à la hauteur de son expertise',
+                  'Le fondateur libéré du reporting, recentré sur les rendez-vous et la relation',
+                ].map((x) => (
+                  <li key={x} className="flex items-start gap-3" style={{ fontSize: 14.5, color: 'var(--text-secondary)', lineHeight: 1.55, fontWeight: 300 }}>
+                    <Check size={16} strokeWidth={2.2} style={{ color: 'var(--accent)', flexShrink: 0, marginTop: 3 }} />
+                    <span>{x}</span>
+                  </li>
+                ))}
+              </ul>
+              <p className="font-mono" style={{ fontSize: 10.5, letterSpacing: 0.5, color: 'var(--text-muted)', fontWeight: 400, margin: '18px 0 0' }}>
+                Cas client réel, détaillé prochainement.
+              </p>
+            </div>
+          </FadeUp>
         </div>
       </section>
 
