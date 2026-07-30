@@ -118,8 +118,8 @@ export default function WhatWeDo() {
             <span className="accent">{d('forgée sur le terrain.', 'forged in the field.')}</span>
           </h2>
           <p className="font-sans" style={{ fontSize: '15px', fontWeight: 300, color: 'var(--text-secondary)', maxWidth: '620px', margin: '0 auto', lineHeight: 1.7 }}>
-            {d('On remplace les outils génériques qui ne collent pas par du sur-mesure que vous possédez. L’IA et l’automatisation sont intégrées uniquement là où elles font gagner de vraies heures.',
-               'We replace ill-fitting generic tools with custom software you own. AI and automation are embedded only where they save real hours.')}
+            {d('On remplace les outils génériques qui ne collent pas par du sur-mesure que vous possédez. L’IA et l’automatisation sont intégrées uniquement là où elles libèrent vos experts du répétitif, pour qu’ils créent de la valeur au lieu de la perdre.',
+               'We replace ill-fitting generic tools with custom software you own. AI and automation are embedded only where they free your experts from repetitive work, so they create value instead of losing it.')}
           </p>
         </FadeUp>
 

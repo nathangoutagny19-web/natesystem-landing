@@ -23,7 +23,7 @@ export default function MiniDiagnosticCta() {
           >
             {d('On vous offre un ', 'We give you a ')}
             <span className="accent">{d('diagnostic gratuit, sans e-mail', 'free diagnostic, no email')}</span>
-            {d(', pour voir où partent vos heures et votre argent.', ', to see where your hours and money go.')}
+            {d(', pour voir où partent vos heures et où débloquer de la valeur.', ', to see where your hours go and where to unlock value.')}
           </h3>
           <p
             className="font-sans"

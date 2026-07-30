@@ -39,8 +39,8 @@ export const translations = {
   // Rotating words (pipe-separated, cycled in the hero). Final benefits the ICP desires, not the mechanisms.
   'hero.titleWords': { en: 'profitability|productivity|responsiveness|reliability', fr: 'rentabilité|productivité|réactivité|fiabilité' },
   'hero.sub': {
-    en: 'Your current tools slow your business down. We build the custom infrastructure that drives it forward, powered by AI. A system that accelerates your growth and evolves by your side, just like us.',
-    fr: 'Vos outils actuels ralentissent votre activité. On construit l\'infrastructure sur-mesure qui la fait avancer, propulsée par l\'IA. Un système qui accélère votre croissance et évolue à vos côtés, comme nous.',
+    en: 'We build the custom infrastructure that unlocks the value locked in your teams, your data and your know-how, and turns it into growth and a real competitive edge: more clients, a better experience, experts who create instead of repeat. Powered by AI, it evolves by your side, just like us.',
+    fr: 'On construit l\'infrastructure sur-mesure qui libère la valeur enfermée dans vos équipes, vos données et votre savoir-faire, et la transforme en croissance et en vrai avantage concurrentiel : plus de clients, une meilleure expérience, des experts qui créent au lieu de répéter. Propulsée par l\'IA, elle évolue à vos côtés, comme nous.',
   },
   'hero.aiNote': { en: 'AI built in where it replaces real hours, never as decoration.', fr: 'IA intégrée là où elle remplace de vraies heures, jamais en décoration.' },
   'hero.cta': { en: 'Book a call · free', fr: 'Réserver un appel · offert' },
@@ -278,6 +278,12 @@ export const translations = {
   'systems.s5.title': { en: 'Automatic internal reporting', fr: 'Reporting interne automatique' },
   'systems.s5.desc': { en: 'CRM + accounting + project collection, analysis, push to Slack or Teams. No new dashboard.', fr: 'Collecte CRM + compta + projet, analyse, push dans Slack ou Teams. Pas de nouveau dashboard.' },
   'systems.s5.metric': { en: '500 hours/year recovered at a 50-call/day construction SMB', fr: '500h/an récupérées sur une PME BTP de 50 SAV/jour' },
+  'systems.s6.title': { en: 'Personalised quotes and proposals in minutes', fr: 'Devis et propositions personnalisés en minutes' },
+  'systems.s6.desc': { en: 'AI drafts tailored quotes and proposals from your reference data and past projects. Your experts validate instead of writing everything from scratch.', fr: 'L\'IA prépare des devis et propositions sur-mesure à partir de vos référentiels et de l\'historique de vos affaires. Vos experts valident au lieu de tout rédiger.' },
+  'systems.s6.metric': { en: 'Faster, more personalised proposals, without tying up your experts', fr: 'Des propositions plus rapides et plus personnalisées, sans mobiliser vos experts' },
+  'systems.s7.title': { en: 'Your experts\' knowledge, captured and searchable', fr: 'Le savoir de vos experts, capitalisé et cherchable' },
+  'systems.s7.desc': { en: 'A knowledge base that captures the know-how from your projects and makes it searchable in seconds. The knowledge no longer leaves with the person.', fr: 'Une base de connaissance qui capte le savoir de vos affaires et le rend cherchable en secondes. Le savoir ne part plus avec la personne.' },
+  'systems.s7.metric': { en: 'The knowledge asleep in people\'s heads, turned into a reusable asset', fr: 'Le savoir qui dort dans les têtes, transformé en actif réutilisable' },
 
   // ───────────────────────────────────────────────────────────────
   // Twist, "On ne fait pas que du logiciel" (le cœur bénéfices, avant la Méthode)
@@ -305,11 +311,11 @@ export const translations = {
   // Transformation, Avant / Après (identification + projection)
   // ───────────────────────────────────────────────────────────────
   'trans.label': { en: 'The digital transformation', fr: 'La transformation digitale' },
-  'trans.title': { en: 'Your tools slow you down.', fr: 'Vos outils vous freinent.' },
-  'trans.titleAccent': { en: 'Soon, they propel you.', fr: 'Bientôt, ils vous propulsent.' },
+  'trans.title': { en: 'Your tools hold your growth back.', fr: 'Vos outils freinent votre croissance.' },
+  'trans.titleAccent': { en: 'Soon, they propel it.', fr: 'Bientôt, ils la propulsent.' },
   'trans.beforeLabel': { en: 'Before', fr: 'Avant' },
   'trans.afterLabel': { en: 'After', fr: 'Après' },
-  'trans.costTitle': { en: 'What it costs you today', fr: 'Ce qui vous coûte cher aujourd\'hui' },
+  'trans.costTitle': { en: 'What\'s blocking your growth today', fr: 'Ce qui bloque votre croissance aujourd\'hui' },
   'trans.gainTitle': { en: 'What you get back', fr: 'Ce que vous récupérez' },
   'trans.before1': { en: 'Excel, WhatsApp and ten tools that don\'t talk to each other', fr: 'Excel, WhatsApp et dix outils qui ne se parlent pas' },
   'trans.before2': { en: 'Patched-up tools, never really fit for you', fr: 'Des outils bricolés, jamais vraiment adaptés' },
@@ -740,11 +746,11 @@ export const translations = {
   'costpain.stat2': { en: '8 SaaS', fr: '8 SaaS' },
   'costpain.desc2': { en: 'On average, 5 of which you only use at 20% of their potential.', fr: 'En moyenne, dont 5 que vous n\'utilisez qu\'à 20% de leur potentiel.' },
   'costpain.stat3': { en: '47%', fr: '47%' },
-  'costpain.desc3': { en: 'Of critical data lives in one person\'s head.', fr: 'Des données critiques vivent dans la tête d\'une seule personne.' },
+  'costpain.desc3': { en: 'Of your know-how lives in one person\'s head, never shared or leveraged.', fr: 'De votre savoir-faire vit dans la tête d\'une seule personne, jamais transmis ni exploité.' },
   'costpain.stat4': { en: '2 months', fr: '2 mois' },
   'costpain.desc4': { en: 'To train a new employee on your undocumented processes.', fr: 'Pour former un nouveau collaborateur à vos process non documentés.' },
   'costpain.stat5': { en: '15h/week', fr: '15h/sem' },
-  'costpain.desc5': { en: 'Of repetitive tasks nobody likes doing, but that cost a fortune.', fr: 'De tâches répétitives que personne n\'aime faire, mais qui coûtent cher.' },
+  'costpain.desc5': { en: 'Of repetitive tasks that eat your teams\' time, instead of the high-value work that would grow you.', fr: 'De tâches répétitives qui accaparent vos équipes, au lieu du travail à forte valeur qui vous ferait grandir.' },
 
   // Quantification section
   'quant.label': { en: 'QUANTIFICATION', fr: 'QUANTIFICATION' },
@@ -1437,7 +1443,7 @@ export const translations = {
   'v2.sprint.d2.desc': { en: 'Clickable, built around your business, before any commitment.', fr: 'Cliquable, construit autour de votre métier, avant tout engagement.' },
   'v2.sprint.d3.name': { en: 'The Costed Roadmap', fr: 'La Feuille de route chiffrée' },
   'v2.sprint.d3.desc': { en: 'What to build, in what order, for how much.', fr: 'Quoi construire, dans quel ordre, pour combien.' },
-  'v2.sprint.promise': { en: 'In 2 weeks you know exactly where your hours and money go, and you click through the software that recovers them, before you\'ve signed anything.', fr: 'En 2 semaines, vous savez exactement où partent vos heures et votre argent, et vous cliquez dans le logiciel qui les récupère, avant d\'avoir signé quoi que ce soit.' },
+  'v2.sprint.promise': { en: 'In 2 weeks you know exactly where your hours and your value are stuck, and you click through the software that frees them and turns them into growth, before you\'ve signed anything.', fr: 'En 2 semaines, vous savez exactement où vos heures et votre valeur sont bloquées, et vous cliquez dans le logiciel qui les libère et les transforme en croissance, avant d\'avoir signé quoi que ce soit.' },
   'v2.sprint.cta': { en: 'Book a call · free', fr: 'Réserver un appel · offert' },
   'v2.sprint.selfserve': { en: 'Or run the online diagnostic, 3 min, no email', fr: 'Ou lancez le diagnostic en ligne, 3 min, sans e-mail' },
   'v2.sprint.afterA': { en: 'What then? Two options: we keep going together, or we stop here. ', fr: 'Ensuite ? Deux options : on continue ensemble, ou on s\'arrête là. ' },

@@ -89,8 +89,8 @@ export default function CaseStudy() {
   const { lang } = useLang()
 
   const headline = lang === 'en'
-    ? 'How a restaurant group in Saint-Étienne replaced 99% of their operational stack with two platforms they own outright, and freed 14 hours a week.'
-    : 'Comment un groupe de restauration à Saint-Étienne a remplacé 99% de son stack opérationnel par deux plateformes qu\'il possède, et libéré 14 heures par semaine.'
+    ? 'How a restaurant group in Saint-Étienne runs all its operations on software it owns, and gives its teams back 14 hours a week for what truly matters: their guests.'
+    : 'Comment un groupe de restauration à Saint-Étienne pilote toutes ses opérations sur un logiciel qui lui appartient, et rend chaque semaine 14 heures à ses équipes pour ce qui compte vraiment : leurs clients.'
 
   const metrics = [
     { value: '11h → 1h', label: lang === 'en' ? 'Per week, per manager' : 'Par semaine, par manager' },

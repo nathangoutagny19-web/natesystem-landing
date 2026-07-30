@@ -12,6 +12,8 @@ import {
   Package,
   Clock,
   Star,
+  FileText,
+  BookOpen,
   type LucideIcon,
 } from 'lucide-react'
 import Link from 'next/link'
@@ -48,7 +50,9 @@ export default function Systems() {
     { icon: Package, title: t('systems.sw4.title'), desc: t('systems.sw4.desc'), metric: t('systems.sw4.metric'), tag: 'software', sector: t('systems.sw4.sector'), mockup: 'systems/sys8' },
     { icon: BarChart3, title: t('systems.s5.title'), desc: t('systems.s5.desc'), metric: t('systems.s5.metric'), tag: 'ai', mockup: 'systems/sys9' },
     { icon: Clock, title: t('systems.sw5.title'), desc: t('systems.sw5.desc'), metric: t('systems.sw5.metric'), tag: 'software', sector: t('systems.sw5.sector'), mockup: 'systems/sys10' },
+    { icon: FileText, title: t('systems.s6.title'), desc: t('systems.s6.desc'), metric: t('systems.s6.metric'), tag: 'ai', mockup: 'systems/sys5' },
     { icon: Star, title: t('systems.sw6.title'), desc: t('systems.sw6.desc'), metric: t('systems.sw6.metric'), tag: 'software', sector: t('systems.sw6.sector'), mockup: 'systems/sys11' },
+    { icon: BookOpen, title: t('systems.s7.title'), desc: t('systems.s7.desc'), metric: t('systems.s7.metric'), tag: 'ai', mockup: 'systems/sys3' },
   ]
 
   // Duplicate the list for seamless infinite scroll

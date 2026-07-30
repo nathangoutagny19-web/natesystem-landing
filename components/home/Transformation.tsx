@@ -40,9 +40,10 @@ const NOTES: { key: string; top: string; left: string; rot: number; z: number; d
   { key: 'trans.chaos.forgot', top: '24%', left: '58%', rot: 3, z: 6, dur: '9.7s', delay: '-3.1s' },
 ]
 
-// AVANT = les chiffres qui piquent (repris de CostPain, jugés plus pertinents par Nathan).
+// AVANT = ce qui bloque la croissance. On mène avec le savoir piégé (47%, stat3),
+// incarnation de la valeur immobilisée, puis le répétitif et le savoir non transmis.
 // Chiffres illustratifs, voir règle d'or BRIEF §7.2 (à confirmer/marquer estimation le jour venu).
-const COST_STATS = [1, 2, 3, 4, 5] as const
+const COST_STATS = [3, 5, 4, 1, 2] as const
 // APRÈS = 3 points forts (valeur serif rouge + description) qui répondent aux
 // coûts de l'AVANT. Choix Nathan : condenser à 3.
 const GAIN_STATS = [1, 2, 3] as const
