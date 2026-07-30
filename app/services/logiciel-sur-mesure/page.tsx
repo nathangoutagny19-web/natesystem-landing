@@ -219,7 +219,7 @@ export default function LogicielSurMesurePage() {
               </h2>
               <p className="font-sans" style={{ fontSize: 15, fontWeight: 300, color: 'var(--text-secondary)', lineHeight: 1.7, maxWidth: 520, margin: '0 auto 32px' }}>
                 Un appel offert. On regarde vos outils actuels et on identifie ce qu&apos;un seul logiciel sur-mesure vous
-                ferait gagner, en temps, en argent, en clarté. Même si on ne travaille pas ensemble.
+                ferait gagner, en temps, en clients, en clarté. Même si on ne travaille pas ensemble.
               </p>
               <Link href={CAL_LINK} className="btn-primary" style={{ margin: '0 auto' }}>
                 <span className="btn-primary-dot" />Réserver un appel · offert

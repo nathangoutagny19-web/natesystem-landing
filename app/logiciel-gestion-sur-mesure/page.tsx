@@ -102,7 +102,7 @@ export default function LogicielGestionSurMesurePage() {
           <FadeUp className="text-center mb-10">
             <span className="section-label">Ce que vivent les PME</span>
             <h2 className="section-title" style={{ maxWidth: 620, margin: '0 auto' }}>
-              Quand la gestion <span className="accent">freine votre activité.</span>
+              Quand la gestion <span className="accent">freine votre croissance.</span>
             </h2>
           </FadeUp>
           <ul style={{ listStyle: 'none', padding: 0, margin: '0 auto', maxWidth: 600, display: 'grid', gap: 13 }}>

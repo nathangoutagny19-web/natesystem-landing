@@ -58,7 +58,7 @@ export default function LogicielInterneSaintEtiennePage() {
           <FadeUp>
             <span className="section-label">Logiciel interne · Saint-Étienne</span>
             <h1 className="font-serif italic" style={{ fontSize: 'clamp(30px, 5.2vw, 52px)', fontWeight: 400, lineHeight: 1.1, color: 'var(--text)', maxWidth: 820, margin: '14px auto 24px' }}>
-              Logiciel interne à Saint-Étienne : la solution sur-mesure qui <span className="accent" style={{ color: 'var(--accent)' }}>pilote votre entreprise.</span>
+              Logiciel interne à Saint-Étienne : la solution sur-mesure qui <span className="accent" style={{ color: 'var(--accent)' }}>fait grandir votre entreprise.</span>
             </h1>
             <p className="font-sans" style={{ fontSize: 'clamp(15px, 3vw, 18px)', fontWeight: 300, color: 'var(--text-secondary)', maxWidth: 660, margin: '0 auto 36px', lineHeight: 1.65 }}>
               NateSystem conçoit des solutions logicielles internes sur-mesure pour les entreprises de Saint-Étienne et de
@@ -101,7 +101,7 @@ export default function LogicielInterneSaintEtiennePage() {
           <FadeUp className="text-center mb-10">
             <span className="section-label">Ce que vivent les entreprises</span>
             <h2 className="section-title" style={{ maxWidth: 620, margin: '0 auto' }}>
-              Quand les outils <span className="accent">freinent votre équipe.</span>
+              Quand les outils <span className="accent">freinent votre croissance.</span>
             </h2>
           </FadeUp>
           <ul style={{ listStyle: 'none', padding: 0, margin: '0 auto', maxWidth: 600, display: 'grid', gap: 13 }}>
@@ -240,7 +240,7 @@ export default function LogicielInterneSaintEtiennePage() {
               </h2>
               <p className="font-sans" style={{ fontSize: 15, fontWeight: 300, color: 'var(--text-secondary)', lineHeight: 1.7, maxWidth: 520, margin: '0 auto 32px' }}>
                 Un appel offert. On regarde vos outils actuels et on identifie ce qu&apos;un logiciel interne sur-mesure
-                ferait gagner à votre entreprise, en temps, en argent, en clarté. Même si on ne travaille pas ensemble.
+                ferait gagner à votre entreprise, en temps, en clients, en clarté. Même si on ne travaille pas ensemble.
               </p>
               <Link href={CAL_LINK} className="btn-primary" style={{ margin: '0 auto' }}>
                 <span className="btn-primary-dot" />Réserver un appel · offert

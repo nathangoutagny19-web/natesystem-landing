@@ -241,7 +241,7 @@ export default function ApplicationWebSurMesurePage() {
               </h2>
               <p className="font-sans" style={{ fontSize: 15, fontWeight: 300, color: 'var(--text-secondary)', lineHeight: 1.7, maxWidth: 520, margin: '0 auto 32px' }}>
                 Un appel offert. On regarde votre besoin métier et vos outils actuels, et on identifie ce qu'une
-                application web sur-mesure ferait gagner à votre entreprise, en temps, en argent, en clarté. Même si on ne
+                application web sur-mesure ferait gagner à votre entreprise, en temps, en clients, en clarté. Même si on ne
                 travaille pas ensemble.
               </p>
               <Link href={CAL_LINK} className="btn-primary" style={{ margin: '0 auto' }}>
