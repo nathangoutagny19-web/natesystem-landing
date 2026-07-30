@@ -42,7 +42,7 @@ export const translations = {
     en: 'Your current tools slow your business down. We build the custom infrastructure that drives it forward, powered by AI. A system that accelerates your growth and evolves by your side, just like us.',
     fr: 'Vos outils actuels ralentissent votre activité. On construit l\'infrastructure sur-mesure qui la fait avancer, propulsée par l\'IA. Un système qui accélère votre croissance et évolue à vos côtés, comme nous.',
   },
-  'hero.aiNote': { en: 'And we power it with AI solutions.', fr: 'Et on le propulse par des solutions IA.' },
+  'hero.aiNote': { en: 'AI built in where it replaces real hours, never as decoration.', fr: 'IA intégrée là où elle remplace de vraies heures, jamais en décoration.' },
   'hero.cta': { en: 'Book a call · free', fr: 'Réserver un appel · offert' },
   'hero.secondary': { en: 'See how it works', fr: 'Voir comment ça marche' },
   'hero.trusted': { en: 'Already building with', fr: 'Déjà à l\'œuvre avec' },
