@@ -1507,7 +1507,7 @@ export const translations = {
   'methode.hero.eyebrow': { en: 'HOW WE WORK', fr: 'NOTRE APPROCHE' },
   'methode.hero.title': { en: 'We audit, map, build, integrate.', fr: 'On audite, cartographie, construit, intègre.' },
   'methode.hero.titleAccent': { en: 'And keep it evolving.', fr: 'Et on fait évoluer.' },
-  'methode.hero.sub': { en: 'We start by understanding where your hours and your money really go, then we build the software that recovers them. Fast, and without jargon.', fr: 'On commence par comprendre où partent vraiment vos heures et votre argent, puis on construit le logiciel qui les récupère. Vite, et sans jargon.' },
+  'methode.hero.sub': { en: 'We start by understanding where your value is stuck, your hours, your know-how, your margin, then we build the software that frees it and turns it into growth. Fast, and without jargon.', fr: 'On commence par comprendre où votre valeur reste bloquée, vos heures, votre savoir, votre marge, puis on construit le logiciel qui la libère et la transforme en croissance. Vite, et sans jargon.' },
   'methode.hero.cta': { en: 'Book a call · free', fr: 'Réserver un appel · offert' },
 
   'radio.eyebrow': { en: 'THE X-RAY', fr: 'LA RADIOGRAPHIE' },

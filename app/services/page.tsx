@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { Clock, TrendingUp, Repeat, Smile, Database, Zap, type LucideIcon } from 'lucide-react'
+import { Clock, TrendingUp, Repeat, Smile, Database, BookOpen, type LucideIcon } from 'lucide-react'
 import Nav from '@/components/layout/Nav'
 import Footer from '@/components/layout/Footer'
 import MobileCta from '@/components/layout/MobileCta'
@@ -47,7 +47,7 @@ const outcomes: Outcome[] = [
   { icon: Repeat, title: 'Des clients qui restent', desc: 'Un suivi sans faille : rien ne se perd, vos clients le sentent, et ils continuent avec vous plus longtemps.' },
   { icon: Smile, title: 'Une meilleure expérience client', desc: 'Réponses plus rapides, dossiers au carré, fini le « je vous rappelle ». L\'image d\'une boîte qui gère.' },
   { icon: Database, title: 'Une équipe alignée', desc: 'Tout le monde sur la même donnée, centralisée et à jour. Plus de versions qui s\'écrasent ni de « c\'était où, déjà ? ».' },
-  { icon: Zap, title: 'Des équipes plus réactives', desc: 'Chacun sait quoi faire et où le trouver. Moins d\'allers-retours, plus de productivité : les rôles sont clairs, l\'efficacité suit, et l\'équipe avance vite et bien.' },
+  { icon: BookOpen, title: 'Votre savoir capitalisé', desc: 'Le savoir de vos experts ne dort plus dans leurs têtes ni dans des docs éparpillés. Capté, structuré et cherchable, il devient un vrai actif réutilisable.' },
 ]
 
 export default function ServicesPage() {
@@ -65,8 +65,8 @@ export default function ServicesPage() {
               Quel que soit votre métier, <span className="accent" style={{ color: 'var(--accent)' }}>le même résultat.</span>
             </h1>
             <p className="font-sans" style={{ fontSize: 'clamp(15px, 3vw, 18px)', fontWeight: 300, color: 'var(--text-secondary)', maxWidth: 660, margin: '0 auto 36px', lineHeight: 1.65 }}>
-              On monte l&apos;infrastructure qui vous fait gagner du temps, signer plus et mieux, et garder vos clients.
-              La techno et les modules s&apos;adaptent à votre réalité, jamais l&apos;inverse.
+              On monte l&apos;infrastructure qui vous fait gagner du temps, signer plus et mieux, garder vos clients et
+              transformer votre expertise en croissance. La techno et les modules s&apos;adaptent à votre réalité, jamais l&apos;inverse.
             </p>
             <Link href={CAL_LINK} className="btn-primary" style={{ margin: '0 auto', fontSize: 14 }}>
               <span className="btn-primary-dot" />Réserver un appel · offert →

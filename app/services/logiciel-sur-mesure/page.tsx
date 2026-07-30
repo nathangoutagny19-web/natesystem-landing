@@ -52,7 +52,7 @@ export default function LogicielSurMesurePage() {
           <FadeUp>
             <span className="section-label">Logiciel & plateforme sur-mesure</span>
             <h1 className="font-serif italic" style={{ fontSize: 'clamp(32px, 5.4vw, 54px)', fontWeight: 400, lineHeight: 1.1, color: 'var(--text)', maxWidth: 780, margin: '14px auto 24px' }}>
-              Un seul logiciel sur-mesure pour <span className="accent" style={{ color: 'var(--accent)' }}>piloter votre activité.</span>
+              Un seul logiciel sur-mesure pour <span className="accent" style={{ color: 'var(--accent)' }}>faire grandir votre activité.</span>
             </h1>
             <p className="font-sans" style={{ fontSize: 'clamp(15px, 3vw, 18px)', fontWeight: 300, color: 'var(--text-secondary)', maxWidth: 660, margin: '0 auto 36px', lineHeight: 1.65 }}>
               On réunit vos outils et vos données dans une seule plateforme conçue pour votre métier, base unifiée,
@@ -185,7 +185,7 @@ export default function LogicielSurMesurePage() {
         links={[
           { href: '/logiciel-sur-mesure-vs-saas', label: 'Sur-mesure ou SaaS ?', desc: 'Quand le sur-mesure devient rentable.' },
           { href: '/prix-logiciel-sur-mesure', label: 'Combien ça coûte ?', desc: 'Les fourchettes de prix réalistes.' },
-          { href: '/logiciel-sur-mesure-restauration', label: 'Exemple : la restauration', desc: 'Un secteur concret, la même méthode.' },
+          { href: '/logiciel-sur-mesure-conseil', label: 'Exemple : conseil & bureaux d\'études', desc: 'Un secteur concret, la même méthode.' },
           { href: '/glossaire', label: 'Glossaire', desc: 'Les termes du logiciel sur-mesure et de l\'IA.' },
         ]}
       />

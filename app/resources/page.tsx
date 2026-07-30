@@ -152,8 +152,8 @@ export default function ResourcesPage() {
                     {d('Le Diagnostic IA', 'The AI Diagnostic')}
                   </h3>
                   <p className="font-sans" style={{ fontSize: '14.5px', fontWeight: 300, color: 'var(--text-secondary)', lineHeight: 1.65, maxWidth: '640px' }}>
-                    {d('Combien votre stack SaaS gaspille, combien d’heures votre équipe perd, où vous en êtes sur la maturité IA. Chiffré, 3 leviers priorisés, PDF téléchargeable.',
-                       'How much your SaaS stack wastes, how many hours your team loses, where you stand on AI maturity. Quantified, 3 prioritised levers, downloadable PDF.')}
+                    {d('Combien de valeur dort dans vos outils et votre savoir, combien d’heures votre équipe perd sur du répétitif, où vous en êtes sur la maturité IA. Chiffré, 3 leviers priorisés, PDF téléchargeable.',
+                       'How much value sleeps in your tools and know-how, how many hours your team loses on repetitive work, where you stand on AI maturity. Quantified, 3 prioritised levers, downloadable PDF.')}
                   </p>
                 </div>
                 <span className="res-feature-cta font-sans">{d('Lancer le diagnostic', 'Run the diagnostic')} &rarr;</span>

@@ -50,7 +50,7 @@ const jsonLd = {
           name: 'Quelles tâches l\'IA peut-elle automatiser ?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Là où ça fait gagner de vraies heures : workflows automatisés (commandes, factures, relances, passations internes), lecture de documents (factures, contrats, formulaires), tri intelligent (classer, router, rédiger des réponses), analytics prédictif (anticiper stock, no-shows, tendances de ventes), qualification de leads, et agents autonomes qui exécutent des tâches multi-étapes dans vos outils. On choisit ce qui vaut le coup pour vous, pas tout parce que c\'est à la mode.',
+            text: 'Là où ça fait gagner de vraies heures : workflows automatisés (devis, factures, relances, passations internes), lecture de documents (devis, contrats, cahiers des charges, documentation technique), recherche dans votre savoir (retrouver une info d\'affaire ou de projet en secondes), tri intelligent (classer, router, rédiger des réponses), analytics prédictif (anticiper charge, délais, rentabilité par affaire), qualification de leads, et agents autonomes qui exécutent des tâches multi-étapes dans vos outils. On choisit ce qui vaut le coup pour vous, pas tout parce que c\'est à la mode.',
           },
         },
         {

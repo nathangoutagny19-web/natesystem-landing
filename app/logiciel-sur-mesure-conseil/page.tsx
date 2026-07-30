@@ -27,9 +27,9 @@ const modules = [
     metric: 'Le pilotage arrive à vous, pas l\'inverse',
   },
   {
-    title: 'Temps facturable récupéré',
-    desc: 'Chaque heure passée sur de l\'administratif est une heure non facturée. On automatise la saisie, les propositions et le suivi pour rendre ces heures à la facturation.',
-    metric: 'L\'admin absorbé, le facturable préservé',
+    title: 'Le savoir de vos experts, capitalisé',
+    desc: 'Le savoir des missions et des projets ne repart plus de zéro et ne part plus avec la personne. On le capte, on le structure, et on le rend cherchable en secondes.',
+    metric: 'Votre expertise transformée en actif réutilisable',
   },
 ]
 
@@ -37,7 +37,7 @@ const pains = [
   'Des relances qui s\'oublient dès qu\'un dossier client prend le dessus',
   'Une base de contacts pleine d\'opportunités dormantes que personne ne retravaille',
   'Le reporting reconstitué à la main, en fin de mois, au lieu d\'être piloté en continu',
-  'Du temps facturable qui part dans la saisie et l\'administratif',
+  'Le savoir de vos experts qui reste dans leurs têtes, jamais capitalisé ni transmis',
 ]
 
 export default function ConseilPage() {
@@ -48,14 +48,15 @@ export default function ConseilPage() {
       <section style={{ padding: '160px 24px 40px' }}>
         <div className="mx-auto text-center" style={{ maxWidth: 820 }}>
           <FadeUp>
-            <span className="section-label">Cabinets de conseil</span>
+            <span className="section-label">Conseil, bureaux d&apos;études &amp; ingénierie</span>
             <h1 className="font-serif italic" style={{ fontSize: 'clamp(32px, 5.4vw, 54px)', fontWeight: 400, lineHeight: 1.1, color: 'var(--text)', maxWidth: 760, margin: '14px auto 24px' }}>
-              Plus de rendez-vous, <span className="accent" style={{ color: 'var(--accent)' }}>moins d&apos;administratif.</span>
+              Plus de clients, <span className="accent" style={{ color: 'var(--accent)' }}>une expertise qui rayonne.</span>
             </h1>
             <p className="font-sans" style={{ fontSize: 'clamp(15px, 3vw, 18px)', fontWeight: 300, color: 'var(--text-secondary)', maxWidth: 640, margin: '0 auto 36px', lineHeight: 1.65 }}>
-              Pour un cabinet de conseil ou un consultant B2B, le logiciel et l&apos;IA sur-mesure automatisent ce qui ronge votre
-              temps facturable : relance commerciale, réactivation des dormants, reporting. L&apos;IA intégrée uniquement là où elle
-              remplace de vraies heures, votre secret client reste intact.
+              Pour un cabinet de conseil, un bureau d&apos;études ou une société d&apos;ingénierie, on construit le logiciel et
+              l&apos;IA sur-mesure qui libèrent vos experts du répétitif, capitalisent votre savoir et transforment votre expertise
+              en croissance : plus de clients, une meilleure expérience, une longueur d&apos;avance sur votre secteur. L&apos;IA
+              intégrée uniquement là où elle remplace de vraies heures, votre secret client reste intact.
             </p>
             <Link href={CAL_LINK} className="btn-primary" style={{ margin: '0 auto', fontSize: 14 }}>
               <span className="btn-primary-dot" />Réserver un appel · offert →
@@ -72,7 +73,7 @@ export default function ConseilPage() {
           <FadeUp className="text-center mb-10">
             <span className="section-label">Le quotidien d&apos;un cabinet</span>
             <h2 className="section-title" style={{ maxWidth: 620, margin: '0 auto' }}>
-              Là où le <span className="accent">temps facturable s&apos;évapore</span>
+              Là où votre <span className="accent">valeur reste bloquée</span>
             </h2>
           </FadeUp>
           <ul style={{ listStyle: 'none', padding: 0, margin: '0 auto', maxWidth: 600, display: 'grid', gap: 13 }}>
@@ -169,11 +170,11 @@ export default function ConseilPage() {
           <FadeUp>
             <div style={{ background: 'var(--bg-card)', border: '1px solid rgba(230,57,70,0.15)', borderRadius: 12, padding: '48px 40px', textAlign: 'center' }}>
               <h2 className="font-serif italic" style={{ fontSize: 'clamp(24px, 4vw, 32px)', fontWeight: 400, marginBottom: 16, color: 'var(--text)' }}>
-                Récupérez votre temps facturable.
+                Transformez votre expertise en croissance.
               </h2>
               <p className="font-sans" style={{ fontSize: 15, fontWeight: 300, color: 'var(--text-secondary)', lineHeight: 1.7, maxWidth: 520, margin: '0 auto 32px' }}>
-                Un appel offert. On regarde où part votre temps et ce que l&apos;automatisation vous ferait gagner, en
-                rendez-vous et en heures facturables. Même si on ne travaille pas ensemble.
+                Un appel offert. On regarde où votre valeur reste bloquée et ce que le sur-mesure vous ferait gagner, en
+                clients et en heures rendues à vos experts. Même si on ne travaille pas ensemble.
               </p>
               <Link href={CAL_LINK} className="btn-primary" style={{ margin: '0 auto' }}>
                 <span className="btn-primary-dot" />Réserver un appel · offert

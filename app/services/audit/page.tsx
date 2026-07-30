@@ -19,7 +19,7 @@ const steps = [
   },
   {
     title: 'On chiffre le coût de l\'inaction',
-    desc: 'Les heures perdues, les marges qui fuient, les tâches qui traînent. On met un chiffre sur ce que vous coûte de ne rien changer.',
+    desc: 'Les heures perdues, les marges qui fuient, le savoir qui dort dans les têtes. On met un chiffre sur la valeur que vous laissez sur la table, pas seulement sur vos coûts.',
     metric: 'Le coût réel, en euros',
   },
   {

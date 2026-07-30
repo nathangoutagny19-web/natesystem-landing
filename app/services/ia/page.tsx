@@ -18,9 +18,9 @@ const capabilities = [
     metric: 'Des tâches prises en charge de bout en bout',
   },
   {
-    title: 'Lecture de documents',
-    desc: 'Factures, contrats, devis, formulaires : l\'IA lit, extrait, structure et classe. Elle ne passe à l\'humain que les cas qui le méritent.',
-    metric: 'La moitié d\'un poste admin absorbée',
+    title: 'Lecture de documents & recherche dans votre savoir',
+    desc: 'Devis, contrats, cahiers des charges, documentation technique : l\'IA lit, extrait, structure et rend tout cherchable en secondes. Le savoir de vos experts ne dort plus, il répond.',
+    metric: 'Le savoir enfoui rendu cherchable en secondes',
   },
   {
     title: 'Qualification & relances',
@@ -35,7 +35,8 @@ const capabilities = [
 ]
 
 const pains = [
-  'Vos équipes passent des heures sur des tâches répétitives',
+  'Vos experts passent des heures sur du répétitif au lieu de créer de la valeur',
+  'Le savoir de vos experts reste coincé dans leurs têtes et leurs docs',
   'Vous croulez sous les documents à lire, trier, recopier',
   'Vous décidez « au feeling », faute de chiffres clairs',
   'Vous avez peur que l\'IA soit un gadget de plus',
