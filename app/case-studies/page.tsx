@@ -48,6 +48,32 @@ export default function CaseStudiesPage() {
         </div>
       </section>
 
+      {/* 2e cas : cabinet de conseil B2B (anonymisé, témoignage nominatif à venir) */}
+      <section style={{ padding: '48px 24px 8px' }}>
+        <div className="mx-auto" style={{ maxWidth: '900px' }}>
+          <FadeUp>
+            <Link href="/case-studies/conseil-b2b-budapest" style={{ textDecoration: 'none', display: 'block' }}>
+              <article
+                style={{ background: 'var(--bg-card)', border: '1px solid var(--border)', borderRadius: 16, padding: 'clamp(28px, 4vw, 44px)' }}
+              >
+                <p className="font-mono" style={{ fontSize: 11, letterSpacing: 1.4, textTransform: 'uppercase', color: 'var(--accent)', fontWeight: 500, margin: '0 0 12px' }}>
+                  Cabinet de conseil B2B · Budapest
+                </p>
+                <h2 className="font-serif italic" style={{ fontSize: 'clamp(26px, 4vw, 40px)', fontWeight: 400, color: 'var(--text)', lineHeight: 1.1, margin: '0 0 14px' }}>
+                  25 ans d’expertise, mis dans une IA.
+                </h2>
+                <p className="font-sans" style={{ fontSize: 15.5, fontWeight: 300, color: 'var(--text-secondary)', lineHeight: 1.65, maxWidth: 640, margin: '0 0 20px' }}>
+                  Un cabinet de conseil B2B de Budapest a capitalisé le savoir de son fondateur dans un système sur-mesure, automatisé ses rapports clients sur 280 KPIs, et l’a rendu à ses clients.
+                </p>
+                <span className="font-sans" style={{ display: 'inline-flex', alignItems: 'center', gap: 7, fontSize: 14, fontWeight: 500, color: 'var(--accent)' }}>
+                  {d('Lire l’étude de cas', 'Read the case study')} &rarr;
+                </span>
+              </article>
+            </Link>
+          </FadeUp>
+        </div>
+      </section>
+
       <Divider />
 
       {/* CTA de clôture */}

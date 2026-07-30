@@ -157,31 +157,49 @@ export default function CaseStudyDetail({ study }: { study: CaseStudy }) {
             </FadeUp>
           ))}
 
-          {/* Citation */}
-          <FadeUp>
-            <blockquote
-              style={{
-                margin: '8px 0 0',
-                padding: '28px 28px 28px 30px',
-                borderLeft: '3px solid var(--accent)',
-                background: 'var(--bg-card)',
-                borderRadius: '0 14px 14px 0',
-              }}
-            >
-              <p
-                className="font-serif italic"
-                style={{ fontSize: 'clamp(21px, 3vw, 27px)', fontWeight: 400, color: 'var(--text)', lineHeight: 1.4, margin: '0 0 18px' }}
+          {/* Citation (si le client a validé un témoignage nominatif) */}
+          {study.quote ? (
+            <FadeUp>
+              <blockquote
+                style={{
+                  margin: '8px 0 0',
+                  padding: '28px 28px 28px 30px',
+                  borderLeft: '3px solid var(--accent)',
+                  background: 'var(--bg-card)',
+                  borderRadius: '0 14px 14px 0',
+                }}
               >
-                « {study.quote} »
-              </p>
-              <div className="font-sans" style={{ fontSize: '14.5px', fontWeight: 500, color: 'var(--text)' }}>
-                {study.quoteAuthor}
+                <p
+                  className="font-serif italic"
+                  style={{ fontSize: 'clamp(21px, 3vw, 27px)', fontWeight: 400, color: 'var(--text)', lineHeight: 1.4, margin: '0 0 18px' }}
+                >
+                  « {study.quote} »
+                </p>
+                <div className="font-sans" style={{ fontSize: '14.5px', fontWeight: 500, color: 'var(--text)' }}>
+                  {study.quoteAuthor}
+                </div>
+                <div className="font-sans" style={{ fontSize: '13px', fontWeight: 300, color: 'var(--text-secondary)', marginTop: 2 }}>
+                  {study.quoteRole}
+                </div>
+              </blockquote>
+            </FadeUp>
+          ) : (
+            <FadeUp>
+              <div
+                style={{
+                  margin: '8px 0 0',
+                  padding: '22px 26px',
+                  borderLeft: '3px solid var(--border)',
+                  background: 'var(--bg-card)',
+                  borderRadius: '0 14px 14px 0',
+                }}
+              >
+                <p className="font-sans" style={{ fontSize: '14px', fontWeight: 300, color: 'var(--text-secondary)', lineHeight: 1.6, margin: 0 }}>
+                  Cas client réel, présenté ici de façon anonyme. Le témoignage nominatif du fondateur sera ajouté prochainement, avec son accord.
+                </p>
               </div>
-              <div className="font-sans" style={{ fontSize: '13px', fontWeight: 300, color: 'var(--text-secondary)', marginTop: 2 }}>
-                {study.quoteRole}
-              </div>
-            </blockquote>
-          </FadeUp>
+            </FadeUp>
+          )}
         </div>
       </section>
 

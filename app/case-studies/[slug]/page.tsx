@@ -38,11 +38,16 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
         about: study.title,
         isPartOf: { '@id': 'https://www.natesystem.com/#organization' },
         mainEntityOfPage: `https://www.natesystem.com/case-studies/${study.slug}`,
-        review: {
-          '@type': 'Review',
-          reviewBody: study.quote,
-          author: { '@type': 'Person', name: study.quoteAuthor },
-        },
+        // Review seulement si un vrai témoignage nominatif existe (règle d'or)
+        ...(study.quote
+          ? {
+              review: {
+                '@type': 'Review',
+                reviewBody: study.quote,
+                author: { '@type': 'Person', name: study.quoteAuthor },
+              },
+            }
+          : {}),
       },
       {
         '@type': 'BreadcrumbList',

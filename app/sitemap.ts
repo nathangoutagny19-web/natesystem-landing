@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next'
 import { blogPosts } from '@/lib/blog'
 import { allSlugs as allPlaybookSlugs } from '@/lib/playbooks'
+import { allCaseSlugs } from '@/lib/case-studies'
 
 const BASE_URL = 'https://www.natesystem.com'
 
@@ -21,6 +22,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/playbook`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${BASE_URL}/glossaire`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
     { url: `${BASE_URL}/a-propos`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${BASE_URL}/case-studies`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/agence-logiciel-ia-lyon`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/logiciel-interne-lyon`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${BASE_URL}/logiciel-interne-saint-etienne`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
@@ -63,5 +65,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }))
 
-  return [...staticRoutes, ...playbookRoutes, ...blogRoutes]
+  // Written case studies
+  const caseStudyRoutes: MetadataRoute.Sitemap = allCaseSlugs().map((slug) => ({
+    url: `${BASE_URL}/case-studies/${slug}`,
+    lastModified: now,
+    changeFrequency: 'monthly',
+    priority: 0.8,
+  }))
+
+  return [...staticRoutes, ...playbookRoutes, ...blogRoutes, ...caseStudyRoutes]
 }
