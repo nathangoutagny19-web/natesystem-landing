@@ -6,6 +6,7 @@ import { LangProvider } from '@/components/providers/LangProvider'
 import WhatsAppFloat from '@/components/layout/WhatsAppFloat'
 import CookieConsent from '@/components/site/CookieConsent'
 import PointerGlow from '@/components/ui/PointerGlow'
+import { Analytics } from '@vercel/analytics/next'
 
 const dmSans = DM_Sans({
   subsets: ['latin'],
@@ -195,6 +196,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <PointerGlow />
           </LangProvider>
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   )
