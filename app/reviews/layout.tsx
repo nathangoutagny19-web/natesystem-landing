@@ -5,11 +5,11 @@ export const metadata: Metadata = {
   description:
     'NateSystem · Reviews is a review intelligence product: AI scoring on six aspects, response drafting in your brand voice, 90-day action plans. The demo runs on mock data, request access via the form.',
   alternates: {
-    canonical: 'https://www.natesystem.com/reviews',
+    canonical: 'https://studio.natesystem.com/reviews',
   },
   openGraph: {
     type: 'website',
-    url: 'https://www.natesystem.com/reviews',
+    url: 'https://studio.natesystem.com/reviews',
     title: 'NateSystem · Reviews, Review intelligence software (demo)',
     description:
       'Review intelligence software in demo. AI scoring, response drafts, action plans. Request demo access via the form.',
@@ -38,14 +38,14 @@ export const metadata: Metadata = {
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
-  '@id': 'https://www.natesystem.com/reviews#app',
+  '@id': 'https://studio.natesystem.com/reviews#app',
   name: 'NateSystem · Reviews',
-  url: 'https://www.natesystem.com/reviews',
+  url: 'https://studio.natesystem.com/reviews',
   applicationCategory: 'BusinessApplication',
   operatingSystem: 'Web',
   description:
     'Review intelligence software: AI scoring on six aspects, response drafting in your brand voice, 90-day action plans. Demo runs on mock data; request access via the form.',
-  provider: { '@id': 'https://www.natesystem.com/#organization' },
+  provider: { '@id': 'https://studio.natesystem.com/#organization' },
 }
 
 export default function ReviewsLayout({ children }: { children: React.ReactNode }) {

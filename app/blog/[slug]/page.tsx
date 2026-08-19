@@ -56,7 +56,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
   const post = blogPosts.find((p) => p.slug === params.slug)
   if (!post) notFound()
 
-  const url = `https://www.natesystem.com/blog/${post.slug}`
+  const url = `https://studio.natesystem.com/blog/${post.slug}`
   // Approximate word count from the HTML body (strip tags), a density signal
   // AI engines and Google both read.
   const wordCount = post.content.replace(/<[^>]+>/g, ' ').trim().split(/\s+/).length
@@ -72,20 +72,20 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
       description: post.description,
       datePublished: post.date,
       dateModified: post.date,
-      author: { '@type': 'Person', '@id': 'https://www.natesystem.com/a-propos#nathan', name: post.author, url: 'https://www.natesystem.com/a-propos' },
-      publisher: { '@id': 'https://www.natesystem.com/#organization' },
+      author: { '@type': 'Person', '@id': 'https://studio.natesystem.com/a-propos#nathan', name: post.author, url: 'https://studio.natesystem.com/a-propos' },
+      publisher: { '@id': 'https://studio.natesystem.com/#organization' },
       mainEntityOfPage: url,
       articleSection: post.category,
       keywords: post.tags.join(', '),
       wordCount,
       inLanguage: 'fr-FR',
-      image: post.ogImage ? [post.ogImage] : ['https://www.natesystem.com/og-image.png'],
+      image: post.ogImage ? [post.ogImage] : ['https://studio.natesystem.com/og-image.png'],
     },
     {
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://www.natesystem.com' },
-        { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://www.natesystem.com/blog' },
+        { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://studio.natesystem.com' },
+        { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://studio.natesystem.com/blog' },
         { '@type': 'ListItem', position: 3, name: post.title, item: url },
       ],
     },

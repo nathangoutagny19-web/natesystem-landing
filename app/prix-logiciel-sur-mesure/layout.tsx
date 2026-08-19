@@ -4,12 +4,12 @@ export const metadata: Metadata = {
   title: 'Prix d\'un logiciel sur-mesure en 2026 : combien prévoir ?',
   description:
     'Combien coûte un logiciel métier sur-mesure pour une PME en 2026 ? Les fourchettes réalistes, les facteurs qui font le prix, et comment le comparer au coût cumulé de vos SaaS. Chiffrage précis lors d\'un appel offert.',
-  alternates: { canonical: 'https://www.natesystem.com/prix-logiciel-sur-mesure' },
+  alternates: { canonical: 'https://studio.natesystem.com/prix-logiciel-sur-mesure' },
   openGraph: {
     title: 'Prix d\'un logiciel sur-mesure en 2026 : combien prévoir ?',
     description:
       'Fourchettes réalistes, facteurs de prix, et comparaison avec le coût cumulé de vos SaaS. Chiffrage précis lors d\'un appel offert.',
-    url: 'https://www.natesystem.com/prix-logiciel-sur-mesure',
+    url: 'https://studio.natesystem.com/prix-logiciel-sur-mesure',
     type: 'article',
     locale: 'fr_FR',
   },
@@ -55,8 +55,8 @@ const jsonLd = {
     {
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://www.natesystem.com' },
-        { '@type': 'ListItem', position: 2, name: 'Prix d\'un logiciel sur-mesure', item: 'https://www.natesystem.com/prix-logiciel-sur-mesure' },
+        { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://studio.natesystem.com' },
+        { '@type': 'ListItem', position: 2, name: 'Prix d\'un logiciel sur-mesure', item: 'https://studio.natesystem.com/prix-logiciel-sur-mesure' },
       ],
     },
   ],

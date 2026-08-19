@@ -4,12 +4,12 @@ export const metadata: Metadata = {
   title: 'CRM sur-mesure : le logiciel taillé pour votre vente',
   description:
     'CRM sur-mesure : NateSystem conçoit un logiciel de suivi prospects, relances et pipeline calé sur votre cycle de vente réel, avec IA intégrée. Code livré, propriété 100 %, hébergé en UE. Audit offert.',
-  alternates: { canonical: 'https://www.natesystem.com/crm-sur-mesure' },
+  alternates: { canonical: 'https://studio.natesystem.com/crm-sur-mesure' },
   openGraph: {
     title: 'CRM sur-mesure : le logiciel taillé pour votre vente',
     description:
       'Un CRM sur-mesure calé sur votre cycle de vente réel : suivi prospects, relances, pipeline, IA intégrée. Code livré, propriété 100 %, hébergé en UE.',
-    url: 'https://www.natesystem.com/crm-sur-mesure',
+    url: 'https://studio.natesystem.com/crm-sur-mesure',
     type: 'website',
     locale: 'fr_FR',
   },
@@ -26,9 +26,9 @@ const jsonLd = {
   '@graph': [
     {
       '@type': 'Service',
-      '@id': 'https://www.natesystem.com/crm-sur-mesure#service',
+      '@id': 'https://studio.natesystem.com/crm-sur-mesure#service',
       name: 'CRM sur-mesure pour entreprise',
-      provider: { '@id': 'https://www.natesystem.com/#organization' },
+      provider: { '@id': 'https://studio.natesystem.com/#organization' },
       areaServed: [
         { '@type': 'Country', name: 'France' },
         { '@type': 'AdministrativeArea', name: 'Union européenne' },
@@ -78,8 +78,8 @@ const jsonLd = {
     {
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://www.natesystem.com' },
-        { '@type': 'ListItem', position: 2, name: 'CRM sur-mesure', item: 'https://www.natesystem.com/crm-sur-mesure' },
+        { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://studio.natesystem.com' },
+        { '@type': 'ListItem', position: 2, name: 'CRM sur-mesure', item: 'https://studio.natesystem.com/crm-sur-mesure' },
       ],
     },
   ],

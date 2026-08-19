@@ -22,7 +22,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const playbook = getPlaybookBySlug(params.slug)
   if (!playbook) return {}
-  const url = `https://www.natesystem.com/playbook/${params.slug}`
+  const url = `https://studio.natesystem.com/playbook/${params.slug}`
   return {
     title: `${playbook.title}, NateSystem`,
     description: playbook.metaDescription,
@@ -46,15 +46,15 @@ export default function PlaybookSlugPage({ params }: { params: Params }) {
   const playbook = getPlaybookBySlug(params.slug)
   if (!playbook) notFound()
 
-  const url = `https://www.natesystem.com/playbook/${playbook.slug}`
+  const url = `https://studio.natesystem.com/playbook/${playbook.slug}`
   // Breadcrumb structured data (JSON-LD), invisible, helps Google show the
   // Accueil › Playbooks › [secteur] trail and feeds AI answer engines.
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://www.natesystem.com' },
-      { '@type': 'ListItem', position: 2, name: 'Playbooks', item: 'https://www.natesystem.com/playbook' },
+      { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://studio.natesystem.com' },
+      { '@type': 'ListItem', position: 2, name: 'Playbooks', item: 'https://studio.natesystem.com/playbook' },
       { '@type': 'ListItem', position: 3, name: playbook.title, item: url },
     ],
   }

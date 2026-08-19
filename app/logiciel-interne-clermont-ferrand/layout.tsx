@@ -4,12 +4,12 @@ export const metadata: Metadata = {
   title: 'Logiciel interne Clermont-Ferrand : solution sur-mesure',
   description:
     'Logiciel interne à Clermont-Ferrand : NateSystem conçoit des solutions logicielles sur-mesure pour entreprise, gestion, données, équipe. Code livré, propriété 100 %, hébergé en UE. Audit offert.',
-  alternates: { canonical: 'https://www.natesystem.com/logiciel-interne-clermont-ferrand' },
+  alternates: { canonical: 'https://studio.natesystem.com/logiciel-interne-clermont-ferrand' },
   openGraph: {
     title: 'Logiciel interne Clermont-Ferrand : solution sur-mesure',
     description:
       'Solutions logicielles internes sur-mesure pour entreprise à Clermont-Ferrand : gestion, données, pilotage. Code livré, propriété 100 %, hébergé en UE.',
-    url: 'https://www.natesystem.com/logiciel-interne-clermont-ferrand',
+    url: 'https://studio.natesystem.com/logiciel-interne-clermont-ferrand',
     type: 'website',
     locale: 'fr_FR',
   },
@@ -27,9 +27,9 @@ const jsonLd = {
   '@graph': [
     {
       '@type': ['Organization', 'LocalBusiness'],
-      '@id': 'https://www.natesystem.com/logiciel-interne-clermont-ferrand#business',
+      '@id': 'https://studio.natesystem.com/logiciel-interne-clermont-ferrand#business',
       name: 'NateSystem, Logiciel interne Clermont-Ferrand',
-      url: 'https://www.natesystem.com/logiciel-interne-clermont-ferrand',
+      url: 'https://studio.natesystem.com/logiciel-interne-clermont-ferrand',
       description:
         'Agence de logiciel interne sur-mesure pour Clermont-Ferrand : solutions logicielles métier pour entreprise, intégration IA, gestion des données et des process.',
       areaServed: [
@@ -41,9 +41,9 @@ const jsonLd = {
     },
     {
       '@type': 'Service',
-      '@id': 'https://www.natesystem.com/logiciel-interne-clermont-ferrand#service',
+      '@id': 'https://studio.natesystem.com/logiciel-interne-clermont-ferrand#service',
       name: 'Logiciel interne sur-mesure pour entreprise à Clermont-Ferrand',
-      provider: { '@id': 'https://www.natesystem.com/#organization' },
+      provider: { '@id': 'https://studio.natesystem.com/#organization' },
       areaServed: { '@type': 'City', name: 'Clermont-Ferrand' },
       serviceType: 'Logiciel interne, logiciel métier sur-mesure, solutions logicielles, intégration IA, gestion de données',
       audience: { '@type': 'BusinessAudience', audienceType: 'Entreprises et PME de Clermont-Ferrand et du Puy-de-Dôme (5 à 100 collaborateurs)' },
@@ -90,8 +90,8 @@ const jsonLd = {
     {
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://www.natesystem.com' },
-        { '@type': 'ListItem', position: 2, name: 'Logiciel interne Clermont-Ferrand', item: 'https://www.natesystem.com/logiciel-interne-clermont-ferrand' },
+        { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://studio.natesystem.com' },
+        { '@type': 'ListItem', position: 2, name: 'Logiciel interne Clermont-Ferrand', item: 'https://studio.natesystem.com/logiciel-interne-clermont-ferrand' },
       ],
     },
   ],

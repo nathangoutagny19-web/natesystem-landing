@@ -3,7 +3,7 @@ import { blogPosts } from '@/lib/blog'
 import { allSlugs as allPlaybookSlugs } from '@/lib/playbooks'
 import { allCaseSlugs } from '@/lib/case-studies'
 
-const BASE_URL = 'https://www.natesystem.com'
+const BASE_URL = 'https://studio.natesystem.com'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date().toISOString()

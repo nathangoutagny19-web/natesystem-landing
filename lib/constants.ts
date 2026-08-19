@@ -4,7 +4,7 @@
 // (qualification step) for when volume justifies re-enabling it; flip this back
 // to '/book' to restore the form-first flow everywhere at once.
 export const CAL_LINK = '/#rendez-vous'
-export const SITE_URL = 'https://www.natesystem.com'
+export const SITE_URL = 'https://studio.natesystem.com'
 export const API_URL = 'https://natesystem-backend.vercel.app'
 
 // Cal.com booking, appel de consulting offert (event 45 min)

@@ -4,12 +4,12 @@ export const metadata: Metadata = {
   title: 'Logiciel & plateforme sur-mesure, NateSystem',
   description:
     'Le logiciel métier sur-mesure qui réunit vos outils et vos données en une seule plateforme, base unifiée, dashboards, portails, outils internes. Vous êtes propriétaire du code, hébergé en UE. En production en 4 à 8 semaines. Audit offert.',
-  alternates: { canonical: 'https://www.natesystem.com/services/logiciel-sur-mesure' },
+  alternates: { canonical: 'https://studio.natesystem.com/services/logiciel-sur-mesure' },
   openGraph: {
     title: 'Logiciel & plateforme sur-mesure, NateSystem',
     description:
       'Un seul logiciel sur-mesure pour piloter votre activité : base de données unifiée, dashboards, portails clients, outils internes. Code livré, hébergé en UE, en 4 à 8 semaines.',
-    url: 'https://www.natesystem.com/services/logiciel-sur-mesure',
+    url: 'https://studio.natesystem.com/services/logiciel-sur-mesure',
     type: 'website',
     locale: 'fr_FR',
   },
@@ -25,9 +25,9 @@ const jsonLd = {
   '@graph': [
     {
       '@type': 'Service',
-      '@id': 'https://www.natesystem.com/services/logiciel-sur-mesure#service',
+      '@id': 'https://studio.natesystem.com/services/logiciel-sur-mesure#service',
       name: 'Logiciel & plateforme sur-mesure',
-      provider: { '@id': 'https://www.natesystem.com/#organization' },
+      provider: { '@id': 'https://studio.natesystem.com/#organization' },
       areaServed: ['FR', 'HU', 'EU'],
       serviceType: 'Développement de logiciel métier sur-mesure, plateforme interne, base de données unifiée, dashboards, portails et outils internes',
       audience: { '@type': 'BusinessAudience', audienceType: 'PME et ETI (5 à 100 collaborateurs) avec des opérations récurrentes' },
@@ -74,9 +74,9 @@ const jsonLd = {
     {
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://www.natesystem.com' },
-        { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://www.natesystem.com/services' },
-        { '@type': 'ListItem', position: 3, name: 'Logiciel & plateforme sur-mesure', item: 'https://www.natesystem.com/services/logiciel-sur-mesure' },
+        { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://studio.natesystem.com' },
+        { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://studio.natesystem.com/services' },
+        { '@type': 'ListItem', position: 3, name: 'Logiciel & plateforme sur-mesure', item: 'https://studio.natesystem.com/services/logiciel-sur-mesure' },
       ],
     },
   ],

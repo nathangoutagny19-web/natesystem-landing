@@ -4,12 +4,12 @@ export const metadata: Metadata = {
   title: 'Logiciel interne Chambéry : solution sur-mesure entreprise',
   description:
     'Logiciel interne à Chambéry : NateSystem conçoit des solutions logicielles sur-mesure pour entreprise en Savoie, gestion, données, équipe. Code livré, propriété 100 %, hébergé en UE. Audit offert.',
-  alternates: { canonical: 'https://www.natesystem.com/logiciel-interne-chambery' },
+  alternates: { canonical: 'https://studio.natesystem.com/logiciel-interne-chambery' },
   openGraph: {
     title: 'Logiciel interne Chambéry : solution sur-mesure entreprise',
     description:
       'Solutions logicielles internes sur-mesure pour entreprise à Chambéry (Savoie) : gestion, données, pilotage. Code livré, propriété 100 %, hébergé en UE.',
-    url: 'https://www.natesystem.com/logiciel-interne-chambery',
+    url: 'https://studio.natesystem.com/logiciel-interne-chambery',
     type: 'website',
     locale: 'fr_FR',
   },
@@ -27,9 +27,9 @@ const jsonLd = {
   '@graph': [
     {
       '@type': ['Organization', 'LocalBusiness'],
-      '@id': 'https://www.natesystem.com/logiciel-interne-chambery#business',
+      '@id': 'https://studio.natesystem.com/logiciel-interne-chambery#business',
       name: 'NateSystem, Logiciel interne Chambéry',
-      url: 'https://www.natesystem.com/logiciel-interne-chambery',
+      url: 'https://studio.natesystem.com/logiciel-interne-chambery',
       description:
         'Agence de logiciel interne sur-mesure à Chambéry : solutions logicielles métier pour entreprise en Savoie, intégration IA, gestion des données et des process.',
       areaServed: [
@@ -41,9 +41,9 @@ const jsonLd = {
     },
     {
       '@type': 'Service',
-      '@id': 'https://www.natesystem.com/logiciel-interne-chambery#service',
+      '@id': 'https://studio.natesystem.com/logiciel-interne-chambery#service',
       name: 'Logiciel interne sur-mesure pour entreprise à Chambéry',
-      provider: { '@id': 'https://www.natesystem.com/#organization' },
+      provider: { '@id': 'https://studio.natesystem.com/#organization' },
       areaServed: { '@type': 'City', name: 'Chambéry' },
       serviceType: 'Logiciel interne, logiciel métier sur-mesure, solutions logicielles, intégration IA, gestion de données',
       audience: { '@type': 'BusinessAudience', audienceType: 'Entreprises et PME de Chambéry et de Savoie (5 à 100 collaborateurs)' },
@@ -90,8 +90,8 @@ const jsonLd = {
     {
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://www.natesystem.com' },
-        { '@type': 'ListItem', position: 2, name: 'Logiciel interne Chambéry', item: 'https://www.natesystem.com/logiciel-interne-chambery' },
+        { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://studio.natesystem.com' },
+        { '@type': 'ListItem', position: 2, name: 'Logiciel interne Chambéry', item: 'https://studio.natesystem.com/logiciel-interne-chambery' },
       ],
     },
   ],

@@ -4,12 +4,12 @@ export const metadata: Metadata = {
   title: 'Formation & accompagnement, jusqu\'à l\'autonomie complète | NateSystem',
   description:
     'On forme vos équipes, du dirigeant au terrain, à piloter leur logiciel sur-mesure, jusqu\'à l\'autonomie complète. Documentation complète, code et infrastructure 100 % à vous. Vous ne dépendez de personne. Appel offert.',
-  alternates: { canonical: 'https://www.natesystem.com/services/formation' },
+  alternates: { canonical: 'https://studio.natesystem.com/services/formation' },
   openGraph: {
     title: 'Formation & accompagnement, jusqu\'à l\'autonomie complète | NateSystem',
     description:
       'Formation sur votre propre outil, du dirigeant au terrain. Documentation complète, code à vous. On part quand vos équipes sont autonomes.',
-    url: 'https://www.natesystem.com/services/formation',
+    url: 'https://studio.natesystem.com/services/formation',
     type: 'website',
     locale: 'fr_FR',
   },
@@ -25,9 +25,9 @@ const jsonLd = {
   '@graph': [
     {
       '@type': 'Service',
-      '@id': 'https://www.natesystem.com/services/formation#service',
+      '@id': 'https://studio.natesystem.com/services/formation#service',
       name: 'Formation & accompagnement',
-      provider: { '@id': 'https://www.natesystem.com/#organization' },
+      provider: { '@id': 'https://studio.natesystem.com/#organization' },
       areaServed: ['FR', 'HU', 'EU'],
       serviceType: 'Formation logiciel, accompagnement au changement, adoption d\'outil, montée en autonomie',
       audience: { '@type': 'BusinessAudience', audienceType: 'PME et ETI (5 à 100 collaborateurs) qui déploient un logiciel sur-mesure' },
@@ -58,9 +58,9 @@ const jsonLd = {
     {
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://www.natesystem.com' },
-        { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://www.natesystem.com/services' },
-        { '@type': 'ListItem', position: 3, name: 'Formation & accompagnement', item: 'https://www.natesystem.com/services/formation' },
+        { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://studio.natesystem.com' },
+        { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://studio.natesystem.com/services' },
+        { '@type': 'ListItem', position: 3, name: 'Formation & accompagnement', item: 'https://studio.natesystem.com/services/formation' },
       ],
     },
   ],

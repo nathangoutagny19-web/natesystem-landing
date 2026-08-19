@@ -4,12 +4,12 @@ export const metadata: Metadata = {
   title: 'Agence logiciel sur-mesure & IA à Lyon, NateSystem',
   description:
     'NateSystem, agence lyonnaise de logiciel métier sur-mesure et d\'intégration IA pour PME. On construit l\'outil qui pilote votre activité, code livré, propriété 100 %, hébergé en UE. Audit offert.',
-  alternates: { canonical: 'https://www.natesystem.com/agence-logiciel-ia-lyon' },
+  alternates: { canonical: 'https://studio.natesystem.com/agence-logiciel-ia-lyon' },
   openGraph: {
     title: 'Agence logiciel sur-mesure & IA à Lyon, NateSystem',
     description:
       'Agence lyonnaise de logiciel métier sur-mesure et d\'intégration IA pour PME. Code livré, propriété 100 %, hébergé en UE. Audit offert.',
-    url: 'https://www.natesystem.com/agence-logiciel-ia-lyon',
+    url: 'https://studio.natesystem.com/agence-logiciel-ia-lyon',
     type: 'website',
     locale: 'fr_FR',
   },
@@ -27,9 +27,9 @@ const jsonLd = {
   '@graph': [
     {
       '@type': 'Service',
-      '@id': 'https://www.natesystem.com/agence-logiciel-ia-lyon#service',
+      '@id': 'https://studio.natesystem.com/agence-logiciel-ia-lyon#service',
       name: 'Développement de logiciel sur-mesure et intégration IA',
-      provider: { '@id': 'https://www.natesystem.com/#organization' },
+      provider: { '@id': 'https://studio.natesystem.com/#organization' },
       areaServed: { '@type': 'City', name: 'Lyon' },
       serviceType: 'Logiciel métier sur-mesure, intégration IA, automatisation',
       description:
@@ -38,8 +38,8 @@ const jsonLd = {
     {
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://www.natesystem.com' },
-        { '@type': 'ListItem', position: 2, name: 'Agence logiciel & IA à Lyon', item: 'https://www.natesystem.com/agence-logiciel-ia-lyon' },
+        { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://studio.natesystem.com' },
+        { '@type': 'ListItem', position: 2, name: 'Agence logiciel & IA à Lyon', item: 'https://studio.natesystem.com/agence-logiciel-ia-lyon' },
       ],
     },
   ],

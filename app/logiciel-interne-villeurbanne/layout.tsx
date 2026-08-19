@@ -4,12 +4,12 @@ export const metadata: Metadata = {
   title: 'Logiciel interne Villeurbanne : solution sur-mesure entreprise',
   description:
     'Logiciel interne à Villeurbanne : NateSystem conçoit des solutions logicielles sur-mesure pour entreprise, gestion, données, équipe. Code livré, propriété 100 %, hébergé en UE. Audit offert.',
-  alternates: { canonical: 'https://www.natesystem.com/logiciel-interne-villeurbanne' },
+  alternates: { canonical: 'https://studio.natesystem.com/logiciel-interne-villeurbanne' },
   openGraph: {
     title: 'Logiciel interne Villeurbanne : solution sur-mesure entreprise',
     description:
       'Solutions logicielles internes sur-mesure pour entreprise à Villeurbanne : gestion, données, pilotage. Code livré, propriété 100 %, hébergé en UE.',
-    url: 'https://www.natesystem.com/logiciel-interne-villeurbanne',
+    url: 'https://studio.natesystem.com/logiciel-interne-villeurbanne',
     type: 'website',
     locale: 'fr_FR',
   },
@@ -27,9 +27,9 @@ const jsonLd = {
   '@graph': [
     {
       '@type': ['Organization', 'LocalBusiness'],
-      '@id': 'https://www.natesystem.com/logiciel-interne-villeurbanne#business',
+      '@id': 'https://studio.natesystem.com/logiciel-interne-villeurbanne#business',
       name: 'NateSystem, Logiciel interne Villeurbanne',
-      url: 'https://www.natesystem.com/logiciel-interne-villeurbanne',
+      url: 'https://studio.natesystem.com/logiciel-interne-villeurbanne',
       description:
         'Agence de logiciel interne sur-mesure à Villeurbanne : solutions logicielles métier pour entreprise, intégration IA, gestion des données et des process.',
       areaServed: [
@@ -41,9 +41,9 @@ const jsonLd = {
     },
     {
       '@type': 'Service',
-      '@id': 'https://www.natesystem.com/logiciel-interne-villeurbanne#service',
+      '@id': 'https://studio.natesystem.com/logiciel-interne-villeurbanne#service',
       name: 'Logiciel interne sur-mesure pour entreprise à Villeurbanne',
-      provider: { '@id': 'https://www.natesystem.com/#organization' },
+      provider: { '@id': 'https://studio.natesystem.com/#organization' },
       areaServed: { '@type': 'City', name: 'Villeurbanne' },
       serviceType: 'Logiciel interne, logiciel métier sur-mesure, solutions logicielles, intégration IA, gestion de données',
       audience: { '@type': 'BusinessAudience', audienceType: 'Entreprises et PME de Villeurbanne et du Rhône (5 à 100 collaborateurs)' },
@@ -90,8 +90,8 @@ const jsonLd = {
     {
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://www.natesystem.com' },
-        { '@type': 'ListItem', position: 2, name: 'Logiciel interne Villeurbanne', item: 'https://www.natesystem.com/logiciel-interne-villeurbanne' },
+        { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://studio.natesystem.com' },
+        { '@type': 'ListItem', position: 2, name: 'Logiciel interne Villeurbanne', item: 'https://studio.natesystem.com/logiciel-interne-villeurbanne' },
       ],
     },
   ],

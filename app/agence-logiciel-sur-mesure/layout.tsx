@@ -4,12 +4,12 @@ export const metadata: Metadata = {
   title: 'Agence de logiciel sur-mesure : comment choisir',
   description:
     'Agence de logiciel sur-mesure : NateSystem conçoit des solutions logicielles pour entreprise, audit, périmètre fixe, livraison en 4 à 8 semaines, code livré et propriété 100 %. Audit offert.',
-  alternates: { canonical: 'https://www.natesystem.com/agence-logiciel-sur-mesure' },
+  alternates: { canonical: 'https://studio.natesystem.com/agence-logiciel-sur-mesure' },
   openGraph: {
     title: 'Agence de logiciel sur-mesure : comment choisir',
     description:
       'Comment choisir une agence de logiciel sur-mesure : méthode, périmètre fixe, livraison en 4 à 8 semaines, propriété du code. NateSystem conçoit vos solutions logicielles.',
-    url: 'https://www.natesystem.com/agence-logiciel-sur-mesure',
+    url: 'https://studio.natesystem.com/agence-logiciel-sur-mesure',
     type: 'website',
     locale: 'fr_FR',
   },
@@ -27,9 +27,9 @@ const jsonLd = {
   '@graph': [
     {
       '@type': 'Service',
-      '@id': 'https://www.natesystem.com/agence-logiciel-sur-mesure#service',
+      '@id': 'https://studio.natesystem.com/agence-logiciel-sur-mesure#service',
       name: 'Agence de logiciel sur-mesure pour entreprise',
-      provider: { '@id': 'https://www.natesystem.com/#organization' },
+      provider: { '@id': 'https://studio.natesystem.com/#organization' },
       areaServed: [
         { '@type': 'Country', name: 'France' },
         { '@type': 'AdministrativeArea', name: 'Union européenne' },
@@ -79,8 +79,8 @@ const jsonLd = {
     {
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://www.natesystem.com' },
-        { '@type': 'ListItem', position: 2, name: 'Agence de logiciel sur-mesure', item: 'https://www.natesystem.com/agence-logiciel-sur-mesure' },
+        { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://studio.natesystem.com' },
+        { '@type': 'ListItem', position: 2, name: 'Agence de logiciel sur-mesure', item: 'https://studio.natesystem.com/agence-logiciel-sur-mesure' },
       ],
     },
   ],

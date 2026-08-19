@@ -4,12 +4,12 @@ export const metadata: Metadata = {
   title: 'Logiciel & IA sur-mesure pour cabinets de conseil, NateSystem',
   description:
     'Logiciel métier et IA sur-mesure pour cabinets de conseil et consultants B2B : relance commerciale automatique, réactivation des contacts dormants, reporting interne auto. Cas réel : conversion 4 % → 12 %. Audit offert.',
-  alternates: { canonical: 'https://www.natesystem.com/logiciel-sur-mesure-conseil' },
+  alternates: { canonical: 'https://studio.natesystem.com/logiciel-sur-mesure-conseil' },
   openGraph: {
     title: 'Logiciel & IA sur-mesure pour cabinets de conseil, NateSystem',
     description:
       'Relance commerciale automatique, réactivation des dormants, reporting interne auto, pour cabinets de conseil et consultants B2B. Cas réel : conversion 4 % → 12 %.',
-    url: 'https://www.natesystem.com/logiciel-sur-mesure-conseil',
+    url: 'https://studio.natesystem.com/logiciel-sur-mesure-conseil',
     type: 'website',
     locale: 'fr_FR',
   },
@@ -25,9 +25,9 @@ const jsonLd = {
   '@graph': [
     {
       '@type': 'Service',
-      '@id': 'https://www.natesystem.com/logiciel-sur-mesure-conseil#service',
+      '@id': 'https://studio.natesystem.com/logiciel-sur-mesure-conseil#service',
       name: 'Logiciel & IA sur-mesure pour cabinets de conseil',
-      provider: { '@id': 'https://www.natesystem.com/#organization' },
+      provider: { '@id': 'https://studio.natesystem.com/#organization' },
       areaServed: ['FR', 'HU', 'EU'],
       serviceType: 'Relance commerciale automatisée, réactivation de contacts, reporting interne, CRM consultant',
       audience: { '@type': 'BusinessAudience', audienceType: 'Cabinets de conseil, consultants B2B, agences' },
@@ -58,8 +58,8 @@ const jsonLd = {
     {
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://www.natesystem.com' },
-        { '@type': 'ListItem', position: 2, name: 'Logiciel & IA pour cabinets de conseil', item: 'https://www.natesystem.com/logiciel-sur-mesure-conseil' },
+        { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://studio.natesystem.com' },
+        { '@type': 'ListItem', position: 2, name: 'Logiciel & IA pour cabinets de conseil', item: 'https://studio.natesystem.com/logiciel-sur-mesure-conseil' },
       ],
     },
   ],
