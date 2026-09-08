@@ -172,10 +172,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap"
           rel="stylesheet"
         />
-        {/* Inline theme script, runs before paint to prevent flash */}
+        {/* Le site ouvre TOUJOURS en clair. Decision de Nathan, 8 septembre 2026.
+            Le theme n'est plus persiste : ce script efface la preference laissee
+            par l'ancienne version, sinon un visiteur qui avait bascule en sombre
+            une fois rouvrait en sombre pour toujours. Le bouton continue de
+            fonctionner, mais seulement pour la session en cours. */}
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(){try{var t=localStorage.getItem('ns-theme');if(t==='light'||t==='dark'){document.documentElement.classList.toggle('light',t==='light')}else{document.documentElement.classList.add('light');localStorage.setItem('ns-theme','light')}}catch(e){}})()`,
+            __html: `(function(){try{var d=document.documentElement;d.classList.add('light');d.classList.remove('dark');localStorage.removeItem('ns-theme')}catch(e){}})()`,
           }}
         />
         {/* Cookie consent & all analytics/tracking (GA4, Clarity, Leadsy/Instantly)

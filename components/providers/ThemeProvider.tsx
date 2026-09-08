@@ -21,19 +21,15 @@ export function useTheme() {
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setTheme] = useState<Theme>('light')
 
-  // On mount: read the actual DOM state (set by the inline script in layout.tsx)
+  /* Le site ouvre toujours en clair, et le theme n'est plus persiste.
+     Decision de Nathan, 8 septembre 2026. Ce provider lisait 'ns-theme' :
+     quiconque avait bascule en sombre une fois rouvrait en sombre a chaque
+     visite, y compris Nathan. Le script inline de layout.tsx a deja pose la
+     classe avant le premier rendu, il n'y a plus rien a resynchroniser ici. */
   useEffect(() => {
-    const stored = localStorage.getItem('ns-theme') as Theme | null
-    if (stored === 'dark' || stored === 'light') {
-      // Sync DOM to stored preference
-      document.documentElement.classList.toggle('light', stored === 'light')
-      setTheme(stored)
-    } else {
-      // No stored pref, default to light (inline script already added 'light' class)
-      document.documentElement.classList.add('light')
-      localStorage.setItem('ns-theme', 'light')
-      setTheme('light')
-    }
+    document.documentElement.classList.add('light')
+    document.documentElement.classList.remove('dark')
+    setTheme('light')
   }, [])
 
   const toggleTheme = useCallback(() => {
@@ -41,7 +37,8 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
       const next = prev === 'dark' ? 'light' : 'dark'
       document.documentElement.classList.toggle('light', next === 'light')
       document.documentElement.classList.toggle('dark', next === 'dark')
-      localStorage.setItem('ns-theme', next)
+      /* Volontairement pas de localStorage : le choix vaut pour cette session,
+         le prochain chargement repart en clair. */
       return next
     })
   }, [])
