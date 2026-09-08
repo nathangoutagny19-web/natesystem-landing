@@ -11,3 +11,4 @@ claude-seo
 .env
 .env.*
 !.env.example
+.archive/
