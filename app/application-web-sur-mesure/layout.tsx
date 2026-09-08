@@ -4,12 +4,12 @@ export const metadata: Metadata = {
   title: 'Application web sur-mesure : votre outil métier en ligne',
   description:
     'Application web sur-mesure : NateSystem conçoit votre outil métier en ligne, accessible navigateur, multi-utilisateurs, temps réel. Code livré, propriété 100 %, hébergé en UE. Audit offert.',
-  alternates: { canonical: 'https://studio.natesystem.com/application-web-sur-mesure' },
+  alternates: { canonical: 'https://www.natesystem.com/application-web-sur-mesure' },
   openGraph: {
     title: 'Application web sur-mesure : votre outil métier en ligne',
     description:
       'Application web sur-mesure pour un besoin métier précis : portail, outil interne, plateforme. Accessible navigateur, multi-utilisateurs, temps réel. Code livré, propriété 100 %, hébergé en UE.',
-    url: 'https://studio.natesystem.com/application-web-sur-mesure',
+    url: 'https://www.natesystem.com/application-web-sur-mesure',
     type: 'website',
     locale: 'fr_FR',
   },
@@ -27,9 +27,9 @@ const jsonLd = {
   '@graph': [
     {
       '@type': 'Service',
-      '@id': 'https://studio.natesystem.com/application-web-sur-mesure#service',
+      '@id': 'https://www.natesystem.com/application-web-sur-mesure#service',
       name: 'Application web sur-mesure pour entreprise',
-      provider: { '@id': 'https://studio.natesystem.com/#organization' },
+      provider: { '@id': 'https://www.natesystem.com/#organization' },
       areaServed: [
         { '@type': 'Country', name: 'France' },
         { '@type': 'AdministrativeArea', name: 'Union européenne' },
@@ -79,8 +79,8 @@ const jsonLd = {
     {
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://studio.natesystem.com' },
-        { '@type': 'ListItem', position: 2, name: 'Application web sur-mesure', item: 'https://studio.natesystem.com/application-web-sur-mesure' },
+        { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://www.natesystem.com' },
+        { '@type': 'ListItem', position: 2, name: 'Application web sur-mesure', item: 'https://www.natesystem.com/application-web-sur-mesure' },
       ],
     },
   ],

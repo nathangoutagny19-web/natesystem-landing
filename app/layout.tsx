@@ -38,22 +38,22 @@ export const metadata: Metadata = {
     'NateSystem',
     'Nathan Goutagny',
   ],
-  authors: [{ name: 'Nathan Goutagny', url: 'https://studio.natesystem.com' }],
+  authors: [{ name: 'Nathan Goutagny', url: 'https://www.natesystem.com' }],
   creator: 'Nathan Goutagny',
-  metadataBase: new URL('https://studio.natesystem.com'),
+  metadataBase: new URL('https://www.natesystem.com'),
   alternates: {
-    canonical: 'https://studio.natesystem.com',
+    canonical: 'https://www.natesystem.com',
     // hreflang FR uniquement : Google exige une URL distincte par langue, donc
     // pas de 'en-US' vers la même URL (déclaration invalide = pire que rien).
     // À rétablir avec des routes /fr /en séparées. Voir BRIEF-SITE-V2.md §4.3.
     languages: {
-      'fr-FR': 'https://studio.natesystem.com',
+      'fr-FR': 'https://www.natesystem.com',
     },
   },
   robots: { index: true, follow: true },
   openGraph: {
     type: 'website',
-    url: 'https://studio.natesystem.com',
+    url: 'https://www.natesystem.com',
     title: 'NateSystem, Logiciel sur-mesure propulsé par l\'IA',
     description:
       'Le logiciel sur-mesure qui pilote votre activité, propulsé par l\'IA, agentique, automatisation, data analytics, là où ça compte. Vos données, votre infrastructure, votre code.',
@@ -83,20 +83,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'ProfessionalService',
-              '@id': 'https://studio.natesystem.com/#organization',
+              '@id': 'https://www.natesystem.com/#organization',
               name: 'NateSystem',
               alternateName: 'Nate System',
-              url: 'https://studio.natesystem.com',
+              url: 'https://www.natesystem.com',
               email: 'nathan@natesystem.com',
-              logo: 'https://studio.natesystem.com/logo.png',
-              image: 'https://studio.natesystem.com/logo.png',
+              logo: 'https://www.natesystem.com/logo.png',
+              image: 'https://www.natesystem.com/logo.png',
               description:
                 'NateSystem construit le logiciel sur-mesure qui pilote votre activité, propulsé par l\'IA, IA agentique, automatisation, data analytics. Vos données, votre infrastructure, votre code. Hébergé en UE, RGPD-natif.',
               founder: {
                 '@type': 'Person',
                 name: 'Nathan Goutagny',
                 jobTitle: 'Fondateur · Ingénieur logiciel & IA appliquée',
-                url: 'https://studio.natesystem.com',
+                url: 'https://www.natesystem.com',
               },
               areaServed: ['FR', 'HU', 'EU'],
               address: {

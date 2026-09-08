@@ -4,12 +4,12 @@ export const metadata: Metadata = {
   title: 'Logiciel de gestion sur-mesure pour PME | NateSystem',
   description:
     'Logiciel de gestion sur-mesure pour piloter toute votre PME : ventes, opérations, stocks, équipe. Une solution unique qui remplace l\'ERP rigide. Code livré, propriété 100 %, hébergé en UE. Audit offert.',
-  alternates: { canonical: 'https://studio.natesystem.com/logiciel-gestion-sur-mesure' },
+  alternates: { canonical: 'https://www.natesystem.com/logiciel-gestion-sur-mesure' },
   openGraph: {
     title: 'Logiciel de gestion sur-mesure pour PME | NateSystem',
     description:
       'Un logiciel de gestion sur-mesure pour piloter toute l\'activité : ventes, opérations, stocks, équipe. Une solution unique que votre entreprise possède.',
-    url: 'https://studio.natesystem.com/logiciel-gestion-sur-mesure',
+    url: 'https://www.natesystem.com/logiciel-gestion-sur-mesure',
     type: 'website',
     locale: 'fr_FR',
   },
@@ -26,9 +26,9 @@ const jsonLd = {
   '@graph': [
     {
       '@type': 'Service',
-      '@id': 'https://studio.natesystem.com/logiciel-gestion-sur-mesure#service',
+      '@id': 'https://www.natesystem.com/logiciel-gestion-sur-mesure#service',
       name: 'Logiciel de gestion sur-mesure pour PME',
-      provider: { '@id': 'https://studio.natesystem.com/#organization' },
+      provider: { '@id': 'https://www.natesystem.com/#organization' },
       areaServed: [
         { '@type': 'Country', name: 'France' },
         { '@type': 'AdministrativeArea', name: 'Union européenne' },
@@ -78,8 +78,8 @@ const jsonLd = {
     {
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://studio.natesystem.com' },
-        { '@type': 'ListItem', position: 2, name: 'Logiciel de gestion sur-mesure', item: 'https://studio.natesystem.com/logiciel-gestion-sur-mesure' },
+        { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://www.natesystem.com' },
+        { '@type': 'ListItem', position: 2, name: 'Logiciel de gestion sur-mesure', item: 'https://www.natesystem.com/logiciel-gestion-sur-mesure' },
       ],
     },
   ],

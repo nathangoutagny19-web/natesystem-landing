@@ -4,12 +4,12 @@ export const metadata: Metadata = {
   title: 'IA agentique & data analytics, l\'IA qui travaille pour vous | NateSystem',
   description:
     'Une IA agentique avec mémoire persistante qui exécute des tâches de bout en bout, apprend votre métier et s\'améliore avec le temps. Data analytics pour décider sur du concret. Intégrée là où elle remplace de vraies heures. Audit offert.',
-  alternates: { canonical: 'https://studio.natesystem.com/services/ia' },
+  alternates: { canonical: 'https://www.natesystem.com/services/ia' },
   openGraph: {
     title: 'IA agentique & data analytics, l\'IA qui travaille pour vous | NateSystem',
     description:
       'IA agentique : mémoire persistante, exécution de tâches de bout en bout, apprentissage continu. Data analytics pour piloter sur du concret. Intégrée là où elle remplace de vraies heures.',
-    url: 'https://studio.natesystem.com/services/ia',
+    url: 'https://www.natesystem.com/services/ia',
     type: 'website',
     locale: 'fr_FR',
   },
@@ -25,9 +25,9 @@ const jsonLd = {
   '@graph': [
     {
       '@type': 'Service',
-      '@id': 'https://studio.natesystem.com/services/ia#service',
+      '@id': 'https://www.natesystem.com/services/ia#service',
       name: 'IA agentique & data analytics',
-      provider: { '@id': 'https://studio.natesystem.com/#organization' },
+      provider: { '@id': 'https://www.natesystem.com/#organization' },
       areaServed: ['FR', 'HU', 'EU'],
       serviceType: 'IA agentique, agents autonomes, automatisation, lecture de documents, data analytics, intégration IA',
       audience: { '@type': 'BusinessAudience', audienceType: 'PME et ETI (5 à 100 collaborateurs) avec des tâches répétitives à fort volume' },
@@ -74,9 +74,9 @@ const jsonLd = {
     {
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://studio.natesystem.com' },
-        { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://studio.natesystem.com/services' },
-        { '@type': 'ListItem', position: 3, name: 'IA agentique & data analytics', item: 'https://studio.natesystem.com/services/ia' },
+        { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://www.natesystem.com' },
+        { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://www.natesystem.com/services' },
+        { '@type': 'ListItem', position: 3, name: 'IA agentique & data analytics', item: 'https://www.natesystem.com/services/ia' },
       ],
     },
   ],

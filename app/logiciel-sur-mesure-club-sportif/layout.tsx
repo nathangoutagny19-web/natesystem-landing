@@ -4,12 +4,12 @@ export const metadata: Metadata = {
   title: 'Logiciel & IA sur-mesure pour clubs sportifs, NateSystem',
   description:
     'Logiciel métier et IA sur-mesure pour clubs sportifs : génération automatique des offres de sponsoring (PDF, slides, mail) après vos appels, back-office commercial relié au CRM, gestion des bénévoles. Démo en 2 minutes + audit offert.',
-  alternates: { canonical: 'https://studio.natesystem.com/logiciel-sur-mesure-club-sportif' },
+  alternates: { canonical: 'https://www.natesystem.com/logiciel-sur-mesure-club-sportif' },
   openGraph: {
     title: 'Logiciel & IA sur-mesure pour clubs sportifs, NateSystem',
     description:
       'Génération auto des offres de sponsoring, back-office commercial relié au CRM, gestion des bénévoles, pour clubs sportifs. Démo en 2 minutes.',
-    url: 'https://studio.natesystem.com/logiciel-sur-mesure-club-sportif',
+    url: 'https://www.natesystem.com/logiciel-sur-mesure-club-sportif',
     type: 'website',
     locale: 'fr_FR',
   },
@@ -25,9 +25,9 @@ const jsonLd = {
   '@graph': [
     {
       '@type': 'Service',
-      '@id': 'https://studio.natesystem.com/logiciel-sur-mesure-club-sportif#service',
+      '@id': 'https://www.natesystem.com/logiciel-sur-mesure-club-sportif#service',
       name: 'Logiciel & IA sur-mesure pour clubs sportifs',
-      provider: { '@id': 'https://studio.natesystem.com/#organization' },
+      provider: { '@id': 'https://www.natesystem.com/#organization' },
       areaServed: ['FR', 'HU', 'EU'],
       serviceType: 'Génération d\'offres de sponsoring, back-office commercial, CRM, gestion des bénévoles',
       audience: { '@type': 'BusinessAudience', audienceType: 'Clubs sportifs, organisations sportives' },
@@ -43,7 +43,7 @@ const jsonLd = {
       uploadDate: '2026-06-01',
       contentUrl: 'https://www.youtube.com/watch?v=4ae5mATIjhw',
       embedUrl: 'https://www.youtube-nocookie.com/embed/4ae5mATIjhw',
-      publisher: { '@id': 'https://studio.natesystem.com/#organization' },
+      publisher: { '@id': 'https://www.natesystem.com/#organization' },
     },
     {
       '@type': 'FAQPage',
@@ -69,8 +69,8 @@ const jsonLd = {
     {
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://studio.natesystem.com' },
-        { '@type': 'ListItem', position: 2, name: 'Logiciel & IA pour clubs sportifs', item: 'https://studio.natesystem.com/logiciel-sur-mesure-club-sportif' },
+        { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://www.natesystem.com' },
+        { '@type': 'ListItem', position: 2, name: 'Logiciel & IA pour clubs sportifs', item: 'https://www.natesystem.com/logiciel-sur-mesure-club-sportif' },
       ],
     },
   ],

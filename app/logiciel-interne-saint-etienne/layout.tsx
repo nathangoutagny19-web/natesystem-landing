@@ -4,12 +4,12 @@ export const metadata: Metadata = {
   title: 'Logiciel interne Saint-Étienne : solution sur-mesure entreprise',
   description:
     'Logiciel interne à Saint-Étienne : NateSystem conçoit des solutions logicielles sur-mesure pour entreprise, gestion, données, équipe. Code livré, propriété 100 %, hébergé en UE. Audit offert.',
-  alternates: { canonical: 'https://studio.natesystem.com/logiciel-interne-saint-etienne' },
+  alternates: { canonical: 'https://www.natesystem.com/logiciel-interne-saint-etienne' },
   openGraph: {
     title: 'Logiciel interne Saint-Étienne : solution sur-mesure entreprise',
     description:
       'Solutions logicielles internes sur-mesure pour entreprise à Saint-Étienne : gestion, données, pilotage. Code livré, propriété 100 %, hébergé en UE.',
-    url: 'https://studio.natesystem.com/logiciel-interne-saint-etienne',
+    url: 'https://www.natesystem.com/logiciel-interne-saint-etienne',
     type: 'website',
     locale: 'fr_FR',
   },
@@ -25,9 +25,9 @@ const jsonLd = {
   '@graph': [
     {
       '@type': ['Organization', 'LocalBusiness'],
-      '@id': 'https://studio.natesystem.com/logiciel-interne-saint-etienne#business',
+      '@id': 'https://www.natesystem.com/logiciel-interne-saint-etienne#business',
       name: 'NateSystem, Logiciel interne Saint-Étienne',
-      url: 'https://studio.natesystem.com/logiciel-interne-saint-etienne',
+      url: 'https://www.natesystem.com/logiciel-interne-saint-etienne',
       description:
         'Agence de logiciel interne sur-mesure pour Saint-Étienne : solutions logicielles métier pour entreprise, intégration IA, gestion des données et des process.',
       areaServed: [
@@ -39,9 +39,9 @@ const jsonLd = {
     },
     {
       '@type': 'Service',
-      '@id': 'https://studio.natesystem.com/logiciel-interne-saint-etienne#service',
+      '@id': 'https://www.natesystem.com/logiciel-interne-saint-etienne#service',
       name: 'Logiciel interne sur-mesure pour entreprise à Saint-Étienne',
-      provider: { '@id': 'https://studio.natesystem.com/#organization' },
+      provider: { '@id': 'https://www.natesystem.com/#organization' },
       areaServed: { '@type': 'City', name: 'Saint-Étienne' },
       serviceType: 'Logiciel interne, logiciel métier sur-mesure, solutions logicielles, intégration IA, gestion de données',
       audience: { '@type': 'BusinessAudience', audienceType: 'Entreprises et PME de Saint-Étienne et de la Loire (5 à 100 collaborateurs)' },
@@ -88,8 +88,8 @@ const jsonLd = {
     {
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://studio.natesystem.com' },
-        { '@type': 'ListItem', position: 2, name: 'Logiciel interne Saint-Étienne', item: 'https://studio.natesystem.com/logiciel-interne-saint-etienne' },
+        { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://www.natesystem.com' },
+        { '@type': 'ListItem', position: 2, name: 'Logiciel interne Saint-Étienne', item: 'https://www.natesystem.com/logiciel-interne-saint-etienne' },
       ],
     },
   ],

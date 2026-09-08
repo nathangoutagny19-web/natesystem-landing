@@ -4,12 +4,12 @@ export const metadata: Metadata = {
   title: 'Logiciel sur-mesure vs SaaS : lequel choisir pour votre PME ?',
   description:
     'Comparatif honnête entre logiciel métier sur-mesure et abonnement SaaS pour une PME : coût réel, propriété, adaptation, lock-in, données. Quand chacun a du sens, et comment décider.',
-  alternates: { canonical: 'https://studio.natesystem.com/logiciel-sur-mesure-vs-saas' },
+  alternates: { canonical: 'https://www.natesystem.com/logiciel-sur-mesure-vs-saas' },
   openGraph: {
     title: 'Logiciel sur-mesure vs SaaS : lequel choisir pour votre PME ?',
     description:
       'Comparatif honnête : coût réel, propriété, adaptation, lock-in, données. Quand le sur-mesure bat le SaaS, et quand non.',
-    url: 'https://studio.natesystem.com/logiciel-sur-mesure-vs-saas',
+    url: 'https://www.natesystem.com/logiciel-sur-mesure-vs-saas',
     type: 'article',
     locale: 'fr_FR',
   },
@@ -56,8 +56,8 @@ const jsonLd = {
     {
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://studio.natesystem.com' },
-        { '@type': 'ListItem', position: 2, name: 'Logiciel sur-mesure vs SaaS', item: 'https://studio.natesystem.com/logiciel-sur-mesure-vs-saas' },
+        { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://www.natesystem.com' },
+        { '@type': 'ListItem', position: 2, name: 'Logiciel sur-mesure vs SaaS', item: 'https://www.natesystem.com/logiciel-sur-mesure-vs-saas' },
       ],
     },
   ],

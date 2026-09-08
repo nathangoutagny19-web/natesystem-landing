@@ -4,12 +4,12 @@ export const metadata: Metadata = {
   title: 'Logiciel sur-mesure pour l\'enseignement supérieur, NateSystem',
   description:
     'CRM pédagogique sur-mesure pour écoles et universités : parcours étudiant, suivi de stages, relance alumni, tout centralisé. Cas réels : 200+ étudiants suivis, 90 %+ d\'adoption. Audit offert.',
-  alternates: { canonical: 'https://studio.natesystem.com/logiciel-sur-mesure-enseignement-superieur' },
+  alternates: { canonical: 'https://www.natesystem.com/logiciel-sur-mesure-enseignement-superieur' },
   openGraph: {
     title: 'Logiciel sur-mesure pour l\'enseignement supérieur, NateSystem',
     description:
       'CRM pédagogique sur-mesure : parcours étudiant, suivi de stages, relance alumni, centralisés. Cas réels : 200+ étudiants suivis, 90 %+ d\'adoption.',
-    url: 'https://studio.natesystem.com/logiciel-sur-mesure-enseignement-superieur',
+    url: 'https://www.natesystem.com/logiciel-sur-mesure-enseignement-superieur',
     type: 'website',
     locale: 'fr_FR',
   },
@@ -25,9 +25,9 @@ const jsonLd = {
   '@graph': [
     {
       '@type': 'Service',
-      '@id': 'https://studio.natesystem.com/logiciel-sur-mesure-enseignement-superieur#service',
+      '@id': 'https://www.natesystem.com/logiciel-sur-mesure-enseignement-superieur#service',
       name: 'Logiciel sur-mesure pour l\'enseignement supérieur',
-      provider: { '@id': 'https://studio.natesystem.com/#organization' },
+      provider: { '@id': 'https://www.natesystem.com/#organization' },
       areaServed: ['FR', 'HU', 'EU'],
       serviceType: 'CRM pédagogique, suivi étudiant, gestion des stages, relation alumni',
       audience: { '@type': 'EducationalAudience', educationalRole: 'Écoles, universités, centres de formation' },
@@ -58,8 +58,8 @@ const jsonLd = {
     {
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://studio.natesystem.com' },
-        { '@type': 'ListItem', position: 2, name: 'Logiciel sur-mesure pour l\'enseignement supérieur', item: 'https://studio.natesystem.com/logiciel-sur-mesure-enseignement-superieur' },
+        { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://www.natesystem.com' },
+        { '@type': 'ListItem', position: 2, name: 'Logiciel sur-mesure pour l\'enseignement supérieur', item: 'https://www.natesystem.com/logiciel-sur-mesure-enseignement-superieur' },
       ],
     },
   ],

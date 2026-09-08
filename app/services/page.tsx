@@ -15,25 +15,25 @@ const servicesJsonLd = {
   '@graph': [
     {
       '@type': 'CollectionPage',
-      '@id': 'https://studio.natesystem.com/services#page',
+      '@id': 'https://www.natesystem.com/services#page',
       name: 'Nos services',
       description: 'Les services NateSystem : audit & consulting, logiciel & plateforme sur-mesure, IA agentique & data analytics, au service d\'un socle de résultats commun à toute entreprise.',
-      isPartOf: { '@id': 'https://studio.natesystem.com/#organization' },
+      isPartOf: { '@id': 'https://www.natesystem.com/#organization' },
     },
     {
       '@type': 'ItemList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Audit & consulting', url: 'https://studio.natesystem.com/services/audit' },
-        { '@type': 'ListItem', position: 2, name: 'Logiciel & plateforme sur-mesure', url: 'https://studio.natesystem.com/services/logiciel-sur-mesure' },
-        { '@type': 'ListItem', position: 3, name: 'IA agentique & data analytics', url: 'https://studio.natesystem.com/services/ia' },
-        { '@type': 'ListItem', position: 4, name: 'Formation & accompagnement', url: 'https://studio.natesystem.com/services/formation' },
+        { '@type': 'ListItem', position: 1, name: 'Audit & consulting', url: 'https://www.natesystem.com/services/audit' },
+        { '@type': 'ListItem', position: 2, name: 'Logiciel & plateforme sur-mesure', url: 'https://www.natesystem.com/services/logiciel-sur-mesure' },
+        { '@type': 'ListItem', position: 3, name: 'IA agentique & data analytics', url: 'https://www.natesystem.com/services/ia' },
+        { '@type': 'ListItem', position: 4, name: 'Formation & accompagnement', url: 'https://www.natesystem.com/services/formation' },
       ],
     },
     {
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://studio.natesystem.com' },
-        { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://studio.natesystem.com/services' },
+        { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://www.natesystem.com' },
+        { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://www.natesystem.com/services' },
       ],
     },
   ],

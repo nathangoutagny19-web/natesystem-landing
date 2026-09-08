@@ -4,12 +4,12 @@ export const metadata: Metadata = {
   title: 'À propos, Nathan Goutagny, fondateur de NateSystem',
   description:
     'Nathan Goutagny, ingénieur logiciel & IA appliquée basé à Lyon. Fondateur de NateSystem. Des années à construire des systèmes opérationnels sur-mesure pour des PME françaises et hongroises, restauration, enseignement supérieur, conseil.',
-  alternates: { canonical: 'https://studio.natesystem.com/a-propos' },
+  alternates: { canonical: 'https://www.natesystem.com/a-propos' },
   openGraph: {
     title: 'À propos, Nathan Goutagny, fondateur de NateSystem',
     description:
       'Ingénieur logiciel & IA appliquée à Lyon. Fondateur de NateSystem. Si vous me parlez, c\'est moi qui code derrière, pas un commercial, pas un junior.',
-    url: 'https://studio.natesystem.com/a-propos',
+    url: 'https://www.natesystem.com/a-propos',
     type: 'profile',
     locale: 'fr_FR',
   },
@@ -25,12 +25,12 @@ export const metadata: Metadata = {
 const personJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Person',
-  '@id': 'https://studio.natesystem.com/a-propos#nathan',
+  '@id': 'https://www.natesystem.com/a-propos#nathan',
   name: 'Nathan Goutagny',
-  url: 'https://studio.natesystem.com/a-propos',
-  image: 'https://studio.natesystem.com/nathan.png',
+  url: 'https://www.natesystem.com/a-propos',
+  image: 'https://www.natesystem.com/nathan.png',
   jobTitle: 'Fondateur · Ingénieur logiciel & IA appliquée',
-  worksFor: { '@id': 'https://studio.natesystem.com/#organization' },
+  worksFor: { '@id': 'https://www.natesystem.com/#organization' },
   homeLocation: { '@type': 'Place', name: 'Lyon, France' },
   sameAs: ['https://www.linkedin.com/in/nathan-goutagny'],
   knowsAbout: [

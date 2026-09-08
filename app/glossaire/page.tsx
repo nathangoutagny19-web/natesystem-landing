@@ -51,15 +51,15 @@ const terms: Term[] = [
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'DefinedTermSet',
-  '@id': 'https://studio.natesystem.com/glossaire#glossary',
+  '@id': 'https://www.natesystem.com/glossaire#glossary',
   name: 'Glossaire NateSystem, logiciel sur-mesure, IA & automatisation',
-  url: 'https://studio.natesystem.com/glossaire',
+  url: 'https://www.natesystem.com/glossaire',
   inLanguage: 'fr-FR',
   hasDefinedTerm: terms.map((t) => ({
     '@type': 'DefinedTerm',
     name: t.term,
     description: t.def,
-    inDefinedTermSet: 'https://studio.natesystem.com/glossaire#glossary',
+    inDefinedTermSet: 'https://www.natesystem.com/glossaire#glossary',
   })),
 }
 

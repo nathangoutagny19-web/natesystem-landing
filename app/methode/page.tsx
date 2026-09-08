@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: 'Notre approche, On radiographie votre activité avant de construire | NateSystem',
   description:
     'La méthode NateSystem en 4 temps : cartographier, unifier, automatiser, former. On comprend d\'abord où partent vos heures et votre argent, puis on construit le logiciel sur-mesure qui les récupère. Vous êtes propriétaire du code.',
-  alternates: { canonical: 'https://studio.natesystem.com/methode' },
+  alternates: { canonical: 'https://www.natesystem.com/methode' },
 }
 
 const methodeJsonLd = {
@@ -13,11 +13,11 @@ const methodeJsonLd = {
   '@graph': [
     {
       '@type': 'WebPage',
-      '@id': 'https://studio.natesystem.com/methode#page',
+      '@id': 'https://www.natesystem.com/methode#page',
       name: 'Notre approche',
       description:
         'La méthode NateSystem : on radiographie votre activité (cartographier, unifier, automatiser, former) avant de construire quoi que ce soit.',
-      isPartOf: { '@id': 'https://studio.natesystem.com/#organization' },
+      isPartOf: { '@id': 'https://www.natesystem.com/#organization' },
     },
     {
       '@type': 'HowTo',
@@ -33,8 +33,8 @@ const methodeJsonLd = {
     {
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://studio.natesystem.com' },
-        { '@type': 'ListItem', position: 2, name: 'Notre approche', item: 'https://studio.natesystem.com/methode' },
+        { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://www.natesystem.com' },
+        { '@type': 'ListItem', position: 2, name: 'Notre approche', item: 'https://www.natesystem.com/methode' },
       ],
     },
   ],

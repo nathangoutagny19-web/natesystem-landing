@@ -13,7 +13,7 @@ export default function robots(): MetadataRoute.Robots {
         ],
       },
     ],
-    sitemap: 'https://studio.natesystem.com/sitemap.xml',
-    host: 'https://studio.natesystem.com',
+    sitemap: 'https://www.natesystem.com/sitemap.xml',
+    host: 'https://www.natesystem.com',
   }
 }

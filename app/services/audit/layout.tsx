@@ -4,12 +4,12 @@ export const metadata: Metadata = {
   title: 'Audit & consulting, cartographie de vos process | NateSystem',
   description:
     'L\'audit qui cartographie vos process, identifie ce qui vous fait perdre du temps et de l\'argent, et vous remet un plan d\'action clair et chiffré. Vous repartez avec le plan, même sans nous. Appel découverte offert.',
-  alternates: { canonical: 'https://studio.natesystem.com/services/audit' },
+  alternates: { canonical: 'https://www.natesystem.com/services/audit' },
   openGraph: {
     title: 'Audit & consulting, cartographie de vos process | NateSystem',
     description:
       'On cartographie vos process, on repère ce qui bloque, on chiffre le coût de l\'inaction, et on vous remet un plan d\'action clair. Vous repartez avec le plan, même sans nous.',
-    url: 'https://studio.natesystem.com/services/audit',
+    url: 'https://www.natesystem.com/services/audit',
     type: 'website',
     locale: 'fr_FR',
   },
@@ -25,9 +25,9 @@ const jsonLd = {
   '@graph': [
     {
       '@type': 'Service',
-      '@id': 'https://studio.natesystem.com/services/audit#service',
+      '@id': 'https://www.natesystem.com/services/audit#service',
       name: 'Audit & consulting opérationnel',
-      provider: { '@id': 'https://studio.natesystem.com/#organization' },
+      provider: { '@id': 'https://www.natesystem.com/#organization' },
       areaServed: ['FR', 'HU', 'EU'],
       serviceType: 'Audit opérationnel, cartographie des process, diagnostic IA, plan d\'action chiffré',
       audience: { '@type': 'BusinessAudience', audienceType: 'PME et ETI (5 à 100 collaborateurs) qui veulent structurer avant de digitaliser' },
@@ -66,9 +66,9 @@ const jsonLd = {
     {
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://studio.natesystem.com' },
-        { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://studio.natesystem.com/services' },
-        { '@type': 'ListItem', position: 3, name: 'Audit & consulting', item: 'https://studio.natesystem.com/services/audit' },
+        { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://www.natesystem.com' },
+        { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://www.natesystem.com/services' },
+        { '@type': 'ListItem', position: 3, name: 'Audit & consulting', item: 'https://www.natesystem.com/services/audit' },
       ],
     },
   ],

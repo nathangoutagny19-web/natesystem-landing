@@ -14,12 +14,12 @@ export const metadata: Metadata = {
     'logiciel gestion de parc informatique gratuit',
     'suivi des actifs entreprise',
   ],
-  alternates: { canonical: 'https://studio.natesystem.com/outils' },
+  alternates: { canonical: 'https://www.natesystem.com/outils' },
   openGraph: {
     title: 'Outils gratuits pour PME : gestion de stock & prévision de trésorerie | NateSystem',
     description:
       'Logiciel de gestion de stock gratuit et outil de prévision de trésorerie gratuit, à tester sans inscription. Des versions gratuites de ce qu’on construit sur-mesure.',
-    url: 'https://studio.natesystem.com/outils',
+    url: 'https://www.natesystem.com/outils',
     type: 'website',
     locale: 'fr_FR',
   },
@@ -35,12 +35,12 @@ const jsonLd = {
   '@graph': [
     {
       '@type': 'CollectionPage',
-      '@id': 'https://studio.natesystem.com/outils#page',
+      '@id': 'https://www.natesystem.com/outils#page',
       name: 'Outils gratuits pour PME',
       description:
         'Outils gratuits pour dirigeants de PME et TPE : logiciel de gestion de stock gratuit et outil de prévision de trésorerie gratuit, à tester sans inscription.',
-      url: 'https://studio.natesystem.com/outils',
-      isPartOf: { '@id': 'https://studio.natesystem.com/#website' },
+      url: 'https://www.natesystem.com/outils',
+      isPartOf: { '@id': 'https://www.natesystem.com/#website' },
     },
     {
       '@type': 'SoftwareApplication',
@@ -51,7 +51,7 @@ const jsonLd = {
         'Logiciel de gestion de stock gratuit et simple pour PME et TPE. Visualisez en temps réel ce que vous avez, ce qui manque et ce qui va bientôt manquer. Références, entrées/sorties, seuils d’alerte, fournisseurs, sans inscription.',
       url: 'https://stack-stock.natesystem.com',
       offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-      provider: { '@id': 'https://studio.natesystem.com/#organization' },
+      provider: { '@id': 'https://www.natesystem.com/#organization' },
     },
     {
       '@type': 'SoftwareApplication',
@@ -62,7 +62,7 @@ const jsonLd = {
         'Outil de prévision de trésorerie gratuit pour entreprise. Sachez à quel mois votre trésorerie passe dans le rouge : TVA, salaires, cotisations, échéances et retards de paiement inclus. Tableau prévisionnel clair, sans inscription.',
       url: 'https://natesystem-treso.vercel.app',
       offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-      provider: { '@id': 'https://studio.natesystem.com/#organization' },
+      provider: { '@id': 'https://www.natesystem.com/#organization' },
     },
     {
       '@type': 'SoftwareApplication',
@@ -73,13 +73,13 @@ const jsonLd = {
         'Logiciel de gestion de parc et d’actifs gratuit pour PME. Centralisez tout votre matériel (IT, véhicules, machines, mobilier) avec amortissements automatiques, alertes de remplacement et historique par équipement. Sans inscription.',
       url: 'https://actifs.natesystem.com',
       offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-      provider: { '@id': 'https://studio.natesystem.com/#organization' },
+      provider: { '@id': 'https://www.natesystem.com/#organization' },
     },
     {
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://studio.natesystem.com' },
-        { '@type': 'ListItem', position: 2, name: 'Outils gratuits', item: 'https://studio.natesystem.com/outils' },
+        { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://www.natesystem.com' },
+        { '@type': 'ListItem', position: 2, name: 'Outils gratuits', item: 'https://www.natesystem.com/outils' },
       ],
     },
   ],

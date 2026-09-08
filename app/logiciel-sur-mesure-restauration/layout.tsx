@@ -4,12 +4,12 @@ export const metadata: Metadata = {
   title: 'Logiciel sur-mesure pour la restauration, NateSystem',
   description:
     'Le logiciel métier qui pilote un restaurant ou un groupe : cockpit KPI temps réel, contrôle des factures fournisseurs, pointeuse & paie, gestion des avis. Cas réel : ×11 sur le temps de pilotage. Audit offert.',
-  alternates: { canonical: 'https://studio.natesystem.com/logiciel-sur-mesure-restauration' },
+  alternates: { canonical: 'https://www.natesystem.com/logiciel-sur-mesure-restauration' },
   openGraph: {
     title: 'Logiciel sur-mesure pour la restauration, NateSystem',
     description:
       'Cockpit KPI, contrôle factures F&B, pointeuse & paie, gestion des avis, un seul système qui pilote votre restaurant ou votre groupe. Cas réel : ×11 sur le temps de pilotage.',
-    url: 'https://studio.natesystem.com/logiciel-sur-mesure-restauration',
+    url: 'https://www.natesystem.com/logiciel-sur-mesure-restauration',
     type: 'website',
     locale: 'fr_FR',
   },
@@ -25,9 +25,9 @@ const jsonLd = {
   '@graph': [
     {
       '@type': 'Service',
-      '@id': 'https://studio.natesystem.com/logiciel-sur-mesure-restauration#service',
+      '@id': 'https://www.natesystem.com/logiciel-sur-mesure-restauration#service',
       name: 'Logiciel sur-mesure pour la restauration',
-      provider: { '@id': 'https://studio.natesystem.com/#organization' },
+      provider: { '@id': 'https://www.natesystem.com/#organization' },
       areaServed: ['FR', 'HU', 'EU'],
       serviceType: 'Logiciel métier restauration, cockpit KPI, contrôle factures F&B, gestion RH et avis',
       audience: { '@type': 'BusinessAudience', audienceType: 'Restaurants, groupes de restauration, hospitality' },
@@ -58,8 +58,8 @@ const jsonLd = {
     {
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://studio.natesystem.com' },
-        { '@type': 'ListItem', position: 2, name: 'Logiciel sur-mesure pour la restauration', item: 'https://studio.natesystem.com/logiciel-sur-mesure-restauration' },
+        { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://www.natesystem.com' },
+        { '@type': 'ListItem', position: 2, name: 'Logiciel sur-mesure pour la restauration', item: 'https://www.natesystem.com/logiciel-sur-mesure-restauration' },
       ],
     },
   ],

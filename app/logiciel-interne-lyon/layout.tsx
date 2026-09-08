@@ -4,12 +4,12 @@ export const metadata: Metadata = {
   title: 'Logiciel interne Lyon : solutions sur-mesure pour entreprise',
   description:
     'Logiciel interne à Lyon : NateSystem conçoit des solutions logicielles sur-mesure pour entreprise, gestion, données, équipe. Code livré, propriété 100 %, hébergé en UE. Audit offert.',
-  alternates: { canonical: 'https://studio.natesystem.com/logiciel-interne-lyon' },
+  alternates: { canonical: 'https://www.natesystem.com/logiciel-interne-lyon' },
   openGraph: {
     title: 'Logiciel interne Lyon : solutions sur-mesure pour entreprise',
     description:
       'Solutions logicielles internes sur-mesure pour entreprise à Lyon : gestion, données, pilotage. Code livré, propriété 100 %, hébergé en UE.',
-    url: 'https://studio.natesystem.com/logiciel-interne-lyon',
+    url: 'https://www.natesystem.com/logiciel-interne-lyon',
     type: 'website',
     locale: 'fr_FR',
   },
@@ -27,9 +27,9 @@ const jsonLd = {
   '@graph': [
     {
       '@type': ['Organization', 'LocalBusiness'],
-      '@id': 'https://studio.natesystem.com/logiciel-interne-lyon#business',
+      '@id': 'https://www.natesystem.com/logiciel-interne-lyon#business',
       name: 'NateSystem, Logiciel interne Lyon',
-      url: 'https://studio.natesystem.com/logiciel-interne-lyon',
+      url: 'https://www.natesystem.com/logiciel-interne-lyon',
       description:
         'Agence de logiciel interne sur-mesure à Lyon : solutions logicielles métier pour entreprise, intégration IA, gestion des données et des process.',
       areaServed: [
@@ -41,9 +41,9 @@ const jsonLd = {
     },
     {
       '@type': 'Service',
-      '@id': 'https://studio.natesystem.com/logiciel-interne-lyon#service',
+      '@id': 'https://www.natesystem.com/logiciel-interne-lyon#service',
       name: 'Logiciel interne sur-mesure pour entreprise à Lyon',
-      provider: { '@id': 'https://studio.natesystem.com/#organization' },
+      provider: { '@id': 'https://www.natesystem.com/#organization' },
       areaServed: { '@type': 'City', name: 'Lyon' },
       serviceType: 'Logiciel interne, logiciel métier sur-mesure, solutions logicielles, intégration IA, gestion de données',
       audience: { '@type': 'BusinessAudience', audienceType: 'Entreprises et PME de Lyon et du Rhône (5 à 100 collaborateurs)' },
@@ -90,8 +90,8 @@ const jsonLd = {
     {
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://studio.natesystem.com' },
-        { '@type': 'ListItem', position: 2, name: 'Logiciel interne Lyon', item: 'https://studio.natesystem.com/logiciel-interne-lyon' },
+        { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://www.natesystem.com' },
+        { '@type': 'ListItem', position: 2, name: 'Logiciel interne Lyon', item: 'https://www.natesystem.com/logiciel-interne-lyon' },
       ],
     },
   ],
