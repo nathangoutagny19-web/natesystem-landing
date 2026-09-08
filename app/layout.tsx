@@ -43,11 +43,17 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://www.natesystem.com'),
   alternates: {
     canonical: 'https://www.natesystem.com',
-    // hreflang FR uniquement : Google exige une URL distincte par langue, donc
-    // pas de 'en-US' vers la même URL (déclaration invalide = pire que rien).
-    // À rétablir avec des routes /fr /en séparées. Voir BRIEF-SITE-V2.md §4.3.
+    /* 08/09/2026 — LE HREFLANG ANGLAIS EST RÉTABLI.
+       Il avait été retiré parce que les deux langues partageaient une seule
+       URL : déclarer 'en' vers la même adresse est invalide, et une
+       déclaration invalide vaut moins que pas de déclaration. L'anglais a
+       maintenant ses propres routes sous /en, donc la déclaration redevient
+       vraie. x-default pointe sur le français, qui reste la version servie
+       par défaut. */
     languages: {
       'fr-FR': 'https://www.natesystem.com',
+      en: 'https://www.natesystem.com/en',
+      'x-default': 'https://www.natesystem.com',
     },
   },
   robots: { index: true, follow: true },

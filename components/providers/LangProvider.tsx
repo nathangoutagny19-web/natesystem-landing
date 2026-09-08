@@ -1,81 +1,103 @@
 'use client'
 
-import { createContext, useContext, useState, useCallback, useEffect } from 'react'
+import { createContext, useContext, useCallback } from 'react'
+import { usePathname, useRouter } from 'next/navigation'
 import { translations, type TranslationKey } from '@/lib/i18n'
 
 export type Lang = 'en' | 'fr'
 
-const STORAGE_KEY = 'ns_lang'
-const DEFAULT_LANG: Lang = 'fr'
+export const DEFAULT_LANG: Lang = 'fr'
+
+/**
+ * LA LANGUE EST DANS L'URL, ET NULLE PART AILLEURS.
+ *
+ * ═══ CE QUI EXISTAIT AVANT, ET POURQUOI ÇA A ÉTÉ REMPLACÉ ═══
+ *
+ * La langue vivait dans `localStorage` sous `ns_lang`, choisie par le drapeau
+ * de la nav. Un seul et même URL servait les deux langues. Le commentaire de
+ * l'ancienne version disait déjà où ça menait :
+ *
+ *   « Effet accepté : la version EN est invisible en recherche. NE PAS
+ *     "réparer" la détection ici : le correctif propre est des routes
+ *     localisées avec hreflang valide. »
+ *
+ * C'était juste. 1 548 lignes de traduction anglaise étaient écrites, et
+ * aucune n'était indexable : sans URL distincte, Google n'a rien à référencer,
+ * personne ne peut partager la version anglaise, et le site déclarait un
+ * `og:locale:alternate` en_US pour une page qui n'avait pas d'adresse.
+ *
+ * ═══ CE QUI LE REMPLACE ═══
+ *
+ * Le français reste sur `/`, sans préfixe : c'est là que vivent l'ancienneté
+ * du domaine, les huit pages de villes et les articles. Aucune URL existante
+ * ne bouge. L'anglais arrive sur `/en/`.
+ *
+ * Le provider ne devine plus rien. Il reçoit sa langue de la route, via
+ * `initialLang`, et le drapeau de la nav ne bascule plus un état : il navigue
+ * vers l'URL miroir. La langue affichée et la langue de l'adresse ne peuvent
+ * donc plus diverger, ce qui était le vrai défaut de l'ancienne version.
+ */
 
 interface LangContextValue {
   lang: Lang
+  /** Navigue vers l'URL miroir. Ne change pas d'état : change de page. */
   setLang: (l: Lang) => void
   t: (key: TranslationKey) => string
+  /** Le chemin équivalent dans l'autre langue, pour les liens et le hreflang. */
+  otherLangHref: string
 }
 
 const LangContext = createContext<LangContextValue>({
   lang: DEFAULT_LANG,
   setLang: () => {},
   t: (key) => key,
+  otherLangHref: '/',
 })
 
 export function useLang() {
   return useContext(LangContext)
 }
 
-function detectLang(): Lang {
-  if (typeof window === 'undefined') return DEFAULT_LANG
-
-  // Respect an explicit language choice from a prior visit (the FR/EN selector).
-  try {
-    const saved = window.localStorage.getItem(STORAGE_KEY)
-    if (saved === 'fr' || saved === 'en') return saved
-  } catch {
-    // localStorage can throw in private mode, fall through to the default.
-  }
-
-  // PATCH ASSUMÉ (Lot 0), pas de détection via navigator.language. Le français
-  // est le rendu par défaut pour tout le monde, crawlers compris, pour ne pas
-  // indexer d'anglais sur des requêtes SEO françaises. Effet accepté : la
-  // version EN est invisible en recherche. NE PAS "réparer" la détection ici :
-  // le correctif propre est des routes localisées /fr /en avec hreflang valide
-  // (il y a un vrai marché anglophone à Budapest). Voir BRIEF-SITE-V2.md §4.3.
-  return DEFAULT_LANG
+/**
+ * Le chemin équivalent dans l'autre langue.
+ * `/services/` ↔ `/en/services/`, `/` ↔ `/en`.
+ */
+export function mirrorPath(pathname: string, target: Lang): string {
+  const withoutPrefix = pathname.replace(/^\/en(?=\/|$)/, '') || '/'
+  if (target === 'fr') return withoutPrefix
+  return withoutPrefix === '/' ? '/en' : `/en${withoutPrefix}`
 }
 
-export function LangProvider({ children }: { children: React.ReactNode }) {
-  // SSR-safe default; real detection happens on the client in useEffect below
-  // so the server-rendered HTML stays stable (no hydration mismatch).
-  const [lang, setLangState] = useState<Lang>(DEFAULT_LANG)
+export function LangProvider({
+  children,
+  initialLang = DEFAULT_LANG,
+}: {
+  children: React.ReactNode
+  initialLang?: Lang
+}) {
+  const pathname = usePathname()
+  const router = useRouter()
 
-  useEffect(() => {
-    const detected = detectLang()
-    if (detected !== DEFAULT_LANG) {
-      setLangState(detected)
-      document.documentElement.lang = detected
-    }
-  }, [])
+  const lang = initialLang
 
-  const setLang = useCallback((l: Lang) => {
-    setLangState(l)
-    document.documentElement.lang = l
-    try {
-      window.localStorage.setItem(STORAGE_KEY, l)
-    } catch {
-      // private mode, ignore
-    }
-  }, [])
+  const setLang = useCallback(
+    (l: Lang) => {
+      if (l === lang) return
+      router.push(mirrorPath(pathname || '/', l))
+    },
+    [lang, pathname, router]
+  )
 
   const t = useCallback(
-    (key: TranslationKey): string => {
-      return translations[key]?.[lang] ?? translations[key]?.[DEFAULT_LANG] ?? key
-    },
+    (key: TranslationKey): string =>
+      translations[key]?.[lang] ?? translations[key]?.[DEFAULT_LANG] ?? key,
     [lang]
   )
 
+  const otherLangHref = mirrorPath(pathname || '/', lang === 'fr' ? 'en' : 'fr')
+
   return (
-    <LangContext.Provider value={{ lang, setLang, t }}>
+    <LangContext.Provider value={{ lang, setLang, t, otherLangHref }}>
       {children}
     </LangContext.Provider>
   )
