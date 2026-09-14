@@ -12,7 +12,14 @@ export const metadata: Metadata = {
     'audit IA gratuit',
     'par où commencer avec l’IA PME',
   ],
-  alternates: { canonical: 'https://www.natesystem.com/outils/pret-pour-lia' },
+  alternates: {
+    canonical: 'https://www.natesystem.com/outils/pret-pour-lia',
+    languages: {
+      'fr-FR': 'https://www.natesystem.com/outils/pret-pour-lia',
+      en: 'https://www.natesystem.com/en/outils/pret-pour-lia',
+      'x-default': 'https://www.natesystem.com/outils/pret-pour-lia',
+    },
+  },
   openGraph: {
     title: 'Votre entreprise est-elle prête pour l’IA ? Le test en 2 min',
     description:

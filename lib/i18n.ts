@@ -1543,6 +1543,206 @@ export const translations = {
   'methode.cta.title': { en: 'We start by understanding. Not by selling.', fr: 'On commence par comprendre. Pas par vendre.' },
   'methode.cta.sub': { en: 'A free call. We look at how your business runs and tell you straight what would actually move the needle, even if it\'s not us who builds it.', fr: 'Un appel offert. On regarde comment votre activité tourne et on vous dit franchement ce qui bougerait vraiment les choses, même si ce n\'est pas nous qui le construisons.' },
   'methode.cta.button': { en: 'Book a call · free', fr: 'Réserver un appel · offert' },
+
+  /* ═══════════════════════════════════════════════════════════════════════
+     /outils · /en/outils — LES OUTILS GRATUITS
+
+     `app/en/outils/page.tsx` ré-exporte le composant français : une seule page
+     à maintenir, deux URL indexables. Donc toute chaîne visible de cette page
+     passe obligatoirement par ici, sinon /en/outils sert du français.
+
+     Les noms de produits sont traduits : « Le Prévisionnel » et « Gestion
+     d’actifs » ne veulent rien dire en anglais, et ce sont des démos publiques,
+     pas des marques déposées. « NateSystem Stock » ne bouge pas.
+     ═══════════════════════════════════════════════════════════════════════ */
+  'outils.hero.label': { en: 'Free tools', fr: 'Outils gratuits' },
+  'outils.hero.titlePrefix': { en: 'Free tools to ', fr: 'Des outils gratuits pour ' },
+  'outils.hero.titleAccent': { en: 'take back control of your business.', fr: 'reprendre le contrôle de votre entreprise.' },
+  'outils.hero.sub': {
+    en: 'We build custom software for small and mid-sized companies. Here are free versions of it, live right now, no signup.',
+    fr: 'On construit des logiciels sur-mesure pour les PME. En voici des versions gratuites, à tester tout de suite, sans inscription.',
+  },
+  'outils.hero.link': { en: 'Need a tool built for you? Book a call', fr: 'Besoin d’un outil taillé pour vous ? Réserver un appel' },
+
+  'outils.cta.demo': { en: 'Try the demo', fr: 'Essayer la démo' },
+  'outils.cta.test': { en: 'Take the test', fr: 'Faire le test' },
+  'outils.badge.soon': { en: 'Coming soon', fr: 'Bientôt' },
+  'outils.shot.soon': { en: 'In progress', fr: 'En préparation' },
+
+  /* Carte 1 · NateSystem Stock */
+  'outils.stock.name': { en: 'NateSystem Stock', fr: 'NateSystem Stock' },
+  'outils.stock.tag': { en: 'Inventory management', fr: 'Gestion de stock' },
+  'outils.stock.problem': {
+    en: 'Still running your stock on a spreadsheet? See in real time what is short, what is out, and what runs out next.',
+    fr: 'Vous gérez votre stock sur Excel ? Voyez en temps réel ce qui manque, ce qui est en rupture, ce qui va bientôt manquer.',
+  },
+  'outils.stock.alt': {
+    en: 'NateSystem Stock, free inventory management software: dashboard showing active items, low stock and stockouts',
+    fr: 'Logiciel de gestion de stock gratuit NateSystem Stock : tableau de bord avec références actives, stock faible et ruptures',
+  },
+
+  /* Carte 2 · Le Prévisionnel */
+  'outils.treso.name': { en: 'The Forecast', fr: 'Le Prévisionnel' },
+  'outils.treso.tag': { en: 'Cash flow forecast', fr: 'Prévision de trésorerie' },
+  'outils.treso.problem': {
+    en: 'Know exactly which month your cash goes into the red. VAT, salaries, payroll taxes and late payments included.',
+    fr: 'Sachez exactement à quel mois votre trésorerie passe dans le rouge. TVA, salaires, cotisations et retards de paiement inclus.',
+  },
+  'outils.treso.alt': {
+    en: 'The Forecast, free cash flow forecasting tool: forecast table showing the month cash drops below zero',
+    fr: 'Outil de prévision de trésorerie gratuit Le Prévisionnel : tableau prévisionnel indiquant le mois où la trésorerie passe sous zéro',
+  },
+
+  /* Carte 3 · Diagnostic IA */
+  'outils.diag.name': { en: 'AI Diagnostic', fr: 'Diagnostic IA' },
+  'outils.diag.tag': { en: 'AI readiness', fr: 'Maturité IA' },
+  'outils.diag.problem': {
+    en: 'Is your company ready for AI? A two-minute test, no jargon: process, data, adoption.',
+    fr: 'Votre entreprise est-elle prête pour l’IA ? Le test en 2 minutes, sans jargon : processus, données, adoption.',
+  },
+  'outils.diag.alt': {
+    en: 'Free NateSystem AI Diagnostic: AI readiness test with one gauge per pillar (process, data, adoption)',
+    fr: 'Diagnostic IA gratuit NateSystem : test de maturité IA avec 3 jauges par pilier (processus, données, adoption)',
+  },
+
+  /* Carte 4 · Gestion d’actifs */
+  'outils.actifs.name': { en: 'Asset Management', fr: 'Gestion d’actifs' },
+  'outils.actifs.tag': { en: 'Equipment tracking', fr: 'Suivi de parc' },
+  'outils.actifs.problem': {
+    en: 'Lost track of who holds which equipment, or when to replace it? Track your equipment (IT, vehicles, machines) with depreciation and alerts.',
+    fr: 'Vous ne savez plus qui a quel matériel, ni quand le remplacer ? Suivez votre parc (IT, véhicules, machines) avec amortissements et alertes.',
+  },
+  'outils.actifs.alt': {
+    en: 'Free NateSystem asset and equipment management software: equipment tracking with automatic depreciation and replacement alerts',
+    fr: 'Logiciel de gestion de parc et d’actifs gratuit NateSystem : suivi du matériel avec amortissements automatiques et alertes de remplacement',
+  },
+
+  /* Sections descriptives, le contenu que Google indexe. */
+  'outils.desc.stock.title': {
+    en: 'Free inventory management software, built for small companies.',
+    fr: 'Un logiciel de gestion de stock gratuit, pour PME et TPE.',
+  },
+  'outils.desc.stock.p1': {
+    en: 'Plenty of small companies still run their stock on a spreadsheet. It works, right up to the day a stockout costs you an order, or you order the same thing twice because nobody had the full picture. NateSystem Stock is free inventory software that stays simple: you see in real time what you hold, what is missing, and what runs out next.',
+    fr: 'Beaucoup de PME et de TPE gèrent encore leur stock sur Excel. Ça marche… jusqu’au jour où une rupture vous fait perdre une commande, ou où vous commandez en double faute de visibilité. NateSystem Stock est un logiciel de gestion de stock gratuit et simple : vous voyez en temps réel ce que vous avez, ce qui manque, et ce qui va bientôt manquer.',
+  },
+  'outils.desc.stock.p2': {
+    en: 'Active items, stock in and out, alert thresholds, suppliers, barcode scanning: everything sits in one place. No more overwritten file, no more “which version was the right one again?”. The demo runs on made-up data, so you can click through all of it without signing up and without an email wall.',
+    fr: 'Références actives, entrées et sorties, seuils d’alerte, fournisseurs, lecture de codes-barres : tout est centralisé au même endroit. Fini le fichier qui s’écrase et le « c’était quelle version, déjà ? ». La démo tourne sur des données fictives, vous pouvez tout tester sans inscription et sans mur e-mail.',
+  },
+  'outils.desc.stock.p3': {
+    en: 'It is the same engine we run in production for our clients, in a version you can try straight away. If you want inventory software built for your trade, with your items, your suppliers and your rules, that is exactly what we build at NateSystem.',
+    fr: 'C’est le même moteur qu’on déploie en production chez nos clients, dans une version que vous essayez tout de suite. Si vous voulez un logiciel de gestion de stock taillé pour votre métier, avec vos références, vos fournisseurs et vos règles, c’est exactement ce qu’on construit chez NateSystem.',
+  },
+
+  'outils.desc.treso.title': {
+    en: 'A free cash flow forecasting tool.',
+    fr: 'Un outil de prévision de trésorerie gratuit.',
+  },
+  'outils.desc.treso.p1': {
+    en: 'Cash is what kills small companies that are otherwise profitable. Not because they stop earning, but because nobody sees the month the account goes into the red. The Forecast is a free cash flow tool that gives you that visibility: which month you drop below zero, and by how much.',
+    fr: 'La trésorerie, c’est ce qui tue le plus de PME pourtant rentables. Pas parce qu’elles ne gagnent pas d’argent, mais parce qu’elles ne voient pas venir le mois où le compte passe dans le rouge. Le Prévisionnel est un outil de prévision de trésorerie gratuit qui vous donne cette visibilité : à quel mois vous passez sous zéro, et de combien.',
+  },
+  'outils.desc.treso.p2': {
+    en: 'It takes in everything that really counts: VAT, salaries, payroll taxes, due dates, and above all the clients who pay you late. A clear forecast table on your own figures, with a simulator that prices the levers to close the gap: getting paid sooner, negotiating supplier terms, invoicing more.',
+    fr: 'Il tient compte de tout ce qui compte vraiment : TVA, salaires, cotisations, échéances, et surtout les retards de paiement de vos clients. Un tableau prévisionnel de trésorerie clair, sur vos vrais chiffres, avec un simulateur qui chiffre les leviers pour combler le trou : se faire payer plus tôt, négocier des délais fournisseurs, facturer davantage.',
+  },
+  'outils.desc.treso.p3': {
+    en: 'Your figures never leave your browser. No signup, no export to a server: you test, you see, you decide. And if you want the forecast plugged into your real accounting, we build that for you.',
+    fr: 'Vos chiffres ne quittent pas votre navigateur. Pas d’inscription, pas d’export vers un serveur : vous testez, vous voyez, vous décidez. Et si vous voulez brancher le prévisionnel sur votre comptabilité réelle, on le fait sur-mesure.',
+  },
+
+  'outils.desc.diag.title': {
+    en: 'Is your company ready for AI?',
+    fr: 'Votre entreprise est-elle prête pour l’IA ?',
+  },
+  'outils.desc.diag.p1': {
+    en: 'Everyone talks about AI, but few owners know where it would start inside their own company. Our AI Diagnostic answers one question: are you really ready? Twelve honest questions across three pillars (clear process, reliable data, team adoption) give you a score per pillar and a straight verdict.',
+    fr: 'L’IA, tout le monde en parle, mais peu de dirigeants savent par où commencer chez eux. Notre Diagnostic IA répond à une question simple : votre entreprise est-elle vraiment prête ? En 12 questions honnêtes, réparties sur 3 piliers (processus clairs, données fiables, adoption par les équipes), vous obtenez un score par pilier et un verdict franc.',
+  },
+  'outils.desc.diag.p2': {
+    en: 'In two minutes, with no jargon and no signup, you see where AI would save you real hours and where it would just be a gadget, with one concrete first step aimed at your weakest pillar. An honest starting point, not a brochure.',
+    fr: 'En 2 minutes, sans jargon et sans inscription, vous voyez où l’IA vous ferait gagner de vraies heures, et où ce serait juste un gadget, avec un premier pas concret adapté à votre point le plus faible. Un point de départ honnête, pas une brochure.',
+  },
+  'outils.desc.diag.link': { en: 'Take the test →', fr: 'Faire le test →' },
+
+  'outils.desc.actifs.title': {
+    en: 'Free asset and equipment management software.',
+    fr: 'Un logiciel de gestion de parc et d’actifs gratuit.',
+  },
+  'outils.desc.actifs.p1': {
+    en: 'Computers, vehicles, machines, furniture: in a company that grows, you end up not knowing who has what, what is still under warranty, or when to replace it. NateSystem Asset Management is a free tracking tool that brings all your equipment into one place, with its condition, who holds it and what it is worth.',
+    fr: 'Ordinateurs, véhicules, machines, mobilier : dans une PME qui grandit, on finit par ne plus savoir qui a quoi, ni ce qui est encore sous garantie, ni quand remplacer. NateSystem Gestion d’actifs est un logiciel de gestion de parc gratuit qui centralise tout votre matériel au même endroit, avec son état, son affectation et sa valeur.',
+  },
+  'outils.desc.actifs.p2': {
+    en: 'Depreciation worked out automatically, end-of-life and replacement alerts, history per item: you stop steering your equipment from a spreadsheet nobody keeps up to date. The demo runs on made-up data, open access, no signup.',
+    fr: 'Amortissements calculés automatiquement, alertes de fin de vie et de remplacement, historique par équipement : vous arrêtez de piloter votre parc dans un tableur qui n’est jamais à jour. La démo tourne sur des données fictives, en accès direct, sans inscription.',
+  },
+  'outils.desc.actifs.p3': {
+    en: 'It is the same engine we adapt to our clients’ real equipment. If you want to track your own categories, your depreciation rules and your alerts, that is exactly what we build.',
+    fr: 'C’est le même moteur qu’on adapte au parc réel de nos clients. Si vous voulez suivre vos propres catégories, vos règles d’amortissement et vos alertes, c’est exactement ce qu’on construit sur-mesure.',
+  },
+
+  /* Bloc conversion, bas de page. */
+  'outils.conv.titlePrefix': { en: 'Need a tool built for ', fr: 'Besoin d’un outil taillé pour ' },
+  'outils.conv.titleAccent': { en: 'your trade', fr: 'votre métier' },
+  'outils.conv.titleSuffix': { en: '?', fr: ' ?' },
+  'outils.conv.sub': {
+    en: 'These free tools are public versions of what we build. At NateSystem we develop the custom software that matches exactly how your business runs. A free call to talk it through, no commitment.',
+    fr: 'Ces outils gratuits sont des versions publiques de ce qu’on construit. Chez NateSystem, on développe le logiciel sur-mesure qui colle exactement à votre activité. Un appel offert pour en parler, sans engagement.',
+  },
+  'outils.conv.cta': { en: 'Book a free call', fr: 'Réserver un appel gratuit' },
+
+  /* ═══════════════════════════════════════════════════════════════════════
+     /outils/pret-pour-lia · /en/outils/pret-pour-lia — LE DIAGNOSTIC IA
+
+     Chrome du test (titres, boutons, verdicts affichés). Les 12 questions,
+     les piliers et les recommandations vivent dans `scoring.ts`, qui les sert
+     dans les deux langues : c’est de la donnée, pas de l’interface.
+     ═══════════════════════════════════════════════════════════════════════ */
+  'diag.intro.label': { en: 'AI Diagnostic · 2 min · free', fr: 'Diagnostic IA · 2 min · gratuit' },
+  'diag.intro.titlePrefix': { en: 'Is your company ', fr: 'Votre entreprise est-elle ' },
+  'diag.intro.titleAccent': { en: 'ready for AI?', fr: 'prête pour l’IA\u00A0?' },
+  'diag.intro.sub': {
+    en: 'Most companies are not held back by AI, but by what sits underneath it. Twelve honest questions show you where you really stand, and what to start with.',
+    fr: 'La plupart des entreprises ne sont pas bloquées par l’IA, mais par ce qu’il y a en dessous. En 12 questions honnêtes, voyez où vous en êtes vraiment, et par quoi commencer.',
+  },
+  'diag.intro.meta': { en: '12 questions · about 2 minutes · no signup', fr: '12 questions · ~2 minutes · sans inscription' },
+  'diag.intro.cta': { en: 'Start the test', fr: 'Commencer le test' },
+  'diag.intro.note': {
+    en: 'Answer straight: the test is worth nothing if you lie to yourself.',
+    fr: 'Répondez franchement : le test ne sert à rien si vous vous mentez à vous-même.',
+  },
+
+  'diag.quiz.pillar': { en: 'Pillar', fr: 'Pilier' },
+  'diag.quiz.back': { en: 'Back', fr: 'Précédent' },
+
+  'diag.result.label': { en: 'Your result', fr: 'Votre résultat' },
+  'diag.result.total': { en: 'Overall score', fr: 'Score global' },
+  'diag.result.badge.red': { en: 'Strengthen this first', fr: 'À consolider d’abord' },
+  'diag.result.badge.orange': { en: 'Solid base', fr: 'Bonne base' },
+  'diag.result.badge.green': { en: 'Ready', fr: 'Prêt' },
+  'diag.result.priority': { en: 'Your priority · Pillar', fr: 'Votre priorité · Pilier' },
+  'diag.result.firstStep': { en: 'Your first step', fr: 'Votre premier pas' },
+  'diag.result.ctaTitle': { en: 'Want to go through your result together?', fr: 'On regarde votre diagnostic ensemble ?' },
+  'diag.result.ctaSub': {
+    en: 'Get your full diagnostic and 15 minutes with me to talk it over. We look concretely at where to start, no commitment. Even if we never work together.',
+    fr: 'Recevez votre diagnostic complet et 15 min avec moi pour en parler. On voit concrètement par où commencer, sans engagement. Même si on ne travaille pas ensemble.',
+  },
+  'diag.result.ctaBtn': { en: 'Book my 15 minutes', fr: 'Réserver mes 15 min' },
+  'diag.result.reset': { en: 'Take the test again', fr: 'Refaire le test' },
+  'diag.result.footText': { en: 'Want a tool built for your trade?', fr: 'Envie d’un outil taillé pour votre métier ?' },
+  'diag.result.footLink': { en: 'See all our free tools', fr: 'Voir tous nos outils gratuits' },
+
+  'diag.gauge.red': { en: 'Needs work', fr: 'À renforcer' },
+  'diag.gauge.orange': { en: 'Almost there', fr: 'À consolider' },
+  'diag.gauge.green': { en: 'Solid', fr: 'Solide' },
+
+  'diag.email.placeholder': { en: 'Get the result by email (optional)', fr: 'Recevoir le résultat par mail (optionnel)' },
+  'diag.email.aria': { en: 'Your email (optional)', fr: 'Votre e-mail (optionnel)' },
+  'diag.email.send': { en: 'Send', fr: 'Envoyer' },
+  'diag.email.sending': { en: 'Sending…', fr: 'Envoi…' },
+  'diag.email.sent': { en: 'Noted, your result is on its way by email.', fr: 'C’est noté, vous recevrez votre résultat par mail.' },
 } as const
 
 export type TranslationKey = keyof typeof translations

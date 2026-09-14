@@ -8,16 +8,26 @@ import MobileCta from '@/components/layout/MobileCta'
 import Divider from '@/components/ui/Divider'
 import FadeUp from '@/components/ui/FadeUp'
 import ScreenMock from '@/components/ui/ScreenMock'
+import { useLang } from '@/components/providers/LangProvider'
+import type { TranslationKey } from '@/lib/i18n'
 import { CAL_LINK } from '@/lib/constants'
 
+/**
+ * Cette page est servie telle quelle sous `/outils` et sous `/en/outils`
+ * (voir `app/en/outils/page.tsx`, qui ré-exporte ce composant). Donc aucune
+ * chaîne visible n'est écrite ici en dur : tout passe par `t()`, sinon la
+ * version anglaise sert du français.
+ */
+
 type Tool = {
-  name: string
-  tag: string
-  problem: string
+  nameKey: TranslationKey
+  tagKey: TranslationKey
+  problemKey: TranslationKey
+  altKey: TranslationKey
+  ctaKey: TranslationKey
+  /** Externe : URL absolue. Interne : chemin français, préfixé /en en anglais. */
   href: string | null
   img: string | null
-  alt: string
-  cta: string
   soon?: boolean
 }
 
@@ -25,44 +35,51 @@ type Tool = {
 // https://previsionnel.natesystem.com une fois le domaine déployé.
 const TOOLS: Tool[] = [
   {
-    name: 'NateSystem Stock',
-    tag: 'Gestion de stock',
-    problem: 'Vous gérez votre stock sur Excel ? Voyez en temps réel ce qui manque, ce qui est en rupture, ce qui va bientôt manquer.',
+    nameKey: 'outils.stock.name',
+    tagKey: 'outils.stock.tag',
+    problemKey: 'outils.stock.problem',
+    altKey: 'outils.stock.alt',
+    ctaKey: 'outils.cta.demo',
     href: 'https://stack-stock.natesystem.com',
     img: 'demos/stock',
-    alt: 'Logiciel de gestion de stock gratuit NateSystem Stock : tableau de bord avec références actives, stock faible et ruptures',
-    cta: 'Essayer la démo',
   },
   {
-    name: 'Le Prévisionnel',
-    tag: 'Prévision de trésorerie',
-    problem: 'Sachez exactement à quel mois votre trésorerie passe dans le rouge. TVA, salaires, cotisations et retards de paiement inclus.',
+    nameKey: 'outils.treso.name',
+    tagKey: 'outils.treso.tag',
+    problemKey: 'outils.treso.problem',
+    altKey: 'outils.treso.alt',
+    ctaKey: 'outils.cta.demo',
     href: 'https://natesystem-treso.vercel.app',
     img: 'demos/treso',
-    alt: 'Outil de prévision de trésorerie gratuit Le Prévisionnel : tableau prévisionnel indiquant le mois où la trésorerie passe sous zéro',
-    cta: 'Essayer la démo',
   },
   {
-    name: 'Diagnostic IA',
-    tag: 'Maturité IA',
-    problem: 'Votre entreprise est-elle prête pour l’IA ? Le test en 2 minutes, sans jargon : processus, données, adoption.',
+    nameKey: 'outils.diag.name',
+    tagKey: 'outils.diag.tag',
+    problemKey: 'outils.diag.problem',
+    altKey: 'outils.diag.alt',
+    ctaKey: 'outils.cta.test',
     href: '/outils/pret-pour-lia',
     img: 'demos/diagnostic-ia',
-    alt: 'Diagnostic IA gratuit NateSystem : test de maturité IA avec 3 jauges par pilier (processus, données, adoption)',
-    cta: 'Faire le test',
   },
   {
-    name: 'Gestion d’actifs',
-    tag: 'Suivi de parc',
-    problem: 'Vous ne savez plus qui a quel matériel, ni quand le remplacer ? Suivez votre parc (IT, véhicules, machines) avec amortissements et alertes.',
+    nameKey: 'outils.actifs.name',
+    tagKey: 'outils.actifs.tag',
+    problemKey: 'outils.actifs.problem',
+    altKey: 'outils.actifs.alt',
+    ctaKey: 'outils.cta.demo',
     href: 'https://actifs.natesystem.com',
     img: 'demos/actifs',
-    alt: 'Logiciel de gestion de parc et d’actifs gratuit NateSystem : suivi du matériel avec amortissements automatiques et alertes de remplacement',
-    cta: 'Essayer la démo',
   },
 ]
 
 export default function OutilsPage() {
+  const { lang, t } = useLang()
+
+  /* Un lien interne écrit en français doit rester dans l'arbre anglais quand
+     on est sous /en, sinon le premier clic renvoie le visiteur en français. */
+  const loc = (path: string) => (lang === 'en' ? `/en${path}` : path)
+  const calHref = lang === 'en' ? `/en${CAL_LINK.slice(1)}` : CAL_LINK
+
   return (
     <main>
       <Nav />
@@ -71,15 +88,15 @@ export default function OutilsPage() {
       <section style={{ padding: '160px 24px 40px' }}>
         <div className="mx-auto text-center" style={{ maxWidth: 860 }}>
           <FadeUp>
-            <span className="section-label">Outils gratuits</span>
+            <span className="section-label">{t('outils.hero.label')}</span>
             <h1 className="font-serif italic" style={{ fontSize: 'clamp(32px, 5.4vw, 54px)', fontWeight: 400, lineHeight: 1.1, color: 'var(--text)', maxWidth: 820, margin: '14px auto 22px' }}>
-              Des outils gratuits pour <span className="accent" style={{ color: 'var(--accent)' }}>reprendre le contrôle de votre entreprise.</span>
+              {t('outils.hero.titlePrefix')}<span className="accent" style={{ color: 'var(--accent)' }}>{t('outils.hero.titleAccent')}</span>
             </h1>
             <p className="font-sans" style={{ fontSize: 'clamp(15px, 3vw, 18px)', fontWeight: 300, color: 'var(--text-secondary)', maxWidth: 660, margin: '0 auto 30px', lineHeight: 1.65 }}>
-              On construit des logiciels sur-mesure pour les PME. En voici des versions gratuites, à tester tout de suite, sans inscription.
+              {t('outils.hero.sub')}
             </p>
-            <Link href={CAL_LINK} className="font-mono" style={{ display: 'inline-flex', alignItems: 'center', gap: 7, fontSize: 12.5, letterSpacing: 0.4, color: 'var(--text-secondary)', textDecoration: 'none', borderBottom: '1px solid var(--border)', paddingBottom: 3 }}>
-              Besoin d’un outil taillé pour vous ? Réserver un appel <ArrowRight size={13} strokeWidth={2} />
+            <Link href={calHref} className="font-mono" style={{ display: 'inline-flex', alignItems: 'center', gap: 7, fontSize: 12.5, letterSpacing: 0.4, color: 'var(--text-secondary)', textDecoration: 'none', borderBottom: '1px solid var(--border)', paddingBottom: 3 }}>
+              {t('outils.hero.link')} <ArrowRight size={13} strokeWidth={2} />
             </Link>
           </FadeUp>
         </div>
@@ -92,37 +109,37 @@ export default function OutilsPage() {
         <div className="mx-auto" style={{ maxWidth: 1200 }}>
           <div className="outils-grid">
             {TOOLS.map((tool, i) => (
-              <FadeUp key={tool.name} delay={Math.min(i * 0.08, 0.3)}>
+              <FadeUp key={tool.nameKey} delay={Math.min(i * 0.08, 0.3)}>
                 <div className={`outil-card${tool.soon ? ' outil-card-soon' : ''}`}>
                   <div className="outil-head">
-                    <span className="font-mono outil-tag">{tool.tag}</span>
-                    {tool.soon && <span className="font-mono outil-badge-soon">Bientôt</span>}
+                    <span className="font-mono outil-tag">{t(tool.tagKey)}</span>
+                    {tool.soon && <span className="font-mono outil-badge-soon">{t('outils.badge.soon')}</span>}
                   </div>
-                  <h2 className="font-serif italic outil-name">{tool.name}</h2>
-                  <p className="font-sans outil-problem">{tool.problem}</p>
+                  <h2 className="font-serif italic outil-name">{t(tool.nameKey)}</h2>
+                  <p className="font-sans outil-problem">{t(tool.problemKey)}</p>
 
                   {tool.img ? (
                     <div className="outil-shot">
-                      <ScreenMock src={`/realisations/${tool.img}.jpg`} alt={tool.alt} />
+                      <ScreenMock src={`/realisations/${tool.img}.jpg`} alt={t(tool.altKey)} />
                     </div>
                   ) : (
                     <div className="outil-shot outil-shot-placeholder" aria-hidden="true">
-                      <span className="font-mono">En préparation</span>
+                      <span className="font-mono">{t('outils.shot.soon')}</span>
                     </div>
                   )}
 
                   {tool.href ? (
                     tool.href.startsWith('/') ? (
-                      <Link href={tool.href} className="btn-primary outil-cta">
-                        <span className="btn-primary-dot" />{tool.cta} &rarr;
+                      <Link href={loc(tool.href)} className="btn-primary outil-cta">
+                        <span className="btn-primary-dot" />{t(tool.ctaKey)} &rarr;
                       </Link>
                     ) : (
                       <a href={tool.href} target="_blank" rel="noopener noreferrer" className="btn-primary outil-cta">
-                        <span className="btn-primary-dot" />{tool.cta} &rarr;
+                        <span className="btn-primary-dot" />{t(tool.ctaKey)} &rarr;
                       </a>
                     )
                   ) : (
-                    <span className="outil-cta-soon font-mono">{tool.cta}</span>
+                    <span className="outil-cta-soon font-mono">{t(tool.ctaKey)}</span>
                   )}
                 </div>
               </FadeUp>
@@ -138,80 +155,37 @@ export default function OutilsPage() {
         <div className="mx-auto" style={{ maxWidth: 760 }}>
           <FadeUp>
             <article style={{ marginBottom: 56 }}>
-              <span className="section-label">NateSystem Stock</span>
-              <h2 className="font-serif italic outil-desc-title">Un logiciel de gestion de stock gratuit, pour PME et TPE.</h2>
-              <p className="outil-desc-p">
-                Beaucoup de PME et de TPE gèrent encore leur stock sur Excel. Ça marche… jusqu’au jour où une rupture vous fait
-                perdre une commande, ou où vous commandez en double faute de visibilité. NateSystem Stock est un logiciel de
-                gestion de stock gratuit et simple : vous voyez en temps réel ce que vous avez, ce qui manque, et ce qui va
-                bientôt manquer.
-              </p>
-              <p className="outil-desc-p">
-                Références actives, entrées et sorties, seuils d’alerte, fournisseurs, lecture de codes-barres : tout est
-                centralisé au même endroit. Fini le fichier qui s’écrase et le « c’était quelle version, déjà ? ». La démo tourne
-                sur des données fictives, vous pouvez tout tester sans inscription et sans mur e-mail.
-              </p>
-              <p className="outil-desc-p">
-                C’est le même moteur qu’on déploie en production chez nos clients, dans une version que vous essayez tout de suite.
-                Si vous voulez un logiciel de gestion de stock taillé pour votre métier, avec vos références, vos fournisseurs et
-                vos règles, c’est exactement ce qu’on construit chez NateSystem.
-              </p>
+              <span className="section-label">{t('outils.stock.name')}</span>
+              <h2 className="font-serif italic outil-desc-title">{t('outils.desc.stock.title')}</h2>
+              <p className="outil-desc-p">{t('outils.desc.stock.p1')}</p>
+              <p className="outil-desc-p">{t('outils.desc.stock.p2')}</p>
+              <p className="outil-desc-p">{t('outils.desc.stock.p3')}</p>
             </article>
 
             <article style={{ marginBottom: 56 }}>
-              <span className="section-label">Le Prévisionnel</span>
-              <h2 className="font-serif italic outil-desc-title">Un outil de prévision de trésorerie gratuit.</h2>
-              <p className="outil-desc-p">
-                La trésorerie, c’est ce qui tue le plus de PME pourtant rentables. Pas parce qu’elles ne gagnent pas d’argent,
-                mais parce qu’elles ne voient pas venir le mois où le compte passe dans le rouge. Le Prévisionnel est un outil de
-                prévision de trésorerie gratuit qui vous donne cette visibilité : à quel mois vous passez sous zéro, et de combien.
-              </p>
-              <p className="outil-desc-p">
-                Il tient compte de tout ce qui compte vraiment : TVA, salaires, cotisations, échéances, et surtout les retards de
-                paiement de vos clients. Un tableau prévisionnel de trésorerie clair, sur vos vrais chiffres, avec un simulateur
-                qui chiffre les leviers pour combler le trou : se faire payer plus tôt, négocier des délais fournisseurs, facturer
-                davantage.
-              </p>
-              <p className="outil-desc-p">
-                Vos chiffres ne quittent pas votre navigateur. Pas d’inscription, pas d’export vers un serveur : vous testez, vous
-                voyez, vous décidez. Et si vous voulez brancher le prévisionnel sur votre comptabilité réelle, on le fait sur-mesure.
-              </p>
+              <span className="section-label">{t('outils.treso.name')}</span>
+              <h2 className="font-serif italic outil-desc-title">{t('outils.desc.treso.title')}</h2>
+              <p className="outil-desc-p">{t('outils.desc.treso.p1')}</p>
+              <p className="outil-desc-p">{t('outils.desc.treso.p2')}</p>
+              <p className="outil-desc-p">{t('outils.desc.treso.p3')}</p>
             </article>
 
             <article>
-              <span className="section-label">Diagnostic IA</span>
-              <h2 className="font-serif italic outil-desc-title">Votre entreprise est-elle prête pour l’IA ?</h2>
+              <span className="section-label">{t('outils.diag.name')}</span>
+              <h2 className="font-serif italic outil-desc-title">{t('outils.desc.diag.title')}</h2>
+              <p className="outil-desc-p">{t('outils.desc.diag.p1')}</p>
               <p className="outil-desc-p">
-                L’IA, tout le monde en parle, mais peu de dirigeants savent par où commencer chez eux. Notre Diagnostic IA
-                répond à une question simple : votre entreprise est-elle vraiment prête ? En 12 questions honnêtes, réparties sur
-                3 piliers (processus clairs, données fiables, adoption par les équipes), vous obtenez un score par pilier et un
-                verdict franc.
-              </p>
-              <p className="outil-desc-p">
-                En 2 minutes, sans jargon et sans inscription, vous voyez où l’IA vous ferait gagner de vraies heures, et où ce
-                serait juste un gadget, avec un premier pas concret adapté à votre point le plus faible. Un point de départ
-                honnête, pas une brochure.{' '}
-                <Link href="/outils/pret-pour-lia" style={{ color: 'var(--accent)', textDecoration: 'none' }}>Faire le test →</Link>
+                {t('outils.desc.diag.p2')}{' '}
+                <Link href={loc('/outils/pret-pour-lia')} style={{ color: 'var(--accent)', textDecoration: 'none' }}>{t('outils.desc.diag.link')}</Link>
               </p>
             </article>
 
             <article style={{ marginTop: 56 }}>
-              <span className="section-label">Gestion d’actifs</span>
-              <h2 className="font-serif italic outil-desc-title">Un logiciel de gestion de parc et d’actifs gratuit.</h2>
-              <p className="outil-desc-p">
-                Ordinateurs, véhicules, machines, mobilier : dans une PME qui grandit, on finit par ne plus savoir qui a quoi, ni
-                ce qui est encore sous garantie, ni quand remplacer. NateSystem Gestion d’actifs est un logiciel de gestion de
-                parc gratuit qui centralise tout votre matériel au même endroit, avec son état, son affectation et sa valeur.
-              </p>
-              <p className="outil-desc-p">
-                Amortissements calculés automatiquement, alertes de fin de vie et de remplacement, historique par équipement :
-                vous arrêtez de piloter votre parc dans un tableur qui n’est jamais à jour. La démo tourne sur des données
-                fictives, en accès direct, sans inscription.
-              </p>
-              <p className="outil-desc-p">
-                C’est le même moteur qu’on adapte au parc réel de nos clients. Si vous voulez suivre vos propres catégories, vos
-                règles d’amortissement et vos alertes, c’est exactement ce qu’on construit sur-mesure.
-              </p>
+              <span className="section-label">{t('outils.actifs.name')}</span>
+              <h2 className="font-serif italic outil-desc-title">{t('outils.desc.actifs.title')}</h2>
+              <p className="outil-desc-p">{t('outils.desc.actifs.p1')}</p>
+              <p className="outil-desc-p">{t('outils.desc.actifs.p2')}</p>
+              <p className="outil-desc-p">{t('outils.desc.actifs.p3')}</p>
             </article>
           </FadeUp>
         </div>
@@ -225,14 +199,13 @@ export default function OutilsPage() {
           <FadeUp>
             <div style={{ background: 'var(--bg-card)', border: '1px solid rgba(230,57,70,0.15)', borderRadius: 12, padding: '48px 40px', textAlign: 'center' }}>
               <h2 className="font-serif italic" style={{ fontSize: 'clamp(24px, 4vw, 32px)', fontWeight: 400, marginBottom: 16, color: 'var(--text)' }}>
-                Besoin d’un outil taillé pour <span className="accent">votre métier</span> ?
+                {t('outils.conv.titlePrefix')}<span className="accent">{t('outils.conv.titleAccent')}</span>{t('outils.conv.titleSuffix')}
               </h2>
               <p className="font-sans" style={{ fontSize: 15, fontWeight: 300, color: 'var(--text-secondary)', lineHeight: 1.7, maxWidth: 520, margin: '0 auto 32px' }}>
-                Ces outils gratuits sont des versions publiques de ce qu’on construit. Chez NateSystem, on développe le logiciel
-                sur-mesure qui colle exactement à votre activité. Un appel offert pour en parler, sans engagement.
+                {t('outils.conv.sub')}
               </p>
-              <Link href={CAL_LINK} className="btn-primary" style={{ margin: '0 auto' }}>
-                <span className="btn-primary-dot" />Réserver un appel gratuit
+              <Link href={calHref} className="btn-primary" style={{ margin: '0 auto' }}>
+                <span className="btn-primary-dot" />{t('outils.conv.cta')}
               </Link>
             </div>
           </FadeUp>

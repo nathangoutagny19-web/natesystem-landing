@@ -8,10 +8,11 @@ import Footer from '@/components/layout/Footer'
 import MobileCta from '@/components/layout/MobileCta'
 import Divider from '@/components/ui/Divider'
 import { CAL_DIRECT_URL } from '@/lib/constants'
+import { useLang } from '@/components/providers/LangProvider'
 import {
   PILLARS,
   CHOICES,
-  FLAT_QUESTIONS,
+  flatQuestions,
   TOTAL_QUESTIONS,
   EMPTY_ANSWERS,
   computeResult,
@@ -19,6 +20,13 @@ import {
   type Choice,
   type Level,
 } from './scoring'
+
+/**
+ * Le même composant sert `/outils/pret-pour-lia` et `/en/outils/pret-pour-lia`
+ * (voir `app/en/outils/pret-pour-lia/page.tsx`). La chrome du test passe par
+ * `t()`, les questions et les verdicts viennent de `scoring.ts`, qui les tient
+ * dans les deux langues.
+ */
 
 type Stage = 'intro' | 'quiz' | 'result'
 
@@ -31,11 +39,12 @@ const LEVEL_COLOR: Record<Level, string> = {
 const scrollTop = () => window.scrollTo({ top: 0, behavior: 'smooth' })
 
 export default function PretPourLiaPage() {
+  const { lang } = useLang()
   const [stage, setStage] = useState<Stage>('intro')
   const [step, setStep] = useState(0) // 0..11
   const [answers, setAnswers] = useState<Answers>([...EMPTY_ANSWERS])
 
-  const result = useMemo(() => computeResult(answers), [answers])
+  const result = useMemo(() => computeResult(answers, lang), [answers, lang])
 
   const start = () => {
     setStage('quiz')
@@ -96,25 +105,25 @@ export default function PretPourLiaPage() {
 /* ─────────────────────────── Intro ─────────────────────────── */
 
 function Intro({ onStart }: { onStart: () => void }) {
+  const { lang, t } = useLang()
   return (
     <div className="text-center q-fade">
-      <span className="section-label">Diagnostic IA · 2 min · gratuit</span>
+      <span className="section-label">{t('diag.intro.label')}</span>
       <h1
         className="font-serif italic"
         style={{ fontSize: 'clamp(32px, 5.4vw, 54px)', fontWeight: 400, lineHeight: 1.1, color: 'var(--text)', maxWidth: 640, margin: '14px auto 22px' }}
       >
-        Votre entreprise est-elle <span className="accent" style={{ color: 'var(--accent)' }}>prête pour l’IA&nbsp;?</span>
+        {t('diag.intro.titlePrefix')}<span className="accent" style={{ color: 'var(--accent)' }}>{t('diag.intro.titleAccent')}</span>
       </h1>
       <p className="font-sans" style={{ fontSize: 'clamp(15px, 3vw, 18px)', fontWeight: 300, color: 'var(--text-secondary)', maxWidth: 580, margin: '0 auto 14px', lineHeight: 1.65 }}>
-        La plupart des entreprises ne sont pas bloquées par l’IA, mais par ce qu’il y a en dessous. En 12 questions honnêtes,
-        voyez où vous en êtes vraiment, et par quoi commencer.
+        {t('diag.intro.sub')}
       </p>
       <p className="font-mono" style={{ fontSize: 12, letterSpacing: 0.4, color: 'var(--text-muted)', marginBottom: 34 }}>
-        12 questions · ~2 minutes · sans inscription
+        {t('diag.intro.meta')}
       </p>
 
       <div className="q-pillars">
-        {PILLARS.map((p) => (
+        {PILLARS[lang].map((p) => (
           <div key={p.id} className="q-pillar-chip">
             <span className="font-mono q-pillar-num">0{p.num}</span>
             <span className="font-sans">{p.name}</span>
@@ -123,10 +132,10 @@ function Intro({ onStart }: { onStart: () => void }) {
       </div>
 
       <button type="button" className="btn-primary" style={{ margin: '32px auto 0', fontSize: 14 }} onClick={onStart}>
-        <span className="btn-primary-dot" />Commencer le test &rarr;
+        <span className="btn-primary-dot" />{t('diag.intro.cta')} &rarr;
       </button>
       <p className="font-sans" style={{ fontSize: 12.5, color: 'var(--text-muted)', marginTop: 16, fontWeight: 300 }}>
-        Répondez franchement : le test ne sert à rien si vous vous mentez à vous-même.
+        {t('diag.intro.note')}
       </p>
 
       <style jsx>{`
@@ -158,7 +167,8 @@ function Quiz({
   onAnswer: (v: Choice) => void
   onPrev: () => void
 }) {
-  const q = FLAT_QUESTIONS[step]
+  const { lang, t } = useLang()
+  const q = flatQuestions(lang)[step]
   const current = answers[step]
   const progress = ((step + 1) / TOTAL_QUESTIONS) * 100
 
@@ -167,7 +177,7 @@ function Quiz({
       {/* Progress */}
       <div className="q-progress-head">
         <span className="font-mono q-pillar-label" style={{ color: 'var(--accent)' }}>
-          Pilier 0{q.pillar.num} · {q.pillar.name}
+          {t('diag.quiz.pillar')} 0{q.pillar.num} · {q.pillar.name}
         </span>
         <span className="font-mono" style={{ fontSize: 12, color: 'var(--text-muted)' }}>
           {step + 1} / {TOTAL_QUESTIONS}
@@ -180,7 +190,7 @@ function Quiz({
       <h2 className="font-serif italic q-question">{q.text}</h2>
 
       <div className="q-choices">
-        {CHOICES.map((c) => {
+        {CHOICES[lang].map((c) => {
           const on = current === c.value
           return (
             <button
@@ -197,7 +207,7 @@ function Quiz({
       </div>
 
       <button type="button" className="q-back font-mono" onClick={onPrev}>
-        <ArrowLeft size={14} strokeWidth={2} /> Précédent
+        <ArrowLeft size={14} strokeWidth={2} /> {t('diag.quiz.back')}
       </button>
 
       <style jsx>{`
@@ -241,15 +251,17 @@ function Result({
   result: ReturnType<typeof computeResult>
   onReset: () => void
 }) {
+  const { lang, t } = useLang()
   const { pillars, total, verdict, weakest } = result
   const vColor = LEVEL_COLOR[verdict.level]
+  const toolsHref = lang === 'en' ? '/en/outils' : '/outils'
 
   return (
     <div className="q-fade">
       <div className="text-center">
-        <span className="section-label">Votre résultat</span>
+        <span className="section-label">{t('diag.result.label')}</span>
         <div className="q-total font-mono" style={{ color: 'var(--text-muted)' }}>
-          Score global · <strong style={{ color: 'var(--text)' }}>{total}</strong> / 24
+          {t('diag.result.total')} · <strong style={{ color: 'var(--text)' }}>{total}</strong> / 24
         </div>
       </div>
 
@@ -263,18 +275,18 @@ function Result({
       {/* Verdict */}
       <div className="q-verdict" style={{ borderColor: hexA(vColor, 0.32), background: hexA(vColor, 0.06) }}>
         <span className="q-verdict-badge font-mono" style={{ background: vColor }}>
-          {verdict.level === 'red' ? 'À consolider d’abord' : verdict.level === 'orange' ? 'Bonne base' : 'Prêt'}
+          {t(`diag.result.badge.${verdict.level}` as const)}
         </span>
         <h2 className="font-serif italic q-verdict-headline">{verdict.headline}</h2>
       </div>
 
       {/* Reco personnalisée */}
       <div className="q-reco">
-        <span className="font-mono q-reco-eyebrow">Votre priorité · Pilier 0{weakest.num}</span>
+        <span className="font-mono q-reco-eyebrow">{t('diag.result.priority')} 0{weakest.num}</span>
         <h3 className="font-serif italic q-reco-title">{weakest.recoTitle}</h3>
         <p className="font-sans q-reco-body">{weakest.recoBody}</p>
         <div className="q-firststep">
-          <span className="font-mono q-firststep-label">Votre premier pas</span>
+          <span className="font-mono q-firststep-label">{t('diag.result.firstStep')}</span>
           <p className="font-sans q-firststep-body">{weakest.firstStep}</p>
         </div>
       </div>
@@ -282,14 +294,13 @@ function Result({
       {/* CTA */}
       <div className="q-cta">
         <h3 className="font-serif italic q-cta-title">
-          On regarde votre diagnostic ensemble&nbsp;?
+          {t('diag.result.ctaTitle')}
         </h3>
         <p className="font-sans q-cta-sub">
-          Recevez votre diagnostic complet et 15 min avec moi pour en parler. On voit concrètement par où commencer, sans
-          engagement. Même si on ne travaille pas ensemble.
+          {t('diag.result.ctaSub')}
         </p>
         <a href={CAL_DIRECT_URL} target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ margin: '0 auto', fontSize: 14 }}>
-          <span className="btn-primary-dot" />Réserver mes 15 min &rarr;
+          <span className="btn-primary-dot" />{t('diag.result.ctaBtn')} &rarr;
         </a>
 
         <EmailCapture result={result} />
@@ -297,13 +308,13 @@ function Result({
 
       <div className="text-center">
         <button type="button" className="q-reset font-mono" onClick={onReset}>
-          <RotateCcw size={13} strokeWidth={2} /> Refaire le test
+          <RotateCcw size={13} strokeWidth={2} /> {t('diag.result.reset')}
         </button>
       </div>
 
       <p className="text-center font-sans" style={{ fontSize: 12.5, color: 'var(--text-muted)', marginTop: 26, fontWeight: 300 }}>
-        Envie d’un outil taillé pour votre métier ?{' '}
-        <Link href="/outils" style={{ color: 'var(--accent)', textDecoration: 'none' }}>Voir tous nos outils gratuits</Link>
+        {t('diag.result.footText')}{' '}
+        <Link href={toolsHref} style={{ color: 'var(--accent)', textDecoration: 'none' }}>{t('diag.result.footLink')}</Link>
       </p>
 
       <style jsx>{`
@@ -339,6 +350,7 @@ function Result({
 
 /* Jauge circulaire hand-rolled SVG (charte : jamais de lib de charts). */
 function Gauge({ name, score, level }: { name: string; score: number; level: Level }) {
+  const { t } = useLang()
   const color = LEVEL_COLOR[level]
   const r = 46
   const c = 2 * Math.PI * r
@@ -360,7 +372,7 @@ function Gauge({ name, score, level }: { name: string; score: number; level: Lev
       </svg>
       <span className="font-sans g-name">{name}</span>
       <span className="font-mono g-level" style={{ color }}>
-        {level === 'red' ? 'À renforcer' : level === 'orange' ? 'À consolider' : 'Solide'}
+        {t(`diag.gauge.${level}` as const)}
       </span>
 
       <style jsx>{`
@@ -377,6 +389,7 @@ function Gauge({ name, score, level }: { name: string; score: number; level: Lev
 
 /* Champ email OPTIONNEL, pas un mur : le score s'affiche sans lui. */
 function EmailCapture({ result }: { result: ReturnType<typeof computeResult> }) {
+  const { t } = useLang()
   const [email, setEmail] = useState('')
   const [state, setState] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
 
@@ -405,7 +418,7 @@ function EmailCapture({ result }: { result: ReturnType<typeof computeResult> }) 
   if (state === 'sent') {
     return (
       <p className="font-sans" style={{ fontSize: 13.5, color: 'var(--text-secondary)', marginTop: 22, display: 'flex', alignItems: 'center', gap: 8, justifyContent: 'center', fontWeight: 300 }}>
-        <Check size={15} strokeWidth={2.4} style={{ color: LEVEL_COLOR.green }} /> C’est noté, vous recevrez votre résultat par mail.
+        <Check size={15} strokeWidth={2.4} style={{ color: LEVEL_COLOR.green }} /> {t('diag.email.sent')}
       </p>
     )
   }
@@ -416,12 +429,12 @@ function EmailCapture({ result }: { result: ReturnType<typeof computeResult> }) 
         type="email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-        placeholder="Recevoir le résultat par mail (optionnel)"
-        aria-label="Votre e-mail (optionnel)"
+        placeholder={t('diag.email.placeholder')}
+        aria-label={t('diag.email.aria')}
         className="font-sans q-email-input"
       />
       <button type="submit" className="q-email-btn font-mono" disabled={state === 'sending'}>
-        {state === 'sending' ? 'Envoi…' : 'Envoyer'}
+        {state === 'sending' ? t('diag.email.sending') : t('diag.email.send')}
       </button>
 
       <style jsx>{`

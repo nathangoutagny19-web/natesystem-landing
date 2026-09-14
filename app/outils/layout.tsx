@@ -14,7 +14,16 @@ export const metadata: Metadata = {
     'logiciel gestion de parc informatique gratuit',
     'suivi des actifs entreprise',
   ],
-  alternates: { canonical: 'https://www.natesystem.com/outils' },
+  /* Le hreflang doit être réciproque : /en/outils déclare le français, donc
+     le français déclare l'anglais, sinon Google écarte la paire. */
+  alternates: {
+    canonical: 'https://www.natesystem.com/outils',
+    languages: {
+      'fr-FR': 'https://www.natesystem.com/outils',
+      en: 'https://www.natesystem.com/en/outils',
+      'x-default': 'https://www.natesystem.com/outils',
+    },
+  },
   openGraph: {
     title: 'Outils gratuits pour PME : gestion de stock & prévision de trésorerie | NateSystem',
     description:
