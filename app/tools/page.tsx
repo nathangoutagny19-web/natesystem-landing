@@ -66,19 +66,19 @@ export default function ToolsPage() {
                     className="font-mono"
                     style={{ fontSize: 10, letterSpacing: 2, textTransform: 'uppercase', color: 'var(--accent)', marginBottom: 10 }}
                   >
-                    Outil interactif · 2 min
+                    {t('tools.interactive')} · 2 min
                   </p>
                   <h2
                     className="font-serif italic"
                     style={{ fontSize: 'clamp(22px, 2.4vw, 28px)', lineHeight: 1.25, color: 'var(--text)', fontWeight: 400, marginBottom: 8 }}
                   >
-                    Le Diagnostic IA
+                    {t('tools.diagnostic.title')}
                   </h2>
                   <p
                     className="font-sans"
                     style={{ fontSize: 14, fontWeight: 300, color: 'var(--text-secondary)', lineHeight: 1.6, maxWidth: 620 }}
                   >
-                    Combien votre stack SaaS gaspille, combien d&apos;heures votre équipe perd, où vous en êtes sur la maturité IA. Chiffré, 3 leviers priorisés, PDF téléchargeable.
+                    {t('tools.diagnostic.desc')}
                   </p>
                 </div>
                 <span

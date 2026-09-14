@@ -58,13 +58,16 @@ export default function CaseStudiesPage() {
                 style={{ background: 'var(--bg-card)', border: '1px solid var(--border)', borderRadius: 16, padding: 'clamp(28px, 4vw, 44px)' }}
               >
                 <p className="font-mono" style={{ fontSize: 11, letterSpacing: 1.4, textTransform: 'uppercase', color: 'var(--accent)', fontWeight: 500, margin: '0 0 12px' }}>
-                  Cabinet de conseil B2B · Budapest
+                  {d('Cabinet de conseil B2B · Budapest', 'B2B consulting firm · Budapest')}
                 </p>
                 <h2 className="font-serif italic" style={{ fontSize: 'clamp(26px, 4vw, 40px)', fontWeight: 400, color: 'var(--text)', lineHeight: 1.1, margin: '0 0 14px' }}>
-                  25 ans d’expertise, mis dans une IA.
+                  {d('25 ans d\u2019expertise, mis dans une IA.', '25 years of expertise, put into an AI.')}
                 </h2>
                 <p className="font-sans" style={{ fontSize: 15.5, fontWeight: 300, color: 'var(--text-secondary)', lineHeight: 1.65, maxWidth: 640, margin: '0 0 20px' }}>
-                  Un cabinet de conseil B2B de Budapest a capitalisé le savoir de son fondateur dans un système sur-mesure, automatisé ses rapports clients sur 280 KPIs, et l’a rendu à ses clients.
+                  {d(
+                    'Un cabinet de conseil B2B de Budapest a capitalisé le savoir de son fondateur dans un système sur-mesure, automatisé ses rapports clients sur 280 KPIs, et l\u2019a rendu à ses clients.',
+                    'A B2B consulting firm in Budapest captured its founder\u2019s know-how in a custom system, automated its client reports across 280 KPIs, and handed it back to its clients.'
+                  )}
                 </p>
                 <span className="font-sans" style={{ display: 'inline-flex', alignItems: 'center', gap: 7, fontSize: 14, fontWeight: 500, color: 'var(--accent)' }}>
                   {d('Lire l’étude de cas', 'Read the case study')} &rarr;

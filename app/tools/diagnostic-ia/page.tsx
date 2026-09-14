@@ -33,7 +33,7 @@ export default function DiagnosticIaPage() {
   const [stage, setStage] = useState<Stage>('intro')
   const [answers, setAnswers] = useState<DiagnosticAnswers>(DEFAULT_ANSWERS)
 
-  const result = useMemo(() => computeDiagnostic(answers), [answers])
+  const result = useMemo(() => computeDiagnostic(answers, lang), [answers, lang])
 
   const setAnswer = <K extends keyof DiagnosticAnswers>(
     key: K,
@@ -196,6 +196,8 @@ export default function DiagnosticIaPage() {
 // ─────────────────────────────────────────────────────────────────────
 
 function ProgressBar({ stage }: { stage: 'act1' | 'act2' | 'act3' }) {
+  const { lang } = useLang()
+  const d = (fr: string, en: string) => (lang === 'en' ? en : fr)
   const map = { act1: 1, act2: 2, act3: 3 } as const
   const current = map[stage]
   return (
@@ -225,22 +227,25 @@ function ProgressBar({ stage }: { stage: 'act1' | 'act2' | 'act3' }) {
           fontWeight: 500,
         }}
       >
-        ACTE {current} / 3
+        {d('ACTE', 'ACT')} {current} / 3
       </span>
     </div>
   )
 }
 
 function Intro({ onStart }: { onStart: () => void }) {
+  const { lang } = useLang()
+  const d = (fr: string, en: string) => (lang === 'en' ? en : fr)
+
   return (
     <div style={{ textAlign: 'center' }}>
-      <span className="section-label">Outil interactif gratuit · 4 min</span>
+      <span className="section-label">{d('Outil interactif gratuit · 4 min', 'Free interactive tool · 4 min')}</span>
       <h1
         className="section-title"
         style={{ maxWidth: 640, margin: '24px auto 20px' }}
       >
-        Le Diagnostic IA{' '}
-        <span className="accent">par NateSystem</span>
+        {d('Le Diagnostic IA', 'The AI Diagnostic')}{' '}
+        <span className="accent">{d('par NateSystem', 'by NateSystem')}</span>
       </h1>
       <p
         className="font-sans"
@@ -253,10 +258,10 @@ function Intro({ onStart }: { onStart: () => void }) {
           margin: '0 auto 40px',
         }}
       >
-        En 4 minutes, mesurez ce que votre PME perd chaque mois en SaaS
-        inutiles, temps répétitif et opportunités IA ratées. Vous repartez
-        avec un rapport chiffré et trois leviers prioritaires. Sans email,
-        sans gate, sans pitch commercial.
+        {d(
+          'En 4 minutes, mesurez ce que votre PME perd chaque mois en SaaS inutiles, temps répétitif et opportunités IA ratées. Vous repartez avec un rapport chiffré et trois leviers prioritaires. Sans email, sans gate, sans pitch commercial.',
+          'In 4 minutes, measure what your company loses each month in unused SaaS, repetitive work and missed AI opportunities. You leave with a costed report and three priority levers. No email, no gate, no sales pitch.'
+        )}
       </p>
 
       <div
@@ -269,9 +274,9 @@ function Intro({ onStart }: { onStart: () => void }) {
         }}
       >
         {[
-          { num: '01', label: 'Votre stack SaaS' },
-          { num: '02', label: 'Votre temps perdu' },
-          { num: '03', label: 'Votre maturité IA' },
+          { num: '01', label: d('Votre stack SaaS', 'Your SaaS stack') },
+          { num: '02', label: d('Votre temps perdu', 'The time you lose') },
+          { num: '03', label: d('Votre maturité IA', 'Your AI readiness') },
         ].map((act) => (
           <div
             key={act.num}
@@ -310,7 +315,7 @@ function Intro({ onStart }: { onStart: () => void }) {
         style={{ fontSize: 15 }}
       >
         <span className="btn-primary-dot" />
-        Commencer le diagnostic <ArrowRight size={16} />
+        {d('Commencer le diagnostic', 'Start the diagnostic')} <ArrowRight size={16} />
       </button>
 
       <p
@@ -322,7 +327,7 @@ function Intro({ onStart }: { onStart: () => void }) {
           letterSpacing: 0.5,
         }}
       >
-        Aucune donnée n&apos;est sauvegardée · Tout reste dans votre navigateur
+        {d('Aucune donnée n\u2019est sauvegardée · Tout reste dans votre navigateur', 'Nothing is saved · everything stays in your browser')}
       </p>
     </div>
   )
@@ -339,13 +344,19 @@ type ActProps = {
 }
 
 function Act1({ answers, setAnswer, onNext, onPrev }: ActProps) {
+  const { lang } = useLang()
+  const d = (fr: string, en: string) => (lang === 'en' ? en : fr)
+
   return (
     <div className="diag-q-card">
-      <ActHeader title="Votre stack SaaS" desc="Combien d'outils, combien réellement utilisés, à quel coût." />
+      <ActHeader
+        title={d('Votre stack SaaS', 'Your SaaS stack')}
+        desc={d("Combien d'outils, combien réellement utilisés, à quel coût.", 'How many tools, how many actually used, and at what cost.')}
+      />
 
       <SliderQuestion
-        label="Combien d'outils SaaS payants utilisez-vous ?"
-        hint="Notion, HubSpot, Sellsy, Slack, Microsoft 365, Pennylane, etc."
+        label={d("Combien d'outils SaaS payants utilisez-vous ?", 'How many paid SaaS tools do you use?')}
+        hint={d('Notion, HubSpot, Sellsy, Slack, Microsoft 365, Pennylane, etc.', 'Notion, HubSpot, Slack, Microsoft 365, Xero, and the rest.')}
         min={1}
         max={30}
         value={answers.saasCount}
@@ -353,22 +364,22 @@ function Act1({ answers, setAnswer, onNext, onPrev }: ActProps) {
           setAnswer('saasCount', v)
           if (answers.saasUsedCount > v) setAnswer('saasUsedCount', v)
         }}
-        suffix="outils"
+        suffix={d('outils', 'tools')}
       />
 
       <SliderQuestion
-        label="Combien sont réellement utilisés au quotidien ?"
-        hint="Ouvert au moins une fois par semaine par votre équipe."
+        label={d('Combien sont réellement utilisés au quotidien ?', 'How many are genuinely used day to day?')}
+        hint={d('Ouvert au moins une fois par semaine par votre équipe.', 'Opened at least once a week by your team.')}
         min={0}
         max={answers.saasCount}
         value={answers.saasUsedCount}
         onChange={(v) => setAnswer('saasUsedCount', v)}
-        suffix="utilisés"
+        suffix={d('utilisés', 'in use')}
       />
 
       <SliderQuestion
-        label="Coût mensuel total estimé ?"
-        hint="Additionnez les abonnements mensuels de tous vos outils."
+        label={d('Coût mensuel total estimé ?', 'Estimated total monthly cost?')}
+        hint={d('Additionnez les abonnements mensuels de tous vos outils.', 'Add up the monthly subscriptions of all your tools.')}
         min={100}
         max={8000}
         step={50}
@@ -378,48 +389,54 @@ function Act1({ answers, setAnswer, onNext, onPrev }: ActProps) {
       />
 
       <SliderQuestion
-        label="Doublons connus : 2 outils qui font la même chose ?"
-        hint="Par exemple : Trello + Asana, ou Slack + Teams."
+        label={d('Doublons connus : 2 outils qui font la même chose ?', 'Known overlaps: two tools doing the same job?')}
+        hint={d('Par exemple : Trello + Asana, ou Slack + Teams.', 'For instance Trello + Asana, or Slack + Teams.')}
         min={0}
         max={6}
         value={answers.duplicatesCount}
         onChange={(v) => setAnswer('duplicatesCount', v)}
-        suffix="doublons"
+        suffix={d('doublons', 'overlaps')}
       />
 
-      <NavButtons onPrev={onPrev} onNext={onNext} nextLabel="Acte 2 →" />
+      <NavButtons onPrev={onPrev} onNext={onNext} nextLabel={d('Acte 2 →', 'Act 2 →')} />
     </div>
   )
 }
 
 function Act2({ answers, setAnswer, onNext, onPrev }: ActProps) {
+  const { lang } = useLang()
+  const d = (fr: string, en: string) => (lang === 'en' ? en : fr)
+
   return (
     <div className="diag-q-card">
-      <ActHeader title="Votre temps perdu" desc="Ce que coûtent vraiment les tâches répétitives." />
+      <ActHeader
+        title={d('Votre temps perdu', 'The time you lose')}
+        desc={d('Ce que coûtent vraiment les tâches répétitives.', 'What repetitive tasks really cost.')}
+      />
 
       <SliderQuestion
-        label="Combien de personnes dans votre équipe ?"
-        hint="Y compris vous, hors stagiaires."
+        label={d('Combien de personnes dans votre équipe ?', 'How many people are in your team?')}
+        hint={d('Y compris vous, hors stagiaires.', 'Including you, not counting interns.')}
         min={1}
         max={50}
         value={answers.employees}
         onChange={(v) => setAnswer('employees', v)}
-        suffix="personnes"
+        suffix={d('personnes', 'people')}
       />
 
       <SliderQuestion
-        label="Heures/semaine/personne sur tâches répétitives ?"
-        hint="Saisie, reporting, relances, copier-coller, validations manuelles."
+        label={d('Heures/semaine/personne sur tâches répétitives ?', 'Hours per week per person on repetitive tasks?')}
+        hint={d('Saisie, reporting, relances, copier-coller, validations manuelles.', 'Data entry, reporting, follow-ups, copy and paste, manual approvals.')}
         min={0}
         max={25}
         value={answers.hoursPerWeekPerPerson}
         onChange={(v) => setAnswer('hoursPerWeekPerPerson', v)}
-        suffix="h/sem"
+        suffix={d('h/sem', 'h/week')}
       />
 
       <SliderQuestion
-        label="Coût mensuel chargé moyen par employé ?"
-        hint="Salaire brut × 1.45 environ. Pour un cadre PME : ~4500 €."
+        label={d('Coût mensuel chargé moyen par employé ?', 'Average fully loaded monthly cost per employee?')}
+        hint={d('Salaire brut × 1.45 environ. Pour un cadre PME : ~4500 €.', 'Gross salary × roughly 1.45. For a manager, around 4,500 €.')}
         min={2500}
         max={12000}
         step={100}
@@ -429,72 +446,78 @@ function Act2({ answers, setAnswer, onNext, onPrev }: ActProps) {
       />
 
       <RadioQuestion
-        label="Avez-vous déjà tenté d'automatiser quelque chose ?"
+        label={d("Avez-vous déjà tenté d'automatiser quelque chose ?", 'Have you ever tried automating anything?')}
         value={answers.automationLevel}
         onChange={(v) => setAnswer('automationLevel', v)}
         options={[
-          { value: 'none', label: 'Jamais, tout est manuel' },
-          { value: 'some', label: 'Un peu (Zapier, Make, ChatGPT)' },
-          { value: 'lots', label: 'Beaucoup, c\'est en place et ça tourne' },
+          { value: 'none', label: d('Jamais, tout est manuel', 'Never, everything is manual') },
+          { value: 'some', label: d('Un peu (Zapier, Make, ChatGPT)', 'A little (Zapier, Make, ChatGPT)') },
+          { value: 'lots', label: d("Beaucoup, c'est en place et ça tourne", 'A lot, it is in place and running') },
         ]}
       />
 
-      <NavButtons onPrev={onPrev} onNext={onNext} nextLabel="Acte 3 →" />
+      <NavButtons onPrev={onPrev} onNext={onNext} nextLabel={d('Acte 3 →', 'Act 3 →')} />
     </div>
   )
 }
 
 function Act3({ answers, setAnswer, onNext, onPrev }: ActProps) {
+  const { lang } = useLang()
+  const d = (fr: string, en: string) => (lang === 'en' ? en : fr)
+
   return (
     <div className="diag-q-card">
-      <ActHeader title="Votre maturité IA" desc="Où vous en êtes vraiment sur l'adoption." />
+      <ActHeader
+        title={d('Votre maturité IA', 'Your AI readiness')}
+        desc={d("Où vous en êtes vraiment sur l'adoption.", 'Where you actually stand on adoption.')}
+      />
 
       <RadioQuestion
-        label="Utilisez-vous ChatGPT / Claude / Copilot au quotidien ?"
+        label={d('Utilisez-vous ChatGPT / Claude / Copilot au quotidien ?', 'Do you use ChatGPT / Claude / Copilot day to day?')}
         value={answers.aiUsage}
         onChange={(v) => setAnswer('aiUsage', v)}
         options={[
-          { value: 'no', label: 'Non, pas du tout' },
-          { value: 'individual', label: 'Oui, individuellement (mes équipes ou moi)' },
-          { value: 'team', label: 'Oui, en équipe avec process partagés' },
+          { value: 'no', label: d('Non, pas du tout', 'No, not at all') },
+          { value: 'individual', label: d('Oui, individuellement (mes équipes ou moi)', 'Yes, individually (my teams or me)') },
+          { value: 'team', label: d('Oui, en équipe avec process partagés', 'Yes, as a team with shared processes') },
         ]}
       />
 
       <RadioQuestion
-        label="Vos process sont-ils documentés ?"
+        label={d('Vos process sont-ils documentés ?', 'Are your processes written down?')}
         value={answers.processDocumented}
         onChange={(v) => setAnswer('processDocumented', v)}
         options={[
-          { value: 'no', label: 'Non, c\'est dans la tête des gens' },
-          { value: 'partial', label: 'Partiellement, sur certains sujets' },
-          { value: 'yes', label: 'Oui, c\'est cartographié' },
+          { value: 'no', label: d("Non, c'est dans la tête des gens", 'No, it lives in people\u2019s heads') },
+          { value: 'partial', label: d('Partiellement, sur certains sujets', 'Partly, on some subjects') },
+          { value: 'yes', label: d("Oui, c'est cartographié", 'Yes, it is mapped out') },
         ]}
       />
 
       <RadioQuestion
-        label="Vos données sont-elles centralisées (une source de vérité) ?"
+        label={d('Vos données sont-elles centralisées (une source de vérité) ?', 'Is your data centralised (one source of truth)?')}
         value={answers.dataCentralized}
         onChange={(v) => setAnswer('dataCentralized', v)}
         options={[
-          { value: 'no', label: 'Non, c\'est éparpillé entre Excel, mails et outils' },
-          { value: 'partial', label: 'Partiellement, ça dépend des sujets' },
-          { value: 'yes', label: 'Oui, on a un système unifié' },
+          { value: 'no', label: d("Non, c'est éparpillé entre Excel, mails et outils", 'No, it is scattered across spreadsheets, email and tools') },
+          { value: 'partial', label: d('Partiellement, ça dépend des sujets', 'Partly, it depends on the subject') },
+          { value: 'yes', label: d('Oui, on a un système unifié', 'Yes, we have one unified system') },
         ]}
       />
 
       <RadioQuestion
-        label="Vous sentez-vous en retard sur vos concurrents IA ?"
+        label={d('Vous sentez-vous en retard sur vos concurrents IA ?', 'Do you feel behind on AI?')}
         value={answers.aiLagFeeling}
         onChange={(v) => setAnswer('aiLagFeeling', v)}
         options={[
-          { value: 'none', label: 'Pas du tout, on est en avance' },
-          { value: 'a-bit', label: 'Un peu, mais ça va' },
-          { value: 'yes', label: 'Oui, clairement' },
-          { value: 'a-lot', label: 'Énormément, on est largués' },
+          { value: 'none', label: d('Pas du tout, on est en avance', 'Not at all, we are ahead') },
+          { value: 'a-bit', label: d('Un peu, mais ça va', 'A little, but it is fine') },
+          { value: 'yes', label: d('Oui, clairement', 'Yes, clearly') },
+          { value: 'a-lot', label: d('Énormément, on est largués', 'Enormously, we are left behind') },
         ]}
       />
 
-      <NavButtons onPrev={onPrev} onNext={onNext} nextLabel="Voir mon rapport →" />
+      <NavButtons onPrev={onPrev} onNext={onNext} nextLabel={d('Voir mon rapport →', 'See my report →')} />
     </div>
   )
 }
@@ -717,13 +740,17 @@ function Report({
   onReset: () => void
 }) {
   const { lang } = useLang()
+  const d = (fr: string, en: string) => (lang === 'en' ? en : fr)
+  /* Les montants et les heures suivent la convention locale d'écriture, le
+     calcul lui-même est identique dans les deux langues. */
+  const nf = lang === 'en' ? 'en-US' : 'fr-FR'
   const handlePrint = () => window.print()
 
   const tierLabel: Record<typeof result.maturityTier, string> = {
-    critical: 'À mettre en route rapidement',
-    lagging: 'Sous la moyenne du marché',
-    average: 'Dans la moyenne',
-    ahead: 'En avance sur le marché',
+    critical: d('À mettre en route rapidement', 'Needs starting soon'),
+    lagging: d('Sous la moyenne du marché', 'Below the market average'),
+    average: d('Dans la moyenne', 'About average'),
+    ahead: d('En avance sur le marché', 'Ahead of the market'),
   }
 
   const tierColor: Record<typeof result.maturityTier, string> = {
@@ -737,12 +764,12 @@ function Report({
     <article>
       {/* Header du rapport */}
       <header style={{ textAlign: 'center', marginBottom: 36 }}>
-        <span className="section-label">Votre rapport</span>
+        <span className="section-label">{d('Votre rapport', 'Your report')}</span>
         <h1
           className="section-title"
           style={{ maxWidth: 640, margin: '20px auto 12px' }}
         >
-          Le Diagnostic IA
+          {d('Le Diagnostic IA', 'The AI Diagnostic')}
         </h1>
         <p
           className="font-sans"
@@ -752,7 +779,7 @@ function Report({
             fontWeight: 300,
           }}
         >
-          Généré le{' '}
+          {d('Généré le', 'Generated on')}{' '}
           <ReportDate />
           {' · '}
           NateSystem
@@ -769,19 +796,19 @@ function Report({
         }}
       >
         <KpiCard
-          label="€ gaspillés / mois"
-          value={`${result.saasWasteMonthly.toLocaleString('fr-FR')} €`}
-          sub={`soit ${result.saasWasteAnnual.toLocaleString('fr-FR')} € / an`}
+          label={d('€ gaspillés / mois', '€ wasted / month')}
+          value={`${result.saasWasteMonthly.toLocaleString(nf)} €`}
+          sub={d(`soit ${result.saasWasteAnnual.toLocaleString(nf)} € / an`, `that is ${result.saasWasteAnnual.toLocaleString(nf)} € / year`)}
           accent="var(--accent)"
         />
         <KpiCard
-          label="Heures perdues / mois"
-          value={`${result.hoursLostMonthly.toLocaleString('fr-FR')} h`}
-          sub={`≈ ${result.hoursLostInETP} ETP perdu / an`}
+          label={d('Heures perdues / mois', 'Hours lost / month')}
+          value={`${result.hoursLostMonthly.toLocaleString(nf)} h`}
+          sub={d(`≈ ${result.hoursLostInETP} ETP perdu / an`, `≈ ${result.hoursLostInETP} full-time equivalent lost / year`)}
           accent="var(--accent)"
         />
         <KpiCard
-          label="Score Maturité IA"
+          label={d('Score Maturité IA', 'AI readiness score')}
           value={`${result.aiMaturityScore} / 100`}
           sub={tierLabel[result.maturityTier]}
           accent={tierColor[result.maturityTier]}
@@ -801,7 +828,7 @@ function Report({
             marginBottom: 16,
           }}
         >
-          Ce que ça représente en vrai
+          {d('Ce que ça représente en vrai', 'What that actually means')}
         </h3>
         <ul
           style={{
@@ -813,17 +840,20 @@ function Report({
           }}
         >
           <BulletPoint>
-            <strong>{result.saasWasteAnnual.toLocaleString('fr-FR')} €/an</strong>{' '}
-            partent en abonnements SaaS qui n&apos;apportent rien ou en doublons.
+            <strong>{result.saasWasteAnnual.toLocaleString(nf)} {d('€/an', '€/year')}</strong>{' '}
+            {d(
+              'partent en abonnements SaaS qui n\u2019apportent rien ou en doublons.',
+              'go on SaaS subscriptions that bring nothing, or that overlap.'
+            )}
           </BulletPoint>
           <BulletPoint>
-            <strong>{result.hoursLostAnnual.toLocaleString('fr-FR')} h/an</strong>{' '}
-            perdues en tâches répétitives, soit environ{' '}
-            <strong>{result.timeWasteAnnualEuros.toLocaleString('fr-FR')} €</strong>{' '}
-            de salaire chargé non productif.
+            <strong>{result.hoursLostAnnual.toLocaleString(nf)} {d('h/an', 'h/year')}</strong>{' '}
+            {d('perdues en tâches répétitives, soit environ', 'lost on repetitive tasks, which is roughly')}{' '}
+            <strong>{result.timeWasteAnnualEuros.toLocaleString(nf)} €</strong>{' '}
+            {d('de salaire chargé non productif.', 'of loaded salary producing nothing.')}
           </BulletPoint>
           <BulletPoint>
-            Votre maturité IA est de{' '}
+            {d('Votre maturité IA est de', 'Your AI readiness is')}{' '}
             <strong>{result.aiMaturityScore}/100</strong>,{' '}
             {tierLabel[result.maturityTier].toLowerCase()}.
           </BulletPoint>
@@ -844,7 +874,7 @@ function Report({
             textAlign: 'center',
           }}
         >
-          Vos {result.topLevers.length} leviers prioritaires
+          {d('Vos', 'Your')} {result.topLevers.length} {d('leviers prioritaires', 'priority levers')}
         </h3>
 
         <div style={{ display: 'grid', gap: 16 }}>
@@ -874,9 +904,9 @@ function Report({
             marginBottom: 12,
           }}
         >
-          Vous avez un rapport.{' '}
+          {d('Vous avez un rapport.', 'You have a report.')}{' '}
           <span style={{ color: 'var(--accent)' }}>
-            Si vous voulez en discuter, je vous offre un appel.
+            {d('Si vous voulez en discuter, je vous offre un appel.', 'If you want to talk it through, the call is on me.')}
           </span>
         </h3>
         <p
@@ -890,9 +920,10 @@ function Report({
             margin: '0 auto 24px',
           }}
         >
-          Pas de pitch, pas d&apos;envoi de devis automatique. Je réponds à vos
-          questions, je vous montre ce qui se construit chez les autres
-          clients NateSystem, et je vous laisse repartir.
+          {d(
+            'Pas de pitch, pas d\u2019envoi de devis automatique. Je réponds à vos questions, je vous montre ce qui se construit chez les autres clients NateSystem, et je vous laisse repartir.',
+            'No pitch, no automatic quote landing in your inbox. I answer your questions, show you what is being built for other NateSystem clients, and let you go.'
+          )}
         </p>
         <div
           className="diag-no-print"
@@ -907,7 +938,7 @@ function Report({
           >
             <span className="btn-primary-dot" />
             <Calendar size={14} />
-            Réserver un appel · offert
+            {d('Réserver un appel · offert', 'Book a call · free')}
           </Link>
           <button
             type="button"
@@ -928,7 +959,7 @@ function Report({
             }}
           >
             <Download size={14} />
-            Télécharger en PDF
+            {d('Télécharger en PDF', 'Download as PDF')}
           </button>
         </div>
       </section>
@@ -956,7 +987,7 @@ function Report({
           }}
         >
           <RotateCcw size={12} />
-          Refaire le diagnostic
+          {d('Refaire le diagnostic', 'Run the diagnostic again')}
         </button>
       </div>
 
@@ -977,10 +1008,10 @@ function Report({
             lineHeight: 1.6,
           }}
         >
-          Méthodologie : les chiffres sont calculés à partir de vos
-          réponses, sur des bases sectorielles PME 2025-2026. Pour un
-          diagnostic personnalisé approfondi, l&apos;audit gratuit NateSystem
-          va beaucoup plus loin.
+          {d(
+            'Méthodologie : les chiffres sont calculés à partir de vos réponses, sur des bases sectorielles PME 2025-2026. Pour un diagnostic personnalisé approfondi, l\u2019audit gratuit NateSystem va beaucoup plus loin.',
+            'Method: the figures are calculated from your answers, against sector baselines for small companies in 2025-2026. For a deeper, personalised diagnostic, the free NateSystem audit goes much further.'
+          )}
         </p>
       </footer>
     </article>
@@ -989,12 +1020,13 @@ function Report({
 
 function ReportDate() {
   // SSR-safe : on attend le mount client pour afficher la date (évite hydration mismatch)
+  const { lang } = useLang()
   const [dateStr, setDateStr] = useState<string>('—')
   useMemo(() => {
     if (typeof window === 'undefined') return
     const d = new Date()
     setDateStr(
-      d.toLocaleDateString('fr-FR', {
+      d.toLocaleDateString(lang === 'en' ? 'en-GB' : 'fr-FR', {
         day: '2-digit',
         month: 'long',
         year: 'numeric',
@@ -1090,6 +1122,8 @@ function LeverCard({
 }: {
   lever: ReturnType<typeof computeDiagnostic>['topLevers'][number]
 }) {
+  const { lang } = useLang()
+  const d = (fr: string, en: string) => (lang === 'en' ? en : fr)
   return (
     <div
       className="diag-q-card"
@@ -1163,7 +1197,7 @@ function LeverCard({
               fontWeight: 600,
             }}
           >
-            Gain estimé
+            {d('Gain estimé', 'Estimated gain')}
           </p>
           <p
             className="font-sans"
@@ -1188,7 +1222,7 @@ function LeverCard({
               fontWeight: 600,
             }}
           >
-            Effort
+            {d('Effort', 'Effort')}
           </p>
           <p
             className="font-sans"

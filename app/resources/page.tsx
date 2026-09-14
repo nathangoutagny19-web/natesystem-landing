@@ -9,6 +9,7 @@ import LiteYouTube from '@/components/ui/LiteYouTube'
 import Link from 'next/link'
 import ScreenMock from '@/components/ui/ScreenMock'
 import { useLang } from '@/components/providers/LangProvider'
+import { localizedHref } from '@/lib/routes'
 import { motion } from 'framer-motion'
 import { blogPosts } from '@/lib/blog'
 import { playbooks, sectorLabelFor, cardTaglineFor } from '@/lib/playbooks'
@@ -17,10 +18,10 @@ import { playbooks, sectorLabelFor, cardTaglineFor } from '@/lib/playbooks'
 const TESTIMONIAL_VIDEO_ID = 'aMIjJbzuhDc'
 
 // Démos live + outil interactif.
-type Demo = { title: string; descFr: string; descEn: string; badge: 'new' | 'gated'; href: string; external?: boolean; img: string }
+type Demo = { titleFr: string; titleEn: string; descFr: string; descEn: string; badge: 'new' | 'gated'; href: string; external?: boolean; img: string }
 const DEMOS: Demo[] = [
   {
-    title: 'Diagnostic IA',
+    titleFr: 'Diagnostic IA', titleEn: 'AI Diagnostic',
     descFr: 'Votre entreprise est-elle prête pour l’IA ? 12 questions, 3 piliers (processus, données, adoption), un score et un verdict franc en 2 minutes.',
     descEn: 'Is your business ready for AI? 12 questions, 3 pillars (process, data, adoption), a score and a straight verdict in 2 minutes.',
     badge: 'new',
@@ -28,7 +29,7 @@ const DEMOS: Demo[] = [
     img: 'diagnostic-ia',
   },
   {
-    title: 'Prévision de trésorerie',
+    titleFr: 'Prévision de trésorerie', titleEn: 'The Forecast',
     descFr: 'À quel mois votre trésorerie passe dans le rouge, et de combien. Le simulateur chiffre les leviers pour combler le trou, sur vos vrais chiffres.',
     descEn: 'Which month your cash goes red, and by how much. The simulator quantifies the levers to close the gap, on your real numbers.',
     badge: 'new',
@@ -37,7 +38,7 @@ const DEMOS: Demo[] = [
     img: 'treso',
   },
   {
-    title: 'Gestion d’actifs',
+    titleFr: 'Gestion d\u2019actifs', titleEn: 'Asset Management',
     descFr: 'Parc IT, véhicules, mobilier, machines, centralisés avec amortissements automatiques et alertes de remplacement.',
     descEn: 'IT assets, vehicles, furniture, machines, centralised with automatic depreciation and replacement alerts.',
     badge: 'new',
@@ -46,7 +47,7 @@ const DEMOS: Demo[] = [
     img: 'actifs',
   },
   {
-    title: 'Plateforme d’inventaire',
+    titleFr: 'Plateforme d\u2019inventaire', titleEn: 'Inventory Platform',
     descFr: 'Stock temps réel, réapprovisionnements intelligents, fournisseurs, lecture de codes-barres. Le moteur qu’on déploie en production.',
     descEn: 'Real-time stock, smart re-ordering, suppliers, barcode scanning. The same engine we deploy in production.',
     badge: 'new',
@@ -55,7 +56,7 @@ const DEMOS: Demo[] = [
     img: 'stock',
   },
   {
-    title: 'Intelligence avis',
+    titleFr: 'Intelligence avis', titleEn: 'Review Intelligence',
     descFr: 'Avis notés par IA sur six dimensions, brouillons de réponses dans votre ton, plan d’action 90 jours. Accès démo sur demande.',
     descEn: 'Reviews scored by AI on six dimensions, reply drafts in your tone, 90-day action plan. Demo access on request.',
     badge: 'gated',
@@ -173,14 +174,14 @@ export default function ResourcesPage() {
                     </span>
                   </div>
                   <h3 className="font-serif italic" style={{ fontSize: '21px', fontWeight: 400, color: 'var(--text)', lineHeight: 1.25, margin: '2px 0 10px' }}>
-                    {demo.title}
+                    {d(demo.titleFr, demo.titleEn)}
                   </h3>
                   <p className="font-sans" style={{ fontSize: '13.5px', fontWeight: 300, color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: 14 }}>
                     {d(demo.descFr, demo.descEn)}
                   </p>
                   <div style={{ marginTop: 'auto', paddingTop: 12 }}>
                     <div style={{ height: 138 }}>
-                      <ScreenMock src={`/realisations/demos/${demo.img}.jpg`} alt={demo.title} />
+                      <ScreenMock src={`/realisations/demos/${demo.img}.jpg`} alt={d(demo.titleFr, demo.titleEn)} />
                     </div>
                   </div>
                   <span className="res-card-cta font-sans">
@@ -189,11 +190,11 @@ export default function ResourcesPage() {
                 </motion.div>
               )
               return (
-                <FadeUp key={demo.title} delay={0.14 + i * 0.06}>
+                <FadeUp key={demo.titleEn} delay={0.14 + i * 0.06}>
                   {demo.external ? (
                     <a href={demo.href} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', display: 'block', height: '100%' }}>{inner}</a>
                   ) : (
-                    <Link href={demo.href} style={{ textDecoration: 'none', display: 'block', height: '100%' }}>{inner}</Link>
+                    <Link href={localizedHref(demo.href, lang)} style={{ textDecoration: 'none', display: 'block', height: '100%' }}>{inner}</Link>
                   )}
                 </FadeUp>
               )
@@ -204,81 +205,94 @@ export default function ResourcesPage() {
 
       <Divider />
 
-      {/* ═══ 3, PLAYBOOKS PAR MÉTIER (lead magnets, au-dessus du blog) ═══ */}
-      <section id="playbooks" style={{ padding: '80px 24px' }}>
-        <div className="mx-auto" style={{ maxWidth: '1120px' }}>
-          <FadeUp>
-            <span className="section-label">{d('Playbooks par métier', 'Playbooks by industry')}</span>
-            <h2 className="font-serif italic" style={{ fontSize: 'clamp(28px, 4vw, 40px)', fontWeight: 400, color: 'var(--text)', lineHeight: 1.15, margin: '4px 0 10px' }}>
-              {d('L’IA appliquée à votre métier.', 'AI applied to your industry.')}
-            </h2>
-            <p className="font-sans" style={{ fontSize: '14px', fontWeight: 300, color: 'var(--text-muted)', lineHeight: 1.6, maxWidth: '640px' }}>
-              {d('Des guides concrets, un par secteur : où l’IA fait vraiment gagner du temps, sans casser votre conformité. PDF gratuit.', 'Concrete guides, one per sector: where AI actually saves time without breaking your compliance. Free PDF.')}
-            </p>
-          </FadeUp>
+      {/* ═══ 3, PLAYBOOKS PAR MÉTIER (lead magnets) ═══
+           PDF français sous slugs français, et /playbook n'a pas d'équivalent
+           anglais : la section est masquée sous /en plutôt que servie en
+           français dans une page anglaise. */}
+      {lang === 'fr' && (
+        <>
+        <section id="playbooks" style={{ padding: '80px 24px' }}>
+          <div className="mx-auto" style={{ maxWidth: '1120px' }}>
+            <FadeUp>
+              <span className="section-label">{d('Playbooks par métier', 'Playbooks by industry')}</span>
+              <h2 className="font-serif italic" style={{ fontSize: 'clamp(28px, 4vw, 40px)', fontWeight: 400, color: 'var(--text)', lineHeight: 1.15, margin: '4px 0 10px' }}>
+                {d('L’IA appliquée à votre métier.', 'AI applied to your industry.')}
+              </h2>
+              <p className="font-sans" style={{ fontSize: '14px', fontWeight: 300, color: 'var(--text-muted)', lineHeight: 1.6, maxWidth: '640px' }}>
+                {d('Des guides concrets, un par secteur : où l’IA fait vraiment gagner du temps, sans casser votre conformité. PDF gratuit.', 'Concrete guides, one per sector: where AI actually saves time without breaking your compliance. Free PDF.')}
+              </p>
+            </FadeUp>
 
-          <div className="res-grid-3" style={{ marginTop: 32 }}>
-            {playbooks.map((pb, i) => (
-              <FadeUp key={pb.slug} delay={Math.min(i * 0.04, 0.4)}>
-                <Link href={`/playbook/${pb.slug}`} style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
-                  <motion.div className="res-card" whileHover={{ borderColor: 'var(--border-hover)' }}>
-                    <span className="font-mono res-badge" style={{ marginBottom: 10 }}>{d('Playbook', 'Playbook')}</span>
-                    <h3 className="font-serif italic" style={{ fontSize: '19px', fontWeight: 400, color: 'var(--text)', lineHeight: 1.25, margin: '0 0 8px' }}>
-                      {sectorLabelFor(pb.slug)}
-                    </h3>
-                    <p className="font-sans" style={{ fontSize: '13px', fontWeight: 300, color: 'var(--text-secondary)', lineHeight: 1.55, flex: 1 }}>
-                      {cardTaglineFor(pb.slug)}
-                    </p>
-                    <span className="res-card-cta font-sans">{d('Télécharger le PDF', 'Download the PDF')} &rarr;</span>
-                  </motion.div>
-                </Link>
-              </FadeUp>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <Divider />
-
-      {/* ═══ 4, BLOG ═══ */}
-      <section id="blog" style={{ padding: '80px 24px' }}>
-        <div className="mx-auto" style={{ maxWidth: '1120px' }}>
-          <FadeUp>
-            <div className="flex items-center justify-between mb-2" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-              <span className="section-label mb-0">{t('resources.blog')}</span>
-              <Link href="/blog" className="font-sans" style={{ fontSize: '13px', color: 'var(--accent)', textDecoration: 'none', fontWeight: 500 }}>
-                {d('Voir tous les articles', 'View all articles')} &rarr;
-              </Link>
+            <div className="res-grid-3" style={{ marginTop: 32 }}>
+              {playbooks.map((pb, i) => (
+                <FadeUp key={pb.slug} delay={Math.min(i * 0.04, 0.4)}>
+                  <Link href={`/playbook/${pb.slug}`} style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
+                    <motion.div className="res-card" whileHover={{ borderColor: 'var(--border-hover)' }}>
+                      <span className="font-mono res-badge" style={{ marginBottom: 10 }}>{d('Playbook', 'Playbook')}</span>
+                      <h3 className="font-serif italic" style={{ fontSize: '19px', fontWeight: 400, color: 'var(--text)', lineHeight: 1.25, margin: '0 0 8px' }}>
+                        {sectorLabelFor(pb.slug)}
+                      </h3>
+                      <p className="font-sans" style={{ fontSize: '13px', fontWeight: 300, color: 'var(--text-secondary)', lineHeight: 1.55, flex: 1 }}>
+                        {cardTaglineFor(pb.slug)}
+                      </p>
+                      <span className="res-card-cta font-sans">{d('Télécharger le PDF', 'Download the PDF')} &rarr;</span>
+                    </motion.div>
+                  </Link>
+                </FadeUp>
+              ))}
             </div>
-            <h2 className="font-serif italic" style={{ fontSize: 'clamp(28px, 4vw, 40px)', fontWeight: 400, color: 'var(--text)', lineHeight: 1.15, margin: '4px 0 28px' }}>
-              {d('À lire pour décider juste.', 'Reading to decide well.')}
-            </h2>
-          </FadeUp>
-
-          <div className="res-grid-3">
-            {blogPosts.slice(0, 6).map((post, i) => (
-              <FadeUp key={post.slug} delay={Math.min(i * 0.06, 0.3)}>
-                <Link href={`/blog/${post.slug}`} style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
-                  <motion.div className="res-card" whileHover={{ borderColor: 'var(--border-hover)' }}>
-                    <span className="font-mono res-badge" style={{ marginBottom: 10 }}>{post.category}</span>
-                    <h3 className="font-serif italic" style={{ fontSize: '19px', fontWeight: 400, color: 'var(--text)', lineHeight: 1.3, margin: '0 0 10px' }}>
-                      {post.title}
-                    </h3>
-                    <p className="font-sans" style={{ fontSize: '13px', fontWeight: 300, color: 'var(--text-secondary)', lineHeight: 1.6, flex: 1, display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
-                      {post.description}
-                    </p>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginTop: 14 }}>
-                      <span className="font-mono" style={{ fontSize: '11px', color: 'var(--text-muted)' }}>{post.date}</span>
-                      <span style={{ color: 'var(--text-muted)' }}>·</span>
-                      <span className="font-mono" style={{ fontSize: '11px', color: 'var(--text-muted)' }}>{post.readTime}</span>
-                    </div>
-                  </motion.div>
-                </Link>
-              </FadeUp>
-            ))}
           </div>
-        </div>
-      </section>
+        </section>
+
+        <Divider />
+        </>
+      )}
+
+      {/* ═══ 4, BLOG ═══
+           Trente articles écrits pour des requêtes françaises : le blog est
+           resté français et /en/blog redirige. Masqué ici aussi. */}
+      {lang === 'fr' && (
+        <>
+        <section id="blog" style={{ padding: '80px 24px' }}>
+          <div className="mx-auto" style={{ maxWidth: '1120px' }}>
+            <FadeUp>
+              <div className="flex items-center justify-between mb-2" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                <span className="section-label mb-0">{t('resources.blog')}</span>
+                <Link href="/blog" className="font-sans" style={{ fontSize: '13px', color: 'var(--accent)', textDecoration: 'none', fontWeight: 500 }}>
+                  {d('Voir tous les articles', 'View all articles')} &rarr;
+                </Link>
+              </div>
+              <h2 className="font-serif italic" style={{ fontSize: 'clamp(28px, 4vw, 40px)', fontWeight: 400, color: 'var(--text)', lineHeight: 1.15, margin: '4px 0 28px' }}>
+                {d('À lire pour décider juste.', 'Reading to decide well.')}
+              </h2>
+            </FadeUp>
+
+            <div className="res-grid-3">
+              {blogPosts.slice(0, 6).map((post, i) => (
+                <FadeUp key={post.slug} delay={Math.min(i * 0.06, 0.3)}>
+                  <Link href={`/blog/${post.slug}`} style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
+                    <motion.div className="res-card" whileHover={{ borderColor: 'var(--border-hover)' }}>
+                      <span className="font-mono res-badge" style={{ marginBottom: 10 }}>{post.category}</span>
+                      <h3 className="font-serif italic" style={{ fontSize: '19px', fontWeight: 400, color: 'var(--text)', lineHeight: 1.3, margin: '0 0 10px' }}>
+                        {post.title}
+                      </h3>
+                      <p className="font-sans" style={{ fontSize: '13px', fontWeight: 300, color: 'var(--text-secondary)', lineHeight: 1.6, flex: 1, display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
+                        {post.description}
+                      </p>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginTop: 14 }}>
+                        <span className="font-mono" style={{ fontSize: '11px', color: 'var(--text-muted)' }}>{post.date}</span>
+                        <span style={{ color: 'var(--text-muted)' }}>·</span>
+                        <span className="font-mono" style={{ fontSize: '11px', color: 'var(--text-muted)' }}>{post.readTime}</span>
+                      </div>
+                    </motion.div>
+                  </Link>
+                </FadeUp>
+              ))}
+            </div>
+          </div>
+        </section>
+        </>
+      )}
 
       <Footer />
       <MobileCta />

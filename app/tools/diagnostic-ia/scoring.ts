@@ -1,3 +1,5 @@
+import type { Lang } from '@/lib/i18n'
+
 /**
  * Diagnostic IA, logique de scoring pure (sans React).
  *
@@ -126,8 +128,13 @@ function tierFromScore(score: number): DiagnosticResult['maturityTier'] {
 
 function generateTopLevers(
   a: DiagnosticAnswers,
-  kpi: { saasWasteMonthly: number; hoursLostMonthly: number; aiMaturityScore: number }
+  kpi: { saasWasteMonthly: number; hoursLostMonthly: number; aiMaturityScore: number },
+  lang: Lang = 'fr'
 ): DiagnosticLever[] {
+  /* Les leviers sont du texte lu par l'utilisateur, pas du calcul : ils suivent
+     la langue de la page. Les montants et les seuils, eux, ne bougent pas. */
+  const d = (fr: string, en: string) => (lang === 'en' ? en : fr)
+  const locale = lang === 'en' ? 'en-US' : 'fr-FR'
   const candidates: Array<DiagnosticLever & { priorityScore: number }> = []
 
   // Levier SaaS (si gaspillage > 100€/mois)
@@ -135,10 +142,16 @@ function generateTopLevers(
     const annualGain = kpi.saasWasteMonthly * 12
     candidates.push({
       rank: 1, // sera remappé après tri
-      title: 'Consolidation de votre stack SaaS',
-      description: `Vous payez ${kpi.saasWasteMonthly}€/mois pour des outils non ou mal utilisés. Une cartographie + un audit de redondance permet de récupérer cette marge sans rien casser dans l'opérationnel quotidien.`,
-      estimatedGain: `${annualGain.toLocaleString('fr-FR')}€/an économisés`,
-      effort: '2-3 semaines',
+      title: d('Consolidation de votre stack SaaS', 'Consolidating your SaaS stack'),
+      description: d(
+        `Vous payez ${kpi.saasWasteMonthly}€/mois pour des outils non ou mal utilisés. Une cartographie + un audit de redondance permet de récupérer cette marge sans rien casser dans l'opérationnel quotidien.`,
+        `You are paying ${kpi.saasWasteMonthly}€ a month for tools that are unused or barely used. Mapping them and auditing the overlaps wins that margin back without breaking anything in the daily running.`
+      ),
+      estimatedGain: d(
+        `${annualGain.toLocaleString('fr-FR')}€/an économisés`,
+        `${annualGain.toLocaleString(locale)}€ a year saved`
+      ),
+      effort: d('2-3 semaines', '2-3 weeks'),
       category: 'saas',
       priorityScore: kpi.saasWasteMonthly * 10, // 100€/mois → 1000
     })
@@ -150,10 +163,16 @@ function generateTopLevers(
     const gainedHours = Math.round(kpi.hoursLostMonthly * monthlyGainPct)
     candidates.push({
       rank: 2,
-      title: "Automatisation des tâches répétitives prioritaires",
-      description: `Vos équipes perdent ${kpi.hoursLostMonthly}h/mois sur des tâches qu'on peut automatiser. On commence par les 2 plus chronophages, avec un ROI mesurable en moins de 30 jours.`,
-      estimatedGain: `~${gainedHours}h/mois récupérées (${Math.round(gainedHours / 4)}h/semaine)`,
-      effort: '4-6 semaines',
+      title: d('Automatisation des tâches répétitives prioritaires', 'Automating the repetitive tasks that cost most'),
+      description: d(
+        `Vos équipes perdent ${kpi.hoursLostMonthly}h/mois sur des tâches qu'on peut automatiser. On commence par les 2 plus chronophages, avec un ROI mesurable en moins de 30 jours.`,
+        `Your teams lose ${kpi.hoursLostMonthly}h a month on tasks that can be automated. We start with the two that eat the most time, with a return you can measure in under 30 days.`
+      ),
+      estimatedGain: d(
+        `~${gainedHours}h/mois récupérées (${Math.round(gainedHours / 4)}h/semaine)`,
+        `~${gainedHours}h a month won back (${Math.round(gainedHours / 4)}h a week)`
+      ),
+      effort: d('4-6 semaines', '4-6 weeks'),
       category: 'time',
       priorityScore: kpi.hoursLostMonthly * 30, // 20h/mois → 600
     })
@@ -166,20 +185,32 @@ function generateTopLevers(
     let description: string
     let effort: string
     if (tier === 'critical') {
-      description = `Votre score (${kpi.aiMaturityScore}/100) montre qu'il y a une fenêtre d'action évidente. On centralise vos données dans un seul système, on documente 2-3 process critiques, et on intègre l'IA là où elle remplace de vraies heures.`
-      effort = '8-12 semaines'
+      description = d(
+        `Votre score (${kpi.aiMaturityScore}/100) montre qu'il y a une fenêtre d'action évidente. On centralise vos données dans un seul système, on documente 2-3 process critiques, et on intègre l'IA là où elle remplace de vraies heures.`,
+        `Your score (${kpi.aiMaturityScore}/100) shows an obvious opening. We bring your data into one system, write down 2 or 3 critical processes, and build AI in where it replaces real hours.`
+      )
+      effort = d('8-12 semaines', '8-12 weeks')
     } else if (tier === 'lagging') {
-      description = `Votre score (${kpi.aiMaturityScore}/100) est sous la moyenne du marché. On accélère sur 2 chantiers : centralisation des données + 1 process IA prioritaire avec ROI mesurable.`
-      effort = '6-8 semaines'
+      description = d(
+        `Votre score (${kpi.aiMaturityScore}/100) est sous la moyenne du marché. On accélère sur 2 chantiers : centralisation des données + 1 process IA prioritaire avec ROI mesurable.`,
+        `Your score (${kpi.aiMaturityScore}/100) sits below the market average. We push on two fronts: centralising the data, and one priority AI process with a measurable return.`
+      )
+      effort = d('6-8 semaines', '6-8 weeks')
     } else {
-      description = `Votre score (${kpi.aiMaturityScore}/100) est correct mais peut encore monter. Sur les bons leviers, +${targetGain} points sont atteignables en quelques semaines.`
-      effort = '4-6 semaines'
+      description = d(
+        `Votre score (${kpi.aiMaturityScore}/100) est correct mais peut encore monter. Sur les bons leviers, +${targetGain} points sont atteignables en quelques semaines.`,
+        `Your score (${kpi.aiMaturityScore}/100) is decent but can still climb. On the right levers, +${targetGain} points is reachable in a few weeks.`
+      )
+      effort = d('4-6 semaines', '4-6 weeks')
     }
     candidates.push({
       rank: 3,
-      title: 'Mise à niveau IA & centralisation des données',
+      title: d('Mise à niveau IA & centralisation des données', 'AI upgrade & data centralisation'),
       description,
-      estimatedGain: `Score maturité +${targetGain} points en moyenne`,
+      estimatedGain: d(
+        `Score maturité +${targetGain} points en moyenne`,
+        `Maturity score +${targetGain} points on average`
+      ),
       effort,
       category: 'ai',
       priorityScore: (75 - kpi.aiMaturityScore) * 10, // score 0 → 750
@@ -203,7 +234,7 @@ function generateTopLevers(
 // API publique
 // ─────────────────────────────────────────────────────────────────────
 
-export function computeDiagnostic(a: DiagnosticAnswers): DiagnosticResult {
+export function computeDiagnostic(a: DiagnosticAnswers, lang: Lang = 'fr'): DiagnosticResult {
   const saasWasteMonthly = computeSaasWaste(a)
   const hoursLostMonthly = computeHoursLostMonthly(a)
   const aiMaturityScore = computeAiMaturityScore(a)
@@ -224,11 +255,7 @@ export function computeDiagnostic(a: DiagnosticAnswers): DiagnosticResult {
     timeWasteAnnualEuros,
     aiMaturityScore,
     maturityTier: tierFromScore(aiMaturityScore),
-    topLevers: generateTopLevers(a, {
-      saasWasteMonthly,
-      hoursLostMonthly,
-      aiMaturityScore,
-    }),
+    topLevers: generateTopLevers(a, { saasWasteMonthly, hoursLostMonthly, aiMaturityScore }, lang),
   }
 
   return result
