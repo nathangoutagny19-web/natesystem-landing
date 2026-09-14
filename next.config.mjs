@@ -30,12 +30,12 @@ const nextConfig = {
          indexé depuis le 8 septembre. */
       {
         source: '/en/blog',
-        destination: '/blog',
+        destination: '/blog/',
         permanent: true,
       },
       {
         source: '/en/blog/:slug',
-        destination: '/blog/:slug',
+        destination: '/blog/:slug/',
         permanent: true,
       },
       // Préserve les liens externes existants en renvoyant vers l'index des outils.
