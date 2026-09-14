@@ -2,9 +2,10 @@
 
 import { createContext, useContext, useCallback } from 'react'
 import { usePathname, useRouter } from 'next/navigation'
-import { translations, type TranslationKey } from '@/lib/i18n'
+import { translations, type TranslationKey, type Lang } from '@/lib/i18n'
+import { hasEnglishVersion } from '@/lib/routes'
 
-export type Lang = 'en' | 'fr'
+export type { Lang }
 
 export const DEFAULT_LANG: Lang = 'fr'
 
@@ -65,7 +66,13 @@ export function useLang() {
 export function mirrorPath(pathname: string, target: Lang): string {
   const withoutPrefix = pathname.replace(/^\/en(?=\/|$)/, '') || '/'
   if (target === 'fr') return withoutPrefix
-  return withoutPrefix === '/' ? '/en' : `/en${withoutPrefix}`
+  /* Toutes les pages françaises n'ont pas d'équivalent anglais : les villes,
+     les pages sectorielles et le blog restent français. Le drapeau renvoyait
+     vers /en/<slug français>, donc vers une 404. Il ramène à l'accueil
+     anglais, qui existe toujours. */
+  if (!hasEnglishVersion(withoutPrefix)) return '/en'
+  const trimmed = withoutPrefix.replace(/\/+$/, '')
+  return trimmed === '' ? '/en' : `/en${trimmed}`
 }
 
 export function LangProvider({

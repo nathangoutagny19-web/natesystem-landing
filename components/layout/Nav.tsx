@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { useLang } from '@/components/providers/LangProvider'
 import { useTheme } from '@/components/providers/ThemeProvider'
 import { CAL_LINK } from '@/lib/constants'
+import { localizedHref } from '@/lib/routes'
 import ScreenMock from '@/components/ui/ScreenMock'
 
 /* ——— SVG Icons (monoline, 18px) ——— */
@@ -116,6 +117,9 @@ const Chevron = () => (
 export default function Nav() {
   const { lang, setLang, t } = useLang()
   const d = (fr: string, en: string) => (lang === 'en' ? en : fr)
+  /* Les href sont écrits en français. Sous /en ils sont préfixés ici, sinon le
+     premier clic d'un visiteur anglophone le renvoie dans l'arbre français. */
+  const l = (path: string) => localizedHref(path, lang)
   const { theme, toggleTheme } = useTheme()
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
@@ -143,7 +147,7 @@ export default function Nav() {
       <header className={`nav-bar ${scrolled ? 'nav-scrolled' : ''}`}>
         <div className="nav-inner">
           {/* Logo */}
-          <Link href="/" className="nav-logo">
+          <Link href={l('/')} className="nav-logo">
             <span className="nav-logo-n">N</span>
             <span className="nav-logo-dot" />
             <span className={`nav-logo-text ${scrolled ? 'nav-logo-text-hidden' : ''}`}>NateSystem</span>
@@ -153,25 +157,25 @@ export default function Nav() {
               Réalisations · Ressources. « Notre approche » = page /methode (Lot 2).
               Ressources = lien direct (pas de méga). */}
           <nav className="nav-links">
-            <Link href="/methode" className="nav-link">{t('nav.methode')}</Link>
+            <Link href={l('/methode')} className="nav-link">{t('nav.methode')}</Link>
 
             {/* Services, méga avec panneau photo (façon concurrents, sauce NateSystem) */}
             <div className="nav-dropdown">
-              <Link href="/services" className="nav-link nav-link-dropdown">
+              <Link href={l('/services')} className="nav-link nav-link-dropdown">
                 {t('nav.services')} <Chevron />
               </Link>
               <div className="nav-mega nav-mega-feature">
                 <div className="nav-mega-inner">
                   <div className="nav-mega-col">
                     <p className="nav-mega-label">{t('mega.services')}</p>
-                    <MegaItem href="/services/audit" icon={icons.clipboard} title={t('nav.svc.sprint')} desc={t('nav.svc.sprintDesc')} />
-                    <MegaItem href="/services/logiciel-sur-mesure" icon={icons.laptop} title={t('nav.svc.logiciel')} desc={t('nav.svc.logicielDesc')} />
-                    <MegaItem href="/services/ia" icon={icons.brain} title={t('nav.svc.ia')} desc={t('nav.svc.iaDesc')} />
-                    <MegaItem href="/services/formation" icon={icons.book} title={t('nav.svc.audit')} desc={t('nav.svc.auditDesc')} />
+                    <MegaItem href={l('/services/audit')} icon={icons.clipboard} title={t('nav.svc.sprint')} desc={t('nav.svc.sprintDesc')} />
+                    <MegaItem href={l('/services/logiciel-sur-mesure')} icon={icons.laptop} title={t('nav.svc.logiciel')} desc={t('nav.svc.logicielDesc')} />
+                    <MegaItem href={l('/services/ia')} icon={icons.brain} title={t('nav.svc.ia')} desc={t('nav.svc.iaDesc')} />
+                    <MegaItem href={l('/services/formation')} icon={icons.book} title={t('nav.svc.audit')} desc={t('nav.svc.auditDesc')} />
                   </div>
                   <div className="nav-mega-features">
                     <MegaFeature
-                      href="/resources"
+                      href={l('/resources')}
                       img="/realisations/prototype/proto-front.jpg"
                       label={d('Ressources', 'Resources')}
                       title={d('Utilisez nos apps, gratuitement', 'Use our apps, for free')}
@@ -179,7 +183,7 @@ export default function Nav() {
                     />
                     <MegaFeature
                       photo
-                      href="/case-studies/chromosome"
+                      href={l('/case-studies/chromosome')}
                       img="/realisations/prototype/diag-feuille.jpg"
                       label={d('Réalisation', 'Case study')}
                       title={d('Le cas Chromosome', 'The Chromosome case')}
@@ -189,21 +193,21 @@ export default function Nav() {
                 </div>
                 <div className="nav-mega-foot">
                   <div className="nav-mega-more">
-                    <Link href="/methode" className="nav-mega-foot-link">{d('Voir comment on travaille', 'See how we work')}</Link>
+                    <Link href={l('/methode')} className="nav-mega-foot-link">{d('Voir comment on travaille', 'See how we work')}</Link>
                   </div>
-                  <Link href={CAL_LINK} className="nav-mega-foot-cta">{d('Réserver un appel', 'Book a call')} &rarr;</Link>
+                  <Link href={l(CAL_LINK)} className="nav-mega-foot-cta">{d('Réserver un appel', 'Book a call')} &rarr;</Link>
                 </div>
               </div>
             </div>
 
             {/* Réalisations, lien direct */}
-            <Link href="/case-studies" className="nav-link">{t('nav.realisations')}</Link>
+            <Link href={l('/case-studies')} className="nav-link">{t('nav.realisations')}</Link>
 
             {/* Ressources, lien direct (seul Services garde un déroulant) */}
-            <Link href="/resources" className="nav-link">{t('nav.resources')}</Link>
+            <Link href={l('/resources')} className="nav-link">{t('nav.resources')}</Link>
 
             {/* Outils gratuits, lien direct (aimant à leads SEO) */}
-            <Link href="/outils" className="nav-link">{t('nav.freeTools')}</Link>
+            <Link href={l('/outils')} className="nav-link">{t('nav.freeTools')}</Link>
           </nav>
 
           {/* Right side, lang + CTA */}
@@ -227,7 +231,7 @@ export default function Nav() {
 
             {/* CTA unique (Lot 1), action simple « Réserver un appel » (le nom
                 « Sprint Diagnostic » vit sur la page, pas sur le bouton). */}
-            <Link href={CAL_LINK} className="nav-cta-btn">
+            <Link href={l(CAL_LINK)} className="nav-cta-btn">
               {t('nav.ctaCall')}
             </Link>
           </div>
@@ -235,7 +239,7 @@ export default function Nav() {
       </header>
 
       {/* ——— Mobile logo ——— */}
-      <Link href="/" className="fixed top-5 left-6 z-[100] md:hidden flex items-center gap-[6px]" style={{ textDecoration: 'none' }}>
+      <Link href={l('/')} className="fixed top-5 left-6 z-[100] md:hidden flex items-center gap-[6px]" style={{ textDecoration: 'none' }}>
         <span className="nav-logo-n">N</span>
         <span className="nav-logo-dot" />
       </Link>
@@ -265,20 +269,20 @@ export default function Nav() {
         style={{ backdropFilter: 'blur(24px)', WebkitBackdropFilter: 'blur(24px)', background: 'var(--mobile-menu-bg, rgba(14,14,18,0.95))' }}
       >
         <div className="pt-20 px-6 flex flex-col gap-1">
-          <MobileLink href="/methode" onClick={() => setMenuOpen(false)}>{t('nav.methode')}</MobileLink>
+          <MobileLink href={l('/methode')} onClick={() => setMenuOpen(false)}>{t('nav.methode')}</MobileLink>
 
           <MobileAccordion label={t('nav.services')} open={mobileServicesOpen} onToggle={() => setMobileServicesOpen(!mobileServicesOpen)}>
-            <MobileLink href="/services/audit" onClick={() => setMenuOpen(false)}>{t('nav.svc.sprint')}</MobileLink>
-            <MobileLink href="/services/logiciel-sur-mesure" onClick={() => setMenuOpen(false)}>{t('nav.svc.logiciel')}</MobileLink>
-            <MobileLink href="/services/ia" onClick={() => setMenuOpen(false)}>{t('nav.svc.ia')}</MobileLink>
-            <MobileLink href="/services/formation" onClick={() => setMenuOpen(false)}>{t('nav.svc.audit')}</MobileLink>
+            <MobileLink href={l('/services/audit')} onClick={() => setMenuOpen(false)}>{t('nav.svc.sprint')}</MobileLink>
+            <MobileLink href={l('/services/logiciel-sur-mesure')} onClick={() => setMenuOpen(false)}>{t('nav.svc.logiciel')}</MobileLink>
+            <MobileLink href={l('/services/ia')} onClick={() => setMenuOpen(false)}>{t('nav.svc.ia')}</MobileLink>
+            <MobileLink href={l('/services/formation')} onClick={() => setMenuOpen(false)}>{t('nav.svc.audit')}</MobileLink>
           </MobileAccordion>
 
-          <MobileLink href="/case-studies" onClick={() => setMenuOpen(false)}>{t('nav.realisations')}</MobileLink>
+          <MobileLink href={l('/case-studies')} onClick={() => setMenuOpen(false)}>{t('nav.realisations')}</MobileLink>
 
-          <MobileLink href="/resources" onClick={() => setMenuOpen(false)}>{t('nav.resources')}</MobileLink>
+          <MobileLink href={l('/resources')} onClick={() => setMenuOpen(false)}>{t('nav.resources')}</MobileLink>
 
-          <MobileLink href="/outils" onClick={() => setMenuOpen(false)}>{t('nav.freeTools')}</MobileLink>
+          <MobileLink href={l('/outils')} onClick={() => setMenuOpen(false)}>{t('nav.freeTools')}</MobileLink>
 
           <div className="flex gap-2 mt-4 flex-wrap">
             {(['en', 'fr'] as const).map(l => (
@@ -312,7 +316,7 @@ export default function Nav() {
             </button>
           </div>
 
-          <Link href={CAL_LINK} className="btn-primary mt-6 justify-center">
+          <Link href={l(CAL_LINK)} className="btn-primary mt-6 justify-center">
             <span className="btn-primary-dot" />{t('nav.ctaCall')}
           </Link>
         </div>

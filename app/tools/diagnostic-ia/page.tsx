@@ -7,6 +7,7 @@ import Nav from '@/components/layout/Nav'
 import Footer from '@/components/layout/Footer'
 import MobileCta from '@/components/layout/MobileCta'
 import { CAL_LINK } from '@/lib/constants'
+import { localizedHref } from '@/lib/routes'
 import { useLang } from '@/components/providers/LangProvider'
 import {
   computeDiagnostic,
@@ -28,7 +29,7 @@ type Stage = 'intro' | 'act1' | 'act2' | 'act3' | 'report'
  * en fin de rapport, pas d'un capture-form intrusif.
  */
 export default function DiagnosticIaPage() {
-  const { t } = useLang()
+  const { lang, t } = useLang()
   const [stage, setStage] = useState<Stage>('intro')
   const [answers, setAnswers] = useState<DiagnosticAnswers>(DEFAULT_ANSWERS)
 
@@ -715,6 +716,7 @@ function Report({
   result: ReturnType<typeof computeDiagnostic>
   onReset: () => void
 }) {
+  const { lang } = useLang()
   const handlePrint = () => window.print()
 
   const tierLabel: Record<typeof result.maturityTier, string> = {
@@ -897,7 +899,7 @@ function Report({
           style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 12 }}
         >
           <Link
-            href={CAL_LINK}
+            href={localizedHref(CAL_LINK, lang)}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary inline-flex"

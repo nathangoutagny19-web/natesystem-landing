@@ -2,6 +2,7 @@ import type { MetadataRoute } from 'next'
 import { blogPosts } from '@/lib/blog'
 import { allSlugs as allPlaybookSlugs } from '@/lib/playbooks'
 import { allCaseSlugs } from '@/lib/case-studies'
+import { EN_ROUTES } from '@/lib/routes'
 
 const BASE_URL = 'https://www.natesystem.com'
 
@@ -85,34 +86,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
      Chaque entrée déclare son équivalent français en `alternates`, ce qui pose
      le hreflang directement dans le sitemap en plus des balises de page.
      ───────────────────────────────────────────────────────────────────── */
-  const EN_ROUTES = [
-    ['/', 1.0], ['/a-propos', 0.6], ['/blog', 0.8], ['/book', 0.7],
-    ['/case-studies', 0.8], ['/glossaire', 0.6], ['/mentions-legales', 0.3],
-    ['/methode', 0.9], ['/outils', 0.9], ['/outils/pret-pour-lia', 0.9],
-    ['/politique-anti-spam', 0.3], ['/resources', 0.7], ['/reviews', 0.7],
-    ['/services', 0.9], ['/services/audit', 0.9], ['/services/formation', 0.9],
-    ['/services/ia', 0.9], ['/services/logiciel-sur-mesure', 0.9],
-    ['/tools', 0.8], ['/tools/diagnostic-ia', 0.9],
-  ] as const
 
-  const enStaticRoutes: MetadataRoute.Sitemap = EN_ROUTES.map(([path, priority]) => ({
+  /* Les priorités anglaises, par route. Une route absente de EN_ROUTES n'est
+     pas traduite et n'a rien à faire ici : la table est indexée par la liste. */
+  const EN_PRIORITY: Record<string, number> = {
+    '/': 1.0, '/methode': 0.9, '/services': 0.9, '/services/audit': 0.9,
+    '/services/formation': 0.9, '/services/ia': 0.9,
+    '/services/logiciel-sur-mesure': 0.9, '/a-propos': 0.6,
+    '/case-studies': 0.8, '/outils': 0.9, '/outils/pret-pour-lia': 0.9,
+    '/tools': 0.8, '/tools/diagnostic-ia': 0.9, '/resources': 0.7,
+    '/reviews': 0.7, '/book': 0.7, '/glossaire': 0.6,
+    '/mentions-legales': 0.3, '/politique-anti-spam': 0.3,
+  }
+
+  const enStaticRoutes: MetadataRoute.Sitemap = EN_ROUTES.map((path) => ({
     url: `${BASE_URL}/en${path === '/' ? '' : path}`,
     lastModified: now,
     changeFrequency: 'monthly',
-    priority,
+    priority: EN_PRIORITY[path] ?? 0.6,
     alternates: {
       languages: {
         'fr-FR': `${BASE_URL}${path}`,
         en: `${BASE_URL}/en${path === '/' ? '' : path}`,
       },
     },
-  }))
-
-  const enBlogRoutes: MetadataRoute.Sitemap = blogPosts.map((post) => ({
-    url: `${BASE_URL}/en/blog/${post.slug}`,
-    lastModified: post.date ? new Date(post.date).toISOString() : now,
-    changeFrequency: 'monthly',
-    priority: 0.6,
   }))
 
   const enCaseStudyRoutes: MetadataRoute.Sitemap = allCaseSlugs().map((slug) => ({
@@ -128,7 +125,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...blogRoutes,
     ...caseStudyRoutes,
     ...enStaticRoutes,
-    ...enBlogRoutes,
     ...enCaseStudyRoutes,
   ]
 }

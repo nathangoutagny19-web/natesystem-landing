@@ -20,6 +20,7 @@ import Link from 'next/link'
 import FadeUp from '@/components/ui/FadeUp'
 import { useLang } from '@/components/providers/LangProvider'
 import { CAL_LINK } from '@/lib/constants'
+import { localizedHref } from '@/lib/routes'
 
 type Card = {
   icon: LucideIcon
@@ -95,7 +96,7 @@ export default function Systems() {
       {/* CTA principal « Je veux le mien » + lien secondaire vers les cas clients */}
       <div className="mx-auto text-center" style={{ maxWidth: '1100px', padding: '40px 24px 0', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 16 }}>
         <FadeUp>
-          <Link href={CAL_LINK} className="btn-primary">
+          <Link href={localizedHref(CAL_LINK, lang)} className="btn-primary">
             <span className="btn-primary-dot" />{d('Je veux le mien', 'I want mine')} &rarr;
           </Link>
         </FadeUp>

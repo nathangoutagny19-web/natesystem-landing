@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { useLang } from '@/components/providers/LangProvider'
+import { localizedHref } from '@/lib/routes'
 import { useTheme } from '@/components/providers/ThemeProvider'
 
 /**
@@ -22,7 +23,7 @@ import { useTheme } from '@/components/providers/ThemeProvider'
  * Bottom row, copyright + SIRET + lang note.
  */
 export default function Footer() {
-  const { t } = useLang()
+  const { lang, t } = useLang()
   const { theme, toggleTheme } = useTheme()
 
   return (
@@ -41,7 +42,7 @@ export default function Footer() {
         className="footer-grid"
         style={{
           display: 'grid',
-          gridTemplateColumns: 'minmax(0, 1.4fr) repeat(5, minmax(0, 1fr))',
+          gridTemplateColumns: `minmax(0, 1.4fr) repeat(${lang === 'en' ? 4 : 5}, minmax(0, 1fr))`,
           gap: 32,
           alignItems: 'flex-start',
           position: 'relative',
@@ -136,16 +137,20 @@ export default function Footer() {
           <FooterLink href="/#contact">{t('footer.link.contact')}</FooterLink>
         </FooterCol>
 
-        {/* Solutions column, conversion + sector SEO pages */}
-        <FooterCol title={t('footer.col.solutions')}>
-          <FooterLink href="/prix-logiciel-sur-mesure">{t('footer.link.pricing')}</FooterLink>
-          <FooterLink href="/logiciel-sur-mesure-vs-saas">{t('footer.link.vsSaas')}</FooterLink>
-          <FooterLink href="/agence-logiciel-ia-lyon">{t('footer.link.lyon')}</FooterLink>
-          <FooterLink href="/logiciel-sur-mesure-restauration">{t('footer.link.restaurant')}</FooterLink>
-          <FooterLink href="/logiciel-sur-mesure-enseignement-superieur">{t('footer.link.education')}</FooterLink>
-          <FooterLink href="/logiciel-sur-mesure-conseil">{t('footer.link.consulting')}</FooterLink>
-          <FooterLink href="/logiciel-sur-mesure-club-sportif">{t('footer.link.sportsclub')}</FooterLink>
-        </FooterCol>
+        {/* Solutions column, conversion + sector SEO pages.
+            Ces sept pages n'existent qu'en français, par choix : elles visent
+            des requêtes françaises. Sous /en la colonne serait vide. */}
+        {lang === 'fr' && (
+          <FooterCol title={t('footer.col.solutions')}>
+            <FooterLink href="/prix-logiciel-sur-mesure">{t('footer.link.pricing')}</FooterLink>
+            <FooterLink href="/logiciel-sur-mesure-vs-saas">{t('footer.link.vsSaas')}</FooterLink>
+            <FooterLink href="/agence-logiciel-ia-lyon">{t('footer.link.lyon')}</FooterLink>
+            <FooterLink href="/logiciel-sur-mesure-restauration">{t('footer.link.restaurant')}</FooterLink>
+            <FooterLink href="/logiciel-sur-mesure-enseignement-superieur">{t('footer.link.education')}</FooterLink>
+            <FooterLink href="/logiciel-sur-mesure-conseil">{t('footer.link.consulting')}</FooterLink>
+            <FooterLink href="/logiciel-sur-mesure-club-sportif">{t('footer.link.sportsclub')}</FooterLink>
+          </FooterCol>
+        )}
 
         {/* Tools & demos column */}
         <FooterCol title={t('footer.col.toolsDemos')}>
@@ -159,8 +164,8 @@ export default function Footer() {
 
         {/* Resources column */}
         <FooterCol title={t('footer.col.resources')}>
-          <FooterLink href="/blog">{t('resources.blog')}</FooterLink>
-          <FooterLink href="/playbook">{t('footer.link.playbooks')}</FooterLink>
+          {lang === 'fr' && <FooterLink href="/blog">{t('resources.blog')}</FooterLink>}
+          {lang === 'fr' && <FooterLink href="/playbook">{t('footer.link.playbooks')}</FooterLink>}
           <FooterLink href="/glossaire">{t('footer.link.glossary')}</FooterLink>
           <FooterLink href="/resources#videos">{t('resources.caseStudies')}</FooterLink>
           <FooterLink href="/resources">{t('nav.resources')}</FooterLink>
@@ -307,6 +312,9 @@ function FooterLink({
   children: React.ReactNode
   external?: boolean
 }) {
+  /* Le href est écrit en français dans les colonnes ci-dessus. Sous /en il est
+     préfixé ici, une fois, plutôt que dans chacun des vingt appels. */
+  const { lang } = useLang()
   const style: React.CSSProperties = {
     fontSize: '13px',
     color: 'var(--text-muted)',
@@ -330,7 +338,7 @@ function FooterLink({
     )
   }
   return (
-    <Link href={href} className="font-sans footer-link" style={style}>
+    <Link href={localizedHref(href, lang)} className="font-sans footer-link" style={style}>
       {children}
     </Link>
   )

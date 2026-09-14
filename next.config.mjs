@@ -23,6 +23,21 @@ const nextConfig = {
         permanent: true,
       },
       // Restaurant audit retiré du catalogue (hors scope landing principal).
+      /* Le blog est resté français : trente articles de fond écrits pour des
+         requêtes françaises, sous des slugs français. Les routes /en/blog
+         existaient et servaient ce français avec une nav anglaise autour.
+         Elles redirigent, plutôt que de renvoyer 404 sur ce qui a pu être
+         indexé depuis le 8 septembre. */
+      {
+        source: '/en/blog',
+        destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/en/blog/:slug',
+        destination: '/blog/:slug',
+        permanent: true,
+      },
       // Préserve les liens externes existants en renvoyant vers l'index des outils.
       {
         source: '/tools/restaurant-audit',

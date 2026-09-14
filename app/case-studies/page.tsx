@@ -9,6 +9,7 @@ import CaseStudy from '@/components/home/CaseStudy'
 import Link from 'next/link'
 import { useLang } from '@/components/providers/LangProvider'
 import { CAL_LINK } from '@/lib/constants'
+import { localizedHref } from '@/lib/routes'
 
 export default function CaseStudiesPage() {
   const { lang } = useLang()
@@ -83,7 +84,7 @@ export default function CaseStudiesPage() {
             <h2 className="font-serif italic" style={{ fontSize: 'clamp(24px, 3.4vw, 34px)', fontWeight: 400, color: 'var(--text)', lineHeight: 1.25, marginBottom: 24 }}>
               {d('Envie du même résultat chez vous ?', 'Want the same result at your company?')}
             </h2>
-            <Link href={CAL_LINK} className="btn-primary">
+            <Link href={localizedHref(CAL_LINK, lang)} className="btn-primary">
               <span className="btn-primary-dot" />
               {d('Réserver un appel', 'Book a call')} &rarr;
             </Link>

@@ -13,6 +13,7 @@ import MethodeFeatures from '@/components/methode/MethodeFeatures'
 import Faq from '@/components/home/Faq'
 import { useLang } from '@/components/providers/LangProvider'
 import { CAL_LINK } from '@/lib/constants'
+import { localizedHref } from '@/lib/routes'
 
 export default function MethodeContent() {
   const { t, lang } = useLang()
@@ -55,7 +56,7 @@ export default function MethodeContent() {
             <p className="font-sans" style={{ fontSize: 'clamp(15px, 3vw, 18px)', fontWeight: 300, color: 'var(--text-secondary)', maxWidth: 660, margin: '0 auto 32px', lineHeight: 1.65 }}>
               {t('methode.hero.sub')}
             </p>
-            <Link href={CAL_LINK} className="btn-primary" style={{ margin: '0 auto 40px', fontSize: 14 }}>
+            <Link href={localizedHref(CAL_LINK, lang)} className="btn-primary" style={{ margin: '0 auto 40px', fontSize: 14 }}>
               <span className="btn-primary-dot" />{t('methode.hero.cta')} →
             </Link>
             <div className="methode-stats">
@@ -203,7 +204,7 @@ export default function MethodeContent() {
               <p className="font-sans" style={{ fontSize: 15, fontWeight: 300, color: 'var(--text-secondary)', lineHeight: 1.7, maxWidth: 520, margin: '0 auto 32px' }}>
                 {t('methode.cta.sub')}
               </p>
-              <Link href={CAL_LINK} className="btn-primary" style={{ margin: '0 auto' }}>
+              <Link href={localizedHref(CAL_LINK, lang)} className="btn-primary" style={{ margin: '0 auto' }}>
                 <span className="btn-primary-dot" />{t('methode.cta.button')}
               </Link>
             </div>

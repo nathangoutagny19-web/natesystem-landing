@@ -1,3 +1,7 @@
+/** Les deux langues servies par le site. Ici plutôt que dans le provider :
+ *  `lib/routes.ts` en a besoin et ne peut pas importer un composant client. */
+export type Lang = 'en' | 'fr'
+
 export const translations = {
   // Nav
   'nav.agency': { en: 'Agency', fr: 'Agence' },

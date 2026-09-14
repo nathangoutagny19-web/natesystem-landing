@@ -6,6 +6,7 @@ import { useLang } from '@/components/providers/LangProvider'
 import Link from 'next/link'
 import { Sparkles } from 'lucide-react'
 import { CAL_LINK } from '@/lib/constants'
+import { localizedHref } from '@/lib/routes'
 import VslPlayer from '@/components/ui/VslPlayer'
 
 const ease = [0.22, 1, 0.36, 1] as const
@@ -63,7 +64,7 @@ function RotatingWord({ words }: { words: string[] }) {
 }
 
 export default function Hero() {
-  const { t } = useLang()
+  const { lang, t } = useLang()
   const words = t('hero.titleWords').split('|').map((w) => w.trim()).filter(Boolean)
 
   return (
@@ -131,7 +132,7 @@ export default function Hero() {
         initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.5, ease }}
         className="flex flex-wrap items-center justify-center gap-3"
       >
-        <Link href={CAL_LINK} className="btn-primary" style={{ fontSize: '14px' }}>
+        <Link href={localizedHref(CAL_LINK, lang)} className="btn-primary" style={{ fontSize: '14px' }}>
           <span className="btn-primary-dot" />
           {t('hero.cta')} →
         </Link>

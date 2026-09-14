@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useLang } from '@/components/providers/LangProvider'
 import { CAL_LINK } from '@/lib/constants'
+import { localizedHref } from '@/lib/routes'
 
 const APPEAR_DELAY_MS = 12_000
 const TEASER_TYPEWRITER_MS = 35
@@ -330,7 +331,7 @@ export default function WorkTogetherPrompt() {
 
               {/* CTA + later */}
               <Link
-                href={CAL_LINK}
+                href={localizedHref(CAL_LINK, lang)}
                 onClick={() => setMode('hidden')}
                 className="btn-primary inline-flex"
                 style={{

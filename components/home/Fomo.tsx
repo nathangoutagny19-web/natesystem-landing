@@ -5,9 +5,10 @@ import { ArrowRight } from 'lucide-react'
 import FadeUp from '@/components/ui/FadeUp'
 import { useLang } from '@/components/providers/LangProvider'
 import { CAL_LINK } from '@/lib/constants'
+import { localizedHref } from '@/lib/routes'
 
 export default function Fomo() {
-  const { t } = useLang()
+  const { lang, t } = useLang()
 
   const stats = [
     { num: t('fomo.stat1.num'), desc: t('fomo.stat1.desc'), source: t('fomo.stat1.source'), url: t('fomo.stat1.url') },
@@ -107,7 +108,7 @@ export default function Fomo() {
 
           <div className="text-center">
             <Link
-              href={CAL_LINK}
+              href={localizedHref(CAL_LINK, lang)}
               className="btn-primary"
               style={{ fontSize: 14, display: 'inline-flex', alignItems: 'center', gap: 8 }}
             >
