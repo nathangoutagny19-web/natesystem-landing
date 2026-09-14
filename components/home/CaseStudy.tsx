@@ -11,12 +11,17 @@ const YOUTUBE_ID = 'aMIjJbzuhDc'
 // Lecteur YouTube "facade" : on ne charge l'iframe (ni les cookies tiers)
 // qu'au clic. Remplit son parent (aspect-ratio géré par le conteneur).
 function LiteYouTube({ title }: { title: string }) {
+  /* Le témoignage est parlé en français. Sous /en on demande l'affichage des
+     sous-titres et la piste anglaise ; il faut qu'une piste anglaise existe
+     sur la vidéo pour que ce soit fiable. */
+  const { lang } = useLang()
+  const captions = lang === 'en' ? '&cc_load_policy=1&cc_lang_pref=en&hl=en' : ''
   const [loaded, setLoaded] = useState(false)
 
   if (loaded) {
     return (
       <iframe
-        src={`https://www.youtube.com/embed/${YOUTUBE_ID}?autoplay=1&rel=0&modestbranding=1`}
+        src={`https://www.youtube.com/embed/${YOUTUBE_ID}?autoplay=1&rel=0&modestbranding=1${captions}`}
         title={title}
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         referrerPolicy="strict-origin-when-cross-origin"

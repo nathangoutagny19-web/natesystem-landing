@@ -1,7 +1,8 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Play } from 'lucide-react'
+import { useLang } from '@/components/providers/LangProvider'
 
 /**
  * Self-hosted VSL, plays INLINE on the landing (no modal, no popup).
@@ -11,6 +12,14 @@ import { Play } from 'lucide-react'
  * Perf: the <video> is only mounted once the poster is clicked, so the file
  * is NEVER fetched on page load, the hero stays as light as before. Until
  * then it's just a poster image + a play button, in the exact same frame.
+ *
+ * Sous-titres : les deux vidéos du site sont parlées en français, y compris
+ * servies sous /en. Sans piste anglaise, un visiteur anglophone regarde une
+ * vidéo qu'il ne comprend pas. La piste anglaise est donc affichée d'office
+ * sous /en, pas seulement proposée dans le menu : `default` ne suffit pas,
+ * les navigateurs le subordonnent à une préférence d'accessibilité, d'où le
+ * passage en `showing` à la main. En français, les deux pistes restent
+ * disponibles mais aucune n'est imposée.
  */
 export default function VslPlayer({
   src,
@@ -18,6 +27,7 @@ export default function VslPlayer({
   label = 'Voir la démo',
   duration,
   title = 'Démo NateSystem',
+  subtitles,
 }: {
   /** Path to the self-hosted file, e.g. "/vsl.mp4" (put it in /public). */
   src: string
@@ -27,13 +37,44 @@ export default function VslPlayer({
   /** Small caption, e.g. "5 min". */
   duration?: string
   title?: string
+  /** Base des pistes, sans langue ni extension : 'vsl' → /subtitles/vsl.en.vtt */
+  subtitles?: string
 }) {
+  const { lang } = useLang()
   const [playing, setPlaying] = useState(false)
+  const videoRef = useRef<HTMLVideoElement>(null)
+
+  useEffect(() => {
+    if (!playing || !subtitles) return
+    const v = videoRef.current
+    if (!v) return
+
+    /* Le navigateur refait sa propre sélection quand chaque piste finit de
+       charger : sans ré-application, Chrome activait aussi la piste française
+       (le <html lang> servi est `fr`) et les deux se superposaient à l'écran.
+       On réaffirme donc l'état voulu, y compris après le chargement. */
+    const apply = () => {
+      for (const track of Array.from(v.textTracks)) {
+        track.mode = lang === 'en' && track.language === 'en' ? 'showing' : 'disabled'
+      }
+    }
+    apply()
+    const timers = [50, 250, 800].map((ms) => window.setTimeout(apply, ms))
+    v.addEventListener('loadeddata', apply)
+    v.textTracks.addEventListener?.('addtrack', apply)
+
+    return () => {
+      timers.forEach(window.clearTimeout)
+      v.removeEventListener('loadeddata', apply)
+      v.textTracks.removeEventListener?.('addtrack', apply)
+    }
+  }, [playing, subtitles, lang])
 
   return (
     <div className="vsl-frame">
       {playing ? (
         <video
+          ref={videoRef}
           src={src}
           poster={poster}
           controls
@@ -41,7 +82,20 @@ export default function VslPlayer({
           playsInline
           preload="auto"
           className="vsl-media"
-        />
+        >
+          {subtitles && (
+            <>
+              <track kind="subtitles" srcLang="fr" label="Français" src={`/subtitles/${subtitles}.fr.vtt`} />
+              <track
+                kind="subtitles"
+                srcLang="en"
+                label="English"
+                src={`/subtitles/${subtitles}.en.vtt`}
+                default={lang === 'en'}
+              />
+            </>
+          )}
+        </video>
       ) : (
         <button type="button" onClick={() => setPlaying(true)} aria-label={label} className="vsl-trigger group">
           {poster ? (

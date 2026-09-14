@@ -1,11 +1,19 @@
 'use client'
 
 import { useState } from 'react'
+import { useLang } from '@/components/providers/LangProvider'
 
 /**
  * Privacy-friendly YouTube embed. Shows the thumbnail (no third-party cookies,
  * so Iubenda autoblocking never empties it); the real iframe only loads on click.
  * Also faster than a raw iframe. Reused across home / sector pages / resources.
+ *
+ * Sous-titres : les vidéos sont parlées en français. Sous /en, l'embed demande
+ * l'affichage des sous-titres et la piste anglaise. Ça ne suffit que si une
+ * piste anglaise existe sur la vidéo : aujourd'hui les deux n'ont qu'une piste
+ * française auto-générée, et l'anglais dépend donc de la traduction
+ * automatique de YouTube. La correction durable est de téléverser une vraie
+ * piste anglaise dans YouTube Studio.
  */
 export default function LiteYouTube({
   id,
@@ -17,7 +25,9 @@ export default function LiteYouTube({
   /** Vertical (9:16) Shorts use the oar2 thumbnail; default is the 16:9 maxres. */
   vertical?: boolean
 }) {
+  const { lang } = useLang()
   const [loaded, setLoaded] = useState(false)
+  const captions = lang === 'en' ? '&cc_load_policy=1&cc_lang_pref=en&hl=en' : ''
   const thumb = vertical
     ? `https://i.ytimg.com/vi/${id}/oar2.jpg`
     : `https://i.ytimg.com/vi/${id}/maxresdefault.jpg`
@@ -25,7 +35,7 @@ export default function LiteYouTube({
   if (loaded) {
     return (
       <iframe
-        src={`https://www.youtube.com/embed/${id}?autoplay=1&rel=0&modestbranding=1`}
+        src={`https://www.youtube.com/embed/${id}?autoplay=1&rel=0&modestbranding=1${captions}`}
         title={title}
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         referrerPolicy="strict-origin-when-cross-origin"

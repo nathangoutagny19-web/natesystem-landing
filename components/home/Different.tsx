@@ -64,6 +64,7 @@ export default function Different() {
           <div className="diff-video-wrap">
             <VslPlayer
               src="/different.mp4"
+              subtitles="different"
               poster="/different-poster.jpg"
               label={d('Regarder la vidéo', 'Watch the video')}
               duration="3 min"

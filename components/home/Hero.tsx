@@ -111,10 +111,11 @@ export default function Hero() {
       >
         <VslPlayer
           src="/vsl.mp4"
+          subtitles="vsl"
           poster="/vsl-poster.jpg"
-          label="Voir la démo"
+          label={lang === 'en' ? 'Watch the demo' : 'Voir la démo'}
           duration="5 min"
-          title="Démo NateSystem"
+          title={lang === 'en' ? 'NateSystem demo' : 'Démo NateSystem'}
         />
       </motion.div>
 
