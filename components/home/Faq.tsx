@@ -5,7 +5,7 @@ import FadeUp from '@/components/ui/FadeUp'
 import { useLang } from '@/components/providers/LangProvider'
 
 export default function Faq() {
-  const { t } = useLang()
+  const { lang, t } = useLang()
   const [openIndex, setOpenIndex] = useState<number | null>(null)
 
   const faqItems = [
@@ -23,7 +23,23 @@ export default function Faq() {
     setOpenIndex(openIndex === i ? null : i)
   }
 
+  /* Le schema suit mot pour mot ce qui est affiché au-dessus, et donc la
+     langue de la page. Il vit ici plutôt que dans le layout racine, où il
+     était servi en français sur toutes les pages du site. */
+  const faqJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    inLanguage: lang,
+    mainEntity: faqItems.map((item) => ({
+      '@type': 'Question',
+      name: item.q,
+      acceptedAnswer: { '@type': 'Answer', text: item.a },
+    })),
+  }
+
   return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
     <section id="faq" style={{ padding: '120px 24px' }}>
       <div className="mx-auto" style={{ maxWidth: '1100px' }}>
         <FadeUp className="text-center mb-16">
@@ -61,5 +77,6 @@ export default function Faq() {
         </div>
       </div>
     </section>
+    </>
   )
 }

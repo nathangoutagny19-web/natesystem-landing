@@ -8,12 +8,16 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 }
 
-export default function PolitiqueAntiSpam() {
+export default function PolitiqueAntiSpam({ lang = 'fr' }: { lang?: 'fr' | 'en' }) {
+  /* Servie aussi sous /en : le lien de retour doit rester dans l'arbre affiché,
+     sinon la page éjecte le visiteur anglophone vers l'accueil français. */
+  const home = lang === 'en' ? '/en' : '/'
+
   return (
     <div style={{ minHeight: '100vh' }}>
       <div className="mx-auto" style={{ maxWidth: '720px', padding: '80px 24px 60px', fontFamily: 'var(--font-sans)' }}>
         <Link
-          href="/"
+          href={home}
           style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: 'var(--text-muted)', textDecoration: 'none', marginBottom: '48px' }}
         >
           ← Retour au site
@@ -178,7 +182,7 @@ export default function PolitiqueAntiSpam() {
           </p>
           <p>
             Voir aussi les{' '}
-            <Link href="/mentions-legales" style={{ color: 'var(--accent)', textDecoration: 'none' }}>mentions légales</Link>.
+            <Link href={lang === 'en' ? '/en/mentions-legales' : '/mentions-legales'} style={{ color: 'var(--accent)', textDecoration: 'none' }}>mentions légales</Link>.
           </p>
         </Section>
       </div>
@@ -189,7 +193,7 @@ export default function PolitiqueAntiSpam() {
           <span style={{ width: '4px', height: '4px', borderRadius: '50%', backgroundColor: 'var(--accent)', display: 'inline-block', marginLeft: '-2px', marginBottom: '2px' }} />
           <span style={{ marginLeft: '8px', fontFamily: 'var(--font-sans)' }}>NateSystem, Nathan Goutagny</span>
         </div>
-        <Link href="/" style={{ color: 'var(--accent)', textDecoration: 'none', fontFamily: 'var(--font-sans)', opacity: 0.7, fontSize: '12px' }}>
+        <Link href={home} style={{ color: 'var(--accent)', textDecoration: 'none', fontFamily: 'var(--font-sans)', opacity: 0.7, fontSize: '12px' }}>
           ← Retour au site
         </Link>
       </footer>

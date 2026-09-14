@@ -19,6 +19,7 @@
 
 import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
+import { localizedHref } from '@/lib/routes'
 import { useLang, type Lang } from '@/components/providers/LangProvider'
 import { useTheme } from '@/components/providers/ThemeProvider'
 
@@ -60,7 +61,7 @@ export default function ReviewsNav({ onRequestDemo }: { onRequestDemo?: () => vo
       <header className={`nav-bar ${scrolled ? 'nav-scrolled' : ''}`}>
         <div className="nav-inner">
           {/* Brand lockup */}
-          <Link href="/reviews" className="nav-logo" style={{ gap: 8 }}>
+          <Link href={localizedHref('/reviews', lang)} className="nav-logo" style={{ gap: 8 }}>
             <span className="nav-logo-n">N</span>
             <span className="nav-logo-dot" />
             <span
@@ -153,7 +154,7 @@ export default function ReviewsNav({ onRequestDemo }: { onRequestDemo?: () => vo
 
       {/* Mobile logo + hamburger */}
       <Link
-        href="/reviews"
+        href={localizedHref('/reviews', lang)}
         className="fixed top-5 left-6 z-[100] md:hidden flex items-center gap-[6px]"
         style={{ textDecoration: 'none' }}
       >

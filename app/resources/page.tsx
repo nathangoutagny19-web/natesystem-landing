@@ -143,7 +143,7 @@ export default function ResourcesPage() {
 
           {/* Diagnostic IA, carte mise en avant */}
           <FadeUp delay={0.1}>
-            <Link href="/tools/diagnostic-ia" style={{ textDecoration: 'none' }}>
+            <Link href={localizedHref('/tools/diagnostic-ia', lang)} style={{ textDecoration: 'none' }}>
               <motion.div className="res-feature" whileHover={{ borderColor: 'var(--border-hover)' }} style={{ marginTop: 32 }}>
                 <div>
                   <span className="font-mono" style={{ fontSize: '10px', letterSpacing: '2.5px', textTransform: 'uppercase', color: 'var(--accent)' }}>

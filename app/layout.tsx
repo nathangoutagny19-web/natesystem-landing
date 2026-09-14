@@ -122,55 +122,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             }),
           }}
         />
-        {/* FAQPage schema (JSON-LD), mirrors the home FAQ section verbatim (FR).
-            Eligible for FAQ rich results and feeds AI answer engines. Invisible. */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'FAQPage',
-              mainEntity: [
-                {
-                  q: 'Qu\'est-ce que vous construisez concrètement ?',
-                  a: 'Du logiciel métier sur-mesure, la plateforme interne qui fait tourner vos opérations. Base unifiée, dashboards, portails clients, outils internes. L\'IA et l\'automatisation sont intégrées uniquement là où elles remplacent de vraies heures de travail, pas en décoration.',
-                },
-                {
-                  q: 'Combien de temps ça prend ?',
-                  a: '4 à 8 semaines pour la première version, selon le périmètre. On s\'accorde sur un périmètre fixe et une date de livraison fixe avant la première ligne de code. Points hebdo, démos mensuelles, zéro dérive, zéro facture surprise. Le pricing est partagé pendant l\'appel de découverte pour coller à vos vrais besoins.',
-                },
-                {
-                  q: 'Le système restera-t-il fiable une fois en production ?',
-                  a: 'Oui. Il est surveillé en permanence, sauvegardé automatiquement plusieurs fois par jour, et on intervient vite en cas de souci. Concrètement : il tourne, et s\'il y a un pépin, c\'est réglé avant que ça vous gêne. Après les 3 premiers mois, vous choisissez : on continue d\'assurer la maintenance, ou on passe tout à votre équipe avec la documentation.',
-                },
-                {
-                  q: 'Quelles automatisations et fonctionnalités IA peuvent être intégrées ?',
-                  a: 'Là où ça fait gagner de vraies heures. Les classiques : workflows automatisés (commandes, factures, relances, passations internes), analytics prédictif (anticiper stock, no-shows, tendances de ventes), lecture de documents (factures, contrats, formulaires), tri intelligent (classer, router, rédiger des réponses), agents autonomes qui exécutent des tâches multi-étapes dans vos outils, et interfaces conversationnelles pour vos équipes ou vos clients. On choisit ce qui vaut le coup pour vous, pas tout parce que c\'est à la mode.',
-                },
-                {
-                  q: 'Et si vous disparaissez demain ?',
-                  a: '100 % du code vous appartient et est hébergé sur votre infrastructure. Documentation complète incluse. N\'importe quel développeur compétent peut reprendre derrière. Zéro abonnement, zéro lock-in, zéro otage.',
-                },
-                {
-                  q: 'Est-ce que ça marche pour mon secteur ?',
-                  a: 'Restauration, conseil, BTP, santé, retail, partout où il y a des opérations récurrentes et de la vraie donnée qui y circule. La stack s\'adapte. La méthode ne change pas.',
-                },
-                {
-                  q: 'Pourquoi maintenant ? Ça ne peut pas attendre ?',
-                  a: 'Ça peut, mais attendre a un coût. 20% des entreprises européennes (10+ employés) utilisent déjà l\'IA en 2025, contre 13,5% un an plus tôt. Les équipes qui l\'intègrent à leurs process clés libèrent 20 à 30% de leur temps de travail (McKinsey), et les PME qui l\'adoptent ont 2× plus de chances de croître d\'une année sur l\'autre (Salesforce). Chaque mois d\'attente est un mois où vos concurrents creusent l\'écart, et où vos équipes continuent de payer des tâches qu\'une infrastructure bien construite absorberait.',
-                },
-                {
-                  q: 'Quelles technologies utilisez-vous ? Mes données sont-elles en sécurité ?',
-                  a: 'On utilise les technologies les plus fiables et reconnues du marché, les mêmes que les grandes entreprises tech. Vos données sont hébergées en Europe, protégées et conformes RGPD. Et tout vous appartient : le code est à vous, vous n\'êtes prisonnier de personne. (Pour les curieux : Next.js, Supabase, Claude API, Vercel, du standard solide.)',
-                },
-              ].map((item) => ({
-                '@type': 'Question',
-                name: item.q,
-                acceptedAnswer: { '@type': 'Answer', text: item.a },
-              })),
-            }),
-          }}
-        />
+        {/* Le schema FAQPage vivait ici, donc sur les 160 pages du site, et en
+            français y compris sous /en. Il est désormais émis par le composant
+            FAQ lui-même (components/home/Faq.tsx) : sur la seule page qui
+            l'affiche, dans la langue affichée, et avec exactement le texte que
+            le visiteur lit. C'est ce que Google demande, et ça ne peut plus
+            diverger du visible. */}
         {/* Instrument Serif from Google Fonts (no next/font support for italic-only) */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

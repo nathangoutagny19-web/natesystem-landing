@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import FadeUp from '@/components/ui/FadeUp'
 import { useLang } from '@/components/providers/LangProvider'
+import { localizedHref } from '@/lib/routes'
 
 /**
  * Invitation au diagnostic gratuit, juste après l'avant/après.
@@ -31,7 +32,7 @@ export default function MiniDiagnosticCta() {
           >
             {d('60 secondes, chiffré, 3 leviers priorisés. Sans engagement.', '60 seconds, quantified, 3 prioritised levers. No commitment.')}
           </p>
-          <Link href="/tools/diagnostic-ia" className="btn-primary" style={{ fontSize: 13, padding: '13px 26px' }}>
+          <Link href={localizedHref('/tools/diagnostic-ia', lang)} className="btn-primary" style={{ fontSize: 13, padding: '13px 26px' }}>
             <span className="btn-primary-dot" />
             {d('Faire le diagnostic gratuit', 'Take the free diagnostic')} &rarr;
           </Link>

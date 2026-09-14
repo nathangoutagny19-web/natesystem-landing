@@ -5,6 +5,7 @@ import Nav from '@/components/layout/Nav'
 import Footer from '@/components/layout/Footer'
 import LiveDemosBanner from './components/LiveDemosBanner'
 import { useLang } from '@/components/providers/LangProvider'
+import { localizedHref } from '@/lib/routes'
 
 // Lead-magnets grid (FilterBar + ResourceCard + DownloadModal) intentionally
 // hidden until the 12 ZIP packs are actually produced, the public/resources/
@@ -12,7 +13,7 @@ import { useLang } from '@/components/providers/LangProvider'
 // can be re-imported in one commit when content ships.
 
 export default function ToolsPage() {
-  const { t } = useLang()
+  const { lang, t } = useLang()
 
   return (
     <main className="tools-page min-h-screen" style={{ background: 'var(--tools-bg)' }}>
@@ -41,7 +42,7 @@ export default function ToolsPage() {
         <section className="px-6 pb-12">
           <div className="max-w-5xl mx-auto">
             <Link
-              href="/tools/diagnostic-ia"
+              href={localizedHref('/tools/diagnostic-ia', lang)}
               className="group block"
               style={{
                 background: 'var(--bg-card)',

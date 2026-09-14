@@ -4,6 +4,7 @@ import Link from 'next/link'
 import FadeUp from '@/components/ui/FadeUp'
 import { motion } from 'framer-motion'
 import { useLang } from '@/components/providers/LangProvider'
+import { localizedHref } from '@/lib/routes'
 
 export default function Process({ home = false }: { home?: boolean }) {
   const { t, lang } = useLang()
@@ -102,7 +103,7 @@ export default function Process({ home = false }: { home?: boolean }) {
         {/* CTA vers la page méthode détaillée (la Radiographie interactive) */}
         <FadeUp>
           <div className="hww-cta-wrap">
-            <Link href="/methode" className="btn-ghost">
+            <Link href={localizedHref('/methode', lang)} className="btn-ghost">
               {d('Voir comment on travaille en détail', 'See how we work in detail')} &rarr;
             </Link>
           </div>

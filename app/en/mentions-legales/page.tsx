@@ -1,7 +1,27 @@
+import type { Metadata } from 'next'
+import LegalNotice from '@/components/site/LegalNotice'
+
 /**
- * `/en/mentions-legales` : rend exactement le composant de `/mentions-legales`.
- * La langue vient de `app/en/layout.tsx`, pas d'une copie du contenu.
+ * `/en/mentions-legales` : la traduction de courtoisie. Le slug reste français
+ * pour que les deux versions partagent une adresse reconnaissable, et la page
+ * dit elle-même que la version française fait foi.
  */
-export { default } from '../../mentions-legales/page'
-/* ⚠︎ Metadonnees heritees du francais, a traduire. */
-export { metadata } from '../../mentions-legales/page'
+
+export const metadata: Metadata = {
+  title: 'Legal notice, NateSystem',
+  description:
+    'Legal notice and privacy policy of NateSystem, Nathan Goutagny, sole trader, Lyon, France. Courtesy translation; the French version applies.',
+  robots: { index: false, follow: true },
+  alternates: {
+    canonical: 'https://www.natesystem.com/en/mentions-legales',
+    languages: {
+      'fr-FR': 'https://www.natesystem.com/mentions-legales',
+      en: 'https://www.natesystem.com/en/mentions-legales',
+      'x-default': 'https://www.natesystem.com/mentions-legales',
+    },
+  },
+}
+
+export default function EnMentionsLegales() {
+  return <LegalNotice lang="en" />
+}

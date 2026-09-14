@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { Map, MousePointerClick, FileText } from 'lucide-react'
 import FadeUp from '@/components/ui/FadeUp'
 import { useLang } from '@/components/providers/LangProvider'
+import { localizedHref } from '@/lib/routes'
 import { VizCarte, VizProto, VizFeuille } from '@/components/v2/DiagViz'
 
 /**
@@ -12,7 +13,7 @@ import { VizCarte, VizProto, VizFeuille } from '@/components/v2/DiagViz'
  * (image vue en entier, jamais rognée), cartes compactes et alignées.
  */
 export default function SprintDiagnostic() {
-  const { t } = useLang()
+  const { lang, t } = useLang()
 
   const deliverables = [
     { icon: Map, name: t('v2.sprint.d1.name'), desc: t('v2.sprint.d1.desc'), Viz: VizCarte },
@@ -112,7 +113,7 @@ export default function SprintDiagnostic() {
               <span className="btn-primary-dot" />
               {t('v2.sprint.cta')} →
             </Link>
-            <Link href="/tools/diagnostic-ia" className="dg-selfserve font-mono">
+            <Link href={localizedHref('/tools/diagnostic-ia', lang)} className="dg-selfserve font-mono">
               {t('v2.sprint.selfserve')} →
             </Link>
           </div>

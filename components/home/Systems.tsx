@@ -102,7 +102,7 @@ export default function Systems() {
         </FadeUp>
         <FadeUp delay={0.05}>
           <Link
-            href="/case-studies"
+            href={localizedHref('/case-studies', lang)}
             className="font-mono"
             style={{
               display: 'inline-flex',
