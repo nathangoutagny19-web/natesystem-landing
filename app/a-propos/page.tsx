@@ -9,6 +9,8 @@ import MobileCta from '@/components/layout/MobileCta'
 import Divider from '@/components/ui/Divider'
 import FadeUp from '@/components/ui/FadeUp'
 import { CAL_LINK } from '@/lib/constants'
+import { useLang } from '@/components/providers/LangProvider'
+import { localizedHref } from '@/lib/routes'
 
 function LinkedInIcon({ size = 15 }: { size?: number }) {
   return (
@@ -19,14 +21,35 @@ function LinkedInIcon({ size = 15 }: { size?: number }) {
 }
 
 // Credibility points reflect real, documented deployments (see case studies).
-const proof = [
-  { k: 'Lyon, France', v: 'Basé à Lyon · interventions FR & HU' },
-  { k: 'Restauration', v: 'Cockpit ops & KPI, contrôle de factures, RH, réputation, groupe Chromosome (×11 sur le temps de pilotage hebdo)' },
-  { k: 'Enseignement supérieur', v: 'CRM pédagogique, 200+ étudiants suivis, 90 %+ d\'adoption' },
-  { k: 'Conseil & événementiel', v: 'Relance commerciale automatisée, gestion d\'équipes & bénévoles' },
+// Les chiffres sont ceux des cas clients : traduits, jamais réinterprétés.
+type Proof = { kFr: string; kEn: string; vFr: string; vEn: string }
+const proof: Proof[] = [
+  {
+    kFr: 'Lyon, France', kEn: 'Lyon, France',
+    vFr: 'Basé à Lyon · interventions FR & HU',
+    vEn: 'Based in Lyon · working in France & Hungary',
+  },
+  {
+    kFr: 'Restauration', kEn: 'Restaurants',
+    vFr: 'Cockpit ops & KPI, contrôle de factures, RH, réputation, groupe Chromosome (×11 sur le temps de pilotage hebdo)',
+    vEn: 'Ops & KPI cockpit, invoice checking, HR, reputation, for the Chromosome group (×11 on weekly steering time)',
+  },
+  {
+    kFr: 'Enseignement supérieur', kEn: 'Higher education',
+    vFr: 'CRM pédagogique, 200+ étudiants suivis, 90 %+ d\u2019adoption',
+    vEn: 'Teaching CRM, 200+ students tracked, 90 %+ adoption',
+  },
+  {
+    kFr: 'Conseil & événementiel', kEn: 'Consulting & events',
+    vFr: 'Relance commerciale automatisée, gestion d\u2019équipes & bénévoles',
+    vEn: 'Automated sales follow-up, team and volunteer management',
+  },
 ]
 
 export default function AProposPage() {
+  const { lang } = useLang()
+  const d = (fr: string, en: string) => (lang === 'en' ? en : fr)
+
   return (
     <main>
       <Nav />
@@ -35,7 +58,7 @@ export default function AProposPage() {
       <section style={{ padding: '160px 24px 40px' }}>
         <div className="mx-auto" style={{ maxWidth: 880 }}>
           <FadeUp className="text-center mb-2">
-            <span className="section-label">Qui construit</span>
+            <span className="section-label">{d('Qui construit', 'Who builds it')}</span>
             <h1
               className="font-serif italic"
               style={{
@@ -48,7 +71,7 @@ export default function AProposPage() {
               }}
             >
               Nathan Goutagny.{' '}
-              <span className="accent" style={{ color: 'var(--accent)' }}>Le fondateur code, pas un commercial.</span>
+              <span className="accent" style={{ color: 'var(--accent)' }}>{d('Le fondateur code, pas un commercial.', 'The founder writes the code, not a sales rep.')}</span>
             </h1>
           </FadeUp>
         </div>
@@ -72,26 +95,27 @@ export default function AProposPage() {
               }}
             >
               <div style={{ width: 140, height: 140, borderRadius: '50%', overflow: 'hidden', border: '1px solid var(--border)', position: 'relative', flexShrink: 0 }}>
-                <Image src="/nathan.png" alt="Nathan Goutagny, fondateur de NateSystem" fill sizes="140px" style={{ objectFit: 'cover' }} priority />
+                <Image src="/nathan.png" alt={d('Nathan Goutagny, fondateur de NateSystem', 'Nathan Goutagny, founder of NateSystem')} fill sizes="140px" style={{ objectFit: 'cover' }} priority />
               </div>
 
               <div>
                 <p className="font-mono" style={{ fontSize: 11, letterSpacing: 1.8, color: 'var(--accent)', textTransform: 'uppercase', margin: '0 0 16px', fontWeight: 500 }}>
-                  Fondateur · Logiciel sur-mesure · IA appliquée · Lyon
+                  {d('Fondateur · Logiciel sur-mesure · IA appliquée · Lyon', 'Founder · Custom software · Applied AI · Lyon')}
                 </p>
                 <p className="font-sans" style={{ fontSize: 15.5, color: 'var(--text-secondary)', lineHeight: 1.75, fontWeight: 300, margin: '0 0 16px' }}>
-                  Ingénieur formé au croisement du software et de l&apos;IA appliquée. Des années à construire des systèmes
-                  opérationnels pour des PME françaises et hongroises, restauration, enseignement supérieur, conseil.
-                  Une conviction simple : le logiciel qui appartient à l&apos;entreprise vaut mieux que dix SaaS qu&apos;elle loue à vie.
+                  {d(
+                    'Ingénieur formé au croisement du software et de l\u2019IA appliquée. Des années à construire des systèmes opérationnels pour des PME françaises et hongroises, restauration, enseignement supérieur, conseil. Une conviction simple : le logiciel qui appartient à l\u2019entreprise vaut mieux que dix SaaS qu\u2019elle loue à vie.',
+                    'An engineer trained where software meets applied AI. Years spent building operational systems for French and Hungarian companies, in restaurants, higher education and consulting. One simple conviction: software a company owns beats ten it rents for life.'
+                  )}
                 </p>
                 <p className="font-sans" style={{ fontSize: 14, color: 'var(--text)', fontWeight: 500, fontStyle: 'italic', borderLeft: '2px solid var(--accent)', paddingLeft: 14, margin: '0 0 22px', lineHeight: 1.6 }}>
-                  Si vous me parlez, c&apos;est moi qui code derrière. Pas un commercial, pas un junior.
+                  {d('Si vous me parlez, c\u2019est moi qui code derrière. Pas un commercial, pas un junior.', 'If you are talking to me, I am the one writing the code. Not a sales rep, not a junior.')}
                 </p>
                 <div className="flex gap-3 items-center flex-wrap">
-                  <a href="https://www.linkedin.com/in/nathan-goutagny" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Nathan Goutagny" className="apropos-link" style={linkStyle}>
+                  <a href="https://www.linkedin.com/in/nathan-goutagny" target="_blank" rel="noopener noreferrer" aria-label={d('LinkedIn Nathan Goutagny', 'Nathan Goutagny on LinkedIn')} className="apropos-link" style={linkStyle}>
                     <LinkedInIcon size={15} /><span>LinkedIn</span>
                   </a>
-                  <a href="mailto:nathan@natesystem.com" aria-label="Email Nathan" className="apropos-link" style={linkStyle}>
+                  <a href="mailto:nathan@natesystem.com" aria-label={d('Email Nathan', 'Email Nathan')} className="apropos-link" style={linkStyle}>
                     <Mail size={15} strokeWidth={1.8} /><span>nathan@natesystem.com</span>
                   </a>
                 </div>
@@ -107,9 +131,9 @@ export default function AProposPage() {
       <section style={{ padding: '80px 24px' }}>
         <div className="mx-auto" style={{ maxWidth: 880 }}>
           <FadeUp className="text-center mb-12">
-            <span className="section-label">Sur quoi je fais autorité</span>
+            <span className="section-label">{d('Sur quoi je fais autorité', 'Where I have real ground')}</span>
             <h2 className="section-title" style={{ maxWidth: 640, margin: '0 auto' }}>
-              Des secteurs réels. <span className="accent">Des chiffres vérifiés.</span>
+              {d('Des secteurs réels. ', 'Real sectors. ')}<span className="accent">{d('Des chiffres vérifiés.', 'Figures that hold up.')}</span>
             </h2>
           </FadeUp>
 
@@ -117,9 +141,9 @@ export default function AProposPage() {
               visible to users and crawlers regardless of scroll/JS state. */}
           <div className="apropos-proof-grid">
             {proof.map((p) => (
-              <div key={p.k} style={{ background: 'var(--bg-card)', border: '1px solid var(--border)', borderRadius: 12, padding: '22px 24px', height: '100%' }}>
-                <p className="font-mono" style={{ fontSize: 10.5, letterSpacing: 1.5, textTransform: 'uppercase', color: 'var(--accent)', fontWeight: 600, margin: '0 0 8px' }}>{p.k}</p>
-                <p className="font-sans" style={{ fontSize: 13.5, color: 'var(--text-secondary)', lineHeight: 1.6, fontWeight: 300, margin: 0 }}>{p.v}</p>
+              <div key={p.kEn} style={{ background: 'var(--bg-card)', border: '1px solid var(--border)', borderRadius: 12, padding: '22px 24px', height: '100%' }}>
+                <p className="font-mono" style={{ fontSize: 10.5, letterSpacing: 1.5, textTransform: 'uppercase', color: 'var(--accent)', fontWeight: 600, margin: '0 0 8px' }}>{d(p.kFr, p.kEn)}</p>
+                <p className="font-sans" style={{ fontSize: 13.5, color: 'var(--text-secondary)', lineHeight: 1.6, fontWeight: 300, margin: 0 }}>{d(p.vFr, p.vEn)}</p>
               </div>
             ))}
           </div>
@@ -134,13 +158,16 @@ export default function AProposPage() {
           <FadeUp>
             <div style={{ background: 'var(--bg-card)', border: '1px solid rgba(230,57,70,0.15)', borderRadius: 12, padding: '48px 40px', textAlign: 'center' }}>
               <h2 className="font-serif italic" style={{ fontSize: 'clamp(24px, 4vw, 32px)', fontWeight: 400, marginBottom: 16, color: 'var(--text)' }}>
-                Parlons de ce que vous construisez.
+                {d('Parlons de ce que vous construisez.', 'Let us talk about what you are building.')}
               </h2>
               <p className="font-sans" style={{ fontSize: 15, fontWeight: 300, color: 'var(--text-secondary)', lineHeight: 1.7, maxWidth: 500, margin: '0 auto 32px' }}>
-                Un appel offert. On regarde votre situation, et vous repartez avec une vision claire, même si on ne travaille pas ensemble.
+                {d(
+                  'Un appel offert. On regarde votre situation, et vous repartez avec une vision claire, même si on ne travaille pas ensemble.',
+                  'A free call. We look at where you stand, and you leave with a clear view, even if we never work together.'
+                )}
               </p>
-              <Link href={CAL_LINK} className="btn-primary" style={{ margin: '0 auto' }}>
-                <span className="btn-primary-dot" />Réserver un appel · offert
+              <Link href={localizedHref(CAL_LINK, lang)} className="btn-primary" style={{ margin: '0 auto' }}>
+                <span className="btn-primary-dot" />{d('Réserver un appel · offert', 'Book a call · free')}
               </Link>
             </div>
           </FadeUp>

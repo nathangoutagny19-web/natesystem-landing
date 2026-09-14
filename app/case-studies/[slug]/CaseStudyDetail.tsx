@@ -8,6 +8,8 @@ import FadeUp from '@/components/ui/FadeUp'
 import Divider from '@/components/ui/Divider'
 import LiteYouTube from '@/components/ui/LiteYouTube'
 import { CAL_LINK } from '@/lib/constants'
+import { useLang } from '@/components/providers/LangProvider'
+import { localizedHref } from '@/lib/routes'
 import type { CaseStudy } from '@/lib/case-studies'
 
 const SECTIONS = [
@@ -17,6 +19,9 @@ const SECTIONS = [
 ]
 
 export default function CaseStudyDetail({ study }: { study: CaseStudy }) {
+  const { lang } = useLang()
+  const d = (fr: string, en: string) => (lang === 'en' ? en : fr)
+
   return (
     <main>
       <Nav />
@@ -213,18 +218,18 @@ export default function CaseStudyDetail({ study }: { study: CaseStudy }) {
               className="font-serif italic"
               style={{ fontSize: 'clamp(24px, 3.4vw, 34px)', fontWeight: 400, color: 'var(--text)', lineHeight: 1.25, marginBottom: 12 }}
             >
-              Envie du même résultat chez vous ?
+              {d('Envie du même résultat chez vous ?', 'Want the same result at your place?')}
             </h2>
             <p className="font-sans" style={{ fontSize: '15px', fontWeight: 300, color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: 26 }}>
-              On commence par un diagnostic, on regarde où partent vos heures avant de proposer quoi que ce soit.
+              {d('On commence par un diagnostic, on regarde où partent vos heures avant de proposer quoi que ce soit.', 'We start with a diagnostic, and look at where your hours go before proposing anything at all.')}
             </p>
             <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
-              <Link href={CAL_LINK} className="btn-primary">
+              <Link href={localizedHref(CAL_LINK, lang)} className="btn-primary">
                 <span className="btn-primary-dot" />
-                Réserver un appel &rarr;
+                {d('Réserver un appel', 'Book a call')} &rarr;
               </Link>
-              <Link href="/case-studies" className="btn-ghost">
-                Voir les réalisations
+              <Link href={localizedHref('/case-studies', lang)} className="btn-ghost">
+                {d('Voir les réalisations', 'See the case studies')}
               </Link>
             </div>
           </FadeUp>

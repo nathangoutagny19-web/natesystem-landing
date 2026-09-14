@@ -42,7 +42,7 @@ export default function CaseStudiesPage() {
       <section style={{ padding: '8px 24px 8px' }}>
         <div className="mx-auto text-center" style={{ maxWidth: '620px' }}>
           <FadeUp>
-            <Link href="/case-studies/chromosome" className="btn-ghost">
+            <Link href={localizedHref('/case-studies/chromosome', lang)} className="btn-ghost">
               {d('Lire l’étude de cas complète', 'Read the full case study')} &rarr;
             </Link>
           </FadeUp>
@@ -53,7 +53,7 @@ export default function CaseStudiesPage() {
       <section style={{ padding: '48px 24px 8px' }}>
         <div className="mx-auto" style={{ maxWidth: '900px' }}>
           <FadeUp>
-            <Link href="/case-studies/conseil-b2b-budapest" style={{ textDecoration: 'none', display: 'block' }}>
+            <Link href={localizedHref('/case-studies/conseil-b2b-budapest', lang)} style={{ textDecoration: 'none', display: 'block' }}>
               <article
                 style={{ background: 'var(--bg-card)', border: '1px solid var(--border)', borderRadius: 16, padding: 'clamp(28px, 4vw, 44px)' }}
               >
