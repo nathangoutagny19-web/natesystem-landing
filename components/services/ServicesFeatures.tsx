@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { Search, Boxes, Cpu, GraduationCap, ArrowRight, type LucideIcon } from 'lucide-react'
 import FadeUp from '@/components/ui/FadeUp'
 import { useLang } from '@/components/providers/LangProvider'
+import { localizedHref } from '@/lib/routes'
 import FanMockups from '@/components/methode/FanMockups'
 
 type Block = {
@@ -91,7 +92,7 @@ export default function ServicesFeatures() {
                       </li>
                     ))}
                   </ul>
-                  <Link href={b.href} className="sf-link font-mono">
+                  <Link href={localizedHref(b.href, lang)} className="sf-link font-mono">
                     {d(b.linkFr, b.linkEn)} <ArrowRight size={14} strokeWidth={2} />
                   </Link>
                 </div>

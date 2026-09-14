@@ -2,6 +2,8 @@
 
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
+import { useLang } from '@/components/providers/LangProvider'
+import { localizedHref } from '@/lib/routes'
 
 export type RelatedLink = {
   href: string
@@ -17,14 +19,17 @@ export type RelatedLink = {
  * for crawlers and AI engines. Brand-faithful, neutral register.
  */
 export default function RelatedLinks({
-  title = 'Pour aller plus loin',
+  title,
   links,
 }: {
   title?: string
   links: RelatedLink[]
 }) {
+  const { lang } = useLang()
+  const heading = title ?? (lang === 'en' ? 'Go further' : 'Pour aller plus loin')
+
   return (
-    <section style={{ padding: '64px 24px' }} aria-label={title}>
+    <section style={{ padding: '64px 24px' }} aria-label={heading}>
       <div className="mx-auto" style={{ maxWidth: 900 }}>
         <p
           className="font-mono"
@@ -37,7 +42,7 @@ export default function RelatedLinks({
             margin: '0 0 20px',
           }}
         >
-          {title}
+          {heading}
         </p>
         <div className="related-grid">
           {links.map((l) => {
@@ -72,7 +77,7 @@ export default function RelatedLinks({
                 {inner}
               </a>
             ) : (
-              <Link key={l.href} href={l.href} className="related-card" style={style}>
+              <Link key={l.href} href={localizedHref(l.href, lang)} className="related-card" style={style}>
                 {inner}
               </Link>
             )

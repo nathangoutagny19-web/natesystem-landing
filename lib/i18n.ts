@@ -1747,6 +1747,66 @@ export const translations = {
   'diag.email.send': { en: 'Send', fr: 'Envoyer' },
   'diag.email.sending': { en: 'Sending…', fr: 'Envoi…' },
   'diag.email.sent': { en: 'Noted, your result is on its way by email.', fr: 'C’est noté, vous recevrez votre résultat par mail.' },
+
+  /* ═══════════════════════════════════════════════════════════════════════
+     /services · /en/services — LA PAGE QUI VEND
+     ═══════════════════════════════════════════════════════════════════════ */
+  'svc.hero.label': { en: 'Our services', fr: 'Nos services' },
+  'svc.hero.titlePrefix': { en: 'Whatever your trade, ', fr: 'Quel que soit votre métier, ' },
+  'svc.hero.titleAccent': { en: 'the same result.', fr: 'le même résultat.' },
+  'svc.hero.sub': {
+    en: 'We build the infrastructure that wins you time, signs more and bigger deals, keeps your clients and turns your expertise into growth. The technology and the modules bend to how you work, never the other way round.',
+    fr: 'On monte l’infrastructure qui vous fait gagner du temps, signer plus et mieux, garder vos clients et transformer votre expertise en croissance. La techno et les modules s’adaptent à votre réalité, jamais l’inverse.',
+  },
+
+  'svc.outcomes.label': { en: 'What it changes', fr: 'Ce que ça change' },
+  'svc.outcomes.titlePrefix': { en: 'The same base of results, ', fr: 'Le même socle de résultats, ' },
+  'svc.outcomes.titleAccent': { en: 'in any company.', fr: 'dans toute entreprise.' },
+
+  'svc.out.time.title': { en: 'Time back', fr: 'Du temps récupéré' },
+  'svc.out.time.desc': {
+    en: 'The repetitive work runs on its own. Your teams stop retyping, chasing and searching, and get back to what actually matters.',
+    fr: 'Le répétitif tourne seul. Vos équipes arrêtent de recopier, relancer et chercher, et se concentrent sur ce qui compte vraiment.',
+  },
+  'svc.out.deals.title': { en: 'More deals, bigger ones', fr: 'Plus de deals, plus gros' },
+  'svc.out.deals.desc': {
+    en: 'A clean pipeline, follow-ups that send themselves, nothing slipping through. You sign more, and you sign better.',
+    fr: 'Un pipeline propre, des relances qui partent toutes seules, plus rien qui passe à la trappe. Vous signez plus, et mieux.',
+  },
+  'svc.out.retain.title': { en: 'Clients who stay', fr: 'Des clients qui restent' },
+  'svc.out.retain.desc': {
+    en: 'Follow-up that drops nothing. Your clients feel it, and they stay with you longer.',
+    fr: 'Un suivi sans faille : rien ne se perd, vos clients le sentent, et ils continuent avec vous plus longtemps.',
+  },
+  'svc.out.exp.title': { en: 'A better client experience', fr: 'Une meilleure expérience client' },
+  'svc.out.exp.desc': {
+    en: 'Faster answers, files in order, no more “let me get back to you”. You look like a company that has it together.',
+    fr: 'Réponses plus rapides, dossiers au carré, fini le « je vous rappelle ». L’image d’une boîte qui gère.',
+  },
+  'svc.out.align.title': { en: 'A team on the same page', fr: 'Une équipe alignée' },
+  'svc.out.align.desc': {
+    en: 'Everyone on the same data, in one place and up to date. No more versions overwriting each other, no more “where was that again?”.',
+    fr: 'Tout le monde sur la même donnée, centralisée et à jour. Plus de versions qui s’écrasent ni de « c’était où, déjà ? ».',
+  },
+  'svc.out.know.title': { en: 'Your know-how, kept', fr: 'Votre savoir capitalisé' },
+  'svc.out.know.desc': {
+    en: 'What your experts know stops sitting in their heads and in scattered documents. Captured, structured and searchable, it becomes an asset you can reuse.',
+    fr: 'Le savoir de vos experts ne dort plus dans leurs têtes ni dans des docs éparpillés. Capté, structuré et cherchable, il devient un vrai actif réutilisable.',
+  },
+  'svc.outcomes.note': {
+    en: 'That is the base, true for any company. The rest depends on how you actually work: an AI search engine over your documentation, an agent that chases your quotes, a portal for your clients. We start from your trade. We do not sell a fixed recipe.',
+    fr: 'Ça, c’est le socle, vrai pour n’importe quelle entreprise. Le reste dépend de votre réalité : un moteur de recherche IA sur votre documentation, un agent qui relance vos devis, un portail pour vos clients… On part de votre métier. On ne vend pas une recette figée.',
+  },
+
+  'svc.how.label': { en: 'How we get there', fr: 'Comment on y arrive' },
+  'svc.how.titlePrefix': { en: 'One infrastructure, ', fr: 'Une infrastructure, ' },
+  'svc.how.titleAccent': { en: 'built for you.', fr: 'montée pour vous.' },
+
+  'svc.cta.title': { en: 'We start from your trade.', fr: 'On part de votre métier.' },
+  'svc.cta.sub': {
+    en: 'A free call. We look at how your business runs and tell you plainly what would gain you the most, and how we would build it. You leave with a clear plan, even if we never work together.',
+    fr: 'Un appel offert. On regarde votre activité et on vous dit, concrètement, ce qui vous ferait gagner le plus, et comment on le construirait. Vous repartez avec un plan clair, même si on ne travaille pas ensemble.',
+  },
 } as const
 
 export type TranslationKey = keyof typeof translations
