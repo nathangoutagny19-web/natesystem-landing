@@ -116,7 +116,7 @@ export default function CaseStudyDetail({ study }: { study: CaseStudy }) {
                   border: '1px solid var(--border)',
                 }}
               >
-                <LiteYouTube id={study.videoId} title={`Témoignage vidéo, ${study.title}`} />
+                <LiteYouTube id={study.videoId} title={d(`Témoignage vidéo, ${study.title}`, `Video testimonial, ${study.title}`)} />
               </div>
             </FadeUp>
           </div>
