@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next'
 import { blogPosts } from '@/lib/blog'
 import { allSlugs as allPlaybookSlugs } from '@/lib/playbooks'
 import { allCaseSlugs } from '@/lib/case-studies'
-import { EN_ROUTES } from '@/lib/routes'
+import { TRANSLATED_ROUTES } from '@/lib/routes'
 
 const BASE_URL = 'https://www.natesystem.com'
 
@@ -87,9 +87,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
      le hreflang directement dans le sitemap en plus des balises de page.
      ───────────────────────────────────────────────────────────────────── */
 
-  /* Les priorités anglaises, par route. Une route absente de EN_ROUTES n'est
-     pas traduite et n'a rien à faire ici : la table est indexée par la liste. */
-  const EN_PRIORITY: Record<string, number> = {
+  /* Les priorités, par route. Une route absente de TRANSLATED_ROUTES n'est pas
+     traduite et n'a rien à faire ici : la table est indexée par la liste. */
+  const PRIORITY: Record<string, number> = {
     '/': 1.0, '/methode': 0.9, '/services': 0.9, '/services/audit': 0.9,
     '/services/formation': 0.9, '/services/ia': 0.9,
     '/services/logiciel-sur-mesure': 0.9, '/a-propos': 0.6,
@@ -99,32 +99,42 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/mentions-legales': 0.3, '/politique-anti-spam': 0.3,
   }
 
-  const enStaticRoutes: MetadataRoute.Sitemap = EN_ROUTES.map((path) => ({
-    url: `${BASE_URL}/en${path === '/' ? '' : path}`,
-    lastModified: now,
-    changeFrequency: 'monthly',
-    priority: EN_PRIORITY[path] ?? 0.6,
-    alternates: {
-      languages: {
-        'fr-FR': `${BASE_URL}${path}`,
-        en: `${BASE_URL}/en${path === '/' ? '' : path}`,
-      },
+  /* Chaque entrée déclare ses trois adresses : hreflang posé dans le sitemap
+     en plus des balises de page. */
+  const alternatesFor = (path: string) => ({
+    languages: {
+      'fr-FR': `${BASE_URL}${path}`,
+      en: `${BASE_URL}/en${path === '/' ? '' : path}`,
+      hu: `${BASE_URL}/hu${path === '/' ? '' : path}`,
     },
-  }))
+  })
 
-  const enCaseStudyRoutes: MetadataRoute.Sitemap = allCaseSlugs().map((slug) => ({
-    url: `${BASE_URL}/en/case-studies/${slug}`,
-    lastModified: now,
-    changeFrequency: 'monthly',
-    priority: 0.7,
-  }))
+  const translatedRoutes: MetadataRoute.Sitemap = (['en', 'hu'] as const).flatMap((lang) =>
+    TRANSLATED_ROUTES.map((path) => ({
+      url: `${BASE_URL}/${lang}${path === '/' ? '' : path}`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: PRIORITY[path] ?? 0.6,
+      alternates: alternatesFor(path),
+    }))
+  )
+
+  const translatedCaseRoutes: MetadataRoute.Sitemap = (['en', 'hu'] as const).flatMap((lang) =>
+    allCaseSlugs().map((slug) => ({
+      url: `${BASE_URL}/${lang}/case-studies/${slug}`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+      alternates: alternatesFor(`/case-studies/${slug}`),
+    }))
+  )
 
   return [
     ...staticRoutes,
     ...playbookRoutes,
     ...blogRoutes,
     ...caseStudyRoutes,
-    ...enStaticRoutes,
-    ...enCaseStudyRoutes,
+    ...translatedRoutes,
+    ...translatedCaseRoutes,
   ]
 }

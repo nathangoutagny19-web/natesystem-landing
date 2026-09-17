@@ -190,7 +190,85 @@ const caseStudiesEn: CaseStudy[] = [
   },
 ]
 
-export const caseStudies: Record<Lang, CaseStudy[]> = { fr: caseStudiesFr, en: caseStudiesEn }
+/** LA VERSION HONGROISE. Mêmes chiffres, même témoin, mêmes limites. */
+const caseStudiesHu: CaseStudy[] = [
+  {
+    slug: 'chromosome',
+    sector: 'Inkluzív étterem és egyesület',
+    location: 'Saint-Étienne',
+    title: 'Chromosome',
+    subtitle:
+      'Két egyedi szoftver egy étteremnek, amelyet fogyatékossággal élő csapattagok visznek, és egy végre nyugodt működés.',
+    videoId: 'aMIjJbzuhDc',
+    metrics: [
+      { value: '+50%', label: 'a foglalásoké ma már a weboldalon érkezik' },
+      { value: '−30 perc/nap', label: 'vége a foglalások esti átmásolásának' },
+      { value: '~15 nap', label: 'ennyi kellett a 35 önkéntesnek az eszköz megtanulásához' },
+      { value: 'Valós idő', label: 'foglalás és beosztás, se táblázat, se papír' },
+    ],
+    problemTitle: 'Hol veszített időt a Chromosome',
+    problem: [
+      'A Chromosome egy inkluzív étterem Saint-Étienne-ben: egyesület, amely fogyatékossággal élő fiatalokat foglalkoztat csapattagként, mintegy harminc önkéntes és egy séf támogatásával. Szép emberi gépezet, de az étterem mögött két adminisztratív munka rengeteg időt vitt el.',
+      'Először a foglalások. A weboldalról érkező kéréseket az alelnök minden este kézzel másolta át egy megosztott táblázatba. Napi fél óra, és minden másolásnál hibalehetőség: egy foglalás rossz hétre, egy vendég kétszer számolva.',
+      'Aztán az önkéntesek beosztása. Minden papíron. El kellett menni az étterembe ahhoz, hogy kiderüljön, ki és mikor jön. Az eredmény: 7 önkéntessel teli napok és 3 fővel működő napok, miközben szolgálatonként 5 kell. Egy önkéntes előző este lemond, és senki nem tudja meg időben.',
+    ],
+    solutionTitle: 'Amit megépítettünk',
+    solution: [
+      'Két egyedi szoftver, a valódi működésükre szabva, nem egy általános SaaS, amelybe be kellett volna préselniük magukat.',
+      'Egy foglalási platform: a weboldalról és a telefonon érkező kérések ugyanoda futnak be, valós időben. 30 teríték, és magától zár, amikor megtelt. Esték, hétvégék és ünnepnapok két kattintással lezárva. Automatikus visszaigazolás e-mailben a vendégnek. Mögötte pedig a statisztikák: foglalások naponként, asztalok, törzsvendégek, allergiák, elég ahhoz, hogy a kasszával összevetve jól döntsenek. Egy űrlap akár meglévő oldalba vagy Google-adatlapba is beilleszthető.',
+      'A Simple Team az önkéntesek beosztásához: mindenki egy érintéssel jelentkezik a telefonjáról, és az egész csapat valós időben látja a beosztást. Lemond egy önkéntes? Riasztás megy az egész csapatnak a linkkel, amellyel átvehető a műszak, és a szolgálat meg van mentve. Az egyensúlyozás joga az adminisztrátoré marad.',
+      'És mindenekelőtt: két hét helyszíni képzés a csapattal és az önkéntesekkel. Mert egy eszközt nem átadni kell, hanem használatba venni.',
+    ],
+    resultsTitle: 'Mi változott',
+    results: [
+      'Az esti fél óra adatbevitel eltűnt, és vele a másolási hibák. Minden valós időben van, és telefonról is olvasható.',
+      'Ma a vendégek több mint fele online foglal. Az eszköz éjjel-nappal fut, vasárnap este is a hétfői ebédre. Nincs több elvesztett vendég azért, mert 10 és 15 óra között nem tudták felvenni a telefont.',
+      'A csapat oldalán a 35 önkéntes nagyjából két hét alatt vette kézbe az eszközt. A séf élőben látja a foglalásokat, és ehhez igazítja az előkészületeket, így kevesebb a kidobott étel és alacsonyabbak a költségek.',
+    ],
+    quote:
+      'Megváltoztatta, ahogyan mindent kezelünk, ma már nem tudnánk nélküle meglenni. Az időben és az átláthatóságban nyert előny óriási, a csapat pedig sokkal nyugodtabb.',
+    quoteAuthor: 'Catherine F.',
+    quoteRole: 'Alelnök · Chromosome Saint-Étienne',
+    metaDescription:
+      'Chromosome esettanulmány (Saint-Étienne): két egyedi szoftver, foglalás és önkéntes-beosztás egy inkluzív étteremnek. A foglalások +50%-a online, napi 30 perc megspórolva, minden valós időben.',
+  },
+  {
+    slug: 'conseil-b2b-budapest',
+    sector: 'B2B tanácsadó cég',
+    location: 'Budapest',
+    title: '25 év szaktudás, MI-be téve',
+    subtitle:
+      'Hogyan őrizte meg egy budapesti B2B tanácsadó cég az alapítója tudását egy egyedi rendszerben, automatizálta az ügyfélriportjait 280 KPI-n, és adta vissza mindezt az ügyfeleinek.',
+    metrics: [
+      { value: '280 KPI', label: 'személyre szabott ügyfélriportokká alakítva, automatikusan' },
+      { value: '25 év', label: 'tudás és tapasztalat egyedi rendszerbe mentve' },
+      { value: 'Ügyfélportál', label: 'sajátja, a szaktudásához méltó élménnyel' },
+      { value: 'Nulla kézi', label: 'riportálás: az alapító újra a találkozókra és a kapcsolatokra figyel' },
+    ],
+    problemTitle: 'Hol ragadt meg az értéke',
+    problem: [
+      'Egy budapesti B2B tanácsadó cég, amelyet egy 25 éves tapasztalattal rendelkező alapító visz. A valódi vagyona nem egy eszköz: az, amit tud, a módszere, ahogyan elolvas egy dossziét. Csakhogy mindez teljes egészében a fejében élt.',
+      'Minden ügyfélriport kézzel készült, a szaktudásából, egyesével. Értékes munka, és rendkívül időigényes, amely elvonta attól, ami a tanácsadásban a legfontosabb: az ügyféllel töltött időtől, a kapcsolattól, a találkozóktól.',
+      'Az eredmény egy plafon volt. A növekedését nem a kereslet korlátozta, hanem az, hány órát tudott maga eltölteni az egyes anyagok elkészítésével.',
+    ],
+    solutionTitle: 'Amit megépítettünk',
+    solution: [
+      'Egyedi rendszer, amely megőrzi a 25 év szaktudását: a módszerét, a szempontjait, az elemzési módját, egy MI-be kódolva, amely úgy dolgozik, ahogyan ő.',
+      'Az egyes ügyfelek adataiból az MI személyre szabott riportokat készít 280 KPI mentén, automatikusan. Az alapító onnan, hogy „minden riportot én írok”, eljutott oda, hogy „átnézem és finomítom”.',
+      'Saját ügyfélportál, ahol minden ügyfél megtalálja a riportjait és a nyomon követését. A szaktudása szintjéhez illő élmény, és egy olyan cég képe, amely egy lépéssel előrébb jár.',
+    ],
+    resultsTitle: 'Mi változott',
+    results: [
+      'Amit tud, többé nem a fejében alszik: megőrizve, újrahasznosíthatóan, és akkor is dolgozik, amikor ő nem.',
+      'Az ügyfélriportok, 280 KPI mentén, maguktól elkészülnek. A visszanyert idő oda kerül, ahol a legtöbb értéket teremti: a találkozókra és az ügyfélkapcsolatra.',
+      'Az ügyfélportál erősíti az élményt, és referenciává teszi a céget, ami valódi előny egy olyan szakmában, ahol mindenki „szaktudást” árul.',
+    ],
+    metaDescription:
+      'Esettanulmány (anonimizálva): egy budapesti B2B tanácsadó cég 25 év szaktudását mentette egyedi MI-be, automatizálta az ügyfélriportjait 280 KPI-n, és ügyfélportált vezetett be. Névre szóló ajánlás később.',
+  },
+]
+
+export const caseStudies: Record<Lang, CaseStudy[]> = { fr: caseStudiesFr, en: caseStudiesEn, hu: caseStudiesHu }
 
 export function getCaseStudy(slug: string, lang: Lang = 'fr'): CaseStudy | undefined {
   return caseStudies[lang].find((c) => c.slug === slug)

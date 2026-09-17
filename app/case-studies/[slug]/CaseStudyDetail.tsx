@@ -9,6 +9,7 @@ import Divider from '@/components/ui/Divider'
 import LiteYouTube from '@/components/ui/LiteYouTube'
 import { CAL_LINK } from '@/lib/constants'
 import { useLang } from '@/components/providers/LangProvider'
+import { makeD } from '@/lib/lang'
 import { localizedHref } from '@/lib/routes'
 import type { CaseStudy } from '@/lib/case-studies'
 
@@ -20,7 +21,7 @@ const SECTIONS = [
 
 export default function CaseStudyDetail({ study }: { study: CaseStudy }) {
   const { lang } = useLang()
-  const d = (fr: string, en: string) => (lang === 'en' ? en : fr)
+  const d = makeD(lang)
 
   return (
     <main>
@@ -218,18 +219,18 @@ export default function CaseStudyDetail({ study }: { study: CaseStudy }) {
               className="font-serif italic"
               style={{ fontSize: 'clamp(24px, 3.4vw, 34px)', fontWeight: 400, color: 'var(--text)', lineHeight: 1.25, marginBottom: 12 }}
             >
-              {d('Envie du même résultat chez vous ?', 'Want the same result at your place?')}
+              {d('Envie du même résultat chez vous ?', 'Want the same result at your place?', 'Szeretné ugyanezt az eredményt a cégénél?')}
             </h2>
             <p className="font-sans" style={{ fontSize: '15px', fontWeight: 300, color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: 26 }}>
-              {d('On commence par un diagnostic, on regarde où partent vos heures avant de proposer quoi que ce soit.', 'We start with a diagnostic, and look at where your hours go before proposing anything at all.')}
+              {d('On commence par un diagnostic, on regarde où partent vos heures avant de proposer quoi que ce soit.', 'We start with a diagnostic, and look at where your hours go before proposing anything at all.', 'Diagnosztikával kezdünk: megnézzük, hová mennek az órái, mielőtt bármit javasolnánk.')}
             </p>
             <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
               <Link href={localizedHref(CAL_LINK, lang)} className="btn-primary">
                 <span className="btn-primary-dot" />
-                {d('Réserver un appel', 'Book a call')} &rarr;
+                {d('Réserver un appel', 'Book a call', 'Hívás foglalása')} &rarr;
               </Link>
               <Link href={localizedHref('/case-studies', lang)} className="btn-ghost">
-                {d('Voir les réalisations', 'See the case studies')}
+                {d('Voir les réalisations', 'See the case studies', 'Esettanulmányok megtekintése')}
               </Link>
             </div>
           </FadeUp>

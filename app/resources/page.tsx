@@ -9,6 +9,7 @@ import LiteYouTube from '@/components/ui/LiteYouTube'
 import Link from 'next/link'
 import ScreenMock from '@/components/ui/ScreenMock'
 import { useLang } from '@/components/providers/LangProvider'
+import { makeD } from '@/lib/lang'
 import { localizedHref } from '@/lib/routes'
 import { motion } from 'framer-motion'
 import { blogPosts } from '@/lib/blog'
@@ -18,47 +19,47 @@ import { playbooks, sectorLabelFor, cardTaglineFor } from '@/lib/playbooks'
 const TESTIMONIAL_VIDEO_ID = 'aMIjJbzuhDc'
 
 // Démos live + outil interactif.
-type Demo = { titleFr: string; titleEn: string; descFr: string; descEn: string; badge: 'new' | 'gated'; href: string; external?: boolean; img: string }
+type Demo = { titleFr: string; titleEn: string; titleHu: string; descFr: string; descEn: string; descHu: string; badge: 'new' | 'gated'; href: string; external?: boolean; img: string }
 const DEMOS: Demo[] = [
   {
-    titleFr: 'Diagnostic IA', titleEn: 'AI Diagnostic',
+    titleFr: 'Diagnostic IA', titleEn: 'AI Diagnostic', titleHu: 'MI-diagnosztika',
     descFr: 'Votre entreprise est-elle prête pour l’IA ? 12 questions, 3 piliers (processus, données, adoption), un score et un verdict franc en 2 minutes.',
-    descEn: 'Is your business ready for AI? 12 questions, 3 pillars (process, data, adoption), a score and a straight verdict in 2 minutes.',
+    descEn: 'Is your business ready for AI? 12 questions, 3 pillars (process, data, adoption), a score and a straight verdict in 2 minutes.', descHu: 'Készen áll a cége az MI-re? 12 kérdés, 3 pillér (folyamatok, adatok, elfogadás), pontszám és őszinte ítélet 2 perc alatt.',
     badge: 'new',
     href: '/outils/pret-pour-lia',
     img: 'diagnostic-ia',
   },
   {
-    titleFr: 'Prévision de trésorerie', titleEn: 'The Forecast',
+    titleFr: 'Prévision de trésorerie', titleEn: 'The Forecast', titleHu: 'The Forecast',
     descFr: 'À quel mois votre trésorerie passe dans le rouge, et de combien. Le simulateur chiffre les leviers pour combler le trou, sur vos vrais chiffres.',
-    descEn: 'Which month your cash goes red, and by how much. The simulator quantifies the levers to close the gap, on your real numbers.',
+    descEn: 'Which month your cash goes red, and by how much. The simulator quantifies the levers to close the gap, on your real numbers.', descHu: 'Melyik hónapban csúszik mínuszba a pénzügyi egyenlege, és mennyivel. A szimulátor a valódi számain számszerűsíti a rés bezárásának eszközeit.',
     badge: 'new',
     href: 'https://natesystem-treso.vercel.app',
     external: true,
     img: 'treso',
   },
   {
-    titleFr: 'Gestion d\u2019actifs', titleEn: 'Asset Management',
+    titleFr: 'Gestion d\u2019actifs', titleEn: 'Asset Management', titleHu: 'Eszköznyilvántartás',
     descFr: 'Parc IT, véhicules, mobilier, machines, centralisés avec amortissements automatiques et alertes de remplacement.',
-    descEn: 'IT assets, vehicles, furniture, machines, centralised with automatic depreciation and replacement alerts.',
+    descEn: 'IT assets, vehicles, furniture, machines, centralised with automatic depreciation and replacement alerts.', descHu: 'Informatikai eszközök, járművek, bútorok, gépek egy helyen, automatikus értékcsökkenéssel és csereriasztásokkal.',
     badge: 'new',
     href: 'https://actifs.natesystem.com',
     external: true,
     img: 'actifs',
   },
   {
-    titleFr: 'Plateforme d\u2019inventaire', titleEn: 'Inventory Platform',
+    titleFr: 'Plateforme d\u2019inventaire', titleEn: 'Inventory Platform', titleHu: 'Készletplatform',
     descFr: 'Stock temps réel, réapprovisionnements intelligents, fournisseurs, lecture de codes-barres. Le moteur qu’on déploie en production.',
-    descEn: 'Real-time stock, smart re-ordering, suppliers, barcode scanning. The same engine we deploy in production.',
+    descEn: 'Real-time stock, smart re-ordering, suppliers, barcode scanning. The same engine we deploy in production.', descHu: 'Valós idejű készlet, okos utánrendelés, beszállítók, vonalkódolvasás. Ugyanaz a motor, amit élesben is bevezetünk.',
     badge: 'new',
     href: 'https://stack-stock.natesystem.com',
     external: true,
     img: 'stock',
   },
   {
-    titleFr: 'Intelligence avis', titleEn: 'Review Intelligence',
+    titleFr: 'Intelligence avis', titleEn: 'Review Intelligence', titleHu: 'Véleményelemzés',
     descFr: 'Avis notés par IA sur six dimensions, brouillons de réponses dans votre ton, plan d’action 90 jours. Accès démo sur demande.',
-    descEn: 'Reviews scored by AI on six dimensions, reply drafts in your tone, 90-day action plan. Demo access on request.',
+    descEn: 'Reviews scored by AI on six dimensions, reply drafts in your tone, 90-day action plan. Demo access on request.', descHu: 'MI-vel hat szempont szerint pontozott vélemények, válaszjavaslatok az Ön hangján, 90 napos cselekvési terv. Demóhozzáférés kérésre.',
     badge: 'gated',
     href: '/reviews',
     img: 'reviews',
@@ -67,7 +68,7 @@ const DEMOS: Demo[] = [
 
 export default function ResourcesPage() {
   const { lang, t } = useLang()
-  const d = (fr: string, en: string) => (lang === 'en' ? en : fr)
+  const d = makeD(lang)
 
   return (
     <main>
@@ -94,12 +95,12 @@ export default function ResourcesPage() {
       <section id="videos" style={{ padding: '80px 24px' }}>
         <div className="mx-auto" style={{ maxWidth: '1120px' }}>
           <FadeUp>
-            <span className="section-label">{d('Vidéos', 'Videos')}</span>
+            <span className="section-label">{d('Vidéos', 'Videos', 'Videók')}</span>
             <h2 className="font-serif italic" style={{ fontSize: 'clamp(28px, 4vw, 40px)', fontWeight: 400, color: 'var(--text)', lineHeight: 1.15, margin: '4px 0 10px' }}>
-              {d('Discussions sans filtres avec nos clients', 'Unfiltered conversations with our clients')}
+              {d('Discussions sans filtres avec nos clients', 'Unfiltered conversations with our clients', 'Szűretlen beszélgetések az ügyfeleinkkel')}
             </h2>
             <p className="font-sans" style={{ fontSize: '14px', fontWeight: 300, color: 'var(--text-muted)', lineHeight: 1.6, maxWidth: '620px' }}>
-              {d('Témoignages clients aujourd’hui, vidéos éducation & vlogs internes à venir.', 'Client testimonials today, education videos & internal vlogs coming soon.')}
+              {d('Témoignages clients aujourd’hui, vidéos éducation & vlogs internes à venir.', 'Client testimonials today, education videos & internal vlogs coming soon.', 'Ma ügyfélajánlások, hamarosan oktatóvideók és belső vlogok.')}
             </p>
           </FadeUp>
 
@@ -107,19 +108,19 @@ export default function ResourcesPage() {
             <div className="res-video-row" style={{ marginTop: 36 }}>
               <div className="res-video-copy">
                 <span className="font-mono" style={{ fontSize: '10px', letterSpacing: '2.5px', textTransform: 'uppercase', color: 'var(--accent)' }}>
-                  {d('Témoignage · Chromosome', 'Testimonial · Chromosome')}
+                  {d('Témoignage · Chromosome', 'Testimonial · Chromosome', 'Ajánlás · Chromosome')}
                 </span>
                 <h3 className="font-serif italic" style={{ fontSize: 'clamp(21px, 2.4vw, 27px)', fontWeight: 400, color: 'var(--text)', lineHeight: 1.3, margin: '14px 0 14px' }}>
-                  {d('« On a tellement gagné en temps et en fiabilité qu’on ne pourrait plus s’en passer. »', '“We’ve gained so much time and reliability that we couldn’t do without it now.”')}
+                  {d('« On a tellement gagné en temps et en fiabilité qu’on ne pourrait plus s’en passer. »', '“We’ve gained so much time and reliability that we couldn’t do without it now.”', '„Annyi időt és megbízhatóságot nyertünk, hogy ma már nem tudnánk nélküle meglenni.”')}
                 </h3>
                 <p className="font-sans" style={{ fontSize: '14.5px', fontWeight: 300, color: 'var(--text-secondary)', lineHeight: 1.65, marginBottom: 6 }}>
                   {d('Catherine F., General Manager d’un groupe de restauration à Saint-Étienne, raconte comment deux plateformes sur-mesure ont remplacé leur stack et libéré 14 heures par semaine.',
-                     'Catherine F., General Manager of a restaurant group in Saint-Étienne, on how two custom platforms replaced their stack and freed 14 hours a week.')}
+                     'Catherine F., General Manager of a restaurant group in Saint-Étienne, on how two custom platforms replaced their stack and freed 14 hours a week.', 'Catherine F., egy saint-étienne-i étteremcsoport General Managere elmeséli, hogyan váltotta ki két egyedi platform az addigi eszközeiket, és hogyan szabadított fel heti 14 órát.')}
                 </p>
               </div>
 
               <div className="res-video">
-                <LiteYouTube id={TESTIMONIAL_VIDEO_ID} title={d('Témoignage Chromosome, NateSystem', 'Chromosome testimonial, NateSystem')} />
+                <LiteYouTube id={TESTIMONIAL_VIDEO_ID} title={d('Témoignage Chromosome, NateSystem', 'Chromosome testimonial, NateSystem', 'Chromosome-ajánlás, NateSystem')} />
               </div>
             </div>
           </FadeUp>
@@ -132,12 +133,12 @@ export default function ResourcesPage() {
       <section id="outils" style={{ padding: '80px 24px' }}>
         <div className="mx-auto" style={{ maxWidth: '1120px' }}>
           <FadeUp>
-            <span className="section-label">{d('Outils & démos', 'Tools & demos')}</span>
+            <span className="section-label">{d('Outils & démos', 'Tools & demos', 'Eszközök és demók')}</span>
             <h2 className="font-serif italic" style={{ fontSize: 'clamp(28px, 4vw, 40px)', fontWeight: 400, color: 'var(--text)', lineHeight: 1.15, margin: '4px 0 10px' }}>
-              {d('Essayez le produit réel.', 'Try the real product.')}
+              {d('Essayez le produit réel.', 'Try the real product.', 'Próbálja ki a valódi terméket.')}
             </h2>
             <p className="font-sans" style={{ fontSize: '14px', fontWeight: 300, color: 'var(--text-muted)', lineHeight: 1.6, maxWidth: '620px' }}>
-              {d('Des démos pleinement fonctionnelles (données fictives) et un diagnostic interactif. Pas des captures, le vrai produit.', 'Fully working demos (dummy data) and an interactive diagnostic. Not screenshots, the real thing.')}
+              {d('Des démos pleinement fonctionnelles (données fictives) et un diagnostic interactif. Pas des captures, le vrai produit.', 'Fully working demos (dummy data) and an interactive diagnostic. Not screenshots, the real thing.', 'Teljesen működő demók (kitalált adatokkal) és egy interaktív diagnosztika. Nem képernyőképek, hanem az igazi.')}
             </p>
           </FadeUp>
 
@@ -147,17 +148,17 @@ export default function ResourcesPage() {
               <motion.div className="res-feature" whileHover={{ borderColor: 'var(--border-hover)' }} style={{ marginTop: 32 }}>
                 <div>
                   <span className="font-mono" style={{ fontSize: '10px', letterSpacing: '2.5px', textTransform: 'uppercase', color: 'var(--accent)' }}>
-                    {d('Outil interactif · 2 min', 'Interactive tool · 2 min')}
+                    {d('Outil interactif · 2 min', 'Interactive tool · 2 min', 'Interaktív eszköz · 2 perc')}
                   </span>
                   <h3 className="font-serif italic" style={{ fontSize: 'clamp(22px, 2.6vw, 30px)', fontWeight: 400, color: 'var(--text)', lineHeight: 1.2, margin: '12px 0 10px' }}>
-                    {d('Le Diagnostic IA', 'The AI Diagnostic')}
+                    {d('Le Diagnostic IA', 'The AI Diagnostic', 'Az MI-diagnosztika')}
                   </h3>
                   <p className="font-sans" style={{ fontSize: '14.5px', fontWeight: 300, color: 'var(--text-secondary)', lineHeight: 1.65, maxWidth: '640px' }}>
                     {d('Combien de valeur dort dans vos outils et votre savoir, combien d’heures votre équipe perd sur du répétitif, où vous en êtes sur la maturité IA. Chiffré, 3 leviers priorisés, PDF téléchargeable.',
-                       'How much value sleeps in your tools and know-how, how many hours your team loses on repetitive work, where you stand on AI maturity. Quantified, 3 prioritised levers, downloadable PDF.')}
+                       'How much value sleeps in your tools and know-how, how many hours your team loses on repetitive work, where you stand on AI maturity. Quantified, 3 prioritised levers, downloadable PDF.', 'Mennyi érték alszik az eszközeiben és a tudásában, hány órát veszít a csapata ismétlődő munkán, és hol tart az MI-érettségben. Számszerűsítve, 3 rangsorolt beavatkozási ponttal, letölthető PDF-fel.')}
                   </p>
                 </div>
-                <span className="res-feature-cta font-sans">{d('Lancer le diagnostic', 'Run the diagnostic')} &rarr;</span>
+                <span className="res-feature-cta font-sans">{d('Lancer le diagnostic', 'Run the diagnostic', 'Diagnosztika indítása')} &rarr;</span>
               </motion.div>
             </Link>
           </FadeUp>
@@ -168,24 +169,24 @@ export default function ResourcesPage() {
               const inner = (
                 <motion.div className="res-card" whileHover={{ borderColor: 'var(--border-hover)' }}>
                   <div className="res-card-badge-row">
-                    <span className="font-mono res-badge">{d('Démo live', 'Live demo')}</span>
+                    <span className="font-mono res-badge">{d('Démo live', 'Live demo', 'Élő demó')}</span>
                     <span className={`font-mono res-pill ${demo.badge === 'gated' ? 'res-pill-gated' : ''}`}>
-                      {demo.badge === 'gated' ? d('Sur demande', 'On request') : d('Nouveau', 'New')}
+                      {demo.badge === 'gated' ? d('Sur demande', 'On request', 'Kérésre') : d('Nouveau', 'New', 'Új')}
                     </span>
                   </div>
                   <h3 className="font-serif italic" style={{ fontSize: '21px', fontWeight: 400, color: 'var(--text)', lineHeight: 1.25, margin: '2px 0 10px' }}>
-                    {d(demo.titleFr, demo.titleEn)}
+                    {d(demo.titleFr, demo.titleEn, demo.titleHu)}
                   </h3>
                   <p className="font-sans" style={{ fontSize: '13.5px', fontWeight: 300, color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: 14 }}>
-                    {d(demo.descFr, demo.descEn)}
+                    {d(demo.descFr, demo.descEn, demo.descHu)}
                   </p>
                   <div style={{ marginTop: 'auto', paddingTop: 12 }}>
                     <div style={{ height: 138 }}>
-                      <ScreenMock src={`/realisations/demos/${demo.img}.jpg`} alt={d(demo.titleFr, demo.titleEn)} />
+                      <ScreenMock src={`/realisations/demos/${demo.img}.jpg`} alt={d(demo.titleFr, demo.titleEn, demo.titleHu)} />
                     </div>
                   </div>
                   <span className="res-card-cta font-sans">
-                    {demo.badge === 'gated' ? d('Demander l’accès', 'Request access') : d('Ouvrir la démo', 'Open the demo')} &rarr;
+                    {demo.badge === 'gated' ? d('Demander l’accès', 'Request access', 'Hozzáférés kérése') : d('Ouvrir la démo', 'Open the demo', 'Demó megnyitása')} &rarr;
                   </span>
                 </motion.div>
               )
@@ -214,12 +215,12 @@ export default function ResourcesPage() {
         <section id="playbooks" style={{ padding: '80px 24px' }}>
           <div className="mx-auto" style={{ maxWidth: '1120px' }}>
             <FadeUp>
-              <span className="section-label">{d('Playbooks par métier', 'Playbooks by industry')}</span>
+              <span className="section-label">{d('Playbooks par métier', 'Playbooks by industry', 'Playbookok szakmánként')}</span>
               <h2 className="font-serif italic" style={{ fontSize: 'clamp(28px, 4vw, 40px)', fontWeight: 400, color: 'var(--text)', lineHeight: 1.15, margin: '4px 0 10px' }}>
-                {d('L’IA appliquée à votre métier.', 'AI applied to your industry.')}
+                {d('L’IA appliquée à votre métier.', 'AI applied to your industry.', 'Az MI az Ön szakmájára alkalmazva.')}
               </h2>
               <p className="font-sans" style={{ fontSize: '14px', fontWeight: 300, color: 'var(--text-muted)', lineHeight: 1.6, maxWidth: '640px' }}>
-                {d('Des guides concrets, un par secteur : où l’IA fait vraiment gagner du temps, sans casser votre conformité. PDF gratuit.', 'Concrete guides, one per sector: where AI actually saves time without breaking your compliance. Free PDF.')}
+                {d('Des guides concrets, un par secteur : où l’IA fait vraiment gagner du temps, sans casser votre conformité. PDF gratuit.', 'Concrete guides, one per sector: where AI actually saves time without breaking your compliance. Free PDF.', 'Konkrét útmutatók, ágazatonként egy: hol spórol az MI tényleg időt anélkül, hogy a megfelelőségét veszélyeztetné. Ingyenes PDF.')}
               </p>
             </FadeUp>
 
@@ -228,14 +229,14 @@ export default function ResourcesPage() {
                 <FadeUp key={pb.slug} delay={Math.min(i * 0.04, 0.4)}>
                   <Link href={`/playbook/${pb.slug}`} style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
                     <motion.div className="res-card" whileHover={{ borderColor: 'var(--border-hover)' }}>
-                      <span className="font-mono res-badge" style={{ marginBottom: 10 }}>{d('Playbook', 'Playbook')}</span>
+                      <span className="font-mono res-badge" style={{ marginBottom: 10 }}>{d('Playbook', 'Playbook', 'Playbook')}</span>
                       <h3 className="font-serif italic" style={{ fontSize: '19px', fontWeight: 400, color: 'var(--text)', lineHeight: 1.25, margin: '0 0 8px' }}>
                         {sectorLabelFor(pb.slug)}
                       </h3>
                       <p className="font-sans" style={{ fontSize: '13px', fontWeight: 300, color: 'var(--text-secondary)', lineHeight: 1.55, flex: 1 }}>
                         {cardTaglineFor(pb.slug)}
                       </p>
-                      <span className="res-card-cta font-sans">{d('Télécharger le PDF', 'Download the PDF')} &rarr;</span>
+                      <span className="res-card-cta font-sans">{d('Télécharger le PDF', 'Download the PDF', 'PDF letöltése')} &rarr;</span>
                     </motion.div>
                   </Link>
                 </FadeUp>
@@ -259,11 +260,11 @@ export default function ResourcesPage() {
               <div className="flex items-center justify-between mb-2" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                 <span className="section-label mb-0">{t('resources.blog')}</span>
                 <Link href="/blog" className="font-sans" style={{ fontSize: '13px', color: 'var(--accent)', textDecoration: 'none', fontWeight: 500 }}>
-                  {d('Voir tous les articles', 'View all articles')} &rarr;
+                  {d('Voir tous les articles', 'View all articles', 'Összes cikk megtekintése')} &rarr;
                 </Link>
               </div>
               <h2 className="font-serif italic" style={{ fontSize: 'clamp(28px, 4vw, 40px)', fontWeight: 400, color: 'var(--text)', lineHeight: 1.15, margin: '4px 0 28px' }}>
-                {d('À lire pour décider juste.', 'Reading to decide well.')}
+                {d('À lire pour décider juste.', 'Reading to decide well.', 'Olvasnivaló a jó döntéshez.')}
               </h2>
             </FadeUp>
 

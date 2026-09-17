@@ -20,6 +20,7 @@ export const metadata: Metadata = {
     languages: {
       'fr-FR': `${SITE_URL}/outils/pret-pour-lia`,
       en: `${SITE_URL}/en/outils/pret-pour-lia`,
+      hu: `${SITE_URL}/hu/outils/pret-pour-lia`,
       'x-default': `${SITE_URL}/outils/pret-pour-lia`,
     },
   },

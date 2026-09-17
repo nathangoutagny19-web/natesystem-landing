@@ -2,34 +2,35 @@
 
 import { useState } from 'react'
 import { useLang } from '@/components/providers/LangProvider'
+import { makeD } from '@/lib/lang'
 import FadeUp from '@/components/ui/FadeUp'
 
-type Item = { titleFr: string; titleEn: string; descFr: string; descEn: string }
+type Item = { titleFr: string; titleEn: string; titleHu: string; descFr: string; descEn: string; descHu: string }
 
 const ITEMS: Item[] = [
   {
     titleFr: 'Consulting opérationnel',
-    titleEn: 'Operational consulting',
+    titleEn: 'Operational consulting', titleHu: 'Operatív tanácsadás',
     descFr: 'On analyse vos process, opérations et workflows, de l’arrivée d’un prospect au client qui recommande. On cartographie tout, puis on repère où vous gagnez le plus.',
-    descEn: 'We analyse your processes, operations and workflows, from a prospect’s arrival to a client who refers you. We map it all, then pinpoint where you gain the most.',
+    descEn: 'We analyse your processes, operations and workflows, from a prospect’s arrival to a client who refers you. We map it all, then pinpoint where you gain the most.', descHu: 'Elemezzük a folyamatait, a működését és a munkafolyamatait, az érdeklődő beérkezésétől az ajánló ügyfélig. Feltérképezzük az egészet, majd megmutatjuk, hol nyer a legtöbbet.',
   },
   {
     titleFr: 'Système sur-mesure',
-    titleEn: 'Custom system',
+    titleEn: 'Custom system', titleHu: 'Egyedi rendszer',
     descFr: 'On développe le logiciel qui vous manque, métier, ERP, portail, cockpit, construit autour de vos opérations, pas l’inverse. Vos données unifiées, votre code qui vous appartient.',
-    descEn: 'We develop the software you’re missing, business app, ERP, portal, cockpit, built around your operations, not the other way round. Your data unified, your code owned by you.',
+    descEn: 'We develop the software you’re missing, business app, ERP, portal, cockpit, built around your operations, not the other way round. Your data unified, your code owned by you.', descHu: 'Megfejlesztjük a hiányzó szoftvert: szakmai alkalmazást, ERP-t, portált, vezérlőpultot, a működése köré építve, nem fordítva. Az adatai egységesítve, a kód az Öné.',
   },
   {
     titleFr: 'Digitalisation & IA',
-    titleEn: 'Digitalisation & AI',
+    titleEn: 'Digitalisation & AI', titleHu: 'Digitalizáció és MI',
     descFr: 'De l’IA et de l’automatisation intégrées par-dessus votre système, uniquement là où elles remplacent de vraies heures. Jamais en décoration.',
-    descEn: 'AI and automation layered on top of your system, only where they replace real hours. Never for show.',
+    descEn: 'AI and automation layered on top of your system, only where they replace real hours. Never for show.', descHu: 'MI és automatizálás a rendszere tetején, kizárólag ott, ahol valódi munkaórákat vált ki. Sosem a látszatért.',
   },
   {
     titleFr: 'Formation & accompagnement',
-    titleEn: 'Training & support',
+    titleEn: 'Training & support', titleHu: 'Képzés és támogatás',
     descFr: 'Construire l’outil, c’est facile ; le faire adopter par toute votre équipe, c’est le vrai job. On forme tout le monde, du dirigeant au terrain, jusqu’à l’autonomie complète.',
-    descEn: 'Building the tool is easy; getting your whole team to adopt it is the real job. We train everyone, from leadership to the field, all the way to full autonomy.',
+    descEn: 'Building the tool is easy; getting your whole team to adopt it is the real job. We train everyone, from leadership to the field, all the way to full autonomy.', descHu: 'Az eszközt megépíteni könnyű; elérni, hogy az egész csapata használja, az az igazi munka. Mindenkit betanítunk, a vezetőtől a terepen dolgozóig, a teljes önállóságig.',
   },
 ]
 
@@ -105,21 +106,21 @@ const VIZ = [VizMap, VizProto, VizGrowth, VizTeach]
 
 export default function WhatWeDo() {
   const { lang } = useLang()
-  const d = (fr: string, en: string) => (lang === 'en' ? en : fr)
+  const d = makeD(lang)
   const [active, setActive] = useState<number | null>(null)
 
   return (
     <section id="ce-quon-fait" style={{ padding: '120px 24px' }}>
       <div className="mx-auto" style={{ maxWidth: '1040px' }}>
         <FadeUp className="text-center mb-16">
-          <span className="section-label">{d('Nos services', 'Our services')}</span>
+          <span className="section-label">{d('Nos services', 'Our services', 'Szolgáltatásaink')}</span>
           <h2 className="section-title" style={{ maxWidth: '720px', margin: '0 auto 20px' }}>
-            {d('Une expertise, ', 'Real expertise, ')}
-            <span className="accent">{d('forgée sur le terrain.', 'forged in the field.')}</span>
+            {d('Une expertise, ', 'Real expertise, ', 'Valódi szaktudás, ')}
+            <span className="accent">{d('forgée sur le terrain.', 'forged in the field.', 'terepen kovácsolva.')}</span>
           </h2>
           <p className="font-sans" style={{ fontSize: '15px', fontWeight: 300, color: 'var(--text-secondary)', maxWidth: '620px', margin: '0 auto', lineHeight: 1.7 }}>
             {d('On remplace les outils génériques qui ne collent pas par du sur-mesure que vous possédez. L’IA et l’automatisation sont intégrées uniquement là où elles libèrent vos experts du répétitif, pour qu’ils créent de la valeur au lieu de la perdre.',
-               'We replace ill-fitting generic tools with custom software you own. AI and automation are embedded only where they free your experts from repetitive work, so they create value instead of losing it.')}
+               'We replace ill-fitting generic tools with custom software you own. AI and automation are embedded only where they free your experts from repetitive work, so they create value instead of losing it.', 'A rosszul illeszkedő általános eszközöket egyedi szoftverre cseréljük, amely az Öné. MI és automatizálás kizárólag ott épül bele, ahol felszabadítja a szakértőit az ismétlődő munka alól, hogy értéket teremtsenek ahelyett, hogy elveszítenék.')}
           </p>
         </FadeUp>
 
@@ -141,13 +142,13 @@ export default function WhatWeDo() {
 
                   <span className="wwx-main">
                     <span className="wwx-title-wrap">
-                      <span className="font-serif italic wwx-title">{d(it.titleFr, it.titleEn)}</span>
+                      <span className="font-serif italic wwx-title">{d(it.titleFr, it.titleEn, it.titleHu)}</span>
                       <svg className="wwx-underline" viewBox="0 0 300 12" preserveAspectRatio="none" fill="none" aria-hidden="true">
                         <path d="M2 8 C 60 2, 110 2, 156 6 S 250 12, 298 5" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
                       </svg>
                     </span>
                     <span className="wwx-desc-wrap">
-                      <span className="font-sans wwx-desc">{d(it.descFr, it.descEn)}</span>
+                      <span className="font-sans wwx-desc">{d(it.descFr, it.descEn, it.descHu)}</span>
                     </span>
                   </span>
 

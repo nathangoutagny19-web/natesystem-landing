@@ -8,12 +8,13 @@ import Divider from '@/components/ui/Divider'
 import CaseStudy from '@/components/home/CaseStudy'
 import Link from 'next/link'
 import { useLang } from '@/components/providers/LangProvider'
+import { makeD } from '@/lib/lang'
 import { CAL_LINK } from '@/lib/constants'
 import { localizedHref } from '@/lib/routes'
 
 export default function CaseStudiesPage() {
   const { lang } = useLang()
-  const d = (fr: string, en: string) => (lang === 'en' ? en : fr)
+  const d = makeD(lang)
 
   return (
     <main>
@@ -23,13 +24,13 @@ export default function CaseStudiesPage() {
       <section style={{ padding: '160px 24px 40px' }}>
         <div className="mx-auto text-center" style={{ maxWidth: '720px' }}>
           <FadeUp>
-            <span className="section-label">{d('Réalisations', 'Case studies')}</span>
+            <span className="section-label">{d('Réalisations', 'Case studies', 'Esettanulmányok')}</span>
             <h1 className="section-title" style={{ margin: '0 auto 20px' }}>
-              {d('Des résultats réels, pas des promesses.', 'Real results, not promises.')}
+              {d('Des résultats réels, pas des promesses.', 'Real results, not promises.', 'Valódi eredmények, nem ígéretek.')}
             </h1>
             <p className="font-sans" style={{ fontSize: '16px', fontWeight: 300, color: 'var(--text-secondary)', lineHeight: 1.7 }}>
               {d('Chaque chiffre est mesuré avec le client et documenté. Voici ce que le sur-mesure change concrètement.',
-                 'Every figure is measured with the client and documented. Here’s what custom software concretely changes.')}
+                 'Every figure is measured with the client and documented. Here’s what custom software concretely changes.', 'Minden számot az ügyféllel közösen mérünk és dokumentálunk. Íme, mit változtat konkrétan az egyedi szoftver.')}
             </p>
           </FadeUp>
         </div>
@@ -43,7 +44,7 @@ export default function CaseStudiesPage() {
         <div className="mx-auto text-center" style={{ maxWidth: '620px' }}>
           <FadeUp>
             <Link href={localizedHref('/case-studies/chromosome', lang)} className="btn-ghost">
-              {d('Lire l’étude de cas complète', 'Read the full case study')} &rarr;
+              {d('Lire l’étude de cas complète', 'Read the full case study', 'Teljes esettanulmány elolvasása')} &rarr;
             </Link>
           </FadeUp>
         </div>
@@ -58,19 +59,19 @@ export default function CaseStudiesPage() {
                 style={{ background: 'var(--bg-card)', border: '1px solid var(--border)', borderRadius: 16, padding: 'clamp(28px, 4vw, 44px)' }}
               >
                 <p className="font-mono" style={{ fontSize: 11, letterSpacing: 1.4, textTransform: 'uppercase', color: 'var(--accent)', fontWeight: 500, margin: '0 0 12px' }}>
-                  {d('Cabinet de conseil B2B · Budapest', 'B2B consulting firm · Budapest')}
+                  {d('Cabinet de conseil B2B · Budapest', 'B2B consulting firm · Budapest', 'B2B tanácsadó cég · Budapest')}
                 </p>
                 <h2 className="font-serif italic" style={{ fontSize: 'clamp(26px, 4vw, 40px)', fontWeight: 400, color: 'var(--text)', lineHeight: 1.1, margin: '0 0 14px' }}>
-                  {d('25 ans d\u2019expertise, mis dans une IA.', '25 years of expertise, put into an AI.')}
+                  {d('25 ans d\u2019expertise, mis dans une IA.', '25 years of expertise, put into an AI.', '25 év szaktudás, MI-be téve.')}
                 </h2>
                 <p className="font-sans" style={{ fontSize: 15.5, fontWeight: 300, color: 'var(--text-secondary)', lineHeight: 1.65, maxWidth: 640, margin: '0 0 20px' }}>
                   {d(
                     'Un cabinet de conseil B2B de Budapest a capitalisé le savoir de son fondateur dans un système sur-mesure, automatisé ses rapports clients sur 280 KPIs, et l\u2019a rendu à ses clients.',
                     'A B2B consulting firm in Budapest captured its founder\u2019s know-how in a custom system, automated its client reports across 280 KPIs, and handed it back to its clients.'
-                  )}
+                  , 'Egy budapesti B2B tanácsadó cég egyedi rendszerbe mentette az alapítója tudását, automatizálta az ügyfélriportjait 280 KPI-n, és mindezt visszaadta az ügyfeleinek.')}
                 </p>
                 <span className="font-sans" style={{ display: 'inline-flex', alignItems: 'center', gap: 7, fontSize: 14, fontWeight: 500, color: 'var(--accent)' }}>
-                  {d('Lire l’étude de cas', 'Read the case study')} &rarr;
+                  {d('Lire l’étude de cas', 'Read the case study', 'Esettanulmány elolvasása')} &rarr;
                 </span>
               </article>
             </Link>
@@ -85,11 +86,11 @@ export default function CaseStudiesPage() {
         <div className="mx-auto text-center" style={{ maxWidth: '620px' }}>
           <FadeUp>
             <h2 className="font-serif italic" style={{ fontSize: 'clamp(24px, 3.4vw, 34px)', fontWeight: 400, color: 'var(--text)', lineHeight: 1.25, marginBottom: 24 }}>
-              {d('Envie du même résultat chez vous ?', 'Want the same result at your company?')}
+              {d('Envie du même résultat chez vous ?', 'Want the same result at your company?', 'Szeretné ugyanezt az eredményt a cégénél?')}
             </h2>
             <Link href={localizedHref(CAL_LINK, lang)} className="btn-primary">
               <span className="btn-primary-dot" />
-              {d('Réserver un appel', 'Book a call')} &rarr;
+              {d('Réserver un appel', 'Book a call', 'Hívás foglalása')} &rarr;
             </Link>
           </FadeUp>
         </div>

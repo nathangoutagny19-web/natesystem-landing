@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     languages: {
       'fr-FR': 'https://www.natesystem.com/mentions-legales',
       en: 'https://www.natesystem.com/en/mentions-legales',
+      hu: 'https://www.natesystem.com/hu/mentions-legales',
       'x-default': 'https://www.natesystem.com/mentions-legales',
     },
   },

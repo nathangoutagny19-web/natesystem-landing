@@ -9,6 +9,7 @@ import Divider from '@/components/ui/Divider'
 import FadeUp from '@/components/ui/FadeUp'
 import ScreenMock from '@/components/ui/ScreenMock'
 import { useLang } from '@/components/providers/LangProvider'
+import { localizedHref } from '@/lib/routes'
 import type { TranslationKey } from '@/lib/i18n'
 import { CAL_LINK } from '@/lib/constants'
 
@@ -77,7 +78,7 @@ export default function OutilsPage() {
 
   /* Un lien interne écrit en français doit rester dans l'arbre anglais quand
      on est sous /en, sinon le premier clic renvoie le visiteur en français. */
-  const loc = (path: string) => (lang === 'en' ? `/en${path}` : path)
+  const loc = (path: string) => localizedHref(path, lang)
   const calHref = lang === 'en' ? `/en${CAL_LINK.slice(1)}` : CAL_LINK
 
   return (

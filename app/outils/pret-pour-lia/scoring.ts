@@ -32,6 +32,11 @@ export const CHOICES: Record<Lang, { value: Choice; label: string }[]> = {
     { value: 1, label: 'Somewhat' },
     { value: 0, label: 'Not really' },
   ],
+  hu: [
+    { value: 2, label: 'Igen, egyértelműen' },
+    { value: 1, label: 'Nagyjából' },
+    { value: 0, label: 'Nem igazán' },
+  ],
 }
 
 export type Pillar = {
@@ -164,7 +169,64 @@ const PILLARS_EN: Pillar[] = [
   },
 ]
 
-export const PILLARS: Record<Lang, Pillar[]> = { fr: PILLARS_FR, en: PILLARS_EN }
+const PILLARS_HU: Pillar[] = [
+  {
+    id: 'process',
+    num: 1,
+    name: 'Világos folyamatok',
+    question: 'Világosak a folyamatai?',
+    action: 'tisztázza és írja le a folyamatait',
+    recoTitle: 'Kezdje a folyamatai tisztázásával.',
+    recoBody:
+      'Ami homályos, azt nem lehet automatizálni. Az MI előtt a munkamódszereinek tisztáknak és ismételhetőknek kell lenniük, különben csak a rendetlenséget gyorsítaná fel.',
+    firstStep:
+      'Válasszon EGY ismétlődő feladatot, amely minden héten időt visz el, és írja le a lépéseit elejétől a végéig, mintha egy új munkatársat tanítana be. Ez az első leírt folyamata, és egyben a legjobb jelölt az automatizálásra.',
+    questions: [
+      'Ha holnap új munkatárs érkezne, el tudná magyarázni neki a kulcsfolyamatait rögtönzés nélkül?',
+      'A fontos feladatai mindig ugyanazokat a lépéseket követik, bárki is végzi őket?',
+      'Le vannak írva valahol a munkamódszerei, és nem csak az emberek fejében élnek?',
+      'Meg tudná fogalmazni egyetlen világos mondatban, mit kellene egy gépnek Ön helyett elvégeznie egy ismétlődő feladaton?',
+    ],
+  },
+  {
+    id: 'data',
+    num: 2,
+    name: 'Megbízható adatok',
+    question: 'Egy helyen vannak és megbízhatók az adatai?',
+    action: 'vonja egy helyre és tegye megbízhatóvá az adatait',
+    recoTitle: 'Kezdje az adatai megbízhatóvá tételével.',
+    recoBody:
+      'A szétszórt vagy hibás adatokra kötött MI gyorsan és nagy léptékben téved. Az egy helyre gyűjtés az a tiszta üzemanyag, amelyre szüksége van ahhoz, hogy hasznos legyen.',
+    firstStep:
+      'Írja össze, hol élnek a kulcsinformációi (ügyfelek, értékesítés, készlet, projektek): hány eszközben, hány fájlban? Aztán válasszon adattípusonként EGY igazságforrást, és hagyja abba a máshová másolását.',
+    questions: [
+      'Egy helyen vannak az információi (ügyfelek, értékesítés, készlet, projektek)?',
+      'Amikor egy számra van szüksége, megkapja másodpercek alatt, anélkül hogy össze kellene rakni?',
+      'Biztos benne, hogy az adatai naprakészek és megbízhatók?',
+      'Beszélnek egymással az eszközei, anélkül hogy bárkinek át kellene gépelnie az adatokat egyikből a másikba?',
+    ],
+  },
+  {
+    id: 'adoption',
+    num: 3,
+    name: 'Elfogadás és emberek',
+    question: 'Elfogadás, emberi kézben tartott irányítással',
+    action: 'vigye magával a csapatait a változásban',
+    recoTitle: 'Kezdje azzal, hogy maga mellé állítja a csapatát.',
+    recoBody:
+      'A világ legjobb eszköze is hasztalan, ha senki nem használja. A csapatok elfogadása, emberrel a végső szónál, az választja el a valódi nyereséget az elhagyott kütyütől.',
+    firstStep:
+      'Keresse meg azt az embert, aki vinni tudná a változást: kíváncsi, tisztelik, és nem feltétlenül a legtechnikásabb. Megfelelő támogatással ő a különbség egy tényleg használt eszköz és egy hónap után elfelejtett újabb dolog között.',
+    questions: [
+      'Amikor új eszközt vezet be, a csapata valóban használatba veszi, anélkül hogy visszacsúszna a régi szokásokba?',
+      'A csapatai inkább kíváncsiak, mint gyanakvók, ha új eszköz érkezik?',
+      'Kényelmes lenne Önnek, ha mindig ember mondaná ki a végső szót abban, amit az MI előállít?',
+      'Van olyan embere, aki hosszú távon végig tudja kísérni egy eszköz bevezetését?',
+    ],
+  },
+]
+
+export const PILLARS: Record<Lang, Pillar[]> = { fr: PILLARS_FR, en: PILLARS_EN, hu: PILLARS_HU }
 
 /** Réponses = 12 valeurs (0/1/2), dans l'ordre des piliers puis des questions. */
 export type Answers = (Choice | null)[]
@@ -213,6 +275,11 @@ const VERDICTS: Record<Lang, { red: (action: string) => string; orange: string; 
     red: (action) => `AI would amplify your mess. Before AI, you first need to ${action}.`,
     orange: 'Solid base. Here is what to strengthen before you start.',
     green: 'You are ready. Here is where to start.',
+  },
+  hu: {
+    red: (action) => `Az MI felnagyítaná a rendetlenségét. Előbb ${action}.`,
+    orange: 'Szilárd alap. Íme, mit érdemes megerősíteni, mielőtt belevág.',
+    green: 'Készen áll. Íme, hol érdemes kezdeni.',
   },
 }
 

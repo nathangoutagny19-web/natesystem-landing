@@ -22,25 +22,33 @@ export function caseStudyMetadata(slug: string, lang: Lang): Metadata {
   const study = getCaseStudy(slug, lang)
   if (!study) return {}
   const frUrl = `${BASE}/case-studies/${study.slug}`
-  const enUrl = `${BASE}/en/case-studies/${study.slug}`
-  const url = lang === 'en' ? enUrl : frUrl
+  const url = lang === 'fr' ? frUrl : `${BASE}/${lang}/case-studies/${study.slug}`
+
+  const title =
+    lang === 'en'
+      ? `${study.title}, ${study.sector}, ${study.location} | NateSystem case study`
+      : lang === 'hu'
+        ? `${study.title}, ${study.sector}, ${study.location} | NateSystem esettanulmány`
+        : `${study.title}, ${study.sector}, ${study.location} | Étude de cas NateSystem`
 
   return {
-    title:
-      lang === 'en'
-        ? `${study.title}, ${study.sector}, ${study.location} | NateSystem case study`
-        : `${study.title}, ${study.sector}, ${study.location} | Étude de cas NateSystem`,
+    title,
     description: study.metaDescription,
     alternates: {
       canonical: url,
-      languages: { 'fr-FR': frUrl, en: enUrl, 'x-default': frUrl },
+      languages: {
+        'fr-FR': frUrl,
+        en: `${BASE}/en/case-studies/${study.slug}`,
+        hu: `${BASE}/hu/case-studies/${study.slug}`,
+        'x-default': frUrl,
+      },
     },
     openGraph: {
-      title: lang === 'en' ? `${study.title}, a NateSystem case study` : `${study.title}, étude de cas NateSystem`,
+      title,
       description: study.metaDescription,
       url,
       type: 'article',
-      locale: lang === 'en' ? 'en_US' : 'fr_FR',
+      locale: lang === 'en' ? 'en_US' : lang === 'hu' ? 'hu_HU' : 'fr_FR',
     },
   }
 }
@@ -49,7 +57,7 @@ export function CaseStudyRoute({ slug, lang }: { slug: string; lang: Lang }) {
   const study = getCaseStudy(slug, lang)
   if (!study) notFound()
 
-  const root = lang === 'en' ? `${BASE}/en` : BASE
+  const root = lang === 'fr' ? BASE : `${BASE}/${lang}`
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -75,8 +83,8 @@ export function CaseStudyRoute({ slug, lang }: { slug: string; lang: Lang }) {
       {
         '@type': 'BreadcrumbList',
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: lang === 'en' ? 'Home' : 'Accueil', item: root },
-          { '@type': 'ListItem', position: 2, name: lang === 'en' ? 'Case studies' : 'Réalisations', item: `${root}/case-studies` },
+          { '@type': 'ListItem', position: 1, name: lang === 'en' ? 'Home' : lang === 'hu' ? 'Főoldal' : 'Accueil', item: root },
+          { '@type': 'ListItem', position: 2, name: lang === 'en' ? 'Case studies' : lang === 'hu' ? 'Esettanulmányok' : 'Réalisations', item: `${root}/case-studies` },
           { '@type': 'ListItem', position: 3, name: study.title, item: `${root}/case-studies/${study.slug}` },
         ],
       },

@@ -53,6 +53,7 @@ export const metadata: Metadata = {
     languages: {
       'fr-FR': 'https://www.natesystem.com',
       en: 'https://www.natesystem.com/en',
+      hu: 'https://www.natesystem.com/hu',
       'x-default': 'https://www.natesystem.com',
     },
   },

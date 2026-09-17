@@ -4,6 +4,7 @@ import { useState } from 'react'
 import FadeUp from '@/components/ui/FadeUp'
 import { motion } from 'framer-motion'
 import { useLang } from '@/components/providers/LangProvider'
+import { pick } from '@/lib/lang'
 
 // Vidéo témoignage podcast (paysage 16:9), l'épisode complet Chromosome.
 const YOUTUBE_ID = 'aMIjJbzuhDc'
@@ -93,23 +94,25 @@ function LiteYouTube({ title }: { title: string }) {
 export default function CaseStudy() {
   const { lang } = useLang()
 
-  const headline = lang === 'en'
-    ? 'How a restaurant group in Saint-Étienne runs all its operations on software it owns, and gives its teams back 14 hours a week for what truly matters: their guests.'
-    : 'Comment un groupe de restauration à Saint-Étienne pilote toutes ses opérations sur un logiciel qui lui appartient, et rend chaque semaine 14 heures à ses équipes pour ce qui compte vraiment : leurs clients.'
+  const headline = pick(lang, {
+    en: 'How a restaurant group in Saint-Étienne runs all its operations on software it owns, and gives its teams back 14 hours a week for what truly matters: their guests.',
+    fr: 'Comment un groupe de restauration à Saint-Étienne pilote toutes ses opérations sur un logiciel qui lui appartient, et rend chaque semaine 14 heures à ses équipes pour ce qui compte vraiment : leurs clients.',
+    hu: 'Hogyan visz egy saint-étienne-i étteremcsoport minden működést egy szoftveren, amely az övé, és ad vissza hetente 14 órát a csapatainak arra, ami igazán számít: a vendégekre.',
+  })
 
   const metrics = [
-    { value: '11h → 1h', label: lang === 'en' ? 'Per week, per manager' : 'Par semaine, par manager' },
-    { value: '~55', label: lang === 'en' ? 'Collaborators (volunteers, staff, partners) onboarded with zero friction' : 'Collaborateurs (bénévoles, employés, partenaires) intégrés sans friction' },
-    { value: '99%', label: lang === 'en' ? 'Operations on software they own' : 'Opérations sur du logiciel qui leur appartient' },
+    { value: '11h → 1h', label: pick(lang, { en: 'Per week, per manager', fr: 'Par semaine, par manager', hu: 'Hetente, vezetőnként' }) },
+    { value: '~55', label: pick(lang, { en: 'Collaborators (volunteers, staff, partners) onboarded with zero friction', fr: 'Collaborateurs (bénévoles, employés, partenaires) intégrés sans friction', hu: 'Közreműködő (önkéntesek, alkalmazottak, partnerek) súrlódásmentesen bevezetve' }) },
+    { value: '99%', label: pick(lang, { en: 'Operations on software they own', fr: 'Opérations sur du logiciel qui leur appartient', hu: 'A működés saját tulajdonú szoftveren' }) },
   ]
 
-  const quote = lang === 'en'
-    ? 'It changed the way we run everything, we couldn\'t do without it now. The time and clarity we\'ve gained are huge, and the team is far more at ease.'
-    : 'Ça a changé notre façon de tout gérer, on ne peut plus s\'en passer aujourd\'hui. Le gain de temps et de clarté est énorme, et l\'équipe est beaucoup plus sereine.'
+  const quote = pick(lang, {
+    en: 'It changed the way we run everything, we couldn\'t do without it now. The time and clarity we\'ve gained are huge, and the team is far more at ease.',
+    fr: 'Ça a changé notre façon de tout gérer, on ne peut plus s\'en passer aujourd\'hui. Le gain de temps et de clarté est énorme, et l\'équipe est beaucoup plus sereine.',
+    hu: 'Megváltoztatta, ahogyan mindent kezelünk, ma már nem tudnánk nélküle meglenni. Az időben és az átláthatóságban nyert előny óriási, a csapat pedig sokkal nyugodtabb.',
+  })
 
-  const role = lang === 'en'
-    ? 'General Manager · Chromosome Saint-Étienne'
-    : 'General Manager · Chromosome Saint-Étienne'
+  const role = 'General Manager · Chromosome Saint-Étienne'
 
   return (
     <section id="case-study" style={{ padding: '24px 24px 80px' }}>
@@ -161,7 +164,7 @@ export default function CaseStudy() {
 
               <div className="cs-video-col">
                 <div className="cs-video">
-                  <LiteYouTube title={lang === 'en' ? 'Chromosome testimonial, NateSystem' : 'Témoignage Chromosome, NateSystem'} />
+                  <LiteYouTube title={pick(lang, { en: 'Chromosome testimonial, NateSystem', fr: 'Témoignage Chromosome, NateSystem', hu: 'Chromosome-ajánlás, NateSystem' })} />
                 </div>
               </div>
             </div>

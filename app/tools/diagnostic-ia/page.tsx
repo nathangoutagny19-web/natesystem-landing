@@ -9,6 +9,7 @@ import MobileCta from '@/components/layout/MobileCta'
 import { CAL_LINK } from '@/lib/constants'
 import { localizedHref } from '@/lib/routes'
 import { useLang } from '@/components/providers/LangProvider'
+import { makeD } from '@/lib/lang'
 import {
   computeDiagnostic,
   DEFAULT_ANSWERS,
@@ -197,7 +198,7 @@ export default function DiagnosticIaPage() {
 
 function ProgressBar({ stage }: { stage: 'act1' | 'act2' | 'act3' }) {
   const { lang } = useLang()
-  const d = (fr: string, en: string) => (lang === 'en' ? en : fr)
+  const d = makeD(lang)
   const map = { act1: 1, act2: 2, act3: 3 } as const
   const current = map[stage]
   return (
@@ -227,7 +228,7 @@ function ProgressBar({ stage }: { stage: 'act1' | 'act2' | 'act3' }) {
           fontWeight: 500,
         }}
       >
-        {d('ACTE', 'ACT')} {current} / 3
+        {d('ACTE', 'ACT', 'FELVONÁS')} {current} / 3
       </span>
     </div>
   )
@@ -235,17 +236,17 @@ function ProgressBar({ stage }: { stage: 'act1' | 'act2' | 'act3' }) {
 
 function Intro({ onStart }: { onStart: () => void }) {
   const { lang } = useLang()
-  const d = (fr: string, en: string) => (lang === 'en' ? en : fr)
+  const d = makeD(lang)
 
   return (
     <div style={{ textAlign: 'center' }}>
-      <span className="section-label">{d('Outil interactif gratuit · 4 min', 'Free interactive tool · 4 min')}</span>
+      <span className="section-label">{d('Outil interactif gratuit · 4 min', 'Free interactive tool · 4 min', 'Ingyenes interaktív eszköz · 4 perc')}</span>
       <h1
         className="section-title"
         style={{ maxWidth: 640, margin: '24px auto 20px' }}
       >
-        {d('Le Diagnostic IA', 'The AI Diagnostic')}{' '}
-        <span className="accent">{d('par NateSystem', 'by NateSystem')}</span>
+        {d('Le Diagnostic IA', 'The AI Diagnostic', 'Az MI-diagnosztika')}{' '}
+        <span className="accent">{d('par NateSystem', 'by NateSystem', 'a NateSystemtől')}</span>
       </h1>
       <p
         className="font-sans"
@@ -261,7 +262,7 @@ function Intro({ onStart }: { onStart: () => void }) {
         {d(
           'En 4 minutes, mesurez ce que votre PME perd chaque mois en SaaS inutiles, temps répétitif et opportunités IA ratées. Vous repartez avec un rapport chiffré et trois leviers prioritaires. Sans email, sans gate, sans pitch commercial.',
           'In 4 minutes, measure what your company loses each month in unused SaaS, repetitive work and missed AI opportunities. You leave with a costed report and three priority levers. No email, no gate, no sales pitch.'
-        )}
+        , '4 perc alatt mérje meg, mennyit veszít a cége havonta kihasználatlan SaaS-eszközökön, ismétlődő munkán és elszalasztott MI-lehetőségeken. Egy számszerű riporttal és három kiemelt beavatkozási ponttal távozik. E-mail nélkül, kapu nélkül, értékesítési duma nélkül.')}
       </p>
 
       <div
@@ -274,9 +275,9 @@ function Intro({ onStart }: { onStart: () => void }) {
         }}
       >
         {[
-          { num: '01', label: d('Votre stack SaaS', 'Your SaaS stack') },
-          { num: '02', label: d('Votre temps perdu', 'The time you lose') },
-          { num: '03', label: d('Votre maturité IA', 'Your AI readiness') },
+          { num: '01', label: d('Votre stack SaaS', 'Your SaaS stack', 'A SaaS-készlete') },
+          { num: '02', label: d('Votre temps perdu', 'The time you lose', 'Az elvesztett ideje') },
+          { num: '03', label: d('Votre maturité IA', 'Your AI readiness', 'Az MI-érettsége') },
         ].map((act) => (
           <div
             key={act.num}
@@ -315,7 +316,7 @@ function Intro({ onStart }: { onStart: () => void }) {
         style={{ fontSize: 15 }}
       >
         <span className="btn-primary-dot" />
-        {d('Commencer le diagnostic', 'Start the diagnostic')} <ArrowRight size={16} />
+        {d('Commencer le diagnostic', 'Start the diagnostic', 'Diagnosztika indítása')} <ArrowRight size={16} />
       </button>
 
       <p
@@ -327,7 +328,7 @@ function Intro({ onStart }: { onStart: () => void }) {
           letterSpacing: 0.5,
         }}
       >
-        {d('Aucune donnée n\u2019est sauvegardée · Tout reste dans votre navigateur', 'Nothing is saved · everything stays in your browser')}
+        {d('Aucune donnée n\u2019est sauvegardée · Tout reste dans votre navigateur', 'Nothing is saved · everything stays in your browser', 'Semmit nem mentünk el · Minden a böngészőjében marad')}
       </p>
     </div>
   )
@@ -345,18 +346,18 @@ type ActProps = {
 
 function Act1({ answers, setAnswer, onNext, onPrev }: ActProps) {
   const { lang } = useLang()
-  const d = (fr: string, en: string) => (lang === 'en' ? en : fr)
+  const d = makeD(lang)
 
   return (
     <div className="diag-q-card">
       <ActHeader
-        title={d('Votre stack SaaS', 'Your SaaS stack')}
+        title={d('Votre stack SaaS', 'Your SaaS stack', 'A SaaS-készlete')}
         desc={d("Combien d'outils, combien réellement utilisés, à quel coût.", 'How many tools, how many actually used, and at what cost.')}
       />
 
       <SliderQuestion
         label={d("Combien d'outils SaaS payants utilisez-vous ?", 'How many paid SaaS tools do you use?')}
-        hint={d('Notion, HubSpot, Sellsy, Slack, Microsoft 365, Pennylane, etc.', 'Notion, HubSpot, Slack, Microsoft 365, Xero, and the rest.')}
+        hint={d('Notion, HubSpot, Sellsy, Slack, Microsoft 365, Pennylane, etc.', 'Notion, HubSpot, Slack, Microsoft 365, Xero, and the rest.', 'Notion, HubSpot, Slack, Microsoft 365, számlázóprogram és a többi.')}
         min={1}
         max={30}
         value={answers.saasCount}
@@ -364,22 +365,22 @@ function Act1({ answers, setAnswer, onNext, onPrev }: ActProps) {
           setAnswer('saasCount', v)
           if (answers.saasUsedCount > v) setAnswer('saasUsedCount', v)
         }}
-        suffix={d('outils', 'tools')}
+        suffix={d('outils', 'tools', 'eszköz')}
       />
 
       <SliderQuestion
-        label={d('Combien sont réellement utilisés au quotidien ?', 'How many are genuinely used day to day?')}
-        hint={d('Ouvert au moins une fois par semaine par votre équipe.', 'Opened at least once a week by your team.')}
+        label={d('Combien sont réellement utilisés au quotidien ?', 'How many are genuinely used day to day?', 'Hányat használnak ténylegesen nap mint nap?')}
+        hint={d('Ouvert au moins une fois par semaine par votre équipe.', 'Opened at least once a week by your team.', 'Amit a csapata legalább hetente egyszer megnyit.')}
         min={0}
         max={answers.saasCount}
         value={answers.saasUsedCount}
         onChange={(v) => setAnswer('saasUsedCount', v)}
-        suffix={d('utilisés', 'in use')}
+        suffix={d('utilisés', 'in use', 'használatban')}
       />
 
       <SliderQuestion
-        label={d('Coût mensuel total estimé ?', 'Estimated total monthly cost?')}
-        hint={d('Additionnez les abonnements mensuels de tous vos outils.', 'Add up the monthly subscriptions of all your tools.')}
+        label={d('Coût mensuel total estimé ?', 'Estimated total monthly cost?', 'Becsült teljes havi költség?')}
+        hint={d('Additionnez les abonnements mensuels de tous vos outils.', 'Add up the monthly subscriptions of all your tools.', 'Adja össze az összes eszköze havi előfizetését.')}
         min={100}
         max={8000}
         step={50}
@@ -389,54 +390,54 @@ function Act1({ answers, setAnswer, onNext, onPrev }: ActProps) {
       />
 
       <SliderQuestion
-        label={d('Doublons connus : 2 outils qui font la même chose ?', 'Known overlaps: two tools doing the same job?')}
-        hint={d('Par exemple : Trello + Asana, ou Slack + Teams.', 'For instance Trello + Asana, or Slack + Teams.')}
+        label={d('Doublons connus : 2 outils qui font la même chose ?', 'Known overlaps: two tools doing the same job?', 'Ismert átfedések: két eszköz ugyanarra?')}
+        hint={d('Par exemple : Trello + Asana, ou Slack + Teams.', 'For instance Trello + Asana, or Slack + Teams.', 'Például Trello + Asana, vagy Slack + Teams.')}
         min={0}
         max={6}
         value={answers.duplicatesCount}
         onChange={(v) => setAnswer('duplicatesCount', v)}
-        suffix={d('doublons', 'overlaps')}
+        suffix={d('doublons', 'overlaps', 'átfedés')}
       />
 
-      <NavButtons onPrev={onPrev} onNext={onNext} nextLabel={d('Acte 2 →', 'Act 2 →')} />
+      <NavButtons onPrev={onPrev} onNext={onNext} nextLabel={d('Acte 2 →', 'Act 2 →', '2. felvonás →')} />
     </div>
   )
 }
 
 function Act2({ answers, setAnswer, onNext, onPrev }: ActProps) {
   const { lang } = useLang()
-  const d = (fr: string, en: string) => (lang === 'en' ? en : fr)
+  const d = makeD(lang)
 
   return (
     <div className="diag-q-card">
       <ActHeader
-        title={d('Votre temps perdu', 'The time you lose')}
-        desc={d('Ce que coûtent vraiment les tâches répétitives.', 'What repetitive tasks really cost.')}
+        title={d('Votre temps perdu', 'The time you lose', 'Az elvesztett ideje')}
+        desc={d('Ce que coûtent vraiment les tâches répétitives.', 'What repetitive tasks really cost.', 'Mennyibe kerülnek valójában az ismétlődő feladatok.')}
       />
 
       <SliderQuestion
-        label={d('Combien de personnes dans votre équipe ?', 'How many people are in your team?')}
-        hint={d('Y compris vous, hors stagiaires.', 'Including you, not counting interns.')}
+        label={d('Combien de personnes dans votre équipe ?', 'How many people are in your team?', 'Hányan vannak a csapatában?')}
+        hint={d('Y compris vous, hors stagiaires.', 'Including you, not counting interns.', 'Önt is beleértve, gyakornokok nélkül.')}
         min={1}
         max={50}
         value={answers.employees}
         onChange={(v) => setAnswer('employees', v)}
-        suffix={d('personnes', 'people')}
+        suffix={d('personnes', 'people', 'fő')}
       />
 
       <SliderQuestion
-        label={d('Heures/semaine/personne sur tâches répétitives ?', 'Hours per week per person on repetitive tasks?')}
-        hint={d('Saisie, reporting, relances, copier-coller, validations manuelles.', 'Data entry, reporting, follow-ups, copy and paste, manual approvals.')}
+        label={d('Heures/semaine/personne sur tâches répétitives ?', 'Hours per week per person on repetitive tasks?', 'Heti hány óra fejenként ismétlődő feladatokon?')}
+        hint={d('Saisie, reporting, relances, copier-coller, validations manuelles.', 'Data entry, reporting, follow-ups, copy and paste, manual approvals.', 'Adatbevitel, riportálás, utánkövetés, másolás-beillesztés, kézi jóváhagyások.')}
         min={0}
         max={25}
         value={answers.hoursPerWeekPerPerson}
         onChange={(v) => setAnswer('hoursPerWeekPerPerson', v)}
-        suffix={d('h/sem', 'h/week')}
+        suffix={d('h/sem', 'h/week', 'óra/hét')}
       />
 
       <SliderQuestion
-        label={d('Coût mensuel chargé moyen par employé ?', 'Average fully loaded monthly cost per employee?')}
-        hint={d('Salaire brut × 1.45 environ. Pour un cadre PME : ~4500 €.', 'Gross salary × roughly 1.45. For a manager, around 4,500 €.')}
+        label={d('Coût mensuel chargé moyen par employé ?', 'Average fully loaded monthly cost per employee?', 'Átlagos havi teljes munkaerőköltség fejenként?')}
+        hint={d('Salaire brut × 1.45 environ. Pour un cadre PME : ~4500 €.', 'Gross salary × roughly 1.45. For a manager, around 4,500 €.', 'Bruttó bér × nagyjából 1,45. Egy vezetőnél körülbelül 4 500 €.')}
         min={2500}
         max={12000}
         step={100}
@@ -450,74 +451,74 @@ function Act2({ answers, setAnswer, onNext, onPrev }: ActProps) {
         value={answers.automationLevel}
         onChange={(v) => setAnswer('automationLevel', v)}
         options={[
-          { value: 'none', label: d('Jamais, tout est manuel', 'Never, everything is manual') },
-          { value: 'some', label: d('Un peu (Zapier, Make, ChatGPT)', 'A little (Zapier, Make, ChatGPT)') },
+          { value: 'none', label: d('Jamais, tout est manuel', 'Never, everything is manual', 'Soha, minden kézzel megy') },
+          { value: 'some', label: d('Un peu (Zapier, Make, ChatGPT)', 'A little (Zapier, Make, ChatGPT)', 'Egy kicsit (Zapier, Make, ChatGPT)') },
           { value: 'lots', label: d("Beaucoup, c'est en place et ça tourne", 'A lot, it is in place and running') },
         ]}
       />
 
-      <NavButtons onPrev={onPrev} onNext={onNext} nextLabel={d('Acte 3 →', 'Act 3 →')} />
+      <NavButtons onPrev={onPrev} onNext={onNext} nextLabel={d('Acte 3 →', 'Act 3 →', '3. felvonás →')} />
     </div>
   )
 }
 
 function Act3({ answers, setAnswer, onNext, onPrev }: ActProps) {
   const { lang } = useLang()
-  const d = (fr: string, en: string) => (lang === 'en' ? en : fr)
+  const d = makeD(lang)
 
   return (
     <div className="diag-q-card">
       <ActHeader
-        title={d('Votre maturité IA', 'Your AI readiness')}
+        title={d('Votre maturité IA', 'Your AI readiness', 'Az MI-érettsége')}
         desc={d("Où vous en êtes vraiment sur l'adoption.", 'Where you actually stand on adoption.')}
       />
 
       <RadioQuestion
-        label={d('Utilisez-vous ChatGPT / Claude / Copilot au quotidien ?', 'Do you use ChatGPT / Claude / Copilot day to day?')}
+        label={d('Utilisez-vous ChatGPT / Claude / Copilot au quotidien ?', 'Do you use ChatGPT / Claude / Copilot day to day?', 'Használ ChatGPT-t / Claude-ot / Copilotot nap mint nap?')}
         value={answers.aiUsage}
         onChange={(v) => setAnswer('aiUsage', v)}
         options={[
-          { value: 'no', label: d('Non, pas du tout', 'No, not at all') },
-          { value: 'individual', label: d('Oui, individuellement (mes équipes ou moi)', 'Yes, individually (my teams or me)') },
-          { value: 'team', label: d('Oui, en équipe avec process partagés', 'Yes, as a team with shared processes') },
+          { value: 'no', label: d('Non, pas du tout', 'No, not at all', 'Nem, egyáltalán nem') },
+          { value: 'individual', label: d('Oui, individuellement (mes équipes ou moi)', 'Yes, individually (my teams or me)', 'Igen, egyénileg (a csapataim vagy én)') },
+          { value: 'team', label: d('Oui, en équipe avec process partagés', 'Yes, as a team with shared processes', 'Igen, csapatban, közös folyamatokkal') },
         ]}
       />
 
       <RadioQuestion
-        label={d('Vos process sont-ils documentés ?', 'Are your processes written down?')}
+        label={d('Vos process sont-ils documentés ?', 'Are your processes written down?', 'Le vannak írva a folyamatai?')}
         value={answers.processDocumented}
         onChange={(v) => setAnswer('processDocumented', v)}
         options={[
           { value: 'no', label: d("Non, c'est dans la tête des gens", 'No, it lives in people\u2019s heads') },
-          { value: 'partial', label: d('Partiellement, sur certains sujets', 'Partly, on some subjects') },
+          { value: 'partial', label: d('Partiellement, sur certains sujets', 'Partly, on some subjects', 'Részben, bizonyos témákban') },
           { value: 'yes', label: d("Oui, c'est cartographié", 'Yes, it is mapped out') },
         ]}
       />
 
       <RadioQuestion
-        label={d('Vos données sont-elles centralisées (une source de vérité) ?', 'Is your data centralised (one source of truth)?')}
+        label={d('Vos données sont-elles centralisées (une source de vérité) ?', 'Is your data centralised (one source of truth)?', 'Egy helyen vannak az adatai (egy igazságforrás)?')}
         value={answers.dataCentralized}
         onChange={(v) => setAnswer('dataCentralized', v)}
         options={[
           { value: 'no', label: d("Non, c'est éparpillé entre Excel, mails et outils", 'No, it is scattered across spreadsheets, email and tools') },
-          { value: 'partial', label: d('Partiellement, ça dépend des sujets', 'Partly, it depends on the subject') },
-          { value: 'yes', label: d('Oui, on a un système unifié', 'Yes, we have one unified system') },
+          { value: 'partial', label: d('Partiellement, ça dépend des sujets', 'Partly, it depends on the subject', 'Részben, témától függ') },
+          { value: 'yes', label: d('Oui, on a un système unifié', 'Yes, we have one unified system', 'Igen, van egységes rendszerünk') },
         ]}
       />
 
       <RadioQuestion
-        label={d('Vous sentez-vous en retard sur vos concurrents IA ?', 'Do you feel behind on AI?')}
+        label={d('Vous sentez-vous en retard sur vos concurrents IA ?', 'Do you feel behind on AI?', 'Úgy érzi, le van maradva az MI terén?')}
         value={answers.aiLagFeeling}
         onChange={(v) => setAnswer('aiLagFeeling', v)}
         options={[
-          { value: 'none', label: d('Pas du tout, on est en avance', 'Not at all, we are ahead') },
-          { value: 'a-bit', label: d('Un peu, mais ça va', 'A little, but it is fine') },
-          { value: 'yes', label: d('Oui, clairement', 'Yes, clearly') },
-          { value: 'a-lot', label: d('Énormément, on est largués', 'Enormously, we are left behind') },
+          { value: 'none', label: d('Pas du tout, on est en avance', 'Not at all, we are ahead', 'Egyáltalán nem, előrébb tartunk') },
+          { value: 'a-bit', label: d('Un peu, mais ça va', 'A little, but it is fine', 'Egy kicsit, de rendben van') },
+          { value: 'yes', label: d('Oui, clairement', 'Yes, clearly', 'Igen, egyértelműen') },
+          { value: 'a-lot', label: d('Énormément, on est largués', 'Enormously, we are left behind', 'Nagyon, teljesen lemaradtunk') },
         ]}
       />
 
-      <NavButtons onPrev={onPrev} onNext={onNext} nextLabel={d('Voir mon rapport →', 'See my report →')} />
+      <NavButtons onPrev={onPrev} onNext={onNext} nextLabel={d('Voir mon rapport →', 'See my report →', 'Kérem a riportomat →')} />
     </div>
   )
 }
@@ -740,17 +741,17 @@ function Report({
   onReset: () => void
 }) {
   const { lang } = useLang()
-  const d = (fr: string, en: string) => (lang === 'en' ? en : fr)
+  const d = makeD(lang)
   /* Les montants et les heures suivent la convention locale d'écriture, le
      calcul lui-même est identique dans les deux langues. */
   const nf = lang === 'en' ? 'en-US' : 'fr-FR'
   const handlePrint = () => window.print()
 
   const tierLabel: Record<typeof result.maturityTier, string> = {
-    critical: d('À mettre en route rapidement', 'Needs starting soon'),
-    lagging: d('Sous la moyenne du marché', 'Below the market average'),
-    average: d('Dans la moyenne', 'About average'),
-    ahead: d('En avance sur le marché', 'Ahead of the market'),
+    critical: d('À mettre en route rapidement', 'Needs starting soon', 'Hamarosan el kell kezdeni'),
+    lagging: d('Sous la moyenne du marché', 'Below the market average', 'A piaci átlag alatt'),
+    average: d('Dans la moyenne', 'About average', 'Nagyjából átlagos'),
+    ahead: d('En avance sur le marché', 'Ahead of the market', 'A piac előtt'),
   }
 
   const tierColor: Record<typeof result.maturityTier, string> = {
@@ -764,12 +765,12 @@ function Report({
     <article>
       {/* Header du rapport */}
       <header style={{ textAlign: 'center', marginBottom: 36 }}>
-        <span className="section-label">{d('Votre rapport', 'Your report')}</span>
+        <span className="section-label">{d('Votre rapport', 'Your report', 'Az Ön riportja')}</span>
         <h1
           className="section-title"
           style={{ maxWidth: 640, margin: '20px auto 12px' }}
         >
-          {d('Le Diagnostic IA', 'The AI Diagnostic')}
+          {d('Le Diagnostic IA', 'The AI Diagnostic', 'Az MI-diagnosztika')}
         </h1>
         <p
           className="font-sans"
@@ -779,7 +780,7 @@ function Report({
             fontWeight: 300,
           }}
         >
-          {d('Généré le', 'Generated on')}{' '}
+          {d('Généré le', 'Generated on', 'Készült')}{' '}
           <ReportDate />
           {' · '}
           NateSystem
@@ -796,19 +797,19 @@ function Report({
         }}
       >
         <KpiCard
-          label={d('€ gaspillés / mois', '€ wasted / month')}
+          label={d('€ gaspillés / mois', '€ wasted / month', 'elpazarolt € / hó')}
           value={`${result.saasWasteMonthly.toLocaleString(nf)} €`}
           sub={d(`soit ${result.saasWasteAnnual.toLocaleString(nf)} € / an`, `that is ${result.saasWasteAnnual.toLocaleString(nf)} € / year`)}
           accent="var(--accent)"
         />
         <KpiCard
-          label={d('Heures perdues / mois', 'Hours lost / month')}
+          label={d('Heures perdues / mois', 'Hours lost / month', 'elvesztett óra / hó')}
           value={`${result.hoursLostMonthly.toLocaleString(nf)} h`}
           sub={d(`≈ ${result.hoursLostInETP} ETP perdu / an`, `≈ ${result.hoursLostInETP} full-time equivalent lost / year`)}
           accent="var(--accent)"
         />
         <KpiCard
-          label={d('Score Maturité IA', 'AI readiness score')}
+          label={d('Score Maturité IA', 'AI readiness score', 'MI-érettségi pontszám')}
           value={`${result.aiMaturityScore} / 100`}
           sub={tierLabel[result.maturityTier]}
           accent={tierColor[result.maturityTier]}
@@ -828,7 +829,7 @@ function Report({
             marginBottom: 16,
           }}
         >
-          {d('Ce que ça représente en vrai', 'What that actually means')}
+          {d('Ce que ça représente en vrai', 'What that actually means', 'Mit jelent ez valójában')}
         </h3>
         <ul
           style={{
@@ -840,20 +841,20 @@ function Report({
           }}
         >
           <BulletPoint>
-            <strong>{result.saasWasteAnnual.toLocaleString(nf)} {d('€/an', '€/year')}</strong>{' '}
+            <strong>{result.saasWasteAnnual.toLocaleString(nf)} {d('€/an', '€/year', '€/év')}</strong>{' '}
             {d(
               'partent en abonnements SaaS qui n\u2019apportent rien ou en doublons.',
               'go on SaaS subscriptions that bring nothing, or that overlap.'
-            )}
+            , 'megy olyan SaaS-előfizetésekre, amelyek semmit nem hoznak, vagy átfedik egymást.')}
           </BulletPoint>
           <BulletPoint>
-            <strong>{result.hoursLostAnnual.toLocaleString(nf)} {d('h/an', 'h/year')}</strong>{' '}
-            {d('perdues en tâches répétitives, soit environ', 'lost on repetitive tasks, which is roughly')}{' '}
+            <strong>{result.hoursLostAnnual.toLocaleString(nf)} {d('h/an', 'h/year', 'óra/év')}</strong>{' '}
+            {d('perdues en tâches répétitives, soit environ', 'lost on repetitive tasks, which is roughly', 'vész el ismétlődő feladatokon, ami nagyjából')}{' '}
             <strong>{result.timeWasteAnnualEuros.toLocaleString(nf)} €</strong>{' '}
-            {d('de salaire chargé non productif.', 'of loaded salary producing nothing.')}
+            {d('de salaire chargé non productif.', 'of loaded salary producing nothing.', 'terméketlen, járulékokkal terhelt bér.')}
           </BulletPoint>
           <BulletPoint>
-            {d('Votre maturité IA est de', 'Your AI readiness is')}{' '}
+            {d('Votre maturité IA est de', 'Your AI readiness is', 'Az MI-érettsége')}{' '}
             <strong>{result.aiMaturityScore}/100</strong>,{' '}
             {tierLabel[result.maturityTier].toLowerCase()}.
           </BulletPoint>
@@ -874,7 +875,7 @@ function Report({
             textAlign: 'center',
           }}
         >
-          {d('Vos', 'Your')} {result.topLevers.length} {d('leviers prioritaires', 'priority levers')}
+          {d('Vos', 'Your', 'Az Ön')} {result.topLevers.length} {d('leviers prioritaires', 'priority levers', 'kiemelt beavatkozási pontja')}
         </h3>
 
         <div style={{ display: 'grid', gap: 16 }}>
@@ -904,9 +905,9 @@ function Report({
             marginBottom: 12,
           }}
         >
-          {d('Vous avez un rapport.', 'You have a report.')}{' '}
+          {d('Vous avez un rapport.', 'You have a report.', 'Megvan a riportja.')}{' '}
           <span style={{ color: 'var(--accent)' }}>
-            {d('Si vous voulez en discuter, je vous offre un appel.', 'If you want to talk it through, the call is on me.')}
+            {d('Si vous voulez en discuter, je vous offre un appel.', 'If you want to talk it through, the call is on me.', 'Ha át szeretné beszélni, a hívás az én számlámra megy.')}
           </span>
         </h3>
         <p
@@ -923,7 +924,7 @@ function Report({
           {d(
             'Pas de pitch, pas d\u2019envoi de devis automatique. Je réponds à vos questions, je vous montre ce qui se construit chez les autres clients NateSystem, et je vous laisse repartir.',
             'No pitch, no automatic quote landing in your inbox. I answer your questions, show you what is being built for other NateSystem clients, and let you go.'
-          )}
+          , 'Semmi értékesítési duma, semmi automatikusan kiküldött árajánlat. Válaszolok a kérdéseire, megmutatom, mi épül a többi NateSystem-ügyfélnél, aztán elengedem.')}
         </p>
         <div
           className="diag-no-print"
@@ -938,7 +939,7 @@ function Report({
           >
             <span className="btn-primary-dot" />
             <Calendar size={14} />
-            {d('Réserver un appel · offert', 'Book a call · free')}
+            {d('Réserver un appel · offert', 'Book a call · free', 'Hívás foglalása · ingyenes')}
           </Link>
           <button
             type="button"
@@ -959,7 +960,7 @@ function Report({
             }}
           >
             <Download size={14} />
-            {d('Télécharger en PDF', 'Download as PDF')}
+            {d('Télécharger en PDF', 'Download as PDF', 'Letöltés PDF-ben')}
           </button>
         </div>
       </section>
@@ -987,7 +988,7 @@ function Report({
           }}
         >
           <RotateCcw size={12} />
-          {d('Refaire le diagnostic', 'Run the diagnostic again')}
+          {d('Refaire le diagnostic', 'Run the diagnostic again', 'Diagnosztika újrakezdése')}
         </button>
       </div>
 
@@ -1011,7 +1012,7 @@ function Report({
           {d(
             'Méthodologie : les chiffres sont calculés à partir de vos réponses, sur des bases sectorielles PME 2025-2026. Pour un diagnostic personnalisé approfondi, l\u2019audit gratuit NateSystem va beaucoup plus loin.',
             'Method: the figures are calculated from your answers, against sector baselines for small companies in 2025-2026. For a deeper, personalised diagnostic, the free NateSystem audit goes much further.'
-          )}
+          , 'Módszertan: a számokat az Ön válaszaiból számoljuk, a 2025-2026-os kkv-ágazati alapadatokkal összevetve. Mélyebb, személyre szabott diagnosztikáért a NateSystem ingyenes auditja sokkal messzebbre megy.')}
         </p>
       </footer>
     </article>
@@ -1123,7 +1124,7 @@ function LeverCard({
   lever: ReturnType<typeof computeDiagnostic>['topLevers'][number]
 }) {
   const { lang } = useLang()
-  const d = (fr: string, en: string) => (lang === 'en' ? en : fr)
+  const d = makeD(lang)
   return (
     <div
       className="diag-q-card"
@@ -1197,7 +1198,7 @@ function LeverCard({
               fontWeight: 600,
             }}
           >
-            {d('Gain estimé', 'Estimated gain')}
+            {d('Gain estimé', 'Estimated gain', 'Becsült nyereség')}
           </p>
           <p
             className="font-sans"
@@ -1222,7 +1223,7 @@ function LeverCard({
               fontWeight: 600,
             }}
           >
-            {d('Effort', 'Effort')}
+            {d('Effort', 'Effort', 'Ráfordítás')}
           </p>
           <p
             className="font-sans"

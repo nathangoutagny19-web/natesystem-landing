@@ -1,3 +1,4 @@
+import type { Lang } from '@/lib/i18n'
 import type { Metadata } from 'next'
 import MethodeContent from '@/components/methode/MethodeContent'
 
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
  * Le JSON-LD suit la langue : servi depuis /en, il déclarait une WebPage
  * française dont l'@id et le fil d'ariane pointaient vers l'arbre français.
  */
-function methodeJsonLd(lang: 'fr' | 'en') {
+function methodeJsonLd(lang: Lang) {
   const base = 'https://www.natesystem.com'
   const root = lang === 'en' ? `${base}/en` : base
   const en = lang === 'en'
@@ -48,7 +49,7 @@ function methodeJsonLd(lang: 'fr' | 'en') {
   }
 }
 
-export function MethodeRoute({ lang }: { lang: 'fr' | 'en' }) {
+export function MethodeRoute({ lang }: { lang: Lang }) {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(methodeJsonLd(lang)) }} />

@@ -19,6 +19,7 @@ import {
 import Link from 'next/link'
 import FadeUp from '@/components/ui/FadeUp'
 import { useLang } from '@/components/providers/LangProvider'
+import { makeD } from '@/lib/lang'
 import { CAL_LINK } from '@/lib/constants'
 import { localizedHref } from '@/lib/routes'
 
@@ -34,7 +35,7 @@ type Card = {
 
 export default function Systems() {
   const { t, lang } = useLang()
-  const d = (fr: string, en: string) => (lang === 'en' ? en : fr)
+  const d = makeD(lang)
 
   const tagAI = t('systems.tagAI')
   const tagSoft = t('systems.tagSoft')
@@ -73,7 +74,7 @@ export default function Systems() {
             {t('systems.deployed')} {t('systems.measured')} <span className="accent">{t('systems.profitable')}</span>
           </h2>
           <p className="font-sans" style={{ fontSize: 15, fontWeight: 300, color: 'var(--text-secondary)', maxWidth: 560, margin: '0 auto', lineHeight: 1.7 }}>
-            {d('Boostez votre activité avec nos systèmes.', 'Boost your business with our systems.')}
+            {d('Boostez votre activité avec nos systèmes.', 'Boost your business with our systems.', 'Lendítse fel a cégét a rendszereinkkel.')}
           </p>
         </FadeUp>
       </div>
@@ -97,7 +98,7 @@ export default function Systems() {
       <div className="mx-auto text-center" style={{ maxWidth: '1100px', padding: '40px 24px 0', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 16 }}>
         <FadeUp>
           <Link href={localizedHref(CAL_LINK, lang)} className="btn-primary">
-            <span className="btn-primary-dot" />{d('Je veux le mien', 'I want mine')} &rarr;
+            <span className="btn-primary-dot" />{d('Je veux le mien', 'I want mine', 'Kérem a sajátomat')} &rarr;
           </Link>
         </FadeUp>
         <FadeUp delay={0.05}>

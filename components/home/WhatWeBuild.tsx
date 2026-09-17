@@ -17,6 +17,7 @@
 
 import Link from 'next/link'
 import { useLang } from '@/components/providers/LangProvider'
+import { makeD } from '@/lib/lang'
 import { CAL_LINK } from '@/lib/constants'
 import { localizedHref } from '@/lib/routes'
 
@@ -38,16 +39,16 @@ const mockups: Mockup[] = [
 
 export default function WhatWeBuild() {
   const { lang } = useLang()
-  const d = (fr: string, en: string) => (lang === 'en' ? en : fr)
-  const sub = d('Un aperçu des logiciels sur-mesure qu’on conçoit et met en production.', 'A glimpse of the custom software we design and ship to production.')
+  const d = makeD(lang)
+  const sub = d('Un aperçu des logiciels sur-mesure qu’on conçoit et met en production.', 'A glimpse of the custom software we design and ship to production.', 'Ízelítő az egyedi szoftverekből, amelyeket tervezünk és élesbe viszünk.')
 
   return (
-    <section aria-label={d('Déjà en production', 'Already in production')} style={{ padding: '96px 0 56px' }}>
+    <section aria-label={d('Déjà en production', 'Already in production', 'Már élesben')} style={{ padding: '96px 0 56px' }}>
       <div className="mx-auto" style={{ maxWidth: 1100, padding: '0 24px', textAlign: 'center' }}>
-        <span className="section-label">{d('Déjà en production', 'Already in production')}</span>
+        <span className="section-label">{d('Déjà en production', 'Already in production', 'Már élesben')}</span>
         <h2 className="font-serif italic" style={{ fontSize: 'clamp(26px, 3.6vw, 40px)', fontWeight: 400, color: 'var(--text)', lineHeight: 1.15, margin: '4px auto 14px', maxWidth: 760 }}>
-          {d('Des systèmes qui font passer un cap. ', 'Systems that take you to the next level. ')}
-          <span className="accent">{d('Déjà déployés.', 'Already shipped.')}</span>
+          {d('Des systèmes qui font passer un cap. ', 'Systems that take you to the next level. ', 'Rendszerek, amelyek szintet lépnek Önnel. ')}
+          <span className="accent">{d('Déjà déployés.', 'Already shipped.', 'Már bevezetve.')}</span>
         </h2>
         <p className="font-sans" style={{ fontSize: 15, fontWeight: 300, color: 'var(--text-secondary)', maxWidth: 600, margin: '0 auto 30px', lineHeight: 1.7 }}>
           {sub}
@@ -82,7 +83,7 @@ export default function WhatWeBuild() {
 
       <div className="mx-auto text-center" style={{ maxWidth: 1100, padding: '36px 24px 0' }}>
         <Link href={localizedHref(CAL_LINK, lang)} className="btn-primary">
-          <span className="btn-primary-dot" />{d('Je veux le mien', 'I want mine')} &rarr;
+          <span className="btn-primary-dot" />{d('Je veux le mien', 'I want mine', 'Kérem a sajátomat')} &rarr;
         </Link>
       </div>
 

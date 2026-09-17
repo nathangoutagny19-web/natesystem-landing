@@ -1,3 +1,4 @@
+import { makeD } from '@/lib/lang'
 import type { Lang } from '@/lib/i18n'
 
 /**
@@ -133,7 +134,7 @@ function generateTopLevers(
 ): DiagnosticLever[] {
   /* Les leviers sont du texte lu par l'utilisateur, pas du calcul : ils suivent
      la langue de la page. Les montants et les seuils, eux, ne bougent pas. */
-  const d = (fr: string, en: string) => (lang === 'en' ? en : fr)
+  const d = makeD(lang)
   const locale = lang === 'en' ? 'en-US' : 'fr-FR'
   const candidates: Array<DiagnosticLever & { priorityScore: number }> = []
 
@@ -142,16 +143,18 @@ function generateTopLevers(
     const annualGain = kpi.saasWasteMonthly * 12
     candidates.push({
       rank: 1, // sera remappé après tri
-      title: d('Consolidation de votre stack SaaS', 'Consolidating your SaaS stack'),
+      title: d('Consolidation de votre stack SaaS', 'Consolidating your SaaS stack', 'A SaaS-készlete összevonása'),
       description: d(
         `Vous payez ${kpi.saasWasteMonthly}€/mois pour des outils non ou mal utilisés. Une cartographie + un audit de redondance permet de récupérer cette marge sans rien casser dans l'opérationnel quotidien.`,
-        `You are paying ${kpi.saasWasteMonthly}€ a month for tools that are unused or barely used. Mapping them and auditing the overlaps wins that margin back without breaking anything in the daily running.`
+        `You are paying ${kpi.saasWasteMonthly}€ a month for tools that are unused or barely used. Mapping them and auditing the overlaps wins that margin back without breaking anything in the daily running.`,
+        `Havi ${kpi.saasWasteMonthly} €-t fizet olyan eszközökért, amelyeket nem vagy alig használnak. Egy feltérképezés és egy átfedés-vizsgálat visszahozza ezt az árrést anélkül, hogy bármit elrontana a napi működésben.`
       ),
       estimatedGain: d(
         `${annualGain.toLocaleString('fr-FR')}€/an économisés`,
-        `${annualGain.toLocaleString(locale)}€ a year saved`
+        `${annualGain.toLocaleString(locale)}€ a year saved`,
+        `${annualGain.toLocaleString(locale)} € megtakarítás évente`
       ),
-      effort: d('2-3 semaines', '2-3 weeks'),
+      effort: d('2-3 semaines', '2-3 weeks', '2-3 hét'),
       category: 'saas',
       priorityScore: kpi.saasWasteMonthly * 10, // 100€/mois → 1000
     })
@@ -163,16 +166,18 @@ function generateTopLevers(
     const gainedHours = Math.round(kpi.hoursLostMonthly * monthlyGainPct)
     candidates.push({
       rank: 2,
-      title: d('Automatisation des tâches répétitives prioritaires', 'Automating the repetitive tasks that cost most'),
+      title: d('Automatisation des tâches répétitives prioritaires', 'Automating the repetitive tasks that cost most', 'A legtöbbe kerülő ismétlődő feladatok automatizálása'),
       description: d(
         `Vos équipes perdent ${kpi.hoursLostMonthly}h/mois sur des tâches qu'on peut automatiser. On commence par les 2 plus chronophages, avec un ROI mesurable en moins de 30 jours.`,
-        `Your teams lose ${kpi.hoursLostMonthly}h a month on tasks that can be automated. We start with the two that eat the most time, with a return you can measure in under 30 days.`
+        `Your teams lose ${kpi.hoursLostMonthly}h a month on tasks that can be automated. We start with the two that eat the most time, with a return you can measure in under 30 days.`,
+        `A csapatai havi ${kpi.hoursLostMonthly} órát veszítenek olyan feladatokon, amelyek automatizálhatók. A két legidőigényesebbel kezdünk, 30 napon belül mérhető megtérüléssel.`
       ),
       estimatedGain: d(
         `~${gainedHours}h/mois récupérées (${Math.round(gainedHours / 4)}h/semaine)`,
-        `~${gainedHours}h a month won back (${Math.round(gainedHours / 4)}h a week)`
+        `~${gainedHours}h a month won back (${Math.round(gainedHours / 4)}h a week)`,
+        `~${gainedHours} óra havonta visszanyerve (heti ${Math.round(gainedHours / 4)} óra)`
       ),
-      effort: d('4-6 semaines', '4-6 weeks'),
+      effort: d('4-6 semaines', '4-6 weeks', '4-6 hét'),
       category: 'time',
       priorityScore: kpi.hoursLostMonthly * 30, // 20h/mois → 600
     })
@@ -187,29 +192,33 @@ function generateTopLevers(
     if (tier === 'critical') {
       description = d(
         `Votre score (${kpi.aiMaturityScore}/100) montre qu'il y a une fenêtre d'action évidente. On centralise vos données dans un seul système, on documente 2-3 process critiques, et on intègre l'IA là où elle remplace de vraies heures.`,
-        `Your score (${kpi.aiMaturityScore}/100) shows an obvious opening. We bring your data into one system, write down 2 or 3 critical processes, and build AI in where it replaces real hours.`
+        `Your score (${kpi.aiMaturityScore}/100) shows an obvious opening. We bring your data into one system, write down 2 or 3 critical processes, and build AI in where it replaces real hours.`,
+        `A pontszáma (${kpi.aiMaturityScore}/100) nyilvánvaló lehetőséget mutat. Egy rendszerbe vonjuk az adatait, leírunk 2-3 kritikus folyamatot, és MI-t építünk oda, ahol valódi órákat vált ki.`
       )
-      effort = d('8-12 semaines', '8-12 weeks')
+      effort = d('8-12 semaines', '8-12 weeks', '8-12 hét')
     } else if (tier === 'lagging') {
       description = d(
         `Votre score (${kpi.aiMaturityScore}/100) est sous la moyenne du marché. On accélère sur 2 chantiers : centralisation des données + 1 process IA prioritaire avec ROI mesurable.`,
-        `Your score (${kpi.aiMaturityScore}/100) sits below the market average. We push on two fronts: centralising the data, and one priority AI process with a measurable return.`
+        `Your score (${kpi.aiMaturityScore}/100) sits below the market average. We push on two fronts: centralising the data, and one priority AI process with a measurable return.`,
+        `A pontszáma (${kpi.aiMaturityScore}/100) a piaci átlag alatt van. Két fronton gyorsítunk: az adatok egy helyre vonásán, és egy kiemelt, mérhető megtérülésű MI-folyamaton.`
       )
-      effort = d('6-8 semaines', '6-8 weeks')
+      effort = d('6-8 semaines', '6-8 weeks', '6-8 hét')
     } else {
       description = d(
         `Votre score (${kpi.aiMaturityScore}/100) est correct mais peut encore monter. Sur les bons leviers, +${targetGain} points sont atteignables en quelques semaines.`,
-        `Your score (${kpi.aiMaturityScore}/100) is decent but can still climb. On the right levers, +${targetGain} points is reachable in a few weeks.`
+        `Your score (${kpi.aiMaturityScore}/100) is decent but can still climb. On the right levers, +${targetGain} points is reachable in a few weeks.`,
+        `A pontszáma (${kpi.aiMaturityScore}/100) rendben van, de még emelkedhet. A megfelelő pontokon +${targetGain} pont néhány hét alatt elérhető.`
       )
-      effort = d('4-6 semaines', '4-6 weeks')
+      effort = d('4-6 semaines', '4-6 weeks', '4-6 hét')
     }
     candidates.push({
       rank: 3,
-      title: d('Mise à niveau IA & centralisation des données', 'AI upgrade & data centralisation'),
+      title: d('Mise à niveau IA & centralisation des données', 'AI upgrade & data centralisation', 'MI-fejlesztés és adatok egy helyre vonása'),
       description,
       estimatedGain: d(
         `Score maturité +${targetGain} points en moyenne`,
-        `Maturity score +${targetGain} points on average`
+        `Maturity score +${targetGain} points on average`,
+        `Érettségi pontszám átlagosan +${targetGain} pont`
       ),
       effort,
       category: 'ai',

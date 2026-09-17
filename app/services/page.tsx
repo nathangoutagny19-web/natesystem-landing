@@ -10,6 +10,7 @@ import FadeUp from '@/components/ui/FadeUp'
 import ServicesFeatures from '@/components/services/ServicesFeatures'
 import { CAL_LINK } from '@/lib/constants'
 import { useLang } from '@/components/providers/LangProvider'
+import type { Lang } from '@/lib/i18n'
 import { localizedHref } from '@/lib/routes'
 import type { TranslationKey } from '@/lib/i18n'
 
@@ -18,7 +19,7 @@ import type { TranslationKey } from '@/lib/i18n'
  * doivent pointer dans l'arbre anglais, sinon Google lit un catalogue qui
  * renvoie ailleurs que la page qui le declare.
  */
-function servicesJsonLd(lang: 'fr' | 'en') {
+function servicesJsonLd(lang: Lang) {
   const base = 'https://www.natesystem.com'
   const root = lang === 'en' ? `${base}/en` : base
   const names =

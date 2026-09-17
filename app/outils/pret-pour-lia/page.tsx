@@ -9,6 +9,7 @@ import MobileCta from '@/components/layout/MobileCta'
 import Divider from '@/components/ui/Divider'
 import { CAL_DIRECT_URL } from '@/lib/constants'
 import { useLang } from '@/components/providers/LangProvider'
+import { localizedHref } from '@/lib/routes'
 import {
   PILLARS,
   CHOICES,
@@ -254,7 +255,7 @@ function Result({
   const { lang, t } = useLang()
   const { pillars, total, verdict, weakest } = result
   const vColor = LEVEL_COLOR[verdict.level]
-  const toolsHref = lang === 'en' ? '/en/outils' : '/outils'
+  const toolsHref = localizedHref('/outils', lang)
 
   return (
     <div className="q-fade">

@@ -29,6 +29,7 @@ export const metadata: Metadata = {
     languages: {
       'fr-FR': `${SITE_URL}/outils`,
       en: `${SITE_URL}/en/outils`,
+      hu: `${SITE_URL}/hu/outils`,
       'x-default': `${SITE_URL}/outils`,
     },
   },

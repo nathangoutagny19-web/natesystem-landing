@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import type { Lang } from '@/lib/i18n'
 
 export const metadata: Metadata = {
   title: 'Politique anti-spam, NateSystem',
@@ -8,10 +9,10 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 }
 
-export default function PolitiqueAntiSpam({ lang = 'fr' }: { lang?: 'fr' | 'en' }) {
+export default function PolitiqueAntiSpam({ lang = 'fr' }: { lang?: Lang }) {
   /* Servie aussi sous /en : le lien de retour doit rester dans l'arbre affiché,
      sinon la page éjecte le visiteur anglophone vers l'accueil français. */
-  const home = lang === 'en' ? '/en' : '/'
+  const home = lang === 'fr' ? '/' : `/${lang}`
 
   return (
     <div style={{ minHeight: '100vh' }}>
@@ -20,7 +21,7 @@ export default function PolitiqueAntiSpam({ lang = 'fr' }: { lang?: 'fr' | 'en' 
           href={home}
           style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: 'var(--text-muted)', textDecoration: 'none', marginBottom: '48px' }}
         >
-          ← Retour au site
+          {lang === 'fr' ? '← Retour au site' : lang === 'en' ? '← Back to the site' : '← Vissza az oldalra'}
         </Link>
 
         <h1 className="font-serif italic" style={{ fontSize: 'clamp(32px, 5vw, 44px)', fontWeight: 400, color: 'var(--text)', marginBottom: '20px', lineHeight: 1.15 }}>
@@ -28,7 +29,7 @@ export default function PolitiqueAntiSpam({ lang = 'fr' }: { lang?: 'fr' | 'en' 
         </h1>
 
         <p style={{ fontSize: '14px', color: 'var(--text-muted)', lineHeight: 1.7, fontWeight: 300 }}>
-          Dernière mise à jour : 30 juillet 2026. <span style={{ opacity: 0.7 }}>English version below.</span>
+          Dernière mise à jour : 30 juillet 2026. <span style={{ opacity: 0.7 }}>English and Magyar versions below.</span>
         </p>
 
         <Section title="Notre engagement">
@@ -182,7 +183,93 @@ export default function PolitiqueAntiSpam({ lang = 'fr' }: { lang?: 'fr' | 'en' 
           </p>
           <p>
             Voir aussi les{' '}
-            <Link href={lang === 'en' ? '/en/mentions-legales' : '/mentions-legales'} style={{ color: 'var(--accent)', textDecoration: 'none' }}>mentions légales</Link>.
+            <Link href={lang === 'fr' ? '/mentions-legales' : `/${lang}/mentions-legales`} style={{ color: 'var(--accent)', textDecoration: 'none' }}>mentions légales</Link>.
+          </p>
+        </Section>
+        {/* ─────────────── MAGYAR ─────────────── */}
+        <div style={{ marginTop: '80px', paddingTop: '60px', borderTop: '1px solid var(--border)' }}>
+          <h2 className="font-serif italic" style={{ fontSize: 'clamp(28px, 4vw, 38px)', fontWeight: 400, color: 'var(--text)', marginBottom: '12px', lineHeight: 1.15 }}>
+            Spamellenes irányelv
+          </h2>
+          <p style={{ fontSize: '14px', color: 'var(--text-muted)', lineHeight: 1.7, fontWeight: 300 }}>
+            Magyar változat. Utolsó frissítés: 2026. július 30.
+          </p>
+        </div>
+
+        <Section title="Vállalásunk">
+          <p>
+            A NateSystem nem használ, és senkinek nem engedi, hogy kéretlen tömeges e-mailt használjon a
+            natesystem.com vagy bármely kapcsolódó domain hirdetésére.
+          </p>
+          <p>
+            Ez a tilalom vonatkozik ránk, mindenkire, aki nekünk dolgozik, és minden harmadik félre, partnerre
+            vagy viszonteladóra. Nincsenek partnereink, viszonteladóink és külső küldőszolgáltatóink.
+          </p>
+        </Section>
+
+        <Section title="Hogyan veszünk fel kapcsolatot">
+          <p>
+            Minden kimenő üzleti levelet maga az alapító ír és küld, egyesével, névvel megnevezett
+            döntéshozóknak, szigorúan szakmai, a vállalkozásukhoz közvetlenül kapcsolódó összefüggésben.
+          </p>
+          <p>
+            Minden üzenet egyértelműen megnevezi a feladót, a cégét és a megkeresés okát. A mennyiség
+            szándékosan korlátozott és maximalizált.
+          </p>
+        </Section>
+
+        <Section title="Amit soha nem teszünk">
+          <ul style={{ paddingLeft: '20px', color: 'var(--text-secondary)', fontSize: '14px', lineHeight: 1.7 }}>
+            <li>Soha nem vásárolunk, bérelünk vagy cserélünk címlistákat</li>
+            <li>Soha nem küldünk tömeges levelet, és soha nem írunk automatikusan begyűjtött címekre</li>
+            <li>Nem működtetünk partnerprogramot, és nem használunk harmadik féltől származó küldőt</li>
+            <li>Soha nem rejtjük el a feladó kilétét vagy az üzenet eredetét</li>
+            <li>Soha nem használunk rejtett átirányító oldalakat, álcázást vagy böngésző-ujjlenyomatot</li>
+          </ul>
+        </Section>
+
+        <Section title="Leiratkozás">
+          <p>
+            Aki azt kéri, hogy ne keressük többé, azonnal és véglegesen kikerül a listáról. Elég válaszolni
+            bármelyik üzenetre, vagy írni ide:
+            {' '}
+            <a href="mailto:nathan@natesystem.com" style={{ color: 'var(--accent)', textDecoration: 'none' }}>nathan@natesystem.com</a>.
+            Indoklás nem szükséges, és nem küldünk utánkövetést.
+          </p>
+          <p>
+            Az adatkezelés a GDPR szerinti jogos érdeken alapul, vállalkozások közötti összefüggésben. Ugyanezen
+            a címen élhet hozzáférési, helyesbítési, tiltakozási és törlési jogával.
+          </p>
+        </Section>
+
+        <Section title="Küldő domainjeink">
+          <p>
+            A natesystem.com mellett két, kimenő levelezésre szánt domaint használunk:
+            <strong> usenatesystem.com</strong> és <strong>getnatesystem.com</strong>.
+          </p>
+          <p>
+            Ezeken a domaineken nincs tartalom. Véglegesen a natesystem.comra irányítanak át, és pontosan úgy
+            tartoznak ezen irányelv hatálya alá, mint a fő domain.
+          </p>
+        </Section>
+
+        <Section title="Visszaélés bejelentése">
+          <p>
+            Ha olyan üzenetet kap, amely sérti ezt az irányelvet, írjon ide:
+            {' '}
+            <a href="mailto:nathan@natesystem.com" style={{ color: 'var(--accent)', textDecoration: 'none' }}>nathan@natesystem.com</a>.
+            Minden bejelentést személyesen kezelünk, két munkanapon belül.
+          </p>
+        </Section>
+
+        <Section title="Kiadó">
+          <p>
+            NateSystem, Nathan Goutagny, egyéni vállalkozó.<br />
+            SIRET 929 498 160 00035, RCS Saint-Étienne, Franciaország.
+          </p>
+          <p>
+            Lásd még a{' '}
+            <Link href={lang === 'fr' ? '/mentions-legales' : `/${lang}/mentions-legales`} style={{ color: 'var(--accent)', textDecoration: 'none' }}>jogi nyilatkozatot</Link>.
           </p>
         </Section>
       </div>
@@ -194,7 +281,7 @@ export default function PolitiqueAntiSpam({ lang = 'fr' }: { lang?: 'fr' | 'en' 
           <span style={{ marginLeft: '8px', fontFamily: 'var(--font-sans)' }}>NateSystem, Nathan Goutagny</span>
         </div>
         <Link href={home} style={{ color: 'var(--accent)', textDecoration: 'none', fontFamily: 'var(--font-sans)', opacity: 0.7, fontSize: '12px' }}>
-          ← Retour au site
+          {lang === 'fr' ? '← Retour au site' : lang === 'en' ? '← Back to the site' : '← Vissza az oldalra'}
         </Link>
       </footer>
     </div>

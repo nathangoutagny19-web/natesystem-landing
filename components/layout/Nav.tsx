@@ -7,6 +7,8 @@ import { useLang } from '@/components/providers/LangProvider'
 import { useTheme } from '@/components/providers/ThemeProvider'
 import { CAL_LINK } from '@/lib/constants'
 import { localizedHref } from '@/lib/routes'
+import { LANG_LABEL, makeD } from '@/lib/lang'
+import { PREFIXED_LANGS } from '@/lib/i18n'
 import ScreenMock from '@/components/ui/ScreenMock'
 
 /* ——— SVG Icons (monoline, 18px) ——— */
@@ -116,7 +118,7 @@ const Chevron = () => (
 
 export default function Nav() {
   const { lang, setLang, t } = useLang()
-  const d = (fr: string, en: string) => (lang === 'en' ? en : fr)
+  const d = makeD(lang)
   /* Les href sont écrits en français. Sous /en ils sont préfixés ici, sinon le
      premier clic d'un visiteur anglophone le renvoie dans l'arbre français. */
   const l = (path: string) => localizedHref(path, lang)
@@ -177,25 +179,25 @@ export default function Nav() {
                     <MegaFeature
                       href={l('/resources')}
                       img="/realisations/prototype/proto-front.jpg"
-                      label={d('Ressources', 'Resources')}
-                      title={d('Utilisez nos apps, gratuitement', 'Use our apps, for free')}
-                      cta={d('Voir les ressources', 'See resources')}
+                      label={d('Ressources', 'Resources', 'Források')}
+                      title={d('Utilisez nos apps, gratuitement', 'Use our apps, for free', 'Használja az appjainkat, ingyen')}
+                      cta={d('Voir les ressources', 'See resources', 'Források megtekintése')}
                     />
                     <MegaFeature
                       photo
                       href={l('/case-studies/chromosome')}
                       img="/realisations/prototype/diag-feuille.jpg"
-                      label={d('Réalisation', 'Case study')}
-                      title={d('Le cas Chromosome', 'The Chromosome case')}
-                      cta={d('Voir le cas client', 'See the case study')}
+                      label={d('Réalisation', 'Case study', 'Esettanulmány')}
+                      title={d('Le cas Chromosome', 'The Chromosome case', 'A Chromosome-eset')}
+                      cta={d('Voir le cas client', 'See the case study', 'Esettanulmány megtekintése')}
                     />
                   </div>
                 </div>
                 <div className="nav-mega-foot">
                   <div className="nav-mega-more">
-                    <Link href={l('/methode')} className="nav-mega-foot-link">{d('Voir comment on travaille', 'See how we work')}</Link>
+                    <Link href={l('/methode')} className="nav-mega-foot-link">{d('Voir comment on travaille', 'See how we work', 'Nézze meg, hogyan dolgozunk')}</Link>
                   </div>
-                  <Link href={l(CAL_LINK)} className="nav-mega-foot-cta">{d('Réserver un appel', 'Book a call')} &rarr;</Link>
+                  <Link href={l(CAL_LINK)} className="nav-mega-foot-cta">{d('Réserver un appel', 'Book a call', 'Hívás foglalása')} &rarr;</Link>
                 </div>
               </div>
             </div>
@@ -219,13 +221,18 @@ export default function Nav() {
                 <span>{lang.toUpperCase()}</span>
                 <Chevron />
               </button>
+              {/* Les trois langues sont générées depuis la liste : en ajouter
+                  une quatrième ne demandera pas de toucher à ce menu. */}
               <div className="lang-options">
-                <button className={`lang-option ${lang === 'en' ? 'active' : ''}`} onClick={() => { setLang('en'); setLangOpen(false) }}>
-                  <span className="lang-flag lang-flag-en" /> English
-                </button>
-                <button className={`lang-option ${lang === 'fr' ? 'active' : ''}`} onClick={() => { setLang('fr'); setLangOpen(false) }}>
-                  <span className="lang-flag lang-flag-fr" /> Français
-                </button>
+                {(['fr', ...PREFIXED_LANGS] as const).map((l) => (
+                  <button
+                    key={l}
+                    className={`lang-option ${lang === l ? 'active' : ''}`}
+                    onClick={() => { setLang(l); setLangOpen(false) }}
+                  >
+                    <span className={`lang-flag lang-flag-${l}`} /> {LANG_LABEL[l]}
+                  </button>
+                ))}
               </div>
             </div>
 

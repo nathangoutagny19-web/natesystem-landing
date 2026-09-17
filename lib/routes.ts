@@ -1,7 +1,10 @@
 import type { Lang } from './i18n'
 
 /**
- * LES ROUTES QUI EXISTENT EN ANGLAIS.
+ * LES ROUTES QUI EXISTENT DANS UNE AUTRE LANGUE QUE LE FRANÇAIS.
+ *
+ * Le même arbre sert l'anglais (`/en`) et le hongrois (`/hu`) : une route
+ * traduite l'est dans les deux, c'est la règle posée le 17 septembre 2026.
  *
  * Source unique de vérité, lue par trois endroits qui divergeaient :
  *   · `app/sitemap.ts`, pour déclarer les URL anglaises ;
@@ -17,7 +20,7 @@ import type { Lang } from './i18n'
  * articles de fond écrits pour des requêtes françaises, sous des slugs
  * français. `/en/blog/*` redirige vers `/blog/*` (voir `next.config.mjs`).
  */
-export const EN_ROUTES = [
+export const TRANSLATED_ROUTES = [
   '/',
   '/methode',
   '/services',
@@ -42,23 +45,29 @@ export const EN_ROUTES = [
 /** Les routes dynamiques traduites, testées par préfixe. */
 const EN_DYNAMIC_PREFIXES = ['/case-studies/'] as const
 
-const EN_SET = new Set<string>(EN_ROUTES)
+/** Rétrocompat : l'ancien nom, le temps que plus rien ne l'utilise. */
+export const EN_ROUTES = TRANSLATED_ROUTES
 
-/** Un chemin français a-t-il un équivalent sous /en ? */
-export function hasEnglishVersion(path: string): boolean {
+const TRANSLATED_SET = new Set<string>(TRANSLATED_ROUTES)
+
+/** Un chemin français a-t-il un équivalent traduit ? */
+export function hasTranslation(path: string): boolean {
   const clean = path.split('#')[0].split('?')[0].replace(/\/+$/, '') || '/'
-  if (EN_SET.has(clean)) return true
+  if (TRANSLATED_SET.has(clean)) return true
   return EN_DYNAMIC_PREFIXES.some((p) => clean.startsWith(p) && clean.length > p.length)
 }
+
+/** Alias historique. */
+export const hasEnglishVersion = hasTranslation
 
 /**
  * Le href à poser dans un lien interne, selon la langue affichée.
  *
- * En français, rien ne bouge. En anglais, le chemin est préfixé `/en` s'il
- * existe en anglais, et laissé tel quel sinon : mieux vaut envoyer un
- * anglophone sur une page française qui existe que sur un /en/… en 404.
+ * En français, rien ne bouge. Sinon le chemin est préfixé par la langue s'il
+ * existe traduit, et laissé tel quel autrement : mieux vaut envoyer un
+ * visiteur sur une page française qui existe que sur un /hu/… en 404.
  *
- * Les ancres sont conservées : `/#rendez-vous` devient `/en#rendez-vous`.
+ * Les ancres sont conservées : `/#rendez-vous` devient `/hu#rendez-vous`.
  */
 export function localizedHref(path: string, lang: Lang): string {
   if (lang === 'fr') return path
@@ -68,8 +77,8 @@ export function localizedHref(path: string, lang: Lang): string {
   const base = hashAt === -1 ? path : path.slice(0, hashAt)
   const hash = hashAt === -1 ? '' : path.slice(hashAt)
 
-  if (!hasEnglishVersion(base || '/')) return path
+  if (!hasTranslation(base || '/')) return path
 
   const trimmed = base.replace(/\/+$/, '')
-  return (trimmed === '' ? '/en' : `/en${trimmed}`) + hash
+  return (trimmed === '' ? `/${lang}` : `/${lang}${trimmed}`) + hash
 }

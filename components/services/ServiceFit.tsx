@@ -3,6 +3,7 @@
 import { Check, X } from 'lucide-react'
 import FadeUp from '@/components/ui/FadeUp'
 import { useLang } from '@/components/providers/LangProvider'
+import { makeD } from '@/lib/lang'
 
 /**
  * Tableau de qualification 2 colonnes : « C'est pour vous si » / « Ce n'est pas pour vous si ».
@@ -10,15 +11,15 @@ import { useLang } from '@/components/providers/LangProvider'
  */
 export default function ServiceFit({ forYou, notForYou }: { forYou: string[]; notForYou: string[] }) {
   const { lang } = useLang()
-  const d = (fr: string, en: string) => (lang === 'en' ? en : fr)
+  const d = makeD(lang)
 
   return (
     <section style={{ padding: '80px 24px' }}>
       <div className="mx-auto" style={{ maxWidth: 980 }}>
         <FadeUp className="text-center mb-12">
-          <span className="section-label">{d('Est-ce pour vous ?', 'Is this for you?')}</span>
+          <span className="section-label">{d('Est-ce pour vous ?', 'Is this for you?', 'Önnek való ez?')}</span>
           <h2 className="section-title" style={{ maxWidth: 620, margin: '0 auto' }}>
-            {d('On est ', 'We are ')}<span className="accent">{d('honnêtes dès le départ.', 'straight with you from the start.')}</span>
+            {d('On est ', 'We are ', 'Őszinték vagyunk ')}<span className="accent">{d('honnêtes dès le départ.', 'straight with you from the start.', 'az első pillanattól.')}</span>
           </h2>
         </FadeUp>
 
@@ -27,7 +28,7 @@ export default function ServiceFit({ forYou, notForYou }: { forYou: string[]; no
             <div className="fit-col fit-yes">
               <div className="fit-head">
                 <span className="fit-head-ico fit-head-yes" aria-hidden="true"><Check size={17} strokeWidth={2.4} /></span>
-                <span className="font-mono fit-head-label">{d('C\u2019est pour vous si', 'This is for you if')}</span>
+                <span className="font-mono fit-head-label">{d('C\u2019est pour vous si', 'This is for you if', 'Önnek szól, ha')}</span>
               </div>
               <ul className="fit-list">
                 {forYou.map((f) => (
@@ -44,7 +45,7 @@ export default function ServiceFit({ forYou, notForYou }: { forYou: string[]; no
             <div className="fit-col fit-no">
               <div className="fit-head">
                 <span className="fit-head-ico fit-head-no" aria-hidden="true"><X size={17} strokeWidth={2.4} /></span>
-                <span className="font-mono fit-head-label">{d('Ce n\u2019est pas pour vous si', 'This is not for you if')}</span>
+                <span className="font-mono fit-head-label">{d('Ce n\u2019est pas pour vous si', 'This is not for you if', 'Nem Önnek szól, ha')}</span>
               </div>
               <ul className="fit-list">
                 {notForYou.map((f) => (

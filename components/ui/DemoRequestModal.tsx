@@ -33,24 +33,26 @@ export default function DemoRequestModal({
   const overlayRef = useRef<HTMLDivElement>(null)
   const modalRef = useRef<HTMLDivElement>(null)
 
+  /* La valeur envoyée reste l'anglais (`r.en`), c'est elle qui part au CRM :
+     seule l'étiquette affichée suit la langue. */
   const ROLES = [
-    { en: 'Owner / CEO', fr: 'Dirigeant·e / CEO' },
-    { en: 'Operations', fr: 'Opérations' },
-    { en: 'Marketing', fr: 'Marketing' },
-    { en: 'Manager', fr: 'Manager' },
-    { en: 'Consultant', fr: 'Consultant·e' },
-    { en: 'Other', fr: 'Autre' },
+    { en: 'Owner / CEO', fr: 'Dirigeant·e / CEO', hu: 'Tulajdonos / ügyvezető' },
+    { en: 'Operations', fr: 'Opérations', hu: 'Működés' },
+    { en: 'Marketing', fr: 'Marketing', hu: 'Marketing' },
+    { en: 'Manager', fr: 'Manager', hu: 'Vezető' },
+    { en: 'Consultant', fr: 'Consultant·e', hu: 'Tanácsadó' },
+    { en: 'Other', fr: 'Autre', hu: 'Egyéb' },
   ]
   const SECTEURS = [
-    { en: 'Restaurant / Hospitality', fr: 'Restauration / Hôtellerie' },
-    { en: 'Retail / Commerce', fr: 'Commerce / Retail' },
-    { en: 'Services / Consulting', fr: 'Conseil / Services' },
-    { en: 'Real estate / Construction', fr: 'BTP / Immobilier' },
-    { en: 'Industry', fr: 'Industrie' },
-    { en: 'Health', fr: 'Santé' },
-    { en: 'Education', fr: 'Éducation' },
-    { en: 'Tech / SaaS', fr: 'Tech / SaaS' },
-    { en: 'Other', fr: 'Autre' },
+    { en: 'Restaurant / Hospitality', fr: 'Restauration / Hôtellerie', hu: 'Vendéglátás / szálláshely' },
+    { en: 'Retail / Commerce', fr: 'Commerce / Retail', hu: 'Kereskedelem' },
+    { en: 'Services / Consulting', fr: 'Conseil / Services', hu: 'Tanácsadás / szolgáltatás' },
+    { en: 'Real estate / Construction', fr: 'BTP / Immobilier', hu: 'Építőipar / ingatlan' },
+    { en: 'Industry', fr: 'Industrie', hu: 'Ipar' },
+    { en: 'Health', fr: 'Santé', hu: 'Egészségügy' },
+    { en: 'Education', fr: 'Éducation', hu: 'Oktatás' },
+    { en: 'Tech / SaaS', fr: 'Tech / SaaS', hu: 'Tech / SaaS' },
+    { en: 'Other', fr: 'Autre', hu: 'Egyéb' },
   ]
 
   const handleEscape = useCallback((e: KeyboardEvent) => {

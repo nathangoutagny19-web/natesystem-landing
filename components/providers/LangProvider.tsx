@@ -3,7 +3,7 @@
 import { createContext, useContext, useCallback } from 'react'
 import { usePathname, useRouter } from 'next/navigation'
 import { translations, type TranslationKey, type Lang } from '@/lib/i18n'
-import { hasEnglishVersion } from '@/lib/routes'
+import { hasTranslation } from '@/lib/routes'
 
 export type { Lang }
 
@@ -64,15 +64,15 @@ export function useLang() {
  * `/services/` ↔ `/en/services/`, `/` ↔ `/en`.
  */
 export function mirrorPath(pathname: string, target: Lang): string {
-  const withoutPrefix = pathname.replace(/^\/en(?=\/|$)/, '') || '/'
+  const withoutPrefix = pathname.replace(/^\/(en|hu)(?=\/|$)/, '') || '/'
   if (target === 'fr') return withoutPrefix
-  /* Toutes les pages françaises n'ont pas d'équivalent anglais : les villes,
+  /* Toutes les pages françaises n'ont pas d'équivalent traduit : les villes,
      les pages sectorielles et le blog restent français. Le drapeau renvoyait
-     vers /en/<slug français>, donc vers une 404. Il ramène à l'accueil
-     anglais, qui existe toujours. */
-  if (!hasEnglishVersion(withoutPrefix)) return '/en'
+     vers /<langue>/<slug français>, donc vers une 404. Il ramène à l'accueil
+     de la langue visée, qui existe toujours. */
+  if (!hasTranslation(withoutPrefix)) return `/${target}`
   const trimmed = withoutPrefix.replace(/\/+$/, '')
-  return trimmed === '' ? '/en' : `/en${trimmed}`
+  return trimmed === '' ? `/${target}` : `/${target}${trimmed}`
 }
 
 export function LangProvider({
@@ -101,6 +101,9 @@ export function LangProvider({
     [lang]
   )
 
+  /* Avec trois langues, « l'autre langue » n'a plus de sens : on garde le lien
+     vers l'anglais quand on est en français, et vers le français sinon. Le
+     drapeau de la nav, lui, propose les trois. */
   const otherLangHref = mirrorPath(pathname || '/', lang === 'fr' ? 'en' : 'fr')
 
   return (
