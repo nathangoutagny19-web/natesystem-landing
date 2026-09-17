@@ -11,18 +11,17 @@ import { SITE_URL } from '@/lib/constants'
  */
 
 export const metadata: Metadata = {
-  title: 'Free tools for small businesses: inventory & cash flow forecast | NateSystem',
+  title: 'Ingyenes eszközök kkv-knak: készlet és pénzforgalmi előrejelzés | NateSystem',
   description:
-    'Free tools for owners of small and mid-sized companies, no signup. Simple free inventory management software, a free cash flow forecasting tool and an AI readiness test. Try them right now.',
+    'Ingyenes eszközök cégvezetőknek, regisztráció nélkül. Egyszerű, ingyenes készletkezelő szoftver, ingyenes pénzforgalmi előrejelző és MI-érettségi teszt. Próbálja ki most.',
   keywords: [
-    'free inventory management software',
-    'free stock management software small business',
-    'free cash flow forecast tool',
-    'cash flow forecast for small business',
-    'free business tools no signup',
-    'free asset management software',
-    'free equipment tracking software',
-    'AI readiness test for business',
+    'ingyenes készletkezelő szoftver',
+    'ingyenes raktárkezelő program kkv',
+    'ingyenes pénzforgalmi előrejelző',
+    'cash flow előrejelzés kkv',
+    'ingyenes üzleti eszközök',
+    'ingyenes eszköznyilvántartó szoftver',
+    'MI-érettségi teszt cégeknek',
   ],
   alternates: {
     canonical: `${SITE_URL}/hu/outils`,
@@ -34,17 +33,17 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'Free tools for small businesses: inventory & cash flow forecast | NateSystem',
+    title: 'Ingyenes eszközök kkv-knak: készlet és pénzforgalmi előrejelzés | NateSystem',
     description:
-      'Free inventory management software and a free cash flow forecasting tool, live with no signup. Free versions of the custom software we build.',
+      'Ingyenes készletkezelő szoftver és ingyenes pénzforgalmi előrejelző, élesben, regisztráció nélkül. Ingyenes változatai annak, amit egyedire építünk.',
     url: `${SITE_URL}/hu/outils`,
     type: 'website',
     locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Free tools for small businesses | NateSystem',
-    description: 'Free inventory management and cash flow forecasting, no signup.',
+    title: 'Ingyenes eszközök kkv-knak | NateSystem',
+    description: 'Ingyenes készletkezelés és pénzforgalmi előrejelzés, regisztráció nélkül.',
   },
 }
 
@@ -54,9 +53,9 @@ const jsonLd = {
     {
       '@type': 'CollectionPage',
       '@id': `${SITE_URL}/hu/outils#page`,
-      name: 'Free tools for small businesses',
+      name: 'Ingyenes eszközök kis- és középvállalkozásoknak',
       description:
-        'Free tools for owners of small and mid-sized companies: free inventory management software and a free cash flow forecasting tool, live with no signup.',
+        'Ingyenes eszközök cégvezetőknek: ingyenes készletkezelő szoftver és ingyenes pénzforgalmi előrejelző, élesben, regisztráció nélkül.',
       url: `${SITE_URL}/hu/outils`,
       inLanguage: 'hu',
       isPartOf: { '@id': `${SITE_URL}/#website` },

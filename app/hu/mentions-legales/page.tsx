@@ -8,9 +8,9 @@ import LegalNotice from '@/components/site/LegalNotice'
  */
 
 export const metadata: Metadata = {
-  title: 'Legal notice, NateSystem',
+  title: 'Jogi nyilatkozat, NateSystem',
   description:
-    'Legal notice and privacy policy of NateSystem, Nathan Goutagny, sole trader, Lyon, France. Courtesy translation; the French version applies.',
+    'A NateSystem jogi nyilatkozata és adatvédelmi tájékoztatója. Nathan Goutagny, egyéni vállalkozó, Lyon, Franciaország. Udvariassági fordítás; a francia változat az irányadó.',
   robots: { index: false, follow: true },
   alternates: {
     canonical: 'https://www.natesystem.com/hu/mentions-legales',

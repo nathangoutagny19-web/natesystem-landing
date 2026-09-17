@@ -4,16 +4,16 @@ import { SITE_URL } from '@/lib/constants'
 /** Équivalent hongrois de `app/outils/pret-pour-lia/layout.tsx`. */
 
 export const metadata: Metadata = {
-  title: 'Test: is your company ready for AI? (2 min, free) | NateSystem',
+  title: 'Teszt: készen áll a cége az MI-re? (2 perc, ingyenes) | NateSystem',
   description:
-    'Free AI readiness test for business owners: twelve questions tell you whether your company is ready for AI. Process, data, adoption, a straight verdict and one concrete first step. No signup.',
+    'Ingyenes MI-érettségi teszt cégvezetőknek: tizenkét kérdés megmondja, készen áll-e a cége az MI-re. Folyamatok, adatok, elfogadás, őszinte ítélet és egy konkrét első lépés. Regisztráció nélkül.',
   keywords: [
-    'is my company ready for AI',
-    'AI readiness assessment',
-    'AI maturity test for business',
-    'AI readiness quiz',
-    'free AI audit',
-    'where to start with AI in a small business',
+    'készen áll a cégem az MI-re',
+    'MI-érettség felmérés',
+    'MI-érettségi teszt vállalkozásoknak',
+    'mesterséges intelligencia teszt cégeknek',
+    'ingyenes MI-audit',
+    'hol kezdjem az MI-t egy kkv-ban',
   ],
   alternates: {
     canonical: `${SITE_URL}/hu/outils/pret-pour-lia`,
@@ -25,17 +25,17 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'Is your company ready for AI? The two-minute test',
+    title: 'Készen áll a cége az MI-re? A kétperces teszt',
     description:
-      'Free AI readiness test: process, data, adoption. A straight verdict and one concrete first step, no signup.',
+      'Ingyenes MI-érettségi teszt: folyamatok, adatok, elfogadás. Őszinte ítélet és egy konkrét első lépés, regisztráció nélkül.',
     url: `${SITE_URL}/hu/outils/pret-pour-lia`,
     type: 'website',
     locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Is your company ready for AI?',
-    description: 'The two-minute test, free and with no signup.',
+    title: 'Készen áll a cége az MI-re?',
+    description: 'A kétperces teszt, ingyen és regisztráció nélkül.',
   },
 }
 
@@ -50,7 +50,7 @@ const jsonLd = {
       url: `${SITE_URL}/hu/outils/pret-pour-lia`,
       inLanguage: 'hu',
       description:
-        'Free AI readiness test: twelve questions across three pillars (clear process, reliable data, adoption and people). Score per pillar, overall verdict and a recommendation aimed at your weakest pillar.',
+        'Ingyenes MI-érettségi teszt: tizenkét kérdés három pillér mentén (világos folyamatok, megbízható adatok, elfogadás és emberek). Pillérenkénti pontszám, összesített ítélet és a leggyengébb pillérre szabott javaslat.',
       offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
       provider: { '@id': `${SITE_URL}/#organization` },
     },
