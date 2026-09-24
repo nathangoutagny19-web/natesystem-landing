@@ -3,6 +3,7 @@ import MobileCta from '@/components/layout/MobileCta'
 import WorkTogetherPrompt from '@/components/layout/WorkTogetherPrompt'
 import Hero from '@/components/home/Hero'
 import Transformation from '@/components/home/Transformation'
+import BrandFilm from '@/components/home/BrandFilm'
 import CredibilityBand from '@/components/home/CredibilityBand'
 import ClientsBar from '@/components/home/ClientsBar'
 import Systems from '@/components/home/Systems'
@@ -45,6 +46,12 @@ export default function Home() {
 
       {/* 3, Avant/Après (diagonale) + bascule « ils sont de l'autre côté » */}
       <Transformation />
+
+      {/* 3a, le film de marque, 36 s. Il reprend la phrase de la section
+          ci-dessus, volontairement : il la met en mouvement, il ne la
+          remplace pas. Contenu à 680 px, pas pleine largeur. Français
+          uniquement, le texte est incrusté dans l'image. */}
+      <BrandFilm />
       <Divider />
 
       {/* 3b, Bandeau « Déployé. Mesuré. Rentabilisé. » (Systems) + CTA « Je veux le mien » */}
