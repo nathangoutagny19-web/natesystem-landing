@@ -19,15 +19,19 @@ export default function LiteYouTube({
   id,
   title,
   vertical = false,
+  start,
 }: {
   id: string
   title: string
   /** Vertical (9:16) Shorts use the oar2 thumbnail; default is the 16:9 maxres. */
   vertical?: boolean
+  /** Seconde de départ. Sert à sauter une intro que le visiteur n'a pas à subir. */
+  start?: number
 }) {
   const { lang } = useLang()
   const [loaded, setLoaded] = useState(false)
   const captions = lang === 'en' ? '&cc_load_policy=1&cc_lang_pref=en&hl=en' : ''
+  const from = start ? `&start=${start}` : ''
   const thumb = vertical
     ? `https://i.ytimg.com/vi/${id}/oar2.jpg`
     : `https://i.ytimg.com/vi/${id}/maxresdefault.jpg`
@@ -35,7 +39,7 @@ export default function LiteYouTube({
   if (loaded) {
     return (
       <iframe
-        src={`https://www.youtube.com/embed/${id}?autoplay=1&rel=0&modestbranding=1${captions}`}
+        src={`https://www.youtube.com/embed/${id}?autoplay=1&rel=0&modestbranding=1${captions}${from}`}
         title={title}
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         referrerPolicy="strict-origin-when-cross-origin"

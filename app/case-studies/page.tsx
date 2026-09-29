@@ -6,6 +6,8 @@ import MobileCta from '@/components/layout/MobileCta'
 import FadeUp from '@/components/ui/FadeUp'
 import Divider from '@/components/ui/Divider'
 import CaseStudy from '@/components/home/CaseStudy'
+import ChartreuxCase from '@/components/case-studies/ChartreuxCase'
+import LiteYouTube from '@/components/ui/LiteYouTube'
 import Link from 'next/link'
 import { useLang } from '@/components/providers/LangProvider'
 import { makeD } from '@/lib/lang'
@@ -36,7 +38,13 @@ export default function CaseStudiesPage() {
         </div>
       </section>
 
-      {/* Cas client, Chromosome (structure OpsKings : citation + vidéo + chiffres) */}
+      {/* 1er cas : Les Chartreux. En tête parce que c'est le plus lourd du
+          portefeuille et celui que vise le positionnement écoles. */}
+      <ChartreuxCase />
+
+      <Divider />
+
+      {/* 2e cas, Chromosome (structure OpsKings : citation + vidéo + chiffres) */}
       <CaseStudy />
 
       {/* Lien vers l'étude de cas écrite (Problème → Solution → Résultats) */}
@@ -50,9 +58,34 @@ export default function CaseStudiesPage() {
         </div>
       </section>
 
-      {/* 2e cas : cabinet de conseil B2B (anonymisé, témoignage nominatif à venir) */}
+      {/* 3e cas : cabinet de conseil B2B (anonymisé, témoignage nominatif à venir) */}
       <section style={{ padding: '48px 24px 8px' }}>
         <div className="mx-auto" style={{ maxWidth: '900px' }}>
+          {/* La vidéo est hors du lien : dans le lien, le clic sur le bouton de
+              lecture partirait sur l'étude de cas au lieu de lancer la vidéo. */}
+          <FadeUp>
+            <div
+              style={{
+                position: 'relative',
+                width: '100%',
+                aspectRatio: '16 / 9',
+                borderRadius: 12,
+                overflow: 'hidden',
+                border: '1px solid var(--border)',
+                marginBottom: 22,
+              }}
+            >
+              <LiteYouTube
+                id="VCqXWRz68_4"
+                start={16}
+                title={d(
+                  'Produire ses rapports clients depuis un seul système',
+                  'Producing client reports from a single system',
+                  'Ügyfélriportok készítése egyetlen rendszerből'
+                )}
+              />
+            </div>
+          </FadeUp>
           <FadeUp>
             <Link href={localizedHref('/case-studies/conseil-b2b-budapest', lang)} style={{ textDecoration: 'none', display: 'block' }}>
               <article

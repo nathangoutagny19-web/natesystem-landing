@@ -14,6 +14,8 @@ export type CaseStudy = {
   title: string
   subtitle: string
   videoId?: string
+  /** Seconde de départ de la vidéo. Sert à sauter l'intro. */
+  videoStart?: number
   metrics: CaseMetric[]
   problemTitle: string
   problem: string[]
@@ -75,6 +77,8 @@ const caseStudiesFr: CaseStudy[] = [
     title: '25 ans d’expertise, mis dans une IA',
     subtitle:
       'Comment un cabinet de conseil B2B de Budapest a capitalisé le savoir de son fondateur dans un système sur-mesure, automatisé ses rapports clients sur 280 KPIs, et l’a rendu à ses clients.',
+    videoId: 'VCqXWRz68_4',
+    videoStart: 16,
     metrics: [
       { value: '280 KPIs', label: 'transformés en rapports clients personnalisés, automatiquement' },
       { value: '25 ans', label: 'de savoir et de parcours capitalisés dans un système sur-mesure' },
@@ -161,6 +165,8 @@ const caseStudiesEn: CaseStudy[] = [
     title: '25 years of expertise, put into an AI',
     subtitle:
       'How a B2B consulting firm in Budapest captured its founder’s know-how in a custom system, automated its client reports across 280 KPIs, and handed it back to its clients.',
+    videoId: 'VCqXWRz68_4',
+    videoStart: 16,
     metrics: [
       { value: '280 KPIs', label: 'turned into personalised client reports, automatically' },
       { value: '25 years', label: 'of know-how and experience captured in a custom system' },
@@ -239,6 +245,8 @@ const caseStudiesHu: CaseStudy[] = [
     title: '25 év szaktudás, MI-be téve',
     subtitle:
       'Hogyan őrizte meg egy budapesti B2B tanácsadó cég az alapítója tudását egy egyedi rendszerben, automatizálta az ügyfélriportjait 280 KPI-n, és adta vissza mindezt az ügyfeleinek.',
+    videoId: 'VCqXWRz68_4',
+    videoStart: 16,
     metrics: [
       { value: '280 KPI', label: 'személyre szabott ügyfélriportokká alakítva, automatikusan' },
       { value: '25 év', label: 'tudás és tapasztalat egyedi rendszerbe mentve' },
