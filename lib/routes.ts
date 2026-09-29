@@ -82,3 +82,31 @@ export function localizedHref(path: string, lang: Lang): string {
   const trimmed = base.replace(/\/+$/, '')
   return (trimmed === '' ? `/${lang}` : `/${lang}${trimmed}`) + hash
 }
+
+/**
+ * LES PAGES QUI NE VIVENT QU'EN ANGLAIS.
+ *
+ * L'inverse des pages de villes : celles-là sont françaises et n'existent
+ * qu'en français, `/schools` est anglaise et n'existe qu'en anglais. Elle vise
+ * des directions d'écoles anglophones et sert de destination au lien LinkedIn.
+ * Elle n'est donc pas dans `TRANSLATED_ROUTES` (pas de miroir à proposer),
+ * mais tout ce qui est rendu au-dessus du `LangProvider` a quand même besoin
+ * de savoir qu'on y parle anglais.
+ */
+export const ENGLISH_ONLY_ROUTES = ['/schools'] as const
+
+/**
+ * La langue d'un chemin, déduite de l'URL seule.
+ *
+ * Pour les composants montés dans le layout racine, donc au-dessus de tous les
+ * `LangProvider` : le bandeau cookies, par exemple, restait en français sur
+ * `/en` et `/hu` parce qu'il n'avait aucun moyen de lire le contexte.
+ */
+export function langFromPathname(pathname: string): Lang {
+  const clean = pathname.split('#')[0].split('?')[0]
+  if (/^\/en(?=\/|$)/.test(clean)) return 'en'
+  if (/^\/hu(?=\/|$)/.test(clean)) return 'hu'
+  const trimmed = clean.replace(/\/+$/, '') || '/'
+  if (ENGLISH_ONLY_ROUTES.some((r) => trimmed === r || trimmed.startsWith(`${r}/`))) return 'en'
+  return 'fr'
+}

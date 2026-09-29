@@ -1,7 +1,10 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { usePathname } from 'next/navigation'
 import Link from 'next/link'
+import { langFromPathname, localizedHref } from '@/lib/routes'
+import { makeD } from '@/lib/lang'
 
 /**
  * Lightweight, fully self-controlled GDPR cookie consent.
@@ -14,6 +17,12 @@ import Link from 'next/link'
  *
  * Scripts gated on consent: Google Analytics (GA4), Microsoft Clarity,
  * Leadsy/Instantly visitor tag.
+ *
+ * ⚠︎ Il est monté dans le layout racine, donc AU-DESSUS de tous les
+ * `LangProvider` : `useLang()` y renverrait toujours le français. Il lit donc
+ * sa langue dans l'URL, via `langFromPathname`, sans quoi un visiteur anglais
+ * ou hongrois se voyait demander son consentement en français, et le lien
+ * « en savoir plus » le renvoyait sur des mentions légales françaises.
  */
 
 const STORAGE_KEY = 'ns-cookie-consent'
@@ -60,6 +69,8 @@ function loadTrackingScripts() {
 
 export default function CookieConsent() {
   const [visible, setVisible] = useState(false)
+  const lang = langFromPathname(usePathname() || '/')
+  const d = makeD(lang)
 
   useEffect(() => {
     let choice: string | null = null
@@ -91,21 +102,25 @@ export default function CookieConsent() {
     <div
       role="dialog"
       aria-live="polite"
-      aria-label="Consentement aux cookies"
+      aria-label={d('Consentement aux cookies', 'Cookie consent', 'Süti-hozzájárulás')}
       className="ns-cookie"
     >
       <p className="ns-cookie-text">
-        On utilise des cookies de mesure d&apos;audience pour améliorer le site.{' '}
-        <Link href="/mentions-legales" className="ns-cookie-link">
-          En savoir plus
+        {d(
+          'On utilise des cookies de mesure d\u2019audience pour améliorer le site.',
+          'We use audience measurement cookies to improve the site.',
+          'Látogatottságmérő sütiket használunk, hogy jobb legyen az oldal.'
+        )}{' '}
+        <Link href={localizedHref('/mentions-legales', lang)} className="ns-cookie-link">
+          {d('En savoir plus', 'Learn more', 'Tudj meg többet')}
         </Link>
       </p>
       <div className="ns-cookie-actions">
         <button type="button" onClick={() => decide(false)} className="ns-cookie-btn ns-cookie-btn--ghost">
-          Refuser
+          {d('Refuser', 'Decline', 'Elutasítom')}
         </button>
         <button type="button" onClick={() => decide(true)} className="ns-cookie-btn ns-cookie-btn--accept">
-          Accepter
+          {d('Accepter', 'Accept', 'Elfogadom')}
         </button>
       </div>
 
