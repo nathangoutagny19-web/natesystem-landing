@@ -10,6 +10,7 @@ export const metadata: Metadata = {
     description: 'Des résultats réels, mesurés et documentés chez de vrais clients.',
     url: 'https://www.natesystem.com/case-studies',
     type: 'website',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'NateSystem' }],
   },
 }
 

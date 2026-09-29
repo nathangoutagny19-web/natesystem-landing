@@ -50,7 +50,17 @@ export function localeMetadata({
         'x-default': fr,
       },
     },
-    openGraph: { title, description, url, type: 'website', locale: OG_LOCALE[lang] },
+    /* L'image est reprise explicitement : Next remplace l'objet `openGraph`
+       du parent au lieu de le fusionner, donc sans cette ligne la page perd
+       l'image de partage du layout racine et LinkedIn affiche une carte nue. */
+    openGraph: {
+      title,
+      description,
+      url,
+      type: 'website',
+      locale: OG_LOCALE[lang],
+      images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'NateSystem' }],
+    },
   }
 }
 

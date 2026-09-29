@@ -31,7 +31,9 @@ export const metadata: Metadata = {
       'x-default': `${SITE_URL}/`,
     },
   },
-  openGraph: { locale: 'hu_HU' },
+  openGraph: { locale: 'hu_HU',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'NateSystem' }],
+  },
 }
 
 export default function HuLayout({ children }: { children: React.ReactNode }) {

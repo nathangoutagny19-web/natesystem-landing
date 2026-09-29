@@ -27,6 +27,7 @@ export const metadata: Metadata = {
     url: 'https://www.natesystem.com/outils/pret-pour-lia',
     type: 'website',
     locale: 'fr_FR',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'NateSystem' }],
   },
   twitter: {
     card: 'summary_large_image',

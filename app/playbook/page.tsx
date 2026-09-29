@@ -16,6 +16,7 @@ export const metadata: Metadata = {
       'Treize guides pratiques pour utiliser l’IA dans votre métier, sans buzzword. 30 pages chacun, écrits pour des PME françaises, prêts à lire.',
     url: 'https://www.natesystem.com/playbook',
     type: 'website',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'NateSystem' }],
   },
 }
 

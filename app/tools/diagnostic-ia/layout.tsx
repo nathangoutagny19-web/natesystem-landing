@@ -11,6 +11,7 @@ export const metadata: Metadata = {
       'Mesurez en 4 min le gaspillage opérationnel de votre PME : SaaS inutiles, temps perdu, maturité IA. Rapport gratuit + 3 leviers prioritaires.',
     url: 'https://www.natesystem.com/tools/diagnostic-ia',
     type: 'website',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'NateSystem' }],
   },
 }
 

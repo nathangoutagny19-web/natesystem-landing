@@ -11,6 +11,7 @@ export const metadata: Metadata = {
       'Analyses, retours d\'expérience et guides pour intégrer l\'IA et le logiciel sur-mesure dans une PME française.',
     url: 'https://www.natesystem.com/blog',
     type: 'website',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'NateSystem' }],
   },
 }
 

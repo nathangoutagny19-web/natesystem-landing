@@ -32,7 +32,9 @@ export const metadata: Metadata = {
       'x-default': `${SITE_URL}/`,
     },
   },
-  openGraph: { locale: 'en_US' },
+  openGraph: { locale: 'en_US',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'NateSystem' }],
+  },
 }
 
 export default function EnLayout({ children }: { children: React.ReactNode }) {

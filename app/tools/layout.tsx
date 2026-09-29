@@ -11,6 +11,7 @@ export const metadata: Metadata = {
       'Le Diagnostic IA gratuit : ce que votre stack SaaS gaspille, le temps perdu, votre maturité IA, 3 leviers priorisés. Plus deux démos live de logiciels métier.',
     url: 'https://www.natesystem.com/tools',
     type: 'website',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'NateSystem' }],
   },
 }
 

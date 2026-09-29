@@ -49,7 +49,8 @@ export function caseStudyMetadata(slug: string, lang: Lang): Metadata {
       url,
       type: 'article',
       locale: lang === 'en' ? 'en_US' : lang === 'hu' ? 'hu_HU' : 'fr_FR',
-    },
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'NateSystem' }],
+  },
   }
 }
 

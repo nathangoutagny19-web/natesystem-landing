@@ -11,6 +11,7 @@ export const metadata: Metadata = {
       'Cas clients vérifiés, guides pratiques et ressources pour les dirigeants de PME.',
     url: 'https://www.natesystem.com/resources',
     type: 'website',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'NateSystem' }],
   },
 }
 

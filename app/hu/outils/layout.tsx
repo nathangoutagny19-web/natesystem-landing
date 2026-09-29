@@ -39,6 +39,7 @@ export const metadata: Metadata = {
     url: `${SITE_URL}/hu/outils`,
     type: 'website',
     locale: 'en_US',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'NateSystem' }],
   },
   twitter: {
     card: 'summary_large_image',
