@@ -5,6 +5,25 @@ const nextConfig = {
 
   async redirects() {
     return [
+      /* Les 14 pages de playbooks sont retirées du site (29 septembre 2026).
+         Elles étaient dans le sitemap depuis des mois, donc indexées : sans
+         ces deux lignes, chacune renverrait 404 à un visiteur venu de Google
+         ou d'un lien partagé. Elles atterrissent sur /resources, qui portait
+         la liste et garde les vidéos, les outils et le blog.
+
+         La règle générique couvre aussi /playbook/<slug>/thank-you et
+         /playbook/unsubscribe, qui étaient en disallow et pointaient vers une
+         API supprimée avec le reste. */
+      {
+        source: '/playbook',
+        destination: '/resources',
+        permanent: true,
+      },
+      {
+        source: '/playbook/:path*',
+        destination: '/resources',
+        permanent: true,
+      },
       // Les 3 anciennes calculettes sont consolidées dans Le Diagnostic IA.
       // Redirections 301 permanentes pour préserver le SEO et les liens partagés.
       {

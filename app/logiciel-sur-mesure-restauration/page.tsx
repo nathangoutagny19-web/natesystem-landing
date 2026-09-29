@@ -158,7 +158,6 @@ export default function RestaurationPage() {
           { href: '/logiciel-sur-mesure-vs-saas', label: 'Sur-mesure ou SaaS ?', desc: 'Pourquoi sortir de l\'empilement d\'outils du restaurant.' },
           { href: '/prix-logiciel-sur-mesure', label: 'Combien ça coûte ?', desc: 'Les fourchettes de prix réalistes.' },
           { href: '/logiciel-sur-mesure-enseignement-superieur', label: 'Et pour l\'enseignement supérieur ?', desc: 'Un autre secteur, la même méthode.' },
-          { href: '/playbook', label: 'Playbooks sectoriels', desc: 'L\'IA appliquée à d\'autres métiers.' },
         ]}
       />
 

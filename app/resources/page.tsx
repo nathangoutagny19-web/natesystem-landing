@@ -13,7 +13,6 @@ import { makeD } from '@/lib/lang'
 import { localizedHref } from '@/lib/routes'
 import { motion } from 'framer-motion'
 import { blogPosts } from '@/lib/blog'
-import { playbooks, sectorLabelFor, cardTaglineFor } from '@/lib/playbooks'
 
 // Vidéo témoignage (paysage 16:9). Plus tard : vidéos éducation + vlogs internes.
 const TESTIMONIAL_VIDEO_ID = 'aMIjJbzuhDc'
@@ -206,50 +205,7 @@ export default function ResourcesPage() {
 
       <Divider />
 
-      {/* ═══ 3, PLAYBOOKS PAR MÉTIER (lead magnets) ═══
-           PDF français sous slugs français, et /playbook n'a pas d'équivalent
-           anglais : la section est masquée sous /en plutôt que servie en
-           français dans une page anglaise. */}
-      {lang === 'fr' && (
-        <>
-        <section id="playbooks" style={{ padding: '80px 24px' }}>
-          <div className="mx-auto" style={{ maxWidth: '1120px' }}>
-            <FadeUp>
-              <span className="section-label">{d('Playbooks par métier', 'Playbooks by industry', 'Playbookok szakmánként')}</span>
-              <h2 className="font-serif italic" style={{ fontSize: 'clamp(28px, 4vw, 40px)', fontWeight: 400, color: 'var(--text)', lineHeight: 1.15, margin: '4px 0 10px' }}>
-                {d('L’IA appliquée à votre métier.', 'AI applied to your industry.', 'Az MI az Ön szakmájára alkalmazva.')}
-              </h2>
-              <p className="font-sans" style={{ fontSize: '14px', fontWeight: 300, color: 'var(--text-muted)', lineHeight: 1.6, maxWidth: '640px' }}>
-                {d('Des guides concrets, un par secteur : où l’IA fait vraiment gagner du temps, sans casser votre conformité. PDF gratuit.', 'Concrete guides, one per sector: where AI actually saves time without breaking your compliance. Free PDF.', 'Konkrét útmutatók, ágazatonként egy: hol spórol az MI tényleg időt anélkül, hogy a megfelelőségét veszélyeztetné. Ingyenes PDF.')}
-              </p>
-            </FadeUp>
-
-            <div className="res-grid-3" style={{ marginTop: 32 }}>
-              {playbooks.map((pb, i) => (
-                <FadeUp key={pb.slug} delay={Math.min(i * 0.04, 0.4)}>
-                  <Link href={`/playbook/${pb.slug}`} style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
-                    <motion.div className="res-card" whileHover={{ borderColor: 'var(--border-hover)' }}>
-                      <span className="font-mono res-badge" style={{ marginBottom: 10 }}>{d('Playbook', 'Playbook', 'Playbook')}</span>
-                      <h3 className="font-serif italic" style={{ fontSize: '19px', fontWeight: 400, color: 'var(--text)', lineHeight: 1.25, margin: '0 0 8px' }}>
-                        {sectorLabelFor(pb.slug)}
-                      </h3>
-                      <p className="font-sans" style={{ fontSize: '13px', fontWeight: 300, color: 'var(--text-secondary)', lineHeight: 1.55, flex: 1 }}>
-                        {cardTaglineFor(pb.slug)}
-                      </p>
-                      <span className="res-card-cta font-sans">{d('Télécharger le PDF', 'Download the PDF', 'PDF letöltése')} &rarr;</span>
-                    </motion.div>
-                  </Link>
-                </FadeUp>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <Divider />
-        </>
-      )}
-
-      {/* ═══ 4, BLOG ═══
+      {/* ═══ 3, BLOG ═══
            Trente articles écrits pour des requêtes françaises : le blog est
            resté français et /en/blog redirige. Masqué ici aussi. */}
       {lang === 'fr' && (

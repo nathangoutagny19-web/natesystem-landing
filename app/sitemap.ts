@@ -1,6 +1,5 @@
 import type { MetadataRoute } from 'next'
 import { blogPosts } from '@/lib/blog'
-import { allSlugs as allPlaybookSlugs } from '@/lib/playbooks'
 import { allCaseSlugs } from '@/lib/case-studies'
 import { TRANSLATED_ROUTES } from '@/lib/routes'
 
@@ -23,7 +22,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/reviews`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/resources`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/book`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${BASE_URL}/playbook`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${BASE_URL}/glossaire`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
     { url: `${BASE_URL}/a-propos`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
     { url: `${BASE_URL}/case-studies`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
@@ -52,14 +50,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/logiciel-sur-mesure-club-sportif`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/mentions-legales`, lastModified: now, changeFrequency: 'yearly', priority: 0.2 },
   ]
-
-  // 12 playbook landing pages
-  const playbookRoutes: MetadataRoute.Sitemap = allPlaybookSlugs().map((slug) => ({
-    url: `${BASE_URL}/playbook/${slug}`,
-    lastModified: now,
-    changeFrequency: 'monthly',
-    priority: 0.8,
-  }))
 
   // Blog posts
   const blogRoutes: MetadataRoute.Sitemap = blogPosts.map((post) => ({
@@ -134,7 +124,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     ...staticRoutes,
-    ...playbookRoutes,
     ...blogRoutes,
     ...caseStudyRoutes,
     ...translatedRoutes,

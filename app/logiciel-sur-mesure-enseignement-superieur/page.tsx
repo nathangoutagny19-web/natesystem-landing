@@ -155,7 +155,6 @@ export default function EducationPage() {
           { href: '/logiciel-sur-mesure-vs-saas', label: 'Sur-mesure ou SaaS ?', desc: 'Pourquoi un CRM pédagogique propriétaire plutôt qu\'un outil générique.' },
           { href: '/prix-logiciel-sur-mesure', label: 'Combien ça coûte ?', desc: 'Les fourchettes de prix réalistes.' },
           { href: '/logiciel-sur-mesure-conseil', label: 'Et pour le conseil ?', desc: 'Un autre secteur, la même méthode.' },
-          { href: '/playbook', label: 'Playbooks sectoriels', desc: 'L\'IA appliquée à d\'autres métiers.' },
         ]}
       />
 
