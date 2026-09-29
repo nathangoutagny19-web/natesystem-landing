@@ -758,34 +758,6 @@ export const translations = {
     hu:
       'Számolja ki, hány órát és eurót veszít a csapata ismétlődő feladatokon.',
   },
-  'playbooks.hotels.title': { en: 'For independent hotels', fr: 'Pour hôteliers indépendants', hu: 'Független szállodáknak' },
-  'playbooks.hotels.desc': {
-    en: 'Bookings, reviews, revenue management, the AI playbook for boutique hotels.',
-    fr: 'Réservations, avis, revenue management, le playbook IA pour hôtels de charme.',
-    hu:
-      'Foglalások, vélemények, bevételkezelés: az MI-playbook butikhoteleknek.',
-  },
-  'playbooks.lawyers.title': { en: 'For business law firms', fr: 'Pour cabinets d\'avocats d\'affaires', hu: 'Üzleti ügyvédi irodáknak' },
-  'playbooks.lawyers.desc': {
-    en: 'Drafting, due diligence, knowledge base, AI built for serious legal work.',
-    fr: 'Rédaction, due diligence, base de connaissances, l\'IA pour le travail juridique sérieux.',
-    hu:
-      'Szövegezés, átvilágítás, tudásbázis: MI a komoly jogi munkához.',
-  },
-  'playbooks.accountants.title': { en: 'For accounting firms', fr: 'Pour cabinets d\'expertise-comptable', hu: 'Könyvelőirodáknak' },
-  'playbooks.accountants.desc': {
-    en: 'Bookkeeping, advisory, deliverables, the AI stack for modern CPAs.',
-    fr: 'Saisie, conseil, livrables, la stack IA pour experts-comptables modernes.',
-    hu:
-      'Könyvelés, tanácsadás, kimenetek: az MI-eszköztár mai könyvelőknek.',
-  },
-  'playbooks.all.title': { en: 'See all 13 playbooks →', fr: 'Voir les 13 playbooks →', hu: 'Mind a 13 playbook →' },
-  'playbooks.all.desc': {
-    en: 'One sector-specific AI playbook per industry, free, ready to read.',
-    fr: 'Un playbook IA par secteur, gratuit, prêt à lire.',
-    hu:
-      'Ágazatonként egy MI-playbook, ingyen, azonnal olvasható.',
-  },
   'tools.downloadPdf': { en: 'Download PDF', fr: 'Télécharger le PDF', hu: 'PDF letöltése' },
   'tools.start': { en: 'Start', fr: 'Commencer', hu: 'Kezdés' },
   'tools.interactive': { en: 'Interactive', fr: 'Interactif', hu: 'Interaktív' },
@@ -809,7 +781,6 @@ export const translations = {
 
   // Mega dropdown
   'mega.interactive': { en: 'Interactive Tools', fr: 'Outils Interactifs', hu: 'Interaktív eszközök' },
-  'mega.playbooks': { en: 'Playbooks', fr: 'Playbooks', hu: 'Playbookok' },
 
   // Email gate
   'email.title': { en: 'Get your free template', fr: 'Obtenez votre template gratuit', hu: 'Kérje az ingyenes sablonját' },
