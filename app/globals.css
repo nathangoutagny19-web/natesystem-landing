@@ -1135,6 +1135,30 @@ html:not(.light) .trust-logo {
 .sec-row-arrow { color: var(--accent); opacity: 0; transform: translateX(-6px); transition: opacity 0.25s ease, transform 0.25s ease; flex: none; }
 .sec-row-on .sec-row-arrow { opacity: 1; transform: translateX(0); }
 
+/* ——— Lien-flèche réutilisable —————————————————————————————————————
+   Au survol : la flèche glisse vers la droite et passe en rouge. PAS de
+   soulignement, PAS de texte qui rougit — seule la flèche s'anime. La flèche
+   vient du ::after, donc ne pas la remettre dans le texte du lien. */
+.arrow-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  letter-spacing: 0.4px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  cursor: pointer;
+}
+.arrow-link::after {
+  content: "→";
+  display: inline-block;
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+.arrow-link:hover { color: var(--text); }
+.arrow-link:hover::after { transform: translateX(6px); color: var(--accent); }
+
 .sec-panel {
   background: var(--bg-card); border: 1px solid var(--border);
   border-radius: 18px; padding: clamp(26px, 3.5vw, 40px); min-height: 300px;

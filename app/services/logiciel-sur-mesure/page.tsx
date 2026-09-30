@@ -206,8 +206,8 @@ export default function LogicielSurMesurePage() {
                 {/* Le comparatif détaillé n'existe qu'en français : on ne le
                     propose pas dans la version anglaise. */}
                 {lang === 'fr' && (
-                  <Link href="/logiciel-sur-mesure-vs-saas" className="font-mono" style={{ fontSize: 13, color: 'var(--accent)', letterSpacing: 0.5, textDecoration: 'none' }}>
-                    Le comparatif complet sur-mesure vs SaaS &rarr;
+                  <Link href="/logiciel-sur-mesure-vs-saas" className="arrow-link">
+                    Le comparatif complet sur-mesure vs SaaS
                   </Link>
                 )}
               </p>

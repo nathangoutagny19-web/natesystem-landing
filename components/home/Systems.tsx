@@ -102,25 +102,8 @@ export default function Systems() {
           </Link>
         </FadeUp>
         <FadeUp delay={0.05}>
-          <Link
-            href={localizedHref('/case-studies', lang)}
-            className="font-mono"
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: 7,
-              fontSize: 12.5,
-              letterSpacing: 0.4,
-              color: 'var(--text-secondary)',
-              textDecoration: 'none',
-              borderBottom: '1px solid var(--border)',
-              paddingBottom: 3,
-              transition: 'color 0.25s ease, border-color 0.25s ease',
-            }}
-            onMouseEnter={(e) => { e.currentTarget.style.color = 'var(--accent)'; e.currentTarget.style.borderColor = 'var(--accent)' }}
-            onMouseLeave={(e) => { e.currentTarget.style.color = 'var(--text-secondary)'; e.currentTarget.style.borderColor = 'var(--border)' }}
-          >
-            {t('systems.allCases')} &rarr;
+          <Link href={localizedHref('/case-studies', lang)} className="arrow-link">
+            {t('systems.allCases')}
           </Link>
         </FadeUp>
       </div>

@@ -215,8 +215,8 @@ export default function ResourcesPage() {
             <FadeUp>
               <div className="flex items-center justify-between mb-2" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                 <span className="section-label mb-0">{t('resources.blog')}</span>
-                <Link href="/blog" className="font-sans" style={{ fontSize: '13px', color: 'var(--accent)', textDecoration: 'none', fontWeight: 500 }}>
-                  {d('Voir tous les articles', 'View all articles', 'Összes cikk megtekintése')} &rarr;
+                <Link href="/blog" className="arrow-link">
+                  {d('Voir tous les articles', 'View all articles', 'Összes cikk megtekintése')}
                 </Link>
               </div>
               <h2 className="font-serif italic" style={{ fontSize: 'clamp(28px, 4vw, 40px)', fontWeight: 400, color: 'var(--text)', lineHeight: 1.15, margin: '4px 0 28px' }}>
