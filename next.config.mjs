@@ -5,6 +5,20 @@ const nextConfig = {
 
   async redirects() {
     return [
+      /* /schools est repliée sur /en le 30 septembre 2026. Elle avait été
+         créée la veille, quand la home parlait encore aux PME : il fallait une
+         destination anglaise qui parle d'écoles. Maintenant que tout le site
+         leur parle, elle faisait doublon avec /en et il y avait deux textes à
+         tenir à jour.
+
+         La redirection reste parce que l'URL a été publiée : c'est le lien que
+         Nathan poste sur LinkedIn. Après déploiement, repasser natesystem.com/en
+         dans le Post Inspector, sinon l'ancienne carte ressort pendant des jours. */
+      {
+        source: '/schools',
+        destination: '/en',
+        permanent: true,
+      },
       /* Les 14 pages de playbooks sont retirées du site (29 septembre 2026).
          Elles étaient dans le sitemap depuis des mois, donc indexées : sans
          ces deux lignes, chacune renverrait 404 à un visiteur venu de Google

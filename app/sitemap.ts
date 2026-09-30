@@ -12,9 +12,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: MetadataRoute.Sitemap = [
     { url: `${BASE_URL}/`, lastModified: now, changeFrequency: 'weekly', priority: 1.0 },
     { url: `${BASE_URL}/blog`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
-    /* Page d'atterrissage écoles privées : anglaise, hors arbre de traduction,
-       comme les pages de villes sont françaises et n'existent qu'en français. */
-    { url: `${BASE_URL}/schools`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${BASE_URL}/outils`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${BASE_URL}/outils/pret-pour-lia`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${BASE_URL}/tools`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
