@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Agence logiciel sur-mesure & IA à Lyon, NateSystem',
   description:
-    'NateSystem, agence lyonnaise de logiciel métier sur-mesure et d\'intégration IA pour PME. On construit l\'outil qui pilote votre activité, code livré, propriété 100 %, hébergé en UE. Audit offert.',
+    'NateSystem, agence lyonnaise de logiciel métier sur-mesure et d\'intégration IA pour PME. On construit l\'outil qui pilote votre établissement, code livré, propriété 100 %, hébergé en UE. Audit offert.',
   alternates: { canonical: 'https://www.natesystem.com/agence-logiciel-ia-lyon' },
   openGraph: {
     title: 'Agence logiciel sur-mesure & IA à Lyon, NateSystem',

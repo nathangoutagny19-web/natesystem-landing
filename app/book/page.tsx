@@ -109,9 +109,9 @@ const COPY: Record<Lang, BookCopy> = {
     fieldLastName: 'Nom',
     fieldLastNamePh: 'Votre nom',
     fieldEmail: 'Email professionnel',
-    fieldEmailPh: 'prenom@entreprise.com',
-    fieldCompany: 'Entreprise',
-    fieldCompanyPh: 'Nom de l\'entreprise',
+    fieldEmailPh: 'prenom@etablissement.fr',
+    fieldCompany: 'Établissement',
+    fieldCompanyPh: 'Nom de l\'établissement',
     fieldWebsite: 'Site web',
     fieldWebsitePh: 'https://...',
     fieldRole: 'Votre rôle',
@@ -163,7 +163,7 @@ const COPY: Record<Lang, BookCopy> = {
     challenges: [
       'Trop d\'outils qui ne communiquent pas', 'Tâches répétitives qui prennent trop de temps',
       'Données éparpillées et non exploitées', 'Process non documentés',
-      'Difficulté à scaler sans recruter', 'Autre',
+      'Les effectifs montent, l\'administratif suit à la main', 'Autre',
     ],
     budgets: ['< 5 000€/an', '5 000€ – 10 000€/an', '10 000€ – 25 000€/an', '25 000€ – 50 000€/an', '50 000€+/an'],
     toolsList: [
@@ -179,8 +179,8 @@ const COPY: Record<Lang, BookCopy> = {
     ],
     repetitiveTasks: [
       'Saisie / transfert de données', 'Plannings / scheduling', 'Reporting / tableaux de bord',
-      'Relances clients / prospects', 'Facturation / devis', 'Onboarding collaborateurs / clients',
-      'Communication interne', 'Gestion de stock / commandes', 'Autre',
+      'Relances de dossiers incomplets', 'Facturation / règlements familles', 'Accueil d\'un nouveau personnel',
+      'Communication interne', 'Stocks / commandes / intendance', 'Autre',
     ],
     hoursWasted: ['Moins de 5h/sem', '5-10h/sem', '10-20h/sem', '20-40h/sem', '40h+/sem'],
     whoDoesIt: [
@@ -200,10 +200,10 @@ const COPY: Record<Lang, BookCopy> = {
     desiredResults: [
       'Gagner 10h+/semaine', 'Réduire les erreurs opérationnelles',
       'Ne plus dépendre d\'une personne clé', 'Avoir un tableau de bord en temps réel',
-      'Automatiser la prospection / relances', 'Réduire les coûts SaaS', 'Scaler sans recruter',
+      'Automatiser les relances', 'Arrêter de payer un logiciel qui ne colle pas', 'Absorber la croissance des effectifs sans recruter en administratif',
     ],
     urgency: [
-      'Critique, on perd de l\'argent chaque semaine', 'Important, dans les 3 prochains mois',
+      'Critique, ça bloque chaque semaine', 'Important, avant la prochaine rentrée',
       'Nice to have, quand on aura le temps', 'Je veux juste explorer',
     ],
     triedBefore: [
@@ -221,9 +221,9 @@ const COPY: Record<Lang, BookCopy> = {
     fieldLastName: 'Last name',
     fieldLastNamePh: 'Your last name',
     fieldEmail: 'Work email',
-    fieldEmailPh: 'firstname@company.com',
-    fieldCompany: 'Company',
-    fieldCompanyPh: 'Company name',
+    fieldEmailPh: 'firstname@school.org',
+    fieldCompany: 'School',
+    fieldCompanyPh: 'School name',
     fieldWebsite: 'Website',
     fieldWebsitePh: 'https://...',
     fieldRole: 'Your role',
@@ -291,7 +291,7 @@ const COPY: Record<Lang, BookCopy> = {
     ],
     repetitiveTasks: [
       'Data entry / transfer', 'Scheduling', 'Reporting / dashboards',
-      'Client / prospect follow-ups', 'Invoicing / quoting', 'Client / employee onboarding',
+      'Chasing incomplete files', 'Invoicing / family payments', 'Onboarding new staff',
       'Internal communication', 'Stock / order management', 'Other',
     ],
     hoursWasted: ['Less than 5h/week', '5-10h/week', '10-20h/week', '20-40h/week', '40h+/week'],
@@ -312,10 +312,10 @@ const COPY: Record<Lang, BookCopy> = {
     desiredResults: [
       'Save 10h+/week', 'Reduce operational errors',
       'Stop depending on one key person', 'Have a real-time dashboard',
-      'Automate prospecting / follow-ups', 'Cut SaaS costs', 'Scale without hiring',
+      'Automate follow-ups', 'Stop paying for a tool that does not fit', 'Absorb growth without hiring more admin',
     ],
     urgency: [
-      'Critical, we lose money every week', 'Important, within the next 3 months',
+      'Critical, it blocks us every week', 'Important, before the next school year',
       'Nice to have, when we have time', 'Just exploring',
     ],
     triedBefore: [
@@ -334,9 +334,9 @@ const COPY: Record<Lang, BookCopy> = {
     fieldLastName: 'Vezetéknév',
     fieldLastNamePh: 'A vezetékneve',
     fieldEmail: 'Céges e-mail',
-    fieldEmailPh: 'nev@cegnev.hu',
-    fieldCompany: 'Cég',
-    fieldCompanyPh: 'A cég neve',
+    fieldEmailPh: 'nev@iskola.hu',
+    fieldCompany: 'Intézmény',
+    fieldCompanyPh: 'Az intézmény neve',
     fieldWebsite: 'Weboldal',
     fieldWebsitePh: 'https://...',
     fieldRole: 'Az Ön szerepköre',
@@ -572,7 +572,7 @@ export default function BookPage() {
   /** Compact notes string passed to Cal so Nathan sees context at a glance. */
   const buildCalNotes = (): string => {
     const lines: string[] = []
-    if (form.entreprise) lines.push(`Entreprise : ${form.entreprise}`)
+    if (form.entreprise) lines.push(`Établissement : ${form.entreprise}`)
     if (form.role) lines.push(`Rôle : ${form.role}`)
     if (form.secteur) lines.push(`Secteur : ${form.secteur}`)
     if (form.taille) lines.push(`Équipe : ${form.taille}`)

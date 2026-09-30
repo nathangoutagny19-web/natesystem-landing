@@ -223,6 +223,7 @@ export default function AgenceLogicielSurMesurePage() {
 
       <RelatedLinks
         links={[
+          { href: '/', label: 'Vous êtes une école privée ?', desc: 'C\'est là qu\'on a le plus de valeur à apporter.' },
           { href: '/comment-choisir-prestataire-logiciel-ia', label: 'Comment choisir son prestataire', desc: 'Les critères pour ne pas se tromper.' },
           { href: '/services/logiciel-sur-mesure', label: 'Le logiciel sur-mesure', desc: 'Ce qu\'on construit, en détail.' },
           { href: '/prix-logiciel-sur-mesure', label: 'Combien ça coûte ?', desc: 'Les fourchettes de prix réalistes.' },

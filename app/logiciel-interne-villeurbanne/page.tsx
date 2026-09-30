@@ -223,6 +223,7 @@ export default function LogicielInterneVilleurbannePage() {
 
       <RelatedLinks
         links={[
+          { href: '/', label: 'Vous êtes une école privée ?', desc: 'C\'est là qu\'on a le plus de valeur à apporter.' },
           { href: '/logiciel-interne-lyon', label: 'Logiciel interne Lyon', desc: 'La même approche, pour Lyon.' },
           { href: '/logiciel-interne-lyon', label: 'Agence proche de Lyon', desc: 'Notre offre à Lyon et en région.' },
           { href: '/services/logiciel-sur-mesure', label: 'Le logiciel sur-mesure', desc: 'Ce qu\'on construit, en détail.' },

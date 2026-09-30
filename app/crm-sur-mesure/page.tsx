@@ -221,6 +221,7 @@ export default function CrmSurMesurePage() {
 
       <RelatedLinks
         links={[
+          { href: '/', label: 'Vous êtes une école privée ?', desc: 'C\'est là qu\'on a le plus de valeur à apporter.' },
           { href: '/crm-agence-immobiliere-sur-mesure', label: 'CRM agence immobilière', desc: 'Le CRM sur-mesure pour l\'immobilier.' },
           { href: '/services/logiciel-sur-mesure', label: 'Le logiciel sur-mesure', desc: 'Ce qu\'on construit, en détail.' },
           { href: '/prix-logiciel-sur-mesure', label: 'Combien ça coûte ?', desc: 'Les fourchettes de prix réalistes.' },

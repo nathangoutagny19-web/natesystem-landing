@@ -63,7 +63,7 @@ const jsonLd = {
           name: 'Que peut piloter un logiciel de gestion sur-mesure ?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Tout ce qui fait tourner votre activité, dans une seule solution : ventes et devis, opérations et planning, stocks et achats, suivi de l\'équipe, facturation, et tableaux de bord en temps réel. On part de vos process réels et on construit uniquement les modules qui vous servent, avec des intégrations vers vos outils existants quand c\'est utile.',
+            text: 'Tout ce qui fait tourner votre établissement, dans une seule solution : ventes et devis, opérations et planning, stocks et achats, suivi de l\'équipe, facturation, et tableaux de bord en temps réel. On part de vos process réels et on construit uniquement les modules qui vous servent, avec des intégrations vers vos outils existants quand c\'est utile.',
           },
         },
         {

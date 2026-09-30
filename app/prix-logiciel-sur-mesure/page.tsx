@@ -120,6 +120,7 @@ export default function PrixPage() {
 
       <RelatedLinks
         links={[
+          { href: '/', label: 'Vous êtes une école privée ?', desc: 'C\'est là qu\'on a le plus de valeur à apporter.' },
           { href: '/logiciel-sur-mesure-vs-saas', label: 'Sur-mesure ou SaaS ?', desc: 'Le comparatif qui explique où part vraiment votre budget.' },
           { href: '/blog/cout-reel-outils-non-connectes-pme', label: 'Le coût caché des outils non connectés', desc: 'Ce que vous payez déjà sans le voir.' },
           { href: '/agence-logiciel-ia-lyon', label: 'Agence à Lyon', desc: 'Qui conçoit et chiffre votre logiciel sur-mesure.' },

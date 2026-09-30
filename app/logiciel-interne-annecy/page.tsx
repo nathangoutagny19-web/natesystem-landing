@@ -221,6 +221,7 @@ export default function LogicielInterneAnnecyPage() {
 
       <RelatedLinks
         links={[
+          { href: '/', label: 'Vous êtes une école privée ?', desc: 'C\'est là qu\'on a le plus de valeur à apporter.' },
           { href: '/logiciel-interne-chambery', label: 'Logiciel interne Chambéry', desc: 'La même approche, pour la Savoie.' },
           { href: '/logiciel-interne-lyon', label: 'Logiciel interne Lyon', desc: 'Nos solutions pour le Rhône.' },
           { href: '/services/logiciel-sur-mesure', label: 'Le logiciel sur-mesure', desc: 'Ce qu\'on construit, en détail.' },

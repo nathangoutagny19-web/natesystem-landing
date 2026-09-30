@@ -34,12 +34,12 @@ const capabilities: Capability[] = [
     metricEn: 'Buried know-how, searchable in seconds', metricHu: 'Az elrejtett tudás, másodpercek alatt kereshetően',
   },
   {
-    titleFr: 'Qualification & relances',
-    titleEn: 'Lead qualification & follow-ups', titleHu: 'Leadminősítés és utánkövetés',
-    descFr: 'Chaque entrant lu, scoré, enrichi, routé vers la bonne personne. Relances personnalisées qui s\u2019arrêtent dès que le prospect répond.',
-    descEn: 'Every inbound read, scored, enriched and routed to the right person. Personal follow-ups that stop the moment the prospect replies.', descHu: 'Minden beérkező elolvasva, pontozva, kiegészítve és a megfelelő emberhez továbbítva. Személyes utánkövetés, amely leáll abban a pillanatban, amikor az érdeklődő válaszol.',
-    metricFr: 'Plus de leads convertis, sans budget pub',
-    metricEn: 'More leads converted, with no ad budget', metricHu: 'Több konvertált érdeklődő, hirdetési költés nélkül',
+    titleFr: 'Demandes des familles & relances',
+    titleEn: 'Family enquiries & follow-ups', titleHu: 'Családi megkeresések és emlékeztetők',
+    descFr: 'Chaque demande lue et orientée vers la bonne personne, même le dimanche soir. Les relances de pièces manquantes partent seules et s\u2019arrêtent dès que la famille répond.',
+    descEn: 'Every enquiry read and routed to the right person, even on a Sunday evening. Reminders for missing documents go out on their own and stop the moment the family replies.', descHu: 'Minden beérkező elolvasva, pontozva, kiegészítve és a megfelelő emberhez továbbítva. Személyes utánkövetés, amely leáll abban a pillanatban, amikor az érdeklődő válaszol.',
+    metricFr: 'Plus une demande qui attend le lundi matin',
+    metricEn: 'No enquiry left waiting for Monday morning', metricHu: 'Egyetlen megkeresés sem vár hétfő reggelig',
   },
   {
     titleFr: 'Data analytics',
@@ -133,8 +133,8 @@ export default function IaPage() {
           <FadeUp>
             <p className="font-sans" style={{ fontSize: 16, color: 'var(--text-secondary)', lineHeight: 1.75, fontWeight: 300, maxWidth: 680, margin: '0 auto', textAlign: 'center' }}>
               {d(
-                'C\u2019est une IA qui ne se contente pas de répondre : elle exécute des tâches de bout en bout dans vos outils, avec une mémoire persistante du contexte de votre activité. Elle apprend de chaque interaction et s\u2019améliore avec le temps, qualifier un lead, lire un document, router une demande, rédiger une première réponse.',
-                'It is AI that does more than answer: it runs tasks end to end inside your tools, holding a lasting memory of how your business works. It learns from every interaction and improves over time, whether it is qualifying a lead, reading a document, routing a request or drafting a first reply.'
+                'C\u2019est une IA qui ne se contente pas de répondre : elle exécute des tâches de bout en bout dans vos outils, avec une mémoire persistante du contexte de votre établissement. Elle apprend de chaque interaction et s\u2019améliore avec le temps, qualifier un lead, lire un document, router une demande, rédiger une première réponse.',
+                'It is AI that does more than answer: it runs tasks end to end inside your tools, holding a lasting memory of how your school works. It learns from every interaction and improves over time, whether it is qualifying a lead, reading a document, routing a request or drafting a first reply.'
               , 'Olyan MI, amely nem csak válaszol: végponttól végpontig futtat feladatokat az eszközeiben, tartósan megőrizve a cége működésének kontextusát. Minden interakcióból tanul, és idővel jobb lesz, legyen szó leadminősítésről, dokumentumolvasásról, kérés továbbításáról vagy egy első válasz megfogalmazásáról.')}
             </p>
           </FadeUp>

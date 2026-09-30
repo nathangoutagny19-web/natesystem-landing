@@ -7,31 +7,31 @@ import FadeUp from '@/components/ui/FadeUp'
 import { useLang } from '@/components/providers/LangProvider'
 import { makeD, pick } from '@/lib/lang'
 
-// Socle commun, ce que nos solutions apportent, quel que soit le secteur.
+// Socle commun, ce que la plateforme apporte quel que soit le métier.
 const BASE_FR = [
   'Données centralisées et claires',
-  'Business plus rentable',
-  'Leads mieux qualifiés',
-  'Hyper-personnalisation',
-  'Meilleure expérience client',
-  'Rapidité & réactivité',
+  'Des heures rendues chaque mois',
+  'Une seule information, partagée',
+  'Vos règles, pas celles d’un modèle',
+  'Des équipes plus sereines',
+  'Des élèves et étudiants mieux suivis',
 ]
 const BASE_HU = [
   'Központosított, tiszta adatok',
-  'Jövedelmezőbb működés',
-  'Jobban minősített érdeklődők',
-  'Hiperszemélyre szabás',
-  'Jobb ügyfélélmény',
-  'Gyorsaság és reakcióképesség',
+  'Havonta visszakapott órák',
+  'Egyetlen, közös információ',
+  'Az Ön szabályai, nem egy sablonéi',
+  'Nyugodtabb csapatok',
+  'Jobban követett diákok',
 ]
 
 const BASE_EN = [
   'Centralised, clear data',
-  'More profitable business',
-  'Better-qualified leads',
-  'Hyper-personalisation',
-  'Better client experience',
-  'Speed & responsiveness',
+  'Hours given back every month',
+  'One piece of information, shared',
+  'Your rules, not a template’s',
+  'Calmer teams',
+  'Students properly followed',
 ]
 
 type Sector = {
@@ -40,72 +40,87 @@ type Sector = {
   buildsFr: string[]; buildsEn: string[]; buildsHu: string[]
 }
 
-// 8 secteurs, resserrés sur le profil cible (service gros ticket d'abord,
-// puis coordination / multi-sites / structure / luxe). Tier 1 en premier.
+/**
+ * LES HUIT MÉTIERS D'UNE ÉCOLE, PAS HUIT SECTEURS.
+ *
+ * Avant le 30 septembre 2026, cette liste tenait huit industries : ingénierie,
+ * conseil, hôtellerie, immobilier, écoles, franchises, logistique, marketing.
+ * Elle a été retournée avec le reste du site, quand NateSystem s'est resserré
+ * sur les écoles privées.
+ *
+ * Huit entrées, même structure, même composant : ce qui change, c'est qu'un
+ * directeur ne voit plus sept industries qui ne sont pas la sienne. C'est ce
+ * que le transcript des experts edtech donne comme première cause de rejet,
+ * « offers that aren't relevant to my job », et c'est aussi ce que fait le
+ * leader du marché, qui adresse huit départements d'école un par un.
+ *
+ * Quatre côté administration, quatre côté pédagogie : les deux axes de
+ * l'offre. Voir natesystem-os/knowledge/voix/socle-ecoles.md.
+ */
 const SECTORS: Sector[] = [
   {
-    nameFr: 'Bureaux d’études, ingénierie & industrie', nameEn: 'Engineering & manufacturing', nameHu: 'Mérnökiroda és gyártás',
-    painFr: 'Vos affaires, vos chiffrages, vos documents techniques et vos heures vivent dans dix fichiers séparés. Résultat : vous ne savez jamais en temps réel quelle affaire est vraiment rentable.',
-    painEn: 'Your projects, quotes, technical docs and hours live in ten separate files. The result: you never know in real time which project is actually profitable.', painHu: 'A projektjei, árajánlatai, műszaki dokumentumai és munkaórái tíz külön fájlban élnek. Az eredmény: soha nem tudja valós időben, melyik projekt nyereséges valójában.',
-    buildsFr: ['Suivi d’affaires : temps passés, avancement et marge par projet', 'Chiffrage assisté et gestion documentaire centralisée', 'Traçabilité, contrôle qualité et conformité digitalisés'],
-    buildsEn: ['Project tracking: time, progress and margin per project', 'Assisted quoting and centralised document management', 'Digitised traceability, quality control and compliance'],
-    buildsHu: ['Projektkövetés: idő, készültség és árrés projektenként', 'Támogatott árajánlat-készítés és központi dokumentumkezelés', 'Digitalizált nyomon követhetőség, minőségellenőrzés és megfelelőség'],
+    nameFr: 'Direction', nameEn: 'Leadership', nameHu: 'Vezetőség',
+    painFr: 'Vous demandez un chiffre, il arrive trois jours plus tard et personne n’est sûr qu’il soit juste. Piloter un groupe scolaire sur des tableurs envoyés par mail, c’est décider en retard.',
+    painEn: 'You ask for a figure, it arrives three days later and nobody is sure it is right. Running a school group on spreadsheets sent by email means deciding late.', painHu: 'Kér egy számot, három nap múlva érkezik meg, és senki sem biztos benne, hogy helyes. Iskolacsoportot e-mailben küldött táblázatokon vezetni annyi, mint késve dönteni.',
+    buildsFr: ['Effectifs, heures et coûts de chaque site sur un écran', 'Les alertes qui comptent, avant que ça devienne un problème', 'Le même chiffre pour la direction et pour les établissements'],
+    buildsEn: ['Headcount, hours and costs for every site on one screen', 'The alerts that matter, before they become a problem', 'The same figure for leadership and for the sites'],
+    buildsHu: ['Minden telephely létszáma, órái és költségei egy képernyőn', 'A fontos riasztások, mielőtt problémává válnának', 'Ugyanaz a szám a vezetőségnek és az intézményeknek'],
   },
   {
-    nameFr: 'Conseil & consulting', nameEn: 'Consulting', nameHu: 'Tanácsadás',
-    painFr: 'Votre matière grise se vend cher, mais elle se perd dans des slides, des mails et des tableurs. Le savoir des missions ne se capitalise nulle part, et chaque livrable repart de zéro.',
-    painEn: 'Your expertise sells at a premium, but it gets lost in slides, emails and spreadsheets. Knowledge from past engagements is never capitalised, and every deliverable starts from scratch.', painHu: 'A szaktudása magas áron kel el, de elvész a diákban, az e-mailekben és a táblázatokban. A korábbi munkák tudása sosem halmozódik fel, és minden anyag nulláról indul.',
-    buildsFr: ['Gestion des missions : staffing, temps et rentabilité par dossier', 'Base de connaissance et livrables capitalisés, réutilisables', 'Portail client, reporting et facturation au temps automatisés'],
-    buildsEn: ['Engagement management: staffing, time and profit per case', 'Reusable knowledge base and capitalised deliverables', 'Client portal, reporting and time-based billing automated'],
-    buildsHu: ['Megbízáskezelés: erőforrás, idő és eredmény ügyenként', 'Újrahasznosítható tudásbázis és megőrzött anyagok', 'Ügyfélportál, riportálás és óraalapú számlázás automatizálva'],
+    nameFr: 'Administratif & financier', nameEn: 'Admin & finance', nameHu: 'Gazdasági hivatal',
+    painFr: 'Chaque mois, la paie se prépare à la main : on récupère les heures site par site, on corrige, on ressaisit. Quinze maillons entre le badge et le bulletin, et une erreur suffit à tout refaire.',
+    painEn: 'Every month payroll is prepared by hand: hours collected site by site, corrected, re-entered. Fifteen links between the badge and the payslip, and one error means starting again.', painHu: 'Minden hónapban kézzel készül a bér: telephelyenként összeszedett órák, javítás, újbóli bevitel. Tizenöt láncszem a beléptetőkártya és a bérlap között, és egyetlen hiba mindent újrakezdet.',
+    buildsFr: ['Heures supplémentaires et annualisation calculées sur votre convention', 'Export prêt pour la paie, sans ressaisie', 'Les écarts signalés avant la clôture, pas après'],
+    buildsEn: ['Overtime and annualised hours calculated against your own agreement', 'Payroll-ready export, no re-entry', 'Discrepancies flagged before closing, not after'],
+    buildsHu: ['Túlóra és éves munkaidő az Ön megállapodása szerint számolva', 'Bérszámfejtésre kész export, újbóli bevitel nélkül', 'Az eltérések a zárás előtt jeleznek, nem utána'],
   },
   {
-    nameFr: 'Hôtellerie, restauration & événementiel', nameEn: 'Hospitality & events', nameHu: 'Vendéglátás és rendezvény',
-    painFr: 'Réservations, plannings, staff et stocks éclatés sur dix outils qui ne se parlent pas. À l’échelle d’un groupe ou d’un gros événement, tout se joue dans l’urgence, sans vue d’ensemble.',
-    painEn: 'Bookings, rotas, staff and stock scattered across ten tools that don’t talk. At the scale of a group or a big event, it all plays out under pressure, with no overall view.', painHu: 'Foglalások, beosztások, munkatársak és készlet tíz egymással nem beszélő eszközben szétszórva. Csoport- vagy nagyrendezvény-léptékben mindez nyomás alatt zajlik, összkép nélkül.',
-    buildsFr: ['Réservations et confirmations automatisées, multi-sites', 'Plannings staff et prestataires en temps réel', 'CRM clients et marges suivies au jour le jour, par site'],
-    buildsEn: ['Automated bookings and confirmations, across sites', 'Real-time staff and vendor rotas', 'Client CRM and margins tracked daily, per site'],
-    buildsHu: ['Automatizált foglalás és visszaigazolás, több helyszínen', 'Valós idejű munkatárs- és beszállítói beosztás', 'Ügyfél-CRM és árrések napi követése helyszínenként'],
+    nameFr: 'Secrétariat & accueil', nameEn: 'Front office', nameHu: 'Titkárság és porta',
+    painFr: 'Le téléphone sonne, une famille demande une attestation, un dossier est incomplet et la pièce manquante est dans un mail de mars. Le temps passé à chercher est du temps volé à l’accueil.',
+    painEn: 'The phone rings, a family asks for a certificate, a file is incomplete and the missing document is in an email from March. Time spent searching is time taken from welcoming people.', painHu: 'Cseng a telefon, egy család igazolást kér, egy akta hiányos, a hiányzó irat pedig egy márciusi e-mailben van. A keresésre fordított idő a fogadástól vett idő.',
+    buildsFr: ['Un dossier par élève, complet, au même endroit', 'Les relances de pièces manquantes qui partent seules', 'Les documents récurrents préparés, vous validez'],
+    buildsEn: ['One record per student, complete, in one place', 'Reminders for missing documents that go out on their own', 'Recurring documents drafted, you just approve'],
+    buildsHu: ['Diákonként egy teljes akta, egy helyen', 'A hiányzó iratok emlékeztetői maguktól mennek ki', 'Az ismétlődő dokumentumok elkészülnek, Ön jóváhagyja'],
   },
   {
-    nameFr: 'Immobilier, promotion & construction', nameEn: 'Real estate, development & construction', nameHu: 'Ingatlan, fejlesztés és építőipar',
-    painFr: 'Programmes, lots, mandats et leads dispersés. De la donnée qui dort partout, sur des opérations qui pèsent lourd, et aucune vue consolidée du pipeline.',
-    painEn: 'Programmes, units, mandates and leads scattered. Data sleeping everywhere, on high-stakes operations, with no consolidated pipeline view.', painHu: 'Projektek, lakások, megbízások és érdeklődők szétszórva. Az adatok mindenütt alszanak, nagy tétű ügyleteknél, konszolidált pipeline-nézet nélkül.',
-    buildsFr: ['Pipeline programmes, lots, mandats et acquéreurs', 'Qualification et relance automatiques des leads', 'Suivi d’opérations, budgets et intervenants centralisé'],
-    buildsEn: ['Pipeline: programmes, units, mandates and buyers', 'Automatic lead qualification and follow-up', 'Centralised operations, budgets and stakeholders tracking'],
-    buildsHu: ['Pipeline: projektek, lakások, megbízások és vevők', 'Automatikus leadminősítés és utánkövetés', 'Központosított működés, költségvetések és résztvevők követése'],
+    nameFr: 'Vie scolaire & internat', nameEn: 'School life & boarding', nameHu: 'Iskolai élet és kollégium',
+    painFr: 'Surveillances, internat, restauration, sorties : des plannings qui changent tout le temps, tenus sur papier ou dans un tableur que trois personnes modifient en même temps.',
+    painEn: 'Supervision, boarding, catering, trips: rotas that change constantly, kept on paper or in a spreadsheet three people edit at once.', painHu: 'Felügyelet, kollégium, étkeztetés, kirándulások: folyton változó beosztások, papíron vagy olyan táblázatban, amit egyszerre hárman szerkesztenek.',
+    buildsFr: ['Un planning par site, visible dès qu’il change', 'Présences et absences constatées le jour même', 'Une alerte quand un créneau se vide, avec le lien pour le reprendre'],
+    buildsEn: ['One rota per site, visible the second it changes', 'Attendance and absence recorded the same day', 'An alert when a slot empties, with the link to pick it up'],
+    buildsHu: ['Telephelyenként egy beosztás, amint változik, látszik', 'A jelenlét és hiányzás aznap rögzül', 'Riasztás, ha egy műszak kiürül, a felvételi linkkel'],
   },
   {
-    nameFr: 'Institutions & écoles privées', nameEn: 'Institutions & private schools', nameHu: 'Intézmények és magániskolák',
-    painFr: 'Admissions, dossiers étudiants, plannings et scolarité gérés dans des outils qui datent. Des ressaisies partout, des données qui ne remontent jamais au bon endroit.',
-    painEn: 'Admissions, student records, schedules and academics run on dated tools. Re-entry everywhere, data that never lands in the right place.', painHu: 'Felvételi, hallgatói adatok, órarendek és oktatók elavult eszközökön futnak. Mindenütt újragépelés, adatok, amelyek sosem kerülnek a helyükre.',
-    buildsFr: ['Admissions et dossiers étudiants centralisés', 'Plannings, campus et scolarité en temps réel', 'Suivi, reporting et communication automatisés'],
-    buildsEn: ['Centralised admissions and student records', 'Real-time schedules, campus and academics', 'Automated tracking, reporting and communication'],
-    buildsHu: ['Központosított felvételi és hallgatói adatok', 'Valós idejű órarend, kampusz és oktatók', 'Automatizált nyomon követés, riportálás és kommunikáció'],
+    nameFr: 'Équipe pédagogique', nameEn: 'Teaching staff', nameHu: 'Tanári kar',
+    painFr: 'Vos enseignants tiennent leurs propres tableurs parce que l’outil de l’école ne fait pas ce dont ils ont besoin. Du temps passé sur du suivi administratif, pas sur leur classe.',
+    painEn: 'Your teachers keep their own spreadsheets because the school tool does not do what they need. Time spent on admin tracking, not on their class.', painHu: 'A tanárai saját táblázatokat vezetnek, mert az iskolai eszköz nem azt tudja, amire szükségük van. Adminisztrációra megy az idő, nem az osztályra.',
+    buildsFr: ['Le suivi dont ils ont vraiment besoin, pas celui d’un éditeur', 'Saisie une fois, visible partout où c’est utile', 'Ce qui est répétitif préparé d’avance, à valider'],
+    buildsEn: ['The tracking they actually need, not a vendor’s idea of it', 'Entered once, visible everywhere it matters', 'The repetitive parts drafted ahead, ready to approve'],
+    buildsHu: ['Az a követés, amire tényleg szükségük van, nem egy gyártóé', 'Egyszer beírva, mindenhol látszik, ahol számít', 'Az ismétlődő rész előre elkészül, csak jóvá kell hagyni'],
   },
   {
-    nameFr: 'Têtes de réseau & franchises', nameEn: 'Networks & franchises', nameHu: 'Hálózatok és franchise-ok',
-    painFr: 'Vous pilotez un réseau, mais chaque point de vente remonte ses chiffres à sa façon, en retard, dans son coin. Impossible d’avoir une vue fiable et en temps réel de tout le réseau.',
-    painEn: 'You run a network, but every location reports its numbers its own way, late, in its own corner. No reliable, real-time view of the whole network.', painHu: 'Hálózatot vezet, de minden egység a maga módján, késve és külön jelenti a számait. Nincs megbízható, valós idejű kép az egészről.',
-    buildsFr: ['Remontée automatique des données de chaque site', 'Tableau de bord réseau consolidé en temps réel', 'Conformité, procédures et reporting standardisés'],
-    buildsEn: ['Automatic data feed from every location', 'Consolidated network dashboard in real time', 'Standardised compliance, procedures and reporting'],
-    buildsHu: ['Automatikus adatbeérkezés minden egységből', 'Konszolidált hálózati irányítópult valós időben', 'Szabványosított megfelelőség, eljárások és riportálás'],
+    nameFr: 'Suivi des élèves et étudiants', nameEn: 'Student tracking', nameHu: 'Diákkövetés',
+    painFr: 'L’information sur un élève est répartie entre le professeur principal, la vie scolaire et le secrétariat. Quand quelqu’un s’inquiète pour lui, personne n’a la vue complète.',
+    painEn: 'What is known about a student is split between the form tutor, school life and the front office. When someone is worried, nobody has the full picture.', painHu: 'Amit egy diákról tudni lehet, megoszlik az osztályfőnök, az iskolai élet és a titkárság között. Ha valaki aggódik, senkinek sincs teljes képe.',
+    buildsFr: ['Un parcours par élève, de l’inscription au diplôme', 'Ce que chaque rôle a le droit de voir, et rien de plus', 'Les signaux faibles remontés tôt, pas au conseil de classe'],
+    buildsEn: ['One journey per student, from enrolment to leaving', 'What each role is allowed to see, and nothing more', 'Early signals surfaced early, not at the term review'],
+    buildsHu: ['Diákonként egy pálya, a beiratkozástól a végzésig', 'Amit az adott szerep láthat, és semmi többet', 'A gyenge jelek korán jelennek meg, nem az osztályozó értekezleten'],
   },
   {
-    nameFr: 'Logistique & supply chain', nameEn: 'Logistics & supply chain', nameHu: 'Logisztika és ellátási lánc',
-    painFr: 'Flux, stocks et transport suivis dans des outils qui ne remontent rien de fiable. Vous pilotez à retardement, sur des chiffres déjà faux.',
-    painEn: 'Flows, stock and transport tracked in tools that surface nothing reliable. You steer with a lag, on numbers already wrong.', painHu: 'Áramlások, készlet és szállítás olyan eszközökben követve, amelyek semmi megbízhatót nem adnak. Késéssel irányít, már téves számokon.',
-    buildsFr: ['Stock et réappros en temps réel', 'Suivi expéditions et transporteurs', 'Analytique flux, ruptures et coûts'],
-    buildsEn: ['Real-time stock and reordering', 'Shipment and carrier tracking', 'Flow, stockout and cost analytics'],
-    buildsHu: ['Valós idejű készlet és utánrendelés', 'Szállítmány- és fuvarozókövetés', 'Áramlás-, kifogyás- és költségelemzés'],
+    nameFr: 'Stages & alternance', nameEn: 'Internships & placements', nameHu: 'Gyakorlat és duális képzés',
+    painFr: 'Conventions, entreprises partenaires, tuteurs, soutenances : suivis dans un tableur par promotion, refait chaque année, et jamais au même format.',
+    painEn: 'Agreements, partner companies, tutors, vivas: tracked in one spreadsheet per cohort, rebuilt every year, never in the same format.', painHu: 'Megállapodások, partnercégek, mentorok, védések: évfolyamonként egy táblázatban követve, évente újraírva, sosem ugyanabban a formában.',
+    buildsFr: ['Entreprises, conventions et tuteurs au même endroit', 'Qui n’a pas encore de stage, vu tout de suite', 'Le réseau d’anciens qui reste joignable d’une promotion à l’autre'],
+    buildsEn: ['Companies, agreements and tutors in one place', 'Who still has no placement, visible at a glance', 'An alumni network that stays reachable from one cohort to the next'],
+    buildsHu: ['Cégek, megállapodások és mentorok egy helyen', 'Ki nincs még helyen, azonnal látszik', 'Egy öregdiák-hálózat, amely évfolyamról évfolyamra elérhető marad'],
   },
   {
-    nameFr: 'Marketing & publicité', nameEn: 'Marketing & advertising', nameHu: 'Marketing és reklám',
-    painFr: 'Briefs, production et reporting client dispersés. Du temps perdu sur du répétitif, au lieu de le passer sur la création qui fait la différence.',
-    painEn: 'Briefs, production and client reporting scattered. Time lost on repetitive work instead of the creative work that makes the difference.', painHu: 'Briefek, gyártás és ügyfélriportok szétszórva. Idő vész el ismétlődő munkán a kreatív munka helyett, amely a különbséget adja.',
-    buildsFr: ['Pipeline campagnes et assets centralisé', 'Reporting client automatisé', 'Génération de contenu assistée par IA'],
-    buildsEn: ['Centralised campaign and asset pipeline', 'Automated client reporting', 'AI-assisted content generation'],
-    buildsHu: ['Központosított kampány- és anyagkezelés', 'Automatizált ügyfélriportálás', 'MI-támogatott tartalomkészítés'],
+    nameFr: 'Informatique', nameEn: 'IT', nameHu: 'Informatika',
+    painFr: 'Vous héritez d’outils que vous n’avez pas choisis, avec des données d’élèves dispersées et des comptes que personne ne ferme. Et chaque nouveau projet vous retombe dessus.',
+    painEn: 'You inherit tools you did not choose, with student data scattered and accounts nobody closes. And every new project lands on your desk.', painHu: 'Olyan eszközöket örököl, amelyeket nem Ön választott, szétszórt diákadatokkal és fiókokkal, amelyeket senki nem zár le. És minden új projekt Önre hárul.',
+    buildsFr: ['Hébergement en Europe, accès cloisonnés par rôle', 'La reprise de vos données existantes, faite par nous', 'Le code et la documentation livrés : vous n’êtes captif de personne'],
+    buildsEn: ['EU hosting, access partitioned by role', 'Migration of your existing data, done by us', 'Code and documentation delivered: you are captive to nobody'],
+    buildsHu: ['Európai tárhely, szerepkörönként elkülönített hozzáférés', 'A meglévő adatai átvétele, általunk elvégezve', 'A kód és a dokumentáció átadva: senkinek nem kiszolgáltatott'],
   },
 ]
 
@@ -119,21 +134,21 @@ export default function Sectors() {
     <section id="secteurs" style={{ padding: '40px 24px 24px' }}>
       <div className="mx-auto" style={{ maxWidth: '1100px' }}>
         <FadeUp className="text-center mb-16">
-          <span className="section-label">{d('Les secteurs qu’on sert', 'Industries we serve', 'Ágazatok, amelyeket kiszolgálunk')}</span>
+          <span className="section-label">{d('Qui s’en sert, chez vous', 'Who uses it, at your school', 'Ki használja Önöknél')}</span>
           <h2 className="font-serif italic" style={{ fontSize: 'clamp(26px, 3.6vw, 38px)', fontWeight: 400, color: 'var(--text)', lineHeight: 1.2, margin: '4px 0 16px' }}>
-            {d('Le secteur change. ', 'The sector changes. ', 'Az ágazat változik. ')}
+            {d('Le métier change. ', 'The job changes. ', 'A munkakör változik. ')}
             <span className="accent">{d('La méthode, non.', 'The method doesn’t.', 'A módszer nem.')}</span>
           </h2>
           <p className="font-sans" style={{ fontSize: '15px', fontWeight: 300, color: 'var(--text-secondary)', maxWidth: '600px', margin: '0 auto', lineHeight: 1.7 }}>
-            {d('Un socle commun pour tous, puis on personnalise pour votre métier. Cliquez sur le vôtre.',
-               'A shared foundation for everyone, then we tailor it to your trade. Click yours.', 'Közös alap mindenkinek, aztán az Ön szakmájára szabjuk. Kattintson a sajátjára.')}
+            {d('Un socle commun à tout l’établissement, puis ce qui change d’un métier à l’autre. Cliquez sur le vôtre.',
+               'A shared foundation across the school, then what changes from one role to the next. Click yours.', 'Közös alap az egész intézményben, aztán ami munkakörönként változik. Kattintson a sajátjára.')}
           </p>
         </FadeUp>
 
         <FadeUp delay={0.1}>
           <div className="sec-x">
             {/* Liste des secteurs, cliquable */}
-            <div className="sec-list" role="tablist" aria-label={d('Secteurs', 'Industries', 'Ágazatok')}>
+            <div className="sec-list" role="tablist" aria-label={d('Métiers', 'Roles', 'Munkakörök')}>
               {SECTORS.map((s, i) => {
                 const on = i === active
                 return (
@@ -164,7 +179,7 @@ export default function Sectors() {
                   transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
                 >
                   <span className="font-mono sec-panel-idx">
-                    {d('Secteur', 'Industry', 'Ágazat')} · {String(active + 1).padStart(2, '0')}/{String(SECTORS.length).padStart(2, '0')}
+                    {d('Métier', 'Role', 'Munkakör')} · {String(active + 1).padStart(2, '0')}/{String(SECTORS.length).padStart(2, '0')}
                   </span>
                   <h3 className="font-serif italic sec-panel-title">{d(cur.nameFr, cur.nameEn, cur.nameHu)}</h3>
                   <p className="font-sans sec-panel-pain">{d(cur.painFr, cur.painEn, cur.painHu)}</p>
@@ -178,7 +193,7 @@ export default function Sectors() {
                   </div>
 
                   {/* Personnalisation secteur */}
-                  <span className="font-mono sec-panel-label">{d('Et concrètement, pour votre secteur', 'And concretely, for your sector', 'És konkrétan, az Ön ágazatában')}</span>
+                  <span className="font-mono sec-panel-label">{d('Et concrètement, pour ce métier', 'And concretely, for this role', 'És konkrétan, ennél a munkakörnél')}</span>
                   <ul className="sec-builds">
                     {pick(lang, { fr: cur.buildsFr, en: cur.buildsEn, hu: cur.buildsHu }).map((b) => (
                       <li key={b} className="sec-build font-sans">

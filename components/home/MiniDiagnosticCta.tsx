@@ -25,13 +25,13 @@ export default function MiniDiagnosticCta() {
           >
             {d('On vous offre un ', 'We give you a ', 'Adunk Önnek egy ')}
             <span className="accent">{d('diagnostic gratuit, sans e-mail', 'free diagnostic, no email', 'ingyenes diagnosztikát, e-mail nélkül')}</span>
-            {d(', pour voir où partent vos heures et où débloquer de la valeur.', ', to see where your hours go and where to unlock value.', ', hogy lássa, hová mennek az órái, és hol szabadítható fel érték.')}
+            {d(', pour voir où partent les heures de vos équipes.', ', to see where your teams’ hours go.', ', hogy lássa, hová mennek az órái, és hol szabadítható fel érték.')}
           </h3>
           <p
             className="font-sans"
             style={{ fontSize: 13, fontWeight: 300, color: 'var(--text-muted)', lineHeight: 1.55, maxWidth: 480, margin: '12px auto 22px' }}
           >
-            {d('60 secondes, chiffré, 3 leviers priorisés. Sans engagement.', '60 seconds, quantified, 3 prioritised levers. No commitment.', '60 másodperc, számszerűsítve, 3 rangsorolt beavatkozási ponttal. Kötelezettség nélkül.')}
+            {d('60 secondes, chiffré, 3 pistes par ordre de priorité. Sans engagement.', '60 seconds, quantified, 3 priorities in order. No commitment.', '60 másodperc, számszerűsítve, 3 rangsorolt beavatkozási ponttal. Kötelezettség nélkül.')}
           </p>
           <Link href={localizedHref('/tools/diagnostic-ia', lang)} className="btn-primary" style={{ fontSize: 13, padding: '13px 26px' }}>
             <span className="btn-primary-dot" />

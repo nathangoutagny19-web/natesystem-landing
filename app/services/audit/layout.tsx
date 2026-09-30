@@ -59,7 +59,7 @@ const jsonLd = {
           name: 'À quoi sert la cartographie des process ?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'La cartographie des process structure votre activité : qui fait quoi, dans quel ordre, avec quelles infos. C\'est cette base claire qui garantit qu\'on construit le bon outil. On commence par corriger les problèmes fondamentaux pour éviter d\'automatiser des opérations défectueuses, puis on dessine vos workflows tels qu\'ils devraient tourner.',
+            text: 'La cartographie des process structure votre établissement : qui fait quoi, dans quel ordre, avec quelles infos. C\'est cette base claire qui garantit qu\'on construit le bon outil. On commence par corriger les problèmes fondamentaux pour éviter d\'automatiser des opérations défectueuses, puis on dessine vos workflows tels qu\'ils devraient tourner.',
           },
         },
       ],

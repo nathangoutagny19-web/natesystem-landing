@@ -224,6 +224,7 @@ export default function LogicielInterneClermontFerrandPage() {
 
       <RelatedLinks
         links={[
+          { href: '/', label: 'Vous êtes une école privée ?', desc: 'C\'est là qu\'on a le plus de valeur à apporter.' },
           { href: '/logiciel-interne-lyon', label: 'Logiciel interne Lyon', desc: 'La même approche, pour le Rhône.' },
           { href: '/logiciel-interne-lyon', label: 'Agence à Lyon', desc: 'Notre base régionale en Auvergne-Rhône-Alpes.' },
           { href: '/services/logiciel-sur-mesure', label: 'Le logiciel sur-mesure', desc: 'Ce qu\'on construit, en détail.' },

@@ -105,7 +105,7 @@ export default function AuditPage() {
           <FadeUp>
             <span className="section-label">{d('Audit & consulting', 'Audit & consulting', 'Audit és tanácsadás')}</span>
             <h1 className="font-serif italic" style={{ fontSize: 'clamp(32px, 5.4vw, 54px)', fontWeight: 400, lineHeight: 1.1, color: 'var(--text)', maxWidth: 780, margin: '14px auto 24px' }}>
-              {d('On comprend votre activité ', 'We understand your business ', 'Megértjük a cégét, ')}<span className="accent" style={{ color: 'var(--accent)' }}>{d('avant de construire quoi que ce soit.', 'before we build anything at all.', 'mielőtt bármit is építenénk.')}</span>
+              {d('On comprend votre établissement ', 'We understand your school ', 'Megértjük a cégét, ')}<span className="accent" style={{ color: 'var(--accent)' }}>{d('avant de construire quoi que ce soit.', 'before we build anything at all.', 'mielőtt bármit is építenénk.')}</span>
             </h1>
             <p className="font-sans" style={{ fontSize: 'clamp(15px, 3vw, 18px)', fontWeight: 300, color: 'var(--text-secondary)', maxWidth: 660, margin: '0 auto 36px', lineHeight: 1.65 }}>
               {d(
@@ -238,13 +238,13 @@ export default function AuditPage() {
                 'Vous sentez que vous perdez du temps, sans savoir vraiment où',
                 'Vos données sont éparpillées sur une pile d\u2019outils',
                 'Vous voulez un plan clair avant d\u2019investir un euro',
-                'Vous êtes prêt à regarder votre activité en face',
+                'Vous êtes prêt à regarder votre établissement en face',
             ],
             en: [
                 'You can feel you are losing time, without knowing quite where',
                 'Your data is scattered across a pile of tools',
                 'You want a clear plan before spending a euro',
-                'You are ready to look at your business honestly',
+                'You are ready to look at your school honestly',
             ],
             hu: [
                 'Érzi, hogy időt veszít, csak azt nem tudja, pontosan hol',
@@ -290,8 +290,8 @@ export default function AuditPage() {
               </h2>
               <p className="font-sans" style={{ fontSize: 15, fontWeight: 300, color: 'var(--text-secondary)', lineHeight: 1.7, maxWidth: 520, margin: '0 auto 32px' }}>
                 {d(
-                  'Un appel offert. On regarde votre activité et on identifie où vous faire gagner du temps et de l\u2019argent. Vous repartez avec un plan clair, même si on ne travaille pas ensemble.',
-                  'A free call. We look at your business and find where to win you time and money. You leave with a clear plan, even if we never work together.'
+                  'Un appel offert. On regarde votre établissement et on identifie où vous faire gagner du temps et de l\u2019argent. Vous repartez avec un plan clair, même si on ne travaille pas ensemble.',
+                  'A free call. We look at your school and find where to win you time and money. You leave with a clear plan, even if we never work together.'
                 , 'Egy ingyenes hívás. Megnézzük a cégét, és megtaláljuk, hol nyerhet időt és pénzt. Világos tervvel távozik, akkor is, ha soha nem dolgozunk együtt.')}
               </p>
               <Link href={localizedHref(CAL_LINK, lang)} className="btn-primary" style={{ margin: '0 auto' }}>

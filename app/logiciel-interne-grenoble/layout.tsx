@@ -67,7 +67,7 @@ const jsonLd = {
           name: 'Un logiciel interne convient-il aux PME industrielles et technologiques de Grenoble ?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Oui. Les entreprises de l\'écosystème grenoblois, industrie, microélectronique, deep tech, ont souvent des process complexes qu\'aucun logiciel standard ne couvre vraiment. Un logiciel interne sur-mesure est précisément conçu autour de ces process et de la donnée propre à votre métier, sans vous obliger à plier votre activité à un outil générique.',
+            text: 'Oui. Les entreprises de l\'écosystème grenoblois, industrie, microélectronique, deep tech, ont souvent des process complexes qu\'aucun logiciel standard ne couvre vraiment. Un logiciel interne sur-mesure est précisément conçu autour de ces process et de la donnée propre à votre métier, sans vous obliger à plier votre établissement à un outil générique.',
           },
         },
         {

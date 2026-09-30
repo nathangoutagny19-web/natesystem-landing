@@ -155,6 +155,7 @@ export default function RestaurationPage() {
 
       <RelatedLinks
         links={[
+          { href: '/', label: 'Vous êtes une école privée ?', desc: 'C\'est là qu\'on a le plus de valeur à apporter.' },
           { href: '/logiciel-sur-mesure-vs-saas', label: 'Sur-mesure ou SaaS ?', desc: 'Pourquoi sortir de l\'empilement d\'outils du restaurant.' },
           { href: '/prix-logiciel-sur-mesure', label: 'Combien ça coûte ?', desc: 'Les fourchettes de prix réalistes.' },
           { href: '/logiciel-sur-mesure-enseignement-superieur', label: 'Et pour l\'enseignement supérieur ?', desc: 'Un autre secteur, la même méthode.' },

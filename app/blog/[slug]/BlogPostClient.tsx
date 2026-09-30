@@ -193,7 +193,7 @@ export default function BlogPostClient({ post }: { post: BlogPost }) {
                   color: 'var(--text)',
                 }}
               >
-                Prêt à automatiser vos opérations ?
+                Vous dirigez un établissement scolaire ?
               </h2>
               <p
                 style={{
@@ -207,9 +207,9 @@ export default function BlogPostClient({ post }: { post: BlogPost }) {
                   margin: '0 auto 32px',
                 }}
               >
-                Réservez un appel de consulting offert. On identifie ensemble
-                vos 3 processus à plus fort potentiel d&apos;automatisation. Vous repartez
-                avec une roadmap, même si on ne bosse pas ensemble.
+                Réservez un appel offert. On regarde comment votre établissement
+                fonctionne vraiment et on vous dit où partent les heures de vos équipes.
+                Vous repartez avec un plan clair, même si on ne travaille jamais ensemble.
               </p>
               <Link href="/book" className="btn-primary" style={{ margin: '0 auto' }}>
                 <span className="btn-primary-dot" />

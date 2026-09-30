@@ -230,6 +230,7 @@ export default function ClubSportifPage() {
 
       <RelatedLinks
         links={[
+          { href: '/', label: 'Vous êtes une école privée ?', desc: 'C\'est là qu\'on a le plus de valeur à apporter.' },
           { href: '/logiciel-sur-mesure-vs-saas', label: 'Sur-mesure ou SaaS ?', desc: 'Pourquoi un système qui appartient au club plutôt qu\'un outil loué.' },
           { href: '/prix-logiciel-sur-mesure', label: 'Combien ça coûte ?', desc: 'Les fourchettes de prix réalistes.' },
           { href: '/logiciel-sur-mesure-conseil', label: 'Et pour le conseil ?', desc: 'Un autre secteur, la même méthode.' },

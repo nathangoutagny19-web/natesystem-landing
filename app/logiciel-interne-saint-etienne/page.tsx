@@ -221,6 +221,7 @@ export default function LogicielInterneSaintEtiennePage() {
 
       <RelatedLinks
         links={[
+          { href: '/', label: 'Vous êtes une école privée ?', desc: 'C\'est là qu\'on a le plus de valeur à apporter.' },
           { href: '/logiciel-interne-lyon', label: 'Logiciel interne Lyon', desc: 'La même approche, pour le Rhône.' },
           { href: '/agence-logiciel-ia-lyon', label: 'Agence logiciel & IA à Lyon', desc: 'Notre offre complète.' },
           { href: '/services/logiciel-sur-mesure', label: 'Le logiciel sur-mesure', desc: 'Ce qu\'on construit, en détail.' },

@@ -24,6 +24,7 @@
  */
 
 import { useLang } from '@/components/providers/LangProvider'
+import { makeD } from '@/lib/lang'
 
 // `compact` shrinks a specific logo below the row height, for WIDE horizontal
 // logos (icon + wordmark + baseline) that would otherwise read heavier than the
@@ -43,7 +44,6 @@ type ClientRef =
 // vendeglatas.png` arrives, flip `type: 'wordmark'` to `type: 'logo'`
 // and add the `src`.
 const clients: ClientRef[] = [
-  { name: 'Chromosome', type: 'logo', src: '/logos/chromosome.png', href: 'https://chromosome-saint-etienne.fr/' },
   {
     name: 'Les Chartreux',
     type: 'logo-white',
@@ -51,6 +51,7 @@ const clients: ClientRef[] = [
     href: 'https://www.leschartreux.net/',
   },
   { name: 'Université Jean Monnet', type: 'logo', src: '/logos/ujm.png', href: 'https://www.univ-st-etienne.fr/fr/index.html' },
+  { name: 'Chromosome', type: 'logo', src: '/logos/chromosome.png', href: 'https://chromosome-saint-etienne.fr/' },
   { name: 'Vendéglátás Menedzsment Kft.', type: 'wordmark', href: 'https://vendeglatasmenedzsment.hu/' },
   // SimpleTeam, blue 'S' wordmark. Rendered as `logo-white`: the alpha-cut
   // artwork is flattened to a solid silhouette by CSS (brightness(0)) so it
@@ -69,10 +70,11 @@ const clients: ClientRef[] = [
 export default function ClientsBar() {
   const { lang } = useLang()
 
-  const label =
-    lang === 'fr'
-      ? 'ILS NOUS FONT CONFIANCE'
-      : 'TRUSTED BY'
+  const label = makeD(lang)(
+    'ILS UTILISENT NOS OUTILS',
+    'THEY USE OUR TOOLS',
+    'ŐK HASZNÁLJÁK AZ ESZKÖZEINKET'
+  )
 
   return (
     <section

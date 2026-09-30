@@ -113,6 +113,7 @@ export default function LyonPage() {
 
       <RelatedLinks
         links={[
+          { href: '/', label: 'Vous êtes une école privée ?', desc: 'C\'est là qu\'on a le plus de valeur à apporter.' },
           { href: '/logiciel-interne-lyon', label: 'Logiciel interne Lyon', desc: 'Solutions logicielles internes sur-mesure pour entreprise.' },
           { href: '/logiciel-interne-saint-etienne', label: 'Logiciel interne Saint-Étienne', desc: 'La même approche, pour la Loire.' },
           { href: '/prix-logiciel-sur-mesure', label: 'Combien ça coûte ?', desc: 'Les fourchettes de prix réalistes pour une PME.' },

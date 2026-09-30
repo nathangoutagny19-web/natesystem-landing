@@ -101,13 +101,13 @@ export default function AProposPage() {
 
               <div>
                 <p className="font-mono" style={{ fontSize: 11, letterSpacing: 1.8, color: 'var(--accent)', textTransform: 'uppercase', margin: '0 0 16px', fontWeight: 500 }}>
-                  {d('Fondateur · Logiciel sur-mesure · IA appliquée · Lyon', 'Founder · Custom software · Applied AI · Lyon', 'Alapító · Egyedi szoftver · Alkalmazott MI · Lyon')}
+                  {d('Fondateur · Plateformes sur-mesure pour écoles · Lyon', 'Founder · Custom platforms for schools · Lyon', 'Alapító · Egyedi platformok iskoláknak · Lyon')}
                 </p>
                 <p className="font-sans" style={{ fontSize: 15.5, color: 'var(--text-secondary)', lineHeight: 1.75, fontWeight: 300, margin: '0 0 16px' }}>
                   {d(
-                    'Ingénieur formé au croisement du software et de l\u2019IA appliquée. Des années à construire des systèmes opérationnels pour des PME françaises et hongroises, restauration, enseignement supérieur, conseil. Une conviction simple : le logiciel qui appartient à l\u2019entreprise vaut mieux que dix SaaS qu\u2019elle loue à vie.',
-                    'An engineer trained where software meets applied AI. Years spent building operational systems for French and Hungarian companies, in restaurants, higher education and consulting. One simple conviction: software a company owns beats ten it rents for life.'
-                  , 'Mérnök, a szoftverfejlesztés és az alkalmazott MI metszéspontján. Évek működő rendszerek építésével francia és magyar cégeknek: vendéglátás, felsőoktatás, tanácsadás. Egy egyszerű meggyőződés: az a szoftver, amely a cégé, többet ér tíz élethosszig bérelt SaaS-előfizetésnél.')}
+                    'Ingénieur formé au croisement du logiciel et de l\u2019IA appliquée. Des années à construire des systèmes opérationnels pour des organisations à forte contrainte, en France et en Hongrie, dont des établissements scolaires. Une conviction simple : le logiciel qui appartient à l\u2019entreprise vaut mieux que dix SaaS qu\u2019elle loue à vie.',
+                    'An engineer trained where software meets applied AI. Years spent building operational systems for organisations under heavy operational constraint, in France and Hungary, schools among them. One simple conviction: software a company owns beats ten it rents for life.'
+                  , 'Mérnök, a szoftverfejlesztés és az alkalmazott MI metszéspontján. Évek működő rendszerek építésével erősen terhelt szervezeteknek Franciaországban és Magyarországon, köztük oktatási intézményeknek. Egy egyszerű meggyőződés: az a szoftver, amely a cégé, többet ér tíz élethosszig bérelt SaaS-előfizetésnél.')}
                 </p>
                 <p className="font-sans" style={{ fontSize: 14, color: 'var(--text)', fontWeight: 500, fontStyle: 'italic', borderLeft: '2px solid var(--accent)', paddingLeft: 14, margin: '0 0 22px', lineHeight: 1.6 }}>
                   {d('Si vous me parlez, c\u2019est moi qui code derrière. Pas un commercial, pas un junior.', 'If you are talking to me, I am the one writing the code. Not a sales rep, not a junior.', 'Ha velem beszél, én írom mögötte a kódot. Nem egy értékesítő, nem egy junior.')}

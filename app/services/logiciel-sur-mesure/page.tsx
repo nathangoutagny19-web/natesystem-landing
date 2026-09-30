@@ -55,13 +55,13 @@ const modules: Module[] = [
 const painsFr = [
   'Excel, mails et dix outils qui ne se parlent pas',
   'Des heures perdues chaque semaine à tout recopier d\u2019un outil à l\u2019autre',
-  'Aucune vue claire sur votre activité, vous pilotez à l\u2019aveugle',
+  'Aucune vue claire sur votre établissement, vous pilotez à l\u2019aveugle',
   'Quand quelqu\u2019un part, son savoir part avec lui',
 ]
 const painsEn = [
   'Spreadsheets, email and ten tools that do not talk to each other',
   'Hours lost every week retyping everything from one tool into the next',
-  'No clear view of your business, so you steer blind',
+  'No clear view of your school, so you steer blind',
   'When someone leaves, what they knew leaves with them',
 ]
 const painsHu = [
@@ -103,7 +103,7 @@ export default function LogicielSurMesurePage() {
           <FadeUp>
             <span className="section-label">{d('Logiciel & plateforme sur-mesure', 'Custom software & platform', 'Egyedi szoftver és platform')}</span>
             <h1 className="font-serif italic" style={{ fontSize: 'clamp(32px, 5.4vw, 54px)', fontWeight: 400, lineHeight: 1.1, color: 'var(--text)', maxWidth: 780, margin: '14px auto 24px' }}>
-              {d('Un seul logiciel sur-mesure pour ', 'One piece of custom software to ', 'Egyetlen egyedi szoftver, hogy ')}<span className="accent" style={{ color: 'var(--accent)' }}>{d('faire grandir votre activité.', 'grow your business.', 'növelje a cégét.')}</span>
+              {d('Une seule plateforme pour ', 'One piece of custom software to ', 'Egyetlen egyedi szoftver, hogy ')}<span className="accent" style={{ color: 'var(--accent)' }}>{d('faire tourner votre établissement.', 'run your school.', 'növelje a cégét.')}</span>
             </h1>
             <p className="font-sans" style={{ fontSize: 'clamp(15px, 3vw, 18px)', fontWeight: 300, color: 'var(--text-secondary)', maxWidth: 660, margin: '0 auto 36px', lineHeight: 1.65 }}>
               {d(
@@ -131,8 +131,8 @@ export default function LogicielSurMesurePage() {
           <FadeUp>
             <p className="font-sans" style={{ fontSize: 16, color: 'var(--text-secondary)', lineHeight: 1.75, fontWeight: 300, maxWidth: 680, margin: '0 auto', textAlign: 'center' }}>
               {d(
-                'C\u2019est une application métier conçue spécifiquement pour votre façon de travailler, au lieu d\u2019un SaaS générique que vous louez. Elle réunit en un seul système ce que vous éparpillez aujourd\u2019hui entre tableurs, mails et outils déconnectés. Le code vous appartient, et il évolue avec votre activité.',
-                'It is a business application designed specifically around how you work, instead of a generic SaaS you rent. It brings into one system what you scatter today across spreadsheets, email and disconnected tools. You own the code, and it grows with your business.'
+                'C\u2019est une application métier conçue spécifiquement pour votre façon de travailler, au lieu d\u2019un SaaS générique que vous louez. Elle réunit en un seul système ce que vous éparpillez aujourd\u2019hui entre tableurs, mails et outils déconnectés. Le code vous appartient, et il évolue avec votre établissement.',
+                'It is a business application designed specifically around how you work, instead of a generic SaaS you rent. It brings into one system what you scatter today across spreadsheets, email and disconnected tools. You own the code, and it grows with your school.'
               , 'Olyan üzleti alkalmazás, amelyet kifejezetten az Ön munkamódszerére terveznek, nem pedig egy bérelt, általános SaaS. Egyetlen rendszerbe hozza azt, amit ma táblázatok, e-mailek és összefüggéstelen eszközök között szór szét. A kód az Öné, és együtt fejlődik a cégével.')}
             </p>
           </FadeUp>
@@ -264,13 +264,13 @@ export default function LogicielSurMesurePage() {
           pick(lang, {
             fr: [
                 'Vous voyez ça comme un investissement sur le long terme',
-                'Vous voulez vraiment faire avancer votre activité',
+                'Vous voulez vraiment faire avancer votre établissement',
                 'Vous êtes prêt à mettre vos process à plat avec nous (même flous, on les clarifie ensemble)',
                 'Vous voulez un outil qui vous appartient et grandit avec vous',
             ],
             en: [
                 'You see this as a long-term investment',
-                'You genuinely want to move your business forward',
+                'You genuinely want to move your school forward',
                 'You are ready to lay your processes flat with us (even vague ones, we clarify them together)',
                 'You want a tool you own, that grows with you',
             ],

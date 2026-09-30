@@ -18,11 +18,11 @@ export default function FunnyGuarantee() {
         <div className="funguar mx-auto">
           <span className="font-mono funguar-label">{d('Notre pari (à moitié sérieux)', 'Our bet (half-serious)', 'A fogadásunk (félig komolyan)')}</span>
           <h2 className="font-serif italic funguar-title">
-            {d('La Garantie ', 'The ', 'A ')}<span className="accent">{d('Concurrent', 'Competitor', 'versenytárs')}</span>{d('', ' Guarantee', '-garancia')}
+            {d('La Garantie ', 'The ', 'A ')}<span className="accent">{d('Voisine', 'Next-Door', 'Szomszéd')}</span>{d('', ' Guarantee', '-garancia')}
           </h2>
           <p className="font-sans funguar-text">
-            {d('Dans les 90 jours suivant la livraison, si vous n’êtes pas assez satisfait pour nous supplier de ne pas bosser avec votre concurrent direct… on vous offre le dîner.',
-               'Within 90 days of delivery, if you’re not satisfied enough to beg us not to work with your direct competitor… dinner’s on us.', 'Az átadástól számított 90 napon belül, ha nem elégedett annyira, hogy könyörögjön nekünk, ne dolgozzunk a közvetlen versenytársával… mi álljuk a vacsorát.')}
+            {d('Dans les 90 jours suivant la livraison, si vous n’êtes pas assez content pour nous supplier de ne pas travailler avec l’établissement d’à côté… on vous offre le dîner.',
+               'Within 90 days of delivery, if you are not happy enough to beg us not to work with the school down the road… dinner is on us.', 'Az átadástól számított 90 napon belül, ha nem elég elégedett ahhoz, hogy könyörögjön, ne dolgozzunk a szomszéd intézménnyel… mi álljuk a vacsorát.')}
           </p>
           <p className="font-mono funguar-fineprint">
             {d('* dîner offert pour de vrai. Et si le projet le mérite vraiment, on vise plus haut.',

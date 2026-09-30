@@ -9,28 +9,28 @@ type Item = { titleFr: string; titleEn: string; titleHu: string; descFr: string;
 
 const ITEMS: Item[] = [
   {
-    titleFr: 'Consulting opérationnel',
-    titleEn: 'Operational consulting', titleHu: 'Operatív tanácsadás',
-    descFr: 'On analyse vos process, opérations et workflows, de l’arrivée d’un prospect au client qui recommande. On cartographie tout, puis on repère où vous gagnez le plus.',
-    descEn: 'We analyse your processes, operations and workflows, from a prospect’s arrival to a client who refers you. We map it all, then pinpoint where you gain the most.', descHu: 'Elemezzük a folyamatait, a működését és a munkafolyamatait, az érdeklődő beérkezésétől az ajánló ügyfélig. Feltérképezzük az egészet, majd megmutatjuk, hol nyer a legtöbbet.',
+    titleFr: 'On cartographie votre établissement',
+    titleEn: 'We map how your school runs', titleHu: 'Feltérképezzük az intézményét',
+    descFr: 'Quelques appels avec les personnes qui font le travail. Qui fait quoi, dans quel ordre, avec quel fichier. De l’inscription d’une famille à la validation de la paie.',
+    descEn: 'A few calls with the people who do the work. Who does what, in what order, with which file. From a family’s enrolment to payroll sign-off.', descHu: 'Néhány beszélgetés azokkal, akik a munkát végzik. Ki mit csinál, milyen sorrendben, melyik fájllal. A család beiratkozásától a bérszámfejtés jóváhagyásáig.',
   },
   {
-    titleFr: 'Système sur-mesure',
-    titleEn: 'Custom system', titleHu: 'Egyedi rendszer',
-    descFr: 'On développe le logiciel qui vous manque, métier, ERP, portail, cockpit, construit autour de vos opérations, pas l’inverse. Vos données unifiées, votre code qui vous appartient.',
-    descEn: 'We develop the software you’re missing, business app, ERP, portal, cockpit, built around your operations, not the other way round. Your data unified, your code owned by you.', descHu: 'Megfejlesztjük a hiányzó szoftvert: szakmai alkalmazást, ERP-t, portált, vezérlőpultot, a működése köré építve, nem fordítva. Az adatai egységesítve, a kód az Öné.',
+    titleFr: 'On construit votre plateforme',
+    titleEn: 'We build your platform', titleHu: 'Megépítjük a platformját',
+    descFr: 'Sur vos règles : votre convention, votre calendrier scolaire, vos établissements. Encodés une fois, tels qu’ils sont. C’est l’outil qui s’aligne sur vous, jamais l’inverse.',
+    descEn: 'On your rules: your agreement, your school calendar, your sites. Encoded once, exactly as they are. The tool aligns to you, never the other way round.', descHu: 'Az Ön szabályai szerint: a megállapodása, tanévi naptára, telephelyei. Egyszer, úgy ahogy vannak, lekódolva. Az eszköz igazodik Önhöz, soha nem fordítva.',
   },
   {
-    titleFr: 'Digitalisation & IA',
-    titleEn: 'Digitalisation & AI', titleHu: 'Digitalizáció és MI',
-    descFr: 'De l’IA et de l’automatisation intégrées par-dessus votre système, uniquement là où elles remplacent de vraies heures. Jamais en décoration.',
-    descEn: 'AI and automation layered on top of your system, only where they replace real hours. Never for show.', descHu: 'MI és automatizálás a rendszere tetején, kizárólag ott, ahol valódi munkaórákat vált ki. Sosem a látszatért.',
+    titleFr: 'On automatise le répétitif',
+    titleEn: 'We automate the repetitive part', titleHu: 'Automatizáljuk az ismétlődőt',
+    descFr: 'Ressaisies, relances, documents récurrents : ce qui revient chaque mois tourne tout seul. C’est là que les heures reviennent, pas ailleurs.',
+    descEn: 'Re-typing, reminders, recurring documents: what comes back every month runs on its own. That is where the hours come back, nowhere else.', descHu: 'Újbóli adatbevitel, emlékeztetők, ismétlődő dokumentumok: ami havonta visszatér, magától megy. Innen jönnek vissza az órák, nem máshonnan.',
   },
   {
-    titleFr: 'Formation & accompagnement',
-    titleEn: 'Training & support', titleHu: 'Képzés és támogatás',
-    descFr: 'Construire l’outil, c’est facile ; le faire adopter par toute votre équipe, c’est le vrai job. On forme tout le monde, du dirigeant au terrain, jusqu’à l’autonomie complète.',
-    descEn: 'Building the tool is easy; getting your whole team to adopt it is the real job. We train everyone, from leadership to the field, all the way to full autonomy.', descHu: 'Az eszközt megépíteni könnyű; elérni, hogy az egész csapata használja, az az igazi munka. Mindenkit betanítunk, a vezetőtől a terepen dolgozóig, a teljes önállóságig.',
+    titleFr: 'On forme jusqu’à l’autonomie',
+    titleEn: 'We train until you are autonomous', titleHu: 'Képzünk, amíg önállóak nem lesznek',
+    descFr: 'Construire l’outil est la partie facile. Le faire adopter par la direction, le secrétariat et les enseignants, c’est le vrai travail. On forme chacun, jusqu’à ce qu’on ne serve plus à rien.',
+    descEn: 'Building the tool is the easy part. Getting leadership, the front office and the teachers to adopt it is the real work. We train everyone, until we are no longer needed.', descHu: 'Az eszközt megépíteni a könnyebbik rész. Elérni, hogy a vezetőség, a titkárság és a tanárok használják, az az igazi munka. Mindenkit betanítunk, amíg már nincs ránk szükség.',
   },
 ]
 
@@ -113,14 +113,14 @@ export default function WhatWeDo() {
     <section id="ce-quon-fait" style={{ padding: '120px 24px' }}>
       <div className="mx-auto" style={{ maxWidth: '1040px' }}>
         <FadeUp className="text-center mb-16">
-          <span className="section-label">{d('Nos services', 'Our services', 'Szolgáltatásaink')}</span>
+          <span className="section-label">{d('Ce qu’on fait', 'What we do', 'Amit csinálunk')}</span>
           <h2 className="section-title" style={{ maxWidth: '720px', margin: '0 auto 20px' }}>
-            {d('Une expertise, ', 'Real expertise, ', 'Valódi szaktudás, ')}
-            <span className="accent">{d('forgée sur le terrain.', 'forged in the field.', 'terepen kovácsolva.')}</span>
+            {d('Quatre étapes, ', 'Four steps, ', 'Négy lépés, ')}
+            <span className="accent">{d('et vous n’êtes jamais seul.', 'and you are never on your own.', 'és soha nincs egyedül.')}</span>
           </h2>
           <p className="font-sans" style={{ fontSize: '15px', fontWeight: 300, color: 'var(--text-secondary)', maxWidth: '620px', margin: '0 auto', lineHeight: 1.7 }}>
-            {d('On remplace les outils génériques qui ne collent pas par du sur-mesure que vous possédez. L’IA et l’automatisation sont intégrées uniquement là où elles libèrent vos experts du répétitif, pour qu’ils créent de la valeur au lieu de la perdre.',
-               'We replace ill-fitting generic tools with custom software you own. AI and automation are embedded only where they free your experts from repetitive work, so they create value instead of losing it.', 'A rosszul illeszkedő általános eszközöket egyedi szoftverre cseréljük, amely az Öné. MI és automatizálás kizárólag ott épül bele, ahol felszabadítja a szakértőit az ismétlődő munka alól, hogy értéket teremtsenek ahelyett, hogy elveszítenék.')}
+            {d('On remplace l’outil générique qui ne colle pas par du sur-mesure qui vous appartient. L’automatisation n’arrive qu’ensuite, et seulement là où elle rend des heures à vos équipes.',
+               'We replace the generic tool that does not fit with custom software you own. Automation comes after, and only where it gives hours back to your teams.', 'A rosszul illeszkedő általános eszközt egyedi szoftverre cseréljük, amely az Öné. Az automatizálás csak utána jön, és csak ott, ahol órákat ad vissza a csapatainak.')}
           </p>
         </FadeUp>
 

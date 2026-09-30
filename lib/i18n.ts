@@ -27,48 +27,126 @@ export const translations = {
   // CTA du bouton nav : action simple et comprise par l'ICP (pas le nom de l'offre).
   'nav.ctaCall': { en: 'Book a call', fr: 'Réserver un appel', hu: 'Hívás foglalása' },
   'mega.services': { en: 'Our services', fr: 'Nos services', hu: 'Szolgáltatásaink' },
-  'mega.sectors': { en: 'By industry', fr: 'Par secteur', hu: 'Ágazat szerint' },
-  'mega.cases': { en: 'Client cases', fr: 'Cas clients', hu: 'Ügyfélesetek' },
-  'nav.svc.sprint': { en: 'Operational consulting', fr: 'Consulting opérationnel', hu: 'Operatív tanácsadás' },
-  'nav.svc.sprintDesc': { en: 'We map your processes and find where you gain the most', fr: 'On cartographie vos process et on repère où vous gagnez le plus', hu: 'Feltérképezzük a folyamatait, és megmutatjuk, hol nyer a legtöbbet' },
-  'nav.svc.logiciel': { en: 'Custom system', fr: 'Système sur-mesure', hu: 'Egyedi rendszer' },
-  'nav.svc.logicielDesc': { en: 'The software or cockpit built for your trade', fr: 'Le logiciel ou cockpit taillé pour votre métier', hu: 'A szoftver vagy vezérlőpult, amit az Ön szakmájára szabunk' },
-  'nav.svc.ia': { en: 'AI & automation', fr: 'IA et automatisation', hu: 'MI és automatizálás' },
-  'nav.svc.iaDesc': { en: 'AI and automation where they replace real hours', fr: 'L\'IA et l\'automatisation là où elles remplacent de vraies heures', hu: 'MI és automatizálás ott, ahol valódi munkaórákat vált ki' },
-  'nav.svc.audit': { en: 'Training & support', fr: 'Formation & accompagnement', hu: 'Képzés és támogatás' },
-  'nav.svc.auditDesc': { en: 'We train your teams all the way to autonomy', fr: 'On forme vos équipes jusqu\'à l\'autonomie complète', hu: 'Betanítjuk a csapatát a teljes önállóságig' },
+  'mega.sectors': {
+    en: 'By role',
+    fr: 'Par métier',
+    hu: 'Munkakör szerint',
+  },
+  'mega.cases': {
+    en: 'Case studies',
+    fr: 'Réalisations',
+    hu: 'Esettanulmányok',
+  },
+  'nav.svc.sprint': {
+    en: 'The diagnosis',
+    fr: 'Le diagnostic',
+    hu: 'A felmérés',
+  },
+  'nav.svc.sprintDesc': {
+    en: 'We map your school and show where the hours go',
+    fr: 'On cartographie votre établissement et on montre où partent les heures',
+    hu: 'Feltérképezzük az intézményét, és megmutatjuk, hová mennek az órák',
+  },
+  'nav.svc.logiciel': {
+    en: 'The custom platform',
+    fr: 'La plateforme sur-mesure',
+    hu: 'Az egyedi platform',
+  },
+  'nav.svc.logicielDesc': {
+    en: 'Built on your agreement and your school calendar',
+    fr: 'Bâtie sur votre convention et votre calendrier scolaire',
+    hu: 'Az Ön megállapodására és tanévi naptárára építve',
+  },
+  'nav.svc.ia': {
+    en: 'Automation',
+    fr: 'L\'automatisation',
+    hu: 'Automatizálás',
+  },
+  'nav.svc.iaDesc': {
+    en: 'Where it gives real hours back to your teams, nowhere else',
+    fr: 'Là où elle rend de vraies heures à vos équipes, jamais ailleurs',
+    hu: 'Ahol valódi órákat ad vissza a csapatainak, máshol soha',
+  },
+  'nav.svc.audit': {
+    en: 'Training and support',
+    fr: 'Formation et suivi',
+    hu: 'Képzés és támogatás',
+  },
+  'nav.svc.auditDesc': {
+    en: 'From leadership to the front desk, until it runs without us',
+    fr: 'De la direction à l\'accueil, jusqu\'à ce que ça tourne sans nous',
+    hu: 'A vezetőségtől a portáig, amíg nélkülünk is megy',
+  },
   'nav.res.glossary': { en: 'Glossary', fr: 'Glossaire', hu: 'Szójegyzék' },
   'nav.res.glossaryDesc': { en: 'Plain-word definitions', fr: 'Les définitions en clair', hu: 'A fogalmak érthetően' },
   'nav.res.pricing': { en: 'Pricing', fr: 'Prix', hu: 'Árak' },
-  'nav.res.pricingDesc': { en: 'How a project is priced', fr: 'Comment un projet se chiffre', hu: 'Hogyan alakul egy projekt ára' },
+  'nav.res.pricingDesc': {
+    en: 'How a project is priced, with no hidden cost',
+    fr: 'Comment un projet se chiffre, sans coût caché',
+    hu: 'Hogyan árazunk egy projektet, rejtett költség nélkül',
+  },
   'nav.res.diag': { en: 'AI Diagnostic', fr: 'Diagnostic IA', hu: 'MI-diagnosztika' },
-  'nav.res.diagDesc': { en: 'Measure what you lose each month', fr: 'Mesurez ce que vous perdez chaque mois', hu: 'Mérje meg, mennyit veszít havonta' },
+  'nav.res.diagDesc': {
+    en: 'Measure the hours your teams lose every month',
+    fr: 'Mesurez les heures que vos équipes perdent chaque mois',
+    hu: 'Mérje meg, hány órát veszítenek a csapatai havonta',
+  },
 
   // Hero
-  'hero.label': { en: 'Digital structuring · Custom software · AI integration', fr: 'Structuration digitale · Logiciel sur-mesure · Intégration IA', hu: 'Digitális strukturálás · Egyedi szoftver · MI-integráció' },
-  'hero.titlePrefix': { en: 'We build your custom software & AI systems that boost your', fr: 'On construit vos logiciels & systèmes IA sur-mesure qui vous font gagner en', hu: 'Egyedi szoftvereket és MI-rendszereket építünk, amelyek növelik az Ön' },
-  // Rotating words (pipe-separated, cycled in the hero). Final benefits the ICP desires, not the mechanisms.
-  'hero.titleWords': { en: 'profitability|productivity|responsiveness|reliability', fr: 'rentabilité|productivité|réactivité|fiabilité', hu: 'jövedelmezőségét|termelékenységét|reakcióképességét|megbízhatóságát' },
-  'hero.sub': {
-    en: 'We build the custom infrastructure that unlocks the value locked in your teams, your data and your know-how, and turns it into growth and a real competitive edge: more clients, a better experience, experts who create instead of repeat. Powered by AI, it evolves by your side, just like us.',
-    fr: 'On construit l\'infrastructure sur-mesure qui libère la valeur enfermée dans vos équipes, vos données et votre savoir-faire, et la transforme en croissance et en vrai avantage concurrentiel : plus de clients, une meilleure expérience, des experts qui créent au lieu de répéter. Propulsée par l\'IA, elle évolue à vos côtés, comme nous.',
-    hu:
-      'Azt az egyedi infrastruktúrát építjük meg, amely felszabadítja a csapataiban, az adataiban és a szaktudásában rejlő értéket, és növekedéssé, valódi versenyelőnnyé alakítja: több ügyfél, jobb élmény, olyan szakértők, akik alkotnak ahelyett, hogy ismételnének. MI hajtja, és Önnel együtt fejlődik, ahogy mi is.',
+  'hero.label': {
+    en: 'Private schools · School groups · Higher education',
+    fr: 'Écoles privées · Groupes scolaires · Enseignement supérieur',
+    hu: 'Magániskolák · Iskolacsoportok · Felsőoktatás',
   },
-  'hero.aiNote': { en: 'AI built in where it replaces real hours, never as decoration.', fr: 'IA intégrée là où elle remplace de vraies heures, jamais en décoration.', hu: 'MI ott, ahol valódi munkaórákat vált ki, sosem dekorációként.' },
+  'hero.titlePrefix': {
+    en: 'The digital partner that builds your',
+    fr: 'Le partenaire digital qui développe vos',
+    hu: 'A digitális partner, amely megépíti az Ön',
+  },
+  // Rotating words (pipe-separated, cycled in the hero). Final benefits the ICP desires, not the mechanisms.
+  'hero.titleWords': {
+    en: 'custom platforms|operational software|academic tools',
+    fr: 'plateformes sur-mesure|logiciels métiers|outils pédagogiques',
+    hu: 'egyedi platformjait|szakmai szoftvereit|pedagógiai eszközeit',
+  },
+  'hero.sub': {
+    en: 'Hours given back, decisions made on figures you can trust, calmer teams, students properly followed. Live in under a term, and you own the code.',
+    fr: 'Des heures rendues, des décisions prises sur des chiffres justes, des équipes sereines, des élèves et des étudiants mieux suivis. En moins d\'un trimestre, et le code vous appartient.',
+    hu: 'Visszakapott órák, megbízható számokon alapuló döntések, nyugodtabb csapatok, jobban követett diákok. Kevesebb mint egy félév alatt élesben, a kód pedig az Öné.',
+  },
+  'hero.aiNote': {
+    en: '40 hours a month given back to the teams on average, reported by the organisations we work with.',
+    fr: '40 heures par mois rendues aux équipes en moyenne, rapporté par les organisations que l\'on accompagne.',
+    hu: 'Átlagosan havi 40 óra vissza a csapatoknak, az általunk kísért szervezetek beszámolója szerint.',
+  },
   'hero.cta': { en: 'Book a call · free', fr: 'Réserver un appel · offert', hu: 'Hívás foglalása · ingyenes' },
-  'hero.secondary': { en: 'See how it works', fr: 'Voir comment ça marche', hu: 'Nézze meg, hogyan működik' },
-  'hero.trusted': { en: 'Already building with', fr: 'Déjà à l\'œuvre avec', hu: 'Már velük dolgozunk' },
+  'hero.secondary': {
+    en: 'See what we build',
+    fr: 'Voir ce qu\'on construit',
+    hu: 'Nézze meg, mit építünk',
+  },
+  'hero.trusted': {
+    en: 'Already building with',
+    fr: 'Déjà à l\'œuvre avec',
+    hu: 'Már velük dolgozunk',
+  },
 
   // Product Showcase (mockup juste après le hero)
-  'showcase.label': { en: 'A system we built', fr: 'Un système qu\'on a construit', hu: 'Egy rendszer, amit megépítettünk' },
-  'showcase.caption': {
-    en: 'Real estate agency · Daily pilot for leads, mandates and latent fees.',
-    fr: 'Agence immobilière · Pilotage quotidien des leads, mandats et honoraires latents.',
-    hu:
-      'Ingatlaniroda · Leadek, megbízások és függő jutalékok napi szintű irányítása.',
+  'showcase.label': {
+    en: 'A system we built',
+    fr: 'Un système qu\'on a construit',
+    hu: 'Egy rendszer, amit megépítettünk',
   },
-  'showcase.altText': { en: 'NateSystem dashboard mockup for a real estate agency', fr: 'Mockup NateSystem du tableau de bord pour une agence immobilière', hu: 'NateSystem irányítópult-makett egy ingatlanirodának' },
+  'showcase.caption': {
+    en: 'School group · Daily pilot for hours, headcount and sites.',
+    fr: 'Groupe scolaire · Pilotage quotidien des heures, des effectifs et des sites.',
+    hu: 'Iskolacsoport · Az órák, a létszám és a telephelyek napi irányítása.',
+  },
+  'showcase.altText': {
+    en: 'NateSystem mockup of a school group dashboard',
+    fr: 'Mockup NateSystem du tableau de bord d\'un groupe scolaire',
+    hu: 'NateSystem makett egy iskolacsoport irányítópultjáról',
+  },
 
   // Problem
   'problem.label': { en: 'The Real Problem', fr: 'Le vrai problème', hu: 'A valódi probléma' },
@@ -171,86 +249,178 @@ export const translations = {
   },
 
   // Process
-  'process.label': { en: 'Our method', fr: 'Notre méthode', hu: 'Módszerünk' },
-  'process.title': { en: 'A clear path,', fr: 'Une méthode claire,', hu: 'Világos módszer,' },
-  'process.titleAccent': { en: 'no surprises.', fr: 'sans surprise.', hu: 'meglepetések nélkül.' },
+  'process.label': {
+    en: 'Our method',
+    fr: 'Notre méthode',
+    hu: 'A módszerünk',
+  },
+  'process.title': {
+    en: 'A clear method,',
+    fr: 'Une méthode claire,',
+    hu: 'Világos módszer,',
+  },
+  'process.titleAccent': {
+    en: 'no surprises.',
+    fr: 'sans surprise.',
+    hu: 'meglepetések nélkül.',
+  },
   'process.sub': {
-    en: 'You always know where we stand and where we\'re going. Four steps, each with a concrete deliverable. And we don\'t consider the job done until your teams are autonomous.',
-    fr: 'Vous savez toujours où on en est et où on va. Quatre étapes, un livrable concret à chacune. Et on ne considère la mission terminée que lorsque vos équipes sont autonomes.',
-    hu:
-      'Mindig tudja, hol tartunk és merre megyünk. Négy lépés, mindegyiknél kézzelfogható eredménnyel. És a munkát csak akkor tekintjük késznek, amikor a csapatai önállóak.',
+    en: 'You always know where things stand. Four steps, one deliverable each. The job is done only when your teams manage without us.',
+    fr: 'Vous savez toujours où on en est. Quatre étapes, un livrable à chacune. La mission n\'est finie que quand vos équipes se débrouillent sans nous.',
+    hu: 'Mindig tudja, hol tartunk. Négy lépés, mindegyikhez egy eredmény. A munka csak akkor kész, ha a csapatai nélkülünk is boldogulnak.',
   },
-  'process.step1': { en: 'The Diagnostic: mapping & analysis', fr: 'Le Diagnostic : cartographie & analyse', hu: 'A diagnosztika: feltérképezés és elemzés' },
-  'process.step1Duration': { en: 'Free discovery call', fr: 'Appel découverte offert', hu: 'Ingyenes felfedező hívás' },
+  'process.step1': {
+    en: 'The diagnosis: we map how your school runs',
+    fr: 'Le diagnostic : on cartographie votre établissement',
+    hu: 'A felmérés: feltérképezzük az intézményét',
+  },
+  'process.step1Duration': {
+    en: 'Free discovery call',
+    fr: 'Appel découverte offert',
+    hu: 'Ingyenes bemutatkozó hívás',
+  },
   'process.step1Desc': {
-    en: 'We map how your whole business runs, from a prospect’s arrival to a client who refers you: acquisition, delivery, internal management. We examine every step in detail and as a whole, to pinpoint where you lose time and money. You leave with a clear map of your workflows, and a first clickable prototype of your future tool, even if we don’t work together.',
-    fr: 'On cartographie tout le fonctionnement de votre entreprise, de l’arrivée d’un prospect au client qui recommande : acquisition, delivery, gestion interne. On examine chaque étape en détail et en vue d’ensemble, pour repérer où vous perdez du temps et de l’argent. Vous repartez avec une carte claire de vos workflows, et un premier prototype cliquable de votre futur outil, même si on ne travaille pas ensemble.',
-    hu:
-      'Feltérképezzük a cége teljes működését, az érdeklődő beérkezésétől az ajánló ügyfélig: ügyfélszerzés, szállítás, belső irányítás. Minden lépést megvizsgálunk részleteiben és egészében is, hogy pontosan lássuk, hol veszít időt és pénzt. Egy világos folyamattérképpel távozik, és a jövőbeli eszközének első kattintható prototípusával, akkor is, ha nem dolgozunk együtt.',
+    en: 'A few calls with the people who do the work. Who does what, in what order, with which file. From a family\'s enrolment to payroll sign-off. You prepare nothing.',
+    fr: 'Quelques appels avec les personnes qui font le travail. Qui fait quoi, dans quel ordre, avec quel fichier. De l\'inscription d\'une famille à la validation de la paie. Vous ne préparez rien.',
+    hu: 'Néhány beszélgetés azokkal, akik a munkát végzik. Ki mit csinál, milyen sorrendben, melyik fájllal. A család beiratkozásától a bérszámfejtés jóváhagyásáig. Önnek nem kell készülnie.',
   },
-  'process.step2': { en: 'Then: custom build', fr: 'Ensuite : développement sur-mesure', hu: 'Utána: egyedi fejlesztés' },
-  'process.step2Duration': { en: '4 to 8 weeks', fr: '4 à 8 semaines', hu: '4-8 hét' },
+  'process.step2': {
+    en: 'Then: we build on your rules',
+    fr: 'Ensuite : on construit sur vos règles',
+    hu: 'Utána: az Ön szabályaira építünk',
+  },
+  'process.step2Duration': {
+    en: '4 to 8 weeks',
+    fr: '4 à 8 semaines',
+    hu: '4-8 hét',
+  },
   'process.step2Desc': {
-    en: 'We build the software, portal or cockpit tailored to your processes, and unify your data into a single source, live in real time. We add AI and automation only where they save you real hours. A usable MVP is ready in under 30 days, the full build in 30 to 60. Price and timeline fixed up front, a check-in every week.',
-    fr: 'On construit le(s) logiciel(s), portail ou cockpit taillés pour vos process, et on unifie vos données dans une seule source, à jour en temps réel. On y ajoute l’IA et l’automatisation uniquement là où elles vous font gagner de vraies heures. Un MVP utilisable est prêt en moins de 30 jours, le développement complet en 30 à 60. Prix et délai fixés d’avance, point chaque semaine.',
-    hu:
-      'Megépítjük a folyamataira szabott szoftvert, portált vagy vezérlőpultot, és az adatait egyetlen, valós időben frissülő forrásba vonjuk össze. MI-t és automatizálást csak ott teszünk bele, ahol valódi órákat nyer vele. Használható MVP 30 napon belül, a teljes fejlesztés 30-60 nap. Ár és határidő előre rögzítve, heti egyeztetéssel.',
+    en: 'Your agreement, your school calendar, your sites. Your data ends up in one base, up to date. You click through a prototype before anything is committed.',
+    fr: 'Votre convention, votre calendrier scolaire, vos établissements. Vos données se retrouvent dans une seule base, à jour. Vous cliquez dans une maquette avant qu\'on engage quoi que ce soit.',
+    hu: 'Az Ön megállapodása, tanévi naptára, telephelyei. Az adatai egyetlen, naprakész adatbázisba kerülnek. Egy kattintható prototípust próbál ki, mielőtt bármit elköteleznénk.',
   },
-  'process.step3': { en: 'Then: training & support', fr: 'Ensuite : formation & accompagnement', hu: 'Utána: képzés és támogatás' },
-  'process.step3Duration': { en: 'Until full autonomy', fr: 'Jusqu\'à l\'autonomie complète', hu: 'A teljes önállóságig' },
+  'process.step3': {
+    en: 'Then: we train until you are autonomous',
+    fr: 'Ensuite : on forme jusqu\'à l\'autonomie',
+    hu: 'Utána: képzünk, amíg önállóak nem lesznek',
+  },
+  'process.step3Duration': {
+    en: 'Until you are fully autonomous',
+    fr: 'Jusqu\'à l\'autonomie complète',
+    hu: 'A teljes önállóságig',
+  },
   'process.step3Desc': {
-    en: 'We test everything before launch. Then we train every person on your teams, from the executive to the field, until they use it on their own, without us. Nobody is left behind.',
-    fr: 'On teste tout avant de lancer. Puis on forme chaque personne de vos équipes, du dirigeant au terrain, jusqu\'à ce qu\'ils s\'en servent seuls, sans nous. Personne n\'est laissé de côté.',
-    hu:
-      'Indulás előtt mindent letesztelünk. Aztán betanítjuk a csapatai minden tagját, a vezetőtől a terepen dolgozóig, amíg nélkülünk is használják. Senki nem marad le.',
+    en: 'We test everything before going live. Then we train everyone, from leadership to the front desk, until they use it on their own. Nobody is left in front of a screen they don\'t understand.',
+    fr: 'On teste tout avant de lancer. Puis on forme chacun, de la direction à l\'accueil, jusqu\'à ce qu\'ils s\'en servent seuls. Personne n\'est laissé devant un écran qu\'il ne comprend pas.',
+    hu: 'Indulás előtt mindent tesztelünk. Aztán mindenkit betanítunk, a vezetőségtől a portáig, amíg egyedül is használják. Senkit nem hagyunk egy képernyő előtt, amit nem ért.',
   },
-  'process.step4': { en: 'Finally: optimise & improve', fr: 'Enfin : optimisation & amélioration continue', hu: 'Végül: optimalizálás és folyamatos fejlesztés' },
-  'process.step4Duration': { en: 'Ongoing · optional', fr: 'En continu · optionnel', hu: 'Folyamatos · választható' },
+  'process.step4': {
+    en: 'Finally: we adjust as the year goes',
+    fr: 'Enfin : on ajuste au fil de l\'année',
+    hu: 'Végül: a tanév során finomítunk',
+  },
+  'process.step4Duration': {
+    en: 'Ongoing · optional',
+    fr: 'En continu · optionnel',
+    hu: 'Folyamatos · opcionális',
+  },
   'process.step4Desc': {
-    en: 'After a few weeks of real use, we look at what works and adjust. And if you want, we stay by your side to grow your software at your pace.',
-    fr: 'Après quelques semaines d\'usage, on regarde ce qui marche et on ajuste. Et si vous voulez, on reste à vos côtés pour faire évoluer votre logiciel à votre rythme.',
-    hu:
-      'Néhány hét valódi használat után megnézzük, mi működik, és igazítunk rajta. Ha kéri, mellette maradunk, és a saját tempójában fejlesztjük tovább a szoftverét.',
+    en: 'After a few weeks of use, we look at what helps and what doesn\'t, and adjust. A school does not run in January the way it runs in September.',
+    fr: 'Après quelques semaines d\'usage, on regarde ce qui sert et ce qui ne sert pas, et on ajuste. Une école ne fonctionne pas en janvier comme en septembre.',
+    hu: 'Néhány hét használat után megnézzük, mi segít és mi nem, és igazítunk. Egy iskola januárban nem úgy működik, mint szeptemberben.',
   },
-  'process.step1Highlight': { en: '1 to 15 days', fr: '1 à 15 jours', hu: '1-15 nap' },
-  'process.step2Highlight': { en: '30 to 60 days', fr: '30 à 60 jours', hu: '30-60 nap' },
-  'process.step3Highlight': { en: 'Until full autonomy', fr: 'Jusqu\'à l\'autonomie complète', hu: 'A teljes önállóságig' },
-  'process.step4Highlight': { en: 'Retainer', fr: 'Forfait', hu: 'Átalánydíj' },
-  'process.guarantee1': { en: 'Guaranteed deadlines or -10%/week late', fr: 'Délais garantis ou -10%/semaine de retard', hu: 'Garantált határidő, vagy -10% minden késett hétért' },
-  'process.guarantee2': { en: 'ROI guarantee over 12 months', fr: 'Garantie ROI sur 12 mois', hu: 'Megtérülési garancia 12 hónapra' },
-  'process.guarantee3': { en: 'Full source code delivered · Permanent ownership', fr: 'Code source complet livré · Propriété définitive', hu: 'Teljes forráskód átadva · Végleges tulajdonjog' },
+  'process.step1Highlight': {
+    en: '1 to 15 days',
+    fr: '1 à 15 jours',
+    hu: '1-15 nap',
+  },
+  'process.step2Highlight': {
+    en: '30 to 60 days',
+    fr: '30 à 60 jours',
+    hu: '30-60 nap',
+  },
+  'process.step3Highlight': {
+    en: 'Until you are fully autonomous',
+    fr: 'Jusqu\'à l\'autonomie complète',
+    hu: 'A teljes önállóságig',
+  },
+  'process.step4Highlight': {
+    en: 'Fixed fee',
+    fr: 'Forfait',
+    hu: 'Átalánydíj',
+  },
+  'process.guarantee1': {
+    en: 'Deadlines guaranteed, or -10%/week late',
+    fr: 'Délais garantis ou -10 %/semaine de retard',
+    hu: 'Garantált határidő, vagy -10% hetente',
+  },
+  'process.guarantee2': {
+    en: 'Hours given back, guaranteed over 12 months',
+    fr: 'Heures rendues garanties sur 12 mois',
+    hu: 'Garantáltan visszakapott órák 12 hónap alatt',
+  },
+  'process.guarantee3': {
+    en: 'Full source code delivered · yours for good',
+    fr: 'Code source complet livré · propriété définitive',
+    hu: 'Teljes forráskód átadva · véglegesen az Öné',
+  },
 
   // CTA Final
-  'cta.label': { en: 'Let\'s work together', fr: 'Travaillons ensemble', hu: 'Dolgozzunk együtt' },
-  'cta.title': { en: 'Tell us what you\'re building.', fr: 'Racontez-nous ce que vous construisez.', hu: 'Mesélje el, mit épít.' },
-  'cta.titleAccent': { en: 'We\'ll tell you how to run it.', fr: 'On vous dira comment le faire tourner.', hu: 'Megmondjuk, hogyan lehet működtetni.' },
-  'cta.sub': {
-    en: 'One call. A clear view of the software your business actually needs, and what it would take to build it. Pick a slot below.',
-    fr: 'Un appel. Une vision claire du logiciel dont votre activité a vraiment besoin, et de ce qu\'il faudrait pour le construire. Choisissez un créneau ci-dessous.',
-    hu:
-      'Egy hívás. Világos kép arról, milyen szoftverre van valóban szüksége a működésének, és mibe kerülne megépíteni. Válasszon időpontot alább.',
+  'cta.label': {
+    en: 'Let\'s work together',
+    fr: 'Travaillons ensemble',
+    hu: 'Dolgozzunk együtt',
   },
-  'cta.button': { en: 'Let\'s work together', fr: 'Travaillons ensemble', hu: 'Dolgozzunk együtt' },
-  'cta.r1': { en: 'free call', fr: 'Appel offert', hu: 'Ingyenes hívás' },
-  'cta.r2': { en: 'No pitch', fr: 'Sans pitch', hu: 'Semmi értékesítési duma' },
-  'cta.r3': { en: 'Response within 24h', fr: 'Réponse sous 24h', hu: 'Válasz 24 órán belül' },
+  'cta.title': {
+    en: 'Tell us where the hours go.',
+    fr: 'Dites-nous où partent les heures.',
+    hu: 'Mondja el, hová mennek az órák.',
+  },
+  'cta.titleAccent': {
+    en: 'We\'ll tell you what we can give back.',
+    fr: 'On vous dira ce qu\'on peut vous en rendre.',
+    hu: 'Megmondjuk, mennyit tudunk visszaadni.',
+  },
+  'cta.sub': {
+    en: 'One call. We look at how your school actually runs, and we tell you plainly where the time goes. You leave with a clear plan, even if we never work together.',
+    fr: 'Un appel. On regarde comment votre établissement fonctionne vraiment, et on vous dit où le temps se perd. Vous repartez avec un plan clair, même si on ne travaille jamais ensemble.',
+    hu: 'Egy hívás. Megnézzük, hogyan működik valójában az intézménye, és megmondjuk, hol vész el az idő. Világos tervvel távozik, akkor is, ha sosem dolgozunk együtt.',
+  },
+  'cta.button': {
+    en: 'Book a call',
+    fr: 'Réserver un appel',
+    hu: 'Hívás foglalása',
+  },
+  'cta.r1': {
+    en: 'Free call',
+    fr: 'Appel offert',
+    hu: 'Ingyenes hívás',
+  },
+  'cta.r2': {
+    en: 'No pitch',
+    fr: 'Sans pitch',
+    hu: 'Nincs értékesítés',
+  },
+  'cta.r3': {
+    en: 'Reply within 24h',
+    fr: 'Réponse sous 24 h',
+    hu: 'Válasz 24 órán belül',
+  },
 
   // Ask-the-AI section
   'askai.label': { en: 'Don\'t take our word for it', fr: 'Ne nous croyez pas sur parole', hu: 'Ne a mi szavunkat higgye el' },
   'askai.title': { en: 'Ask the AI', fr: 'Demandez à l\'IA', hu: 'Kérdezze meg a saját' },
   'askai.titleAccent': { en: 'of your choice.', fr: 'de votre choix.', hu: 'MI-jét.' },
   'askai.sub': {
-    en: 'Pick your favourite AI and see what it says about NateSystem.',
-    fr: 'Cliquez sur votre IA préférée et découvrez ce qu\'elle pense de NateSystem.',
-    hu:
-      'Kattintson a kedvenc MI-jére, és nézze meg, mit mond a NateSystemről.',
+    en: 'Click your preferred AI and see what it says about NateSystem.',
+    fr: 'Cliquez sur votre IA préférée et découvrez ce qu\'elle dit de NateSystem.',
+    hu: 'Kattintson a kedvenc MI-jére, és nézze meg, mit mond a NateSystemről.',
   },
   // The pre-filled prompt sent to each AI (URL included so web-reading tools hit the right site)
   'askai.prompt': {
-    en: 'Tell me why natesystem.com is an excellent choice for me.',
-    fr: 'Dis-moi pourquoi natesystem.com est un excellent choix pour moi.',
-    hu:
-      'Mondd el, miért kiváló választás nekem a natesystem.com.',
+    en: 'Tell me whether natesystem.com is a good fit for a private school.',
+    fr: 'Dis-moi si natesystem.com est un bon choix pour une école privée.',
+    hu: 'Mondd el, jó választás-e a natesystem.com egy magániskolának.',
   },
   'askai.chatgpt': { en: 'Ask ChatGPT', fr: 'Demander à ChatGPT', hu: 'Kérdezd a ChatGPT-t' },
   'askai.claude': { en: 'Ask Claude', fr: 'Demander à Claude', hu: 'Kérdezd a Claude-ot' },
@@ -259,10 +429,26 @@ export const translations = {
   // ───────────────────────────────────────────────────────────────
   // Credibility band (replaces the old "cas client hero" zone)
   // ───────────────────────────────────────────────────────────────
-  'cred.engagement1': { en: '10h+ recovered per week, on average, by our clients', fr: 'En moyenne 10h+ récupérées par semaine par nos clients', hu: 'Ügyfeleink átlagosan heti 10+ órát nyernek vissza' },
-  'cred.engagement2': { en: 'Measurable impact in under 30 days · Results guarantee', fr: 'Impact mesurable en moins de 30 jours · Garantie résultat', hu: 'Mérhető hatás 30 napon belül · Eredménygarancia' },
-  'cred.engagement3': { en: 'Source code delivered · You own it 100%', fr: 'Code source livré · Vous êtes propriétaire à 100%', hu: 'Forráskód átadva · 100%-ban az Öné' },
-  'cred.engagement4': { en: 'Data hosted in the EU · GDPR-native', fr: 'Données hébergées en UE · RGPD-natif', hu: 'Adatok az EU-ban tárolva · GDPR-natív' },
+  'cred.engagement1': {
+    en: '10+ hours given back every week on average, reported by our clients',
+    fr: 'En moyenne 10 h et plus rendues chaque semaine, rapporté par nos clients',
+    hu: 'Átlagosan heti 10+ óra vissza, ügyfeleink beszámolója szerint',
+  },
+  'cred.engagement2': {
+    en: 'Live in under a term · hours given back, guaranteed',
+    fr: 'En service en moins d\'un trimestre · heures rendues garanties',
+    hu: 'Kevesebb mint egy félév alatt éles · garantáltan visszakapott órák',
+  },
+  'cred.engagement3': {
+    en: 'Source code delivered · you own 100% of it',
+    fr: 'Code source livré · vous êtes propriétaire à 100 %',
+    hu: 'Forráskód átadva · 100%-ban az Öné',
+  },
+  'cred.engagement4': {
+    en: 'Student data hosted in the EU · GDPR by design',
+    fr: 'Données d\'élèves et d\'étudiants hébergées en UE · RGPD dès la conception',
+    hu: 'Diákadatok az EU-ban · GDPR a tervezéstől',
+  },
 
   // ───────────────────────────────────────────────────────────────
   // Constat (narrative bridge before "5 systèmes")
@@ -280,69 +466,292 @@ export const translations = {
   // ───────────────────────────────────────────────────────────────
   // Systems, recurring cases (5 AI systems + 3 custom software)
   // ───────────────────────────────────────────────────────────────
-  'systems.label': { en: 'Example solutions', fr: 'Exemples de solutions', hu: 'Példák a megoldásainkra' },
-  'systems.deployed': { en: 'Deployed.', fr: 'Déployé.', hu: 'Bevezetve.' },
-  'systems.measured': { en: 'Measured.', fr: 'Mesuré.', hu: 'Megmérve.' },
-  'systems.profitable': { en: 'Profitable.', fr: 'Rentabilisé.', hu: 'Megtérült.' },
-  'systems.title': { en: 'Deployed in these sectors,', fr: 'Déjà déployé dans ces secteurs,', hu: 'Már ezekben az ágazatokban fut,' },
-  'systems.titleAccent': { en: 'winning every day.', fr: 'rentable tous les jours.', hu: 'és minden nap hoz.' },
-  'systems.sub': {
-    en: 'A glimpse of what we build and run, systems that save our clients time and money, every single day.',
-    fr: 'Un aperçu de ce qu\'on construit et fait tourner, des systèmes qui font gagner du temps et de l\'argent à nos clients, tous les jours.',
-    hu:
-      'Ízelítő abból, amit építünk és üzemeltetünk: rendszerek, amelyek minden nap időt és pénzt spórolnak az ügyfeleinknek.',
+  'systems.label': {
+    en: 'What we build',
+    fr: 'Ce qu\'on construit',
+    hu: 'Amit építünk',
   },
-  'systems.allCases': { en: 'See all our case studies', fr: 'Voir tous nos cas clients', hu: 'Összes esettanulmány megtekintése' },
-  'systems.groupAI': { en: 'AI systems', fr: 'Systèmes IA', hu: 'MI-rendszerek' },
-  'systems.groupSoft': { en: 'Custom software', fr: 'Logiciels métier sur-mesure', hu: 'Egyedi üzleti szoftverek' },
-  'systems.tagAI': { en: 'AI integration', fr: 'Intégration IA', hu: 'MI-integráció' },
-  'systems.tagSoft': { en: 'Custom software', fr: 'Logiciel métier', hu: 'Üzleti szoftver' },
+  'systems.deployed': {
+    en: 'Deployed.',
+    fr: 'Déployé.',
+    hu: 'Telepítve.',
+  },
+  'systems.measured': {
+    en: 'Used.',
+    fr: 'Utilisé.',
+    hu: 'Használatban.',
+  },
+  'systems.profitable': {
+    en: 'Adopted.',
+    fr: 'Adopté.',
+    hu: 'Elfogadva.',
+  },
+  'systems.title': {
+    en: 'Already running in schools,',
+    fr: 'Déjà en service dans des établissements,',
+    hu: 'Már működik intézményekben,',
+  },
+  'systems.titleAccent': {
+    en: 'useful every single day.',
+    fr: 'utile tous les jours.',
+    hu: 'és minden nap hasznos.',
+  },
+  'systems.sub': {
+    en: 'A look at what we build and keep running. Every piece exists because a team needed it.',
+    fr: 'Un aperçu de ce qu\'on construit et fait tourner. Chaque brique existe parce qu\'une équipe en avait besoin.',
+    hu: 'Ízelítő abból, amit építünk és működtetünk. Minden elem azért van, mert egy csapatnak szüksége volt rá.',
+  },
+  'systems.allCases': {
+    en: 'See all our case studies',
+    fr: 'Voir toutes nos réalisations',
+    hu: 'Összes esettanulmány',
+  },
+  'systems.groupAI': {
+    en: 'Automations',
+    fr: 'Automatisations',
+    hu: 'Automatizálások',
+  },
+  'systems.groupSoft': {
+    en: 'Custom software',
+    fr: 'Logiciels sur-mesure',
+    hu: 'Egyedi szoftverek',
+  },
+  'systems.tagAI': {
+    en: 'Automation',
+    fr: 'Automatisation',
+    hu: 'Automatizálás',
+  },
+  'systems.tagSoft': {
+    en: 'Software',
+    fr: 'Logiciel',
+    hu: 'Szoftver',
+  },
   // 6 real-client logiciel métier cases (anonymized, sector tag instead of client name)
-  'systems.sw1.sector': { en: 'Hospitality', fr: 'Restauration', hu: 'Vendéglátás' },
-  'systems.sw2.sector': { en: 'Public university', fr: 'Université publique', hu: 'Állami egyetem' },
-  'systems.sw3.sector': { en: 'Events & non-profit', fr: 'Événementiel & associatif', hu: 'Rendezvény és civil szféra' },
-  'systems.sw4.sector': { en: 'Hospitality · F&B procurement', fr: 'Restauration · Achats F&B', hu: 'Vendéglátás · Beszerzés' },
-  'systems.sw5.sector': { en: 'Hospitality · HR', fr: 'Restauration · RH', hu: 'Vendéglátás · HR' },
-  'systems.sw6.sector': { en: 'Hospitality groups', fr: 'Groupes restauration', hu: 'Vendéglátó-csoportok' },
-  'systems.sw1.title': { en: 'Restaurant ops & KPI cockpit', fr: 'Cockpit ops & KPI restauration', hu: 'Vendéglátó műveleti és KPI-vezérlőpult' },
-  'systems.sw1.desc': { en: 'Live dashboard for an independent restaurant: covers, labor cost, daily KPIs, action plan suggestions powered by AI.', fr: 'Dashboard live pour un restaurant indépendant : couverts, masse salariale, KPI quotidiens, plan d\'action suggéré par l\'IA.', hu: 'Élő irányítópult egy független étteremnek: vendégszám, bérköltség, napi KPI-k, MI által javasolt cselekvési terv.' },
-  'systems.sw1.metric': { en: 'Decisions made in 2 min instead of ~2h on Excel', fr: 'Décisions data en 2 min vs ~2h sur Excel', hu: 'Adatalapú döntés 2 perc alatt a táblázatos ~2 óra helyett' },
-  'systems.sw2.title': { en: 'Pedagogical CRM', fr: 'CRM pédagogique', hu: 'Oktatási CRM' },
-  'systems.sw2.desc': { en: 'A CRM built for higher education: student journey, internship tracking, alumni follow-up, all centralized. No more multi-spreadsheet.', fr: 'Un CRM bâti pour l\'enseignement supérieur : parcours étudiants, suivi de stages, relance alumni, tout centralisé. Fin des multi-tableurs.', hu: 'Felsőoktatásra épített CRM: hallgatói életút, gyakorlatok követése, öregdiákok utánkövetése, mind egy helyen. Vége a sok táblázatnak.' },
-  'systems.sw2.metric': { en: '200+ students tracked in one tool · Adoption 90%+', fr: '200+ étudiants suivis dans un seul outil · Adoption 90%+', hu: '200+ hallgató egyetlen eszközben · 90%+ használat' },
-  'systems.sw3.title': { en: 'Team & volunteer ops for events', fr: 'Gestion équipe & bénévoles événementiel', hu: 'Csapat- és önkéntes-kezelés rendezvényekhez' },
-  'systems.sw3.desc': { en: 'Planning, role assignments, real-time check-ins, internal comms for 50+ volunteers, without Excel + WhatsApp chaos.', fr: 'Planning, attribution des rôles, check-in temps réel, comm interne pour 50+ bénévoles, sans Excel + WhatsApp en chaos.', hu: 'Beosztás, szerepkiosztás, valós idejű bejelentkezés, belső kommunikáció 50+ önkéntesnek, Excel- és WhatsApp-káosz nélkül.' },
-  'systems.sw3.metric': { en: 'No-shows divided by 3 · Coordination time ÷ 2', fr: 'No-shows divisés par 3 · Temps de coordination ÷ 2', hu: 'Harmadára csökkent lemorzsolódás · Feleannyi koordinációs idő' },
-  'systems.sw4.title': { en: 'Stock & invoice control', fr: 'Stock & contrôle de factures', hu: 'Készlet és számlaellenőrzés' },
-  'systems.sw4.desc': { en: 'Real-time stock, supplier prices tracked over time, automatic detection of overcharges and double invoicing on incoming bills.', fr: 'Stock temps réel, prix fournisseurs suivis dans le temps, détection auto des surfacturations et double facturation sur les factures entrantes.', hu: 'Valós idejű készlet, beszállítói árak idősoros követése, túlszámlázás és kettős számlázás automatikus felismerése a beérkező számlákon.' },
-  'systems.sw4.metric': { en: 'Estimated ~3-5% margin recovered on F&B procurement', fr: '~3-5% de marge récupérée sur les achats F&B (estimation)', hu: 'Becslés szerint 3-5% árrés visszanyerve a beszerzésen' },
-  'systems.sw5.title': { en: 'HR & real-time time clock', fr: 'RH & pointeuse temps réel', hu: 'HR és valós idejű jelenlét' },
-  'systems.sw5.desc': { en: 'Mobile clock-in, weekly planning, overtime tracking, payroll-ready exports. Replaces paper sheets and Excel chains.', fr: 'Pointage mobile, planning hebdo, suivi heures sup, exports prêts pour la paie. Remplace les fiches papier et les chaînes Excel.', hu: 'Mobilos beléptetés, heti beosztás, túlóra követése, bérszámfejtésre kész exportok. Kiváltja a papíralapú íveket és a táblázatláncokat.' },
-  'systems.sw5.metric': { en: 'Payroll validated in 30 min instead of half a day', fr: 'Paie validée en 30 min vs une demi-journée', hu: 'Bérszámfejtés 30 perc alatt jóváhagyva, fél nap helyett' },
-  'systems.sw6.title': { en: 'Reputation & reviews with agentic AI', fr: 'Réputation & avis avec IA agentique', hu: 'Hírnév és vélemények ágens MI-vel' },
-  'systems.sw6.desc': { en: 'Aggregates Google, TripAdvisor, Facebook reviews. AI drafts on-brand replies. Monthly sentiment report auto-generated for each location.', fr: 'Agrège les avis Google, TripAdvisor, Facebook. L\'IA rédige des réponses dans votre ton. Synthèse mensuelle générée automatiquement par établissement.', hu: 'Összegyűjti a Google-, TripAdvisor- és Facebook-véleményeket. Az MI a márkája hangján fogalmaz választ. Havi összefoglaló automatikusan, egységenként.' },
-  'systems.sw6.metric': { en: 'Review reply time ÷10 · Monthly synthesis fully auto', fr: 'Temps de réponse aux avis ÷10 · Synthèse mensuelle 100% auto', hu: 'Tizedére csökkent válaszidő · Teljesen automatikus havi összefoglaló' },
-  'systems.s1.title': { en: 'Instant qualification', fr: 'Qualification instantanée', hu: 'Azonnali minősítés' },
-  'systems.s1.desc': { en: 'An agent that answers, qualifies and dispatches a lead in under 5 minutes, 24/7.', fr: 'Un agent qui répond, qualifie et dispatche un lead en moins de 5 min, 24/7.', hu: 'Ágens, amely 5 percen belül válaszol, minősíti és továbbítja az érdeklődőt, a nap 24 órájában.' },
-  'systems.s1.metric': { en: '+10% conversion = +€20K/year on 100 leads at €2K basket', fr: '+10% conversion = +20 K€/an sur 100 leads à 2 K€', hu: '+10% konverzió = +20 E€/év 100 érdeklődőn, 2 E€-s kosárral' },
-  'systems.s2.title': { en: 'Invisible back-office', fr: 'Back-office invisible', hu: 'Láthatatlan háttériroda' },
-  'systems.s2.desc': { en: 'Document reading, recopying, classifying: half of an admin role absorbed.', fr: 'Lecture de documents, recopie, classement : la moitié d\'un poste admin absorbée.', hu: 'Dokumentumolvasás, átmásolás, iktatás: egy adminisztratív állás fele felszívva.' },
-  'systems.s2.metric': { en: 'ROI in 2 months on a €40K/year admin role', fr: 'ROI en 2 mois sur un poste à 40 K€/an', hu: 'Megtérülés 2 hónap alatt egy 40 E€/év-es admin poszton' },
-  'systems.s3.title': { en: 'Automatic follow-up', fr: 'Relance commerciale automatique', hu: 'Automatikus értékesítési utánkövetés' },
-  'systems.s3.desc': { en: '3 to 5 personalised messages over 2-3 weeks, that stop the moment the prospect replies.', fr: '3 à 5 messages personnalisés sur 2-3 semaines, qui s\'arrêtent dès que le prospect répond.', hu: '3-5 személyre szabott üzenet 2-3 hét alatt, amely leáll abban a pillanatban, amikor az érdeklődő válaszol.' },
-  'systems.s3.metric': { en: '4% → 12% conversion at our B2B consulting clients', fr: '4% → 12% conversion chez nos clients consultants B2B', hu: '4% → 12% konverzió a B2B tanácsadó ügyfeleinknél' },
-  'systems.s4.title': { en: 'Dormant contact reactivation', fr: 'Réactivation des contacts dormants', hu: 'Alvó kapcsolatok újraaktiválása' },
-  'systems.s4.desc': { en: 'Former clients, ghost prospects, inactive subscribers: we wake them up without ad budget.', fr: 'Anciens clients, prospects fantômes, abonnés inactifs : on les réveille sans budget pub.', hu: 'Régi ügyfelek, eltűnt érdeklődők, inaktív feliratkozók: felébresztjük őket hirdetési költés nélkül.' },
-  'systems.s4.metric': { en: '+€45K/year on 500 contacts at 3% reconversion', fr: '+45 K€/an sur 500 contacts à 3% de reconversion', hu: '+45 E€/év 500 kapcsolaton, 3%-os visszatéréssel' },
-  'systems.s5.title': { en: 'Automatic internal reporting', fr: 'Reporting interne automatique', hu: 'Automatikus belső riportálás' },
-  'systems.s5.desc': { en: 'CRM + accounting + project collection, analysis, push to Slack or Teams. No new dashboard.', fr: 'Collecte CRM + compta + projet, analyse, push dans Slack ou Teams. Pas de nouveau dashboard.', hu: 'CRM, könyvelés és projektadatok gyűjtése, elemzése, kiküldése Slackre vagy Teamsre. Nincs új irányítópult.' },
-  'systems.s5.metric': { en: '500 hours/year recovered at a 50-call/day construction SMB', fr: '500h/an récupérées sur une PME BTP de 50 SAV/jour', hu: '500 óra/év megspórolva egy napi 50 hívást kezelő építőipari kkv-nál' },
-  'systems.s6.title': { en: 'Personalised quotes and proposals in minutes', fr: 'Devis et propositions personnalisés en minutes', hu: 'Személyre szabott árajánlatok percek alatt' },
-  'systems.s6.desc': { en: 'AI drafts tailored quotes and proposals from your reference data and past projects. Your experts validate instead of writing everything from scratch.', fr: 'L\'IA prépare des devis et propositions sur-mesure à partir de vos référentiels et de l\'historique de vos affaires. Vos experts valident au lieu de tout rédiger.', hu: 'Az MI a törzsadataiból és a korábbi munkáiból készít testreszabott árajánlatokat és javaslatokat. A szakértői jóváhagynak ahelyett, hogy mindent megírnának.' },
-  'systems.s6.metric': { en: 'Faster, more personalised proposals, without tying up your experts', fr: 'Des propositions plus rapides et plus personnalisées, sans mobiliser vos experts', hu: 'Gyorsabb, személyesebb ajánlatok anélkül, hogy lekötné a szakértőit' },
-  'systems.s7.title': { en: 'Your experts\' knowledge, captured and searchable', fr: 'Le savoir de vos experts, capitalisé et cherchable', hu: 'A szakértői tudása, megőrizve és kereshetően' },
-  'systems.s7.desc': { en: 'A knowledge base that captures the know-how from your projects and makes it searchable in seconds. The knowledge no longer leaves with the person.', fr: 'Une base de connaissance qui capte le savoir de vos affaires et le rend cherchable en secondes. Le savoir ne part plus avec la personne.', hu: 'Tudásbázis, amely összegyűjti a munkáiban felhalmozott tudást, és másodpercek alatt kereshetővé teszi. A tudás többé nem távozik az emberrel.' },
-  'systems.s7.metric': { en: 'The knowledge asleep in people\'s heads, turned into a reusable asset', fr: 'Le savoir qui dort dans les têtes, transformé en actif réutilisable', hu: 'A fejekben alvó tudásból újrahasznosítható vagyon lesz' },
+  'systems.sw1.sector': {
+    en: 'Leadership · School group',
+    fr: 'Direction · Groupe scolaire',
+    hu: 'Vezetőség · Iskolacsoport',
+  },
+  'systems.sw2.sector': {
+    en: 'Higher education',
+    fr: 'Enseignement supérieur',
+    hu: 'Felsőoktatás',
+  },
+  'systems.sw3.sector': {
+    en: 'School life · Supervision',
+    fr: 'Vie scolaire · Encadrement',
+    hu: 'Iskolai élet · Felügyelet',
+  },
+  'systems.sw4.sector': {
+    en: 'Facilities & supplies',
+    fr: 'Intendance',
+    hu: 'Gazdasági hivatal',
+  },
+  'systems.sw5.sector': {
+    en: 'HR · Multi-site',
+    fr: 'RH · Multi-établissements',
+    hu: 'HR · Több telephely',
+  },
+  'systems.sw6.sector': {
+    en: 'Communications · Families',
+    fr: 'Communication · Familles',
+    hu: 'Kommunikáció · Családok',
+  },
+  'systems.sw1.title': {
+    en: 'Leadership dashboard',
+    fr: 'Tableau de bord de direction',
+    hu: 'Vezetői irányítópult',
+  },
+  'systems.sw1.desc': {
+    en: 'Headcount, hours and costs for every site on one screen, up to date. Leadership stops asking and just looks.',
+    fr: 'Les effectifs, les heures et les coûts de chaque établissement sur un seul écran, à jour. La direction arrête de demander, elle regarde.',
+    hu: 'Minden telephely létszáma, órái és költségei egy képernyőn, naprakészen. A vezetőség nem kérdez többé, hanem megnézi.',
+  },
+  'systems.sw1.metric': {
+    en: 'The same information for the group and for the sites',
+    fr: 'La même information pour le groupe et pour les sites',
+    hu: 'Ugyanaz az információ a csoportnak és a telephelyeknek',
+  },
+  'systems.sw2.title': {
+    en: 'Pedagogical CRM',
+    fr: 'CRM pédagogique',
+    hu: 'Pedagógiai CRM',
+  },
+  'systems.sw2.desc': {
+    en: 'Student journeys, internship tracking, alumni follow-up, all in one place. No more parallel spreadsheets.',
+    fr: 'Parcours étudiants, suivi de stages, relance des anciens : tout au même endroit. Fin des tableurs parallèles.',
+    hu: 'Hallgatói pályák, szakmai gyakorlatok követése, öregdiákok megkeresése egy helyen. Vége a párhuzamos táblázatoknak.',
+  },
+  'systems.sw2.metric': {
+    en: '200+ students tracked in a single tool · 90%+ adoption',
+    fr: '200+ étudiants suivis dans un seul outil · adoption 90 %+',
+    hu: '200+ hallgató egyetlen eszközben · 90%+ használat',
+  },
+  'systems.sw3.title': {
+    en: 'Staff and volunteer scheduling',
+    fr: 'Planning des équipes et des bénévoles',
+    hu: 'Munkatársak és önkéntesek beosztása',
+  },
+  'systems.sw3.desc': {
+    en: 'Rota, roles, live attendance, internal comms. Without the spreadsheet-plus-messages chain.',
+    fr: 'Planning, rôles, présence en temps réel, communication interne. Sans la chaîne Excel plus messages.',
+    hu: 'Beosztás, szerepek, valós idejű jelenlét, belső kommunikáció. Az Excel–üzenet lánc nélkül.',
+  },
+  'systems.sw3.metric': {
+    en: 'Absences seen the same day, not the following month',
+    fr: 'Les absences vues le jour même, plus le mois suivant',
+    hu: 'A hiányzások aznap látszanak, nem a következő hónapban',
+  },
+  'systems.sw4.title': {
+    en: 'Stock, textbooks and equipment',
+    fr: 'Stocks, manuels et équipement',
+    hu: 'Készlet, tankönyvek és eszközök',
+  },
+  'systems.sw4.desc': {
+    en: 'Supplies, IT, linen, textbooks: what you hold, who has it, what needs reordering.',
+    fr: 'Fournitures, informatique, linge, manuels : ce que vous avez, qui l\'a, ce qu\'il faut recommander.',
+    hu: 'Eszközök, informatika, textília, tankönyvek: mi van, kinél, és mit kell újrarendelni.',
+  },
+  'systems.sw4.metric': {
+    en: 'No more end-of-year inventory weekend',
+    fr: 'Fini le week-end d\'inventaire de fin d\'année',
+    hu: 'Vége az év végi leltározós hétvégének',
+  },
+  'systems.sw5.title': {
+    en: 'Time clock and hour counts',
+    fr: 'Pointeuse et comptage d\'heures',
+    hu: 'Beléptetés és óranyilvántartás',
+  },
+  'systems.sw5.desc': {
+    en: 'Tablet or phone clock-in, overtime and annualised hours calculated against your own agreement, not a generic template.',
+    fr: 'Pointage sur tablette ou téléphone, heures supplémentaires et annualisation calculées sur votre convention, pas sur un modèle générique.',
+    hu: 'Beléptetés táblagépen vagy telefonon, a túlóra és az éves munkaidő az Ön megállapodása szerint számolva, nem sablon alapján.',
+  },
+  'systems.sw5.metric': {
+    en: '40 hours a month given back, reported by a group of nine schools',
+    fr: '40 h par mois rendues, rapporté par un groupe de neuf établissements',
+    hu: 'Havi 40 óra vissza, egy kilenc intézményes csoport beszámolója szerint',
+  },
+  'systems.sw6.title': {
+    en: 'Family feedback and reputation',
+    fr: 'Retours des familles et réputation',
+    hu: 'Családi visszajelzés és hírnév',
+  },
+  'systems.sw6.desc': {
+    en: 'Reviews and feedback in one place, replies drafted in your tone, a monthly summary per site.',
+    fr: 'Les avis et les retours regroupés, des réponses préparées dans votre ton, une synthèse mensuelle par établissement.',
+    hu: 'A vélemények és visszajelzések egy helyen, válaszok az Ön hangnemében, havi összefoglaló telephelyenként.',
+  },
+  'systems.sw6.metric': {
+    en: 'A month of feedback read in ten minutes',
+    fr: 'Un mois de retours lu en dix minutes',
+    hu: 'Egy hónapnyi visszajelzés tíz perc alatt',
+  },
+  'systems.s1.title': {
+    en: 'Answering admission enquiries',
+    fr: 'Réponse aux demandes d\'inscription',
+    hu: 'Felvételi megkeresések megválaszolása',
+  },
+  'systems.s1.desc': {
+    en: 'Family enquiries get a first answer and reach the right person, even on a Sunday evening.',
+    fr: 'Les demandes des familles reçoivent une première réponse et partent vers la bonne personne, même le dimanche soir.',
+    hu: 'A családok megkeresései választ kapnak és a megfelelő emberhez jutnak, vasárnap este is.',
+  },
+  'systems.s1.metric': {
+    en: 'No enquiry left waiting for Monday morning',
+    fr: 'Plus une demande qui attend le lundi matin',
+    hu: 'Egyetlen megkeresés sem vár hétfő reggelig',
+  },
+  'systems.s2.title': {
+    en: 'Invisible back office',
+    fr: 'Back-office invisible',
+    hu: 'Láthatatlan háttériroda',
+  },
+  'systems.s2.desc': {
+    en: 'Reading documents, re-typing, filing: half the repetitive admin absorbed.',
+    fr: 'Lecture de documents, recopie, classement : la moitié du travail administratif répétitif absorbée.',
+    hu: 'Dokumentumok olvasása, átgépelése, iktatása: az ismétlődő adminisztráció fele eltűnik.',
+  },
+  'systems.s2.metric': {
+    en: 'The front office gives time back to welcoming families',
+    fr: 'Le secrétariat rend du temps à l\'accueil des familles',
+    hu: 'A titkárság időt ad vissza a családok fogadására',
+  },
+  'systems.s3.title': {
+    en: 'Automatic follow-ups',
+    fr: 'Relances automatiques',
+    hu: 'Automatikus emlékeztetők',
+  },
+  'systems.s3.desc': {
+    en: 'Incomplete files, missing documents, deadlines: reminders go out on their own and stop the moment the family replies.',
+    fr: 'Dossiers incomplets, pièces manquantes, échéances : les relances partent seules et s\'arrêtent dès que la famille répond.',
+    hu: 'Hiányos akták, hiányzó iratok, határidők: az emlékeztetők maguktól mennek ki, és leállnak, amint a család válaszol.',
+  },
+  'systems.s3.metric': {
+    en: 'Files complete themselves without chasing',
+    fr: 'Les dossiers se complètent sans qu\'on coure après',
+    hu: 'Az akták utánajárás nélkül állnak össze',
+  },
+  'systems.s4.title': {
+    en: 'Reconnecting with alumni',
+    fr: 'Reprise du lien avec les anciens élèves',
+    hu: 'Kapcsolatfelvétel az öregdiákokkal',
+  },
+  'systems.s4.desc': {
+    en: 'Alumni, families who left, dormant contacts: the link is picked back up, with no ad budget.',
+    fr: 'Anciens élèves, familles parties, contacts dormants : on reprend le lien, sans budget publicitaire.',
+    hu: 'Öregdiákok, elköltözött családok, alvó kapcsolatok: a kapcsolat újraindul, hirdetési költség nélkül.',
+  },
+  'systems.s4.metric': {
+    en: 'An alumni network you can reach again',
+    fr: 'Un réseau d\'anciens qui redevient joignable',
+    hu: 'Egy újra elérhető öregdiák-hálózat',
+  },
+  'systems.s5.title': {
+    en: 'The monthly report, automatic',
+    fr: 'Le point mensuel, automatique',
+    hu: 'A havi jelentés, automatikusan',
+  },
+  'systems.s5.desc': {
+    en: 'Figures collected, analysed, sent to your inbox. Not one more dashboard to remember to open.',
+    fr: 'Collecte des chiffres, analyse, envoi dans votre messagerie. Pas un tableau de bord de plus à penser à ouvrir.',
+    hu: 'Számok begyűjtve, elemezve, elküldve a postafiókjába. Nem egy újabb irányítópult, amit meg kell nyitni.',
+  },
+  'systems.s5.metric': {
+    en: 'The monthly review arrives on its own',
+    fr: 'Le point mensuel arrive tout seul',
+    hu: 'A havi áttekintés magától megérkezik',
+  },
+  'systems.s6.title': {
+    en: 'Files and letters drafted in minutes',
+    fr: 'Dossiers et courriers préparés en minutes',
+    hu: 'Akták és levelek percek alatt',
+  },
+  'systems.s6.desc': {
+    en: 'Recurring documents are drafted from your own templates and history. Your teams validate instead of writing.',
+    fr: 'Les documents récurrents sont préparés à partir de vos modèles et de votre historique. Vos équipes valident au lieu de rédiger.',
+    hu: 'Az ismétlődő dokumentumok az Ön sablonjai és előzményei alapján készülnek. A csapatai jóváhagynak, nem írnak.',
+  },
+  'systems.s6.metric': {
+    en: 'Your teams validate, they don\'t start from scratch',
+    fr: 'Vos équipes valident, elles ne repartent pas de zéro',
+    hu: 'A csapatai jóváhagynak, nem nulláról kezdenek',
+  },
+  'systems.s7.title': {
+    en: 'The school\'s know-how, searchable',
+    fr: 'Le savoir de l\'établissement, cherchable',
+    hu: 'Az intézmény tudása, kereshetően',
+  },
+  'systems.s7.desc': {
+    en: 'Procedures, decisions, custom: searchable in seconds. Know-how no longer leaves with the person who leaves.',
+    fr: 'Procédures, décisions, usages : cherchables en secondes. Le savoir ne part plus avec la personne qui s\'en va.',
+    hu: 'Eljárások, döntések, szokások: másodpercek alatt kereshetők. A tudás már nem távozik azzal, aki elmegy.',
+  },
+  'systems.s7.metric': {
+    en: 'The process no longer lives in one person\'s head',
+    fr: 'Le process ne dépend plus d\'une seule tête',
+    hu: 'A folyamat már nem egyetlen ember fejében él',
+  },
 
   // ───────────────────────────────────────────────────────────────
   // Twist, "On ne fait pas que du logiciel" (le cœur bénéfices, avant la Méthode)
@@ -371,47 +780,170 @@ export const translations = {
   // ───────────────────────────────────────────────────────────────
   // Transformation, Avant / Après (identification + projection)
   // ───────────────────────────────────────────────────────────────
-  'trans.label': { en: 'The digital transformation', fr: 'La transformation digitale', hu: 'A digitális átállás' },
-  'trans.title': { en: 'Your tools hold your growth back.', fr: 'Vos outils freinent votre croissance.', hu: 'Ma az eszközei fékezik a növekedését.' },
-  'trans.titleAccent': { en: 'Soon, they propel it.', fr: 'Bientôt, ils la propulsent.', hu: 'Hamarosan hajtani fogják.' },
-  'trans.beforeLabel': { en: 'Before', fr: 'Avant', hu: 'Előtte' },
-  'trans.afterLabel': { en: 'After', fr: 'Après', hu: 'Utána' },
-  'trans.costTitle': { en: 'What\'s blocking your growth today', fr: 'Ce qui bloque votre croissance aujourd\'hui', hu: 'Ami ma blokkolja a növekedését' },
-  'trans.gainTitle': { en: 'What you get back', fr: 'Ce que vous récupérez', hu: 'Amit visszakap' },
-  'trans.before1': { en: 'Excel, WhatsApp and ten tools that don\'t talk to each other', fr: 'Excel, WhatsApp et dix outils qui ne se parlent pas', hu: 'Excel, WhatsApp és tíz eszköz, amelyek nem beszélnek egymással' },
-  'trans.before2': { en: 'Patched-up tools, never really fit for you', fr: 'Des outils bricolés, jamais vraiment adaptés', hu: 'Összetákolt eszközök, amelyek sosem illeszkedtek igazán' },
-  'trans.before3': { en: 'It drags on, it costs a lot, unmanaged costs', fr: 'Ça traîne, ça coûte cher, des coûts non maîtrisés', hu: 'Elhúzódik, sokba kerül, a költségek kicsúsznak' },
-  'trans.before4': { en: 'No clear view of your business', fr: 'Aucune vue claire sur votre activité', hu: 'Semmi tiszta rálátás a működésére' },
-  'trans.before5': { en: 'Poor organisation, time lost every day', fr: 'Mauvaise organisation, du temps perdu chaque jour', hu: 'Rossz szervezés, naponta elvesztegetett idő' },
-  'trans.after1': { en: 'One platform, everything in one place', fr: 'Une seule plateforme, tout au même endroit', hu: 'Egyetlen platform, minden egy helyen' },
-  'trans.after2': { en: 'Custom-built, tailored to your business', fr: 'Du sur-mesure, taillé pour votre métier', hu: 'Egyedi fejlesztés, az Ön szakmájára szabva' },
-  'trans.after3': { en: 'Managed costs, a measured ROI', fr: 'Des coûts maîtrisés, un ROI chiffré', hu: 'Kézben tartott költségek, számszerű megtérülés' },
-  'trans.after4': { en: 'Clear dashboards, in real time', fr: 'Des tableaux de bord clairs, en temps réel', hu: 'Világos irányítópultok, valós időben' },
-  'trans.after5': { en: 'Organised teams, time won back', fr: 'Des équipes organisées, du temps regagné', hu: 'Szervezett csapatok, visszanyert idő' },
+  'trans.label': {
+    en: 'Before, after',
+    fr: 'Avant, après',
+    hu: 'Előtte, utána',
+  },
+  'trans.title': {
+    en: 'Your tools don\'t speak your school\'s language.',
+    fr: 'Vos outils ne parlent pas la langue de votre école.',
+    hu: 'Az eszközei nem az iskolája nyelvét beszélik.',
+  },
+  'trans.titleAccent': {
+    en: 'Soon they will.',
+    fr: 'Bientôt, si.',
+    hu: 'Hamarosan viszont igen.',
+  },
+  'trans.beforeLabel': {
+    en: 'Before',
+    fr: 'Avant',
+    hu: 'Előtte',
+  },
+  'trans.afterLabel': {
+    en: 'After',
+    fr: 'Après',
+    hu: 'Utána',
+  },
+  'trans.costTitle': {
+    en: 'What takes your teams\' time today',
+    fr: 'Ce qui prend du temps à vos équipes aujourd\'hui',
+    hu: 'Ami ma elveszi a csapatai idejét',
+  },
+  'trans.gainTitle': {
+    en: 'What your teams get back',
+    fr: 'Ce que vos équipes récupèrent',
+    hu: 'Amit a csapatai visszakapnak',
+  },
+  'trans.before1': {
+    en: 'One spreadsheet per site, and nobody knows which one tells the truth',
+    fr: 'Un tableur par établissement, et personne ne sait lequel dit vrai',
+    hu: 'Telephelyenként egy táblázat, és senki sem tudja, melyik mond igazat',
+  },
+  'trans.before2': {
+    en: 'An off-the-shelf tool that covers part of the need, never all of it',
+    fr: 'Un logiciel du marché qui couvre une partie du besoin, jamais la totalité',
+    hu: 'Egy piaci szoftver, ami az igények egy részét fedi le, az egészet soha',
+  },
+  'trans.before3': {
+    en: 'Every month, someone re-enters the same hours to prepare payroll',
+    fr: 'Chaque mois, quelqu\'un ressaisit les mêmes heures pour préparer la paie',
+    hu: 'Minden hónapban valaki újra beírja ugyanazokat az órákat a bérszámfejtéshez',
+  },
+  'trans.before4': {
+    en: 'No consolidated view when leadership needs one',
+    fr: 'Aucune vue consolidée quand la direction en a besoin',
+    hu: 'Nincs összesített kép, amikor a vezetőségnek kellene',
+  },
+  'trans.before5': {
+    en: 'When the person who knows is away, everything waits',
+    fr: 'Quand la personne qui sait est absente, tout attend',
+    hu: 'Amikor hiányzik az, aki tudja, minden áll',
+  },
+  'trans.after1': {
+    en: 'One screen, every site on it',
+    fr: 'Un seul écran, tous les établissements dessus',
+    hu: 'Egyetlen képernyő, rajta minden telephely',
+  },
+  'trans.after2': {
+    en: 'Your rules, your agreement, your school calendar',
+    fr: 'Vos règles, votre convention, votre calendrier scolaire',
+    hu: 'Az Ön szabályai, megállapodása, tanévi naptára',
+  },
+  'trans.after3': {
+    en: 'Zero re-entry between clocking in and payroll',
+    fr: 'Zéro ressaisie entre le pointage et la paie',
+    hu: 'Nulla újbóli adatbevitel a beléptetés és a bérszámfejtés között',
+  },
+  'trans.after4': {
+    en: 'The same information for leadership and for the sites',
+    fr: 'La même information pour la direction et pour les sites',
+    hu: 'Ugyanaz az információ a vezetőségnek és a telephelyeknek',
+  },
+  'trans.after5': {
+    en: 'The process lives in the tool, not in someone\'s head',
+    fr: 'Le process vit dans l\'outil, plus dans une tête',
+    hu: 'A folyamat az eszközben él, nem valakinek a fejében',
+  },
   // APRÈS, les gains, en miroir 1:1 des coûts (même format : valeur serif rouge + description)
-  'trans.gainVal1': { en: 'Built for you', fr: 'Taillé pour vous', hu: 'Önre szabva' },
-  'trans.gainDesc1': { en: 'Software built around your operations, not a generic SaaS you use half of. Every view, every number, every automation exists because your business needs it. You decide right, at the right moment.', fr: 'Un logiciel construit autour de vos opérations, pas un SaaS générique utilisé à moitié. Chaque vue, chaque chiffre, chaque automatisation existe parce que votre activité en a besoin. Vous décidez juste, au bon moment.', hu: 'A működése köré épített szoftver, nem egy általános SaaS, amit félig használ. Minden nézet, minden szám, minden automatizmus azért van benne, mert a cégének szüksége van rá. Jól dönt, a megfelelő pillanatban.' },
-  'trans.gainVal2': { en: 'One cockpit', fr: 'Un cockpit', hu: 'Egy vezérlőpult' },
-  'trans.gainDesc2': { en: 'One screen that centralises your data in real time. The right info at the right moment, no checking 4 tools, no calling the expert who’s on holiday. It updates itself, and it tells the truth.', fr: 'Un seul écran qui centralise votre data en temps réel. La bonne info au bon moment, sans checker 4 outils ni rappeler l’expert parti en vacances. Ça se met à jour tout seul, et ça dit la vérité.', hu: 'Egyetlen képernyő, amely valós időben fogja össze az adatait. A jó információ a jó pillanatban, 4 eszköz átnézése nélkül, anélkül hogy a szabadságon lévő szakértőt kellene hívni. Magától frissül, és igazat mond.' },
-  'trans.gainVal3': { en: '100 % yours', fr: '100 % à vous', hu: '100%-ban az Öné' },
-  'trans.gainDesc3': { en: 'The code belongs to you, you depend on no one. And we train your teams to run it, all the way to autonomy.', fr: 'Le code vous appartient, vous ne dépendez de personne. Et on forme vos équipes pour le prendre en main, jusqu’à l’autonomie.', hu: 'A kód az Öné, senkitől nem függ. A csapatait pedig betanítjuk a használatára, egészen az önállóságig.' },
-  'trans.gainVal4': { en: 'In days', fr: 'En jours', hu: 'Napok alatt' },
-  'trans.gainDesc4': { en: 'A new hire gets up to speed in a few days, not months.', fr: 'Un nouveau prend l\'outil en main en quelques jours, plus en mois.', hu: 'Egy új munkatárs napok alatt beletanul, nem hónapok alatt.' },
-  'trans.gainVal5': { en: 'Automated', fr: 'Automatisé', hu: 'Automatizálva' },
-  'trans.gainDesc5': { en: 'The repetitive runs itself; your teams win back hours every week.', fr: 'Le répétitif tourne tout seul ; vos équipes regagnent des heures chaque semaine.', hu: 'Az ismétlődő munka magától fut; a csapatai hetente órákat nyernek vissza.' },
+  'trans.gainVal1': {
+    en: 'Built to your school',
+    fr: 'À votre école',
+    hu: 'Az iskolájára szabva',
+  },
+  'trans.gainDesc1': {
+    en: 'Built around how you actually run, not a generic tool used at half capacity. Every view exists because someone at your school needed it.',
+    fr: 'Construit autour de votre fonctionnement réel, pas un outil générique utilisé à moitié. Chaque vue existe parce que quelqu\'un chez vous en avait besoin.',
+    hu: 'A tényleges működésére épül, nem egy félig használt általános eszköz. Minden nézet azért van, mert valakinek az iskolájában szüksége volt rá.',
+  },
+  'trans.gainVal2': {
+    en: 'One screen',
+    fr: 'Un seul écran',
+    hu: 'Egyetlen képernyő',
+  },
+  'trans.gainDesc2': {
+    en: 'Every site, the hours, the headcount, in one place and up to date. No more calling the person who knows.',
+    fr: 'Les neuf sites, les heures, les effectifs, au même endroit et à jour. Plus besoin d\'appeler la personne qui sait.',
+    hu: 'Minden telephely, az órák, a létszám egy helyen és naprakészen. Nem kell többé felhívni azt, aki tudja.',
+  },
+  'trans.gainVal3': {
+    en: '100% yours',
+    fr: '100 % à vous',
+    hu: '100%-ban az Öné',
+  },
+  'trans.gainDesc3': {
+    en: 'You own the code, the data stays in Europe. And we train your teams until they no longer need us.',
+    fr: 'Le code vous appartient, les données restent en Europe. Et on forme vos équipes jusqu\'à ce qu\'elles n\'aient plus besoin de nous.',
+    hu: 'A kód az Öné, az adatok Európában maradnak. A csapatait pedig addig képezzük, amíg már nincs ránk szükségük.',
+  },
+  'trans.gainVal4': {
+    en: 'In days',
+    fr: 'En jours',
+    hu: 'Napok alatt',
+  },
+  'trans.gainDesc4': {
+    en: 'A new hire picks the tool up in days, not a term.',
+    fr: 'Une nouvelle recrue prend l\'outil en main en quelques jours, pas en un trimestre.',
+    hu: 'Egy új munkatárs napok alatt megtanulja az eszközt, nem egy félév alatt.',
+  },
+  'trans.gainVal5': {
+    en: 'Automated',
+    fr: 'Automatisé',
+    hu: 'Automatizálva',
+  },
+  'trans.gainDesc5': {
+    en: 'The repetitive part runs on its own. That\'s where the hours come back.',
+    fr: 'Le répétitif tourne tout seul. C\'est là que les heures reviennent.',
+    hu: 'Az ismétlődő rész magától megy. Innen jönnek vissza az órák.',
+  },
   'trans.punch': {
-    en: 'Our clients were exactly there. Today, they\'re on the other side.',
-    fr: 'Nos clients étaient exactement là. Aujourd\'hui, ils sont de l\'autre côté.',
-    hu:
-      'Az ügyfeleink pontosan itt tartottak. Ma a másik oldalon vannak.',
+    en: 'A group of nine schools was exactly there. Today it is on the other side.',
+    fr: 'Un groupe de neuf établissements était exactement là. Aujourd\'hui, il est de l\'autre côté.',
+    hu: 'Egy kilenc intézményes csoport pontosan itt tartott. Ma már a másik oldalon van.',
   },
   'trans.aiLabel': { en: 'AI', fr: 'IA', hu: 'MI' },
   'trans.aiTag': { en: 'AI powered', fr: 'AI powered', hu: 'MI-vel hajtva' },
   // Chaos artefacts (left panel), small friction notes scattered in the pile
-  'trans.chaos.quote': { en: 'Quote #142 · overdue', fr: 'Devis #142 · en retard', hu: '#142-es ajánlat · késésben' },
-  'trans.chaos.money': { en: '−2 400 € lost?', fr: '−2 400 € perdus ?', hu: '−2 400 € elveszett?' },
-  'trans.chaos.sms': { en: '12 unread', fr: '12 non lus', hu: '12 olvasatlan' },
-  'trans.chaos.forgot': { en: 'call back the client…', fr: 'rappeler le client…', hu: 'visszahívni az ügyfelet…' },
+  'trans.chaos.quote': {
+    en: 'Hours_Site_v4_FINAL(2).xlsx',
+    fr: 'Heures_Site_v4_FINAL(2).xlsx',
+    hu: 'Orak_Telephely_v4_VEGLEGES(2).xlsx',
+  },
+  'trans.chaos.money': {
+    en: 'edited by 3 people',
+    fr: 'modifié par 3 personnes',
+    hu: '3 ember szerkesztette',
+  },
+  'trans.chaos.sms': {
+    en: '5 unread',
+    fr: '5 non lus',
+    hu: '5 olvasatlan',
+  },
+  'trans.chaos.forgot': {
+    en: 'I forgot to clock in…',
+    fr: 'j\'ai oublié de pointer…',
+    hu: 'elfelejtettem bejelentkezni…',
+  },
 
   // ───────────────────────────────────────────────────────────────
   // Comparatif, NateSystem vs prestataire classique (lève l'objection
@@ -675,14 +1207,17 @@ export const translations = {
   },
 
   // Footer
-  'footer.tagline': { en: 'Custom software · Integrated AI · Owned by you', fr: 'Logiciel sur-mesure · IA intégrée · Vous appartient', hu: 'Egyedi szoftver · Beépített MI · Az Öné' },
+  'footer.tagline': {
+    en: 'Private schools · Custom · Yours to keep',
+    fr: 'Écoles privées · Sur-mesure · Vous appartient',
+    hu: 'Magániskolák · Egyedi · Az Öné marad',
+  },
   'footer.contactLabel': { en: 'Get in touch', fr: 'Nous contacter', hu: 'Lépjen kapcsolatba' },
   'footer.founderRole': { en: 'Founder · NateSystem', fr: 'Fondateur · NateSystem', hu: 'Alapító · NateSystem' },
   'footer.founder': {
-    en: 'Founded and coded by Nathan Goutagny. The person you talk to is the one who builds, and you keep 100 % of the code.',
+    en: 'Founded and coded by Nathan Goutagny. The person you talk to is the person who builds, and you keep 100% of the code.',
     fr: 'Fondé et codé par Nathan Goutagny. Celui qui vous parle est celui qui construit, et vous gardez 100 % du code.',
-    hu:
-      'Alapította és kódolja Nathan Goutagny. Akivel beszél, az építi is, és a kód 100%-a az Öné marad.',
+    hu: 'Nathan Goutagny alapította és kódolja. Akivel beszél, az építi is, és a kód 100%-a az Öné marad.',
   },
   'footer.legal': { en: 'Legal notice', fr: 'Mentions légales', hu: 'Jogi nyilatkozat' },
 
@@ -859,24 +1394,96 @@ export const translations = {
   'quant.cta': { en: 'Calculate my real cost →', fr: 'Calculer mon coût réel →', hu: 'A valódi költségem kiszámítása →' },
 
   // Guarantees section
-  'guarantees.label': { en: 'GUARANTEES', fr: 'GARANTIES', hu: 'GARANCIÁK' },
-  'guarantees.title': { en: 'Zero risk.', fr: 'Zéro risque.', hu: 'Nulla kockázat.' },
-  'guarantees.titleAccent': { en: '5 guarantees.', fr: '5 garanties.', hu: '5 garancia.' },
-  'guarantees.roi.title': { en: 'ROI Guarantee', fr: 'Garantie ROI', hu: 'Megtérülési garancia' },
-  'guarantees.roi.desc': { en: 'We define a number together before starting. It\'s written in the contract. If at 12 months it\'s not reached, we work for free until it is.', fr: 'On définit ensemble un chiffre avant de commencer. Il est écrit dans le contrat. Si à 12 mois il n\'est pas atteint, on travaille gratuitement jusqu\'à ce qu\'il le soit.', hu: 'Indulás előtt közösen meghatározunk egy számot. Bekerül a szerződésbe. Ha 12 hónap alatt nem érjük el, ingyen dolgozunk tovább, amíg meglesz.' },
-  'guarantees.delays.title': { en: 'Deadline Guarantee', fr: 'Garantie Délais', hu: 'Határidőgarancia' },
-  'guarantees.delays.desc': { en: 'Each unjustified week of delay on the signed initial scope = -10% on the remaining balance, capped at 50%.', fr: 'Chaque semaine de retard injustifiée sur le périmètre initial signé = -10% sur le solde restant, plafonné à 50%. Ne compte pas : évolutions hors périmètre, retours clients non fournis sous 48h, RDV non honorés.', hu: 'A szerződött kiindulási terjedelemhez képest minden indokolatlanul késett hét = -10% a fennmaradó összegből, legfeljebb 50%-ig. Nem számít bele: a terjedelmen kívüli módosítás, a 48 órán belül meg nem adott ügyfél-visszajelzés, az elmaradt egyeztetés.' },
-  'guarantees.ownership.title': { en: 'Ownership Guarantee', fr: 'Garantie Propriété', hu: 'Tulajdonjogi garancia' },
-  'guarantees.ownership.desc': { en: '100% of the code belongs to you at delivery. No subscription to keep access. If NateSystem disappears tomorrow, your tool keeps running.', fr: '100% du code vous appartient à la livraison. Aucun abonnement pour garder l\'accès. Si NateSystem disparaît demain, votre outil tourne toujours.', hu: 'Átadáskor a kód 100%-a az Öné. Semmilyen előfizetés nem kell a hozzáféréshez. Ha a NateSystem holnap eltűnik, az eszköze akkor is fut.' },
-  'guarantees.productivity.title': { en: 'Productivity Guarantee', fr: 'Garantie Productivité', hu: 'Termelékenységi garancia' },
-  'guarantees.productivity.desc': { en: 'We measure together the time lost on targeted tasks before starting. If 90 days after delivery your team hasn\'t recovered at least 30% of that time, we continue for free.', fr: 'On mesure ensemble le temps perdu sur les tâches ciblées avant de commencer. Si 90 jours après livraison votre équipe n\'a pas récupéré au moins 30% de ce temps, on continue gratuitement jusqu\'à ce que ce soit le cas.', hu: 'Indulás előtt közösen megmérjük, mennyi idő megy el a kiválasztott feladatokra. Ha az átadás után 90 nappal a csapata nem nyerte vissza ennek legalább 30%-át, ingyen dolgozunk tovább, amíg így lesz.' },
-  'guarantees.efficiency.title': { en: 'Efficiency Guarantee', fr: 'Garantie Efficacité', hu: 'Hatékonysági garancia' },
-  'guarantees.efficiency.desc': { en: 'We identify together before launch the recurring operational errors the infrastructure must eliminate. If 90 days after delivery these errors still exist, we fix them for free until zero.', fr: 'On identifie ensemble avant démarrage les erreurs opérationnelles récurrentes que l\'infrastructure doit éliminer. Si 90 jours après livraison ces erreurs existent encore, on corrige gratuitement jusqu\'à zéro.', hu: 'Indulás előtt közösen azonosítjuk azokat a visszatérő működési hibákat, amelyeket az infrastruktúrának meg kell szüntetnie. Ha az átadás után 90 nappal ezek még mindig megvannak, ingyen javítjuk őket nulláig.' },
-  'guarantees.family.title': { en: 'The Family Guarantee', fr: 'La Garantie Famille', hu: 'A családi garancia' },
-  'guarantees.family.desc': { en: 'Within 90 days of delivery, if you\'re not satisfied enough to talk about it at every family dinner until everyone is tired of hearing about it, dinner is on us.', fr: 'Dans les 90 jours suivant la livraison, si vous n\'êtes pas suffisamment satisfait pour en parler à chaque repas de famille jusqu\'à ce que tout le monde en soit lassé, on vous offre le restau.', hu: 'Az átadástól számított 90 napon belül, ha nem elégedett annyira, hogy minden családi vacsorán erről beszéljen, amíg mindenki meg nem unja, mi álljuk a vacsorát.' },
-  'guarantees.competitor.title': { en: 'The Competitor Guarantee', fr: 'La Garantie Concurrent', hu: 'A versenytárs-garancia' },
-  'guarantees.competitor.desc': { en: 'Within 90 days of delivery, if you\'re not satisfied enough to beg us not to work with your direct competitor, dinner is on us.', fr: 'Dans les 90 jours suivant la livraison, si vous n\'êtes pas suffisamment satisfait pour nous supplier de ne pas travailler avec votre concurrent direct, on vous offre le restau.', hu: 'Az átadástól számított 90 napon belül, ha nem elégedett annyira, hogy könyörögjön nekünk, ne dolgozzunk a közvetlen versenytársával, mi álljuk a vacsorát.' },
-  'guarantees.absurdLabel': { en: 'OUR BET', fr: 'NOTRE PARI', hu: 'A FOGADÁSUNK' },
+  'guarantees.label': {
+    en: 'GUARANTEES',
+    fr: 'GARANTIES',
+    hu: 'GARANCIÁK',
+  },
+  'guarantees.title': {
+    en: 'Zero risk.',
+    fr: 'Zéro risque.',
+    hu: 'Nulla kockázat.',
+  },
+  'guarantees.titleAccent': {
+    en: '5 guarantees.',
+    fr: '5 garanties.',
+    hu: '5 garancia.',
+  },
+  'guarantees.roi.title': {
+    en: 'Hours-back guarantee',
+    fr: 'Garantie Heures rendues',
+    hu: 'Visszakapott órák garancia',
+  },
+  'guarantees.roi.desc': {
+    en: 'Together we measure how long the targeted tasks take, before we start. The figure goes in the contract. If it is not reached at 12 months, we work for free until it is.',
+    fr: 'On mesure ensemble le temps que prennent les tâches visées, avant de commencer. Le chiffre est écrit dans le contrat. Si à 12 mois il n\'est pas atteint, on travaille gratuitement jusqu\'à ce qu\'il le soit.',
+    hu: 'Indulás előtt közösen megmérjük, mennyi időt visznek el a célzott feladatok. A szám bekerül a szerződésbe. Ha 12 hónap alatt nem teljesül, ingyen dolgozunk, amíg nem teljesül.',
+  },
+  'guarantees.delays.title': {
+    en: 'Deadline guarantee',
+    fr: 'Garantie Délais',
+    hu: 'Határidő-garancia',
+  },
+  'guarantees.delays.desc': {
+    en: 'Every unjustified week late on the signed scope: -10% off the remaining balance, capped at 50%. Not counted: additions outside scope, and feedback that is slow to come back from your side.',
+    fr: 'Chaque semaine de retard injustifiée sur le périmètre signé : -10 % sur le solde restant, plafonné à 50 %. Ne comptent pas : les ajouts hors périmètre et les retours qui tardent de votre côté.',
+    hu: 'Az aláírt terjedelemhez képest minden indokolatlan késés hete: -10% a fennmaradó összegből, legfeljebb 50%. Nem számít: a terjedelmen kívüli bővítés és az Önöktől késve érkező visszajelzés.',
+  },
+  'guarantees.ownership.title': {
+    en: 'Ownership guarantee',
+    fr: 'Garantie Propriété',
+    hu: 'Tulajdonjogi garancia',
+  },
+  'guarantees.ownership.desc': {
+    en: 'You own 100% of the code on delivery. No subscription to keep access. If NateSystem disappears tomorrow, your tool keeps running and your student records stay with you.',
+    fr: '100 % du code vous appartient à la livraison. Aucun abonnement pour garder l\'accès. Si NateSystem disparaît demain, votre outil tourne toujours et vos données d\'élèves restent chez vous.',
+    hu: 'Átadáskor a kód 100%-a az Öné. Nincs előfizetés a hozzáférésért. Ha a NateSystem holnap eltűnik, az eszköze tovább működik, a diákadatok pedig Önnél maradnak.',
+  },
+  'guarantees.productivity.title': {
+    en: 'Time guarantee',
+    fr: 'Garantie Temps',
+    hu: 'Idő-garancia',
+  },
+  'guarantees.productivity.desc': {
+    en: 'Together we measure the time lost on the targeted tasks before we start. If 90 days after delivery your teams have not got at least 30% of it back, we keep going at no charge.',
+    fr: 'On mesure ensemble le temps perdu sur les tâches ciblées avant de commencer. Si 90 jours après la livraison vos équipes n\'en ont pas récupéré au moins 30 %, on continue sans facturer.',
+    hu: 'Indulás előtt közösen megmérjük a célzott feladatokra elvesztegetett időt. Ha az átadás után 90 nappal a csapatai ennek legalább 30%-át nem kapták vissza, díjmentesen folytatjuk.',
+  },
+  'guarantees.efficiency.title': {
+    en: 'Reliability guarantee',
+    fr: 'Garantie Fiabilité',
+    hu: 'Megbízhatósági garancia',
+  },
+  'guarantees.efficiency.desc': {
+    en: 'Before we start, we list together the errors that come back every month: missed hours, double entries, incomplete files. If they are still there 90 days after delivery, we fix them at no charge.',
+    fr: 'On liste ensemble, avant de démarrer, les erreurs qui reviennent chaque mois : heures oubliées, doubles saisies, dossiers incomplets. Si elles sont encore là 90 jours après la livraison, on corrige sans facturer.',
+    hu: 'Indulás előtt közösen összeírjuk a havonta visszatérő hibákat: elfelejtett órák, kettős adatbevitel, hiányos akták. Ha az átadás után 90 nappal még mindig megvannak, díjmentesen javítjuk.',
+  },
+  'guarantees.family.title': {
+    en: 'The Family Guarantee',
+    fr: 'La Garantie Famille',
+    hu: 'A Családi Garancia',
+  },
+  'guarantees.family.desc': {
+    en: 'Within 90 days of delivery, if you are not happy enough to bring it up at every family dinner until everyone is sick of it, we refund you.',
+    fr: 'Dans les 90 jours suivant la livraison, si vous n\'êtes pas assez content pour en parler à chaque repas de famille jusqu\'à ce que tout le monde en ait assez, on vous rembourse.',
+    hu: 'Az átadástól számított 90 napon belül, ha nem elég elégedett ahhoz, hogy minden családi vacsorán szóba hozza, amíg mindenki meg nem unja, visszatérítjük.',
+  },
+  'guarantees.competitor.title': {
+    en: 'The Next-Door Guarantee',
+    fr: 'La Garantie Voisine',
+    hu: 'A Szomszéd Garancia',
+  },
+  'guarantees.competitor.desc': {
+    en: 'Within 90 days of delivery, if you are not happy enough to beg us not to work with the school down the road, we refund you.',
+    fr: 'Dans les 90 jours suivant la livraison, si vous n\'êtes pas assez content pour nous supplier de ne pas travailler avec l\'établissement d\'à côté, on vous rembourse.',
+    hu: 'Az átadástól számított 90 napon belül, ha nem elég elégedett ahhoz, hogy könyörögjön, ne dolgozzunk a szomszéd intézménnyel, visszatérítjük.',
+  },
+  'guarantees.absurdLabel': {
+    en: 'OUR BET',
+    fr: 'NOTRE PARI',
+    hu: 'A FOGADÁSUNK',
+  },
 
   // ForWho section
   'forwho.label': { en: 'Who this is for', fr: 'Pour qui c\'est', hu: 'Kinek szól' },
@@ -899,75 +1506,111 @@ export const translations = {
   'forwho.promise3': { en: 'Fixed scope, fixed price: no surprise invoices', fr: 'Périmètre fixe, prix fixe : zéro facture surprise', hu: 'Rögzített terjedelem, rögzített ár: semmi meglepetésszámla' },
 
   // FAQ section
-  'faq.label': { en: 'FAQ', fr: 'QUESTIONS FRÉQUENTES', hu: 'GYAKORI KÉRDÉSEK' },
-  'faq.title': { en: 'The honest', fr: 'Les réponses', hu: 'Az őszinte' },
-  'faq.titleAccent': { en: 'answers.', fr: 'honnêtes.', hu: 'válaszok.' },
+  'faq.label': {
+    en: 'FREQUENTLY ASKED',
+    fr: 'QUESTIONS FRÉQUENTES',
+    hu: 'GYAKORI KÉRDÉSEK',
+  },
+  'faq.title': {
+    en: 'The honest',
+    fr: 'Les réponses',
+    hu: 'Az őszinte',
+  },
+  'faq.titleAccent': {
+    en: 'answers.',
+    fr: 'honnêtes.',
+    hu: 'válaszok.',
+  },
   // Q1, what we build
-  'faq.q1': { en: 'What do you actually build?', fr: 'Qu\'est-ce que vous construisez concrètement ?', hu: 'Mit építenek pontosan?' },
+  'faq.q1': {
+    en: 'What do you actually build?',
+    fr: 'Qu\'est-ce que vous construisez concrètement ?',
+    hu: 'Mit építenek pontosan?',
+  },
   'faq.a1': {
-    en: 'Custom business software: the internal platform that runs your operations. Unified database, dashboards, client portals, internal tools. AI and automation are integrated only where they replace real hours of work, not as decoration.',
-    fr: 'Du logiciel métier sur-mesure : la plateforme interne qui fait tourner vos opérations. Base unifiée, dashboards, portails clients, outils internes. L\'IA et l\'automatisation sont intégrées uniquement là où elles remplacent de vraies heures de travail, pas en décoration.',
-    hu:
-      'Egyedi üzleti szoftvert: azt a belső platformot, amin a működése fut. Egységes adatbázis, irányítópultok, ügyfélportálok, belső eszközök. MI és automatizálás csak ott épül bele, ahol valódi munkaórákat vált ki, nem dekorációként.',
+    en: 'Two things. The platform the school runs on: clocking in and hour counts, rotas, stock, records, dashboards. And the teaching tools for your students: tracking, internships, work placements, whatever your teachers need. In both cases it is built on how you work, not on a template.',
+    fr: 'Deux choses. La plateforme qui fait tourner l\'établissement : pointage et comptage d\'heures, plannings, stocks, dossiers, tableaux de bord. Et les outils pédagogiques pour vos élèves : suivi de parcours, stages, alternance, ce dont vos enseignants ont besoin. Dans les deux cas, c\'est construit sur votre fonctionnement, pas sur un modèle.',
+    hu: 'Két dolgot. A platformot, amin az intézmény működik: beléptetés és óranyilvántartás, beosztások, készlet, akták, irányítópultok. És a pedagógiai eszközöket a diákjainak: pályakövetés, szakmai gyakorlat, duális képzés, amire a tanárainak szüksége van. Mindkettő az Ön működésére épül, nem sablonra.',
   },
 
   // Q2, timeline (price removed, given on the call)
-  'faq.q2': { en: 'How long does it take?', fr: 'Combien de temps ça prend ?', hu: 'Mennyi ideig tart?' },
+  'faq.q2': {
+    en: 'How long does it take?',
+    fr: 'Combien de temps ça prend ?',
+    hu: 'Mennyi ideig tart?',
+  },
   'faq.a2': {
-    en: '4 to 8 weeks for the initial build, depending on scope. We agree on a fixed scope and a fixed delivery date before writing a line of code. Weekly check-ins, monthly demos, no scope creep, no surprise invoices. Pricing is shared on the discovery call so it matches your real needs.',
-    fr: '4 à 8 semaines pour la première version, selon le périmètre. On s\'accorde sur un périmètre fixe et une date de livraison fixe avant la première ligne de code. Points hebdo, démos mensuelles, zéro dérive, zéro facture surprise. Le pricing est partagé pendant l\'appel de découverte pour coller à vos vrais besoins.',
-    hu:
-      'Az első verzió 4-8 hét, a terjedelemtől függően. Az első kódsor előtt megállapodunk a rögzített terjedelemben és a rögzített átadási dátumban. Heti egyeztetés, havi bemutató, semmi elcsúszás, semmi meglepetésszámla. Az árat a felfedező hívás során beszéljük meg, hogy az valós igényeihez igazodjon.',
+    en: '4 to 8 weeks for the first version, depending on scope. Live in under a term. Scope and date are fixed before the first line of code, and your teams keep working throughout.',
+    fr: '4 à 8 semaines pour la première version, selon le périmètre. En service en moins d\'un trimestre. On fixe le périmètre et la date avant la première ligne de code, et vos équipes continuent de travailler pendant tout ce temps.',
+    hu: 'Az első változat 4-8 hét, a terjedelemtől függően. Kevesebb mint egy félév alatt éles. A terjedelmet és a dátumot az első kódsor előtt rögzítjük, a csapatai pedig végig dolgoznak tovább.',
   },
 
   // Q3, reliability + SLA
-  'faq.q3': { en: 'Will the system stay reliable once it\'s live?', fr: 'Le système restera-t-il fiable une fois en production ?', hu: 'Megbízható marad a rendszer éles üzemben?' },
+  'faq.q3': {
+    en: 'Will the system stay reliable in production?',
+    fr: 'Le système restera-t-il fiable une fois en production ?',
+    hu: 'Megbízható marad a rendszer éles üzemben?',
+  },
   'faq.a3': {
-    en: 'Yes. It\'s monitored around the clock, backed up automatically several times a day, and we step in fast if anything goes wrong. In plain terms: it runs, and if there\'s a glitch it\'s fixed before it gets in your way. After the first 3 months, you choose: we keep handling maintenance, or we hand everything over to your team with the documentation.',
-    fr: 'Oui. Il est surveillé en permanence, sauvegardé automatiquement plusieurs fois par jour, et on intervient vite en cas de souci. Concrètement : il tourne, et s\'il y a un pépin, c\'est réglé avant que ça vous gêne. Après les 3 premiers mois, vous choisissez : on continue d\'assurer la maintenance, ou on passe tout à votre équipe avec la documentation.',
-    hu:
-      'Igen. Folyamatosan felügyeljük, naponta többször automatikusan mentjük, és gond esetén gyorsan lépünk. Magyarán: fut, és ha akad valami, még azelőtt megoldjuk, hogy zavarná Önt. Az első 3 hónap után Ön dönt: mi visszük tovább az üzemeltetést, vagy mindent átadunk a csapatának a dokumentációval együtt.',
+    en: 'Yes. Monitored continuously, backed up several times a day, and we step in fast if something breaks. A school cannot afford a day without its rota or its clocking: it is built for that.',
+    fr: 'Oui. Surveillé en permanence, sauvegardé plusieurs fois par jour, et on intervient vite en cas de souci. Une école ne peut pas se permettre une journée sans planning ni sans pointage : c\'est dimensionné pour ça.',
+    hu: 'Igen. Folyamatos felügyelet, napi többszöri mentés, és gyorsan beavatkozunk, ha gond van. Egy iskola nem engedhet meg egy napot beosztás vagy beléptetés nélkül: erre van méretezve.',
   },
 
   // Q4, automations + AI catalog (concrete, not buzzwords)
-  'faq.q4': { en: 'What automations and AI features can be integrated?', fr: 'Quelles automatisations et fonctionnalités IA peuvent être intégrées ?', hu: 'Milyen automatizálás és MI-funkció építhető be?' },
+  'faq.q4': {
+    en: 'Do we have to change how we work for this to fit?',
+    fr: 'Il faut changer notre organisation pour que ça marche ?',
+    hu: 'Meg kell változtatnunk a működésünket, hogy működjön?',
+  },
   'faq.a4': {
-    en: 'Wherever it saves real hours. The common ones: automated workflows (orders, invoices, follow-ups, internal handovers), predictive analytics (anticipate stock, no-shows, sales trends), document parsing (read invoices, contracts, forms), intelligent triage (sort, route, draft replies), autonomous agents that execute multi-step tasks across your tools, and conversational interfaces for your team or customers. We pick what\'s worth building for you, not everything because it\'s trendy.',
-    fr: 'Là où ça fait gagner de vraies heures. Les classiques : workflows automatisés (commandes, factures, relances, passations internes), analytics prédictif (anticiper stock, no-shows, tendances de ventes), lecture de documents (factures, contrats, formulaires), tri intelligent (classer, router, rédiger des réponses), agents autonomes qui exécutent des tâches multi-étapes dans vos outils, et interfaces conversationnelles pour vos équipes ou vos clients. On choisit ce qui vaut le coup pour vous, pas tout parce que c\'est à la mode.',
-    hu:
-      'Az, amelyik valódi órákat spórol. A klasszikusok: automatizált munkafolyamatok (rendelések, számlák, utánkövetés, belső átadások), előrejelző elemzés (készlet, lemondások, értékesítési trendek), dokumentumolvasás (számlák, szerződések, űrlapok), intelligens rendezés (besorolás, továbbítás, válaszfogalmazás), önálló ágensek, amelyek többlépcsős feladatokat futtatnak az eszközeiben, és beszélgetőfelületek a csapatának vagy az ügyfeleinek. Azt választjuk, ami Önnek megéri, nem mindent azért, mert divatos.',
+    en: 'No, the other way round. An off-the-shelf tool asks you to fit its boxes because it is sold to everyone. Here your rules are encoded once, exactly as they are. Your agreement, your calendar, your habits: the tool is what adapts.',
+    fr: 'Non, c\'est l\'inverse. Un logiciel du marché vous demande de rentrer dans ses cases parce qu\'il est vendu à tout le monde. Ici, vos règles sont encodées une fois, telles qu\'elles sont. Votre convention, votre calendrier, vos usages : c\'est l\'outil qui s\'aligne.',
+    hu: 'Nem, épp fordítva. Egy piaci szoftver arra kéri, hogy illeszkedjen a dobozaiba, mert mindenkinek árulják. Itt az Ön szabályait egyszer, úgy ahogy vannak, kódoljuk le. A megállapodása, a naptára, a szokásai: az eszköz igazodik.',
   },
 
   // Q5, anti lock-in
-  'faq.q5': { en: 'What if you disappear tomorrow?', fr: 'Et si vous disparaissez demain ?', hu: 'Mi van, ha holnap eltűnnek?' },
+  'faq.q5': {
+    en: 'What if you disappear tomorrow?',
+    fr: 'Et si vous disparaissez demain ?',
+    hu: 'Mi van, ha holnap eltűnnek?',
+  },
   'faq.a5': {
-    en: '100% of the code is yours and hosted on your infrastructure. Full documentation included. Any competent developer can pick it up. No subscription, no lock-in, no hostage situation.',
-    fr: '100 % du code vous appartient et est hébergé sur votre infrastructure. Documentation complète incluse. N\'importe quel développeur compétent peut reprendre derrière. Zéro abonnement, zéro lock-in, zéro otage.',
-    hu:
-      'A kód 100%-a az Öné, és az Ön infrastruktúráján fut. Teljes dokumentációval. Bármelyik hozzáértő fejlesztő folytatni tudja. Semmi előfizetés, semmi bezártság, semmi túszdráma.',
+    en: 'You own 100% of the code and it runs on your infrastructure. Full documentation included. Any competent developer can take over. Your student records are never held hostage by a subscription.',
+    fr: '100 % du code vous appartient et tourne sur votre infrastructure. Documentation complète incluse. N\'importe quel développeur compétent reprend derrière. Vos données d\'élèves ne sont jamais otages d\'un abonnement.',
+    hu: 'A kód 100%-a az Öné, és az Ön infrastruktúráján fut. Teljes dokumentációval. Bármely hozzáértő fejlesztő átveheti. A diákadatait soha nem tartja túszként egy előfizetés.',
   },
 
   // Q6, industries
-  'faq.q6': { en: 'Does this work for my industry?', fr: 'Est-ce que ça marche pour mon secteur ?', hu: 'Működik ez az én ágazatomban?' },
+  'faq.q6': {
+    en: 'Do you only work with schools?',
+    fr: 'Vous ne travaillez qu\'avec des écoles ?',
+    hu: 'Csak iskolákkal dolgoznak?',
+  },
   'faq.a6': {
-    en: 'Restaurants, consulting, construction, healthcare, retail: wherever there are recurring operations and real data flowing through them. The stack adapts. The method doesn\'t change.',
-    fr: 'Restauration, conseil, BTP, santé, retail : partout où il y a des opérations récurrentes et de la vraie donnée qui y circule. La stack s\'adapte. La méthode ne change pas.',
-    hu:
-      'Vendéglátás, tanácsadás, építőipar, egészségügy, kiskereskedelem: mindenütt, ahol visszatérő működés van, és valódi adat áramlik benne. A technológia alkalmazkodik. A módszer nem változik.',
+    en: 'That is where we add the most, and that is where we focus. But we built for other organisations under heavy operational constraint before, and it shows in the method: a school is still the most demanding organisation we have met.',
+    fr: 'C\'est là qu\'on a le plus de valeur à apporter, et c\'est là qu\'on se concentre. Mais on a construit pour d\'autres organisations à forte contrainte opérationnelle avant, et ça se voit dans la méthode : une école reste l\'organisation la plus exigeante qu\'on ait rencontrée.',
+    hu: 'Itt tudjuk a legtöbbet hozzátenni, és ide koncentrálunk. De korábban más, erősen terhelt szervezeteknek is építettünk, és ez meglátszik a módszeren: egy iskola a legigényesebb szervezet, amivel találkoztunk.',
   },
-  'faq.q7': { en: 'Why now? Can\'t it wait?', fr: 'Pourquoi maintenant ? Ça ne peut pas attendre ?', hu: 'Miért most? Nem várhat?' },
+  'faq.q7': {
+    en: 'Why now? Can\'t this wait until next September?',
+    fr: 'Pourquoi maintenant ? Ça ne peut pas attendre la rentrée prochaine ?',
+    hu: 'Miért most? Nem várhat a következő tanévig?',
+  },
   'faq.a7': {
-    en: 'It can, but waiting has a cost. 20% of European companies (10+ employees) already use AI in 2025, up from 13.5% a year earlier. Teams that integrate it into their core processes free up 20–30% of their working time (McKinsey), and SMBs that adopt it are 2× more likely to grow year over year (Salesforce). Every month of waiting is a month your competitors use to widen the gap, and time your teams keep spending on tasks a well-built system would absorb.',
-    fr: 'Ça peut, mais attendre a un coût. 20% des entreprises européennes (10+ employés) utilisent déjà l\'IA en 2025, contre 13,5% un an plus tôt. Les équipes qui l\'intègrent à leurs process clés libèrent 20 à 30% de leur temps de travail (McKinsey), et les PME qui l\'adoptent ont 2× plus de chances de croître d\'une année sur l\'autre (Salesforce). Chaque mois d\'attente est un mois où vos concurrents creusent l\'écart, et où vos équipes continuent de payer des tâches qu\'une infrastructure bien construite absorberait.',
-    hu:
-      'Várhat, de a várakozásnak ára van. Az európai cégek (10+ alkalmazott) 20%-a már 2025-ben MI-t használ, szemben az egy évvel korábbi 13,5%-kal. Azok a csapatok, amelyek beépítik a kulcsfolyamataikba, a munkaidejük 20-30%-át szabadítják fel (McKinsey), és az MI-t bevezető kkv-k 2× akkora eséllyel nőnek évről évre (Salesforce). Minden várakozással töltött hónap egy hónap, amíg a versenytársai növelik az előnyüket, és amíg a csapatai olyan feladatokat fizetnek meg, amelyeket egy jól megépített rendszer elnyelne.',
+    en: 'It can. But every month of waiting is a month of re-typing, of payroll prepared by hand, and of information living in one person\'s head. The right moment is when you have time to talk to us, not when the calendar is perfect.',
+    fr: 'Ça peut. Mais chaque mois d\'attente est un mois de ressaisie, de paie préparée à la main et d\'informations qui vivent dans une seule tête. Le bon moment, c\'est quand vous avez le temps de nous parler, pas quand le calendrier est parfait.',
+    hu: 'Várhat. De minden várakozással töltött hónap az újbóli adatbevitel, a kézzel készített bérszámfejtés és az egyetlen fejben élő információ hónapja. A jó pillanat az, amikor van ideje beszélni velünk, nem az, amikor tökéletes a naptár.',
   },
-  'faq.q8': { en: 'What technologies do you use? Is my data safe?', fr: 'Quelles technologies utilisez-vous ? Mes données sont-elles en sécurité ?', hu: 'Milyen technológiákat használnak? Biztonságban vannak az adataim?' },
+  'faq.q8': {
+    en: 'Where is our student data hosted?',
+    fr: 'Où sont hébergées les données de nos élèves ?',
+    hu: 'Hol tárolják a diákjaink adatait?',
+  },
   'faq.a8': {
-    en: 'We use the most reliable, recognised technologies on the market: the same ones big tech companies rely on. Your data is hosted in Europe, protected and GDPR-compliant. And everything is yours: the code belongs to you, you\'re no one\'s prisoner. (For the curious: Next.js, Supabase, Claude API, Vercel, solid standards.)',
-    fr: 'On utilise les technologies les plus fiables et reconnues du marché : les mêmes que les grandes entreprises tech. Vos données sont hébergées en Europe, protégées et conformes RGPD. Et tout vous appartient : le code est à vous, vous n\'êtes prisonnier de personne. (Pour les curieux : Next.js, Supabase, Claude API, Vercel, du standard solide.)',
-    hu:
-      'A piac legmegbízhatóbb, legelismertebb technológiáit használjuk: ugyanazokat, amelyekre a nagy tech-cégek is építenek. Az adatai Európában tárolódnak, védetten és GDPR-konforman. És minden az Öné: a kód a sajátja, senkinek nem a foglya. (A kíváncsiaknak: Next.js, Supabase, Claude API, Vercel, szilárd szabványok.)',
+    en: 'In Europe, and nowhere else. These are minors\' records: hosting is European, GDPR is designed in from the start, and access is partitioned by role. Leadership does not see what the front desk sees.',
+    fr: 'En Europe, et nulle part ailleurs. Ce sont des données de mineurs : l\'hébergement est européen, le RGPD est pris en compte dès la conception, et les accès sont cloisonnés par rôle. La direction ne voit pas la même chose que l\'accueil.',
+    hu: 'Európában, és sehol máshol. Ezek kiskorúak adatai: az adattárolás európai, a GDPR a tervezéstől kezdve beépített, a hozzáférés pedig szerepkörönként elkülönített. A vezetőség nem ugyanazt látja, mint a porta.',
   },
 
   // StrategyCall section
@@ -1693,14 +2336,30 @@ export const translations = {
   'v2.sprint.eyebrow': { en: 'First step · no commitment', fr: 'Première étape · sans engagement', hu: 'Első lépés · kötelezettség nélkül' },
   'v2.sprint.title': { en: 'The Diagnostic', fr: 'Le Diagnostic', hu: 'A diagnosztika' },
   'v2.sprint.format': { en: '2 weeks · 3 to 5 calls · nothing to prepare', fr: '2 semaines · 3 à 5 appels · rien à préparer', hu: '2 hét · 3-5 hívás · semmit nem kell előkészítenie' },
-  'v2.sprint.intro': { en: 'You prepare nothing, you fill in nothing. You talk, we do the work.', fr: 'Vous ne préparez rien, vous ne remplissez rien. Vous parlez, on fait le travail.', hu: 'Nem készül elő semmivel, nem tölt ki semmit. Ön beszél, a munkát mi végezzük.' },
+  'v2.sprint.intro': {
+    en: 'You prepare nothing, you fill in nothing. You talk, we do the work.',
+    fr: 'Vous ne préparez rien, vous ne remplissez rien. Vous parlez, on fait le travail.',
+    hu: 'Semmit nem kell előkészítenie vagy kitöltenie. Ön beszél, mi dolgozunk.',
+  },
   'v2.sprint.d1.name': { en: 'The Map', fr: 'La Carte', hu: 'A térkép' },
-  'v2.sprint.d1.desc': { en: 'How your business really runs, everything living in people\'s heads, put on paper.', fr: 'Comment votre activité tourne réellement, tout ce qui est dans les têtes, mis sur papier.', hu: 'Ahogyan a cége valójában működik: minden, ami a fejekben él, papírra téve.' },
+  'v2.sprint.d1.desc': {
+    en: 'How your school actually runs. Everything that lives in people\'s heads, put on paper.',
+    fr: 'Comment votre établissement tourne réellement. Tout ce qui est dans les têtes, mis sur papier.',
+    hu: 'Hogyan működik valójában az intézménye. Minden, ami a fejekben él, papírra téve.',
+  },
   'v2.sprint.d2.name': { en: 'The Prototype', fr: 'Le Prototype', hu: 'A prototípus' },
-  'v2.sprint.d2.desc': { en: 'Clickable, built around your business, before any commitment.', fr: 'Cliquable, construit autour de votre métier, avant tout engagement.', hu: 'Kattintható, az Ön szakmája köré építve, még mindenféle elköteleződés előtt.' },
+  'v2.sprint.d2.desc': {
+    en: 'Clickable, built on your rules, before any commitment.',
+    fr: 'Cliquable, construit sur vos règles, avant tout engagement.',
+    hu: 'Kattintható, az Ön szabályaira építve, bármilyen elköteleződés előtt.',
+  },
   'v2.sprint.d3.name': { en: 'The Costed Roadmap', fr: 'La Feuille de route chiffrée', hu: 'A beárazott ütemterv' },
   'v2.sprint.d3.desc': { en: 'What to build, in what order, for how much.', fr: 'Quoi construire, dans quel ordre, pour combien.', hu: 'Mit építsünk meg, milyen sorrendben, mennyiért.' },
-  'v2.sprint.promise': { en: 'In 2 weeks you know exactly where your hours and your value are stuck, and you click through the software that frees them and turns them into growth, before you\'ve signed anything.', fr: 'En 2 semaines, vous savez exactement où vos heures et votre valeur sont bloquées, et vous cliquez dans le logiciel qui les libère et les transforme en croissance, avant d\'avoir signé quoi que ce soit.', hu: '2 hét alatt pontosan tudni fogja, hol ragadnak meg az órái és az értéke, és végig tud kattintani azon a szoftveren, amely felszabadítja és növekedéssé alakítja őket, még mielőtt bármit aláírt volna.' },
+  'v2.sprint.promise': {
+    en: 'In 2 weeks you know exactly where your teams\' hours go, and you click through the software that gives them back.',
+    fr: 'En 2 semaines, vous savez exactement où partent les heures de vos équipes, et vous cliquez dans le logiciel qui vous les rend.',
+    hu: '2 hét alatt pontosan tudni fogja, hová mennek a csapatai órái, és kipróbálhatja a szoftvert, amely visszaadja őket.',
+  },
   'v2.sprint.cta': { en: 'Book a call · free', fr: 'Réserver un appel · offert', hu: 'Hívás foglalása · ingyenes' },
   'v2.sprint.selfserve': { en: 'Or run the online diagnostic, 3 min, no email', fr: 'Ou lancez le diagnostic en ligne, 3 min, sans e-mail', hu: 'Vagy indítsa el az online diagnosztikát: 3 perc, e-mail nélkül' },
   'v2.sprint.afterA': { en: 'What then? Two options: we keep going together, or we stop here. ', fr: 'Ensuite ? Deux options : on continue ensemble, ou on s\'arrête là. ', hu: 'Utána? Két lehetőség: folytatjuk együtt, vagy itt megállunk. ' },
@@ -1712,9 +2371,17 @@ export const translations = {
   'v2.cmp.titleAccent': { en: 'next to us.', fr: 'à côté de nous.', hu: 'mellettünk.' },
   'v2.cmp.colFreelance': { en: 'Freelancer', fr: 'Freelance', hu: 'Szabadúszó' },
   'v2.cmp.colEsn': { en: 'Traditional agency', fr: 'Agence traditionnelle', hu: 'Hagyományos ügynökség' },
-  'v2.cmp.colSaas': { en: 'Off-the-shelf SaaS', fr: 'SaaS du marché', hu: 'Dobozos SaaS' },
+  'v2.cmp.colSaas': {
+    en: 'Off-the-shelf software',
+    fr: 'Logiciel du marché',
+    hu: 'Piaci szoftver',
+  },
   'v2.cmp.colUs': { en: 'NateSystem', fr: 'NateSystem', hu: 'NateSystem' },
-  'v2.cmp.r1.crit': { en: 'Understands your business', fr: 'Comprend votre métier', hu: 'Érti a szakmáját' },
+  'v2.cmp.r1.crit': {
+    en: 'Understands how a school runs',
+    fr: 'Comprend le fonctionnement d\'une école',
+    hu: 'Érti, hogyan működik egy iskola',
+  },
   'v2.cmp.r1.freelance': { en: 'Sometimes', fr: 'Parfois', hu: 'Néha' },
   'v2.cmp.r1.esn': { en: 'Rarely', fr: 'Rarement', hu: 'Ritkán' },
   'v2.cmp.r1.saas': { en: 'Never', fr: 'Jamais', hu: 'Soha' },
@@ -1761,45 +2428,201 @@ export const translations = {
   'v2.cta.button': { en: 'Book a call', fr: 'Réserver un appel', hu: 'Hívás foglalása' },
 
   /* ─────────── Page /methode « Notre approche » (Lot 2) ─────────── */
-  'methode.hero.eyebrow': { en: 'HOW WE WORK', fr: 'NOTRE APPROCHE', hu: 'AHOGYAN DOLGOZUNK' },
-  'methode.hero.title': { en: 'We audit, map, build, integrate.', fr: 'On audite, cartographie, construit, intègre.', hu: 'Auditálunk, feltérképezünk, építünk, integrálunk.' },
-  'methode.hero.titleAccent': { en: 'And keep it evolving.', fr: 'Et on fait évoluer.', hu: 'És folyamatosan fejlesztjük.' },
-  'methode.hero.sub': { en: 'We start by understanding where your value is stuck, your hours, your know-how, your margin, then we build the software that frees it and turns it into growth. Fast, and without jargon.', fr: 'On commence par comprendre où votre valeur reste bloquée, vos heures, votre savoir, votre marge, puis on construit le logiciel qui la libère et la transforme en croissance. Vite, et sans jargon.', hu: 'Azzal kezdjük, hogy megértjük, hol ragad meg az értéke: az órái, a tudása, az árrése. Aztán megépítjük a szoftvert, amely felszabadítja és növekedéssé alakítja. Gyorsan, szakzsargon nélkül.' },
-  'methode.hero.cta': { en: 'Book a call · free', fr: 'Réserver un appel · offert', hu: 'Hívás foglalása · ingyenes' },
+  'methode.hero.eyebrow': {
+    en: 'OUR METHOD',
+    fr: 'NOTRE MÉTHODE',
+    hu: 'A MÓDSZERÜNK',
+  },
+  'methode.hero.title': {
+    en: 'We map, we build, we train.',
+    fr: 'On cartographie, on construit, on forme.',
+    hu: 'Feltérképezünk, építünk, betanítunk.',
+  },
+  'methode.hero.titleAccent': {
+    en: 'Then we step back.',
+    fr: 'Puis on s\'efface.',
+    hu: 'Aztán háttérbe lépünk.',
+  },
+  'methode.hero.sub': {
+    en: 'We start by understanding where your teams\' hours go. Then we build the platform that gives them back, on your own rules, and we train until it runs without us.',
+    fr: 'On commence par comprendre où partent les heures de vos équipes. Puis on construit la plateforme qui vous les rend, sur vos règles, et on forme jusqu\'à ce que ça tourne sans nous.',
+    hu: 'Azzal kezdjük, hogy megértjük, hová mennek a csapatai órái. Aztán megépítjük a platformot, amely visszaadja őket, az Ön szabályai szerint, és addig képzünk, amíg nélkülünk is megy.',
+  },
+  'methode.hero.cta': {
+    en: 'Book a call · free',
+    fr: 'Réserver un appel · offert',
+    hu: 'Hívás foglalása · ingyenes',
+  },
 
-  'radio.eyebrow': { en: 'THE X-RAY', fr: 'LA RADIOGRAPHIE', hu: 'A RÖNTGEN' },
-  'radio.title': { en: 'How we read', fr: 'Comment on lit', hu: 'Hogyan olvassuk' },
-  'radio.titleAccent': { en: 'your business.', fr: 'votre activité.', hu: 'a cége működését.' },
-  'radio.sub': { en: 'Four moves. From what lives in people\'s heads to a system your team actually runs.', fr: 'Quatre temps. De ce qui vit dans les têtes à un système que votre équipe pilote vraiment.', hu: 'Négy lépés. Attól, ami a fejekben él, addig a rendszerig, amelyet a csapata tényleg használ.' },
-  'radio.hint': { en: 'Click each step', fr: 'Cliquez sur chaque étape', hu: 'Kattintson az egyes lépésekre' },
+  'radio.eyebrow': {
 
-  'radio.s1.name': { en: 'Map', fr: 'Cartographier', hu: 'Feltérképezés' },
-  'radio.s1.tag': { en: 'We look', fr: 'On regarde', hu: 'Megnézzük' },
-  'radio.s1.desc': { en: 'We lay out how your business really runs, every task, every tool, every piece of data living in a notebook, a spreadsheet or someone\'s head.', fr: 'On met à plat comment votre activité tourne vraiment, chaque tâche, chaque outil, chaque donnée qui vit dans un cahier, un tableur ou la tête de quelqu\'un.', hu: 'Kiterítjük, hogyan működik valójában a cége: minden feladatot, minden eszközt, minden adatot, ami füzetben, táblázatban vagy valakinek a fejében él.' },
-  'radio.s2.name': { en: 'Unify', fr: 'Unifier', hu: 'Egységesítés' },
-  'radio.s2.tag': { en: 'We gather', fr: 'On rassemble', hu: 'Összegyűjtjük' },
-  'radio.s2.desc': { en: 'Your data, scattered across five tools, comes back into a single base built for your trade. One source of truth, no more double entry.', fr: 'Vos données éparpillées dans cinq outils reviennent dans une seule base, conçue pour votre métier. Une source de vérité, fini la double-saisie.', hu: 'Az öt eszközben szétszórt adatai egyetlen, a szakmájára tervezett adatbázisba kerülnek vissza. Egy igazságforrás, vége a kettős adatbevitelnek.' },
-  'radio.s3.name': { en: 'Automate', fr: 'Automatiser', hu: 'Automatizálás' },
-  'radio.s3.tag': { en: 'We lighten', fr: 'On allège', hu: 'Könnyítünk' },
-  'radio.s3.desc': { en: 'AI and automation take on the repetitive work, but only where they replace real working hours. Never a gadget bolted on to look modern.', fr: 'L\'IA et l\'automatisation prennent le répétitif, mais seulement là où elles remplacent de vraies heures de travail. Jamais un gadget posé pour faire moderne.', hu: 'Az MI és az automatizálás átveszi az ismétlődő munkát, de csak ott, ahol valódi munkaórákat vált ki. Sosem dísznek felcsavarozott kütyüként.' },
-  'radio.s4.name': { en: 'Hand over', fr: 'Former', hu: 'Átadás' },
-  'radio.s4.tag': { en: 'We step back', fr: 'On passe la main', hu: 'Hátralépünk' },
-  'radio.s4.desc': { en: 'Your team runs the tool, the documentation is complete, 100% of the code is yours. We stay if you want us to, but you\'re never a hostage.', fr: 'Votre équipe pilote l\'outil, la documentation est complète, 100 % du code vous appartient. On reste si vous voulez, mais vous n\'êtes jamais prisonnier.', hu: 'A csapata viszi az eszközt, a dokumentáció teljes, a kód 100%-a az Öné. Maradunk, ha kéri, de sosem tartjuk fogva.' },
+    en: 'THE MAPPING',
 
-  'radio.scene.sources': { en: 'Spreadsheets · Notebooks · WhatsApp · Emails · In people\'s heads', fr: 'Tableurs · Cahiers · WhatsApp · Mails · Dans les têtes', hu: 'Táblázatok · Füzetek · WhatsApp · E-mailek · A fejekben' },
-  'radio.scene.hub': { en: 'Your base', fr: 'Votre base', hu: 'Az Ön adatbázisa' },
-  'radio.scene.auto': { en: 'Auto', fr: 'Auto', hu: 'Auto' },
-  'radio.scene.ai': { en: 'AI', fr: 'IA', hu: 'MI' },
-  'radio.scene.yours': { en: '100% yours', fr: '100 % à vous', hu: '100%-ban az Öné' },
-  'radio.scene.doc': { en: 'Docs', fr: 'Doc', hu: 'Doku' },
+    fr: 'LA CARTOGRAPHIE',
 
-  'methode.deliv.label': { en: 'THE DELIVERABLES', fr: 'LES LIVRABLES', hu: 'AMIT ÁTADUNK' },
-  'methode.deliv.title': { en: 'Everything, built for you.', fr: 'Tout est sur-mesure.', hu: 'Minden egyedire készül.' },
-  'methode.deliv.sub': { en: 'From the X-ray of your business to the costed action plan, every deliverable is tailored to you.', fr: 'De la radiographie de votre activité au plan d’action chiffré, chaque livrable est taillé pour vous.', hu: 'A cége röntgenképétől a beárazott cselekvési tervig minden átadott anyag Önre szabott.' },
+    hu: 'A FELTÉRKÉPEZÉS',
 
-  'methode.cta.title': { en: 'We start by understanding. Not by selling.', fr: 'On commence par comprendre. Pas par vendre.', hu: 'Azzal kezdjük, hogy megértjük. Nem azzal, hogy eladunk.' },
-  'methode.cta.sub': { en: 'A free call. We look at how your business runs and tell you straight what would actually move the needle, even if it\'s not us who builds it.', fr: 'Un appel offert. On regarde comment votre activité tourne et on vous dit franchement ce qui bougerait vraiment les choses, même si ce n\'est pas nous qui le construisons.', hu: 'Egy ingyenes hívás. Megnézzük, hogyan működik a cége, és őszintén megmondjuk, mi mozdítana valóban a helyzeten, akkor is, ha nem mi építjük meg.' },
-  'methode.cta.button': { en: 'Book a call · free', fr: 'Réserver un appel · offert', hu: 'Hívás foglalása · ingyenes' },
+  },
+  'radio.title': {
+    en: 'How we read',
+    fr: 'Comment on lit',
+    hu: 'Hogyan olvassuk',
+  },
+  'radio.titleAccent': {
+    en: 'your school.',
+    fr: 'votre établissement.',
+    hu: 'az intézményét.',
+  },
+  'radio.sub': {
+    en: 'Four steps. From what lives in people\'s heads to a tool your teams use without us.',
+    fr: 'Quatre temps. De ce qui vit dans les têtes à un outil que vos équipes utilisent sans nous.',
+    hu: 'Négy lépés. Attól, ami a fejekben él, odáig, hogy a csapatai nélkülünk használják az eszközt.',
+  },
+  'radio.hint': {
+    en: 'Click each step',
+    fr: 'Cliquez sur chaque étape',
+    hu: 'Kattintson az egyes lépésekre',
+  },
+
+  'radio.s1.name': {
+
+    en: 'Map',
+
+    fr: 'Cartographier',
+
+    hu: 'Feltérképezés',
+
+  },
+  'radio.s1.tag': {
+    en: 'We look',
+    fr: 'On regarde',
+    hu: 'Megnézzük',
+  },
+  'radio.s1.desc': {
+    en: 'We lay out how your school actually runs: every task, every tool, every piece of information living in a notebook, a spreadsheet or one person\'s head. From a family\'s enrolment to payroll sign-off.',
+    fr: 'On met à plat comment votre établissement tourne vraiment : chaque tâche, chaque outil, chaque information qui vit dans un cahier, un tableur ou une seule tête. De l\'inscription d\'une famille à la validation de la paie.',
+    hu: 'Kiterítjük, hogyan működik valójában az intézménye: minden feladat, eszköz és információ, ami egy füzetben, táblázatban vagy egyetlen fejben él. A család beiratkozásától a bérszámfejtés jóváhagyásáig.',
+  },
+  'radio.s2.name': {
+    en: 'Bring together',
+    fr: 'Réunir',
+    hu: 'Összefogás',
+  },
+  'radio.s2.tag': {
+    en: 'We gather',
+    fr: 'On rassemble',
+    hu: 'Összegyűjtjük',
+  },
+  'radio.s2.desc': {
+    en: 'Your data, scattered across sites, comes back into one base built on your own agreement and school calendar. One single record, the same for leadership and for the sites.',
+    fr: 'Vos données éparpillées entre les sites reviennent dans une seule base, bâtie sur votre convention et votre calendrier scolaire. Une seule information, la même pour la direction et pour les établissements.',
+    hu: 'A telephelyek között szétszórt adatai egyetlen adatbázisba kerülnek, amely az Ön megállapodására és tanévi naptárára épül. Egyetlen információ, ugyanaz a vezetőségnek és a telephelyeknek.',
+  },
+  'radio.s3.name': {
+    en: 'Automate',
+    fr: 'Automatiser',
+    hu: 'Automatizálás',
+  },
+  'radio.s3.tag': {
+    en: 'We lighten',
+    fr: 'On allège',
+    hu: 'Könnyítünk',
+  },
+  'radio.s3.desc': {
+    en: 'Re-typing, chasing missing documents and hour calculations run on their own, but only where it gives real hours back to your teams. Never one more gadget to learn.',
+    fr: 'Les ressaisies, les relances de pièces manquantes et les calculs d\'heures tournent seuls, mais seulement là où ça rend de vraies heures à vos équipes. Jamais un gadget de plus à apprendre.',
+    hu: 'Az újbóli adatbevitel, a hiányzó iratok utánkövetése és az óraszámítás magától megy, de csak ott, ahol valódi órákat ad vissza a csapatainak. Sosem egy újabb megtanulandó kütyü.',
+  },
+  'radio.s4.name': {
+    en: 'Train',
+    fr: 'Former',
+    hu: 'Betanítás',
+  },
+  'radio.s4.tag': {
+    en: 'We hand over',
+    fr: 'On passe la main',
+    hu: 'Átadjuk',
+  },
+  'radio.s4.desc': {
+    en: 'From leadership to the front desk, everyone knows how to use it. Documentation is complete, you own 100% of the code and the student records stay with you. We stay if you want, but you no longer need us.',
+    fr: 'De la direction à l\'accueil, chacun sait s\'en servir. La documentation est complète, 100 % du code vous appartient et les données d\'élèves restent chez vous. On reste si vous voulez, mais vous n\'en avez plus besoin.',
+    hu: 'A vezetőségtől a portáig mindenki tudja használni. A dokumentáció teljes, a kód 100%-a az Öné, a diákadatok pedig Önnél maradnak. Maradunk, ha szeretné, de már nincs ránk szüksége.',
+  },
+
+  'radio.scene.sources': {
+
+    en: 'Spreadsheets · Notebooks · Messages · Emails · In people\'s heads',
+
+    fr: 'Tableurs · Cahiers · Messages · Mails · Dans les têtes',
+
+    hu: 'Táblázatok · Füzetek · Üzenetek · E-mailek · A fejekben',
+
+  },
+  'radio.scene.hub': {
+    en: 'Your base',
+    fr: 'Votre base',
+    hu: 'Az Ön adatbázisa',
+  },
+  'radio.scene.auto': {
+    en: 'Auto',
+    fr: 'Auto',
+    hu: 'Auto',
+  },
+  'radio.scene.ai': {
+    en: 'AI',
+    fr: 'IA',
+    hu: 'MI',
+  },
+  'radio.scene.yours': {
+    en: '100% yours',
+    fr: '100 % à vous',
+    hu: '100%-ban az Öné',
+  },
+  'radio.scene.doc': {
+    en: 'Doc',
+    fr: 'Doc',
+    hu: 'Dok',
+  },
+
+  'methode.deliv.label': {
+
+    en: 'THE DELIVERABLES',
+
+    fr: 'LES LIVRABLES',
+
+    hu: 'AZ EREDMÉNYEK',
+
+  },
+  'methode.deliv.title': {
+    en: 'Everything is custom.',
+    fr: 'Tout est sur-mesure.',
+    hu: 'Minden egyedi.',
+  },
+  'methode.deliv.sub': {
+    en: 'From mapping your school to a costed action plan, every deliverable is cut for you. You keep them, even if we stop there.',
+    fr: 'De la cartographie de votre établissement au plan d\'action chiffré, chaque livrable est taillé pour vous. Vous les gardez, même si on s\'arrête là.',
+    hu: 'Az intézmény feltérképezésétől a számszerűsített cselekvési tervig minden eredmény Önre szabott. Meg is tartja őket, akkor is, ha itt megállunk.',
+  },
+
+  'methode.cta.title': {
+
+    en: 'We start by understanding. Not by selling.',
+
+    fr: 'On commence par comprendre. Pas par vendre.',
+
+    hu: 'A megértéssel kezdjük. Nem az eladással.',
+
+  },
+  'methode.cta.sub': {
+    en: 'A free call. We look at how your school actually runs and tell you plainly what would change things, even if we are not the ones doing it.',
+    fr: 'Un appel offert. On regarde comment votre établissement fonctionne vraiment et on vous dit franchement ce qui changerait les choses, même si ce n\'est pas nous qui le faisons.',
+    hu: 'Egy ingyenes hívás. Megnézzük, hogyan működik valójában az intézménye, és őszintén megmondjuk, mi hozna változást, akkor is, ha nem mi csináljuk.',
+  },
+  'methode.cta.button': {
+    en: 'Book a call · free',
+    fr: 'Réserver un appel · offert',
+    hu: 'Hívás foglalása · ingyenes',
+  },
 
   /* ═══════════════════════════════════════════════════════════════════════
      /outils · /en/outils — LES OUTILS GRATUITS

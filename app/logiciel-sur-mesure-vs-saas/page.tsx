@@ -107,6 +107,7 @@ export default function VsPage() {
 
       <RelatedLinks
         links={[
+          { href: '/', label: 'Vous êtes une école privée ?', desc: 'C\'est là qu\'on a le plus de valeur à apporter.' },
           { href: '/prix-logiciel-sur-mesure', label: 'Combien coûte le sur-mesure ?', desc: 'Les fourchettes réalistes et le point de bascule vs SaaS.' },
           { href: '/blog/base-de-donnees-vs-excel-pourquoi-migrer', label: 'Base de données vs Excel', desc: 'Quand vos tableurs deviennent un frein, et quoi faire.' },
           { href: '/agence-logiciel-ia-lyon', label: 'Agence à Lyon', desc: 'Qui construit votre logiciel sur-mesure et votre IA.' },

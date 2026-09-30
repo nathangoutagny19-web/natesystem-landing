@@ -221,6 +221,7 @@ export default function LogicielGestionSurMesurePage() {
 
       <RelatedLinks
         links={[
+          { href: '/', label: 'Vous êtes une école privée ?', desc: 'C\'est là qu\'on a le plus de valeur à apporter.' },
           { href: '/erp-vs-logiciel-sur-mesure', label: 'ERP vs logiciel sur-mesure', desc: 'Quelle approche pour votre PME ?' },
           { href: '/services/logiciel-sur-mesure', label: 'Le logiciel sur-mesure', desc: 'Ce qu\'on construit, en détail.' },
           { href: '/prix-logiciel-sur-mesure', label: 'Combien ça coûte ?', desc: 'Les fourchettes de prix réalistes.' },

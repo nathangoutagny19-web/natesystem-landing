@@ -33,7 +33,7 @@ const jsonLd = {
       serviceType: 'IA agentique, agents autonomes, automatisation, lecture de documents, data analytics, intégration IA',
       audience: { '@type': 'BusinessAudience', audienceType: 'PME et ETI (5 à 100 collaborateurs) avec des tâches répétitives à fort volume' },
       description:
-        'Intégration d\'IA agentique et de data analytics dans votre activité : une IA avec mémoire persistante qui exécute des tâches de bout en bout, apprend votre métier et s\'améliore avec le temps. Agents autonomes, automatisation, lecture de documents, analytics prédictif, intégrés uniquement là où ils remplacent de vraies heures de travail. Vos données restent en UE.',
+        'Intégration d\'IA agentique et de data analytics dans votre établissement : une IA avec mémoire persistante qui exécute des tâches de bout en bout, apprend votre métier et s\'améliore avec le temps. Agents autonomes, automatisation, lecture de documents, analytics prédictif, intégrés uniquement là où ils remplacent de vraies heures de travail. Vos données restent en UE.',
     },
     {
       '@type': 'FAQPage',
@@ -43,7 +43,7 @@ const jsonLd = {
           name: 'Qu\'est-ce que l\'IA agentique ?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'L\'IA agentique est une IA qui ne se contente pas de répondre : elle exécute des tâches de bout en bout dans vos outils, avec une mémoire persistante du contexte de votre activité. Elle apprend de chaque interaction et s\'améliore avec le temps. Concrètement, elle prend en charge des tâches répétitives, parfois à forte valeur, comme qualifier un lead, lire un document, router une demande, rédiger une première réponse.',
+            text: 'L\'IA agentique est une IA qui ne se contente pas de répondre : elle exécute des tâches de bout en bout dans vos outils, avec une mémoire persistante du contexte de votre établissement. Elle apprend de chaque interaction et s\'améliore avec le temps. Concrètement, elle prend en charge des tâches répétitives, parfois à forte valeur, comme qualifier un lead, lire un document, router une demande, rédiger une première réponse.',
           },
         },
         {

@@ -23,18 +23,18 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'NateSystem, Logiciel sur-mesure propulsé par l\'IA',
+  title: 'NateSystem, plateformes sur-mesure pour écoles privées',
   description:
-    'Le logiciel sur-mesure qui pilote votre activité, propulsé par l\'IA, intelligence artificielle agentique, automatisation, data analytics, là où elle remplace de vraies heures de travail. Vos données, votre infrastructure, votre code.',
+    'La plateforme de gestion sur-mesure des écoles privées : pointage et comptage d\'heures, plannings, dossiers, suivi des élèves. Construite sur votre convention et votre calendrier scolaire. Le code vous appartient, les données restent en Europe.',
   keywords: [
-    'logiciel sur-mesure IA',
-    'IA intégrée logiciel métier',
-    'intelligence artificielle agentique PME',
-    'automatisation IA entreprise',
-    'data analytics PME',
-    'infrastructure IA souveraine',
-    'command center métier',
-    'alternative SaaS PME',
+    'logiciel gestion école privée',
+    'logiciel sur-mesure école',
+    'pointeuse école multi-établissements',
+    'comptage heures établissement scolaire',
+    'CRM pédagogique sur-mesure',
+    'logiciel vie scolaire sur-mesure',
+    'plateforme gestion groupe scolaire',
+    'alternative logiciel générique école',
     'NateSystem',
     'Nathan Goutagny',
   ],
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     url: 'https://www.natesystem.com',
-    title: 'NateSystem, Logiciel sur-mesure propulsé par l\'IA',
+    title: 'NateSystem, plateformes sur-mesure pour écoles privées',
     description:
       'Le logiciel sur-mesure qui pilote votre activité, propulsé par l\'IA, agentique, automatisation, data analytics, là où ça compte. Vos données, votre infrastructure, votre code.',
     siteName: 'NateSystem',
@@ -71,8 +71,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'NateSystem, Logiciel sur-mesure propulsé par l\'IA',
-    description: 'Le logiciel sur-mesure qui pilote votre activité, propulsé par l\'IA là où ça compte.',
+    title: 'NateSystem, plateformes sur-mesure pour écoles privées',
+    description: 'La plateforme de gestion sur-mesure des écoles privées. Le code vous appartient.',
     images: ['/og-image.png'],
   },
 }
