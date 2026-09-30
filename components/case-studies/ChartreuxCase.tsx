@@ -17,7 +17,8 @@ import { makeD } from '@/lib/lang'
  * démarre à 34 s, là où le cas commence, pour ne pas imposer l'intro.
  *
  * ⚠︎ CHIFFRES. Tout ce qui est écrit ici sort de la vidéo publique de Nathan :
- * neuf établissements, 4 700 élèves, neuf tableurs, 63 jours. Le nombre
+ * neuf établissements, 4 700 élèves, neuf tableurs, 63 jours de développement
+ * et de mise en production. Le nombre
  * d'heures rendues chaque mois n'y est PAS, volontairement : la vidéo dit 40,
  * le cerveau dit 30, et tant que ce n'est pas tranché le site n'en avance
  * aucun. Voir brain/accounts/institut-chartreux.md.
@@ -63,9 +64,9 @@ export default function ChartreuxCase() {
     {
       value: d('63 jours', '63 days', '63 nap'),
       label: d(
-        'du premier appel aux neuf établissements en service. Le dixième n’y est pas encore.',
-        'from the first call to all nine schools running. The tenth is not there yet.',
-        'az első hívástól a kilenc működő intézményig. A tizedik még nincs meg.'
+        'de développement et de mise en production, sur neuf établissements. Le dixième n’y est pas encore.',
+        'of development and go-live, across nine schools. The tenth is not there yet.',
+        'fejlesztés és éles indulás kilenc intézményen. A tizedik még nincs meg.'
       ),
     },
   ]

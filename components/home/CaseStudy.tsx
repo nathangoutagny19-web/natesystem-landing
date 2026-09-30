@@ -100,9 +100,9 @@ const CASES: CaseEntry[] = [
       {
         value: '63',
         label: {
-          fr: 'jours du premier appel aux neuf sites en service',
-          en: 'days from the first call to all nine sites running',
-          hu: 'nap az első hívástól a kilenc működő telephelyig',
+          fr: 'jours de développement et de mise en production, sur neuf sites',
+          en: 'days of development and go-live, across nine sites',
+          hu: 'nap fejlesztés és éles indulás, kilenc telephelyen',
         },
       },
     ],
