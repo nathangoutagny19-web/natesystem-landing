@@ -25,6 +25,15 @@ import ClientsBar from '@/components/home/ClientsBar'
  * lien sortant est une fuite. Les seules sorties sont les mentions légales
  * (obligation) et l'email.
  *
+ * ⚠︎ « JE », PAS « NOUS ». Le brouillon de Nathan disait « nous construisons ».
+ * La page dit deux lignes plus bas « ni commercial ni junior derrière », et
+ * l'opérateur unique est un des trois différenciateurs qui survivent à tout
+ * (~/.claude/CLAUDE.md). Un « nous » ici se contredirait tout seul.
+ *
+ * ⚠︎ PAS DE « CES DERNIERS MOIS ». Le brouillon le portait ; le chantier des
+ * Chartreux et celui de l'IUT ne tiennent pas dans cette fenêtre, et la date
+ * n'est sourcée nulle part. Le chiffre reste, la fenêtre de temps saute.
+ *
  * ⚠︎ CATHERINE F. Elle enseigne le numérique à l'IUT de Saint-Étienne, et ce
  * depuis longtemps (Nathan, 01/10/2026). La légende dit « dans le supérieur »
  * et PAS le nom de l'établissement : nommer l'employeur de quelqu'un, qui plus
@@ -444,10 +453,27 @@ export default function AtelierPage() {
               <h2 className="font-serif italic at-h2">Nathan Goutagny.</h2>
               <div className="at-prose">
                 <p>
-                  Je construis des logiciels de gestion sur mesure pour des établissements :
-                  plannings, comptage des heures, dossiers, suivi des élèves. Je les vends et je
-                  les code moi-même, il n’y a ni commercial ni junior derrière. La personne qui
-                  anime les trois heures est celle qui écrirait le logiciel.
+                  Je dirige NateSystem. Je construis des logiciels de gestion sur mesure pour des
+                  établissements, et aussi des outils pédagogiques : plannings, comptage des
+                  heures, dossiers, suivi des élèves. Plus de dix établissements tournent dessus,
+                  dont les Chartreux et l’IUT de Saint-Étienne pour citer les plus connus.
+                </p>
+                <p>
+                  Ce que ça leur apporte : des heures rendues aux équipes, des tâches répétitives
+                  qui disparaissent, des données enfin claires, une communication interne qui ne
+                  dépend plus de qui sait, et au bout de la chaîne des élèves mieux suivis. Les
+                  Chartreux rapportent quarante heures récupérées par mois.
+                </p>
+                <p>
+                  Je les vends et je les code moi-même, il n’y a ni commercial ni junior
+                  derrière. Et je passe beaucoup de temps à former, parce qu’un logiciel que
+                  personne n’utilise vraiment ne sert à rien : je forme jusqu’à l’autonomie.
+                </p>
+                <p>
+                  C’est là que j’ai vu la même chose revenir, rendez-vous après rendez-vous. Des
+                  professeurs et des directeurs qui voulaient se construire leurs propres petits
+                  outils, qui essayaient, et qui s’emmêlaient les pinceaux. Cet atelier vient de
+                  là.
                 </p>
                 <p>
                   Quand un établissement me confie un projet, le code source lui appartient à
