@@ -40,12 +40,13 @@ import { makeD } from '@/lib/lang'
  * n'est sourcée nulle part. Le chiffre reste, la fenêtre de temps saute.
  *
  * ⚠︎ CATHERINE F. Elle enseigne le numérique à l'IUT de Saint-Étienne, et ce
- * depuis longtemps (Nathan, 01/10/2026). La légende dit « dans le supérieur »
- * et PAS le nom de l'établissement : nommer l'employeur de quelqu'un, qui plus
- * est un établissement public, sur une page commerciale, ça se demande à
- * l'intéressée. Et son témoignage vidéo porte sur son autre organisation, pas
- * sur l'enseignement : citer les deux rôles côte à côte est honnête, laisser
- * croire que l'IUT cautionne ne l'est pas. Voir brain/accounts/chromosome.md.
+ * depuis longtemps. L'établissement est nommé depuis que Nathan a confirmé
+ * avoir son accord (01/10/2026).
+ *
+ * Les DEUX rôles restent cités côte à côte, et ce n'est pas un détail : son
+ * témoignage vidéo porte sur son autre organisation, pas sur l'enseignement.
+ * Les séparer laisserait croire que l'IUT cautionne, ce qu'il ne fait pas.
+ * Voir brain/accounts/chromosome.md.
  *
  * ⚠︎ CHIFFRES. Les seuls publiables ici : les 40 h/mois des Chartreux,
  * toujours formulées comme un report du client, et leurs neuf établissements.
@@ -549,8 +550,8 @@ export default function AtelierPage() {
                 </div>
                 <figcaption className="font-sans at-proof-caption">
                   {d(
-                    'Catherine F. enseigne le numérique dans le supérieur et dirige une organisation que nous équipons. Elle raconte ce que deux plateformes sur-mesure ont changé chez eux.',
-                    'Catherine F. teaches digital skills in higher education and runs an organisation that uses our software. She explains what two custom platforms changed for them.'
+                    'Catherine F. enseigne le numérique à l’IUT de Saint-Étienne et dirige une organisation que nous équipons. Elle raconte ce que deux plateformes sur-mesure ont changé chez eux.',
+                    'Catherine F. teaches digital skills at the IUT de Saint-Étienne and runs an organisation that uses our software. She explains what two custom platforms changed for them.'
                   )}
                 </figcaption>
               </figure>
