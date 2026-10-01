@@ -9,6 +9,7 @@ import VslPlayer from '@/components/ui/VslPlayer'
 import LiteYouTube from '@/components/ui/LiteYouTube'
 import ClientsBar from '@/components/home/ClientsBar'
 import ScreenMock from '@/components/ui/ScreenMock'
+import LangToggle from '@/components/atelier/LangToggle'
 import { useLang } from '@/components/providers/LangProvider'
 import { makeD } from '@/lib/lang'
 
@@ -92,19 +93,19 @@ const FAITS = [
     titreFr: 'Dix à quinze personnes',
     titreEn: 'Ten to fifteen people',
     detailFr: 'Votre équipe pédagogique telle qu’elle est, débutants compris.',
-    detailEn: 'Your teaching team as it is, complete beginners included.',
+    detailEn: 'Your teaching team as it stands, complete beginners included.',
   },
   {
     titreFr: 'Chez vous ou en visio',
     titreEn: 'At your school or online',
     detailFr: 'Je me déplace dans votre établissement quand c’est possible.',
-    detailEn: 'I come to you whenever it is possible.',
+    detailEn: 'I come to your school whenever I can.',
   },
   {
     titreFr: 'Gratuit',
     titreEn: 'Free',
     detailFr: 'Il n’y a pas de version payante de l’atelier derrière.',
-    detailEn: 'There is no paid version of the workshop waiting behind this one.',
+    detailEn: 'There is no paid version hiding behind this one.',
   },
 ]
 
@@ -116,7 +117,7 @@ const DEROULE = [
     texteFr:
       'Écran partagé, de la page blanche à l’outil qui tourne. Mes tâtonnements et mes corrections compris : c’est ça qui fait penser « je peux le faire ». Cinq minutes au début sur les données des élèves, et une règle qu’on ne lâche pas de la journée, jamais un nom, on travaille sur initiales.',
     texteEn:
-      'Screen shared, from a blank page to a working tool. My fumbling and my corrections included, because that is what makes people think “I could do this”. Five minutes at the start on student data, and one rule we hold all day: never a name, we work on initials.',
+      'Screen shared, from a blank page to a working tool. Wrong turns and fixes included, because that is what makes people think “I could do this”. Five minutes at the start on student data, and one rule we stick to all day: no names, ever, initials only.',
   },
   {
     num: '2',
@@ -125,7 +126,7 @@ const DEROULE = [
     texteFr:
       'Sur sa matière, sur sa vraie corvée. J’arrive avec trois sujets de secours pour ceux qui bloquent devant la page blanche, parce qu’il y en a toujours deux ou trois.',
     texteEn:
-      'On their own subject, on their own real chore. I bring three backup ideas for the ones who freeze in front of a blank page, because there are always two or three.',
+      'In their own subject, on a chore they actually have. I bring three backup ideas for those who freeze at the blank page, because there are always two or three.',
   },
   {
     num: '3',
@@ -134,26 +135,26 @@ const DEROULE = [
     texteFr:
       'Ils testent sur un cas réel, avec leurs vraies copies. Quelque chose va rater, et c’est le moment le plus utile des trois heures : c’est là qu’on apprend à corriger au lieu d’abandonner.',
     texteEn:
-      'They test on a real case, with their own students’ work. Something will go wrong, and that is the most useful moment of the three hours: it is where you learn to fix instead of giving up.',
+      'They try it on a real case, with their own students’ work. Something will go wrong, and that is the most useful moment of the three hours: it is where they learn to fix things instead of giving up.',
   },
 ]
 
 const EXEMPLES = [
   {
     fr: 'Un outil d’appréciations de bulletins qui part de vos observations et rend un texte à relire, pas à écrire.',
-    en: 'A report-comment tool that starts from your own notes and hands back text to proofread, not to write.',
+    en: 'A report-comment tool that takes your own observations and gives you a draft to proofread, not to write from scratch.',
   },
   {
     fr: 'Un générateur d’exercices sur trois niveaux, tiré d’un seul chapitre.',
-    en: 'An exercise generator at three levels, built from a single chapter.',
+    en: 'A generator that turns one chapter into exercises at three levels of difficulty.',
   },
   {
     fr: 'Un QCM fabriqué à partir d’un cours existant, corrigé d’avance.',
-    en: 'A multiple-choice quiz made from an existing lesson, answer key already done.',
+    en: 'A multiple-choice quiz built from an existing lesson, answer key included.',
   },
   {
     fr: 'Une grille de correction qui calcule toute seule et qui se réutilise d’une année sur l’autre.',
-    en: 'A marking rubric that adds itself up and gets reused year after year.',
+    en: 'A marking rubric that totals the marks itself and can be reused year after year.',
   },
 ]
 
@@ -174,21 +175,21 @@ const PREREQUIS = [
     items: [
       {
         titreFr: 'Une salle et trois heures d’affilée',
-        titreEn: 'A room and three hours back to back',
+        titreEn: 'A room and three uninterrupted hours',
         detailFr:
           'Pas fractionnées en deux fois une heure et demie : la troisième heure ne vaut que parce qu’elle suit les deux autres.',
         detailEn:
-          'Not split into two ninety-minute halves: the third hour is only worth anything because it follows the other two.',
+          'Not split into two ninety-minute sessions: the third hour only works because it comes straight after the other two.',
       },
       {
         titreFr: 'Un ordinateur par participant',
         titreEn: 'One computer per participant',
         detailFr: 'Le sien ou celui de l’établissement, peu importe. Une tablette ne suffit pas.',
-        detailEn: 'Their own or the school’s, it makes no difference. A tablet will not do.',
+        detailEn: 'Their own or the school’s, either is fine. A tablet will not do.',
       },
       {
         titreFr: 'Une connexion qui tient',
-        titreEn: 'A connection that holds',
+        titreEn: 'A connection that holds up',
         detailFr:
           'Quinze personnes dessus en même temps. C’est le point de blocage le plus fréquent, et le seul que je ne peux pas rattraper sur place.',
         detailEn:
@@ -200,7 +201,7 @@ const PREREQUIS = [
         detailFr:
           'Toute la première heure consiste à me regarder construire. Si la salle ne voit pas mon écran, il n’y a pas d’atelier.',
         detailEn:
-          'The whole first hour consists of watching me build. If the room cannot see my screen, there is no workshop.',
+          'The whole first hour is spent watching me build. If the room cannot see my screen, there is no workshop.',
       },
       {
         titreFr: 'Dix à quinze personnes, pas plus',
@@ -208,7 +209,7 @@ const PREREQUIS = [
         detailFr:
           'Au-delà, je ne peux plus passer aider chacun pendant la deuxième heure, et c’est elle qui fait la différence.',
         detailEn:
-          'Beyond that I can no longer get round to help each person during the second hour, and that hour is what makes the difference.',
+          'Beyond that, I cannot get round to everyone during the second hour, and that hour is the one that makes the difference.',
       },
       {
         titreFr: 'Un membre de la direction dans la salle',
@@ -216,7 +217,7 @@ const PREREQUIS = [
         detailFr:
           'La deuxième moitié de mon métier concerne l’organisation, et ça ne se raconte pas par personne interposée.',
         detailEn:
-          'The other half of my work is about how the school runs, and that is not something to relay second-hand.',
+          'The other half of my work is about how the school runs, and that is a conversation to have directly, not second-hand.',
         cle: true,
       },
     ],
@@ -227,11 +228,11 @@ const PREREQUIS = [
     items: [
       {
         titreFr: 'Une tâche précise qui lui prend du temps chaque semaine',
-        titreEn: 'One specific task that eats their time every week',
+        titreEn: 'One specific task that eats up their time every week',
         detailFr:
           'Le prérequis le plus important, et celui que personne ne prépare. Un professeur qui arrive sans savoir ce qu’il veut automatiser passe la deuxième heure à chercher une idée au lieu de construire. Les quatre exemples plus haut suffisent à amorcer.',
         detailEn:
-          'The most important prerequisite, and the one nobody prepares. A teacher who turns up without knowing what they want to automate spends the second hour hunting for an idea instead of building. The four examples above are enough to get started.',
+          'The most important prerequisite, and the one nobody prepares for. A teacher who turns up without knowing what they want to automate spends the second hour hunting for an idea instead of building. The four examples above are enough to get them started.',
         cle: true,
       },
       {
@@ -240,7 +241,7 @@ const PREREQUIS = [
         detailFr:
           'Une grille de notation, un sujet de contrôle, une liste de compétences. Ce qu’il utilise vraiment, pas un exemple refait pour l’occasion.',
         detailEn:
-          'A marking rubric, a test paper, a list of learning objectives. What they actually use, not something remade for the occasion.',
+          'A marking rubric, a test paper, a list of learning objectives. What they actually use, not an example made up for the occasion.',
       },
     ],
   },
@@ -250,7 +251,7 @@ const PREREQUIS = [
     items: [
       {
         titreFr: 'Aucune compétence technique',
-        titreEn: 'No technical skill',
+        titreEn: 'No technical skills',
         detailFr: 'Personne n’écrit une ligne de code, à aucun moment des trois heures.',
         detailEn: 'Nobody writes a line of code, at any point in the three hours.',
       },
@@ -262,11 +263,11 @@ const PREREQUIS = [
       },
       {
         titreFr: 'Rien à payer pour participer',
-        titreEn: 'Nothing to pay to take part',
+        titreEn: 'No fee to take part',
         detailFr:
           'Pour aller plus loin ensuite, il existe des outils payants : je dis lesquels pendant la séance, et ce que j’y gagne quand c’est le cas.',
         detailEn:
-          'To go further afterwards, there are paid tools: I say which ones during the session, and what I get out of it when that is the case.',
+          'There are paid tools for going further afterwards: I name them during the session, and I say what I earn from them, if anything.',
       },
     ],
   },
@@ -284,7 +285,7 @@ const TAILLES = [
   { fr: 'Moins de 10', en: 'Fewer than 10' },
   { fr: '10 à 15', en: '10 to 15' },
   { fr: 'Plus de 15', en: 'More than 15' },
-  { fr: 'Je ne sais pas encore', en: 'I do not know yet' },
+  { fr: 'Je ne sais pas encore', en: 'Not sure yet' },
 ]
 
 const LIEUX = [
@@ -296,7 +297,7 @@ const LIEUX = [
 const RESEAU = [
   { fr: 'Oui, rien n’est bloqué', en: 'Yes, nothing is blocked' },
   { fr: 'Non, c’est filtré', en: 'No, it is filtered' },
-  { fr: 'Je ne sais pas, je vérifie', en: 'I do not know, I will check' },
+  { fr: 'Je ne sais pas, je vérifie', en: 'Not sure, I will check' },
 ]
 
 /* Même courbe que le hero du site : les deux pages doivent bouger pareil. */
@@ -354,9 +355,12 @@ export default function AtelierPage() {
           <span className="at-brand-dot" aria-hidden="true" />
           <span className="font-sans at-brand-name">NateSystem</span>
         </div>
-        <a href="#demander" className="nav-cta-btn at-header-cta">
-          {d('Demander l’atelier', 'Request the workshop')}
-        </a>
+        <div className="at-header-right">
+          <LangToggle />
+          <a href="#demander" className="nav-cta-btn at-header-cta">
+            {d('Demander l’atelier', 'Request the workshop')}
+          </a>
+        </div>
       </header>
 
       {/* ═══ HERO ═══ */}
@@ -381,7 +385,7 @@ export default function AtelierPage() {
           />{' '}
           <span className="at-h1-accent">
             <RevealWords
-              text={d('qu’ils ont bricolé seuls.', 'they cobbled together alone.')}
+              text={d('qu’ils ont bricolé seuls.', 'they cobbled together on their own.')}
               delay={0.45}
             />
           </span>
@@ -397,7 +401,7 @@ export default function AtelierPage() {
           <span className="font-sans at-pill-text">
             {d(
               `Je prends ${ETABLISSEMENTS_PAR_TRIMESTRE} établissements ce trimestre.`,
-              `I am taking ${ETABLISSEMENTS_PAR_TRIMESTRE} schools this term.`
+              `I am taking on ${ETABLISSEMENTS_PAR_TRIMESTRE} schools this term.`
             )}
           </span>
         </motion.div>
@@ -430,7 +434,7 @@ export default function AtelierPage() {
         >
           {d(
             'En trois heures, ils construisent l’outil qui le remplace, et ils le testent sur leurs vraies copies avant de partir. Pour leur classe, à leur main, sans écrire une ligne de code. C’est gratuit, et ça ne vous engage à rien.',
-            'In three hours, they build the tool that replaces it, and they test it on their own students’ work before they leave. For their class, their way, without writing a line of code. It is free, and it commits you to nothing.'
+            'In three hours, they build the tool that replaces it, and they test it on their own students’ work before they leave. For their class, their way, without writing a line of code. It is free, and there is no obligation.'
           )}
         </motion.p>
 
@@ -486,7 +490,7 @@ export default function AtelierPage() {
               <p className="font-sans at-lead">
                 {d(
                   'Des écoles, un IUT, et des organisations d’autres secteurs. Les mêmes contraintes partout : beaucoup de monde, peu de temps, et un logiciel générique qui ne colle jamais tout à fait.',
-                  'Schools, a university institute, and organisations from other sectors. The same constraints everywhere: a lot of people, very little time, and off-the-shelf software that never quite fits.'
+                  'Schools, a university institute of technology, and organisations from other sectors. The same constraints everywhere: lots of people, very little time, and off-the-shelf software that never quite fits.'
                 )}
               </p>
             </header>
@@ -507,7 +511,7 @@ export default function AtelierPage() {
                     src="/realisations/chartreux-terrasse.webp"
                     alt={d(
                       'Nathan Goutagny serre la main de sa cliente sur la terrasse des Chartreux, à Lyon',
-                      'Nathan Goutagny shaking hands with his client on the Les Chartreux terrace in Lyon'
+                      'Nathan Goutagny shaking hands with his client on the terrace at Les Chartreux in Lyon'
                     )}
                     loading="lazy"
                     width={1200}
@@ -537,7 +541,7 @@ export default function AtelierPage() {
                 <figcaption className="font-sans at-proof-caption">
                   {d(
                     'Catherine F. enseigne le numérique dans le supérieur et dirige une organisation que nous équipons. Elle raconte ce que deux plateformes sur-mesure ont changé chez eux.',
-                    'Catherine F. teaches digital skills in higher education and runs an organisation we equip. She explains what two custom platforms changed for them.'
+                    'Catherine F. teaches digital skills in higher education and runs an organisation that uses our software. She explains what two custom platforms changed for them.'
                   )}
                 </figcaption>
               </figure>
@@ -560,7 +564,7 @@ export default function AtelierPage() {
               <p className="font-sans at-lead">
                 {d(
                   'L’atelier s’appelle « Créer ses propres outils pour sa classe, sans développeur ». Trois heures, trois temps. Rien à installer. Une seule chose à préparer : chaque participant arrive avec une corvée précise à régler.',
-                  'The workshop is called “Build your own classroom tools, without a developer”. Three hours, three parts. Nothing to install. One single thing to prepare: every participant turns up with one specific chore to fix.'
+                  'The workshop is called “Build your own classroom tools, without a developer”. Three hours, three parts. Nothing to install. Just one thing to prepare: each participant turns up with one specific chore they want to get rid of.'
                 )}
               </p>
             </header>
@@ -621,7 +625,7 @@ export default function AtelierPage() {
       <section className="at-section">
         <div className="at-wrap at-wrap--narrow">
           <FadeUp>
-            <span className="section-label at-who-label">{d('Qui vient', 'Who turns up')}</span>
+            <span className="section-label at-who-label">{d('Qui vient', 'Who comes')}</span>
           </FadeUp>
           <FadeUp delay={0.06}>
             <div className="card at-who">
@@ -644,25 +648,25 @@ export default function AtelierPage() {
                   <p>
                     {d(
                       'Je dirige NateSystem. Je construis des logiciels de gestion sur mesure pour des établissements, et aussi des outils pédagogiques : plannings, comptage des heures, dossiers, suivi des élèves. Plus de dix établissements tournent dessus, dont les Chartreux et l’IUT de Saint-Étienne pour citer les plus connus.',
-                      'I run NateSystem. I build custom management software for schools, and teaching tools too: timetables, hours tracking, records, student follow-up. More than ten schools run on them, including Les Chartreux and the IUT de Saint-Étienne to name the best known.'
+                      'I run NateSystem. I build custom management software for schools, and teaching tools too: timetables, staff hours, records, student progress tracking. More than ten schools run on them, Les Chartreux and the IUT de Saint-Étienne among the best known.'
                     )}
                   </p>
                   <p>
                     {d(
                       'Ce que ça leur apporte : des heures rendues aux équipes, des tâches répétitives qui disparaissent, des données enfin claires, une communication interne qui ne dépend plus de qui sait, et au bout de la chaîne des élèves mieux suivis. Les Chartreux rapportent quarante heures récupérées par mois.',
-                      'What it gives them: hours back for their teams, repetitive tasks that disappear, data that is finally clear, internal communication that no longer depends on who happens to know, and at the end of the chain, students who are followed properly. Les Chartreux report forty hours given back every month.'
+                      'What it gives them: hours back for their teams, repetitive tasks that disappear, data that is finally clear, internal communication that no longer depends on who happens to know, and, at the end of the chain, students who are properly supported. Les Chartreux report forty hours given back every month.'
                     )}
                   </p>
                   <p>
                     {d(
                       'Je passe beaucoup de temps à former, parce qu’un logiciel que personne n’utilise vraiment ne sert à rien : je forme jusqu’à l’autonomie.',
-                      'I spend a lot of time training, because software nobody really uses is worth nothing: I train until the team is autonomous.'
+                      'I spend a lot of time on training, because software nobody actually uses is useless: I keep going until the team can run it without me.'
                     )}
                   </p>
                   <p>
                     {d(
                       'C’est là que j’ai vu la même chose revenir, rendez-vous après rendez-vous. Des professeurs et des directeurs qui voulaient se construire leurs propres petits outils, qui essayaient, et qui s’emmêlaient les pinceaux. Cet atelier vient de là.',
-                      'That is where I saw the same thing come back, meeting after meeting. Teachers and heads who wanted to build their own small tools, who tried, and who got themselves tangled up. This workshop came out of that.'
+                      'That is where I kept seeing the same thing, meeting after meeting. Teachers and heads who wanted to build small tools of their own, who tried, and who ended up in a muddle. This workshop came out of that.'
                     )}
                   </p>
                 </div>
@@ -689,7 +693,7 @@ export default function AtelierPage() {
               <p className="font-sans at-lead">
                 {d(
                   'Chaque professeur repart avec son premier outil qui marche, à tester dès le lendemain matin. Et surtout avec la technique pour en refaire d’autres sans moi.',
-                  'Every teacher leaves with their first working tool, ready to try the next morning. And above all with the method to build more without me.'
+                  'Every teacher leaves with a first tool that works, ready to try the next morning. And, more importantly, with the method to build more without me.'
                 )}
               </p>
             </header>
@@ -729,7 +733,7 @@ export default function AtelierPage() {
               <p className="font-serif italic at-pledge-text">
                 {d(
                   'Si quelqu’un repart les mains vides, je reviens le faire avec lui.',
-                  'If anyone leaves empty-handed, I come back and build it with them.'
+                  'If anyone leaves empty-handed, I will come back and build it with them.'
                 )}
               </p>
             </div>
@@ -748,12 +752,12 @@ export default function AtelierPage() {
             <header className="at-head">
               <span className="section-label">{d('Avant de dire oui', 'Before you say yes')}</span>
               <h2 className="section-title at-h2">
-                {d('Ce qu’il vous faut de votre côté.', 'What you need on your side.')}
+                {d('Ce qu’il vous faut de votre côté.', 'What you need to have in place.')}
               </h2>
               <p className="font-sans at-lead">
                 {d(
                   'Rien d’exotique, mais tout compte. Les deux lignes en rouge sont celles qui font rater un atelier quand elles manquent, pas celles qui le gênent.',
-                  'Nothing exotic, but everything counts. The two lines in red are the ones that make a workshop fail when they are missing, not the ones that merely get in the way.'
+                  'Nothing exotic, but everything counts. The two lines in red are the ones that sink a workshop when they are missing, not the ones that merely get in the way.'
                 )}
               </p>
             </header>
@@ -804,7 +808,7 @@ export default function AtelierPage() {
               <p className="font-sans at-lead">
                 {d(
                   `Je reviens vers vous sous 48 heures avec deux ou trois créneaux. Je prends ${ETABLISSEMENTS_PAR_TRIMESTRE} établissements ce trimestre.`,
-                  `I come back to you within 48 hours with two or three slots. I am taking ${ETABLISSEMENTS_PAR_TRIMESTRE} schools this term.`
+                  `I will get back to you within 48 hours with two or three possible dates. I am taking on ${ETABLISSEMENTS_PAR_TRIMESTRE} schools this term.`
                 )}
               </p>
             </header>
@@ -814,12 +818,12 @@ export default function AtelierPage() {
             {statut === 'ok' ? (
               <div className="card at-done">
                 <p className="font-serif italic at-done-title">
-                  {d('C’est parti.', 'You are in.')}
+                  {d('C’est parti.', 'Got it.')}
                 </p>
                 <p className="font-sans at-done-text">
                   {d(
                     'Je vous réponds sous 48 heures, depuis nathan@natesystem.com. Si vous ne voyez rien passer, regardez vos indésirables.',
-                    'I reply within 48 hours, from nathan@natesystem.com. If nothing turns up, check your spam folder.'
+                    'I will reply within 48 hours, from nathan@natesystem.com. If nothing arrives, check your spam folder.'
                   )}
                 </p>
               </div>
@@ -856,7 +860,7 @@ export default function AtelierPage() {
                     name="etablissement"
                     type="text"
                     required
-                    placeholder={d('Nom de l’établissement, et la ville', 'School name, and the town')}
+                    placeholder={d('Nom de l’établissement, et la ville', 'School name and town')}
                   />
                 </label>
 
@@ -921,7 +925,7 @@ export default function AtelierPage() {
                   <span className="font-sans at-field-help">
                     {d(
                       'Depuis les postes de l’établissement, un site comme ChatGPT est-il accessible ?',
-                      'From the school’s computers, is a site like ChatGPT reachable?'
+                      'Is a site like ChatGPT accessible from the school’s computers?'
                     )}
                   </span>
                   <select name="reseau" defaultValue={d(RESEAU[2].fr, RESEAU[2].en)}>
@@ -942,7 +946,7 @@ export default function AtelierPage() {
                     rows={3}
                     placeholder={d(
                       'Ce qui vous fait venir, ou une contrainte de calendrier.',
-                      'What brings you, or a calendar constraint.'
+                      'What prompted you to ask, or any calendar constraints.'
                     )}
                   />
                 </label>
@@ -953,27 +957,27 @@ export default function AtelierPage() {
                 <label className="at-check">
                   <input type="checkbox" name="prerequis" value="oui" required />
                   <span className="font-sans at-check-text">
-                    {d('Je confirme pouvoir réunir ', 'I confirm I can provide ')}
+                    {d('Je confirme pouvoir réunir ', 'I confirm I can meet ')}
                     <a href="#prerequis">
                       {d('les prérequis listés plus haut', 'the prerequisites listed above')}
                     </a>
                     {d(
                       ' le jour de l’atelier, direction présente comprise.',
-                      ' on the day of the workshop, including someone from the leadership team.'
+                      ' on the day of the workshop, with someone from the leadership team present.'
                     )}
                   </span>
                 </label>
 
                 <button type="submit" className="btn-primary at-submit" disabled={statut === 'envoi'}>
                   <span className="btn-primary-dot" />
-                  {statut === 'envoi' ? d('Envoi…', 'Sending…') : d('Envoyer la demande', 'Send the request')}
+                  {statut === 'envoi' ? d('Envoi…', 'Sending…') : d('Envoyer la demande', 'Send my request')}
                 </button>
 
                 {statut === 'erreur' && (
                   <p className="font-sans at-error" role="alert">
                     {d('Ça n’est pas parti. Écrivez-moi directement à ', 'That did not go through. Email me directly at ')}
                     <a href="mailto:nathan@natesystem.com">nathan@natesystem.com</a>
-                    {d(', je réponds aussi vite.', ', I answer just as fast.')}
+                    {d(', je réponds aussi vite.', '. I reply just as quickly.')}
                   </p>
                 )}
 
@@ -1031,6 +1035,11 @@ export default function AtelierPage() {
           display: flex;
           align-items: center;
           justify-content: space-between;
+        }
+        .at-header-right {
+          display: flex;
+          align-items: center;
+          gap: 12px;
         }
         .at-brand {
           display: flex;
@@ -1585,6 +1594,13 @@ export default function AtelierPage() {
           }
         }
         @media (max-width: 560px) {
+          .at-header-right {
+            gap: 8px;
+          }
+          .at-header-cta {
+            padding: 9px 14px;
+            font-size: 12px;
+          }
           .at-hero {
             min-height: 0;
             padding: 56px 24px 56px;
@@ -1900,7 +1916,7 @@ function GarantieJeu() {
           transition={{ duration: reduce ? 0 : 1.1, delay: finale, ease: 'easeOut' }}
         />
         <span className="font-sans gj-prize-text">
-          {d('Son outil, et il tourne.', 'Their tool, and it runs.')}
+          {d('Son outil, et il tourne.', 'Their own tool, up and running.')}
         </span>
       </motion.div>
 
