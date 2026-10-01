@@ -43,6 +43,8 @@ type Payload = {
   nom?: string
   /** Case requise du formulaire : « oui » si le directeur a confirmé les prérequis. */
   prerequis?: string
+  /** Filtrage réseau : le prérequis invisible qui tue un atelier sur place. */
+  reseau?: string
   fonction?: string
   etablissement?: string
   email?: string
@@ -77,7 +79,7 @@ export async function POST(req: NextRequest) {
 
   const {
     nom = '', fonction = '', etablissement = '', email = '',
-    telephone = '', personnes = '', lieu = '', mot = '', prerequis = '',
+    telephone = '', personnes = '', lieu = '', mot = '', prerequis = '', reseau = '',
   } = body
 
   if (!nom.trim() || !email.trim() || !etablissement.trim()) {
@@ -113,6 +115,7 @@ export async function POST(req: NextRequest) {
               ${row('Format souhaité', lieu)}
               ${row('Fonction', fonction)}
               ${row('Prérequis confirmés', prerequis === 'oui' ? 'Oui, case cochée' : 'NON')}
+              ${row('Accès réseau aux sites d\'IA', reseau)}
             </table>
           </td>
         </tr>
@@ -147,6 +150,7 @@ Téléphone : ${telephone || '—'}
 Participants : ${personnes || '—'}
 Format : ${lieu || '—'}
 Prérequis confirmés : ${prerequis === 'oui' ? 'oui' : 'NON'}
+Accès réseau : ${reseau || '—'}
 ${mot.trim() ? `\nSon mot :\n${mot}\n` : ''}
 ${direction
   ? 'La direction demande elle-même, condition remplie.'
@@ -169,7 +173,7 @@ Réponds : ${email}
     fetch(CRM_ENDPOINT, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ nom, fonction, etablissement, email, telephone, personnes, lieu, mot, prerequis }),
+      body: JSON.stringify({ nom, fonction, etablissement, email, telephone, personnes, lieu, mot, prerequis, reseau }),
     }).then((r) => {
       if (!r.ok) throw new Error(`CRM ${r.status}`)
       return r.json()

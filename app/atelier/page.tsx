@@ -65,7 +65,7 @@ const FAITS = [
     detail: 'Une demi-journée, en une fois. Pas un cycle de formation à caser dans l’année.',
   },
   {
-    titre: 'Dix à vingt personnes',
+    titre: 'Dix à quinze personnes',
     detail: 'Votre équipe pédagogique telle qu’elle est, débutants compris.',
   },
   {
@@ -106,36 +106,84 @@ const EXEMPLES = [
   'Une grille de correction qui calcule toute seule et qui se réutilise d’une année sur l’autre.',
 ]
 
-/* LES PRÉREQUIS. Ils servent deux fois : ici, pour qu'un directeur mesure la
-   faisabilité avant de demander, et dans le formulaire, où il coche qu'il peut
-   les réunir. La condition « un membre de la direction dans la salle » est le
-   premier de la liste plutôt qu'un encart à part : c'est un prérequis, pas un
-   discours, et il se vérifie comme les autres. */
+/* LES PRÉREQUIS, EN TROIS BLOCS.
+ *
+ * Sur une landing, lever un frein vaut autant qu'énoncer une condition : le
+ * troisième bloc ne demande rien, il désamorce. Et les deux prérequis marqués
+ * `cle` sont ceux qui tuent l'atelier quand ils manquent, pas ceux qui le
+ * gênent. Celui du participant est le plus souvent oublié : un professeur qui
+ * arrive sans savoir ce qu'il veut automatiser cherche une idée pendant la
+ * deuxième heure au lieu de construire, repart les mains vides, et déclenche
+ * la garantie. D'où sa place ici, dès l'inscription.
+ */
 const PREREQUIS = [
   {
-    titre: 'Un membre de la direction dans la salle',
-    detail:
-      'La seule condition non négociable. La deuxième moitié de mon métier concerne l’organisation, et ça ne se raconte pas par personne interposée.',
-    cle: true,
+    groupe: 'Ce que l’établissement fournit',
+    items: [
+      {
+        titre: 'Une salle et trois heures d’affilée',
+        detail:
+          'Pas fractionnées en deux fois une heure et demie : la troisième heure ne vaut que parce qu’elle suit les deux autres.',
+      },
+      {
+        titre: 'Un ordinateur par participant',
+        detail: 'Le sien ou celui de l’établissement, peu importe. Une tablette ne suffit pas.',
+      },
+      {
+        titre: 'Une connexion qui tient',
+        detail:
+          'Quinze personnes dessus en même temps. C’est le point de blocage le plus fréquent, et le seul que je ne peux pas rattraper sur place.',
+      },
+      {
+        titre: 'Un écran ou un vidéoprojecteur',
+        detail:
+          'Toute la première heure consiste à me regarder construire. Si la salle ne voit pas mon écran, il n’y a pas d’atelier.',
+      },
+      {
+        titre: 'Dix à quinze personnes, pas plus',
+        detail:
+          'Au-delà, je ne peux plus passer aider chacun pendant la deuxième heure, et c’est elle qui fait la différence.',
+      },
+      {
+        titre: 'Un membre de la direction dans la salle',
+        detail:
+          'La deuxième moitié de mon métier concerne l’organisation, et ça ne se raconte pas par personne interposée.',
+        cle: true,
+      },
+    ],
   },
   {
-    titre: 'Un ordinateur portable par professeur',
-    detail: 'Le sien ou celui de l’établissement, peu importe. Une tablette ne suffit pas.',
+    groupe: 'Ce que chaque participant apporte',
+    items: [
+      {
+        titre: 'Une tâche précise qui lui prend du temps chaque semaine',
+        detail:
+          'Le prérequis le plus important, et celui que personne ne prépare. Un professeur qui arrive sans savoir ce qu’il veut automatiser passe la deuxième heure à chercher une idée au lieu de construire. Les quatre exemples plus haut suffisent à amorcer.',
+        cle: true,
+      },
+      {
+        titre: 'Ses propres documents',
+        detail:
+          'Une grille de notation, un sujet de contrôle, une liste de compétences. Ce qu’il utilise vraiment, pas un exemple refait pour l’occasion.',
+      },
+    ],
   },
   {
-    titre: 'Du wifi qui tient vingt personnes en même temps',
-    detail:
-      'Le point de blocage le plus fréquent, et le seul que je ne peux pas rattraper sur place. À vérifier avant, pas le jour même.',
-  },
-  {
-    titre: 'Un écran ou un vidéoprojecteur',
-    detail:
-      'Toute la première heure consiste à me regarder construire. Si la salle ne voit pas mon écran, il n’y a pas d’atelier.',
-  },
-  {
-    titre: 'Trois heures d’affilée, dix à vingt personnes',
-    detail:
-      'Pas deux fois une heure et demie : la troisième heure ne vaut que parce qu’elle suit les deux autres.',
+    groupe: 'Ce qui n’est pas nécessaire',
+    items: [
+      {
+        titre: 'Aucune compétence technique',
+        detail: 'Personne n’écrit une ligne de code, à aucun moment des trois heures.',
+      },
+      {
+        titre: 'Aucune connaissance préalable des outils d’IA',
+        detail: 'Les débutants complets sont souvent ceux qui en tirent le plus.',
+      },
+      {
+        titre: 'Aucun logiciel à installer, aucun abonnement à payer',
+        detail: 'Ni pendant l’atelier, ni après pour s’en resservir.',
+      },
+    ],
   },
 ]
 
@@ -147,9 +195,15 @@ const FONCTIONS = [
   'Autre',
 ]
 
-const TAILLES = ['Moins de 10', '10 à 20', 'Plus de 20', 'Je ne sais pas encore']
+const TAILLES = ['Moins de 10', '10 à 15', 'Plus de 15', 'Je ne sais pas encore']
 
 const LIEUX = ['Dans notre établissement', 'En visio', 'Peu importe']
+
+const RESEAU = [
+  'Oui, rien n’est bloqué',
+  'Non, c’est filtré',
+  'Je ne sais pas, je vérifie',
+]
 
 type Statut = 'repos' | 'envoi' | 'ok' | 'erreur'
 
@@ -428,23 +482,31 @@ export default function AtelierPage() {
           <p className="font-mono at-label">Avant de dire oui</p>
           <h2 className="font-serif italic at-h2">Ce qu’il vous faut de votre côté.</h2>
           <p className="font-sans at-lead">
-            Rien d’exotique, mais tout compte. Si un seul manque, les trois heures tombent à
-            plat, et c’est votre équipe qui aura perdu son après-midi.
+            Rien d’exotique, mais tout compte. Les deux lignes en rouge sont celles qui font
+            rater un atelier quand elles manquent, pas celles qui le gênent.
           </p>
         </FadeUp>
-        <FadeUp delay={0.08}>
-          <ul className="at-prereqs">
-            {PREREQUIS.map((r) => (
-              <li key={r.titre} className={`at-prereq${r.cle ? ' at-prereq--cle' : ''}`}>
-                <span className="at-prereq-mark" aria-hidden="true" />
-                <div>
-                  <p className="font-sans at-prereq-title">{r.titre}</p>
-                  <p className="font-sans at-prereq-detail">{r.detail}</p>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </FadeUp>
+        {PREREQUIS.map((bloc, b) => (
+          <FadeUp key={bloc.groupe} delay={0.08 + b * 0.06}>
+            <div className="at-prereq-group">
+              <h3 className="font-mono at-prereq-group-title">{bloc.groupe}</h3>
+              <ul className="at-prereqs">
+                {bloc.items.map((r) => (
+                  <li
+                    key={r.titre}
+                    className={`at-prereq${'cle' in r && r.cle ? ' at-prereq--cle' : ''}`}
+                  >
+                    <span className="at-prereq-mark" aria-hidden="true" />
+                    <div>
+                      <p className="font-sans at-prereq-title">{r.titre}</p>
+                      <p className="font-sans at-prereq-detail">{r.detail}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </FadeUp>
+        ))}
       </section>
 
       {/* ——— LE FORMULAIRE, seule action de la page ——— */}
@@ -524,6 +586,26 @@ export default function AtelierPage() {
                   </select>
                 </label>
               </div>
+
+              {/* LE PRÉREQUIS INVISIBLE. Beaucoup d'établissements filtrent
+                  les sites d'IA sur le réseau pédagogique. Découvert le jour J
+                  devant quinze personnes, l'atelier est mort et la garantie
+                  avec. « Je ne sais pas » est la réponse honnête et attendue :
+                  elle dit simplement qu'il faut vérifier avant de caler la
+                  date. */}
+              <label className="at-field">
+                <span className="font-mono at-field-label">Accès réseau</span>
+                <span className="font-sans at-field-help">
+                  Depuis les postes de l’établissement, un site comme ChatGPT est-il accessible ?
+                </span>
+                <select name="reseau" defaultValue={RESEAU[2]}>
+                  {RESEAU.map((r) => (
+                    <option key={r} value={r}>
+                      {r}
+                    </option>
+                  ))}
+                </select>
+              </label>
 
               <label className="at-field">
                 <span className="font-mono at-field-label">Un mot, si vous voulez (facultatif)</span>
@@ -862,10 +944,21 @@ export default function AtelierPage() {
         }
 
         /* ——— Prérequis ——— */
+        .at-prereq-group {
+          margin-top: 34px;
+        }
+        .at-prereq-group-title {
+          font-size: 10.5px;
+          letter-spacing: 1.8px;
+          text-transform: uppercase;
+          color: var(--text-muted);
+          font-weight: 500;
+          margin: 0;
+        }
         .at-prereqs {
           list-style: none;
           padding: 0;
-          margin: 30px 0 0;
+          margin: 14px 0 0;
           display: grid;
           gap: 2px;
         }
@@ -953,6 +1046,13 @@ export default function AtelierPage() {
         .at-field {
           display: grid;
           gap: 8px;
+        }
+        .at-field-help {
+          font-size: 13px;
+          font-weight: 300;
+          line-height: 1.5;
+          color: var(--text-secondary);
+          margin-top: -2px;
         }
         .at-field-label {
           font-size: 10.5px;
