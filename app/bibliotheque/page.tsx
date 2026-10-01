@@ -38,6 +38,11 @@ export default function BibliothequePage() {
   const { lang } = useLang()
   const d = makeD(lang)
 
+  /* Chaque asset peut avoir sa version anglaise tournée à part. À défaut, on
+     sert la française : mieux vaut une vidéo dans une autre langue que rien. */
+  const videoDe = (a: (typeof ASSETS)[number]) =>
+    (lang === 'en' ? a.videoIdEn ?? a.videoId : a.videoId) ?? null
+
   /* `null` = on ne sait pas encore (rendu serveur). Sans ce troisième état, la
      page clignote : elle s'affiche fermée puis s'ouvre à l'hydratation. */
   const [ouvert, setOuvert] = useState<boolean | null>(null)
@@ -106,9 +111,9 @@ export default function BibliothequePage() {
               <FadeUp key={a.slug} delay={0.06 * i}>
                 <article className="card bib-card">
                   <div className="bib-media">
-                    {a.videoId ? (
+                    {videoDe(a) ? (
                       <LiteYouTube
-                        id={a.videoId}
+                        id={videoDe(a)!}
                         start={a.start}
                         title={d(a.titreFr, a.titreEn)}
                       />

@@ -25,8 +25,10 @@ export type Livrable = {
 
 export type Asset = {
   slug: string
-  /** L'identifiant YouTube, ou null si la vidéo n'est pas encore tournée. */
+  /** L'identifiant YouTube, ou null si la vidéo n'est pas encore tournée.
+   *  Une par langue : Nathan tourne deux versions, pas une version sous-titrée. */
   videoId: string | null
+  videoIdEn?: string | null
   /** Seconde de départ, pour sauter une intro. */
   start?: number
   dureeMin: number
@@ -76,13 +78,14 @@ export const ASSETS: Asset[] = [
   },
   {
     slug: 'outils-pedagogiques-sans-coder',
-    videoId: null,
-    dureeMin: 20,
+    videoId: 'FjpwHd82GYI',
+    videoIdEn: 'jRz_VDB-E9o',
+    dureeMin: 17,
     dateFr: 'Octobre 2026',
     dateEn: 'October 2026',
     titreFr:
-      'Comment créer vos propres outils pédagogiques sans savoir coder, en une après-midi',
-    titreEn: 'How to build your own teaching tools without coding, in one afternoon',
+      'Comment créer vos propres outils pédagogiques, sans savoir coder, en 17 minutes',
+    titreEn: 'How to build your own teaching tools without knowing how to code, in 15 minutes',
     douleurFr:
       'Les outils dont vos équipes ont besoin n’existent sur aucun catalogue. On répond au directeur qu’il faut un développeur, un budget et six mois.',
     douleurEn:
