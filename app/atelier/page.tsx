@@ -180,8 +180,9 @@ const PREREQUIS = [
         detail: 'Les débutants complets sont souvent ceux qui en tirent le plus.',
       },
       {
-        titre: 'Aucun logiciel à installer, aucun abonnement à payer',
-        detail: 'Ni pendant l’atelier, ni après pour s’en resservir.',
+        titre: 'Rien à payer pour participer',
+        detail:
+          'Pour aller plus loin ensuite, il existe des outils payants : je dis lesquels pendant la séance, et ce que j’y gagne quand c’est le cas.',
       },
     ],
   },
@@ -365,8 +366,8 @@ export default function AtelierPage() {
                 />
               </div>
               <figcaption className="font-sans at-proof-caption">
-                Catherine F., directrice générale d’une organisation de Saint-Étienne, raconte ce
-                que deux plateformes sur-mesure ont changé chez eux.
+                Catherine F., directrice générale d’une organisation que nous équipons, raconte
+                ce que deux plateformes sur-mesure ont changé chez eux.
               </figcaption>
             </figure>
           </FadeUp>
@@ -380,7 +381,8 @@ export default function AtelierPage() {
           <h2 className="font-serif italic at-h2">Ce qu’il se passe, concrètement.</h2>
           <p className="font-sans at-lead">
             L’atelier s’appelle « Créer ses propres outils pour sa classe, sans développeur ».
-            Trois heures, trois temps. Rien à préparer, rien à installer, rien à acheter.
+            Trois heures, trois temps. Rien à installer. Une seule chose à préparer : chaque
+            participant arrive avec une corvée précise à régler.
           </p>
         </FadeUp>
 
