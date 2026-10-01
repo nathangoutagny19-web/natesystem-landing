@@ -25,6 +25,14 @@ import ClientsBar from '@/components/home/ClientsBar'
  * lien sortant est une fuite. Les seules sorties sont les mentions légales
  * (obligation) et l'email.
  *
+ * ⚠︎ CATHERINE F. Elle enseigne le numérique à l'IUT de Saint-Étienne, et ce
+ * depuis longtemps (Nathan, 01/10/2026). La légende dit « dans le supérieur »
+ * et PAS le nom de l'établissement : nommer l'employeur de quelqu'un, qui plus
+ * est un établissement public, sur une page commerciale, ça se demande à
+ * l'intéressée. Et son témoignage vidéo porte sur son autre organisation, pas
+ * sur l'enseignement : citer les deux rôles côte à côte est honnête, laisser
+ * croire que l'IUT cautionne ne l'est pas. Voir brain/accounts/chromosome.md.
+ *
  * ⚠︎ CHIFFRES. Les seuls publiables ici : les 40 h/mois des Chartreux,
  * toujours formulées comme un report du client, et leurs neuf établissements.
  * L'IUT de Saint-Étienne est citable comme preuve de secteur. Tout le reste
@@ -366,8 +374,9 @@ export default function AtelierPage() {
                 />
               </div>
               <figcaption className="font-sans at-proof-caption">
-                Catherine F., directrice générale d’une organisation que nous équipons, raconte
-                ce que deux plateformes sur-mesure ont changé chez eux.
+                Catherine F. enseigne le numérique dans le supérieur et dirige une organisation
+                que nous équipons. Elle raconte ce que deux plateformes sur-mesure ont changé
+                chez eux.
               </figcaption>
             </figure>
           </FadeUp>
