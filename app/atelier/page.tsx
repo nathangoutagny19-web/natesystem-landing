@@ -1,7 +1,9 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import { motion, useInView, useScroll, useSpring } from 'framer-motion'
 import FadeUp from '@/components/ui/FadeUp'
+import RevealWords from '@/components/ui/RevealWords'
 import VslPlayer from '@/components/ui/VslPlayer'
 import LiteYouTube from '@/components/ui/LiteYouTube'
 import ClientsBar from '@/components/home/ClientsBar'
@@ -9,9 +11,9 @@ import ClientsBar from '@/components/home/ClientsBar'
 /**
  * ATELIER · « Créer ses propres outils pour sa classe, sans développeur »
  *
- * Porte d'entrée, pas offre. Une heure gratuite et utile offerte à l'équipe
- * pédagogique, qui met Nathan dans la maison et lui donne une raison de
- * revenir parler d'organisation interne.
+ * Porte d'entrée, pas offre. Trois heures gratuites et utiles offertes à
+ * l'équipe pédagogique, qui mettent Nathan dans la maison et lui donnent une
+ * raison de revenir parler d'organisation interne.
  *
  * ⚠︎ UN SEUL LECTEUR : LE CHEF D'ÉTABLISSEMENT. Pas le professeur. C'est lui
  * qui autorise, qui réunit son équipe et qui signe plus tard. Le titre de
@@ -59,8 +61,8 @@ const PODCAST_ID = 'aMIjJbzuhDc'
 
 const FAITS = [
   {
-    titre: 'Une heure',
-    detail: 'Pas une demi-journée, pas un cycle de formation à caser dans l’année.',
+    titre: 'Trois heures',
+    detail: 'Une demi-journée, en une fois. Pas un cycle de formation à caser dans l’année.',
   },
   {
     titre: 'Dix à vingt personnes',
@@ -78,30 +80,63 @@ const FAITS = [
 
 const DEROULE = [
   {
-    num: '01',
-    titre: 'On part d’une corvée réelle',
+    num: '1',
+    titre: 'Heure 1 · Je construis devant eux',
     texte:
-      'Un professeur de la salle donne la tâche qui lui mange ses dimanches soir. C’est celle-là qu’on traite, pas un exemple de démonstration préparé à l’avance.',
+      'Écran partagé, de la page blanche à l’outil qui tourne. Mes tâtonnements et mes corrections compris : c’est ça qui fait penser « je peux le faire ». Cinq minutes au début sur les données des élèves, et une règle qu’on ne lâche pas de la journée, jamais un nom, on travaille sur initiales.',
   },
   {
-    num: '02',
-    titre: 'On la construit en direct',
+    num: '2',
+    titre: 'Heure 2 · Chacun construit le sien',
     texte:
-      'À l’écran, devant tout le monde, de la feuille blanche à l’outil qui tourne. Les questions se posent pendant, pas à la fin.',
+      'Sur sa matière, sur sa vraie corvée. J’arrive avec trois sujets de secours pour ceux qui bloquent devant la page blanche, parce qu’il y en a toujours deux ou trois.',
   },
   {
-    num: '03',
-    titre: 'Chacun repart avec le sien',
+    num: '3',
+    titre: 'Heure 3 · On s’en sert, et on répare',
     texte:
-      'L’outil construit pendant l’heure, et de quoi en refaire un autre tout seul la semaine suivante.',
+      'Ils testent sur un cas réel, avec leurs vraies copies. Quelque chose va rater, et c’est le moment le plus utile des trois heures : c’est là qu’on apprend à corriger au lieu d’abandonner.',
   },
 ]
 
 const EXEMPLES = [
-  'Un suivi de classe qui se remplit en deux clics au lieu de quinze colonnes à recopier.',
-  'Une grille d’évaluation qui calcule toute seule et qui se réutilise d’une année sur l’autre.',
-  'Un récapitulatif de fin de trimestre qui se génère au lieu de se taper.',
-  'Un planning de salle, de matériel ou de sortie qui ne vit plus dans un classeur partagé.',
+  'Un outil d’appréciations de bulletins qui part de vos observations et rend un texte à relire, pas à écrire.',
+  'Un générateur d’exercices sur trois niveaux, tiré d’un seul chapitre.',
+  'Un QCM fabriqué à partir d’un cours existant, corrigé d’avance.',
+  'Une grille de correction qui calcule toute seule et qui se réutilise d’une année sur l’autre.',
+]
+
+/* LES PRÉREQUIS. Ils servent deux fois : ici, pour qu'un directeur mesure la
+   faisabilité avant de demander, et dans le formulaire, où il coche qu'il peut
+   les réunir. La condition « un membre de la direction dans la salle » est le
+   premier de la liste plutôt qu'un encart à part : c'est un prérequis, pas un
+   discours, et il se vérifie comme les autres. */
+const PREREQUIS = [
+  {
+    titre: 'Un membre de la direction dans la salle',
+    detail:
+      'La seule condition non négociable. La deuxième moitié de mon métier concerne l’organisation, et ça ne se raconte pas par personne interposée.',
+    cle: true,
+  },
+  {
+    titre: 'Un ordinateur portable par professeur',
+    detail: 'Le sien ou celui de l’établissement, peu importe. Une tablette ne suffit pas.',
+  },
+  {
+    titre: 'Du wifi qui tient vingt personnes en même temps',
+    detail:
+      'Le point de blocage le plus fréquent, et le seul que je ne peux pas rattraper sur place. À vérifier avant, pas le jour même.',
+  },
+  {
+    titre: 'Un écran ou un vidéoprojecteur',
+    detail:
+      'Toute la première heure consiste à me regarder construire. Si la salle ne voit pas mon écran, il n’y a pas d’atelier.',
+  },
+  {
+    titre: 'Trois heures d’affilée, dix à vingt personnes',
+    detail:
+      'Pas deux fois une heure et demie : la troisième heure ne vaut que parce qu’elle suit les deux autres.',
+  },
 ]
 
 const FONCTIONS = [
@@ -173,15 +208,15 @@ export default function AtelierPage() {
       <section className="at-hero">
         <FadeUp>
           <p className="font-mono at-eyebrow">
-            Atelier offert · Une heure · Chez vous ou en visio
+            Atelier offert · Trois heures · Chez vous ou en visio
           </p>
           <h1 className="font-serif italic at-h1">
-            Vos professeurs ont tous un tableur qu’ils ont bricolé seuls.
+            <RevealWords text="Vos professeurs ont tous un tableur qu’ils ont bricolé seuls." />
           </h1>
           <p className="font-sans at-hero-sub">
-            En une heure, ils construisent l’outil qui le remplace. Pour leur classe, à leur
-            main, sans écrire une ligne de code et sans rien installer. C’est gratuit, et ça ne
-            vous engage à rien.
+            En trois heures, ils construisent l’outil qui le remplace, et ils le testent sur
+            leurs vraies copies avant de partir. Pour leur classe, à leur main, sans écrire une
+            ligne de code. C’est gratuit, et ça ne vous engage à rien.
           </p>
           {VSL && (
             <div className="at-vsl">
@@ -287,33 +322,22 @@ export default function AtelierPage() {
       {/* ——— LE DÉROULÉ ——— */}
       <section className="at-section">
         <FadeUp>
-          <p className="font-mono at-label">L’heure</p>
+          <p className="font-mono at-label">Les trois heures</p>
           <h2 className="font-serif italic at-h2">Ce qu’il se passe, concrètement.</h2>
           <p className="font-sans at-lead">
             L’atelier s’appelle « Créer ses propres outils pour sa classe, sans développeur ».
-            Il tient en trois moments. Rien à préparer, rien à installer, rien à acheter.
+            Trois heures, trois temps. Rien à préparer, rien à installer, rien à acheter.
           </p>
         </FadeUp>
-        <ol className="at-steps">
-          {DEROULE.map((s, i) => (
-            <FadeUp key={s.num} delay={0.06 * (i + 1)}>
-              <li className="at-step">
-                <span className="font-mono at-step-num">{s.num}</span>
-                <div>
-                  <h3 className="font-sans at-step-title">{s.titre}</h3>
-                  <p className="font-sans at-step-text">{s.texte}</p>
-                </div>
-              </li>
-            </FadeUp>
-          ))}
-        </ol>
+
+        <Deroule />
       </section>
 
       {/* ——— LES EXEMPLES ——— */}
       <section className="at-section">
         <FadeUp>
           <p className="font-mono at-label">De quoi on parle</p>
-          <h2 className="font-serif italic at-h2">Le genre d’outil qui sort d’une heure.</h2>
+          <h2 className="font-serif italic at-h2">Le genre d’outil qui sort de trois heures.</h2>
           <p className="font-sans at-lead">
             « Créer son outil » ne veut pas dire grand-chose tant qu’on n’a pas vu à quoi ça
             ressemble.
@@ -328,52 +352,9 @@ export default function AtelierPage() {
             ))}
           </ul>
           <p className="font-sans at-note">
-            Ce sont des exemples, pas un programme. L’heure part de ce que vos professeurs
-            apportent ce jour-là.
+            Ce sont des exemples, pas un programme. Les trois heures partent de ce que vos
+            professeurs apportent ce jour-là.
           </p>
-        </FadeUp>
-      </section>
-
-      {/* ——— POURQUOI C'EST GRATUIT ———
-          La section la plus importante de la page. Un chef d'établissement qui
-          lit « gratuit » cherche le piège : on le lui donne, en clair. C'est
-          aussi ici que vit la condition « un membre de la direction présent »,
-          présentée comme une conséquence et non comme un péage. */}
-      <section className="at-section at-why">
-        <FadeUp>
-          <p className="font-mono at-label">La transparence</p>
-          <h2 className="font-serif italic at-h2">Pourquoi c’est gratuit, et ce que j’y gagne.</h2>
-          <div className="at-prose">
-            <p>
-              Je ne vends pas de formation. Mon métier, c’est de construire des logiciels de
-              gestion sur mesure pour des établissements : les plannings, le comptage des heures,
-              les dossiers, le suivi des élèves.
-            </p>
-            <p>
-              L’Institut des Chartreux, neuf établissements à Lyon, tourne sur une plateforme RH
-              que j’ai écrite pour eux. Ils rapportent quarante heures récupérées par mois. L’IUT
-              de Saint-Étienne a son CRM pédagogique. D’autres organisations ont leurs outils de
-              stock et de logistique.
-            </p>
-            <p>
-              L’atelier ne démontre rien de tout ça. C’est une heure utile pour vos professeurs,
-              et elle le reste même si on n’en fait rien ensuite.
-            </p>
-            <p>
-              Ce que j’y gagne : vous me voyez travailler. Si à la fin vous avez envie qu’on
-              regarde comment ça se passe chez vous côté administratif, je reste une demi-heure de
-              plus. Si vous n’avez pas envie, l’heure a quand même servi.
-            </p>
-          </div>
-        </FadeUp>
-        <FadeUp delay={0.1}>
-          <div className="at-condition">
-            <p className="font-mono at-condition-label">La seule chose que je demande</p>
-            <p className="font-sans at-condition-text">
-              Qu’un membre de la direction soit dans la salle. La deuxième moitié de mon métier
-              concerne l’organisation, et ça ne se raconte pas par personne interposée.
-            </p>
-          </div>
         </FadeUp>
       </section>
 
@@ -381,18 +362,88 @@ export default function AtelierPage() {
       <section className="at-section">
         <FadeUp>
           <p className="font-mono at-label">Qui vient</p>
-          <h2 className="font-serif italic at-h2">Nathan Goutagny.</h2>
+        </FadeUp>
+        <FadeUp delay={0.06}>
+          <div className="at-who">
+            <figure className="at-who-photo">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/nathan.png"
+                alt="Nathan Goutagny, fondateur de NateSystem"
+                loading="lazy"
+                width={1104}
+                height={974}
+              />
+            </figure>
+            <div>
+              <h2 className="font-serif italic at-h2">Nathan Goutagny.</h2>
+              <div className="at-prose">
+                <p>
+                  Je construis des logiciels de gestion sur mesure pour des établissements :
+                  plannings, comptage des heures, dossiers, suivi des élèves. Je les vends et je
+                  les code moi-même, il n’y a ni commercial ni junior derrière. La personne qui
+                  anime les trois heures est celle qui écrirait le logiciel.
+                </p>
+                <p>
+                  Quand un établissement me confie un projet, le code source lui appartient à
+                  cent pour cent et les données restent hébergées en Europe. Pour un
+                  établissement qui tient des dossiers de mineurs, ce n’est pas un détail de bas
+                  de page.
+                </p>
+              </div>
+            </div>
+          </div>
+        </FadeUp>
+      </section>
+
+      {/* ——— LA GARANTIE ———
+          Texte de Nathan, repris quasi mot pour mot. Seule la personne change :
+          il l'avait écrit en s'adressant aux professeurs, or le lecteur de
+          cette page est le chef d'établissement, qui ne construit pas. */}
+      <section className="at-section">
+        <FadeUp>
+          <p className="font-mono at-label">La garantie</p>
+          <h2 className="font-serif italic at-h2">Personne ne repart les mains vides.</h2>
           <div className="at-prose">
             <p>
-              Je vends et je code moi-même. Il n’y a ni commercial ni junior derrière : la
-              personne qui anime l’heure est celle qui écrirait le logiciel.
-            </p>
-            <p>
-              Quand un établissement me confie un projet, le code source lui appartient à cent
-              pour cent et les données restent hébergées en Europe. Pour un établissement qui
-              tient des dossiers de mineurs, ce n’est pas un détail de bas de page.
+              Chaque professeur repart avec son premier outil qui marche, à tester dès le
+              lendemain matin. Et surtout avec la technique pour en refaire d’autres sans moi.
             </p>
           </div>
+        </FadeUp>
+        <FadeUp delay={0.1}>
+          <div className="at-highlight">
+            <p className="font-sans at-highlight-text">
+              Si quelqu’un repart les mains vides, je reviens le faire avec lui.
+            </p>
+          </div>
+        </FadeUp>
+      </section>
+
+      {/* ——— LES PRÉREQUIS ———
+          Juste avant le formulaire : un directeur mesure la faisabilité, puis
+          il demande. La case à cocher du formulaire renvoie à cette ancre. */}
+      <section className="at-section" id="prerequis">
+        <FadeUp>
+          <p className="font-mono at-label">Avant de dire oui</p>
+          <h2 className="font-serif italic at-h2">Ce qu’il vous faut de votre côté.</h2>
+          <p className="font-sans at-lead">
+            Rien d’exotique, mais tout compte. Si un seul manque, les trois heures tombent à
+            plat, et c’est votre équipe qui aura perdu son après-midi.
+          </p>
+        </FadeUp>
+        <FadeUp delay={0.08}>
+          <ul className="at-prereqs">
+            {PREREQUIS.map((r) => (
+              <li key={r.titre} className={`at-prereq${r.cle ? ' at-prereq--cle' : ''}`}>
+                <span className="at-prereq-mark" aria-hidden="true" />
+                <div>
+                  <p className="font-sans at-prereq-title">{r.titre}</p>
+                  <p className="font-sans at-prereq-detail">{r.detail}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
         </FadeUp>
       </section>
 
@@ -477,6 +528,17 @@ export default function AtelierPage() {
               <label className="at-field">
                 <span className="font-mono at-field-label">Un mot, si vous voulez (facultatif)</span>
                 <textarea name="mot" rows={3} placeholder="Ce qui vous fait venir, ou une contrainte de calendrier." />
+              </label>
+
+              {/* Requise : elle engage le directeur sur le matériel et sur la
+                  présence de la direction, et elle part dans le CRM. C'est
+                  aussi ce qui évite le déplacement pour rien. */}
+              <label className="at-check">
+                <input type="checkbox" name="prerequis" value="oui" required />
+                <span className="font-sans at-check-text">
+                  Je confirme pouvoir réunir <a href="#prerequis">les prérequis listés plus haut</a>{' '}
+                  le jour de l’atelier, direction présente comprise.
+                </span>
               </label>
 
               <button type="submit" className="btn-primary at-submit" disabled={statut === 'envoi'}>
@@ -734,43 +796,6 @@ export default function AtelierPage() {
           margin-bottom: 0;
         }
 
-        /* ——— Déroulé ——— */
-        .at-steps {
-          list-style: none;
-          padding: 0;
-          margin: 34px 0 0;
-          display: grid;
-          gap: 2px;
-        }
-        .at-step {
-          display: flex;
-          gap: 20px;
-          align-items: flex-start;
-          padding: 22px 0;
-          border-top: 1px solid var(--border);
-        }
-        .at-step-num {
-          font-size: 12px;
-          color: var(--accent);
-          letter-spacing: 1px;
-          padding-top: 3px;
-          flex-shrink: 0;
-        }
-        .at-step-title {
-          font-size: 16px;
-          font-weight: 600;
-          color: var(--text);
-          margin: 0 0 7px;
-        }
-        .at-step-text {
-          font-size: 15px;
-          font-weight: 300;
-          line-height: 1.68;
-          color: var(--text-secondary);
-          max-width: 58ch;
-          margin: 0;
-        }
-
         /* ——— Exemples ——— */
         .at-examples {
           list-style: none;
@@ -798,29 +823,116 @@ export default function AtelierPage() {
           margin: 0;
         }
 
-        /* ——— Pourquoi c'est gratuit ——— */
-        .at-condition {
-          margin-top: 30px;
-          padding: 22px 24px;
+        /* ——— Encart accentué (la garantie) ——— */
+        .at-highlight {
+          margin-top: 26px;
+          padding: 22px 26px;
           border-left: 2px solid var(--accent);
           background: var(--accent-subtle);
           border-radius: 0 10px 10px 0;
         }
-        .at-condition-label {
-          font-size: 10.5px;
-          letter-spacing: 1.6px;
-          text-transform: uppercase;
-          color: var(--accent);
-          font-weight: 500;
-          margin: 0 0 10px;
-        }
-        .at-condition-text {
-          font-size: 15.5px;
-          font-weight: 300;
-          line-height: 1.68;
+        .at-highlight-text {
+          font-size: 17px;
+          font-weight: 400;
+          line-height: 1.6;
           color: var(--text);
-          max-width: 58ch;
+          max-width: 52ch;
           margin: 0;
+        }
+
+        /* ——— Qui vient ——— */
+        .at-who {
+          display: grid;
+          grid-template-columns: 148px minmax(0, 1fr);
+          gap: 30px;
+          align-items: start;
+        }
+        .at-who-photo {
+          margin: 0;
+          border-radius: 14px;
+          overflow: hidden;
+          border: 1px solid var(--border);
+          aspect-ratio: 1 / 1;
+        }
+        .at-who-photo img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+        }
+
+        /* ——— Prérequis ——— */
+        .at-prereqs {
+          list-style: none;
+          padding: 0;
+          margin: 30px 0 0;
+          display: grid;
+          gap: 2px;
+        }
+        .at-prereq {
+          display: flex;
+          gap: 16px;
+          align-items: flex-start;
+          padding: 18px 0;
+          border-top: 1px solid var(--border);
+        }
+        .at-prereq:last-child {
+          border-bottom: 1px solid var(--border);
+        }
+        .at-prereq-mark {
+          width: 7px;
+          height: 7px;
+          border-radius: 50%;
+          border: 1px solid var(--text-muted);
+          margin-top: 7px;
+          flex-shrink: 0;
+        }
+        .at-prereq--cle .at-prereq-mark {
+          background: var(--accent);
+          border-color: var(--accent);
+        }
+        .at-prereq-title {
+          font-size: 15.5px;
+          font-weight: 600;
+          color: var(--text);
+          margin: 0 0 5px;
+        }
+        .at-prereq--cle .at-prereq-title {
+          color: var(--accent);
+        }
+        .at-prereq-detail {
+          font-size: 14px;
+          font-weight: 300;
+          line-height: 1.6;
+          color: var(--text-secondary);
+          max-width: 60ch;
+          margin: 0;
+        }
+
+        /* ——— Case de confirmation ——— */
+        .at-check {
+          display: flex;
+          gap: 11px;
+          align-items: flex-start;
+          cursor: pointer;
+          margin-top: 2px;
+        }
+        .at-check input {
+          width: 17px;
+          height: 17px;
+          margin-top: 2px;
+          flex-shrink: 0;
+          accent-color: var(--accent);
+          cursor: pointer;
+        }
+        .at-check-text {
+          font-size: 13.5px;
+          font-weight: 300;
+          line-height: 1.55;
+          color: var(--text-secondary);
+        }
+        .at-check-text a {
+          color: var(--accent);
         }
 
         /* ——— Formulaire ——— */
@@ -989,11 +1101,189 @@ export default function AtelierPage() {
           .at-row {
             grid-template-columns: 1fr;
           }
+          .at-who {
+            grid-template-columns: 1fr;
+            gap: 20px;
+          }
+          .at-who-photo {
+            width: 124px;
+          }
           .at-submit {
             justify-self: stretch;
           }
         }
       `}</style>
     </main>
+  )
+}
+
+/**
+ * LE DÉROULÉ, ET SON RAIL QUI SE REMPLIT.
+ *
+ * Une seule animation, mais elle dit quelque chose : le trait se remplit au
+ * rythme du défilement et chaque heure s'allume quand on l'atteint. La page
+ * vend trois heures en trois temps, le rail le montre au lieu de l'écrire.
+ *
+ * `useSpring` lisse la valeur de défilement, sinon le trait colle au pixel
+ * près à la molette et tressaute. L'étalement va de « le bloc entre par le bas
+ * de l'écran » à « il est aux trois quarts sorti », pour que le remplissage se
+ * termine pendant la lecture de la troisième heure et pas après.
+ */
+function Deroule() {
+  const rail = useRef<HTMLDivElement>(null)
+  const { scrollYProgress } = useScroll({
+    target: rail,
+    offset: ['start 0.78', 'end 0.55'],
+  })
+  const remplissage = useSpring(scrollYProgress, { stiffness: 90, damping: 26, restDelta: 0.001 })
+
+  return (
+    <div className="at-steps-wrap" ref={rail}>
+      <div className="at-rail" aria-hidden="true">
+        <motion.div className="at-rail-fill" style={{ scaleY: remplissage }} />
+      </div>
+
+      <ol className="at-steps">
+        {DEROULE.map((etape) => (
+          <Etape key={etape.num} etape={etape} />
+        ))}
+      </ol>
+
+      <style jsx>{`
+        .at-steps-wrap {
+          position: relative;
+          margin-top: 36px;
+          padding-left: 58px;
+        }
+        .at-rail {
+          position: absolute;
+          left: 14px;
+          top: 6px;
+          bottom: 10px;
+          width: 1px;
+          background: var(--border);
+        }
+        /* :global est OBLIGATOIRE ici. motion.div est un composant, pas un
+           élément du DOM : styled-jsx ne peut pas lui coller sa classe de
+           portée, donc une règle « .at-rail-fill » toute seule ne s'applique
+           jamais et le trait se remplit sans être visible. On passe par le
+           parent .at-rail, lui bien réel, pour garder la règle confinée. */
+        .at-rail :global(.at-rail-fill) {
+          position: absolute;
+          inset: 0;
+          background: var(--accent);
+          transform-origin: top center;
+        }
+        .at-steps {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          display: grid;
+          gap: 34px;
+        }
+        @media (max-width: 560px) {
+          .at-steps-wrap {
+            padding-left: 44px;
+          }
+          .at-rail {
+            left: 11px;
+          }
+        }
+      `}</style>
+    </div>
+  )
+}
+
+/** Une heure du déroulé : elle s'allume quand elle entre réellement dans l'écran. */
+function Etape({ etape }: { etape: (typeof DEROULE)[number] }) {
+  const ref = useRef<HTMLLIElement>(null)
+  const vue = useInView(ref, { once: true, margin: '-45% 0px -35% 0px' })
+
+  return (
+    <li ref={ref} className={`at-step${vue ? ' is-on' : ''}`}>
+      <span className="font-mono at-step-num" aria-hidden="true">
+        {etape.num}
+      </span>
+      <h3 className="font-sans at-step-title">{etape.titre}</h3>
+      <p className="font-sans at-step-text">{etape.texte}</p>
+
+      <style jsx>{`
+        .at-step {
+          position: relative;
+        }
+        /* La pastille porte le fond de la page : le rail passe derrière elle
+           sans la traverser, et le remplissage s'arrête visuellement dessus. */
+        .at-step-num {
+          position: absolute;
+          left: -58px;
+          top: -2px;
+          width: 29px;
+          height: 29px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 50%;
+          border: 1px solid var(--border);
+          background: var(--bg);
+          font-size: 11px;
+          color: var(--text-muted);
+          transition:
+            color 0.5s ease,
+            background 0.5s ease,
+            border-color 0.5s ease,
+            transform 0.55s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .at-step.is-on .at-step-num {
+          color: #fff;
+          background: var(--accent);
+          border-color: var(--accent);
+          transform: scale(1.1);
+        }
+        .at-step-title {
+          font-size: 16px;
+          font-weight: 600;
+          color: var(--text-muted);
+          margin: 0 0 7px;
+          transition: color 0.5s ease;
+        }
+        .at-step.is-on .at-step-title {
+          color: var(--text);
+        }
+        .at-step-text {
+          font-size: 15px;
+          font-weight: 300;
+          line-height: 1.68;
+          color: var(--text-secondary);
+          max-width: 58ch;
+          margin: 0;
+          opacity: 0.55;
+          transition: opacity 0.6s ease;
+        }
+        .at-step.is-on .at-step-text {
+          opacity: 1;
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .at-step-title,
+          .at-step-text,
+          .at-step-num {
+            transition: none;
+          }
+          .at-step-title {
+            color: var(--text);
+          }
+          .at-step-text {
+            opacity: 1;
+          }
+        }
+        @media (max-width: 560px) {
+          .at-step-num {
+            left: -44px;
+            width: 25px;
+            height: 25px;
+            font-size: 10px;
+          }
+        }
+      `}</style>
+    </li>
   )
 }

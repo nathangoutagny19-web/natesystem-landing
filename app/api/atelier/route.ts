@@ -41,6 +41,8 @@ const getResend = (): Resend => {
 
 type Payload = {
   nom?: string
+  /** Case requise du formulaire : « oui » si le directeur a confirmé les prérequis. */
+  prerequis?: string
   fonction?: string
   etablissement?: string
   email?: string
@@ -75,7 +77,7 @@ export async function POST(req: NextRequest) {
 
   const {
     nom = '', fonction = '', etablissement = '', email = '',
-    telephone = '', personnes = '', lieu = '', mot = '',
+    telephone = '', personnes = '', lieu = '', mot = '', prerequis = '',
   } = body
 
   if (!nom.trim() || !email.trim() || !etablissement.trim()) {
@@ -110,6 +112,7 @@ export async function POST(req: NextRequest) {
               ${row('Participants', personnes)}
               ${row('Format souhaité', lieu)}
               ${row('Fonction', fonction)}
+              ${row('Prérequis confirmés', prerequis === 'oui' ? 'Oui, case cochée' : 'NON')}
             </table>
           </td>
         </tr>
@@ -143,6 +146,7 @@ Email : ${email}
 Téléphone : ${telephone || '—'}
 Participants : ${personnes || '—'}
 Format : ${lieu || '—'}
+Prérequis confirmés : ${prerequis === 'oui' ? 'oui' : 'NON'}
 ${mot.trim() ? `\nSon mot :\n${mot}\n` : ''}
 ${direction
   ? 'La direction demande elle-même, condition remplie.'
@@ -165,7 +169,7 @@ Réponds : ${email}
     fetch(CRM_ENDPOINT, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ nom, fonction, etablissement, email, telephone, personnes, lieu, mot }),
+      body: JSON.stringify({ nom, fonction, etablissement, email, telephone, personnes, lieu, mot, prerequis }),
     }).then((r) => {
       if (!r.ok) throw new Error(`CRM ${r.status}`)
       return r.json()

@@ -19,9 +19,9 @@ import type { Metadata } from 'next'
  */
 
 export const metadata: Metadata = {
-  title: 'Atelier offert pour votre équipe pédagogique · NateSystem',
+  title: 'Atelier de 3 h offert pour votre équipe pédagogique · NateSystem',
   description:
-    'Une heure offerte à votre équipe pédagogique : chaque professeur repart avec un outil qu’il a construit lui-même pour sa classe, sans développeur. Chez vous ou en visio. Trois établissements ce trimestre.',
+    'Trois heures offertes à votre équipe pédagogique : chaque professeur construit son propre outil de classe, le teste sur ses vraies copies, et repart avec. Sans développeur, chez vous ou en visio. Trois établissements ce trimestre.',
   keywords: [
     'atelier numérique équipe pédagogique',
     'formation professeurs outils numériques',
@@ -32,9 +32,9 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://www.natesystem.com/atelier' },
   robots: { index: true, follow: true },
   openGraph: {
-    title: 'Une heure offerte à vos professeurs · NateSystem',
+    title: 'Trois heures offertes à vos professeurs · NateSystem',
     description:
-      'Vos professeurs ont tous un tableur qu’ils ont bricolé seuls. En une heure, ils construisent l’outil qui le remplace.',
+      'Vos professeurs ont tous un tableur qu’ils ont bricolé seuls. En trois heures, ils construisent l’outil qui le remplace.',
     url: 'https://www.natesystem.com/atelier',
     type: 'website',
     locale: 'fr_FR',
@@ -42,9 +42,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Une heure offerte à vos professeurs · NateSystem',
+    title: 'Trois heures offertes à vos professeurs · NateSystem',
     description:
-      'Vos professeurs ont tous un tableur qu’ils ont bricolé seuls. En une heure, ils construisent l’outil qui le remplace.',
+      'Vos professeurs ont tous un tableur qu’ils ont bricolé seuls. En trois heures, ils construisent l’outil qui le remplace.',
   },
 }
 
@@ -54,9 +54,9 @@ const jsonLd = {
     {
       '@type': 'WebPage',
       '@id': 'https://www.natesystem.com/atelier#page',
-      name: 'Atelier offert pour votre équipe pédagogique',
+      name: 'Atelier de 3 h offert pour votre équipe pédagogique',
       description:
-        'Une heure offerte à l’équipe pédagogique d’un établissement privé : chaque professeur repart avec un outil qu’il a construit lui-même pour sa classe.',
+        'Trois heures offertes à l’équipe pédagogique d’un établissement privé : chaque professeur construit son propre outil de classe, le teste, et repart avec.',
       url: 'https://www.natesystem.com/atelier',
       inLanguage: 'fr-FR',
       provider: { '@id': 'https://www.natesystem.com/#organization' },
