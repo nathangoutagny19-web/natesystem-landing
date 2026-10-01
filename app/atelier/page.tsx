@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react'
 import { motion, useInView, useScroll, useSpring } from 'framer-motion'
+import { Sparkles } from 'lucide-react'
 import FadeUp from '@/components/ui/FadeUp'
 import RevealWords from '@/components/ui/RevealWords'
 import VslPlayer from '@/components/ui/VslPlayer'
@@ -223,7 +224,11 @@ const RESEAU = [
   'Je ne sais pas, je vérifie',
 ]
 
+/* Même courbe que le hero du site : les deux pages doivent bouger pareil. */
+const EASE = [0.22, 1, 0.36, 1] as const
+
 type Statut = 'repos' | 'envoi' | 'ok' | 'erreur'
+
 
 export default function AtelierPage() {
   const [statut, setStatut] = useState<Statut>('repos')
@@ -262,450 +267,551 @@ export default function AtelierPage() {
   }
 
   return (
-    <main className="at-page">
-      {/* En-tête réduite au strict minimum : la marque, et rien à cliquer
-          qui emmène ailleurs que sur le formulaire. */}
+    <main>
+      {/* En-tête réduite au strict minimum : la marque, et une seule action.
+          Pas la nav du site : douze portes de sortie sur une page qui n'a
+          qu'une destination, c'est douze façons de la quitter. */}
       <header className="at-header">
         <div className="at-brand">
           <span className="font-serif italic at-brand-n">N</span>
           <span className="at-brand-dot" aria-hidden="true" />
           <span className="font-sans at-brand-name">NateSystem</span>
         </div>
-        <a href="#demander" className="font-sans at-header-cta">
+        <a href="#demander" className="nav-cta-btn at-header-cta">
           Demander l’atelier
         </a>
       </header>
 
-      {/* ——— HERO ——— */}
+      {/* ═══ HERO ═══ */}
       <section className="at-hero">
-        <FadeUp>
-          <p className="font-mono at-eyebrow">
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1, ease: EASE }}
+        >
+          <span className="section-label at-hero-label">
             Atelier offert · Trois heures · Chez vous ou en visio
-          </p>
-          <h1 className="font-serif italic at-h1">
-            <RevealWords text="Vos professeurs ont tous un tableur qu’ils ont bricolé seuls." />
-          </h1>
-          <p className="font-sans at-hero-sub">
-            En trois heures, ils construisent l’outil qui le remplace, et ils le testent sur
-            leurs vraies copies avant de partir. Pour leur classe, à leur main, sans écrire une
-            ligne de code. C’est gratuit, et ça ne vous engage à rien.
-          </p>
-          {VSL && (
-            <div className="at-vsl">
-              <VslPlayer
-                src={VSL.src}
-                poster={VSL.poster}
-                duration={VSL.duree}
-                label="Voir ce que fait l’atelier"
-                title="L’atelier NateSystem, en quelques minutes"
-              />
-            </div>
-          )}
+          </span>
+        </motion.div>
 
-          <div className="at-hero-actions">
-            <a href="#demander" className="btn-primary">
-              Demander l’atelier pour mon établissement
-            </a>
-            <p className="font-mono at-scarcity">
-              Je prends {ETABLISSEMENTS_PAR_TRIMESTRE} établissements ce trimestre.
-            </p>
-          </div>
-        </FadeUp>
+        <h1 className="at-h1">
+          <RevealWords text="Vos professeurs ont tous un tableur" delay={0.15} />{' '}
+          <span className="at-h1-accent">
+            <RevealWords text="qu’ils ont bricolé seuls." delay={0.45} />
+          </span>
+        </h1>
+
+        <motion.div
+          initial={{ opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.95, ease: EASE }}
+          className="at-pill"
+        >
+          <Sparkles size={13} strokeWidth={2} className="at-pill-icon" />
+          <span className="font-sans at-pill-text">
+            Je prends {ETABLISSEMENTS_PAR_TRIMESTRE} établissements ce trimestre.
+          </span>
+        </motion.div>
+
+        {VSL && (
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.05, ease: EASE }}
+            className="at-vsl"
+          >
+            <VslPlayer
+              src={VSL.src}
+              poster={VSL.poster}
+              duration={VSL.duree}
+              label="Voir ce que fait l’atelier"
+              title="L’atelier NateSystem, en quelques minutes"
+            />
+          </motion.div>
+        )}
+
+        <motion.p
+          initial={{ opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 1.15, ease: EASE }}
+          className="font-sans at-hero-sub"
+        >
+          En trois heures, ils construisent l’outil qui le remplace, et ils le testent sur leurs
+          vraies copies avant de partir. Pour leur classe, à leur main, sans écrire une ligne de
+          code. C’est gratuit, et ça ne vous engage à rien.
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 1.25, ease: EASE }}
+          className="at-hero-actions"
+        >
+          <a href="#demander" className="btn-primary">
+            <span className="btn-primary-dot" />
+            Demander l’atelier pour mon établissement
+          </a>
+          <a href="#les-trois-heures" className="btn-ghost">
+            Voir le déroulé
+          </a>
+        </motion.div>
       </section>
 
-      {/* ——— LES FAITS, pour que la décision se prenne sans appel préalable ——— */}
-      <section className="at-facts-wrap">
-        <FadeUp>
+      {/* ═══ LES FAITS ═══ */}
+      <section className="at-band">
+        <div className="at-wrap">
           <ul className="at-facts">
-            {FAITS.map((f) => (
-              <li key={f.titre} className="at-fact">
-                <p className="font-sans at-fact-title">{f.titre}</p>
-                <p className="font-sans at-fact-detail">{f.detail}</p>
-              </li>
+            {FAITS.map((f, i) => (
+              <FadeUp key={f.titre} delay={0.05 * i}>
+                <li className="card at-fact">
+                  <p className="font-sans at-fact-title">{f.titre}</p>
+                  <p className="font-sans at-fact-detail">{f.detail}</p>
+                </li>
+              </FadeUp>
             ))}
           </ul>
-        </FadeUp>
+        </div>
       </section>
 
-      {/* ——— LA PREUVE ———
+      <div className="divider" />
+
+      {/* ═══ LA PREUVE ═══
           Elle arrive avant le déroulé : un directeur juge d'abord à qui il a
           affaire, le contenu de l'heure ne l'intéresse qu'ensuite.
 
           ⚠︎ Les logos viennent de ClientsBar, le composant de la home, et pas
           d'une liste recopiée ici : ajouter une référence doit rester un
-          changement à un seul endroit. Son intitulé est masqué, le titre
-          ci-dessous le remplace. */}
+          changement à un seul endroit. */}
       <section className="at-section">
-        <FadeUp>
-          <p className="font-mono at-label">La preuve</p>
-          <h2 className="font-serif italic at-h2">
-            {PARC} tournent sur nos outils.
-          </h2>
-          <p className="font-sans at-lead">
-            Des écoles, un IUT, et des organisations d’autres secteurs. Les mêmes contraintes
-            partout : beaucoup de monde, peu de temps, et un logiciel du commerce qui ne colle
-            jamais tout à fait.
-          </p>
-        </FadeUp>
-
-        <FadeUp delay={0.06}>
-          <div className="at-logos">
-            <ClientsBar hideLabel />
-          </div>
-        </FadeUp>
-
-        <div className="at-proof-grid">
-          <FadeUp delay={0.1}>
-            <figure className="at-proof-item">
-              <div className="at-proof-media">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/realisations/chartreux-terrasse.webp"
-                  alt="Nathan Goutagny serre la main de sa cliente sur la terrasse des Chartreux, à Lyon"
-                  loading="lazy"
-                  width={1200}
-                  height={1200}
-                />
-              </div>
-              <figcaption className="font-sans at-proof-caption">
-                Aux Chartreux, à Lyon. Neuf établissements sur une seule plateforme, et quarante
-                heures récupérées chaque mois, de leur propre compte.
-              </figcaption>
-            </figure>
+        <div className="at-wrap">
+          <FadeUp>
+            <header className="at-head">
+              <span className="section-label">La preuve</span>
+              <h2 className="section-title at-h2">{PARC} tournent sur nos outils.</h2>
+              <p className="font-sans at-lead">
+                Des écoles, un IUT, et des organisations d’autres secteurs. Les mêmes contraintes
+                partout : beaucoup de monde, peu de temps, et un logiciel du commerce qui ne colle
+                jamais tout à fait.
+              </p>
+            </header>
           </FadeUp>
 
-          <FadeUp delay={0.16}>
-            <figure className="at-proof-item">
-              <div className="at-proof-media at-proof-video">
-                <LiteYouTube
-                  id={PODCAST_ID}
-                  title="Catherine F. raconte ce que les plateformes sur-mesure ont changé chez elle"
-                />
-              </div>
-              <figcaption className="font-sans at-proof-caption">
-                Catherine F. enseigne le numérique dans le supérieur et dirige une organisation
-                que nous équipons. Elle raconte ce que deux plateformes sur-mesure ont changé
-                chez eux.
-              </figcaption>
-            </figure>
+          <FadeUp delay={0.06}>
+            <div className="at-logos">
+              <ClientsBar hideLabel />
+            </div>
+          </FadeUp>
+
+          <div className="at-proof-grid">
+            <FadeUp delay={0.1}>
+              <figure className="at-proof-item">
+                <div className="at-proof-media">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="/realisations/chartreux-terrasse.webp"
+                    alt="Nathan Goutagny serre la main de sa cliente sur la terrasse des Chartreux, à Lyon"
+                    loading="lazy"
+                    width={1200}
+                    height={1200}
+                  />
+                </div>
+                <figcaption className="font-sans at-proof-caption">
+                  Aux Chartreux, à Lyon. Neuf établissements sur une seule plateforme, et quarante
+                  heures récupérées chaque mois, de leur propre compte.
+                </figcaption>
+              </figure>
+            </FadeUp>
+
+            <FadeUp delay={0.16}>
+              <figure className="at-proof-item">
+                <div className="at-proof-media at-proof-video">
+                  <LiteYouTube
+                    id={PODCAST_ID}
+                    title="Catherine F. raconte ce que les plateformes sur-mesure ont changé chez elle"
+                  />
+                </div>
+                <figcaption className="font-sans at-proof-caption">
+                  Catherine F. enseigne le numérique dans le supérieur et dirige une organisation
+                  que nous équipons. Elle raconte ce que deux plateformes sur-mesure ont changé
+                  chez eux.
+                </figcaption>
+              </figure>
+            </FadeUp>
+          </div>
+        </div>
+      </section>
+
+      <div className="divider" />
+
+      {/* ═══ LE DÉROULÉ ═══ */}
+      <section className="at-section" id="les-trois-heures">
+        <div className="at-wrap at-wrap--narrow">
+          <FadeUp>
+            <header className="at-head">
+              <span className="section-label">Les trois heures</span>
+              <h2 className="section-title at-h2">Ce qu’il se passe, concrètement.</h2>
+              <p className="font-sans at-lead">
+                L’atelier s’appelle « Créer ses propres outils pour sa classe, sans développeur ».
+                Trois heures, trois temps. Rien à installer. Une seule chose à préparer : chaque
+                participant arrive avec une corvée précise à régler.
+              </p>
+            </header>
+          </FadeUp>
+
+          <Deroule />
+        </div>
+      </section>
+
+      <div className="divider" />
+
+      {/* ═══ LES EXEMPLES ═══ */}
+      <section className="at-section">
+        <div className="at-wrap">
+          <FadeUp>
+            <header className="at-head">
+              <span className="section-label">De quoi on parle</span>
+              <h2 className="section-title at-h2">Le genre d’outil qui sort de trois heures.</h2>
+              <p className="font-sans at-lead">
+                « Créer son outil » ne veut pas dire grand-chose tant qu’on n’a pas vu à quoi ça
+                ressemble.
+              </p>
+            </header>
+          </FadeUp>
+
+          <ul className="at-examples">
+            {EXEMPLES.map((ex, i) => (
+              <FadeUp key={ex} delay={0.05 * i}>
+                <li className="card at-example">
+                  <span className="font-mono at-example-num">{String(i + 1).padStart(2, '0')}</span>
+                  <p className="font-sans at-example-text">{ex}</p>
+                </li>
+              </FadeUp>
+            ))}
+          </ul>
+
+          <FadeUp delay={0.24}>
+            <p className="font-sans at-note">
+              Ce sont des exemples, pas un programme. Les trois heures partent de ce que vos
+              professeurs apportent ce jour-là.
+            </p>
           </FadeUp>
         </div>
       </section>
 
-      {/* ——— LE DÉROULÉ ——— */}
-      <section className="at-section">
-        <FadeUp>
-          <p className="font-mono at-label">Les trois heures</p>
-          <h2 className="font-serif italic at-h2">Ce qu’il se passe, concrètement.</h2>
-          <p className="font-sans at-lead">
-            L’atelier s’appelle « Créer ses propres outils pour sa classe, sans développeur ».
-            Trois heures, trois temps. Rien à installer. Une seule chose à préparer : chaque
-            participant arrive avec une corvée précise à régler.
-          </p>
-        </FadeUp>
+      <div className="divider" />
 
-        <Deroule />
-      </section>
-
-      {/* ——— LES EXEMPLES ——— */}
+      {/* ═══ QUI VIENT ═══ */}
       <section className="at-section">
-        <FadeUp>
-          <p className="font-mono at-label">De quoi on parle</p>
-          <h2 className="font-serif italic at-h2">Le genre d’outil qui sort de trois heures.</h2>
-          <p className="font-sans at-lead">
-            « Créer son outil » ne veut pas dire grand-chose tant qu’on n’a pas vu à quoi ça
-            ressemble.
-          </p>
-        </FadeUp>
-        <FadeUp delay={0.08}>
-          <ul className="at-examples">
-            {EXEMPLES.map((ex) => (
-              <li key={ex} className="font-sans at-example">
-                {ex}
-              </li>
-            ))}
-          </ul>
-          <p className="font-sans at-note">
-            Ce sont des exemples, pas un programme. Les trois heures partent de ce que vos
-            professeurs apportent ce jour-là.
-          </p>
-        </FadeUp>
-      </section>
-
-      {/* ——— QUI VIENT ——— */}
-      <section className="at-section">
-        <FadeUp>
-          <p className="font-mono at-label">Qui vient</p>
-        </FadeUp>
-        <FadeUp delay={0.06}>
-          <div className="at-who">
-            <figure className="at-who-photo">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/nathan.png"
-                alt="Nathan Goutagny, fondateur de NateSystem"
-                loading="lazy"
-                width={1104}
-                height={974}
-              />
-            </figure>
-            <div>
-              <h2 className="font-serif italic at-h2">Nathan Goutagny.</h2>
-              <div className="at-prose">
-                <p>
-                  Je dirige NateSystem. Je construis des logiciels de gestion sur mesure pour des
-                  établissements, et aussi des outils pédagogiques : plannings, comptage des
-                  heures, dossiers, suivi des élèves. Plus de dix établissements tournent dessus,
-                  dont les Chartreux et l’IUT de Saint-Étienne pour citer les plus connus.
-                </p>
-                <p>
-                  Ce que ça leur apporte : des heures rendues aux équipes, des tâches répétitives
-                  qui disparaissent, des données enfin claires, une communication interne qui ne
-                  dépend plus de qui sait, et au bout de la chaîne des élèves mieux suivis. Les
-                  Chartreux rapportent quarante heures récupérées par mois.
-                </p>
-                <p>
-                  Je les vends et je les code moi-même, il n’y a ni commercial ni junior
-                  derrière. Et je passe beaucoup de temps à former, parce qu’un logiciel que
-                  personne n’utilise vraiment ne sert à rien : je forme jusqu’à l’autonomie.
-                </p>
-                <p>
-                  C’est là que j’ai vu la même chose revenir, rendez-vous après rendez-vous. Des
-                  professeurs et des directeurs qui voulaient se construire leurs propres petits
-                  outils, qui essayaient, et qui s’emmêlaient les pinceaux. Cet atelier vient de
-                  là.
-                </p>
-                <p>
-                  Quand un établissement me confie un projet, le code source lui appartient à
-                  cent pour cent et les données restent hébergées en Europe. Pour un
-                  établissement qui tient des dossiers de mineurs, ce n’est pas un détail de bas
-                  de page.
-                </p>
+        <div className="at-wrap at-wrap--narrow">
+          <FadeUp>
+            <span className="section-label at-who-label">Qui vient</span>
+          </FadeUp>
+          <FadeUp delay={0.06}>
+            <div className="card at-who">
+              <figure className="at-who-photo">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/nathan.png"
+                  alt="Nathan Goutagny, fondateur de NateSystem"
+                  loading="lazy"
+                  width={1104}
+                  height={974}
+                />
+              </figure>
+              <div className="at-who-body">
+                <h2 className="font-serif italic at-who-name">Nathan Goutagny.</h2>
+                <div className="at-prose">
+                  <p>
+                    Je dirige NateSystem. Je construis des logiciels de gestion sur mesure pour des
+                    établissements, et aussi des outils pédagogiques : plannings, comptage des
+                    heures, dossiers, suivi des élèves. Plus de dix établissements tournent dessus,
+                    dont les Chartreux et l’IUT de Saint-Étienne pour citer les plus connus.
+                  </p>
+                  <p>
+                    Ce que ça leur apporte : des heures rendues aux équipes, des tâches répétitives
+                    qui disparaissent, des données enfin claires, une communication interne qui ne
+                    dépend plus de qui sait, et au bout de la chaîne des élèves mieux suivis. Les
+                    Chartreux rapportent quarante heures récupérées par mois.
+                  </p>
+                  <p>
+                    Je les vends et je les code moi-même, il n’y a ni commercial ni junior
+                    derrière. Et je passe beaucoup de temps à former, parce qu’un logiciel que
+                    personne n’utilise vraiment ne sert à rien : je forme jusqu’à l’autonomie.
+                  </p>
+                  <p>
+                    C’est là que j’ai vu la même chose revenir, rendez-vous après rendez-vous. Des
+                    professeurs et des directeurs qui voulaient se construire leurs propres petits
+                    outils, qui essayaient, et qui s’emmêlaient les pinceaux. Cet atelier vient de
+                    là.
+                  </p>
+                  <p>
+                    Quand un établissement me confie un projet, le code source lui appartient à
+                    cent pour cent et les données restent hébergées en Europe. Pour un
+                    établissement qui tient des dossiers de mineurs, ce n’est pas un détail de bas
+                    de page.
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-        </FadeUp>
+          </FadeUp>
+        </div>
       </section>
 
-      {/* ——— LA GARANTIE ———
+      <div className="divider" />
+
+      {/* ═══ LA GARANTIE ═══
           Texte de Nathan, repris quasi mot pour mot. Seule la personne change :
           il l'avait écrit en s'adressant aux professeurs, or le lecteur de
           cette page est le chef d'établissement, qui ne construit pas. */}
       <section className="at-section">
-        <FadeUp>
-          <p className="font-mono at-label">La garantie</p>
-          <h2 className="font-serif italic at-h2">Personne ne repart les mains vides.</h2>
-          <div className="at-prose">
-            <p>
-              Chaque professeur repart avec son premier outil qui marche, à tester dès le
-              lendemain matin. Et surtout avec la technique pour en refaire d’autres sans moi.
-            </p>
-          </div>
-        </FadeUp>
-        <FadeUp delay={0.1}>
-          <div className="at-highlight">
-            <p className="font-sans at-highlight-text">
-              Si quelqu’un repart les mains vides, je reviens le faire avec lui.
-            </p>
-          </div>
-        </FadeUp>
+        <div className="at-wrap at-wrap--narrow">
+          <FadeUp>
+            <header className="at-head">
+              <span className="section-label">La garantie</span>
+              <h2 className="section-title at-h2">Personne ne repart les mains vides.</h2>
+              <p className="font-sans at-lead">
+                Chaque professeur repart avec son premier outil qui marche, à tester dès le
+                lendemain matin. Et surtout avec la technique pour en refaire d’autres sans moi.
+              </p>
+            </header>
+          </FadeUp>
+          <FadeUp delay={0.1}>
+            <div className="at-pledge">
+              <p className="font-serif italic at-pledge-text">
+                Si quelqu’un repart les mains vides, je reviens le faire avec lui.
+              </p>
+            </div>
+          </FadeUp>
+        </div>
       </section>
 
-      {/* ——— LES PRÉREQUIS ———
+      <div className="divider" />
+
+      {/* ═══ LES PRÉREQUIS ═══
           Juste avant le formulaire : un directeur mesure la faisabilité, puis
           il demande. La case à cocher du formulaire renvoie à cette ancre. */}
       <section className="at-section" id="prerequis">
-        <FadeUp>
-          <p className="font-mono at-label">Avant de dire oui</p>
-          <h2 className="font-serif italic at-h2">Ce qu’il vous faut de votre côté.</h2>
-          <p className="font-sans at-lead">
-            Rien d’exotique, mais tout compte. Les deux lignes en rouge sont celles qui font
-            rater un atelier quand elles manquent, pas celles qui le gênent.
-          </p>
-        </FadeUp>
-        {PREREQUIS.map((bloc, b) => (
-          <FadeUp key={bloc.groupe} delay={0.08 + b * 0.06}>
-            <div className="at-prereq-group">
-              <h3 className="font-mono at-prereq-group-title">{bloc.groupe}</h3>
-              <ul className="at-prereqs">
-                {bloc.items.map((r) => (
-                  <li
-                    key={r.titre}
-                    className={`at-prereq${'cle' in r && r.cle ? ' at-prereq--cle' : ''}`}
-                  >
-                    <span className="at-prereq-mark" aria-hidden="true" />
-                    <div>
-                      <p className="font-sans at-prereq-title">{r.titre}</p>
-                      <p className="font-sans at-prereq-detail">{r.detail}</p>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            </div>
+        <div className="at-wrap">
+          <FadeUp>
+            <header className="at-head">
+              <span className="section-label">Avant de dire oui</span>
+              <h2 className="section-title at-h2">Ce qu’il vous faut de votre côté.</h2>
+              <p className="font-sans at-lead">
+                Rien d’exotique, mais tout compte. Les deux lignes en rouge sont celles qui font
+                rater un atelier quand elles manquent, pas celles qui le gênent.
+              </p>
+            </header>
           </FadeUp>
-        ))}
+
+          <div className="at-prereq-cols">
+            {PREREQUIS.map((bloc, b) => (
+              <FadeUp key={bloc.groupe} delay={0.06 * b}>
+                <div className="card at-prereq-col">
+                  <h3 className="font-mono at-prereq-group-title">{bloc.groupe}</h3>
+                  <ul className="at-prereqs">
+                    {bloc.items.map((r) => (
+                      <li
+                        key={r.titre}
+                        className={`at-prereq${'cle' in r && r.cle ? ' at-prereq--cle' : ''}`}
+                      >
+                        <span className="at-prereq-mark" aria-hidden="true" />
+                        <div>
+                          <p className="font-sans at-prereq-title">{r.titre}</p>
+                          <p className="font-sans at-prereq-detail">{r.detail}</p>
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </FadeUp>
+            ))}
+          </div>
+        </div>
       </section>
 
-      {/* ——— LE FORMULAIRE, seule action de la page ——— */}
+      <div className="divider" />
+
+      {/* ═══ LE FORMULAIRE, seule action de la page ═══ */}
       <section className="at-section at-form-section" id="demander">
-        <FadeUp>
-          <p className="font-mono at-label">La demande</p>
-          <h2 className="font-serif italic at-h2">Demander l’atelier pour votre établissement.</h2>
-          <p className="font-sans at-lead">
-            Je reviens vers vous sous 48 heures avec deux ou trois créneaux. Je prends{' '}
-            {ETABLISSEMENTS_PAR_TRIMESTRE} établissements ce trimestre.
-          </p>
-        </FadeUp>
-
-        <FadeUp delay={0.08}>
-          {statut === 'ok' ? (
-            <div className="at-done">
-              <p className="font-serif italic at-done-title">C’est parti.</p>
-              <p className="font-sans at-done-text">
-                Je vous réponds sous 48 heures, depuis nathan@natesystem.com. Si vous ne voyez
-                rien passer, regardez vos indésirables.
+        <div className="at-wrap at-wrap--narrow">
+          <FadeUp>
+            <header className="at-head">
+              <span className="section-label">La demande</span>
+              <h2 className="section-title at-h2">
+                Demander l’atelier pour votre établissement.
+              </h2>
+              <p className="font-sans at-lead">
+                Je reviens vers vous sous 48 heures avec deux ou trois créneaux. Je prends{' '}
+                {ETABLISSEMENTS_PAR_TRIMESTRE} établissements ce trimestre.
               </p>
-            </div>
-          ) : (
-            <form className="at-form" onSubmit={envoyer} noValidate={false}>
-              <div className="at-row">
-                <label className="at-field">
-                  <span className="font-mono at-field-label">Votre nom</span>
-                  <input name="nom" type="text" required autoComplete="name" placeholder="Prénom et nom" />
-                </label>
-                <label className="at-field">
-                  <span className="font-mono at-field-label">Votre fonction</span>
-                  <select name="fonction" defaultValue={FONCTIONS[0]}>
-                    {FONCTIONS.map((f) => (
-                      <option key={f} value={f}>
-                        {f}
-                      </option>
-                    ))}
-                  </select>
-                </label>
-              </div>
+            </header>
+          </FadeUp>
 
-              <label className="at-field">
-                <span className="font-mono at-field-label">Votre établissement</span>
-                <input name="etablissement" type="text" required placeholder="Nom de l’établissement, et la ville" />
-              </label>
-
-              <div className="at-row">
-                <label className="at-field">
-                  <span className="font-mono at-field-label">Email</span>
-                  <input name="email" type="email" required autoComplete="email" placeholder="vous@etablissement.fr" />
-                </label>
-                <label className="at-field">
-                  <span className="font-mono at-field-label">Téléphone</span>
-                  <input name="telephone" type="tel" required autoComplete="tel" placeholder="06 00 00 00 00" />
-                </label>
-              </div>
-
-              <div className="at-row">
-                <label className="at-field">
-                  <span className="font-mono at-field-label">Combien de personnes</span>
-                  <select name="personnes" defaultValue={TAILLES[1]}>
-                    {TAILLES.map((t) => (
-                      <option key={t} value={t}>
-                        {t}
-                      </option>
-                    ))}
-                  </select>
-                </label>
-                <label className="at-field">
-                  <span className="font-mono at-field-label">Plutôt</span>
-                  <select name="lieu" defaultValue={LIEUX[2]}>
-                    {LIEUX.map((l) => (
-                      <option key={l} value={l}>
-                        {l}
-                      </option>
-                    ))}
-                  </select>
-                </label>
-              </div>
-
-              {/* LE PRÉREQUIS INVISIBLE. Beaucoup d'établissements filtrent
-                  les sites d'IA sur le réseau pédagogique. Découvert le jour J
-                  devant quinze personnes, l'atelier est mort et la garantie
-                  avec. « Je ne sais pas » est la réponse honnête et attendue :
-                  elle dit simplement qu'il faut vérifier avant de caler la
-                  date. */}
-              <label className="at-field">
-                <span className="font-mono at-field-label">Accès réseau</span>
-                <span className="font-sans at-field-help">
-                  Depuis les postes de l’établissement, un site comme ChatGPT est-il accessible ?
-                </span>
-                <select name="reseau" defaultValue={RESEAU[2]}>
-                  {RESEAU.map((r) => (
-                    <option key={r} value={r}>
-                      {r}
-                    </option>
-                  ))}
-                </select>
-              </label>
-
-              <label className="at-field">
-                <span className="font-mono at-field-label">Un mot, si vous voulez (facultatif)</span>
-                <textarea name="mot" rows={3} placeholder="Ce qui vous fait venir, ou une contrainte de calendrier." />
-              </label>
-
-              {/* Requise : elle engage le directeur sur le matériel et sur la
-                  présence de la direction, et elle part dans le CRM. C'est
-                  aussi ce qui évite le déplacement pour rien. */}
-              <label className="at-check">
-                <input type="checkbox" name="prerequis" value="oui" required />
-                <span className="font-sans at-check-text">
-                  Je confirme pouvoir réunir <a href="#prerequis">les prérequis listés plus haut</a>{' '}
-                  le jour de l’atelier, direction présente comprise.
-                </span>
-              </label>
-
-              <button type="submit" className="btn-primary at-submit" disabled={statut === 'envoi'}>
-                {statut === 'envoi' ? 'Envoi…' : 'Envoyer la demande'}
-              </button>
-
-              {statut === 'erreur' && (
-                <p className="font-sans at-error" role="alert">
-                  Ça n’est pas parti. Écrivez-moi directement à{' '}
-                  <a href="mailto:nathan@natesystem.com">nathan@natesystem.com</a>, je réponds
-                  aussi vite.
+          <FadeUp delay={0.08}>
+            {statut === 'ok' ? (
+              <div className="card at-done">
+                <p className="font-serif italic at-done-title">C’est parti.</p>
+                <p className="font-sans at-done-text">
+                  Je vous réponds sous 48 heures, depuis nathan@natesystem.com. Si vous ne voyez
+                  rien passer, regardez vos indésirables.
                 </p>
-              )}
+              </div>
+            ) : (
+              <form className="card at-form" onSubmit={envoyer}>
+                <div className="at-row">
+                  <label className="at-field">
+                    <span className="font-mono at-field-label">Votre nom</span>
+                    <input name="nom" type="text" required autoComplete="name" placeholder="Prénom et nom" />
+                  </label>
+                  <label className="at-field">
+                    <span className="font-mono at-field-label">Votre fonction</span>
+                    <select name="fonction" defaultValue={FONCTIONS[0]}>
+                      {FONCTIONS.map((f) => (
+                        <option key={f} value={f}>
+                          {f}
+                        </option>
+                      ))}
+                    </select>
+                  </label>
+                </div>
 
-              <p className="font-sans at-reassurance">
-                Pas de newsletter, pas de relance automatique. Votre demande arrive directement
-                dans ma boîte.
-              </p>
-            </form>
-          )}
-        </FadeUp>
+                <label className="at-field">
+                  <span className="font-mono at-field-label">Votre établissement</span>
+                  <input name="etablissement" type="text" required placeholder="Nom de l’établissement, et la ville" />
+                </label>
+
+                <div className="at-row">
+                  <label className="at-field">
+                    <span className="font-mono at-field-label">Email</span>
+                    <input name="email" type="email" required autoComplete="email" placeholder="vous@etablissement.fr" />
+                  </label>
+                  <label className="at-field">
+                    <span className="font-mono at-field-label">Téléphone</span>
+                    <input name="telephone" type="tel" required autoComplete="tel" placeholder="06 00 00 00 00" />
+                  </label>
+                </div>
+
+                <div className="at-row">
+                  <label className="at-field">
+                    <span className="font-mono at-field-label">Combien de personnes</span>
+                    <select name="personnes" defaultValue={TAILLES[1]}>
+                      {TAILLES.map((t) => (
+                        <option key={t} value={t}>
+                          {t}
+                        </option>
+                      ))}
+                    </select>
+                  </label>
+                  <label className="at-field">
+                    <span className="font-mono at-field-label">Plutôt</span>
+                    <select name="lieu" defaultValue={LIEUX[2]}>
+                      {LIEUX.map((l) => (
+                        <option key={l} value={l}>
+                          {l}
+                        </option>
+                      ))}
+                    </select>
+                  </label>
+                </div>
+
+                {/* LE PRÉREQUIS INVISIBLE. Beaucoup d'établissements filtrent
+                    les sites d'IA sur le réseau pédagogique. Découvert le jour J
+                    devant quinze personnes, l'atelier est mort et la garantie
+                    avec. « Je ne sais pas » est la réponse honnête et attendue :
+                    elle dit simplement qu'il faut vérifier avant de caler la
+                    date. */}
+                <label className="at-field">
+                  <span className="font-mono at-field-label">Accès réseau</span>
+                  <span className="font-sans at-field-help">
+                    Depuis les postes de l’établissement, un site comme ChatGPT est-il accessible ?
+                  </span>
+                  <select name="reseau" defaultValue={RESEAU[2]}>
+                    {RESEAU.map((r) => (
+                      <option key={r} value={r}>
+                        {r}
+                      </option>
+                    ))}
+                  </select>
+                </label>
+
+                <label className="at-field">
+                  <span className="font-mono at-field-label">Un mot, si vous voulez (facultatif)</span>
+                  <textarea name="mot" rows={3} placeholder="Ce qui vous fait venir, ou une contrainte de calendrier." />
+                </label>
+
+                {/* Requise : elle engage le directeur sur le matériel et sur la
+                    présence de la direction, et elle part dans le CRM. C'est
+                    aussi ce qui évite le déplacement pour rien. */}
+                <label className="at-check">
+                  <input type="checkbox" name="prerequis" value="oui" required />
+                  <span className="font-sans at-check-text">
+                    Je confirme pouvoir réunir <a href="#prerequis">les prérequis listés plus haut</a>{' '}
+                    le jour de l’atelier, direction présente comprise.
+                  </span>
+                </label>
+
+                <button type="submit" className="btn-primary at-submit" disabled={statut === 'envoi'}>
+                  <span className="btn-primary-dot" />
+                  {statut === 'envoi' ? 'Envoi…' : 'Envoyer la demande'}
+                </button>
+
+                {statut === 'erreur' && (
+                  <p className="font-sans at-error" role="alert">
+                    Ça n’est pas parti. Écrivez-moi directement à{' '}
+                    <a href="mailto:nathan@natesystem.com">nathan@natesystem.com</a>, je réponds
+                    aussi vite.
+                  </p>
+                )}
+
+                <p className="font-sans at-reassurance">
+                  Pas de newsletter, pas de relance automatique. Votre demande arrive directement
+                  dans ma boîte.
+                </p>
+              </form>
+            )}
+          </FadeUp>
+        </div>
       </section>
 
       {/* Pied de page réduit : la mention légale est une obligation, pas une
           invitation à visiter le site. */}
       <footer className="at-footer">
-        <p className="font-sans at-footer-text">
-          NateSystem · Nathan Goutagny ·{' '}
-          <a href="mailto:nathan@natesystem.com">nathan@natesystem.com</a>
-        </p>
-        <a href="/mentions-legales" className="font-sans at-footer-legal">
-          Mentions légales
-        </a>
+        <div className="at-wrap at-footer-inner">
+          <p className="font-sans at-footer-text">
+            NateSystem · Nathan Goutagny ·{' '}
+            <a href="mailto:nathan@natesystem.com">nathan@natesystem.com</a>
+          </p>
+          <a href="/mentions-legales" className="font-sans at-footer-legal">
+            Mentions légales
+          </a>
+        </div>
       </footer>
 
       <style jsx>{`
-        .at-page {
-          max-width: 860px;
+        /* ——— Conteneurs, au gabarit du site ——— */
+        .at-wrap {
+          max-width: 1100px;
           margin: 0 auto;
-          padding: 0 24px 80px;
+          padding: 0 24px;
+        }
+        .at-wrap--narrow {
+          max-width: 820px;
+        }
+        .at-section {
+          padding: 110px 0;
+        }
+        .at-band {
+          padding: 0 0 90px;
         }
 
         /* ——— En-tête ——— */
         .at-header {
+          max-width: 1100px;
+          margin: 0 auto;
+          padding: 26px 24px 0;
           display: flex;
           align-items: center;
           justify-content: space-between;
-          padding: 28px 0 0;
         }
         .at-brand {
           display: flex;
@@ -732,119 +838,139 @@ export default function AtelierPage() {
           color: var(--text-muted);
           margin-left: 10px;
         }
-        .at-header-cta {
-          font-size: 13px;
-          font-weight: 500;
-          color: var(--text-secondary);
-          text-decoration: none;
-          border-bottom: 1px solid var(--border-hover);
-          padding-bottom: 2px;
-          transition: color 0.2s ease, border-color 0.2s ease;
-        }
-        .at-header-cta:hover {
-          color: var(--accent);
-          border-color: var(--accent);
-        }
 
         /* ——— Hero ——— */
         .at-hero {
-          padding: 72px 0 56px;
+          min-height: 86vh;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          padding: 90px 24px 70px;
         }
-        .at-eyebrow {
-          font-size: 11px;
-          letter-spacing: 1.6px;
-          text-transform: uppercase;
-          color: var(--accent);
-          font-weight: 500;
-          margin: 0 0 20px;
+        .at-hero-label {
+          color: var(--text-muted);
         }
         .at-h1 {
-          font-size: clamp(34px, 6vw, 56px);
+          font-family: var(--font-serif);
+          font-style: italic;
+          font-size: clamp(38px, 5.2vw, 64px);
           font-weight: 400;
-          line-height: 1.05;
+          line-height: 1.08;
           color: var(--text);
-          margin: 0 0 22px;
-          max-width: 22ch;
+          max-width: 940px;
+          margin: 0 auto 26px;
         }
-        .at-hero-sub {
-          font-size: 17px;
+        .at-h1-accent {
+          color: var(--accent);
+        }
+        /* ⚠︎ :global EST OBLIGATOIRE SUR TOUT CE BLOC. motion.div, motion.p et
+           Sparkles sont des COMPOSANTS, pas des éléments du DOM : styled-jsx ne
+           peut pas leur coller sa classe de portée, donc une règle « .at-pill »
+           toute seule ne s'applique jamais. C'est ce qui avait vidé le hero de
+           ses styles, pastille, sous-titre et boutons compris. On passe par
+           .at-hero, lui bien réel, pour que les règles restent confinées. */
+        .at-hero :global(.at-pill) {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          padding: 9px 18px;
+          border: 1px solid var(--border);
+          border-radius: 999px;
+          background: var(--accent-subtle);
+          margin-bottom: 34px;
+        }
+        .at-hero :global(.at-pill-icon) {
+          color: var(--accent);
+          flex-shrink: 0;
+        }
+        .at-pill-text {
+          font-size: 13px;
+          font-weight: 400;
+          color: var(--text-secondary);
+        }
+        .at-hero :global(.at-vsl) {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          margin-bottom: 38px;
+        }
+        .at-hero :global(.at-hero-sub) {
+          font-size: clamp(15px, 3vw, 18px);
+          font-weight: 300;
+          line-height: 1.65;
+          color: var(--text-secondary);
+          max-width: 640px;
+          margin: 0 auto 38px;
+        }
+        .at-hero :global(.at-hero-actions) {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: center;
+          gap: 12px;
+        }
+
+        /* ——— En-têtes de section ——— */
+        .at-head {
+          text-align: center;
+          max-width: 760px;
+          margin: 0 auto 52px;
+        }
+        .at-h2 {
+          font-size: clamp(26px, 3vw, 38px);
+          color: var(--text);
+          margin: 0 auto 18px;
+          max-width: 20ch;
+        }
+        .at-lead {
+          font-size: 16px;
           font-weight: 300;
           line-height: 1.7;
           color: var(--text-secondary);
-          max-width: 56ch;
-          margin: 0;
-        }
-        .at-hero-actions {
-          display: flex;
-          align-items: center;
-          gap: 20px;
-          flex-wrap: wrap;
-          margin-top: 34px;
-        }
-        .at-scarcity {
-          font-size: 11.5px;
-          letter-spacing: 0.4px;
-          color: var(--text-muted);
-          margin: 0;
+          max-width: 620px;
+          margin: 0 auto;
         }
 
         /* ——— Les faits ——— */
-        .at-facts-wrap {
-          padding-bottom: 12px;
-        }
         .at-facts {
           list-style: none;
           padding: 0;
           margin: 0;
           display: grid;
           grid-template-columns: repeat(4, minmax(0, 1fr));
-          gap: 0;
-          border: 1px solid var(--border);
-          border-radius: 14px;
-          overflow: hidden;
-          background: var(--bg-card);
+          gap: 18px;
         }
         .at-fact {
-          padding: 22px 20px;
-          border-right: 1px solid var(--border);
-        }
-        .at-fact:last-child {
-          border-right: 0;
+          padding: 26px 24px;
+          height: 100%;
         }
         .at-fact-title {
-          font-size: 14.5px;
+          font-size: 16px;
           font-weight: 600;
           color: var(--text);
-          margin: 0 0 7px;
+          margin: 0 0 9px;
         }
         .at-fact-detail {
-          font-size: 13px;
+          font-size: 13.5px;
           font-weight: 300;
-          line-height: 1.55;
+          line-height: 1.6;
           color: var(--text-secondary);
           margin: 0;
         }
 
-        .at-vsl {
-          margin-top: 34px;
-          display: flex;
-          justify-content: flex-start;
-        }
-
         /* ——— Preuve ——— */
         /* ClientsBar porte son propre rembourrage de section, pensé pour la
-           home : on le neutralise ici pour qu'il respire comme le reste. */
-        .at-logos {
-          margin: 26px -24px 4px;
-        }
+           home : on le resserre ici pour qu'il respire comme le reste. */
         .at-logos :global(section) {
-          padding: 12px 0 !important;
+          padding: 8px 0 !important;
         }
         .at-proof-grid {
           display: grid;
           grid-template-columns: repeat(2, minmax(0, 1fr));
-          gap: 26px;
-          margin-top: 24px;
+          gap: 32px;
+          margin-top: 36px;
           align-items: start;
         }
         .at-proof-item {
@@ -854,10 +980,11 @@ export default function AtelierPage() {
           position: relative;
           width: 100%;
           aspect-ratio: 4 / 3;
-          border-radius: 12px;
+          border-radius: 14px;
           overflow: hidden;
           border: 1px solid var(--border);
           background: var(--bg-elevated);
+          box-shadow: 0 18px 48px -28px rgba(15, 23, 42, 0.32);
         }
         .at-proof-media img {
           position: absolute;
@@ -868,103 +995,63 @@ export default function AtelierPage() {
           display: block;
         }
         .at-proof-caption {
-          font-size: 13.5px;
+          font-size: 14px;
           font-weight: 300;
           line-height: 1.6;
           color: var(--text-secondary);
-          margin: 12px 0 0;
-        }
-
-        /* ——— Sections ——— */
-        .at-section {
-          padding: 64px 0 0;
-        }
-        .at-label {
-          font-size: 10.5px;
-          letter-spacing: 1.8px;
-          text-transform: uppercase;
-          color: var(--accent);
-          font-weight: 500;
-          margin: 0 0 14px;
-        }
-        .at-h2 {
-          font-size: clamp(26px, 4vw, 38px);
-          font-weight: 400;
-          line-height: 1.12;
-          color: var(--text);
-          margin: 0 0 16px;
-          max-width: 20ch;
-        }
-        .at-lead {
-          font-size: 16px;
-          font-weight: 300;
-          line-height: 1.7;
-          color: var(--text-secondary);
-          max-width: 60ch;
-          margin: 0;
-        }
-        .at-prose p {
-          font-size: 16px;
-          font-weight: 300;
-          line-height: 1.75;
-          color: var(--text-secondary);
-          max-width: 62ch;
-          margin: 0 0 16px;
-        }
-        .at-prose p:last-child {
-          margin-bottom: 0;
+          margin: 14px 0 0;
         }
 
         /* ——— Exemples ——— */
         .at-examples {
           list-style: none;
           padding: 0;
-          margin: 30px 0 18px;
+          margin: 0;
           display: grid;
-          gap: 12px;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 18px;
         }
         .at-example {
+          display: flex;
+          gap: 18px;
+          align-items: flex-start;
+          padding: 26px 24px;
+          height: 100%;
+        }
+        .at-example-num {
+          font-size: 12px;
+          letter-spacing: 1px;
+          color: var(--accent);
+          flex-shrink: 0;
+          padding-top: 3px;
+        }
+        .at-example-text {
           font-size: 15px;
           font-weight: 300;
-          line-height: 1.6;
+          line-height: 1.62;
           color: var(--text-secondary);
-          padding: 15px 18px;
-          border: 1px solid var(--border);
-          border-radius: 10px;
-          background: var(--bg-card);
+          margin: 0;
         }
         .at-note {
           font-size: 13.5px;
           font-weight: 300;
           line-height: 1.6;
           color: var(--text-muted);
-          max-width: 58ch;
-          margin: 0;
-        }
-
-        /* ——— Encart accentué (la garantie) ——— */
-        .at-highlight {
-          margin-top: 26px;
-          padding: 22px 26px;
-          border-left: 2px solid var(--accent);
-          background: var(--accent-subtle);
-          border-radius: 0 10px 10px 0;
-        }
-        .at-highlight-text {
-          font-size: 17px;
-          font-weight: 400;
-          line-height: 1.6;
-          color: var(--text);
-          max-width: 52ch;
-          margin: 0;
+          max-width: 620px;
+          margin: 26px auto 0;
+          text-align: center;
         }
 
         /* ——— Qui vient ——— */
+        .at-who-label {
+          text-align: center;
+        }
         .at-who {
           display: grid;
-          grid-template-columns: 148px minmax(0, 1fr);
-          gap: 30px;
+          grid-template-columns: 168px minmax(0, 1fr);
+          gap: 34px;
           align-items: start;
+          padding: 36px;
         }
         .at-who-photo {
           margin: 0;
@@ -979,10 +1066,50 @@ export default function AtelierPage() {
           object-fit: cover;
           display: block;
         }
+        .at-who-name {
+          font-size: clamp(24px, 2.6vw, 32px);
+          font-weight: 400;
+          color: var(--text);
+          margin: 0 0 16px;
+        }
+        .at-prose p {
+          font-size: 15.5px;
+          font-weight: 300;
+          line-height: 1.75;
+          color: var(--text-secondary);
+          margin: 0 0 15px;
+        }
+        .at-prose p:last-child {
+          margin-bottom: 0;
+        }
+
+        /* ——— Garantie ——— */
+        .at-pledge {
+          text-align: center;
+          padding: 40px 32px;
+          border: 1px solid var(--border);
+          border-radius: 16px;
+          background: var(--accent-subtle);
+        }
+        .at-pledge-text {
+          font-size: clamp(20px, 2.4vw, 28px);
+          font-weight: 400;
+          line-height: 1.4;
+          color: var(--text);
+          max-width: 24ch;
+          margin: 0 auto;
+        }
 
         /* ——— Prérequis ——— */
-        .at-prereq-group {
-          margin-top: 34px;
+        .at-prereq-cols {
+          display: grid;
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+          gap: 20px;
+          align-items: start;
+        }
+        .at-prereq-col {
+          padding: 28px 26px;
+          height: 100%;
         }
         .at-prereq-group-title {
           font-size: 10.5px;
@@ -990,24 +1117,23 @@ export default function AtelierPage() {
           text-transform: uppercase;
           color: var(--text-muted);
           font-weight: 500;
-          margin: 0;
+          margin: 0 0 6px;
         }
         .at-prereqs {
           list-style: none;
           padding: 0;
-          margin: 14px 0 0;
-          display: grid;
-          gap: 2px;
+          margin: 0;
         }
         .at-prereq {
           display: flex;
-          gap: 16px;
+          gap: 14px;
           align-items: flex-start;
           padding: 18px 0;
-          border-top: 1px solid var(--border);
+          border-bottom: 1px solid var(--border);
         }
         .at-prereq:last-child {
-          border-bottom: 1px solid var(--border);
+          border-bottom: 0;
+          padding-bottom: 0;
         }
         .at-prereq-mark {
           width: 7px;
@@ -1022,7 +1148,7 @@ export default function AtelierPage() {
           border-color: var(--accent);
         }
         .at-prereq-title {
-          font-size: 15.5px;
+          font-size: 15px;
           font-weight: 600;
           color: var(--text);
           margin: 0 0 5px;
@@ -1031,65 +1157,30 @@ export default function AtelierPage() {
           color: var(--accent);
         }
         .at-prereq-detail {
-          font-size: 14px;
+          font-size: 13.5px;
           font-weight: 300;
           line-height: 1.6;
           color: var(--text-secondary);
-          max-width: 60ch;
           margin: 0;
-        }
-
-        /* ——— Case de confirmation ——— */
-        .at-check {
-          display: flex;
-          gap: 11px;
-          align-items: flex-start;
-          cursor: pointer;
-          margin-top: 2px;
-        }
-        .at-check input {
-          width: 17px;
-          height: 17px;
-          margin-top: 2px;
-          flex-shrink: 0;
-          accent-color: var(--accent);
-          cursor: pointer;
-        }
-        .at-check-text {
-          font-size: 13.5px;
-          font-weight: 300;
-          line-height: 1.55;
-          color: var(--text-secondary);
-        }
-        .at-check-text a {
-          color: var(--accent);
         }
 
         /* ——— Formulaire ——— */
         .at-form-section {
-          scroll-margin-top: 24px;
+          scroll-margin-top: 20px;
         }
         .at-form {
-          margin-top: 32px;
           display: grid;
-          gap: 18px;
-          max-width: 640px;
+          gap: 20px;
+          padding: 36px;
         }
         .at-row {
           display: grid;
           grid-template-columns: repeat(2, minmax(0, 1fr));
-          gap: 18px;
+          gap: 20px;
         }
         .at-field {
           display: grid;
           gap: 8px;
-        }
-        .at-field-help {
-          font-size: 13px;
-          font-weight: 300;
-          line-height: 1.5;
-          color: var(--text-secondary);
-          margin-top: -2px;
         }
         .at-field-label {
           font-size: 10.5px;
@@ -1098,6 +1189,13 @@ export default function AtelierPage() {
           color: var(--text-muted);
           font-weight: 500;
         }
+        .at-field-help {
+          font-size: 13px;
+          font-weight: 300;
+          line-height: 1.5;
+          color: var(--text-secondary);
+          margin-top: -2px;
+        }
         .at-field input,
         .at-field select,
         .at-field textarea {
@@ -1105,7 +1203,7 @@ export default function AtelierPage() {
           font-size: 15px;
           font-weight: 300;
           color: var(--text);
-          background: var(--bg-card);
+          background: var(--bg);
           border: 1px solid var(--border);
           border-radius: 10px;
           padding: 13px 14px;
@@ -1127,9 +1225,31 @@ export default function AtelierPage() {
           border-color: var(--accent);
           box-shadow: 0 0 0 3px var(--accent-subtle);
         }
+        .at-check {
+          display: flex;
+          gap: 11px;
+          align-items: flex-start;
+          cursor: pointer;
+        }
+        .at-check input {
+          width: 17px;
+          height: 17px;
+          margin-top: 2px;
+          flex-shrink: 0;
+          accent-color: var(--accent);
+          cursor: pointer;
+        }
+        .at-check-text {
+          font-size: 13.5px;
+          font-weight: 300;
+          line-height: 1.55;
+          color: var(--text-secondary);
+        }
+        .at-check-text a {
+          color: var(--accent);
+        }
         .at-submit {
           justify-self: start;
-          margin-top: 4px;
           border: 0;
         }
         .at-submit:disabled {
@@ -1153,33 +1273,31 @@ export default function AtelierPage() {
           margin: 0;
         }
         .at-done {
-          margin-top: 32px;
-          padding: 30px 28px;
-          border: 1px solid var(--border);
+          padding: 40px 36px;
           border-left: 2px solid var(--accent);
-          border-radius: 0 12px 12px 0;
-          background: var(--bg-card);
-          max-width: 560px;
+          text-align: center;
         }
         .at-done-title {
-          font-size: 28px;
+          font-size: 32px;
           font-weight: 400;
           color: var(--text);
-          margin: 0 0 10px;
+          margin: 0 0 12px;
         }
         .at-done-text {
-          font-size: 15px;
+          font-size: 15.5px;
           font-weight: 300;
           line-height: 1.68;
           color: var(--text-secondary);
-          margin: 0;
+          max-width: 46ch;
+          margin: 0 auto;
         }
 
         /* ——— Pied de page ——— */
         .at-footer {
-          margin-top: 72px;
-          padding-top: 24px;
           border-top: 1px solid var(--border);
+          padding: 28px 0 44px;
+        }
+        .at-footer-inner {
           display: flex;
           align-items: center;
           justify-content: space-between;
@@ -1203,50 +1321,54 @@ export default function AtelierPage() {
           color: var(--accent);
         }
 
-        @media (max-width: 820px) {
+        /* ——— Adaptations ——— */
+        @media (max-width: 1000px) {
           .at-facts {
             grid-template-columns: repeat(2, minmax(0, 1fr));
           }
-          .at-fact:nth-child(2n) {
-            border-right: 0;
-          }
-          .at-fact:nth-child(-n + 2) {
-            border-bottom: 1px solid var(--border);
+          .at-prereq-cols {
+            grid-template-columns: 1fr;
           }
         }
-        @media (max-width: 560px) {
-          .at-hero {
-            padding: 52px 0 44px;
+        @media (max-width: 820px) {
+          .at-section {
+            padding: 80px 0;
           }
-          .at-proof-grid {
-            grid-template-columns: 1fr;
-            gap: 22px;
-          }
-          .at-h1 {
-            max-width: none;
-          }
-          .at-facts {
-            grid-template-columns: 1fr;
-          }
-          .at-fact {
-            border-right: 0;
-            border-bottom: 1px solid var(--border);
-          }
-          .at-fact:last-child {
-            border-bottom: 0;
-          }
-          .at-row {
+          .at-proof-grid,
+          .at-examples {
             grid-template-columns: 1fr;
           }
           .at-who {
             grid-template-columns: 1fr;
-            gap: 20px;
+            gap: 22px;
+            padding: 28px;
           }
           .at-who-photo {
-            width: 124px;
+            width: 132px;
+          }
+        }
+        @media (max-width: 560px) {
+          .at-hero {
+            min-height: 0;
+            padding: 56px 24px 56px;
+          }
+          .at-facts {
+            grid-template-columns: 1fr;
+          }
+          .at-row {
+            grid-template-columns: 1fr;
+          }
+          .at-form,
+          .at-done {
+            padding: 26px 20px;
           }
           .at-submit {
             justify-self: stretch;
+          }
+          .at-hero :global(.at-hero-actions .btn-primary),
+          .at-hero :global(.at-hero-actions .btn-ghost) {
+            width: 100%;
+            justify-content: center;
           }
         }
       `}</style>
