@@ -67,7 +67,11 @@ const clients: ClientRef[] = [
   { name: 'Association Aloess', type: 'logo', src: '/logos/aloess.png', href: 'https://www.aloess.org/', compact: true },
 ]
 
-export default function ClientsBar() {
+/* `hideLabel` sert à la landing /atelier, qui pose son propre titre au-dessus
+   du carrousel : sans ça, deux intitulés diraient la même chose à deux pas
+   l'un de l'autre. Le reste du site n'y touche pas. La liste de logos, elle,
+   reste ici et nulle part ailleurs, pour qu'un ajout se fasse en un endroit. */
+export default function ClientsBar({ hideLabel = false }: { hideLabel?: boolean }) {
   const { lang } = useLang()
 
   const label = makeD(lang)(
@@ -85,20 +89,22 @@ export default function ClientsBar() {
         className="mx-auto"
         style={{ maxWidth: 1100 }}
       >
-        <p
-          className="font-mono text-center"
-          style={{
-            fontSize: 11,
-            letterSpacing: 3,
-            textTransform: 'uppercase',
-            color: 'var(--text-muted)',
-            opacity: 0.5,
-            marginBottom: 32,
-            fontWeight: 300,
-          }}
-        >
-          {label}
-        </p>
+        {!hideLabel && (
+          <p
+            className="font-mono text-center"
+            style={{
+              fontSize: 11,
+              letterSpacing: 3,
+              textTransform: 'uppercase',
+              color: 'var(--text-muted)',
+              opacity: 0.5,
+              marginBottom: 32,
+              fontWeight: 300,
+            }}
+          >
+            {label}
+          </p>
+        )}
 
         {/* One continuous carousel on every viewport, all references stay on
             ONE line and scroll left forever (track duplicated for a seamless
