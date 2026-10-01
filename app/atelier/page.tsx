@@ -8,6 +8,7 @@ import RevealWords from '@/components/ui/RevealWords'
 import VslPlayer from '@/components/ui/VslPlayer'
 import LiteYouTube from '@/components/ui/LiteYouTube'
 import ClientsBar from '@/components/home/ClientsBar'
+import ScreenMock from '@/components/ui/ScreenMock'
 import { useLang } from '@/components/providers/LangProvider'
 import { makeD } from '@/lib/lang'
 
@@ -484,7 +485,7 @@ export default function AtelierPage() {
               </h2>
               <p className="font-sans at-lead">
                 {d(
-                  'Des écoles, un IUT, et des organisations d’autres secteurs. Les mêmes contraintes partout : beaucoup de monde, peu de temps, et un logiciel du commerce qui ne colle jamais tout à fait.',
+                  'Des écoles, un IUT, et des organisations d’autres secteurs. Les mêmes contraintes partout : beaucoup de monde, peu de temps, et un logiciel générique qui ne colle jamais tout à fait.',
                   'Schools, a university institute, and organisations from other sectors. The same constraints everywhere: a lot of people, very little time, and off-the-shelf software that never quite fits.'
                 )}
               </p>
@@ -695,7 +696,35 @@ export default function AtelierPage() {
           </FadeUp>
           <GarantieJeu />
 
+          {/* L'outil, en vrai. « Personne ne repart les mains vides » reste une
+              phrase tant qu'on n'a pas vu ce que « les mains pleines » veut
+              dire.
+
+              ⚠︎ ScreenMock est un COMPOSANT : styled-jsx ne peut pas lui coller
+              sa classe de portée, et .screenmock vaut height:100%. D'où le vrai
+              div .at-tool autour, qui porte le rapport d'image. Sans lui, le
+              cadre s'effondre sur sa barre de titre. */}
           <FadeUp delay={0.1}>
+            <figure className="at-tool-fig">
+              <div className="at-tool">
+                <ScreenMock
+                  src="/realisations/outil-vamos.webp"
+                  alt={d(
+                    'Un outil de révision d’espagnol construit pendant un atelier : niveaux, points, séries d’exercices',
+                    'A Spanish revision tool built during a workshop: levels, points, exercise sets'
+                  )}
+                />
+              </div>
+              <figcaption className="font-sans at-tool-caption">
+                {d(
+                  'Un outil de révision d’espagnol, construit de la même façon : on décrit ce qu’on veut, on regarde ce qui sort, on corrige.',
+                  'A Spanish revision tool, built the same way: describe what you want, look at what comes out, fix it.'
+                )}
+              </figcaption>
+            </figure>
+          </FadeUp>
+
+          <FadeUp delay={0.16}>
             <div className="at-pledge">
               <p className="font-serif italic at-pledge-text">
                 {d(
@@ -1274,6 +1303,24 @@ export default function AtelierPage() {
         }
 
         /* ——— Garantie ——— */
+        .at-tool-fig {
+          margin: 0 0 34px;
+        }
+        /* Le rapport tient compte de la barre de titre du cadre : sans ça,
+           l'image laisse une bande blanche sous elle. */
+        .at-tool {
+          width: 100%;
+          aspect-ratio: 1.43 / 1;
+        }
+        .at-tool-caption {
+          font-size: 13.5px;
+          font-weight: 300;
+          line-height: 1.6;
+          color: var(--text-muted);
+          max-width: 56ch;
+          margin: 14px auto 0;
+          text-align: center;
+        }
         .at-pledge {
           text-align: center;
           padding: 40px 32px;
