@@ -29,7 +29,16 @@ export const metadata: Metadata = {
     'créer ses outils pour sa classe',
     'NateSystem',
   ],
-  alternates: { canonical: 'https://www.natesystem.com/atelier' },
+  /* Le hreflang doit être réciproque : /en/atelier déclare le français, donc
+     le français déclare l'anglais. Pas de hongrois, /hu/atelier n'existe pas. */
+  alternates: {
+    canonical: 'https://www.natesystem.com/atelier',
+    languages: {
+      'fr-FR': 'https://www.natesystem.com/atelier',
+      en: 'https://www.natesystem.com/en/atelier',
+      'x-default': 'https://www.natesystem.com/atelier',
+    },
+  },
   robots: { index: true, follow: true },
   openGraph: {
     title: 'Trois heures offertes à vos professeurs · NateSystem',

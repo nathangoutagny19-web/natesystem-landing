@@ -1,13 +1,15 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
-import { motion, useInView, useScroll, useSpring } from 'framer-motion'
+import { Fragment, useEffect, useRef, useState } from 'react'
+import { motion, useInView, useReducedMotion, useScroll, useSpring } from 'framer-motion'
 import { Sparkles } from 'lucide-react'
 import FadeUp from '@/components/ui/FadeUp'
 import RevealWords from '@/components/ui/RevealWords'
 import VslPlayer from '@/components/ui/VslPlayer'
 import LiteYouTube from '@/components/ui/LiteYouTube'
 import ClientsBar from '@/components/home/ClientsBar'
+import { useLang } from '@/components/providers/LangProvider'
+import { makeD } from '@/lib/lang'
 
 /**
  * ATELIER · « Créer ses propres outils pour sa classe, sans développeur »
@@ -71,7 +73,8 @@ const VSL: { src: string; poster?: string; duree?: string } | null = null
    « 13 organisations » serait donc faux et se vérifie en une question ; « 13
    établissements et organisations » dit exactement ce qu'il compte. Nathan a
    arrêté le nombre le 01/10/2026. */
-const PARC = 'Plus de 13 établissements et organisations'
+const PARC_FR = 'Plus de 13 établissements et organisations'
+const PARC_EN = 'More than 13 schools and organisations'
 
 /* Le podcast avec Catherine F. n'existe pas en photo fixe dans le dépôt : il
    existe en vidéo, et sa miniature YouTube EST la photo, en cliquable. */
@@ -79,49 +82,78 @@ const PODCAST_ID = 'aMIjJbzuhDc'
 
 const FAITS = [
   {
-    titre: 'Trois heures',
-    detail: 'Une demi-journée, en une fois. Pas un cycle de formation à caser dans l’année.',
+    titreFr: 'Trois heures',
+    titreEn: 'Three hours',
+    detailFr: 'Une demi-journée, en une fois. Pas un cycle de formation à caser dans l’année.',
+    detailEn: 'Half a day, in one go. Not a training programme to fit into the school year.',
   },
   {
-    titre: 'Dix à quinze personnes',
-    detail: 'Votre équipe pédagogique telle qu’elle est, débutants compris.',
+    titreFr: 'Dix à quinze personnes',
+    titreEn: 'Ten to fifteen people',
+    detailFr: 'Votre équipe pédagogique telle qu’elle est, débutants compris.',
+    detailEn: 'Your teaching team as it is, complete beginners included.',
   },
   {
-    titre: 'Chez vous ou en visio',
-    detail: 'Je me déplace dans votre établissement quand c’est possible.',
+    titreFr: 'Chez vous ou en visio',
+    titreEn: 'At your school or online',
+    detailFr: 'Je me déplace dans votre établissement quand c’est possible.',
+    detailEn: 'I come to you whenever it is possible.',
   },
   {
-    titre: 'Gratuit',
-    detail: 'Il n’y a pas de version payante de l’atelier derrière.',
+    titreFr: 'Gratuit',
+    titreEn: 'Free',
+    detailFr: 'Il n’y a pas de version payante de l’atelier derrière.',
+    detailEn: 'There is no paid version of the workshop waiting behind this one.',
   },
 ]
 
 const DEROULE = [
   {
     num: '1',
-    titre: 'Heure 1 · Je construis devant eux',
-    texte:
+    titreFr: 'Heure 1 · Je construis devant eux',
+    titreEn: 'Hour 1 · I build in front of them',
+    texteFr:
       'Écran partagé, de la page blanche à l’outil qui tourne. Mes tâtonnements et mes corrections compris : c’est ça qui fait penser « je peux le faire ». Cinq minutes au début sur les données des élèves, et une règle qu’on ne lâche pas de la journée, jamais un nom, on travaille sur initiales.',
+    texteEn:
+      'Screen shared, from a blank page to a working tool. My fumbling and my corrections included, because that is what makes people think “I could do this”. Five minutes at the start on student data, and one rule we hold all day: never a name, we work on initials.',
   },
   {
     num: '2',
-    titre: 'Heure 2 · Chacun construit le sien',
-    texte:
+    titreFr: 'Heure 2 · Chacun construit le sien',
+    titreEn: 'Hour 2 · Everyone builds their own',
+    texteFr:
       'Sur sa matière, sur sa vraie corvée. J’arrive avec trois sujets de secours pour ceux qui bloquent devant la page blanche, parce qu’il y en a toujours deux ou trois.',
+    texteEn:
+      'On their own subject, on their own real chore. I bring three backup ideas for the ones who freeze in front of a blank page, because there are always two or three.',
   },
   {
     num: '3',
-    titre: 'Heure 3 · On s’en sert, et on répare',
-    texte:
+    titreFr: 'Heure 3 · On s’en sert, et on répare',
+    titreEn: 'Hour 3 · We use it, and we fix it',
+    texteFr:
       'Ils testent sur un cas réel, avec leurs vraies copies. Quelque chose va rater, et c’est le moment le plus utile des trois heures : c’est là qu’on apprend à corriger au lieu d’abandonner.',
+    texteEn:
+      'They test on a real case, with their own students’ work. Something will go wrong, and that is the most useful moment of the three hours: it is where you learn to fix instead of giving up.',
   },
 ]
 
 const EXEMPLES = [
-  'Un outil d’appréciations de bulletins qui part de vos observations et rend un texte à relire, pas à écrire.',
-  'Un générateur d’exercices sur trois niveaux, tiré d’un seul chapitre.',
-  'Un QCM fabriqué à partir d’un cours existant, corrigé d’avance.',
-  'Une grille de correction qui calcule toute seule et qui se réutilise d’une année sur l’autre.',
+  {
+    fr: 'Un outil d’appréciations de bulletins qui part de vos observations et rend un texte à relire, pas à écrire.',
+    en: 'A report-comment tool that starts from your own notes and hands back text to proofread, not to write.',
+  },
+  {
+    fr: 'Un générateur d’exercices sur trois niveaux, tiré d’un seul chapitre.',
+    en: 'An exercise generator at three levels, built from a single chapter.',
+  },
+  {
+    fr: 'Un QCM fabriqué à partir d’un cours existant, corrigé d’avance.',
+    en: 'A multiple-choice quiz made from an existing lesson, answer key already done.',
+  },
+  {
+    fr: 'Une grille de correction qui calcule toute seule et qui se réutilise d’une année sur l’autre.',
+    en: 'A marking rubric that adds itself up and gets reused year after year.',
+  },
 ]
 
 /* LES PRÉREQUIS, EN TROIS BLOCS.
@@ -136,92 +168,134 @@ const EXEMPLES = [
  */
 const PREREQUIS = [
   {
-    groupe: 'Ce que l’établissement fournit',
+    groupeFr: 'Ce que l’établissement fournit',
+    groupeEn: 'What the school provides',
     items: [
       {
-        titre: 'Une salle et trois heures d’affilée',
-        detail:
+        titreFr: 'Une salle et trois heures d’affilée',
+        titreEn: 'A room and three hours back to back',
+        detailFr:
           'Pas fractionnées en deux fois une heure et demie : la troisième heure ne vaut que parce qu’elle suit les deux autres.',
+        detailEn:
+          'Not split into two ninety-minute halves: the third hour is only worth anything because it follows the other two.',
       },
       {
-        titre: 'Un ordinateur par participant',
-        detail: 'Le sien ou celui de l’établissement, peu importe. Une tablette ne suffit pas.',
+        titreFr: 'Un ordinateur par participant',
+        titreEn: 'One computer per participant',
+        detailFr: 'Le sien ou celui de l’établissement, peu importe. Une tablette ne suffit pas.',
+        detailEn: 'Their own or the school’s, it makes no difference. A tablet will not do.',
       },
       {
-        titre: 'Une connexion qui tient',
-        detail:
+        titreFr: 'Une connexion qui tient',
+        titreEn: 'A connection that holds',
+        detailFr:
           'Quinze personnes dessus en même temps. C’est le point de blocage le plus fréquent, et le seul que je ne peux pas rattraper sur place.',
+        detailEn:
+          'Fifteen people on it at once. This is the most common blocker, and the only one I cannot work around on the day.',
       },
       {
-        titre: 'Un écran ou un vidéoprojecteur',
-        detail:
+        titreFr: 'Un écran ou un vidéoprojecteur',
+        titreEn: 'A screen or a projector',
+        detailFr:
           'Toute la première heure consiste à me regarder construire. Si la salle ne voit pas mon écran, il n’y a pas d’atelier.',
+        detailEn:
+          'The whole first hour consists of watching me build. If the room cannot see my screen, there is no workshop.',
       },
       {
-        titre: 'Dix à quinze personnes, pas plus',
-        detail:
+        titreFr: 'Dix à quinze personnes, pas plus',
+        titreEn: 'Ten to fifteen people, no more',
+        detailFr:
           'Au-delà, je ne peux plus passer aider chacun pendant la deuxième heure, et c’est elle qui fait la différence.',
+        detailEn:
+          'Beyond that I can no longer get round to help each person during the second hour, and that hour is what makes the difference.',
       },
       {
-        titre: 'Un membre de la direction dans la salle',
-        detail:
+        titreFr: 'Un membre de la direction dans la salle',
+        titreEn: 'Someone from the leadership team in the room',
+        detailFr:
           'La deuxième moitié de mon métier concerne l’organisation, et ça ne se raconte pas par personne interposée.',
+        detailEn:
+          'The other half of my work is about how the school runs, and that is not something to relay second-hand.',
         cle: true,
       },
     ],
   },
   {
-    groupe: 'Ce que chaque participant apporte',
+    groupeFr: 'Ce que chaque participant apporte',
+    groupeEn: 'What each participant brings',
     items: [
       {
-        titre: 'Une tâche précise qui lui prend du temps chaque semaine',
-        detail:
+        titreFr: 'Une tâche précise qui lui prend du temps chaque semaine',
+        titreEn: 'One specific task that eats their time every week',
+        detailFr:
           'Le prérequis le plus important, et celui que personne ne prépare. Un professeur qui arrive sans savoir ce qu’il veut automatiser passe la deuxième heure à chercher une idée au lieu de construire. Les quatre exemples plus haut suffisent à amorcer.',
+        detailEn:
+          'The most important prerequisite, and the one nobody prepares. A teacher who turns up without knowing what they want to automate spends the second hour hunting for an idea instead of building. The four examples above are enough to get started.',
         cle: true,
       },
       {
-        titre: 'Ses propres documents',
-        detail:
+        titreFr: 'Ses propres documents',
+        titreEn: 'Their own documents',
+        detailFr:
           'Une grille de notation, un sujet de contrôle, une liste de compétences. Ce qu’il utilise vraiment, pas un exemple refait pour l’occasion.',
+        detailEn:
+          'A marking rubric, a test paper, a list of learning objectives. What they actually use, not something remade for the occasion.',
       },
     ],
   },
   {
-    groupe: 'Ce qui n’est pas nécessaire',
+    groupeFr: 'Ce qui n’est pas nécessaire',
+    groupeEn: 'What you do not need',
     items: [
       {
-        titre: 'Aucune compétence technique',
-        detail: 'Personne n’écrit une ligne de code, à aucun moment des trois heures.',
+        titreFr: 'Aucune compétence technique',
+        titreEn: 'No technical skill',
+        detailFr: 'Personne n’écrit une ligne de code, à aucun moment des trois heures.',
+        detailEn: 'Nobody writes a line of code, at any point in the three hours.',
       },
       {
-        titre: 'Aucune connaissance préalable des outils d’IA',
-        detail: 'Les débutants complets sont souvent ceux qui en tirent le plus.',
+        titreFr: 'Aucune connaissance préalable des outils d’IA',
+        titreEn: 'No prior knowledge of AI tools',
+        detailFr: 'Les débutants complets sont souvent ceux qui en tirent le plus.',
+        detailEn: 'Complete beginners are often the ones who get the most out of it.',
       },
       {
-        titre: 'Rien à payer pour participer',
-        detail:
+        titreFr: 'Rien à payer pour participer',
+        titreEn: 'Nothing to pay to take part',
+        detailFr:
           'Pour aller plus loin ensuite, il existe des outils payants : je dis lesquels pendant la séance, et ce que j’y gagne quand c’est le cas.',
+        detailEn:
+          'To go further afterwards, there are paid tools: I say which ones during the session, and what I get out of it when that is the case.',
       },
     ],
   },
 ]
 
 const FONCTIONS = [
-  'Chef d’établissement',
-  'Direction adjointe',
-  'Responsable administratif',
-  'Professeur',
-  'Autre',
+  { fr: 'Chef d’établissement', en: 'Head of school' },
+  { fr: 'Direction adjointe', en: 'Deputy head' },
+  { fr: 'Responsable administratif', en: 'Business or admin manager' },
+  { fr: 'Professeur', en: 'Teacher' },
+  { fr: 'Autre', en: 'Other' },
 ]
 
-const TAILLES = ['Moins de 10', '10 à 15', 'Plus de 15', 'Je ne sais pas encore']
+const TAILLES = [
+  { fr: 'Moins de 10', en: 'Fewer than 10' },
+  { fr: '10 à 15', en: '10 to 15' },
+  { fr: 'Plus de 15', en: 'More than 15' },
+  { fr: 'Je ne sais pas encore', en: 'I do not know yet' },
+]
 
-const LIEUX = ['Dans notre établissement', 'En visio', 'Peu importe']
+const LIEUX = [
+  { fr: 'Dans notre établissement', en: 'At our school' },
+  { fr: 'En visio', en: 'Online' },
+  { fr: 'Peu importe', en: 'Either works' },
+]
 
 const RESEAU = [
-  'Oui, rien n’est bloqué',
-  'Non, c’est filtré',
-  'Je ne sais pas, je vérifie',
+  { fr: 'Oui, rien n’est bloqué', en: 'Yes, nothing is blocked' },
+  { fr: 'Non, c’est filtré', en: 'No, it is filtered' },
+  { fr: 'Je ne sais pas, je vérifie', en: 'I do not know, I will check' },
 ]
 
 /* Même courbe que le hero du site : les deux pages doivent bouger pareil. */
@@ -231,6 +305,8 @@ type Statut = 'repos' | 'envoi' | 'ok' | 'erreur'
 
 
 export default function AtelierPage() {
+  const { lang } = useLang()
+  const d = makeD(lang)
   const [statut, setStatut] = useState<Statut>('repos')
 
   /* La bulle WhatsApp flottante est montée par le layout racine, donc sur
@@ -278,7 +354,7 @@ export default function AtelierPage() {
           <span className="font-sans at-brand-name">NateSystem</span>
         </div>
         <a href="#demander" className="nav-cta-btn at-header-cta">
-          Demander l’atelier
+          {d('Demander l’atelier', 'Request the workshop')}
         </a>
       </header>
 
@@ -290,14 +366,23 @@ export default function AtelierPage() {
           transition={{ duration: 0.6, delay: 0.1, ease: EASE }}
         >
           <span className="section-label at-hero-label">
-            Atelier offert · Trois heures · Chez vous ou en visio
+            {d(
+              'Atelier offert · Trois heures · Chez vous ou en visio',
+              'Free workshop · Three hours · At your school or online'
+            )}
           </span>
         </motion.div>
 
         <h1 className="at-h1">
-          <RevealWords text="Vos professeurs ont tous un tableur" delay={0.15} />{' '}
+          <RevealWords
+            text={d('Vos professeurs ont tous un tableur', 'Your teachers all have a spreadsheet')}
+            delay={0.15}
+          />{' '}
           <span className="at-h1-accent">
-            <RevealWords text="qu’ils ont bricolé seuls." delay={0.45} />
+            <RevealWords
+              text={d('qu’ils ont bricolé seuls.', 'they cobbled together alone.')}
+              delay={0.45}
+            />
           </span>
         </h1>
 
@@ -309,7 +394,10 @@ export default function AtelierPage() {
         >
           <Sparkles size={13} strokeWidth={2} className="at-pill-icon" />
           <span className="font-sans at-pill-text">
-            Je prends {ETABLISSEMENTS_PAR_TRIMESTRE} établissements ce trimestre.
+            {d(
+              `Je prends ${ETABLISSEMENTS_PAR_TRIMESTRE} établissements ce trimestre.`,
+              `I am taking ${ETABLISSEMENTS_PAR_TRIMESTRE} schools this term.`
+            )}
           </span>
         </motion.div>
 
@@ -324,8 +412,11 @@ export default function AtelierPage() {
               src={VSL.src}
               poster={VSL.poster}
               duration={VSL.duree}
-              label="Voir ce que fait l’atelier"
-              title="L’atelier NateSystem, en quelques minutes"
+              label={d('Voir ce que fait l’atelier', 'See what the workshop does')}
+              title={d(
+                'L’atelier NateSystem, en quelques minutes',
+                'The NateSystem workshop, in a few minutes'
+              )}
             />
           </motion.div>
         )}
@@ -336,9 +427,10 @@ export default function AtelierPage() {
           transition={{ duration: 0.6, delay: 1.15, ease: EASE }}
           className="font-sans at-hero-sub"
         >
-          En trois heures, ils construisent l’outil qui le remplace, et ils le testent sur leurs
-          vraies copies avant de partir. Pour leur classe, à leur main, sans écrire une ligne de
-          code. C’est gratuit, et ça ne vous engage à rien.
+          {d(
+            'En trois heures, ils construisent l’outil qui le remplace, et ils le testent sur leurs vraies copies avant de partir. Pour leur classe, à leur main, sans écrire une ligne de code. C’est gratuit, et ça ne vous engage à rien.',
+            'In three hours, they build the tool that replaces it, and they test it on their own students’ work before they leave. For their class, their way, without writing a line of code. It is free, and it commits you to nothing.'
+          )}
         </motion.p>
 
         <motion.div
@@ -349,10 +441,10 @@ export default function AtelierPage() {
         >
           <a href="#demander" className="btn-primary">
             <span className="btn-primary-dot" />
-            Demander l’atelier pour mon établissement
+            {d('Demander l’atelier pour mon établissement', 'Request the workshop for my school')}
           </a>
           <a href="#les-trois-heures" className="btn-ghost">
-            Voir le déroulé
+            {d('Voir le déroulé', 'See how it runs')}
           </a>
         </motion.div>
       </section>
@@ -362,10 +454,10 @@ export default function AtelierPage() {
         <div className="at-wrap">
           <ul className="at-facts">
             {FAITS.map((f, i) => (
-              <FadeUp key={f.titre} delay={0.05 * i}>
+              <FadeUp key={f.titreFr} delay={0.05 * i}>
                 <li className="card at-fact">
-                  <p className="font-sans at-fact-title">{f.titre}</p>
-                  <p className="font-sans at-fact-detail">{f.detail}</p>
+                  <p className="font-sans at-fact-title">{d(f.titreFr, f.titreEn)}</p>
+                  <p className="font-sans at-fact-detail">{d(f.detailFr, f.detailEn)}</p>
                 </li>
               </FadeUp>
             ))}
@@ -386,12 +478,15 @@ export default function AtelierPage() {
         <div className="at-wrap">
           <FadeUp>
             <header className="at-head">
-              <span className="section-label">La preuve</span>
-              <h2 className="section-title at-h2">{PARC} tournent sur nos outils.</h2>
+              <span className="section-label">{d('La preuve', 'The proof')}</span>
+              <h2 className="section-title at-h2">
+                {d(`${PARC_FR} tournent sur nos outils.`, `${PARC_EN} run on our tools.`)}
+              </h2>
               <p className="font-sans at-lead">
-                Des écoles, un IUT, et des organisations d’autres secteurs. Les mêmes contraintes
-                partout : beaucoup de monde, peu de temps, et un logiciel du commerce qui ne colle
-                jamais tout à fait.
+                {d(
+                  'Des écoles, un IUT, et des organisations d’autres secteurs. Les mêmes contraintes partout : beaucoup de monde, peu de temps, et un logiciel du commerce qui ne colle jamais tout à fait.',
+                  'Schools, a university institute, and organisations from other sectors. The same constraints everywhere: a lot of people, very little time, and off-the-shelf software that never quite fits.'
+                )}
               </p>
             </header>
           </FadeUp>
@@ -409,15 +504,20 @@ export default function AtelierPage() {
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src="/realisations/chartreux-terrasse.webp"
-                    alt="Nathan Goutagny serre la main de sa cliente sur la terrasse des Chartreux, à Lyon"
+                    alt={d(
+                      'Nathan Goutagny serre la main de sa cliente sur la terrasse des Chartreux, à Lyon',
+                      'Nathan Goutagny shaking hands with his client on the Les Chartreux terrace in Lyon'
+                    )}
                     loading="lazy"
                     width={1200}
                     height={1200}
                   />
                 </div>
                 <figcaption className="font-sans at-proof-caption">
-                  Aux Chartreux, à Lyon. Neuf établissements sur une seule plateforme, et quarante
-                  heures récupérées chaque mois, de leur propre compte.
+                  {d(
+                    'Aux Chartreux, à Lyon. Neuf établissements sur une seule plateforme, et quarante heures récupérées chaque mois, de leur propre compte.',
+                    'At Les Chartreux, in Lyon. Nine schools on a single platform, and forty hours given back every month, by their own account.'
+                  )}
                 </figcaption>
               </figure>
             </FadeUp>
@@ -427,13 +527,17 @@ export default function AtelierPage() {
                 <div className="at-proof-media at-proof-video">
                   <LiteYouTube
                     id={PODCAST_ID}
-                    title="Catherine F. raconte ce que les plateformes sur-mesure ont changé chez elle"
+                    title={d(
+                      'Catherine F. raconte ce que les plateformes sur-mesure ont changé chez elle',
+                      'Catherine F. on what the custom platforms changed where she works'
+                    )}
                   />
                 </div>
                 <figcaption className="font-sans at-proof-caption">
-                  Catherine F. enseigne le numérique dans le supérieur et dirige une organisation
-                  que nous équipons. Elle raconte ce que deux plateformes sur-mesure ont changé
-                  chez eux.
+                  {d(
+                    'Catherine F. enseigne le numérique dans le supérieur et dirige une organisation que nous équipons. Elle raconte ce que deux plateformes sur-mesure ont changé chez eux.',
+                    'Catherine F. teaches digital skills in higher education and runs an organisation we equip. She explains what two custom platforms changed for them.'
+                  )}
                 </figcaption>
               </figure>
             </FadeUp>
@@ -448,12 +552,15 @@ export default function AtelierPage() {
         <div className="at-wrap at-wrap--narrow">
           <FadeUp>
             <header className="at-head">
-              <span className="section-label">Les trois heures</span>
-              <h2 className="section-title at-h2">Ce qu’il se passe, concrètement.</h2>
+              <span className="section-label">{d('Les trois heures', 'The three hours')}</span>
+              <h2 className="section-title at-h2">
+                {d('Ce qu’il se passe, concrètement.', 'What actually happens.')}
+              </h2>
               <p className="font-sans at-lead">
-                L’atelier s’appelle « Créer ses propres outils pour sa classe, sans développeur ».
-                Trois heures, trois temps. Rien à installer. Une seule chose à préparer : chaque
-                participant arrive avec une corvée précise à régler.
+                {d(
+                  'L’atelier s’appelle « Créer ses propres outils pour sa classe, sans développeur ». Trois heures, trois temps. Rien à installer. Une seule chose à préparer : chaque participant arrive avec une corvée précise à régler.',
+                  'The workshop is called “Build your own classroom tools, without a developer”. Three hours, three parts. Nothing to install. One single thing to prepare: every participant turns up with one specific chore to fix.'
+                )}
               </p>
             </header>
           </FadeUp>
@@ -469,21 +576,28 @@ export default function AtelierPage() {
         <div className="at-wrap">
           <FadeUp>
             <header className="at-head">
-              <span className="section-label">De quoi on parle</span>
-              <h2 className="section-title at-h2">Le genre d’outil qui sort de trois heures.</h2>
+              <span className="section-label">{d('De quoi on parle', 'What we mean')}</span>
+              <h2 className="section-title at-h2">
+                {d(
+                  'Le genre d’outil qui sort de trois heures.',
+                  'The kind of tool that comes out of three hours.'
+                )}
+              </h2>
               <p className="font-sans at-lead">
-                « Créer son outil » ne veut pas dire grand-chose tant qu’on n’a pas vu à quoi ça
-                ressemble.
+                {d(
+                  '« Créer son outil » ne veut pas dire grand-chose tant qu’on n’a pas vu à quoi ça ressemble.',
+                  '“Build your own tool” does not mean much until you have seen what one looks like.'
+                )}
               </p>
             </header>
           </FadeUp>
 
           <ul className="at-examples">
             {EXEMPLES.map((ex, i) => (
-              <FadeUp key={ex} delay={0.05 * i}>
+              <FadeUp key={ex.fr} delay={0.05 * i}>
                 <li className="card at-example">
                   <span className="font-mono at-example-num">{String(i + 1).padStart(2, '0')}</span>
-                  <p className="font-sans at-example-text">{ex}</p>
+                  <p className="font-sans at-example-text">{d(ex.fr, ex.en)}</p>
                 </li>
               </FadeUp>
             ))}
@@ -491,8 +605,10 @@ export default function AtelierPage() {
 
           <FadeUp delay={0.24}>
             <p className="font-sans at-note">
-              Ce sont des exemples, pas un programme. Les trois heures partent de ce que vos
-              professeurs apportent ce jour-là.
+              {d(
+                'Ce sont des exemples, pas un programme. Les trois heures partent de ce que vos professeurs apportent ce jour-là.',
+                'These are examples, not a syllabus. The three hours start from whatever your teachers bring on the day.'
+              )}
             </p>
           </FadeUp>
         </div>
@@ -504,7 +620,7 @@ export default function AtelierPage() {
       <section className="at-section">
         <div className="at-wrap at-wrap--narrow">
           <FadeUp>
-            <span className="section-label at-who-label">Qui vient</span>
+            <span className="section-label at-who-label">{d('Qui vient', 'Who turns up')}</span>
           </FadeUp>
           <FadeUp delay={0.06}>
             <div className="card at-who">
@@ -512,7 +628,10 @@ export default function AtelierPage() {
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="/nathan.png"
-                  alt="Nathan Goutagny, fondateur de NateSystem"
+                  alt={d(
+                    'Nathan Goutagny, fondateur de NateSystem',
+                    'Nathan Goutagny, founder of NateSystem'
+                  )}
                   loading="lazy"
                   width={1104}
                   height={974}
@@ -522,33 +641,28 @@ export default function AtelierPage() {
                 <h2 className="font-serif italic at-who-name">Nathan Goutagny.</h2>
                 <div className="at-prose">
                   <p>
-                    Je dirige NateSystem. Je construis des logiciels de gestion sur mesure pour des
-                    établissements, et aussi des outils pédagogiques : plannings, comptage des
-                    heures, dossiers, suivi des élèves. Plus de dix établissements tournent dessus,
-                    dont les Chartreux et l’IUT de Saint-Étienne pour citer les plus connus.
+                    {d(
+                      'Je dirige NateSystem. Je construis des logiciels de gestion sur mesure pour des établissements, et aussi des outils pédagogiques : plannings, comptage des heures, dossiers, suivi des élèves. Plus de dix établissements tournent dessus, dont les Chartreux et l’IUT de Saint-Étienne pour citer les plus connus.',
+                      'I run NateSystem. I build custom management software for schools, and teaching tools too: timetables, hours tracking, records, student follow-up. More than ten schools run on them, including Les Chartreux and the IUT de Saint-Étienne to name the best known.'
+                    )}
                   </p>
                   <p>
-                    Ce que ça leur apporte : des heures rendues aux équipes, des tâches répétitives
-                    qui disparaissent, des données enfin claires, une communication interne qui ne
-                    dépend plus de qui sait, et au bout de la chaîne des élèves mieux suivis. Les
-                    Chartreux rapportent quarante heures récupérées par mois.
+                    {d(
+                      'Ce que ça leur apporte : des heures rendues aux équipes, des tâches répétitives qui disparaissent, des données enfin claires, une communication interne qui ne dépend plus de qui sait, et au bout de la chaîne des élèves mieux suivis. Les Chartreux rapportent quarante heures récupérées par mois.',
+                      'What it gives them: hours back for their teams, repetitive tasks that disappear, data that is finally clear, internal communication that no longer depends on who happens to know, and at the end of the chain, students who are followed properly. Les Chartreux report forty hours given back every month.'
+                    )}
                   </p>
                   <p>
-                    Je les vends et je les code moi-même, il n’y a ni commercial ni junior
-                    derrière. Et je passe beaucoup de temps à former, parce qu’un logiciel que
-                    personne n’utilise vraiment ne sert à rien : je forme jusqu’à l’autonomie.
+                    {d(
+                      'Je passe beaucoup de temps à former, parce qu’un logiciel que personne n’utilise vraiment ne sert à rien : je forme jusqu’à l’autonomie.',
+                      'I spend a lot of time training, because software nobody really uses is worth nothing: I train until the team is autonomous.'
+                    )}
                   </p>
                   <p>
-                    C’est là que j’ai vu la même chose revenir, rendez-vous après rendez-vous. Des
-                    professeurs et des directeurs qui voulaient se construire leurs propres petits
-                    outils, qui essayaient, et qui s’emmêlaient les pinceaux. Cet atelier vient de
-                    là.
-                  </p>
-                  <p>
-                    Quand un établissement me confie un projet, le code source lui appartient à
-                    cent pour cent et les données restent hébergées en Europe. Pour un
-                    établissement qui tient des dossiers de mineurs, ce n’est pas un détail de bas
-                    de page.
+                    {d(
+                      'C’est là que j’ai vu la même chose revenir, rendez-vous après rendez-vous. Des professeurs et des directeurs qui voulaient se construire leurs propres petits outils, qui essayaient, et qui s’emmêlaient les pinceaux. Cet atelier vient de là.',
+                      'That is where I saw the same thing come back, meeting after meeting. Teachers and heads who wanted to build their own small tools, who tried, and who got themselves tangled up. This workshop came out of that.'
+                    )}
                   </p>
                 </div>
               </div>
@@ -567,18 +681,27 @@ export default function AtelierPage() {
         <div className="at-wrap at-wrap--narrow">
           <FadeUp>
             <header className="at-head">
-              <span className="section-label">La garantie</span>
-              <h2 className="section-title at-h2">Personne ne repart les mains vides.</h2>
+              <span className="section-label">{d('La garantie', 'The guarantee')}</span>
+              <h2 className="section-title at-h2">
+                {d('Personne ne repart les mains vides.', 'Nobody leaves empty-handed.')}
+              </h2>
               <p className="font-sans at-lead">
-                Chaque professeur repart avec son premier outil qui marche, à tester dès le
-                lendemain matin. Et surtout avec la technique pour en refaire d’autres sans moi.
+                {d(
+                  'Chaque professeur repart avec son premier outil qui marche, à tester dès le lendemain matin. Et surtout avec la technique pour en refaire d’autres sans moi.',
+                  'Every teacher leaves with their first working tool, ready to try the next morning. And above all with the method to build more without me.'
+                )}
               </p>
             </header>
           </FadeUp>
+          <GarantieJeu />
+
           <FadeUp delay={0.1}>
             <div className="at-pledge">
               <p className="font-serif italic at-pledge-text">
-                Si quelqu’un repart les mains vides, je reviens le faire avec lui.
+                {d(
+                  'Si quelqu’un repart les mains vides, je reviens le faire avec lui.',
+                  'If anyone leaves empty-handed, I come back and build it with them.'
+                )}
               </p>
             </div>
           </FadeUp>
@@ -594,30 +717,36 @@ export default function AtelierPage() {
         <div className="at-wrap">
           <FadeUp>
             <header className="at-head">
-              <span className="section-label">Avant de dire oui</span>
-              <h2 className="section-title at-h2">Ce qu’il vous faut de votre côté.</h2>
+              <span className="section-label">{d('Avant de dire oui', 'Before you say yes')}</span>
+              <h2 className="section-title at-h2">
+                {d('Ce qu’il vous faut de votre côté.', 'What you need on your side.')}
+              </h2>
               <p className="font-sans at-lead">
-                Rien d’exotique, mais tout compte. Les deux lignes en rouge sont celles qui font
-                rater un atelier quand elles manquent, pas celles qui le gênent.
+                {d(
+                  'Rien d’exotique, mais tout compte. Les deux lignes en rouge sont celles qui font rater un atelier quand elles manquent, pas celles qui le gênent.',
+                  'Nothing exotic, but everything counts. The two lines in red are the ones that make a workshop fail when they are missing, not the ones that merely get in the way.'
+                )}
               </p>
             </header>
           </FadeUp>
 
           <div className="at-prereq-cols">
             {PREREQUIS.map((bloc, b) => (
-              <FadeUp key={bloc.groupe} delay={0.06 * b}>
+              <FadeUp key={bloc.groupeFr} delay={0.06 * b}>
                 <div className="card at-prereq-col">
-                  <h3 className="font-mono at-prereq-group-title">{bloc.groupe}</h3>
+                  <h3 className="font-mono at-prereq-group-title">
+                    {d(bloc.groupeFr, bloc.groupeEn)}
+                  </h3>
                   <ul className="at-prereqs">
                     {bloc.items.map((r) => (
                       <li
-                        key={r.titre}
+                        key={r.titreFr}
                         className={`at-prereq${'cle' in r && r.cle ? ' at-prereq--cle' : ''}`}
                       >
                         <span className="at-prereq-mark" aria-hidden="true" />
                         <div>
-                          <p className="font-sans at-prereq-title">{r.titre}</p>
-                          <p className="font-sans at-prereq-detail">{r.detail}</p>
+                          <p className="font-sans at-prereq-title">{d(r.titreFr, r.titreEn)}</p>
+                          <p className="font-sans at-prereq-detail">{d(r.detailFr, r.detailEn)}</p>
                         </div>
                       </li>
                     ))}
@@ -636,13 +765,18 @@ export default function AtelierPage() {
         <div className="at-wrap at-wrap--narrow">
           <FadeUp>
             <header className="at-head">
-              <span className="section-label">La demande</span>
+              <span className="section-label">{d('La demande', 'The request')}</span>
               <h2 className="section-title at-h2">
-                Demander l’atelier pour votre établissement.
+                {d(
+                  'Demander l’atelier pour votre établissement.',
+                  'Request the workshop for your school.'
+                )}
               </h2>
               <p className="font-sans at-lead">
-                Je reviens vers vous sous 48 heures avec deux ou trois créneaux. Je prends{' '}
-                {ETABLISSEMENTS_PAR_TRIMESTRE} établissements ce trimestre.
+                {d(
+                  `Je reviens vers vous sous 48 heures avec deux ou trois créneaux. Je prends ${ETABLISSEMENTS_PAR_TRIMESTRE} établissements ce trimestre.`,
+                  `I come back to you within 48 hours with two or three slots. I am taking ${ETABLISSEMENTS_PAR_TRIMESTRE} schools this term.`
+                )}
               </p>
             </header>
           </FadeUp>
@@ -650,25 +784,35 @@ export default function AtelierPage() {
           <FadeUp delay={0.08}>
             {statut === 'ok' ? (
               <div className="card at-done">
-                <p className="font-serif italic at-done-title">C’est parti.</p>
+                <p className="font-serif italic at-done-title">
+                  {d('C’est parti.', 'You are in.')}
+                </p>
                 <p className="font-sans at-done-text">
-                  Je vous réponds sous 48 heures, depuis nathan@natesystem.com. Si vous ne voyez
-                  rien passer, regardez vos indésirables.
+                  {d(
+                    'Je vous réponds sous 48 heures, depuis nathan@natesystem.com. Si vous ne voyez rien passer, regardez vos indésirables.',
+                    'I reply within 48 hours, from nathan@natesystem.com. If nothing turns up, check your spam folder.'
+                  )}
                 </p>
               </div>
             ) : (
               <form className="card at-form" onSubmit={envoyer}>
                 <div className="at-row">
                   <label className="at-field">
-                    <span className="font-mono at-field-label">Votre nom</span>
-                    <input name="nom" type="text" required autoComplete="name" placeholder="Prénom et nom" />
+                    <span className="font-mono at-field-label">{d('Votre nom', 'Your name')}</span>
+                    <input
+                      name="nom"
+                      type="text"
+                      required
+                      autoComplete="name"
+                      placeholder={d('Prénom et nom', 'First and last name')}
+                    />
                   </label>
                   <label className="at-field">
-                    <span className="font-mono at-field-label">Votre fonction</span>
-                    <select name="fonction" defaultValue={FONCTIONS[0]}>
+                    <span className="font-mono at-field-label">{d('Votre fonction', 'Your role')}</span>
+                    <select name="fonction" defaultValue={d(FONCTIONS[0].fr, FONCTIONS[0].en)}>
                       {FONCTIONS.map((f) => (
-                        <option key={f} value={f}>
-                          {f}
+                        <option key={f.fr} value={d(f.fr, f.en)}>
+                          {d(f.fr, f.en)}
                         </option>
                       ))}
                     </select>
@@ -676,38 +820,59 @@ export default function AtelierPage() {
                 </div>
 
                 <label className="at-field">
-                  <span className="font-mono at-field-label">Votre établissement</span>
-                  <input name="etablissement" type="text" required placeholder="Nom de l’établissement, et la ville" />
+                  <span className="font-mono at-field-label">
+                    {d('Votre établissement', 'Your school')}
+                  </span>
+                  <input
+                    name="etablissement"
+                    type="text"
+                    required
+                    placeholder={d('Nom de l’établissement, et la ville', 'School name, and the town')}
+                  />
                 </label>
 
                 <div className="at-row">
                   <label className="at-field">
                     <span className="font-mono at-field-label">Email</span>
-                    <input name="email" type="email" required autoComplete="email" placeholder="vous@etablissement.fr" />
+                    <input
+                      name="email"
+                      type="email"
+                      required
+                      autoComplete="email"
+                      placeholder={d('vous@etablissement.fr', 'you@school.org')}
+                    />
                   </label>
                   <label className="at-field">
-                    <span className="font-mono at-field-label">Téléphone</span>
-                    <input name="telephone" type="tel" required autoComplete="tel" placeholder="06 00 00 00 00" />
+                    <span className="font-mono at-field-label">{d('Téléphone', 'Phone')}</span>
+                    <input
+                      name="telephone"
+                      type="tel"
+                      required
+                      autoComplete="tel"
+                      placeholder={d('06 00 00 00 00', '+33 6 00 00 00 00')}
+                    />
                   </label>
                 </div>
 
                 <div className="at-row">
                   <label className="at-field">
-                    <span className="font-mono at-field-label">Combien de personnes</span>
-                    <select name="personnes" defaultValue={TAILLES[1]}>
+                    <span className="font-mono at-field-label">
+                      {d('Combien de personnes', 'How many people')}
+                    </span>
+                    <select name="personnes" defaultValue={d(TAILLES[1].fr, TAILLES[1].en)}>
                       {TAILLES.map((t) => (
-                        <option key={t} value={t}>
-                          {t}
+                        <option key={t.fr} value={d(t.fr, t.en)}>
+                          {d(t.fr, t.en)}
                         </option>
                       ))}
                     </select>
                   </label>
                   <label className="at-field">
-                    <span className="font-mono at-field-label">Plutôt</span>
-                    <select name="lieu" defaultValue={LIEUX[2]}>
+                    <span className="font-mono at-field-label">{d('Plutôt', 'Preference')}</span>
+                    <select name="lieu" defaultValue={d(LIEUX[2].fr, LIEUX[2].en)}>
                       {LIEUX.map((l) => (
-                        <option key={l} value={l}>
-                          {l}
+                        <option key={l.fr} value={d(l.fr, l.en)}>
+                          {d(l.fr, l.en)}
                         </option>
                       ))}
                     </select>
@@ -721,22 +886,36 @@ export default function AtelierPage() {
                     elle dit simplement qu'il faut vérifier avant de caler la
                     date. */}
                 <label className="at-field">
-                  <span className="font-mono at-field-label">Accès réseau</span>
-                  <span className="font-sans at-field-help">
-                    Depuis les postes de l’établissement, un site comme ChatGPT est-il accessible ?
+                  <span className="font-mono at-field-label">
+                    {d('Accès réseau', 'Network access')}
                   </span>
-                  <select name="reseau" defaultValue={RESEAU[2]}>
+                  <span className="font-sans at-field-help">
+                    {d(
+                      'Depuis les postes de l’établissement, un site comme ChatGPT est-il accessible ?',
+                      'From the school’s computers, is a site like ChatGPT reachable?'
+                    )}
+                  </span>
+                  <select name="reseau" defaultValue={d(RESEAU[2].fr, RESEAU[2].en)}>
                     {RESEAU.map((r) => (
-                      <option key={r} value={r}>
-                        {r}
+                      <option key={r.fr} value={d(r.fr, r.en)}>
+                        {d(r.fr, r.en)}
                       </option>
                     ))}
                   </select>
                 </label>
 
                 <label className="at-field">
-                  <span className="font-mono at-field-label">Un mot, si vous voulez (facultatif)</span>
-                  <textarea name="mot" rows={3} placeholder="Ce qui vous fait venir, ou une contrainte de calendrier." />
+                  <span className="font-mono at-field-label">
+                    {d('Un mot, si vous voulez (facultatif)', 'A note, if you like (optional)')}
+                  </span>
+                  <textarea
+                    name="mot"
+                    rows={3}
+                    placeholder={d(
+                      'Ce qui vous fait venir, ou une contrainte de calendrier.',
+                      'What brings you, or a calendar constraint.'
+                    )}
+                  />
                 </label>
 
                 {/* Requise : elle engage le directeur sur le matériel et sur la
@@ -745,27 +924,35 @@ export default function AtelierPage() {
                 <label className="at-check">
                   <input type="checkbox" name="prerequis" value="oui" required />
                   <span className="font-sans at-check-text">
-                    Je confirme pouvoir réunir <a href="#prerequis">les prérequis listés plus haut</a>{' '}
-                    le jour de l’atelier, direction présente comprise.
+                    {d('Je confirme pouvoir réunir ', 'I confirm I can provide ')}
+                    <a href="#prerequis">
+                      {d('les prérequis listés plus haut', 'the prerequisites listed above')}
+                    </a>
+                    {d(
+                      ' le jour de l’atelier, direction présente comprise.',
+                      ' on the day of the workshop, including someone from the leadership team.'
+                    )}
                   </span>
                 </label>
 
                 <button type="submit" className="btn-primary at-submit" disabled={statut === 'envoi'}>
                   <span className="btn-primary-dot" />
-                  {statut === 'envoi' ? 'Envoi…' : 'Envoyer la demande'}
+                  {statut === 'envoi' ? d('Envoi…', 'Sending…') : d('Envoyer la demande', 'Send the request')}
                 </button>
 
                 {statut === 'erreur' && (
                   <p className="font-sans at-error" role="alert">
-                    Ça n’est pas parti. Écrivez-moi directement à{' '}
-                    <a href="mailto:nathan@natesystem.com">nathan@natesystem.com</a>, je réponds
-                    aussi vite.
+                    {d('Ça n’est pas parti. Écrivez-moi directement à ', 'That did not go through. Email me directly at ')}
+                    <a href="mailto:nathan@natesystem.com">nathan@natesystem.com</a>
+                    {d(', je réponds aussi vite.', ', I answer just as fast.')}
                   </p>
                 )}
 
                 <p className="font-sans at-reassurance">
-                  Pas de newsletter, pas de relance automatique. Votre demande arrive directement
-                  dans ma boîte.
+                  {d(
+                    'Pas de newsletter, pas de relance automatique. Votre demande arrive directement dans ma boîte.',
+                    'No newsletter, no automated follow-ups. Your request lands straight in my inbox.'
+                  )}
                 </p>
               </form>
             )}
@@ -781,8 +968,11 @@ export default function AtelierPage() {
             NateSystem · Nathan Goutagny ·{' '}
             <a href="mailto:nathan@natesystem.com">nathan@natesystem.com</a>
           </p>
-          <a href="/mentions-legales" className="font-sans at-footer-legal">
-            Mentions légales
+          <a
+            href={lang === 'en' ? '/en/mentions-legales' : '/mentions-legales'}
+            className="font-sans at-footer-legal"
+          >
+            {d('Mentions légales', 'Legal notice')}
           </a>
         </div>
       </footer>
@@ -1096,7 +1286,7 @@ export default function AtelierPage() {
           font-weight: 400;
           line-height: 1.4;
           color: var(--text);
-          max-width: 24ch;
+          max-width: 36ch;
           margin: 0 auto;
         }
 
@@ -1390,6 +1580,8 @@ export default function AtelierPage() {
  */
 function Deroule() {
   const rail = useRef<HTMLDivElement>(null)
+  const { lang } = useLang()
+  const d = makeD(lang)
   const { scrollYProgress } = useScroll({
     target: rail,
     offset: ['start 0.78', 'end 0.55'],
@@ -1404,7 +1596,12 @@ function Deroule() {
 
       <ol className="at-steps">
         {DEROULE.map((etape) => (
-          <Etape key={etape.num} etape={etape} />
+          <Etape
+            key={etape.num}
+            num={etape.num}
+            titre={d(etape.titreFr, etape.titreEn)}
+            texte={d(etape.texteFr, etape.texteEn)}
+          />
         ))}
       </ol>
 
@@ -1454,17 +1651,17 @@ function Deroule() {
 }
 
 /** Une heure du déroulé : elle s'allume quand elle entre réellement dans l'écran. */
-function Etape({ etape }: { etape: (typeof DEROULE)[number] }) {
+function Etape({ num, titre, texte }: { num: string; titre: string; texte: string }) {
   const ref = useRef<HTMLLIElement>(null)
   const vue = useInView(ref, { once: true, margin: '-45% 0px -35% 0px' })
 
   return (
     <li ref={ref} className={`at-step${vue ? ' is-on' : ''}`}>
       <span className="font-mono at-step-num" aria-hidden="true">
-        {etape.num}
+        {num}
       </span>
-      <h3 className="font-sans at-step-title">{etape.titre}</h3>
-      <p className="font-sans at-step-text">{etape.texte}</p>
+      <h3 className="font-sans at-step-title">{titre}</h3>
+      <p className="font-sans at-step-text">{texte}</p>
 
       <style jsx>{`
         .at-step {
@@ -1544,5 +1741,220 @@ function Etape({ etape }: { etape: (typeof DEROULE)[number] }) {
         }
       `}</style>
     </li>
+  )
+}
+
+/**
+ * LA GARANTIE, EN JEU.
+ *
+ * Trois heures qui se valident l'une après l'autre, un trait qui se remplit
+ * entre elles, puis le résultat qui tombe. C'est la grammaire du « niveau
+ * franchi », et elle dit la promesse au lieu de l'écrire : on voit que les
+ * trois heures mènent quelque part.
+ *
+ * Le registre reste sobre. Le lecteur est un chef d'établissement, pas un
+ * joueur : ce sont les ressorts et l'enchaînement qui portent le jeu, jamais
+ * le vocabulaire. Aucun « niveau débloqué », aucune médaille.
+ *
+ * La coche se DESSINE (pathLength), elle n'apparaît pas : c'est ce trait qui
+ * donne la sensation de validation plutôt qu'un simple affichage.
+ *
+ * ⚠︎ TOUTES LES RÈGLES PASSENT PAR :global. motion.div et motion.span sont des
+ * composants, pas des éléments du DOM : styled-jsx ne peut pas leur coller sa
+ * classe de portée. `.gj`, lui, est un vrai div et confine le tout.
+ */
+function GarantieJeu() {
+  const { lang } = useLang()
+  const d = makeD(lang)
+  const ref = useRef<HTMLDivElement>(null)
+  const vue = useInView(ref, { once: true, margin: '-20% 0px -20% 0px' })
+  const reduce = useReducedMotion()
+
+  /* Sans animation, tout est posé d'emblée : l'information passe pareil. */
+  const depart = reduce ? 0 : 0.18
+  const pas = reduce ? 0 : 0.42
+  const finale = depart + pas * 3
+
+  const heures = [
+    { n: '1', labelFr: 'Heure 1', labelEn: 'Hour 1' },
+    { n: '2', labelFr: 'Heure 2', labelEn: 'Hour 2' },
+    { n: '3', labelFr: 'Heure 3', labelEn: 'Hour 3' },
+  ]
+
+  return (
+    <div className="gj" ref={ref}>
+      <ol className="gj-track">
+        {heures.map((h, i) => (
+          <Fragment key={h.n}>
+            {i > 0 && (
+              <li className="gj-link" aria-hidden="true">
+                <motion.span
+                  className="gj-link-fill"
+                  initial={{ scaleX: 0 }}
+                  animate={vue ? { scaleX: 1 } : { scaleX: 0 }}
+                  transition={{
+                    duration: reduce ? 0 : 0.34,
+                    delay: depart + pas * i - 0.2,
+                    ease: EASE,
+                  }}
+                />
+              </li>
+            )}
+            <li className="gj-step">
+              <motion.span
+                className="gj-disc"
+                initial={{ scale: 0.4, opacity: 0 }}
+                animate={vue ? { scale: 1, opacity: 1 } : { scale: 0.4, opacity: 0 }}
+                transition={
+                  reduce
+                    ? { duration: 0 }
+                    : { type: 'spring', stiffness: 300, damping: 15, delay: depart + pas * i }
+                }
+              >
+                <svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true">
+                  <motion.path
+                    d="M5 12.5l4.2 4.2L19 7"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.6"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    initial={{ pathLength: 0 }}
+                    animate={vue ? { pathLength: 1 } : { pathLength: 0 }}
+                    transition={{
+                      duration: reduce ? 0 : 0.3,
+                      delay: depart + pas * i + 0.14,
+                      ease: EASE,
+                    }}
+                  />
+                </svg>
+              </motion.span>
+              <span className="font-mono gj-label">{d(h.labelFr, h.labelEn)}</span>
+            </li>
+          </Fragment>
+        ))}
+      </ol>
+
+      <motion.div
+        className="gj-prize"
+        initial={{ scale: 0.86, opacity: 0, y: 10 }}
+        animate={vue ? { scale: 1, opacity: 1, y: 0 } : { scale: 0.86, opacity: 0, y: 10 }}
+        transition={
+          reduce
+            ? { duration: 0 }
+            : { type: 'spring', stiffness: 220, damping: 13, delay: finale }
+        }
+      >
+        <motion.span
+          className="gj-prize-halo"
+          aria-hidden="true"
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={vue ? { opacity: [0, 0.75, 0], scale: [0.9, 1.5, 1.9] } : { opacity: 0 }}
+          transition={{ duration: reduce ? 0 : 1.1, delay: finale, ease: 'easeOut' }}
+        />
+        <span className="font-sans gj-prize-text">
+          {d('Son outil, et il tourne.', 'Their tool, and it runs.')}
+        </span>
+      </motion.div>
+
+      <style jsx>{`
+        .gj {
+          margin: 6px 0 34px;
+        }
+        .gj-track {
+          list-style: none;
+          padding: 0;
+          margin: 0 auto;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 0;
+          max-width: 520px;
+        }
+        .gj-step {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 10px;
+          flex-shrink: 0;
+        }
+        .gj :global(.gj-disc) {
+          width: 44px;
+          height: 44px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: var(--accent);
+          color: #fff;
+          box-shadow: 0 6px 18px -6px rgba(230, 57, 70, 0.55);
+        }
+        .gj-label {
+          font-size: 10.5px;
+          letter-spacing: 1.4px;
+          text-transform: uppercase;
+          color: var(--text-muted);
+        }
+        .gj-link {
+          flex: 1 1 auto;
+          height: 2px;
+          background: var(--border);
+          margin: 0 10px 26px;
+          position: relative;
+          border-radius: 2px;
+          overflow: hidden;
+          min-width: 28px;
+        }
+        .gj :global(.gj-link-fill) {
+          position: absolute;
+          inset: 0;
+          background: var(--accent);
+          transform-origin: left center;
+          display: block;
+        }
+        .gj :global(.gj-prize) {
+          position: relative;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          margin: 30px auto 0;
+          padding: 13px 26px;
+          border-radius: 999px;
+          border: 1px solid var(--accent);
+          background: var(--bg-card);
+          box-shadow: 0 10px 30px -12px rgba(230, 57, 70, 0.4);
+        }
+        .gj :global(.gj-prize-halo) {
+          position: absolute;
+          inset: -2px;
+          border-radius: 999px;
+          border: 1px solid var(--accent);
+          pointer-events: none;
+        }
+        .gj-prize-text {
+          font-size: 15px;
+          font-weight: 600;
+          color: var(--text);
+          white-space: nowrap;
+        }
+        /* Le lot est en ligne : il faut un conteneur centré autour de lui. */
+        .gj {
+          text-align: center;
+        }
+        @media (max-width: 520px) {
+          .gj :global(.gj-disc) {
+            width: 38px;
+            height: 38px;
+          }
+          .gj-link {
+            min-width: 16px;
+            margin: 0 6px 26px;
+          }
+          .gj-prize-text {
+            white-space: normal;
+          }
+        }
+      `}</style>
+    </div>
   )
 }
