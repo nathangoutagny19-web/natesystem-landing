@@ -59,16 +59,25 @@ import { makeD } from '@/lib/lang'
    change, il est affiché à deux endroits. */
 const ETABLISSEMENTS_PAR_TRIMESTRE = 3
 
-/* LA VSL, et elle n'existe pas encore (01/10/2026) : Nathan l'enregistre.
-   Le bloc ne s'affiche QUE quand ce réglage n'est plus `null`, parce qu'une
-   page en ligne ne montre pas un cadre vide, ni un bouton lecture qui ne lance
-   rien, à un chef d'établissement.
-   POUR L'ALLUMER : déposer la vidéo et son image d'attente dans /public, puis
-   remplacer null par
-     { src: '/vsl-atelier.mp4', poster: '/vsl-atelier-poster.jpg', duree: '3 min' }
-   VslPlayer ne télécharge le fichier qu'au clic : seule l'image d'attente part
-   au chargement, donc la page reste légère. */
-const VSL: { src: string; poster?: string; duree?: string } | null = null
+/* LA VSL, montée le 01/10/2026 à partir des deux prises de Nathan.
+ *
+ * ⚠︎ DEUX FICHIERS, ET C'EST VOULU : les sous-titres sont INCRUSTÉS dans
+ * l'image, pas servis en piste .vtt. Une seule vidéo donnerait donc des
+ * sous-titres français gravés à un visiteur anglophone. `/vsl-atelier.mp4`
+ * porte le français, `/vsl-atelier-en.mp4` l'anglais, même bande-son.
+ *
+ * Pourquoi les graver plutôt que de servir une piste : la vidéo circulera
+ * aussi sur LinkedIn et en pièce jointe, où aucun .vtt n'est lu. Gravés, les
+ * sous-titres suivent le fichier partout.
+ *
+ * VslPlayer ne télécharge le .mp4 qu'au clic : seule l'image d'attente part au
+ * chargement, donc la page reste légère malgré les 39 Mo. */
+const VSL = {
+  srcFr: '/vsl-atelier.mp4',
+  srcEn: '/vsl-atelier-en.mp4',
+  poster: '/vsl-atelier-poster.jpg',
+  duree: '2 min 28',
+}
 
 /* LA PREUVE CHIFFRÉE. Formulation voulue, et elle n'est pas interchangeable :
    neuf des établissements comptés appartiennent aux Chartreux, un seul client.
@@ -414,7 +423,7 @@ export default function AtelierPage() {
             className="at-vsl"
           >
             <VslPlayer
-              src={VSL.src}
+              src={lang === 'en' ? VSL.srcEn : VSL.srcFr}
               poster={VSL.poster}
               duration={VSL.duree}
               label={d('Voir ce que fait l’atelier', 'See what the workshop does')}
