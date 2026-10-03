@@ -25,6 +25,8 @@
 
 import { useLang } from '@/components/providers/LangProvider'
 import { makeD } from '@/lib/lang'
+import { localizedHref } from '@/lib/routes'
+import type { Lang } from '@/lib/i18n'
 
 // `compact` shrinks a specific logo below the row height, for WIDE horizontal
 // logos (icon + wordmark + baseline) that would otherwise read heavier than the
@@ -38,6 +40,13 @@ type ClientRef =
   // detailed artwork.
   | { name: string; type: 'logo-white'; src: string; href: string; compact?: boolean }
   | { name: string; type: 'wordmark'; href: string }
+  // 'photo' est une rencontre, pas une marque : une vraie photo prise sur
+  // place, traitee comme un logo pour qu'elle tienne dans la rangee sans
+  // la casser. Noir et blanc au repos comme les logos, couleur au survol,
+  // et elle mene au cas client au lieu du site du client. `internal` dit
+  // qu'on reste sur le site : pas de target _blank, et le prefixe de
+  // langue s'applique.
+  | { name: string; type: 'photo'; src: string; href: string; internal: true }
 
 // Vendéglátás Menedzsment Kft. is the Hungarian hospitality reference,
 // kept as wordmark until the official logo lands. When `/public/logos/
@@ -65,6 +74,37 @@ const clients: ClientRef[] = [
   // Association Aloess, wide horizontal logo (icon + "aloess" + baseline);
   // `compact` trims its height so it doesn't dominate the compact marks.
   { name: 'Association Aloess', type: 'logo', src: '/logos/aloess.png', href: 'https://www.aloess.org/', compact: true },
+  /* ⚠︎ LES TROIS RENCONTRES MENENT AU CAS, PAS AU SITE DU CLIENT. C'est
+     toute la difference avec les logos au-dessus : un logo dit qui nous
+     fait confiance et renvoie chez lui, une rencontre dit ce qu'on a fait
+     et renvoie a la preuve.
+
+     ⚠︎ LES CHARTREUX N'ONT PAS DE PAGE DE CAS. lib/case-studies.ts n'en
+     porte que deux, 'chromosome' et 'conseil-b2b-budapest'. Leur photo
+     pointe donc vers le carrousel de la home, qui est le seul endroit ou
+     leur cas est raconte. A rebrancher sur /case-studies/... le jour ou
+     la page existe. */
+  {
+    name: 'Institut des Chartreux, sur la terrasse à Lyon',
+    type: 'photo',
+    src: '/realisations/chartreux-terrasse.webp',
+    href: '/#case-study',
+    internal: true,
+  },
+  {
+    name: 'Kis Zoltán, à Budapest',
+    type: 'photo',
+    src: '/realisations/zoltan-budapest.webp',
+    href: '/case-studies/conseil-b2b-budapest',
+    internal: true,
+  },
+  {
+    name: 'Catherine F., pendant le podcast',
+    type: 'photo',
+    src: '/realisations/catherine-podcast.webp',
+    href: '/case-studies/chromosome',
+    internal: true,
+  },
 ]
 
 /* `hideLabel` sert à la landing /atelier, qui pose son propre titre au-dessus
@@ -113,7 +153,7 @@ export default function ClientsBar({ hideLabel = false }: { hideLabel?: boolean 
           <ul className="clients-marquee">
             {[...clients, ...clients].map((c, i) => (
               <li key={`${c.name}-${i}`} className="clients-item">
-                <ClientItem c={c} />
+                <ClientItem c={c} lang={lang} />
               </li>
             ))}
           </ul>
@@ -181,6 +221,24 @@ export default function ClientsBar({ hideLabel = false }: { hideLabel?: boolean 
         html:not(.light) .clients-item:hover .clients-logo--white {
           filter: brightness(0) invert(1) opacity(1);
         }
+        /* La rencontre prend la hauteur de la rangee et un format fixe, pour
+           qu'elle pese exactement comme un logo. object-fit: cover recadre
+           au centre : les photos n'ont pas toutes le meme rapport. */
+        .clients-photo {
+          height: 46px;
+          width: 64px;
+          object-fit: cover;
+          border-radius: 5px;
+          display: block;
+          filter: grayscale(100%) contrast(1.04);
+          opacity: 0.72;
+          transition: filter 220ms ease-out, opacity 220ms ease-out;
+        }
+        .clients-item:hover .clients-photo,
+        .clients-link:focus-visible .clients-photo {
+          filter: grayscale(0%) contrast(1);
+          opacity: 1;
+        }
         .clients-wordmark {
           font-size: 19px;
           line-height: 1.2;
@@ -247,6 +305,10 @@ export default function ClientsBar({ hideLabel = false }: { hideLabel?: boolean 
             max-height: 28px;
             max-width: 130px;
           }
+          .clients-photo {
+            height: 38px;
+            width: 53px;
+          }
           .clients-wordmark {
             font-size: 15px;
           }
@@ -262,16 +324,24 @@ export default function ClientsBar({ hideLabel = false }: { hideLabel?: boolean 
   )
 }
 
-function ClientItem({ c }: { c: ClientRef }) {
+function ClientItem({ c, lang }: { c: ClientRef; lang: Lang }) {
+  /* ⚠︎ UN LIEN INTERNE NE S'OUVRE PAS DANS UN ONGLET. Les logos mènent
+     chez le client, donc _blank ; les rencontres mènent à une page du
+     site, donc même onglet, et avec le préfixe de langue sinon un
+     visiteur anglophone retombe en français. */
+  const interne = c.type === 'photo'
   return (
     <a
-      href={c.href}
-      target="_blank"
-      rel="noopener noreferrer"
+      href={interne ? localizedHref(c.href, lang) : c.href}
+      target={interne ? undefined : '_blank'}
+      rel={interne ? undefined : 'noopener noreferrer'}
       aria-label={c.name}
       className="clients-link"
     >
-      {c.type === 'logo' ? (
+      {c.type === 'photo' ? (
+        /* eslint-disable-next-line @next/next/no-img-element */
+        <img src={c.src} alt={c.name} className="clients-photo" loading="lazy" />
+      ) : c.type === 'logo' ? (
         /* eslint-disable-next-line @next/next/no-img-element */
         <img src={c.src} alt={c.name} className={`clients-logo${c.compact ? ' clients-logo--sm' : ''}`} />
       ) : c.type === 'logo-white' ? (
