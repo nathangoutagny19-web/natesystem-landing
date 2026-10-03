@@ -88,21 +88,21 @@ const clients: ClientRef[] = [
   {
     name: 'Institut des Chartreux, sur la terrasse à Lyon',
     type: 'photo',
-    src: '/realisations/chartreux-terrasse.webp',
+    src: '/realisations/bandeau/chartreux.webp',
     href: '/case-studies',
     internal: true,
   },
   {
     name: 'Kis Zoltán, à Budapest',
     type: 'photo',
-    src: '/realisations/zoltan-budapest.webp',
+    src: '/realisations/bandeau/zoltan.webp',
     href: '/case-studies/conseil-b2b-budapest',
     internal: true,
   },
   {
     name: 'Catherine F., pendant le podcast',
     type: 'photo',
-    src: '/realisations/catherine-podcast.webp',
+    src: '/realisations/bandeau/catherine.webp',
     href: '/case-studies/chromosome',
     internal: true,
   },
@@ -225,6 +225,13 @@ export default function ClientsBar({ hideLabel = false }: { hideLabel?: boolean 
         /* La rencontre prend la hauteur de la rangee et un format fixe, pour
            qu'elle pese exactement comme un logo. object-fit: cover recadre
            au centre : les photos n'ont pas toutes le meme rapport. */
+        /* ⚠︎ LES SOURCES SONT DEJA AU FORMAT DE LA CASE, 1,391 pour
+           1. object-fit: cover recadre depuis le CENTRE : sur les photos
+           carrees d'origine, 1200x1200, il coupait les tetes. Les trois
+           fichiers de public/realisations/bandeau/ sont donc recadres a
+           la main, cadres sur les visages et la poignee de main, et cover
+           n'a plus rien a rogner. Les originaux carres restent intacts,
+           ils servent au carrousel, a /atelier et aux pages de cas. */
         .clients-photo {
           height: 46px;
           width: 64px;
