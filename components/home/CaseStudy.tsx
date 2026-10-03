@@ -130,9 +130,9 @@ const CASES: CaseEntry[] = [
       hu: 'Tanácsadó cég · Budapest',
     },
     headline: {
-      fr: 'Comment un formateur et directeur d’établissement a capitalisé son savoir dans un système sur-mesure, automatisé ses rapports sur 280 indicateurs, et l’a rendu à ses clients. La vidéo montre le sien, puis comment un consultant construit le sien.',
-      en: 'How a trainer and head of institution turned his own expertise into a custom system, automated his reports across 280 indicators, and handed it back to his clients. The video shows his, then how a consultant builds their own.',
-      hu: 'Hogyan tette át egy oktató és intézményvezető a saját tudását egyedi rendszerbe, automatizálta a riportjait 280 mutatón, és adta vissza mindezt az ügyfeleinek. A videó megmutatja az övét, majd azt, hogyan építi meg a sajátját egy tanácsadó.',
+      fr: 'Comment un consultant, écrivain, formateur et directeur d’établissement a capitalisé son savoir dans un système sur-mesure, automatisé ses rapports sur 280 indicateurs, et l’a rendu à ses clients. La vidéo montre le sien, puis comment un consultant construit le sien.',
+      en: 'How a consultant, author, trainer and head of institution turned his own expertise into a custom system, automated his reports across 280 indicators, and handed it back to his clients. The video shows his, then how a consultant builds their own.',
+      hu: 'Hogyan tette át egy tanácsadó, író, oktató és intézményvezető a saját tudását egyedi rendszerbe, automatizálta a riportjait 280 mutatón, és adta vissza mindezt az ügyfeleinek. A videó megmutatja az övét, majd azt, hogyan építi meg a sajátját egy tanácsadó.',
     },
     videoId: 'VCqXWRz68_4',
     videoStart: 27,

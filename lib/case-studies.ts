@@ -78,7 +78,7 @@ const caseStudiesFr: CaseStudy[] = [
     location: 'Budapest',
     title: '25 ans d’expertise, mis dans une IA',
     subtitle:
-      'Comment Kis Zoltán, formateur et directeur d’établissement à Budapest, a capitalisé son savoir dans un système sur-mesure, automatisé ses rapports clients sur 280 KPIs, et l’a rendu à ses clients.',
+      'Comment Kis Zoltán, consultant, écrivain, formateur et directeur d’établissement à Budapest, a capitalisé son savoir dans un système sur-mesure, automatisé ses rapports clients sur 280 KPIs, et l’a rendu à ses clients.',
     videoId: 'VCqXWRz68_4',
     videoStart: 27,
     photo: {
@@ -171,7 +171,7 @@ const caseStudiesEn: CaseStudy[] = [
     location: 'Budapest',
     title: '25 years of expertise, put into an AI',
     subtitle:
-      'How Kis Zoltán, a trainer and head of institution in Budapest, captured his own know-how in a custom system, automated his client reports across 280 KPIs, and handed it back to his clients.',
+      'How Kis Zoltán, a consultant, author, trainer and head of institution in Budapest, captured his own know-how in a custom system, automated his client reports across 280 KPIs, and handed it back to his clients.',
     videoId: 'VCqXWRz68_4',
     videoStart: 27,
     photo: {
@@ -256,7 +256,7 @@ const caseStudiesHu: CaseStudy[] = [
     location: 'Budapest',
     title: '25 év szaktudás, MI-be téve',
     subtitle:
-      'Hogyan őrizte meg Kis Zoltán, budapesti oktató és intézményvezető, a saját tudását egy egyedi rendszerben, automatizálta az ügyfélriportjait 280 KPI-n, és adta vissza mindezt az ügyfeleinek.',
+      'Hogyan őrizte meg Kis Zoltán, budapesti tanácsadó, író, oktató és intézményvezető, a saját tudását egy egyedi rendszerben, automatizálta az ügyfélriportjait 280 KPI-n, és adta vissza mindezt az ügyfeleinek.',
     videoId: 'VCqXWRz68_4',
     videoStart: 27,
     photo: {
