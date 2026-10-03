@@ -93,10 +93,22 @@ export const translations = {
   },
 
   // Hero
+  /* ⚠︎ LA CIBLE N'EST PLUS « LES ÉCOLES », ET LA LIGNE LE DIT.
+     Les trois intitulés précédents disaient trois fois la même famille.
+     La cible réelle, arrêtée le 3 octobre 2026, ce sont les
+     établissements qui accueillent du monde physiquement tous les jours,
+     en trois familles : écoles et supérieur, maisons d'accueil de
+     groupes, hôtels qui reçoivent des groupes.
+     Source : Desktop/theecosystem.io/transpositions/
+     offre-etablissements-accueil--natesystem.md, S1.
+     ⚠︎ LA RESTAURATION N'EST QU'UN SERVICE INTERNE de ces
+     établissements, jamais une famille : cantine et restaurant de maison
+     ou d'hôtel oui, restaurants et groupes de restauration commerciale
+     non. C'est aussi la règle absolue de ~/.claude/CLAUDE.md. */
   'hero.label': {
-    en: 'Private schools · School groups · Higher education',
-    fr: 'Écoles privées · Groupes scolaires · Enseignement supérieur',
-    hu: 'Magániskolák · Iskolacsoportok · Felsőoktatás',
+    en: 'Schools and higher education · Group accommodation · Group hotels',
+    fr: 'Écoles et supérieur · Maisons d\'accueil · Hôtels de groupe',
+    hu: 'Iskolák és felsőoktatás · Csoportos szálláshelyek · Csoportos szállodák',
   },
   'hero.titlePrefix': {
     en: 'The digital partner that builds your',
@@ -109,10 +121,20 @@ export const translations = {
     fr: 'plateformes sur-mesure|logiciels métiers|outils pédagogiques',
     hu: 'egyedi platformjait|szakmai szoftvereit|pedagógiai eszközeit',
   },
+  /* ⚠︎ DEUX CORRECTIONS ICI, ET LA SECONDE EST UNE RÈGLE.
+     1. « des élèves et des étudiants mieux suivis » ne parlait qu'à une
+        des trois familles. La ligne dit maintenant le désir commun de
+        S2 : saisir une fois, que tout suive, et du temps pour la
+        personne accueillie.
+     2. « En moins d'un trimestre » ANNONÇAIT UN DÉLAI DE LIVRAISON.
+        ~/.claude/CLAUDE.md l'interdit tant que le package n'est pas
+        écrit, et le document d'offre laisse la case vide : S6, « Délai
+        de livraison à fixer ». La mention est donc retirée, pas
+        remplacée. Elle revient le jour où Nathan le fixe. */
   'hero.sub': {
-    en: 'Hours given back, decisions made on figures you can trust, calmer teams, students properly followed. Live in under a term, and you own the code.',
-    fr: 'Des heures rendues, des décisions prises sur des chiffres justes, des équipes sereines, des élèves et des étudiants mieux suivis. En moins d\'un trimestre, et le code vous appartient.',
-    hu: 'Visszakapott órák, megbízható számokon alapuló döntések, nyugodtabb csapatok, jobban követett diákok. Kevesebb mint egy félév alatt élesben, a kód pedig az Öné.',
+    en: 'Hours given back, calmer teams, and time for the people you host. You enter it once, and the meals, the rooms and the rota follow. And you own the code.',
+    fr: 'Des heures rendues, des équipes sereines, et du temps pour ceux que vous accueillez. Vous saisissez une fois, les repas, les chambres et le planning suivent. Et le code vous appartient.',
+    hu: 'Visszakapott órák, nyugodtabb csapatok, és idő azoknak, akiket fogadnak. Egyszer viszi be, az étkezés, a szobák és a beosztás pedig követi. A kód pedig az Öné.',
   },
   'hero.aiNote': {
     en: '40 hours a month given back to the teams on average, reported by the organisations we work with.',
