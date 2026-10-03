@@ -53,27 +53,6 @@ type ClientRef =
 // vendeglatas.png` arrives, flip `type: 'wordmark'` to `type: 'logo'`
 // and add the `src`.
 const clients: ClientRef[] = [
-  {
-    name: 'Les Chartreux',
-    type: 'logo-white',
-    src: '/logos/chartreux-light.png', // transparent white artwork, tinted by CSS per theme
-    href: 'https://www.leschartreux.net/',
-  },
-  { name: 'Université Jean Monnet', type: 'logo', src: '/logos/ujm.png', href: 'https://www.univ-st-etienne.fr/fr/index.html' },
-  { name: 'Chromosome', type: 'logo', src: '/logos/chromosome.png', href: 'https://chromosome-saint-etienne.fr/' },
-  { name: 'Vendéglátás Menedzsment Kft.', type: 'wordmark', href: 'https://vendeglatasmenedzsment.hu/' },
-  // SimpleTeam, blue 'S' wordmark. Rendered as `logo-white`: the alpha-cut
-  // artwork is flattened to a solid silhouette by CSS (brightness(0)) so it
-  // reads neutral, then tinted per theme, black on light, white on dark,
-  // never the raw blue, which would clash with the neutral row.
-  { name: 'SimpleTeam', type: 'logo-white', src: '/logos/simpleteam.png', href: 'https://simple-team.com/' },
-  // Goutagny Élagage, colored green logo, white background keyed out to
-  // transparent so the row's grayscale/invert treatment renders it neutral
-  // on both themes (same as the other `logo` refs).
-  { name: 'Goutagny Élagage', type: 'logo', src: '/logos/goutagny.png', href: 'https://www.goutagny-elagage.fr/' },
-  // Association Aloess, wide horizontal logo (icon + "aloess" + baseline);
-  // `compact` trims its height so it doesn't dominate the compact marks.
-  { name: 'Association Aloess', type: 'logo', src: '/logos/aloess.png', href: 'https://www.aloess.org/', compact: true },
   /* ⚠︎ LES TROIS RENCONTRES MENENT AU CAS, PAS AU SITE DU CLIENT. C'est
      toute la difference avec les logos au-dessus : un logo dit qui nous
      fait confiance et renvoie chez lui, une rencontre dit ce qu'on a fait
@@ -86,12 +65,21 @@ const clients: ClientRef[] = [
      elle-meme, ou il est le premier bloc. Chercher un
      /case-studies/chartreux donnerait un 404. */
   {
+    name: 'Les Chartreux',
+    type: 'logo-white',
+    src: '/logos/chartreux-light.png', // transparent white artwork, tinted by CSS per theme
+    href: 'https://www.leschartreux.net/',
+  },
+  { name: 'Université Jean Monnet', type: 'logo', src: '/logos/ujm.png', href: 'https://www.univ-st-etienne.fr/fr/index.html' },
+  {
     name: 'Institut des Chartreux, sur la terrasse à Lyon',
     type: 'photo',
     src: '/realisations/bandeau/chartreux.webp',
     href: '/case-studies',
     internal: true,
   },
+  { name: 'Chromosome', type: 'logo', src: '/logos/chromosome.png', href: 'https://chromosome-saint-etienne.fr/' },
+  { name: 'Vendéglátás Menedzsment Kft.', type: 'wordmark', href: 'https://vendeglatasmenedzsment.hu/' },
   {
     name: 'Kis Zoltán, à Budapest',
     type: 'photo',
@@ -99,6 +87,15 @@ const clients: ClientRef[] = [
     href: '/case-studies/conseil-b2b-budapest',
     internal: true,
   },
+  // SimpleTeam, blue 'S' wordmark. Rendered as `logo-white`: the alpha-cut
+  // artwork is flattened to a solid silhouette by CSS (brightness(0)) so it
+  // reads neutral, then tinted per theme, black on light, white on dark,
+  // never the raw blue, which would clash with the neutral row.
+  { name: 'SimpleTeam', type: 'logo-white', src: '/logos/simpleteam.png', href: 'https://simple-team.com/' },
+  // Goutagny Élagage, colored green logo, white background keyed out to
+  // transparent so the row's grayscale/invert treatment renders it neutral
+  // on both themes (same as the other `logo` refs).
+  { name: 'Goutagny Élagage', type: 'logo', src: '/logos/goutagny.png', href: 'https://www.goutagny-elagage.fr/' },
   {
     name: 'Catherine F., pendant le podcast',
     type: 'photo',
@@ -106,6 +103,9 @@ const clients: ClientRef[] = [
     href: '/case-studies/chromosome',
     internal: true,
   },
+  // Association Aloess, wide horizontal logo (icon + "aloess" + baseline);
+  // `compact` trims its height so it doesn't dominate the compact marks.
+  { name: 'Association Aloess', type: 'logo', src: '/logos/aloess.png', href: 'https://www.aloess.org/', compact: true },
 ]
 
 /* `hideLabel` sert à la landing /atelier, qui pose son propre titre au-dessus

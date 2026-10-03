@@ -311,10 +311,17 @@ export const translations = {
     fr: 'Ensuite : on construit sur vos règles',
     hu: 'Utána: az Ön szabályaira építünk',
   },
+  /* ⚠︎ PLUS DE DURÉE CHIFFRÉE ICI. Les trois autres étapes portent une
+     mention qualitative ; celle-ci était la seule à annoncer un délai
+     public, interdit tant que le package n'est pas écrit
+     (~/.claude/CLAUDE.md), et laissé vide par le document d'offre
+     (S6, « délai de livraison à fixer »). Décision de Nathan,
+     3 octobre 2026 : on l'enlève partout. Le délai existe toujours, il
+     se fixe avec le client au lieu de s'afficher. */
   'process.step2Duration': {
-    en: '4 to 8 weeks',
-    fr: '4 à 8 semaines',
-    hu: '4-8 hét',
+    en: 'Scope and date set before any code',
+    fr: 'Périmètre et date fixés avant de coder',
+    hu: 'A terjedelem és a dátum a kódolás előtt rögzítve',
   },
   'process.step2Desc': {
     en: 'Your agreement, your school calendar, your sites. Your data ends up in one base, up to date. You click through a prototype before anything is committed.',
@@ -456,10 +463,17 @@ export const translations = {
     fr: 'En moyenne 10 h et plus rendues chaque semaine, rapporté par nos clients',
     hu: 'Átlagosan heti 10+ óra vissza, ügyfeleink beszámolója szerint',
   },
+  /* ⚠︎ « HEURES RENDUES GARANTIES » PROMETTAIT UN RÉSULTAT CHIFFRÉ.
+     C'est l'éliminateur n.2 de knowledge/voix/garde-fous-publication.md,
+     et le S9 du document d'offre est net : « pas de promesse de gain
+     chiffré, le risque est réduit autrement ». La ligne porte donc
+     désormais la première garantie de ce S9, le prototype sur leurs
+     vraies données, qui réduit le risque sans rien promettre.
+     L'engagement 3 porte déjà la propriété du code, donc pas de doublon. */
   'cred.engagement2': {
-    en: 'Live in under a term · hours given back, guaranteed',
-    fr: 'En service en moins d\'un trimestre · heures rendues garanties',
-    hu: 'Kevesebb mint egy félév alatt éles · garantáltan visszakapott órák',
+    en: 'Prototype on your real data · before any commitment',
+    fr: 'Prototype sur vos vraies données · avant tout engagement',
+    hu: 'Prototípus a valós adataival · bármilyen elköteleződés előtt',
   },
   'cred.engagement3': {
     en: 'Source code delivered · you own 100% of it',
@@ -1561,10 +1575,15 @@ export const translations = {
     fr: 'Combien de temps ça prend ?',
     hu: 'Mennyi ideig tart?',
   },
+  /* ⚠︎ LA QUESTION RESTE, LA RÉPONSE NE CHIFFRE PLUS. Retirer le délai
+     sans rien mettre laisserait une question sans réponse, ce qui est
+     pire qu'un chiffre. La réponse porte donc ce qui est réellement
+     fixe : la méthode, et le prototype validé avant tout engagement
+     (S9). Le chiffre revient le jour où Nathan fixe le délai. */
   'faq.a2': {
-    en: '4 to 8 weeks for the first version, depending on scope. Live in under a term. Scope and date are fixed before the first line of code, and your teams keep working throughout.',
-    fr: '4 à 8 semaines pour la première version, selon le périmètre. En service en moins d\'un trimestre. On fixe le périmètre et la date avant la première ligne de code, et vos équipes continuent de travailler pendant tout ce temps.',
-    hu: 'Az első változat 4-8 hét, a terjedelemtől függően. Kevesebb mint egy félév alatt éles. A terjedelmet és a dátumot az első kódsor előtt rögzítjük, a csapatai pedig végig dolgoznak tovább.',
+    en: 'We don\'t quote a standard timeline: it depends on what we build. What is fixed is the method. We set the scope and the date together before the first line of code, you sign off a prototype on your own data before any commitment, and your teams keep working throughout.',
+    fr: 'On ne donne pas de délai type : il dépend de ce qu\'on construit. Ce qui est fixe, c\'est la méthode. On fixe le périmètre et la date ensemble avant la première ligne de code, vous validez un prototype sur vos propres données avant tout engagement, et vos équipes continuent de travailler pendant tout ce temps.',
+    hu: 'Nem adunk általános határidőt: attól függ, mit építünk. Ami rögzített, az a módszer. A terjedelmet és a dátumot együtt rögzítjük az első kódsor előtt, Ön pedig a saját adatain futó prototípust hagy jóvá bármilyen elköteleződés előtt, a csapatai pedig végig dolgoznak tovább.',
   },
 
   // Q3, reliability + SLA
