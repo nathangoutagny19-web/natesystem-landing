@@ -79,16 +79,17 @@ const clients: ClientRef[] = [
      fait confiance et renvoie chez lui, une rencontre dit ce qu'on a fait
      et renvoie a la preuve.
 
-     ⚠︎ LES CHARTREUX N'ONT PAS DE PAGE DE CAS. lib/case-studies.ts n'en
-     porte que deux, 'chromosome' et 'conseil-b2b-budapest'. Leur photo
-     pointe donc vers le carrousel de la home, qui est le seul endroit ou
-     leur cas est raconte. A rebrancher sur /case-studies/... le jour ou
-     la page existe. */
+     ⚠︎ LE CAS DES CHARTREUX N'A PAS DE SLUG, et c'est normal : il ne vit
+     pas dans lib/case-studies.ts comme les deux autres, mais dans son
+     propre composant, components/case-studies/ChartreuxCase.tsx, rendu en
+     tete de la page /case-studies. Sa photo pointe donc sur la page
+     elle-meme, ou il est le premier bloc. Chercher un
+     /case-studies/chartreux donnerait un 404. */
   {
     name: 'Institut des Chartreux, sur la terrasse à Lyon',
     type: 'photo',
     src: '/realisations/chartreux-terrasse.webp',
-    href: '/#case-study',
+    href: '/case-studies',
     internal: true,
   },
   {
