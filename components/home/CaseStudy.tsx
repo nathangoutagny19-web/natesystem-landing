@@ -38,6 +38,9 @@ type CaseEntry = {
   videoStart?: number
   videoTitle: Record<Lang, string>
   metrics: { value: string; label: Record<Lang, string> }[]
+  /** Le logo du client, posé dans la ligne de surtitre. Absent tant qu'on
+      n'a pas le fichier : la ligne se compose alors sans lui, sans trou. */
+  brand?: { src: string; alt: string }
   /** Une photo prise sur place, quand il n'y a pas encore de témoignage. */
   photo?: { src: string; alt: Record<Lang, string>; caption: Record<Lang, string> }
   /** Absente tant que le client n'a pas donné de témoignage. */
@@ -56,10 +59,11 @@ const CASES: CaseEntry[] = [
       hu: 'Iskolacsoport · Lyon',
     },
     headline: {
-      fr: 'Comment un groupe scolaire de neuf établissements est passé de neuf tableurs à une seule pointeuse, bâtie sur sa convention, et a rendu des heures à ses équipes chaque mois.',
-      en: 'How a nine-site school group went from nine spreadsheets to a single time clock, built on its own agreement, and gave hours back to its teams every month.',
-      hu: 'Hogyan jutott el egy kilenc telephelyes iskolacsoport kilenc táblázattól egyetlen beléptetőrendszerig, a saját megállapodására építve, és hogyan ad vissza havonta órákat a csapatainak.',
+      fr: 'Neuf tableurs remplacés par une seule pointeuse, bâtie sur leur convention.',
+      en: 'Nine spreadsheets replaced by a single time clock, built on their own agreement.',
+      hu: 'Kilenc táblázat helyett egyetlen beléptetőrendszer, a saját megállapodásukra építve.',
     },
+    brand: { src: '/logos/chartreux-dark.png', alt: 'Institut des Chartreux' },
     videoId: 'pfkWU9IDeGE',
     videoStart: 34,
     videoTitle: {
@@ -100,9 +104,9 @@ const CASES: CaseEntry[] = [
       {
         value: '63',
         label: {
-          fr: 'jours de développement et de mise en production, sur neuf sites',
-          en: 'days of development and go-live, across nine sites',
-          hu: 'nap fejlesztés és éles indulás, kilenc telephelyen',
+          fr: 'jours de développement et de mise en production',
+          en: 'days of development and go-live',
+          hu: 'nap fejlesztés és éles indulás',
         },
       },
     ],
@@ -124,15 +128,18 @@ const CASES: CaseEntry[] = [
        Règle de ~/.claude/CLAUDE.md, jamais la restauration en spécialité. */
     id: 'vendeglatas',
     name: 'Kis Zoltán',
+    /* ⚠︎ ON NOMME LE CABINET. « Cabinet de conseil » ne désignait personne,
+       et Nathan a confirmé le nom le 3 octobre 2026. C'est aussi celui du
+       site public cité plus haut, donc sourçable. */
     sector: {
-      fr: 'Cabinet de conseil · Budapest',
-      en: 'Consulting firm · Budapest',
-      hu: 'Tanácsadó cég · Budapest',
+      fr: 'Vendéglátás Menedzsment · Budapest',
+      en: 'Vendéglátás Menedzsment · Budapest',
+      hu: 'Vendéglátás Menedzsment · Budapest',
     },
     headline: {
-      fr: 'Comment un consultant, écrivain, formateur et directeur d’établissement a capitalisé son savoir dans un système sur-mesure, automatisé ses rapports sur 280 indicateurs, et l’a rendu à ses clients. La vidéo montre le sien, puis comment un consultant construit le sien.',
-      en: 'How a consultant, author, trainer and head of institution turned his own expertise into a custom system, automated his reports across 280 indicators, and handed it back to his clients. The video shows his, then how a consultant builds their own.',
-      hu: 'Hogyan tette át egy tanácsadó, író, oktató és intézményvezető a saját tudását egyedi rendszerbe, automatizálta a riportjait 280 mutatón, és adta vissza mindezt az ügyfeleinek. A videó megmutatja az övét, majd azt, hogyan építi meg a sajátját egy tanácsadó.',
+      fr: 'Vingt-cinq ans de méthode devenus un système qui rédige ses rapports.',
+      en: 'Twenty-five years of method turned into a system that writes his reports.',
+      hu: 'Huszonöt év módszere egy rendszerré, amely megírja a riportjait.',
     },
     videoId: 'VCqXWRz68_4',
     videoStart: 27,
@@ -158,17 +165,17 @@ const CASES: CaseEntry[] = [
       {
         value: '280',
         label: {
-          fr: 'indicateurs transformés en rapports personnalisés, automatiquement',
-          en: 'indicators turned into personalised reports, automatically',
-          hu: 'mutató automatikusan személyre szabott riporttá alakítva',
+          fr: 'indicateurs en rapports automatiques',
+          en: 'indicators into automatic reports',
+          hu: 'mutató automatikus riporttá',
         },
       },
       {
         value: '25 ans',
         label: {
-          fr: 'de savoir et de méthode capitalisés dans un système sur-mesure',
-          en: 'of knowledge and method built into a custom system',
-          hu: 'tudás és módszer egyedi rendszerbe öntve',
+          fr: 'de méthode capitalisés dans le système',
+          en: 'of method built into the system',
+          hu: 'módszer a rendszerbe öntve',
         },
       },
       {
@@ -176,9 +183,9 @@ const CASES: CaseEntry[] = [
            chiffre l'est dans les trois langues, un mot non. */
         value: '0',
         label: {
-          fr: 'rapport écrit à la main : il valide et il affine, il ne rédige plus',
-          en: 'reports written by hand: he reviews and refines, he no longer drafts',
-          hu: 'kézzel írt riport: ellenőriz és finomít, már nem fogalmaz',
+          fr: 'rapport écrit à la main',
+          en: 'report written by hand',
+          hu: 'kézzel írt riport',
         },
       },
     ],
@@ -192,9 +199,9 @@ const CASES: CaseEntry[] = [
       hu: 'Szervezet · Saint-Étienne',
     },
     headline: {
-      fr: 'Comment une organisation de Saint-Étienne pilote tout son fonctionnement sur un logiciel qui lui appartient, et rend chaque semaine 14 heures à ses équipes.',
-      en: 'How an organisation in Saint-Étienne runs everything on software it owns, and gives its teams back 14 hours a week.',
-      hu: 'Hogyan visz egy saint-étienne-i szervezet mindent egy szoftveren, amely az övé, és ad vissza hetente 14 órát a csapatainak.',
+      fr: 'Tout leur fonctionnement sur un logiciel qui leur appartient.',
+      en: 'Everything they run, on software that belongs to them.',
+      hu: 'A teljes működésük egy szoftveren, amely az övék.',
     },
     videoId: 'aMIjJbzuhDc',
     videoTitle: {
@@ -218,9 +225,9 @@ const CASES: CaseEntry[] = [
       {
         value: '99%',
         label: {
-          fr: 'du fonctionnement sur un logiciel qui leur appartient',
-          en: 'of operations on software they own',
-          hu: 'a működés saját tulajdonú szoftveren',
+          fr: 'du fonctionnement sur leur logiciel',
+          en: 'of operations on their own software',
+          hu: 'a működés saját szoftveren',
         },
       },
     ],
@@ -269,12 +276,26 @@ export default function CaseStudy() {
               >
                 {/* En-tête */}
                 <div style={{ marginBottom: 'clamp(28px, 4vw, 44px)', textAlign: 'center' }}>
-                  <p
-                    className="font-mono"
-                    style={{ fontSize: '10px', letterSpacing: '2.5px', textTransform: 'uppercase', color: 'var(--accent)', marginBottom: '12px' }}
-                  >
-                    {pick(lang, current.sector)}
-                  </p>
+                  {/* ⚠︎ LE LOGO VIT DANS LA LIGNE DE SURTITRE, pas au-dessus du
+                      nom. Une marque posée seule sur sa ligne ajoute un
+                      troisième étage à un en-tête qui en a déjà deux, et le
+                      cas sans logo laisse alors un trou. Ici, pas de logo
+                      veut juste dire une ligne plus courte.
+                      C'est aussi le vocabulaire du bandeau « USED BY » de la
+                      bannière LinkedIn : une marque et une étiquette mono,
+                      sur la même ligne. */}
+                  <div className="cs-brand">
+                    {current.brand && (
+                      /* eslint-disable-next-line @next/next/no-img-element */
+                      <img
+                        className="cs-brand-logo"
+                        src={current.brand.src}
+                        alt={current.brand.alt}
+                        loading="lazy"
+                      />
+                    )}
+                    <span className="font-mono cs-brand-label">{pick(lang, current.sector)}</span>
+                  </div>
                   <h3
                     className="font-serif italic"
                     style={{ fontSize: 'clamp(30px, 4.5vw, 46px)', fontWeight: 400, color: 'var(--accent)', lineHeight: 1.1, marginBottom: '18px' }}
@@ -380,6 +401,19 @@ export default function CaseStudy() {
       </div>
 
       <style jsx>{`
+        /* La ligne de marque : le logo, puis la categorie et la ville. */
+        .cs-brand {
+          display: flex; align-items: center; justify-content: center;
+          gap: 14px; margin-bottom: 15px; min-height: 36px;
+        }
+        /* ⚠︎ 36 ET PAS 26. Le logo des Chartreux est une gravure : un dôme
+           fin et un texte serré. Sous 30 points il devient une tache. */
+        .cs-brand-logo { height: 36px; width: auto; display: block; opacity: 0.92; }
+        .cs-brand-label {
+          font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase;
+          color: var(--accent); line-height: 1;
+        }
+
         .cs-row {
           display: grid;
           grid-template-columns: 1fr;
