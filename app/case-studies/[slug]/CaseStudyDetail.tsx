@@ -120,6 +120,41 @@ export default function CaseStudyDetail({ study }: { study: CaseStudy }) {
                 <LiteYouTube id={study.videoId} start={study.videoStart} title={d(`Témoignage vidéo, ${study.title}`, `Video testimonial, ${study.title}`)} />
               </div>
             </FadeUp>
+
+            {study.photo && (
+              <FadeUp delay={0.1}>
+                <figure style={{ margin: '28px auto 0', maxWidth: 420 }}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={study.photo.src}
+                    alt={study.photo.alt}
+                    loading="lazy"
+                    width={1200}
+                    height={1200}
+                    style={{
+                      width: '100%',
+                      height: 'auto',
+                      display: 'block',
+                      borderRadius: 12,
+                      border: '1px solid var(--border)',
+                    }}
+                  />
+                  <figcaption
+                    className="font-mono"
+                    style={{
+                      fontSize: 10.5,
+                      letterSpacing: 0.6,
+                      color: 'var(--text-secondary)',
+                      opacity: 0.8,
+                      marginTop: 10,
+                      textAlign: 'center',
+                    }}
+                  >
+                    {study.photo.caption}
+                  </figcaption>
+                </figure>
+              </FadeUp>
+            )}
           </div>
         </section>
       )}

@@ -16,6 +16,8 @@ export type CaseStudy = {
   videoId?: string
   /** Seconde de départ de la vidéo. Sert à sauter l'intro. */
   videoStart?: number
+  /** Une photo prise sur place, sous la vidéo. */
+  photo?: { src: string; alt: string; caption: string }
   metrics: CaseMetric[]
   problemTitle: string
   problem: string[]
@@ -76,9 +78,14 @@ const caseStudiesFr: CaseStudy[] = [
     location: 'Budapest',
     title: '25 ans d’expertise, mis dans une IA',
     subtitle:
-      'Comment un cabinet de conseil B2B de Budapest a capitalisé le savoir de son fondateur dans un système sur-mesure, automatisé ses rapports clients sur 280 KPIs, et l’a rendu à ses clients.',
+      'Comment Kis Zoltán, formateur et directeur d’établissement à Budapest, a capitalisé son savoir dans un système sur-mesure, automatisé ses rapports clients sur 280 KPIs, et l’a rendu à ses clients.',
     videoId: 'VCqXWRz68_4',
-    videoStart: 16,
+    videoStart: 27,
+    photo: {
+      src: '/realisations/zoltan-budapest.webp',
+      alt: 'Nathan Goutagny serre la main de Kis Zoltán, à Budapest',
+      caption: 'Avec Kis Zoltán, à Budapest.',
+    },
     metrics: [
       { value: '280 KPIs', label: 'transformés en rapports clients personnalisés, automatiquement' },
       { value: '25 ans', label: 'de savoir et de parcours capitalisés dans un système sur-mesure' },
@@ -104,7 +111,7 @@ const caseStudiesFr: CaseStudy[] = [
       'Le portail client renforce l’expérience et positionne le cabinet comme une référence, un vrai avantage concurrentiel dans un métier où tout le monde vend « de l’expertise ».',
     ],
     metaDescription:
-      'Étude de cas (anonymisée) : un cabinet de conseil B2B à Budapest a capitalisé 25 ans d’expertise dans une IA sur-mesure, automatisé ses rapports clients sur 280 KPIs et déployé un portail client. Témoignage nominatif à venir.',
+      'Étude de cas : le cabinet de Kis Zoltán, à Budapest, a capitalisé 25 ans d’expertise dans une IA sur-mesure, automatisé ses rapports clients sur 280 KPIs et déployé un portail client.',
   },
 ]
 
@@ -114,8 +121,8 @@ const caseStudiesFr: CaseStudy[] = [
  *
  * Traduction, pas réécriture : chaque chiffre est celui du cas français, et
  * `project_case_study` fixe ce qui est publiable. Catherine F. est le témoin
- * confirmé de Chromosome ; le cabinet de Budapest reste anonyme, sans
- * témoignage nominatif tant qu'il n'est pas accordé.
+ * confirmé de Chromosome. Le cabinet de Budapest N'EST PLUS ANONYME depuis le
+ * 3 octobre 2026 : Nathan a vu Kis Zoltán ce jour-là et l'accord est donné.
  */
 const caseStudiesEn: CaseStudy[] = [
   {
@@ -164,9 +171,14 @@ const caseStudiesEn: CaseStudy[] = [
     location: 'Budapest',
     title: '25 years of expertise, put into an AI',
     subtitle:
-      'How a B2B consulting firm in Budapest captured its founder’s know-how in a custom system, automated its client reports across 280 KPIs, and handed it back to its clients.',
+      'How Kis Zoltán, a trainer and head of institution in Budapest, captured his own know-how in a custom system, automated his client reports across 280 KPIs, and handed it back to his clients.',
     videoId: 'VCqXWRz68_4',
-    videoStart: 16,
+    videoStart: 27,
+    photo: {
+      src: '/realisations/zoltan-budapest.webp',
+      alt: 'Nathan Goutagny shaking hands with Kis Zoltán, in Budapest',
+      caption: 'With Kis Zoltán, in Budapest.',
+    },
     metrics: [
       { value: '280 KPIs', label: 'turned into personalised client reports, automatically' },
       { value: '25 years', label: 'of know-how and experience captured in a custom system' },
@@ -192,7 +204,7 @@ const caseStudiesEn: CaseStudy[] = [
       'The client portal strengthens the experience and positions the firm as a reference, a real edge in a trade where everyone sells “expertise”.',
     ],
     metaDescription:
-      'Case study (anonymised): a B2B consulting firm in Budapest captured 25 years of expertise in a custom AI, automated its client reports across 280 KPIs and deployed a client portal. Named testimonial to come.',
+      'Case study: Kis Zoltán’s consulting firm in Budapest captured 25 years of expertise in a custom AI, automated its client reports across 280 KPIs and deployed a client portal.',
   },
 ]
 
@@ -244,9 +256,14 @@ const caseStudiesHu: CaseStudy[] = [
     location: 'Budapest',
     title: '25 év szaktudás, MI-be téve',
     subtitle:
-      'Hogyan őrizte meg egy budapesti B2B tanácsadó cég az alapítója tudását egy egyedi rendszerben, automatizálta az ügyfélriportjait 280 KPI-n, és adta vissza mindezt az ügyfeleinek.',
+      'Hogyan őrizte meg Kis Zoltán, budapesti oktató és intézményvezető, a saját tudását egy egyedi rendszerben, automatizálta az ügyfélriportjait 280 KPI-n, és adta vissza mindezt az ügyfeleinek.',
     videoId: 'VCqXWRz68_4',
-    videoStart: 16,
+    videoStart: 27,
+    photo: {
+      src: '/realisations/zoltan-budapest.webp',
+      alt: 'Nathan Goutagny kezet fog Kis Zoltánnal, Budapesten',
+      caption: 'Kis Zoltánnal, Budapesten.',
+    },
     metrics: [
       { value: '280 KPI', label: 'személyre szabott ügyfélriportokká alakítva, automatikusan' },
       { value: '25 év', label: 'tudás és tapasztalat egyedi rendszerbe mentve' },
@@ -272,7 +289,7 @@ const caseStudiesHu: CaseStudy[] = [
       'Az ügyfélportál erősíti az élményt, és referenciává teszi a céget, ami valódi előny egy olyan szakmában, ahol mindenki „szaktudást” árul.',
     ],
     metaDescription:
-      'Esettanulmány (anonimizálva): egy budapesti B2B tanácsadó cég 25 év szaktudását mentette egyedi MI-be, automatizálta az ügyfélriportjait 280 KPI-n, és ügyfélportált vezetett be. Névre szóló ajánlás később.',
+      'Esettanulmány: Kis Zoltán budapesti tanácsadó cége 25 év szaktudását mentette egyedi MI-be, automatizálta az ügyfélriportjait 280 KPI-n, és ügyfélportált vezetett be.',
   },
 ]
 

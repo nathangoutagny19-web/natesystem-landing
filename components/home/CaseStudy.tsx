@@ -108,6 +108,82 @@ const CASES: CaseEntry[] = [
     ],
   },
   {
+    /* ⚠︎ CE CAS A ÉTÉ ANONYME JUSQU'AU 3 OCTOBRE 2026. Il s'appelait
+       « cabinet de conseil B2B à Budapest », sans nom ni visage, faute
+       d'accord. Nathan a vu Kis Zoltán ce jour-là et l'accord est donné.
+
+       ⚠︎ CE QUI EST SOURCÉ, ET D'OÙ. « Formateur et directeur
+       d'établissement » vient de sa propre page publique, qui le présente
+       comme « vendéglátóipari szakember, oktató, intézményvezető ». Nathan
+       dit qu'il dirige une école de cuisine réputée de Budapest : le nom de
+       l'école n'est écrit NULLE PART de sourçable, donc il n'apparaît pas
+       ici. Voir vendeglatasmenedzsment.hu/kis-zoltan-vendeglatoipari-audit.
+
+       ⚠︎ LE SECTEUR N'EST PAS LE SUJET, comme pour les autres cas d'avant la
+       niche : on dit « cabinet de conseil », pas le métier de ses clients.
+       Règle de ~/.claude/CLAUDE.md, jamais la restauration en spécialité. */
+    id: 'vendeglatas',
+    name: 'Kis Zoltán',
+    sector: {
+      fr: 'Cabinet de conseil · Budapest',
+      en: 'Consulting firm · Budapest',
+      hu: 'Tanácsadó cég · Budapest',
+    },
+    headline: {
+      fr: 'Comment un formateur et directeur d’établissement a capitalisé son savoir dans un système sur-mesure, automatisé ses rapports sur 280 indicateurs, et l’a rendu à ses clients. La vidéo montre le sien, puis comment un consultant construit le sien.',
+      en: 'How a trainer and head of institution turned his own expertise into a custom system, automated his reports across 280 indicators, and handed it back to his clients. The video shows his, then how a consultant builds their own.',
+      hu: 'Hogyan tette át egy oktató és intézményvezető a saját tudását egyedi rendszerbe, automatizálta a riportjait 280 mutatón, és adta vissza mindezt az ügyfeleinek. A videó megmutatja az övét, majd azt, hogyan építi meg a sajátját egy tanácsadó.',
+    },
+    videoId: 'VCqXWRz68_4',
+    videoStart: 27,
+    videoTitle: {
+      fr: 'Le système de Kis Zoltán, et comment un consultant construit le sien',
+      en: 'Kis Zoltán’s system, and how a consultant builds their own',
+      hu: 'Kis Zoltán rendszere, és hogyan építi meg a sajátját egy tanácsadó',
+    },
+    photo: {
+      src: '/realisations/zoltan-budapest.webp',
+      alt: {
+        fr: 'Nathan Goutagny serre la main de Kis Zoltán, à Budapest',
+        en: 'Nathan Goutagny shaking hands with Kis Zoltán, in Budapest',
+        hu: 'Nathan Goutagny kezet fog Kis Zoltánnal, Budapesten',
+      },
+      caption: {
+        fr: 'Avec Kis Zoltán, à Budapest.',
+        en: 'With Kis Zoltán, in Budapest.',
+        hu: 'Kis Zoltánnal, Budapesten.',
+      },
+    },
+    metrics: [
+      {
+        value: '280',
+        label: {
+          fr: 'indicateurs transformés en rapports personnalisés, automatiquement',
+          en: 'indicators turned into personalised reports, automatically',
+          hu: 'mutató automatikusan személyre szabott riporttá alakítva',
+        },
+      },
+      {
+        value: '25 ans',
+        label: {
+          fr: 'de savoir et de méthode capitalisés dans un système sur-mesure',
+          en: 'of knowledge and method built into a custom system',
+          hu: 'tudás és módszer egyedi rendszerbe öntve',
+        },
+      },
+      {
+        /* Le champ `value` n'est pas traduisible dans ce composant : un
+           chiffre l'est dans les trois langues, un mot non. */
+        value: '0',
+        label: {
+          fr: 'rapport écrit à la main : il valide et il affine, il ne rédige plus',
+          en: 'reports written by hand: he reviews and refines, he no longer drafts',
+          hu: 'kézzel írt riport: ellenőriz és finomít, már nem fogalmaz',
+        },
+      },
+    ],
+  },
+  {
     id: 'chromosome',
     name: 'Chromosome',
     sector: {
