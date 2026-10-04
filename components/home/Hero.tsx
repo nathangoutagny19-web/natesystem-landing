@@ -30,8 +30,13 @@ function RotatingWord({ words }: { words: string[] }) {
     return () => clearInterval(id)
   }, [mounted, words.length])
 
-  // Reserve width for the longest word so the layout doesn't jump.
-  const longest = words.reduce((a, b) => (b.length > a.length ? b : a), words[0] ?? '')
+  /* ⚠︎ LA LARGEUR SUIT LE MOT COURANT, ELLE NE RESERVE PLUS LE PLUS LONG.
+     Tant que le mot tournait en FIN de phrase, reserver la largeur du mot le
+     plus long ne se voyait pas. Depuis le 4 octobre 2026 il tourne AU MILIEU,
+     « Votre [X] est unique », et cette reserve ouvrait un trou de plusieurs
+     dizaines de pixels apres les mots courts : « Votre process      est
+     unique. » Le gabarit porte donc le mot courant, et c'est motion.span
+     layout qui absorbe le changement de largeur. */
 
   // SSR / first paint: a stable, always-visible first word (avoids hydration mismatch).
   if (!mounted || words.length <= 1) {
@@ -43,9 +48,13 @@ function RotatingWord({ words }: { words: string[] }) {
   const offset = reduce ? 0 : '0.35em'
 
   return (
-    <span style={{ position: 'relative', display: 'inline-block', verticalAlign: 'bottom' }}>
-      {/* invisible sizer keeps the line width stable */}
-      <span aria-hidden className="accent" style={{ visibility: 'hidden', color: 'var(--accent)' }}>{longest}</span>
+    <motion.span
+      layout={!reduce}
+      transition={{ duration: dur, ease }}
+      style={{ position: 'relative', display: 'inline-block', verticalAlign: 'bottom' }}
+    >
+      {/* gabarit invisible : il porte le mot COURANT, pas le plus long */}
+      <span aria-hidden className="accent" style={{ visibility: 'hidden', color: 'var(--accent)' }}>{words[i]}</span>
       <AnimatePresence mode="wait" initial={false}>
         <motion.span
           key={words[i]}
@@ -59,7 +68,7 @@ function RotatingWord({ words }: { words: string[] }) {
           {words[i]}
         </motion.span>
       </AnimatePresence>
-    </span>
+    </motion.span>
   )
 }
 
@@ -81,7 +90,8 @@ export default function Hero() {
         style={{ fontSize: 'clamp(38px, 5.2vw, 64px)', lineHeight: 1.08, marginBottom: '28px', maxWidth: '820px', color: 'var(--text)' }}
       >
         {t('hero.titlePrefix')}{' '}
-        <RotatingWord words={words} />
+        <RotatingWord words={words} />{' '}
+        {t('hero.titleSuffix')}
       </motion.h1>
 
       {/* AI note, small pill right under the headline: agentic AI is a

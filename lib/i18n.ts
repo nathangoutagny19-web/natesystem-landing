@@ -105,21 +105,31 @@ export const translations = {
      établissements, jamais une famille : cantine et restaurant de maison
      ou d'hôtel oui, restaurants et groupes de restauration commerciale
      non. C'est aussi la règle absolue de ~/.claude/CLAUDE.md. */
+  /* Decision de Nathan, 4 octobre 2026 : l'eyebrow gris porte la cible, la
+     headline porte la promesse. L'ancienne headline, « Le partenaire digital
+     qui developpe vos... », remonte donc ici en petit, et la headline reprend
+     la ligne deja posee sur les couvertures Facebook. */
   'hero.label': {
-    en: 'Schools and higher education · Group accommodation · Group hotels',
-    fr: 'Écoles et supérieur · Maisons d\'accueil · Hôtels de groupe',
-    hu: 'Iskolák és felsőoktatás · Csoportos szálláshelyek · Csoportos szállodák',
+    en: 'Digital partner to schools, group accommodation and group hotels',
+    fr: 'Partenaire digital des écoles, maisons d\'accueil et hôtels de groupe',
+    hu: 'Iskolák, csoportos szálláshelyek és csoportos szállodák digitális partnere',
   },
-  'hero.titlePrefix': {
-    en: 'The digital partner that builds your',
-    fr: 'Le partenaire digital qui développe vos',
-    hu: 'A digitális partner, amely megépíti az Ön',
-  },
-  // Rotating words (pipe-separated, cycled in the hero). Final benefits the ICP desires, not the mechanisms.
+  'hero.titlePrefix': { en: 'Your', fr: 'Votre', hu: 'Az Ön' },
+  /* ⚠︎ TOUS LES MOTS SONT AU SINGULIER, ET C'EST UNE CONTRAINTE, PAS UN GOUT.
+     « Votre X est unique » ne tient qu'au singulier : un pluriel casse l'accord
+     du verbe, « vos process sont uniques », et la phrase se disloque au moment
+     meme ou le mot tourne. Donc aucun pluriel ici, jamais.
+     ⚠︎ Et les trois langues ne sont pas interchangeables : en hongrois le mot
+     porte lui-meme son suffixe possessif, szervezet devient szervezete. */
   'hero.titleWords': {
-    en: 'custom platforms|operational software|academic tools',
-    fr: 'plateformes sur-mesure|logiciels métiers|outils pédagogiques',
-    hu: 'egyedi platformjait|szakmai szoftvereit|pedagógiai eszközeit',
+    en: 'organisation|process|management|team|place|hospitality',
+    fr: 'organisation|process|management|équipe|maison|accueil',
+    hu: 'szervezete|folyamata|vezetése|csapata|háza|vendéglátása',
+  },
+  'hero.titleSuffix': {
+    en: 'is unique. Your software should be too. We build it with and for you.',
+    fr: 'est unique. Votre logiciel devrait l’être aussi. On le construit avec et pour vous.',
+    hu: 'egyedi. A szoftvere is legyen az. Önökkel és Önökért építjük.',
   },
   /* ⚠︎ DEUX CORRECTIONS ICI, ET LA SECONDE EST UNE RÈGLE.
      1. « des élèves et des étudiants mieux suivis » ne parlait qu'à une
