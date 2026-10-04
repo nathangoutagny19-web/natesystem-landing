@@ -51,11 +51,19 @@
 
   /* Le bloc central, cale sur le milieu du cadre et non sur un tiers :
      en 2,63:1, decentrer fait sortir de la zone sure. */
+  /* ⚠︎ TOUT TIENT DANS 555 POINTS, PAS 640. Recalcul fait le 4 octobre
+     2026, parce que la valeur de 90 px lue dans la documentation est
+     fausse. Facebook affiche 640 x 360 sur mobile contre 820 x 312 sur
+     ordinateur : pour remplir une boite plus haute, il AGRANDIT l'image
+     de 15,4 % puis coupe les cotes. Le rognage reel est donc de 133
+     points dans le fichier, pas 90, et la zone sure va de x 133 a 687.
+     Les cartes allaient de 129 a 691 : les deux des bords etaient
+     coupees sur mobile. */
   .stack { position: absolute; left: 410px; top: 50%; transform: translate(-50%, -50%);
-           display: flex; flex-direction: column; align-items: center; }
+           display: flex; flex-direction: column; align-items: center; max-width: 548px; }
 
-  .shots { display: flex; gap: 14px; }
-  .card { position: relative; width: 130px; height: 87px; border-radius: 9px; }
+  .shots { display: flex; gap: 11px; }
+  .card { position: relative; width: 126px; height: 84px; border-radius: 9px; }
   .card img { width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 9px;
               filter: saturate(0.93) contrast(1.02);
               box-shadow: 0 7px 16px -6px rgba(15,23,42,.28), 0 1px 2px rgba(15,23,42,.07); }
@@ -72,7 +80,7 @@
      bandeau de logos de la banniere ecoles ne rentrent pas, et c'est
      tant mieux : a 820 points de large ils auraient fait de la bouillie. */
   h1 { font-family: 'Instrument Serif', Georgia, serif; font-style: italic; font-weight: 400;
-       font-size: 27px; line-height: 1.22; color: var(--text); letter-spacing: -0.2px;
+       font-size: 25px; line-height: 1.22; color: var(--text); letter-spacing: -0.2px;
        text-align: center; margin: 20px 0 0; }
   h1 .accent { color: var(--accent); }
   .cible { font-size: 11px; font-weight: 500; letter-spacing: 2.4px;
@@ -90,7 +98,7 @@
 
      ⚠︎ OPACITE BASSE ET NIVEAUX DE GRIS. C'est un fond, pas une
      deuxieme preuve qui se battrait avec les photos du dessus. */
-  .logos-fond { position: absolute; left: 206px; right: 90px; bottom: 13px;
+  .logos-fond { position: absolute; left: 212px; right: 147px; bottom: 13px;
                 display: flex; align-items: center; justify-content: space-between; }
   .fl { width: auto; max-width: 96px; object-fit: contain; display: block;
         filter: grayscale(100%); opacity: .62; }
@@ -99,7 +107,7 @@
                color: #6b7280; opacity: .78; white-space: nowrap; }
 
 
-  body.debug .zone { position: absolute; left: 90px; top: 0; width: 640px; height: 312px;
+  body.debug .zone { position: absolute; left: 133px; top: 0; width: 554px; height: 312px;
     outline: 2px dashed rgba(230,57,70,.55); }
   body.debug .pp { position: absolute; left: 20px; bottom: -40px; width: 170px; height: 170px;
     border-radius: 50%; outline: 2px dashed rgba(15,23,42,.45); background: rgba(15,23,42,.06); }
