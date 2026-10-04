@@ -48,10 +48,11 @@ type ClientRef =
   // langue s'applique.
   | { name: string; type: 'photo'; src: string; href: string; internal: true }
 
-// Vendéglátás Menedzsment Kft. is the Hungarian hospitality reference,
-// kept as wordmark until the official logo lands. When `/public/logos/
-// vendeglatas.png` arrives, flip `type: 'wordmark'` to `type: 'logo'`
-// and add the `src`.
+// ⚠︎ LE LOGO VENDEGLATAS EST ARRIVE, le 4 octobre 2026, recupere sur
+// vendeglatasmenedzsment.hu. Le commentaire precedent disait exactement
+// quoi faire le jour ou il arriverait : c'est fait, le wordmark est
+// devenu un logo. Le type 'wordmark' reste disponible pour la prochaine
+// reference sans fichier.
 const clients: ClientRef[] = [
   /* ⚠︎ LES TROIS RENCONTRES MENENT AU CAS, PAS AU SITE DU CLIENT. C'est
      toute la difference avec les logos au-dessus : un logo dit qui nous
@@ -71,6 +72,10 @@ const clients: ClientRef[] = [
     href: 'https://www.leschartreux.net/',
   },
   { name: 'Université Jean Monnet', type: 'logo', src: '/logos/ujm.png', href: 'https://www.univ-st-etienne.fr/fr/index.html' },
+  // ⚠︎ L'IUT N'EST PAS L'UNIVERSITE. L'IUT de Saint-Etienne est une
+  // composante de l'Universite Jean Monnet, et il a sa propre marque.
+  // Les deux figurent parce que ce sont deux entites, pas un doublon.
+  { name: 'IUT de Saint-Étienne', type: 'logo', src: '/logos/iut-saint-etienne.png', href: 'https://www.iut.univ-st-etienne.fr/', compact: true },
   {
     name: 'Institut des Chartreux, sur la terrasse à Lyon',
     type: 'photo',
@@ -79,7 +84,7 @@ const clients: ClientRef[] = [
     internal: true,
   },
   { name: 'Chromosome', type: 'logo', src: '/logos/chromosome.png', href: 'https://chromosome-saint-etienne.fr/' },
-  { name: 'Vendéglátás Menedzsment Kft.', type: 'wordmark', href: 'https://vendeglatasmenedzsment.hu/' },
+  { name: 'Vendéglátás Menedzsment Kft.', type: 'logo', src: '/logos/vendeglatas.png', href: 'https://vendeglatasmenedzsment.hu/', compact: true },
   {
     name: 'Kis Zoltán, à Budapest',
     type: 'photo',
@@ -106,6 +111,11 @@ const clients: ClientRef[] = [
   // Association Aloess, wide horizontal logo (icon + "aloess" + baseline);
   // `compact` trims its height so it doesn't dominate the compact marks.
   { name: 'Association Aloess', type: 'logo', src: '/logos/aloess.png', href: 'https://www.aloess.org/', compact: true },
+  // ⚠︎ WEBM EST UN PARTENAIRE, PAS UN CLIENT. Il n'utilise pas nos
+  // outils : c'est avec lui qu'on travaille. C'est la raison pour
+  // laquelle l'intitule de la rangee a change, « ils nous font
+  // confiance » au lieu de « ils utilisent nos outils ».
+  { name: 'WebM', type: 'logo', src: '/logos/webm.png', href: 'https://webm.fr/' },
 ]
 
 /* `hideLabel` sert à la landing /atelier, qui pose son propre titre au-dessus
@@ -115,10 +125,14 @@ const clients: ClientRef[] = [
 export default function ClientsBar({ hideLabel = false }: { hideLabel?: boolean }) {
   const { lang } = useLang()
 
+  /* ⚠︎ « ILS NOUS FONT CONFIANCE » ET NON « ILS UTILISENT NOS OUTILS ».
+     La rangee ne contient plus seulement des clients : WebM est un
+     partenaire, il ne se sert pas de nos outils, il travaille avec nous.
+     L'ancien intitule devenait faux pour une entree sur dix. */
   const label = makeD(lang)(
-    'ILS UTILISENT NOS OUTILS',
-    'THEY USE OUR TOOLS',
-    'ŐK HASZNÁLJÁK AZ ESZKÖZEINKET'
+    'ILS NOUS FONT CONFIANCE',
+    'THEY TRUST US',
+    'ŐK BÍZNAK BENNÜNK'
   )
 
   return (
