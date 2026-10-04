@@ -30,7 +30,7 @@ export default function LiteYouTube({
 }) {
   const { lang } = useLang()
   const [loaded, setLoaded] = useState(false)
-  const captions = lang === 'en' ? '&cc_load_policy=1&cc_lang_pref=en&hl=en' : ''
+  const captions = lang === 'fr' ? '' : `&cc_load_policy=1&cc_lang_pref=${lang}&hl=${lang}`
   const from = start ? `&start=${start}` : ''
   const thumb = vertical
     ? `https://i.ytimg.com/vi/${id}/oar2.jpg`
