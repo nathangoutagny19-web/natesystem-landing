@@ -14,9 +14,9 @@ import { useLang, type Lang } from '@/components/providers/LangProvider'
  * inscrire `/atelier` publierait `/hu/atelier` dans le sitemap, et cette page
  * n'existe pas : on déclarerait une 404 à Google pour faire marcher un bouton.
  *
- * Cette landing n'a que deux versions, elle les connaît toutes les deux, et
- * elle n'a besoin de rien d'autre. Le jour où le hongrois arrive, on ajoute sa
- * route ici, et on inscrit `/atelier` dans TRANSLATED_ROUTES à ce moment-là.
+ * Cette landing connaît ses trois versions et n'a besoin de rien d'autre.
+ * `/atelier` reste hors de TRANSLATED_ROUTES : le sitemap y déclare déjà ses
+ * trois URL à la main, l'y inscrire en doublerait deux.
  *
  * L'ancre est conservée : un visiteur arrivé sur `#demander` qui bascule de
  * langue ne doit pas être renvoyé en haut de la page.
@@ -25,11 +25,13 @@ import { useLang, type Lang } from '@/components/providers/LangProvider'
 const ROUTES: Partial<Record<Lang, string>> = {
   fr: '/atelier',
   en: '/en/atelier',
+  hu: '/hu/atelier',
 }
 
 const LANGUES: { code: Lang; label: string }[] = [
   { code: 'fr', label: 'FR' },
   { code: 'en', label: 'EN' },
+  { code: 'hu', label: 'HU' },
 ]
 
 export default function LangToggle() {
@@ -45,7 +47,7 @@ export default function LangToggle() {
   }
 
   return (
-    <div className="at-lang" role="group" aria-label={lang === 'en' ? 'Language' : 'Langue'}>
+    <div className="at-lang" role="group" aria-label={lang === 'fr' ? 'Langue' : lang === 'hu' ? 'Nyelv' : 'Language'}>
       {LANGUES.map((l) => {
         const actif = l.code === lang
         return (

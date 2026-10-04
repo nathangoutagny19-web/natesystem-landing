@@ -12,15 +12,14 @@ export const metadata: Metadata = {
     'teacher productivity workshop',
     'NateSystem',
   ],
-  /* Le hreflang doit être réciproque : le français déclare l'anglais, donc
-     l'anglais déclare le français, sinon Google écarte la paire. Pas de
-     hongrois : `/hu/atelier` n'existe pas, et déclarer une langue vers une
-     URL absente vaut moins que ne rien déclarer. */
+  /* Le hreflang doit être réciproque sur les trois versions, sinon Google
+     écarte la paire. */
   alternates: {
     canonical: `${SITE_URL}/en/atelier`,
     languages: {
       'fr-FR': `${SITE_URL}/atelier`,
       en: `${SITE_URL}/en/atelier`,
+      hu: `${SITE_URL}/hu/atelier`,
       'x-default': `${SITE_URL}/atelier`,
     },
   },

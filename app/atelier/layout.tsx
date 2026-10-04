@@ -8,10 +8,8 @@ import type { Metadata } from 'next'
  * site ni son pied de page, qui offriraient douze portes de sortie à une
  * page qui n'a qu'une destination.
  *
- * Français uniquement. Le lecteur est un directeur d'établissement privé
- * français : il n'y a pas de version /en ni /hu, donc pas de hreflang non
- * plus. Déclarer une langue vers une URL qui n'existe pas vaut moins que
- * ne rien déclarer.
+ * Trois langues : `/atelier`, `/en/atelier` et `/hu/atelier` rendent le même
+ * composant. Le JSON-LD ci-dessous reste celui du français, qui fait foi.
  *
  * Elle est indexable : rien à cacher, et une requête de longue traîne qui
  * tombe dessus est une bonne surprise. Mais ce n'est pas une page SEO,
@@ -29,13 +27,13 @@ export const metadata: Metadata = {
     'créer ses outils pour sa classe',
     'NateSystem',
   ],
-  /* Le hreflang doit être réciproque : /en/atelier déclare le français, donc
-     le français déclare l'anglais. Pas de hongrois, /hu/atelier n'existe pas. */
+  /* Le hreflang doit être réciproque sur les trois versions. */
   alternates: {
     canonical: 'https://www.natesystem.com/atelier',
     languages: {
       'fr-FR': 'https://www.natesystem.com/atelier',
       en: 'https://www.natesystem.com/en/atelier',
+      hu: 'https://www.natesystem.com/hu/atelier',
       'x-default': 'https://www.natesystem.com/atelier',
     },
   },

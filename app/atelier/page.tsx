@@ -11,7 +11,7 @@ import ClientsBar from '@/components/home/ClientsBar'
 import ScreenMock from '@/components/ui/ScreenMock'
 import LangToggle from '@/components/atelier/LangToggle'
 import { useLang } from '@/components/providers/LangProvider'
-import { makeD } from '@/lib/lang'
+import { makeD, pick } from '@/lib/lang'
 
 /**
  * ATELIER · « Créer ses propres outils pour sa classe, sans développeur »
@@ -62,10 +62,17 @@ const ETABLISSEMENTS_PAR_TRIMESTRE = 3
 
 /* LA VSL, montée le 01/10/2026 à partir des deux prises de Nathan.
  *
- * ⚠︎ DEUX FICHIERS, ET C'EST VOULU : les sous-titres sont INCRUSTÉS dans
+ * ⚠︎ TROIS FICHIERS, ET C'EST VOULU : les sous-titres sont INCRUSTÉS dans
  * l'image, pas servis en piste .vtt. Une seule vidéo donnerait donc des
  * sous-titres français gravés à un visiteur anglophone. `/vsl-atelier.mp4`
- * porte le français, `/vsl-atelier-en.mp4` l'anglais, même bande-son.
+ * porte le français, `/vsl-atelier-en.mp4` l'anglais, `/vsl-atelier-hu.mp4`
+ * le hongrois, même bande-son.
+ *
+ * La version hongroise (04/10/2026) n'a pas été montée depuis les rushes,
+ * qui ne sont plus sur la machine : elle part du fichier français, efface
+ * chaque sous-titre et chaque carte par reconstruction du fond de leur
+ * boîte, et grave le hongrois par-dessus au même style. Elle traduit aussi
+ * les onze cartes du haut, que la version anglaise a gardées en français.
  *
  * Pourquoi les graver plutôt que de servir une piste : la vidéo circulera
  * aussi sur LinkedIn et en pièce jointe, où aucun .vtt n'est lu. Gravés, les
@@ -76,8 +83,10 @@ const ETABLISSEMENTS_PAR_TRIMESTRE = 3
 const VSL = {
   srcFr: '/vsl-atelier.mp4',
   srcEn: '/vsl-atelier-en.mp4',
+  srcHu: '/vsl-atelier-hu.mp4',
   poster: '/vsl-atelier-poster.jpg',
   duree: '2 min 28',
+  dureeHu: '2 perc 28 mp',
 }
 
 /* LA PREUVE CHIFFRÉE. Formulation voulue, et elle n'est pas interchangeable :
@@ -87,6 +96,7 @@ const VSL = {
    arrêté le nombre le 01/10/2026. */
 const PARC_FR = 'Plus de 13 établissements et organisations'
 const PARC_EN = 'More than 13 schools and organisations'
+const PARC_HU = 'Több mint 13 intézmény és szervezet'
 
 /* Le podcast avec Catherine F. n'existe pas en photo fixe dans le dépôt : il
    existe en vidéo, et sa miniature YouTube EST la photo, en cliquable. */
@@ -96,26 +106,34 @@ const FAITS = [
   {
     titreFr: 'Trois heures',
     titreEn: 'Three hours',
+    titreHu: 'Három óra',
     detailFr: 'Une demi-journée, en une fois. Pas un cycle de formation à caser dans l’année.',
     detailEn: 'Half a day, in one go. Not a training programme to fit into the school year.',
+    detailHu: 'Egy fél nap, egyben. Nem egy egész tanévre szétszórt képzéssorozat.',
   },
   {
     titreFr: 'Dix à quinze personnes',
     titreEn: 'Ten to fifteen people',
+    titreHu: 'Tíz-tizenöt fő',
     detailFr: 'Votre équipe pédagogique telle qu’elle est, débutants compris.',
     detailEn: 'Your teaching team as it stands, complete beginners included.',
+    detailHu: 'A tantestülete úgy, ahogy van, a teljesen kezdőkkel együtt.',
   },
   {
     titreFr: 'Chez vous ou en visio',
     titreEn: 'At your school or online',
+    titreHu: 'Az iskolában vagy online',
     detailFr: 'Je me déplace dans votre établissement quand c’est possible.',
     detailEn: 'I come to your school whenever I can.',
+    detailHu: 'Amikor csak lehet, személyesen megyek el az intézményükbe.',
   },
   {
     titreFr: 'Gratuit',
     titreEn: 'Free',
+    titreHu: 'Ingyenes',
     detailFr: 'Il n’y a pas de version payante de l’atelier derrière.',
     detailEn: 'There is no paid version hiding behind this one.',
+    detailHu: 'A workshopnak nincs fizetős változata a háttérben.',
   },
 ]
 
@@ -124,28 +142,37 @@ const DEROULE = [
     num: '1',
     titreFr: 'Heure 1 · Je construis devant eux',
     titreEn: 'Hour 1 · I build in front of them',
+    titreHu: '1. óra · Építek a szemük előtt',
     texteFr:
       'Écran partagé, de la page blanche à l’outil qui tourne. Mes tâtonnements et mes corrections compris : c’est ça qui fait penser « je peux le faire ». Cinq minutes au début sur les données des élèves, et une règle qu’on ne lâche pas de la journée, jamais un nom, on travaille sur initiales.',
     texteEn:
       'Screen shared, from a blank page to a working tool. Wrong turns and fixes included, because that is what makes people think “I could do this”. Five minutes at the start on student data, and one rule we stick to all day: no names, ever, initials only.',
+    texteHu:
+      'Megosztott képernyő, az üres oldaltól a működő eszközig. A tévutakkal és a javításokkal együtt: épp ettől gondolja az ember, hogy „ezt én is meg tudnám csinálni”. Az elején öt perc a diákok adatairól, és egy szabály, amelyből egész nap nem engedünk: soha egy név, csak monogramok.',
   },
   {
     num: '2',
     titreFr: 'Heure 2 · Chacun construit le sien',
     titreEn: 'Hour 2 · Everyone builds their own',
+    titreHu: '2. óra · Mindenki megépíti a sajátját',
     texteFr:
       'Sur sa matière, sur sa vraie corvée. J’arrive avec trois sujets de secours pour ceux qui bloquent devant la page blanche, parce qu’il y en a toujours deux ou trois.',
     texteEn:
       'In their own subject, on a chore they actually have. I bring three backup ideas for those who freeze at the blank page, because there are always two or three.',
+    texteHu:
+      'A saját tantárgyában, egy valódi nyűgén. Hozok három tartalék témát azoknak, akik lefagynak az üres oldal előtt, mert mindig van két-három ilyen ember.',
   },
   {
     num: '3',
     titreFr: 'Heure 3 · On s’en sert, et on répare',
     titreEn: 'Hour 3 · We use it, and we fix it',
+    titreHu: '3. óra · Használjuk, és megjavítjuk',
     texteFr:
       'Ils testent sur un cas réel, avec leurs vraies copies. Quelque chose va rater, et c’est le moment le plus utile des trois heures : c’est là qu’on apprend à corriger au lieu d’abandonner.',
     texteEn:
       'They try it on a real case, with their own students’ work. Something will go wrong, and that is the most useful moment of the three hours: it is where they learn to fix things instead of giving up.',
+    texteHu:
+      'Valódi esetet próbálnak ki, a saját diákjaik dolgozataival. Valami nem fog működni, és ez a három óra leghasznosabb pillanata: itt tanulják meg, hogy javítsanak, ahelyett hogy feladnák.',
   },
 ]
 
@@ -153,18 +180,22 @@ const EXEMPLES = [
   {
     fr: 'Un outil d’appréciations de bulletins qui part de vos observations et rend un texte à relire, pas à écrire.',
     en: 'A report-comment tool that takes your own observations and gives you a draft to proofread, not to write from scratch.',
+    hu: 'Szöveges értékelést író eszköz a bizonyítványhoz: az Ön megfigyeléseiből indul, és átnézendő szöveget ad, nem megírandót.',
   },
   {
     fr: 'Un générateur d’exercices sur trois niveaux, tiré d’un seul chapitre.',
     en: 'A generator that turns one chapter into exercises at three levels of difficulty.',
+    hu: 'Egy generátor, amely egyetlen fejezetből három nehézségi szintű feladatsort készít.',
   },
   {
     fr: 'Un QCM fabriqué à partir d’un cours existant, corrigé d’avance.',
     en: 'A multiple-choice quiz built from an existing lesson, answer key included.',
+    hu: 'Feleletválasztós teszt egy meglévő tananyagból, megoldókulccsal együtt.',
   },
   {
     fr: 'Une grille de correction qui calcule toute seule et qui se réutilise d’une année sur l’autre.',
     en: 'A marking rubric that totals the marks itself and can be reused year after year.',
+    hu: 'Javítási útmutató, amely magától összesíti a pontokat, és évről évre újra felhasználható.',
   },
 ]
 
@@ -182,52 +213,70 @@ const PREREQUIS = [
   {
     groupeFr: 'Ce que l’établissement fournit',
     groupeEn: 'What the school provides',
+    groupeHu: 'Amit az intézmény biztosít',
     items: [
       {
         titreFr: 'Une salle et trois heures d’affilée',
         titreEn: 'A room and three uninterrupted hours',
+        titreHu: 'Egy terem és három egybefüggő óra',
         detailFr:
           'Pas fractionnées en deux fois une heure et demie : la troisième heure ne vaut que parce qu’elle suit les deux autres.',
         detailEn:
           'Not split into two ninety-minute sessions: the third hour only works because it comes straight after the other two.',
+        detailHu:
+          'Nem két másfél órás részletben: a harmadik óra csak azért működik, mert közvetlenül a másik kettő után jön.',
       },
       {
         titreFr: 'Un ordinateur par participant',
         titreEn: 'One computer per participant',
+        titreHu: 'Résztvevőnként egy számítógép',
         detailFr: 'Le sien ou celui de l’établissement, peu importe. Une tablette ne suffit pas.',
         detailEn: 'Their own or the school’s, either is fine. A tablet will not do.',
+        detailHu: 'A sajátja vagy az iskoláé, mindegy. Egy tablet nem elég.',
       },
       {
         titreFr: 'Une connexion qui tient',
         titreEn: 'A connection that holds up',
+        titreHu: 'Stabil internetkapcsolat',
         detailFr:
           'Quinze personnes dessus en même temps. C’est le point de blocage le plus fréquent, et le seul que je ne peux pas rattraper sur place.',
         detailEn:
           'Fifteen people on it at once. This is the most common blocker, and the only one I cannot work around on the day.',
+        detailHu:
+          'Tizenöt ember egyszerre rajta. Ez a leggyakoribb akadály, és az egyetlen, amelyet a helyszínen nem tudok áthidalni.',
       },
       {
         titreFr: 'Un écran ou un vidéoprojecteur',
         titreEn: 'A screen or a projector',
+        titreHu: 'Egy nagy kijelző vagy egy projektor',
         detailFr:
           'Toute la première heure consiste à me regarder construire. Si la salle ne voit pas mon écran, il n’y a pas d’atelier.',
         detailEn:
           'The whole first hour is spent watching me build. If the room cannot see my screen, there is no workshop.',
+        detailHu:
+          'Az egész első órában engem néznek építeni. Ha a terem nem látja a képernyőmet, nincs workshop.',
       },
       {
         titreFr: 'Dix à quinze personnes, pas plus',
         titreEn: 'Ten to fifteen people, no more',
+        titreHu: 'Tíz-tizenöt fő, nem több',
         detailFr:
           'Au-delà, je ne peux plus passer aider chacun pendant la deuxième heure, et c’est elle qui fait la différence.',
         detailEn:
           'Beyond that, I cannot get round to everyone during the second hour, and that hour is the one that makes the difference.',
+        detailHu:
+          'Afölött a második órában már nem jutok el mindenkihez, pedig épp az az óra hozza a különbséget.',
       },
       {
         titreFr: 'Un membre de la direction dans la salle',
         titreEn: 'Someone from the leadership team in the room',
+        titreHu: 'Az iskolavezetés egy tagja a teremben',
         detailFr:
           'La deuxième moitié de mon métier concerne l’organisation, et ça ne se raconte pas par personne interposée.',
         detailEn:
           'The other half of my work is about how the school runs, and that is a conversation to have directly, not second-hand.',
+        detailHu:
+          'A munkám másik fele az intézmény működéséről szól, és erről közvetlenül kell beszélni, nem közvetítőn keresztül.',
         cle: true,
       },
     ],
@@ -235,79 +284,94 @@ const PREREQUIS = [
   {
     groupeFr: 'Ce que chaque participant apporte',
     groupeEn: 'What each participant brings',
+    groupeHu: 'Amit minden résztvevő hoz',
     items: [
       {
         titreFr: 'Une tâche précise qui lui prend du temps chaque semaine',
         titreEn: 'One specific task that eats up their time every week',
+        titreHu: 'Egy konkrét feladat, amely minden héten elviszi az idejét',
         detailFr:
           'Le prérequis le plus important, et celui que personne ne prépare. Un professeur qui arrive sans savoir ce qu’il veut automatiser passe la deuxième heure à chercher une idée au lieu de construire. Les quatre exemples plus haut suffisent à amorcer.',
         detailEn:
           'The most important prerequisite, and the one nobody prepares for. A teacher who turns up without knowing what they want to automate spends the second hour hunting for an idea instead of building. The four examples above are enough to get them started.',
+        detailHu:
+          'A legfontosabb előfeltétel, és amelyre senki nem készül. Az a tanár, aki úgy érkezik, hogy nem tudja, mit szeretne automatizálni, a második órát ötletkereséssel tölti építés helyett. A fenti négy példa elég az induláshoz.',
         cle: true,
       },
       {
         titreFr: 'Ses propres documents',
         titreEn: 'Their own documents',
+        titreHu: 'A saját dokumentumai',
         detailFr:
           'Une grille de notation, un sujet de contrôle, une liste de compétences. Ce qu’il utilise vraiment, pas un exemple refait pour l’occasion.',
         detailEn:
           'A marking rubric, a test paper, a list of learning objectives. What they actually use, not an example made up for the occasion.',
+        detailHu:
+          'Egy értékelési táblázat, egy dolgozat feladatlapja, egy kompetencialista. Amit valóban használ, nem egy alkalomra gyártott példát.',
       },
     ],
   },
   {
     groupeFr: 'Ce qui n’est pas nécessaire',
     groupeEn: 'What you do not need',
+    groupeHu: 'Amire nincs szükség',
     items: [
       {
         titreFr: 'Aucune compétence technique',
         titreEn: 'No technical skills',
+        titreHu: 'Semmilyen műszaki tudás',
         detailFr: 'Personne n’écrit une ligne de code, à aucun moment des trois heures.',
         detailEn: 'Nobody writes a line of code, at any point in the three hours.',
+        detailHu: 'A három óra alatt senki nem ír egyetlen sor kódot sem.',
       },
       {
         titreFr: 'Aucune connaissance préalable des outils d’IA',
         titreEn: 'No prior knowledge of AI tools',
+        titreHu: 'Az MI-eszközök előzetes ismerete',
         detailFr: 'Les débutants complets sont souvent ceux qui en tirent le plus.',
         detailEn: 'Complete beginners are often the ones who get the most out of it.',
+        detailHu: 'Gyakran épp a teljesen kezdők profitálnak belőle a legtöbbet.',
       },
       {
         titreFr: 'Rien à payer pour participer',
         titreEn: 'No fee to take part',
+        titreHu: 'Részvételi díj',
         detailFr:
           'Pour aller plus loin ensuite, il existe des outils payants : je dis lesquels pendant la séance, et ce que j’y gagne quand c’est le cas.',
         detailEn:
           'There are paid tools for going further afterwards: I name them during the session, and I say what I earn from them, if anything.',
+        detailHu:
+          'A továbblépéshez léteznek fizetős eszközök: az alkalom során megnevezem őket, és azt is elmondom, keresek-e rajtuk valamit.',
       },
     ],
   },
 ]
 
 const FONCTIONS = [
-  { fr: 'Chef d’établissement', en: 'Head of school' },
-  { fr: 'Direction adjointe', en: 'Deputy head' },
-  { fr: 'Responsable administratif', en: 'Business or admin manager' },
-  { fr: 'Professeur', en: 'Teacher' },
-  { fr: 'Autre', en: 'Other' },
+  { fr: 'Chef d’établissement', en: 'Head of school', hu: 'Intézményvezető, igazgató' },
+  { fr: 'Direction adjointe', en: 'Deputy head', hu: 'Igazgatóhelyettes' },
+  { fr: 'Responsable administratif', en: 'Business or admin manager', hu: 'Gazdasági vagy adminisztratív vezető' },
+  { fr: 'Professeur', en: 'Teacher', hu: 'Tanár' },
+  { fr: 'Autre', en: 'Other', hu: 'Egyéb' },
 ]
 
 const TAILLES = [
-  { fr: 'Moins de 10', en: 'Fewer than 10' },
-  { fr: '10 à 15', en: '10 to 15' },
-  { fr: 'Plus de 15', en: 'More than 15' },
-  { fr: 'Je ne sais pas encore', en: 'Not sure yet' },
+  { fr: 'Moins de 10', en: 'Fewer than 10', hu: 'Kevesebb mint 10' },
+  { fr: '10 à 15', en: '10 to 15', hu: '10–15 fő' },
+  { fr: 'Plus de 15', en: 'More than 15', hu: 'Több mint 15' },
+  { fr: 'Je ne sais pas encore', en: 'Not sure yet', hu: 'Még nem tudom' },
 ]
 
 const LIEUX = [
-  { fr: 'Dans notre établissement', en: 'At our school' },
-  { fr: 'En visio', en: 'Online' },
-  { fr: 'Peu importe', en: 'Either works' },
+  { fr: 'Dans notre établissement', en: 'At our school', hu: 'Az intézményünkben' },
+  { fr: 'En visio', en: 'Online', hu: 'Online' },
+  { fr: 'Peu importe', en: 'Either works', hu: 'Mindegy' },
 ]
 
 const RESEAU = [
-  { fr: 'Oui, rien n’est bloqué', en: 'Yes, nothing is blocked' },
-  { fr: 'Non, c’est filtré', en: 'No, it is filtered' },
-  { fr: 'Je ne sais pas, je vérifie', en: 'Not sure, I will check' },
+  { fr: 'Oui, rien n’est bloqué', en: 'Yes, nothing is blocked', hu: 'Igen, semmi sincs blokkolva' },
+  { fr: 'Non, c’est filtré', en: 'No, it is filtered', hu: 'Nem, szűrve van' },
+  { fr: 'Je ne sais pas, je vérifie', en: 'Not sure, I will check', hu: 'Nem tudom, utánanézek' },
 ]
 
 /* Même courbe que le hero du site : les deux pages doivent bouger pareil. */
@@ -368,7 +432,7 @@ export default function AtelierPage() {
         <div className="at-header-right">
           <LangToggle />
           <a href="#demander" className="nav-cta-btn at-header-cta">
-            {d('Demander l’atelier', 'Request the workshop')}
+            {d('Demander l’atelier', 'Request the workshop', 'Workshop kérése')}
           </a>
         </div>
       </header>
@@ -383,19 +447,19 @@ export default function AtelierPage() {
           <span className="section-label at-hero-label">
             {d(
               'Atelier offert · Trois heures · Chez vous ou en visio',
-              'Free workshop · Three hours · At your school or online'
+              'Free workshop · Three hours · At your school or online', 'Ingyenes workshop · Három óra · Az iskolában vagy online'
             )}
           </span>
         </motion.div>
 
         <h1 className="at-h1">
           <RevealWords
-            text={d('Vos professeurs ont tous un tableur', 'Your teachers all have a spreadsheet')}
+            text={d('Vos professeurs ont tous un tableur', 'Your teachers all have a spreadsheet', 'A tanárainak mind van egy táblázata,')}
             delay={0.15}
           />{' '}
           <span className="at-h1-accent">
             <RevealWords
-              text={d('qu’ils ont bricolé seuls.', 'they cobbled together on their own.')}
+              text={d('qu’ils ont bricolé seuls.', 'they cobbled together on their own.', 'amit egyedül barkácsoltak össze.')}
               delay={0.45}
             />
           </span>
@@ -411,7 +475,8 @@ export default function AtelierPage() {
           <span className="font-sans at-pill-text">
             {d(
               `Je prends ${ETABLISSEMENTS_PAR_TRIMESTRE} établissements ce trimestre.`,
-              `I am taking on ${ETABLISSEMENTS_PAR_TRIMESTRE} schools this term.`
+              `I am taking on ${ETABLISSEMENTS_PAR_TRIMESTRE} schools this term.`,
+              `Ebben a negyedévben ${ETABLISSEMENTS_PAR_TRIMESTRE} intézményt vállalok.`
             )}
           </span>
         </motion.div>
@@ -424,13 +489,13 @@ export default function AtelierPage() {
             className="at-vsl"
           >
             <VslPlayer
-              src={lang === 'en' ? VSL.srcEn : VSL.srcFr}
+              src={pick(lang, { fr: VSL.srcFr, en: VSL.srcEn, hu: VSL.srcHu })}
               poster={VSL.poster}
-              duration={VSL.duree}
-              label={d('Voir ce que fait l’atelier', 'See what the workshop does')}
+              duration={d(VSL.duree, VSL.duree, VSL.dureeHu)}
+              label={d('Voir ce que fait l’atelier', 'See what the workshop does', 'Nézze meg, mit ad a workshop')}
               title={d(
                 'L’atelier NateSystem, en quelques minutes',
-                'The NateSystem workshop, in a few minutes'
+                'The NateSystem workshop, in a few minutes', 'A NateSystem workshop, pár percben'
               )}
             />
           </motion.div>
@@ -444,7 +509,7 @@ export default function AtelierPage() {
         >
           {d(
             'En trois heures, ils construisent l’outil qui le remplace, et ils le testent sur leurs vraies copies avant de partir. Pour leur classe, à leur main, sans écrire une ligne de code. C’est gratuit, et ça ne vous engage à rien.',
-            'In three hours, they build the tool that replaces it, and they test it on their own students’ work before they leave. For their class, their way, without writing a line of code. It is free, and there is no obligation.'
+            'In three hours, they build the tool that replaces it, and they test it on their own students’ work before they leave. For their class, their way, without writing a line of code. It is free, and there is no obligation.', 'Három óra alatt megépítik az eszközt, amely leváltja, és még indulás előtt kipróbálják a diákjaik valódi dolgozatain. A saját osztályukra, a saját kezük alá szabva, egyetlen sor kód nélkül. Ingyenes, és semmire nem kötelezi.'
           )}
         </motion.p>
 
@@ -456,10 +521,10 @@ export default function AtelierPage() {
         >
           <a href="#demander" className="btn-primary">
             <span className="btn-primary-dot" />
-            {d('Demander l’atelier pour mon établissement', 'Request the workshop for my school')}
+            {d('Demander l’atelier pour mon établissement', 'Request the workshop for my school', 'Workshopot kérek az iskolánkba')}
           </a>
           <a href="#les-trois-heures" className="btn-ghost">
-            {d('Voir le déroulé', 'See how it runs')}
+            {d('Voir le déroulé', 'See how it runs', 'Megnézem a menetét')}
           </a>
         </motion.div>
       </section>
@@ -471,8 +536,8 @@ export default function AtelierPage() {
             {FAITS.map((f, i) => (
               <FadeUp key={f.titreFr} delay={0.05 * i}>
                 <li className="card at-fact">
-                  <p className="font-sans at-fact-title">{d(f.titreFr, f.titreEn)}</p>
-                  <p className="font-sans at-fact-detail">{d(f.detailFr, f.detailEn)}</p>
+                  <p className="font-sans at-fact-title">{d(f.titreFr, f.titreEn, f.titreHu)}</p>
+                  <p className="font-sans at-fact-detail">{d(f.detailFr, f.detailEn, f.detailHu)}</p>
                 </li>
               </FadeUp>
             ))}
@@ -493,14 +558,14 @@ export default function AtelierPage() {
         <div className="at-wrap">
           <FadeUp>
             <header className="at-head">
-              <span className="section-label">{d('La preuve', 'The proof')}</span>
+              <span className="section-label">{d('La preuve', 'The proof', 'A bizonyíték')}</span>
               <h2 className="section-title at-h2">
-                {d(`${PARC_FR} tournent sur nos outils.`, `${PARC_EN} run on our tools.`)}
+                {d(`${PARC_FR} tournent sur nos outils.`, `${PARC_EN} run on our tools.`, `${PARC_HU} használja az eszközeinket.`)}
               </h2>
               <p className="font-sans at-lead">
                 {d(
                   'Des écoles, un IUT, et des organisations d’autres secteurs. Les mêmes contraintes partout : beaucoup de monde, peu de temps, et un logiciel générique qui ne colle jamais tout à fait.',
-                  'Schools, a university institute of technology, and organisations from other sectors. The same constraints everywhere: lots of people, very little time, and off-the-shelf software that never quite fits.'
+                  'Schools, a university institute of technology, and organisations from other sectors. The same constraints everywhere: lots of people, very little time, and off-the-shelf software that never quite fits.', 'Iskolák, egy francia műszaki felsőoktatási intézet (IUT), és más ágazatok szervezetei. Mindenhol ugyanazok a korlátok: sok ember, kevés idő, és egy dobozos szoftver, amely sosem illik igazán.'
                 )}
               </p>
             </header>
@@ -521,7 +586,7 @@ export default function AtelierPage() {
                     src="/realisations/chartreux-terrasse.webp"
                     alt={d(
                       'Nathan Goutagny serre la main de sa cliente sur la terrasse des Chartreux, à Lyon',
-                      'Nathan Goutagny shaking hands with his client on the terrace at Les Chartreux in Lyon'
+                      'Nathan Goutagny shaking hands with his client on the terrace at Les Chartreux in Lyon', 'Nathan Goutagny kezet fog ügyfelével a lyoni Chartreux teraszán'
                     )}
                     loading="lazy"
                     width={1200}
@@ -531,7 +596,7 @@ export default function AtelierPage() {
                 <figcaption className="font-sans at-proof-caption">
                   {d(
                     'Aux Chartreux, à Lyon. Neuf établissements sur une seule plateforme, et quarante heures récupérées chaque mois, de leur propre compte.',
-                    'At Les Chartreux, in Lyon. Nine schools on a single platform, and forty hours given back every month, by their own account.'
+                    'At Les Chartreux, in Lyon. Nine schools on a single platform, and forty hours given back every month, by their own account.', 'A lyoni Chartreux-nál. Kilenc intézmény egyetlen platformon, és havonta negyven visszanyert óra, a saját beszámolójuk szerint.'
                   )}
                 </figcaption>
               </figure>
@@ -544,14 +609,14 @@ export default function AtelierPage() {
                     id={PODCAST_ID}
                     title={d(
                       'Catherine F. raconte ce que les plateformes sur-mesure ont changé chez elle',
-                      'Catherine F. on what the custom platforms changed where she works'
+                      'Catherine F. on what the custom platforms changed where she works', 'Catherine F. arról, mit változtattak náluk az egyedi platformok'
                     )}
                   />
                 </div>
                 <figcaption className="font-sans at-proof-caption">
                   {d(
                     'Catherine F. enseigne le numérique à l’IUT de Saint-Étienne et dirige une organisation que nous équipons. Elle raconte ce que deux plateformes sur-mesure ont changé chez eux.',
-                    'Catherine F. teaches digital skills at the IUT de Saint-Étienne and runs an organisation that uses our software. She explains what two custom platforms changed for them.'
+                    'Catherine F. teaches digital skills at the IUT de Saint-Étienne and runs an organisation that uses our software. She explains what two custom platforms changed for them.', 'Catherine F. digitális ismereteket tanít a Saint-Étienne-i IUT-n, és vezet egy szervezetet, amely a mi szoftvereinket használja. Elmondja, mit változtatott náluk két egyedi platform.'
                   )}
                 </figcaption>
               </figure>
@@ -567,14 +632,14 @@ export default function AtelierPage() {
         <div className="at-wrap at-wrap--narrow">
           <FadeUp>
             <header className="at-head">
-              <span className="section-label">{d('Les trois heures', 'The three hours')}</span>
+              <span className="section-label">{d('Les trois heures', 'The three hours', 'A három óra')}</span>
               <h2 className="section-title at-h2">
-                {d('Ce qu’il se passe, concrètement.', 'What actually happens.')}
+                {d('Ce qu’il se passe, concrètement.', 'What actually happens.', 'Mi történik, konkrétan.')}
               </h2>
               <p className="font-sans at-lead">
                 {d(
                   'L’atelier s’appelle « Créer ses propres outils pour sa classe, sans développeur ». Trois heures, trois temps. Rien à installer. Une seule chose à préparer : chaque participant arrive avec une corvée précise à régler.',
-                  'The workshop is called “Build your own classroom tools, without a developer”. Three hours, three parts. Nothing to install. Just one thing to prepare: each participant turns up with one specific chore they want to get rid of.'
+                  'The workshop is called “Build your own classroom tools, without a developer”. Three hours, three parts. Nothing to install. Just one thing to prepare: each participant turns up with one specific chore they want to get rid of.', 'A workshop címe: „Saját eszközök a saját osztályomnak, fejlesztő nélkül”. Három óra, három szakasz. Semmit nem kell telepíteni. Egyetlen dolgot kell előkészíteni: minden résztvevő egy konkrét nyűggel érkezik, amelytől meg akar szabadulni.'
                 )}
               </p>
             </header>
@@ -591,17 +656,17 @@ export default function AtelierPage() {
         <div className="at-wrap">
           <FadeUp>
             <header className="at-head">
-              <span className="section-label">{d('De quoi on parle', 'What we mean')}</span>
+              <span className="section-label">{d('De quoi on parle', 'What we mean', 'Miről beszélünk')}</span>
               <h2 className="section-title at-h2">
                 {d(
                   'Le genre d’outil qui sort de trois heures.',
-                  'The kind of tool that comes out of three hours.'
+                  'The kind of tool that comes out of three hours.', 'Az a fajta eszköz, ami három óra alatt elkészül.'
                 )}
               </h2>
               <p className="font-sans at-lead">
                 {d(
                   '« Créer son outil » ne veut pas dire grand-chose tant qu’on n’a pas vu à quoi ça ressemble.',
-                  '“Build your own tool” does not mean much until you have seen what one looks like.'
+                  '“Build your own tool” does not mean much until you have seen what one looks like.', 'A „saját eszköz építése” nem sokat mond, amíg az ember nem látta, hogyan néz ki.'
                 )}
               </p>
             </header>
@@ -612,7 +677,7 @@ export default function AtelierPage() {
               <FadeUp key={ex.fr} delay={0.05 * i}>
                 <li className="card at-example">
                   <span className="font-mono at-example-num">{String(i + 1).padStart(2, '0')}</span>
-                  <p className="font-sans at-example-text">{d(ex.fr, ex.en)}</p>
+                  <p className="font-sans at-example-text">{d(ex.fr, ex.en, ex.hu)}</p>
                 </li>
               </FadeUp>
             ))}
@@ -622,7 +687,7 @@ export default function AtelierPage() {
             <p className="font-sans at-note">
               {d(
                 'Ce sont des exemples, pas un programme. Les trois heures partent de ce que vos professeurs apportent ce jour-là.',
-                'These are examples, not a syllabus. The three hours start from whatever your teachers bring on the day.'
+                'These are examples, not a syllabus. The three hours start from whatever your teachers bring on the day.', 'Ezek példák, nem tanmenet. A három óra abból indul ki, amit a tanárai aznap magukkal hoznak.'
               )}
             </p>
           </FadeUp>
@@ -635,7 +700,7 @@ export default function AtelierPage() {
       <section className="at-section">
         <div className="at-wrap at-wrap--narrow">
           <FadeUp>
-            <span className="section-label at-who-label">{d('Qui vient', 'Who comes')}</span>
+            <span className="section-label at-who-label">{d('Qui vient', 'Who comes', 'Ki érkezik')}</span>
           </FadeUp>
           <FadeUp delay={0.06}>
             <div className="card at-who">
@@ -645,7 +710,7 @@ export default function AtelierPage() {
                   src="/nathan.png"
                   alt={d(
                     'Nathan Goutagny, fondateur de NateSystem',
-                    'Nathan Goutagny, founder of NateSystem'
+                    'Nathan Goutagny, founder of NateSystem', 'Nathan Goutagny, a NateSystem alapítója'
                   )}
                   loading="lazy"
                   width={1104}
@@ -658,25 +723,25 @@ export default function AtelierPage() {
                   <p>
                     {d(
                       'Je dirige NateSystem. Je construis des logiciels de gestion sur mesure pour des établissements, et aussi des outils pédagogiques : plannings, comptage des heures, dossiers, suivi des élèves. Plus de dix établissements tournent dessus, dont les Chartreux et l’IUT de Saint-Étienne pour citer les plus connus.',
-                      'I run NateSystem. I build custom management software for schools, and teaching tools too: timetables, staff hours, records, student progress tracking. More than ten schools run on them, Les Chartreux and the IUT de Saint-Étienne among the best known.'
+                      'I run NateSystem. I build custom management software for schools, and teaching tools too: timetables, staff hours, records, student progress tracking. More than ten schools run on them, Les Chartreux and the IUT de Saint-Étienne among the best known.', 'A NateSystemet vezetem. Egyedi ügyviteli szoftvereket építek intézményeknek, és pedagógiai eszközöket is: órarendek, óraelszámolás, nyilvántartások, a diákok előrehaladásának követése. Több mint tíz intézmény használja őket, a legismertebbek közülük a lyoni Chartreux és a Saint-Étienne-i IUT.'
                     )}
                   </p>
                   <p>
                     {d(
                       'Ce que ça leur apporte : des heures rendues aux équipes, des tâches répétitives qui disparaissent, des données enfin claires, une communication interne qui ne dépend plus de qui sait, et au bout de la chaîne des élèves mieux suivis. Les Chartreux rapportent quarante heures récupérées par mois.',
-                      'What it gives them: hours back for their teams, repetitive tasks that disappear, data that is finally clear, internal communication that no longer depends on who happens to know, and, at the end of the chain, students who are properly supported. Les Chartreux report forty hours given back every month.'
+                      'What it gives them: hours back for their teams, repetitive tasks that disappear, data that is finally clear, internal communication that no longer depends on who happens to know, and, at the end of the chain, students who are properly supported. Les Chartreux report forty hours given back every month.', 'Amit ez nekik ad: visszanyert órák a csapatoknak, eltűnő ismétlődő feladatok, végre átlátható adatok, belső kommunikáció, amely már nem azon múlik, ki mit tud, és a lánc végén jobban követett diákok. A Chartreux havi negyven visszanyert óráról számol be.'
                     )}
                   </p>
                   <p>
                     {d(
                       'Je passe beaucoup de temps à former, parce qu’un logiciel que personne n’utilise vraiment ne sert à rien : je forme jusqu’à l’autonomie.',
-                      'I spend a lot of time on training, because software nobody actually uses is useless: I keep going until the team can run it without me.'
+                      'I spend a lot of time on training, because software nobody actually uses is useless: I keep going until the team can run it without me.', 'Sok időt töltök képzéssel, mert az a szoftver, amelyet senki nem használ igazán, semmit nem ér: addig képzek, amíg a csapat nélkülem is boldogul vele.'
                     )}
                   </p>
                   <p>
                     {d(
                       'C’est là que j’ai vu la même chose revenir, rendez-vous après rendez-vous. Des professeurs et des directeurs qui voulaient se construire leurs propres petits outils, qui essayaient, et qui s’emmêlaient les pinceaux. Cet atelier vient de là.',
-                      'That is where I kept seeing the same thing, meeting after meeting. Teachers and heads who wanted to build small tools of their own, who tried, and who ended up in a muddle. This workshop came out of that.'
+                      'That is where I kept seeing the same thing, meeting after meeting. Teachers and heads who wanted to build small tools of their own, who tried, and who ended up in a muddle. This workshop came out of that.', 'Itt láttam újra és újra ugyanazt, találkozóról találkozóra. Tanárokat és igazgatókat, akik saját kis eszközöket akartak építeni maguknak, belevágtak, és belegabalyodtak. Ez a workshop innen született.'
                     )}
                   </p>
                 </div>
@@ -696,14 +761,14 @@ export default function AtelierPage() {
         <div className="at-wrap at-wrap--narrow">
           <FadeUp>
             <header className="at-head">
-              <span className="section-label">{d('La garantie', 'The guarantee')}</span>
+              <span className="section-label">{d('La garantie', 'The guarantee', 'A garancia')}</span>
               <h2 className="section-title at-h2">
-                {d('Personne ne repart les mains vides.', 'Nobody leaves empty-handed.')}
+                {d('Personne ne repart les mains vides.', 'Nobody leaves empty-handed.', 'Senki nem távozik üres kézzel.')}
               </h2>
               <p className="font-sans at-lead">
                 {d(
                   'Chaque professeur repart avec son premier outil qui marche, à tester dès le lendemain matin. Et surtout avec la technique pour en refaire d’autres sans moi.',
-                  'Every teacher leaves with a first tool that works, ready to try the next morning. And, more importantly, with the method to build more without me.'
+                  'Every teacher leaves with a first tool that works, ready to try the next morning. And, more importantly, with the method to build more without me.', 'Minden tanár egy működő első eszközzel távozik, amelyet már másnap reggel kipróbálhat. És ami még fontosabb: a módszerrel, amellyel nélkülem is építhet újakat.'
                 )}
               </p>
             </header>
@@ -725,14 +790,14 @@ export default function AtelierPage() {
                   src="/realisations/outil-vamos.webp"
                   alt={d(
                     'Un outil de révision d’espagnol construit pendant un atelier : niveaux, points, séries d’exercices',
-                    'A Spanish revision tool built during a workshop: levels, points, exercise sets'
+                    'A Spanish revision tool built during a workshop: levels, points, exercise sets', 'Egy workshopon épített spanyol gyakorlóeszköz: szintek, pontok, feladatsorok'
                   )}
                 />
               </div>
               <figcaption className="font-sans at-tool-caption">
                 {d(
                   'Un outil de révision d’espagnol, construit de la même façon : on décrit ce qu’on veut, on regarde ce qui sort, on corrige.',
-                  'A Spanish revision tool, built the same way: describe what you want, look at what comes out, fix it.'
+                  'A Spanish revision tool, built the same way: describe what you want, look at what comes out, fix it.', 'Egy spanyol gyakorlóeszköz, ugyanígy építve: leírjuk, mit szeretnénk, megnézzük, mi lesz belőle, és javítunk.'
                 )}
               </figcaption>
             </figure>
@@ -743,7 +808,7 @@ export default function AtelierPage() {
               <p className="font-serif italic at-pledge-text">
                 {d(
                   'Si quelqu’un repart les mains vides, je reviens le faire avec lui.',
-                  'If anyone leaves empty-handed, I will come back and build it with them.'
+                  'If anyone leaves empty-handed, I will come back and build it with them.', 'Ha valaki üres kézzel távozik, visszamegyek, és megépítem vele.'
                 )}
               </p>
             </div>
@@ -760,14 +825,14 @@ export default function AtelierPage() {
         <div className="at-wrap">
           <FadeUp>
             <header className="at-head">
-              <span className="section-label">{d('Avant de dire oui', 'Before you say yes')}</span>
+              <span className="section-label">{d('Avant de dire oui', 'Before you say yes', 'Mielőtt igent mond')}</span>
               <h2 className="section-title at-h2">
-                {d('Ce qu’il vous faut de votre côté.', 'What you need to have in place.')}
+                {d('Ce qu’il vous faut de votre côté.', 'What you need to have in place.', 'Amire az Ön oldalán szükség van.')}
               </h2>
               <p className="font-sans at-lead">
                 {d(
                   'Rien d’exotique, mais tout compte. Les deux lignes en rouge sont celles qui font rater un atelier quand elles manquent, pas celles qui le gênent.',
-                  'Nothing exotic, but everything counts. The two lines in red are the ones that sink a workshop when they are missing, not the ones that merely get in the way.'
+                  'Nothing exotic, but everything counts. The two lines in red are the ones that sink a workshop when they are missing, not the ones that merely get in the way.', 'Semmi különös, de minden számít. A két pirossal jelölt sor az, amelynek a hiánya meghiúsítja a workshopot, nem csak megnehezíti.'
                 )}
               </p>
             </header>
@@ -778,7 +843,7 @@ export default function AtelierPage() {
               <FadeUp key={bloc.groupeFr} delay={0.06 * b}>
                 <div className="card at-prereq-col">
                   <h3 className="font-mono at-prereq-group-title">
-                    {d(bloc.groupeFr, bloc.groupeEn)}
+                    {d(bloc.groupeFr, bloc.groupeEn, bloc.groupeHu)}
                   </h3>
                   <ul className="at-prereqs">
                     {bloc.items.map((r) => (
@@ -788,8 +853,8 @@ export default function AtelierPage() {
                       >
                         <span className="at-prereq-mark" aria-hidden="true" />
                         <div>
-                          <p className="font-sans at-prereq-title">{d(r.titreFr, r.titreEn)}</p>
-                          <p className="font-sans at-prereq-detail">{d(r.detailFr, r.detailEn)}</p>
+                          <p className="font-sans at-prereq-title">{d(r.titreFr, r.titreEn, r.titreHu)}</p>
+                          <p className="font-sans at-prereq-detail">{d(r.detailFr, r.detailEn, r.detailHu)}</p>
                         </div>
                       </li>
                     ))}
@@ -808,17 +873,18 @@ export default function AtelierPage() {
         <div className="at-wrap at-wrap--narrow">
           <FadeUp>
             <header className="at-head">
-              <span className="section-label">{d('La demande', 'The request')}</span>
+              <span className="section-label">{d('La demande', 'The request', 'A kérés')}</span>
               <h2 className="section-title at-h2">
                 {d(
                   'Demander l’atelier pour votre établissement.',
-                  'Request the workshop for your school.'
+                  'Request the workshop for your school.', 'Kérje a workshopot az intézményébe.'
                 )}
               </h2>
               <p className="font-sans at-lead">
                 {d(
                   `Je reviens vers vous sous 48 heures avec deux ou trois créneaux. Je prends ${ETABLISSEMENTS_PAR_TRIMESTRE} établissements ce trimestre.`,
-                  `I will get back to you within 48 hours with two or three possible dates. I am taking on ${ETABLISSEMENTS_PAR_TRIMESTRE} schools this term.`
+                  `I will get back to you within 48 hours with two or three possible dates. I am taking on ${ETABLISSEMENTS_PAR_TRIMESTRE} schools this term.`,
+                  `48 órán belül jelentkezem két-három időpont-javaslattal. Ebben a negyedévben ${ETABLISSEMENTS_PAR_TRIMESTRE} intézményt vállalok.`
                 )}
               </p>
             </header>
@@ -828,34 +894,39 @@ export default function AtelierPage() {
             {statut === 'ok' ? (
               <div className="card at-done">
                 <p className="font-serif italic at-done-title">
-                  {d('C’est parti.', 'Got it.')}
+                  {d('C’est parti.', 'Got it.', 'Indulunk.')}
                 </p>
                 <p className="font-sans at-done-text">
                   {d(
                     'Je vous réponds sous 48 heures, depuis nathan@natesystem.com. Si vous ne voyez rien passer, regardez vos indésirables.',
-                    'I will reply within 48 hours, from nathan@natesystem.com. If nothing arrives, check your spam folder.'
+                    'I will reply within 48 hours, from nathan@natesystem.com. If nothing arrives, check your spam folder.', '48 órán belül válaszolok a nathan@natesystem.com címről. Ha nem lát semmit, nézze meg a levélszemét mappát.'
                   )}
                 </p>
               </div>
             ) : (
               <form className="card at-form" onSubmit={envoyer}>
+                {/* La langue de la page : elle dit à Nathan dans quelle langue
+                    répondre. Les menus, eux, envoient toujours leur valeur
+                    française, pour que le mail et le CRM lisent la même chose
+                    quelle que soit la version remplie. */}
+                <input type="hidden" name="langue" value={lang} />
                 <div className="at-row">
                   <label className="at-field">
-                    <span className="font-mono at-field-label">{d('Votre nom', 'Your name')}</span>
+                    <span className="font-mono at-field-label">{d('Votre nom', 'Your name', 'Az Ön neve')}</span>
                     <input
                       name="nom"
                       type="text"
                       required
                       autoComplete="name"
-                      placeholder={d('Prénom et nom', 'First and last name')}
+                      placeholder={d('Prénom et nom', 'First and last name', 'Vezeték- és keresztnév')}
                     />
                   </label>
                   <label className="at-field">
-                    <span className="font-mono at-field-label">{d('Votre fonction', 'Your role')}</span>
-                    <select name="fonction" defaultValue={d(FONCTIONS[0].fr, FONCTIONS[0].en)}>
+                    <span className="font-mono at-field-label">{d('Votre fonction', 'Your role', 'Beosztása')}</span>
+                    <select name="fonction" defaultValue={FONCTIONS[0].fr}>
                       {FONCTIONS.map((f) => (
-                        <option key={f.fr} value={d(f.fr, f.en)}>
-                          {d(f.fr, f.en)}
+                        <option key={f.fr} value={f.fr}>
+                          {d(f.fr, f.en, f.hu)}
                         </option>
                       ))}
                     </select>
@@ -864,13 +935,13 @@ export default function AtelierPage() {
 
                 <label className="at-field">
                   <span className="font-mono at-field-label">
-                    {d('Votre établissement', 'Your school')}
+                    {d('Votre établissement', 'Your school', 'Intézménye')}
                   </span>
                   <input
                     name="etablissement"
                     type="text"
                     required
-                    placeholder={d('Nom de l’établissement, et la ville', 'School name and town')}
+                    placeholder={d('Nom de l’établissement, et la ville', 'School name and town', 'Az intézmény neve és a település')}
                   />
                 </label>
 
@@ -882,17 +953,17 @@ export default function AtelierPage() {
                       type="email"
                       required
                       autoComplete="email"
-                      placeholder={d('vous@etablissement.fr', 'you@school.org')}
+                      placeholder={d('vous@etablissement.fr', 'you@school.org', 'on@iskola.hu')}
                     />
                   </label>
                   <label className="at-field">
-                    <span className="font-mono at-field-label">{d('Téléphone', 'Phone')}</span>
+                    <span className="font-mono at-field-label">{d('Téléphone', 'Phone', 'Telefon')}</span>
                     <input
                       name="telephone"
                       type="tel"
                       required
                       autoComplete="tel"
-                      placeholder={d('06 00 00 00 00', '+33 6 00 00 00 00')}
+                      placeholder={d('06 00 00 00 00', '+33 6 00 00 00 00', '+36 30 000 0000')}
                     />
                   </label>
                 </div>
@@ -900,22 +971,22 @@ export default function AtelierPage() {
                 <div className="at-row">
                   <label className="at-field">
                     <span className="font-mono at-field-label">
-                      {d('Combien de personnes', 'How many people')}
+                      {d('Combien de personnes', 'How many people', 'Hány fő')}
                     </span>
-                    <select name="personnes" defaultValue={d(TAILLES[1].fr, TAILLES[1].en)}>
+                    <select name="personnes" defaultValue={TAILLES[1].fr}>
                       {TAILLES.map((t) => (
-                        <option key={t.fr} value={d(t.fr, t.en)}>
-                          {d(t.fr, t.en)}
+                        <option key={t.fr} value={t.fr}>
+                          {d(t.fr, t.en, t.hu)}
                         </option>
                       ))}
                     </select>
                   </label>
                   <label className="at-field">
-                    <span className="font-mono at-field-label">{d('Plutôt', 'Preference')}</span>
-                    <select name="lieu" defaultValue={d(LIEUX[2].fr, LIEUX[2].en)}>
+                    <span className="font-mono at-field-label">{d('Plutôt', 'Preference', 'Helyszín')}</span>
+                    <select name="lieu" defaultValue={LIEUX[2].fr}>
                       {LIEUX.map((l) => (
-                        <option key={l.fr} value={d(l.fr, l.en)}>
-                          {d(l.fr, l.en)}
+                        <option key={l.fr} value={l.fr}>
+                          {d(l.fr, l.en, l.hu)}
                         </option>
                       ))}
                     </select>
@@ -930,18 +1001,18 @@ export default function AtelierPage() {
                     date. */}
                 <label className="at-field">
                   <span className="font-mono at-field-label">
-                    {d('Accès réseau', 'Network access')}
+                    {d('Accès réseau', 'Network access', 'Hálózati hozzáférés')}
                   </span>
                   <span className="font-sans at-field-help">
                     {d(
                       'Depuis les postes de l’établissement, un site comme ChatGPT est-il accessible ?',
-                      'Is a site like ChatGPT accessible from the school’s computers?'
+                      'Is a site like ChatGPT accessible from the school’s computers?', 'Az intézmény gépeiről elérhető egy olyan oldal, mint a ChatGPT?'
                     )}
                   </span>
-                  <select name="reseau" defaultValue={d(RESEAU[2].fr, RESEAU[2].en)}>
+                  <select name="reseau" defaultValue={RESEAU[2].fr}>
                     {RESEAU.map((r) => (
-                      <option key={r.fr} value={d(r.fr, r.en)}>
-                        {d(r.fr, r.en)}
+                      <option key={r.fr} value={r.fr}>
+                        {d(r.fr, r.en, r.hu)}
                       </option>
                     ))}
                   </select>
@@ -949,14 +1020,14 @@ export default function AtelierPage() {
 
                 <label className="at-field">
                   <span className="font-mono at-field-label">
-                    {d('Un mot, si vous voulez (facultatif)', 'A note, if you like (optional)')}
+                    {d('Un mot, si vous voulez (facultatif)', 'A note, if you like (optional)', 'Pár szó, ha szeretné (nem kötelező)')}
                   </span>
                   <textarea
                     name="mot"
                     rows={3}
                     placeholder={d(
                       'Ce qui vous fait venir, ou une contrainte de calendrier.',
-                      'What prompted you to ask, or any calendar constraints.'
+                      'What prompted you to ask, or any calendar constraints.', 'Mi hozta ide, vagy egy naptári megkötés.'
                     )}
                   />
                 </label>
@@ -967,34 +1038,34 @@ export default function AtelierPage() {
                 <label className="at-check">
                   <input type="checkbox" name="prerequis" value="oui" required />
                   <span className="font-sans at-check-text">
-                    {d('Je confirme pouvoir réunir ', 'I confirm I can meet ')}
+                    {d('Je confirme pouvoir réunir ', 'I confirm I can meet ', 'Megerősítem, hogy a workshop napján teljesíteni tudom ')}
                     <a href="#prerequis">
-                      {d('les prérequis listés plus haut', 'the prerequisites listed above')}
+                      {d('les prérequis listés plus haut', 'the prerequisites listed above', 'a fent felsorolt előfeltételeket')}
                     </a>
                     {d(
                       ' le jour de l’atelier, direction présente comprise.',
-                      ' on the day of the workshop, with someone from the leadership team present.'
+                      ' on the day of the workshop, with someone from the leadership team present.', ', az iskolavezetés jelenlétét is beleértve.'
                     )}
                   </span>
                 </label>
 
                 <button type="submit" className="btn-primary at-submit" disabled={statut === 'envoi'}>
                   <span className="btn-primary-dot" />
-                  {statut === 'envoi' ? d('Envoi…', 'Sending…') : d('Envoyer la demande', 'Send my request')}
+                  {statut === 'envoi' ? d('Envoi…', 'Sending…', 'Küldés…') : d('Envoyer la demande', 'Send my request', 'Kérés elküldése')}
                 </button>
 
                 {statut === 'erreur' && (
                   <p className="font-sans at-error" role="alert">
-                    {d('Ça n’est pas parti. Écrivez-moi directement à ', 'That did not go through. Email me directly at ')}
+                    {d('Ça n’est pas parti. Écrivez-moi directement à ', 'That did not go through. Email me directly at ', 'Nem ment el. Írjon nekem közvetlenül: ')}
                     <a href="mailto:nathan@natesystem.com">nathan@natesystem.com</a>
-                    {d(', je réponds aussi vite.', '. I reply just as quickly.')}
+                    {d(', je réponds aussi vite.', '. I reply just as quickly.', ', ugyanolyan gyorsan válaszolok.')}
                   </p>
                 )}
 
                 <p className="font-sans at-reassurance">
                   {d(
                     'Pas de newsletter, pas de relance automatique. Votre demande arrive directement dans ma boîte.',
-                    'No newsletter, no automated follow-ups. Your request lands straight in my inbox.'
+                    'No newsletter, no automated follow-ups. Your request lands straight in my inbox.', 'Nincs hírlevél, nincs automatikus emlékeztető. A kérése egyenesen az én postafiókomba érkezik.'
                   )}
                 </p>
               </form>
@@ -1012,10 +1083,10 @@ export default function AtelierPage() {
             <a href="mailto:nathan@natesystem.com">nathan@natesystem.com</a>
           </p>
           <a
-            href={lang === 'en' ? '/en/mentions-legales' : '/mentions-legales'}
+            href={pick(lang, { fr: '/mentions-legales', en: '/en/mentions-legales', hu: '/hu/mentions-legales' })}
             className="font-sans at-footer-legal"
           >
-            {d('Mentions légales', 'Legal notice')}
+            {d('Mentions légales', 'Legal notice', 'Jogi nyilatkozat')}
           </a>
         </div>
       </footer>
@@ -1672,8 +1743,8 @@ function Deroule() {
           <Etape
             key={etape.num}
             num={etape.num}
-            titre={d(etape.titreFr, etape.titreEn)}
-            texte={d(etape.texteFr, etape.texteEn)}
+            titre={d(etape.titreFr, etape.titreEn, etape.titreHu)}
+            texte={d(etape.texteFr, etape.texteEn, etape.texteHu)}
           />
         ))}
       </ol>
@@ -1849,9 +1920,9 @@ function GarantieJeu() {
   const finale = depart + pas * 3
 
   const heures = [
-    { n: '1', labelFr: 'Heure 1', labelEn: 'Hour 1' },
-    { n: '2', labelFr: 'Heure 2', labelEn: 'Hour 2' },
-    { n: '3', labelFr: 'Heure 3', labelEn: 'Hour 3' },
+    { n: '1', labelFr: 'Heure 1', labelEn: 'Hour 1', labelHu: '1. óra' },
+    { n: '2', labelFr: 'Heure 2', labelEn: 'Hour 2', labelHu: '2. óra' },
+    { n: '3', labelFr: 'Heure 3', labelEn: 'Hour 3', labelHu: '3. óra' },
   ]
 
   return (
@@ -1902,7 +1973,7 @@ function GarantieJeu() {
                   />
                 </svg>
               </motion.span>
-              <span className="font-mono gj-label">{d(h.labelFr, h.labelEn)}</span>
+              <span className="font-mono gj-label">{d(h.labelFr, h.labelEn, h.labelHu)}</span>
             </li>
           </Fragment>
         ))}
@@ -1926,7 +1997,7 @@ function GarantieJeu() {
           transition={{ duration: reduce ? 0 : 1.1, delay: finale, ease: 'easeOut' }}
         />
         <span className="font-sans gj-prize-text">
-          {d('Son outil, et il tourne.', 'Their own tool, up and running.')}
+          {d('Son outil, et il tourne.', 'Their own tool, up and running.', 'A saját eszköze, és működik.')}
         </span>
       </motion.div>
 
