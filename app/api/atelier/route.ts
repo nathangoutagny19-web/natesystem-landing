@@ -52,6 +52,8 @@ type Payload = {
   personnes?: string
   lieu?: string
   mot?: string
+  /** Langue de la page remplie (fr, en, hu) : la langue dans laquelle répondre. */
+  langue?: string
 }
 
 const esc = (s: unknown) =>
@@ -79,8 +81,11 @@ export async function POST(req: NextRequest) {
 
   const {
     nom = '', fonction = '', etablissement = '', email = '',
-    telephone = '', personnes = '', lieu = '', mot = '', prerequis = '', reseau = '',
+    telephone = '', personnes = '', lieu = '', mot = '', prerequis = '', reseau = '', langue = 'fr',
   } = body
+  const LANGUES: Record<string, string> = { fr: 'Français', en: 'Anglais', hu: 'Hongrois' }
+  const langueLabel = LANGUES[langue] ?? 'Français'
+  const etranger = langue !== 'fr'
 
   if (!nom.trim() || !email.trim() || !etablissement.trim()) {
     return NextResponse.json({ error: 'missing_fields' }, { status: 400 })
@@ -89,7 +94,7 @@ export async function POST(req: NextRequest) {
   // La fonction du demandeur change l'urgence : un chef d'établissement qui
   // demande lui-même, c'est la condition « direction présente » déjà remplie.
   const direction = /chef|direction|responsable/i.test(fonction)
-  const subject = `${direction ? '🔴 ' : ''}Atelier demandé · ${etablissement.trim()} (${nom.trim()})`
+  const subject = `${direction ? '🔴 ' : ''}${etranger ? `[${langue.toUpperCase()}] ` : ''}Atelier demandé · ${etablissement.trim()} (${nom.trim()})`
 
   const html = `<!DOCTYPE html>
 <html>
@@ -110,6 +115,7 @@ export async function POST(req: NextRequest) {
         <tr>
           <td style="padding:24px 28px;">
             <table cellpadding="0" cellspacing="0" border="0" width="100%">
+              ${row('Langue de la page', etranger ? `${langueLabel}, répondre dans cette langue` : langueLabel)}
               ${row('Téléphone', telephone)}
               ${row('Participants', personnes)}
               ${row('Format souhaité', lieu)}
@@ -146,6 +152,7 @@ export async function POST(req: NextRequest) {
 
 ${nom}${fonction ? `, ${fonction}` : ''}
 Email : ${email}
+Langue de la page : ${langueLabel}
 Téléphone : ${telephone || '—'}
 Participants : ${personnes || '—'}
 Format : ${lieu || '—'}
