@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="NateSystem, pour La Conciergerie de Courchevel - Saint-Tropez.">
+<link rel="icon" href="/favicon.ico">
+<title>NateSystem × Conciergerie de Courchevel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=JetBrains+Mono:wght@300;400&display=swap">
+<style>
+/* Layout: une lettre courte et sombre. La promesse, les clients, les résultats, puis la proposition. Charte NateSystem. */
+:root {
+  --bg: #0e0e12;
+  --card: #141418;
+  --line: rgba(255,255,255,0.08);
+  --text: #f0f0f2;
+  --text-2: #a3a3ad;
+  --muted: #6b6b76;
+  --accent: #E63946;
+  --accent-soft: rgba(230,57,70,0.10);
+  --serif: 'Instrument Serif', Georgia, 'Times New Roman', serif;
+  --sans: 'DM Sans', -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+a:focus-visible { outline: 2px solid var(--text); outline-offset: 3px; }
+.wrap { max-width: 820px; margin: 0 auto; padding-inline: 24px; padding-block: 36px 64px; }
+.label {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 300;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.topbar {
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px;
+  padding-bottom: 18px; border-bottom: 1px solid var(--line);
+}
+.brand { font-family: var(--mono); font-size: 12px; letter-spacing: 0.3em; text-decoration: none; }
+.brand b { color: var(--accent); font-weight: 400; }
+
+/* Promesse */
+.hero { padding-block: 56px 40px; }
+h1 {
+  font-family: var(--serif); font-style: italic; font-weight: 400;
+  font-size: clamp(34px, 6.4vw, 56px); line-height: 1.08; letter-spacing: -0.01em;
+  margin: 0 0 26px; text-wrap: balance;
+}
+h1 span { display: block; }
+h1 span:last-child { color: var(--accent); }
+.what { font-size: 18px; color: var(--text-2); max-width: 58ch; margin: 0; }
+.what strong { color: var(--text); font-weight: 500; }
+
+section { padding-block: 40px; border-top: 1px solid var(--line); }
+h2 {
+  font-family: var(--serif); font-style: italic; font-weight: 400;
+  font-size: clamp(26px, 4.6vw, 34px); line-height: 1.15; margin: 8px 0 22px; text-wrap: balance;
+}
+p { margin: 0 0 12px; max-width: 64ch; }
+.note { font-size: 13px; color: var(--muted); margin: 14px 0 0; }
+
+/* Clients : logos */
+.logos {
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px; background: var(--line); border: 1px solid var(--line);
+}
+.logos a {
+  background: var(--bg); display: grid; place-items: center; gap: 10px;
+  padding: 22px 12px 16px; text-decoration: none; min-width: 0;
+  transition: background .2s;
+}
+.logos a:hover { background: var(--card); }
+.logos img {
+  height: 46px; width: auto; max-width: 100%; object-fit: contain;
+  filter: grayscale(1) brightness(0) invert(1); opacity: .82;
+}
+.logos .name { font-family: var(--mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); text-align: center; }
+
+/* Clients : rencontres */
+.meet { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-top: 14px; }
+.meet a { text-decoration: none; display: grid; gap: 8px; min-width: 0; }
+.meet img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; object-position: 50% 0%; display: block; filter: grayscale(.25); transition: filter .25s; }
+.meet a:hover img { filter: none; }
+.meet .play img { object-fit: contain; background: var(--card); }
+.meet .cap { font-size: 13px; color: var(--text-2); }
+.meet .cap b { color: var(--text); font-weight: 500; }
+.play { position: relative; display: block; }
+.play::after {
+  content: ""; position: absolute; inset: 0; margin: auto; width: 46px; height: 46px; border-radius: 50%;
+  background: var(--accent) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 7l8 5-8 5z' fill='white'/%3E%3C/svg%3E") center/22px no-repeat;
+}
+
+/* Résultats */
+.results { display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); }
+.res { background: var(--card); padding: 18px 20px; display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 18px; align-items: baseline; }
+.fig { font-family: var(--serif); font-style: italic; font-size: 34px; line-height: 1; font-variant-numeric: tabular-nums; }
+.fig small { display: block; font-family: var(--mono); font-style: normal; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin-top: 6px; }
+.res h3 { font-family: var(--sans); font-weight: 500; font-size: 15px; margin: 0 0 2px; }
+.res p { color: var(--text-2); font-size: 14px; margin: 0; }
+blockquote {
+  margin: 22px 0 0; padding-left: 18px; border-left: 2px solid var(--accent);
+  font-family: var(--serif); font-style: italic; font-size: 21px; line-height: 1.35; max-width: 60ch;
+}
+blockquote footer { font-family: var(--mono); font-style: normal; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-top: 10px; }
+.discreet { margin-top: 18px; padding: 16px 18px; background: var(--accent-soft); border: 1px solid rgba(230,57,70,0.25); font-size: 15px; }
+.discreet p { margin: 0; }
+.discreet b { font-weight: 500; color: var(--text); }
+
+/* Pour vous */
+.pistes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+.pistes > div { min-width: 0; }
+.pistes h3 { font-family: var(--sans); font-weight: 500; font-size: 16px; margin: 8px 0 6px; }
+.pistes p { color: var(--text-2); font-size: 14px; margin: 0; }
+.facts { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 26px; padding-top: 18px; border-top: 1px dashed var(--line); }
+.facts span { font-size: 13px; color: var(--text-2); }
+.facts b { color: var(--text); font-weight: 500; }
+
+
+/* Accompagnement */
+.cycle { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); margin-top: 4px; }
+.cycle > div { background: var(--bg); padding: 16px 14px; min-width: 0; }
+.cycle .n { font-family: var(--mono); font-size: 11px; color: var(--accent); letter-spacing: .14em; }
+.cycle h3 { font-family: var(--serif); font-style: italic; font-weight: 400; font-size: 22px; margin: 6px 0 4px; }
+.cycle .key { background: var(--accent-soft); }
+.cycle p { font-size: 13px; color: var(--text-2); margin: 0; }
+.free { margin-top: 16px; padding: 18px 20px; border: 1px solid var(--line-strong, rgba(255,255,255,0.16)); background: var(--card); }
+.free h3 { font-family: var(--sans); font-weight: 500; font-size: 16px; margin: 0 0 6px; }
+.free p { margin: 0; color: var(--text-2); font-size: 15px; }
+@media (max-width: 680px) { .cycle { grid-template-columns: minmax(0, 1fr); } }
+
+
+.offers { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 16px; }
+.offers .first { grid-column: 1 / -1; }
+.offers .then { grid-column: 1 / -1; margin-top: 6px; }
+.offer { border: 1px solid var(--line); padding: 20px; min-width: 0; display: grid; gap: 8px; align-content: start; }
+.offer.main { border-color: rgba(230,57,70,0.45); background: var(--accent-soft); }
+.offer .price { font-size: 14px; color: var(--text-2); }
+.offer .role { font-family: var(--serif); font-style: italic; font-weight: 400; font-size: 22px; line-height: 1.2; margin: 0; }
+.offer .price b { margin-inline: 4px 2px; font-family: var(--serif); font-style: italic; font-weight: 400; font-size: 34px; color: var(--text); font-variant-numeric: tabular-nums; }
+.offer .price small { font-family: var(--mono); font-size: 11px; letter-spacing: .1em; color: var(--muted); }
+.offer p { margin: 0; color: var(--text-2); font-size: 14px; }
+@media (max-width: 680px) { .offers { grid-template-columns: minmax(0, 1fr); } }
+
+
+/* Douleurs */
+.unique { margin-top: 18px; padding: 18px 20px; border-left: 2px solid var(--accent); background: var(--accent-soft); }
+.unique p { margin: 0; font-family: var(--serif); font-style: italic; font-size: 21px; line-height: 1.35; max-width: none; }
+.unique strong { font-family: var(--sans); font-style: normal; font-weight: 500; letter-spacing: .08em; color: var(--accent); }
+.pains-head { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); margin-top: 14px; padding-inline: 18px; }
+.pains-head .label:last-child { color: var(--accent); padding-left: 2px; }
+@media (max-width: 680px) { .pains-head { display: none; } }
+.intro { color: var(--text-2); font-size: 15px; margin-top: -8px; }
+.pains { display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); margin-top: 8px; }
+.pain { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); background: var(--bg); }
+.pain > div { padding: 16px 18px; min-width: 0; }
+.pain .ko p { font-size: 14px; color: var(--text-2); margin: 6px 0 0; }
+.pain .ok { background: var(--card); border-left: 2px solid var(--accent); }
+.pain .ok h3 { font-family: var(--sans); font-weight: 500; font-size: 15px; margin: 0 0 4px; }
+.pain .ok p { font-size: 14px; color: var(--text-2); margin: 0; }
+@media (max-width: 680px) { .pain { grid-template-columns: minmax(0, 1fr); } .pain .ok { border-left: 0; border-top: 2px solid var(--accent); } }
+
+
+.offers { grid-template-columns: minmax(0, 1fr) !important; }
+.then-row { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 10px 22px; margin-top: 12px; padding-top: 16px; border-top: 1px solid var(--line); }
+.then-row > .label { grid-column: 1 / -1; }
+.opt { display: grid; gap: 2px; min-width: 0; }
+.opt strong { font-weight: 500; font-size: 15px; }
+.opt span { font-size: 14px; color: var(--text-2); }
+.opt span b { font-family: var(--serif); font-style: italic; font-weight: 400; font-size: 24px; color: var(--text); }
+.opt em { font-style: normal; font-size: 13px; color: var(--text-2); }
+.offer .sm { font-size: 13px; color: var(--muted); margin-top: 6px; }
+@media (max-width: 680px) { .then-row { grid-template-columns: minmax(0,1fr); } }
+
+/* Contact */
+.cta { padding-block: 44px 4px; border-top: 1px solid var(--line); }
+.btn {
+  display: inline-flex; align-items: center; gap: 10px; background: var(--accent); color: #fff;
+  text-decoration: none; font-weight: 500; font-size: 15px; padding: 14px 22px; border-radius: 2px; margin: 4px 0 26px;
+}
+.btn:hover { filter: brightness(1.08); }
+.sign { display: grid; gap: 3px; }
+.sign .name { font-family: var(--serif); font-style: italic; font-size: 24px; }
+.sign .contact { font-family: var(--mono); font-size: 13px; color: var(--text-2); }
+
+@media (max-width: 680px) {
+  .wrap { padding-inline: 18px; padding-block: 26px 52px; }
+  .hero { padding-block: 40px 30px; }
+  .logos { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .meet, .pistes { grid-template-columns: minmax(0, 1fr); }
+  .res { grid-template-columns: minmax(0, 1fr); gap: 6px; }
+}
+</style>
+
+</head>
+<body>
+<div class="wrap">
+  <header class="topbar">
+    <a class="brand" href="https://www.natesystem.com" target="_blank" rel="noopener">NATE<b>SYSTEM</b></a>
+    <span class="label">Pour La Conciergerie de Courchevel - Saint-Tropez</span>
+  </header>
+
+  <div class="hero">
+    <h1>
+      <span>Votre façon de servir vos clients est unique.</span>
+      <span>Votre logiciel et votre image digitale devraient l'être aussi.</span>
+    </h1>
+    <p class="what"><strong>NateSystem conçoit des outils digitaux sur mesure</strong> : logiciels métier, CRM, outils internes et sites web, construits sur votre façon de travailler. Le code vous appartient.</p>
+  </div>
+
+  <section>
+    <span class="label">Ils nous font confiance</span>
+    <h2>Nos clients de référence.</h2>
+    <div class="logos">
+      <a href="https://www.leschartreux.net/" target="_blank" rel="noopener"><img src="/pour/courchevel/img/chartreux-light.png" alt="Institut des Chartreux"><span class="name">Institut des Chartreux · Lyon</span></a>
+      <a href="https://www.univ-st-etienne.fr/fr/index.html" target="_blank" rel="noopener"><img src="/pour/courchevel/img/ujm.png" alt="Université Jean Monnet"><span class="name">Université de Saint-Étienne</span></a>
+      <a href="https://chromosome-saint-etienne.fr/" target="_blank" rel="noopener"><img src="/pour/courchevel/img/chromosome.png" alt="Chromosome"><span class="name">Chromosome · Saint-Étienne</span></a>
+      <a href="https://vendeglatasmenedzsment.hu/" target="_blank" rel="noopener"><img src="/pour/courchevel/img/vendeglatas.png" alt="Vendéglátás Menedzsment"><span class="name">Hospitality Management · Budapest</span></a>
+    </div>
+    <div class="meet">
+      <a href="https://www.natesystem.com/case-studies/conseil-b2b-budapest" target="_blank" rel="noopener">
+        <img src="/pour/courchevel/img/zoltan-budapest.webp" alt="Nathan Goutagny serre la main de Kis Zoltán, à Budapest">
+        <span class="cap"><b>Kis Zoltán</b>, Hospitality Management, à Budapest</span>
+      </a>
+      <a href="https://www.natesystem.com/case-studies" target="_blank" rel="noopener">
+        <img src="/pour/courchevel/img/chartreux-terrasse.webp" alt="Nathan Goutagny serre la main de la direction de l'Institut des Chartreux, sur la terrasse, à Lyon">
+        <span class="cap"><b>Institut des Chartreux</b>, sur la terrasse, à Lyon</span>
+      </a>
+      <a href="https://www.youtube.com/watch?v=aMIjJbzuhDc" target="_blank" rel="noopener">
+        <span class="play"><img src="/pour/courchevel/img/catherine.webp" alt="Catherine F., de Chromosome, pendant le podcast"></span>
+        <span class="cap"><b>Le podcast</b> avec Catherine F., Chromosome</span>
+      </a>
+    </div>
+  </section>
+
+  <section>
+    <span class="label">Leurs résultats</span>
+    <h2>Ce que ça a changé pour eux.</h2>
+    <div class="results">
+      <div class="res"><div class="fig">40 h<small>par mois</small></div><div><h3>Institut des Chartreux</h3><p>de temps rendu chaque mois à l'équipe administrative.</p></div></div>
+      <div class="res"><div class="fig">30 h<small>par mois</small></div><div><h3>Une conciergerie immobilière de luxe</h3><p>récupérées, avec une nette amélioration de l'expérience client.</p></div></div>
+      <div class="res"><div class="fig">45 min<small>par jour</small></div><div><h3>Chromosome</h3><p>gagnées sur la gestion des réservations, et 50 % des réservations passent désormais par le site.</p></div></div>
+      <div class="res"><div class="fig">10 à 15 h<small>par semaine</small></div><div><h3>Hospitality Management</h3><p>gagnées, et un portail dédié à ses clients : ils suivent leur dossier et reçoivent leurs rapports personnalisés (280 indicateurs) au même endroit. Un suivi bien plus clair, et une bien meilleure expérience client.</p></div></div>
+    </div>
+    <blockquote>« Ça a changé notre façon de tout gérer, on ne peut plus s'en passer aujourd'hui. »<footer>Catherine F., vice-présidente, Chromosome</footer></blockquote>
+    <div class="discreet"><p><b>Plus de dix organisations accompagnées, dont une conciergerie immobilière de luxe, dans votre domaine.</b> Comme vous sans doute, elle tient à sa discrétion : nous avons signé avec elle un accord de confidentialité, son nom n'est donc pas cité ici.</p></div>
+    <p class="note">Chiffres rapportés par nos clients.</p>
+  </section>
+
+  <section>
+    <span class="label">Pour vous</span>
+    <h2>Ce qui revient le plus souvent dans une conciergerie, et ce que nous mettrions en place chez vous.</h2>
+    <p class="intro">Tiré de vos sites, de vos conditions de vente, et de ce que nous retrouvons d'un projet à l'autre.</p>
+    <div class="pains-head"><span class="label">Aujourd'hui</span><span class="label">Avec votre outil</span></div>
+    <div class="pains">
+      <div class="pain"><div class="ko"><span class="label">Vos demandes</span><p>Un devis personnalisé à demander sur chaque page, deux sites, deux adresses mail, plusieurs numéros, WhatsApp. Chaque devis se monte à la main.</p></div><div class="ok"><h3>Une seule entrée, des devis en quelques minutes</h3><p>Chaque demande arrive au même endroit, d'où qu'elle vienne. Le devis se construit à partir de vos tarifs et de vos partenaires, puis part au client.</p></div></div>
+      <div class="pain"><div class="ko"><span class="label">Vos conditions de vente</span><p>Annulation sous 24 h, no-show à 399 €, itinéraire refusé à 99 €, empreintes Swikly : des règles précises, à appliquer et facturer une par une.</p></div><div class="ok"><h3>La facturation qui suit vos règles</h3><p>Chaque prestation, annulation ou no-show génère sa facture selon vos conditions. Acomptes et empreintes sont suivis, rien ne s'oublie.</p></div></div>
+      <div class="pain"><div class="ko"><span class="label">L'arrivée</span><p>Chauffeur, chef, gouvernante, moniteur, table : le jour J, tout doit être confirmé, et c'est souvent la veille au soir qu'on vérifie un par un.</p></div><div class="ok"><h3>Le séjour sans accroc</h3><p>Chaque prestation du séjour avec son statut. Les prestataires sont reconfirmés automatiquement, et tout ce qui n'est pas confirmé passe en rouge.</p></div></div>
+      <div class="pain"><div class="ko"><span class="label">Vos propriétaires</span><p>Location sur les plateformes, check-in, états des lieux, cautions, artisans, dates bloquées par le propriétaire, et la promesse d'un reporting transparent.</p></div><div class="ok"><h3>Le portail propriétaire</h3><p>Son calendrier, ses locations, les interventions avec photos, les états des lieux, les dépenses et les revenus. Le rapport du mois se fait tout seul.</p></div></div>
+      <div class="pain"><div class="ko"><span class="label">Vos événements</span><p>Séminaires et team buildings : un planning précis, des lieux, des prestataires, des transferts et un budget à tenir, pour un interlocuteur unique.</p></div><div class="ok"><h3>Le planning événement</h3><p>Le déroulé de chaque événement, ses prestataires confirmés et son budget suivi, partagés avec votre client en temps réel.</p></div></div>
+      <div class="pain"><div class="ko"><span class="label">Vos clients</span><p>Une clientèle internationale, qui parle anglais, russe ou arabe, et qui passe de Courchevel à Saint-Tropez. Ses préférences vivent dans des têtes et des fils WhatsApp.</p></div><div class="ok"><h3>La fiche client partagée</h3><p>Préférences, habitudes, historique et promesses faites, visibles par toute l'équipe, d'une destination et d'une saison à l'autre.</p></div></div>
+      <div class="pain"><div class="ko"><span class="label">Vos chiffres</span><p>Séjours, propriétaires, événements, commissions partenaires : l'information est éparpillée entre fichiers, boîtes mail et téléphones.</p></div><div class="ok"><h3>Toute votre activité, au même endroit</h3><p>Un tableau de bord par activité et par saison : ce qui est vendu, encaissé, avancé, à réclamer, et ce que rapporte chaque client.</p></div></div>
+    </div>
+    <div class="unique"><p>Ce ne sont que des idées et des suppositions. Votre organisation est <strong>UNIQUE</strong> : c'est en analysant vos process avec vos équipes que nous arriverons aux meilleures solutions pour vous.</p></div>
+    <div class="facts">
+      <span><b>100 %</b> du code est à vous</span>
+      <span><b>Le fondateur</b> développe lui-même</span>
+      <span><b>Europe</b>, conforme RGPD</span>
+    </div>
+  </section>
+
+  <section>
+    <span class="label">Notre façon de travailler</span>
+    <h2>Nous ne livrons pas un logiciel pour repartir. Nous restons à vos côtés.</h2>
+    <div class="cycle">
+      <div class="key"><span class="n">01 · L'essentiel</span><h3>Analyser</h3><p>Nous cartographions votre organisation et nous écoutons vos équipes, sur le terrain, avant d'écrire une ligne de code.</p></div>
+      <div><span class="n">02</span><h3>Créer</h3><p>Nous concevons l'outil avec vous, sur votre façon de travailler.</p></div>
+      <div><span class="n">03</span><h3>Développer</h3><p>Le fondateur construit lui-même votre outil.</p></div>
+      <div><span class="n">04</span><h3>Suivre</h3><p>Nous suivons l'outil après sa mise en service, en saison comme hors saison.</p></div>
+      <div><span class="n">05</span><h3>Faire évoluer</h3><p>L'outil grandit avec votre activité et vos nouvelles demandes.</p></div>
+      <div><span class="n">06</span><h3>Former</h3><p>Votre équipe le prend en main, à son rythme.</p></div>
+    </div>
+    <div class="free">
+      <h3>Puis sans engagement.</h3>
+      <p>Après les trois premiers mois, vous arrêtez quand vous voulez. Le jour où vous souhaitez être autonome, ou si vous n'êtes plus satisfait, nous formons votre équipe, nous vous remettons tout, et nous partons. Le logiciel, le code et vos données restent à vous.</p>
+    </div>
+
+    <div class="offers">
+      <div class="offer main">
+        <span class="label">Projet de développement</span>
+        <div class="price">à partir de <b>2 500 €</b> <small>HT</small></div>
+        <p>L'analyse de votre organisation, puis votre outil conçu, développé et livré. Nous formons votre équipe jusqu'à ce qu'elle soit autonome. L'outil vous appartient.</p>
+        <div class="then-row">
+          <span class="label">Ensuite, au choix</span>
+          <div class="opt"><strong>Maintenance</strong><span>à partir de <b>89 €</b> HT / mois</span><em>Votre outil reste à jour et en état de marche.</em></div>
+          <div class="opt"><strong>Évolution</strong><span>à partir de <b>690 €</b> HT / mois</span><em>Votre département digital et IA, à l'extérieur : évolutions, nouvelles demandes, suivi et formation. Trois mois minimum, puis sans engagement.</em></div>
+        </div>
+        <p class="sm">Chaque projet est sur mesure : le prix exact se fixe après l'analyse, avant de commencer.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta">
+    <span class="label">Prochaine étape</span>
+    <h2>20 minutes pour en parler.</h2>
+    <a class="btn" href="https://cal.com/natesystem/session-strategique" target="_blank" rel="noopener">Choisir un créneau <span aria-hidden="true">→</span></a>
+    <div class="sign">
+      <span class="name">Nathan Goutagny</span>
+      <span class="label">Fondateur, NateSystem</span>
+      <span class="contact">nathan@natesystem.com · www.natesystem.com</span>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

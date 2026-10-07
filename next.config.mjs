@@ -79,6 +79,18 @@ const nextConfig = {
       },
     ]
   },
+
+  /* Pages de présentation envoyées à un prospect précis : du HTML statique
+     dans public/pour/<slug>/. Next ne sert pas index.html tout seul pour un
+     dossier, d'où la réécriture. Elles sont en noindex dans leur <head>. */
+  async rewrites() {
+    return [
+      {
+        source: '/pour/:slug/',
+        destination: '/pour/:slug/index.html',
+      },
+    ]
+  },
 }
 
 export default nextConfig
