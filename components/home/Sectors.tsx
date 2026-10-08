@@ -14,7 +14,7 @@ const BASE_FR = [
   'Une seule information, partagée',
   'Vos règles, pas celles d’un modèle',
   'Des équipes plus sereines',
-  'Des élèves et étudiants mieux suivis',
+  'Des clients mieux servis',
 ]
 const BASE_HU = [
   'Központosított, tiszta adatok',
@@ -22,7 +22,7 @@ const BASE_HU = [
   'Egyetlen, közös információ',
   'Az Ön szabályai, nem egy sablonéi',
   'Nyugodtabb csapatok',
-  'Jobban követett diákok',
+  'Jobban kiszolgált ügyfelek',
 ]
 
 const BASE_EN = [
@@ -31,7 +31,7 @@ const BASE_EN = [
   'One piece of information, shared',
   'Your rules, not a template’s',
   'Calmer teams',
-  'Students properly followed',
+  'Clients better served',
 ]
 
 type Sector = {
@@ -41,86 +41,91 @@ type Sector = {
 }
 
 /**
- * LES HUIT MÉTIERS D'UNE ÉCOLE, PAS HUIT SECTEURS.
+ * HUIT MÉTIERS DU LUXE ET DE L'HOSPITALITÉ.
  *
- * Avant le 30 septembre 2026, cette liste tenait huit industries : ingénierie,
- * conseil, hôtellerie, immobilier, écoles, franchises, logistique, marketing.
- * Elle a été retournée avec le reste du site, quand NateSystem s'est resserré
- * sur les écoles privées.
+ * 30 septembre 2026 : la liste tenait les huit métiers d'une école privée.
+ * 8 octobre 2026, sur décision de Nathan : elle passe aux métiers qui
+ * répondent réellement à la prospection (conciergeries, villas, voyage de
+ * luxe, yachting), les écoles restent en huitième, Chartreux étant toujours
+ * la preuve n° 1. La structure du composant ne change pas.
  *
- * Huit entrées, même structure, même composant : ce qui change, c'est qu'un
- * directeur ne voit plus sept industries qui ne sont pas la sienne. C'est ce
- * que le transcript des experts edtech donne comme première cause de rejet,
- * « offers that aren't relevant to my job », et c'est aussi ce que fait le
- * leader du marché, qui adresse huit départements d'école un par un.
- *
- * Quatre côté administration, quatre côté pédagogie : les deux axes de
- * l'offre. Voir natesystem-os/knowledge/voix/socle-ecoles.md.
+ * Les douleurs viennent de la recherche du 6 octobre
+ * (~/Business/Commercial/6:10prospection/douleurs-conciergeries-voyage-luxe-2026-10-06.md)
+ * et des sites lus pendant la prospection. Aucun chiffre inventé.
+ * La restauration n'apparaît pas : règle permanente, jamais en niche.
  */
 const SECTORS: Sector[] = [
   {
-    nameFr: 'Direction', nameEn: 'Leadership', nameHu: 'Vezetőség',
-    painFr: 'Vous demandez un chiffre, il arrive trois jours plus tard et personne n’est sûr qu’il soit juste. Piloter un groupe scolaire sur des tableurs envoyés par mail, c’est décider en retard.',
-    painEn: 'You ask for a figure, it arrives three days later and nobody is sure it is right. Running a school group on spreadsheets sent by email means deciding late.', painHu: 'Kér egy számot, három nap múlva érkezik meg, és senki sem biztos benne, hogy helyes. Iskolacsoportot e-mailben küldött táblázatokon vezetni annyi, mint késve dönteni.',
-    buildsFr: ['Effectifs, heures et coûts de chaque site sur un écran', 'Les alertes qui comptent, avant que ça devienne un problème', 'Le même chiffre pour la direction et pour les établissements'],
-    buildsEn: ['Headcount, hours and costs for every site on one screen', 'The alerts that matter, before they become a problem', 'The same figure for leadership and for the sites'],
-    buildsHu: ['Minden telephely létszáma, órái és költségei egy képernyőn', 'A fontos riasztások, mielőtt problémává válnának', 'Ugyanaz a szám a vezetőségnek és az intézményeknek'],
+    nameFr: 'Conciergerie privée', nameEn: 'Private concierge', nameHu: 'Magán concierge',
+    painFr: 'Les demandes arrivent par WhatsApp, par mail et par téléphone, à toute heure. Le chauffeur, le chef, la table « confirmée » : tout tient dans une tête, jusqu’au jour où un détail passe à la trappe.',
+    painEn: 'Requests come in by WhatsApp, email and phone, at all hours. The driver, the chef, the « confirmed » table: it all lives in one head, until the day a detail slips.',
+    painHu: 'A kérések WhatsAppon, e-mailben és telefonon érkeznek, bármikor. A sofőr, a séf, a „megerősített” asztal: minden egy fejben van, amíg egy nap el nem csúszik egy részlet.',
+    buildsFr: ['Chaque demande suivie, de la réception à la confirmation', 'Les prestataires reconfirmés la veille, sans y penser', 'La fiche de chaque client, partagée par toute l’équipe'],
+    buildsEn: ['Every request tracked, from arrival to confirmation', 'Suppliers reconfirmed the day before, without thinking about it', 'Each client’s profile, shared by the whole team'],
+    buildsHu: ['Minden kérés követve, a beérkezéstől a megerősítésig', 'A szolgáltatók előző nap újra megerősítve, külön gondolkodás nélkül', 'Minden ügyfél adatlapja, az egész csapat számára elérhető'],
   },
   {
-    nameFr: 'Administratif & financier', nameEn: 'Admin & finance', nameHu: 'Gazdasági hivatal',
-    painFr: 'Chaque mois, la paie se prépare à la main : on récupère les heures site par site, on corrige, on ressaisit. Quinze maillons entre le badge et le bulletin, et une erreur suffit à tout refaire.',
-    painEn: 'Every month payroll is prepared by hand: hours collected site by site, corrected, re-entered. Fifteen links between the badge and the payslip, and one error means starting again.', painHu: 'Minden hónapban kézzel készül a bér: telephelyenként összeszedett órák, javítás, újbóli bevitel. Tizenöt láncszem a beléptetőkártya és a bérlap között, és egyetlen hiba mindent újrakezdet.',
-    buildsFr: ['Heures supplémentaires et annualisation calculées sur votre convention', 'Export prêt pour la paie, sans ressaisie', 'Les écarts signalés avant la clôture, pas après'],
-    buildsEn: ['Overtime and annualised hours calculated against your own agreement', 'Payroll-ready export, no re-entry', 'Discrepancies flagged before closing, not after'],
-    buildsHu: ['Túlóra és éves munkaidő az Ön megállapodása szerint számolva', 'Bérszámfejtésre kész export, újbóli bevitel nélkül', 'Az eltérések a zárás előtt jeleznek, nem utána'],
+    nameFr: 'Gestion de villas', nameEn: 'Villa management', nameHu: 'Villakezelés',
+    painFr: 'Interventions, ménages, états des lieux, cautions, artisans : chaque propriétaire attend un compte rendu clair, et le préparer prend des heures de ressaisie chaque mois.',
+    painEn: 'Maintenance, cleaning, check-in reports, deposits, contractors: every owner expects a clear report, and preparing it takes hours of re-entry every month.',
+    painHu: 'Javítások, takarítás, állapotfelmérés, kauciók, szakemberek: minden tulajdonos világos beszámolót vár, és ennek elkészítése havonta órákig tartó újragépelés.',
+    buildsFr: ['Un portail par propriétaire : calendrier, interventions, photos', 'Le rapport mensuel qui se prépare tout seul', 'Les artisans et leurs passages suivis par villa'],
+    buildsEn: ['One portal per owner: calendar, work done, photos', 'The monthly report that builds itself', 'Contractors and their visits tracked per villa'],
+    buildsHu: ['Tulajdonosonként egy portál: naptár, elvégzett munkák, fotók', 'A havi jelentés, ami magától elkészül', 'A szakemberek és látogatásaik villánként követve'],
   },
   {
-    nameFr: 'Secrétariat & accueil', nameEn: 'Front office', nameHu: 'Titkárság és porta',
-    painFr: 'Le téléphone sonne, une famille demande une attestation, un dossier est incomplet et la pièce manquante est dans un mail de mars. Le temps passé à chercher est du temps volé à l’accueil.',
-    painEn: 'The phone rings, a family asks for a certificate, a file is incomplete and the missing document is in an email from March. Time spent searching is time taken from welcoming people.', painHu: 'Cseng a telefon, egy család igazolást kér, egy akta hiányos, a hiányzó irat pedig egy márciusi e-mailben van. A keresésre fordított idő a fogadástól vett idő.',
-    buildsFr: ['Un dossier par élève, complet, au même endroit', 'Les relances de pièces manquantes qui partent seules', 'Les documents récurrents préparés, vous validez'],
-    buildsEn: ['One record per student, complete, in one place', 'Reminders for missing documents that go out on their own', 'Recurring documents drafted, you just approve'],
-    buildsHu: ['Diákonként egy teljes akta, egy helyen', 'A hiányzó iratok emlékeztetői maguktól mennek ki', 'Az ismétlődő dokumentumok elkészülnek, Ön jóváhagyja'],
+    nameFr: 'Voyage de luxe sur mesure', nameEn: 'Bespoke luxury travel', nameHu: 'Egyedi luxusutazás',
+    painFr: 'Chaque proposition se monte à la main, partenaire par partenaire, puis il faut suivre le voyageur jusqu’à son retour. Le temps passé à produire, c’est du temps en moins pour conseiller.',
+    painEn: 'Every proposal is built by hand, partner by partner, then the traveller has to be followed until they are home. Time spent producing is time taken from advising.',
+    painHu: 'Minden ajánlat kézzel készül, partnerről partnerre, aztán az utazót hazaérkezéséig követni kell. Amit a gyártásra fordítanak, az a tanácsadástól hiányzik.',
+    buildsFr: ['Vos itinéraires réutilisables, pour des devis plus rapides', 'Les disponibilités partenaires suivies au même endroit', 'Chaque voyageur suivi jusqu’à son retour'],
+    buildsEn: ['Your itineraries made reusable, for faster quotes', 'Partner availability tracked in one place', 'Every traveller followed until they are home'],
+    buildsHu: ['Újrafelhasználható útitervek a gyorsabb ajánlatokért', 'A partnerek elérhetősége egy helyen követve', 'Minden utazó követve hazaérkezéséig'],
   },
   {
-    nameFr: 'Vie scolaire & internat', nameEn: 'School life & boarding', nameHu: 'Iskolai élet és kollégium',
-    painFr: 'Surveillances, internat, restauration, sorties : des plannings qui changent tout le temps, tenus sur papier ou dans un tableur que trois personnes modifient en même temps.',
-    painEn: 'Supervision, boarding, catering, trips: rotas that change constantly, kept on paper or in a spreadsheet three people edit at once.', painHu: 'Felügyelet, kollégium, étkeztetés, kirándulások: folyton változó beosztások, papíron vagy olyan táblázatban, amit egyszerre hárman szerkesztenek.',
-    buildsFr: ['Un planning par site, visible dès qu’il change', 'Présences et absences constatées le jour même', 'Une alerte quand un créneau se vide, avec le lien pour le reprendre'],
-    buildsEn: ['One rota per site, visible the second it changes', 'Attendance and absence recorded the same day', 'An alert when a slot empties, with the link to pick it up'],
-    buildsHu: ['Telephelyenként egy beosztás, amint változik, látszik', 'A jelenlét és hiányzás aznap rögzül', 'Riasztás, ha egy műszak kiürül, a felvételi linkkel'],
+    nameFr: 'Yachting & transport VIP', nameEn: 'Yachting & VIP transport', nameHu: 'Jacht és VIP szállítás',
+    painFr: 'Arrivées de yachts, avitaillement, transferts, chauffeurs : le planning change d’heure en heure, et chaque dépense avancée pour un client doit être refacturée sans rien oublier.',
+    painEn: 'Yacht arrivals, provisioning, transfers, drivers: the schedule changes by the hour, and every expense advanced for a client has to be re-billed without missing one.',
+    painHu: 'Jachtérkezések, ellátás, transzferek, sofőrök: a beosztás óránként változik, és minden ügyfélnek megelőlegezett költséget hiánytalanul tovább kell számlázni.',
+    buildsFr: ['Un planning en direct par bateau et par véhicule', 'Les commandes d’avitaillement suivies jusqu’à la livraison', 'Chaque dépense avancée, rattachée et refacturée'],
+    buildsEn: ['A live schedule per yacht and per vehicle', 'Provisioning orders tracked through to delivery', 'Every advanced expense, assigned and re-billed'],
+    buildsHu: ['Élő beosztás hajónként és járművenként', 'Az ellátási rendelések követése a kiszállításig', 'Minden megelőlegezett költség hozzárendelve és továbbszámlázva'],
   },
   {
-    nameFr: 'Équipe pédagogique', nameEn: 'Teaching staff', nameHu: 'Tanári kar',
-    painFr: 'Vos enseignants tiennent leurs propres tableurs parce que l’outil de l’école ne fait pas ce dont ils ont besoin. Du temps passé sur du suivi administratif, pas sur leur classe.',
-    painEn: 'Your teachers keep their own spreadsheets because the school tool does not do what they need. Time spent on admin tracking, not on their class.', painHu: 'A tanárai saját táblázatokat vezetnek, mert az iskolai eszköz nem azt tudja, amire szükségük van. Adminisztrációra megy az idő, nem az osztályra.',
-    buildsFr: ['Le suivi dont ils ont vraiment besoin, pas celui d’un éditeur', 'Saisie une fois, visible partout où c’est utile', 'Ce qui est répétitif préparé d’avance, à valider'],
-    buildsEn: ['The tracking they actually need, not a vendor’s idea of it', 'Entered once, visible everywhere it matters', 'The repetitive parts drafted ahead, ready to approve'],
-    buildsHu: ['Az a követés, amire tényleg szükségük van, nem egy gyártóé', 'Egyszer beírva, mindenhol látszik, ahol számít', 'Az ismétlődő rész előre elkészül, csak jóvá kell hagyni'],
+    nameFr: 'Événementiel & mariages', nameEn: 'Events & weddings', nameHu: 'Rendezvények és esküvők',
+    painFr: 'Un lieu, dix prestataires, un rétroplanning et un budget à tenir, souvent pour plusieurs événements à la fois en saison. Le moindre changement se propage par message, un par un.',
+    painEn: 'One venue, ten suppliers, a countdown plan and a budget to hold, often for several events at once in season. Every change spreads by message, one by one.',
+    painHu: 'Egy helyszín, tíz szolgáltató, egy visszaszámláló terv és egy tartandó költségvetés, szezonban gyakran több rendezvényre egyszerre. Minden változás üzenetenként, egyesével terjed.',
+    buildsFr: ['Le déroulé de chaque événement, partagé en temps réel', 'Les prestataires confirmés, et les manques visibles', 'Le budget suivi ligne par ligne'],
+    buildsEn: ['Each event’s run of show, shared in real time', 'Suppliers confirmed, and gaps visible', 'The budget tracked line by line'],
+    buildsHu: ['Minden rendezvény menete valós időben megosztva', 'A megerősített szolgáltatók, és a hiányok láthatóan', 'A költségvetés tételenként követve'],
   },
   {
-    nameFr: 'Suivi des élèves et étudiants', nameEn: 'Student tracking', nameHu: 'Diákkövetés',
-    painFr: 'L’information sur un élève est répartie entre le professeur principal, la vie scolaire et le secrétariat. Quand quelqu’un s’inquiète pour lui, personne n’a la vue complète.',
-    painEn: 'What is known about a student is split between the form tutor, school life and the front office. When someone is worried, nobody has the full picture.', painHu: 'Amit egy diákról tudni lehet, megoszlik az osztályfőnök, az iskolai élet és a titkárság között. Ha valaki aggódik, senkinek sincs teljes képe.',
-    buildsFr: ['Un parcours par élève, de l’inscription au diplôme', 'Ce que chaque rôle a le droit de voir, et rien de plus', 'Les signaux faibles remontés tôt, pas au conseil de classe'],
-    buildsEn: ['One journey per student, from enrolment to leaving', 'What each role is allowed to see, and nothing more', 'Early signals surfaced early, not at the term review'],
-    buildsHu: ['Diákonként egy pálya, a beiratkozástól a végzésig', 'Amit az adott szerep láthat, és semmi többet', 'A gyenge jelek korán jelennek meg, nem az osztályozó értekezleten'],
+    nameFr: 'Immobilier de prestige', nameEn: 'Prestige real estate', nameHu: 'Prémium ingatlan',
+    painFr: 'Entre les demandes de location, les acheteurs à qualifier et les vendeurs à relancer, les contacts s’empilent dans les boîtes mail. Celui qui n’a pas été rappelé au bon moment est parti ailleurs.',
+    painEn: 'Between rental enquiries, buyers to qualify and sellers to follow up, contacts pile up in inboxes. The one not called back at the right time has gone elsewhere.',
+    painHu: 'A bérleti érdeklődők, a minősítendő vevők és az utánkövetendő eladók között a kapcsolatok felhalmozódnak a postafiókokban. Akit nem hívtak vissza időben, máshová ment.',
+    buildsFr: ['Chaque contact qualifié dès son arrivée', 'Les relances qui partent au bon moment', 'Biens, acheteurs et visites suivis au même endroit'],
+    buildsEn: ['Every contact qualified as soon as it comes in', 'Follow-ups that go out at the right time', 'Properties, buyers and viewings tracked in one place'],
+    buildsHu: ['Minden kapcsolat minősítve, amint beérkezik', 'Az utánkövetések a megfelelő időben mennek ki', 'Ingatlanok, vevők és megtekintések egy helyen követve'],
   },
   {
-    nameFr: 'Stages & alternance', nameEn: 'Internships & placements', nameHu: 'Gyakorlat és duális képzés',
-    painFr: 'Conventions, entreprises partenaires, tuteurs, soutenances : suivis dans un tableur par promotion, refait chaque année, et jamais au même format.',
-    painEn: 'Agreements, partner companies, tutors, vivas: tracked in one spreadsheet per cohort, rebuilt every year, never in the same format.', painHu: 'Megállapodások, partnercégek, mentorok, védések: évfolyamonként egy táblázatban követve, évente újraírva, sosem ugyanabban a formában.',
-    buildsFr: ['Entreprises, conventions et tuteurs au même endroit', 'Qui n’a pas encore de stage, vu tout de suite', 'Le réseau d’anciens qui reste joignable d’une promotion à l’autre'],
-    buildsEn: ['Companies, agreements and tutors in one place', 'Who still has no placement, visible at a glance', 'An alumni network that stays reachable from one cohort to the next'],
-    buildsHu: ['Cégek, megállapodások és mentorok egy helyen', 'Ki nincs még helyen, azonnal látszik', 'Egy öregdiák-hálózat, amely évfolyamról évfolyamra elérhető marad'],
+    nameFr: 'Hôtellerie', nameEn: 'Hospitality', nameHu: 'Vendéglátás',
+    painFr: 'Plannings, demandes des clients, maintenance, reporting à la direction : chaque service tient son propre tableur, et le chiffre qu’on demande arrive en retard.',
+    painEn: 'Rotas, guest requests, maintenance, reporting to management: each department keeps its own spreadsheet, and the figure you ask for arrives late.',
+    painHu: 'Beosztások, vendégkérések, karbantartás, vezetői jelentések: minden részleg saját táblázatot vezet, és a kért szám késve érkezik.',
+    buildsFr: ['Un planning par service, visible dès qu’il change', 'Les demandes clients suivies jusqu’à leur résolution', 'Le reporting de la direction, à jour sans ressaisie'],
+    buildsEn: ['One rota per department, visible the second it changes', 'Guest requests tracked until resolved', 'Management reporting, up to date with no re-entry'],
+    buildsHu: ['Részlegenként egy beosztás, amint változik, látszik', 'A vendégkérések követése megoldásukig', 'Naprakész vezetői jelentés újragépelés nélkül'],
   },
   {
-    nameFr: 'Informatique', nameEn: 'IT', nameHu: 'Informatika',
-    painFr: 'Vous héritez d’outils que vous n’avez pas choisis, avec des données d’élèves dispersées et des comptes que personne ne ferme. Et chaque nouveau projet vous retombe dessus.',
-    painEn: 'You inherit tools you did not choose, with student data scattered and accounts nobody closes. And every new project lands on your desk.', painHu: 'Olyan eszközöket örököl, amelyeket nem Ön választott, szétszórt diákadatokkal és fiókokkal, amelyeket senki nem zár le. És minden új projekt Önre hárul.',
-    buildsFr: ['Hébergement en Europe, accès cloisonnés par rôle', 'La reprise de vos données existantes, faite par nous', 'Le code et la documentation livrés : vous n’êtes captif de personne'],
-    buildsEn: ['EU hosting, access partitioned by role', 'Migration of your existing data, done by us', 'Code and documentation delivered: you are captive to nobody'],
-    buildsHu: ['Európai tárhely, szerepkörönként elkülönített hozzáférés', 'A meglévő adatai átvétele, általunk elvégezve', 'A kód és a dokumentáció átadva: senkinek nem kiszolgáltatott'],
+    nameFr: 'Écoles privées', nameEn: 'Private schools', nameHu: 'Magániskolák',
+    painFr: 'Paie, plannings, dossiers d’élèves, suivi pédagogique : un établissement privé tourne souvent sur une dizaine de tableurs, refaits chaque année.',
+    painEn: 'Payroll, rotas, student records, academic tracking: a private school often runs on a dozen spreadsheets, rebuilt every year.',
+    painHu: 'Bérszámfejtés, beosztások, diákaktak, tanulmányi követés: egy magániskola gyakran egy tucat, évente újraírt táblázaton működik.',
+    buildsFr: ['Heures et paie calculées sur votre convention', 'Un dossier par élève, complet, au même endroit', 'Ce que chaque rôle a le droit de voir, et rien de plus'],
+    buildsEn: ['Hours and payroll calculated against your own agreement', 'One record per student, complete, in one place', 'What each role is allowed to see, and nothing more'],
+    buildsHu: ['Órák és bér az Ön megállapodása szerint számolva', 'Diákonként egy teljes akta, egy helyen', 'Amit az adott szerep láthat, és semmi többet'],
   },
 ]
 
@@ -134,14 +139,14 @@ export default function Sectors() {
     <section id="secteurs" style={{ padding: '40px 24px 24px' }}>
       <div className="mx-auto" style={{ maxWidth: '1100px' }}>
         <FadeUp className="text-center mb-16">
-          <span className="section-label">{d('Qui s’en sert, chez vous', 'Who uses it, at your school', 'Ki használja Önöknél')}</span>
+          <span className="section-label">{d('Pour qui on construit', 'Who we build for', 'Kiknek építünk')}</span>
           <h2 className="font-serif italic" style={{ fontSize: 'clamp(26px, 3.6vw, 38px)', fontWeight: 400, color: 'var(--text)', lineHeight: 1.2, margin: '4px 0 16px' }}>
             {d('Le métier change. ', 'The job changes. ', 'A munkakör változik. ')}
             <span className="accent">{d('La méthode, non.', 'The method doesn’t.', 'A módszer nem.')}</span>
           </h2>
           <p className="font-sans" style={{ fontSize: '15px', fontWeight: 300, color: 'var(--text-secondary)', maxWidth: '600px', margin: '0 auto', lineHeight: 1.7 }}>
-            {d('Un socle commun à tout l’établissement, puis ce qui change d’un métier à l’autre. Cliquez sur le vôtre.',
-               'A shared foundation across the school, then what changes from one role to the next. Click yours.', 'Közös alap az egész intézményben, aztán ami munkakörönként változik. Kattintson a sajátjára.')}
+            {d('Un socle commun à chaque maison, puis ce qui change d’un métier à l’autre. Cliquez sur le vôtre.',
+               'A shared foundation for every business, then what changes from one trade to the next. Click yours.', 'Közös alap minden vállalkozásnak, aztán ami szakmánként változik. Kattintson a sajátjára.')}
           </p>
         </FadeUp>
 
