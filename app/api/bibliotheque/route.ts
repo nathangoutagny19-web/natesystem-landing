@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { Resend } from 'resend'
 import { API_URL } from '@/lib/constants'
+import { SECTEURS, SECTEUR_IDS, assetParSlug, type Secteur } from '@/lib/bibliotheque'
 
 export const runtime = 'nodejs'
 export const dynamic = 'force-dynamic'
@@ -18,6 +19,18 @@ export const dynamic = 'force-dynamic'
  * preflight, et c'est ce qui casse /book et les lead magnets. De serveur à
  * serveur il n'y a pas d'origine, donc pas de preflight. Quand la variable
  * sera corrigée, ce code continuera de marcher tel quel.
+ *
+ * LA SEGMENTATION. Le type d'établissement (facultatif) part dans le champ
+ * `secteur` de la route, qui l'écrit dans `contacts.sector`. ⚠︎ Seulement à la
+ * création du contact : pour un contact déjà connu, la route n'écrase rien,
+ * c'est voulu côté CRM (un tiers qui connaît l'email ne doit pas pouvoir
+ * réécrire la fiche). Le secteur reste alors lisible dans le mail à Nathan.
+ * La ressource ouverte part comme `lead_magnet_id`, ce qui l'empile dans
+ * `lead_magnets_downloaded` et dans la timeline du contact.
+ *
+ * LE CONSENTEMENT. Le formulaire dit, avant l'envoi, que Nathan écrira à
+ * chaque nouvelle ressource et qu'on peut se désinscrire : d'où
+ * `newsletter: true`. Le retrait passe par /bibliotheque/desinscription.
  */
 
 const NOTIFY_TO = 'nathan@natesystem.com'
@@ -36,7 +49,7 @@ const esc = (s: unknown) =>
   String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
 
 export async function POST(req: NextRequest) {
-  let body: { prenom?: string; email?: string; lang?: string }
+  let body: { prenom?: string; email?: string; lang?: string; secteur?: string; slug?: string }
   try {
     body = await req.json()
   } catch {
@@ -46,6 +59,19 @@ export async function POST(req: NextRequest) {
   const prenom = String(body.prenom ?? '').trim().slice(0, 60)
   const email = String(body.email ?? '').trim().toLowerCase().slice(0, 200)
   const lang = body.lang === 'en' ? 'en' : 'fr'
+  /* Tout ce qui ne figure pas dans les listes est ignoré, pas rejeté : un
+     champ facultatif mal rempli ne doit pas fermer la porte. */
+  const secteur = (SECTEUR_IDS as string[]).includes(String(body.secteur))
+    ? (body.secteur as Secteur)
+    : body.secteur === 'autre'
+      ? 'autre'
+      : null
+  const secteurLabel = secteur
+    ? secteur === 'autre'
+      ? 'Autre'
+      : SECTEURS.find((x) => x.id === secteur)!.fr
+    : null
+  const asset = body.slug ? assetParSlug(String(body.slug)) : undefined
 
   if (!prenom || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
     return NextResponse.json({ error: 'missing_fields' }, { status: 400 })
@@ -56,8 +82,8 @@ export async function POST(req: NextRequest) {
       from: NOTIFY_FROM,
       to: NOTIFY_TO,
       replyTo: email,
-      subject: `Bibliothèque ouverte · ${prenom}`,
-      text: `${prenom} vient d'ouvrir la bibliothèque.\nEmail : ${email}\nLangue : ${lang}\n\nRéponds : ${email}`,
+      subject: `Bibliothèque ouverte · ${prenom}${secteurLabel ? ` (${secteurLabel})` : ''}`,
+      text: `${prenom} vient d'ouvrir la bibliothèque.\nEmail : ${email}\nÉtablissement : ${secteurLabel ?? 'non précisé'}\nDepuis : ${asset ? asset.titreFr : 'la page de la bibliothèque'}\nLangue : ${lang}\n\nRéponds : ${email}`,
       html: `<!DOCTYPE html><html><body style="margin:0;padding:32px 16px;background:#f5f4f0;font-family:-apple-system,sans-serif;">
 <table cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td align="center">
 <table cellpadding="0" cellspacing="0" border="0" width="560" style="max-width:560px;background:#fff;border-radius:12px;border:1px solid rgba(0,0,0,.08);overflow:hidden;">
@@ -67,6 +93,8 @@ export async function POST(req: NextRequest) {
   <p style="margin:6px 0 0;font-size:13px;color:#aaa;"><a href="mailto:${esc(email)}" style="color:#E63946;text-decoration:none;">${esc(email)}</a></p>
 </td></tr>
 <tr><td style="padding:20px 28px;font-size:13px;color:#666;">
+  &Eacute;tablissement : ${esc(secteurLabel ?? 'non précisé')}<br />
+  Depuis : ${esc(asset ? asset.titreFr : 'la page de la bibliothèque')}<br />
   Langue : ${esc(lang)}<br /><br />R&eacute;ponds-lui &rarr; <a href="mailto:${esc(email)}" style="color:#E63946;">${esc(email)}</a>
 </td></tr></table></td></tr></table></body></html>`,
     }),
@@ -77,9 +105,11 @@ export async function POST(req: NextRequest) {
         prenom,
         email,
         source: 'bibliotheque',
-        lead_magnet_id: 'bibliotheque',
-        lead_magnet_name: 'Bibliothèque NateSystem',
-        metadata: { lang },
+        lead_magnet_id: asset ? asset.slug : 'bibliotheque',
+        lead_magnet_name: asset ? asset.titreFr : 'Bibliothèque NateSystem',
+        secteur: secteurLabel,
+        newsletter: true,
+        metadata: { lang, secteur, slug: asset?.slug ?? null },
       }),
     }).then((r) => {
       if (!r.ok) throw new Error(`CRM ${r.status}`)
