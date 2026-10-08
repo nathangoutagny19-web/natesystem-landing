@@ -7,14 +7,14 @@ import { SITE_URL } from '@/lib/constants'
  * fait venir les gens. Les livrables, eux, sont derrière la porte.
  */
 export const metadata: Metadata = {
-  title: 'La bibliothèque NateSystem · vidéos et outils pour écoles privées',
+  title: 'La bibliothèque NateSystem · modèles et méthodes pour l’hôtellerie de luxe',
   description:
-    'Tout ce que NateSystem publie pour les écoles privées, au même endroit : les vidéos, et surtout les cartographies, grilles de décision et modèles qui vont avec. Accès avec votre prénom et votre email.',
+    'Checklists, modèles, grilles de décision et courtes vidéos pour les villas, domaines, maisons de réception, petits hôtels, conciergeries, chalets et yachts. Tout se voit avant de laisser votre email.',
   keywords: [
-    'ressources école privée',
-    'outils gestion établissement scolaire',
-    'cartographie comptage heures école',
-    'créer outils pédagogiques sans coder',
+    'checklist arrivée client villa',
+    'outils conciergerie de luxe',
+    'modèle rapport propriétaire location',
+    'gestion villa de luxe',
     'NateSystem',
   ],
   alternates: {
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'La bibliothèque NateSystem',
     description:
-      'Les vidéos, et surtout ce qui va avec : cartographies, grilles de décision, modèles à reprendre.',
+      'Checklists, modèles et grilles de décision pour les métiers de l’accueil haut de gamme.',
     url: `${SITE_URL}/bibliotheque`,
     type: 'website',
     locale: 'fr_FR',

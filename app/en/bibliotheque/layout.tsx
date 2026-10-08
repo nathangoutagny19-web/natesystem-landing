@@ -2,9 +2,9 @@ import type { Metadata } from 'next'
 import { SITE_URL } from '@/lib/constants'
 
 export const metadata: Metadata = {
-  title: 'The NateSystem library · videos and tools for private schools',
+  title: 'The NateSystem library · templates and methods for luxury hospitality',
   description:
-    'Everything NateSystem publishes for private schools, in one place: the videos, and above all the maps, decision grids and templates that come with them. Access with your first name and email.',
+    'Checklists, templates, decision grids and short videos for villas, estates, event venues, boutique hotels, concierge services, chalets and yachts. You see everything before you leave your email.',
   alternates: {
     canonical: `${SITE_URL}/en/bibliotheque`,
     languages: {
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'The NateSystem library',
     description:
-      'The videos, and above all what comes with them: maps, decision grids, templates to reuse.',
+      'Checklists, templates and decision grids for high-end hospitality.',
     url: `${SITE_URL}/en/bibliotheque`,
     type: 'website',
     locale: 'en_US',
