@@ -27,6 +27,8 @@
  * que Nathan n'a pas validé un affichage « à venir ».
  */
 
+import { RESSOURCES_HOTELLERIE } from './bibliotheque-hotellerie'
+
 /* ——— Les trois axes de filtre ——— */
 
 /** Le type d'établissement. `tous` = la ressource vaut pour chacun d'eux. */
@@ -83,6 +85,28 @@ export type Livrable = {
   fichier: string | null
 }
 
+/**
+ * LE CONTENU LISIBLE SUR LA PAGE, bloc par bloc.
+ *
+ * Une ressource peut vivre directement dans la page, sans fichier à
+ * télécharger : sur téléphone, un PDF s'ouvre mal et ne se relit jamais. Les
+ * `apercu` premiers blocs sont visibles par tous (on montre avant de
+ * demander), le reste s'ouvre avec la porte.
+ */
+export type Bloc =
+  | { t: 'titre'; fr: string; en?: string }
+  | { t: 'texte'; fr: string; en?: string }
+  | { t: 'note'; fr: string; en?: string }
+  /** `coche` : une checklist qu'on coche à l'écran. `numero` : liste numérotée. */
+  | {
+      t: 'liste'
+      coche?: boolean
+      numero?: boolean
+      items: { fr: string; en?: string; detailFr?: string; detailEn?: string }[]
+    }
+  /** Une consigne à copier dans un assistant, avec son bouton Copier. */
+  | { t: 'prompt'; titreFr: string; titreEn?: string; fr: string; en?: string }
+
 export type Asset = {
   slug: string
   /** L'identifiant YouTube, ou null si la vidéo n'est pas encore tournée.
@@ -111,9 +135,15 @@ export type Asset = {
   categorie: Categorie
   format: Format
   livrables: Livrable[]
+  /** Le contenu lu sur la page. Absent = la ressource est une vidéo et ses
+   *  fichiers. */
+  contenu?: Bloc[]
+  /** Combien de blocs de `contenu` se lisent avant la porte. */
+  apercu?: number
 }
 
 export const ASSETS: Asset[] = [
+  ...RESSOURCES_HOTELLERIE,
   {
     slug: 'pointeuse-9-tableurs',
     videoId: 'pfkWU9IDeGE',
@@ -191,9 +221,13 @@ export const ASSETS: Asset[] = [
   },
 ]
 
-/** Les assets réellement montrables : une vidéo OU au moins un livrable prêt. */
+/** Les assets réellement montrables : une vidéo, un livrable prêt, ou un
+ *  contenu écrit sur la page. */
 export const ASSETS_PUBLIES = ASSETS.filter(
-  (a) => a.videoId !== null || a.livrables.some((l) => l.fichier !== null)
+  (a) =>
+    a.videoId !== null ||
+    a.livrables.some((l) => l.fichier !== null) ||
+    (a.contenu?.length ?? 0) > 0
 )
 
 /** Ceux que la bibliothèque hôtellerie liste. */
@@ -208,27 +242,13 @@ export function concerne(a: Asset, secteur: Secteur): boolean {
   return a.secteurs.includes('tous') || a.secteurs.includes(secteur)
 }
 
-/* ——— PLANNED : ce qui reste à produire, PAS sur la page ———
+/* ——— PLANNED ———
  *
- * Tiré des appels et des recherches d'octobre 2026
- * (~/Business/Commercial/6:10prospection/douleurs-conciergeries-voyage-luxe-2026-10-06.md).
- * Titres seulement. Une ressource passe dans ASSETS le jour où sa vidéo ou son
- * fichier existe, pas avant. Le classement proposé est indicatif.
- *
- *  1. La checklist de la veille : reconfirmer chaque prestataire avant une arrivée
- *       secteurs: conciergerie, villa, chalet, yacht · operations · checklist
- *  2. La fiche préférences client (modèle)
- *       secteurs: tous · experience · modele
- *  3. Lodgify, Guesty, Hostaway : ce qu'ils font, et ce qu'ils vous laissent
- *       secteurs: villa, chalet, conciergerie · operations · guide
- *  4. Le rapport mensuel au propriétaire (modèle)
- *       secteurs: villa, chalet, conciergerie · operations · modele
- *  5. 10 messages clients à traiter en 4 langues sans les retaper (méthode + prompts)
- *       secteurs: tous · ia · guide
- *  6. D'un fil WhatsApp à une demande structurée : la méthode
- *       secteurs: conciergerie, villa · ia · guide
- *  7. Logiciel du marché ou sur mesure ? La grille des 11 questions, version hôtellerie
- *       secteurs: tous · operations · grille
+ * Les sept ressources tirées des appels et des recherches d'octobre 2026
+ * (~/Business/Commercial/6:10prospection/douleurs-conciergeries-voyage-luxe-2026-10-06.md)
+ * sont écrites, dans `lib/bibliotheque-hotellerie.ts`. Le français est fait,
+ * l'anglais attend la relecture de Nathan. Une prochaine idée s'ajoute ici,
+ * en titre seulement, jusqu'à ce qu'elle soit écrite.
  */
 
 /**
