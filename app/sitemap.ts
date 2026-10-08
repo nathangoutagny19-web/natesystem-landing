@@ -2,6 +2,7 @@ import type { MetadataRoute } from 'next'
 import { blogPosts } from '@/lib/blog'
 import { allCaseSlugs } from '@/lib/case-studies'
 import { TRANSLATED_ROUTES } from '@/lib/routes'
+import { ASSETS_PUBLIES } from '@/lib/bibliotheque'
 
 const BASE_URL = 'https://www.natesystem.com'
 
@@ -53,6 +54,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/logiciel-sur-mesure-club-sportif`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/mentions-legales`, lastModified: now, changeFrequency: 'yearly', priority: 0.2 },
   ]
+
+  // Une page par ressource de la bibliothèque, en français et en anglais.
+  // Seules les ressources publiées ont une page : rien de prévu n'est déclaré.
+  const bibliothequeRoutes: MetadataRoute.Sitemap = ASSETS_PUBLIES.flatMap((a) => [
+    { url: `${BASE_URL}/bibliotheque/${a.slug}`, lastModified: now, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: `${BASE_URL}/en/bibliotheque/${a.slug}`, lastModified: now, changeFrequency: 'monthly' as const, priority: 0.5 },
+  ])
 
   // Blog posts
   const blogRoutes: MetadataRoute.Sitemap = blogPosts.map((post) => ({
@@ -128,6 +136,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     ...staticRoutes,
     ...blogRoutes,
+    ...bibliothequeRoutes,
     ...caseStudyRoutes,
     ...translatedRoutes,
     ...translatedCaseRoutes,
