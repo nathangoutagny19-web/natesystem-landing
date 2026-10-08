@@ -38,6 +38,8 @@ type Sector = {
   nameFr: string; nameEn: string; nameHu: string
   painFr: string; painEn: string; painHu: string
   buildsFr: string[]; buildsEn: string[]; buildsHu: string[]
+  /** Remplace la dernière pastille du socle (« Des clients mieux servis ») quand le métier ne parle pas de clients. */
+  servedFr?: string; servedEn?: string; servedHu?: string
 }
 
 /**
@@ -126,6 +128,9 @@ const SECTORS: Sector[] = [
     buildsFr: ['Heures et paie calculées sur votre convention', 'Un dossier par élève, complet, au même endroit', 'Ce que chaque rôle a le droit de voir, et rien de plus'],
     buildsEn: ['Hours and payroll calculated against your own agreement', 'One record per student, complete, in one place', 'What each role is allowed to see, and nothing more'],
     buildsHu: ['Órák és bér az Ön megállapodása szerint számolva', 'Diákonként egy teljes akta, egy helyen', 'Amit az adott szerep láthat, és semmi többet'],
+    servedFr: 'Des élèves et des familles mieux suivis',
+    servedEn: 'Students and families better followed',
+    servedHu: 'Jobban követett diákok és családok',
   },
 ]
 
@@ -192,7 +197,14 @@ export default function Sectors() {
                   {/* Socle commun, le même pour tous */}
                   <span className="font-mono sec-panel-label">{d('Ce que ça vous apporte, à tous les coups', 'What it brings you, every time', 'Amit mindenképp hoz Önnek')}</span>
                   <div className="sec-base">
-                    {pick(lang, { fr: BASE_FR, en: BASE_EN, hu: BASE_HU }).map((b) => (
+                    {[
+                      ...pick(lang, { fr: BASE_FR, en: BASE_EN, hu: BASE_HU }).slice(0, -1),
+                      pick(lang, {
+                        fr: cur.servedFr ?? BASE_FR[BASE_FR.length - 1],
+                        en: cur.servedEn ?? BASE_EN[BASE_EN.length - 1],
+                        hu: cur.servedHu ?? BASE_HU[BASE_HU.length - 1],
+                      }),
+                    ].map((b) => (
                       <span key={b} className="sec-base-chip">{b}</span>
                     ))}
                   </div>
