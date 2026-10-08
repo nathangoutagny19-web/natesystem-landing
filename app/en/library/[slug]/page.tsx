@@ -2,10 +2,10 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { ASSETS_PUBLIES, assetParSlug } from '@/lib/bibliotheque'
 import RessourceVue from '@/components/bibliotheque/RessourceVue'
-import { ressourceJsonLd, ressourceMetadata } from '../../../bibliotheque/[slug]/page'
+import { ressourceJsonLd, ressourceMetadata } from '../../../library/[slug]/page'
 
 /**
- * `/en/bibliotheque/[slug]` : la même page, servie en anglais. La langue du
+ * `/en/library/[slug]` : la même page, servie en anglais. La langue du
  * contenu vient de `app/en/layout.tsx`, celle des métadonnées est passée ici.
  */
 

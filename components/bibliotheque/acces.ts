@@ -17,15 +17,19 @@ import { useCallback, useEffect, useState } from 'react'
  * entrés depuis le 1er octobre ne voient pas la porte se refermer.
  */
 export const CLE_ACCES = 'ns-biblio-v1'
+/** Le prénom, pour accueillir la personne par son nom dans l'espace membre. */
+export const CLE_PRENOM = 'ns-biblio-prenom'
 
 /** `null` = on ne sait pas encore (rendu serveur). Sans ce troisième état, la
  *  page clignote : elle s'affiche fermée puis s'ouvre à l'hydratation. */
 export function useAcces() {
   const [ouvert, setOuvert] = useState<boolean | null>(null)
+  const [prenom, setPrenom] = useState<string>('')
 
   useEffect(() => {
     try {
       setOuvert(Boolean(localStorage.getItem(CLE_ACCES)))
+      setPrenom(localStorage.getItem(CLE_PRENOM) ?? '')
     } catch {
       setOuvert(false)
     }
@@ -37,12 +41,14 @@ export function useAcces() {
     return () => window.removeEventListener('storage', ecoute)
   }, [])
 
-  const ouvrir = useCallback((email: string) => {
+  const ouvrir = useCallback((email: string, p: string) => {
     try {
       localStorage.setItem(CLE_ACCES, email)
+      localStorage.setItem(CLE_PRENOM, p)
     } catch {}
+    setPrenom(p)
     setOuvert(true)
   }, [])
 
-  return { ouvert, ouvrir }
+  return { ouvert, ouvrir, prenom }
 }

@@ -5,7 +5,7 @@ import Nav from '@/components/layout/Nav'
 import Footer from '@/components/layout/Footer'
 import { useLang } from '@/components/providers/LangProvider'
 import { makeD } from '@/lib/lang'
-import { CLE_ACCES } from '@/components/bibliotheque/acces'
+import { CLE_ACCES, CLE_PRENOM } from '@/components/bibliotheque/acces'
 
 /**
  * LA DÉSINSCRIPTION DE LA BIBLIOTHÈQUE.
@@ -40,6 +40,7 @@ export default function DesinscriptionPage() {
       if (!res.ok) throw new Error()
       try {
         localStorage.removeItem(CLE_ACCES)
+        localStorage.removeItem(CLE_PRENOM)
       } catch {}
       setEtat('ok')
     } catch {

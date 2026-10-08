@@ -22,8 +22,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/book`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
     // Landing de l'atelier : indexable, mais ce n'est pas une page SEO.
     { url: `${BASE_URL}/atelier`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${BASE_URL}/bibliotheque`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
-    { url: `${BASE_URL}/en/bibliotheque`, lastModified: now, changeFrequency: 'weekly', priority: 0.6 },
+    { url: `${BASE_URL}/library`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
+    { url: `${BASE_URL}/en/library`, lastModified: now, changeFrequency: 'weekly', priority: 0.6 },
     { url: `${BASE_URL}/en/atelier`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
     { url: `${BASE_URL}/hu/atelier`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
     { url: `${BASE_URL}/glossaire`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
@@ -58,8 +58,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Une page par ressource de la bibliothèque, en français et en anglais.
   // Seules les ressources publiées ont une page : rien de prévu n'est déclaré.
   const bibliothequeRoutes: MetadataRoute.Sitemap = ASSETS_PUBLIES.flatMap((a) => [
-    { url: `${BASE_URL}/bibliotheque/${a.slug}`, lastModified: now, changeFrequency: 'monthly' as const, priority: 0.7 },
-    { url: `${BASE_URL}/en/bibliotheque/${a.slug}`, lastModified: now, changeFrequency: 'monthly' as const, priority: 0.5 },
+    { url: `${BASE_URL}/library/${a.slug}`, lastModified: now, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: `${BASE_URL}/en/library/${a.slug}`, lastModified: now, changeFrequency: 'monthly' as const, priority: 0.5 },
   ])
 
   // Blog posts

@@ -49,7 +49,7 @@ const CATEGORIE_IDS = CATEGORIES.map((c) => c.id)
 export default function BibliothequePage() {
   const { lang } = useLang()
   const d = makeD(lang)
-  const { ouvert, ouvrir } = useAcces()
+  const { ouvert, ouvrir, prenom } = useAcces()
 
   const [secteur, setSecteur] = useState<FiltreSecteur>('tous')
   const [categorie, setCategorie] = useState<FiltreCategorie>('tous')
@@ -111,30 +111,77 @@ export default function BibliothequePage() {
     <main>
       <Nav />
 
-      {/* ═══ HERO ═══ */}
-      <section className="bib-hero">
-        <div className="bib-wrap">
-          <FadeUp>
-            <span className="section-label">{d('La bibliothèque', 'The library')}</span>
-            <h1 className="bib-h1">
-              {d('Les modèles et les méthodes ', 'Templates and methods ')}
-              <span className="bib-accent">
-                {d('des métiers de l’accueil haut de gamme', 'for high-end hospitality')}
-              </span>
+      {/* ═══ L'ENTRÉE ═══
+          Fermée, la page est un écran d'accès : la promesse à gauche, la porte
+          à droite, au-dessus de la ligne de flottaison. Ouverte, elle devient
+          un espace membre qui accueille la personne par son prénom. */}
+      {ouvert ? (
+        <section className="bib-membre">
+          <div className="bib-wrap">
+            <span className="font-mono bib-membre-badge">{d('Espace membre', 'Member area')}</span>
+            <h1 className="bib-membre-h1">
+              {prenom ? d(`Bonjour ${prenom}.`, `Hello ${prenom}.`) : d('Bienvenue.', 'Welcome.')}
             </h1>
-            <p className="font-sans bib-lead">
+            <p className="font-sans bib-membre-texte">
               {d(
-                'Pour les villas, les domaines, les maisons de réception, les petits hôtels, les conciergeries, les chalets et les yachts. Ce que je publie pour ces métiers se trouve ici, à reprendre chez vous tel quel, et chaque ressource montre ce qu’elle contient avant de vous demander votre email.',
-                'For villas, estates, event venues, boutique hotels, concierge services, chalets and yachts. What I publish for these businesses lives here, ready to reuse as it is, and every resource shows what is inside before asking for your email.'
+                `Tout est ouvert : ${ASSETS_LISTES.length} ressources à lire, cocher et copier. Choisissez votre métier pour ne voir que ce qui vous concerne.`,
+                `Everything is open: ${ASSETS_LISTES.length} resources to read, tick off and copy. Pick your type of business to see only what applies to you.`
               )}
             </p>
-          </FadeUp>
-        </div>
-      </section>
+          </div>
+        </section>
+      ) : (
+        <section className="bib-entree">
+          <div className="bib-wrap bib-entree-grille">
+            <FadeUp>
+              <div className="bib-entree-texte">
+                <span className="section-label">NateSystem Library</span>
+                <h1 className="bib-h1">
+                  {d('L’espace privé ', 'The private library ')}
+                  <span className="bib-accent">
+                    {d('des métiers de l’accueil haut de gamme', 'for high-end hospitality')}
+                  </span>
+                </h1>
+                <p className="font-sans bib-lead">
+                  {d(
+                    'Pour les villas, les domaines, les maisons de réception, les petits hôtels, les conciergeries, les chalets et les yachts. Des checklists à cocher, des modèles à reprendre, des consignes à copier dans ChatGPT ou Claude. Votre email suffit pour entrer.',
+                    'For villas, estates, event venues, boutique hotels, concierge services, chalets and yachts. Checklists to tick off, templates to reuse, prompts to paste into ChatGPT or Claude. Your email is all it takes to get in.'
+                  )}
+                </p>
+                <ul className="bib-entree-points">
+                  <li className="font-sans">
+                    <strong>{ASSETS_LISTES.length}</strong> {d('ressources, lisibles sur votre téléphone', 'resources, readable on your phone')}
+                  </li>
+                  <li className="font-sans">{d('Gratuit, sans mot de passe', 'Free, no password')}</li>
+                  <li className="font-sans">{d('Désinscription en un clic', 'One-click unsubscribe')}</li>
+                </ul>
+              </div>
+            </FadeUp>
+            <FadeUp delay={0.1}>
+              {ouvert === false ? (
+                <Porte
+                  empile
+                  titre={d('Entrez avec votre email.', 'Get in with your email.')}
+                  texte={d(
+                    'Vous entrez tout de suite, et votre navigateur se souvient de vous.',
+                    'You get in straight away, and your browser remembers you.'
+                  )}
+                  onOuvert={ouvrir}
+                />
+              ) : (
+                <div className="card bib-porte-attente" aria-hidden="true" />
+              )}
+            </FadeUp>
+          </div>
+        </section>
+      )}
 
       {/* ═══ LES FILTRES ═══ */}
       <section className="bib-filtres" aria-label={d('Filtrer les ressources', 'Filter the resources')}>
         <div className="bib-wrap" ref={filtres}>
+          {!ouvert && (
+            <h2 className="font-serif italic bib-dedans">{d('Ce qu’il y a dedans', 'What’s inside')}</h2>
+          )}
           <div className="bib-filtre">
             <span className="font-mono bib-filtre-label">{d('Votre métier', 'Your business')}</span>
             <div className="bib-puces" role="group">
@@ -208,37 +255,8 @@ export default function BibliothequePage() {
             </div>
           )}
 
-          {ouvert && visibles.length > 0 && (
-            <p className="font-sans bib-note">
-              {d(
-                'C’est ouvert. Les fichiers qui ne sont pas encore prêts arrivent : je vous écris dès qu’ils le sont, à l’adresse que vous avez laissée.',
-                'It is open. Files that are not ready yet are on their way: I will email you as soon as they are, at the address you left.'
-              )}
-            </p>
-          )}
         </div>
       </section>
-
-      {/* ═══ LA PORTE ═══ */}
-      {ouvert === false && (
-        <>
-          <div className="divider" />
-          <section className="bib-section" id="entrer">
-            <div className="bib-wrap bib-wrap--etroit">
-              <FadeUp>
-                <Porte
-                  titre={d('Votre prénom, votre email, et c’est ouvert.', 'Your first name, your email, and it opens.')}
-                  texte={d(
-                    'Pas de mot de passe, pas de lien à aller chercher dans vos mails. Vous entrez tout de suite, et votre navigateur se souvient de vous.',
-                    'No password, no link to hunt for in your inbox. You come straight in, and your browser remembers you.'
-                  )}
-                  onOuvert={ouvrir}
-                />
-              </FadeUp>
-            </div>
-          </section>
-        </>
-      )}
 
       <Footer />
 
@@ -251,9 +269,90 @@ export default function BibliothequePage() {
         .bib-wrap--etroit {
           max-width: 760px;
         }
-        .bib-hero {
-          padding: 150px 0 48px;
-          text-align: center;
+        .bib-entree {
+          padding: 140px 0 56px;
+        }
+        .bib-entree-grille {
+          display: grid;
+          grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+          gap: 56px;
+          align-items: center;
+        }
+        .bib-entree-texte .bib-h1 {
+          text-align: left;
+          margin: 0 0 22px;
+        }
+        .bib-entree-texte .bib-lead {
+          text-align: left;
+          margin: 0;
+        }
+        .bib-entree-points {
+          list-style: none;
+          padding: 0;
+          margin: 26px 0 0;
+          display: grid;
+          gap: 10px;
+        }
+        .bib-entree-points li {
+          position: relative;
+          padding-left: 22px;
+          font-size: 15px;
+          font-weight: 300;
+          color: var(--text-secondary);
+        }
+        .bib-entree-points li::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 9px;
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          background: var(--accent);
+        }
+        .bib-entree-points strong {
+          font-weight: 600;
+          color: var(--text);
+        }
+        .bib-porte-attente {
+          min-height: 520px;
+        }
+        .bib-membre {
+          padding: 140px 0 28px;
+        }
+        .bib-membre-badge {
+          display: inline-block;
+          font-size: 10.5px;
+          letter-spacing: 1.6px;
+          text-transform: uppercase;
+          color: var(--accent);
+          background: var(--accent-subtle);
+          border-radius: 999px;
+          padding: 7px 12px;
+          margin-bottom: 16px;
+        }
+        .bib-membre-h1 {
+          font-family: var(--font-serif);
+          font-style: italic;
+          font-size: clamp(34px, 4.6vw, 52px);
+          font-weight: 400;
+          line-height: 1.08;
+          color: var(--text);
+          margin: 0 0 14px;
+        }
+        .bib-membre-texte {
+          font-size: 16px;
+          font-weight: 300;
+          line-height: 1.7;
+          color: var(--text-secondary);
+          margin: 0;
+          max-width: 620px;
+        }
+        .bib-dedans {
+          font-size: clamp(24px, 3vw, 32px);
+          font-weight: 400;
+          color: var(--text);
+          margin: 0 0 22px;
         }
         .bib-h1 {
           font-family: var(--font-serif);
@@ -352,6 +451,12 @@ export default function BibliothequePage() {
           cursor: pointer;
         }
 
+        @media (max-width: 900px) {
+          .bib-entree-grille {
+            grid-template-columns: 1fr;
+            gap: 32px;
+          }
+        }
         @media (max-width: 1000px) {
           .bib-grille {
             grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -360,8 +465,11 @@ export default function BibliothequePage() {
         /* Sur téléphone, les puces défilent sur une ligne au lieu d'empiler
            quatre rangées avant la première ressource. */
         @media (max-width: 680px) {
-          .bib-hero {
-            padding: 116px 0 32px;
+          .bib-entree {
+            padding: 108px 0 36px;
+          }
+          .bib-membre {
+            padding: 108px 0 20px;
           }
           .bib-filtre {
             flex-direction: column;

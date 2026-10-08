@@ -32,12 +32,12 @@ export const dynamicParams = false
 export function ressourceMetadata(slug: string, lang: Lang): Metadata {
   const a = assetParSlug(slug)
   if (!a) return {}
-  const frUrl = `${SITE_URL}/bibliotheque/${a.slug}`
-  const enUrl = `${SITE_URL}/en/bibliotheque/${a.slug}`
+  const frUrl = `${SITE_URL}/library/${a.slug}`
+  const enUrl = `${SITE_URL}/en/library/${a.slug}`
   const titre = lang === 'en' ? a.titreEn : a.titreFr
   const description = lang === 'en' ? a.douleurEn : a.douleurFr
   return {
-    title: lang === 'en' ? `${titre} · NateSystem library` : `${titre} · Bibliothèque NateSystem`,
+    title: lang === 'en' ? `${titre} · NateSystem Library` : `${titre} · NateSystem Library`,
     description,
     alternates: {
       canonical: lang === 'en' ? enUrl : frUrl,
@@ -59,7 +59,7 @@ export function ressourceMetadata(slug: string, lang: Lang): Metadata {
 export function ressourceJsonLd(slug: string, lang: Lang) {
   const a = assetParSlug(slug)!
   const base = lang === 'en' ? `${SITE_URL}/en` : SITE_URL
-  const url = `${base}/bibliotheque/${a.slug}`
+  const url = `${base}/library/${a.slug}`
   return {
     '@context': 'https://schema.org',
     '@graph': [
@@ -79,7 +79,7 @@ export function ressourceJsonLd(slug: string, lang: Lang) {
       {
         '@type': 'BreadcrumbList',
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: lang === 'en' ? 'Library' : 'Bibliothèque', item: `${base}/bibliotheque` },
+          { '@type': 'ListItem', position: 1, name: lang === 'en' ? 'Library' : 'Bibliothèque', item: `${base}/library` },
           { '@type': 'ListItem', position: 2, name: lang === 'en' ? a.titreEn : a.titreFr, item: url },
         ],
       },

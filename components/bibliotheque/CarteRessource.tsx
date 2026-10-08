@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { ArrowRight, Play } from 'lucide-react'
+import { ArrowRight, Lock, Play } from 'lucide-react'
 import { useLang } from '@/components/providers/LangProvider'
 import { makeD } from '@/lib/lang'
 import { CATEGORIES, FORMATS, SECTEURS, lienBiblio, type Asset } from '@/lib/bibliotheque'
@@ -29,8 +29,20 @@ export default function CarteRessource({ asset: a, ouvert }: { asset: Asset; ouv
         .join(' · ')
 
   return (
-    <Link href={lienBiblio(`/bibliotheque/${a.slug}`, lang)} className="carte-lien">
+    <Link href={lienBiblio(`/library/${a.slug}`, lang)} className="carte-lien">
       <article className="card carte">
+        {ouvert === false && (
+          <span className="font-mono carte-verrou">
+            <Lock size={11} strokeWidth={2.4} />
+            {d('Membres', 'Members')}
+          </span>
+        )}
+        {!video && (
+          <div className="carte-couv" aria-hidden="true">
+            <span className="font-mono carte-couv-format">{d(FORMATS[a.format].fr, FORMATS[a.format].en)}</span>
+            <span className="font-serif italic carte-couv-titre">{d(categorie.fr, categorie.en)}</span>
+          </div>
+        )}
         {video && (
           <div className="carte-media">
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -48,10 +60,11 @@ export default function CarteRessource({ asset: a, ouvert }: { asset: Asset; ouv
         )}
 
         <div className="carte-corps">
+          {/* Sans vidéo, la couverture porte déjà le format et le thème. */}
           <p className="font-mono carte-meta">
-            <span className="carte-format">{d(FORMATS[a.format].fr, FORMATS[a.format].en)}</span>
+            {video && <span className="carte-format">{d(FORMATS[a.format].fr, FORMATS[a.format].en)}</span>}
             <span>{a.dureeMin} min</span>
-            <span>{d(categorie.fr, categorie.en)}</span>
+            {video && <span>{d(categorie.fr, categorie.en)}</span>}
           </p>
           <h2 className="font-serif italic carte-titre">{d(a.titreFr, a.titreEn)}</h2>
           <p className="font-sans carte-douleur">{d(a.douleurFr, a.douleurEn)}</p>
@@ -77,6 +90,7 @@ export default function CarteRessource({ asset: a, ouvert }: { asset: Asset; ouv
           color: inherit;
         }
         .carte {
+          position: relative;
           padding: 0;
           overflow: hidden;
           height: 100%;
@@ -119,6 +133,47 @@ export default function CarteRessource({ asset: a, ouvert }: { asset: Asset; ouv
           color: #fff;
           padding-left: 2px;
           box-shadow: 0 6px 18px -6px rgba(230, 57, 70, 0.6);
+        }
+        .carte-verrou {
+          position: absolute;
+          top: 14px;
+          right: 14px;
+          z-index: 2;
+          display: inline-flex;
+          align-items: center;
+          gap: 5px;
+          font-size: 10px;
+          letter-spacing: 1.2px;
+          text-transform: uppercase;
+          color: #fff;
+          background: rgba(14, 14, 18, 0.72);
+          backdrop-filter: blur(6px);
+          border-radius: 999px;
+          padding: 6px 10px;
+        }
+        .carte-couv {
+          position: relative;
+          aspect-ratio: 16 / 7;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+          gap: 6px;
+          padding: 20px 24px;
+          border-bottom: 1px solid var(--border);
+          background:
+            radial-gradient(120% 140% at 100% 0%, var(--accent-subtle), transparent 60%),
+            linear-gradient(160deg, var(--bg-elevated), var(--bg-card));
+        }
+        .carte-couv-format {
+          font-size: 10.5px;
+          letter-spacing: 1.8px;
+          text-transform: uppercase;
+          color: var(--accent);
+        }
+        .carte-couv-titre {
+          font-size: 24px;
+          line-height: 1.15;
+          color: var(--text);
         }
         .carte-corps {
           padding: 24px 24px 22px;

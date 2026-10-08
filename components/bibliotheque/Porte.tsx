@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, Lock } from 'lucide-react'
 import { useLang } from '@/components/providers/LangProvider'
 import { makeD } from '@/lib/lang'
 import { localizedHref } from '@/lib/routes'
@@ -34,11 +34,14 @@ export default function Porte({
   titre,
   texte,
   onOuvert,
+  empile = false,
 }: {
+  /** Champs l'un sous l'autre, pour une colonne étroite (le hero). */
+  empile?: boolean
   slug?: string
   titre: string
   texte: string
-  onOuvert: (email: string) => void
+  onOuvert: (email: string, prenom: string) => void
 }) {
   const { lang } = useLang()
   const d = makeD(lang)
@@ -56,7 +59,7 @@ export default function Porte({
         body: JSON.stringify({ ...data, slug, lang }),
       })
       if (!res.ok) throw new Error()
-      onOuvert(String(data.email))
+      onOuvert(String(data.email), String(data.prenom ?? '').trim())
       setEtat('repos')
     } catch {
       setEtat('erreur')
@@ -65,12 +68,15 @@ export default function Porte({
 
   return (
     <div className="card porte">
-      <span className="section-label">{d('L’accès', 'Access')}</span>
+      <span className="font-mono porte-badge">
+        <Lock size={12} strokeWidth={2.4} />
+        {d('Accès membre · gratuit', 'Member access · free')}
+      </span>
       <h2 className="section-title porte-h2">{titre}</h2>
       <p className="font-sans porte-texte">{texte}</p>
 
       <form className="porte-form" onSubmit={entrer}>
-        <div className="porte-ligne">
+        <div className={empile ? 'porte-ligne porte-ligne--empile' : 'porte-ligne'}>
           <label className="porte-champ">
             <span className="font-mono porte-label">{d('Votre prénom', 'Your first name')}</span>
             <input name="prenom" type="text" required autoComplete="given-name" placeholder={d('Prénom', 'First name')} />
@@ -106,10 +112,10 @@ export default function Porte({
 
         <p className="font-sans porte-consentement">
           {d(
-            'En ouvrant la bibliothèque, vous acceptez que je vous écrive quand je publie une nouvelle ressource. Chaque email porte un lien de désinscription, et ',
-            'By opening the library, you agree that I may email you when I publish a new resource. Every email has an unsubscribe link, and '
+            'En entrant, vous acceptez que je vous écrive quand je publie une nouvelle ressource. Chaque email porte un lien de désinscription, et ',
+            'By entering, you agree that I may email you when I publish a new resource. Every email has an unsubscribe link, and '
           )}
-          <Link href={lienBiblio('/bibliotheque/desinscription', lang)}>
+          <Link href={lienBiblio('/library/unsubscribe', lang)}>
             {d('cette page', 'this page')}
           </Link>
           {d(' fait la même chose à tout moment. Le détail est dans la ', ' does the same at any time. The details are in the ')}
@@ -121,7 +127,7 @@ export default function Porte({
 
         <button type="submit" className="btn-primary porte-bouton" disabled={etat === 'envoi'}>
           <span className="btn-primary-dot" />
-          {etat === 'envoi' ? d('Ouverture…', 'Opening…') : d('Ouvrir la bibliothèque', 'Open the library')}
+          {etat === 'envoi' ? d('Ouverture…', 'Opening…') : d('Entrer dans l’espace', 'Enter the library')}
           <ArrowRight size={16} strokeWidth={2} />
         </button>
 
@@ -135,7 +141,21 @@ export default function Porte({
 
       <style jsx>{`
         .porte {
-          padding: 40px 40px 36px;
+          padding: 36px 36px 32px;
+          box-shadow: 0 24px 60px -30px rgba(15, 23, 42, 0.35);
+        }
+        .porte-badge {
+          display: inline-flex;
+          align-items: center;
+          gap: 7px;
+          font-size: 10.5px;
+          letter-spacing: 1.5px;
+          text-transform: uppercase;
+          color: var(--accent);
+          background: var(--accent-subtle);
+          border-radius: 999px;
+          padding: 7px 12px;
+          margin-bottom: 16px;
         }
         .porte-h2 {
           font-size: clamp(24px, 3vw, 32px);
@@ -157,6 +177,9 @@ export default function Porte({
           display: grid;
           grid-template-columns: 1fr 1fr;
           gap: 18px;
+        }
+        .porte-ligne--empile {
+          grid-template-columns: 1fr;
         }
         .porte-champ {
           display: grid;

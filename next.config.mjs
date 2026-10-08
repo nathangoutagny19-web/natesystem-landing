@@ -5,6 +5,15 @@ const nextConfig = {
 
   async redirects() {
     return [
+      /* La bibliothèque devient /library le 8 octobre 2026 : « bibliothèque »
+         ne se lit pas pour un anglophone. L'ancienne adresse était en ligne
+         depuis le 1er octobre, partagée en message : elle redirige. */
+      { source: '/bibliotheque', destination: '/library', permanent: true },
+      { source: '/bibliotheque/desinscription', destination: '/library/unsubscribe', permanent: true },
+      { source: '/bibliotheque/:path*', destination: '/library/:path*', permanent: true },
+      { source: '/en/bibliotheque', destination: '/en/library', permanent: true },
+      { source: '/en/bibliotheque/desinscription', destination: '/en/library/unsubscribe', permanent: true },
+      { source: '/en/bibliotheque/:path*', destination: '/en/library/:path*', permanent: true },
       /* /schools est repliée sur /en le 30 septembre 2026. Elle avait été
          créée la veille, quand la home parlait encore aux PME : il fallait une
          destination anglaise qui parle d'écoles. Maintenant que tout le site

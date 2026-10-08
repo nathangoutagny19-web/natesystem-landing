@@ -7,9 +7,9 @@ import { SITE_URL } from '@/lib/constants'
  * fait venir les gens. Les livrables, eux, sont derrière la porte.
  */
 export const metadata: Metadata = {
-  title: 'La bibliothèque NateSystem · modèles et méthodes pour l’hôtellerie de luxe',
+  title: 'NateSystem Library · l’espace privé de l’hôtellerie de luxe',
   description:
-    'Checklists, modèles, grilles de décision et courtes vidéos pour les villas, domaines, maisons de réception, petits hôtels, conciergeries, chalets et yachts. Tout se voit avant de laisser votre email.',
+    'Checklists à cocher, modèles à reprendre et consignes à copier pour les villas, domaines, maisons de réception, petits hôtels, conciergeries, chalets et yachts. Accès gratuit avec votre email.',
   keywords: [
     'checklist arrivée client villa',
     'outils conciergerie de luxe',
@@ -18,19 +18,19 @@ export const metadata: Metadata = {
     'NateSystem',
   ],
   alternates: {
-    canonical: `${SITE_URL}/bibliotheque`,
+    canonical: `${SITE_URL}/library`,
     languages: {
-      'fr-FR': `${SITE_URL}/bibliotheque`,
-      en: `${SITE_URL}/en/bibliotheque`,
-      'x-default': `${SITE_URL}/bibliotheque`,
+      'fr-FR': `${SITE_URL}/library`,
+      en: `${SITE_URL}/en/library`,
+      'x-default': `${SITE_URL}/library`,
     },
   },
   robots: { index: true, follow: true },
   openGraph: {
-    title: 'La bibliothèque NateSystem',
+    title: 'NateSystem Library',
     description:
       'Checklists, modèles et grilles de décision pour les métiers de l’accueil haut de gamme.',
-    url: `${SITE_URL}/bibliotheque`,
+    url: `${SITE_URL}/library`,
     type: 'website',
     locale: 'fr_FR',
     images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'NateSystem' }],

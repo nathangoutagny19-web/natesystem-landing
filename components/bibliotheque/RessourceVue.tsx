@@ -18,6 +18,7 @@ import {
 } from '@/lib/bibliotheque'
 import { useAcces } from './acces'
 import Livrables from './Livrables'
+import Contenu from './Contenu'
 import Porte from './Porte'
 import CarteRessource from './CarteRessource'
 
@@ -35,10 +36,17 @@ import CarteRessource from './CarteRessource'
 export default function RessourceVue({ slug }: { slug: string }) {
   const { lang } = useLang()
   const d = makeD(lang)
-  const { ouvert, ouvrir } = useAcces()
+  const { ouvert, ouvrir, prenom } = useAcces()
   const a = assetParSlug(slug)!
 
   const video = (lang === 'en' ? a.videoIdEn ?? a.videoId : a.videoId) ?? null
+  const contenu = a.contenu ?? []
+  const apercu = contenu.slice(0, a.apercu ?? 2)
+  /* Ce qui suit l'aperçu, flouté sous la porte : on voit qu'il y a de la
+     matière, sans pouvoir la lire. Deux blocs suffisent à le faire sentir. */
+  const suiteFloue = contenu.slice(a.apercu ?? 2, (a.apercu ?? 2) + 2)
+  const enAttenteAnglais =
+    lang === 'en' && contenu.some((b) => ('en' in b ? !b.en : 'items' in b ? b.items.some((i) => !i.en) : false))
   const categorie = CATEGORIES.find((c) => c.id === a.categorie)!
   const dansLaBiblio = a.secteurs.length > 0
   const autres = dansLaBiblio ? ASSETS_LISTES.filter((x) => x.slug !== a.slug).slice(0, 3) : []
@@ -57,12 +65,19 @@ export default function RessourceVue({ slug }: { slug: string }) {
       <article className="res">
         <div className="res-wrap">
           <FadeUp>
-            {dansLaBiblio && (
-              <Link href={lienBiblio('/bibliotheque', lang)} className="font-sans res-retour">
-                <ArrowLeft size={15} strokeWidth={2} />
-                {d('La bibliothèque', 'The library')}
-              </Link>
-            )}
+            <div className="res-barre">
+              {dansLaBiblio && (
+                <Link href={lienBiblio('/library', lang)} className="font-sans res-retour">
+                  <ArrowLeft size={15} strokeWidth={2} />
+                  {d('Toutes les ressources', 'All resources')}
+                </Link>
+              )}
+              {ouvert && (
+                <span className="font-mono res-membre">
+                  {prenom ? d(`Espace membre · ${prenom}`, `Member area · ${prenom}`) : d('Espace membre', 'Member area')}
+                </span>
+              )}
+            </div>
             <p className="font-mono res-meta">
               <span className="res-format">{d(FORMATS[a.format].fr, FORMATS[a.format].en)}</span>
               <span>{a.dureeMin} min</span>
@@ -83,13 +98,47 @@ export default function RessourceVue({ slug }: { slug: string }) {
             </FadeUp>
           )}
 
+          {enAttenteAnglais && (
+            <p className="font-sans res-fr">
+              This resource is in French for now. The English version is on its way.
+            </p>
+          )}
+
+          {contenu.length > 0 && (
+            <div className="res-contenu">
+              <Contenu blocs={ouvert ? contenu : apercu} />
+              {ouvert === false && suiteFloue.length > 0 && (
+                <div className="res-flou" aria-hidden="true">
+                  <Contenu blocs={suiteFloue} />
+                </div>
+              )}
+            </div>
+          )}
+
+          {ouvert === false && (
+            <FadeUp delay={0.16}>
+              <div className="res-porte" id="entrer">
+                <Porte
+                  slug={a.slug}
+                  titre={d('La suite est réservée aux membres.', 'The rest is for members.')}
+                  texte={d(
+                    'Votre prénom et votre email suffisent. Ils ouvrent cette ressource et toutes les autres, tout de suite, sans mot de passe.',
+                    'Your first name and email are all it takes. They open this resource and every other one, straight away, with no password.'
+                  )}
+                  onOuvert={ouvrir}
+                />
+              </div>
+            </FadeUp>
+          )}
+
+          {(contenu.length === 0 || ouvert === false) && (
           <FadeUp delay={0.12}>
             <section className="card res-dedans" aria-labelledby="res-dedans-titre">
               <h2 id="res-dedans-titre" className="font-mono res-dedans-label">
-                {d('Ce que vous repartez avec', 'What you leave with')}
+                {contenu.length > 0 ? d('Dans cette ressource', 'In this resource') : d('Ce que vous repartez avec', 'What you leave with')}
               </h2>
               <Livrables livrables={a.livrables} ouvert={ouvert} />
-              {ouvert && a.livrables.some((l) => !l.fichier) && (
+              {ouvert && contenu.length === 0 && a.livrables.some((l) => !l.fichier) && (
                 <p className="font-sans res-note">
                   {d(
                     'Les fichiers qui ne sont pas encore prêts arrivent. Je vous écris dès qu’ils le sont, à l’adresse que vous avez laissée.',
@@ -99,22 +148,8 @@ export default function RessourceVue({ slug }: { slug: string }) {
               )}
             </section>
           </FadeUp>
-
-          {ouvert === false && (
-            <FadeUp delay={0.16}>
-              <div className="res-porte" id="entrer">
-                <Porte
-                  slug={a.slug}
-                  titre={d('Ouvrez cette ressource.', 'Open this resource.')}
-                  texte={d(
-                    'Votre prénom et votre email suffisent. Ils ouvrent cette ressource et toutes les autres de la bibliothèque, tout de suite, sans mot de passe.',
-                    'Your first name and email are all it takes. They open this resource and every other one in the library, straight away, with no password.'
-                  )}
-                  onOuvert={ouvrir}
-                />
-              </div>
-            </FadeUp>
           )}
+
         </div>
 
         {autres.length > 0 && (
@@ -145,6 +180,14 @@ export default function RessourceVue({ slug }: { slug: string }) {
         .res-wrap--large {
           max-width: 1100px;
         }
+        .res-barre {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 12px;
+          flex-wrap: wrap;
+          margin-bottom: 28px;
+        }
         .res :global(.res-retour) {
           display: inline-flex;
           align-items: center;
@@ -152,8 +195,37 @@ export default function RessourceVue({ slug }: { slug: string }) {
           font-size: 14px;
           color: var(--text-muted);
           text-decoration: none;
-          margin-bottom: 28px;
           transition: color 0.2s ease;
+        }
+        .res-membre {
+          font-size: 10.5px;
+          letter-spacing: 1.4px;
+          text-transform: uppercase;
+          color: var(--accent);
+          background: var(--accent-subtle);
+          border-radius: 999px;
+          padding: 6px 11px;
+        }
+        .res-fr {
+          margin: 28px 0 0;
+          font-size: 14px;
+          color: var(--text-muted);
+          font-style: italic;
+        }
+        .res-contenu {
+          margin-top: 36px;
+        }
+        .res-flou {
+          position: relative;
+          margin-top: 18px;
+          max-height: 260px;
+          overflow: hidden;
+          filter: blur(5px);
+          opacity: 0.55;
+          user-select: none;
+          pointer-events: none;
+          -webkit-mask-image: linear-gradient(to bottom, #000 30%, transparent);
+          mask-image: linear-gradient(to bottom, #000 30%, transparent);
         }
         .res :global(.res-retour:hover) {
           color: var(--accent);
