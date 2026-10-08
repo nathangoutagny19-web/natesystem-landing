@@ -1,6 +1,5 @@
 import Nav from '@/components/layout/Nav'
 import MobileCta from '@/components/layout/MobileCta'
-import WorkTogetherPrompt from '@/components/layout/WorkTogetherPrompt'
 import Hero from '@/components/home/Hero'
 import Transformation from '@/components/home/Transformation'
 import BrandFilm from '@/components/home/BrandFilm'
@@ -115,7 +114,6 @@ export default function Home() {
       <Footer />
 
       <MobileCta />
-      <WorkTogetherPrompt />
     </main>
   )
 }

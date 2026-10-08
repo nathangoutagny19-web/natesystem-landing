@@ -1929,19 +1929,6 @@ export const translations = {
   // Sticky mobile
   'reviews.stickyCta': { en: 'Book a call · free', fr: 'Réserver un appel · offert', hu: 'Hívás foglalása · ingyenes' },
 
-  // Work-together widget ("Nate" agent)
-  'nate.status': { en: 'Online', fr: 'En ligne', hu: 'Elérhető' },
-  'nate.teaser': { en: 'Need custom software?', fr: 'Besoin d\'un logiciel sur-mesure ?', hu: 'Egyedi szoftverre van szüksége?' },
-  'nate.name': { en: 'Nate · Assistant', fr: 'Nate · Assistant', hu: 'Nate · Asszisztens' },
-  'nate.message': {
-    en: 'Tell me what you\'re building, I\'ll tell you how to run it.',
-    fr: 'Dites-moi ce que vous construisez, je vous dirai comment le faire tourner.',
-    hu:
-      'Mondja el, mit épít, és megmondom, hogyan lehet működtetni.',
-  },
-  'nate.cta': { en: 'Open the form', fr: 'Ouvrir le formulaire', hu: 'Űrlap megnyitása' },
-  'nate.later': { en: 'Later', fr: 'Plus tard', hu: 'Később' },
-  'nate.close': { en: 'Close', fr: 'Fermer', hu: 'Bezárás' },
 
   // ───────────────────────────────────────────────────────────────
   // Agents in action, new section between Solution and CaseStudy

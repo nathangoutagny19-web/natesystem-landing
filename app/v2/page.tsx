@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 
 import Nav from '@/components/layout/Nav'
 import MobileCta from '@/components/layout/MobileCta'
-import WorkTogetherPrompt from '@/components/layout/WorkTogetherPrompt'
 import Footer from '@/components/layout/Footer'
 import Divider from '@/components/ui/Divider'
 
@@ -104,7 +103,6 @@ export default function HomeV2() {
       <Footer />
 
       <MobileCta />
-      <WorkTogetherPrompt />
     </main>
   )
 }
