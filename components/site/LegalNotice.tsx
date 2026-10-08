@@ -66,7 +66,7 @@ export default function LegalNotice({ lang }: { lang: Lang }) {
           </ul>
         </Section>
 
-        <Section title={d('Politique de confidentialité', 'Privacy policy', 'Adatvédelmi tájékoztató')}>
+        <Section id="confidentialite" title={d('Politique de confidentialité', 'Privacy policy', 'Adatvédelmi tájékoztató')}>
           <p>{d(
             'Les données personnelles collectées ne sont jamais vendues, louées ou partagées avec des tiers à des fins commerciales.',
             'The personal data collected is never sold, rented or shared with third parties for commercial purposes.'
@@ -77,6 +77,19 @@ export default function LegalNotice({ lang }: { lang: Lang }) {
               'You have the right to access, correct and delete your personal data. To exercise those rights, write to:'
             , 'Önnek joga van hozzáférni a személyes adataihoz, helyesbíteni és töröltetni azokat. E jogok gyakorlásához írjon ide:')}{' '}
             <a href="mailto:nathan@natesystem.com" style={{ color: 'var(--accent)', textDecoration: 'none' }}>nathan@natesystem.com</a>
+          </p>
+          {/* La bibliothèque : le formulaire y renvoie (#confidentialite) depuis
+              sa ligne de consentement. La durée de conservation est à valider
+              par Nathan avant la mise en production. */}
+          <p>
+            {d(
+              'La bibliothèque. Pour l’ouvrir, vous donnez votre prénom, votre email et, si vous le souhaitez, votre type d’établissement. Ces informations servent à vous donner accès aux ressources et à vous écrire quand une nouvelle ressource est publiée. Elles sont conservées tant que votre inscription est active, et supprimées au plus tard trois ans après notre dernier échange. Vous pouvez vous désinscrire à tout moment, par le lien présent dans chaque email ou sur ',
+              'The library. To open it, you give your first name, your email and, if you wish, your type of business. This information is used to give you access to the resources and to email you when a new resource is published. It is kept for as long as you stay subscribed, and deleted no later than three years after our last exchange. You can unsubscribe at any time, through the link in every email or on '
+            , 'A könyvtár. A megnyitásához megadja a keresztnevét, az e-mail-címét és, ha szeretné, az intézménye típusát. Ezekre az adatokra azért van szükség, hogy hozzáférést adjak az anyagokhoz, és írjak Önnek, amikor új anyag jelenik meg. Addig őrzöm őket, amíg feliratkozva marad, és legkésőbb három évvel az utolsó kapcsolatfelvételünk után törlöm. Bármikor leiratkozhat az egyes e-mailekben található linkkel vagy ')}
+            <a href={lang === 'en' ? '/en/bibliotheque/desinscription' : '/bibliotheque/desinscription'} style={{ color: 'var(--accent)', textDecoration: 'none' }}>
+              {d('la page de désinscription', 'the unsubscribe page', 'a leiratkozási oldalon')}
+            </a>
+            .
           </p>
         </Section>
 
@@ -116,9 +129,9 @@ export default function LegalNotice({ lang }: { lang: Lang }) {
   )
 }
 
-function Section({ title, children }: { title: string; children: React.ReactNode }) {
+function Section({ id, title, children }: { id?: string; title: string; children: React.ReactNode }) {
   return (
-    <div style={{ marginTop: '48px' }}>
+    <div id={id} style={{ marginTop: '48px', scrollMarginTop: '100px' }}>
       <h2 className="font-serif italic" style={{ fontSize: '22px', fontWeight: 400, color: 'var(--accent)', marginBottom: '16px' }}>
         {title}
       </h2>
