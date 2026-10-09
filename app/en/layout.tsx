@@ -22,7 +22,7 @@ import { SITE_URL } from '@/lib/constants'
 export const metadata: Metadata = {
   title: 'NateSystem, bespoke software for luxury and prestige hospitality',
   description:
-    'Bespoke software, online presence and tracked data for villas, chalets, estates, concierge services, yachts, independent hotels and event venues. Enter it once and your whole organisation follows. A long-term partnership, and you own the code.',
+    'Bespoke software, online presence and tracked data for villas, chalets, estates, concierge services, yachts, boutique hotels and event venues. Enter it once and your whole organisation follows. A long-term partnership, and you own the code.',
   alternates: {
     canonical: `${SITE_URL}/en`,
     languages: {

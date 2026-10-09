@@ -1700,7 +1700,7 @@ export const translations = {
     hu: 'Csak a luxusvendéglátással dolgoznak?',
   },
   'faq.a6': {
-    en: 'That’s where we focus: villas, chalets and estates, concierge services, yachts, independent hotels, event venues. We built for very demanding organisations before, schools and multi-site groups, and it shows in the method.',
+    en: 'That’s where we focus: villas, chalets and estates, concierge services, yachts, boutique hotels, event venues. We built for very demanding organisations before, schools and multi-site groups, and it shows in the method.',
     fr: 'C’est là qu’on se concentre : villas, chalets et domaines, conciergeries, yachts, hôtels indépendants et maisons de réception. On a construit avant pour des organisations très exigeantes, des écoles et des groupes multi-sites, et ça se voit dans la méthode.',
     hu: 'Erre koncentrálunk: villák, faházak és birtokok, concierge-szolgáltatások, jachtok, független szállodák, rendezvényhelyszínek. Korábban nagyon igényes szervezeteknek építettünk, iskoláknak és többtelephelyes csoportoknak, és ez látszik a módszeren.',
   },

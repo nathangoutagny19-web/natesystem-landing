@@ -115,7 +115,7 @@ const SECTORS: Sector[] = [
     /* Le cas type : L'Hermitage (Saint-Chamond), maison de réception de groupe.
        Douleurs tirées de l'appel avec Florian Méheust, 2 octobre 2026. Le nom
        n'apparaît pas : c'est un prospect, pas un client. */
-    nameFr: 'Hôtels indépendants & maisons de réception', nameEn: 'Independent hotels & event venues', nameHu: 'Független szállodák és rendezvényházak',
+    nameFr: 'Hôtels indépendants & maisons de réception', nameEn: 'Boutique hotels & event venues', nameHu: 'Független szállodák és rendezvényházak',
     painFr: 'Un groupe passe de 40 à 20 la veille, et il faut tout refaire à la main : les repas, le planning des équipes, le ménage, la facture. Le logiciel hôtelier garde les réservations, le reste vit dans des Word et des Excel.',
     painEn: 'A group drops from 40 to 20 the day before, and everything has to be redone by hand: meals, staff rota, housekeeping, invoice. The hotel software keeps the bookings, the rest lives in Word and Excel files.',
     painHu: 'Egy csoport előző nap 40-ről 20 főre csökken, és mindent kézzel kell újracsinálni: étkezések, beosztás, takarítás, számla. A szállodai szoftver tárolja a foglalásokat, a többi Word- és Excel-fájlokban él.',
