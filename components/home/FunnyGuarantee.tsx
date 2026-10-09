@@ -21,8 +21,8 @@ export default function FunnyGuarantee() {
             {d('La Garantie ', 'The ', 'A ')}<span className="accent">{d('Voisine', 'Next-Door', 'Szomszéd')}</span>{d('', ' Guarantee', '-garancia')}
           </h2>
           <p className="font-sans funguar-text">
-            {d('Dans les 90 jours suivant la livraison, si vous n’êtes pas assez content pour nous supplier de ne pas travailler avec l’établissement d’à côté… on vous offre le dîner.',
-               'Within 90 days of delivery, if you are not happy enough to beg us not to work with the school down the road… dinner is on us.', 'Az átadástól számított 90 napon belül, ha nem elég elégedett ahhoz, hogy könyörögjön, ne dolgozzunk a szomszéd intézménnyel… mi álljuk a vacsorát.')}
+            {d('Dans les 90 jours suivant la livraison, si vous n’êtes pas assez content pour nous supplier de ne pas travailler avec votre voisin… on vous offre le dîner.',
+               'Within 90 days of delivery, if you are not happy enough to beg us not to work with your neighbour… dinner is on us.', 'Az átadástól számított 90 napon belül, ha nem elég elégedett ahhoz, hogy könyörögjön, ne dolgozzunk a szomszédjával… mi álljuk a vacsorát.')}
           </p>
           <p className="font-mono funguar-fineprint">
             {d('* dîner offert pour de vrai. Et si le projet le mérite vraiment, on vise plus haut.',

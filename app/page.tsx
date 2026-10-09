@@ -102,7 +102,7 @@ export default function Home() {
       <Faq />
       <Divider />
 
-      {/* 15, La garantie « funny » (clin d'œil resto), déplacée tout à la fin,
+      {/* 15, La garantie « funny » (typographique, sans image sectorielle), déplacée tout à la fin,
              juste avant « Demandez à l'IA » (choix Nathan). */}
       <FunnyGuarantee />
       <Divider />

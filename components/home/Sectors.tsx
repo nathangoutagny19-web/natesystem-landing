@@ -150,7 +150,7 @@ export default function Sectors() {
             <span className="accent">{d('La méthode, non.', 'The method doesn’t.', 'A módszer nem.')}</span>
           </h2>
           <p className="font-sans" style={{ fontSize: '15px', fontWeight: 300, color: 'var(--text-secondary)', maxWidth: '600px', margin: '0 auto', lineHeight: 1.7 }}>
-            {d('Un socle commun à chaque maison, puis ce qui change d’un métier à l’autre. Cliquez sur le vôtre.',
+            {d('Un socle commun à chaque organisation, puis ce qui change d’un métier à l’autre. Cliquez sur le vôtre.',
                'A shared foundation for every business, then what changes from one trade to the next. Click yours.', 'Közös alap minden vállalkozásnak, aztán ami szakmánként változik. Kattintson a sajátjára.')}
           </p>
         </FadeUp>
