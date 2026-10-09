@@ -43,9 +43,9 @@ export const translations = {
     hu: 'A felmérés',
   },
   'nav.svc.sprintDesc': {
-    en: 'We map your school and show where the hours go',
-    fr: 'On cartographie votre établissement et on montre où partent les heures',
-    hu: 'Feltérképezzük az intézményét, és megmutatjuk, hová mennek az órák',
+    en: 'We map your organisation and show where time and clients slip away',
+    fr: 'On cartographie votre organisation et on montre où se perdent le temps et les clients',
+    hu: 'Feltérképezzük a szervezetét, és megmutatjuk, hol vész el az idő és az ügyfél',
   },
   'nav.svc.logiciel': {
     en: 'The custom platform',
@@ -53,9 +53,9 @@ export const translations = {
     hu: 'Az egyedi platform',
   },
   'nav.svc.logicielDesc': {
-    en: 'Built on your agreement and your school calendar',
-    fr: 'Bâtie sur votre convention et votre calendrier scolaire',
-    hu: 'Az Ön megállapodására és tanévi naptárára építve',
+    en: 'Built on your suppliers, your seasons and your way of receiving clients',
+    fr: 'Bâtie sur vos prestataires, vos saisons et votre façon de recevoir',
+    hu: 'A beszállítóira, a szezonjaira és a vendégfogadására építve',
   },
   'nav.svc.ia': {
     en: 'Automation',
@@ -306,14 +306,14 @@ export const translations = {
     hu: 'meglepetések nélkül.',
   },
   'process.sub': {
-    en: 'You always know where things stand. Four steps, one deliverable each. The job is done only when your teams manage without us.',
-    fr: 'Vous savez toujours où on en est. Quatre étapes, un livrable à chacune. La mission n\'est finie que quand vos équipes se débrouillent sans nous.',
-    hu: 'Mindig tudja, hol tartunk. Négy lépés, mindegyikhez egy eredmény. A munka csak akkor kész, ha a csapatai nélkülünk is boldogulnak.',
+    en: 'You always know where we stand. Four steps, one deliverable at each. And it doesn’t stop at delivery: the system keeps evolving with you.',
+    fr: 'Vous savez toujours où on en est. Quatre étapes, un livrable à chacune. Et ça ne s’arrête pas à la livraison : le système continue d’évoluer avec vous.',
+    hu: 'Mindig tudja, hol tartunk. Négy lépés, mindegyiknél egy eredménnyel. És nem ér véget az átadással: a rendszer Önnel együtt fejlődik tovább.',
   },
   'process.step1': {
-    en: 'The diagnosis: we map how your school runs',
-    fr: 'Le diagnostic : on cartographie votre établissement',
-    hu: 'A felmérés: feltérképezzük az intézményét',
+    en: 'The diagnostic: we map your organisation',
+    fr: 'Le diagnostic : on cartographie votre organisation',
+    hu: 'A diagnózis: feltérképezzük a szervezetét',
   },
   'process.step1Duration': {
     en: 'Free discovery call',
@@ -321,9 +321,9 @@ export const translations = {
     hu: 'Ingyenes bemutatkozó hívás',
   },
   'process.step1Desc': {
-    en: 'A few calls with the people who do the work. Who does what, in what order, with which file. From a family\'s enrolment to payroll sign-off. You prepare nothing.',
-    fr: 'Quelques appels avec les personnes qui font le travail. Qui fait quoi, dans quel ordre, avec quel fichier. De l\'inscription d\'une famille à la validation de la paie. Vous ne préparez rien.',
-    hu: 'Néhány beszélgetés azokkal, akik a munkát végzik. Ki mit csinál, milyen sorrendben, melyik fájllal. A család beiratkozásától a bérszámfejtés jóváhagyásáig. Önnek nem kell készülnie.',
+    en: 'A few calls with the people who do the work. Who does what, with which tool, and where your clients come from, from the first request to departure. You prepare nothing.',
+    fr: 'Quelques appels avec les personnes qui font le travail. Qui fait quoi, avec quel outil, et d’où viennent vos clients, de la première demande jusqu’au départ. Vous ne préparez rien.',
+    hu: 'Néhány beszélgetés azokkal, akik a munkát végzik. Ki mit csinál, milyen eszközzel, és honnan jönnek az ügyfelei, az első kéréstől a távozásig. Önnek semmit nem kell előkészítenie.',
   },
   'process.step2': {
     en: 'Then: we build on your rules',
@@ -343,9 +343,9 @@ export const translations = {
     hu: 'A terjedelem és a dátum a kódolás előtt rögzítve',
   },
   'process.step2Desc': {
-    en: 'Your agreement, your school calendar, your sites. Your data ends up in one base, up to date. You click through a prototype before anything is committed.',
-    fr: 'Votre convention, votre calendrier scolaire, vos établissements. Vos données se retrouvent dans une seule base, à jour. Vous cliquez dans une maquette avant qu\'on engage quoi que ce soit.',
-    hu: 'Az Ön megállapodása, tanévi naptára, telephelyei. Az adatai egyetlen, naprakész adatbázisba kerülnek. Egy kattintható prototípust próbál ki, mielőtt bármit elköteleznénk.',
+    en: 'Your suppliers, your rates, your seasons, your places. Your data ends up in one base, up to date, with your website and tracking connected. You click through a prototype before anything is committed.',
+    fr: 'Vos prestataires, vos tarifs, vos saisons, vos lieux. Vos données se retrouvent dans une seule base, à jour, avec votre site et le suivi branchés dessus. Vous cliquez dans une maquette avant qu’on engage quoi que ce soit.',
+    hu: 'A beszállítói, az árai, a szezonjai, a helyszínei. Az adatai egyetlen, naprakész adatbázisba kerülnek, a weboldallal és a követéssel összekötve. Egy prototípusba kattinthat bele, mielőtt bármi eldőlne.',
   },
   'process.step3': {
     en: 'Then: we train until you are autonomous',
@@ -358,34 +358,34 @@ export const translations = {
     hu: 'A teljes önállóságig',
   },
   'process.step3Desc': {
-    en: 'We test everything before going live. Then we train everyone, from leadership to the front desk, until they use it on their own. Nobody is left in front of a screen they don\'t understand.',
-    fr: 'On teste tout avant de lancer. Puis on forme chacun, de la direction à l\'accueil, jusqu\'à ce qu\'ils s\'en servent seuls. Personne n\'est laissé devant un écran qu\'il ne comprend pas.',
-    hu: 'Indulás előtt mindent tesztelünk. Aztán mindenkit betanítunk, a vezetőségtől a portáig, amíg egyedül is használják. Senkit nem hagyunk egy képernyő előtt, amit nem ért.',
+    en: 'We test everything before launch. Then we train everyone, management, front desk, field teams and suppliers, until they use it on their own. Nobody is left in front of a screen they don’t understand.',
+    fr: 'On teste tout avant de lancer. Puis on forme chacun, direction, accueil, équipes sur le terrain et prestataires, jusqu’à ce qu’ils s’en servent seuls. Personne n’est laissé devant un écran qu’il ne comprend pas.',
+    hu: 'Indulás előtt mindent tesztelünk. Aztán mindenkit betanítunk, vezetőséget, recepciót, terepen dolgozó csapatokat és beszállítókat, amíg egyedül nem használják. Senki nem marad egy olyan képernyő előtt, amelyet nem ért.',
   },
   'process.step4': {
-    en: 'Finally: we adjust as the year goes',
-    fr: 'Enfin : on ajuste au fil de l\'année',
-    hu: 'Végül: a tanév során finomítunk',
+    en: 'Then: we evolve it with you, season after season',
+    fr: 'Ensuite : on fait évoluer avec vous, saison après saison',
+    hu: 'Aztán: szezonról szezonra együtt fejlesztjük',
   },
   'process.step4Duration': {
-    en: 'Ongoing · optional',
-    fr: 'En continu · optionnel',
-    hu: 'Folyamatos · opcionális',
+    en: 'A long-term partnership',
+    fr: 'Un partenariat dans la durée',
+    hu: 'Hosszú távú partnerség',
   },
   'process.step4Desc': {
-    en: 'After a few weeks of use, we look at what helps and what doesn\'t, and adjust. A school does not run in January the way it runs in September.',
-    fr: 'Après quelques semaines d\'usage, on regarde ce qui sert et ce qui ne sert pas, et on ajuste. Une école ne fonctionne pas en janvier comme en septembre.',
-    hu: 'Néhány hét használat után megnézzük, mi segít és mi nem, és igazítunk. Egy iskola januárban nem úgy működik, mint szeptemberben.',
+    en: 'We look at what gets used and what doesn’t, and we adjust. New needs, new places, new channels: the system grows with your organisation. A season in high summer doesn’t run like a quiet month.',
+    fr: 'On regarde ce qui sert et ce qui ne sert pas, et on ajuste. Nouveaux besoins, nouveaux lieux, nouveaux canaux : le système grandit avec votre organisation. Une haute saison ne tourne pas comme un mois calme.',
+    hu: 'Megnézzük, mi hasznos és mi nem, és igazítunk rajta. Új igények, új helyszínek, új csatornák: a rendszer a szervezetével együtt nő. Egy főszezon nem úgy működik, mint egy csendes hónap.',
   },
   'process.step1Highlight': {
-    en: '1 to 15 days',
-    fr: '1 à 15 jours',
-    hu: '1-15 nap',
+    en: 'You prepare nothing',
+    fr: 'Vous ne préparez rien',
+    hu: 'Semmit nem kell előkészítenie',
   },
   'process.step2Highlight': {
-    en: '30 to 60 days',
-    fr: '30 à 60 jours',
-    hu: '30-60 nap',
+    en: 'A prototype before any commitment',
+    fr: 'Une maquette avant tout engagement',
+    hu: 'Prototípus minden elköteleződés előtt',
   },
   'process.step3Highlight': {
     en: 'Until you are fully autonomous',
@@ -393,9 +393,9 @@ export const translations = {
     hu: 'A teljes önállóságig',
   },
   'process.step4Highlight': {
-    en: 'Fixed fee',
-    fr: 'Forfait',
-    hu: 'Átalánydíj',
+    en: 'A partnership, not a delivery',
+    fr: 'Un partenariat, pas une livraison',
+    hu: 'Partnerség, nem egyszeri átadás',
   },
   'process.guarantee1': {
     en: 'Deadlines guaranteed, or -10%/week late',

@@ -30,8 +30,8 @@ export default function Process({ home = false }: { home?: boolean }) {
                 <span className="accent">{d('sans surprise.', 'no surprises.', 'meglepetések nélkül.')}</span>
               </h2>
               <p className="font-sans" style={{ fontSize: '15px', fontWeight: 300, color: 'var(--text-secondary)', maxWidth: '560px', margin: '0 auto', lineHeight: 1.7 }}>
-                {d('Vous savez toujours où on en est et où on va. Quatre étapes, un livrable concret à chacune. Et on ne considère la mission terminée que lorsque vos équipes sont autonomes.',
-                   'You always know where we are and where we’re headed. Four steps, one concrete deliverable at each. And the job isn’t done until your teams are autonomous.', 'Mindig tudja, hol tartunk és merre megyünk. Négy lépés, mindegyiknél egy kézzelfogható eredménnyel. És a munkát csak akkor tekintjük késznek, amikor a csapatai önállóak.')}
+                {d('Vous savez toujours où on en est et où on va. Quatre étapes, un livrable concret à chacune. Et ça ne s’arrête pas à la livraison : le système continue d’évoluer avec vous, dans la durée.',
+                   'You always know where we are and where we’re headed. Four steps, one concrete deliverable at each. And it doesn’t stop at delivery: the system keeps evolving with you, for the long term.', 'Mindig tudja, hol tartunk és merre megyünk. Négy lépés, mindegyiknél egy kézzelfogható eredménnyel. És nem ér véget az átadással: a rendszer hosszú távon Önnel együtt fejlődik tovább.')}
               </p>
             </>
           ) : (
