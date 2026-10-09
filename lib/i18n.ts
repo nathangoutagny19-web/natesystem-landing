@@ -151,9 +151,9 @@ export const translations = {
         de livraison à fixer ». La mention est donc retirée, pas
         remplacée. Elle revient le jour où Nathan le fixe. */
   'hero.sub': {
-    en: 'Responsiveness that doubles, hours given back to your team every month, a client experience nobody else offers. And your numbers in front of you at last: what each client spends, on what, and where they came from.',
-    fr: 'Une réactivité qui double, des heures rendues à votre équipe chaque mois, une expérience client que personne d’autre n’offre. Et enfin vos chiffres sous les yeux : ce que chaque client dépense, sur quoi, et d’où il vient.',
-    hu: 'Kétszer gyorsabb reagálás, havonta visszanyert órák a csapatának, olyan ügyfélélmény, amilyet senki más nem nyújt. És végre a számai a szeme előtt: mennyit költ az egyes ügyfelek, mire, és honnan jöttek.',
+    en: 'Responsiveness that doubles, hours given back to your team every month, a unique client experience and data-driven decisions: what each client spends, on what, and where they came from. That’s what a bespoke digital ecosystem is.',
+    fr: 'Une réactivité qui double, des heures rendues à votre équipe chaque mois, une expérience client unique et des décisions data-driven : ce que chaque client dépense, sur quoi, et d’où il vient. C’est ça, un écosystème digital sur mesure.',
+    hu: 'Kétszer gyorsabb reagálás, havonta visszanyert órák a csapatának, egyedi ügyfélélmény és adatvezérelt döntések: mennyit költ az egyes ügyfelek, mire, és honnan jöttek. Ez az egyedi digitális ökoszisztéma.',
   },
   'hero.aiNote': {
     en: '40 hours a month given back to teams on average, as reported by our clients.',
