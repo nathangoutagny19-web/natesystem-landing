@@ -20,73 +20,73 @@ const included: Included[] = [
   {
     titleFr: 'Formation sur votre propre outil',
     titleEn: 'Training on your own tool', titleHu: 'Képzés a saját eszközén',
-    descFr: 'On forme sur VOTRE logiciel, avec vos vraies données, pas une démo générique. Chacun apprend exactement ce qu\u2019il utilisera au quotidien.',
-    descEn: 'We train on YOUR software, with your real data, not a generic demo. Everyone learns exactly what they will use day to day.', descHu: 'AZ ÖN szoftverén tanítunk, a valódi adataival, nem egy általános demón. Mindenki pontosan azt tanulja meg, amit nap mint nap használni fog.',
+    descFr: 'On forme sur VOTRE logiciel, avec vos vrais séjours, vos vrais clients, vos vrais fournisseurs. Pas une démo générique : chacun apprend ce qu’il utilisera dès le lendemain.',
+    descEn: 'We train on YOUR software, with your real stays, your real clients, your real suppliers. No generic demo: everyone learns what they will use the very next day.', descHu: 'AZ ÖN szoftverén tanítunk, a valódi tartózkodásaival, ügyfeleivel és beszállítóival. Nem általános demón: mindenki azt tanulja meg, amit már másnap használni fog.',
     metricFr: 'Une adoption réelle, pas théorique',
     metricEn: 'Real adoption, not theoretical', metricHu: 'Valódi használatbavétel, nem elméleti',
   },
   {
-    titleFr: 'Du dirigeant au terrain',
-    titleEn: 'From leadership to the field', titleHu: 'A vezetőtől a terepen dolgozóig',
-    descFr: 'Chaque rôle est formé sur ce qui le concerne : le dirigeant lit ses tableaux de bord, l\u2019équipe pilote son quotidien, personne n\u2019est perdu.',
-    descEn: 'Every role is trained on what concerns it: leadership reads the dashboards, the team runs its day, nobody is left behind.', descHu: 'Minden szerepkör arra kap képzést, ami rá tartozik: a vezetés az irányítópultokat olvassa, a csapat a napi munkáját viszi, senki nem marad le.',
-    metricFr: 'Toute l\u2019équipe autonome',
+    titleFr: 'De la réception à la direction',
+    titleEn: 'From front desk to management', titleHu: 'A recepciótól a vezetésig',
+    descFr: 'Réception, conciergerie, équipes terrain, direction : chaque rôle est formé sur ce qui le concerne. La direction lit ses chiffres, la réception gère les demandes, le terrain sait quoi faire et quand.',
+    descEn: 'Front desk, concierges, field teams, management: every role is trained on what concerns it. Management reads its numbers, the front desk handles requests, the field teams know what to do and when.', descHu: 'Recepció, concierge, terepen dolgozó csapatok, vezetés: minden szerepkör arra kap képzést, ami rá tartozik. A vezetés a számait olvassa, a recepció a kéréseket kezeli, a terepen dolgozók tudják, mit és mikor kell tenniük.',
+    metricFr: 'Toute l’équipe autonome',
     metricEn: 'The whole team, autonomous', metricHu: 'Az egész csapat önállóan',
   },
   {
-    titleFr: 'Documentation complète',
-    titleEn: 'Full documentation', titleHu: 'Teljes dokumentáció',
-    descFr: 'Guides, vidéos, procédures : tout est écrit et à vous. De quoi former vos prochaines recrues sans nous, quand vous voulez.',
-    descEn: 'Guides, videos, procedures: all written down and yours. Enough to train your next hires without us, whenever you want.', descHu: 'Útmutatók, videók, eljárások: minden leírva, és az Öné. Elég ahhoz, hogy a következő munkatársait nélkülünk tanítsa be, amikor csak akarja.',
-    metricFr: 'Onboarding des nouveaux, sans nous',
-    metricEn: 'Onboarding new hires, without us', metricHu: 'Új munkatársak bevezetése, nélkülünk',
+    titleFr: 'Les outils et l’IA au quotidien',
+    titleEn: 'Tools and AI in daily work', titleHu: 'Eszközök és MI a mindennapokban',
+    descFr: 'Rédiger une réponse soignée dans la langue du client, résumer un fil WhatsApp, préparer le brief du chef. On montre à vos équipes comment s’en servir concrètement, et où garder la main.',
+    descEn: 'Drafting a careful reply in the client’s language, summarising a WhatsApp thread, preparing the chef’s brief. We show your teams how to use it in practice, and where to keep control.', descHu: 'Gondos válasz megfogalmazása az ügyfél nyelvén, egy WhatsApp-beszélgetés összefoglalása, a séf eligazításának előkészítése. Megmutatjuk a csapatainak, hogyan használják mindezt a gyakorlatban, és hol tartsák meg az irányítást.',
+    metricFr: 'Des réponses plus rapides, le même soin',
+    metricEn: 'Faster replies, the same care', metricHu: 'Gyorsabb válaszok, ugyanazzal a gondossággal',
   },
   {
-    titleFr: 'Accompagnement puis autonomie',
-    titleEn: 'Support, then autonomy', titleHu: 'Támogatás, aztán önállóság',
-    descFr: 'On reste à vos côtés le temps qu\u2019il faut, puis on vous laisse la main. Toujours dispo si besoin, mais jamais indispensable.',
-    descEn: 'We stay alongside you as long as it takes, then we hand over. Always around if you need us, never indispensable.', descHu: 'Addig maradunk Ön mellett, ameddig kell, aztán átadjuk. Mindig elérhetők, ha szüksége van ránk, de sosem nélkülözhetetlenek.',
-    metricFr: 'On part quand vous êtes prêts',
-    metricEn: 'We leave when you are ready', metricHu: 'Akkor megyünk, amikor készen áll',
+    titleFr: 'Documentation et suivi',
+    titleEn: 'Documentation and follow-up', titleHu: 'Dokumentáció és utánkövetés',
+    descFr: 'Guides, vidéos, procédures, écrits et à vous : chaque saisonnier se forme sans nous. On reste à vos côtés, saison après saison, à mesure que le système évolue.',
+    descEn: 'Guides, videos, procedures, written down and yours: every seasonal hire can be trained without us. We stay alongside you, season after season, as the system evolves.', descHu: 'Útmutatók, videók, eljárások, leírva és az Öné: minden szezonális munkatárs nélkülünk is betanulhat. Szezonról szezonra Ön mellett maradunk, ahogy a rendszer fejlődik.',
+    metricFr: 'Chaque saison, sans repartir de zéro',
+    metricEn: 'Every season, without starting from scratch', metricHu: 'Minden szezon, nulláról kezdés nélkül',
   },
 ]
 
 const painsFr = [
-  'Vous avez déjà payé des outils que, au final, personne n\u2019utilise',
-  'L\u2019équipe résiste au changement, par peur ou par habitude',
-  'Vous dépendez d\u2019un prestataire pour la moindre modification',
-  'Le savoir reste dans la tête d\u2019une ou deux personnes clés',
+  'Vous avez déjà payé des outils que, au final, personne n’utilise',
+  'Tout passe par vous, parce que vous êtes le seul à savoir comment faire',
+  'Les saisonniers arrivent et il faut tout réexpliquer, chaque saison',
+  'L’équipe ne sait pas quoi faire de l’IA, ou n’ose pas s’en servir',
 ]
 const painsEn = [
   'You have already paid for tools that, in the end, nobody uses',
-  'The team resists the change, out of fear or out of habit',
-  'You depend on a supplier for the smallest change',
-  'The know-how sits in the heads of one or two key people',
+  'Everything goes through you, because you are the only one who knows how',
+  'Seasonal staff arrive and everything has to be explained again, every season',
+  'The team does not know what to do with AI, or does not dare use it',
 ]
 const painsHu = [
   'Fizetett már olyan eszközökért, amelyeket végül senki nem használ',
-  'A csapat ellenáll a változásnak, félelemből vagy megszokásból',
-  'A legapróbb módosításhoz is egy szolgáltatótól függ',
-  'A tudás egy-két kulcsember fejében ül',
+  'Minden Önön megy át, mert csak Ön tudja, hogyan kell csinálni',
+  'Megérkeznek a szezonális munkatársak, és minden szezonban mindent újra el kell magyarázni',
+  'A csapat nem tudja, mit kezdjen az MI-vel, vagy nem meri használni',
 ]
 
 const guaranteesFr = [
-  'Le code et l\u2019infrastructure vous appartiennent à 100 %',
-  'Documentation complète · vous formez vos nouveaux sans nous',
-  'On part quand vos équipes sont autonomes, jamais avant',
-  'Toujours dispo si vous en avez besoin, sans dépendance',
+  'Le code et les données vous appartiennent à 100 %',
+  'Documentation complète · vous formez vos saisonniers sans nous',
+  'On forme jusqu’à l’autonomie de vos équipes, jamais moins',
+  'Un partenaire qui reste, saison après saison, sans dépendance',
 ]
 const guaranteesEn = [
-  'The code and the infrastructure are 100 % yours',
-  'Full documentation · you train your new hires without us',
-  'We leave when your teams are autonomous, never before',
-  'Always around if you need us, without you depending on us',
+  'The code and the data are 100 % yours',
+  'Full documentation · you train your seasonal staff without us',
+  'We train until your teams are autonomous, never less',
+  'A partner who stays, season after season, with no dependency',
 ]
 const guaranteesHu = [
-  'A kód és az infrastruktúra 100%-ban az Öné',
-  'Teljes dokumentáció · nélkülünk tanítja be az új munkatársait',
-  'Akkor megyünk, amikor a csapatai önállóak, előbb soha',
-  'Mindig elérhetők, ha szüksége van ránk, anélkül hogy függne tőlünk',
+  'A kód és az adatok 100%-ban az Önéi',
+  'Teljes dokumentáció · nélkülünk tanítja be a szezonális munkatársait',
+  'A csapatai önállóságáig tanítunk, soha nem kevesebbig',
+  'Partner, aki marad, szezonról szezonra, függőség nélkül',
 ]
 
 export default function FormationPage() {
@@ -102,15 +102,15 @@ export default function FormationPage() {
           <FadeUp>
             <span className="section-label">{d('Formation & accompagnement', 'Training & support', 'Képzés és támogatás')}</span>
             <h1 className="font-serif italic" style={{ fontSize: 'clamp(32px, 5.4vw, 54px)', fontWeight: 400, lineHeight: 1.1, color: 'var(--text)', maxWidth: 780, margin: '14px auto 24px' }}>
-              {d('On vous forme, jusqu\u2019à ', 'We train you, all the way to ', 'Betanítjuk Önöket, egészen ')}<span className="accent" style={{ color: 'var(--accent)' }}>{d('l\u2019autonomie complète.', 'full autonomy.', 'a teljes önállóságig.')}</span>
+              {d('Vos équipes formées, jusqu’à ', 'Your teams trained, all the way to ', 'Csapatai betanítva, egészen ')}<span className="accent" style={{ color: 'var(--accent)' }}>{d('l’autonomie complète.', 'full autonomy.', 'a teljes önállóságig.')}</span>
             </h1>
             <p className="font-sans" style={{ fontSize: 'clamp(15px, 3vw, 18px)', fontWeight: 300, color: 'var(--text-secondary)', maxWidth: 660, margin: '0 auto 36px', lineHeight: 1.65 }}>
-              {d('Construire l\u2019outil, c\u2019est la partie facile. Le faire ', 'Building the tool is the easy part. Getting it ', 'Az eszközt megépíteni a könnyebbik rész. Elérni, hogy ')}
-              <strong style={{ fontWeight: 500, color: 'var(--text)' }}>{d('adopter par toute votre équipe', 'adopted by your whole team', 'az egész csapata használatba vegye')}</strong>
+              {d('Construire l’outil, c’est la partie facile. Le faire ', 'Building the tool is the easy part. Getting it ', 'Az eszközt megépíteni a könnyebbik rész. Elérni, hogy ')}
+              <strong style={{ fontWeight: 500, color: 'var(--text)' }}>{d('adopter par la réception, la conciergerie et le terrain', 'adopted by the front desk, the concierges and the field teams', 'a recepció, a concierge és a terepen dolgozók használatba vegyék')}</strong>
               {d(
-                ', c\u2019est le vrai job, et il compte autant pour nous que la construction. On forme tout le monde, du dirigeant au terrain, jusqu\u2019à ce que l\u2019outil tourne sans nous. Le code et l\u2019infrastructure vous appartiennent : vous ne dépendez de personne.',
-                ' is the real job, and it matters to us as much as the building. We train everyone, from leadership to the field, until the tool runs without us. The code and the infrastructure belong to you, so you depend on nobody.'
-              , ', az az igazi munka, és nekünk annyira számít, mint maga az építés. Mindenkit betanítunk, a vezetőtől a terepen dolgozóig, amíg az eszköz nélkülünk is fut. A kód és az infrastruktúra az Öné: senkitől nem függ.')}
+                ', c’est le vrai travail. On forme chaque équipe sur ce qu’elle fait chaque jour, et on montre à chacun comment utiliser les outils et l’IA dans son travail quotidien. Jusqu’à ce que l’équipe tourne sans que tout passe par vous.',
+                ' is the real work. We train each team on what it does every day, and show everyone how to use the tools and AI in their daily work. Until the team runs without everything going through you.'
+              , ', az az igazi munka. Minden csapatot arra tanítunk, amit nap mint nap csinál, és mindenkinek megmutatjuk, hogyan használja az eszközöket és az MI-t a mindennapi munkájában. Egészen addig, amíg a csapat úgy működik, hogy nem minden Önön megy át.')}
             </p>
             <Link href={localizedHref(CAL_LINK, lang)} className="btn-primary" style={{ margin: '0 auto', fontSize: 14 }}>
               <span className="btn-primary-dot" />{d('Réserver un appel · offert', 'Book a call · free', 'Hívás foglalása · ingyenes')} &rarr;
@@ -125,9 +125,9 @@ export default function FormationPage() {
       <section style={{ padding: '70px 24px' }}>
         <div className="mx-auto" style={{ maxWidth: 760 }}>
           <FadeUp className="text-center mb-10">
-            <span className="section-label">{d('Ce qui bloque l\u2019adoption', 'What blocks adoption', 'Ami megakasztja a használatbavételt')}</span>
+            <span className="section-label">{d('Ce qui bloque l’adoption', 'What blocks adoption', 'Ami megakasztja a használatbavételt')}</span>
             <h2 className="section-title" style={{ maxWidth: 620, margin: '0 auto' }}>
-              {d('Un outil, ça ne sert à rien ', 'A tool is worth nothing ', 'Egy eszköz semmit nem ér, ')}<span className="accent">{d('si personne ne l\u2019utilise.', 'if nobody uses it.', 'ha senki nem használja.')}</span>
+              {d('Un outil, ça ne sert à rien ', 'A tool is worth nothing ', 'Egy eszköz semmit nem ér, ')}<span className="accent">{d('si personne ne l’utilise.', 'if nobody uses it.', 'ha senki nem használja.')}</span>
             </h2>
           </FadeUp>
           <ul style={{ listStyle: 'none', padding: 0, margin: '0 auto', maxWidth: 600, display: 'grid', gap: 13 }}>
@@ -149,7 +149,7 @@ export default function FormationPage() {
           <FadeUp className="text-center mb-12">
             <span className="section-label">{d('Comment on forme', 'How we train', 'Hogyan tanítunk')}</span>
             <h2 className="section-title" style={{ maxWidth: 660, margin: '0 auto' }}>
-              {d('Ce qui est inclus, ', 'What is included, ', 'Mit tartalmaz, ')}<span className="accent">{d('jusqu\u2019à l\u2019autonomie.', 'all the way to autonomy.', 'egészen az önállóságig.')}</span>
+              {d('Ce qui est inclus, ', 'What is included, ', 'Mit tartalmaz, ')}<span className="accent">{d('jusqu’à l’autonomie.', 'all the way to autonomy.', 'egészen az önállóságig.')}</span>
             </h2>
           </FadeUp>
           <div className="svc-grid">
@@ -188,21 +188,21 @@ export default function FormationPage() {
         links={
           pick(lang, {
             fr: [
-                { href: '/methode', label: 'Notre méthode', desc: 'La formation, dernière étape avant l\u2019autonomie.' },
-                { href: '/services/logiciel-sur-mesure', label: 'Le système sur-mesure', desc: 'L\u2019outil qu\u2019on vous apprend à piloter.' },
-                { href: '/services/audit', label: 'Le consulting', desc: 'On repère d\u2019abord où vous gagnez le plus.' },
+                { href: '/methode', label: 'Notre méthode', desc: 'La formation, dernière étape avant l’autonomie.' },
+                { href: '/services/logiciel-sur-mesure', label: 'Le logiciel sur-mesure', desc: 'L’outil qu’on apprend à vos équipes.' },
+                { href: '/services/audit', label: 'Le Diagnostic', desc: 'On repère d’abord où vous gagnez le plus.' },
                 { href: '/case-studies', label: 'Nos réalisations', desc: 'Des équipes qui pilotent leur outil seules.' },
             ],
             en: [
                 { href: '/methode', label: 'Our method', desc: 'Training, the last step before autonomy.' },
-                { href: '/services/logiciel-sur-mesure', label: 'The custom system', desc: 'The tool we teach you to run.' },
-                { href: '/services/audit', label: 'Consulting', desc: 'We find first where you gain the most.' },
+                { href: '/services/logiciel-sur-mesure', label: 'Custom software', desc: 'The tool we teach your teams to run.' },
+                { href: '/services/audit', label: 'The Diagnostic', desc: 'We find first where you gain the most.' },
                 { href: '/case-studies', label: 'Case studies', desc: 'Teams running their own tool, on their own.' },
             ],
             hu: [
                 { href: '/methode', label: 'Módszerünk', desc: 'A képzés az utolsó lépés az önállóság előtt.' },
-                { href: '/services/logiciel-sur-mesure', label: 'Az egyedi rendszer', desc: 'Az eszköz, amelynek használatára betanítjuk.' },
-                { href: '/services/audit', label: 'Tanácsadás', desc: 'Előbb megkeressük, hol nyer a legtöbbet.' },
+                { href: '/services/logiciel-sur-mesure', label: 'Egyedi szoftver', desc: 'Az eszköz, amelynek használatára a csapatait betanítjuk.' },
+                { href: '/services/audit', label: 'A diagnosztika', desc: 'Előbb megkeressük, hol nyer a legtöbbet.' },
                 { href: '/case-studies', label: 'Esettanulmányok', desc: 'Csapatok, amelyek maguk viszik a saját eszközüket.' },
             ],
           })
@@ -215,21 +215,21 @@ export default function FormationPage() {
         forYou={
           pick(lang, {
             fr: [
-                'Vous voulez que vos équipes soient vraiment autonomes',
-                'Vous en avez assez de dépendre d\u2019un prestataire pour tout',
-                'Vous tenez à posséder votre outil et le savoir qui va avec',
+                'Vous voulez que vos équipes avancent sans que tout passe par vous',
+                'Vous accueillez des saisonniers et voulez les rendre opérationnels vite',
+                'Vous voulez que l’équipe utilise l’IA avec bon sens, pas en cachette',
                 'Vous voulez pouvoir former vos futures recrues vous-même',
             ],
             en: [
-                'You want your teams to be genuinely autonomous',
-                'You have had enough of depending on a supplier for everything',
-                'You care about owning your tool and the know-how that goes with it',
+                'You want your teams to move forward without everything going through you',
+                'You bring in seasonal staff and want them up to speed quickly',
+                'You want the team to use AI with good sense, not in secret',
                 'You want to be able to train your future hires yourself',
             ],
             hu: [
-                'Azt akarja, hogy a csapatai valóban önállóak legyenek',
-                'Elege van abból, hogy mindenben egy szolgáltatótól függ',
-                'Fontos Önnek, hogy az eszköz és a hozzá tartozó tudás az Öné legyen',
+                'Azt szeretné, hogy a csapatai haladjanak anélkül, hogy minden Önön menne át',
+                'Szezonális munkatársakat fogad, és gyorsan munkaképessé szeretné tenni őket',
+                'Azt szeretné, hogy a csapat józanul használja az MI-t, nem titokban',
                 'Maga szeretné betanítani a jövőbeli munkatársait',
             ],
           })
@@ -238,21 +238,21 @@ export default function FormationPage() {
           pick(lang, {
             fr: [
                 'Vous préférez tout déléguer sans jamais mettre les mains dedans',
-                'Vous voulez garder un prestataire à vie, quoi qu\u2019il arrive',
+                'Vous voulez une formation générique, sans lien avec votre quotidien',
                 'Vous ne pouvez pas mobiliser un peu vos équipes',
-                'L\u2019autonomie ne vous intéresse pas vraiment',
+                'L’autonomie de vos équipes ne vous intéresse pas vraiment',
             ],
             en: [
                 'You would rather delegate everything and never get your hands in it',
-                'You want to keep a supplier for life, whatever happens',
+                'You want generic training, unrelated to your daily work',
                 'You cannot free up your teams even a little',
-                'Autonomy does not really interest you',
+                'Your teams’ autonomy does not really interest you',
             ],
             hu: [
                 'Inkább mindent delegálna, és soha nem nyúlna bele',
-                'Élete végéig szolgáltatót akar tartani, bármi történjék',
+                'Általános képzést szeretne, amely nem kapcsolódik a mindennapjaihoz',
                 'Egy kicsit sem tudja felszabadítani a csapatait',
-                'Az önállóság igazából nem érdekli',
+                'A csapatai önállósága igazából nem érdekli',
             ],
           })
         }
@@ -270,9 +270,9 @@ export default function FormationPage() {
               </h2>
               <p className="font-sans" style={{ fontSize: 15, fontWeight: 300, color: 'var(--text-secondary)', lineHeight: 1.7, maxWidth: 520, margin: '0 auto 32px' }}>
                 {d(
-                  'Un appel offert. On regarde votre situation et on vous dit comment on rendrait votre équipe autonome sur son outil, sans dépendance. Même si on ne travaille pas ensemble.',
-                  'A free call. We look at where you stand and tell you how we would make your team autonomous on its tool, with no dependency. Even if we never work together.'
-                , 'Egy ingyenes hívás. Megnézzük, hol tart, és megmondjuk, hogyan tennénk önállóvá a csapatát a saját eszközén, függőség nélkül. Akkor is, ha soha nem dolgozunk együtt.')}
+                  'Un appel offert. On regarde comment vos équipes travaillent aujourd’hui et ce qu’il faudrait pour qu’elles tournent sans que tout passe par vous. Même si on ne travaille pas ensemble.',
+                  'A free call. We look at how your teams work today and what it would take for them to run without everything going through you. Even if we never work together.'
+                , 'Egy ingyenes hívás. Megnézzük, hogyan dolgoznak ma a csapatai, és mi kellene ahhoz, hogy úgy működjenek, hogy nem minden Önön megy át. Akkor is, ha soha nem dolgozunk együtt.')}
               </p>
               <Link href={localizedHref(CAL_LINK, lang)} className="btn-primary" style={{ margin: '0 auto' }}>
                 <span className="btn-primary-dot" />{d('Réserver un appel · offert', 'Book a call · free', 'Hívás foglalása · ingyenes')}

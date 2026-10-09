@@ -21,75 +21,75 @@ type Step = { titleFr: string; titleEn: string; titleHu: string; descFr: string;
 
 const steps: Step[] = [
   {
-    titleFr: 'On cartographie vos process',
-    titleEn: 'We map your processes', titleHu: 'Feltérképezzük a folyamatait',
-    descFr: 'Votre façon réelle de travailler, mise à plat : qui fait quoi, dans quel ordre, avec quelles infos. On repère ce qui bloque, ce qui ralentit, ce qui se perd.',
-    descEn: 'How you actually work, laid flat: who does what, in what order, with what information. We spot what blocks, what slows down, what gets lost.', descHu: 'Ahogyan valójában dolgoznak, kiterítve: ki mit csinál, milyen sorrendben, milyen információval. Megmutatjuk, mi akaszt meg, mi lassít, mi vész el.',
-    metricFr: 'Une vision claire de votre fonctionnement',
-    metricEn: 'A clear view of how you run', metricHu: 'Világos kép arról, hogyan működnek',
+    titleFr: 'On écoute, vous ne préparez rien',
+    titleEn: 'We listen, you prepare nothing', titleHu: 'Mi figyelünk, Ön semmit nem készít elő',
+    descFr: 'Quelques appels avec vous et les personnes clés. Pas de questionnaire, pas de document à remplir : vous racontez comment ça se passe, on prend les notes.',
+    descEn: 'A few calls with you and your key people. No questionnaire, no document to fill in: you tell us how things happen, we take the notes.', descHu: 'Néhány hívás Önnel és a kulcsembereivel. Nincs kérdőív, nincs kitöltendő dokumentum: Ön elmondja, hogyan mennek a dolgok, mi jegyzetelünk.',
+    metricFr: 'Zéro préparation de votre côté',
+    metricEn: 'Zero preparation on your side', metricHu: 'Semmi előkészület az Ön részéről',
   },
   {
-    titleFr: 'On chiffre le coût de l\u2019inaction',
-    titleEn: 'We put a number on doing nothing', titleHu: 'Számszerűsítjük a tétlenség árát',
-    descFr: 'Les heures perdues, les marges qui fuient, le savoir qui dort dans les têtes. On met un chiffre sur la valeur que vous laissez sur la table, pas seulement sur vos coûts.',
-    descEn: 'Hours lost, margin leaking away, know-how sitting in people\u2019s heads. We put a figure on the value you leave on the table, not only on what you spend.', descHu: 'Elvesztett órák, elszivárgó árrés, a fejekben ülő tudás. Számot teszünk arra az értékre, amit az asztalon hagy, nem csak arra, amit elkölt.',
-    metricFr: 'Le coût réel, en euros',
-    metricEn: 'The real cost, in euros', metricHu: 'A valódi költség, euróban',
+    titleFr: 'La carte de votre organisation',
+    titleEn: 'The map of your organisation', titleHu: 'A szervezete térképe',
+    descFr: 'Qui fait quoi, d’où viennent les demandes, où elles se perdent, où les erreurs arrivent, d’où viennent vos clients. Tout ce qui est dans les têtes, mis sur papier.',
+    descEn: 'Who does what, where requests come from, where they get lost, where mistakes happen, where your clients come from. Everything in people’s heads, put on paper.', descHu: 'Ki mit csinál, honnan érkeznek a kérések, hol vesznek el, hol csúsznak be a hibák, honnan jönnek az ügyfelei. Minden, ami a fejekben van, papírra téve.',
+    metricFr: 'Où partent le temps, les erreurs et les clients',
+    metricEn: 'Where time, mistakes and clients slip away', metricHu: 'Látható, hol vész el idő és ügyfél',
   },
   {
-    titleFr: 'On dessine la cible',
-    titleEn: 'We draw the target', titleHu: 'Megrajzoljuk a célképet',
-    descFr: 'Vos opérations telles qu\u2019elles tourneraient avec un logiciel sur-mesure et de l\u2019IA là où elle aide. Concret, pas théorique.',
-    descEn: 'Your operations as they would run with custom software, and AI where it genuinely helps. Concrete, not theoretical.', descHu: 'A működése úgy, ahogyan egyedi szoftverrel futna, és MI-vel ott, ahol valóban segít. Konkrétan, nem elméletben.',
-    metricFr: 'Le « après », à l\u2019échelle de votre métier',
-    metricEn: 'The “after”, at the scale of your trade', metricHu: 'Az „utána”, az Ön szakmájának léptékében',
+    titleFr: 'Un prototype sur vos vraies données',
+    titleEn: 'A prototype on your real data', titleHu: 'Prototípus a valódi adatain',
+    descFr: 'Un prototype cliquable, construit sur vos règles et vos vraies données. Vous et votre équipe cliquez dedans, et vous voyez à quoi ressemblerait votre quotidien.',
+    descEn: 'A clickable prototype, built on your rules and your real data. You and your team click through it and see what your day would look like.', descHu: 'Kattintható prototípus, az Ön szabályaira és valódi adataira építve. Ön és a csapata belekattint, és látják, hogyan nézne ki a mindennapjuk.',
+    metricFr: 'Le « après », avant tout engagement',
+    metricEn: 'The “after”, before any commitment', metricHu: 'Az „utána”, bármilyen elköteleződés előtt',
   },
   {
-    titleFr: 'On vous remet le plan',
-    titleEn: 'We hand you the plan', titleHu: 'Átadjuk a tervet',
-    descFr: 'Un plan d\u2019action clair et chiffré, priorisé par impact. Exécutable avec nous, en interne, ou un mix. Vous repartez avec, même sans nous.',
-    descEn: 'A clear, costed action plan, ordered by impact. You can run it with us, in house, or both. It is yours to keep, with or without us.', descHu: 'Világos, beárazott cselekvési terv, hatás szerint rangsorolva. Végrehajthatja velünk, házon belül, vagy vegyesen. Az Öné marad, velünk vagy nélkülünk.',
-    metricFr: 'Un plan exécutable, livré',
-    metricEn: 'A plan you can act on, delivered', metricHu: 'Terv, amivel lépni tud, átadva',
+    titleFr: 'La feuille de route',
+    titleEn: 'The roadmap', titleHu: 'Az ütemterv',
+    descFr: 'Quoi construire, dans quel ordre, chiffré et priorisé par impact. Ensuite, deux options : un partenariat dans la durée, ou on s’arrête là. Ce que vous avez vu reste à vous.',
+    descEn: 'What to build, in what order, costed and ranked by impact. Then two options: a long-term partnership, or we stop there. What you have seen stays yours.', descHu: 'Mit építsünk meg, milyen sorrendben, beárazva és hatás szerint rangsorolva. Utána két lehetőség: hosszú távú partnerség, vagy itt megállunk. Amit látott, az Öné marad.',
+    metricFr: 'Une décision claire, sans pression',
+    metricEn: 'A clear decision, no pressure', metricHu: 'Világos döntés, nyomás nélkül',
   },
 ]
 
 const painsFr = [
-  'Vous sentez que ça bloque, mais vous ne savez pas exactement où',
-  'Vous voulez digitaliser, mais sans automatiser un process bancal',
-  'On vous a déjà vendu des outils qui n\u2019ont rien changé',
-  'Vous voulez savoir où agir en premier, et combien ça coûte',
+  'Tout passe par vous, et vous ne pouvez plus vous absenter une journée',
+  'Vous ne savez pas d’où viennent vos clients, ni ce que votre site vous rapporte',
+  'On vous a déjà vendu des outils qui n’ont rien changé',
+  'Vous voulez voir le résultat avant de vous engager',
 ]
 const painsEn = [
-  'You can feel something is blocked, but not exactly where',
-  'You want to go digital, without automating a process that already limps',
+  'Everything goes through you, and you cannot take a single day off any more',
+  'You do not know where your clients come from, or what your website brings in',
   'You have been sold tools before that changed nothing',
-  'You want to know where to act first, and what it costs',
+  'You want to see the result before you commit',
 ]
 const painsHu = [
-  'Érzi, hogy valami megakadt, de nem tudja pontosan, hol',
-  'Digitalizálni akar, de nem úgy, hogy egy már sántító folyamatot automatizál',
+  'Minden Önön megy át, és már egyetlen napra sem tud kiesni',
+  'Nem tudja, honnan jönnek az ügyfelei, és mit hoz a weboldala',
   'Adtak már el Önnek olyan eszközöket, amelyek semmit nem változtattak',
-  'Tudni akarja, hol kell először lépni, és mibe kerül',
+  'Látni szeretné az eredményt, mielőtt elköteleződik',
 ]
 
 const guaranteesFr = [
-  'Appel découverte · offert',
-  'Un plan d\u2019action clair et chiffré · vous repartez avec',
-  'Exécutable avec nous, en interne, ou un mix',
-  'Sans engagement · même si on ne travaille pas ensemble',
+  'Premier appel · offert',
+  'Un prototype cliquable sur vos vraies données · avant tout engagement',
+  'Vous ne préparez rien, vous ne remplissez rien',
+  'Sans engagement · ce que vous avez vu reste à vous',
 ]
 const guaranteesEn = [
-  'Discovery call · free',
-  'A clear, costed action plan · yours to keep',
-  'Run it with us, in house, or both',
-  'No commitment · even if we never work together',
+  'First call · free',
+  'A clickable prototype on your real data · before any commitment',
+  'You prepare nothing, you fill in nothing',
+  'No commitment · what you have seen stays yours',
 ]
 const guaranteesHu = [
-  'Felfedező hívás · ingyenes',
-  'Világos, beárazott cselekvési terv · az Öné marad',
-  'Végrehajthatja velünk, házon belül, vagy vegyesen',
-  'Kötelezettség nélkül · akkor is, ha soha nem dolgozunk együtt',
+  'Első hívás · ingyenes',
+  'Kattintható prototípus a valódi adatain · bármilyen elköteleződés előtt',
+  'Semmit nem kell előkészítenie, semmit nem kell kitöltenie',
+  'Kötelezettség nélkül · amit látott, az Öné marad',
 ]
 
 export default function AuditPage() {
@@ -103,15 +103,15 @@ export default function AuditPage() {
       <section style={{ padding: '160px 24px 40px' }}>
         <div className="mx-auto text-center" style={{ maxWidth: 820 }}>
           <FadeUp>
-            <span className="section-label">{d('Audit & consulting', 'Audit & consulting', 'Audit és tanácsadás')}</span>
+            <span className="section-label">{d('Le Diagnostic', 'The Diagnostic', 'A diagnosztika')}</span>
             <h1 className="font-serif italic" style={{ fontSize: 'clamp(32px, 5.4vw, 54px)', fontWeight: 400, lineHeight: 1.1, color: 'var(--text)', maxWidth: 780, margin: '14px auto 24px' }}>
-              {d('On comprend votre établissement ', 'We understand your school ', 'Megértjük a cégét, ')}<span className="accent" style={{ color: 'var(--accent)' }}>{d('avant de construire quoi que ce soit.', 'before we build anything at all.', 'mielőtt bármit is építenénk.')}</span>
+              {d('On comprend votre organisation ', 'We understand your organisation ', 'Megértjük a szervezetét, ')}<span className="accent" style={{ color: 'var(--accent)' }}>{d('avant de construire quoi que ce soit.', 'before we build anything at all.', 'mielőtt bármit is építenénk.')}</span>
             </h1>
             <p className="font-sans" style={{ fontSize: 'clamp(15px, 3vw, 18px)', fontWeight: 300, color: 'var(--text-secondary)', maxWidth: 660, margin: '0 auto 36px', lineHeight: 1.65 }}>
               {d(
-                'On cartographie vos process, on repère ce qui vous fait perdre du temps et de l\u2019argent, et on vous remet un plan d\u2019action clair et chiffré. Vous repartez avec le plan, même si on ne travaille pas ensemble.',
-                'We map your processes, find what costs you time and money, and hand you a clear, costed action plan. The plan is yours to keep, even if we never work together.'
-              , 'Feltérképezzük a folyamatait, megkeressük, mi kerül időbe és pénzbe, és világos, beárazott cselekvési tervet adunk a kezébe. A terv az Öné marad, akkor is, ha soha nem dolgozunk együtt.')}
+                'On cartographie comment votre organisation tourne vraiment, et où se perdent le temps, les erreurs et les clients. Puis vous cliquez dans un prototype construit sur vos vraies données, avant tout engagement. Vous ne préparez rien : vous parlez, on fait le travail.',
+                'We map how your organisation really runs, and where time, mistakes and clients slip away. Then you click through a prototype built on your real data, before any commitment. You prepare nothing: you talk, we do the work.'
+              , 'Feltérképezzük, hogyan működik valójában a szervezete, és hol vész el az idő, hol csúsznak be hibák, hol tűnnek el ügyfelek. Ezután belekattinthat egy prototípusba, amely a valódi adataira épül, bármilyen elköteleződés előtt. Semmit nem kell előkészítenie: Ön beszél, mi dolgozunk.')}
             </p>
             <Link href={localizedHref(CAL_LINK, lang)} className="btn-primary" style={{ margin: '0 auto', fontSize: 14 }}>
               <span className="btn-primary-dot" />{d('Réserver un appel · offert', 'Book a call · free', 'Hívás foglalása · ingyenes')} &rarr;
@@ -127,15 +127,15 @@ export default function AuditPage() {
         <div className="mx-auto" style={{ maxWidth: 760 }}>
           <FadeUp className="text-center mb-8">
             <h2 className="section-title" style={{ maxWidth: 640, margin: '0 auto' }}>
-              {d('En quoi consiste ', 'What does ', 'Miből áll ')}<span className="accent">{d('un audit de process', 'a process audit', 'egy folyamatauditok')}</span>{d(' ?', ' involve?', '?')}
+              {d('En quoi consiste ', 'What does ', 'Miből áll ')}<span className="accent">{d('le Diagnostic', 'the Diagnostic', 'a diagnosztika')}</span>{d(' ?', ' involve?', '?')}
             </h2>
           </FadeUp>
           <FadeUp>
             <p className="font-sans" style={{ fontSize: 16, color: 'var(--text-secondary)', lineHeight: 1.75, fontWeight: 300, maxWidth: 680, margin: '0 auto', textAlign: 'center' }}>
               {d(
-                'Tout commence par un appel découverte, offert, pour comprendre votre situation. Puis on cartographie votre façon réelle de travailler, on repère ce qui bloque, et on chiffre ce que vous coûte l\u2019inaction. On dessine la cible et on vous remet un plan d\u2019action clair et chiffré.',
-                'It starts with a free discovery call, to understand where you stand. Then we map how you actually work, find what blocks, and put a number on what doing nothing costs you. We draw the target and hand you a clear, costed action plan.'
-              , 'Egy ingyenes felfedező hívással kezdődik, hogy megértsük, hol tart. Aztán feltérképezzük, hogyan dolgoznak valójában, megkeressük, mi akaszt meg, és számszerűsítjük, mibe kerül Önnek a tétlenség. Megrajzoljuk a célképet, és átadunk egy világos, beárazott cselekvési tervet.')}
+                'Tout commence par un appel offert, pour comprendre votre situation. Puis on met à plat ce qui est aujourd’hui dans les têtes : qui fait quoi, d’où viennent vos clients, où les demandes se perdent. On construit un prototype cliquable sur vos vraies données, et on vous remet une feuille de route chiffrée : quoi construire, dans quel ordre.',
+                'It starts with a free call, to understand where you stand. Then we put on paper what lives in people’s heads today: who does what, where your clients come from, where requests get lost. We build a clickable prototype on your real data, and hand you a costed roadmap: what to build, in what order.'
+              , 'Egy ingyenes hívással kezdődik, hogy megértsük, hol tart. Aztán papírra tesszük, ami ma a fejekben van: ki mit csinál, honnan jönnek az ügyfelei, hol vesznek el a kérések. A valódi adataira építve kattintható prototípust készítünk, és átadunk egy beárazott ütemtervet: mit építsünk meg, milyen sorrendben.')}
             </p>
           </FadeUp>
         </div>
@@ -149,7 +149,7 @@ export default function AuditPage() {
           <FadeUp className="text-center mb-10">
             <span className="section-label">{d('Si vous vous reconnaissez', 'If this sounds like you', 'Ha magára ismer')}</span>
             <h2 className="section-title" style={{ maxWidth: 620, margin: '0 auto' }}>
-              {d('L\u2019audit est ', 'The audit is ', 'Az audit ')}<span className="accent">{d('pour vous.', 'for you.', 'Önnek szól.')}</span>
+              {d('Le Diagnostic est ', 'The Diagnostic is ', 'A diagnosztika ')}<span className="accent">{d('pour vous.', 'for you.', 'Önnek szól.')}</span>
             </h2>
           </FadeUp>
           <ul style={{ listStyle: 'none', padding: 0, margin: '0 auto', maxWidth: 600, display: 'grid', gap: 13 }}>
@@ -169,9 +169,9 @@ export default function AuditPage() {
       <section style={{ padding: '70px 24px' }}>
         <div className="mx-auto" style={{ maxWidth: 1100 }}>
           <FadeUp className="text-center mb-12">
-            <span className="section-label">{d('Comment se passe l\u2019audit', 'How the audit runs', 'Hogyan zajlik az audit')}</span>
+            <span className="section-label">{d('Comment se passe le Diagnostic', 'How the Diagnostic runs', 'Hogyan zajlik a diagnosztika')}</span>
             <h2 className="section-title" style={{ maxWidth: 660, margin: '0 auto' }}>
-              {d('Quatre temps, ', 'Four stages, ', 'Négy szakasz, ')}<span className="accent">{d('un plan clair.', 'one clear plan.', 'egy világos terv.')}</span>
+              {d('Quatre temps, ', 'Four stages, ', 'Négy szakasz, ')}<span className="accent">{d('avant tout engagement.', 'before any commitment.', 'bármilyen elköteleződés előtt.')}</span>
             </h2>
           </FadeUp>
           <div className="svc-grid">
@@ -210,20 +210,20 @@ export default function AuditPage() {
         links={
           pick(lang, {
             fr: [
-                { href: '/services/logiciel-sur-mesure', label: 'Le logiciel sur-mesure', desc: 'Ce qu\u2019on construit après l\u2019audit.' },
-                { href: '/services/ia', label: 'L\u2019IA agentique', desc: 'Là où l\u2019IA fait gagner de vraies heures.' },
-                { href: '/prix-logiciel-sur-mesure', label: 'Combien ça coûte ?', desc: 'Les fourchettes de prix réalistes.' },
-                { href: '/tools/diagnostic-ia', label: 'Diagnostic IA', desc: 'Mesurez en 4 min où l\u2019IA peut vous aider.' },
+                { href: '/services/logiciel-sur-mesure', label: 'Le logiciel sur-mesure', desc: 'Ce qu’on construit après le Diagnostic.' },
+                { href: '/services/ia', label: 'L’automatisation', desc: 'Premières réponses, reconfirmations, relances.' },
+                { href: '/prix-logiciel-sur-mesure', label: 'Combien ça coûte ?', desc: 'Ce qui fait varier le budget.' },
+                { href: '/tools/diagnostic-ia', label: 'Diagnostic IA', desc: 'Mesurez en 4 min ce qui peut être automatisé.' },
             ],
             en: [
-                { href: '/services/logiciel-sur-mesure', label: 'Custom software', desc: 'What we build after the audit.' },
-                { href: '/services/ia', label: 'Agentic AI', desc: 'Where AI wins you real hours.' },
-                { href: '/tools/diagnostic-ia', label: 'AI Diagnostic', desc: 'Measure in 4 minutes where AI can help you.' },
+                { href: '/services/logiciel-sur-mesure', label: 'Custom software', desc: 'What we build after the Diagnostic.' },
+                { href: '/services/ia', label: 'Automation', desc: 'First replies, reconfirmations, follow-ups.' },
+                { href: '/tools/diagnostic-ia', label: 'AI Diagnostic', desc: 'Measure in 4 minutes what can be automated.' },
             ],
             hu: [
-                { href: '/services/logiciel-sur-mesure', label: 'Egyedi szoftver', desc: 'Amit az audit után megépítünk.' },
-                { href: '/services/ia', label: 'Ágens MI', desc: 'Ahol az MI valódi órákat nyer Önnek.' },
-                { href: '/tools/diagnostic-ia', label: 'MI-diagnosztika', desc: 'Mérje meg 4 perc alatt, hol segíthet Önnek az MI.' },
+                { href: '/services/logiciel-sur-mesure', label: 'Egyedi szoftver', desc: 'Amit a diagnosztika után megépítünk.' },
+                { href: '/services/ia', label: 'Automatizálás', desc: 'Első válaszok, megerősítések, emlékeztetők.' },
+                { href: '/tools/diagnostic-ia', label: 'MI-diagnosztika', desc: 'Mérje meg 4 perc alatt, mi automatizálható.' },
             ],
           })
         }
@@ -235,44 +235,44 @@ export default function AuditPage() {
         forYou={
           pick(lang, {
             fr: [
-                'Vous sentez que vous perdez du temps, sans savoir vraiment où',
-                'Vos données sont éparpillées sur une pile d\u2019outils',
-                'Vous voulez un plan clair avant d\u2019investir un euro',
-                'Vous êtes prêt à regarder votre établissement en face',
+                'Vous sentez que vous perdez du temps et des clients, sans savoir où',
+                'Vos informations sont éparpillées entre WhatsApp, mails et tableurs',
+                'Vous voulez voir et cliquer avant d’investir',
+                'Vous êtes prêt à regarder votre organisation en face',
             ],
             en: [
-                'You can feel you are losing time, without knowing quite where',
-                'Your data is scattered across a pile of tools',
-                'You want a clear plan before spending a euro',
-                'You are ready to look at your school honestly',
+                'You can feel you are losing time and clients, without knowing where',
+                'Your information is scattered across WhatsApp, email and spreadsheets',
+                'You want to see and click before you invest',
+                'You are ready to look at your organisation honestly',
             ],
             hu: [
-                'Érzi, hogy időt veszít, csak azt nem tudja, pontosan hol',
-                'Az adatai eszközök tucatján szóródnak szét',
-                'Világos tervet akar, mielőtt egyetlen eurót is elköltene',
-                'Készen áll arra, hogy őszintén ránézzen a cégére',
+                'Érzi, hogy időt és ügyfeleket veszít, csak azt nem tudja, hol',
+                'Az információi szét vannak szórva a WhatsApp, az e-mailek és a táblázatok között',
+                'Látni és kattintani szeretne, mielőtt befektet',
+                'Készen áll arra, hogy őszintén ránézzen a szervezetére',
             ],
           })
         }
         notForYou={
           pick(lang, {
             fr: [
-                'Vous cherchez juste un devis, sans prendre le temps d\u2019échanger',
+                'Vous cherchez juste un devis, sans prendre le temps d’échanger',
                 'Tout tourne déjà parfaitement chez vous',
                 'Vous voulez un outil sur étagère, pas du sur-mesure',
-                'Vous ne pouvez pas consacrer deux semaines au diagnostic',
+                'Vous ne pouvez libérer personne pour quelques échanges',
             ],
             en: [
                 'You just want a quote, without taking the time to talk',
-                'Everything already runs perfectly at your place',
+                'Everything already runs perfectly in your organisation',
                 'You want something off the shelf, not custom',
-                'You cannot give two weeks to the diagnostic',
+                'You cannot free anyone up for a few conversations',
             ],
             hu: [
                 'Csak egy árajánlatot szeretne, anélkül hogy időt szánna a beszélgetésre',
                 'Önöknél már minden tökéletesen működik',
                 'Dobozos megoldást szeretne, nem egyedit',
-                'Nem tud két hetet szánni a diagnosztikára',
+                'Senkit nem tud felszabadítani néhány beszélgetésre',
             ],
           })
         }
@@ -290,9 +290,9 @@ export default function AuditPage() {
               </h2>
               <p className="font-sans" style={{ fontSize: 15, fontWeight: 300, color: 'var(--text-secondary)', lineHeight: 1.7, maxWidth: 520, margin: '0 auto 32px' }}>
                 {d(
-                  'Un appel offert. On regarde votre établissement et on identifie où vous faire gagner du temps et de l\u2019argent. Vous repartez avec un plan clair, même si on ne travaille pas ensemble.',
-                  'A free call. We look at your school and find where to win you time and money. You leave with a clear plan, even if we never work together.'
-                , 'Egy ingyenes hívás. Megnézzük a cégét, és megtaláljuk, hol nyerhet időt és pénzt. Világos tervvel távozik, akkor is, ha soha nem dolgozunk együtt.')}
+                  'Un appel offert. On regarde votre organisation et on repère où se perdent le temps, les erreurs et les clients. Vous repartez avec une vision claire, même si on ne travaille pas ensemble.',
+                  'A free call. We look at your organisation and find where time, mistakes and clients slip away. You leave with a clear picture, even if we never work together.'
+                , 'Egy ingyenes hívás. Megnézzük a szervezetét, és megkeressük, hol vész el az idő, hol csúsznak be hibák és hol tűnnek el ügyfelek. Világos képpel távozik, akkor is, ha soha nem dolgozunk együtt.')}
               </p>
               <Link href={localizedHref(CAL_LINK, lang)} className="btn-primary" style={{ margin: '0 auto' }}>
                 <span className="btn-primary-dot" />{d('Réserver un appel · offert', 'Book a call · free', 'Hívás foglalása · ingyenes')}

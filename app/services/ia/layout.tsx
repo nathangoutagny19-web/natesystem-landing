@@ -1,14 +1,22 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'IA agentique & data analytics, l\'IA qui travaille pour vous | NateSystem',
+  title: 'Automatisation pour l\'hôtellerie de prestige, votre équipe décide | NateSystem',
   description:
-    'Une IA agentique avec mémoire persistante qui exécute des tâches de bout en bout, apprend votre métier et s\'améliore avec le temps. Data analytics pour décider sur du concret. Intégrée là où elle remplace de vraies heures. Audit offert.',
+    'Première réponse dans la langue du client, reconfirmations, relances d\'acompte, fils WhatsApp transformés en demandes claires. L\'outil propose, une personne de votre équipe décide. Données hébergées en UE. Appel offert.',
+  keywords: [
+    'automatisation hôtellerie de luxe',
+    'automatisation conciergerie de luxe',
+    'réponse automatique demandes clients multilingue',
+    'reconfirmation prestataires automatique',
+    'relance acompte automatique',
+    'WhatsApp demandes clients hôtellerie',
+  ],
   alternates: { canonical: 'https://www.natesystem.com/services/ia' },
   openGraph: {
-    title: 'IA agentique & data analytics, l\'IA qui travaille pour vous | NateSystem',
+    title: 'Automatisation pour l\'hôtellerie de prestige, votre équipe décide | NateSystem',
     description:
-      'IA agentique : mémoire persistante, exécution de tâches de bout en bout, apprentissage continu. Data analytics pour piloter sur du concret. Intégrée là où elle remplace de vraies heures.',
+      'Chaque demande reçoit une première réponse dans la langue du client. Reconfirmations et relances partent seules. L\'outil propose, une personne décide.',
     url: 'https://www.natesystem.com/services/ia',
     type: 'website',
     locale: 'fr_FR',
@@ -16,8 +24,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'IA agentique & data analytics, l\'IA qui travaille pour vous | NateSystem',
-    description: 'Une IA agentique qui exécute des tâches, apprend votre métier et s\'améliore avec le temps.',
+    title: 'Automatisation pour l\'hôtellerie de prestige, votre équipe décide | NateSystem',
+    description: 'Plus une demande qui attend sa réponse. L\'outil propose, votre équipe décide.',
   },
 }
 
@@ -27,47 +35,47 @@ const jsonLd = {
     {
       '@type': 'Service',
       '@id': 'https://www.natesystem.com/services/ia#service',
-      name: 'IA agentique & data analytics',
+      name: 'Automatisation pour l\'hôtellerie de prestige',
       provider: { '@id': 'https://www.natesystem.com/#organization' },
       areaServed: ['FR', 'HU', 'EU'],
-      serviceType: 'IA agentique, agents autonomes, automatisation, lecture de documents, data analytics, intégration IA',
-      audience: { '@type': 'BusinessAudience', audienceType: 'PME et ETI (5 à 100 collaborateurs) avec des tâches répétitives à fort volume' },
+      serviceType: 'Automatisation : première réponse multilingue, structuration des demandes WhatsApp, reconfirmations des prestataires, relances d\'acompte',
+      audience: { '@type': 'BusinessAudience', audienceType: 'Organisations de l\'hôtellerie de luxe et de prestige : villas, chalets et domaines, conciergeries de luxe, yachts, hôtels indépendants, lieux de réception et de séminaires, services VIP privés' },
       description:
-        'Intégration d\'IA agentique et de data analytics dans votre établissement : une IA avec mémoire persistante qui exécute des tâches de bout en bout, apprend votre métier et s\'améliore avec le temps. Agents autonomes, automatisation, lecture de documents, analytics prédictif, intégrés uniquement là où ils remplacent de vraies heures de travail. Vos données restent en UE.',
+        'Automatisation des tâches répétitives d\'une organisation de prestige : première réponse à chaque demande dans la langue du client, fils WhatsApp transformés en demandes structurées, reconfirmations du chauffeur, du chef et du ménage, relances d\'acompte en euros ou en dollars. L\'outil propose, une personne de l\'équipe décide. Les clients ne remplissent aucun formulaire. Données hébergées en UE.',
     },
     {
       '@type': 'FAQPage',
       mainEntity: [
         {
           '@type': 'Question',
-          name: 'Qu\'est-ce que l\'IA agentique ?',
+          name: 'Que peut-on automatiser dans une organisation de prestige ?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'L\'IA agentique est une IA qui ne se contente pas de répondre : elle exécute des tâches de bout en bout dans vos outils, avec une mémoire persistante du contexte de votre établissement. Elle apprend de chaque interaction et s\'améliore avec le temps. Concrètement, elle prend en charge des tâches répétitives, parfois à forte valeur, comme qualifier un lead, lire un document, router une demande, rédiger une première réponse.',
+            text: 'Les tâches qui reviennent chaque jour et ne demandent pas de jugement : accuser réception d\'une demande dans la langue du client, transformer un fil WhatsApp en demande structurée prête pour le devis, reconfirmer le chauffeur, le chef ou l\'équipe de ménage, relancer un acompte jusqu\'au paiement. On automatise uniquement là où ça rend de vraies heures.',
           },
         },
         {
           '@type': 'Question',
-          name: 'Quelles tâches l\'IA peut-elle automatiser ?',
+          name: 'L\'automatisation remplace-t-elle mon équipe ?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Là où ça fait gagner de vraies heures : workflows automatisés (devis, factures, relances, passations internes), lecture de documents (devis, contrats, cahiers des charges, documentation technique), recherche dans votre savoir (retrouver une info d\'affaire ou de projet en secondes), tri intelligent (classer, router, rédiger des réponses), analytics prédictif (anticiper charge, délais, rentabilité par affaire), qualification de leads, et agents autonomes qui exécutent des tâches multi-étapes dans vos outils. On choisit ce qui vaut le coup pour vous, pas tout parce que c\'est à la mode.',
+            text: 'Non. L\'outil prépare, une personne de votre équipe relit et décide. Tout ce qui demande du jugement, le ton d\'une réponse, un geste pour un client, une exception, reste entre les mains de votre équipe. Elle passe moins de temps à recopier et à relancer, et plus de temps avec vos clients.',
           },
         },
         {
           '@type': 'Question',
-          name: 'À quoi sert la data analytics pour une PME ?',
+          name: 'Mes clients doivent-ils changer leurs habitudes ?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'La data analytics réunit vos données en temps réel, au même endroit, pour que vous décidiez sur du concret plutôt qu\'au feeling. Tableaux de bord clairs, indicateurs suivis dans le temps, anticipation des tendances. Vous voyez où vous en êtes d\'un coup d\'œil et vous décidez vite.',
+            text: 'Non. Vos clients écrivent comme d\'habitude, sur WhatsApp, par mail ou par téléphone. Ils ne remplissent aucun formulaire et n\'ont aucun espace à créer. C\'est l\'outil qui structure la demande, pas le client.',
           },
         },
         {
           '@type': 'Question',
-          name: 'Mes données sont-elles en sécurité avec l\'IA ?',
+          name: 'Mes données et celles de mes clients sont-elles protégées ?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Vos données sont hébergées en Europe, protégées et conformes RGPD. L\'IA intégrée tourne sous votre contrôle, sur votre infrastructure. Le modèle, Claude, GPT ou auto-hébergé, est choisi selon votre niveau de souveraineté. Vos données ne sortent pas de votre périmètre.',
+            text: 'Vos données sont hébergées en Europe, conformes RGPD, et restent chez vous en toute discrétion. L\'automatisation tourne sous votre contrôle, et le code vous appartient à 100 %.',
           },
         },
       ],
@@ -77,7 +85,7 @@ const jsonLd = {
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://www.natesystem.com' },
         { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://www.natesystem.com/services' },
-        { '@type': 'ListItem', position: 3, name: 'IA agentique & data analytics', item: 'https://www.natesystem.com/services/ia' },
+        { '@type': 'ListItem', position: 3, name: 'Automatisation', item: 'https://www.natesystem.com/services/ia' },
       ],
     },
   ],

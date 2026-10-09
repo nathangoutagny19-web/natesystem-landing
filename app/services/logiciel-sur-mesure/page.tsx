@@ -19,75 +19,75 @@ type Module = { titleFr: string; titleEn: string; titleHu: string; descFr: strin
 
 const modules: Module[] = [
   {
-    titleFr: 'Base de données unifiée',
-    titleEn: 'One unified database', titleHu: 'Egyetlen egységes adatbázis',
-    descFr: 'Une seule source de vérité. On cartographie votre vrai workflow et on remplace le patchwork d\u2019outils par un système unique où toute votre équipe se connecte.',
-    descEn: 'A single source of truth. We map how you really work and replace the patchwork of tools with one system your whole team logs into.', descHu: 'Egyetlen igazságforrás. Feltérképezzük, hogyan dolgoznak valójában, és az eszközök foltvarrását egyetlen rendszerre cseréljük, amelybe az egész csapata belép.',
-    metricFr: 'Fin des doubles saisies et des données dispersées',
-    metricEn: 'No more double entry, no more scattered data', metricHu: 'Vége a kettős adatbevitelnek és a szétszórt adatoknak',
+    titleFr: 'Une seule base pour toute l’organisation',
+    titleEn: 'One base for the whole organisation', titleHu: 'Egyetlen adatbázis az egész szervezetnek',
+    descFr: 'Clients, séjours, événements, fournisseurs, équipes : tout vit au même endroit. Une demande saisie une fois alimente le planning, le devis et la facture, sans rien recopier.',
+    descEn: 'Clients, stays, events, suppliers, teams: everything lives in one place. A request entered once feeds the schedule, the quote and the invoice, with nothing retyped.', descHu: 'Ügyfelek, tartózkodások, rendezvények, beszállítók, csapatok: minden egy helyen van. Az egyszer rögzített kérés táplálja a beosztást, az árajánlatot és a számlát, átgépelés nélkül.',
+    metricFr: 'Fin des ressaisies',
+    metricEn: 'No more re-entering the same request', metricHu: 'Vége az újrarögzítésnek',
   },
   {
-    titleFr: 'Dashboards & pilotage',
-    titleEn: 'Dashboards & steering', titleHu: 'Irányítópultok és vezetői rálátás',
-    descFr: 'Vos chiffres en temps réel, au même endroit. Vous voyez où vous en êtes d\u2019un coup d\u2019œil et vous décidez sur du concret, pas au feeling.',
-    descEn: 'Your figures in real time, in one place. You see where you stand at a glance and decide on facts, not on gut feel.', descHu: 'A számai valós időben, egy helyen. Egy pillantással látja, hol tart, és tényekre alapozva dönt, nem megérzésből.',
-    metricFr: 'Décisions data en minutes, pas en heures',
-    metricEn: 'Decisions on data in minutes, not hours', metricHu: 'Adatalapú döntések percek, nem órák alatt',
+    titleFr: 'Les changements de dernière minute',
+    titleEn: 'Last-minute changes', titleHu: 'Utolsó pillanatos változások',
+    descFr: 'Un groupe passe de 40 à 20 personnes la veille : repas, planning des équipes, ménage et facture se recalculent. Vous validez, au lieu de tout refaire à la main.',
+    descEn: 'A group drops from 40 to 20 guests the day before: meals, team rota, housekeeping and invoice are recalculated. You approve, instead of redoing it all by hand.', descHu: 'Egy csoport létszáma az előző napon 40-ről 20 főre csökken: az étkezések, a csapatbeosztás, a takarítás és a számla újraszámolódik. Ön jóváhagyja, ahelyett hogy mindent kézzel újracsinálna.',
+    metricFr: 'L’outil propose, vous décidez',
+    metricEn: 'The tool suggests, you decide', metricHu: 'Az eszköz javasol, Ön dönt',
   },
   {
-    titleFr: 'Portails & outils internes',
-    titleEn: 'Portals & internal tools', titleHu: 'Portálok és belső eszközök',
-    descFr: 'Portails clients, espaces fournisseurs, outils métier, chaque écran pensé pour la tâche qu\u2019il sert. Pas de feature bloat, pas de menus qu\u2019on n\u2019ouvre jamais.',
-    descEn: 'Client portals, supplier areas, trade tools, every screen designed for the job it serves. No feature bloat, no menus nobody ever opens.', descHu: 'Ügyfélportálok, beszállítói felületek, szakmai eszközök: minden képernyő arra a feladatra készül, amit kiszolgál. Semmi funkcióhalmozás, semmi menü, amit soha senki nem nyit meg.',
-    metricFr: 'Chaque rôle a exactement ce qu\u2019il lui faut',
-    metricEn: 'Every role gets exactly what it needs', metricHu: 'Minden szerepkör pontosan azt kapja, amire szüksége van',
+    titleFr: 'Chaque équipe a son écran',
+    titleEn: 'Every team gets its own screen', titleHu: 'Minden csapatnak saját képernyő',
+    descFr: 'Réception, conciergerie, équipes terrain, direction : chacun voit ce qu’il doit faire, au bon moment. Le chauffeur est reconfirmé, la villa est prête, le chef est briefé avant l’arrivée du client.',
+    descEn: 'Front desk, concierges, field teams, management: everyone sees what they need to do, at the right time. The driver is reconfirmed, the villa is ready, the chef is briefed before the client arrives.', descHu: 'Recepció, concierge, terepen dolgozó csapatok, vezetés: mindenki a megfelelő időben látja, mi a teendője. A sofőr megerősítve, a villa kész, a séf eligazítva, mielőtt az ügyfél megérkezik.',
+    metricFr: 'Des séjours sans accroc',
+    metricEn: 'Smoother stays', metricHu: 'Zökkenőmentes tartózkodások',
   },
   {
-    titleFr: 'Automatisations & IA intégrée',
-    titleEn: 'Automation & AI built in', titleHu: 'Automatizálás és beépített MI',
-    descFr: 'Workflows automatisés, lecture de documents, relances, alertes, l\u2019IA intégrée uniquement là où elle remplace de vraies heures de travail.',
-    descEn: 'Automated workflows, document reading, follow-ups, alerts, with AI built in only where it replaces real hours of work.', descHu: 'Automatizált munkafolyamatok, dokumentumolvasás, utánkövetés, riasztások, beépített MI-vel, kizárólag ott, ahol valódi munkaórákat vált ki.',
-    metricFr: 'Des heures regagnées chaque semaine',
-    metricEn: 'Hours won back every week', metricHu: 'Hetente visszanyert órák',
+    titleFr: 'Vos chiffres, enfin clairs',
+    titleEn: 'Your numbers, clear at last', titleHu: 'Végre világos számok',
+    descFr: 'D’où vient chaque demande, ce que dépense chaque client, et sur quoi, en euros comme en dollars. Vous décidez sur des chiffres, plus sur ce que vous avez en tête. Les données restent chez vous, hébergées en UE.',
+    descEn: 'Where each request comes from, what each client spends and on what, in euros or in dollars. You decide on numbers, not on what is in your head. The data stays with you, hosted in the EU.', descHu: 'Honnan érkezik az egyes kérés, mennyit költ az egyes ügyfél és mire, euróban vagy dollárban. Számok alapján dönt, nem az alapján, ami a fejében van. Az adatok Önnél maradnak, EU-s tárhelyen.',
+    metricFr: 'Des décisions sur des chiffres',
+    metricEn: 'Decisions based on numbers', metricHu: 'Számokon alapuló döntések',
   },
 ]
 
 const painsFr = [
-  'Excel, mails et dix outils qui ne se parlent pas',
-  'Des heures perdues chaque semaine à tout recopier d\u2019un outil à l\u2019autre',
-  'Aucune vue claire sur votre établissement, vous pilotez à l\u2019aveugle',
-  'Quand quelqu\u2019un part, son savoir part avec lui',
+  'Les demandes arrivent sur WhatsApp, sur trois téléphones, et tout passe par vous',
+  'Le logiciel générique ne colle pas, alors Excel reste ouvert à côté',
+  'La même demande ressaisie trois à cinq fois, du devis à la facture',
+  'Le chauffeur pas reconfirmé, la villa pas prête : le client l’apprend avant vous',
 ]
 const painsEn = [
-  'Spreadsheets, email and ten tools that do not talk to each other',
-  'Hours lost every week retyping everything from one tool into the next',
-  'No clear view of your school, so you steer blind',
-  'When someone leaves, what they knew leaves with them',
+  'Requests come in on WhatsApp, across three phones, and everything goes through you',
+  'Generic software does not fit, so Excel stays open next to it',
+  'The same request re-entered three to five times, from quote to invoice',
+  'The driver not reconfirmed, the villa not ready: your client finds out before you do',
 ]
 const painsHu = [
-  'Táblázatok, e-mailek és tíz eszköz, amelyek nem beszélnek egymással',
-  'Hetente elvesztett órák azzal, hogy mindent átgépelnek egyik eszközből a másikba',
-  'Semmi tiszta rálátás a cégére, így vakon irányít',
-  'Ha valaki távozik, a tudása vele megy',
+  'A kérések WhatsAppon érkeznek, három telefonra, és minden Önön megy át',
+  'Az általános szoftver nem illik Önökhöz, ezért az Excel ott marad mellette nyitva',
+  'Ugyanazt a kérést háromszor-ötször rögzítik újra, az árajánlattól a számláig',
+  'A sofőrt nem erősítették meg, a villa nincs kész: az ügyfél előbb tudja meg, mint Ön',
 ]
 
 const guaranteesFr = [
   'Code source livré · vous êtes propriétaire à 100 %',
-  'Données hébergées en UE · RGPD-natif',
-  'En production en 4 à 8 semaines · vos équipes continuent de travailler',
-  'Formation jusqu\u2019à l\u2019autonomie · on ne livre pas pour disparaître',
+  'Données hébergées en UE · RGPD, en toute discrétion',
+  'Un partenariat dans la durée · le système évolue avec vous, saison après saison',
+  'Codé par le fondateur · pas de commercial, pas de junior',
 ]
 const guaranteesEn = [
   'Source code delivered · you own 100 % of it',
-  'Data hosted in the EU · GDPR-native',
-  'In production in 4 to 8 weeks · your teams keep working throughout',
-  'Training until you are autonomous · we do not deliver and vanish',
+  'Data hosted in the EU · GDPR, in complete discretion',
+  'A long-term partnership · the system evolves with you, season after season',
+  'Coded by the founder · no sales rep, no junior',
 ]
 const guaranteesHu = [
   'Forráskód átadva · 100%-ban az Öné',
-  'Adatok az EU-ban tárolva · GDPR-natív',
-  'Élesben 4-8 hét alatt · a csapatai közben dolgoznak tovább',
-  'Képzés az önállóságig · nem adjuk át, hogy aztán eltűnjünk',
+  'Adatok az EU-ban tárolva · GDPR, teljes diszkrécióval',
+  'Hosszú távú partnerség · a rendszer szezonról szezonra Önnel együtt fejlődik',
+  'Az alapító maga kódol · nincs értékesítő, nincs junior',
 ]
 
 export default function LogicielSurMesurePage() {
@@ -101,15 +101,15 @@ export default function LogicielSurMesurePage() {
       <section style={{ padding: '160px 24px 40px' }}>
         <div className="mx-auto text-center" style={{ maxWidth: 820 }}>
           <FadeUp>
-            <span className="section-label">{d('Logiciel & plateforme sur-mesure', 'Custom software & platform', 'Egyedi szoftver és platform')}</span>
+            <span className="section-label">{d('Logiciel sur-mesure', 'Custom software', 'Egyedi szoftver')}</span>
             <h1 className="font-serif italic" style={{ fontSize: 'clamp(32px, 5.4vw, 54px)', fontWeight: 400, lineHeight: 1.1, color: 'var(--text)', maxWidth: 780, margin: '14px auto 24px' }}>
-              {d('Une seule plateforme pour ', 'One piece of custom software to ', 'Egyetlen egyedi szoftver, hogy ')}<span className="accent" style={{ color: 'var(--accent)' }}>{d('faire tourner votre établissement.', 'run your school.', 'növelje a cégét.')}</span>
+              {d('Vous saisissez une fois. ', 'Enter it once. ', 'Egyszer rögzíti. ')}<span className="accent" style={{ color: 'var(--accent)' }}>{d('Toute l’organisation suit.', 'The whole organisation follows.', 'Az egész szervezet követi.')}</span>
             </h1>
             <p className="font-sans" style={{ fontSize: 'clamp(15px, 3vw, 18px)', fontWeight: 300, color: 'var(--text-secondary)', maxWidth: 660, margin: '0 auto 36px', lineHeight: 1.65 }}>
               {d(
-                'On réunit vos outils et vos données dans une seule plateforme conçue pour votre métier, base unifiée, dashboards, portails, outils internes. La vôtre, pas un abonnement de plus. Vous êtes propriétaire du code, hébergé en UE, en production en 4 à 8 semaines.',
-                'We bring your tools and your data into one platform designed for your trade: unified database, dashboards, portals, internal tools. Yours, not one more subscription. You own the code, it is hosted in the EU, and it goes live in 4 to 8 weeks.'
-              , 'Egyetlen, a szakmájára tervezett platformba vonjuk az eszközeit és az adatait: egységes adatbázis, irányítópultok, portálok, belső eszközök. Az Önébe, nem még egy előfizetésbe. A kód az Öné, EU-s tárhelyen, élesben 4-8 hét alatt.')}
+                'Un logiciel construit sur votre façon de recevoir vos clients : fournisseurs, équipes, séjours et événements, devis, facturation, au même endroit. L’outil propose, une personne décide : vous gardez la main sur chaque détail. Le code vous appartient à 100 %, et le système évolue avec vous, saison après saison.',
+                'Software built around the way you serve your clients: suppliers, teams, stays and events, quotes, invoicing, all in one place. The tool suggests, a person decides: you keep control of every detail. You own 100 % of the code, and the system evolves with you, season after season.'
+              , 'Az Ön vendégfogadási módjára épített szoftver: beszállítók, csapatok, tartózkodások és rendezvények, árajánlatok, számlázás, egy helyen. Az eszköz javasol, egy ember dönt: Ön minden részlet felett megtartja az irányítást. A forráskód 100%-ban az Öné, a rendszer pedig szezonról szezonra Önnel együtt fejlődik.')}
             </p>
             <Link href={localizedHref(CAL_LINK, lang)} className="btn-primary" style={{ margin: '0 auto', fontSize: 14 }}>
               <span className="btn-primary-dot" />{d('Réserver un appel · offert', 'Book a call · free', 'Hívás foglalása · ingyenes')} &rarr;
@@ -125,15 +125,15 @@ export default function LogicielSurMesurePage() {
         <div className="mx-auto" style={{ maxWidth: 760 }}>
           <FadeUp className="text-center mb-8">
             <h2 className="section-title" style={{ maxWidth: 640, margin: '0 auto' }}>
-              {d('Qu\u2019est-ce qu\u2019un ', 'What is ', 'Mi az ')}<span className="accent">{d('logiciel sur-mesure', 'custom software', 'egyedi szoftver')}</span>{d(' ?', '?', '?')}
+              {d('Qu’est-ce qu’un ', 'What is ', 'Mi az ')}<span className="accent">{d('logiciel sur-mesure', 'custom software', 'egyedi szoftver')}</span>{d(' ?', '?', '?')}
             </h2>
           </FadeUp>
           <FadeUp>
             <p className="font-sans" style={{ fontSize: 16, color: 'var(--text-secondary)', lineHeight: 1.75, fontWeight: 300, maxWidth: 680, margin: '0 auto', textAlign: 'center' }}>
               {d(
-                'C\u2019est une application métier conçue spécifiquement pour votre façon de travailler, au lieu d\u2019un SaaS générique que vous louez. Elle réunit en un seul système ce que vous éparpillez aujourd\u2019hui entre tableurs, mails et outils déconnectés. Le code vous appartient, et il évolue avec votre établissement.',
-                'It is a business application designed specifically around how you work, instead of a generic SaaS you rent. It brings into one system what you scatter today across spreadsheets, email and disconnected tools. You own the code, and it grows with your school.'
-              , 'Olyan üzleti alkalmazás, amelyet kifejezetten az Ön munkamódszerére terveznek, nem pedig egy bérelt, általános SaaS. Egyetlen rendszerbe hozza azt, amit ma táblázatok, e-mailek és összefüggéstelen eszközök között szór szét. A kód az Öné, és együtt fejlődik a cégével.')}
+                'C’est un logiciel construit pour votre organisation, au lieu d’un outil générique loué qui vous oblige à garder Excel ouvert à côté. Il réunit ce qui est aujourd’hui éparpillé entre WhatsApp, mails, tableurs et la tête d’une seule personne. Le code vous appartient, et le logiciel évolue avec votre activité, saison après saison.',
+                'It is software built for your organisation, instead of a generic tool you rent that still leaves Excel open next to it. It brings together what is scattered today across WhatsApp, email, spreadsheets and one person’s head. You own the code, and the software evolves with your business, season after season.'
+              , 'Az Ön szervezetére épített szoftver, nem pedig egy bérelt, általános eszköz, amely mellett az Excel továbbra is nyitva marad. Egy helyre hozza azt, ami ma szét van szórva a WhatsApp, az e-mailek, a táblázatok és egyetlen ember feje között. A forráskód az Öné, a szoftver pedig szezonról szezonra együtt fejlődik a tevékenységével.')}
             </p>
           </FadeUp>
         </div>
@@ -145,9 +145,9 @@ export default function LogicielSurMesurePage() {
       <section style={{ padding: '70px 24px' }}>
         <div className="mx-auto" style={{ maxWidth: 760 }}>
           <FadeUp className="text-center mb-10">
-            <span className="section-label">{d('Ce que vous vivez aujourd\u2019hui', 'What you live with today', 'Amit ma megél')}</span>
+            <span className="section-label">{d('Ce que vous vivez aujourd’hui', 'What you live with today', 'Amit ma megél')}</span>
             <h2 className="section-title" style={{ maxWidth: 620, margin: '0 auto' }}>
-              {d('Le ', 'The ', 'A ')}<span className="accent">{d('SaaS-spaghetti.', 'SaaS spaghetti.', 'SaaS-spagetti.')}</span>
+              {d('Tout passe par ', 'Everything goes through ', 'Minden ')}<span className="accent">{d('une seule personne.', 'one person.', 'egyetlen emberen megy át.')}</span>
             </h2>
           </FadeUp>
           <ul style={{ listStyle: 'none', padding: 0, margin: '0 auto', maxWidth: 600, display: 'grid', gap: 13 }}>
@@ -167,9 +167,9 @@ export default function LogicielSurMesurePage() {
       <section style={{ padding: '70px 24px' }}>
         <div className="mx-auto" style={{ maxWidth: 1100 }}>
           <FadeUp className="text-center mb-12">
-            <span className="section-label">{d('Ce qu\u2019on construit', 'What we build', 'Amit megépítünk')}</span>
+            <span className="section-label">{d('Ce qu’on construit', 'What we build', 'Amit megépítünk')}</span>
             <h2 className="section-title" style={{ maxWidth: 660, margin: '0 auto' }}>
-              {d('Tout ce qu\u2019il vous faut, ', 'Everything you need, ', 'Minden, amire szüksége van, ')}<span className="accent">{d('au même endroit.', 'in one place.', 'egy helyen.')}</span>
+              {d('Une saisie, ', 'One entry, ', 'Egy rögzítés, ')}<span className="accent">{d('tout le reste suit.', 'everything else follows.', 'minden más követi.')}</span>
             </h2>
           </FadeUp>
           <div className="svc-grid">
@@ -198,9 +198,9 @@ export default function LogicielSurMesurePage() {
               </h2>
               <p className="font-sans" style={{ fontSize: 15, color: 'var(--text-secondary)', lineHeight: 1.7, fontWeight: 300, maxWidth: 620, margin: '0 auto 18px', textAlign: 'center' }}>
                 {d(
-                  'Un SaaS est un outil standard, loué par abonnement, que vous adaptez à votre métier. Un logiciel sur-mesure est construit autour de votre métier, vous en êtes propriétaire et il est hébergé chez vous. Le sur-mesure devient rentable dès que vous payez plusieurs SaaS qui ne se parlent pas.',
-                  'A SaaS is a standard tool, rented by subscription, that you bend to your trade. Custom software is built around your trade, you own it, and it is hosted on your side. Custom pays for itself the moment you are paying for several tools that do not talk to each other.'
-                , 'A SaaS szabványos eszköz, előfizetéssel bérelve, amit Ön hajlít a szakmájához. Az egyedi szoftver a szakmája köré épül, az Öné, és az Ön oldalán fut. Az egyedi abban a pillanatban megtérül, amint több olyan eszközért fizet, amelyek nem beszélnek egymással.')}
+                  'Un SaaS est un outil standard, loué par abonnement, pensé pour la moyenne. Vos clients, eux, attendent un service qui ne ressemble à aucun autre. Un logiciel sur-mesure suit votre façon de recevoir, vous en êtes propriétaire, et il évolue avec vous. Il se justifie dès que vous gardez plusieurs outils et un tableur ouverts pour faire tenir l’ensemble.',
+                  'A SaaS is a standard tool, rented by subscription, designed for the average. Your clients expect a service unlike any other. Custom software follows the way you serve them, you own it, and it evolves with you. It makes sense the moment you keep several tools and a spreadsheet open just to hold everything together.'
+                , 'A SaaS szabványos, előfizetéssel bérelt eszköz, az átlagra tervezve. Az Ön ügyfelei viszont semmihez sem hasonlítható szolgáltatást várnak. Az egyedi szoftver az Ön vendégfogadási módját követi, az Öné, és Önnel együtt fejlődik. Akkor éri meg, amikor több eszközt és egy táblázatot kell nyitva tartania ahhoz, hogy minden összeálljon.')}
               </p>
               <p style={{ textAlign: 'center', margin: 0 }}>
                 {/* Le comparatif détaillé n'existe qu'en français : on ne le
@@ -238,20 +238,20 @@ export default function LogicielSurMesurePage() {
         links={
           pick(lang, {
             fr: [
-                { href: '/logiciel-sur-mesure-vs-saas', label: 'Sur-mesure ou SaaS ?', desc: 'Quand le sur-mesure devient rentable.' },
-                { href: '/prix-logiciel-sur-mesure', label: 'Combien ça coûte ?', desc: 'Les fourchettes de prix réalistes.' },
-                { href: '/logiciel-sur-mesure-conseil', label: 'Exemple : conseil & bureaux d\u2019études', desc: 'Un secteur concret, la même méthode.' },
-                { href: '/glossaire', label: 'Glossaire', desc: 'Les termes du logiciel sur-mesure et de l\u2019IA.' },
+                { href: '/logiciel-sur-mesure-vs-saas', label: 'Sur-mesure ou SaaS ?', desc: 'Quand le sur-mesure se justifie.' },
+                { href: '/prix-logiciel-sur-mesure', label: 'Combien ça coûte ?', desc: 'Ce qui fait varier le budget.' },
+                { href: '/logiciel-sur-mesure-conseil', label: 'Exemple : conseil & bureaux d’études', desc: 'La même méthode, appliquée à un autre secteur.' },
+                { href: '/glossaire', label: 'Glossaire', desc: 'Les termes du logiciel sur-mesure, en mots simples.' },
             ],
             en: [
-                { href: '/services/ia', label: 'AI & automation', desc: 'Where AI replaces real hours.' },
+                { href: '/services/ia', label: 'Automation', desc: 'First replies, reconfirmations, follow-ups, handled.' },
                 { href: '/case-studies', label: 'Case studies', desc: 'What we built, and what it changed.' },
-                { href: '/glossaire', label: 'Glossary', desc: 'The terms of custom software and AI, in plain words.' },
+                { href: '/glossaire', label: 'Glossary', desc: 'The terms of custom software, in plain words.' },
             ],
             hu: [
-                { href: '/services/ia', label: 'MI és automatizálás', desc: 'Ahol az MI valódi munkaórákat vált ki.' },
+                { href: '/services/ia', label: 'Automatizálás', desc: 'Első válaszok, megerősítések, emlékeztetők, elintézve.' },
                 { href: '/case-studies', label: 'Esettanulmányok', desc: 'Amit megépítettünk, és amit megváltoztatott.' },
-                { href: '/glossaire', label: 'Szójegyzék', desc: 'Az egyedi szoftver és az MI fogalmai, érthetően.' },
+                { href: '/glossaire', label: 'Szójegyzék', desc: 'Az egyedi szoftver fogalmai, érthetően.' },
             ],
           })
         }
@@ -263,44 +263,44 @@ export default function LogicielSurMesurePage() {
         forYou={
           pick(lang, {
             fr: [
-                'Vous voyez ça comme un investissement sur le long terme',
-                'Vous voulez vraiment faire avancer votre établissement',
-                'Vous êtes prêt à mettre vos process à plat avec nous (même flous, on les clarifie ensemble)',
-                'Vous voulez un outil qui vous appartient et grandit avec vous',
+                'Votre façon de recevoir vos clients est ce qui vous distingue',
+                'Vous voulez prendre du recul sur l’heure par heure sans perdre le contrôle',
+                'Vous êtes prêt à nous montrer comment ça tourne vraiment (même flou, on clarifie ensemble)',
+                'Vous cherchez un partenaire dans la durée, pas une prestation ponctuelle',
             ],
             en: [
-                'You see this as a long-term investment',
-                'You genuinely want to move your school forward',
-                'You are ready to lay your processes flat with us (even vague ones, we clarify them together)',
-                'You want a tool you own, that grows with you',
+                'The way you serve your clients is what sets you apart',
+                'You want to step back from hour-by-hour work without losing control',
+                'You are ready to show us how things really run (even if it is fuzzy, we clarify it together)',
+                'You want a long-term partner, not a one-off job',
             ],
             hu: [
-                'Hosszú távú befektetésként tekint rá',
-                'Valóban előre akarja vinni a cégét',
-                'Készen áll arra, hogy velünk együtt kiterítse a folyamatait (a homályosakat is, együtt tisztázzuk)',
-                'Olyan eszközt akar, amely az Öné, és Önnel együtt nő',
+                'Az, ahogyan az ügyfeleit fogadja, az különbözteti meg Önt',
+                'Ki szeretne lépni az óráról órára végzett munkából anélkül, hogy elveszítené az irányítást',
+                'Készen áll megmutatni, hogyan működnek valójában a dolgok (ha homályos, együtt tisztázzuk)',
+                'Hosszú távú partnert keres, nem egyszeri megbízást',
             ],
           })
         }
         notForYou={
           pick(lang, {
             fr: [
-                'Un SaaS standard couvre déjà tous vos besoins',
+                'Un logiciel standard couvre déjà tous vos besoins',
                 'Vous cherchez avant tout le moins cher, peu importe le résultat',
-                'Vous voulez du livré en 3 jours, sans aucun cadrage',
-                'Vous ne voulez impliquer personne dans le projet',
+                'Vous voulez un outil livré une fois, puis plus jamais touché',
+                'Vous voulez que vos clients remplissent des formulaires à votre place',
             ],
             en: [
-                'A standard SaaS already covers everything you need',
+                'A standard tool already covers everything you need',
                 'You are looking for the cheapest option above all, whatever the result',
-                'You want it delivered in three days, with no scoping at all',
-                'You do not want to involve anyone in the project',
+                'You want a tool delivered once and never touched again',
+                'You want your clients to fill in forms so you do not have to',
             ],
             hu: [
-                'Egy szabványos SaaS már mindent lefed, amire szüksége van',
+                'Egy szabványos eszköz már mindent lefed, amire szüksége van',
                 'Mindenekelőtt a legolcsóbbat keresi, bármi is az eredmény',
-                'Három nap alatt kéri, mindenféle előkészítés nélkül',
-                'Senkit nem akar bevonni a projektbe',
+                'Egyszer átadott, aztán soha többé nem érintett eszközt szeretne',
+                'Azt szeretné, hogy az ügyfelei töltsenek ki űrlapokat Ön helyett',
             ],
           })
         }
@@ -314,13 +314,13 @@ export default function LogicielSurMesurePage() {
           <FadeUp>
             <div style={{ background: 'var(--bg-card)', border: '1px solid rgba(230,57,70,0.15)', borderRadius: 12, padding: '48px 40px', textAlign: 'center' }}>
               <h2 className="font-serif italic" style={{ fontSize: 'clamp(24px, 4vw, 32px)', fontWeight: 400, marginBottom: 16, color: 'var(--text)' }}>
-                {d('Et si tout était au même endroit ?', 'What if it were all in one place?', 'Mi lenne, ha minden egy helyen volna?')}
+                {d('Saisissez une fois. Le reste suit.', 'Enter it once. The rest follows.', 'Rögzítse egyszer. A többi követi.')}
               </h2>
               <p className="font-sans" style={{ fontSize: 15, fontWeight: 300, color: 'var(--text-secondary)', lineHeight: 1.7, maxWidth: 520, margin: '0 auto 32px' }}>
                 {d(
-                  'Un appel offert. On regarde vos outils actuels et on identifie ce qu\u2019un seul logiciel sur-mesure vous ferait gagner, en temps, en clients, en clarté. Même si on ne travaille pas ensemble.',
-                  'A free call. We look at the tools you use today and work out what one piece of custom software would win you, in time, in clients, in clarity. Even if we never work together.'
-                , 'Egy ingyenes hívás. Megnézzük a ma használt eszközeit, és kiszámoljuk, mit nyerne egyetlen egyedi szoftverrel időben, ügyfelekben, átláthatóságban. Akkor is, ha soha nem dolgozunk együtt.')}
+                  'Un appel offert. On regarde comment les demandes circulent chez vous aujourd’hui, et où partent le temps, les erreurs et les clients. Vous repartez avec une vision claire, même si on ne travaille pas ensemble.',
+                  'A free call. We look at how requests move through your organisation today, and where time, mistakes and clients slip away. You leave with a clear picture, even if we never work together.'
+                , 'Egy ingyenes hívás. Megnézzük, hogyan haladnak ma a kérések a szervezetében, és hol vész el az idő, hol csúsznak be hibák, hol tűnnek el ügyfelek. Világos képpel távozik, akkor is, ha soha nem dolgozunk együtt.')}
               </p>
               <Link href={localizedHref(CAL_LINK, lang)} className="btn-primary" style={{ margin: '0 auto' }}>
                 <span className="btn-primary-dot" />{d('Réserver un appel · offert', 'Book a call · free', 'Hívás foglalása · ingyenes')}

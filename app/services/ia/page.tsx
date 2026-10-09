@@ -18,78 +18,78 @@ type Capability = { titleFr: string; titleEn: string; titleHu: string; descFr: s
 
 const capabilities: Capability[] = [
   {
-    titleFr: 'Agents autonomes',
-    titleEn: 'Autonomous agents', titleHu: 'Önálló ágensek',
-    descFr: 'Une IA agentique avec mémoire persistante qui exécute des tâches multi-étapes dans vos outils, apprend votre métier et s\u2019améliore à chaque utilisation.',
-    descEn: 'Agentic AI with a lasting memory that runs multi-step tasks inside your tools, learns your trade and gets better with every use.', descHu: 'Tartós memóriájú ágens MI, amely többlépcsős feladatokat futtat az eszközeiben, megtanulja a szakmáját, és minden használattal jobb lesz.',
-    metricFr: 'Des tâches prises en charge de bout en bout',
-    metricEn: 'Tasks handled end to end', metricHu: 'Végponttól végpontig elvégzett feladatok',
+    titleFr: 'Première réponse dans la langue du client',
+    titleEn: 'A first reply in the client’s language', titleHu: 'Első válasz az ügyfél nyelvén',
+    descFr: 'Chaque demande reçoit un accusé de réception soigné, dans la langue du client, même tard le soir. Une proposition de réponse est préparée pour votre équipe, qui relit et envoie.',
+    descEn: 'Every request gets a careful acknowledgment, in the client’s language, even late at night. A draft reply is prepared for your team, who read it and send it.', descHu: 'Minden kérés gondos visszaigazolást kap, az ügyfél nyelvén, késő este is. A csapata számára elkészül egy válaszjavaslat, amelyet átolvasnak és elküldenek.',
+    metricFr: 'Des réponses plus rapides',
+    metricEn: 'Faster responses', metricHu: 'Gyorsabb válaszok',
   },
   {
-    titleFr: 'Lecture de documents & recherche dans votre savoir',
-    titleEn: 'Document reading & search across your know-how', titleHu: 'Dokumentumolvasás és keresés a tudásában',
-    descFr: 'Devis, contrats, cahiers des charges, documentation technique : l\u2019IA lit, extrait, structure et rend tout cherchable en secondes. Le savoir de vos experts ne dort plus, il répond.',
-    descEn: 'Quotes, contracts, specifications, technical documentation: the AI reads, extracts, structures and makes all of it searchable in seconds. What your experts know stops sleeping and starts answering.', descHu: 'Árajánlatok, szerződések, műszaki leírások, dokumentációk: az MI elolvassa, kinyeri, rendszerezi, és másodpercek alatt kereshetővé teszi az egészet. A szakértői tudása nem alszik tovább, hanem válaszol.',
-    metricFr: 'Le savoir enfoui rendu cherchable en secondes',
-    metricEn: 'Buried know-how, searchable in seconds', metricHu: 'Az elrejtett tudás, másodpercek alatt kereshetően',
+    titleFr: 'WhatsApp transformé en demandes claires',
+    titleEn: 'WhatsApp turned into clear requests', titleHu: 'WhatsAppból rendezett kérések',
+    descFr: 'Dates, nombre de personnes, envies, contraintes : le fil de discussion devient une demande structurée, prête pour le devis. Plus rien ne dort dans un téléphone.',
+    descEn: 'Dates, number of guests, wishes, constraints: the chat thread becomes a structured request, ready for the quote. Nothing sits forgotten in a phone any more.', descHu: 'Dátumok, létszám, kívánságok, feltételek: a beszélgetésből rendezett kérés lesz, árajánlatra készen. Semmi sem ragad többé egy telefonban.',
+    metricFr: 'Plus une demande oubliée',
+    metricEn: 'No request forgotten', metricHu: 'Egyetlen elfelejtett kérés sem',
   },
   {
-    titleFr: 'Demandes des familles & relances',
-    titleEn: 'Family enquiries & follow-ups', titleHu: 'Családi megkeresések és emlékeztetők',
-    descFr: 'Chaque demande lue et orientée vers la bonne personne, même le dimanche soir. Les relances de pièces manquantes partent seules et s\u2019arrêtent dès que la famille répond.',
-    descEn: 'Every enquiry read and routed to the right person, even on a Sunday evening. Reminders for missing documents go out on their own and stop the moment the family replies.', descHu: 'Minden beérkező elolvasva, pontozva, kiegészítve és a megfelelő emberhez továbbítva. Személyes utánkövetés, amely leáll abban a pillanatban, amikor az érdeklődő válaszol.',
-    metricFr: 'Plus une demande qui attend le lundi matin',
-    metricEn: 'No enquiry left waiting for Monday morning', metricHu: 'Egyetlen megkeresés sem vár hétfő reggelig',
+    titleFr: 'Reconfirmations automatiques',
+    titleEn: 'Automatic reconfirmations', titleHu: 'Automatikus megerősítések',
+    descFr: 'Le chauffeur, le chef, l’équipe de ménage, le prestataire : chacun reçoit son rappel au bon moment et confirme. Si quelqu’un ne répond pas, vous le savez avant votre client.',
+    descEn: 'The driver, the chef, the housekeeping team, the supplier: each gets a reminder at the right time and confirms. If someone does not answer, you know before your client does.', descHu: 'A sofőr, a séf, a takarítócsapat, a szolgáltató: mindenki a megfelelő időben kap emlékeztetőt, és visszaigazol. Ha valaki nem válaszol, Ön előbb tudja meg, mint az ügyfele.',
+    metricFr: 'Des séjours sans mauvaise surprise',
+    metricEn: 'Stays without bad surprises', metricHu: 'Tartózkodások kellemetlen meglepetések nélkül',
   },
   {
-    titleFr: 'Data analytics',
-    titleEn: 'Data analytics', titleHu: 'Adatelemzés',
-    descFr: 'Vos données réunies en temps réel, au même endroit. Tableaux de bord clairs, anticipation des tendances. Vous décidez sur du concret, vite.',
-    descEn: 'Your data brought together in real time, in one place. Clear dashboards, trends you see coming. You decide on facts, and fast.', descHu: 'Az adatai valós időben, egy helyen összefogva. Világos irányítópultok, előre látható trendek. Tényekre alapozva dönt, és gyorsan.',
-    metricFr: 'Décisions data en minutes',
-    metricEn: 'Decisions on data in minutes', metricHu: 'Adatalapú döntések percek alatt',
+    titleFr: 'Relances d’acompte et suivi',
+    titleEn: 'Deposit follow-ups', titleHu: 'Előleg-emlékeztetők és nyomon követés',
+    descFr: 'Les acomptes et les soldes sont suivis, en euros comme en dollars. Les relances partent seules, avec le ton de votre organisation, et s’arrêtent dès que le client a payé.',
+    descEn: 'Deposits and balances are tracked, in euros or in dollars. Follow-ups go out on their own, in your organisation’s tone, and stop as soon as the client has paid.', descHu: 'Az előlegek és a hátralékok nyomon követve, euróban és dollárban egyaránt. Az emlékeztetők maguktól mennek ki, a szervezete hangnemében, és leállnak, amint az ügyfél fizetett.',
+    metricFr: 'Plus un acompte oublié',
+    metricEn: 'No deposit forgotten', metricHu: 'Egyetlen elfelejtett előleg sem',
   },
 ]
 
 const painsFr = [
-  'Vos experts passent des heures sur du répétitif au lieu de créer de la valeur',
-  'Le savoir de vos experts reste coincé dans leurs têtes et leurs docs',
-  'Vous croulez sous les documents à lire, trier, recopier',
-  'Vous décidez « au feeling », faute de chiffres clairs',
-  'Vous avez peur que l\u2019IA soit un gadget de plus',
+  'Les demandes arrivent sur WhatsApp, par mail, par téléphone, et quelqu’un doit tout trier',
+  'Un client écrit le soir, dans sa langue, et attend la réponse jusqu’au lendemain',
+  'Les reconfirmations du chauffeur, du chef ou du ménage se font de tête',
+  'Les acomptes à relancer se perdent entre deux urgences',
+  'Vous craignez un robot froid qui parle à vos clients à votre place',
 ]
 const painsEn = [
-  'Your experts spend hours on repetitive work instead of creating value',
-  'What your experts know stays stuck in their heads and their documents',
-  'You are buried under documents to read, sort and retype',
-  'You decide on gut feel, for want of clear figures',
-  'You are afraid AI turns out to be one more gadget',
+  'Requests come in on WhatsApp, by email and by phone, and someone has to sort it all',
+  'A client writes in the evening, in their own language, and waits until the next day for a reply',
+  'Reconfirming the driver, the chef or housekeeping is done from memory',
+  'Deposits to chase get lost between two emergencies',
+  'You fear a cold robot talking to your clients in your place',
 ]
 const painsHu = [
-  'A szakértői órákat töltenek ismétlődő munkával értékteremtés helyett',
-  'Amit a szakértői tudnak, a fejükben és a dokumentumaikban ragad',
-  'Elborítják az elolvasandó, rendezendő, átgépelendő dokumentumok',
-  'Megérzésre dönt, mert nincsenek világos számai',
-  'Fél attól, hogy az MI csak még egy kütyü lesz',
+  'A kérések WhatsAppon, e-mailben és telefonon érkeznek, és valakinek mindet szét kell válogatnia',
+  'Egy ügyfél este, a saját nyelvén ír, és másnapig vár a válaszra',
+  'A sofőr, a séf vagy a takarítás megerősítése fejből történik',
+  'A behajtandó előlegek elvesznek két sürgős ügy között',
+  'Tart attól, hogy egy rideg robot beszél majd az ügyfeleivel Ön helyett',
 ]
 
 const guaranteesFr = [
-  'IA intégrée uniquement là où elle remplace de vraies heures',
-  'Vos données restent en UE · RGPD-natif',
-  'Modèle au choix · Claude, GPT ou auto-hébergé selon votre souveraineté',
-  'ROI mesuré · on ne déploie rien sans impact chiffrable',
+  'L’outil propose, une personne de votre équipe décide',
+  'Vos données restent en UE · RGPD, en toute discrétion',
+  'Vos clients ne remplissent rien · ils écrivent comme d’habitude',
+  'Automatisé uniquement là où ça rend de vraies heures',
 ]
 const guaranteesEn = [
-  'AI built in only where it replaces real hours',
-  'Your data stays in the EU · GDPR-native',
-  'Your choice of model · Claude, GPT or self-hosted, depending on how much sovereignty you need',
-  'ROI measured · we deploy nothing without a countable impact',
+  'The tool suggests, someone on your team decides',
+  'Your data stays in the EU · GDPR, in complete discretion',
+  'Your clients fill in nothing · they write the way they always do',
+  'Automated only where it gives real hours back',
 ]
 const guaranteesHu = [
-  'MI csak ott épül be, ahol valódi munkaórákat vált ki',
-  'Az adatai az EU-ban maradnak · GDPR-natív',
-  'Szabadon választott modell · Claude, GPT vagy saját üzemeltetésű, a szuverenitási igénye szerint',
-  'Mért megtérülés · semmit nem vezetünk be számszerű hatás nélkül',
+  'Az eszköz javasol, a csapata egy tagja dönt',
+  'Az adatai az EU-ban maradnak · GDPR, teljes diszkrécióval',
+  'Az ügyfelei semmit nem töltenek ki · úgy írnak, ahogy eddig',
+  'Csak ott automatizálunk, ahol valódi órákat ad vissza',
 ]
 
 export default function IaPage() {
@@ -103,15 +103,15 @@ export default function IaPage() {
       <section style={{ padding: '160px 24px 40px' }}>
         <div className="mx-auto text-center" style={{ maxWidth: 820 }}>
           <FadeUp>
-            <span className="section-label">{d('IA agentique & data analytics', 'Agentic AI & data analytics', 'Ágens MI és adatelemzés')}</span>
+            <span className="section-label">{d('Automatisation', 'Automation', 'Automatizálás')}</span>
             <h1 className="font-serif italic" style={{ fontSize: 'clamp(32px, 5.4vw, 54px)', fontWeight: 400, lineHeight: 1.1, color: 'var(--text)', maxWidth: 780, margin: '14px auto 24px' }}>
-              {d('Une IA qui ', 'AI that ', 'MI, amely ')}<span className="accent" style={{ color: 'var(--accent)' }}>{d('travaille vraiment pour vous.', 'actually works for you.', 'tényleg Önért dolgozik.')}</span>
+              {d('Plus une demande ', 'No request left ', 'Egyetlen kérés sem ')}<span className="accent" style={{ color: 'var(--accent)' }}>{d('qui attend sa réponse.', 'waiting for a reply.', 'marad válasz nélkül.')}</span>
             </h1>
             <p className="font-sans" style={{ fontSize: 'clamp(15px, 3vw, 18px)', fontWeight: 300, color: 'var(--text-secondary)', maxWidth: 660, margin: '0 auto 36px', lineHeight: 1.65 }}>
               {d(
-                'Une IA agentique avec mémoire persistante : elle exécute des tâches de bout en bout, apprend votre métier et s\u2019améliore avec le temps. Intégrée uniquement là où elle remplace de vraies heures, jamais en gadget. Vos données restent en UE.',
-                'Agentic AI with a lasting memory: it runs tasks end to end, learns your trade and improves over time. Built in only where it replaces real hours, never as decoration. Your data stays in the EU.'
-              , 'Tartós memóriájú ágens MI: végponttól végpontig futtat feladatokat, megtanulja a szakmáját, és idővel jobb lesz. Csak ott épül be, ahol valódi munkaórákat vált ki, sosem kütyüként. Az adatai az EU-ban maradnak.')}
+                'Première réponse dans la langue du client, reconfirmations, relances d’acompte, fils WhatsApp transformés en demandes claires : l’automatisation prend le répétitif. L’outil propose, une personne de votre équipe décide. Vos données restent en UE.',
+                'A first reply in the client’s language, reconfirmations, deposit follow-ups, WhatsApp threads turned into clear requests: automation takes the repetitive work. The tool suggests, someone on your team decides. Your data stays in the EU.'
+              , 'Első válasz az ügyfél nyelvén, megerősítések, előleg-emlékeztetők, WhatsApp-beszélgetésekből rendezett kérések: az automatizálás átveszi az ismétlődő munkát. Az eszköz javasol, a csapata egy tagja dönt. Az adatai az EU-ban maradnak.')}
             </p>
             <Link href={localizedHref(CAL_LINK, lang)} className="btn-primary" style={{ margin: '0 auto', fontSize: 14 }}>
               <span className="btn-primary-dot" />{d('Réserver un appel · offert', 'Book a call · free', 'Hívás foglalása · ingyenes')} &rarr;
@@ -127,15 +127,15 @@ export default function IaPage() {
         <div className="mx-auto" style={{ maxWidth: 760 }}>
           <FadeUp className="text-center mb-8">
             <h2 className="section-title" style={{ maxWidth: 640, margin: '0 auto' }}>
-              {d('Qu\u2019est-ce que ', 'What is ', 'Mi az ')}<span className="accent">{d('l\u2019IA agentique', 'agentic AI', 'ágens MI')}</span>{d(' ?', '?', '?')}
+              {d('Ce que fait ', 'What ', 'Mit csinál ')}<span className="accent">{d('l’automatisation', 'automation', 'az automatizálás')}</span>{d(' chez vous', ' does for you', ' Önnél')}
             </h2>
           </FadeUp>
           <FadeUp>
             <p className="font-sans" style={{ fontSize: 16, color: 'var(--text-secondary)', lineHeight: 1.75, fontWeight: 300, maxWidth: 680, margin: '0 auto', textAlign: 'center' }}>
               {d(
-                'C\u2019est une IA qui ne se contente pas de répondre : elle exécute des tâches de bout en bout dans vos outils, avec une mémoire persistante du contexte de votre établissement. Elle apprend de chaque interaction et s\u2019améliore avec le temps, qualifier un lead, lire un document, router une demande, rédiger une première réponse.',
-                'It is AI that does more than answer: it runs tasks end to end inside your tools, holding a lasting memory of how your school works. It learns from every interaction and improves over time, whether it is qualifying a lead, reading a document, routing a request or drafting a first reply.'
-              , 'Olyan MI, amely nem csak válaszol: végponttól végpontig futtat feladatokat az eszközeiben, tartósan megőrizve a cége működésének kontextusát. Minden interakcióból tanul, és idővel jobb lesz, legyen szó leadminősítésről, dokumentumolvasásról, kérés továbbításáról vagy egy első válasz megfogalmazásáról.')}
+                'Elle s’occupe des tâches qui reviennent chaque jour et ne demandent pas de jugement : accuser réception d’une demande, la structurer, reconfirmer un chauffeur, relancer un acompte. Tout ce qui demande du jugement reste à votre équipe : l’outil prépare, une personne valide. Vos clients ne remplissent rien, ils écrivent comme d’habitude.',
+                'It handles the tasks that come back every day and need no judgment: acknowledging a request, structuring it, reconfirming a driver, chasing a deposit. Anything that needs judgment stays with your team: the tool prepares, a person approves. Your clients fill in nothing, they write the way they always do.'
+              , 'Átveszi azokat a naponta visszatérő feladatokat, amelyekhez nem kell mérlegelés: egy kérés visszaigazolását és rendszerezését, a sofőr megerősítését, az előleg utánkövetését. Ami mérlegelést igényel, az a csapatánál marad: az eszköz előkészít, egy ember jóváhagy. Az ügyfelei semmit nem töltenek ki, úgy írnak, ahogy eddig.')}
             </p>
           </FadeUp>
         </div>
@@ -149,7 +149,7 @@ export default function IaPage() {
           <FadeUp className="text-center mb-10">
             <span className="section-label">{d('Ce qui vous coûte des heures', 'What costs you hours', 'Ami órákba kerül Önnek')}</span>
             <h2 className="section-title" style={{ maxWidth: 620, margin: '0 auto' }}>
-              {d('Là où l\u2019IA ', 'Where AI ', 'Ahol az MI ')}<span className="accent">{d('change la donne.', 'changes things.', 'változtat a helyzeten.')}</span>
+              {d('Là où l’automatisation ', 'Where automation ', 'Ahol az automatizálás ')}<span className="accent">{d('vous rend du temps.', 'gives you time back.', 'időt ad vissza.')}</span>
             </h2>
           </FadeUp>
           <ul style={{ listStyle: 'none', padding: 0, margin: '0 auto', maxWidth: 600, display: 'grid', gap: 13 }}>
@@ -169,9 +169,9 @@ export default function IaPage() {
       <section style={{ padding: '70px 24px' }}>
         <div className="mx-auto" style={{ maxWidth: 1100 }}>
           <FadeUp className="text-center mb-12">
-            <span className="section-label">{d('Ce que l\u2019IA prend en charge', 'What the AI takes on', 'Amit az MI átvesz')}</span>
+            <span className="section-label">{d('Ce que l’automatisation prend en charge', 'What automation takes on', 'Amit az automatizálás átvesz')}</span>
             <h2 className="section-title" style={{ maxWidth: 660, margin: '0 auto' }}>
-              {d('L\u2019IA, ', 'AI, ', 'Az MI ')}<span className="accent">{d('là où elle fait gagner des heures.', 'where it wins you hours.', 'ott, ahol órákat nyer vele.')}</span>
+              {d('Le répétitif, ', 'The repetitive work, ', 'Az ismétlődő munkát, ')}<span className="accent">{d('jamais le jugement.', 'never the judgment.', 'soha nem a mérlegelést.')}</span>
             </h2>
           </FadeUp>
           <div className="svc-grid">
@@ -210,22 +210,22 @@ export default function IaPage() {
         links={
           pick(lang, {
             fr: [
-                { href: '/services/logiciel-sur-mesure', label: 'Le logiciel sur-mesure', desc: 'L\u2019IA s\u2019intègre dedans, sur votre métier.' },
-                { href: '/services/audit', label: 'L\u2019audit & consulting', desc: 'On identifie où l\u2019IA a du ROI.' },
-                { href: '/tools/diagnostic-ia', label: 'Diagnostic IA', desc: 'Mesurez en 4 min où l\u2019IA peut vous aider.' },
-                { href: '/glossaire', label: 'Glossaire', desc: 'IA agentique, automatisation, data analytics.' },
+                { href: '/services/logiciel-sur-mesure', label: 'Le logiciel sur-mesure', desc: 'L’automatisation s’y branche, sur votre organisation.' },
+                { href: '/services/audit', label: 'Le Diagnostic', desc: 'On repère où partent le temps et les clients.' },
+                { href: '/tools/diagnostic-ia', label: 'Diagnostic IA', desc: 'Mesurez en 4 min ce qui peut être automatisé.' },
+                { href: '/glossaire', label: 'Glossaire', desc: 'Automatisation, données, logiciel, en mots simples.' },
             ],
             en: [
-                { href: '/services/logiciel-sur-mesure', label: 'Custom software', desc: 'The AI plugs into it, on your trade.' },
-                { href: '/services/audit', label: 'Audit & consulting', desc: 'We find where AI actually pays off.' },
-                { href: '/tools/diagnostic-ia', label: 'AI Diagnostic', desc: 'Measure in 4 minutes where AI can help you.' },
-                { href: '/glossaire', label: 'Glossary', desc: 'Agentic AI, automation, data analytics.' },
+                { href: '/services/logiciel-sur-mesure', label: 'Custom software', desc: 'Automation plugs into it, on your organisation.' },
+                { href: '/services/audit', label: 'The Diagnostic', desc: 'We find where time and clients slip away.' },
+                { href: '/tools/diagnostic-ia', label: 'AI Diagnostic', desc: 'Measure in 4 minutes what can be automated.' },
+                { href: '/glossaire', label: 'Glossary', desc: 'Automation, data, software, in plain words.' },
             ],
             hu: [
-                { href: '/services/logiciel-sur-mesure', label: 'Egyedi szoftver', desc: 'Az MI ebbe épül be, az Ön szakmájára.' },
-                { href: '/services/audit', label: 'Audit és tanácsadás', desc: 'Megkeressük, hol térül meg tényleg az MI.' },
-                { href: '/tools/diagnostic-ia', label: 'MI-diagnosztika', desc: 'Mérje meg 4 perc alatt, hol segíthet Önnek az MI.' },
-                { href: '/glossaire', label: 'Szójegyzék', desc: 'Ágens MI, automatizálás, adatelemzés.' },
+                { href: '/services/logiciel-sur-mesure', label: 'Egyedi szoftver', desc: 'Az automatizálás erre épül, az Ön szervezetére.' },
+                { href: '/services/audit', label: 'A diagnosztika', desc: 'Megkeressük, hol vész el az idő és az ügyfél.' },
+                { href: '/tools/diagnostic-ia', label: 'MI-diagnosztika', desc: 'Mérje meg 4 perc alatt, mi automatizálható.' },
+                { href: '/glossaire', label: 'Szójegyzék', desc: 'Automatizálás, adatok, szoftver, érthetően.' },
             ],
           })
         }
@@ -237,21 +237,21 @@ export default function IaPage() {
         forYou={
           pick(lang, {
             fr: [
-                'Vos équipes croulent sous des tâches répétitives',
-                'Vous avez du volume : documents, leads, demandes à traiter',
-                'Vous voulez une IA utile, branchée sur vos vraies données',
+                'Vos équipes passent leurs journées à répondre, reconfirmer, relancer',
+                'Vos clients écrivent à toute heure, dans plusieurs langues',
+                'Vous voulez répondre plus vite sans perdre le ton de votre organisation',
                 'Vous tenez à garder vos données en Europe',
             ],
             en: [
-                'Your teams are buried in repetitive tasks',
-                'You have volume: documents, leads, requests to process',
-                'You want AI that is useful, plugged into your real data',
+                'Your teams spend their days replying, reconfirming, chasing',
+                'Your clients write at any hour, in several languages',
+                'You want to reply faster without losing your organisation’s tone',
                 'You care about keeping your data in Europe',
             ],
             hu: [
-                'A csapatai el vannak temetve az ismétlődő feladatok alatt',
-                'Van mennyiség: dokumentumok, érdeklődők, feldolgozandó kérések',
-                'Hasznos MI-t akar, a valódi adataira kötve',
+                'A csapatai egész nap válaszolnak, megerősítenek, utánkövetnek',
+                'Az ügyfelei a nap bármely órájában, több nyelven írnak',
+                'Gyorsabban szeretne válaszolni anélkül, hogy elveszítené a szervezete hangnemét',
                 'Fontos Önnek, hogy az adatai Európában maradjanak',
             ],
           })
@@ -259,22 +259,22 @@ export default function IaPage() {
         notForYou={
           pick(lang, {
             fr: [
-                'Vous voulez de l\u2019IA juste pour dire que vous en faites',
-                'Vous n\u2019avez pas encore de données un minimum structurées',
-                'Vous cherchez un chatbot générique à 20 €/mois',
-                'Le ROI vous importe peu, seule la hype compte',
+                'Vous voulez un robot qui décide à la place de votre équipe',
+                'Vous voulez faire remplir des formulaires à vos clients',
+                'Vous cherchez un chatbot générique, prêt à l’emploi',
+                'Vous voulez de l’automatisation juste pour dire que vous en faites',
             ],
             en: [
-                'You want AI just to be able to say you do AI',
-                'Your data is not structured at all yet',
-                'You are looking for a generic chatbot at 20 € a month',
-                'ROI matters little to you, only the hype counts',
+                'You want a robot that decides in place of your team',
+                'You want your clients to fill in forms',
+                'You are looking for a generic, off-the-shelf chatbot',
+                'You want automation just to be able to say you have it',
             ],
             hu: [
-                'Csak azért akar MI-t, hogy elmondhassa, van MI-je',
-                'Az adatai még egyáltalán nincsenek rendszerezve',
-                'Egy általános, havi 20 €-s chatbotot keres',
-                'A megtérülés keveset számít Önnek, csak a felhajtás',
+                'Olyan robotot szeretne, amely a csapata helyett dönt',
+                'Űrlapokat szeretne kitöltetni az ügyfeleivel',
+                'Egy általános, dobozos chatbotot keres',
+                'Csak azért akar automatizálást, hogy elmondhassa, van',
             ],
           })
         }
@@ -288,13 +288,13 @@ export default function IaPage() {
           <FadeUp>
             <div style={{ background: 'var(--bg-card)', border: '1px solid rgba(230,57,70,0.15)', borderRadius: 12, padding: '48px 40px', textAlign: 'center' }}>
               <h2 className="font-serif italic" style={{ fontSize: 'clamp(24px, 4vw, 32px)', fontWeight: 400, marginBottom: 16, color: 'var(--text)' }}>
-                {d('Déléguez le répétitif à l\u2019IA.', 'Hand the repetitive work to AI.', 'Adja át az ismétlődő munkát az MI-nek.')}
+                {d('Rendez du temps à votre équipe.', 'Give your team its time back.', 'Adjon vissza időt a csapatának.')}
               </h2>
               <p className="font-sans" style={{ fontSize: 15, fontWeight: 300, color: 'var(--text-secondary)', lineHeight: 1.7, maxWidth: 520, margin: '0 auto 32px' }}>
                 {d(
-                  'Un appel offert. On regarde vos tâches répétitives et on identifie où l\u2019IA vous ferait gagner de vraies heures, avec un ROI mesurable. Même si on ne travaille pas ensemble.',
-                  'A free call. We look at your repetitive tasks and find where AI would win you real hours, with a return you can measure. Even if we never work together.'
-                , 'Egy ingyenes hívás. Megnézzük az ismétlődő feladatait, és megtaláljuk, hol nyerne velük az MI valódi órákat, mérhető megtérüléssel. Akkor is, ha soha nem dolgozunk együtt.')}
+                  'Un appel offert. On regarde ce que votre équipe refait chaque jour à la main, et ce qui peut tourner seul sans rien enlever à l’attention que vous portez à vos clients. Même si on ne travaille pas ensemble.',
+                  'A free call. We look at what your team redoes by hand every day, and what can run on its own without taking anything away from the care you give your clients. Even if we never work together.'
+                , 'Egy ingyenes hívás. Megnézzük, mit végez el újra és újra kézzel a csapata nap mint nap, és mi futhat magától úgy, hogy semmit ne vegyen el az ügyfeleinek szentelt figyelemből. Akkor is, ha soha nem dolgozunk együtt.')}
               </p>
               <Link href={localizedHref(CAL_LINK, lang)} className="btn-primary" style={{ margin: '0 auto' }}>
                 <span className="btn-primary-dot" />{d('Réserver un appel · offert', 'Book a call · free', 'Hívás foglalása · ingyenes')}

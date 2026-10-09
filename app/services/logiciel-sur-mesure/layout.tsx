@@ -1,14 +1,23 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Logiciel & plateforme sur-mesure, NateSystem',
+  title: 'Logiciel sur-mesure pour l\'hôtellerie de prestige, NateSystem',
   description:
-    'Le logiciel métier sur-mesure qui réunit vos outils et vos données en une seule plateforme, base unifiée, dashboards, portails, outils internes. Vous êtes propriétaire du code, hébergé en UE. En production en 4 à 8 semaines. Audit offert.',
+    'Le logiciel sur-mesure des villas, chalets, conciergeries de luxe, yachts, hôtels indépendants et lieux de réception : vous saisissez une fois, toute l\'organisation suit. Code 100 % à vous, hébergé en UE, un partenariat qui évolue avec vous. Appel offert.',
+  keywords: [
+    'logiciel sur-mesure hôtellerie de luxe',
+    'logiciel conciergerie de luxe',
+    'logiciel gestion villas et chalets',
+    'logiciel hôtel indépendant',
+    'logiciel lieu de réception séminaire',
+    'logiciel gestion yacht',
+    'logiciel métier sur-mesure',
+  ],
   alternates: { canonical: 'https://www.natesystem.com/services/logiciel-sur-mesure' },
   openGraph: {
-    title: 'Logiciel & plateforme sur-mesure, NateSystem',
+    title: 'Logiciel sur-mesure pour l\'hôtellerie de prestige, NateSystem',
     description:
-      'Un seul logiciel sur-mesure pour piloter votre établissement : base de données unifiée, dashboards, portails clients, outils internes. Code livré, hébergé en UE, en 4 à 8 semaines.',
+      'Fournisseurs, équipes, séjours et événements, devis, facturation : une seule saisie, toute l\'organisation suit. L\'outil propose, une personne décide. Code livré, hébergé en UE.',
     url: 'https://www.natesystem.com/services/logiciel-sur-mesure',
     type: 'website',
     locale: 'fr_FR',
@@ -16,8 +25,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Logiciel & plateforme sur-mesure, NateSystem',
-    description: 'Un seul logiciel sur-mesure qui pilote votre établissement. Vous êtes propriétaire, hébergé en UE.',
+    title: 'Logiciel sur-mesure pour l\'hôtellerie de prestige, NateSystem',
+    description: 'Vous saisissez une fois, toute l\'organisation suit. Code 100 % à vous, hébergé en UE.',
   },
 }
 
@@ -27,13 +36,13 @@ const jsonLd = {
     {
       '@type': 'Service',
       '@id': 'https://www.natesystem.com/services/logiciel-sur-mesure#service',
-      name: 'Logiciel & plateforme sur-mesure',
+      name: 'Logiciel sur-mesure pour l\'hôtellerie de prestige',
       provider: { '@id': 'https://www.natesystem.com/#organization' },
       areaServed: ['FR', 'HU', 'EU'],
-      serviceType: 'Développement de logiciel métier sur-mesure, plateforme interne, base de données unifiée, dashboards, portails et outils internes',
-      audience: { '@type': 'BusinessAudience', audienceType: 'PME et ETI (5 à 100 collaborateurs) avec des opérations récurrentes' },
+      serviceType: 'Logiciel métier sur-mesure : demandes, séjours et événements, fournisseurs, planning des équipes, devis, facturation, suivi des données',
+      audience: { '@type': 'BusinessAudience', audienceType: 'Organisations de l\'hôtellerie de luxe et de prestige : villas, chalets et domaines, conciergeries de luxe, yachts, hôtels indépendants, lieux de réception et de séminaires, services VIP privés' },
       description:
-        'Conception et déploiement d\'un logiciel métier sur-mesure : on réunit vos outils et vos données dans une seule plateforme conçue pour votre établissement, base de données unifiée, dashboards, portails clients, outils internes. Le code source vous appartient, hébergé sur votre infrastructure en UE, en production en 4 à 8 semaines.',
+        'Un logiciel construit sur la façon dont l\'organisation reçoit ses clients : une demande saisie une fois alimente le planning, le devis et la facture. L\'outil propose, une personne décide. Le code source appartient au client à 100 %, les données sont hébergées en UE, et le système évolue avec l\'organisation dans le cadre d\'un partenariat dans la durée.',
     },
     {
       '@type': 'FAQPage',
@@ -43,7 +52,7 @@ const jsonLd = {
           name: 'Qu\'est-ce qu\'un logiciel sur-mesure ?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Un logiciel sur-mesure est une application métier conçue spécifiquement pour votre façon de travailler, au lieu d\'un SaaS générique que vous louez. Il réunit en un seul système ce que vous éparpillez aujourd\'hui entre tableurs, mails et outils déconnectés : base de données unifiée, dashboards, portails clients, outils internes. Le code vous appartient et il évolue avec votre établissement.',
+            text: 'Un logiciel sur-mesure est construit pour votre organisation, au lieu d\'un outil générique loué qui vous oblige à garder Excel ouvert à côté. Il réunit ce qui est aujourd\'hui éparpillé entre WhatsApp, mails, tableurs et la tête d\'une seule personne : demandes, séjours et événements, fournisseurs, équipes, devis, facturation. Le code vous appartient et le logiciel évolue avec votre activité.',
           },
         },
         {
@@ -51,15 +60,15 @@ const jsonLd = {
           name: 'Logiciel sur-mesure ou SaaS : quelle différence ?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Un SaaS est un outil standard, loué par abonnement, que vous adaptez à votre métier. Un logiciel sur-mesure est construit autour de votre métier, vous en êtes propriétaire (code livré, pas d\'abonnement à vie, pas de lock-in) et il est hébergé sur votre infrastructure. Le sur-mesure devient rentable quand vous payez plusieurs SaaS qui ne se parlent pas et perdez des heures à les faire communiquer.',
+            text: 'Un SaaS est un outil standard, loué par abonnement, pensé pour la moyenne. Un logiciel sur-mesure suit votre façon de recevoir vos clients, vous en êtes propriétaire (code livré, pas de lock-in) et il évolue avec vous. Il se justifie dès que vous gardez plusieurs outils et un tableur ouverts pour faire tenir l\'ensemble, et que la même demande est ressaisie plusieurs fois.',
           },
         },
         {
           '@type': 'Question',
-          name: 'Combien de temps pour développer un logiciel sur-mesure ?',
+          name: 'Est-ce un projet ponctuel ?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: '4 à 8 semaines pour la première version, selon le périmètre. Le périmètre et la date de livraison sont fixés avant la première ligne de code, avec un point chaque semaine. Vos équipes continuent de travailler normalement pendant qu\'on construit autour d\'elles. Puis on déploie sur votre infrastructure et on forme vos équipes jusqu\'à l\'autonomie.',
+            text: 'Non. NateSystem travaille en partenariat dans la durée : le système évolue avec votre organisation, saison après saison, à mesure que vos besoins changent. Le fondateur code lui-même, sans commercial ni junior entre vous et le logiciel. Et vous restez propriétaire du code à 100 %.',
           },
         },
         {
@@ -67,7 +76,7 @@ const jsonLd = {
           name: 'À qui appartient le code du logiciel ?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: '100 % du code vous appartient et est hébergé sur votre infrastructure, en UE, conforme RGPD. Documentation complète incluse : n\'importe quel développeur compétent peut reprendre derrière. Zéro abonnement, zéro lock-in. Si NateSystem disparaît demain, votre logiciel continue de tourner.',
+            text: '100 % du code vous appartient. Les données sont hébergées en UE, conformes RGPD, et restent chez vous en toute discrétion. Documentation complète incluse : n\'importe quel développeur compétent peut reprendre derrière. Si NateSystem disparaît demain, votre logiciel continue de tourner.',
           },
         },
       ],
@@ -77,7 +86,7 @@ const jsonLd = {
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://www.natesystem.com' },
         { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://www.natesystem.com/services' },
-        { '@type': 'ListItem', position: 3, name: 'Logiciel & plateforme sur-mesure', item: 'https://www.natesystem.com/services/logiciel-sur-mesure' },
+        { '@type': 'ListItem', position: 3, name: 'Logiciel sur-mesure', item: 'https://www.natesystem.com/services/logiciel-sur-mesure' },
       ],
     },
   ],
