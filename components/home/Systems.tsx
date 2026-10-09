@@ -134,7 +134,7 @@ export default function Systems() {
             {t('systems.deployed')} {t('systems.measured')} <span className="accent">{t('systems.profitable')}</span>
           </h2>
           <p className="font-sans" style={{ fontSize: 15, fontWeight: 300, color: 'var(--text-secondary)', maxWidth: 560, margin: '0 auto', lineHeight: 1.7 }}>
-            {d('Votre organisation, votre image en ligne, vos données : trois étages, un seul système.', 'Your organisation, your online presence, your data: three layers, one system.', 'A szervezete, az online megjelenése, az adatai: három szint, egyetlen rendszer.')}
+            {d('Moins de ressaisie, moins de mauvaises surprises devant le client, et enfin des chiffres pour décider.', 'Less re-entering, fewer bad surprises in front of the client, and numbers to decide on at last.', 'Kevesebb újbóli bevitel, kevesebb kellemetlen meglepetés az ügyfél előtt, és végre számok a döntéshez.')}
           </p>
         </FadeUp>
       </div>
