@@ -21,7 +21,7 @@ import { SITE_URL } from '@/lib/constants'
 export const metadata: Metadata = {
   title: 'NateSystem, egyedi szoftver a luxus- és presztízsvendéglátásnak',
   description:
-    'Egyedi szoftver, online megjelenés és követett adatok villáknak, faházaknak, birtokoknak, concierge-szolgáltatásoknak, jachtoknak, butikszállodáknak és rendezvényhelyszíneknek. Egyszer viszi be, és az egész szervezet követi. Hosszú távú partnerség, a forráskód az Öné.',
+    'Egyedi szoftver, online megjelenés és követett adatok villáknak, faházaknak, birtokoknak, concierge-szolgáltatásoknak, jachtoknak, független szállodáknak és rendezvényhelyszíneknek. Egyszer viszi be, és az egész szervezet követi. Hosszú távú partnerség, a forráskód az Öné.',
   alternates: {
     canonical: `${SITE_URL}/hu`,
     languages: {

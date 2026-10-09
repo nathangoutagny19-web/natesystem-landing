@@ -25,7 +25,7 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: 'NateSystem, logiciel sur mesure pour l’hospitalité de luxe et de prestige',
   description:
-    'Logiciel sur mesure, image en ligne et données suivies pour villas, chalets, domaines, conciergeries, yachts, petits hôtels et maisons de réception. Une seule saisie, et toute votre organisation suit. Un partenariat dans la durée, le code vous appartient.',
+    'Logiciel sur mesure, image en ligne et données suivies pour villas, chalets, domaines, conciergeries, yachts, hôtels indépendants et maisons de réception. Une seule saisie, et toute votre organisation suit. Un partenariat dans la durée, le code vous appartient.',
   keywords: [
     'logiciel sur mesure conciergerie de luxe',
     'logiciel gestion villa de luxe',
