@@ -112,13 +112,16 @@ const SECTORS: Sector[] = [
     buildsHu: ['Minden kapcsolat minősítve, amint beérkezik', 'Az utánkövetések a megfelelő időben mennek ki', 'Ingatlanok, vevők és megtekintések egy helyen követve'],
   },
   {
-    nameFr: 'Hôtellerie', nameEn: 'Hospitality', nameHu: 'Vendéglátás',
-    painFr: 'Plannings, demandes des clients, maintenance, reporting à la direction : chaque service tient son propre tableur, et le chiffre qu’on demande arrive en retard.',
-    painEn: 'Rotas, guest requests, maintenance, reporting to management: each department keeps its own spreadsheet, and the figure you ask for arrives late.',
-    painHu: 'Beosztások, vendégkérések, karbantartás, vezetői jelentések: minden részleg saját táblázatot vezet, és a kért szám késve érkezik.',
-    buildsFr: ['Un planning par service, visible dès qu’il change', 'Les demandes clients suivies jusqu’à leur résolution', 'Le reporting de la direction, à jour sans ressaisie'],
-    buildsEn: ['One rota per department, visible the second it changes', 'Guest requests tracked until resolved', 'Management reporting, up to date with no re-entry'],
-    buildsHu: ['Részlegenként egy beosztás, amint változik, látszik', 'A vendégkérések követése megoldásukig', 'Naprakész vezetői jelentés újragépelés nélkül'],
+    /* Le cas type : L'Hermitage (Saint-Chamond), maison de réception de groupe.
+       Douleurs tirées de l'appel avec Florian Méheust, 2 octobre 2026. Le nom
+       n'apparaît pas : c'est un prospect, pas un client. */
+    nameFr: 'Petits hôtels & maisons de réception', nameEn: 'Boutique hotels & event venues', nameHu: 'Butikszállodák és rendezvényházak',
+    painFr: 'Un groupe passe de 40 à 20 la veille, et il faut tout refaire à la main : les repas, le planning des équipes, le ménage, la facture. Le logiciel hôtelier garde les réservations, le reste vit dans des Word et des Excel.',
+    painEn: 'A group drops from 40 to 20 the day before, and everything has to be redone by hand: meals, staff rota, housekeeping, invoice. The hotel software keeps the bookings, the rest lives in Word and Excel files.',
+    painHu: 'Egy csoport előző nap 40-ről 20 főre csökken, és mindent kézzel kell újracsinálni: étkezések, beosztás, takarítás, számla. A szállodai szoftver tárolja a foglalásokat, a többi Word- és Excel-fájlokban él.',
+    buildsFr: ['Un changement d’effectif qui se répercute partout, tout seul', 'Les chambres, les salles et le ménage sur un seul planning', 'Vous gardez la main sur chaque détail : plan de table, chambre calme, exception'],
+    buildsEn: ['A change in numbers that ripples everywhere on its own', 'Rooms, function rooms and housekeeping on one planner', 'You stay in control of every detail: table plan, quiet room, exception'],
+    buildsHu: ['A létszámváltozás magától mindenhol megjelenik', 'Szobák, termek és takarítás egyetlen tervezőn', 'Minden részlet az Ön kezében marad: ültetési rend, csendes szoba, kivétel'],
   },
   {
     nameFr: 'Écoles privées', nameEn: 'Private schools', nameHu: 'Magániskolák',
