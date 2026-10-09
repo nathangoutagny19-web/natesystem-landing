@@ -110,26 +110,35 @@ export const translations = {
      qui developpe vos... », remonte donc ici en petit, et la headline reprend
      la ligne deja posee sur les couvertures Facebook. */
   'hero.label': {
-    en: 'Digital partner to schools, group accommodation and group hotels',
-    fr: 'Partenaire digital des écoles, maisons d\'accueil et hôtels de groupe',
-    hu: 'Iskolák, csoportos szálláshelyek és csoportos szállodák digitális partnere',
+    en: 'Bespoke software for luxury and prestige hospitality',
+    fr: 'Logiciel sur mesure pour l’hospitalité de luxe et de prestige',
+    hu: 'Egyedi szoftver a luxus- és presztízsvendéglátásnak',
   },
-  'hero.titlePrefix': { en: 'Your', fr: 'Votre', hu: 'Az Ön' },
-  /* ⚠︎ TOUS LES MOTS SONT AU SINGULIER, ET C'EST UNE CONTRAINTE, PAS UN GOUT.
+  'hero.titlePrefix': {
+    en: 'The way you',
+    fr: 'Votre',
+    hu: 'Az Ön',
+  },
+  /* LA HEADLINE DU 9 OCTOBRE 2026 : « Votre façon de recevoir vos clients est
+     unique. Votre logiciel devrait l'être aussi. » Un seul segment ici, donc
+     le mot ne tourne plus (Hero l'affiche fixe). Pour réactiver la rotation,
+     remettre plusieurs mots séparés par des barres, en respectant la règle
+     ci-dessous.
+     ⚠︎ TOUS LES MOTS SONT AU SINGULIER, ET C'EST UNE CONTRAINTE, PAS UN GOUT.
      « Votre X est unique » ne tient qu'au singulier : un pluriel casse l'accord
      du verbe, « vos process sont uniques », et la phrase se disloque au moment
      meme ou le mot tourne. Donc aucun pluriel ici, jamais.
      ⚠︎ Et les trois langues ne sont pas interchangeables : en hongrois le mot
      porte lui-meme son suffixe possessif, szervezet devient szervezete. */
   'hero.titleWords': {
-    en: 'organisation|process|management|team|place|hospitality',
-    fr: 'organisation|process|management|équipe|maison|accueil',
-    hu: 'szervezete|folyamata|vezetése|csapata|háza|vendéglátása',
+    en: 'serve your clients',
+    fr: 'façon de recevoir vos clients',
+    hu: 'vendégfogadása',
   },
   'hero.titleSuffix': {
-    en: 'is unique. Your software should be too. We build it with and for you.',
-    fr: 'est unique. Votre logiciel devrait l’être aussi. On le construit avec et pour vous.',
-    hu: 'egyedi. A szoftvere is legyen az. Önökkel és Önökért építjük.',
+    en: 'is unique. Your software should be too.',
+    fr: 'est unique. Votre logiciel devrait l’être aussi.',
+    hu: 'egyedi. A szoftvere is legyen az.',
   },
   /* ⚠︎ DEUX CORRECTIONS ICI, ET LA SECONDE EST UNE RÈGLE.
      1. « des élèves et des étudiants mieux suivis » ne parlait qu'à une
@@ -142,14 +151,14 @@ export const translations = {
         de livraison à fixer ». La mention est donc retirée, pas
         remplacée. Elle revient le jour où Nathan le fixe. */
   'hero.sub': {
-    en: 'Hours given back, calmer teams, and time for the people you host. You enter it once, and the meals, the rooms and the rota follow. And you own the code.',
-    fr: 'Des heures rendues, des équipes sereines, et du temps pour ceux que vous accueillez. Vous saisissez une fois, les repas, les chambres et le planning suivent. Et le code vous appartient.',
-    hu: 'Visszakapott órák, nyugodtabb csapatok, és idő azoknak, akiket fogadnak. Egyszer viszi be, az étkezés, a szobák és a beosztás pedig követi. A kód pedig az Öné.',
+    en: 'Enter it once and your whole organisation follows. An online presence as unique as your service. Numbers tracked everywhere, so decisions rest on data, not on what’s in the owner’s head. And a long-term partnership that grows with you: you own the code.',
+    fr: 'Une seule saisie, et toute votre organisation suit. Une image en ligne aussi unique que votre service. Des chiffres suivis partout, pour décider sur des données, plus sur ce que le dirigeant a en tête. Et un partenariat dans la durée, qui évolue avec vous : le code vous appartient.',
+    hu: 'Egyszer viszi be, és az egész szervezet követi. Online megjelenés, amely olyan egyedi, mint a szolgáltatása. Mindenhol követett számok, hogy a döntések adatokon alapuljanak, ne azon, ami a vezető fejében van. És hosszú távú partnerség, amely Önnel együtt fejlődik: a forráskód az Öné.',
   },
   'hero.aiNote': {
-    en: '40 hours a month given back to the teams on average, reported by the organisations we work with.',
-    fr: '40 heures par mois rendues aux équipes en moyenne, rapporté par les organisations que l\'on accompagne.',
-    hu: 'Átlagosan havi 40 óra vissza a csapatoknak, az általunk kísért szervezetek beszámolója szerint.',
+    en: '40 hours a month given back to the team of a group of nine sites, as reported by the client.',
+    fr: '40 h par mois rendues à l’équipe d’un groupe de neuf établissements, chiffre rapporté par le client.',
+    hu: 'Havi 40 óra visszanyerve egy kilenc intézményből álló csoport csapatának, az ügyfél beszámolója szerint.',
   },
   'hero.cta': { en: 'Book a call · free', fr: 'Réserver un appel · offert', hu: 'Hívás foglalása · ingyenes' },
   'hero.secondary': {
@@ -411,19 +420,19 @@ export const translations = {
     hu: 'Dolgozzunk együtt',
   },
   'cta.title': {
-    en: 'Tell us where the hours go.',
-    fr: 'Dites-nous où partent les heures.',
-    hu: 'Mondja el, hová mennek az órák.',
+    en: 'Tell us what still goes through you.',
+    fr: 'Dites-nous ce qui passe encore par vous.',
+    hu: 'Mondja el, mi megy még mindig Önön keresztül.',
   },
   'cta.titleAccent': {
-    en: 'We\'ll tell you what we can give back.',
-    fr: 'On vous dira ce qu\'on peut vous en rendre.',
-    hu: 'Megmondjuk, mennyit tudunk visszaadni.',
+    en: 'We’ll tell you what we can take off your plate.',
+    fr: 'On vous dira ce qu’on peut en sortir.',
+    hu: 'Megmondjuk, mit tudunk levenni a válláról.',
   },
   'cta.sub': {
-    en: 'One call. We look at how your school actually runs, and we tell you plainly where the time goes. You leave with a clear plan, even if we never work together.',
-    fr: 'Un appel. On regarde comment votre établissement fonctionne vraiment, et on vous dit où le temps se perd. Vous repartez avec un plan clair, même si on ne travaille jamais ensemble.',
-    hu: 'Egy hívás. Megnézzük, hogyan működik valójában az intézménye, és megmondjuk, hol vész el az idő. Világos tervvel távozik, akkor is, ha sosem dolgozunk együtt.',
+    en: 'One call. We look at how your organisation really runs, where your clients come from and where information gets lost. You leave with a clear plan, even if we never work together.',
+    fr: 'Un appel. On regarde comment votre organisation fonctionne vraiment, d’où viennent vos clients et où l’information se perd. Vous repartez avec un plan clair, même si on ne travaille jamais ensemble.',
+    hu: 'Egy hívás. Megnézzük, hogyan működik valójában a szervezete, honnan jönnek az ügyfelei, és hol vész el az információ. Világos tervvel távozik, akkor is, ha soha nem dolgozunk együtt.',
   },
   'cta.button': {
     en: 'Book a call',
@@ -469,9 +478,9 @@ export const translations = {
   // Credibility band (replaces the old "cas client hero" zone)
   // ───────────────────────────────────────────────────────────────
   'cred.engagement1': {
-    en: '10+ hours given back every week on average, reported by our clients',
-    fr: 'En moyenne 10 h et plus rendues chaque semaine, rapporté par nos clients',
-    hu: 'Átlagosan heti 10+ óra vissza, ügyfeleink beszámolója szerint',
+    en: 'One point of contact · the person who codes',
+    fr: 'Un seul interlocuteur · celui qui code',
+    hu: 'Egyetlen kapcsolattartó · aki a kódot írja',
   },
   /* ⚠︎ « HEURES RENDUES GARANTIES » PROMETTAIT UN RÉSULTAT CHIFFRÉ.
      C'est l'éliminateur n.2 de knowledge/voix/garde-fous-publication.md,
@@ -483,17 +492,17 @@ export const translations = {
   'cred.engagement2': {
     en: 'Prototype on your real data · before any commitment',
     fr: 'Prototype sur vos vraies données · avant tout engagement',
-    hu: 'Prototípus a valós adataival · bármilyen elköteleződés előtt',
+    hu: 'Prototípus a valódi adatain · minden elköteleződés előtt',
   },
   'cred.engagement3': {
-    en: 'Source code delivered · you own 100% of it',
+    en: 'Source code delivered · you own 100%',
     fr: 'Code source livré · vous êtes propriétaire à 100 %',
-    hu: 'Forráskód átadva · 100%-ban az Öné',
+    hu: 'Átadott forráskód · 100%-ban az Öné',
   },
   'cred.engagement4': {
-    en: 'Student data hosted in the EU · GDPR by design',
-    fr: 'Données d\'élèves et d\'étudiants hébergées en UE · RGPD dès la conception',
-    hu: 'Diákadatok az EU-ban · GDPR a tervezéstől',
+    en: 'Data hosted in the EU · GDPR-compliant tracking',
+    fr: 'Données hébergées en UE · suivi conforme au RGPD',
+    hu: 'EU-ban tárolt adatok · GDPR-konform követés',
   },
 
   // ───────────────────────────────────────────────────────────────
@@ -832,9 +841,9 @@ export const translations = {
     hu: 'Előtte, utána',
   },
   'trans.title': {
-    en: 'Your software handles enrolments and bookings. The rest lives in Excel, on paper, and in two people’s heads.',
-    fr: 'Votre logiciel gère les inscriptions et les réservations. Le reste tient sur Excel, sur papier, et dans la tête de deux personnes.',
-    hu: 'A szoftvere a beiratkozásokat és a foglalásokat kezeli. A többi Excelben, papíron és két ember fejében él.',
+    en: 'Today, everything goes through one person. The requests, the numbers, the decisions.',
+    fr: 'Aujourd’hui, tout passe par une seule personne. Les demandes, les chiffres, les décisions.',
+    hu: 'Ma minden egyetlen emberen megy át. A kérések, a számok, a döntések.',
   },
   'trans.titleAccent': {
     en: 'Not for much longer.',
@@ -862,75 +871,75 @@ export const translations = {
     hu: 'Amit a csapatai visszakapnak',
   },
   'trans.before1': {
-    en: 'The same information keyed in three, four, five times',
-    fr: 'La même information saisie trois, quatre, cinq fois',
-    hu: 'Ugyanaz az információ háromszor, négyszer, ötször bevive',
+    en: 'The same request copied from WhatsApp to a spreadsheet, then into the supplier’s email',
+    fr: 'La même demande recopiée du WhatsApp au tableur, puis au mail du prestataire',
+    hu: 'Ugyanaz a kérés WhatsAppról táblázatba, onnan a beszállító e-mailjébe másolva',
   },
   'trans.before2': {
-    en: 'A group drops from 40 to 20, and every document is corrected by hand',
-    fr: 'Un groupe passe de 40 à 20, et chaque document se corrige à la main',
-    hu: 'Egy csoport 40-ről 20-ra csökken, és minden dokumentumot kézzel kell javítani',
+    en: 'The driver, the chef, the villa: nothing reconfirmed the day before',
+    fr: 'Le chauffeur, le chef, la villa : rien n’est reconfirmé la veille',
+    hu: 'A sofőr, a séf, a villa: előző nap semmit nem erősítenek meg újra',
   },
   'trans.before3': {
-    en: 'The kitchen, housekeeping and the front desk are not looking at the same file',
-    fr: 'La cuisine, le ménage et l’accueil ne regardent pas le même fichier',
-    hu: 'A konyha, a takarítás és a recepció nem ugyanazt a fájlt nézi',
+    en: 'A website nobody can say what it brings in',
+    fr: 'Un site dont personne ne sait ce qu’il rapporte',
+    hu: 'Egy weboldal, amelyről senki nem tudja, mit hoz',
   },
   'trans.before4': {
-    en: 'Evenings spent recounting covers and redoing the rota',
-    fr: 'Des soirées à recompter les couverts et à refaire le planning',
-    hu: 'Esték a terítékek újraszámolásával és a beosztás újraírásával',
+    en: 'No way of saying where your best clients come from',
+    fr: 'Impossible de dire d’où viennent vos meilleurs clients',
+    hu: 'Nem lehet megmondani, honnan jönnek a legjobb ügyfelei',
   },
   'trans.before5': {
-    en: 'A generic tool bent out of shape, with paid features nobody uses',
-    fr: 'Un logiciel générique qu’on tord, avec des fonctions payées que personne n’utilise',
-    hu: 'Egy általános szoftver, amit elforgatnak, fizetett funkciókkal, amiket senki nem használ',
+    en: 'The year’s numbers live in the owner’s head, and nowhere else',
+    fr: 'Les chiffres de l’année sont dans la tête du dirigeant, et nulle part ailleurs',
+    hu: 'Az év számai a vezető fejében vannak, és sehol máshol',
   },
   'trans.after1': {
-    en: 'Entered once, and the meals, the rooms and the rota follow',
-    fr: 'Saisi une fois, et les repas, les chambres et le planning suivent',
-    hu: 'Egyszer bevive, az étkezés, a szobák és a beosztás pedig követi',
+    en: 'A request entered once, and the team, the supplier and the invoice follow',
+    fr: 'Une demande saisie une fois, et l’équipe, le prestataire et la facture suivent',
+    hu: 'Egyszer bevitt kérés, és a csapat, a beszállító és a számla követi',
   },
   'trans.after2': {
-    en: 'Your own documents become your screens, in your own words',
-    fr: 'Vos documents deviennent vos écrans, avec votre vocabulaire',
-    hu: 'A saját dokumentumaiból lesznek a képernyői, a saját szavaival',
+    en: 'Every service reconfirmed, with an alert when someone doesn’t answer',
+    fr: 'Chaque prestation reconfirmée, avec une alerte quand quelqu’un ne répond pas',
+    hu: 'Minden szolgáltatás újra megerősítve, riasztással, ha valaki nem válaszol',
   },
   'trans.after3': {
-    en: 'A change in numbers spreads everywhere, on its own',
-    fr: 'Un changement d’effectif se répercute partout, tout seul',
-    hu: 'A létszám változása mindenhol átfut, magától',
+    en: 'A website, event pages and campaigns connected to the same system',
+    fr: 'Un site, des pages d’événements et des campagnes reliés au même système',
+    hu: 'Weboldal, eseményoldalak és kampányok ugyanahhoz a rendszerhez kötve',
   },
   'trans.after4': {
-    en: 'The kitchen, housekeeping and management read the same data',
-    fr: 'La cuisine, le ménage et la direction lisent la même donnée',
-    hu: 'A konyha, a takarítás és a vezetőség ugyanazt az adatot olvassa',
+    en: 'Every request carries its source: website, Google, campaign, trade show, referral',
+    fr: 'Chaque demande porte son origine : site, Google, campagne, salon, recommandation',
+    hu: 'Minden kérés hordozza a forrását: weboldal, Google, kampány, kiállítás, ajánlás',
   },
   'trans.after5': {
-    en: 'The tool proposes, you decide. Exceptions stay possible everywhere',
-    fr: 'L’outil propose, vous décidez. Les exceptions restent possibles partout',
-    hu: 'Az eszköz javasol, Ön dönt. A kivételek mindenhol lehetségesek maradnak',
+    en: 'A dashboard the whole team can read, and decisions made on numbers',
+    fr: 'Un tableau de bord que toute l’équipe peut lire, et des décisions prises sur des chiffres',
+    hu: 'Az egész csapat számára olvasható irányítópult, és számokon alapuló döntések',
   },
   // APRÈS, les gains, en miroir 1:1 des coûts (même format : valeur serif rouge + description)
   'trans.gainVal1': {
-    en: 'One entry',
+    en: 'Enter it once',
     fr: 'Une seule saisie',
     hu: 'Egyetlen bevitel',
   },
   'trans.gainDesc1': {
-    en: 'The group, the student or the guest is entered once. Meals, rooms, housekeeping, the rota and the invoice all read the same data.',
-    fr: 'Le groupe, l’élève ou le client est saisi une fois. Les repas, les chambres, le ménage, le planning et la facture lisent la même donnée.',
-    hu: 'A csoportot, a diákot vagy a vendéget egyszer viszik be. Az étkezés, a szobák, a takarítás, a beosztás és a számla ugyanazt az adatot olvassa.',
+    en: 'The request is entered once. Suppliers, the rota, the stay and the invoice all read the same data.',
+    fr: 'La demande est saisie une fois. Les prestataires, le planning, le séjour et la facture lisent la même donnée.',
+    hu: 'A kérést egyszer viszik be. A beszállítók, a beosztás, a tartózkodás és a számla ugyanazt az adatot olvassa.',
   },
   'trans.gainVal2': {
-    en: 'Your documents',
-    fr: 'Vos documents',
-    hu: 'Az Ön dokumentumai',
+    en: 'You stay in control',
+    fr: 'Vous gardez la main',
+    hu: 'Ön dönt',
   },
   'trans.gainDesc2': {
-    en: 'Every in-house Word and Excel becomes a screen. We keep your words and your way of working.',
-    fr: 'Chaque Word et chaque Excel « maison » devient un écran. On garde votre vocabulaire et votre façon de faire.',
-    hu: 'Minden házi Word és Excel képernyővé válik. Megtartjuk a szavait és a munkamódszerét.',
+    en: 'The tool suggests a rota or a table plan, a person decides. Exceptions stay possible everywhere, because personal service is your trade.',
+    fr: 'L’outil propose un planning ou un plan de table, la personne décide. Les exceptions restent possibles partout, parce que la personnalisation, c’est votre métier.',
+    hu: 'Az eszköz beosztást vagy ültetési rendet javasol, egy ember dönt. A kivételek mindenhol lehetségesek, mert a személyre szabás az Ön szakmája.',
   },
   'trans.gainVal3': {
     en: '100% yours',
@@ -938,34 +947,34 @@ export const translations = {
     hu: '100%-ban az Öné',
   },
   'trans.gainDesc3': {
-    en: 'You own the code, the data stays in Europe, and it is exportable at any time. Each person is trained at their own pace.',
-    fr: 'Le code vous appartient, les données restent en Europe, et elles sont exportables à tout moment. On forme chacun à son rythme.',
-    hu: 'A kód az Öné, az adatok Európában maradnak, és bármikor exportálhatók. Mindenkit a saját tempójában képzünk ki.',
+    en: 'You own the code, the data stays in Europe and can be exported at any time. Nothing depends on a tool you don’t control.',
+    fr: 'Le code vous appartient, les données restent en Europe et s’exportent à tout moment. Rien ne dépend d’un outil que vous ne contrôlez pas.',
+    hu: 'A forráskód az Öné, az adatok Európában maradnak, és bármikor exportálhatók. Semmi nem függ olyan eszköztől, amelyet nem Ön irányít.',
   },
   'trans.gainVal4': {
-    en: 'You decide',
-    fr: 'Vous décidez',
-    hu: 'Ön dönt',
+    en: 'Tracked',
+    fr: 'Tout est suivi',
+    hu: 'Minden követve',
   },
   'trans.gainDesc4': {
-    en: 'Covers, staffing needs, order totals: fixed rules, same data, same result. The tool proposes, a person decides.',
-    fr: 'Couverts, besoins en personnel, totaux de commande : des règles fixes, mêmes données, même résultat. L’outil propose, la personne décide.',
-    hu: 'Terítékek, személyzeti igény, rendelési összesen: fix szabályok, ugyanaz az adat, ugyanaz az eredmény. Az eszköz javasol, az ember dönt.',
+    en: 'Where each request comes from, what each client spends, what each campaign produced. On one screen, up to date.',
+    fr: 'D’où vient chaque demande, ce que dépense chaque client, ce qu’a produit chaque campagne. Sur un écran, à jour.',
+    hu: 'Honnan jön minden kérés, mennyit költ minden ügyfél, mit hozott minden kampány. Egy képernyőn, naprakészen.',
   },
   'trans.gainVal5': {
-    en: 'It plugs in',
+    en: 'We plug in',
     fr: 'On branche',
-    hu: 'Rácsatlakozunk',
+    hu: 'Csatlakoztatunk',
   },
   'trans.gainDesc5': {
-    en: 'Your booking or student-records software stays. We prepare its work, we do not replace it.',
-    fr: 'Votre logiciel de réservation ou de scolarité reste en place. On lui prépare le travail, on ne le remplace pas.',
-    hu: 'A foglalási vagy tanulmányi szoftvere marad. Előkészítjük neki a munkát, nem cseréljük le.',
+    en: 'Your booking or rental software stays in place. We prepare its work, we don’t replace it.',
+    fr: 'Votre logiciel de réservation ou de location reste en place. On lui prépare le travail, on ne le remplace pas.',
+    hu: 'A foglalási vagy bérlési szoftvere a helyén marad. Előkészítjük a munkáját, nem cseréljük le.',
   },
   'trans.punch': {
-    en: 'A nine-site school group was exactly there. Today it is on the other side.',
-    fr: 'Un groupe scolaire de neuf établissements était exactement là. Aujourd’hui, il est de l’autre côté.',
-    hu: 'Egy kilenc telephelyes iskolacsoport pontosan ott tartott. Ma a másik oldalon van.',
+    en: 'A group of nine sites was exactly there. Today, it’s on the other side.',
+    fr: 'Un groupe de neuf établissements était exactement là. Aujourd’hui, il est de l’autre côté.',
+    hu: 'Egy kilenc intézményből álló csoport pontosan itt tartott. Ma már a túloldalon van.',
   },
   'trans.aiLabel': { en: 'AI', fr: 'IA', hu: 'MI' },
   'trans.aiTag': {
@@ -975,9 +984,9 @@ export const translations = {
   },
   // Chaos artefacts (left panel), small friction notes scattered in the pile
   'trans.chaos.quote': {
-    en: 'Hours_Site_v4_FINAL(2).xlsx',
-    fr: 'Heures_Site_v4_FINAL(2).xlsx',
-    hu: 'Orak_Telephely_v4_VEGLEGES(2).xlsx',
+    en: 'Requests_season_v4_FINAL(2).xlsx',
+    fr: 'Demandes_saison_v4_FINAL(2).xlsx',
+    hu: 'Keresek_szezon_v4_VEGLEGES(2).xlsx',
   },
   'trans.chaos.money': {
     en: 'edited by 3 people',
@@ -990,9 +999,9 @@ export const translations = {
     hu: '5 olvasatlan',
   },
   'trans.chaos.forgot': {
-    en: 'I forgot to clock in…',
-    fr: 'j\'ai oublié de pointer…',
-    hu: 'elfelejtettem bejelentkezni…',
+    en: 'did the driver confirm…?',
+    fr: 'le chauffeur a confirmé… ?',
+    hu: 'megerősített a sofőr…?',
   },
 
   // ───────────────────────────────────────────────────────────────
@@ -1533,9 +1542,9 @@ export const translations = {
     hu: 'Tulajdonjogi garancia',
   },
   'guarantees.ownership.desc': {
-    en: 'You own 100% of the code on delivery. No subscription to keep access. If NateSystem disappears tomorrow, your tool keeps running and your student records stay with you.',
-    fr: '100 % du code vous appartient à la livraison. Aucun abonnement pour garder l\'accès. Si NateSystem disparaît demain, votre outil tourne toujours et vos données d\'élèves restent chez vous.',
-    hu: 'Átadáskor a kód 100%-a az Öné. Nincs előfizetés a hozzáférésért. Ha a NateSystem holnap eltűnik, az eszköze tovább működik, a diákadatok pedig Önnél maradnak.',
+    en: '100% of the code is yours on delivery. No subscription to keep access. If NateSystem disappeared tomorrow, your tool would keep running and your client data would stay with you.',
+    fr: '100 % du code vous appartient à la livraison. Aucun abonnement pour garder l’accès. Si NateSystem disparaît demain, votre outil tourne toujours et vos données clients restent chez vous.',
+    hu: 'A forráskód átadáskor 100%-ban az Öné. Nincs előfizetés a hozzáférés megtartásához. Ha a NateSystem holnap eltűnne, az eszköze tovább működik, és az ügyféladatai Önnél maradnak.',
   },
   'guarantees.productivity.title': {
     en: 'Time guarantee',
@@ -1553,9 +1562,9 @@ export const translations = {
     hu: 'Megbízhatósági garancia',
   },
   'guarantees.efficiency.desc': {
-    en: 'Before we start, we list together the errors that come back every month: missed hours, double entries, incomplete files. If they are still there 90 days after delivery, we fix them at no charge.',
-    fr: 'On liste ensemble, avant de démarrer, les erreurs qui reviennent chaque mois : heures oubliées, doubles saisies, dossiers incomplets. Si elles sont encore là 90 jours après la livraison, on corrige sans facturer.',
-    hu: 'Indulás előtt közösen összeírjuk a havonta visszatérő hibákat: elfelejtett órák, kettős adatbevitel, hiányos akták. Ha az átadás után 90 nappal még mindig megvannak, díjmentesen javítjuk.',
+    en: 'Before we start, we list together the mistakes that come back every season: services not reconfirmed, double entry, lost requests. If they’re still there 90 days after delivery, we fix them free of charge.',
+    fr: 'On liste ensemble, avant de démarrer, les erreurs qui reviennent chaque saison : prestations non reconfirmées, doubles saisies, demandes perdues. Si elles sont encore là 90 jours après la livraison, on corrige sans facturer.',
+    hu: 'Indulás előtt közösen listázzuk a minden szezonban visszatérő hibákat: újra meg nem erősített szolgáltatások, dupla bevitel, elveszett kérések. Ha az átadás után 90 nappal még megvannak, díjmentesen javítjuk.',
   },
   'guarantees.family.title': {
     en: 'The Family Guarantee',
@@ -1573,9 +1582,9 @@ export const translations = {
     hu: 'A Szomszéd Garancia',
   },
   'guarantees.competitor.desc': {
-    en: 'Within 90 days of delivery, if you are not happy enough to beg us not to work with the school down the road, we refund you.',
-    fr: 'Dans les 90 jours suivant la livraison, si vous n\'êtes pas assez content pour nous supplier de ne pas travailler avec l\'établissement d\'à côté, on vous rembourse.',
-    hu: 'Az átadástól számított 90 napon belül, ha nem elég elégedett ahhoz, hogy könyörögjön, ne dolgozzunk a szomszéd intézménnyel, visszatérítjük.',
+    en: 'Within 90 days of delivery, if you’re not happy enough to beg us not to work with your neighbour, we refund you.',
+    fr: 'Dans les 90 jours suivant la livraison, si vous n’êtes pas assez content pour nous supplier de ne pas travailler avec votre voisin, on vous rembourse.',
+    hu: 'Az átadást követő 90 napon belül, ha nem elég elégedett ahhoz, hogy könyörögjön, ne dolgozzunk a szomszédjával, visszafizetjük.',
   },
   'guarantees.absurdLabel': {
     en: 'OUR BET',
@@ -1622,20 +1631,20 @@ export const translations = {
   // Q1, what we build
   'faq.q1': {
     en: 'What do you actually build?',
-    fr: 'Qu\'est-ce que vous construisez concrètement ?',
-    hu: 'Mit építenek pontosan?',
+    fr: 'Qu’est-ce que vous construisez concrètement ?',
+    hu: 'Pontosan mit építenek?',
   },
   'faq.a1': {
-    en: 'Two things. The platform the school runs on: clocking in and hour counts, rotas, stock, records, dashboards. And the teaching tools for your students: tracking, internships, work placements, whatever your teachers need. In both cases it is built on how you work, not on a template.',
-    fr: 'Deux choses. La plateforme qui fait tourner l\'établissement : pointage et comptage d\'heures, plannings, stocks, dossiers, tableaux de bord. Et les outils pédagogiques pour vos élèves : suivi de parcours, stages, alternance, ce dont vos enseignants ont besoin. Dans les deux cas, c\'est construit sur votre fonctionnement, pas sur un modèle.',
-    hu: 'Két dolgot. A platformot, amin az intézmény működik: beléptetés és óranyilvántartás, beosztások, készlet, akták, irányítópultok. És a pedagógiai eszközöket a diákjainak: pályakövetés, szakmai gyakorlat, duális képzés, amire a tanárainak szüksége van. Mindkettő az Ön működésére épül, nem sablonra.',
+    en: 'Three connected things. The software that runs your organisation: stays and events, suppliers, client profiles, team rotas, quotes and invoicing. The online presence that goes with it: website, search visibility, event landing pages, campaign strategy. And the tracking that links the two, so you know where each request comes from and what it brings in.',
+    fr: 'Trois choses reliées. Le logiciel qui fait tourner votre organisation : séjours et événements, prestataires, fiches clients, planning des équipes, devis et facturation. L’image en ligne qui va avec : site, référencement, pages pour vos événements, stratégie de campagnes. Et le suivi qui relie les deux, pour savoir d’où vient chaque demande et ce qu’elle rapporte.',
+    hu: 'Három összekapcsolt dolgot. A szoftvert, amely a szervezetét működteti: tartózkodások és események, beszállítók, ügyféladatlapok, csapatbeosztás, árajánlatok és számlázás. A hozzá tartozó online megjelenést: weboldal, keresőoptimalizálás, eseményoldalak, kampánystratégia. És a követést, amely a kettőt összeköti, hogy tudja, honnan jön minden kérés, és mit hoz.',
   },
 
   // Q2, timeline (price removed, given on the call)
   'faq.q2': {
-    en: 'How long does it take?',
-    fr: 'Combien de temps ça prend ?',
-    hu: 'Mennyi ideig tart?',
+    en: 'Is it a development project?',
+    fr: 'C’est une prestation de développement ?',
+    hu: 'Ez egy fejlesztési megbízás?',
   },
   /* ⚠︎ LA QUESTION RESTE, LA RÉPONSE NE CHIFFRE PLUS. Retirer le délai
      sans rien mettre laisserait une question sans réponse, ce qui est
@@ -1643,33 +1652,33 @@ export const translations = {
      fixe : la méthode, et le prototype validé avant tout engagement
      (S9). Le chiffre revient le jour où Nathan fixe le délai. */
   'faq.a2': {
-    en: 'We don\'t quote a standard timeline: it depends on what we build. What is fixed is the method. We set the scope and the date together before the first line of code, you sign off a prototype on your own data before any commitment, and your teams keep working throughout.',
-    fr: 'On ne donne pas de délai type : il dépend de ce qu\'on construit. Ce qui est fixe, c\'est la méthode. On fixe le périmètre et la date ensemble avant la première ligne de code, vous validez un prototype sur vos propres données avant tout engagement, et vos équipes continuent de travailler pendant tout ce temps.',
-    hu: 'Nem adunk általános határidőt: attól függ, mit építünk. Ami rögzített, az a módszer. A terjedelmet és a dátumot együtt rögzítjük az első kódsor előtt, Ön pedig a saját adatain futó prototípust hagy jóvá bármilyen elköteleződés előtt, a csapatai pedig végig dolgoznak tovább.',
+    en: 'No. It’s a long-term partnership. We build the first version on your real data, then the system evolves with you, season after season: new needs, new sites, new channels. You keep one point of contact who knows your organisation, trains your team and keeps improving the tool. And the code is yours from day one.',
+    fr: 'Non. C’est un partenariat dans la durée. On construit la première version sur vos vraies données, puis le système évolue avec vous, saison après saison : nouveaux besoins, nouveaux lieux, nouveaux canaux. Vous gardez un seul interlocuteur qui connaît votre organisation, forme vos équipes et fait progresser l’outil. Et le code est à vous dès le premier jour.',
+    hu: 'Nem. Ez hosszú távú partnerség. Az első változatot a valódi adatain építjük meg, aztán a rendszer Önnel együtt fejlődik, szezonról szezonra: új igények, új helyszínek, új csatornák. Egyetlen kapcsolattartója marad, aki ismeri a szervezetét, képzi a csapatát, és folyamatosan fejleszti az eszközt. A forráskód pedig az első naptól az Öné.',
   },
 
   // Q3, reliability + SLA
   'faq.q3': {
-    en: 'Will the system stay reliable in production?',
+    en: 'Will it stay reliable once it’s live?',
     fr: 'Le système restera-t-il fiable une fois en production ?',
-    hu: 'Megbízható marad a rendszer éles üzemben?',
+    hu: 'Megbízható marad éles üzemben is?',
   },
   'faq.a3': {
-    en: 'Yes. Monitored continuously, backed up several times a day, and we step in fast if something breaks. A school cannot afford a day without its rota or its clocking: it is built for that.',
-    fr: 'Oui. Surveillé en permanence, sauvegardé plusieurs fois par jour, et on intervient vite en cas de souci. Une école ne peut pas se permettre une journée sans planning ni sans pointage : c\'est dimensionné pour ça.',
-    hu: 'Igen. Folyamatos felügyelet, napi többszöri mentés, és gyorsan beavatkozunk, ha gond van. Egy iskola nem engedhet meg egy napot beosztás vagy beléptetés nélkül: erre van méretezve.',
+    en: 'Yes. Monitored constantly, backed up several times a day, and we step in fast if anything goes wrong. An arrival can’t happen without a rota or a confirmed driver: it’s built for that.',
+    fr: 'Oui. Surveillé en permanence, sauvegardé plusieurs fois par jour, et on intervient vite en cas de souci. Une arrivée ne peut pas se passer sans planning ni chauffeur confirmé : c’est dimensionné pour ça.',
+    hu: 'Igen. Folyamatosan felügyelve, naponta többször mentve, és gyorsan beavatkozunk, ha gond van. Egy érkezés nem történhet beosztás és megerősített sofőr nélkül: erre van méretezve.',
   },
 
   // Q4, automations + AI catalog (concrete, not buzzwords)
   'faq.q4': {
-    en: 'Do we have to change how we work for this to fit?',
+    en: 'Do we have to change how we work?',
     fr: 'Il faut changer notre organisation pour que ça marche ?',
-    hu: 'Meg kell változtatnunk a működésünket, hogy működjön?',
+    hu: 'Meg kell változtatnunk a működésünket?',
   },
   'faq.a4': {
-    en: 'No, the other way round. An off-the-shelf tool asks you to fit its boxes because it is sold to everyone. Here your rules are encoded once, exactly as they are. Your agreement, your calendar, your habits: the tool is what adapts.',
-    fr: 'Non, c\'est l\'inverse. Un logiciel du marché vous demande de rentrer dans ses cases parce qu\'il est vendu à tout le monde. Ici, vos règles sont encodées une fois, telles qu\'elles sont. Votre convention, votre calendrier, vos usages : c\'est l\'outil qui s\'aligne.',
-    hu: 'Nem, épp fordítva. Egy piaci szoftver arra kéri, hogy illeszkedjen a dobozaiba, mert mindenkinek árulják. Itt az Ön szabályait egyszer, úgy ahogy vannak, kódoljuk le. A megállapodása, a naptára, a szokásai: az eszköz igazodik.',
+    en: 'No, it’s the other way round. Off-the-shelf software asks you to fit its boxes because it’s sold to everyone. Here your rules are encoded once, as they are. Your suppliers, your rates, your seasons, your way of receiving clients: the tool adapts.',
+    fr: 'Non, c’est l’inverse. Un logiciel du marché vous demande de rentrer dans ses cases parce qu’il est vendu à tout le monde. Ici, vos règles sont encodées une fois, telles qu’elles sont. Vos prestataires, vos tarifs, vos saisons, votre façon de recevoir : c’est l’outil qui s’aligne.',
+    hu: 'Nem, éppen fordítva. A dobozos szoftver azt kéri, illeszkedjen a rubrikáiba, mert mindenkinek eladják. Itt a szabályait egyszer kódoljuk le, úgy, ahogy vannak. A beszállítói, az árai, a szezonjai, a vendégfogadása: az eszköz igazodik.',
   },
 
   // Q5, anti lock-in
@@ -1679,41 +1688,41 @@ export const translations = {
     hu: 'Mi van, ha holnap eltűnnek?',
   },
   'faq.a5': {
-    en: 'You own 100% of the code and it runs on your infrastructure. Full documentation included. Any competent developer can take over. Your student records are never held hostage by a subscription.',
-    fr: '100 % du code vous appartient et tourne sur votre infrastructure. Documentation complète incluse. N\'importe quel développeur compétent reprend derrière. Vos données d\'élèves ne sont jamais otages d\'un abonnement.',
-    hu: 'A kód 100%-a az Öné, és az Ön infrastruktúráján fut. Teljes dokumentációval. Bármely hozzáértő fejlesztő átveheti. A diákadatait soha nem tartja túszként egy előfizetés.',
+    en: 'You own 100% of the code and it runs on your infrastructure. Full documentation included. Any competent developer can take over. Your client data is never held hostage by a subscription.',
+    fr: '100 % du code vous appartient et tourne sur votre infrastructure. Documentation complète incluse. N’importe quel développeur compétent reprend derrière. Vos données clients ne sont jamais otages d’un abonnement.',
+    hu: 'A forráskód 100%-ban az Öné, és az Ön infrastruktúráján fut. Teljes dokumentációval. Bármely hozzáértő fejlesztő átveheti. Az ügyféladatai soha nem egy előfizetés túszai.',
   },
 
   // Q6, industries
   'faq.q6': {
-    en: 'Do you only work with schools?',
-    fr: 'Vous ne travaillez qu\'avec des écoles ?',
-    hu: 'Csak iskolákkal dolgoznak?',
+    en: 'Do you only work in luxury hospitality?',
+    fr: 'Vous ne travaillez qu’avec l’hospitalité de luxe ?',
+    hu: 'Csak a luxusvendéglátással dolgoznak?',
   },
   'faq.a6': {
-    en: 'That is where we add the most, and that is where we focus. But we built for other organisations under heavy operational constraint before, and it shows in the method: a school is still the most demanding organisation we have met.',
-    fr: 'C\'est là qu\'on a le plus de valeur à apporter, et c\'est là qu\'on se concentre. Mais on a construit pour d\'autres organisations à forte contrainte opérationnelle avant, et ça se voit dans la méthode : une école reste l\'organisation la plus exigeante qu\'on ait rencontrée.',
-    hu: 'Itt tudjuk a legtöbbet hozzátenni, és ide koncentrálunk. De korábban más, erősen terhelt szervezeteknek is építettünk, és ez meglátszik a módszeren: egy iskola a legigényesebb szervezet, amivel találkoztunk.',
+    en: 'That’s where we focus: villas, chalets and estates, concierge services, yachts, boutique and group hotels, event venues. We built for very demanding organisations before, schools and multi-site groups, and it shows in the method.',
+    fr: 'C’est là qu’on se concentre : villas, chalets et domaines, conciergeries, yachts, petits hôtels et maisons de réception. On a construit avant pour des organisations très exigeantes, des écoles et des groupes multi-sites, et ça se voit dans la méthode.',
+    hu: 'Erre koncentrálunk: villák, faházak és birtokok, concierge-szolgáltatások, jachtok, butik- és csoportszállodák, rendezvényhelyszínek. Korábban nagyon igényes szervezeteknek építettünk, iskoláknak és többtelephelyes csoportoknak, és ez látszik a módszeren.',
   },
   'faq.q7': {
-    en: 'Why now? Can\'t this wait until next September?',
-    fr: 'Pourquoi maintenant ? Ça ne peut pas attendre la rentrée prochaine ?',
-    hu: 'Miért most? Nem várhat a következő tanévig?',
+    en: 'Do you promise more bookings?',
+    fr: 'Vous promettez plus de réservations ?',
+    hu: 'Több foglalást ígérnek?',
   },
   'faq.a7': {
-    en: 'It can. But every month of waiting is a month of re-typing, of payroll prepared by hand, and of information living in one person\'s head. The right moment is when you have time to talk to us, not when the calendar is perfect.',
-    fr: 'Ça peut. Mais chaque mois d\'attente est un mois de ressaisie, de paie préparée à la main et d\'informations qui vivent dans une seule tête. Le bon moment, c\'est quand vous avez le temps de nous parler, pas quand le calendrier est parfait.',
-    hu: 'Várhat. De minden várakozással töltött hónap az újbóli adatbevitel, a kézzel készített bérszámfejtés és az egyetlen fejben élő információ hónapja. A jó pillanat az, amikor van ideje beszélni velünk, nem az, amikor tökéletes a naptár.',
+    en: 'No, and be wary of anyone who does. We give you what you need to know what works: where your clients come from, what each source costs and what it brings in. The decisions stay yours. We don’t run your social media either: if someone does, we track what it brings in the same dashboard.',
+    fr: 'Non, et méfiez-vous de qui le promet. On vous donne de quoi savoir ce qui marche : d’où viennent vos clients, ce que coûte chaque source et ce qu’elle rapporte. Les décisions restent les vôtres. On ne gère pas non plus vos réseaux sociaux : si quelqu’un s’en occupe, on suit ce qu’ils apportent dans le même tableau de bord.',
+    hu: 'Nem, és óvakodjon attól, aki ígéri. Megadjuk, amire szüksége van ahhoz, hogy tudja, mi működik: honnan jönnek az ügyfelei, mennyibe kerül és mit hoz az egyes források. A döntések az Önéi maradnak. A közösségi médiát sem mi kezeljük: ha valaki foglalkozik vele, ugyanabban az irányítópultban követjük, mit hoz.',
   },
   'faq.q8': {
-    en: 'Where is our student data hosted?',
-    fr: 'Où sont hébergées les données de nos élèves ?',
-    hu: 'Hol tárolják a diákjaink adatait?',
+    en: 'Where is our client data hosted?',
+    fr: 'Où sont hébergées les données de nos clients ?',
+    hu: 'Hol tárolják az ügyfeleink adatait?',
   },
   'faq.a8': {
-    en: 'In Europe, and nowhere else. These are minors\' records: hosting is European, GDPR is designed in from the start, and access is partitioned by role. Leadership does not see what the front desk sees.',
-    fr: 'En Europe, et nulle part ailleurs. Ce sont des données de mineurs : l\'hébergement est européen, le RGPD est pris en compte dès la conception, et les accès sont cloisonnés par rôle. La direction ne voit pas la même chose que l\'accueil.',
-    hu: 'Európában, és sehol máshol. Ezek kiskorúak adatai: az adattárolás európai, a GDPR a tervezéstől kezdve beépített, a hozzáférés pedig szerepkörönként elkülönített. A vezetőség nem ugyanazt látja, mint a porta.',
+    en: 'In Europe, and nowhere else. Discretion is part of your service, so it’s part of ours: European hosting, GDPR built in from the start, tracking with consent, and access split by role. Management doesn’t see what a supplier sees.',
+    fr: 'En Europe, et nulle part ailleurs. La discrétion fait partie de votre service, donc du nôtre : hébergement européen, RGPD pris en compte dès la conception, suivi avec consentement, et accès cloisonnés par rôle. La direction ne voit pas la même chose qu’un prestataire.',
+    hu: 'Európában, és sehol máshol. A diszkréció az Ön szolgáltatásának része, így a miénknek is: európai tárhely, beépített GDPR, hozzájáruláson alapuló követés, és szerepkörök szerint elválasztott hozzáférés. A vezetőség nem ugyanazt látja, mint egy beszállító.',
   },
 
   // StrategyCall section
@@ -2425,7 +2434,11 @@ export const translations = {
 
   'v2.sprint.eyebrow': { en: 'First step · no commitment', fr: 'Première étape · sans engagement', hu: 'Első lépés · kötelezettség nélkül' },
   'v2.sprint.title': { en: 'The Diagnostic', fr: 'Le Diagnostic', hu: 'A diagnosztika' },
-  'v2.sprint.format': { en: '2 weeks · 3 to 5 calls · nothing to prepare', fr: '2 semaines · 3 à 5 appels · rien à préparer', hu: '2 hét · 3-5 hívás · semmit nem kell előkészítenie' },
+  'v2.sprint.format': {
+    en: '3 to 5 calls · nothing to prepare',
+    fr: '3 à 5 appels · rien à préparer',
+    hu: '3-5 hívás · semmit nem kell előkészítenie',
+  },
   'v2.sprint.intro': {
     en: 'You prepare nothing, you fill in nothing. You talk, we do the work.',
     fr: 'Vous ne préparez rien, vous ne remplissez rien. Vous parlez, on fait le travail.',
@@ -2433,9 +2446,9 @@ export const translations = {
   },
   'v2.sprint.d1.name': { en: 'The Map', fr: 'La Carte', hu: 'A térkép' },
   'v2.sprint.d1.desc': {
-    en: 'How your school actually runs. Everything that lives in people\'s heads, put on paper.',
-    fr: 'Comment votre établissement tourne réellement. Tout ce qui est dans les têtes, mis sur papier.',
-    hu: 'Hogyan működik valójában az intézménye. Minden, ami a fejekben él, papírra téve.',
+    en: 'How your organisation really runs, and where your clients come from. Everything in people’s heads, put on paper.',
+    fr: 'Comment votre organisation tourne réellement, et d’où viennent vos clients. Tout ce qui est dans les têtes, mis sur papier.',
+    hu: 'Hogyan működik valójában a szervezete, és honnan jönnek az ügyfelei. Minden, ami a fejekben van, papírra téve.',
   },
   'v2.sprint.d2.name': { en: 'The Prototype', fr: 'Le Prototype', hu: 'A prototípus' },
   'v2.sprint.d2.desc': {
@@ -2446,13 +2459,17 @@ export const translations = {
   'v2.sprint.d3.name': { en: 'The Costed Roadmap', fr: 'La Feuille de route chiffrée', hu: 'A beárazott ütemterv' },
   'v2.sprint.d3.desc': { en: 'What to build, in what order, for how much.', fr: 'Quoi construire, dans quel ordre, pour combien.', hu: 'Mit építsünk meg, milyen sorrendben, mennyiért.' },
   'v2.sprint.promise': {
-    en: 'In 2 weeks you know exactly where your teams\' hours go, and you click through the software that gives them back.',
-    fr: 'En 2 semaines, vous savez exactement où partent les heures de vos équipes, et vous cliquez dans le logiciel qui vous les rend.',
-    hu: '2 hét alatt pontosan tudni fogja, hová mennek a csapatai órái, és kipróbálhatja a szoftvert, amely visszaadja őket.',
+    en: 'You know where time, mistakes and clients slip away, and you click through the software that fixes it.',
+    fr: 'Vous savez où se perdent le temps, les erreurs et les clients, et vous cliquez dans le logiciel qui règle tout ça.',
+    hu: 'Tudja, hol vész el az idő, hol csúsznak be a hibák és hol tűnnek el az ügyfelek, és belekattinthat a szoftverbe, amely mindezt rendezi.',
   },
   'v2.sprint.cta': { en: 'Book a call · free', fr: 'Réserver un appel · offert', hu: 'Hívás foglalása · ingyenes' },
   'v2.sprint.selfserve': { en: 'Or run the online diagnostic, 3 min, no email', fr: 'Ou lancez le diagnostic en ligne, 3 min, sans e-mail', hu: 'Vagy indítsa el az online diagnosztikát: 3 perc, e-mail nélkül' },
-  'v2.sprint.afterA': { en: 'What then? Two options: we keep going together, or we stop here. ', fr: 'Ensuite ? Deux options : on continue ensemble, ou on s\'arrête là. ', hu: 'Utána? Két lehetőség: folytatjuk együtt, vagy itt megállunk. ' },
+  'v2.sprint.afterA': {
+    en: 'What then? Two options: a long-term partnership where the system keeps evolving with you, or we stop here. ',
+    fr: 'Ensuite ? Deux options : un partenariat dans la durée, où le système continue d’évoluer avec vous, ou on s’arrête là. ',
+    hu: 'Utána? Két lehetőség: hosszú távú partnerség, amelyben a rendszer Önnel együtt fejlődik tovább, vagy itt megállunk. ',
+  },
   'v2.sprint.afterB': { en: 'Zero pressure, zero commitment.', fr: 'Zéro pression, zéro engagement.', hu: 'Semmi nyomás, semmi kötelezettség.' },
   'v2.sprint.afterC': { en: ' What you see is already yours.', fr: ' Ce que vous voyez est déjà à vous.', hu: ' Amit lát, az már az Öné.' },
 

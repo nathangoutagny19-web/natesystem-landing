@@ -90,7 +90,8 @@ export default function Hero() {
         style={{ fontSize: 'clamp(38px, 5.2vw, 64px)', lineHeight: 1.08, marginBottom: '28px', maxWidth: '820px', color: 'var(--text)' }}
       >
         {t('hero.titlePrefix')}{' '}
-        <RotatingWord words={words} />{' '}
+        {/* Un seul mot : la headline est fixe, rien ne tourne. */}
+        {words.length > 1 ? <RotatingWord words={words} /> : <span>{words[0]}</span>}{' '}
         {t('hero.titleSuffix')}
       </motion.h1>
 

@@ -23,18 +23,16 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'NateSystem, plateformes sur-mesure pour écoles privées',
+  title: 'NateSystem, logiciel sur mesure pour l’hospitalité de luxe et de prestige',
   description:
-    'La plateforme de gestion sur-mesure des écoles privées : pointage et comptage d\'heures, plannings, dossiers, suivi des élèves. Construite sur votre convention et votre calendrier scolaire. Le code vous appartient, les données restent en Europe.',
+    'Logiciel sur mesure, image en ligne et données suivies pour villas, chalets, domaines, conciergeries, yachts, petits hôtels et maisons de réception. Une seule saisie, et toute votre organisation suit. Un partenariat dans la durée, le code vous appartient.',
   keywords: [
-    'logiciel gestion école privée',
-    'logiciel sur-mesure école',
-    'pointeuse école multi-établissements',
-    'comptage heures établissement scolaire',
-    'CRM pédagogique sur-mesure',
-    'logiciel vie scolaire sur-mesure',
-    'plateforme gestion groupe scolaire',
-    'alternative logiciel générique école',
+    'logiciel sur mesure conciergerie de luxe',
+    'logiciel gestion villa de luxe',
+    'logiciel maison de réception',
+    'logiciel hôtel de groupe sur mesure',
+    'site internet conciergerie de luxe',
+    'suivi des demandes clients hospitalité',
     'NateSystem',
     'Nathan Goutagny',
   ],
@@ -61,9 +59,9 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     url: 'https://www.natesystem.com',
-    title: 'NateSystem, plateformes sur-mesure pour écoles privées',
+    title: 'NateSystem, logiciel sur mesure pour l’hospitalité de luxe et de prestige',
     description:
-      'Le logiciel sur-mesure qui pilote votre activité, propulsé par l\'IA, agentique, automatisation, data analytics, là où ça compte. Vos données, votre infrastructure, votre code.',
+      'Votre façon de recevoir vos clients est unique. Votre logiciel devrait l’être aussi. Logiciel, image en ligne et données suivies, dans un partenariat qui évolue avec vous.',
     siteName: 'NateSystem',
     images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'NateSystem' }],
     locale: 'fr_FR',
@@ -71,8 +69,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'NateSystem, plateformes sur-mesure pour écoles privées',
-    description: 'La plateforme de gestion sur-mesure des écoles privées. Le code vous appartient.',
+    title: 'NateSystem, logiciel sur mesure pour l’hospitalité de luxe et de prestige',
+    description: 'Votre façon de recevoir vos clients est unique. Votre logiciel devrait l’être aussi.',
     images: ['/og-image.png'],
   },
 }

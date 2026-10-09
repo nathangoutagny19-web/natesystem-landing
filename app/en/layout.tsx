@@ -20,9 +20,9 @@ import { SITE_URL } from '@/lib/constants'
  */
 
 export const metadata: Metadata = {
-  title: 'NateSystem, custom software and AI built on your process',
+  title: 'NateSystem, bespoke software for luxury and prestige hospitality',
   description:
-    'Custom software and AI for B2B expertise firms. Your scattered data becomes your firm\u2019s biggest asset: faster answers, hours back every week, nothing paid for twice. You own 100% of the source code, EU-hosted.',
+    'Bespoke software, online presence and tracked data for villas, chalets, estates, concierge services, yachts, boutique hotels and event venues. Enter it once and your whole organisation follows. A long-term partnership, and you own the code.',
   alternates: {
     canonical: `${SITE_URL}/en`,
     languages: {
