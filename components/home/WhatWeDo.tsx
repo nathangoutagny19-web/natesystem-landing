@@ -9,28 +9,28 @@ type Item = { titleFr: string; titleEn: string; titleHu: string; descFr: string;
 
 const ITEMS: Item[] = [
   {
-    titleFr: 'On cartographie votre établissement',
-    titleEn: 'We map how your school runs', titleHu: 'Feltérképezzük az intézményét',
-    descFr: 'Quelques appels avec les personnes qui font le travail. Qui fait quoi, dans quel ordre, avec quel fichier. De l’inscription d’une famille à la validation de la paie.',
-    descEn: 'A few calls with the people who do the work. Who does what, in what order, with which file. From a family’s enrolment to payroll sign-off.', descHu: 'Néhány beszélgetés azokkal, akik a munkát végzik. Ki mit csinál, milyen sorrendben, melyik fájllal. A család beiratkozásától a bérszámfejtés jóváhagyásáig.',
+    titleFr: 'On cartographie votre organisation',
+    titleEn: 'We map how your organisation runs', titleHu: 'Feltérképezzük a szervezetét',
+    descFr: 'Quelques appels avec les personnes qui font le travail. Qui fait quoi, avec quel outil, et d’où viennent vos clients, de la première visite sur votre site jusqu’au départ.',
+    descEn: 'A few calls with the people who do the work. Who does what, with which tool, and where your clients come from, from their first visit to your website to their departure.', descHu: 'Néhány beszélgetés azokkal, akik a munkát végzik. Ki mit csinál, milyen eszközzel, és honnan jönnek az ügyfelei, a weboldal első meglátogatásától a távozásig.',
   },
   {
-    titleFr: 'On construit votre plateforme',
-    titleEn: 'We build your platform', titleHu: 'Megépítjük a platformját',
-    descFr: 'Sur vos règles : votre convention, votre calendrier scolaire, vos établissements. Encodés une fois, tels qu’ils sont. C’est l’outil qui s’aligne sur vous, jamais l’inverse.',
-    descEn: 'On your rules: your agreement, your school calendar, your sites. Encoded once, exactly as they are. The tool aligns to you, never the other way round.', descHu: 'Az Ön szabályai szerint: a megállapodása, tanévi naptára, telephelyei. Egyszer, úgy ahogy vannak, lekódolva. Az eszköz igazodik Önhöz, soha nem fordítva.',
+    titleFr: 'On construit votre plateforme et votre image',
+    titleEn: 'We build your platform and your online presence', titleHu: 'Megépítjük a platformját és az online megjelenését',
+    descFr: 'Sur vos règles : vos prestataires, vos tarifs, vos saisons, vos lieux. Encodés une fois, tels qu’ils sont. Le site et les pages de vos événements sont branchés dessus dès le départ.',
+    descEn: 'On your rules: your suppliers, your rates, your seasons, your places. Encoded once, as they are. The website and your event pages are connected to it from day one.', descHu: 'Az Ön szabályaira: a beszállítóira, az áraira, a szezonjaira, a helyszíneire. Egyszer lekódolva, úgy, ahogy vannak. A weboldal és az eseményoldalak az első naptól rá vannak kötve.',
   },
   {
-    titleFr: 'On automatise le répétitif',
-    titleEn: 'We automate the repetitive part', titleHu: 'Automatizáljuk az ismétlődőt',
-    descFr: 'Ressaisies, relances, documents récurrents : ce qui revient chaque mois tourne tout seul. C’est là que les heures reviennent, pas ailleurs.',
-    descEn: 'Re-typing, reminders, recurring documents: what comes back every month runs on its own. That is where the hours come back, nowhere else.', descHu: 'Újbóli adatbevitel, emlékeztetők, ismétlődő dokumentumok: ami havonta visszatér, magától megy. Innen jönnek vissza az órák, nem máshonnan.',
+    titleFr: 'On suit tout, et on automatise le répétitif',
+    titleEn: 'We track everything, and automate the repetitive', titleHu: 'Mindent követünk, és automatizáljuk az ismétlődőt',
+    descFr: 'Chaque demande porte son origine, chaque client son historique. Les relances, les reconfirmations et les documents récurrents partent seuls. Vous décidez sur des chiffres, plus de mémoire.',
+    descEn: 'Every request carries its source, every client their history. Follow-ups, reconfirmations and recurring documents go out on their own. You decide on numbers, not from memory.', descHu: 'Minden kérés hordozza a forrását, minden ügyfél az előzményeit. Az emlékeztetők, az újbóli megerősítések és az ismétlődő dokumentumok maguktól mennek ki. Számok alapján dönt, nem emlékezetből.',
   },
   {
-    titleFr: 'On forme jusqu’à l’autonomie',
-    titleEn: 'We train until you are autonomous', titleHu: 'Képzünk, amíg önállóak nem lesznek',
-    descFr: 'Construire l’outil est la partie facile. Le faire adopter par la direction, le secrétariat et les enseignants, c’est le vrai travail. On forme chacun, jusqu’à ce qu’on ne serve plus à rien.',
-    descEn: 'Building the tool is the easy part. Getting leadership, the front office and the teachers to adopt it is the real work. We train everyone, until we are no longer needed.', descHu: 'Az eszközt megépíteni a könnyebbik rész. Elérni, hogy a vezetőség, a titkárság és a tanárok használják, az az igazi munka. Mindenkit betanítunk, amíg már nincs ránk szükség.',
+    titleFr: 'On forme, puis on fait évoluer avec vous',
+    titleEn: 'We train, then keep evolving with you', titleHu: 'Képzünk, aztán együtt fejlődünk',
+    descFr: 'Construire l’outil est la partie facile. Le faire adopter par vous, l’équipe et les prestataires, c’est le vrai travail. Ensuite, le système évolue avec vous, saison après saison : c’est un partenariat, pas une livraison.',
+    descEn: 'Building the tool is the easy part. Getting you, the team and your suppliers to use it is the real work. Then the system evolves with you, season after season: it’s a partnership, not a delivery.', descHu: 'Az eszköz megépítése a könnyebb rész. Az igazi munka az, hogy Ön, a csapata és a beszállítói használják is. Utána a rendszer Önnel együtt fejlődik, szezonról szezonra: ez partnerség, nem egyszeri átadás.',
   },
 ]
 
@@ -119,8 +119,8 @@ export default function WhatWeDo() {
             <span className="accent">{d('et vous n’êtes jamais seul.', 'and you are never on your own.', 'és soha nincs egyedül.')}</span>
           </h2>
           <p className="font-sans" style={{ fontSize: '15px', fontWeight: 300, color: 'var(--text-secondary)', maxWidth: '620px', margin: '0 auto', lineHeight: 1.7 }}>
-            {d('On remplace l’outil générique qui ne colle pas par du sur-mesure qui vous appartient. L’automatisation n’arrive qu’ensuite, et seulement là où elle rend des heures à vos équipes.',
-               'We replace the generic tool that does not fit with custom software you own. Automation comes after, and only where it gives hours back to your teams.', 'A rosszul illeszkedő általános eszközt egyedi szoftverre cseréljük, amely az Öné. Az automatizálás csak utána jön, és csak ott, ahol órákat ad vissza a csapatainak.')}
+            {d('On remplace l’outil générique qui ne colle pas par un système sur mesure qui vous appartient, avec l’image en ligne qui va avec. Puis on le fait grandir avec vous, dans la durée.',
+               'We replace the generic tool that doesn’t fit with a bespoke system you own, with the online presence to match. Then we grow it with you, for the long term.', 'A rosszul illeszkedő általános eszközt egy egyedi rendszerre cseréljük, amely az Öné, a hozzá illő online megjelenéssel. Aztán hosszú távon együtt fejlesztjük.')}
           </p>
         </FadeUp>
 
