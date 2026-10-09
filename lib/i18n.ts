@@ -2543,17 +2543,17 @@ export const translations = {
   'methode.hero.title': {
     en: 'We map, we build, we train.',
     fr: 'On cartographie, on construit, on forme.',
-    hu: 'Feltérképezünk, építünk, betanítunk.',
+    hu: 'Feltérképezünk, építünk, képzünk.',
   },
   'methode.hero.titleAccent': {
-    en: 'Then we step back.',
-    fr: 'Puis on s\'efface.',
-    hu: 'Aztán háttérbe lépünk.',
+    en: 'Then we grow it with you.',
+    fr: 'Puis on fait évoluer avec vous.',
+    hu: 'Aztán együtt fejlesztjük tovább.',
   },
   'methode.hero.sub': {
-    en: 'We start by understanding where your teams\' hours go. Then we build the platform that gives them back, on your own rules, and we train until it runs without us.',
-    fr: 'On commence par comprendre où partent les heures de vos équipes. Puis on construit la plateforme qui vous les rend, sur vos règles, et on forme jusqu\'à ce que ça tourne sans nous.',
-    hu: 'Azzal kezdjük, hogy megértjük, hová mennek a csapatai órái. Aztán megépítjük a platformot, amely visszaadja őket, az Ön szabályai szerint, és addig képzünk, amíg nélkülünk is megy.',
+    en: 'We start by understanding where your team’s time and your clients slip away. Then we build the system that fixes it, on your rules, train everyone, and keep it evolving with you, season after season.',
+    fr: 'On commence par comprendre où se perdent le temps de vos équipes et vos clients. Puis on construit le système qui règle ça, sur vos règles, on forme chacun, et on le fait évoluer avec vous, saison après saison.',
+    hu: 'Először megértjük, hol vész el a csapata ideje és hol tűnnek el az ügyfelei. Aztán megépítjük a rendszert, amely ezt rendezi, az Ön szabályaira, mindenkit betanítunk, és szezonról szezonra együtt fejlesztjük tovább.',
   },
   'methode.hero.cta': {
     en: 'Book a call · free',
@@ -2576,9 +2576,9 @@ export const translations = {
     hu: 'Hogyan olvassuk',
   },
   'radio.titleAccent': {
-    en: 'your school.',
-    fr: 'votre établissement.',
-    hu: 'az intézményét.',
+    en: 'your organisation.',
+    fr: 'votre organisation.',
+    hu: 'a szervezetét.',
   },
   'radio.sub': {
     en: 'Four steps. From what lives in people\'s heads to a tool your teams use without us.',
@@ -2606,9 +2606,9 @@ export const translations = {
     hu: 'Megnézzük',
   },
   'radio.s1.desc': {
-    en: 'We lay out how your school actually runs: every task, every tool, every piece of information living in a notebook, a spreadsheet or one person\'s head. From a family\'s enrolment to payroll sign-off.',
-    fr: 'On met à plat comment votre établissement tourne vraiment : chaque tâche, chaque outil, chaque information qui vit dans un cahier, un tableur ou une seule tête. De l\'inscription d\'une famille à la validation de la paie.',
-    hu: 'Kiterítjük, hogyan működik valójában az intézménye: minden feladat, eszköz és információ, ami egy füzetben, táblázatban vagy egyetlen fejben él. A család beiratkozásától a bérszámfejtés jóváhagyásáig.',
+    en: 'We lay out how your organisation really runs: every task, every tool, every piece of information living in a notebook, a spreadsheet, a WhatsApp thread or one person’s head. From the first request to departure.',
+    fr: 'On met à plat comment votre organisation tourne vraiment : chaque tâche, chaque outil, chaque information qui vit dans un cahier, un tableur, un fil WhatsApp ou une seule tête. De la première demande jusqu’au départ.',
+    hu: 'Kiterítjük, hogyan működik valójában a szervezete: minden feladat, minden eszköz, minden információ, amely egy füzetben, egy táblázatban, egy WhatsApp-beszélgetésben vagy egyetlen ember fejében él. Az első kéréstől a távozásig.',
   },
   'radio.s2.name': {
     en: 'Bring together',
@@ -2621,9 +2621,9 @@ export const translations = {
     hu: 'Összegyűjtjük',
   },
   'radio.s2.desc': {
-    en: 'Your data, scattered across sites, comes back into one base built on your own agreement and school calendar. One single record, the same for leadership and for the sites.',
-    fr: 'Vos données éparpillées entre les sites reviennent dans une seule base, bâtie sur votre convention et votre calendrier scolaire. Une seule information, la même pour la direction et pour les établissements.',
-    hu: 'A telephelyek között szétszórt adatai egyetlen adatbázisba kerülnek, amely az Ön megállapodására és tanévi naptárára épül. Egyetlen információ, ugyanaz a vezetőségnek és a telephelyeknek.',
+    en: 'Your scattered data comes back into one base, built on your suppliers, your rates and your seasons. One piece of information, the same for management and for the teams, with every request carrying its source.',
+    fr: 'Vos données éparpillées reviennent dans une seule base, bâtie sur vos prestataires, vos tarifs et vos saisons. Une seule information, la même pour la direction et pour les équipes, et chaque demande porte son origine.',
+    hu: 'A szétszórt adatai egyetlen adatbázisba kerülnek vissza, a beszállítóira, az áraira és a szezonjaira építve. Egyetlen információ, ugyanaz a vezetésnek és a csapatoknak, és minden kérés hordozza a forrását.',
   },
   'radio.s3.name': {
     en: 'Automate',
@@ -2636,9 +2636,9 @@ export const translations = {
     hu: 'Könnyítünk',
   },
   'radio.s3.desc': {
-    en: 'Re-typing, chasing missing documents and hour calculations run on their own, but only where it gives real hours back to your teams. Never one more gadget to learn.',
-    fr: 'Les ressaisies, les relances de pièces manquantes et les calculs d\'heures tournent seuls, mais seulement là où ça rend de vraies heures à vos équipes. Jamais un gadget de plus à apprendre.',
-    hu: 'Az újbóli adatbevitel, a hiányzó iratok utánkövetése és az óraszámítás magától megy, de csak ott, ahol valódi órákat ad vissza a csapatainak. Sosem egy újabb megtanulandó kütyü.',
+    en: 'Re-entry, day-before reconfirmations and deposit follow-ups run on their own, but only where it gives your teams real hours back. Never one more gadget to learn.',
+    fr: 'Les ressaisies, les reconfirmations de la veille et les relances d’acomptes tournent seules, mais seulement là où ça rend de vraies heures à vos équipes. Jamais un gadget de plus à apprendre.',
+    hu: 'Az újbóli bevitel, az előző napi megerősítések és az előlegek utánkövetése magától megy, de csak ott, ahol valódi órákat ad vissza a csapatainak. Soha egy újabb megtanulandó kütyü.',
   },
   'radio.s4.name': {
     en: 'Train',
@@ -2651,9 +2651,9 @@ export const translations = {
     hu: 'Átadjuk',
   },
   'radio.s4.desc': {
-    en: 'From leadership to the front desk, everyone knows how to use it. Documentation is complete, you own 100% of the code and the student records stay with you. We stay if you want, but you no longer need us.',
-    fr: 'De la direction à l\'accueil, chacun sait s\'en servir. La documentation est complète, 100 % du code vous appartient et les données d\'élèves restent chez vous. On reste si vous voulez, mais vous n\'en avez plus besoin.',
-    hu: 'A vezetőségtől a portáig mindenki tudja használni. A dokumentáció teljes, a kód 100%-a az Öné, a diákadatok pedig Önnél maradnak. Maradunk, ha szeretné, de már nincs ránk szüksége.',
+    en: 'From management to suppliers, everyone knows how to use it. The documentation is complete, 100% of the code is yours and your client data stays with you. And we stay alongside to keep the system evolving.',
+    fr: 'De la direction aux prestataires, chacun sait s’en servir. La documentation est complète, 100 % du code vous appartient et vos données clients restent chez vous. Et on reste à vos côtés pour faire évoluer le système.',
+    hu: 'A vezetéstől a beszállítókig mindenki tudja használni. A dokumentáció teljes, a kód 100%-ban az Öné, az ügyféladatai Önnél maradnak. És mellette maradunk, hogy továbbfejlesszük a rendszert.',
   },
 
   'radio.scene.sources': {
@@ -2706,9 +2706,9 @@ export const translations = {
     hu: 'Minden egyedi.',
   },
   'methode.deliv.sub': {
-    en: 'From mapping your school to a costed action plan, every deliverable is cut for you. You keep them, even if we stop there.',
-    fr: 'De la cartographie de votre établissement au plan d\'action chiffré, chaque livrable est taillé pour vous. Vous les gardez, même si on s\'arrête là.',
-    hu: 'Az intézmény feltérképezésétől a számszerűsített cselekvési tervig minden eredmény Önre szabott. Meg is tartja őket, akkor is, ha itt megállunk.',
+    en: 'From the map of your organisation to the costed action plan, every deliverable is cut for you. You keep them, even if we stop there.',
+    fr: 'De la cartographie de votre organisation au plan d’action chiffré, chaque livrable est taillé pour vous. Vous les gardez, même si on s’arrête là.',
+    hu: 'A szervezete feltérképezésétől a számszerűsített cselekvési tervig minden eredmény Önre van szabva. Megtartja őket, akkor is, ha itt megállunk.',
   },
 
   'methode.cta.title': {
@@ -2721,9 +2721,9 @@ export const translations = {
 
   },
   'methode.cta.sub': {
-    en: 'A free call. We look at how your school actually runs and tell you plainly what would change things, even if we are not the ones doing it.',
-    fr: 'Un appel offert. On regarde comment votre établissement fonctionne vraiment et on vous dit franchement ce qui changerait les choses, même si ce n\'est pas nous qui le faisons.',
-    hu: 'Egy ingyenes hívás. Megnézzük, hogyan működik valójában az intézménye, és őszintén megmondjuk, mi hozna változást, akkor is, ha nem mi csináljuk.',
+    en: 'A free call. We look at how your organisation really runs and tell you straight what would change things, even if we’re not the ones doing it.',
+    fr: 'Un appel offert. On regarde comment votre organisation fonctionne vraiment et on vous dit franchement ce qui changerait les choses, même si ce n’est pas nous qui le faisons.',
+    hu: 'Egy ingyenes hívás. Megnézzük, hogyan működik valójában a szervezete, és őszintén megmondjuk, mi változtatna a helyzeten, akkor is, ha nem mi csináljuk.',
   },
   'methode.cta.button': {
     en: 'Book a call · free',
@@ -2991,78 +2991,129 @@ export const translations = {
      /services · /en/services — LA PAGE QUI VEND
      ═══════════════════════════════════════════════════════════════════════ */
   'svc.hero.label': { en: 'Our services', fr: 'Nos services', hu: 'Szolgáltatásaink' },
-  'svc.hero.titlePrefix': { en: 'Whatever your trade, ', fr: 'Quel que soit votre métier, ', hu: 'Bármi is a szakmája, ' },
-  'svc.hero.titleAccent': { en: 'the same result.', fr: 'le même résultat.', hu: 'ugyanaz az eredmény.' },
+  'svc.hero.titlePrefix': {
+    en: 'Whatever your organisation, ',
+    fr: 'Quelle que soit votre organisation, ',
+    hu: 'Bármilyen is a szervezete, ',
+  },
+  'svc.hero.titleAccent': {
+    en: 'the same result.',
+    fr: 'le même résultat.',
+    hu: 'ugyanaz az eredmény.',
+  },
   'svc.hero.sub': {
-    en: 'We build the infrastructure that wins you time, signs more and bigger deals, keeps your clients and turns your expertise into growth. The technology and the modules bend to how you work, never the other way round.',
-    fr: 'On monte l’infrastructure qui vous fait gagner du temps, signer plus et mieux, garder vos clients et transformer votre expertise en croissance. La techno et les modules s’adaptent à votre réalité, jamais l’inverse.',
-    hu:
-      'Azt az infrastruktúrát építjük, amely időt nyer Önnek, több és nagyobb üzletet hoz, megtartja az ügyfeleit, és a szaktudását növekedéssé alakítja. A technológia és a modulok igazodnak ahhoz, ahogyan Ön dolgozik, sosem fordítva.',
+    en: 'Villas, chalets and estates, concierge services, yachts, boutique hotels and event venues. We build the system that gives your team hours back, makes every stay run smoothly and shows you where your clients come from. The technology bends to the way you receive clients, never the other way round.',
+    fr: 'Villas, chalets et domaines, conciergeries, yachts, hôtels indépendants et maisons de réception. On construit le système qui rend des heures à votre équipe, fait tourner chaque séjour sans accroc et vous montre d’où viennent vos clients. La technologie s’adapte à votre façon de recevoir, jamais l’inverse.',
+    hu: 'Villák, faházak és birtokok, concierge-szolgáltatások, jachtok, független szállodák és rendezvényházak. Megépítjük a rendszert, amely órákat ad vissza a csapatának, gördülékennyé tesz minden tartózkodást, és megmutatja, honnan jönnek az ügyfelei. A technológia igazodik a vendégfogadásához, soha nem fordítva.',
   },
 
   'svc.outcomes.label': { en: 'What it changes', fr: 'Ce que ça change', hu: 'Amit megváltoztat' },
-  'svc.outcomes.titlePrefix': { en: 'The same base of results, ', fr: 'Le même socle de résultats, ', hu: 'Ugyanaz az eredményalap, ' },
-  'svc.outcomes.titleAccent': { en: 'in any company.', fr: 'dans toute entreprise.', hu: 'bármelyik cégben.' },
+  'svc.outcomes.titlePrefix': {
+    en: 'The same core results, ',
+    fr: 'Le même socle de résultats, ',
+    hu: 'Ugyanaz az eredményalap ',
+  },
+  'svc.outcomes.titleAccent': {
+    en: 'for every organisation that receives clients.',
+    fr: 'pour toute organisation qui reçoit.',
+    hu: 'minden vendégfogadó szervezetnek.',
+  },
 
-  'svc.out.time.title': { en: 'Time back', fr: 'Du temps récupéré', hu: 'Visszanyert idő' },
+  'svc.out.time.title': {
+
+    en: 'Hours given back',
+
+    fr: 'Des heures rendues',
+
+    hu: 'Visszanyert órák',
+
+  },
   'svc.out.time.desc': {
-    en: 'The repetitive work runs on its own. Your teams stop retyping, chasing and searching, and get back to what actually matters.',
-    fr: 'Le répétitif tourne seul. Vos équipes arrêtent de recopier, relancer et chercher, et se concentrent sur ce qui compte vraiment.',
-    hu:
-      'Az ismétlődő munka magától fut. A csapatai abbahagyják az újragépelést, az utánajárást és a keresgélést, és visszatérnek ahhoz, ami tényleg számít.',
+    en: 'No more re-entering, chasing by hand or spreadsheets on the side. The time goes back to your clients.',
+    fr: 'Plus de ressaisie, plus de relances à la main, plus d’Excel à côté. Le temps revient à vos clients.',
+    hu: 'Nincs több újbóli bevitel, kézi utánajárás, párhuzamos Excel. Az idő visszakerül az ügyfeleihez.',
   },
-  'svc.out.deals.title': { en: 'More deals, bigger ones', fr: 'Plus de deals, plus gros', hu: 'Több üzlet, nagyobbak' },
+  'svc.out.deals.title': {
+    en: 'Faster responses',
+    fr: 'Une réactivité qui double',
+    hu: 'Kétszer gyorsabb reagálás',
+  },
   'svc.out.deals.desc': {
-    en: 'A clean pipeline, follow-ups that send themselves, nothing slipping through. You sign more, and you sign better.',
-    fr: 'Un pipeline propre, des relances qui partent toutes seules, plus rien qui passe à la trappe. Vous signez plus, et mieux.',
-    hu:
-      'Tiszta pipeline, magától induló utánkövetés, semmi nem csúszik ki. Többet ír alá, és jobbat.',
+    en: 'Every request gets a first reply and goes to the right person, even late at night. Nothing waits until the morning.',
+    fr: 'Chaque demande reçoit une première réponse et part vers la bonne personne, même tard le soir. Plus rien n’attend le lendemain matin.',
+    hu: 'Minden kérés első választ kap, és a megfelelő emberhez kerül, késő este is. Semmi nem vár másnap reggelig.',
   },
-  'svc.out.retain.title': { en: 'Clients who stay', fr: 'Des clients qui restent', hu: 'Ügyfelek, akik maradnak' },
+  'svc.out.retain.title': {
+    en: 'Clients who feel known',
+    fr: 'Des clients reconnus',
+    hu: 'Ügyfelek, akiket ismernek',
+  },
   'svc.out.retain.desc': {
-    en: 'Follow-up that drops nothing. Your clients feel it, and they stay with you longer.',
-    fr: 'Un suivi sans faille : rien ne se perd, vos clients le sentent, et ils continuent avec vous plus longtemps.',
-    hu:
-      'Utánkövetés, amely semmit nem ejt el. Az ügyfelei megérzik, és tovább maradnak Önnél.',
+    en: 'Their preferences and what was promised to them, remembered from one season to the next by the whole team.',
+    fr: 'Leurs préférences et ce qui leur a été promis, retrouvés d’une saison à l’autre par toute l’équipe.',
+    hu: 'A preferenciáik és amit megígértek nekik, szezonról szezonra az egész csapat számára elérhetően.',
   },
-  'svc.out.exp.title': { en: 'A better client experience', fr: 'Une meilleure expérience client', hu: 'Jobb ügyfélélmény' },
+  'svc.out.exp.title': {
+    en: 'Stays without a hitch',
+    fr: 'Des séjours sans accroc',
+    hu: 'Gördülékeny tartózkodások',
+  },
   'svc.out.exp.desc': {
-    en: 'Faster answers, files in order, no more “let me get back to you”. You look like a company that has it together.',
-    fr: 'Réponses plus rapides, dossiers au carré, fini le « je vous rappelle ». L’image d’une boîte qui gère.',
-    hu:
-      'Gyorsabb válaszok, rendben tartott dossziék, vége a „majd visszahívom”-nak. Úgy néz ki, mint egy cég, amelynél minden a helyén van.',
+    en: 'Every service reconfirmed the day before. The client lives exactly what you promised them, and never finds a gap before you do.',
+    fr: 'Chaque prestation reconfirmée la veille. Le client vit exactement ce que vous lui avez promis, et ne découvre jamais un trou avant vous.',
+    hu: 'Minden szolgáltatás előző nap újra megerősítve. Az ügyfél pontosan azt éli át, amit megígért neki, és soha nem ő veszi észre előbb a hiányt.',
   },
-  'svc.out.align.title': { en: 'A team on the same page', fr: 'Une équipe alignée', hu: 'Egy csapat, egy oldalon' },
+  'svc.out.align.title': {
+    en: 'Clear numbers',
+    fr: 'Des chiffres clairs',
+    hu: 'Világos számok',
+  },
   'svc.out.align.desc': {
-    en: 'Everyone on the same data, in one place and up to date. No more versions overwriting each other, no more “where was that again?”.',
-    fr: 'Tout le monde sur la même donnée, centralisée et à jour. Plus de versions qui s’écrasent ni de « c’était où, déjà ? ».',
-    hu:
-      'Mindenki ugyanazon az adaton, egy helyen és naprakészen. Nincs többé egymást felülíró verzió, nincs többé „hol is volt ez?”.',
+    en: 'Where each client comes from, what they spend and on what, what each campaign brings in. Decisions on data, not on memory.',
+    fr: 'D’où vient chaque client, ce qu’il dépense et sur quoi, ce que rapporte chaque campagne. Des décisions sur des données, plus de mémoire.',
+    hu: 'Honnan jön minden ügyfél, mennyit és mire költ, mit hoz az egyes kampányok. Adatokon alapuló döntések, nem emlékezetből.',
   },
-  'svc.out.know.title': { en: 'Your know-how, kept', fr: 'Votre savoir capitalisé', hu: 'A tudása megőrizve' },
+  'svc.out.know.title': {
+    en: 'A team that runs without you',
+    fr: 'Une équipe qui avance sans vous',
+    hu: 'Egy csapat, amely Ön nélkül is halad',
+  },
   'svc.out.know.desc': {
-    en: 'What your experts know stops sitting in their heads and in scattered documents. Captured, structured and searchable, it becomes an asset you can reuse.',
-    fr: 'Le savoir de vos experts ne dort plus dans leurs têtes ni dans des docs éparpillés. Capté, structuré et cherchable, il devient un vrai actif réutilisable.',
-    hu:
-      'Amit a szakértői tudnak, többé nem a fejükben és szétszórt dokumentumokban ül. Összegyűjtve, rendszerezve és kereshetően újrahasznosítható vagyonná válik.',
+    en: 'What lives in your head becomes shared. You let go of the hour-by-hour without losing control.',
+    fr: 'Ce qui vit dans votre tête devient partagé. Vous lâchez l’heure par heure sans perdre la main.',
+    hu: 'Ami a fejében él, közössé válik. Elengedi az óráról órára követést, anélkül hogy kiengedné a kezéből az irányítást.',
   },
   'svc.outcomes.note': {
-    en: 'That is the base, true for any company. The rest depends on how you actually work: an AI search engine over your documentation, an agent that chases your quotes, a portal for your clients. We start from your trade. We do not sell a fixed recipe.',
-    fr: 'Ça, c’est le socle, vrai pour n’importe quelle entreprise. Le reste dépend de votre réalité : un moteur de recherche IA sur votre documentation, un agent qui relance vos devis, un portail pour vos clients… On part de votre métier. On ne vend pas une recette figée.',
-    hu:
-      'Ez az alap, és bármelyik cégre igaz. A többi attól függ, ahogyan Ön valójában dolgozik: MI-alapú kereső a dokumentációján, ágens, amely az ajánlatai után megy, portál az ügyfeleinek. A szakmájából indulunk ki. Nem árulunk kész receptet.',
+    en: 'That’s the core, true for every organisation that receives clients. The rest depends on yours: a website that feeds your software, a page for each event, the follow-up of your deposits in two currencies, a client profile shared with your suppliers. We start from the way you work. We don’t sell a set recipe.',
+    fr: 'Ça, c’est le socle, vrai pour toute organisation qui reçoit. Le reste dépend de la vôtre : un site qui alimente votre logiciel, une page pour chaque événement, le suivi de vos acomptes en deux devises, une fiche client partagée avec vos prestataires. On part de votre façon de travailler. On ne vend pas une recette figée.',
+    hu: 'Ez az alap, amely minden vendégfogadó szervezetre igaz. A többi az Önétől függ: egy weboldal, amely a szoftverét táplálja, oldal minden eseményhez, az előlegek követése két devizában, beszállítókkal megosztott ügyféladatlap. Az Ön munkamódjából indulunk ki. Nem árulunk kész receptet.',
   },
 
   'svc.how.label': { en: 'How we get there', fr: 'Comment on y arrive', hu: 'Hogyan jutunk el oda' },
-  'svc.how.titlePrefix': { en: 'One infrastructure, ', fr: 'Une infrastructure, ', hu: 'Egyetlen infrastruktúra, ' },
-  'svc.how.titleAccent': { en: 'built for you.', fr: 'montée pour vous.', hu: 'Önnek építve.' },
+  'svc.how.titlePrefix': {
+    en: 'A digital ecosystem, ',
+    fr: 'Un écosystème digital, ',
+    hu: 'Egy digitális ökoszisztéma, ',
+  },
+  'svc.how.titleAccent': {
+    en: 'built for you, and grown with you.',
+    fr: 'construit pour vous, et qui grandit avec vous.',
+    hu: 'Önnek építve, és Önnel együtt növekedve.',
+  },
 
-  'svc.cta.title': { en: 'We start from your trade.', fr: 'On part de votre métier.', hu: 'A szakmájából indulunk ki.' },
+  'svc.cta.title': {
+
+    en: 'We start from the way you receive clients.',
+
+    fr: 'On part de votre façon de recevoir.',
+
+    hu: 'A vendégfogadásából indulunk ki.',
+
+  },
   'svc.cta.sub': {
-    en: 'A free call. We look at how your business runs and tell you plainly what would gain you the most, and how we would build it. You leave with a clear plan, even if we never work together.',
-    fr: 'Un appel offert. On regarde votre activité et on vous dit, concrètement, ce qui vous ferait gagner le plus, et comment on le construirait. Vous repartez avec un plan clair, même si on ne travaille pas ensemble.',
-    hu:
-      'Egy ingyenes hívás. Megnézzük, hogyan működik a cége, és kerek perec megmondjuk, mivel nyerne a legtöbbet, és hogyan építenénk meg. Világos tervvel távozik, akkor is, ha soha nem dolgozunk együtt.',
+    en: 'A free call. We look at how your organisation runs and tell you, concretely, what would help you most and how we would build it. You leave with a clear plan, even if we never work together.',
+    fr: 'Un appel offert. On regarde comment votre organisation fonctionne et on vous dit, concrètement, ce qui vous aiderait le plus et comment on le construirait. Vous repartez avec un plan clair, même si on ne travaille pas ensemble.',
+    hu: 'Egy ingyenes hívás. Megnézzük, hogyan működik a szervezete, és konkrétan megmondjuk, mi segítene a legtöbbet, és hogyan építenénk meg. Világos tervvel távozik, akkor is, ha soha nem dolgozunk együtt.',
   },
 } as const
 

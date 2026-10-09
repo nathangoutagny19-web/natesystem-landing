@@ -21,24 +21,24 @@ export default function MethodeContent() {
   const d = makeD(lang)
 
   const stats = [
-    { v: d('2 semaines', '2 weeks', '2 hét'), l: d('pour la cartographie', 'for the mapping', 'a feltérképezésre') },
+    { v: d('Quelques appels', 'A few calls', 'Néhány hívás'), l: d('pour la cartographie', 'for the mapping', 'a feltérképezésre') },
     { v: d('Rien à préparer', 'Nothing to prepare', 'Semmit nem kell előkészíteni'), l: d('vous parlez, on écrit', 'you talk, we write', 'Ön beszél, mi írunk') },
     { v: d('1 prototype', '1 prototype', '1 prototípus'), l: d('cliquable, avant de signer', 'clickable, before you sign', 'kattintható, még aláírás előtt') },
   ]
 
 
   const deliverables: { icon: LucideIcon; name: string; desc: string; img: string; mock?: boolean }[] = [
-    { icon: Map, name: d('La cartographie de votre établissement', 'Your school, mapped', 'Az intézménye feltérképezve'), desc: d('Qui fait quoi, dans quel ordre, avec quel fichier. De l’inscription d’une famille à la validation de la paie.', 'Who does what, in what order, with which file. From a family’s enrolment to payroll sign-off.', 'Ki mit csinál, milyen sorrendben, melyik fájllal. A család beiratkozásától a bérszámfejtés jóváhagyásáig.'), img: 'methode/miro-full' },
-    { icon: Boxes, name: d('La plateforme sur-mesure', 'The custom platform', 'Az egyedi platform'), desc: d('Vos règles, votre convention, votre calendrier scolaire, encodés une fois. Tous vos établissements sur un seul écran.', 'Your rules, your agreement, your school calendar, encoded once. Every site on a single screen.', 'Az Ön szabályai, megállapodása, tanévi naptára egyszer lekódolva. Minden telephely egyetlen képernyőn.'), img: 'prototype/proto-front' },
-    { icon: Cpu, name: d('Ce qui tourne tout seul', 'What runs on its own', 'Ami magától megy'), desc: d('Ressaisies, relances de pièces manquantes, documents récurrents. Ce qui revient chaque mois, automatisé.', 'Re-typing, chasing missing documents, recurring paperwork. What comes back every month, automated.', 'Újbóli adatbevitel, hiányzó iratok utánkövetése, ismétlődő papírmunka. Ami havonta visszatér, automatizálva.'), img: 'methode/coding' },
+    { icon: Map, name: d('La cartographie de votre organisation', 'Your organisation, mapped', 'A szervezete feltérképezve'), desc: d('Qui fait quoi, avec quel outil, et d’où viennent vos clients. De la première demande jusqu’au départ et à la facture.', 'Who does what, with which tool, and where your clients come from. From the first request to departure and the invoice.', 'Ki mit csinál, milyen eszközzel, és honnan jönnek az ügyfelei. Az első kéréstől a távozásig és a számláig.'), img: 'methode/miro-full' },
+    { icon: Boxes, name: d('La plateforme sur mesure', 'The bespoke platform', 'Az egyedi platform'), desc: d('Vos prestataires, vos tarifs, vos saisons, encodés une fois. Tous vos lieux sur un seul écran, avec votre site et le suivi branchés dessus.', 'Your suppliers, your rates, your seasons, encoded once. All your places on one screen, with your website and tracking connected.', 'A beszállítói, az árai, a szezonjai egyszer lekódolva. Minden helyszíne egyetlen képernyőn, a weboldallal és a követéssel összekötve.'), img: 'prototype/proto-front' },
+    { icon: Cpu, name: d('Ce qui tourne tout seul', 'What runs on its own', 'Ami magától megy'), desc: d('Ressaisies, reconfirmations de la veille, relances d’acomptes, documents récurrents. Ce qui revient à chaque séjour, automatisé.', 'Re-entry, day-before reconfirmations, deposit follow-ups, recurring documents. What comes back with every stay, automated.', 'Újbóli bevitel, előző napi megerősítések, előlegek utánkövetése, ismétlődő dokumentumok. Ami minden tartózkodásnál visszatér, automatizálva.'), img: 'methode/coding' },
     { icon: FileText, name: d('La feuille de route chiffrée', 'The costed roadmap', 'A számszerűsített ütemterv'), desc: d('Quoi construire, dans quel ordre, pour combien. Vous la gardez même si on s’arrête là.', 'What to build, in what order, for how much. You keep it even if we stop there.', 'Mit építsünk, milyen sorrendben, mennyiért. Akkor is megtartja, ha itt megállunk.'), img: 'prototype/diag-feuille' },
   ]
 
   const results: { icon: LucideIcon; title: string; sub: string }[] = [
     { icon: Clock, title: d('Des heures rendues', 'Hours given back', 'Visszakapott órák'), sub: d('chaque mois, sur le répétitif', 'every month, on the repetitive', 'havonta, az ismétlődő munkán') },
     { icon: TrendingUp, title: d('Des décisions sur des chiffres justes', 'Decisions on figures you trust', 'Döntések megbízható számokon'), sub: d('plus au doigt mouillé ni trois jours plus tard', 'no more guesswork, no more three-day waits', 'nincs több találgatás vagy háromnapos várakozás') },
-    { icon: Smile, title: d('Des équipes sereines', 'Calmer teams', 'Nyugodtabb csapatok'), sub: d('et des élèves et étudiants mieux suivis', 'and students properly followed', 'és jobban követett diákok') },
-    { icon: Database, title: d('Une seule information', 'One single record', 'Egyetlen információ'), sub: d('la même pour la direction et les sites', 'the same for leadership and the sites', 'ugyanaz a vezetőségnek és a telephelyeknek') },
+    { icon: Smile, title: d('Des équipes sereines', 'Calmer teams', 'Nyugodtabb csapatok'), sub: d('et des clients mieux reçus', 'and clients better received', 'és jobban fogadott ügyfelek') },
+    { icon: Database, title: d('Une seule information', 'One single record', 'Egyetlen információ'), sub: d('la même pour la direction et les équipes', 'the same for management and the teams', 'ugyanaz a vezetésnek és a csapatoknak') },
   ]
 
 
@@ -179,8 +179,8 @@ export default function MethodeContent() {
               <div>
                 <p className="font-mono methode-guarantee-label">{d('La garantie heures rendues', 'The hours-back guarantee', 'A visszakapott órák garanciája')}</p>
                 <p className="font-serif italic methode-guarantee-text">
-                  {d('On mesure ensemble le temps que prennent les tâches visées, et on fixe le délai. On y arrive dans les temps, ou on continue gratuitement jusqu’à ce que ce soit le cas.',
-                     'We set the goal and the timeline together. We hit it on time, or we keep working for free until we do.', 'Közösen határozzuk meg a célt és a határidőt. Vagy időben elérjük, vagy ingyen dolgozunk tovább, amíg meglesz.')}
+                  {d('On mesure ensemble le temps que prennent les tâches visées avant de commencer, et on fixe l’objectif. On l’atteint, ou on continue gratuitement jusqu’à ce que ce soit le cas.',
+                     'We measure together how long the targeted tasks take before we start, and set the goal. We reach it, or we keep working for free until we do.', 'Kezdés előtt közösen megmérjük, mennyi időt visznek el a célzott feladatok, és kitűzzük a célt. Elérjük, vagy ingyen dolgozunk tovább, amíg meglesz.')}
                 </p>
               </div>
             </div>

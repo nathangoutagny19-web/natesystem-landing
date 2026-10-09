@@ -4,9 +4,9 @@ import { localeMetadata } from '@/lib/en-metadata'
 export const metadata: Metadata = localeMetadata({
   lang: 'hu',
   path: '/methode',
-  title: 'Módszerünk: átvilágítjuk a cégét, mielőtt bármit építenénk | NateSystem',
+  title: 'Módszerünk: feltérképezzük a szervezetét, mielőtt bármit építenénk | NateSystem',
   description:
-    'A NateSystem módszere négy lépésben: feltérképezés, egységesítés, automatizálás, betanítás. Előbb megértjük, hová megy az ideje és a pénze, aztán megépítjük az egyedi szoftvert, amely visszaszerzi. A kód az Öné.',
+    'A NateSystem módszere a luxus- és presztízsvendéglátásnak: feltérképezés, egységesítés, automatizálás, képzés, aztán közös továbbfejlesztés. Előbb megértjük, hol vész el az idő és az ügyfél, aztán megépítjük az egyedi rendszert, amely ezt rendezi. A forráskód az Öné.',
 })
 
 export default function HuMethodeLayout({ children }: { children: React.ReactNode }) {

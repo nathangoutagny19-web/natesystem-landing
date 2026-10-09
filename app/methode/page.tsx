@@ -3,9 +3,9 @@ import type { Metadata } from 'next'
 import MethodeContent from '@/components/methode/MethodeContent'
 
 export const metadata: Metadata = {
-  title: 'Notre approche, On radiographie votre établissement avant de construire | NateSystem',
+  title: 'Notre méthode : on cartographie votre organisation avant de construire | NateSystem',
   description:
-    'La méthode NateSystem en 4 temps : cartographier, unifier, automatiser, former. On comprend d\'abord où partent vos heures et votre argent, puis on construit le logiciel sur-mesure qui les récupère. Vous êtes propriétaire du code.',
+    'La méthode NateSystem pour l\'hospitalité de luxe et de prestige : cartographier, réunir, automatiser, former, puis faire évoluer avec vous. On comprend d\'abord où se perdent le temps et les clients, puis on construit le système sur mesure qui règle ça. Vous êtes propriétaire du code.',
   alternates: {
     canonical: 'https://www.natesystem.com/methode',
     languages: {
@@ -33,8 +33,8 @@ function methodeJsonLd(lang: Lang) {
         '@id': `${root}/methode#page`,
         name: en ? 'Our method' : 'Notre approche',
         description: en
-          ? 'The NateSystem method: we X-ray your school (map, unify, automate, train) before building anything at all.'
-          : 'La méthode NateSystem : on radiographie votre établissement (cartographier, unifier, automatiser, former) avant de construire quoi que ce soit.',
+          ? 'The NateSystem method: we map your organisation (map, unify, automate, train) before building anything, then keep it evolving with you.'
+          : 'La méthode NateSystem : on cartographie votre organisation (cartographier, réunir, automatiser, former) avant de construire quoi que ce soit, puis on la fait évoluer avec vous.',
         inLanguage: lang,
         isPartOf: { '@id': `${base}/#organization` },
       },
