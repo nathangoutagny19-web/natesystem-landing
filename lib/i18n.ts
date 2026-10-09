@@ -156,9 +156,9 @@ export const translations = {
     hu: 'Gyorsabb reagálás minden ügyfélnek, havonta visszanyert órák a csapatának, és olyan élmény, amilyet az ügyfelei sehol máshol nem kapnak.',
   },
   'hero.aiNote': {
-    en: '40 hours a month given back to the team of a group of nine sites, as reported by the client.',
-    fr: '40 h par mois rendues à l’équipe d’un groupe de neuf établissements, chiffre rapporté par le client.',
-    hu: 'Havi 40 óra visszanyerve egy kilenc intézményből álló csoport csapatának, az ügyfél beszámolója szerint.',
+    en: '40 hours a month given back to teams on average, as reported by our clients.',
+    fr: '40 h par mois rendues en moyenne aux équipes, chiffre rapporté par nos clients.',
+    hu: 'Átlagosan havi 40 óra visszanyerve a csapatoknak, az ügyfeleink beszámolója szerint.',
   },
   'hero.cta': { en: 'Book a call · free', fr: 'Réserver un appel · offert', hu: 'Hívás foglalása · ingyenes' },
   'hero.secondary': {
