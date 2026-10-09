@@ -151,9 +151,9 @@ export const translations = {
         de livraison à fixer ». La mention est donc retirée, pas
         remplacée. Elle revient le jour où Nathan le fixe. */
   'hero.sub': {
-    en: 'Stays without a hitch, calmer teams, and time for your clients. You enter it once and your whole organisation follows, and you finally know where your clients come from. You own the code.',
-    fr: 'Des séjours sans accroc, des équipes sereines, et du temps pour vos clients. Vous saisissez une fois, toute votre organisation suit, et vous savez enfin d’où viennent vos clients. Le code vous appartient.',
-    hu: 'Gördülékeny tartózkodások, nyugodt csapatok, és idő az ügyfeleire. Egyszer viszi be, az egész szervezete követi, és végre tudja, honnan jönnek az ügyfelei. A forráskód az Öné.',
+    en: 'More responsive with every client, hours given back to your team every month, and an experience your clients get nowhere else.',
+    fr: 'Plus réactif avec chaque client, des heures rendues à votre équipe chaque mois, et une expérience que vos clients ne vivent nulle part ailleurs.',
+    hu: 'Gyorsabb reagálás minden ügyfélnek, havonta visszanyert órák a csapatának, és olyan élmény, amilyet az ügyfelei sehol máshol nem kapnak.',
   },
   'hero.aiNote': {
     en: '40 hours a month given back to the team of a group of nine sites, as reported by the client.',
