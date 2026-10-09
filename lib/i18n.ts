@@ -151,9 +151,9 @@ export const translations = {
         de livraison à fixer ». La mention est donc retirée, pas
         remplacée. Elle revient le jour où Nathan le fixe. */
   'hero.sub': {
-    en: 'Responsiveness that doubles, hours given back to your team every month, a unique client experience and data-driven decisions: what each client spends, on what, and where they came from. That’s what a bespoke digital ecosystem is.',
-    fr: 'Une réactivité qui double, des heures rendues à votre équipe chaque mois, une expérience client unique et des décisions data-driven : ce que chaque client dépense, sur quoi, et d’où il vient. C’est ça, un écosystème digital sur mesure.',
-    hu: 'Kétszer gyorsabb reagálás, havonta visszanyert órák a csapatának, egyedi ügyfélélmény és adatvezérelt döntések: mennyit költ az egyes ügyfelek, mire, és honnan jöttek. Ez az egyedi digitális ökoszisztéma.',
+    en: 'Responsiveness that doubles, hours given back to your team every month, a unique client experience, and decisions based on tracked data that stays yours, in complete discretion. That’s a bespoke digital ecosystem, made by NateSystem.',
+    fr: 'Une réactivité qui double, des heures rendues à votre équipe chaque mois, une expérience client unique, et des décisions fondées sur des données suivies, qui restent chez vous, en toute discrétion. C’est ça, un écosystème digital sur mesure, signé NateSystem.',
+    hu: 'Kétszer gyorsabb reagálás, havonta visszanyert órák a csapatának, egyedi ügyfélélmény, és követett adatokon alapuló döntések, amelyek Önnél maradnak, teljes diszkrécióval. Ez az egyedi digitális ökoszisztéma, a NateSystemtől.',
   },
   'hero.aiNote': {
     en: '40 hours a month given back to teams on average, as reported by our clients.',
