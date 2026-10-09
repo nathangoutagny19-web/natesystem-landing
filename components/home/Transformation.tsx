@@ -40,13 +40,17 @@ const NOTES: { key: string; top: string; left: string; rot: number; z: number; d
   { key: 'trans.chaos.forgot', top: '24%', left: '58%', rot: 3, z: 6, dur: '9.7s', delay: '-3.1s' },
 ]
 
-// AVANT = ce qui bloque la croissance. On mène avec le savoir piégé (47%, stat3),
-// incarnation de la valeur immobilisée, puis le répétitif et le savoir non transmis.
-// Chiffres illustratifs, voir règle d'or BRIEF §7.2 (à confirmer/marquer estimation le jour venu).
-const COST_STATS = [3, 5, 4, 1, 2] as const
-// APRÈS = 3 points forts (valeur serif rouge + description) qui répondent aux
-// coûts de l'AVANT. Choix Nathan : condenser à 3.
-const GAIN_STATS = [1, 2, 3] as const
+// AVANT = ce que ça coûte (9 octobre 2026, hospitalité de luxe et de prestige).
+// Nathan : la douleur principale, c'est le logiciel qui ne colle pas. Il ouvre
+// donc la liste, suivi de la ressaisie, du jour J, des chiffres qu'on ne voit
+// pas et de la dépendance à une seule personne.
+const COST_STATS = [1, 2, 3, 4, 5] as const
+// APRÈS = les résultats qui répondent à ces coûts : des heures rendues, des
+// séjours sans accroc, des chiffres clairs, une équipe qui avance sans le
+// dirigeant. Quatre et non plus trois : la donnée et la dépendance au
+// dirigeant sont deux demandes explicites de Nathan. Le gain 3 (« Des clients
+// reconnus ») reste écrit dans i18n, prêt à revenir.
+const GAIN_STATS = [1, 2, 4, 5] as const
 
 export default function Transformation() {
   const { t } = useLang()
