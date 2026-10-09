@@ -54,9 +54,9 @@ const CASES: CaseEntry[] = [
     id: 'chartreux',
     name: 'Les Chartreux',
     sector: {
-      fr: 'Groupe scolaire · Lyon',
-      en: 'School group · Lyon',
-      hu: 'Iskolacsoport · Lyon',
+      fr: 'Institut des Chartreux · Lyon',
+      en: 'Institut des Chartreux · Lyon',
+      hu: 'Institut des Chartreux · Lyon',
     },
     headline: {
       fr: 'Neuf tableurs remplacés par une seule pointeuse, bâtie sur leur convention.',

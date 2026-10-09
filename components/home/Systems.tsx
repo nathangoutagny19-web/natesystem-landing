@@ -113,7 +113,7 @@ export default function Systems() {
     { icon: Clock, tag: 'org', mockup: 'systems/sys10',
       title: d('Pointeuse et comptage d’heures', 'Time clock and hours tracking', 'Munkaidő-nyilvántartás'),
       desc: d('Pointage sur tablette ou téléphone, heures supplémentaires calculées sur vos règles, pas sur un modèle générique.', 'Clock-in on a tablet or phone, overtime calculated on your rules, not on a generic template.', 'Bejelentkezés tableten vagy telefonon, a túlórák az Ön szabályai szerint számolva, nem általános sablon alapján.'),
-      metric: d('40 h par mois rendues, rapporté par un groupe de neuf établissements', '40 hours a month given back, as reported by a group of nine sites', 'Havi 40 óra visszanyerve, egy kilenc intézményből álló csoport beszámolója szerint'),
+      metric: d('40 h par mois rendues, rapporté par l’Institut des Chartreux', '40 hours a month given back, as reported by Institut des Chartreux', 'Havi 40 óra visszanyerve, az Institut des Chartreux beszámolója szerint'),
       sector: d('RH · Multi-sites', 'HR · Multi-site', 'HR · Többtelephelyes') },
   ]
 

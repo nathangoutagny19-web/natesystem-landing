@@ -972,9 +972,9 @@ export const translations = {
     hu: 'Az információ közös, mindenki tudja, mi a dolga. Elengedi az óráról órára követést, anélkül hogy kiengedné a kezéből az irányítást.',
   },
   'trans.punch': {
-    en: 'A group of nine sites was exactly there. Today, it’s on the other side.',
-    fr: 'Un groupe de neuf établissements était exactement là. Aujourd’hui, il est de l’autre côté.',
-    hu: 'Egy kilenc intézményből álló csoport pontosan itt tartott. Ma már a túloldalon van.',
+    en: 'Institut des Chartreux was exactly there. Today, it’s on the other side.',
+    fr: 'L’Institut des Chartreux était exactement là. Aujourd’hui, il est de l’autre côté.',
+    hu: 'Az Institut des Chartreux pontosan itt tartott. Ma már a túloldalon van.',
   },
   'trans.aiLabel': { en: 'AI', fr: 'IA', hu: 'MI' },
   'trans.aiTag': {
