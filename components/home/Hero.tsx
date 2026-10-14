@@ -120,13 +120,14 @@ export default function Hero() {
         className="w-full flex justify-center"
         style={{ marginBottom: '40px' }}
       >
+        {/* Sous-titres incrustés dans la vidéo : pas de piste VTT, elle
+            doublerait le texte à l'écran. */}
         <VslPlayer
-          src="/vsl.mp4"
-          subtitles="vsl"
-          poster="/vsl-poster.jpg"
-          label={lang === 'en' ? 'Watch the demo' : 'Voir la démo'}
-          duration="5 min"
-          title={lang === 'en' ? 'NateSystem demo' : 'Démo NateSystem'}
+          src="/vsl-hospitality.mp4"
+          poster="/vsl-hospitality-poster.jpg"
+          label={t('hero.vslLabel')}
+          duration="51 s"
+          title={t('hero.vslTitle')}
         />
       </motion.div>
 

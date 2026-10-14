@@ -161,6 +161,11 @@ export const translations = {
     hu: 'Átlagosan havi 40 óra visszanyerve a csapatoknak, az ügyfeleink beszámolója szerint.',
   },
   'hero.cta': { en: 'Book a call · free', fr: 'Réserver un appel · offert', hu: 'Hívás foglalása · ingyenes' },
+  /* La VSL du 13 octobre 2026, tournée en anglais à Budapest, sous-titres
+     incrustés. Nathan l'a voulue sur les trois langues, y compris en
+     français, à la place de l'ancienne démo de juillet. */
+  'hero.vslLabel': { en: 'Watch the video', fr: 'Voir la vidéo', hu: 'Nézze meg a videót' },
+  'hero.vslTitle': { en: 'Nathan Goutagny, NateSystem', fr: 'Nathan Goutagny, NateSystem', hu: 'Nathan Goutagny, NateSystem' },
   'hero.secondary': {
     en: 'See what we build',
     fr: 'Voir ce qu\'on construit',
