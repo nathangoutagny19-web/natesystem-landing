@@ -239,7 +239,7 @@ export default function RdvConfirmePage() {
         </div>
       </section>
 
-      <ClientsBar />
+      <ClientsBar split />
 
       <Divider />
 

@@ -108,11 +108,17 @@ const clients: ClientRef[] = [
   { name: 'Association Aloess', type: 'logo', src: '/logos/aloess.png', href: 'https://www.aloess.org/', compact: true },
 ]
 
+const logos = clients.filter((c) => c.type !== 'photo')
+const photos = clients.filter((c): c is Extract<ClientRef, { type: 'photo' }> => c.type === 'photo')
+
 /* `hideLabel` sert à la landing /atelier, qui pose son propre titre au-dessus
    du carrousel : sans ça, deux intitulés diraient la même chose à deux pas
    l'un de l'autre. Le reste du site n'y touche pas. La liste de logos, elle,
    reste ici et nulle part ailleurs, pour qu'un ajout se fasse en un endroit. */
-export default function ClientsBar({ hideLabel = false }: { hideLabel?: boolean }) {
+/* `split` sert à la page de confirmation (/rdv-confirme) : les logos défilent sur
+   une ligne, les rencontres (photos) tiennent sur une seconde ligne, fixe et plus
+   grande, pour qu'on voie les visages. La home garde la ligne unique. */
+export default function ClientsBar({ hideLabel = false, split = false }: { hideLabel?: boolean; split?: boolean }) {
   const { lang } = useLang()
 
   const label = makeD(lang)(
@@ -152,16 +158,75 @@ export default function ClientsBar({ hideLabel = false }: { hideLabel?: boolean 
             loop). Pauses on hover so a visitor can read a logo. */}
         <div className="clients-marquee-wrap" aria-hidden="false">
           <ul className="clients-marquee">
-            {[...clients, ...clients].map((c, i) => (
+            {[...(split ? logos : clients), ...(split ? logos : clients)].map((c, i) => (
               <li key={`${c.name}-${i}`} className="clients-item">
                 <ClientItem c={c} lang={lang} />
               </li>
             ))}
           </ul>
         </div>
+
+        {split && (
+          <ul className="clients-meetings">
+            {photos.map((c) => (
+              <li key={c.name}>
+                <a href={localizedHref(c.href, lang)} aria-label={c.name} className="clients-meeting">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={c.src} alt={c.name} loading="lazy" />
+                  <span className="font-mono">{c.name}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
 
       <style>{`
+        .clients-meetings {
+          list-style: none;
+          margin: 36px 0 0;
+          padding: 0;
+          display: flex;
+          justify-content: center;
+          gap: 28px;
+          flex-wrap: wrap;
+        }
+        .clients-meeting {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 10px;
+          text-decoration: none;
+        }
+        .clients-meeting img {
+          width: 167px;
+          height: 120px;
+          object-fit: cover;
+          border-radius: 8px;
+          display: block;
+          filter: grayscale(100%) contrast(1.04);
+          opacity: 0.85;
+          transition: filter 220ms ease-out, opacity 220ms ease-out;
+        }
+        .clients-meeting:hover img,
+        .clients-meeting:focus-visible img {
+          filter: grayscale(0%) contrast(1);
+          opacity: 1;
+        }
+        .clients-meeting span {
+          font-size: 10.5px;
+          letter-spacing: 1.2px;
+          text-transform: uppercase;
+          color: var(--text-muted);
+          max-width: 167px;
+          text-align: center;
+          line-height: 1.5;
+        }
+        @media (max-width: 768px) {
+          .clients-meeting img { width: 125px; height: 90px; }
+          .clients-meeting span { max-width: 125px; }
+          .clients-meetings { gap: 16px; }
+        }
         .clients-item {
           display: flex;
           align-items: center;
