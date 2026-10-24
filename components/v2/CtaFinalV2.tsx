@@ -1,13 +1,11 @@
 'use client'
 
-import { useEffect } from 'react'
-import Cal, { getCalApi } from '@calcom/embed-react'
 import FadeUp from '@/components/ui/FadeUp'
 import { useLang } from '@/components/providers/LangProvider'
-import { CAL_HANDLE, CAL_NAMESPACE } from '@/lib/constants'
+import CalendlyInline from '@/components/ui/CalendlyInline'
 
 /**
- * CtaFinalV2, même embed Cal.com que CtaFinal (id="rendez-vous", brand rouge),
+ * CtaFinalV2, même agenda Calendly que CtaFinal (id="rendez-vous", brand rouge),
  * mais recadré autour du Sprint Diagnostic : « Vous ne sautez jamais dans le
  * vide » (REFONTE §CTA). Réutilise les réassurances existantes cta.r1/r2/r3.
  */
@@ -15,20 +13,6 @@ export default function CtaFinalV2() {
   const { t } = useLang()
 
   const reassurances = [t('cta.r1'), t('cta.r2'), t('cta.r3')]
-
-  useEffect(() => {
-    ;(async () => {
-      const cal = await getCalApi({ namespace: CAL_NAMESPACE })
-      cal('ui', {
-        hideEventTypeDetails: false,
-        layout: 'month_view',
-        cssVarsPerTheme: {
-          light: { 'cal-brand': '#E63946' },
-          dark: { 'cal-brand': '#E63946', 'cal-bg': '#0e0e12' },
-        },
-      })
-    })()
-  }, [])
 
   return (
     <section id="rendez-vous" style={{ padding: '0 24px', scrollMarginTop: '90px' }}>
@@ -71,12 +55,7 @@ export default function CtaFinalV2() {
               textAlign: 'left',
             }}
           >
-            <Cal
-              namespace={CAL_NAMESPACE}
-              calLink={CAL_HANDLE}
-              style={{ width: '100%', height: '100%', minHeight: 640, overflow: 'scroll' }}
-              config={{ layout: 'month_view' }}
-            />
+            <CalendlyInline />
           </div>
         </FadeUp>
       </div>

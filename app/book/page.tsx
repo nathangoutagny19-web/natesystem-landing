@@ -1,11 +1,10 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { getCalApi } from '@calcom/embed-react'
-import Cal from '@calcom/embed-react'
+import CalendlyInline from '@/components/ui/CalendlyInline'
 import Nav from '@/components/layout/Nav'
 import Footer from '@/components/layout/Footer'
-import { API_URL, CAL_HANDLE, CAL_NAMESPACE } from '@/lib/constants'
+import { API_URL } from '@/lib/constants'
 import { useLang, type Lang } from '@/components/providers/LangProvider'
 
 /* ——— Localized copy, labels, options, UI strings ——— */
@@ -487,26 +486,9 @@ export default function BookPage() {
   const [step, setStep] = useState<Step>('form')
   const [submitting, setSubmitting] = useState(false)
 
-  // Init Cal embed UI once on mount + flag layout to hide the floating
-  // WhatsApp pill on the booking page (no double CTA when Cal is open).
+  // Hide the floating WhatsApp pill on the booking page (no double CTA when
+  // the calendar is open).
   useEffect(() => {
-    (async () => {
-      const cal = await getCalApi({ namespace: CAL_NAMESPACE })
-      cal('ui', {
-        hideEventTypeDetails: false,
-        layout: 'month_view',
-        cssVarsPerTheme: {
-          dark: {
-            'cal-brand': '#E63946',
-            'cal-bg': '#0e0e12',
-            'cal-bg-emphasis': '#1a1a1f',
-          },
-          light: {
-            'cal-brand': '#E63946',
-          },
-        },
-      })
-    })()
     document.body.dataset.hideWhatsappFloat = 'true'
     return () => { delete document.body.dataset.hideWhatsappFloat }
   }, [])
@@ -760,17 +742,7 @@ export default function BookPage() {
                   minHeight: 640,
                 }}
               >
-                <Cal
-                  namespace={CAL_NAMESPACE}
-                  calLink={CAL_HANDLE}
-                  style={{ width: '100%', height: '100%', minHeight: 640, overflow: 'scroll' }}
-                  config={{
-                    layout: 'month_view',
-                    name: `${form.prenom} ${form.nom}`.trim(),
-                    email: form.email,
-                    notes: buildCalNotes(),
-                  }}
-                />
+                <CalendlyInline name={`${form.prenom} ${form.nom}`.trim()} email={form.email} />
               </div>
             </div>
           )}
