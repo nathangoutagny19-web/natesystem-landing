@@ -243,17 +243,17 @@ export default function RdvConfirmePage() {
 
       <Divider />
 
-      {/* Un empêchement */}
+      {/* Une question avant l'appel */}
       <section style={{ padding: '64px 24px 96px' }}>
         <div className="mx-auto text-center" style={{ maxWidth: 620 }}>
           <FadeUp>
             <p className="font-serif italic" style={{ fontSize: 'clamp(22px, 3.4vw, 28px)', color: 'var(--text)', margin: '0 0 12px' }}>
-              {d('Un empêchement ?', 'Something came up?')}
+              {d('Une question avant l’appel ?', 'A question before the call?')}
             </p>
             <p className="font-sans" style={{ fontSize: 15, color: 'var(--text-secondary)', lineHeight: 1.7, fontWeight: 300, margin: '0 0 24px' }}>
               {d(
-                'Décalez le rendez-vous depuis l’email de confirmation, ou écrivez-moi directement. Je préfère un autre créneau à un appel manqué.',
-                'Reschedule from the confirmation email, or write to me directly. I’d rather find another slot than miss each other.',
+                'Écrivez-moi directement, je vous réponds moi-même.',
+                'Write to me directly, I answer myself.',
               )}
             </p>
             <a href="mailto:nathan@natesystem.com" className="btn-primary" style={{ margin: '0 auto', display: 'inline-flex', gap: 8, alignItems: 'center' }}>
