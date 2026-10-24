@@ -5,6 +5,7 @@ import { Mail } from 'lucide-react'
 import Nav from '@/components/layout/Nav'
 import Footer from '@/components/layout/Footer'
 import Divider from '@/components/ui/Divider'
+import ClientsBar from '@/components/home/ClientsBar'
 import FadeUp from '@/components/ui/FadeUp'
 import { useLang } from '@/components/providers/LangProvider'
 import { makeD } from '@/lib/lang'
@@ -237,6 +238,8 @@ export default function RdvConfirmePage() {
 
         </div>
       </section>
+
+      <ClientsBar />
 
       <Divider />
 
