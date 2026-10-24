@@ -21,6 +21,22 @@ type Props = { name?: string; email?: string; minHeight?: number }
 export default function CalendlyInline({ name, email, minHeight = 720 }: Props) {
   const { theme } = useTheme()
   const [ready, setReady] = useState(false)
+  /* Calendly envoie la hauteur réelle de sa page (calendly.page_height). Le cadre
+     la suit : sans ça, la liste des horaires défile dans un cadre trop court et
+     passe sous le titre du jour (vu en prod le 24/10/2026). */
+  const [height, setHeight] = useState(minHeight)
+
+  useEffect(() => {
+    const onMessage = (e: MessageEvent) => {
+      if (e.origin !== 'https://calendly.com') return
+      const data = e.data as { event?: string; payload?: { height?: string } }
+      if (data?.event !== 'calendly.page_height' || !data.payload?.height) return
+      const h = parseInt(data.payload.height, 10)
+      if (Number.isFinite(h)) setHeight(Math.max(minHeight, h))
+    }
+    window.addEventListener('message', onMessage)
+    return () => window.removeEventListener('message', onMessage)
+  }, [minHeight])
 
   const url = useMemo(() => {
     const p = new URLSearchParams({
@@ -56,5 +72,10 @@ export default function CalendlyInline({ name, email, minHeight = 720 }: Props) 
     w.Calendly.initInlineWidget({ url, parentElement: el })
   }, [ready, url])
 
-  return <div id="calendly-inline" style={{ width: '100%', minHeight, height: minHeight }} />
+  return (
+    <>
+      <style>{`#calendly-inline iframe { height: 100% !important; }`}</style>
+      <div id="calendly-inline" style={{ width: '100%', minHeight, height }} />
+    </>
+  )
 }
