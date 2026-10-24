@@ -11,22 +11,27 @@ import CalendlyInline from '@/components/ui/CalendlyInline'
 export default function CtaFinal() {
   return (
     <section id="rendez-vous" style={{ padding: '0 24px', scrollMarginTop: '90px' }}>
-      <div className="mx-auto" style={{ maxWidth: '1100px', padding: '56px 0 96px' }}>
+      <div className="mx-auto" style={{ maxWidth: 'var(--cal-w, 1060px)', padding: '56px 0 96px' }}>
         <FadeUp>
-          <div
-            style={{
-              background: 'var(--bg-card)',
-              border: '1px solid var(--border)',
-              borderRadius: 12,
-              overflow: 'hidden',
-              minHeight: 720,
-              textAlign: 'left',
-            }}
-          >
-            <CalendlyInline />
+          {/* Pas de cadre à nous : seulement la carte Calendly. Calendly pose une marge
+              blanche autour de sa carte (≈ 66 px en haut) : on la rogne pour que la carte
+              soit posée directement sur le fond du site. */}
+          <div className="cal-crop">
+            <div className="cal-shift">
+              <CalendlyInline />
+            </div>
           </div>
         </FadeUp>
       </div>
+      <style jsx>{`
+        .cal-crop {
+          overflow: hidden;
+          border-radius: 12px;
+        }
+        .cal-shift {
+          margin-top: -66px;
+        }
+      `}</style>
     </section>
   )
 }

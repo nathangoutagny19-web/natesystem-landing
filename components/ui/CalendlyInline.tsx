@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState } from 'react'
 import { useTheme } from '@/components/providers/ThemeProvider'
+import { useLang } from '@/components/providers/LangProvider'
 import { CALENDLY_URL } from '@/lib/constants'
 
 /**
@@ -20,6 +21,7 @@ type Props = { name?: string; email?: string; minHeight?: number }
 
 export default function CalendlyInline({ name, email, minHeight = 720 }: Props) {
   const { theme } = useTheme()
+  const { lang } = useLang()
   const [ready, setReady] = useState(false)
   /* Calendly envoie la hauteur réelle de sa page (calendly.page_height). Le cadre
      la suit : sans ça, la liste des horaires défile dans un cadre trop court et
@@ -37,6 +39,23 @@ export default function CalendlyInline({ name, email, minHeight = 720 }: Props) 
     window.addEventListener('message', onMessage)
     return () => window.removeEventListener('message', onMessage)
   }, [minHeight])
+
+  /* ⚠︎ C'EST LE SITE QUI REDIRIGE, PAS CALENDLY. La redirection réglée côté
+     Calendly passe par sa page « You are leaving Calendly » (lien externe, à
+     cliquer) : un clic et une page étrangère juste après la réservation. On
+     écoute l'événement de réservation et on envoie nous-mêmes vers la page de
+     confirmation, dans la langue du visiteur. */
+  useEffect(() => {
+    const onScheduled = (e: MessageEvent) => {
+      if (e.origin !== 'https://calendly.com') return
+      const data = e.data as { event?: string }
+      if (data?.event !== 'calendly.event_scheduled') return
+      const nameParam = name ? `?prenom=${encodeURIComponent(name.split(' ')[0])}` : ''
+      window.location.href = `${lang === 'en' ? '/en' : ''}/rdv-confirme/${nameParam}`
+    }
+    window.addEventListener('message', onScheduled)
+    return () => window.removeEventListener('message', onScheduled)
+  }, [lang, name])
 
   const url = useMemo(() => {
     const p = new URLSearchParams({
