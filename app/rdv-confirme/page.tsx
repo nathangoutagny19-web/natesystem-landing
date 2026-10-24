@@ -59,49 +59,8 @@ export default function RdvConfirmePage() {
       n: '03',
       t: d('Je vous dis si je peux aider', 'I tell you if I can help', 'Megmondom, tudok-e segíteni'),
       s: d(
-        'Et comment, concrètement. Si ce n’est pas le cas, je vous le dis aussi.',
-        'And how, in practice. If I can’t, I’ll tell you that too.',
-      ),
-    },
-  ]
-
-  const faq = [
-    {
-      q: d('Nous avons déjà un outil.', 'We already have a tool.'),
-      a: d(
-        'Très bien. On part de ce qui marche chez vous, et on construit seulement ce que votre outil ne fait pas.',
-        'Good. We start from what already works for you, and only build what your tool doesn’t do.',
-      ),
-    },
-    {
-      q: d(
-        'Nous avons déjà essayé un logiciel sur mesure, et ça s’est mal passé.',
-        'We already tried custom software, and it went badly.',
-      ),
-      a: d(
-        'Le code et les données sont à vous dès le premier jour, dans des comptes à votre nom. Si je disparais demain, un autre développeur reprend le lendemain.',
-        'The code and the data are yours from day one, in accounts in your name. If I disappeared tomorrow, another developer could take over the next day.',
-      ),
-    },
-    {
-      q: d('C’est la saison, je n’ai pas le temps.', 'It’s high season, I don’t have time.'),
-      a: d(
-        'On démarre petit, sur ce qui vous soulage tout de suite, et on avance au rythme de votre saison.',
-        'We start small, with what takes weight off you right away, and move at the pace of your season.',
-      ),
-    },
-    {
-      q: d('Combien ça coûte ?', 'How much does it cost?'),
-      a: d(
-        'Ça dépend de ce qu’on construit. Si l’appel montre que je peux vous aider, on en parle à la fin, clairement.',
-        'It depends on what we build. If the call shows I can help, we talk about it at the end, plainly.',
-      ),
-    },
-    {
-      q: d('Est-ce que ça remplace le contact humain ?', 'Does it replace the human touch?'),
-      a: d(
-        'Non. Vous et votre équipe restez les interlocuteurs de vos clients. L’outil enlève l’administratif, pour vous laisser plus de temps avec eux.',
-        'No. You and your team stay the people your clients talk to. The tool takes the admin away, so you have more time with them.',
+        'Et comment, concrètement. À la fin, on se dit franchement si on continue ou non.',
+        'And how, in practice. At the end, we tell each other plainly whether we go on or not.',
       ),
     },
   ]
@@ -128,9 +87,20 @@ export default function RdvConfirmePage() {
             </h1>
             <p className="font-sans" style={{ fontSize: 16, color: 'var(--text-secondary)', lineHeight: 1.7, fontWeight: 300, maxWidth: 560, margin: '20px auto 0' }}>
               {d(
-                'Vous avez reçu l’invitation par email. Prenez quelques minutes pour regarder la vidéo : vous saurez exactement comment va se passer notre échange.',
-                'The invitation is in your inbox. Take a few minutes to watch the video: you’ll know exactly how our conversation will go.',
+                'Vous repartez de cet appel avec les deux ou trois endroits où votre organisation vous coûte le plus de temps, que l’on travaille ensemble ou non.',
+                'You leave this call knowing the two or three places where your organisation costs you the most time, whether we work together or not.',
               )}
+            </p>
+            <p className="font-sans" style={{ fontSize: 14, color: 'var(--text-secondary)', lineHeight: 1.7, fontWeight: 300, maxWidth: 560, margin: '14px auto 0' }}>
+              {VIDEO_EMBED_URL
+                ? d(
+                    'L’invitation est dans votre boîte mail : acceptez-la pour l’avoir dans votre agenda. En attendant, la vidéo ci-dessous vous montre comment se passe l’appel.',
+                    'The invitation is in your inbox: accept it to have it in your calendar. Meanwhile, the video below shows how the call goes.',
+                  )
+                : d(
+                    'L’invitation est dans votre boîte mail : acceptez-la, elle s’ajoute à votre agenda avec le lien Google Meet.',
+                    'The invitation is in your inbox: accept it, and it goes into your calendar with the Google Meet link.',
+                  )}
             </p>
           </FadeUp>
         </div>
@@ -203,8 +173,8 @@ export default function RdvConfirmePage() {
               </p>
               <p className="font-sans" style={{ fontSize: 16, color: 'var(--text)', lineHeight: 1.6, margin: 0 }}>
                 {d(
-                  'La tâche qui vous prend le plus de temps chaque semaine.',
-                  'The task that takes you the most time every week.',
+                  'La tâche qui vous prend le plus de temps chaque semaine, et combien d’heures elle vous prend. Si vous décidez à deux, invitez votre associé.',
+                  'The task that takes you the most time every week, and how many hours it takes. If you decide with a partner, bring them along.',
                 )}
               </p>
             </div>
@@ -232,49 +202,6 @@ export default function RdvConfirmePage() {
             </p>
           </FadeUp>
 
-          <div className="rdv-fit">
-            <div style={{ background: 'var(--bg-card)', border: '1px solid var(--border)', borderRadius: 12, padding: '24px 26px' }}>
-              <p className="font-mono" style={{ fontSize: 11, letterSpacing: 1.8, textTransform: 'uppercase', color: 'var(--accent)', fontWeight: 600, margin: '0 0 10px' }}>
-                {d('C’est pour vous si', 'This is for you if')}
-              </p>
-              <p className="font-sans" style={{ fontSize: 14.5, color: 'var(--text-secondary)', lineHeight: 1.7, fontWeight: 300, margin: 0 }}>
-                {d(
-                  'Votre structure grandit, la demande est là, mais tout passe encore par vous : WhatsApp, emails, Excel, prestataires à relancer.',
-                  'Your business is growing, the demand is there, but everything still goes through you: WhatsApp, emails, spreadsheets, suppliers to chase.',
-                )}
-              </p>
-            </div>
-            <div style={{ background: 'var(--bg-card)', border: '1px solid var(--border)', borderRadius: 12, padding: '24px 26px' }}>
-              <p className="font-mono" style={{ fontSize: 11, letterSpacing: 1.8, textTransform: 'uppercase', color: 'var(--text-secondary)', fontWeight: 600, margin: '0 0 10px' }}>
-                {d('Ce n’est pas pour vous si', 'It’s not for you if')}
-              </p>
-              <p className="font-sans" style={{ fontSize: 14.5, color: 'var(--text-secondary)', lineHeight: 1.7, fontWeight: 300, margin: 0 }}>
-                {d(
-                  'Un logiciel standard vous convient parfaitement. Dans ce cas, gardez-le, je vous le dirai pendant l’appel.',
-                  'A standard software suits you perfectly. In that case, keep it, and I’ll tell you so on the call.',
-                )}
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <Divider />
-
-      {/* FAQ */}
-      <section style={{ padding: '80px 24px' }}>
-        <div className="mx-auto" style={{ maxWidth: 760 }}>
-          <FadeUp className="text-center mb-10">
-            <span className="section-label">{d('Les questions qu’on me pose', 'The questions I get asked', 'A gyakori kérdések')}</span>
-          </FadeUp>
-          <div style={{ display: 'grid', gap: 12 }}>
-            {faq.map((f) => (
-              <details key={f.q} className="rdv-faq" style={{ background: 'var(--bg-card)', border: '1px solid var(--border)', borderRadius: 12, padding: '18px 22px' }}>
-                <summary className="font-sans" style={{ fontSize: 15.5, color: 'var(--text)', cursor: 'pointer', fontWeight: 500, listStyle: 'none' }}>{f.q}</summary>
-                <p className="font-sans" style={{ fontSize: 14.5, color: 'var(--text-secondary)', lineHeight: 1.7, fontWeight: 300, margin: '12px 0 0' }}>{f.a}</p>
-              </details>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -310,18 +237,8 @@ export default function RdvConfirmePage() {
           grid-template-columns: repeat(3, minmax(0, 1fr));
           gap: 16px;
         }
-        .rdv-fit {
-          display: grid;
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-          gap: 16px;
-          margin-top: 40px;
-        }
-        .rdv-faq summary::-webkit-details-marker {
-          display: none;
-        }
         @media (max-width: 760px) {
-          .rdv-grid,
-          .rdv-fit {
+          .rdv-grid {
             grid-template-columns: 1fr;
           }
         }
