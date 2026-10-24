@@ -82,7 +82,9 @@ export default function RdvConfirmePage() {
                 ? d(`Merci ${firstName}, c’est noté.`, `Thank you ${firstName}, you’re booked.`)
                 : d('Merci, c’est noté.', 'Thank you, you’re booked.')}{' '}
               <span className="accent" style={{ color: 'var(--accent)' }}>
-                {d('À très vite sur Google Meet.', 'Talk soon on Google Meet.')}
+                {VIDEO_EMBED_URL
+                  ? d('Une dernière étape avant l’appel.', 'One last step before the call.')
+                  : d('À très vite sur Google Meet.', 'Talk soon on Google Meet.')}
               </span>
             </h1>
             <p className="font-sans" style={{ fontSize: 16, color: 'var(--text-secondary)', lineHeight: 1.7, fontWeight: 300, maxWidth: 560, margin: '20px auto 0' }}>
@@ -94,8 +96,8 @@ export default function RdvConfirmePage() {
             <p className="font-sans" style={{ fontSize: 14, color: 'var(--text-secondary)', lineHeight: 1.7, fontWeight: 300, maxWidth: 560, margin: '14px auto 0' }}>
               {VIDEO_EMBED_URL
                 ? d(
-                    'L’invitation est dans votre boîte mail : acceptez-la pour l’avoir dans votre agenda. En attendant, la vidéo ci-dessous vous montre comment se passe l’appel.',
-                    'The invitation is in your inbox: accept it to have it in your calendar. Meanwhile, the video below shows how the call goes.',
+                    'Regardez cette vidéo de quelques minutes : comment se passe l’appel, et les questions qu’on me pose à chaque fois.',
+                    'Watch this short video: how the call goes, and the questions I get asked every time.',
                   )
                 : d(
                     'L’invitation est dans votre boîte mail : acceptez-la, elle s’ajoute à votre agenda avec le lien Google Meet.',
@@ -145,7 +147,35 @@ export default function RdvConfirmePage() {
 
       <Divider />
 
-      {/* Comment se passe l'appel */}
+      {/* Avant l'appel (version vidéo) */}
+      {VIDEO_EMBED_URL && (
+        <section style={{ padding: '72px 24px' }}>
+          <div className="mx-auto" style={{ maxWidth: 640 }}>
+            <FadeUp className="text-center mb-10">
+              <span className="section-label">{d('Avant l’appel', 'Before the call', 'A hívás előtt')}</span>
+            </FadeUp>
+            <div style={{ display: 'grid', gap: 12 }}>
+              {[
+                d('Acceptez l’invitation reçue par email : le lien Google Meet est dedans.', 'Accept the invitation in your inbox: the Google Meet link is in it.'),
+                d('Regardez la vidéo ci-dessus.', 'Watch the video above.'),
+                d(
+                  'Notez la tâche qui vous prend le plus de temps chaque semaine, et combien d’heures. Si vous décidez à deux, invitez votre associé.',
+                  'Write down the task that takes you the most time every week, and how many hours. If you decide with a partner, bring them along.',
+                ),
+              ].map((t, i) => (
+                <div key={i} style={{ display: 'flex', gap: 14, alignItems: 'baseline', background: 'var(--bg-card)', border: '1px solid var(--border)', borderRadius: 12, padding: '16px 20px' }}>
+                  <span className="font-mono" style={{ fontSize: 11, letterSpacing: 1.8, color: 'var(--accent)', fontWeight: 600 }}>{`0${i + 1}`}</span>
+                  <span className="font-sans" style={{ fontSize: 15, color: 'var(--text)', lineHeight: 1.6 }}>{t}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {!VIDEO_EMBED_URL && (
+        <>
+      {/* Comment se passe l'appel (sans vidéo) */}
       <section style={{ padding: '80px 24px' }}>
         <div className="mx-auto" style={{ maxWidth: 880 }}>
           <FadeUp className="text-center mb-12">
@@ -181,6 +211,9 @@ export default function RdvConfirmePage() {
           </FadeUp>
         </div>
       </section>
+
+        </>
+      )}
 
       <Divider />
 
