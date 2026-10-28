@@ -33,7 +33,10 @@ type CaseEntry = {
   name: string
   sector: Record<Lang, string>
   headline: Record<Lang, string>
-  videoId: string
+  /** Vidéo YouTube. Absente quand la vidéo est servie par le site (`localVideo`). */
+  videoId?: string
+  /** Vidéo hébergée dans /public, lue sur place avec ses contrôles. */
+  localVideo?: { src: string; poster: string }
   /** Seconde de départ, pour sauter l'intro. */
   videoStart?: number
   videoTitle: Record<Lang, string>
@@ -45,9 +48,11 @@ type CaseEntry = {
   photo?: { src: string; alt: Record<Lang, string>; caption: Record<Lang, string> }
   /** Absente tant que le client n'a pas donné de témoignage. */
   quote?: Record<Lang, string>
-  author?: string
-  role?: string
+  author?: string | Record<Lang, string>
+  role?: string | Record<Lang, string>
 }
+
+const text = (lang: Lang, v: string | Record<Lang, string>) => (typeof v === 'string' ? v : pick(lang, v))
 
 const CASES: CaseEntry[] = [
   {
@@ -110,6 +115,54 @@ const CASES: CaseEntry[] = [
         },
       },
     ],
+  },
+  {
+    /* ⚠︎ LE TÉMOIGNAGE DE L'IUT, REÇU LE 28 OCTOBRE 2026. Contrairement à
+       celui de Catherine F., il parle du travail fait POUR l'IUT : le CRM du
+       département Techniques de commercialisation. Nathan a donné son accord
+       pour le publier SANS NOM, attribué à « interlocuteur IUT de
+       Saint-Étienne » (choix de Nathan, pas « enseignant »).
+
+       ⚠︎ AUCUN CHIFFRE. La vidéo n'en donne pas, donc le bloc des chiffres
+       n'est pas affiché pour ce cas, plutôt que d'en inventer.
+
+       La citation est la fin de la vidéo, mot pour mot à l'oral près (le
+       « eh bien » est retiré). Transcription complète :
+       ~/Business/Clients/IUT-Saint-Etienne/temoignage-video-crm-tc-transcript-2026-10-28.txt */
+    id: 'iutse',
+    name: 'IUT de Saint-Étienne',
+    sector: {
+      fr: 'Département Techniques de commercialisation · Saint-Étienne',
+      en: 'Sales & Marketing department · Saint-Étienne',
+      hu: 'Kereskedelmi tanszék · Saint-Étienne',
+    },
+    headline: {
+      fr: 'Un CRM construit sur leur cahier des charges, pour que les étudiants prospectent sur un vrai outil.',
+      en: 'A CRM built on their own specification, so students prospect with a real tool.',
+      hu: 'A saját követelményeikre épített CRM, hogy a hallgatók valódi eszközzel prospektáljanak.',
+    },
+    localVideo: { src: '/realisations/iut-temoignage.mp4', poster: '/realisations/iut-temoignage-poster.jpg' },
+    videoTitle: {
+      fr: 'Témoignage de l’IUT de Saint-Étienne sur le CRM du département TC',
+      en: 'IUT de Saint-Étienne testimonial on the Sales & Marketing department CRM',
+      hu: 'A Saint-Étienne-i IUT ajánlása a kereskedelmi tanszék CRM-jéről',
+    },
+    metrics: [],
+    quote: {
+      fr: 'Ce que je peux dire au niveau de Nathan, c’est qu’effectivement il est hyper sérieux, hyper réactif et force de proposition, et vous pouvez faire appel à lui en toute confiance.',
+      en: 'What I can say about Nathan is that he is extremely serious, extremely responsive and full of ideas, and you can call on him with complete confidence.',
+      hu: 'Nathanről annyit mondhatok, hogy rendkívül megbízható, rendkívül gyorsan reagál és tele van javaslatokkal, teljes bizalommal fordulhat hozzá.',
+    },
+    author: {
+      fr: 'Interlocuteur IUT de Saint-Étienne',
+      en: 'Contact at IUT de Saint-Étienne',
+      hu: 'Kapcsolattartó, IUT de Saint-Étienne',
+    },
+    role: {
+      fr: 'Département Techniques de commercialisation',
+      en: 'Sales & Marketing department',
+      hu: 'Kereskedelmi tanszék',
+    },
   },
   {
     /* ⚠︎ CE CAS A ÉTÉ ANONYME JUSQU'AU 3 OCTOBRE 2026. Il s'appelait
@@ -332,32 +385,48 @@ export default function CaseStudy() {
                       <span className="cs-qmark font-serif" aria-hidden="true">&ldquo;</span>
                       <blockquote className="cs-quote font-serif">{pick(lang, current.quote)}</blockquote>
                       <div className="cs-attr">
-                        <span className="cs-attr-name font-sans">{current.author}</span>
-                        <span className="cs-attr-role font-sans">{current.role}</span>
+                        {current.author && <span className="cs-attr-name font-sans">{text(lang, current.author)}</span>}
+                        {current.role && <span className="cs-attr-role font-sans">{text(lang, current.role)}</span>}
                       </div>
                     </div>
                   )}
 
                   <div className="cs-video-col">
                     <div className="cs-video">
-                      <LiteYouTube
-                        id={current.videoId}
-                        start={current.videoStart}
-                        title={pick(lang, current.videoTitle)}
-                      />
+                      {current.localVideo ? (
+                        <video
+                          key={current.localVideo.src}
+                          src={current.localVideo.src}
+                          poster={current.localVideo.poster}
+                          controls
+                          playsInline
+                          preload="none"
+                          aria-label={pick(lang, current.videoTitle)}
+                          className="absolute inset-0 w-full h-full"
+                          style={{ objectFit: 'cover' }}
+                        />
+                      ) : current.videoId ? (
+                        <LiteYouTube
+                          id={current.videoId}
+                          start={current.videoStart}
+                          title={pick(lang, current.videoTitle)}
+                        />
+                      ) : null}
                     </div>
                   </div>
                 </div>
 
-                {/* Chiffres */}
-                <div className="cs-metrics">
-                  {current.metrics.map((m) => (
-                    <div key={m.value} className="cs-metric">
-                      <p className="cs-metric-value font-serif italic">{m.value}</p>
-                      <p className="cs-metric-label font-sans">{pick(lang, m.label)}</p>
-                    </div>
-                  ))}
-                </div>
+                {/* Chiffres, seulement quand le cas en a de sourcés. */}
+                {current.metrics.length > 0 && (
+                  <div className="cs-metrics">
+                    {current.metrics.map((m) => (
+                      <div key={m.value} className="cs-metric">
+                        <p className="cs-metric-value font-serif italic">{m.value}</p>
+                        <p className="cs-metric-label font-sans">{pick(lang, m.label)}</p>
+                      </div>
+                    ))}
+                  </div>
+                )}
               </motion.div>
             </AnimatePresence>
 
