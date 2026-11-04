@@ -110,9 +110,9 @@ export const translations = {
      qui developpe vos... », remonte donc ici en petit, et la headline reprend
      la ligne deja posee sur les couvertures Facebook. */
   'hero.label': {
-    en: 'Bespoke software for luxury and prestige hospitality',
-    fr: 'Logiciel sur mesure pour l’hospitalité de luxe et de prestige',
-    hu: 'Egyedi szoftver a luxus- és presztízsvendéglátásnak',
+    en: 'Bespoke software for luxury hospitality',
+    fr: 'Logiciels sur mesure pour l’hospitalité de luxe',
+    hu: 'Egyedi szoftver a luxusvendéglátásnak',
   },
   'hero.titlePrefix': {
     en: 'The way you',
@@ -132,7 +132,7 @@ export const translations = {
      porte lui-meme son suffixe possessif, szervezet devient szervezete. */
   'hero.titleWords': {
     en: 'serve your clients',
-    fr: 'façon de recevoir vos clients',
+    fr: 'façon de servir vos clients',
     hu: 'vendégfogadása',
   },
   'hero.titleSuffix': {
@@ -150,16 +150,22 @@ export const translations = {
         écrit, et le document d'offre laisse la case vide : S6, « Délai
         de livraison à fixer ». La mention est donc retirée, pas
         remplacée. Elle revient le jour où Nathan le fixe. */
+  /* HERO DU 4 NOVEMBRE 2026, texte de Nathan : sous-titre, badge de preuve,
+     deux boutons. Les chiffres du badge sont ceux qu'il a arrêtés ce jour-là :
+     11+ équipes, 35 h par mois en moyenne (remplace les 40 h), réactivité ×2.
+     ⚠︎ Aucun délai de livraison ni prix ici, même règle qu'avant. */
   'hero.sub': {
-    en: 'Responsiveness that doubles, hours given back to your team every month, a unique client experience, and decisions based on tracked data that stays yours, in complete discretion. That’s a bespoke digital ecosystem, made by NateSystem.',
-    fr: 'Une réactivité qui double, des heures rendues à votre équipe chaque mois, une expérience client unique, et des décisions fondées sur des données suivies, qui restent chez vous, en toute discrétion. C’est ça, un écosystème digital sur mesure, signé NateSystem.',
-    hu: 'Kétszer gyorsabb reagálás, havonta visszanyert órák a csapatának, egyedi ügyfélélmény, és követett adatokon alapuló döntések, amelyek Önnél maradnak, teljes diszkrécióval. Ez az egyedi digitális ökoszisztéma, a NateSystemtől.',
+    en: 'Your own digital ecosystem, built around how your team already works and ready to grow with your company. Client requests, bookings, team operations, suppliers, finances and reporting, everything finally in one place, for true operational excellence and a guest experience in a league of its own. 100% yours.',
+    fr: 'Votre propre écosystème digital, construit autour de la façon dont votre équipe travaille déjà et prêt à grandir avec votre entreprise. Demandes clients, réservations, opérations, prestataires, finances et reporting, tout enfin réuni au même endroit, pour une véritable excellence opérationnelle et une expérience client hors du commun. 100 % à vous.',
+    hu: 'Saját digitális ökoszisztéma, amely a csapata meglévő munkamódjára épül, és együtt nő a vállalkozásával. Vendégkérések, foglalások, csapatműveletek, beszállítók, pénzügyek és riportok: végre minden egy helyen, a valódi működési kiválóságért és egy páratlan vendégélményért. 100%-ban az Öné.',
   },
   'hero.aiNote': {
-    en: '40 hours a month given back to teams on average, as reported by our clients.',
-    fr: '40 h par mois rendues en moyenne aux équipes, chiffre rapporté par nos clients.',
-    hu: 'Átlagosan havi 40 óra visszanyerve a csapatoknak, az ügyfeleink beszámolója szerint.',
+    en: '11+ teams equipped · 35h a month given back on average · 2× responsiveness',
+    fr: '11+ équipes équipées · 35 h rendues par mois en moyenne · réactivité ×2',
+    hu: '11+ felszerelt csapat · átlagosan havi 35 óra visszanyerve · 2× gyorsabb reagálás',
   },
+  'hero.ctaPrototype': { en: 'Get your free prototype', fr: 'Recevoir votre prototype gratuit', hu: 'Kérje ingyenes prototípusát' },
+  'hero.ctaCall': { en: 'Book a call', fr: 'Réserver un appel', hu: 'Hívás foglalása' },
   'hero.cta': { en: 'Book a call · free', fr: 'Réserver un appel · offert', hu: 'Hívás foglalása · ingyenes' },
   /* La VSL du 13 octobre 2026, tournée en anglais à Budapest, sous-titres
      incrustés. Nathan l'a voulue sur les trois langues, y compris en

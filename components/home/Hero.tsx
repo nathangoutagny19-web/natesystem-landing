@@ -6,6 +6,11 @@ import { useLang } from '@/components/providers/LangProvider'
 import Link from 'next/link'
 import { Sparkles } from 'lucide-react'
 import { CAL_LINK } from '@/lib/constants'
+
+/* ⚠︎ PROVISOIRE : le bouton « prototype gratuit » mène à la prise de
+   rendez-vous tant que Nathan n'a pas choisi sa destination (formulaire,
+   WhatsApp ou page dédiée). Poussé ainsi le 4 novembre 2026, à sa demande. */
+const PROTOTYPE_LINK = CAL_LINK
 import { localizedHref } from '@/lib/routes'
 import VslPlayer from '@/components/ui/VslPlayer'
 
@@ -95,13 +100,21 @@ export default function Hero() {
         {t('hero.titleSuffix')}
       </motion.h1>
 
-      {/* AI note, small pill right under the headline: agentic AI is a
-          differentiator we plug in where it counts, not the headline focus. */}
+      {/* Sous-titre : sous le titre depuis le 4 novembre 2026 (avant, sous la vidéo). */}
+      <motion.p
+        initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.28, ease }}
+        className="font-sans"
+        style={{ fontSize: 'clamp(15px, 3vw, 18px)', fontWeight: 300, color: 'var(--text-secondary)', maxWidth: '720px', lineHeight: 1.6, marginBottom: '28px' }}
+      >
+        {t('hero.sub')}
+      </motion.p>
+
+      {/* Badge de preuve : même pastille qu'avant, le texte porte maintenant les trois chiffres. */}
       <motion.div
-        initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.3, ease }}
+        initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.36, ease }}
         className="inline-flex items-center gap-2"
         style={{
-          marginBottom: '28px',
+          marginBottom: '32px',
           padding: '7px 14px',
           borderRadius: '999px',
           background: 'var(--accent-subtle)',
@@ -114,11 +127,25 @@ export default function Hero() {
         </span>
       </motion.div>
 
-      {/* VSL, self-hosted, plays inline on click (zero page-load cost). */}
+      {/* Deux boutons : le prototype gratuit en principal, l'appel en secondaire. */}
       <motion.div
-        initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.4, ease }}
+        initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.44, ease }}
+        className="flex flex-wrap items-center justify-center gap-3"
+        style={{ marginBottom: '48px' }}
+      >
+        <Link href={localizedHref(PROTOTYPE_LINK, lang)} className="btn-primary" style={{ fontSize: '14px' }}>
+          <span className="btn-primary-dot" />
+          {t('hero.ctaPrototype')} →
+        </Link>
+        <Link href={localizedHref(CAL_LINK, lang)} className="btn-ghost" style={{ fontSize: '14px', fontWeight: 500 }}>
+          {t('hero.ctaCall')} →
+        </Link>
+      </motion.div>
+
+      {/* VSL, self-hosted, plays inline on click (zero page-load cost). Inchangée. */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.52, ease }}
         className="w-full flex justify-center"
-        style={{ marginBottom: '40px' }}
       >
         {/* Sous-titres incrustés dans la vidéo : pas de piste VTT, elle
             doublerait le texte à l'écran. */}
@@ -129,33 +156,6 @@ export default function Hero() {
           duration="51 s"
           title={t('hero.vslTitle')}
         />
-      </motion.div>
-
-      {/* Subtitle */}
-      <motion.p
-        initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.35, ease }}
-        className="font-sans"
-        style={{ fontSize: 'clamp(15px, 3vw, 18px)', fontWeight: 300, color: 'var(--text-secondary)', maxWidth: '620px', lineHeight: 1.6, marginBottom: '40px' }}
-      >
-        {t('hero.sub')}
-      </motion.p>
-
-      {/* CTAs, primary + secondary ghost */}
-      <motion.div
-        initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.5, ease }}
-        className="flex flex-wrap items-center justify-center gap-3"
-      >
-        <Link href={localizedHref(CAL_LINK, lang)} className="btn-primary" style={{ fontSize: '14px' }}>
-          <span className="btn-primary-dot" />
-          {t('hero.cta')} →
-        </Link>
-        <a
-          href="#process"
-          className="btn-ghost"
-          style={{ fontSize: '14px', fontWeight: 500 }}
-        >
-          {t('hero.secondary')} →
-        </a>
       </motion.div>
 
       {/* Scroll hint, trust bar moved to dedicated <ClientsBar /> below the hero */}
