@@ -101,8 +101,26 @@ export default function Hero({ label }: { label?: string } = {}) {
         {t('hero.titleSuffix')}
       </motion.h1>
 
-      {/* VSL juste sous le titre (Nathan, 8 novembre 2026) : titre → vidéo →
-          boutons → chiffres → paragraphe. */}
+      {/* Badge de preuve, entre le titre et la vidéo (Nathan, 8 novembre 2026). */}
+      <motion.div
+        initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.36, ease }}
+        className="inline-flex items-center gap-2"
+        style={{
+          marginBottom: '28px',
+          padding: '7px 14px',
+          borderRadius: '999px',
+          background: 'var(--accent-subtle)',
+          border: '1px solid rgba(230,57,70,0.18)',
+        }}
+      >
+        <Sparkles size={13} strokeWidth={2} style={{ color: 'var(--accent)', flexShrink: 0 }} />
+        <span className="font-sans" style={{ fontSize: '13px', fontWeight: 400, color: 'var(--text-secondary)' }}>
+          {t('hero.aiNote')}
+        </span>
+      </motion.div>
+
+      {/* VSL sous le titre et le badge (Nathan, 8 novembre 2026) : titre →
+          badge → vidéo → boutons → paragraphe. */}
       <motion.div
         initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.52, ease }}
         className="w-full flex justify-center"
@@ -132,24 +150,6 @@ export default function Hero({ label }: { label?: string } = {}) {
         <Link href={localizedHref(CAL_LINK, lang)} className="btn-ghost" style={{ fontSize: '14px', fontWeight: 500 }}>
           {t('hero.ctaCall')} →
         </Link>
-      </motion.div>
-
-      {/* Badge de preuve : même pastille qu'avant, le texte porte maintenant les trois chiffres. */}
-      <motion.div
-        initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.36, ease }}
-        className="inline-flex items-center gap-2"
-        style={{
-          marginBottom: '32px',
-          padding: '7px 14px',
-          borderRadius: '999px',
-          background: 'var(--accent-subtle)',
-          border: '1px solid rgba(230,57,70,0.18)',
-        }}
-      >
-        <Sparkles size={13} strokeWidth={2} style={{ color: 'var(--accent)', flexShrink: 0 }} />
-        <span className="font-sans" style={{ fontSize: '13px', fontWeight: 400, color: 'var(--text-secondary)' }}>
-          {t('hero.aiNote')}
-        </span>
       </motion.div>
 
       {/* Sous-titre : sous le titre depuis le 4 novembre 2026 (avant, sous la vidéo). */}
