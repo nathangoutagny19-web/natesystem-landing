@@ -2,38 +2,11 @@
 
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ArrowRight } from 'lucide-react'
 import FadeUp from '@/components/ui/FadeUp'
 import { useLang } from '@/components/providers/LangProvider'
 import { makeD, pick } from '@/lib/lang'
 
 // Socle commun, ce que la plateforme apporte quel que soit le métier.
-const BASE_FR = [
-  'Données centralisées et claires',
-  'Des heures rendues chaque mois',
-  'Une seule information, partagée',
-  'Vos règles, pas celles d’un modèle',
-  'Des équipes plus sereines',
-  'Des clients mieux servis',
-]
-const BASE_HU = [
-  'Központosított, tiszta adatok',
-  'Havonta visszakapott órák',
-  'Egyetlen, közös információ',
-  'Az Ön szabályai, nem egy sablonéi',
-  'Nyugodtabb csapatok',
-  'Jobban kiszolgált ügyfelek',
-]
-
-const BASE_EN = [
-  'Centralised, clear data',
-  'Hours given back every month',
-  'One piece of information, shared',
-  'Your rules, not a template’s',
-  'Calmer teams',
-  'Clients better served',
-]
-
 type Sector = {
   nameFr: string; nameEn: string; nameHu: string
   painFr: string; painEn: string; painHu: string
@@ -134,8 +107,8 @@ export default function Sectors() {
             <span className="accent">{d('La méthode, non.', 'The method doesn’t.', 'A módszer nem.')}</span>
           </h2>
           <p className="font-sans" style={{ fontSize: '15px', fontWeight: 300, color: 'var(--text-secondary)', maxWidth: '600px', margin: '0 auto', lineHeight: 1.7 }}>
-            {d('Un socle commun à chaque organisation, puis ce qui change d’un métier à l’autre. Cliquez sur le vôtre.',
-               'A shared foundation for every business, then what changes from one trade to the next. Click yours.', 'Közös alap minden vállalkozásnak, aztán ami szakmánként változik. Kattintson a sajátjára.')}
+            {d('Ce qui change d’un métier à l’autre. Cliquez sur le vôtre.',
+               'What changes from one trade to the next. Click yours.', 'Ami szakmánként változik. Kattintson a sajátjára.')}
           </p>
         </FadeUp>
 
@@ -156,7 +129,6 @@ export default function Sectors() {
                   >
                     <span className="font-mono sec-row-idx">{String(i + 1).padStart(2, '0')}</span>
                     <span className="font-sans sec-row-name">{d(s.nameFr, s.nameEn, s.nameHu)}</span>
-                    <ArrowRight size={15} strokeWidth={2} className="sec-row-arrow" />
                   </button>
                 )
               })}
@@ -172,33 +144,14 @@ export default function Sectors() {
                   exit={{ opacity: 0, y: -10 }}
                   transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
                 >
-                  <span className="font-mono sec-panel-idx">
-                    {d('Métier', 'Role', 'Munkakör')} · {String(active + 1).padStart(2, '0')}/{String(SECTORS.length).padStart(2, '0')}
-                  </span>
                   <h3 className="font-serif italic sec-panel-title">{d(cur.nameFr, cur.nameEn, cur.nameHu)}</h3>
                   <p className="font-sans sec-panel-pain">{d(cur.painFr, cur.painEn, cur.painHu)}</p>
 
-                  {/* Socle commun, le même pour tous */}
-                  <span className="font-mono sec-panel-label">{d('Ce que ça vous apporte, à tous les coups', 'What it brings you, every time', 'Amit mindenképp hoz Önnek')}</span>
-                  <div className="sec-base">
-                    {[
-                      ...pick(lang, { fr: BASE_FR, en: BASE_EN, hu: BASE_HU }).slice(0, -1),
-                      pick(lang, {
-                        fr: cur.servedFr ?? BASE_FR[BASE_FR.length - 1],
-                        en: cur.servedEn ?? BASE_EN[BASE_EN.length - 1],
-                        hu: cur.servedHu ?? BASE_HU[BASE_HU.length - 1],
-                      }),
-                    ].map((b) => (
-                      <span key={b} className="sec-base-chip">{b}</span>
-                    ))}
-                  </div>
-
                   {/* Personnalisation secteur */}
-                  <span className="font-mono sec-panel-label">{d('Et concrètement, pour ce métier', 'And concretely, for this role', 'És konkrétan, ennél a munkakörnél')}</span>
+                  <span className="font-sans sec-panel-label">{d('Concrètement', 'In practice', 'A gyakorlatban')}</span>
                   <ul className="sec-builds">
                     {pick(lang, { fr: cur.buildsFr, en: cur.buildsEn, hu: cur.buildsHu }).map((b) => (
                       <li key={b} className="sec-build font-sans">
-                        <span className="sec-build-dot" aria-hidden="true" />
                         {b}
                       </li>
                     ))}

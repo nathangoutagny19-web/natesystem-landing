@@ -1232,3 +1232,34 @@ html:not(.light) .trust-logo {
   to { opacity: 1; transform: none; }
 }
 .q-fade { animation: qFadeIn 0.42s cubic-bezier(0.22, 1, 0.36, 1); }
+
+/* ═══ Secteurs de l'accueil, habillage allégé (8 novembre 2026, Nathan :
+   « ça fait IA »). Plus de pastilles en police machine, de libellés rouges
+   espacés, de puces rouges, de carte à ombre ni de flèche : des filets fins,
+   une barre rouge sur la ligne active, le texte seul. ═══ */
+.sec-list { gap: 0; border-top: 1px solid var(--border); }
+.sec-row {
+  border: 0 !important; border-bottom: 1px solid var(--border) !important; border-radius: 0 !important;
+  background: transparent !important; padding: 18px 4px 18px 16px; position: relative;
+}
+.sec-row::before { content: ''; position: absolute; left: 0; top: 14px; bottom: 14px; width: 2px; background: transparent; transition: background .2s ease; }
+.sec-row-on::before { background: var(--accent); }
+.sec-row-on .sec-row-idx { color: var(--text-muted) !important; }
+.sec-row-name { font-size: 16px; font-weight: 400; }
+.sec-panel {
+  background: transparent !important; border: 0 !important; border-left: 1px solid var(--border) !important;
+  border-radius: 0 !important; box-shadow: none !important; padding: 8px 0 8px clamp(24px, 3.5vw, 48px) !important;
+}
+.sec-panel-title { font-size: clamp(24px, 2.6vw, 34px) !important; margin: 0 0 16px !important; overflow-wrap: anywhere; }
+.sec-panel-label {
+  font-size: 13px !important; letter-spacing: 0 !important; text-transform: none !important;
+  font-weight: 500 !important; color: var(--text) !important; border-top: 1px solid var(--border);
+}
+.sec-builds { gap: 0 !important; }
+.sec-build { padding: 12px 0; border-bottom: 1px solid var(--border); font-size: 15px !important; }
+@media (max-width: 859px) {
+  .sec-list { border-top: 0; }
+  .sec-row { border-bottom: 0 !important; padding: 10px 14px; }
+  .sec-row::before { top: auto; bottom: 0; left: 14px; right: 14px; width: auto; height: 2px; }
+  .sec-panel { border-left: 0 !important; padding: 8px 0 !important; }
+}
