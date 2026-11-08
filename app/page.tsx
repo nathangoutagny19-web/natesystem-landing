@@ -17,9 +17,10 @@ import Divider from '@/components/ui/Divider'
  * (Nathan : « au moins le professionnalisme de Gourmet », « on vend un
  * écosystème digital »). Une section, un rôle, alternance sombre / clair :
  *
- *   Hero sombre (deux grandes phrases, 40 heures en rouge, vidéo) → logos
- *   → preuve (carrousel des cas) → secteurs (sombre) → écosystème digital
- *   (schéma) → bande de positionnement (sombre) → méthode → FAQ → rendez-vous.
+ *   Hero sombre (phrase, 40 heures en rouge, vidéo à droite) → logos
+ *   → écosystème en mouvement (sombre) → preuve (carrousel des cas)
+ *   → secteurs (sombre) → méthode → bande de positionnement (sombre)
+ *   → FAQ → rendez-vous.
  *
  * Plus de quadrillage, de halo ni d'effets qui suivent la souris (retirés du
  * layout racine). Les composants retirés de l'accueil restent dans le dépôt.
@@ -30,12 +31,11 @@ export default function Home() {
       <Nav />
       <Hero />
       <ClientsBar />
+      <Ecosystem />
       <CaseStudy />
       <SectorsAccordion />
-      <Ecosystem />
-      <StatementBand />
       <Process home />
-      <Divider />
+      <StatementBand />
       <Faq />
       <Divider />
       <CtaFinal />

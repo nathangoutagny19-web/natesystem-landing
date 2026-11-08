@@ -84,60 +84,48 @@ export default function Hero() {
   const fade = (delay: number) => ({ initial: { opacity: 0 }, animate: { opacity: 1 }, transition: { duration: 0.9, delay, ease } })
 
   return (
-    /* LE HERO DU 8 NOVEMBRE 2026, sur le modèle de gourmetmarketing.net : fond
-       sombre, texte aligné à gauche, deux grandes phrases en serif droite, la
-       seconde porte les chiffres, « 40 heures » en rouge. La ligne de preuve en
-       petites capitales et la pastille à icône sont retirées. */
-    <section className="hero-section" style={{ background: 'radial-gradient(80% 70% at 100% 0%, rgba(230,57,70,0.09), transparent 60%), #0e0e12', padding: '168px 24px 96px' }}>
-      <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-        <motion.p {...fade(0.05)} className="font-mono" style={{ fontSize: 11, letterSpacing: '0.22em', textTransform: 'uppercase', color: 'rgba(240,240,242,0.5)' }}>
-          {t('hero.label')}
-        </motion.p>
+    /* LE HERO, version courte du 8 novembre 2026 : à gauche la phrase de
+       Nathan et la ligne des 40 heures, à droite la vidéo. Son paragraphe
+       (hero.sub) est passé dans la section Écosystème, qu'il décrit. */
+    <section className="hero-section" style={{ background: '#0e0e12', padding: '150px 24px 110px' }}>
+      <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-14 items-center" style={{ maxWidth: 1240, margin: '0 auto' }}>
+        <div>
+          <motion.p {...fade(0.05)} className="font-mono" style={{ fontSize: 11, letterSpacing: '0.22em', textTransform: 'uppercase', color: 'rgba(240,240,242,0.5)' }}>
+            {t('hero.label')}
+          </motion.p>
 
-        <motion.h1
-          {...fade(0.1)}
-          className="font-serif font-normal"
-          style={{ fontSize: 'clamp(42px, 6.2vw, 88px)', lineHeight: 1.02, letterSpacing: '-0.01em', marginTop: 28, maxWidth: 1080, color: '#f0f0f2' }}
-        >
-          {t('hero.titlePrefix')}{' '}
-          {words.length > 1 ? <RotatingWord words={words} /> : <span>{words[0]}</span>}{' '}
-          {t('hero.titleSuffix')}
-        </motion.h1>
+          <motion.h1
+            {...fade(0.1)}
+            className="font-serif font-normal"
+            style={{ fontSize: 'clamp(40px, 4.4vw, 64px)', lineHeight: 1.06, marginTop: 26, color: '#f0f0f2' }}
+          >
+            {t('hero.titlePrefix')}{' '}
+            {words.length > 1 ? <RotatingWord words={words} /> : <span>{words[0]}</span>}{' '}
+            {t('hero.titleSuffix')}
+          </motion.h1>
 
-        <motion.p
-          {...fade(0.25)}
-          className="font-serif"
-          style={{ fontSize: 'clamp(28px, 3.6vw, 48px)', lineHeight: 1.12, marginTop: 36, maxWidth: 980, color: 'rgba(240,240,242,0.86)' }}
-        >
-          {d('Nos clients nous rapportent ', 'Our clients report ', 'Ügyfeleink szerint havonta ')}
-          <span className="italic" style={{ color: '#E63946' }}>{d('40 heures', '40 hours', '40 órát')}</span>
-          {d(
-            ' rendues chaque mois, et une réactivité qui double.',
-            ' given back every month, and responsiveness that doubles.',
-            ' nyernek vissza, és kétszer gyorsabban reagálnak.'
-          )}
-        </motion.p>
+          <motion.p
+            {...fade(0.25)}
+            className="font-sans"
+            style={{ fontSize: 'clamp(16px, 1.5vw, 19px)', fontWeight: 300, lineHeight: 1.6, marginTop: 28, maxWidth: 520, color: 'rgba(240,240,242,0.7)' }}
+          >
+            {d('Nos clients nous rapportent ', 'Our clients report ', 'Ügyfeleink szerint havonta ')}
+            <span className="font-serif italic" style={{ color: '#E63946', fontSize: '1.35em' }}>{d('40 heures', '40 hours', '40 órát')}</span>
+            {d(' rendues chaque mois, et une réactivité qui double.', ' given back every month, and responsiveness that doubles.', ' nyernek vissza, és kétszer gyorsabban reagálnak.')}
+          </motion.p>
 
-        <motion.p
-          {...fade(0.35)}
-          className="font-sans"
-          style={{ fontSize: 'clamp(15px, 1.6vw, 18px)', fontWeight: 300, lineHeight: 1.65, marginTop: 32, maxWidth: 640, color: 'rgba(240,240,242,0.6)' }}
-        >
-          {t('hero.sub')}
-        </motion.p>
-
-        <motion.div {...fade(0.45)} className="flex flex-wrap items-center gap-3" style={{ marginTop: 44 }}>
-          <Link href={localizedHref(AUDIT_LINK, lang)} className="btn-primary btn-on-dark">
-            {t('hero.ctaAudit')} →
-          </Link>
-          <Link href={localizedHref(CAL_LINK, lang)} className="btn-ghost btn-on-dark">
-            {t('hero.ctaCall')} →
-          </Link>
-        </motion.div>
+          <motion.div {...fade(0.4)} className="flex flex-wrap items-center gap-3" style={{ marginTop: 40 }}>
+            <Link href={localizedHref(AUDIT_LINK, lang)} className="btn-primary btn-on-dark">
+              {t('hero.ctaAudit')} →
+            </Link>
+            <Link href={localizedHref(CAL_LINK, lang)} className="btn-ghost btn-on-dark">
+              {t('hero.ctaCall')} →
+            </Link>
+          </motion.div>
+        </div>
 
         {/* VSL, self-hosted, plays inline on click (zero page-load cost). */}
-        <motion.div {...fade(0.55)} style={{ marginTop: 72, maxWidth: 880 }}>
-          {/* Sous-titres incrustés dans la vidéo : pas de piste VTT. */}
+        <motion.div {...fade(0.3)} className="w-full">
           <VslPlayer
             src="/vsl-hospitality.mp4"
             poster="/vsl-hospitality-poster.jpg"
@@ -151,7 +139,7 @@ export default function Hero() {
       <style jsx>{`
         @media (max-width: 540px) {
           .hero-section {
-            padding: 120px 18px 64px !important;
+            padding: 112px 18px 64px !important;
           }
         }
       `}</style>
