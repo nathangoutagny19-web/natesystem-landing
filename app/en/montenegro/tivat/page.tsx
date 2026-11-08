@@ -1,0 +1,9 @@
+import type { Metadata } from 'next'
+import MontenegroPage from '@/components/montenegro/MontenegroPage'
+import { MONTENEGRO_PAGES, montenegroMetadata } from '@/lib/montenegro'
+
+export const metadata: Metadata = montenegroMetadata('/montenegro/tivat')
+
+export default function MontenegroTivatPage() {
+  return <MontenegroPage data={MONTENEGRO_PAGES['/montenegro/tivat']} />
+}

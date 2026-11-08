@@ -43,6 +43,24 @@ export const TRANSLATED_ROUTES = [
   '/politique-anti-spam',
 ] as const
 
+/**
+ * LES PAGES QUI N'EXISTENT QU'EN ANGLAIS (sans préfixe de langue).
+ *
+ * Les pages Monténégro (8 novembre 2026) visent des recherches anglaises :
+ * Tivat, Kotor, Porto Montenegro. Elles vivent sous /en et n'ont ni version
+ * française ni version hongroise. Le drapeau de la nav ramène donc à
+ * l'accueil de la langue visée au lieu d'ouvrir une 404.
+ */
+export const EN_ONLY_ROUTES = ['/montenegro', '/montenegro/tivat', '/montenegro/kotor'] as const
+
+const EN_ONLY_SET = new Set<string>(EN_ONLY_ROUTES)
+
+/** Une page n'existe-t-elle qu'en anglais ? Chemin sans préfixe de langue. */
+export function isEnglishOnly(path: string): boolean {
+  const clean = path.split('#')[0].split('?')[0].replace(/\/+$/, '') || '/'
+  return EN_ONLY_SET.has(clean)
+}
+
 /** Les routes dynamiques traduites, testées par préfixe. */
 const EN_DYNAMIC_PREFIXES = ['/case-studies/'] as const
 

@@ -25,6 +25,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/bibliotheque`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${BASE_URL}/en/bibliotheque`, lastModified: now, changeFrequency: 'weekly', priority: 0.6 },
     { url: `${BASE_URL}/en/atelier`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
+    // Pages Monténégro, anglais seulement (08/11/2026) : la cible n°1 de Nathan.
+    { url: `${BASE_URL}/en/montenegro`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${BASE_URL}/en/montenegro/tivat`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${BASE_URL}/en/montenegro/kotor`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${BASE_URL}/hu/atelier`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
     { url: `${BASE_URL}/glossaire`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
     { url: `${BASE_URL}/a-propos`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },

@@ -3,7 +3,7 @@
 import { createContext, useContext, useCallback } from 'react'
 import { usePathname, useRouter } from 'next/navigation'
 import { translations, type TranslationKey, type Lang } from '@/lib/i18n'
-import { hasTranslation } from '@/lib/routes'
+import { hasTranslation, isEnglishOnly } from '@/lib/routes'
 
 export type { Lang }
 
@@ -65,6 +65,7 @@ export function useLang() {
  */
 export function mirrorPath(pathname: string, target: Lang): string {
   const withoutPrefix = pathname.replace(/^\/(en|hu)(?=\/|$)/, '') || '/'
+  if (isEnglishOnly(withoutPrefix)) return target === 'fr' ? '/' : target === 'en' ? `/en${withoutPrefix.replace(/\/+$/, '')}` : `/${target}`
   if (target === 'fr') return withoutPrefix
   /* Toutes les pages françaises n'ont pas d'équivalent traduit : les villes,
      les pages sectorielles et le blog restent français. Le drapeau renvoyait
