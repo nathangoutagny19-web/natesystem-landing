@@ -1263,3 +1263,32 @@ html:not(.light) .trust-logo {
   .sec-row::before { top: auto; bottom: 0; left: 14px; right: 14px; width: auto; height: 2px; }
   .sec-panel { border-left: 0 !important; padding: 8px 0 !important; }
 }
+
+/* Sectors, téléphone et tablette : accordéon (8 novembre 2026). Au-dessus de
+   860 px, la liste et le panneau restent côte à côte, inchangés. */
+.sec-acc { display: none; }
+@media (max-width: 859px) {
+  .sec-x { display: none !important; }
+  .sec-acc { display: block; border-top: 1px solid var(--border); }
+  .sec-acc-item { border-bottom: 1px solid var(--border); position: relative; }
+  .sec-acc-item::before { content: ''; position: absolute; left: 0; top: 16px; height: 26px; width: 2px; background: transparent; transition: background .2s ease; }
+  .sec-acc-open::before { background: var(--accent); }
+  .sec-acc-head {
+    width: 100%; display: flex; align-items: center; gap: 14px;
+    padding: 17px 4px 17px 16px; background: none; border: 0; cursor: pointer; text-align: left;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .sec-acc-idx { font-size: 11px; color: var(--text-muted); flex: none; }
+  .sec-acc-name { flex: 1; font-size: 16px; font-weight: 400; line-height: 1.35; color: var(--text-secondary); }
+  .sec-acc-open .sec-acc-name { color: var(--text); }
+  .sec-acc-plus { position: relative; flex: none; width: 14px; height: 14px; }
+  .sec-acc-plus::before, .sec-acc-plus::after {
+    content: ''; position: absolute; left: 0; right: 0; top: 50%; height: 1.4px; margin-top: -0.7px;
+    background: var(--text-muted); transition: transform .25s ease;
+  }
+  .sec-acc-plus::after { transform: rotate(90deg); }
+  .sec-acc-open .sec-acc-plus::after { transform: rotate(0deg); }
+  .sec-acc-body { padding: 2px 4px 24px 16px; }
+  .sec-acc-body .sec-panel-pain { font-size: 15px; margin-bottom: 20px; }
+  .sec-acc-body .sec-panel-label { padding-top: 16px; }
+}

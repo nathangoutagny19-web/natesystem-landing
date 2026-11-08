@@ -96,6 +96,8 @@ export default function Sectors() {
   const { lang } = useLang()
   const d = makeD(lang)
   const [active, setActive] = useState(0)
+  /* Téléphone et tablette : accordéon, un métier ouvert à la fois (-1 : aucun). */
+  const [open, setOpen] = useState(0)
   const cur = SECTORS[active]
 
   return (
@@ -161,6 +163,51 @@ export default function Sectors() {
                 </motion.div>
               </AnimatePresence>
             </div>
+          </div>
+
+          {/* Téléphone et tablette (8 novembre 2026) : un accordéon à la place
+              de la bande d'onglets qui défilait de côté et n'en montrait qu'un.
+              Les six métiers sont visibles d'un coup d'œil, un seul s'ouvre. */}
+          <div className="sec-acc">
+            {SECTORS.map((s, i) => {
+              const isOpen = i === open
+              return (
+                <div key={s.nameFr} className={`sec-acc-item${isOpen ? ' sec-acc-open' : ''}`}>
+                  <button
+                    className="sec-acc-head"
+                    aria-expanded={isOpen}
+                    onClick={() => setOpen(isOpen ? -1 : i)}
+                  >
+                    <span className="font-mono sec-acc-idx">{String(i + 1).padStart(2, '0')}</span>
+                    <span className="font-sans sec-acc-name">{d(s.nameFr, s.nameEn, s.nameHu)}</span>
+                    <span className="sec-acc-plus" aria-hidden="true" />
+                  </button>
+                  <AnimatePresence initial={false}>
+                    {isOpen && (
+                      <motion.div
+                        key="body"
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: 'auto', opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                        style={{ overflow: 'hidden' }}
+                      >
+                        <div className="sec-acc-body">
+                          <SectorGlyph index={i} />
+                          <p className="font-sans sec-panel-pain">{d(s.painFr, s.painEn, s.painHu)}</p>
+                          <span className="font-sans sec-panel-label">{d('Concrètement', 'In practice', 'A gyakorlatban')}</span>
+                          <ul className="sec-builds">
+                            {pick(lang, { fr: s.buildsFr, en: s.buildsEn, hu: s.buildsHu }).map((b) => (
+                              <li key={b} className="sec-build font-sans">{b}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              )
+            })}
           </div>
         </FadeUp>
       </div>
