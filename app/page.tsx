@@ -17,6 +17,7 @@ import CtaFinal from '@/components/home/CtaFinal'
 import AskAI from '@/components/home/AskAI'
 import SprintDiagnostic from '@/components/v2/SprintDiagnostic'
 import ComparisonV2 from '@/components/v2/ComparisonV2'
+import StatementBand from '@/components/home/StatementBand'
 import Footer from '@/components/layout/Footer'
 import Divider from '@/components/ui/Divider'
 
@@ -45,7 +46,10 @@ export default function Home() {
       {/* Les secteurs, remontés juste sous les logos (Nathan, 8 novembre 2026) :
           le visiteur voit tout de suite si on parle de son métier. */}
       <Sectors />
-      <Divider />
+
+      {/* Bande noire de positionnement, entre les secteurs et « Avant, après »
+          (Nathan, 8 novembre 2026). */}
+      <StatementBand />
 
       {/* 3, Avant/Après (diagonale) + bascule « ils sont de l'autre côté » */}
       <Transformation />
