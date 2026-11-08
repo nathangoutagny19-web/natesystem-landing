@@ -62,7 +62,14 @@ const clients: ClientRef[] = [
      site (favicon de wanderingyacht.com), récupéré le 08/11/2026. */
   { name: 'Services Exclusifs', type: 'logo', src: '/logos/services-exclusifs.png', href: 'https://services-exclusifs.ch/' },
   { name: 'Wandering Yacht', type: 'logo', src: '/logos/wandering-yacht.png', href: 'https://www.wanderingyacht.com/' },
-  /* ⚠︎ LES TROIS RENCONTRES MENENT AU CAS, PAS AU SITE DU CLIENT. C'est
+  /* ⚠︎ LES RENCONTRES (photos) NE DÉFILENT PLUS DANS LA RANGÉE DE LOGOS
+     depuis le 8 novembre 2026 (Nathan : « dans la bande de logos supprime
+     les images »). La rangée ne montre que des logos, partout. Les photos ne
+     servent plus qu'à la seconde ligne de /rdv-confirme (`split`) ; sur
+     l'accueil, les poignées de main et le podcast vivent dans la bande noire
+     (StatementBand).
+
+     ⚠︎ LES TROIS RENCONTRES MENENT AU CAS, PAS AU SITE DU CLIENT. C'est
      toute la difference avec les logos au-dessus : un logo dit qui nous
      fait confiance et renvoie chez lui, une rencontre dit ce qu'on a fait
      et renvoie a la preuve.
@@ -170,7 +177,7 @@ export default function ClientsBar({ hideLabel = false, split = false }: { hideL
             loop). Pauses on hover so a visitor can read a logo. */}
         <div className="clients-marquee-wrap" aria-hidden="false">
           <ul className="clients-marquee">
-            {[...(split ? logos : clients), ...(split ? logos : clients)].map((c, i) => (
+            {[...logos, ...logos].map((c, i) => (
               <li key={`${c.name}-${i}`} className="clients-item">
                 <ClientItem c={c} lang={lang} />
               </li>
