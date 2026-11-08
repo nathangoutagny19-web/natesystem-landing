@@ -62,6 +62,9 @@ type Payload = {
   details?: string
   audit?: Audit
   lang?: string
+  /** 'audit' : demande venue de /audit-gratuit (bouton principal du hero). */
+  source?: string
+  telephone?: string
 }
 
 const esc = (s: unknown) =>
@@ -89,7 +92,7 @@ export async function POST(req: NextRequest) {
     const {
       prenom = '', nom = '', email = '', entreprise = '', site = '',
       role = '', secteur = '', taille = '', challenge = '', budget = '',
-      details = '', audit = {}, lang = 'fr',
+      details = '', audit = {}, lang = 'fr', source = '', telephone = '',
     } = body
 
     if (!email?.trim() || !prenom?.trim()) {
@@ -101,7 +104,10 @@ export async function POST(req: NextRequest) {
       ? '🔥 '
       : ''
 
-    const subject = `${urgencyTag}Nouveau lead /book, ${fullName}${entreprise ? ` (${entreprise})` : ''}`
+    const isAudit = source === 'audit'
+    const subject = isAudit
+      ? `Demande d’audit gratuit, ${fullName}${entreprise ? ` (${entreprise})` : ''}`
+      : `${urgencyTag}Nouveau lead /book, ${fullName}${entreprise ? ` (${entreprise})` : ''}`
 
     const html = `
 <!DOCTYPE html>
@@ -113,7 +119,7 @@ export async function POST(req: NextRequest) {
         <table cellpadding="0" cellspacing="0" border="0" width="640" style="max-width:640px;background:#fff;border-radius:12px;border:1px solid rgba(0,0,0,0.08);overflow:hidden;">
           <tr>
             <td style="padding:24px 28px;border-bottom:1px solid rgba(0,0,0,0.06);background:#0e0e12;">
-              <p style="margin:0;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:2px;color:#E63946;text-transform:uppercase;">Nouveau lead · /book</p>
+              <p style="margin:0;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:2px;color:#E63946;text-transform:uppercase;">${isAudit ? 'Audit gratuit · /audit-gratuit' : 'Nouveau lead · /book'}</p>
               <h1 style="margin:8px 0 0;font-size:22px;color:#fff;font-weight:600;line-height:1.3;">${esc(fullName)}${entreprise ? ` <span style="color:#888;font-weight:400;">— ${esc(entreprise)}</span>` : ''}</h1>
               <p style="margin:6px 0 0;font-size:13px;color:#aaa;">
                 <a href="mailto:${esc(email)}" style="color:#E63946;text-decoration:none;">${esc(email)}</a>
@@ -126,6 +132,7 @@ export async function POST(req: NextRequest) {
             <td style="padding:24px 28px;">
               <p style="margin:0 0 12px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;color:#999;text-transform:uppercase;">Identité</p>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                ${row('Téléphone / WhatsApp', telephone)}
                 ${row('Rôle', role)}
                 ${row('Secteur', secteur)}
                 ${row('Taille équipe', taille)}

@@ -19,6 +19,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/reviews`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/resources`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/book`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${BASE_URL}/audit-gratuit`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     // Landing de l'atelier : indexable, mais ce n'est pas une page SEO.
     { url: `${BASE_URL}/atelier`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/bibliotheque`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
@@ -91,7 +92,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/services/logiciel-sur-mesure': 0.9, '/a-propos': 0.6,
     '/case-studies': 0.8, '/outils': 0.9, '/outils/pret-pour-lia': 0.9,
     '/tools': 0.8, '/tools/diagnostic-ia': 0.9, '/resources': 0.7,
-    '/reviews': 0.7, '/book': 0.7, '/glossaire': 0.6,
+    '/reviews': 0.7, '/book': 0.7, '/audit-gratuit': 0.8, '/glossaire': 0.6,
     '/mentions-legales': 0.3, '/politique-anti-spam': 0.3,
   }
 

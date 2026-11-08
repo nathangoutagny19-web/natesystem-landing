@@ -164,7 +164,7 @@ export const translations = {
     fr: '11+ équipes équipées · 35 h rendues par mois en moyenne · réactivité ×2',
     hu: '11+ felszerelt csapat · átlagosan havi 35 óra visszanyerve · 2× gyorsabb reagálás',
   },
-  'hero.ctaPrototype': { en: 'Get your free prototype', fr: 'Recevoir votre prototype gratuit', hu: 'Kérje ingyenes prototípusát' },
+  'hero.ctaAudit': { en: 'Get your free audit', fr: 'Recevoir votre audit gratuit', hu: 'Kérje ingyenes auditját' },
   'hero.ctaCall': { en: 'Book a call', fr: 'Réserver un appel', hu: 'Hívás foglalása' },
   'hero.cta': { en: 'Book a call · free', fr: 'Réserver un appel · offert', hu: 'Hívás foglalása · ingyenes' },
   /* La VSL du 13 octobre 2026, tournée en anglais à Budapest, sous-titres

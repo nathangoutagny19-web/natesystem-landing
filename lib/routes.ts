@@ -37,6 +37,7 @@ export const TRANSLATED_ROUTES = [
   '/resources',
   '/reviews',
   '/book',
+  '/audit-gratuit',
   '/glossaire',
   '/mentions-legales',
   '/politique-anti-spam',

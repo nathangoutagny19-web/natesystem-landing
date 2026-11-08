@@ -7,10 +7,9 @@ import Link from 'next/link'
 import { Sparkles } from 'lucide-react'
 import { CAL_LINK } from '@/lib/constants'
 
-/* ⚠︎ PROVISOIRE : le bouton « prototype gratuit » mène à la prise de
-   rendez-vous tant que Nathan n'a pas choisi sa destination (formulaire,
-   WhatsApp ou page dédiée). Poussé ainsi le 4 novembre 2026, à sa demande. */
-const PROTOTYPE_LINK = CAL_LINK
+/* Bouton principal : l'audit gratuit, sans appel (Nathan, 8 novembre 2026).
+   Jamais « prototype » : règle de la prospection. */
+const AUDIT_LINK = '/audit-gratuit'
 import { localizedHref } from '@/lib/routes'
 import VslPlayer from '@/components/ui/VslPlayer'
 
@@ -127,15 +126,15 @@ export default function Hero() {
         </span>
       </motion.div>
 
-      {/* Deux boutons : le prototype gratuit en principal, l'appel en secondaire. */}
+      {/* Deux boutons : l'audit gratuit en principal, l'appel en secondaire. */}
       <motion.div
         initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.44, ease }}
         className="flex flex-wrap items-center justify-center gap-3"
         style={{ marginBottom: '48px' }}
       >
-        <Link href={localizedHref(PROTOTYPE_LINK, lang)} className="btn-primary" style={{ fontSize: '14px' }}>
+        <Link href={localizedHref(AUDIT_LINK, lang)} className="btn-primary" style={{ fontSize: '14px' }}>
           <span className="btn-primary-dot" />
-          {t('hero.ctaPrototype')} →
+          {t('hero.ctaAudit')} →
         </Link>
         <Link href={localizedHref(CAL_LINK, lang)} className="btn-ghost" style={{ fontSize: '14px', fontWeight: 500 }}>
           {t('hero.ctaCall')} →
