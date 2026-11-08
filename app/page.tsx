@@ -5,7 +5,6 @@ import ClientsBar from '@/components/home/ClientsBar'
 import Transformation from '@/components/home/Transformation'
 import CredibilityBand from '@/components/home/CredibilityBand'
 import Systems from '@/components/home/Systems'
-import MiniDiagnosticCta from '@/components/home/MiniDiagnosticCta'
 import WhatWeDo from '@/components/home/WhatWeDo'
 import Different from '@/components/home/Different'
 import Sectors from '@/components/home/Sectors'
@@ -64,9 +63,8 @@ export default function Home() {
       {/* Les témoignages sont remontés sous la bande noire (Nathan, 8 novembre
           2026). Le carrousel de cas et ses vidéos sont sur /case-studies. */}
 
-      {/* 4b, Encart mini-diagnostic gratuit, juste après le témoignage (plus petit) */}
-      <MiniDiagnosticCta />
-      <Divider />
+      {/* L'encart « diagnostic gratuit » (MiniDiagnosticCta) est retiré de
+          l'accueil le 8 novembre 2026 (Nathan). */}
 
       {/* ─────────── CORPS REMODELÉ ─────────── */}
 

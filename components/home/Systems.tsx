@@ -20,7 +20,7 @@ import Link from 'next/link'
 import FadeUp from '@/components/ui/FadeUp'
 import { useLang } from '@/components/providers/LangProvider'
 import { makeD } from '@/lib/lang'
-import { CAL_LINK } from '@/lib/constants'
+const AUDIT_LINK = '/audit-gratuit'
 import { localizedHref } from '@/lib/routes'
 
 type Card = {
@@ -154,11 +154,14 @@ export default function Systems() {
         </div>
       </div>
 
-      {/* CTA principal « Je veux le mien » + lien secondaire vers les cas clients */}
+      {/* CTA principal : l'offre gratuite, la même que dans le hero (Nathan,
+          8 novembre 2026, à la place de « Je veux le mien »). « Audit » et pas
+          « prototype » : on ne dit pas « prototype » aux prospects et on ne
+          construit rien gratuitement avant engagement. */}
       <div className="mx-auto text-center" style={{ maxWidth: '1100px', padding: '40px 24px 0', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 16 }}>
         <FadeUp>
-          <Link href={localizedHref(CAL_LINK, lang)} className="btn-primary">
-            <span className="btn-primary-dot" />{d('Je veux le mien', 'I want mine', 'Kérem a sajátomat')} &rarr;
+          <Link href={localizedHref(AUDIT_LINK, lang)} className="btn-primary">
+            <span className="btn-primary-dot" />{t('hero.ctaAudit')} &rarr;
           </Link>
         </FadeUp>
         <FadeUp delay={0.05}>
