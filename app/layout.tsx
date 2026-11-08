@@ -23,9 +23,10 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'NateSystem, logiciel sur mesure pour l’hospitalité de luxe et de prestige',
+  /* Title ≤ 60 et description ≤ 155 caractères : au-delà, Google coupe (08/11/2026). */
+  title: 'Logiciel sur mesure pour l’hospitalité de luxe | NateSystem',
   description:
-    'Logiciel sur mesure, image en ligne et données suivies pour villas, chalets, domaines, conciergeries, yachts, hôtels indépendants et maisons de réception. Une seule saisie, et toute votre organisation suit. Un partenariat dans la durée, le code vous appartient.',
+    'Conciergeries, villas, chalets, yachts : un logiciel construit autour de votre façon de servir vos clients. Le code vous appartient. Audit gratuit.',
   keywords: [
     'logiciel sur mesure conciergerie de luxe',
     'logiciel gestion villa de luxe',
@@ -59,9 +60,9 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     url: 'https://www.natesystem.com',
-    title: 'NateSystem, logiciel sur mesure pour l’hospitalité de luxe et de prestige',
+    title: 'Logiciel sur mesure pour l’hospitalité de luxe | NateSystem',
     description:
-      'Votre façon de recevoir vos clients est unique. Votre logiciel devrait l’être aussi. Logiciel, image en ligne et données suivies, dans un partenariat qui évolue avec vous.',
+      'Votre façon de servir vos clients est unique. Votre logiciel devrait l’être aussi. Conciergeries, villas, chalets, yachts. Le code vous appartient.',
     siteName: 'NateSystem',
     images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'NateSystem' }],
     locale: 'fr_FR',
@@ -69,8 +70,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'NateSystem, logiciel sur mesure pour l’hospitalité de luxe et de prestige',
-    description: 'Votre façon de recevoir vos clients est unique. Votre logiciel devrait l’être aussi.',
+    title: 'Logiciel sur mesure pour l’hospitalité de luxe | NateSystem',
+    description: 'Votre façon de servir vos clients est unique. Votre logiciel devrait l’être aussi.',
     images: ['/og-image.png'],
   },
 }
@@ -96,7 +97,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               logo: 'https://www.natesystem.com/logo.png',
               image: 'https://www.natesystem.com/logo.png',
               description:
-                'NateSystem construit le logiciel sur-mesure qui pilote votre activité, propulsé par l\'IA, IA agentique, automatisation, data analytics. Vos données, votre infrastructure, votre code. Hébergé en UE, RGPD-natif.',
+                'NateSystem construit des logiciels sur mesure pour l’hospitalité de luxe : conciergeries, villas et chalets, yachts. Construits autour de la façon dont chaque organisation sert ses clients. Le client possède 100 % du code et des données. Hébergé en UE, RGPD-natif.',
               founder: {
                 '@type': 'Person',
                 name: 'Nathan Goutagny',
@@ -110,14 +111,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 addressCountry: 'FR',
               },
               knowsAbout: [
-                'Logiciel sur-mesure',
-                'Intégration IA en entreprise',
-                'IA agentique',
-                'Automatisation des processus',
-                'Data analytics',
-                'Audit IA',
+                'Logiciel sur mesure',
+                'Logiciel de gestion pour conciergerie de luxe',
+                'Gestion de villas et chalets de luxe',
+                'Gestion de yachts',
+                'Hospitalité de luxe',
+                'Hébergement des données en UE',
               ],
-              slogan: 'Logiciel sur-mesure · IA intégrée · Vous appartient',
+              slogan: 'Votre façon de servir vos clients est unique. Votre logiciel devrait l’être aussi.',
             }),
           }}
         />

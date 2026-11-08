@@ -19,9 +19,9 @@ import { SITE_URL } from '@/lib/constants'
  */
 
 export const metadata: Metadata = {
-  title: 'NateSystem, egyedi szoftver a luxus- és presztízsvendéglátásnak',
+  title: 'Egyedi szoftver a luxusvendéglátásnak | NateSystem',
   description:
-    'Egyedi szoftver, online megjelenés és követett adatok villáknak, faházaknak, birtokoknak, concierge-szolgáltatásoknak, jachtoknak, független szállodáknak és rendezvényhelyszíneknek. Egyszer viszi be, és az egész szervezet követi. Hosszú távú partnerség, a forráskód az Öné.',
+    'Concierge-szolgáltatások, villák, faházak, jachtok: szoftver, amely ahhoz igazodik, ahogyan Ön a vendégeit kiszolgálja. A forráskód az Öné.',
   alternates: {
     canonical: `${SITE_URL}/hu`,
     languages: {
@@ -31,8 +31,21 @@ export const metadata: Metadata = {
       'x-default': `${SITE_URL}/`,
     },
   },
-  openGraph: { locale: 'hu_HU',
+  /* Même règle qu'en /en : l'openGraph enfant remplace celui du parent. */
+  openGraph: {
+    type: 'website',
+    locale: 'hu_HU',
+    url: `${SITE_URL}/hu/`,
+    siteName: 'NateSystem',
+    title: 'Egyedi szoftver a luxusvendéglátásnak | NateSystem',
+    description: 'Az Ön vendégfogadása egyedi. A szoftvere is legyen az. Concierge-szolgáltatások, villák, faházak, jachtok. A forráskód az Öné.',
     images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'NateSystem' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Egyedi szoftver a luxusvendéglátásnak | NateSystem',
+    description: 'Az Ön vendégfogadása egyedi. A szoftvere is legyen az.',
+    images: ['/og-image.png'],
   },
 }
 

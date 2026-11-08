@@ -20,9 +20,9 @@ import { SITE_URL } from '@/lib/constants'
  */
 
 export const metadata: Metadata = {
-  title: 'NateSystem, bespoke software for luxury and prestige hospitality',
+  title: 'Custom software for luxury hospitality | NateSystem',
   description:
-    'Bespoke software, online presence and tracked data for villas, chalets, estates, concierge services, yachts, boutique hotels and event venues. Enter it once and your whole organisation follows. A long-term partnership, and you own the code.',
+    'Concierge services, villas, chalets, yachts: software built around the way you serve your clients. You own the code. Get a free audit.',
   alternates: {
     canonical: `${SITE_URL}/en`,
     languages: {
@@ -32,8 +32,22 @@ export const metadata: Metadata = {
       'x-default': `${SITE_URL}/`,
     },
   },
-  openGraph: { locale: 'en_US',
+  /* L'openGraph d'un layout enfant REMPLACE celui du parent, il ne le complète
+     pas : sans titre ni url ici, /en partageait le titre français sur X. */
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: `${SITE_URL}/en/`,
+    siteName: 'NateSystem',
+    title: 'Custom software for luxury hospitality | NateSystem',
+    description: 'The way you serve your clients is unique. Your software should be too. Concierge services, villas, chalets, yachts. You own the code.',
     images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'NateSystem' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Custom software for luxury hospitality | NateSystem',
+    description: 'The way you serve your clients is unique. Your software should be too.',
+    images: ['/og-image.png'],
   },
 }
 

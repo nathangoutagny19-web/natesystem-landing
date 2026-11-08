@@ -126,11 +126,46 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }))
   )
 
+  /* ⚠︎ LES PAGES FRANÇAISES TRADUITES MANQUAIENT : /methode, entre autres,
+     n'était déclarée qu'en /en et /hu. Toute route traduite absente de la
+     liste statique y est ajoutée, avec ses alternates. */
+  const declared = new Set(staticRoutes.map((r) => r.url))
+  const missingFrRoutes: MetadataRoute.Sitemap = TRANSLATED_ROUTES
+    .filter((path) => !declared.has(`${BASE_URL}${path === '/' ? '/' : path}`))
+    .map((path) => ({
+      url: `${BASE_URL}${path}`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: PRIORITY[path] ?? 0.6,
+      alternates: alternatesFor(path),
+    }))
+
+  /* ⚠︎ LE SITE TOURNE EN `trailingSlash: true` (next.config.mjs) : /methode
+     répond par une 308 vers /methode/, et c'est /methode/ que la canonique
+     déclare. Un sitemap qui liste /methode envoie donc Google sur une
+     redirection pour chaque page (constaté le 08/11/2026). Toutes les
+     adresses, alternates compris, sont ramenées à leur forme canonique. */
+  const canonical = (u: string) => (u.endsWith('/') ? u : `${u}/`)
+  const normalize = (r: MetadataRoute.Sitemap[number]): MetadataRoute.Sitemap[number] => ({
+    ...r,
+    url: canonical(r.url),
+    ...(r.alternates?.languages
+      ? {
+          alternates: {
+            languages: Object.fromEntries(
+              Object.entries(r.alternates.languages).map(([k, v]) => [k, typeof v === 'string' ? canonical(v) : v])
+            ),
+          },
+        }
+      : {}),
+  })
+
   return [
     ...staticRoutes,
+    ...missingFrRoutes,
     ...blogRoutes,
     ...caseStudyRoutes,
     ...translatedRoutes,
     ...translatedCaseRoutes,
-  ]
+  ].map(normalize)
 }
