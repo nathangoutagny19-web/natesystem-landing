@@ -125,8 +125,10 @@ export default function WhatWeDo() {
             <span className="accent">{d('et vous n’êtes jamais seul.', 'and you are never on your own.', 'és soha nincs egyedül.')}</span>
           </h2>
           <p className="font-sans" style={{ fontSize: '15px', fontWeight: 300, color: 'var(--text-secondary)', maxWidth: '620px', margin: '0 auto', lineHeight: 1.7 }}>
-            {d('On remplace l’outil générique qui ne colle pas par un système sur mesure qui vous appartient, avec l’image en ligne qui va avec. Puis on le fait grandir avec vous, dans la durée.',
-               'We replace the generic tool that doesn’t fit with a bespoke system you own, with the online presence to match. Then we grow it with you, for the long term.', 'A rosszul illeszkedő általános eszközt egy egyedi rendszerre cseréljük, amely az Öné, a hozzá illő online megjelenéssel. Aztán hosszú távon együtt fejlesztjük.')}
+            {/* 8 novembre 2026 : on ne « remplace » plus l'outil en place, ce
+                qui contredisait la FAQ (« gardez-le, on construit à côté »). */}
+            {d('On garde ce qui marche déjà chez vous, et on construit autour tout ce qui passe encore par WhatsApp, Excel et votre téléphone.',
+               'We keep what already works for you, and build around it everything that still runs through WhatsApp, Excel and your phone.', 'Megtartjuk, ami Önnél már működik, és köré építjük mindazt, ami még mindig WhatsAppon, Excelben és a telefonján fut.')}
           </p>
         </FadeUp>
 
