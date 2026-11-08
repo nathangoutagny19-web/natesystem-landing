@@ -4,13 +4,13 @@ import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 import { useEffect, useState } from 'react'
 import { useLang } from '@/components/providers/LangProvider'
 import Link from 'next/link'
+import { Sparkles } from 'lucide-react'
 import { CAL_LINK } from '@/lib/constants'
 
 /* Bouton principal : l'audit gratuit, sans appel (Nathan, 8 novembre 2026).
    Jamais « prototype » : règle de la prospection. */
 const AUDIT_LINK = '/audit-gratuit'
 import { localizedHref } from '@/lib/routes'
-import { makeD } from '@/lib/lang'
 import VslPlayer from '@/components/ui/VslPlayer'
 
 const ease = [0.22, 1, 0.36, 1] as const
@@ -78,68 +78,105 @@ function RotatingWord({ words }: { words: string[] }) {
 
 export default function Hero() {
   const { lang, t } = useLang()
-  const d = makeD(lang)
   const words = t('hero.titleWords').split('|').map((w) => w.trim()).filter(Boolean)
-  /* Une simple apparition en fondu, rien qui glisse (Nathan, 8 novembre 2026). */
-  const fade = (delay: number) => ({ initial: { opacity: 0 }, animate: { opacity: 1 }, transition: { duration: 0.9, delay, ease } })
 
   return (
-    /* LE HERO, version courte du 8 novembre 2026 : à gauche la phrase de
-       Nathan et la ligne des 40 heures, à droite la vidéo. Son paragraphe
-       (hero.sub) est passé dans la section Écosystème, qu'il décrit. */
-    <section className="hero-section" style={{ background: '#0e0e12', padding: '150px 24px 110px' }}>
-      <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-14 items-center" style={{ maxWidth: 1240, margin: '0 auto' }}>
-        <div>
-          <motion.p {...fade(0.05)} className="font-mono" style={{ fontSize: 11, letterSpacing: '0.22em', textTransform: 'uppercase', color: 'rgba(240,240,242,0.5)' }}>
-            {t('hero.label')}
-          </motion.p>
+    <section className="relative min-h-screen flex flex-col items-center justify-center text-center hero-section" style={{ padding: '140px 24px 80px' }}>
+      {/* Label */}
+      <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1, ease }} className="mb-8">
+        <span className="section-label hero-eyebrow">{t('hero.label')}</span>
+      </motion.div>
 
-          <motion.h1
-            {...fade(0.1)}
-            className="font-serif font-normal"
-            style={{ fontSize: 'clamp(40px, 4.4vw, 64px)', lineHeight: 1.06, marginTop: 26, color: '#f0f0f2' }}
-          >
-            {t('hero.titlePrefix')}{' '}
-            {words.length > 1 ? <RotatingWord words={words} /> : <span>{words[0]}</span>}{' '}
-            {t('hero.titleSuffix')}
-          </motion.h1>
+      {/* Title, NateSystem signature: serif italic, scaled up for the new outcome-first H1 */}
+      <motion.h1
+        initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2, ease }}
+        className="font-serif italic font-normal"
+        style={{ fontSize: 'clamp(38px, 5.2vw, 64px)', lineHeight: 1.08, marginBottom: '28px', maxWidth: '820px', color: 'var(--text)' }}
+      >
+        {t('hero.titlePrefix')}{' '}
+        {/* Un seul mot : la headline est fixe, rien ne tourne. */}
+        {words.length > 1 ? <RotatingWord words={words} /> : <span>{words[0]}</span>}{' '}
+        {t('hero.titleSuffix')}
+      </motion.h1>
 
-          <motion.p
-            {...fade(0.25)}
-            className="font-sans"
-            style={{ fontSize: 'clamp(16px, 1.5vw, 19px)', fontWeight: 300, lineHeight: 1.6, marginTop: 28, maxWidth: 520, color: 'rgba(240,240,242,0.7)' }}
-          >
-            {d('Nos clients nous rapportent ', 'Our clients report ', 'Ügyfeleink szerint havonta ')}
-            <span className="font-serif italic" style={{ color: '#E63946', fontSize: '1.35em' }}>{d('40 heures', '40 hours', '40 órát')}</span>
-            {d(' rendues chaque mois, et une réactivité qui double.', ' given back every month, and responsiveness that doubles.', ' nyernek vissza, és kétszer gyorsabban reagálnak.')}
-          </motion.p>
+      {/* Sous-titre : sous le titre depuis le 4 novembre 2026 (avant, sous la vidéo). */}
+      <motion.p
+        initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.28, ease }}
+        className="font-sans"
+        style={{ fontSize: 'clamp(15px, 3vw, 18px)', fontWeight: 300, color: 'var(--text-secondary)', maxWidth: '720px', lineHeight: 1.6, marginBottom: '28px' }}
+      >
+        {t('hero.sub')}
+      </motion.p>
 
-          <motion.div {...fade(0.4)} className="flex flex-wrap items-center gap-3" style={{ marginTop: 40 }}>
-            <Link href={localizedHref(AUDIT_LINK, lang)} className="btn-primary btn-on-dark">
-              {t('hero.ctaAudit')} →
-            </Link>
-            <Link href={localizedHref(CAL_LINK, lang)} className="btn-ghost btn-on-dark">
-              {t('hero.ctaCall')} →
-            </Link>
-          </motion.div>
-        </div>
+      {/* Badge de preuve : même pastille qu'avant, le texte porte maintenant les trois chiffres. */}
+      <motion.div
+        initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.36, ease }}
+        className="inline-flex items-center gap-2"
+        style={{
+          marginBottom: '32px',
+          padding: '7px 14px',
+          borderRadius: '999px',
+          background: 'var(--accent-subtle)',
+          border: '1px solid rgba(230,57,70,0.18)',
+        }}
+      >
+        <Sparkles size={13} strokeWidth={2} style={{ color: 'var(--accent)', flexShrink: 0 }} />
+        <span className="font-sans" style={{ fontSize: '13px', fontWeight: 400, color: 'var(--text-secondary)' }}>
+          {t('hero.aiNote')}
+        </span>
+      </motion.div>
 
-        {/* VSL, self-hosted, plays inline on click (zero page-load cost). */}
-        <motion.div {...fade(0.3)} className="w-full">
-          <VslPlayer
-            src="/vsl-hospitality.mp4"
-            poster="/vsl-hospitality-poster.jpg"
-            label={t('hero.vslLabel')}
-            duration="51 s"
-            title={t('hero.vslTitle')}
-          />
-        </motion.div>
-      </div>
+      {/* Deux boutons : l'audit gratuit en principal, l'appel en secondaire. */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.44, ease }}
+        className="flex flex-wrap items-center justify-center gap-3"
+        style={{ marginBottom: '48px' }}
+      >
+        <Link href={localizedHref(AUDIT_LINK, lang)} className="btn-primary" style={{ fontSize: '14px' }}>
+          <span className="btn-primary-dot" />
+          {t('hero.ctaAudit')} →
+        </Link>
+        <Link href={localizedHref(CAL_LINK, lang)} className="btn-ghost" style={{ fontSize: '14px', fontWeight: 500 }}>
+          {t('hero.ctaCall')} →
+        </Link>
+      </motion.div>
+
+      {/* VSL, self-hosted, plays inline on click (zero page-load cost). Inchangée. */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.52, ease }}
+        className="w-full flex justify-center"
+      >
+        {/* Sous-titres incrustés dans la vidéo : pas de piste VTT, elle
+            doublerait le texte à l'écran. */}
+        <VslPlayer
+          src="/vsl-hospitality.mp4"
+          poster="/vsl-hospitality-poster.jpg"
+          label={t('hero.vslLabel')}
+          duration="51 s"
+          title={t('hero.vslTitle')}
+        />
+      </motion.div>
+
+      {/* Scroll hint, trust bar moved to dedicated <ClientsBar /> below the hero */}
+      <motion.div
+        initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 1.2 }}
+        className="absolute bottom-10 left-0 right-0 flex flex-col items-center gap-4"
+      >
+        <div className="w-px h-10" style={{ background: 'linear-gradient(to bottom, var(--text-muted), transparent)', animation: 'scrollPulse 2s ease infinite' }} />
+      </motion.div>
 
       <style jsx>{`
+        .hero-eyebrow {
+          letter-spacing: 4px;
+        }
         @media (max-width: 540px) {
           .hero-section {
-            padding: 112px 18px 64px !important;
+            padding: 110px 18px 64px !important;
+            min-height: auto;
+          }
+          .hero-eyebrow {
+            letter-spacing: 2px;
+            font-size: 10px;
           }
         }
       `}</style>

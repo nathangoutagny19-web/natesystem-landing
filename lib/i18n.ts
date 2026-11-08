@@ -151,17 +151,16 @@ export const translations = {
         de livraison à fixer ». La mention est donc retirée, pas
         remplacée. Elle revient le jour où Nathan le fixe. */
   /* HERO DU 4 NOVEMBRE 2026, texte de Nathan : sous-titre, badge de preuve,
-     deux boutons. Le badge a changé le 8 novembre : voir hero.aiNote.
+     deux boutons. Les chiffres du badge sont ceux qu'il a arrêtés ce jour-là :
+     11+ équipes, 35 h par mois en moyenne (remplace les 40 h), réactivité ×2.
      ⚠︎ Aucun délai de livraison ni prix ici, même règle qu'avant. */
   'hero.sub': {
     en: 'Your own digital ecosystem, built around how your team already works and ready to grow with your company. Client requests, bookings, team operations, suppliers, finances and reporting, everything finally in one place, for true operational excellence and a guest experience in a league of its own. 100% yours.',
     fr: 'Votre propre écosystème digital, construit autour de la façon dont votre équipe travaille déjà et prêt à grandir avec votre entreprise. Demandes clients, réservations, opérations, prestataires, finances et reporting, tout enfin réuni au même endroit, pour une véritable excellence opérationnelle et une expérience client hors du commun. 100 % à vous.',
     hu: 'Saját digitális ökoszisztéma, amely a csapata meglévő munkamódjára épül, és együtt nő a vállalkozásával. Vendégkérések, foglalások, csapatműveletek, beszállítók, pénzügyek és riportok: végre minden egy helyen, a valódi működési kiválóságért és egy páratlan vendégélményért. 100%-ban az Öné.',
   },
-  /* Badge de preuve (8 novembre 2026, Nathan) : 40 h rapportées par les
-     clients, réactivité ×2, expérience client unique. Remplace « 11+ équipes ·
-     35 h » du 4 novembre : Nathan revient aux 40 h, qui sont aussi le chiffre
-     de la vidéo. La mention « rapporté par nos clients » reste collée au chiffre. */
+  /* Ligne de preuve (8 novembre 2026, Nathan) : 40 h rapportées par les
+     clients, réactivité ×2, expérience client unique. */
   'hero.aiNote': {
     en: '40 hours a month given back, as reported by our clients · 2× responsiveness · A unique guest experience',
     fr: '40 h par mois rendues, rapporté par nos clients · Réactivité ×2 · Une expérience client unique',

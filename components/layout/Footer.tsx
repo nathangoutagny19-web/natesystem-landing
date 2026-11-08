@@ -133,10 +133,10 @@ export default function Footer() {
           <FooterLink href="/a-propos">{t('footer.link.about')}</FooterLink>
           {/* Pages Monténégro, anglaises seulement : lien interne depuis tout le site. */}
           <FooterLink href="/en/montenegro">Montenegro · Tivat · Kotor</FooterLink>
-          <FooterLink href="/#secteurs">{lang === 'en' ? 'Industries' : lang === 'hu' ? 'Ágazatok' : 'Secteurs'}</FooterLink>
+          <FooterLink href="/#probleme">{t('footer.link.problem')}</FooterLink>
           <FooterLink href="/#process">{t('footer.link.process')}</FooterLink>
           <FooterLink href="/#case-study">{t('footer.link.results')}</FooterLink>
-          <FooterLink href="/#rendez-vous">{t('footer.link.contact')}</FooterLink>
+          <FooterLink href="/#contact">{t('footer.link.contact')}</FooterLink>
         </FooterCol>
 
         {/* Solutions column, conversion + sector SEO pages.
