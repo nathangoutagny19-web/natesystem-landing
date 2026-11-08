@@ -39,6 +39,28 @@ export default function ComparisonV2() {
           </h2>
         </FadeUp>
 
+        {/* Téléphone (8 novembre 2026) : une fiche par critère au lieu d'un
+            tableau de 5 colonnes qui se coupait et défilait de côté. */}
+        <div className="cmp-m">
+          {rows.map((r) => (
+            <div key={r.crit} className="cmp-m-item">
+              <p className="font-sans cmp-m-crit">{r.crit}</p>
+              <div className="cmp-m-us">
+                <span className="font-serif italic cmp-m-us-name">{t('v2.cmp.colUs')}</span>
+                <span className="font-sans cmp-m-us-val">{r.us}</span>
+              </div>
+              <dl className="cmp-m-alts">
+                {cols.map((c) => (
+                  <div key={c.key} className="cmp-m-alt">
+                    <dt className="font-mono">{c.label}</dt>
+                    <dd className="font-sans">{r[c.key as 'wa' | 'esn' | 'saas']}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+          ))}
+        </div>
+
         <FadeUp delay={0.12}>
           <div className="cmp4-scroll">
             <div className="cmp4">
@@ -66,6 +88,31 @@ export default function ComparisonV2() {
       </div>
 
       <style jsx>{`
+        .cmp-m { display: none; }
+        @media (max-width: 640px) {
+          .cmp4-scroll { display: none; }
+          .cmp-m { display: flex; flex-direction: column; gap: 12px; }
+          .cmp-m-item {
+            border: 1px solid var(--border); border-radius: 12px;
+            background: var(--bg-card); padding: 16px 16px 12px;
+          }
+          .cmp-m-crit { font-size: 14px; font-weight: 500; color: var(--text); margin: 0 0 10px; line-height: 1.4; }
+          .cmp-m-us {
+            display: flex; flex-direction: column; gap: 2px;
+            padding: 10px 12px; border-radius: 8px;
+            background: var(--accent-subtle); border: 1px solid rgba(230, 57, 70, 0.18);
+          }
+          .cmp-m-us-name { font-size: 15px; color: var(--accent); }
+          .cmp-m-us-val { font-size: 14px; font-weight: 500; color: var(--text); line-height: 1.4; }
+          .cmp-m-alts { margin: 8px 0 0; }
+          .cmp-m-alt {
+            display: grid; grid-template-columns: 112px 1fr; gap: 10px; align-items: baseline;
+            padding: 7px 2px; border-top: 1px solid var(--border);
+          }
+          .cmp-m-alt:first-child { border-top: 0; }
+          .cmp-m-alt dt { font-size: 9.5px; letter-spacing: 1px; text-transform: uppercase; color: var(--text-muted); line-height: 1.4; }
+          .cmp-m-alt dd { margin: 0; font-size: 13.5px; font-weight: 300; color: var(--text-secondary); line-height: 1.45; }
+        }
         .cmp4-scroll {
           overflow-x: auto;
           -webkit-overflow-scrolling: touch;

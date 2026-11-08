@@ -246,15 +246,25 @@ export default function Nav() {
         </div>
       </header>
 
-      {/* ——— Mobile logo ——— */}
-      <Link href={l('/')} className="fixed top-5 left-6 z-[100] md:hidden flex items-center gap-[6px]" style={{ textDecoration: 'none' }}>
+      {/* ——— Barre mobile (8 novembre 2026, sur le modèle de frontal.so) :
+          une vraie barre fixe avec fond, le logo, l'audit gratuit toujours
+          à portée de pouce, et le menu. Avant, le logo et le menu flottaient
+          sur le contenu qui défilait dessous. ——— */}
+      <div className="nav-mbar">
+      <Link href={l('/')} className="flex items-center gap-[6px]" style={{ textDecoration: 'none' }} onClick={() => setMenuOpen(false)}>
         <span className="nav-logo-n">N</span>
         <span className="nav-logo-dot" />
       </Link>
 
+      <div className="flex items-center gap-1">
+      <Link href={l('/audit-gratuit')} className="nav-mcta" onClick={() => setMenuOpen(false)}>
+        <span className="nav-mcta-dot" />
+        {d('Audit gratuit', 'Free audit', 'Ingyenes audit')}
+      </Link>
+
       {/* ——— Mobile hamburger ——— */}
       <button
-        className="fixed top-5 right-6 z-[100] md:hidden flex flex-col gap-[5px] p-2 cursor-pointer bg-transparent border-none"
+        className="flex flex-col gap-[5px] p-3 cursor-pointer bg-transparent border-none"
         onClick={() => setMenuOpen(!menuOpen)}
         aria-label="Menu"
       >
@@ -267,6 +277,8 @@ export default function Nav() {
           }} />
         ))}
       </button>
+      </div>
+      </div>
 
       {/* ——— Mobile menu ——— */}
       <motion.div

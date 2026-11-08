@@ -303,6 +303,18 @@ export default function WhatWeDo() {
           .wwx-desc { opacity: 1; }
           .wwx-underline path { stroke-dashoffset: 0; }
         }
+        /* Téléphone (8 novembre 2026) : les quatre étapes sont ouvertes,
+           quatre soulignés rouges d'affilée faisaient trop ; titres plus
+           petits, trait de gauche plus court. */
+        @media (max-width: 640px) {
+          .wwx-row { grid-template-columns: 18px 1fr; gap: 12px; padding: 20px 2px; }
+          .wwx-row.on { padding-left: 2px; background: none; }
+          .wwx-mark, .wwx-row.on .wwx-mark { width: 14px; margin-top: 13px; }
+          .wwx-underline { display: none; }
+          .wwx-title { font-size: 21px; line-height: 1.25; }
+          .wwx-row.on .wwx-title { transform: none; }
+          .wwx-desc { font-size: 14.5px; }
+        }
       `}</style>
     </section>
   )

@@ -92,7 +92,7 @@ export default function Hero({ label }: { label?: string } = {}) {
       {/* Title, NateSystem signature: serif italic, scaled up for the new outcome-first H1 */}
       <motion.h1
         initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2, ease }}
-        className="font-serif italic font-normal"
+        className="font-serif italic font-normal hero-title"
         style={{ fontSize: 'clamp(38px, 5.2vw, 64px)', lineHeight: 1.08, marginBottom: '28px', maxWidth: '820px', color: 'var(--text)' }}
       >
         {t('hero.titlePrefix')}{' '}
@@ -104,7 +104,7 @@ export default function Hero({ label }: { label?: string } = {}) {
       {/* Badge de preuve, entre le titre et la vidéo (Nathan, 8 novembre 2026). */}
       <motion.div
         initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.36, ease }}
-        className="inline-flex items-center gap-2"
+        className="inline-flex items-center gap-2 hero-badge"
         style={{
           marginBottom: '28px',
           padding: '7px 14px',
@@ -140,7 +140,7 @@ export default function Hero({ label }: { label?: string } = {}) {
       {/* Deux boutons : l'audit gratuit en principal, l'appel en secondaire. */}
       <motion.div
         initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.44, ease }}
-        className="flex flex-wrap items-center justify-center gap-3"
+        className="flex flex-wrap items-center justify-center gap-3 hero-ctas"
         style={{ marginBottom: '28px' }}
       >
         <Link href={localizedHref(AUDIT_LINK, lang)} className="btn-primary" style={{ fontSize: '14px' }}>

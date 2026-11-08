@@ -273,9 +273,11 @@ export default function Footer() {
             grid-column: 1 / -1;
           }
         }
+        /* Téléphone : on garde deux colonnes de liens (8 novembre 2026),
+           une seule colonne faisait un pied de page interminable. */
         @media (max-width: 480px) {
           .footer-grid {
-            grid-template-columns: 1fr !important;
+            gap: 28px 20px !important;
           }
         }
       `}</style>

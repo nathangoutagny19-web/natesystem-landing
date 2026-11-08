@@ -328,7 +328,18 @@ export default function Transformation() {
           font-family: var(--font-sans); font-size: 14.5px; font-weight: 300;
           color: var(--text-secondary); line-height: 1.5;
         }
-        @media (max-width: 480px) { .baf-cost-stat { width: 88px; } }
+        /* Téléphone : le mot rouge passe au-dessus de son texte au lieu de
+           l'écraser dans une colonne de 88 px (8 novembre 2026). */
+        @media (max-width: 560px) {
+          .baf-cost-item { flex-direction: column; gap: 4px; }
+          .baf-cost-stat { width: auto; font-size: 21px; }
+          .baf-cost-desc { font-size: 14px; }
+          .baf-costlist { gap: 20px; }
+          .baf-visual { overflow: hidden; min-height: 280px; }
+          /* Le schéma est dessiné pour 500 px : on le réduit pour qu'il
+             tienne dans l'écran au lieu d'être coupé à droite. */
+          .baf-stage { zoom: 0.78; }
+        }
         .baf-dot { width: 7px; height: 7px; border-radius: 50%; }
         .baf-dot-before { background: var(--text-muted); opacity: 0.6; }
         .baf-dot-after { background: var(--accent); }

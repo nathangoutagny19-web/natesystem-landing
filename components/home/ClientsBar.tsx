@@ -154,7 +154,7 @@ export default function ClientsBar({ hideLabel = false, split = false }: { hideL
       >
         {!hideLabel && (
           <p
-            className="font-mono text-center"
+            className="font-mono text-center clients-label"
             style={{
               fontSize: 11,
               letterSpacing: 3,
