@@ -4,7 +4,6 @@ import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 import { useEffect, useState } from 'react'
 import { useLang } from '@/components/providers/LangProvider'
 import Link from 'next/link'
-import { Sparkles } from 'lucide-react'
 import { CAL_LINK } from '@/lib/constants'
 
 /* Bouton principal : l'audit gratuit, sans appel (Nathan, 8 novembre 2026).
@@ -108,23 +107,15 @@ export default function Hero() {
         {t('hero.sub')}
       </motion.p>
 
-      {/* Badge de preuve : même pastille qu'avant, le texte porte maintenant les trois chiffres. */}
-      <motion.div
+      {/* Ligne de preuve, sans pastille ni icône (8 novembre 2026, charte façon
+          Gourmet) : petites capitales espacées, grises, comme leurs libellés. */}
+      <motion.p
         initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.36, ease }}
-        className="inline-flex items-center gap-2"
-        style={{
-          marginBottom: '32px',
-          padding: '7px 14px',
-          borderRadius: '999px',
-          background: 'var(--accent-subtle)',
-          border: '1px solid rgba(230,57,70,0.18)',
-        }}
+        className="font-mono"
+        style={{ marginBottom: '36px', fontSize: '11px', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--text-secondary)', lineHeight: 1.8, maxWidth: 960 }}
       >
-        <Sparkles size={13} strokeWidth={2} style={{ color: 'var(--accent)', flexShrink: 0 }} />
-        <span className="font-sans" style={{ fontSize: '13px', fontWeight: 400, color: 'var(--text-secondary)' }}>
-          {t('hero.aiNote')}
-        </span>
-      </motion.div>
+        {t('hero.aiNote')}
+      </motion.p>
 
       {/* Deux boutons : l'audit gratuit en principal, l'appel en secondaire. */}
       <motion.div

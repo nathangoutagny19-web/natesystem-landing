@@ -1232,3 +1232,40 @@ html:not(.light) .trust-logo {
   to { opacity: 1; transform: none; }
 }
 .q-fade { animation: qFadeIn 0.42s cubic-bezier(0.22, 1, 0.36, 1); }
+
+/* ═══════════════════════════════════════════════════════════════════════
+   CHARTE DES BOUTONS, 8 novembre 2026 (Nathan : « les boutons sont bizarres,
+   inspire-toi de Gourmet pour notre charte »). Sur le modèle de
+   gourmetmarketing.net : angles nets, petites capitales espacées, aplat
+   sombre pour le principal, contour fin pour le secondaire. Plus de halo
+   tournant, plus de dérive magnétique, plus de point rouge pulsant.
+   Ce bloc vient en dernier et prend le pas sur les règles plus haut.
+   ═══════════════════════════════════════════════════════════════════════ */
+.btn-primary, .btn-ghost, .nav-cta-btn, .infra-cta, .form-cta {
+  border-radius: 2px !important;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  box-shadow: none !important;
+  transform: none !important;
+  transition: background .2s ease, color .2s ease, border-color .2s ease !important;
+}
+.btn-primary::before, .btn-ghost::before, .nav-cta-btn::before,
+.infra-cta::before, .form-cta::before { display: none !important; }
+.btn-primary-dot { display: none !important; }
+
+.btn-primary { padding: 18px 30px; background: #0e0e12; border: 1px solid #0e0e12; color: #fff; gap: 10px; }
+.btn-primary:hover { background: var(--accent) !important; border-color: var(--accent) !important; color: #fff; }
+html:not(.light) .btn-primary { background: #f0f0f2; border-color: #f0f0f2; color: #0e0e12; }
+html:not(.light) .btn-primary:hover { background: var(--accent) !important; border-color: var(--accent) !important; color: #fff; }
+
+.btn-ghost { padding: 17px 30px; background: transparent !important; border: 1px solid currentColor !important; color: var(--text); gap: 10px; }
+.btn-ghost:hover { background: var(--text) !important; color: var(--bg) !important; border-color: var(--text) !important; }
+
+.nav-cta-btn { padding: 12px 22px; }
+.nav-cta-btn:hover { background: #0e0e12 !important; }
+
+@media (max-width: 540px) {
+  .btn-primary, .btn-ghost { padding: 15px 20px; font-size: 11px !important; letter-spacing: 0.12em; }
+}
