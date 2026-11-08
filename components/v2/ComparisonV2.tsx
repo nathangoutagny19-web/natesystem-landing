@@ -5,7 +5,8 @@ import { useLang } from '@/components/providers/LangProvider'
 
 /**
  * ComparisonV2, variante 4 colonnes de la comparaison honnête (REFONTE §7).
- * Ajoute les vraies alternatives du prospect : Freelance / ESN / SaaS / NateSystem.
+ * Les vraies alternatives du prospect : WhatsApp et Excel (le statu quo, la
+ * plus fréquente dans nos appels) / agence / logiciel du marché / NateSystem.
  * Colonne NateSystem mise en avant (fond accent-subtle). La table scrolle
  * horizontalement dans son propre conteneur sur mobile (jamais le body).
  */
@@ -13,18 +14,19 @@ export default function ComparisonV2() {
   const { t } = useLang()
 
   const cols = [
-    { key: 'freelance', label: t('v2.cmp.colFreelance') },
+    { key: 'wa', label: t('v2.cmp.colWa') },
     { key: 'esn', label: t('v2.cmp.colEsn') },
     { key: 'saas', label: t('v2.cmp.colSaas') },
   ]
 
-  const rows = [
-    { crit: t('v2.cmp.r1.crit'), freelance: t('v2.cmp.r1.freelance'), esn: t('v2.cmp.r1.esn'), saas: t('v2.cmp.r1.saas'), us: t('v2.cmp.r1.us') },
-    { crit: t('v2.cmp.r2.crit'), freelance: t('v2.cmp.r2.freelance'), esn: t('v2.cmp.r2.esn'), saas: t('v2.cmp.r2.saas'), us: t('v2.cmp.r2.us') },
-    { crit: t('v2.cmp.r3.crit'), freelance: t('v2.cmp.r3.freelance'), esn: t('v2.cmp.r3.esn'), saas: t('v2.cmp.r3.saas'), us: t('v2.cmp.r3.us') },
-    { crit: t('v2.cmp.r4.crit'), freelance: t('v2.cmp.r4.freelance'), esn: t('v2.cmp.r4.esn'), saas: t('v2.cmp.r4.saas'), us: t('v2.cmp.r4.us') },
-    { crit: t('v2.cmp.r5.crit'), freelance: t('v2.cmp.r5.freelance'), esn: t('v2.cmp.r5.esn'), saas: t('v2.cmp.r5.saas'), us: t('v2.cmp.r5.us') },
-  ]
+  /* Sept lignes, dans l'ordre validé par Nathan le 8 novembre 2026. */
+  const rows = ([1, 2, 3, 4, 5, 6, 7] as const).map((n) => ({
+    crit: t(`v2.cmp.r${n}.crit`),
+    wa: t(`v2.cmp.r${n}.wa`),
+    esn: t(`v2.cmp.r${n}.esn`),
+    saas: t(`v2.cmp.r${n}.saas`),
+    us: t(`v2.cmp.r${n}.us`),
+  }))
 
   return (
     <section id="comparatif-v2" style={{ padding: '110px 24px' }}>
@@ -52,7 +54,7 @@ export default function ComparisonV2() {
               {rows.map((r) => (
                 <div className="cmp4-row" key={r.crit}>
                   <div className="cmp4-cell cmp4-crit">{r.crit}</div>
-                  <div className="cmp4-cell cmp4-alt">{r.freelance}</div>
+                  <div className="cmp4-cell cmp4-alt">{r.wa}</div>
                   <div className="cmp4-cell cmp4-alt">{r.esn}</div>
                   <div className="cmp4-cell cmp4-alt">{r.saas}</div>
                   <div className="cmp4-cell cmp4-us">{r.us}</div>
