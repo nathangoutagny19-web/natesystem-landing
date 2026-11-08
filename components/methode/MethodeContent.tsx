@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { Map, Boxes, Cpu, FileText, Clock, TrendingUp, Smile, Database, ShieldCheck, type LucideIcon } from 'lucide-react'
+import { Map, Boxes, Cpu, FileText, Clock, TrendingUp, Smile, Database, type LucideIcon } from 'lucide-react'
 import Nav from '@/components/layout/Nav'
 import Footer from '@/components/layout/Footer'
 import MobileCta from '@/components/layout/MobileCta'
@@ -21,23 +21,26 @@ export default function MethodeContent() {
   const d = makeD(lang)
 
   const stats = [
-    { v: d('Quelques appels', 'A few calls', 'Néhány hívás'), l: d('pour la cartographie', 'for the mapping', 'a feltérképezésre') },
+    /* Le parcours vendu aujourd'hui (8 novembre 2026) : un appel de 20 min,
+       puis une proposition à prix ferme. Plus de « prototype avant de
+       signer » : on ne dit plus « prototype » et on ne construit rien gratuitement. */
+    { v: d('20 minutes', '20 minutes', '20 perc'), l: d('pour comprendre comment vous travaillez', 'to understand how you work', 'hogy megértsük, hogyan dolgozik') },
     { v: d('Rien à préparer', 'Nothing to prepare', 'Semmit nem kell előkészíteni'), l: d('vous parlez, on écrit', 'you talk, we write', 'Ön beszél, mi írunk') },
-    { v: d('1 prototype', '1 prototype', '1 prototípus'), l: d('cliquable, avant de signer', 'clickable, before you sign', 'kattintható, még aláírás előtt') },
+    { v: d('1 prix ferme', '1 firm price', '1 fix ár'), l: d('périmètre écrit, avant de signer', 'written scope, before you sign', 'írásban rögzített feladatkör, aláírás előtt') },
   ]
 
 
   const deliverables: { icon: LucideIcon; name: string; desc: string; img: string; mock?: boolean }[] = [
-    { icon: Map, name: d('La cartographie de votre organisation', 'Your organisation, mapped', 'A szervezete feltérképezve'), desc: d('Qui fait quoi, avec quel outil, et d’où viennent vos clients. De la première demande jusqu’au départ et à la facture.', 'Who does what, with which tool, and where your clients come from. From the first request to departure and the invoice.', 'Ki mit csinál, milyen eszközzel, és honnan jönnek az ügyfelei. Az első kéréstől a távozásig és a számláig.'), img: 'methode/miro-full' },
-    { icon: Boxes, name: d('La plateforme sur mesure', 'The bespoke platform', 'Az egyedi platform'), desc: d('Vos prestataires, vos tarifs, vos saisons, encodés une fois. Tous vos lieux sur un seul écran, avec votre site et le suivi branchés dessus.', 'Your suppliers, your rates, your seasons, encoded once. All your places on one screen, with your website and tracking connected.', 'A beszállítói, az árai, a szezonjai egyszer lekódolva. Minden helyszíne egyetlen képernyőn, a weboldallal és a követéssel összekötve.'), img: 'prototype/proto-front' },
-    { icon: Cpu, name: d('Ce qui tourne tout seul', 'What runs on its own', 'Ami magától megy'), desc: d('Ressaisies, reconfirmations de la veille, relances d’acomptes, documents récurrents. Ce qui revient à chaque séjour, automatisé.', 'Re-entry, day-before reconfirmations, deposit follow-ups, recurring documents. What comes back with every stay, automated.', 'Újbóli bevitel, előző napi megerősítések, előlegek utánkövetése, ismétlődő dokumentumok. Ami minden tartózkodásnál visszatér, automatizálva.'), img: 'methode/coding' },
-    { icon: FileText, name: d('La feuille de route chiffrée', 'The costed roadmap', 'A számszerűsített ütemterv'), desc: d('Quoi construire, dans quel ordre, pour combien. Vous la gardez même si on s’arrête là.', 'What to build, in what order, for how much. You keep it even if we stop there.', 'Mit építsünk, milyen sorrendben, mennyiért. Akkor is megtartja, ha itt megállunk.'), img: 'prototype/diag-feuille' },
+    { icon: Map, name: d('La cartographie de votre organisation', 'Your organisation, mapped', 'A szervezete feltérképezve'), desc: d('Qui fait quoi, avec quel outil, à quelle étape. De la première demande jusqu’à la facture.', 'Who does what, with which tool, at which step. From the first request to the invoice.', 'Ki mit csinál, milyen eszközzel, melyik lépésben. Az első kéréstől a számláig.'), img: 'methode/miro-full' },
+    { icon: Boxes, name: d('La plateforme sur mesure', 'The bespoke platform', 'Az egyedi platform'), desc: d('Vos prestataires, vos tarifs, vos saisons, encodés une fois. Vos biens, vos clients et vos missions sur un seul écran.', 'Your suppliers, your rates, your seasons, encoded once. Your properties, your clients and your jobs on one screen.', 'A beszállítói, az árai, a szezonjai egyszer lekódolva. Az ingatlanjai, az ügyfelei és a megbízásai egyetlen képernyőn.'), img: 'prototype/proto-front' },
+    { icon: Cpu, name: d('Ce qui tourne tout seul', 'What runs on its own', 'Ami magától megy'), desc: d('Ressaisies, reconfirmations de la veille, relances d’acomptes, documents récurrents. Ce qui revient à chaque demande, automatisé.', 'Re-entry, day-before reconfirmations, deposit follow-ups, recurring documents. What comes back with every request, automated.', 'Újbóli bevitel, előző napi megerősítések, előlegek utánkövetése, ismétlődő dokumentumok. Ami minden kérésnél visszatér, automatizálva.'), img: 'methode/coding' },
+    { icon: FileText, name: d('La proposition à prix ferme', 'The firm-price proposal', 'A fix áras ajánlat'), desc: d('Ce qu’on construit, dans quel ordre et pour quel prix, écrit noir sur blanc avant de commencer.', 'What we build, in what order and at what price, written down in black and white before we start.', 'Mit építünk, milyen sorrendben és milyen áron, írásban rögzítve, mielőtt elkezdjük.'), img: 'prototype/diag-feuille' },
   ]
 
   const results: { icon: LucideIcon; title: string; sub: string }[] = [
     { icon: Clock, title: d('Des heures rendues', 'Hours given back', 'Visszakapott órák'), sub: d('chaque mois, sur le répétitif', 'every month, on the repetitive', 'havonta, az ismétlődő munkán') },
     { icon: TrendingUp, title: d('Des décisions sur des chiffres justes', 'Decisions on figures you trust', 'Döntések megbízható számokon'), sub: d('plus au doigt mouillé ni trois jours plus tard', 'no more guesswork, no more three-day waits', 'nincs több találgatás vagy háromnapos várakozás') },
-    { icon: Smile, title: d('Des équipes sereines', 'Calmer teams', 'Nyugodtabb csapatok'), sub: d('et des clients mieux reçus', 'and clients better received', 'és jobban fogadott ügyfelek') },
+    { icon: Smile, title: d('Des équipes sereines', 'Calmer teams', 'Nyugodtabb csapatok'), sub: d('et des clients mieux servis', 'and clients better served', 'és jobban kiszolgált ügyfelek') },
     { icon: Database, title: d('Une seule information', 'One single record', 'Egyetlen információ'), sub: d('la même pour la direction et les équipes', 'the same for management and the teams', 'ugyanaz a vezetésnek és a csapatoknak') },
   ]
 
@@ -172,19 +175,10 @@ export default function MethodeContent() {
             })}
           </div>
 
-          {/* La garantie résultat */}
-          <FadeUp delay={0.15}>
-            <div className="methode-guarantee">
-              <span className="methode-guarantee-ico" aria-hidden="true"><ShieldCheck size={22} strokeWidth={1.7} /></span>
-              <div>
-                <p className="font-mono methode-guarantee-label">{d('La garantie heures rendues', 'The hours-back guarantee', 'A visszakapott órák garanciája')}</p>
-                <p className="font-serif italic methode-guarantee-text">
-                  {d('On mesure ensemble le temps que prennent les tâches visées avant de commencer, et on fixe l’objectif. On l’atteint, ou on continue gratuitement jusqu’à ce que ce soit le cas.',
-                     'We measure together how long the targeted tasks take before we start, and set the goal. We reach it, or we keep working for free until we do.', 'Kezdés előtt közösen megmérjük, mennyi időt visznek el a célzott feladatok, és kitűzzük a célt. Elérjük, vagy ingyen dolgozunk tovább, amíg meglesz.')}
-                </p>
-              </div>
-            </div>
-          </FadeUp>
+          {/* « La garantie heures rendues » (« on continue gratuitement ») est
+              retirée le 8 novembre 2026 : engagement d'offre non cadré (M1),
+              contraire à la FAQ « Vous promettez des résultats ? Non », et
+              refusée par un client le 02/11. */}
         </div>
       </section>
 
@@ -275,28 +269,10 @@ export default function MethodeContent() {
         .methode-result-title { font-size: 19px; font-weight: 400; color: var(--text); line-height: 1.2; }
         .methode-result-sub { font-size: 13px; font-weight: 300; color: var(--text-secondary); line-height: 1.45; }
 
-        /* La garantie résultat */
-        .methode-guarantee {
-          display: flex; align-items: flex-start; gap: 20px;
-          padding: 30px 32px; border-radius: 16px;
-          background: linear-gradient(120deg, var(--accent-subtle), transparent 70%);
-          border: 1px solid rgba(230,57,70,0.28);
-        }
-        .methode-guarantee-ico {
-          flex: none; display: inline-flex; align-items: center; justify-content: center;
-          width: 48px; height: 48px; border-radius: 12px;
-          background: var(--accent); color: #fff;
-        }
-        .methode-guarantee-label {
-          font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); font-weight: 600; margin: 2px 0 8px;
-        }
-        .methode-guarantee-text { font-size: clamp(18px, 2.4vw, 22px); font-weight: 400; color: var(--text); line-height: 1.45; margin: 0; max-width: 720px; }
-
         @media (max-width: 900px) {
           .methode-pillars { grid-template-columns: 1fr; gap: 16px; }
           .methode-deliv-grid { grid-template-columns: 1fr; gap: 16px; }
           .methode-results { grid-template-columns: repeat(2, 1fr); }
-          .methode-guarantee { flex-direction: column; gap: 14px; padding: 26px 22px; }
         }
       `}</style>
     </main>

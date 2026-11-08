@@ -2703,11 +2703,6 @@ export const translations = {
     fr: 'Auto',
     hu: 'Auto',
   },
-  'radio.scene.ai': {
-    en: 'AI',
-    fr: 'IA',
-    hu: 'MI',
-  },
   'radio.scene.yours': {
     en: '100% yours',
     fr: '100 % à vous',
@@ -2734,9 +2729,9 @@ export const translations = {
     hu: 'Minden egyedi.',
   },
   'methode.deliv.sub': {
-    en: 'From the map of your organisation to the costed action plan, every deliverable is cut for you. You keep them, even if we stop there.',
-    fr: 'De la cartographie de votre organisation au plan d’action chiffré, chaque livrable est taillé pour vous. Vous les gardez, même si on s’arrête là.',
-    hu: 'A szervezete feltérképezésétől a számszerűsített cselekvési tervig minden eredmény Önre van szabva. Megtartja őket, akkor is, ha itt megállunk.',
+    en: 'From the map of your organisation to the firm-price proposal, every deliverable is cut for you. And everything we build is yours.',
+    fr: 'De la cartographie de votre organisation à la proposition à prix ferme, chaque livrable est taillé pour vous. Et tout ce qu’on construit vous appartient.',
+    hu: 'A szervezete feltérképezésétől a fix áras ajánlatig minden eredmény Önre van szabva. És minden, amit építünk, az Öné.',
   },
 
   'methode.cta.title': {

@@ -112,8 +112,10 @@ export default function Radiographie() {
                   />
                 ))}
 
-                {/* badges Auto / IA sur 2 connecteurs (étape 3) */}
-                {[{ i: 0, label: t('radio.scene.auto') }, { i: 2, label: t('radio.scene.ai') }].map(({ i, label }) => {
+                {/* badges « Auto » sur 2 connecteurs (étape 3). Le badge « IA »
+                    est retiré le 8 novembre 2026 : l'IA n'est jamais l'objet
+                    sur une page que lit un prospect. */}
+                {[{ i: 0, label: t('radio.scene.auto') }, { i: 2, label: t('radio.scene.auto') }].map(({ i, label }) => {
                   const s = SOURCES[i]
                   const mx = (s.x + HUB.x) / 2
                   const my = (s.y + HUB.y) / 2
