@@ -8,6 +8,7 @@ import SectorsAccordion from '@/components/home/SectorsAccordion'
 import ServicesGrid from '@/components/home/ServicesGrid'
 import Process from '@/components/home/Process'
 import Faq from '@/components/home/Faq'
+import StatementBand from '@/components/home/StatementBand'
 import CtaFinal from '@/components/home/CtaFinal'
 import Footer from '@/components/layout/Footer'
 import Divider from '@/components/ui/Divider'
@@ -18,7 +19,8 @@ import Divider from '@/components/ui/Divider'
  * de bordel »). Une section, un rôle :
  *
  *   Hero → logos → résultats → preuve (témoignages) → secteurs en accordéon
- *   → services → comment ça marche → FAQ → rendez-vous.
+ *   → services en accordéon → bande de positionnement → comment ça marche
+ *   → FAQ → rendez-vous.
  *
  * Retirés de l'accueil (les composants restent dans le dépôt) : Transformation,
  * BrandFilm, Systems, MiniDiagnosticCta, WhatWeDo, Different, CredibilityBand,
@@ -41,7 +43,7 @@ export default function Home() {
       <SectorsAccordion />
       <Divider />
       <ServicesGrid />
-      <Divider />
+      <StatementBand />
       <Process home />
       <Divider />
       <Faq />

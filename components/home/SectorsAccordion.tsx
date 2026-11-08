@@ -1,10 +1,9 @@
 'use client'
 
-import { useState } from 'react'
-import Link from 'next/link'
-import { Plus, Minus } from 'lucide-react'
+import EditorialAccordion, { CaseCard } from '@/components/home/EditorialAccordion'
 import { useLang } from '@/components/providers/LangProvider'
 import { makeD } from '@/lib/lang'
+import { localizedHref } from '@/lib/routes'
 
 /**
  * LES SECTEURS EN ACCORDÉON (accueil, 8 novembre 2026), sur le modèle de
@@ -83,57 +82,36 @@ export default function SectorsAccordion() {
   const { lang } = useLang()
   const d = makeD(lang)
   const i = lang === 'en' ? 1 : lang === 'hu' ? 2 : 0
-  const [open, setOpen] = useState(0)
+
+  const items = SECTORS.map((s) => ({
+    title: s.name[i],
+    head: s.head[i],
+    text: s.text[i],
+    href: s.href,
+    linkLabel: s.href ? d('Yacht à Tivat et au Monténégro →', 'Yachting in Tivat and Montenegro →', 'Jachtozás Tivatban és Montenegróban →') : undefined,
+  }))
 
   return (
-    <section id="secteurs" style={{ padding: '96px 24px' }}>
-      <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-12" style={{ maxWidth: 1120, margin: '0 auto' }}>
+    <section id="secteurs" style={{ padding: '110px 24px' }}>
+      <div className="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-14" style={{ maxWidth: 1120, margin: '0 auto' }}>
         <div>
           <span className="section-label">{d('Secteurs', 'Industries', 'Ágazatok')}</span>
           <h2 className="font-serif italic font-normal" style={{ fontSize: 'clamp(32px, 4vw, 48px)', lineHeight: 1.1, marginTop: 18, color: 'var(--text)' }}>
-            {d(
-              'Les métiers du service, dans l’hospitalité de luxe.',
-              'Service businesses in luxury hospitality.',
-              'Szolgáltató vállalkozások a luxusvendéglátásban.'
-            )}
+            {d('Les métiers du service, dans l’hospitalité de luxe.', 'Service businesses in luxury hospitality.', 'Szolgáltató vállalkozások a luxusvendéglátásban.')}
           </h2>
-          <p className="font-sans" style={{ fontSize: 16, fontWeight: 300, color: 'var(--text-secondary)', lineHeight: 1.65, marginTop: 18, maxWidth: 440 }}>
-            {d(
-              'Des équipes de 3 à 50 personnes, une clientèle exigeante, et une organisation qui tient encore sur WhatsApp, Excel et la tête de quelqu’un.',
-              'Teams of 3 to 50 people, demanding clients, and operations that still run on WhatsApp, Excel and someone’s memory.',
-              '3–50 fős csapatok, igényes ügyfélkör, és egy működés, amely még mindig a WhatsAppon, az Excelen és valakinek az emlékezetén múlik.'
-            )}
-          </p>
+          <div style={{ marginTop: 32, maxWidth: 400 }}>
+            <CaseCard
+              src="/realisations/chartreux-terrasse.webp"
+              alt={d('Nathan avec l’Institut des Chartreux, sur la terrasse à Lyon', 'Nathan with Institut des Chartreux, on the terrace in Lyon', 'Nathan az Institut des Chartreux-vel, a lyoni teraszon')}
+              chip="Institut des Chartreux"
+              metric="40 h"
+              metricLabel={d('par mois, rapporté par l’Institut', 'a month, as reported by the Institut', 'havonta, az Intézet beszámolója szerint')}
+              href={localizedHref('/case-studies', lang)}
+            />
+          </div>
         </div>
-
-        <div>
-          {SECTORS.map((s, k) => {
-            const isOpen = open === k
-            return (
-              <div key={s.name[0]} style={{ borderBottom: '1px solid var(--border)' }}>
-                <button
-                  type="button"
-                  onClick={() => setOpen(isOpen ? -1 : k)}
-                  aria-expanded={isOpen}
-                  className="w-full flex items-center justify-between text-left font-sans"
-                  style={{ padding: '22px 0', fontSize: 18, fontWeight: isOpen ? 500 : 400, color: isOpen ? 'var(--text)' : 'var(--text-secondary)', background: 'none', border: 0, cursor: 'pointer' }}
-                >
-                  <span>{s.name[i]}</span>
-                  {isOpen ? <Minus size={18} style={{ color: 'var(--accent)' }} /> : <Plus size={18} style={{ color: 'var(--text-muted)' }} />}
-                </button>
-                {/* Le texte reste dans le HTML même fermé : Google le lit. */}
-                <div hidden={!isOpen} style={{ paddingBottom: 24 }}>
-                  <p className="font-serif italic" style={{ fontSize: 22, lineHeight: 1.3, color: 'var(--text)' }}>{s.head[i]}</p>
-                  <p className="font-sans" style={{ fontSize: 15, fontWeight: 300, color: 'var(--text-secondary)', lineHeight: 1.65, marginTop: 10 }}>{s.text[i]}</p>
-                  {s.href && (
-                    <Link href={s.href} className="font-sans" style={{ display: 'inline-block', marginTop: 12, fontSize: 14, color: 'var(--text)', textDecoration: 'underline', textUnderlineOffset: 3 }}>
-                      {d('Yacht à Tivat et au Monténégro →', 'Yachting in Tivat and Montenegro →', 'Jachtozás Tivatban és Montenegróban →')}
-                    </Link>
-                  )}
-                </div>
-              </div>
-            )
-          })}
+        <div className="lg:pt-10">
+          <EditorialAccordion items={items} />
         </div>
       </div>
     </section>
