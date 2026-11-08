@@ -43,6 +43,10 @@ export default function Home() {
           secteurs (Nathan, 8 novembre 2026 : « mets avant les secteurs »). */}
       <StatementBand />
 
+      {/* La preuve, juste sous la bande et ses photos : les témoignages, mot
+          pour mot, signés par l'entreprise (Nathan, 8 novembre 2026). */}
+      <Testimonials />
+
       {/* Les secteurs, juste après la bande (Nathan, 8 novembre 2026) :
           le visiteur voit tout de suite si on parle de son métier. */}
       <Sectors />
@@ -59,9 +63,8 @@ export default function Home() {
       <Systems />
       <Divider />
 
-      {/* 4, La preuve : les témoignages, mot pour mot (8 novembre 2026). Le
-          carrousel de cas et ses vidéos sont partis sur /case-studies. */}
-      <Testimonials />
+      {/* Les témoignages sont remontés sous la bande noire (Nathan, 8 novembre
+          2026). Le carrousel de cas et ses vidéos sont sur /case-studies. */}
 
       {/* 4b, Encart mini-diagnostic gratuit, juste après le témoignage (plus petit) */}
       <MiniDiagnosticCta />

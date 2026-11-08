@@ -19,12 +19,12 @@ import type { Lang } from '@/lib/i18n'
  *     (jamais une phrase avec son « AI-powered »).
  *   - IUT : transcription de la vidéo du 28/10/2026,
  *     ~/Business/Clients/IUT-Saint-Etienne/temoignage-video-crm-tc-transcript-2026-10-28.txt
- *     Signée « Interlocuteur IUT » tant que Nathan n'a pas confirmé que c'est
- *     Catherine Fasang qui parle.
  *   - Chromosome : verbatims notés du podcast YouTube aMIjJbzuhDc, à
  *     vérifier sur la vidéo par Nathan avant la mise en ligne. Signée avec
  *     l'entreprise seule : son rôle diffère d'un fichier à l'autre
  *     (General Manager / Vice-présidente).
+ * Chaque carte est signée par l'entreprise seule, sans prénom : les noms sont
+ * dans les légendes des photos de la bande noire juste au-dessus (Nathan).
  * Pas de citation des Chartreux : aucune n'a été recueillie. Ne pas en créer.
  * La citation « réservations » de Chromosome est écartée : la restauration
  * n'est jamais présentée comme une spécialité.
@@ -38,14 +38,14 @@ type Testimonial = {
   /** Langue dans laquelle la personne l'a dit ou écrit. */
   original: Original
   quote: Record<Lang, string>
-  name: Record<Lang, string>
-  org: string | Record<Lang, string>
+  /** Signée avec l'entreprise seule (Nathan, 8 novembre 2026) : les prénoms
+      sont déjà dans les légendes des photos de la bande noire juste au-dessus. */
+  org: Record<Lang, string>
 }
 
-const ZOLTAN = { fr: 'Zoltán', en: 'Zoltán', hu: 'Kis Zoltán' }
-const IUT = { fr: 'Interlocuteur IUT de Saint-Étienne', en: 'Contact at IUT de Saint-Étienne', hu: 'Kapcsolattartó, IUT de Saint-Étienne' }
-const IUT_DEPT = { fr: 'Département Techniques de commercialisation', en: 'Sales & Marketing department', hu: 'Kereskedelmi tanszék' }
-const CATHERINE = { fr: 'Catherine F.', en: 'Catherine F.', hu: 'Catherine F.' }
+const VM = { fr: 'Vendéglátás Menedzsment · Budapest', en: 'Vendéglátás Menedzsment · Budapest', hu: 'Vendéglátás Menedzsment · Budapest' }
+const IUT = { fr: 'IUT de Saint-Étienne · département TC', en: 'IUT de Saint-Étienne · Sales & Marketing dept.', hu: 'IUT de Saint-Étienne · kereskedelmi tanszék' }
+const CHROMO = { fr: 'Chromosome · Saint-Étienne', en: 'Chromosome · Saint-Étienne', hu: 'Chromosome · Saint-Étienne' }
 
 /* L'ordre est celui de la lecture en colonnes : il alterne les trois voix
    et les trois tailles, pour qu'aucune colonne ne parle d'un seul client. */
@@ -58,8 +58,7 @@ const TESTIMONIALS: Testimonial[] = [
       fr: 'Il n’a pas seulement construit ce que je lui avais demandé, il est allé au-delà de mes attentes.',
       hu: 'Nem csak azt építette meg, amit kértem, hanem felül is múlta a várakozásaimat.',
     },
-    name: ZOLTAN,
-    org: 'Vendéglátás Menedzsment · Budapest',
+    org: VM,
   },
   {
     size: 'md',
@@ -69,8 +68,7 @@ const TESTIMONIALS: Testimonial[] = [
       en: 'As the tool was being built and tested, Nathan was able to add quite a few features that are very useful.',
       hu: 'Az eszköz kidolgozása és tesztelése során Nathan jó néhány nagyon hasznos funkcióval bővítette.',
     },
-    name: IUT,
-    org: IUT_DEPT,
+    org: IUT,
   },
   {
     size: 'sm',
@@ -80,8 +78,7 @@ const TESTIMONIALS: Testimonial[] = [
       en: 'You talk about our tool better than we do.',
       hu: 'Ön jobban beszél az eszközünkről, mint mi magunk.',
     },
-    name: CATHERINE,
-    org: 'Chromosome · Saint-Étienne',
+    org: CHROMO,
   },
   {
     size: 'lg',
@@ -91,8 +88,7 @@ const TESTIMONIALS: Testimonial[] = [
       en: 'We don’t build digital tools for the sake of digital tools. We put them to work on a management problem.',
       hu: 'Nem a digitális eszköz kedvéért csinálunk digitális eszközt. Egy működési probléma megoldására használjuk.',
     },
-    name: CATHERINE,
-    org: 'Chromosome · Saint-Étienne',
+    org: CHROMO,
   },
   {
     size: 'sm',
@@ -102,8 +98,7 @@ const TESTIMONIALS: Testimonial[] = [
       fr: 'Je n’ai plus à fouiller dans des fichiers Excel interminables.',
       hu: 'Már nem kell végtelen Excel-táblázatokban keresgélnem.',
     },
-    name: ZOLTAN,
-    org: 'Vendéglátás Menedzsment · Budapest',
+    org: VM,
   },
   {
     size: 'md',
@@ -113,8 +108,7 @@ const TESTIMONIALS: Testimonial[] = [
       fr: 'Nathan a écouté très attentivement, et j’ai senti qu’il comprenait vraiment ce que je décrivais.',
       hu: 'Nathan nagyon figyelmesen meghallgatott, és éreztem, hogy valóban érti, amit elmondok.',
     },
-    name: ZOLTAN,
-    org: 'Vendéglátás Menedzsment · Budapest',
+    org: VM,
   },
   {
     size: 'lg',
@@ -124,8 +118,7 @@ const TESTIMONIALS: Testimonial[] = [
       en: 'He is extremely serious, extremely responsive and full of ideas, and you can call on him with complete confidence.',
       hu: 'Rendkívül komoly, rendkívül gyorsan reagál és tele van javaslatokkal, teljes bizalommal fordulhat hozzá.',
     },
-    name: IUT,
-    org: IUT_DEPT,
+    org: IUT,
   },
   {
     size: 'md',
@@ -135,8 +128,7 @@ const TESTIMONIALS: Testimonial[] = [
       en: 'Having the information almost in real time is precious in a business. You can anticipate and make the right decisions.',
       hu: 'Szinte valós időben látni az információt felbecsülhetetlen egy vállalkozásban. Előre lehet tervezni és jó döntéseket hozni.',
     },
-    name: CATHERINE,
-    org: 'Chromosome · Saint-Étienne',
+    org: CHROMO,
   },
   {
     size: 'md',
@@ -146,8 +138,7 @@ const TESTIMONIALS: Testimonial[] = [
       fr: 'C’est un développeur très compétent, créatif et fiable, et c’est un vrai plaisir de travailler avec lui.',
       hu: 'Rendkívül képzett, kreatív és megbízható fejlesztő, és igazi öröm vele dolgozni.',
     },
-    name: ZOLTAN,
-    org: 'Vendéglátás Menedzsment · Budapest',
+    org: VM,
   },
 
 ]
@@ -167,7 +158,7 @@ export default function Testimonials() {
   }
 
   return (
-    <section id="temoignages" style={{ padding: '110px 24px 100px' }}>
+    <section id="temoignages" style={{ padding: '96px 24px 100px' }}>
       <div className="mx-auto" style={{ maxWidth: 1120 }}>
         <FadeUp className="text-center">
           <span className="section-label">{d('Témoignages', 'Testimonials', 'Ajánlások')}</span>
@@ -188,8 +179,7 @@ export default function Testimonials() {
                     {open}{tm.quote[lang]}{close}
                   </blockquote>
                   <figcaption className="tm-sign">
-                    <span className="font-sans tm-name">{tm.name[lang]}</span>
-                    <span className="font-mono tm-org">{typeof tm.org === 'string' ? tm.org : tm.org[lang]}</span>
+                    <span className="font-sans tm-org">{tm.org[lang]}</span>
                     {note && <span className="font-sans tm-note">{note}</span>}
                   </figcaption>
                 </figure>
@@ -243,13 +233,7 @@ export default function Testimonials() {
           padding-top: 16px;
           border-top: 1px solid var(--border);
         }
-        .tm-name { font-size: 14px; font-weight: 500; color: var(--text); }
-        .tm-org {
-          font-size: 10.5px;
-          letter-spacing: 1.4px;
-          text-transform: uppercase;
-          color: var(--text-muted);
-        }
+        .tm-org { font-size: 14px; font-weight: 500; color: var(--text); }
         .tm-note {
           font-size: 12px;
           font-style: italic;
