@@ -500,13 +500,14 @@ export const translations = {
      C'est l'éliminateur n.2 de knowledge/voix/garde-fous-publication.md,
      et le S9 du document d'offre est net : « pas de promesse de gain
      chiffré, le risque est réduit autrement ». La ligne porte donc
-     désormais la première garantie de ce S9, le prototype sur leurs
-     vraies données, qui réduit le risque sans rien promettre.
+     désormais ce qui réduit le risque sans rien promettre. Le 8 novembre
+     2026, « Prototype sur vos vraies données » cède la place au prix ferme :
+     on ne dit plus « prototype » et on ne construit rien avant engagement.
      L'engagement 3 porte déjà la propriété du code, donc pas de doublon. */
   'cred.engagement2': {
-    en: 'Prototype on your real data · before any commitment',
-    fr: 'Prototype sur vos vraies données · avant tout engagement',
-    hu: 'Prototípus a valódi adatain · minden elköteleződés előtt',
+    en: 'A firm price · written scope before you sign',
+    fr: 'Un prix ferme · périmètre écrit avant de signer',
+    hu: 'Fix ár · írásban rögzített feladatkör aláírás előtt',
   },
   'cred.engagement3': {
     en: 'Source code delivered · you own 100%',
