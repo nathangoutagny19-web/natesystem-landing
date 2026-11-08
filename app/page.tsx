@@ -1,6 +1,7 @@
 import Nav from '@/components/layout/Nav'
 import MobileCta from '@/components/layout/MobileCta'
 import Hero from '@/components/home/Hero'
+import ClientsBar from '@/components/home/ClientsBar'
 import Transformation from '@/components/home/Transformation'
 import CredibilityBand from '@/components/home/CredibilityBand'
 import Systems from '@/components/home/Systems'
@@ -34,8 +35,8 @@ export default function Home() {
       {/* 1, Hero : promesse business + VSL */}
       <Hero />
 
-      {/* 2, Logos clients : ils défilent désormais dans la bande noire, sous
-          les citations (Nathan, 8 novembre 2026). Voir StatementBand. */}
+      {/* 2, Logos clients */}
+      <ClientsBar />
 
       {/* Bande noire de positionnement, juste sous les logos et avant les
           secteurs (Nathan, 8 novembre 2026 : « mets avant les secteurs »). */}

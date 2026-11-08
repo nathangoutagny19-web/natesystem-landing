@@ -131,9 +131,7 @@ const photos = clients.filter((c): c is Extract<ClientRef, { type: 'photo' }> =>
 /* `split` sert à la page de confirmation (/rdv-confirme) : les logos défilent sur
    une ligne, les rencontres (photos) tiennent sur une seconde ligne, fixe et plus
    grande, pour qu'on voie les visages. La home garde la ligne unique. */
-/* `dark` sert à la bande noire de l'accueil (8 novembre 2026) : la rangée y
-   défile sous les citations, logos passés en clair sur le fond sombre. */
-export default function ClientsBar({ hideLabel = false, split = false, dark = false }: { hideLabel?: boolean; split?: boolean; dark?: boolean }) {
+export default function ClientsBar({ hideLabel = false, split = false }: { hideLabel?: boolean; split?: boolean }) {
   const { lang } = useLang()
 
   /* Nathan, 8 novembre 2026 : dire qu'on travaille avec eux, qu'on les a
@@ -148,8 +146,7 @@ export default function ClientsBar({ hideLabel = false, split = false, dark = fa
   return (
     <section
       aria-label={label}
-      className={dark ? 'clients-dark' : undefined}
-      style={{ padding: dark ? '8px 24px clamp(64px, 8vw, 96px)' : '48px 24px' }}
+      style={{ padding: '48px 24px' }}
     >
       <div
         className="mx-auto"
@@ -405,23 +402,6 @@ export default function ClientsBar({ hideLabel = false, split = false, dark = fa
             font-size: 15px;
           }
         }
-
-        /* Variante sombre (bande noire) : logos en clair, comme le thème
-           sombre, quel que soit le thème de la page. */
-        .clients-dark .clients-item { color: rgba(240, 240, 242, 0.6); }
-        .clients-dark .clients-item:hover { color: #f0f0f2; }
-        .clients-dark .clients-logo,
-        html.light .clients-dark .clients-logo {
-          filter: grayscale(100%) invert(1) brightness(0.95);
-        }
-        .clients-dark .clients-logo--white,
-        html.light .clients-dark .clients-logo--white {
-          filter: brightness(0) invert(1) opacity(0.85);
-        }
-        .clients-dark .clients-item:hover .clients-logo--white {
-          filter: brightness(0) invert(1) opacity(1);
-        }
-        .clients-dark p { color: rgba(240, 240, 242, 0.5) !important; }
 
         /* References must stay discoverable, so we keep scrolling even under
            reduced-motion, just much slower. */

@@ -3,7 +3,6 @@
 import { useLang } from '@/components/providers/LangProvider'
 import { makeD } from '@/lib/lang'
 import BandQuotes from '@/components/home/Testimonials'
-import ClientsBar from '@/components/home/ClientsBar'
 
 /**
  * LA BANDE NOIRE DE POSITIONNEMENT (accueil, 8 novembre 2026), juste sous les
@@ -57,9 +56,6 @@ export default function StatementBand() {
       </div>
 
       <BandQuotes />
-
-      {/* Les logos défilent sous les citations (Nathan, 8 novembre 2026). */}
-      <ClientsBar dark />
 
       <style jsx>{`
         .stmt-stage {

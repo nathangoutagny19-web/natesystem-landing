@@ -16,8 +16,8 @@ import type { Lang } from '@/lib/i18n'
  * en anglais ; la mention « traduit » a été retirée à la demande de Nathan
  * (8 novembre 2026).
  *
- * Elles DÉFILENT, sur une ligne, comme la rangée de logos posée juste
- * dessous (Nathan) ; pause au survol.
+ * Elles DÉFILENT, sur une ligne, toutes dans la même police et la même
+ * taille (Nathan) ; pause au survol.
  * Sources :
  *   - Vendéglátás Menedzsment (Zoltán) : e-mail écrit du 28/10/2026, en
  *     anglais, ~/Business/Clients/Vendeglatas-Management/temoignage-ecrit-zoltan-kis-2026-10-28.md
@@ -146,8 +146,8 @@ export default function BandQuotes() {
             masquée aux lecteurs d'écran. */}
         <ul className="bq-track">
           {[...TESTIMONIALS, ...TESTIMONIALS].map((tm, i) => (
-            <li key={i} className={`bq-item bq-${tm.size}`} aria-hidden={i >= N ? true : undefined}>
-              <blockquote className={`bq-quote ${tm.size === 'sm' ? 'font-sans' : 'font-serif italic'}`}>
+            <li key={i} className="bq-item" aria-hidden={i >= N ? true : undefined}>
+              <blockquote className="bq-quote font-serif italic">
                 {open}{tm.quote[lang]}{close}
               </blockquote>
             </li>
@@ -179,23 +179,21 @@ export default function BandQuotes() {
         }
         .bq-marquee:hover .bq-track { animation-play-state: paused; }
         /* L'écart est un padding, pas un gap : -50 % retombe pile sur la copie. */
-        .bq-item { flex: 0 0 auto; padding-right: 80px; }
-        .bq-lg { width: 540px; }
-        .bq-md { width: 460px; }
-        .bq-sm { width: 360px; }
-        .bq-quote { margin: 0; font-weight: 400; }
-        .bq-lg .bq-quote { font-size: clamp(24px, 2.4vw, 30px); line-height: 1.25; color: #f0f0f2; }
-        .bq-md .bq-quote { font-size: clamp(19px, 1.8vw, 22px); line-height: 1.35; color: rgba(240, 240, 242, 0.82); }
-        .bq-sm .bq-quote { font-size: 15.5px; line-height: 1.6; font-weight: 300; color: rgba(240, 240, 242, 0.6); }
+        /* Une seule police, une seule taille pour toutes (Nathan). */
+        .bq-item { flex: 0 0 auto; width: 480px; padding-right: 80px; }
+        .bq-quote {
+          margin: 0;
+          font-weight: 400;
+          font-size: clamp(21px, 2vw, 25px);
+          line-height: 1.3;
+          color: #f0f0f2;
+        }
         @keyframes bqScroll {
           from { transform: translateX(0); }
           to { transform: translateX(-50%); }
         }
         @media (max-width: 760px) {
-          .bq-item { padding-right: 44px; }
-          .bq-lg { width: 80vw; }
-          .bq-md { width: 74vw; }
-          .bq-sm { width: 64vw; }
+          .bq-item { width: 78vw; padding-right: 44px; }
           .bq-track { animation-duration: 80s; }
         }
         @media (prefers-reduced-motion: reduce) {
