@@ -39,15 +39,15 @@ export default function Home() {
 
       {/* 2, Logos clients */}
       <ClientsBar />
-      <Divider />
 
-      {/* Les secteurs, remontés juste sous les logos (Nathan, 8 novembre 2026) :
+      {/* Bande noire de positionnement, juste sous les logos et avant les
+          secteurs (Nathan, 8 novembre 2026 : « mets avant les secteurs »). */}
+      <StatementBand />
+
+      {/* Les secteurs, juste après la bande (Nathan, 8 novembre 2026) :
           le visiteur voit tout de suite si on parle de son métier. */}
       <Sectors />
-
-      {/* Bande noire de positionnement, entre les secteurs et « Avant, après »
-          (Nathan, 8 novembre 2026). */}
-      <StatementBand />
+      <Divider />
 
       {/* 3, Avant/Après (diagonale) + bascule « ils sont de l'autre côté » */}
       <Transformation />
