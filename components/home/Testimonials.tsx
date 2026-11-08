@@ -1,8 +1,6 @@
 'use client'
 
-import FadeUp from '@/components/ui/FadeUp'
 import { useLang } from '@/components/providers/LangProvider'
-import { makeD } from '@/lib/lang'
 import type { Lang } from '@/lib/i18n'
 
 /**
@@ -14,8 +12,12 @@ import type { Lang } from '@/lib/i18n'
  * Les noms sont dans les légendes des photos juste au-dessus.
  *
  * ⚠︎ MOT POUR MOT, ET SOURCÉ. Aucune citation n'est reformulée ; une coupe
- * est marquée « […] ». Une seule ligne, en bas, dit que certaines sont
- * traduites : sans signature, une mention par citation n'aurait pas de sens.
+ * est marquée « […] ». Les citations de Zoltán sont traduites de son e-mail
+ * en anglais ; la mention « traduit » a été retirée à la demande de Nathan
+ * (8 novembre 2026).
+ *
+ * Elles DÉFILENT, sur une ligne, comme la rangée de logos posée juste
+ * dessous (Nathan) ; pause au survol.
  * Sources :
  *   - Vendéglátás Menedzsment (Zoltán) : e-mail écrit du 28/10/2026, en
  *     anglais, ~/Business/Clients/Vendeglatas-Management/temoignage-ecrit-zoltan-kis-2026-10-28.md
@@ -133,65 +135,71 @@ const MARKS: Record<Lang, [string, string]> = { fr: ['«\u00A0', '\u00A0»'], en
 
 export default function BandQuotes() {
   const { lang } = useLang()
-  const d = makeD(lang)
   const [open, close] = MARKS[lang]
-  const anyTranslated = TESTIMONIALS.some((tm) => tm.original !== lang)
+  const N = TESTIMONIALS.length
 
   return (
     <div className="bq">
-      <div className="bq-wall">
-        {TESTIMONIALS.map((tm, i) => (
-          <FadeUp key={i} delay={Math.min(i * 0.05, 0.3)}>
-            <blockquote className={`bq-quote bq-${tm.size} ${tm.size === 'sm' ? 'font-sans' : 'font-serif italic'}`}>
-              {open}{tm.quote[lang]}{close}
-            </blockquote>
-          </FadeUp>
-        ))}
+      <div className="bq-rule" />
+      <div className="bq-marquee">
+        {/* La piste est doublée pour une boucle sans couture ; la copie est
+            masquée aux lecteurs d'écran. */}
+        <ul className="bq-track">
+          {[...TESTIMONIALS, ...TESTIMONIALS].map((tm, i) => (
+            <li key={i} className={`bq-item bq-${tm.size}`} aria-hidden={i >= N ? true : undefined}>
+              <blockquote className={`bq-quote ${tm.size === 'sm' ? 'font-sans' : 'font-serif italic'}`}>
+                {open}{tm.quote[lang]}{close}
+              </blockquote>
+            </li>
+          ))}
+        </ul>
       </div>
 
-      {anyTranslated && (
-        <p className="font-sans bq-note">
-          {d('Certaines citations sont traduites de l’anglais.', 'Some quotes are translated from French.', 'Az idézeteket franciából és angolból fordítottuk.')}
-        </p>
-      )}
-
       <style jsx>{`
-        .bq {
+        .bq-rule {
           max-width: 1120px;
           margin: 0 auto;
-          padding: clamp(64px, 8vw, 104px) 24px clamp(88px, 10vw, 140px);
           border-top: 1px solid rgba(255, 255, 255, 0.08);
         }
-        /* Des colonnes, pas de cartes : chaque citation prend la hauteur de
-           son texte, et les trois tailles cassent la grille. */
-        .bq-wall {
-          column-count: 3;
-          column-gap: 64px;
+        .bq-marquee {
+          overflow: hidden;
+          padding: clamp(64px, 8vw, 96px) 0 clamp(48px, 6vw, 72px);
+          -webkit-mask-image: linear-gradient(to right, transparent, #000 7%, #000 93%, transparent);
+          mask-image: linear-gradient(to right, transparent, #000 7%, #000 93%, transparent);
         }
-        .bq-wall > :global(div) {
-          break-inside: avoid;
-          margin-bottom: 48px;
-        }
-        .bq-quote {
+        .bq-track {
+          list-style: none;
           margin: 0;
-          font-weight: 400;
+          padding: 0;
+          display: flex;
+          align-items: center;
+          width: max-content;
+          animation: bqScroll 110s linear infinite;
+          will-change: transform;
         }
-        .bq-lg { font-size: clamp(24px, 2.4vw, 30px); line-height: 1.25; color: #f0f0f2; }
-        .bq-md { font-size: clamp(19px, 1.8vw, 22px); line-height: 1.35; color: rgba(240, 240, 242, 0.82); }
-        .bq-sm { font-size: 15.5px; line-height: 1.6; font-weight: 300; color: rgba(240, 240, 242, 0.6); }
-        .bq-note {
-          margin: 24px 0 0;
-          text-align: center;
-          font-size: 12px;
-          font-weight: 300;
-          color: rgba(240, 240, 242, 0.38);
+        .bq-marquee:hover .bq-track { animation-play-state: paused; }
+        /* L'écart est un padding, pas un gap : -50 % retombe pile sur la copie. */
+        .bq-item { flex: 0 0 auto; padding-right: 80px; }
+        .bq-lg { width: 540px; }
+        .bq-md { width: 460px; }
+        .bq-sm { width: 360px; }
+        .bq-quote { margin: 0; font-weight: 400; }
+        .bq-lg .bq-quote { font-size: clamp(24px, 2.4vw, 30px); line-height: 1.25; color: #f0f0f2; }
+        .bq-md .bq-quote { font-size: clamp(19px, 1.8vw, 22px); line-height: 1.35; color: rgba(240, 240, 242, 0.82); }
+        .bq-sm .bq-quote { font-size: 15.5px; line-height: 1.6; font-weight: 300; color: rgba(240, 240, 242, 0.6); }
+        @keyframes bqScroll {
+          from { transform: translateX(0); }
+          to { transform: translateX(-50%); }
         }
-        @media (max-width: 960px) {
-          .bq-wall { column-count: 2; column-gap: 40px; }
+        @media (max-width: 760px) {
+          .bq-item { padding-right: 44px; }
+          .bq-lg { width: 80vw; }
+          .bq-md { width: 74vw; }
+          .bq-sm { width: 64vw; }
+          .bq-track { animation-duration: 80s; }
         }
-        @media (max-width: 620px) {
-          .bq-wall { column-count: 1; }
-          .bq-wall > :global(div) { margin-bottom: 32px; }
+        @media (prefers-reduced-motion: reduce) {
+          .bq-track { animation-duration: 260s; }
         }
       `}</style>
     </div>
