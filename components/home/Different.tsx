@@ -13,22 +13,24 @@ const POINTS: Point[] = [
     icon: Target,
     titleFr: 'Votre organisation ne change pas',
     titleEn: 'Your organisation does not change', titleHu: 'A szervezete nem változik',
-    descFr: 'Un logiciel du marché vous demande de rentrer dans ses cases, parce qu’il est vendu à tout le monde. Ici, vos règles sont encodées une fois, telles qu’elles sont : vos prestataires, vos tarifs, vos saisons, votre façon de recevoir. C’est l’outil qui s’aligne.',
-    descEn: 'An off-the-shelf tool asks you to fit its boxes, because it is sold to everyone. Here your rules are encoded once, exactly as they are: your suppliers, your rates, your seasons, the way you receive clients. The tool is what adapts.', descHu: 'Egy dobozos szoftver arra kéri, hogy illeszkedjen a rubrikáiba, mert mindenkinek eladják. Itt a szabályait egyszer, úgy ahogy vannak, lekódoljuk: a beszállítóit, az árait, a szezonjait, a vendégfogadását. Az eszköz igazodik.',
+    descFr: 'Un logiciel du marché vous demande de rentrer dans ses cases, parce qu’il est vendu à tout le monde. Ici, vos règles sont encodées une fois, telles qu’elles sont : vos prestataires, vos tarifs, vos saisons, votre façon de travailler. C’est l’outil qui s’aligne.',
+    descEn: 'An off-the-shelf tool asks you to fit its boxes, because it is sold to everyone. Here your rules are encoded once, exactly as they are: your suppliers, your rates, your seasons, the way you work. The tool is what adapts.', descHu: 'Egy dobozos szoftver arra kéri, hogy illeszkedjen a rubrikáiba, mert mindenkinek eladják. Itt a szabályait egyszer, úgy ahogy vannak, lekódoljuk: a beszállítóit, az árait, a szezonjait, a munkamódját. Az eszköz igazodik.',
   },
   {
     icon: InfinityIcon,
     titleFr: 'Vous gardez la main',
     titleEn: 'You stay in control', titleHu: 'Ön dönt',
-    descFr: 'L’automatisation fait le travail répétitif, le jugement reste humain. L’outil propose un planning, un plan de table, une réponse : la personne décide. La personnalisation, c’est votre métier, on ne vous la retire pas.',
-    descEn: 'Automation does the repetitive work, judgement stays human. The tool suggests a rota, a table plan, a reply: a person decides. Personal service is your trade, and we don’t take it away from you.', descHu: 'Az automatizálás végzi az ismétlődő munkát, az ítélet emberi marad. Az eszköz beosztást, ültetési rendet, választ javasol: egy ember dönt. A személyre szabás az Ön szakmája, nem vesszük el Öntől.',
+    descFr: 'L’automatisation fait le travail répétitif, le jugement reste humain. L’outil propose un planning, un devis, une réponse : la personne décide. La personnalisation, c’est votre métier, on ne vous la retire pas.',
+    descEn: 'Automation does the repetitive work, judgement stays human. The tool suggests a rota, a quote, a reply: a person decides. Personal service is your trade, and we don’t take it away from you.', descHu: 'Az automatizálás végzi az ismétlődő munkát, az ítélet emberi marad. Az eszköz beosztást, árajánlatot, választ javasol: egy ember dönt. A személyre szabás az Ön szakmája, nem vesszük el Öntől.',
   },
   {
     icon: Zap,
-    titleFr: 'Un seul système, de la première visite à la facture',
-    titleEn: 'One system, from the first visit to the invoice', titleHu: 'Egyetlen rendszer, az első látogatástól a számláig',
-    descFr: 'Le site, les campagnes, les demandes, les séjours et les chiffres parlent entre eux. Vous savez d’où vient chaque client et ce qu’il rapporte, sans recouper cinq outils qui s’ignorent.',
-    descEn: 'The website, the campaigns, the requests, the stays and the numbers talk to each other. You know where each client comes from and what they bring in, without cross-checking five tools that ignore each other.', descHu: 'A weboldal, a kampányok, a kérések, a tartózkodások és a számok beszélnek egymással. Tudja, honnan jön minden ügyfél és mit hoz, anélkül hogy öt, egymásról nem tudó eszközt kellene összevetnie.',
+    /* 8 novembre 2026 : plus d'attribution d'acquisition (« d'où vient chaque
+       client »), c'est la 360, parquée. On parle du chemin d'une demande. */
+    titleFr: 'Un seul système, de la première demande à la facture',
+    titleEn: 'One system, from the first request to the invoice', titleHu: 'Egyetlen rendszer, az első kéréstől a számláig',
+    descFr: 'Les demandes, les devis, les prestataires, les propriétaires et les factures parlent entre eux. Fini de recouper WhatsApp, Excel et cinq outils qui s’ignorent.',
+    descEn: 'Requests, quotes, suppliers, owners and invoices talk to each other. No more cross-checking WhatsApp, Excel and five tools that ignore each other.', descHu: 'A kérések, az árajánlatok, a beszállítók, a tulajdonosok és a számlák beszélnek egymással. Nem kell többé a WhatsAppot, az Excelt és öt, egymásról nem tudó eszközt összevetni.',
   },
   {
     icon: KeyRound,
