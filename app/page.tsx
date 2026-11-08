@@ -9,7 +9,6 @@ import Systems from '@/components/home/Systems'
 import CaseStudy from '@/components/home/CaseStudy'
 import MiniDiagnosticCta from '@/components/home/MiniDiagnosticCta'
 import WhatWeDo from '@/components/home/WhatWeDo'
-import Process from '@/components/home/Process'
 import Different from '@/components/home/Different'
 import Sectors from '@/components/home/Sectors'
 import FunnyGuarantee from '@/components/home/FunnyGuarantee'
@@ -75,9 +74,8 @@ export default function Home() {
       <WhatWeDo />
       <Divider />
 
-      {/* 6, Comment on travaille (méthode résumée) + CTA vers /methode détaillée */}
-      <Process home />
-      <Divider />
+      {/* « Comment on travaille » (Process) retiré de l'accueil le 8 novembre
+          2026 : il répétait « Ce qu'on fait » juste au-dessus (Nathan). */}
 
       {/* 8, Ce qui nous rend différents : vidéo + différenciateurs */}
       <Different />

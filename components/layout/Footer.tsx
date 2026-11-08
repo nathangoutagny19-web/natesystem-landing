@@ -134,7 +134,7 @@ export default function Footer() {
           {/* Pages Monténégro, anglaises seulement : lien interne depuis tout le site. */}
           <FooterLink href="/en/montenegro">Montenegro · Tivat · Kotor</FooterLink>
           <FooterLink href="/#probleme">{t('footer.link.problem')}</FooterLink>
-          <FooterLink href="/#process">{t('footer.link.process')}</FooterLink>
+          <FooterLink href="/methode">{t('footer.link.process')}</FooterLink>
           <FooterLink href="/#case-study">{t('footer.link.results')}</FooterLink>
           <FooterLink href="/#contact">{t('footer.link.contact')}</FooterLink>
         </FooterCol>

@@ -57,6 +57,18 @@ type Sector = {
  * La restauration n'apparaît pas : règle permanente, jamais en niche.
  */
 const SECTORS: Sector[] = [
+  /* Ordre du 8 novembre 2026, aligné sur la prospection : yacht, puis
+     conciergerie, puis villas et chalets. Écoles privées et immobilier de
+     prestige retirés (hors cible) ; sécurité privée de luxe ajoutée. */
+  {
+    nameFr: 'Yachting & transport VIP', nameEn: 'Yachting & VIP transport', nameHu: 'Jacht és VIP szállítás',
+    painFr: 'Arrivées de yachts, avitaillement, transferts, chauffeurs : le planning change d’heure en heure, et chaque dépense avancée pour un client doit être refacturée sans rien oublier.',
+    painEn: 'Yacht arrivals, provisioning, transfers, drivers: the schedule changes by the hour, and every expense advanced for a client has to be re-billed without missing one.',
+    painHu: 'Jachtérkezések, ellátás, transzferek, sofőrök: a beosztás óránként változik, és minden ügyfélnek megelőlegezett költséget hiánytalanul tovább kell számlázni.',
+    buildsFr: ['Un planning en direct par bateau et par véhicule', 'Les commandes d’avitaillement suivies jusqu’à la livraison', 'Chaque dépense avancée, rattachée et refacturée'],
+    buildsEn: ['A live schedule per yacht and per vehicle', 'Provisioning orders tracked through to delivery', 'Every advanced expense, assigned and re-billed'],
+    buildsHu: ['Élő beosztás hajónként és járművenként', 'Az ellátási rendelések követése a kiszállításig', 'Minden megelőlegezett költség hozzárendelve és továbbszámlázva'],
+  },
   {
     nameFr: 'Conciergerie privée', nameEn: 'Private concierge', nameHu: 'Magán concierge',
     painFr: 'Les demandes arrivent par WhatsApp, par mail et par téléphone, à toute heure. Le chauffeur, le chef, la table « confirmée » : tout tient dans une tête, jusqu’au jour où un détail passe à la trappe.',
@@ -67,7 +79,7 @@ const SECTORS: Sector[] = [
     buildsHu: ['Minden kérés követve, a beérkezéstől a megerősítésig', 'A szolgáltatók előző nap újra megerősítve, külön gondolkodás nélkül', 'Minden ügyfél adatlapja, az egész csapat számára elérhető'],
   },
   {
-    nameFr: 'Gestion de villas', nameEn: 'Villa management', nameHu: 'Villakezelés',
+    nameFr: 'Gestion de villas et chalets', nameEn: 'Villa and chalet management', nameHu: 'Villák és faházak kezelése',
     painFr: 'Interventions, ménages, états des lieux, cautions, artisans : chaque propriétaire attend un compte rendu clair, et le préparer prend des heures de ressaisie chaque mois.',
     painEn: 'Maintenance, cleaning, check-in reports, deposits, contractors: every owner expects a clear report, and preparing it takes hours of re-entry every month.',
     painHu: 'Javítások, takarítás, állapotfelmérés, kauciók, szakemberek: minden tulajdonos világos beszámolót vár, és ennek elkészítése havonta órákig tartó újragépelés.',
@@ -85,33 +97,6 @@ const SECTORS: Sector[] = [
     buildsHu: ['Újrafelhasználható útitervek a gyorsabb ajánlatokért', 'A partnerek elérhetősége egy helyen követve', 'Minden utazó követve hazaérkezéséig'],
   },
   {
-    nameFr: 'Yachting & transport VIP', nameEn: 'Yachting & VIP transport', nameHu: 'Jacht és VIP szállítás',
-    painFr: 'Arrivées de yachts, avitaillement, transferts, chauffeurs : le planning change d’heure en heure, et chaque dépense avancée pour un client doit être refacturée sans rien oublier.',
-    painEn: 'Yacht arrivals, provisioning, transfers, drivers: the schedule changes by the hour, and every expense advanced for a client has to be re-billed without missing one.',
-    painHu: 'Jachtérkezések, ellátás, transzferek, sofőrök: a beosztás óránként változik, és minden ügyfélnek megelőlegezett költséget hiánytalanul tovább kell számlázni.',
-    buildsFr: ['Un planning en direct par bateau et par véhicule', 'Les commandes d’avitaillement suivies jusqu’à la livraison', 'Chaque dépense avancée, rattachée et refacturée'],
-    buildsEn: ['A live schedule per yacht and per vehicle', 'Provisioning orders tracked through to delivery', 'Every advanced expense, assigned and re-billed'],
-    buildsHu: ['Élő beosztás hajónként és járművenként', 'Az ellátási rendelések követése a kiszállításig', 'Minden megelőlegezett költség hozzárendelve és továbbszámlázva'],
-  },
-  {
-    nameFr: 'Événementiel & mariages', nameEn: 'Events & weddings', nameHu: 'Rendezvények és esküvők',
-    painFr: 'Un lieu, dix prestataires, un rétroplanning et un budget à tenir, souvent pour plusieurs événements à la fois en saison. Le moindre changement se propage par message, un par un.',
-    painEn: 'One venue, ten suppliers, a countdown plan and a budget to hold, often for several events at once in season. Every change spreads by message, one by one.',
-    painHu: 'Egy helyszín, tíz szolgáltató, egy visszaszámláló terv és egy tartandó költségvetés, szezonban gyakran több rendezvényre egyszerre. Minden változás üzenetenként, egyesével terjed.',
-    buildsFr: ['Le déroulé de chaque événement, partagé en temps réel', 'Les prestataires confirmés, et les manques visibles', 'Le budget suivi ligne par ligne'],
-    buildsEn: ['Each event’s run of show, shared in real time', 'Suppliers confirmed, and gaps visible', 'The budget tracked line by line'],
-    buildsHu: ['Minden rendezvény menete valós időben megosztva', 'A megerősített szolgáltatók, és a hiányok láthatóan', 'A költségvetés tételenként követve'],
-  },
-  {
-    nameFr: 'Immobilier de prestige', nameEn: 'Prestige real estate', nameHu: 'Prémium ingatlan',
-    painFr: 'Entre les demandes de location, les acheteurs à qualifier et les vendeurs à relancer, les contacts s’empilent dans les boîtes mail. Celui qui n’a pas été rappelé au bon moment est parti ailleurs.',
-    painEn: 'Between rental enquiries, buyers to qualify and sellers to follow up, contacts pile up in inboxes. The one not called back at the right time has gone elsewhere.',
-    painHu: 'A bérleti érdeklődők, a minősítendő vevők és az utánkövetendő eladók között a kapcsolatok felhalmozódnak a postafiókokban. Akit nem hívtak vissza időben, máshová ment.',
-    buildsFr: ['Chaque contact qualifié dès son arrivée', 'Les relances qui partent au bon moment', 'Biens, acheteurs et visites suivis au même endroit'],
-    buildsEn: ['Every contact qualified as soon as it comes in', 'Follow-ups that go out at the right time', 'Properties, buyers and viewings tracked in one place'],
-    buildsHu: ['Minden kapcsolat minősítve, amint beérkezik', 'Az utánkövetések a megfelelő időben mennek ki', 'Ingatlanok, vevők és megtekintések egy helyen követve'],
-  },
-  {
     /* Le cas type : L'Hermitage (Saint-Chamond), maison de réception de groupe.
        Douleurs tirées de l'appel avec Florian Méheust, 2 octobre 2026. Le nom
        n'apparaît pas : c'est un prospect, pas un client. */
@@ -124,16 +109,24 @@ const SECTORS: Sector[] = [
     buildsHu: ['A létszámváltozás magától mindenhol megjelenik', 'Szobák, termek és takarítás egyetlen tervezőn', 'Minden részlet az Ön kezében marad: ültetési rend, csendes szoba, kivétel'],
   },
   {
-    nameFr: 'Écoles privées', nameEn: 'Private schools', nameHu: 'Magániskolák',
-    painFr: 'Paie, plannings, dossiers d’élèves, suivi pédagogique : un établissement privé tourne souvent sur une dizaine de tableurs, refaits chaque année.',
-    painEn: 'Payroll, rotas, student records, academic tracking: a private school often runs on a dozen spreadsheets, rebuilt every year.',
-    painHu: 'Bérszámfejtés, beosztások, diákaktak, tanulmányi követés: egy magániskola gyakran egy tucat, évente újraírt táblázaton működik.',
-    buildsFr: ['Heures et paie calculées sur votre convention', 'Un dossier par élève, complet, au même endroit', 'Ce que chaque rôle a le droit de voir, et rien de plus'],
-    buildsEn: ['Hours and payroll calculated against your own agreement', 'One record per student, complete, in one place', 'What each role is allowed to see, and nothing more'],
-    buildsHu: ['Órák és bér az Ön megállapodása szerint számolva', 'Diákonként egy teljes akta, egy helyen', 'Amit az adott szerep láthat, és semmi többet'],
-    servedFr: 'Des élèves et des familles mieux suivis',
-    servedEn: 'Students and families better followed',
-    servedHu: 'Jobban követett diákok és családok',
+    nameFr: 'Événementiel & mariages', nameEn: 'Events & weddings', nameHu: 'Rendezvények és esküvők',
+    painFr: 'Un lieu, dix prestataires, un rétroplanning et un budget à tenir, souvent pour plusieurs événements à la fois en saison. Le moindre changement se propage par message, un par un.',
+    painEn: 'One venue, ten suppliers, a countdown plan and a budget to hold, often for several events at once in season. Every change spreads by message, one by one.',
+    painHu: 'Egy helyszín, tíz szolgáltató, egy visszaszámláló terv és egy tartandó költségvetés, szezonban gyakran több rendezvényre egyszerre. Minden változás üzenetenként, egyesével terjed.',
+    buildsFr: ['Le déroulé de chaque événement, partagé en temps réel', 'Les prestataires confirmés, et les manques visibles', 'Le budget suivi ligne par ligne'],
+    buildsEn: ['Each event’s run of show, shared in real time', 'Suppliers confirmed, and gaps visible', 'The budget tracked line by line'],
+    buildsHu: ['Minden rendezvény menete valós időben megosztva', 'A megerősített szolgáltatók, és a hiányok láthatóan', 'A költségvetés tételenként követve'],
+  },
+  {
+    /* Ajouté le 8 novembre 2026 (Nathan) : segment en test, type HighWatch.
+       Aucun client ni chiffre cité. */
+    nameFr: 'Sécurité privée de luxe', nameEn: 'Luxury private security', nameHu: 'Luxus magánbiztonság',
+    painFr: 'Protection rapprochée, sécurité d’événements, surveillance de villas et de yachts : les missions, les agents et les comptes rendus circulent par WhatsApp et par mail. Le planning change à la dernière minute, et c’est le dirigeant qui recolle tout.',
+    painEn: 'Close protection, event security, villa and yacht surveillance: missions, agents and reports travel by WhatsApp and email. The schedule changes at the last minute, and the owner pieces it all back together.',
+    painHu: 'Személyvédelem, rendezvénybiztonság, villák és jachtok felügyelete: a megbízások, az ügynökök és a jelentések WhatsAppon és e-mailben keringenek. A beosztás az utolsó pillanatban változik, és a vezető rakja össze újra.',
+    buildsFr: ['Chaque mission planifiée, chaque agent prévenu', 'Les comptes rendus déposés au même endroit, horodatés', 'Des données discrètes, hébergées en Europe'],
+    buildsEn: ['Every mission scheduled, every agent notified', 'Mission reports filed in one place, time-stamped', 'Discreet data, hosted in Europe'],
+    buildsHu: ['Minden megbízás beosztva, minden ügynök értesítve', 'A jelentések egy helyen, időbélyeggel', 'Diszkrét adatok, Európában tárolva'],
   },
 ]
 
