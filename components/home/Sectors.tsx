@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import FadeUp from '@/components/ui/FadeUp'
 import { useLang } from '@/components/providers/LangProvider'
 import { makeD, pick } from '@/lib/lang'
+import SectorGlyph from '@/components/home/SectorGlyph'
 
 // Socle commun, ce que la plateforme apporte quel que soit le métier.
 type Sector = {
@@ -144,6 +145,7 @@ export default function Sectors() {
                   exit={{ opacity: 0, y: -10 }}
                   transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
                 >
+                  <SectorGlyph index={active} />
                   <h3 className="font-serif italic sec-panel-title">{d(cur.nameFr, cur.nameEn, cur.nameHu)}</h3>
                   <p className="font-sans sec-panel-pain">{d(cur.painFr, cur.painEn, cur.painHu)}</p>
 
