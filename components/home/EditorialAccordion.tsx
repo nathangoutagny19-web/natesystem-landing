@@ -12,30 +12,35 @@ import { Plus, Minus } from 'lucide-react'
  */
 export type AccordionItem = { title: string; head: string; text: string; href?: string; linkLabel?: string }
 
-export default function EditorialAccordion({ items, defaultOpen = 0 }: { items: AccordionItem[]; defaultOpen?: number }) {
+export default function EditorialAccordion({ items, defaultOpen = 0, dark = false }: { items: AccordionItem[]; defaultOpen?: number; dark?: boolean }) {
   const [open, setOpen] = useState(defaultOpen)
+  /* Sur fond sombre (sections façon Gourmet), couleurs fixes : les variables
+     du thème clair rendraient le texte gris sur noir. */
+  const c = dark
+    ? { line: 'rgba(255,255,255,0.14)', text: '#f0f0f2', soft: 'rgba(240,240,242,0.62)', muted: 'rgba(240,240,242,0.4)' }
+    : { line: 'var(--border)', text: 'var(--text)', soft: 'var(--text-secondary)', muted: 'var(--text-muted)' }
 
   return (
-    <div style={{ borderTop: '1px solid var(--border)' }}>
+    <div style={{ borderTop: `1px solid ${c.line}` }}>
       {items.map((it, k) => {
         const isOpen = open === k
         return (
-          <div key={it.title} style={{ borderBottom: '1px solid var(--border)' }}>
+          <div key={it.title} style={{ borderBottom: `1px solid ${c.line}` }}>
             <button
               type="button"
               onClick={() => setOpen(isOpen ? -1 : k)}
               aria-expanded={isOpen}
               className="w-full flex items-center justify-between text-left font-sans"
-              style={{ padding: '20px 0', fontSize: 18, fontWeight: 400, color: isOpen ? 'var(--text)' : 'var(--text-secondary)', background: 'none', border: 0, cursor: 'pointer' }}
+              style={{ padding: '20px 0', fontSize: 18, fontWeight: 400, color: isOpen ? c.text : c.soft, background: 'none', border: 0, cursor: 'pointer' }}
             >
               <span>{it.title}</span>
-              {isOpen ? <Minus size={16} style={{ color: 'var(--text)' }} /> : <Plus size={16} style={{ color: 'var(--text-muted)' }} />}
+              {isOpen ? <Minus size={16} style={{ color: c.text }} /> : <Plus size={16} style={{ color: c.muted }} />}
             </button>
             <div hidden={!isOpen} style={{ paddingBottom: 26 }}>
-              <p className="font-serif italic" style={{ fontSize: 24, lineHeight: 1.25, color: 'var(--text)' }}>{it.head}</p>
-              <p className="font-sans" style={{ fontSize: 15, fontWeight: 300, color: 'var(--text-secondary)', lineHeight: 1.7, marginTop: 12, maxWidth: 560 }}>{it.text}</p>
+              <p className="font-serif italic" style={{ fontSize: 24, lineHeight: 1.25, color: c.text }}>{it.head}</p>
+              <p className="font-sans" style={{ fontSize: 15, fontWeight: 300, color: c.soft, lineHeight: 1.7, marginTop: 12, maxWidth: 560 }}>{it.text}</p>
               {it.href && it.linkLabel && (
-                <Link href={it.href} className="font-sans" style={{ display: 'inline-block', marginTop: 14, fontSize: 14, color: 'var(--text)', textDecoration: 'underline', textUnderlineOffset: 3 }}>
+                <Link href={it.href} className="font-sans" style={{ display: 'inline-block', marginTop: 14, fontSize: 14, color: c.text, textDecoration: 'underline', textUnderlineOffset: 3 }}>
                   {it.linkLabel}
                 </Link>
               )}

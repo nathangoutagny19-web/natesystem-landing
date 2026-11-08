@@ -4,55 +4,44 @@ import { useLang } from '@/components/providers/LangProvider'
 import { makeD } from '@/lib/lang'
 
 /**
- * LES RÉSULTATS (accueil, 8 novembre 2026), la preuve telle que Nathan la
- * formule : 40 h par mois rapportées par les clients, une réactivité qui
- * double, une expérience client unique, et ce que ça entraîne.
+ * LA PREUVE EN UNE PHRASE (accueil, 8 novembre 2026), sur le modèle du hero de
+ * gourmetmarketing.net (« …helped our partners generate $462M in 2025 ») :
+ * une seule grande phrase sur fond sombre, le chiffre en rouge. Remplace la
+ * rangée de trois stats (40 h / ×2 / Unique), jugée « IA » par Nathan.
  *
- * ⚠︎ Les 40 h sont RAPPORTÉES par les clients, jamais mesurées par nous : la
- * mention reste collée au chiffre. « ×2 » est un choix assumé de Nathan,
- * non mesuré. Aucun chiffre de ventes ni de LTV n'est promis : la dernière
- * phrase dit le mécanisme, pas un résultat chiffré.
+ * ⚠︎ Les 40 h sont RAPPORTÉES par les clients, la phrase le dit. « Réactivité
+ * qui double » est un choix assumé de Nathan, non mesuré. Aucun chiffre de
+ * ventes promis.
  */
 export default function Outcomes() {
   const { lang } = useLang()
   const d = makeD(lang)
 
-  const items = [
-    {
-      big: '40 h',
-      label: d('rendues à l’équipe chaque mois', 'given back to the team every month', 'havonta visszanyerve a csapatnak'),
-      note: d('en moyenne, rapporté par nos clients', 'on average, as reported by our clients', 'átlagosan, az ügyfeleink beszámolója szerint'),
-    },
-    {
-      big: '×2',
-      label: d('de réactivité', 'responsiveness', 'gyorsabb reagálás'),
-      note: d('chaque demande vue, attribuée, suivie', 'every request seen, assigned, followed', 'minden kérés látható, kiosztva, követve'),
-    },
-    {
-      big: d('Unique', 'Unique', 'Egyedi'),
-      label: d('une expérience client à votre image', 'a guest experience in your image', 'az Önhöz illő vendégélmény'),
-      note: d('la mémoire de chaque client, gardée', 'every client’s preferences, remembered', 'minden ügyfél preferenciái megőrizve'),
-    },
-  ]
-
   return (
-    <section id="resultats" style={{ padding: '88px 24px' }}>
-      <div style={{ maxWidth: 1120, margin: '0 auto' }}>
-        <span className="section-label">{d('Résultats', 'Results', 'Eredmények')}</span>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10" style={{ marginTop: 36 }}>
-          {items.map((it) => (
-            <div key={it.big} style={{ borderTop: '1px solid var(--border)', paddingTop: 22 }}>
-              <p className="font-serif italic" style={{ fontSize: 'clamp(52px, 6vw, 76px)', lineHeight: 1, color: 'var(--text)' }}>{it.big}</p>
-              <p className="font-sans" style={{ fontSize: 17, color: 'var(--text)', marginTop: 14 }}>{it.label}</p>
-              <p className="font-mono" style={{ fontSize: 11, letterSpacing: 1.5, textTransform: 'uppercase', color: 'var(--text-muted)', marginTop: 8 }}>{it.note}</p>
-            </div>
-          ))}
-        </div>
-        <p className="font-serif italic" style={{ fontSize: 'clamp(22px, 2.6vw, 30px)', lineHeight: 1.35, color: 'var(--text)', marginTop: 56, maxWidth: 820 }}>
-          {d('Une expérience que vos clients ne trouvent nulle part ailleurs, c’est ce qui les fait revenir et en amène d’autres. C’est comme ça qu’on devient ', 'An experience your clients find nowhere else is what brings them back and brings others with them. That is how you become ', 'Az az élmény, amelyet ügyfelei sehol máshol nem találnak, hozza vissza őket, és hoz újakat. Így lesz Ön ')}
-          <span style={{ color: 'var(--accent)' }}>{d('la référence', 'the reference', 'a viszonyítási pont')}</span>
-          {d(' de son marché.', ' in your market.', ' a piacán.')}
+    <section
+      id="resultats"
+      style={{
+        padding: 'clamp(96px, 13vw, 170px) 24px',
+        background: 'radial-gradient(70% 60% at 85% 0%, rgba(230,57,70,0.10), transparent 60%), #0e0e12',
+      }}
+    >
+      <div style={{ maxWidth: 1040, margin: '0 auto' }}>
+        <p className="font-serif" style={{ fontSize: 'clamp(36px, 5.4vw, 72px)', lineHeight: 1.06, color: '#f0f0f2' }}>
+          {d('Nos clients nous rapportent ', 'Our clients report ', 'Ügyfeleink beszámolója szerint ')}
+          <span className="italic" style={{ color: '#E63946' }}>{d('40 heures', '40 hours', 'havi 40 órát')}</span>
+          {d(' rendues chaque mois à leur équipe.', ' given back to their team every month.', ' kapnak vissza a csapatuk számára.')}
         </p>
+        <p className="font-sans" style={{ fontSize: 'clamp(16px, 1.8vw, 20px)', fontWeight: 300, lineHeight: 1.6, color: 'rgba(240,240,242,0.66)', marginTop: 32, maxWidth: 680 }}>
+          {d(
+            'Une réactivité qui double, et une expérience que leurs propres clients ne trouvent nulle part ailleurs. C’est comme ça qu’on devient la référence de son marché.',
+            'Responsiveness that doubles, and an experience their own clients find nowhere else. That is how you become the reference in your market.',
+            'Kétszer gyorsabb reagálás, és olyan élmény, amelyet a saját ügyfeleik sehol máshol nem találnak. Így válik valaki a piaca viszonyítási pontjává.'
+          )}
+        </p>
+        <a href="#case-study" className="font-sans inline-flex items-center gap-3" style={{ marginTop: 40, fontSize: 15, color: '#f0f0f2' }}>
+          <span aria-hidden>→</span>
+          {d('Voir les réalisations', 'See the work', 'Nézze meg a munkáinkat')}
+        </a>
       </div>
     </section>
   )

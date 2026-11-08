@@ -35,13 +35,9 @@ export default function Home() {
       <Nav />
       <Hero />
       <ClientsBar />
-      <Divider />
       <Outcomes />
-      <Divider />
       <CaseStudy />
-      <Divider />
       <SectorsAccordion />
-      <Divider />
       <ServicesGrid />
       <StatementBand />
       <Process home />

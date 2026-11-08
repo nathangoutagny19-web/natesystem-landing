@@ -92,11 +92,11 @@ export default function SectorsAccordion() {
   }))
 
   return (
-    <section id="secteurs" style={{ padding: '110px 24px' }}>
+    <section id="secteurs" style={{ padding: '120px 24px', background: '#0e0e12' }}>
       <div className="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-14" style={{ maxWidth: 1120, margin: '0 auto' }}>
         <div>
-          <span className="section-label">{d('Secteurs', 'Industries', 'Ágazatok')}</span>
-          <h2 className="font-serif italic font-normal" style={{ fontSize: 'clamp(32px, 4vw, 48px)', lineHeight: 1.1, marginTop: 18, color: 'var(--text)' }}>
+          <span className="font-mono" style={{ fontSize: 11, letterSpacing: 3, textTransform: 'uppercase', color: 'rgba(240,240,242,0.5)' }}>{d('Secteurs', 'Industries', 'Ágazatok')}</span>
+          <h2 className="font-serif font-normal" style={{ fontSize: 'clamp(34px, 4.2vw, 52px)', lineHeight: 1.08, marginTop: 18, color: '#f0f0f2' }}>
             {d('Les métiers du service, dans l’hospitalité de luxe.', 'Service businesses in luxury hospitality.', 'Szolgáltató vállalkozások a luxusvendéglátásban.')}
           </h2>
           <div style={{ marginTop: 32, maxWidth: 400 }}>
@@ -111,7 +111,7 @@ export default function SectorsAccordion() {
           </div>
         </div>
         <div className="lg:pt-10">
-          <EditorialAccordion items={items} />
+          <EditorialAccordion items={items} dark />
         </div>
       </div>
     </section>
