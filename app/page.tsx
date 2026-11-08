@@ -5,7 +5,6 @@ import Transformation from '@/components/home/Transformation'
 import CredibilityBand from '@/components/home/CredibilityBand'
 import ClientsBar from '@/components/home/ClientsBar'
 import Systems from '@/components/home/Systems'
-import Testimonials from '@/components/home/Testimonials'
 import MiniDiagnosticCta from '@/components/home/MiniDiagnosticCta'
 import WhatWeDo from '@/components/home/WhatWeDo'
 import Different from '@/components/home/Different'
@@ -43,9 +42,8 @@ export default function Home() {
           secteurs (Nathan, 8 novembre 2026 : « mets avant les secteurs »). */}
       <StatementBand />
 
-      {/* La preuve, juste sous la bande et ses photos : les témoignages, mot
-          pour mot, signés par l'entreprise (Nathan, 8 novembre 2026). */}
-      <Testimonials />
+      {/* Les citations des clients sont DANS la bande noire, sous la phrase et
+          les photos (Nathan, 8 novembre 2026) : voir StatementBand. */}
 
       {/* Les secteurs, juste après la bande (Nathan, 8 novembre 2026) :
           le visiteur voit tout de suite si on parle de son métier. */}

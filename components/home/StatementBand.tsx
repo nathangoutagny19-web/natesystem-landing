@@ -2,6 +2,7 @@
 
 import { useLang } from '@/components/providers/LangProvider'
 import { makeD } from '@/lib/lang'
+import BandQuotes from '@/components/home/Testimonials'
 
 /**
  * LA BANDE NOIRE DE POSITIONNEMENT (accueil, 8 novembre 2026), juste sous les
@@ -11,6 +12,14 @@ import { makeD } from '@/lib/lang'
  * avec Catherine F. (Chromosome). Ces photos ont quitté la rangée de logos le
  * même jour. « Agence » est autorisé depuis le 8 novembre.
  *
+ * Sous la phrase et les photos, sur le même fond noir : les citations des
+ * clients, seules, sans nom ni entreprise (Nathan, 8 novembre 2026 : les
+ * noms sont déjà dans les légendes des photos).
+ *
+ * ⚠︎ DEUX ÉTAGES. Les photos sont en position absolue dans la « scène »
+ * (.stmt-stage), pas dans la section : sinon la photo du bas glisserait
+ * sur les citations.
+ *
  * ⚠︎ La photo du podcast n'existe qu'en 400 × 288 : elle reste petite (190 px
  * au plus), sinon elle devient floue sur un écran Retina.
  */
@@ -19,7 +28,8 @@ export default function StatementBand() {
   const d = makeD(lang)
 
   return (
-    <section className="stmt-band" style={{ position: 'relative', overflow: 'hidden', background: '#0e0e12' }}>
+    <section className="stmt-band" style={{ overflow: 'hidden', background: '#0e0e12' }}>
+      <div className="stmt-stage">
       <figure className="stmt-photo stmt-photo-tl">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src="/realisations/chartreux-terrasse.webp" alt={d('Nathan avec l’Institut des Chartreux, à Lyon', 'Nathan with Institut des Chartreux, in Lyon', 'Nathan az Institut des Chartreux-vel Lyonban')} loading="lazy" />
@@ -43,9 +53,13 @@ export default function StatementBand() {
         <img src="/realisations/zoltan-budapest.webp" alt={d('Nathan avec Kis Zoltán, à Budapest', 'Nathan with Kis Zoltán, in Budapest', 'Nathan Kis Zoltánnal Budapesten')} loading="lazy" />
         <figcaption>{d('Kis Zoltán, Budapest', 'Kis Zoltán, Budapest', 'Kis Zoltán, Budapest')}</figcaption>
       </figure>
+      </div>
+
+      <BandQuotes />
 
       <style jsx>{`
-        .stmt-band {
+        .stmt-stage {
+          position: relative;
           padding: clamp(150px, 20vw, 260px) 24px;
         }
         .stmt-text {
@@ -102,7 +116,7 @@ export default function StatementBand() {
            phrase au lieu de la recouvrir : les deux du haut côte à côte, la
            phrase, puis la poignée de main de Budapest à droite. */
         @media (max-width: 760px) {
-          .stmt-band {
+          .stmt-stage {
             padding: 40px 18px;
             display: grid;
             grid-template-columns: 1fr 1fr;
