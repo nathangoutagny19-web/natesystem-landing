@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Nav from '@/components/layout/Nav'
 import Footer from '@/components/layout/Footer'
 import ClientsBar from '@/components/home/ClientsBar'
+import Hero from '@/components/home/Hero'
 import { SITE_URL } from '@/lib/constants'
 import type { MontenegroPageData } from '@/lib/montenegro'
 
@@ -63,45 +64,22 @@ export default function MontenegroPage({ data }: { data: MontenegroPageData }) {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <Nav />
       <main>
-        {/* Hero */}
-        <section className="flex flex-col items-center text-center" style={{ padding: '140px 20px 56px' }}>
-          <nav aria-label="Breadcrumb" className="font-sans" style={{ fontSize: 12, color: 'var(--text-muted)', marginBottom: 20 }}>
-            {data.breadcrumb.map((b, i) => (
-              <span key={b.href}>
-                {i > 0 && <span aria-hidden> / </span>}
-                {i < data.breadcrumb.length - 1 ? (
-                  <Link href={b.href} style={{ color: 'inherit' }}>{b.name}</Link>
-                ) : (
-                  <span>{b.name}</span>
-                )}
-              </span>
-            ))}
-          </nav>
-          <span className="section-label" style={{ letterSpacing: 3 }}>{data.eyebrow}</span>
-          <h1
-            className="font-serif italic font-normal"
-            style={{ fontSize: 'clamp(36px, 5vw, 60px)', lineHeight: 1.08, maxWidth: 860, marginTop: 24, color: 'var(--text)' }}
-          >
-            {data.h1}
-          </h1>
-          <p className="font-sans" style={{ ...body, fontSize: 'clamp(15px, 2.6vw, 18px)', maxWidth: 680, marginTop: 22 }}>
-            {data.intro}
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-3" style={{ marginTop: 32 }}>
-            <Link href="/en/audit-gratuit" className="btn-primary" style={{ fontSize: 14 }}>
-              <span className="btn-primary-dot" />
-              Get your free audit →
-            </Link>
-            <Link href="/en#rendez-vous" className="btn-ghost" style={{ fontSize: 14, fontWeight: 500 }}>
-              Book a call →
-            </Link>
-          </div>
-        </section>
+        {/* Le même hero que l'accueil (Nathan, 8 novembre 2026 : « remets la même
+            hero que ce matin »). Le titre local de la page passe en H2 juste
+            en dessous, pour garder Tivat / Kotor dans le contenu. */}
+        <Hero />
 
         <ClientsBar />
 
+        {/* Le titre local et son introduction */}
+        <section className="flex flex-col items-center text-center" style={{ padding: '72px 20px 0' }}>
+          <span className="section-label" style={{ letterSpacing: 3 }}>{data.eyebrow}</span>
+          <h2 className="font-serif italic font-normal" style={{ ...h2, maxWidth: 820, marginTop: 18 }}>{data.h1}</h2>
+          <p className="font-sans" style={{ ...body, maxWidth: 680, marginTop: 18 }}>{data.intro}</p>
+        </section>
+
         {/* What we build */}
-        <section style={{ padding: '72px 20px', maxWidth: 1080, margin: '0 auto' }}>
+        <section style={{ padding: '56px 20px 72px', maxWidth: 1080, margin: '0 auto' }}>
           <h2 className="font-serif italic font-normal text-center" style={h2}>{data.servicesTitle}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5" style={{ marginTop: 40 }}>
             {data.services.map((s) => (

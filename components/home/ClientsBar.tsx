@@ -130,10 +130,13 @@ const photos = clients.filter((c): c is Extract<ClientRef, { type: 'photo' }> =>
 export default function ClientsBar({ hideLabel = false, split = false }: { hideLabel?: boolean; split?: boolean }) {
   const { lang } = useLang()
 
+  /* Nathan, 8 novembre 2026 : dire qu'on travaille avec eux, qu'on les a
+     équipés et qu'on les accompagne, pas seulement qu'ils « utilisent nos
+     outils ». */
   const label = makeD(lang)(
-    'ILS UTILISENT NOS OUTILS',
-    'THEY USE OUR TOOLS',
-    'ŐK HASZNÁLJÁK AZ ESZKÖZEINKET'
+    'ÉQUIPÉS ET ACCOMPAGNÉS PAR NATESYSTEM',
+    'EQUIPPED AND SUPPORTED BY NATESYSTEM',
+    'A NATESYSTEM FELSZERELÉSÉVEL ÉS TÁMOGATÁSÁVAL'
   )
 
   return (
