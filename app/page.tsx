@@ -11,13 +11,11 @@ import MiniDiagnosticCta from '@/components/home/MiniDiagnosticCta'
 import WhatWeDo from '@/components/home/WhatWeDo'
 import Different from '@/components/home/Different'
 import Sectors from '@/components/home/Sectors'
-import FunnyGuarantee from '@/components/home/FunnyGuarantee'
 import Faq from '@/components/home/Faq'
 import CtaFinal from '@/components/home/CtaFinal'
-import AskAI from '@/components/home/AskAI'
-import SprintDiagnostic from '@/components/v2/SprintDiagnostic'
 import ComparisonV2 from '@/components/v2/ComparisonV2'
 import StatementBand from '@/components/home/StatementBand'
+import AskAI from '@/components/home/AskAI'
 import Footer from '@/components/layout/Footer'
 import Divider from '@/components/ui/Divider'
 
@@ -90,8 +88,8 @@ export default function Home() {
       <CredibilityBand />
       <Divider />
 
-      {/* 10, Commence maintenant : l'offre d'entrée « Le Diagnostic » */}
-      <SprintDiagnostic />
+      {/* « Le Diagnostic » (SprintDiagnostic) retiré de l'accueil le 8 novembre
+          2026 (Nathan). */}
 
       {/* 11, Embed Cal.com SEUL (entête retirée), juste après l'offre d'entrée */}
       <CtaFinal />
@@ -106,10 +104,7 @@ export default function Home() {
       <Faq />
       <Divider />
 
-      {/* 15, La garantie « funny » (typographique, sans image sectorielle), déplacée tout à la fin,
-             juste avant « Demandez à l'IA » (choix Nathan). */}
-      <FunnyGuarantee />
-      <Divider />
+      {/* Garantie Voisine retirée de l'accueil le 8 novembre 2026 (Nathan). */}
 
       {/* 16, Demandez à l'IA : preuve sociale via IA */}
       <AskAI />
