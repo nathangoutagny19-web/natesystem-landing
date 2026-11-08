@@ -44,13 +44,13 @@ export default function Home() {
       {/* Les citations des clients sont DANS la bande noire, sous la phrase et
           les photos (Nathan, 8 novembre 2026) : voir StatementBand. */}
 
-      {/* Les secteurs, juste après la bande (Nathan, 8 novembre 2026) :
-          le visiteur voit tout de suite si on parle de son métier. */}
-      <Sectors />
-      <Divider />
-
       {/* 3, Avant/Après (diagonale) + bascule « ils sont de l'autre côté » */}
       <Transformation />
+
+      {/* Les secteurs, juste après « Avant, après » (Nathan, 8 novembre 2026). */}
+      <Divider />
+      <Sectors />
+      <Divider />
 
       {/* Le film de marque « Déployé. Mesuré. Rentabilisé. » (BrandFilm) est
           retiré de l'accueil le 8 novembre 2026 (Nathan). Il affichait aussi
