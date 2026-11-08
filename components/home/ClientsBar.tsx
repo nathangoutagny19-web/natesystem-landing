@@ -53,6 +53,15 @@ type ClientRef =
 // vendeglatas.png` arrives, flip `type: 'wordmark'` to `type: 'logo'`
 // and add the `src`.
 const clients: ClientRef[] = [
+  /* LES DEUX PREMIERS CLIENTS QUI NE CONNAISSAIENT PAS NATHAN, en tête de
+     rangée (8 novembre 2026). Accord oral de Judith (Wandering Yacht) et
+     d'Achille (Services Exclusifs) d'après Nathan.
+     ⚠︎ Le contrat Wandering Yacht (art. 8) demande un accord ÉCRIT pour les
+     citer comme référence : si Judith revient dessus, retirer la ligne.
+     Wandering Yacht reste en wordmark tant que leurs fichiers de marque ne
+     sont pas arrivés (on n'a que le pictogramme de 64 px). */
+  { name: 'Services Exclusifs', type: 'logo', src: '/logos/services-exclusifs.png', href: 'https://services-exclusifs.ch/' },
+  { name: 'Wandering Yacht', type: 'wordmark', href: 'https://www.wanderingyacht.com/' },
   /* ⚠︎ LES TROIS RENCONTRES MENENT AU CAS, PAS AU SITE DU CLIENT. C'est
      toute la difference avec les logos au-dessus : un logo dit qui nous
      fait confiance et renvoie chez lui, une rencontre dit ce qu'on a fait
