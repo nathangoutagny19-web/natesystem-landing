@@ -8,8 +8,8 @@
  * pages satellites et déclassées.
  *
  * Règles : aucun prix ni délai, aucun chiffre inventé, aucun nom de prospect
- * ou de client sous NDA, jamais « agency » pour parler de NateSystem, pas de
- * grand tiret. Les douleurs viennent de la recherche terrain de la session
+ * ou de client sous NDA, pas de grand tiret. « Agency » est autorisé depuis le
+ * 8 novembre 2026 (Nathan) : c'est le mot que les gens tapent. Les douleurs viennent de la recherche terrain de la session
  * prospection (6:10prospection/03-recherche-marche/).
  */
 
@@ -90,13 +90,13 @@ const SERVICES_BASE = {
 export const MONTENEGRO_PAGES: Record<MontenegroPageData['path'], MontenegroPageData> = {
   '/montenegro': {
     path: '/montenegro',
-    title: 'Web Design, Software & Ads in Montenegro | NateSystem',
+    title: 'Web Design & Digital Agency in Montenegro | NateSystem',
     description:
-      'Websites, custom software, content and ads for yacht, villa, concierge and hospitality businesses in Tivat, Kotor and Budva. You own the code. Free audit.',
+      'Digital agency for luxury hospitality in Montenegro: websites, custom software, content and ads in Tivat, Kotor and Budva. You own the code. Free audit.',
     eyebrow: 'Montenegro · Tivat · Kotor · Budva',
     h1: 'Websites, software and ads for luxury hospitality in Montenegro.',
     intro:
-      'Yacht charter and management, villas, concierge services, boutique hotels and tours. We build your website, the software your team runs on, your content and your ads, all connected, all yours.',
+      'NateSystem is a web design, software and marketing agency for yacht charter and management, villas, concierge services, boutique hotels and tours. We build your website, the software your team runs on, your content and your ads, all connected, all yours.',
     breadcrumb: [
       { name: 'NateSystem', href: '/en' },
       { name: 'Montenegro', href: '/en/montenegro' },
@@ -142,8 +142,8 @@ export const MONTENEGRO_PAGES: Record<MontenegroPageData['path'], MontenegroPage
     why: WHY,
     faq: [
       {
-        q: 'Do you build websites for businesses in Montenegro?',
-        a: 'Yes. We design and develop websites for yacht, villa, concierge, hotel and tour businesses in Tivat, Kotor, Budva and the rest of the coast, connected to their bookings and their team.',
+        q: 'Are you a web design agency in Montenegro?',
+        a: 'Yes. We are a web design, software and marketing agency for luxury hospitality, and we design and develop websites for yacht, villa, concierge, hotel and tour businesses in Tivat, Kotor, Budva and the rest of the coast, connected to their bookings and their team.',
       },
       {
         q: 'Can you also handle social media, content and ads?',
@@ -164,13 +164,13 @@ export const MONTENEGRO_PAGES: Record<MontenegroPageData['path'], MontenegroPage
 
   '/montenegro/tivat': {
     path: '/montenegro/tivat',
-    title: 'Web Design & Software in Tivat, Montenegro | NateSystem',
+    title: 'Web Design & Software Agency in Tivat | NateSystem',
     description:
-      'Websites, custom software, content and ads for yacht charter, yacht management and luxury businesses in Tivat and Porto Montenegro. You own the code.',
+      'Web design, software and marketing agency for yacht charter, yacht management and luxury businesses in Tivat and Porto Montenegro. You own the code.',
     eyebrow: 'Tivat · Porto Montenegro',
     h1: 'Websites, software and ads for yacht and luxury businesses in Tivat.',
     intro:
-      'Charter companies, yacht managers, superyacht agents, villas and concierge services around Porto Montenegro. We build the website your clients see and the software your team runs on, connected and owned by you.',
+      'A web design, software and marketing agency for charter companies, yacht managers, superyacht agents, villas and concierge services around Porto Montenegro. We build the website your clients see and the software your team runs on, connected and owned by you.',
     breadcrumb: [
       { name: 'NateSystem', href: '/en' },
       { name: 'Montenegro', href: '/en/montenegro' },
@@ -246,13 +246,13 @@ export const MONTENEGRO_PAGES: Record<MontenegroPageData['path'], MontenegroPage
 
   '/montenegro/kotor': {
     path: '/montenegro/kotor',
-    title: 'Web Design & Software in Kotor, Montenegro | NateSystem',
+    title: 'Web Design & Software Agency in Kotor | NateSystem',
     description:
-      'Websites, custom software, content and ads for boutique hotels, villas, tours and concierge services in Kotor and the Bay of Kotor. You own the code.',
+      'Web design, software and marketing agency for boutique hotels, villas, tours and concierge services in Kotor and the Bay of Kotor. You own the code.',
     eyebrow: 'Kotor · Bay of Kotor',
     h1: 'Websites, software and ads for hotels, villas and tours in Kotor.',
     intro:
-      'Boutique hotels in the Old Town, villas around the bay, private tours and concierge services. We build the website guests book on, the software your team runs on, and the content and ads that bring guests in.',
+      'A web design, software and marketing agency for boutique hotels in the Old Town, villas around the bay, private tours and concierge services. We build the website guests book on, the software your team runs on, and the content and ads that bring guests in.',
     breadcrumb: [
       { name: 'NateSystem', href: '/en' },
       { name: 'Montenegro', href: '/en/montenegro' },
