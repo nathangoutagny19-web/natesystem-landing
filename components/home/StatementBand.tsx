@@ -4,11 +4,15 @@ import { useLang } from '@/components/providers/LangProvider'
 import { makeD } from '@/lib/lang'
 
 /**
- * LA BANDE NOIRE DE POSITIONNEMENT (accueil, 8 novembre 2026), entre les
- * secteurs et « Avant, après ». Une phrase en grand, en blanc, et deux vraies
- * photos de Nathan qui serre la main de clients, en haut à gauche et en bas à
- * droite, pour la preuve sociale (Nathan). « Agence » est autorisé depuis le
- * 8 novembre.
+ * LA BANDE NOIRE DE POSITIONNEMENT (accueil, 8 novembre 2026), juste sous les
+ * logos et avant les secteurs. Une phrase en grand, en blanc, et trois vraies
+ * photos pour la preuve sociale (Nathan) : deux poignées de main, en haut à
+ * gauche et en bas à droite, et, en petit en haut à droite, Nathan en podcast
+ * avec Catherine F. (Chromosome). Ces photos ont quitté la rangée de logos le
+ * même jour. « Agence » est autorisé depuis le 8 novembre.
+ *
+ * ⚠︎ La photo du podcast n'existe qu'en 400 × 288 : elle reste petite (190 px
+ * au plus), sinon elle devient floue sur un écran Retina.
  */
 export default function StatementBand() {
   const { lang } = useLang()
@@ -20,6 +24,12 @@ export default function StatementBand() {
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src="/realisations/chartreux-terrasse.webp" alt={d('Nathan avec l’Institut des Chartreux, à Lyon', 'Nathan with Institut des Chartreux, in Lyon', 'Nathan az Institut des Chartreux-vel Lyonban')} loading="lazy" />
         <figcaption>{d('Institut des Chartreux, Lyon', 'Institut des Chartreux, Lyon', 'Institut des Chartreux, Lyon')}</figcaption>
+      </figure>
+
+      <figure className="stmt-photo stmt-photo-tr">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/realisations/bandeau/catherine.webp" alt={d('Nathan en podcast avec Catherine F., de Chromosome', 'Nathan on a podcast with Catherine F., from Chromosome', 'Nathan podcaston Catherine F.-fel, a Chromosome-tól')} loading="lazy" />
+        <figcaption>{d('Catherine F., Chromosome', 'Catherine F., Chromosome', 'Catherine F., Chromosome')}</figcaption>
       </figure>
 
       <p className="font-serif text-center stmt-text">
@@ -77,24 +87,50 @@ export default function StatementBand() {
           right: clamp(16px, 5vw, 80px);
           text-align: right;
         }
+        /* Le podcast, en petit, au format de la photo (paysage) : pas de
+           recadrage. */
+        .stmt-photo-tr {
+          top: 48px;
+          right: clamp(16px, 5vw, 80px);
+          width: clamp(120px, 12vw, 190px);
+          text-align: right;
+        }
+        .stmt-photo-tr img {
+          aspect-ratio: 400 / 288;
+        }
         /* Sur téléphone, les photos passent au-dessus et au-dessous de la
-           phrase au lieu de la recouvrir. */
+           phrase au lieu de la recouvrir : les deux du haut côte à côte, la
+           phrase, puis la poignée de main de Budapest à droite. */
         @media (max-width: 760px) {
           .stmt-band {
             padding: 40px 18px;
-            display: flex;
-            flex-direction: column;
-            gap: 36px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 36px 16px;
           }
           .stmt-photo {
             position: static;
             width: 150px;
           }
+          .stmt-photo-tl {
+            grid-column: 1;
+            grid-row: 1;
+          }
+          .stmt-photo-tr {
+            grid-column: 2;
+            grid-row: 1;
+            width: 130px;
+            justify-self: end;
+          }
           .stmt-text {
+            grid-column: 1 / -1;
+            grid-row: 2;
             max-width: none;
           }
           .stmt-photo-br {
-            align-self: flex-end;
+            grid-column: 1 / -1;
+            grid-row: 3;
+            justify-self: end;
           }
         }
       `}</style>
