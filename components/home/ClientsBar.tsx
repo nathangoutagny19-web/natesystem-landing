@@ -108,10 +108,7 @@ const clients: ClientRef[] = [
   // reads neutral, then tinted per theme, black on light, white on dark,
   // never the raw blue, which would clash with the neutral row.
   { name: 'SimpleTeam', type: 'logo-white', src: '/logos/simpleteam.png', href: 'https://simple-team.com/' },
-  // Goutagny Élagage, colored green logo, white background keyed out to
-  // transparent so the row's grayscale/invert treatment renders it neutral
-  // on both themes (same as the other `logo` refs).
-  { name: 'Goutagny Élagage', type: 'logo', src: '/logos/goutagny.png', href: 'https://www.goutagny-elagage.fr/' },
+  // Goutagny Élagage retiré de la rangée le 8 novembre 2026 (Nathan).
   {
     name: 'Catherine F., pendant le podcast',
     type: 'photo',
