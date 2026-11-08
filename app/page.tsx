@@ -2,7 +2,6 @@ import Nav from '@/components/layout/Nav'
 import MobileCta from '@/components/layout/MobileCta'
 import Hero from '@/components/home/Hero'
 import Transformation from '@/components/home/Transformation'
-import BrandFilm from '@/components/home/BrandFilm'
 import CredibilityBand from '@/components/home/CredibilityBand'
 import ClientsBar from '@/components/home/ClientsBar'
 import Systems from '@/components/home/Systems'
@@ -52,12 +51,9 @@ export default function Home() {
       {/* 3, Avant/Après (diagonale) + bascule « ils sont de l'autre côté » */}
       <Transformation />
 
-      {/* 3a, le film de marque, 36 s. Il reprend la phrase de la section
-          ci-dessus, volontairement : il la met en mouvement, il ne la
-          remplace pas. Contenu à 680 px, pas pleine largeur. Français
-          uniquement, le texte est incrusté dans l'image. */}
-      <BrandFilm />
-      <Divider />
+      {/* Le film de marque « Déployé. Mesuré. Rentabilisé. » (BrandFilm) est
+          retiré de l'accueil le 8 novembre 2026 (Nathan). Il affichait aussi
+          « En production en 4 à 8 semaines », une durée qu'on ne promet plus. */}
 
       {/* 3b, Bandeau « Déployé. Mesuré. Rentabilisé. » (Systems) + CTA « Je veux le mien » */}
       <Systems />
