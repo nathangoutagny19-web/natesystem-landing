@@ -43,6 +43,11 @@ export default function Home() {
       <ClientsBar />
       <Divider />
 
+      {/* Les secteurs, remontés juste sous les logos (Nathan, 8 novembre 2026) :
+          le visiteur voit tout de suite si on parle de son métier. */}
+      <Sectors />
+      <Divider />
+
       {/* 3, Avant/Après (diagonale) + bascule « ils sont de l'autre côté » */}
       <Transformation />
 
@@ -90,9 +95,6 @@ export default function Home() {
       <CtaFinal />
       <Divider />
 
-      {/* 12, Les secteurs qu'on sert (sélecteur interactif) */}
-      <Sectors />
-      <Divider />
 
       {/* 13, Comparatif honnête 4 colonnes */}
       <ComparisonV2 />
