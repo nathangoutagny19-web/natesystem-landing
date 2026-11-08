@@ -205,11 +205,12 @@ export default function Nav() {
             {/* Réalisations, lien direct */}
             <Link href={l('/case-studies')} className="nav-link">{t('nav.realisations')}</Link>
 
-            {/* Ressources, lien direct (seul Services garde un déroulant) */}
+            {/* Ressources, lien direct (seul Services garde un déroulant).
+                « Outils gratuits » a quitté le menu le 8 novembre 2026
+                (Nathan : « mets que Ressources ») : les outils sont dans
+                /resources, section « Outils & démos ». La page /outils reste
+                en ligne pour le référencement. */}
             <Link href={l('/resources')} className="nav-link">{t('nav.resources')}</Link>
-
-            {/* Outils gratuits, lien direct (aimant à leads SEO) */}
-            <Link href={l('/outils')} className="nav-link">{t('nav.freeTools')}</Link>
           </nav>
 
           {/* Right side, lang + CTA */}
@@ -288,8 +289,6 @@ export default function Nav() {
           <MobileLink href={l('/case-studies')} onClick={() => setMenuOpen(false)}>{t('nav.realisations')}</MobileLink>
 
           <MobileLink href={l('/resources')} onClick={() => setMenuOpen(false)}>{t('nav.resources')}</MobileLink>
-
-          <MobileLink href={l('/outils')} onClick={() => setMenuOpen(false)}>{t('nav.freeTools')}</MobileLink>
 
           <div className="flex gap-2 mt-4 flex-wrap">
             {(['en', 'fr'] as const).map(l => (
