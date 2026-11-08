@@ -5,7 +5,7 @@ import Transformation from '@/components/home/Transformation'
 import CredibilityBand from '@/components/home/CredibilityBand'
 import ClientsBar from '@/components/home/ClientsBar'
 import Systems from '@/components/home/Systems'
-import CaseStudy from '@/components/home/CaseStudy'
+import Testimonials from '@/components/home/Testimonials'
 import MiniDiagnosticCta from '@/components/home/MiniDiagnosticCta'
 import WhatWeDo from '@/components/home/WhatWeDo'
 import Different from '@/components/home/Different'
@@ -59,8 +59,9 @@ export default function Home() {
       <Systems />
       <Divider />
 
-      {/* 4, La preuve : vidéo témoignage Chromosome */}
-      <CaseStudy />
+      {/* 4, La preuve : les témoignages, mot pour mot (8 novembre 2026). Le
+          carrousel de cas et ses vidéos sont partis sur /case-studies. */}
+      <Testimonials />
 
       {/* 4b, Encart mini-diagnostic gratuit, juste après le témoignage (plus petit) */}
       <MiniDiagnosticCta />
