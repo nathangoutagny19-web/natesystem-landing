@@ -91,6 +91,23 @@ const SECTORS: Sector[] = [
   },
 ]
 
+/* UN ÉCRAN PAR MÉTIER (8 novembre 2026, Nathan : la section paraissait vide).
+   Captures du kit de démo neutre (~/Projects/Prototypes/demo-kit, prospect
+   « demo-villas », entièrement fictif : aucun nom, lieu ou prix réel), sans
+   la barre latérale ni le bandeau du bas. Même ordre que SECTORS.
+   ⚠︎ Sécurité et événementiel n'ont pas encore d'écran neutre à eux : ils
+   montrent l'écran « Aujourd'hui » et l'écran des prestataires du même kit.
+   Les démos sécurité (Lutèce) et mariage (Lili Events) portent les vraies
+   informations de prospects : jamais sur le site. */
+const SHOTS: { src: string; alt: Record<'fr' | 'en' | 'hu', string> }[] = [
+  { src: '/realisations/secteurs/yachting.jpg', alt: { fr: 'Écran Yachts : embarquements, avitaillement et marge', en: 'Yachts screen: boardings, provisioning and margin', hu: 'Jachtok képernyő: beszállások, ellátás és árrés' } },
+  { src: '/realisations/secteurs/villas.jpg', alt: { fr: 'Écran Séjours : séjours, paiements et propriétaires', en: 'Stays screen: stays, payments and owners', hu: 'Tartózkodások képernyő: tartózkodások, fizetések és tulajdonosok' } },
+  { src: '/realisations/secteurs/conciergerie.jpg', alt: { fr: 'Écran Demandes : chaque demande attribuée et suivie', en: 'Requests screen: every request assigned and followed', hu: 'Kérések képernyő: minden kérés kiosztva és követve' } },
+  { src: '/realisations/secteurs/voyage.jpg', alt: { fr: 'Écran Partenaires : qui a accepté, qui relancer', en: 'Partners screen: who accepted, who to chase', hu: 'Partnerek képernyő: ki fogadta el, kit kell emlékeztetni' } },
+  { src: '/realisations/secteurs/securite.jpg', alt: { fr: 'Écran Aujourd’hui : ce qui demande votre attention', en: 'Today screen: what needs your attention', hu: 'Mai nap képernyő: ami a figyelmét igényli' } },
+  { src: '/realisations/secteurs/evenementiel.jpg', alt: { fr: 'Écran Prestataires : factures et budget suivis', en: 'Suppliers screen: invoices and budget tracked', hu: 'Beszállítók képernyő: számlák és költségvetés követve' } },
+]
+
 export default function Sectors() {
   const { lang } = useLang()
   const d = makeD(lang)
@@ -158,6 +175,28 @@ export default function Sectors() {
                   </ul>
                 </motion.div>
               </AnimatePresence>
+            </div>
+          </div>
+        </FadeUp>
+
+        {/* L'écran du métier actif. Les six images sont empilées et chargées
+            d'avance : le survol d'un métier ne fait pas clignoter l'écran. */}
+        <FadeUp delay={0.15}>
+          <div className="sec-shot" aria-live="polite">
+            <div className="sec-shot-bar" aria-hidden="true"><i /><i /><i /></div>
+            <div className="sec-shot-stack">
+              {SHOTS.map((sh, i) => (
+                /* eslint-disable-next-line @next/next/no-img-element */
+                <img
+                  key={sh.src}
+                  src={sh.src}
+                  alt={i === active ? sh.alt[lang] : ''}
+                  aria-hidden={i === active ? undefined : true}
+                  width={1600}
+                  height={759}
+                  className={i === active ? 'sec-shot-on' : undefined}
+                />
+              ))}
             </div>
           </div>
         </FadeUp>
