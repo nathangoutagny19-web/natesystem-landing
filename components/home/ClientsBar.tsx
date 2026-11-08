@@ -58,10 +58,10 @@ const clients: ClientRef[] = [
      d'Achille (Services Exclusifs) d'après Nathan.
      ⚠︎ Le contrat Wandering Yacht (art. 8) demande un accord ÉCRIT pour les
      citer comme référence : si Judith revient dessus, retirer la ligne.
-     Wandering Yacht reste en wordmark tant que leurs fichiers de marque ne
-     sont pas arrivés (on n'a que le pictogramme de 64 px). */
+     Logo Wandering Yacht : leur monogramme officiel en 512 px, celui de leur
+     site (favicon de wanderingyacht.com), récupéré le 08/11/2026. */
   { name: 'Services Exclusifs', type: 'logo', src: '/logos/services-exclusifs.png', href: 'https://services-exclusifs.ch/' },
-  { name: 'Wandering Yacht', type: 'wordmark', href: 'https://www.wanderingyacht.com/' },
+  { name: 'Wandering Yacht', type: 'logo', src: '/logos/wandering-yacht.png', href: 'https://www.wanderingyacht.com/' },
   /* ⚠︎ LES TROIS RENCONTRES MENENT AU CAS, PAS AU SITE DU CLIENT. C'est
      toute la difference avec les logos au-dessus : un logo dit qui nous
      fait confiance et renvoie chez lui, une rencontre dit ce qu'on a fait
