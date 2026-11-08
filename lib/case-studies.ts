@@ -65,10 +65,13 @@ const caseStudiesFr: CaseStudy[] = [
       'Aujourd’hui, plus de la moitié des clients réservent en ligne, l’outil tourne 24h/24, même le dimanche soir pour le lendemain midi. Fini les clients perdus faute d’avoir décroché entre 10h et 15h.',
       'Côté équipe, les 35 bénévoles ont pris l’outil en main en une quinzaine de jours. Le chef voit les réservations en direct et ajuste ses préparations, moins de gaspillage, donc moins de coûts.',
     ],
+    /* 8 novembre 2026 : verbatim noté du podcast (aMIjJbzuhDc), à vérifier sur
+       la vidéo. L'ancienne citation n'était dans aucune source. Rôle retiré
+       tant qu'il n'est pas tranché (General Manager / Vice-présidente). */
     quote:
-      'Ça a changé notre façon de tout gérer, on ne peut plus s’en passer aujourd’hui. Le gain de temps et de clarté est énorme, et l’équipe est beaucoup plus sereine.',
+      'C’est indispensable maintenant. Si on devait faire toutes les réservations à la main, on perdrait un temps fou.',
     quoteAuthor: 'Catherine F.',
-    quoteRole: 'Vice-présidente · Chromosome Saint-Étienne',
+    quoteRole: 'Chromosome Saint-Étienne',
     metaDescription:
       'Étude de cas Chromosome (Saint-Étienne) : deux logiciels sur-mesure, réservations et planning des bénévoles, pour un restaurant inclusif. +50 % de réservations en ligne, 30 min/jour économisées, gestion en temps réel.',
   },
@@ -159,9 +162,9 @@ const caseStudiesEn: CaseStudy[] = [
       'On the team side, the 35 volunteers took the tool in hand in about a fortnight. The chef sees bookings live and adjusts his preparation, so less waste and lower costs.',
     ],
     quote:
-      'It changed the way we manage everything, we could not do without it now. The gain in time and clarity is enormous, and the team is far more relaxed.',
+      'It’s indispensable now. If we had to take every booking by hand, we’d lose a huge amount of time. (Translated from French.)',
     quoteAuthor: 'Catherine F.',
-    quoteRole: 'Vice-president · Chromosome Saint-Étienne',
+    quoteRole: 'Chromosome Saint-Étienne',
     metaDescription:
       'Chromosome case study (Saint-Étienne): two pieces of custom software, bookings and volunteer rota, for an inclusive restaurant. +50 % of bookings online, 30 minutes a day saved, everything managed in real time.',
   },
@@ -244,9 +247,9 @@ const caseStudiesHu: CaseStudy[] = [
       'A csapat oldalán a 35 önkéntes nagyjából két hét alatt vette kézbe az eszközt. A séf élőben látja a foglalásokat, és ehhez igazítja az előkészületeket, így kevesebb a kidobott étel és alacsonyabbak a költségek.',
     ],
     quote:
-      'Megváltoztatta, ahogyan mindent kezelünk, ma már nem tudnánk nélküle meglenni. Az időben és az átláthatóságban nyert előny óriási, a csapat pedig sokkal nyugodtabb.',
+      'Ma már nélkülözhetetlen. Ha minden foglalást kézzel kellene intézni, rengeteg időt veszítenénk. (Franciából fordítva.)',
     quoteAuthor: 'Catherine F.',
-    quoteRole: 'Alelnök · Chromosome Saint-Étienne',
+    quoteRole: 'Chromosome Saint-Étienne',
     metaDescription:
       'Chromosome esettanulmány (Saint-Étienne): két egyedi szoftver, foglalás és önkéntes-beosztás egy inkluzív étteremnek. A foglalások +50%-a online, napi 30 perc megspórolva, minden valós időben.',
   },

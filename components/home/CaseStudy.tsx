@@ -284,13 +284,18 @@ const CASES: CaseEntry[] = [
         },
       },
     ],
+    /* ⚠︎ 8 novembre 2026 : l'ancienne citation (« Ça a changé notre façon de
+       tout gérer… beaucoup plus sereine ») ne figure dans aucun verbatim
+       sourcé. Remplacée par un verbatim noté du podcast (aMIjJbzuhDc), à
+       vérifier sur la vidéo. Signée avec l'entreprise seule tant que son
+       rôle n'est pas tranché (General Manager / Vice-présidente). */
     quote: {
-      fr: 'Ça a changé notre façon de tout gérer, on ne peut plus s’en passer aujourd’hui. Le gain de temps et de clarté est énorme, et l’équipe est beaucoup plus sereine.',
-      en: 'It changed the way we run everything, we couldn’t do without it now. The time and clarity we’ve gained are huge, and the team is far more at ease.',
-      hu: 'Megváltoztatta, ahogyan mindent kezelünk, ma már nem tudnánk nélküle meglenni. Az időben és az átláthatóságban nyert előny óriási, a csapat pedig sokkal nyugodtabb.',
+      fr: 'On ne fait pas de l’outil numérique pour faire de l’outil numérique. On le met au service d’un problème de gestion.',
+      en: 'We don’t build digital tools for the sake of digital tools. We put them to work on a management problem.',
+      hu: 'Nem a digitális eszköz kedvéért csinálunk digitális eszközt. Egy működési probléma megoldására használjuk.',
     },
     author: 'Catherine F.',
-    role: 'General Manager · Chromosome Saint-Étienne',
+    role: 'Chromosome Saint-Étienne',
   },
 ]
 
