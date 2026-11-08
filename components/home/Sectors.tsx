@@ -57,76 +57,64 @@ type Sector = {
  * La restauration n'apparaît pas : règle permanente, jamais en niche.
  */
 const SECTORS: Sector[] = [
-  /* Ordre du 8 novembre 2026, aligné sur la prospection : yacht, puis
-     conciergerie, puis villas et chalets. Écoles privées et immobilier de
-     prestige retirés (hors cible) ; sécurité privée de luxe ajoutée. */
+  /* Six secteurs du 8 novembre 2026, réécrits par la session prospection sur
+     les données du CRM (6:10prospection/04-prompts-et-contexte/
+     website-secteurs-2026-11-08.md) : douleurs tirées des appels et de la
+     pain map, sans nom ni chiffre. Hôtels, écoles et immobilier (vente)
+     retirés ; le transport VIP rejoint le voyage sur mesure. */
   {
-    nameFr: 'Yachting & transport VIP', nameEn: 'Yachting & VIP transport', nameHu: 'Jacht és VIP szállítás',
-    painFr: 'Arrivées de yachts, avitaillement, transferts, chauffeurs : le planning change d’heure en heure, et chaque dépense avancée pour un client doit être refacturée sans rien oublier.',
-    painEn: 'Yacht arrivals, provisioning, transfers, drivers: the schedule changes by the hour, and every expense advanced for a client has to be re-billed without missing one.',
-    painHu: 'Jachtérkezések, ellátás, transzferek, sofőrök: a beosztás óránként változik, és minden ügyfélnek megelőlegezett költséget hiánytalanul tovább kell számlázni.',
-    buildsFr: ['Un planning en direct par bateau et par véhicule', 'Les commandes d’avitaillement suivies jusqu’à la livraison', 'Chaque dépense avancée, rattachée et refacturée'],
-    buildsEn: ['A live schedule per yacht and per vehicle', 'Provisioning orders tracked through to delivery', 'Every advanced expense, assigned and re-billed'],
-    buildsHu: ['Élő beosztás hajónként és járművenként', 'Az ellátási rendelések követése a kiszállításig', 'Minden megelőlegezett költség hozzárendelve és továbbszámlázva'],
+    nameFr: 'Yachting : charter, gestion et agents', nameEn: 'Yachting: charter, management and agents', nameHu: 'Jachtozás: bérlés, kezelés és ügynökök',
+    painFr: 'Arrivées, avitaillement, disponibilités : chaque demande de charter repart de zéro, bateau par bateau, et chaque dépense avancée pour un yacht en gestion doit finir sur le relevé de son propriétaire, ligne par ligne.',
+    painEn: 'Arrivals, provisioning, availability: every charter request starts from scratch, boat by boat, and every expense advanced for a managed yacht has to end up on its owner’s statement, line by line.',
+    painHu: 'Érkezések, ellátmány, elérhetőség: minden bérlési kérés nulláról indul, hajóról hajóra, és minden kezelt jachtért megelőlegezett költségnek tételesen meg kell jelennie a tulajdonos kimutatásán.',
+    buildsFr: ['Le devis monté depuis votre flotte et vos tarifs, sans tout ressaisir', 'Chaque dépense rattachée à son yacht et refacturée avec votre commission', 'Le relevé mensuel de chaque propriétaire, prêt à envoyer'],
+    buildsEn: ['The quote built from your fleet and your rates, without retyping', 'Every expense tied to its yacht and recharged with your commission', 'Each owner’s monthly statement, ready to send'],
+    buildsHu: ['Az árajánlat a flottájából és áraiból, újragépelés nélkül', 'Minden költség a jachtjához kötve, jutalékkal továbbszámlázva', 'Minden tulajdonos havi kimutatása, küldésre készen'],
+  },
+  {
+    nameFr: 'Villas, chalets et gestion de propriétés', nameEn: 'Villas, chalets and property management', nameHu: 'Villák, faházak és ingatlankezelés',
+    painFr: 'Vous pourriez gérer plus de maisons, mais chaque nouveau bien met des semaines à être prêt, les prestataires se coordonnent un par un, et les propriétaires attendent des nouvelles.',
+    painEn: 'You could manage more homes, but every new property takes weeks to get ready, suppliers are coordinated one by one, and owners are waiting for news.',
+    painHu: 'Több házat is kezelhetne, de minden új ingatlan hetekig tart, mire elkészül, a beszállítókat egyesével kell összehangolni, a tulajdonosok pedig hírekre várnak.',
+    buildsFr: ['Les interventions de chaque maison planifiées, suivies et prouvées en photo', 'Le compte rendu du propriétaire préparé depuis le terrain et envoyé à temps', 'Chaque nouveau bien suivi étape par étape jusqu’à sa mise en location'],
+    buildsEn: ['Each home’s interventions scheduled, tracked and proven with photos', 'The owner’s report prepared from the field and sent on time', 'Each new property followed step by step until it goes live'],
+    buildsHu: ['Minden ház munkái ütemezve, követve és fotóval igazolva', 'A tulajdonosi jelentés a helyszínről összeállítva és időben elküldve', 'Minden új ingatlan lépésről lépésre követve a kiadásig'],
   },
   {
     nameFr: 'Conciergerie privée', nameEn: 'Private concierge', nameHu: 'Magán concierge',
-    painFr: 'Les demandes arrivent par WhatsApp, par mail et par téléphone, à toute heure. Le chauffeur, le chef, la table « confirmée » : tout tient dans une tête, jusqu’au jour où un détail passe à la trappe.',
-    painEn: 'Requests come in by WhatsApp, email and phone, at all hours. The driver, the chef, the « confirmed » table: it all lives in one head, until the day a detail slips.',
-    painHu: 'A kérések WhatsAppon, e-mailben és telefonon érkeznek, bármikor. A sofőr, a séf, a „megerősített” asztal: minden egy fejben van, amíg egy nap el nem csúszik egy részlet.',
-    buildsFr: ['Chaque demande suivie, de la réception à la confirmation', 'Les prestataires reconfirmés la veille, sans y penser', 'La fiche de chaque client, partagée par toute l’équipe'],
-    buildsEn: ['Every request tracked, from arrival to confirmation', 'Suppliers reconfirmed the day before, without thinking about it', 'Each client’s profile, shared by the whole team'],
-    buildsHu: ['Minden kérés követve, a beérkezéstől a megerősítésig', 'A szolgáltatók előző nap újra megerősítve, külön gondolkodás nélkül', 'Minden ügyfél adatlapja, az egész csapat számára elérhető'],
+    painFr: 'Tout arrive sur WhatsApp, à toute heure, et tout passe par vous : savoir quel prestataire a accepté, ce que tel client préfère, ce qu’il reste à facturer.',
+    painEn: 'Everything comes in on WhatsApp, at all hours, and everything goes through you: which supplier accepted, what this client prefers, what is left to invoice.',
+    painHu: 'Minden WhatsAppon érkezik, bármikor, és minden Önön megy keresztül: melyik beszállító fogadta el, mit szeret az adott ügyfél, mit kell még számlázni.',
+    buildsFr: ['Toutes les demandes au même endroit, attribuées et suivies jusqu’au bout', 'La fiche de chaque client, qui se souvient de ses préférences', 'Chaque extra retrouvé sur la facture'],
+    buildsEn: ['Every request in one place, assigned and followed through', 'Each client’s profile, remembering their preferences', 'Every extra back on the invoice'],
+    buildsHu: ['Minden kérés egy helyen, kiosztva és végigkövetve', 'Minden ügyfél adatlapja, amely emlékszik a preferenciáira', 'Minden extra a számlán'],
   },
   {
-    nameFr: 'Gestion de villas et chalets', nameEn: 'Villa and chalet management', nameHu: 'Villák és faházak kezelése',
-    painFr: 'Interventions, ménages, états des lieux, cautions, artisans : chaque propriétaire attend un compte rendu clair, et le préparer prend des heures de ressaisie chaque mois.',
-    painEn: 'Maintenance, cleaning, check-in reports, deposits, contractors: every owner expects a clear report, and preparing it takes hours of re-entry every month.',
-    painHu: 'Javítások, takarítás, állapotfelmérés, kauciók, szakemberek: minden tulajdonos világos beszámolót vár, és ennek elkészítése havonta órákig tartó újragépelés.',
-    buildsFr: ['Un portail par propriétaire : calendrier, interventions, photos', 'Le rapport mensuel qui se prépare tout seul', 'Les artisans et leurs passages suivis par villa'],
-    buildsEn: ['One portal per owner: calendar, work done, photos', 'The monthly report that builds itself', 'Contractors and their visits tracked per villa'],
-    buildsHu: ['Tulajdonosonként egy portál: naptár, elvégzett munkák, fotók', 'A havi jelentés, ami magától elkészül', 'A szakemberek és látogatásaik villánként követve'],
+    nameFr: 'Voyage sur mesure, DMC et transport VIP', nameEn: 'Bespoke travel, DMC and VIP transport', nameHu: 'Egyedi utazás, DMC és VIP szállítás',
+    painFr: 'Chaque devis est refait à la main alors que vos tarifs ne changent pas, et sur le terrain il faut savoir qui a accepté le transfert, qui a confirmé l’hôtel et qui reste à relancer.',
+    painEn: 'Every quote is rebuilt by hand even though your rates don’t change, and on the ground you need to know who accepted the transfer, who confirmed the hotel and who still needs chasing.',
+    painHu: 'Minden árajánlatot kézzel készítenek újra, pedig az árak nem változnak, a helyszínen pedig tudni kell, ki vállalta a transzfert, ki igazolta vissza a szállodát, és kit kell még megkeresni.',
+    buildsFr: ['Le devis et l’itinéraire montés depuis votre grille de prix, à vos couleurs', 'Guides, chauffeurs et partenaires : qui a accepté, qui a refusé, qui relancer', 'Vos prestataires voient leur mission, jamais le numéro de vos clients'],
+    buildsEn: ['The quote and itinerary built from your price grid, in your colours', 'Guides, drivers and partners: who accepted, who declined, who to chase', 'Your suppliers see their mission, never your clients’ numbers'],
+    buildsHu: ['Az árajánlat és az útiterv az árlistájából, az Ön színeiben', 'Idegenvezetők, sofőrök és partnerek: ki fogadta el, ki utasította el, kit kell megkeresni', 'A beszállítók a feladatukat látják, soha nem az ügyfelei számát'],
   },
   {
-    nameFr: 'Voyage de luxe sur mesure', nameEn: 'Bespoke luxury travel', nameHu: 'Egyedi luxusutazás',
-    painFr: 'Chaque proposition se monte à la main, partenaire par partenaire, puis il faut suivre le voyageur jusqu’à son retour. Le temps passé à produire, c’est du temps en moins pour conseiller.',
-    painEn: 'Every proposal is built by hand, partner by partner, then the traveller has to be followed until they are home. Time spent producing is time taken from advising.',
-    painHu: 'Minden ajánlat kézzel készül, partnerről partnerre, aztán az utazót hazaérkezéséig követni kell. Amit a gyártásra fordítanak, az a tanácsadástól hiányzik.',
-    buildsFr: ['Vos itinéraires réutilisables, pour des devis plus rapides', 'Les disponibilités partenaires suivies au même endroit', 'Chaque voyageur suivi jusqu’à son retour'],
-    buildsEn: ['Your itineraries made reusable, for faster quotes', 'Partner availability tracked in one place', 'Every traveller followed until they are home'],
-    buildsHu: ['Újrafelhasználható útitervek a gyorsabb ajánlatokért', 'A partnerek elérhetősége egy helyen követve', 'Minden utazó követve hazaérkezéséig'],
+    nameFr: 'Sécurité privée haut de gamme', nameEn: 'High-end private security', nameHu: 'Prémium magánbiztonság',
+    painFr: 'Des audits sur site, des rapports recopiés à la main, des agents à affecter, et des clients qui veulent savoir sans attendre où en est leur dispositif.',
+    painEn: 'On-site audits, reports copied out by hand, agents to assign, and clients who want to know right away where their protection plan stands.',
+    painHu: 'Helyszíni auditok, kézzel átmásolt jelentések, beosztandó ügynökök, és ügyfelek, akik azonnal tudni akarják, hol tart a védelmük.',
+    buildsFr: ['Le diagnostic sur tablette, et le rapport qui se rédige à partir du terrain', 'Les missions, les agents et les comptes rendus au même endroit', 'Un espace client : son plan d’action, ses équipements, ses échéances'],
+    buildsEn: ['The assessment on a tablet, and the report written from the field', 'Missions, agents and reports in one place', 'A client space: their action plan, their equipment, their deadlines'],
+    buildsHu: ['A felmérés tableten, a jelentés a helyszínről készül', 'Megbízások, ügynökök és jelentések egy helyen', 'Ügyfélfelület: akcióterv, eszközök, határidők'],
   },
   {
-    /* Le cas type : L'Hermitage (Saint-Chamond), maison de réception de groupe.
-       Douleurs tirées de l'appel avec Florian Méheust, 2 octobre 2026. Le nom
-       n'apparaît pas : c'est un prospect, pas un client. */
-    nameFr: 'Hôtels indépendants & maisons de réception', nameEn: 'Boutique hotels & event venues', nameHu: 'Független szállodák és rendezvényházak',
-    painFr: 'Un groupe passe de 40 à 20 la veille, et il faut tout refaire à la main : les repas, le planning des équipes, le ménage, la facture. Le logiciel hôtelier garde les réservations, le reste vit dans des Word et des Excel.',
-    painEn: 'A group drops from 40 to 20 the day before, and everything has to be redone by hand: meals, staff rota, housekeeping, invoice. The hotel software keeps the bookings, the rest lives in Word and Excel files.',
-    painHu: 'Egy csoport előző nap 40-ről 20 főre csökken, és mindent kézzel kell újracsinálni: étkezések, beosztás, takarítás, számla. A szállodai szoftver tárolja a foglalásokat, a többi Word- és Excel-fájlokban él.',
-    buildsFr: ['Un changement d’effectif qui se répercute partout, tout seul', 'Les chambres, les salles et le ménage sur un seul planning', 'Vous gardez la main sur chaque détail : plan de table, chambre calme, exception'],
-    buildsEn: ['A change in numbers that ripples everywhere on its own', 'Rooms, function rooms and housekeeping on one planner', 'You stay in control of every detail: table plan, quiet room, exception'],
-    buildsHu: ['A létszámváltozás magától mindenhol megjelenik', 'Szobák, termek és takarítás egyetlen tervezőn', 'Minden részlet az Ön kezében marad: ültetési rend, csendes szoba, kivétel'],
-  },
-  {
-    nameFr: 'Événementiel & mariages', nameEn: 'Events & weddings', nameHu: 'Rendezvények és esküvők',
+    nameFr: 'Événementiel et mariages haut de gamme', nameEn: 'High-end events and weddings', nameHu: 'Prémium rendezvények és esküvők',
     painFr: 'Un lieu, dix prestataires, un rétroplanning et un budget à tenir, souvent pour plusieurs événements à la fois en saison. Le moindre changement se propage par message, un par un.',
     painEn: 'One venue, ten suppliers, a countdown plan and a budget to hold, often for several events at once in season. Every change spreads by message, one by one.',
     painHu: 'Egy helyszín, tíz szolgáltató, egy visszaszámláló terv és egy tartandó költségvetés, szezonban gyakran több rendezvényre egyszerre. Minden változás üzenetenként, egyesével terjed.',
     buildsFr: ['Le déroulé de chaque événement, partagé en temps réel', 'Les prestataires confirmés, et les manques visibles', 'Le budget suivi ligne par ligne'],
     buildsEn: ['Each event’s run of show, shared in real time', 'Suppliers confirmed, and gaps visible', 'The budget tracked line by line'],
     buildsHu: ['Minden rendezvény menete valós időben megosztva', 'A megerősített szolgáltatók, és a hiányok láthatóan', 'A költségvetés tételenként követve'],
-  },
-  {
-    /* Ajouté le 8 novembre 2026 (Nathan) : segment en test, type HighWatch.
-       Aucun client ni chiffre cité. */
-    nameFr: 'Sécurité privée de luxe', nameEn: 'Luxury private security', nameHu: 'Luxus magánbiztonság',
-    painFr: 'Protection rapprochée, sécurité d’événements, surveillance de villas et de yachts : les missions, les agents et les comptes rendus circulent par WhatsApp et par mail. Le planning change à la dernière minute, et c’est le dirigeant qui recolle tout.',
-    painEn: 'Close protection, event security, villa and yacht surveillance: missions, agents and reports travel by WhatsApp and email. The schedule changes at the last minute, and the owner pieces it all back together.',
-    painHu: 'Személyvédelem, rendezvénybiztonság, villák és jachtok felügyelete: a megbízások, az ügynökök és a jelentések WhatsAppon és e-mailben keringenek. A beosztás az utolsó pillanatban változik, és a vezető rakja össze újra.',
-    buildsFr: ['Chaque mission planifiée, chaque agent prévenu', 'Les comptes rendus déposés au même endroit, horodatés', 'Des données discrètes, hébergées en Europe'],
-    buildsEn: ['Every mission scheduled, every agent notified', 'Mission reports filed in one place, time-stamped', 'Discreet data, hosted in Europe'],
-    buildsHu: ['Minden megbízás beosztva, minden ügynök értesítve', 'A jelentések egy helyen, időbélyeggel', 'Diszkrét adatok, Európában tárolva'],
   },
 ]
 
