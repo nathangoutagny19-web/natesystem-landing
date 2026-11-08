@@ -30,6 +30,9 @@ export default function MontenegroPage({ data }: { data: MontenegroPageData }) {
       logo: `${SITE_URL}/logo.png`,
       email: 'nathan@natesystem.com',
       founder: { '@type': 'Person', name: 'Nathan Goutagny' },
+      /* Basé à Tivat, d'après Nathan (8 novembre 2026). Clients au Monténégro,
+         en Suisse, en France et en Hongrie. */
+      address: { '@type': 'PostalAddress', addressLocality: 'Tivat', addressCountry: 'ME' },
       areaServed: data.areaServed.map((name) => ({ '@type': 'Place', name })),
       knowsAbout: data.services.map((s) => s.title),
     },
@@ -67,7 +70,7 @@ export default function MontenegroPage({ data }: { data: MontenegroPageData }) {
         {/* Le même hero que l'accueil (Nathan, 8 novembre 2026 : « remets la même
             hero que ce matin »). Le titre local de la page passe en H2 juste
             en dessous, pour garder Tivat / Kotor dans le contenu. */}
-        <Hero />
+        <Hero label="Based in Tivat · Working worldwide" />
 
         <ClientsBar />
 

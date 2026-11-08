@@ -92,16 +92,16 @@ export const MONTENEGRO_PAGES: Record<MontenegroPageData['path'], MontenegroPage
     path: '/montenegro',
     title: 'Web Design & Digital Agency in Montenegro | NateSystem',
     description:
-      'Digital agency for luxury hospitality in Montenegro: websites, custom software, content and ads in Tivat, Kotor and Budva. You own the code. Free audit.',
+      'Digital agency based in Tivat: websites, custom software, content and ads for luxury hospitality in Montenegro and abroad. You own the code. Free audit.',
     eyebrow: 'Montenegro · Tivat · Kotor · Budva',
     h1: 'Websites, software and ads for luxury hospitality in Montenegro.',
     intro:
-      'NateSystem is a web design, software and marketing agency for yacht charter and management, villas, concierge services, boutique hotels and tours. We build your website, the software your team runs on, your content and your ads, all connected, all yours.',
+      'Based in Tivat, NateSystem is a web design, software and marketing agency for yacht charter and management, villas, concierge services, boutique hotels and tours. We build your website, the software your team runs on, your content and your ads, all connected, all yours.',
     breadcrumb: [
       { name: 'NateSystem', href: '/en' },
       { name: 'Montenegro', href: '/en/montenegro' },
     ],
-    areaServed: ['Montenegro', 'Tivat', 'Kotor', 'Budva', 'Herceg Novi', 'Porto Montenegro'],
+    areaServed: ['Montenegro', 'Tivat', 'Kotor', 'Budva', 'Herceg Novi', 'Porto Montenegro', 'Switzerland', 'France', 'Hungary'],
     servicesTitle: 'What we build for Montenegro businesses',
     services: [
       {
@@ -166,17 +166,17 @@ export const MONTENEGRO_PAGES: Record<MontenegroPageData['path'], MontenegroPage
     path: '/montenegro/tivat',
     title: 'Web Design & Software Agency in Tivat | NateSystem',
     description:
-      'Web design, software and marketing agency for yacht charter, yacht management and luxury businesses in Tivat and Porto Montenegro. You own the code.',
-    eyebrow: 'Tivat · Porto Montenegro',
+      'Web design, software and marketing agency based in Tivat, for yacht charter, yacht management and luxury businesses. Clients across Europe.',
+    eyebrow: 'Based in Tivat · Porto Montenegro',
     h1: 'Websites, software and ads for yacht and luxury businesses in Tivat.',
     intro:
-      'A web design, software and marketing agency for charter companies, yacht managers, superyacht agents, villas and concierge services around Porto Montenegro. We build the website your clients see and the software your team runs on, connected and owned by you.',
+      'Based in Tivat, NateSystem is a web design, software and marketing agency for charter companies, yacht managers, superyacht agents, villas and concierge services around Porto Montenegro. We build the website your clients see and the software your team runs on, connected and owned by you. And we work worldwide, with clients in Montenegro, Switzerland, France and Hungary.',
     breadcrumb: [
       { name: 'NateSystem', href: '/en' },
       { name: 'Montenegro', href: '/en/montenegro' },
       { name: 'Tivat', href: '/en/montenegro/tivat' },
     ],
-    areaServed: ['Tivat', 'Porto Montenegro', 'Montenegro'],
+    areaServed: ['Tivat', 'Porto Montenegro', 'Montenegro', 'Switzerland', 'France', 'Hungary'],
     servicesTitle: 'What we build in Tivat',
     services: [
       {
@@ -215,7 +215,8 @@ export const MONTENEGRO_PAGES: Record<MontenegroPageData['path'], MontenegroPage
     localTitle: 'Built for the Porto Montenegro season',
     local: [
       'Tivat runs on a season: boats arrive, crews change, owners visit, suppliers are booked weeks ahead and then changed the day before. The busiest weeks are the ones where nothing can slip.',
-      'We already work with a yacht company in Tivat. We know the rhythm of the marina, the owners who want reports and the captains who want answers, and we build tools that fit that pace.',
+      'We are based in Tivat and already work with a yacht company here. We know the rhythm of the marina, the owners who want reports and the captains who want answers, and we build tools that fit that pace.',
+      'From Tivat, we also work for clients in Switzerland, France and Hungary: concierge and property services, schools, hospitality groups and consultants. Same method, same ownership of the code.',
     ],
     related: [
       { label: 'All of Montenegro', href: '/en/montenegro' },
@@ -223,6 +224,10 @@ export const MONTENEGRO_PAGES: Record<MontenegroPageData['path'], MontenegroPage
     ],
     why: WHY,
     faq: [
+      {
+        q: 'Is NateSystem based in Tivat?',
+        a: 'Yes. NateSystem is based in Tivat, Montenegro, and works worldwide, with clients in Montenegro, Switzerland, France and Hungary.',
+      },
       {
         q: 'Do you build software for yacht management companies in Tivat?',
         a: 'Yes. We build custom tools for yacht charter and management: expenses per yacht, owner reports, supplier orders, crew and check-ins, around the way your team already works.',

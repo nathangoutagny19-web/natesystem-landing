@@ -76,7 +76,9 @@ function RotatingWord({ words }: { words: string[] }) {
   )
 }
 
-export default function Hero() {
+/** `label` remplace le surtitre, sans toucher au reste : les pages Monténégro
+    y disent « Based in Tivat » (8 novembre 2026). */
+export default function Hero({ label }: { label?: string } = {}) {
   const { lang, t } = useLang()
   const words = t('hero.titleWords').split('|').map((w) => w.trim()).filter(Boolean)
 
@@ -84,7 +86,7 @@ export default function Hero() {
     <section className="relative min-h-screen flex flex-col items-center justify-center text-center hero-section" style={{ padding: '140px 24px 80px' }}>
       {/* Label */}
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1, ease }} className="mb-8">
-        <span className="section-label hero-eyebrow">{t('hero.label')}</span>
+        <span className="section-label hero-eyebrow">{label ?? t('hero.label')}</span>
       </motion.div>
 
       {/* Title, NateSystem signature: serif italic, scaled up for the new outcome-first H1 */}
