@@ -1642,101 +1642,104 @@ export const translations = {
     fr: 'honnêtes.',
     hu: 'válaszok.',
   },
-  // Q1, what we build
+  /* FAQ refaite le 8 novembre 2026 sur les questions que les prospects ont
+     vraiment posées en appel, en réponse ou à la signature (session
+     6:10prospection, à valider par Nathan sur la prévisualisation). La table
+     des sources reste hors du site : ~/Business/Commercial/6:10prospection/
+     04-prompts-et-contexte/website-faq-2026-11-08.md.
+     ⚠︎ Q8, LA PREUVE : seulement la conciergerie sous NDA (30 h, forme imposée
+     par brain/accounts/conciergerie-nda.md) et l'Institut des Chartreux
+     (40 h). « Hospitality Management et d'autres structures » n'est PAS
+     sourcé (brain/accounts/vendeglatas-menedzsment.md) : ne pas le remettre. */
   'faq.q1': {
-    en: 'What do you actually build?',
-    fr: 'Qu’est-ce que vous construisez concrètement ?',
-    hu: 'Pontosan mit építenek?',
+    en: 'How much does it cost?',
+    fr: 'Combien ça coûte ?',
+    hu: 'Mennyibe kerül?',
   },
   'faq.a1': {
-    en: 'Three connected things. The software that runs your organisation: stays and events, suppliers, client profiles, team rotas, quotes and invoicing. The online presence that goes with it: website, search visibility, event landing pages, campaign strategy. And the tracking that links the two, so you know where each request comes from and what it brings in.',
-    fr: 'Trois choses reliées. Le logiciel qui fait tourner votre organisation : séjours et événements, prestataires, fiches clients, planning des équipes, devis et facturation. L’image en ligne qui va avec : site, référencement, pages pour vos événements, stratégie de campagnes. Et le suivi qui relie les deux, pour savoir d’où vient chaque demande et ce qu’elle rapporte.',
-    hu: 'Három összekapcsolt dolgot. A szoftvert, amely a szervezetét működteti: tartózkodások és események, beszállítók, ügyféladatlapok, csapatbeosztás, árajánlatok és számlázás. A hozzá tartozó online megjelenést: weboldal, keresőoptimalizálás, eseményoldalak, kampánystratégia. És a követést, amely a kettőt összeköti, hogy tudja, honnan jön minden kérés, és mit hoz.',
+    en: 'A firm price, set before we start, for a scope written down in black and white. You pay for the build once, then a maintenance plan of your choice, with no commitment and no per-user licence. The price depends on what we build: we set it together after a first 20-minute conversation.',
+    fr: 'Un prix ferme, fixé avant de commencer, pour un périmètre écrit noir sur blanc. Vous payez le développement une fois, puis une maintenance au choix, sans engagement et sans licence par utilisateur. Le prix dépend de ce qu’on construit : on le fixe ensemble après un premier échange de 20 minutes.',
+    hu: 'Fix ár, amelyet a munka megkezdése előtt rögzítünk, írásban meghatározott feladatkörre. A fejlesztést egyszer fizeti ki, utána választható karbantartási csomag jön, kötelezettség és felhasználónkénti licenc nélkül. Az ár attól függ, mit építünk: egy első, 20 perces beszélgetés után közösen határozzuk meg.',
   },
-
-  // Q2, timeline (price removed, given on the call)
   'faq.q2': {
-    en: 'Is it a development project?',
-    fr: 'C’est une prestation de développement ?',
-    hu: 'Ez egy fejlesztési megbízás?',
+    en: 'We already have software (Hostaway, Avantio, a channel manager…). Why another one?',
+    fr: 'On a déjà un logiciel (Hostaway, Avantio, un channel manager…). Pourquoi un autre ?',
+    hu: 'Már van szoftverünk (Hostaway, Avantio, channel manager…). Miért kellene még egy?',
   },
-  /* ⚠︎ LA QUESTION RESTE, LA RÉPONSE NE CHIFFRE PLUS. Retirer le délai
-     sans rien mettre laisserait une question sans réponse, ce qui est
-     pire qu'un chiffre. La réponse porte donc ce qui est réellement
-     fixe : la méthode, et le prototype validé avant tout engagement
-     (S9). Le chiffre revient le jour où Nathan fixe le délai. */
   'faq.a2': {
-    en: 'No. It’s a long-term partnership. We build the first version on your real data, then the system evolves with you, season after season: new needs, new sites, new channels. You keep one point of contact who knows your organisation, trains your team and keeps improving the tool. And the code is yours from day one.',
-    fr: 'Non. C’est un partenariat dans la durée. On construit la première version sur vos vraies données, puis le système évolue avec vous, saison après saison : nouveaux besoins, nouveaux lieux, nouveaux canaux. Vous gardez un seul interlocuteur qui connaît votre organisation, forme vos équipes et fait progresser l’outil. Et le code est à vous dès le premier jour.',
-    hu: 'Nem. Ez hosszú távú partnerség. Az első változatot a valódi adatain építjük meg, aztán a rendszer Önnel együtt fejlődik, szezonról szezonra: új igények, új helyszínek, új csatornák. Egyetlen kapcsolattartója marad, aki ismeri a szervezetét, képzi a csapatát, és folyamatosan fejleszti az eszközt. A forráskód pedig az első naptól az Öné.',
+    en: 'Keep it. It does what it was built for: your listings, your calendars, your platforms. We build what it doesn’t do, alongside it: your clients’ requests, your suppliers, your owners, your quotes, your extras. And we connect to it when it allows.',
+    fr: 'Gardez-le. Il fait bien ce pour quoi il est fait : vos annonces, vos calendriers, vos plateformes. On construit ce qu’il ne fait pas, à côté : les demandes de vos clients, vos prestataires, vos propriétaires, vos devis, vos extras. Et on s’y branche quand il le permet.',
+    hu: 'Tartsa meg. Jól végzi, amire készült: a hirdetéseit, a naptárait, a platformjait. Mi azt építjük meg mellé, amit nem tud: az ügyfelei kéréseit, a beszállítóit, a tulajdonosait, az árajánlatait, az extráit. És ha lehetővé teszi, rá is kapcsolódunk.',
   },
-
-  // Q3, reliability + SLA
   'faq.q3': {
-    en: 'Will it stay reliable once it’s live?',
-    fr: 'Le système restera-t-il fiable une fois en production ?',
-    hu: 'Megbízható marad éles üzemben is?',
+    en: 'My team has no time to learn a new tool.',
+    fr: 'Mon équipe n’a pas le temps d’apprendre un nouvel outil.',
+    hu: 'A csapatomnak nincs ideje új eszközt megtanulni.',
   },
   'faq.a3': {
-    en: 'Yes. Monitored constantly, backed up several times a day, and we step in fast if anything goes wrong. An arrival can’t happen without a rota or a confirmed driver: it’s built for that.',
-    fr: 'Oui. Surveillé en permanence, sauvegardé plusieurs fois par jour, et on intervient vite en cas de souci. Une arrivée ne peut pas se passer sans planning ni chauffeur confirmé : c’est dimensionné pour ça.',
-    hu: 'Igen. Folyamatosan felügyelve, naponta többször mentve, és gyorsan beavatkozunk, ha gond van. Egy érkezés nem történhet beosztás és megerősített sofőr nélkül: erre van méretezve.',
+    en: 'We start with a single building block, the one that frees you the most, and we import your files ourselves. Your team finds your words and your steps, not those of generic software. The rest comes at the pace of your season.',
+    fr: 'On commence par une seule brique, celle qui vous libère le plus, et on importe vos fichiers nous-mêmes. Votre équipe retrouve vos mots et vos étapes, pas ceux d’un logiciel générique. Le reste arrive au rythme de votre saison.',
+    hu: 'Egyetlen elemmel kezdünk, azzal, amelyik a legtöbb terhet veszi le Önről, és a fájljait mi magunk importáljuk. A csapata a saját kifejezéseit és lépéseit találja benne, nem egy általános szoftverét. A többi a szezonja ritmusában érkezik.',
   },
-
-  // Q4, automations + AI catalog (concrete, not buzzwords)
   'faq.q4': {
-    en: 'Do we have to change how we work?',
-    fr: 'Il faut changer notre organisation pour que ça marche ?',
-    hu: 'Meg kell változtatnunk a működésünket?',
+    en: 'Does it work with WhatsApp?',
+    fr: 'Ça marche avec WhatsApp ?',
+    hu: 'Működik WhatsAppal?',
   },
   'faq.a4': {
-    en: 'No, it’s the other way round. Off-the-shelf software asks you to fit its boxes because it’s sold to everyone. Here your rules are encoded once, as they are. Your suppliers, your rates, your seasons, your way of receiving clients: the tool adapts.',
-    fr: 'Non, c’est l’inverse. Un logiciel du marché vous demande de rentrer dans ses cases parce qu’il est vendu à tout le monde. Ici, vos règles sont encodées une fois, telles qu’elles sont. Vos prestataires, vos tarifs, vos saisons, votre façon de recevoir : c’est l’outil qui s’aligne.',
-    hu: 'Nem, éppen fordítva. A dobozos szoftver azt kéri, illeszkedjen a rubrikáiba, mert mindenkinek eladják. Itt a szabályait egyszer kódoljuk le, úgy, ahogy vannak. A beszállítói, az árai, a szezonjai, a vendégfogadása: az eszköz igazodik.',
+    en: 'Yes, it’s often where we start: requests that come in on WhatsApp land in the tool, with their client, their deadline and their status. The direct connection goes through WhatsApp Business, which we check with you at launch.',
+    fr: 'Oui, c’est souvent par là qu’on commence : les demandes qui arrivent sur WhatsApp atterrissent dans l’outil, avec leur client, leur échéance et leur statut. La connexion directe passe par WhatsApp Business, que nous vérifions avec vous au lancement.',
+    hu: 'Igen, gyakran innen indulunk: a WhatsAppon érkező kérések bekerülnek az eszközbe, az ügyféllel, a határidővel és az állapottal együtt. A közvetlen kapcsolat a WhatsApp Businessen keresztül működik, ezt az indításkor Önnel együtt ellenőrizzük.',
   },
-
-  // Q5, anti lock-in
   'faq.q5': {
     en: 'What if you disappear tomorrow?',
     fr: 'Et si vous disparaissez demain ?',
     hu: 'Mi van, ha holnap eltűnnek?',
   },
   'faq.a5': {
-    en: 'You own 100% of the code and it runs on your infrastructure. Full documentation included. Any competent developer can take over. Your client data is never held hostage by a subscription.',
-    fr: '100 % du code vous appartient et tourne sur votre infrastructure. Documentation complète incluse. N’importe quel développeur compétent reprend derrière. Vos données clients ne sont jamais otages d’un abonnement.',
-    hu: 'A forráskód 100%-ban az Öné, és az Ön infrastruktúráján fut. Teljes dokumentációval. Bármely hozzáértő fejlesztő átveheti. Az ügyféladatai soha nem egy előfizetés túszai.',
+    en: 'The code and the data are in your name. You can export everything at any time, and any developer can take over the next day. Nothing depends on a platform you don’t control.',
+    fr: 'Le code et les données sont à votre nom. Vous pouvez tout exporter à tout moment, et n’importe quel développeur peut reprendre le lendemain. Rien ne dépend d’une plateforme que vous ne contrôlez pas.',
+    hu: 'A kód és az adatok az Ön nevén vannak. Bármikor mindent exportálhat, és bármely fejlesztő átveheti másnap. Semmi sem függ olyan platformtól, amely felett nincs kontrollja.',
   },
-
-  // Q6, industries
   'faq.q6': {
-    en: 'Do you only work in luxury hospitality?',
-    fr: 'Vous ne travaillez qu’avec l’hospitalité de luxe ?',
-    hu: 'Csak a luxusvendéglátással dolgoznak?',
+    en: 'Where is our data, and who can access it?',
+    fr: 'Où sont nos données, et qui y a accès ?',
+    hu: 'Hol vannak az adataink, és ki fér hozzájuk?',
   },
   'faq.a6': {
-    en: 'That’s where we focus: villas, chalets and estates, concierge services, yachts, boutique hotels, event venues. We built for very demanding organisations before, schools and multi-site groups, and it shows in the method.',
-    fr: 'C’est là qu’on se concentre : villas, chalets et domaines, conciergeries, yachts, hôtels indépendants et maisons de réception. On a construit avant pour des organisations très exigeantes, des écoles et des groupes multi-sites, et ça se voit dans la méthode.',
-    hu: 'Erre koncentrálunk: villák, faházak és birtokok, concierge-szolgáltatások, jachtok, független szállodák, rendezvényhelyszínek. Korábban nagyon igényes szervezeteknek építettünk, iskoláknak és többtelephelyes csoportoknak, és ez látszik a módszeren.',
+    en: 'Hosted in Europe, encrypted, backed up every day. Everyone sees only what concerns them: you, your team, your owners or your clients. Two-factor authentication for those who want it.',
+    fr: 'Hébergées en Europe, chiffrées, sauvegardées chaque jour. Chacun ne voit que ce qui le concerne : vous, votre équipe, vos propriétaires ou vos clients. Double authentification pour ceux qui le veulent.',
+    hu: 'Európában tárolva, titkosítva, naponta mentve. Mindenki csak azt látja, ami rá tartozik: Ön, a csapata, a tulajdonosai vagy az ügyfelei. Kétlépcsős azonosítás annak, aki kéri.',
   },
   'faq.q7': {
-    en: 'Do you promise more bookings?',
-    fr: 'Vous promettez plus de réservations ?',
-    hu: 'Több foglalást ígérnek?',
+    en: 'Does it work on a phone, in the field?',
+    fr: 'Ça marche sur téléphone, sur le terrain ?',
+    hu: 'Működik telefonon, terepen?',
   },
   'faq.a7': {
-    en: 'No, and be wary of anyone who does. We give you what you need to know what works: where your clients come from, what each source costs and what it brings in. The decisions stay yours. We don’t run your social media either: if someone does, we track what it brings in the same dashboard.',
-    fr: 'Non, et méfiez-vous de qui le promet. On vous donne de quoi savoir ce qui marche : d’où viennent vos clients, ce que coûte chaque source et ce qu’elle rapporte. Les décisions restent les vôtres. On ne gère pas non plus vos réseaux sociaux : si quelqu’un s’en occupe, on suit ce qu’ils apportent dans le même tableau de bord.',
-    hu: 'Nem, és óvakodjon attól, aki ígéri. Megadjuk, amire szüksége van ahhoz, hogy tudja, mi működik: honnan jönnek az ügyfelei, mennyibe kerül és mit hoz az egyes források. A döntések az Önéi maradnak. A közösségi médiát sem mi kezeljük: ha valaki foglalkozik vele, ugyanabban az irányítópultban követjük, mit hoz.',
+    en: 'The tool is designed for phone and tablet, where your teams actually work. With no signal, data entry carries on and syncs as soon as the connection is back.',
+    fr: 'L’outil est pensé pour le téléphone et la tablette, là où vos équipes travaillent vraiment. Sans réseau, la saisie continue et se synchronise dès que la connexion revient.',
+    hu: 'Az eszközt telefonra és tabletre terveztük, oda, ahol a csapatai valóban dolgoznak. Térerő nélkül is lehet rögzíteni, és amint visszajön a kapcsolat, minden szinkronizálódik.',
   },
   'faq.q8': {
-    en: 'Where is our client data hosted?',
-    fr: 'Où sont hébergées les données de nos clients ?',
-    hu: 'Hol tárolják az ügyfeleink adatait?',
+    en: 'Who have you done this for?',
+    fr: 'Vous avez déjà fait ça pour qui ?',
+    hu: 'Kinek csinálták már ezt?',
   },
   'faq.a8': {
-    en: 'In Europe, and nowhere else. Discretion is part of your service, so it’s part of ours: European hosting, GDPR built in from the start, tracking with consent, and access split by role. Management doesn’t see what a supplier sees.',
-    fr: 'En Europe, et nulle part ailleurs. La discrétion fait partie de votre service, donc du nôtre : hébergement européen, RGPD pris en compte dès la conception, suivi avec consentement, et accès cloisonnés par rôle. La direction ne voit pas la même chose qu’un prestataire.',
-    hu: 'Európában, és sehol máshol. A diszkréció az Ön szolgáltatásának része, így a miénknek is: európai tárhely, beépített GDPR, hozzájáruláson alapuló követés, és szerepkörök szerint elválasztott hozzáférés. A vezetőség nem ugyanazt látja, mint egy beszállító.',
+    en: 'A concierge business we work with, under NDA, got back 30 hours a month and a clear improvement in client experience. Institut des Chartreux, in Lyon, reports 40 hours a month given back to its team.',
+    fr: 'Une conciergerie que nous accompagnons, sous NDA, a récupéré 30 h par mois et une nette amélioration de l’expérience client. L’Institut des Chartreux, à Lyon, rapporte 40 h par mois rendues à son équipe.',
+    hu: 'Egy concierge-cég, amellyel titoktartási megállapodás mellett dolgozunk, havi 30 órát nyert vissza, és az ügyfélélmény is érezhetően javult. Az Institut des Chartreux (Lyon) beszámolója szerint a csapata havi 40 órát kapott vissza.',
+  },
+  'faq.q9': {
+    en: 'Do you promise results?',
+    fr: 'Vous promettez des résultats ?',
+    hu: 'Eredményt ígérnek?',
+  },
+  'faq.a9': {
+    en: 'No, nobody honest can. What we guarantee: a tool built on the way you work, yours, delivered step by step, and adjusted every week with you.',
+    fr: 'Non, personne d’honnête ne peut le faire. Ce qu’on garantit : un outil construit sur votre façon de travailler, à vous, livré étape par étape, et ajusté chaque semaine avec vous.',
+    hu: 'Nem, ezt senki sem ígérheti, aki őszinte. Amit garantálunk: egy az Ön munkamódjára épülő eszköz, amely az Öné, lépésről lépésre átadva, és minden héten Önnel együtt finomítva.',
   },
 
   // StrategyCall section
