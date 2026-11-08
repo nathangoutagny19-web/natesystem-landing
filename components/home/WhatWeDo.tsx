@@ -7,30 +7,36 @@ import FadeUp from '@/components/ui/FadeUp'
 
 type Item = { titleFr: string; titleEn: string; titleHu: string; descFr: string; descEn: string; descHu: string }
 
+/* 8 novembre 2026 (Nathan : « ça se lit comme “automatiser le répétitif”,
+   alors que l'offre est bien plus »). Réécrit sur ce que les comptes signés
+   ont réellement acheté : toute l'activité au même endroit, la délégation,
+   la vue d'ensemble du fondateur, les espaces clients et propriétaires,
+   l'argent. Plus d'attribution d'acquisition (la 360, parquée), plus de
+   phase de cartographie avant engagement, plus de vocabulaire hôtelier. */
 const ITEMS: Item[] = [
   {
-    titleFr: 'On cartographie votre organisation',
-    titleEn: 'We map how your organisation runs', titleHu: 'Feltérképezzük a szervezetét',
-    descFr: 'Quelques appels avec les personnes qui font le travail. Qui fait quoi, avec quel outil, et d’où viennent vos clients, de la première visite sur votre site jusqu’au départ.',
-    descEn: 'A few calls with the people who do the work. Who does what, with which tool, and where your clients come from, from their first visit to your website to their departure.', descHu: 'Néhány beszélgetés azokkal, akik a munkát végzik. Ki mit csinál, milyen eszközzel, és honnan jönnek az ügyfelei, a weboldal első meglátogatásától a távozásig.',
+    titleFr: 'On comprend comment vous travaillez',
+    titleEn: 'We understand how you work', titleHu: 'Megértjük, hogyan dolgozik',
+    descFr: 'Un échange de 20 minutes, puis un lancement avec vous et ceux qui font le travail : le chemin d’une demande, vos prestataires, vos propriétaires, vos tarifs, ce que vous facturez. Rien à préparer, on écrit.',
+    descEn: 'A 20-minute conversation, then a kickoff with you and the people who do the work: the path of a request, your suppliers, your owners, your rates, what you invoice. Nothing to prepare, we take the notes.', descHu: 'Egy 20 perces beszélgetés, aztán egy indítás Önnel és azokkal, akik a munkát végzik: egy kérés útja, a beszállítói, a tulajdonosai, az árai, amit számláz. Semmit nem kell előkészítenie, mi jegyzetelünk.',
   },
   {
-    titleFr: 'On construit votre plateforme et votre image',
-    titleEn: 'We build your platform and your online presence', titleHu: 'Megépítjük a platformját és az online megjelenését',
-    descFr: 'Sur vos règles : vos prestataires, vos tarifs, vos saisons, vos lieux. Encodés une fois, tels qu’ils sont. Le site et les pages de vos événements sont branchés dessus dès le départ.',
-    descEn: 'On your rules: your suppliers, your rates, your seasons, your places. Encoded once, as they are. The website and your event pages are connected to it from day one.', descHu: 'Az Ön szabályaira: a beszállítóira, az áraira, a szezonjaira, a helyszíneire. Egyszer lekódolva, úgy, ahogy vannak. A weboldal és az eseményoldalak az első naptól rá vannak kötve.',
+    titleFr: 'On construit votre outil, à votre image',
+    titleEn: 'We build your tool, in your image', titleHu: 'Megépítjük az eszközét, az Ön arculatára',
+    descFr: 'Vos demandes, vos devis, vos prestataires, vos propriétaires et vos factures au même endroit, sur ordinateur et sur téléphone. Avec, si vous le voulez, l’espace de vos clients et de vos propriétaires, et votre site.',
+    descEn: 'Your requests, quotes, suppliers, owners and invoices in one place, on computer and on phone. And, if you want them, a space for your clients and your owners, and your website.', descHu: 'A kérései, az árajánlatai, a beszállítói, a tulajdonosai és a számlái egy helyen, számítógépen és telefonon. És ha szeretné, egy felület az ügyfelei és a tulajdonosai számára, valamint a weboldala.',
   },
   {
-    titleFr: 'On suit tout, et on automatise le répétitif',
-    titleEn: 'We track everything, and automate the repetitive', titleHu: 'Mindent követünk, és automatizáljuk az ismétlődőt',
-    descFr: 'Chaque demande porte son origine, chaque client son historique. Les relances, les reconfirmations et les documents récurrents partent seuls. Vous décidez sur des chiffres, plus de mémoire.',
-    descEn: 'Every request carries its source, every client their history. Follow-ups, reconfirmations and recurring documents go out on their own. You decide on numbers, not from memory.', descHu: 'Minden kérés hordozza a forrását, minden ügyfél az előzményeit. Az emlékeztetők, az újbóli megerősítések és az ismétlődő dokumentumok maguktól mennek ki. Számok alapján dönt, nem emlékezetből.',
+    titleFr: 'Votre équipe prend le relais, vous gardez la vue d’ensemble',
+    titleEn: 'Your team takes over, you keep the overview', titleHu: 'A csapata átveszi, Ön megtartja az áttekintést',
+    descFr: 'Chacun voit ce qui le concerne et avance sans tout vous demander. Vous voyez où en est chaque demande, ce qui est en retard, ce qu’il reste à facturer et ce que rapporte chaque client. Les relances et les reconfirmations partent toutes seules.',
+    descEn: 'Everyone sees what concerns them and moves forward without asking you everything. You see where each request stands, what is late, what is left to invoice and what each client brings in. Follow-ups and reconfirmations go out on their own.', descHu: 'Mindenki azt látja, ami rá tartozik, és halad anélkül, hogy mindent Öntől kérdezne. Ön látja, hol tart minden kérés, mi késik, mit kell még kiszámlázni, és mennyit hoz egy-egy ügyfél. Az emlékeztetők és a visszaigazolások maguktól mennek ki.',
   },
   {
     titleFr: 'On forme, puis on fait évoluer avec vous',
     titleEn: 'We train, then keep evolving with you', titleHu: 'Képzünk, aztán együtt fejlődünk',
-    descFr: 'Construire l’outil est la partie facile. Le faire adopter par vous, l’équipe et les prestataires, c’est le vrai travail. Ensuite, le système évolue avec vous, saison après saison : c’est un partenariat, pas une livraison.',
-    descEn: 'Building the tool is the easy part. Getting you, the team and your suppliers to use it is the real work. Then the system evolves with you, season after season: it’s a partnership, not a delivery.', descHu: 'Az eszköz megépítése a könnyebb rész. Az igazi munka az, hogy Ön, a csapata és a beszállítói használják is. Utána a rendszer Önnel együtt fejlődik, szezonról szezonra: ez partnerség, nem egyszeri átadás.',
+    descFr: 'Toute l’équipe formée jusqu’à l’autonomie, puis l’outil grandit avec vous, saison après saison. Le code et les données restent à vous.',
+    descEn: 'The whole team trained until they are autonomous, then the tool grows with you, season after season. The code and the data stay yours.', descHu: 'Az egész csapatot betanítjuk, amíg önálló nem lesz, aztán az eszköz Önnel együtt nő, szezonról szezonra. A kód és az adatok az Önéi maradnak.',
   },
 ]
 
