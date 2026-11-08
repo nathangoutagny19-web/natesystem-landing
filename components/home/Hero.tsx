@@ -10,6 +10,7 @@ import { CAL_LINK } from '@/lib/constants'
    Jamais « prototype » : règle de la prospection. */
 const AUDIT_LINK = '/audit-gratuit'
 import { localizedHref } from '@/lib/routes'
+import { makeD } from '@/lib/lang'
 import VslPlayer from '@/components/ui/VslPlayer'
 
 const ease = [0.22, 1, 0.36, 1] as const
@@ -77,97 +78,80 @@ function RotatingWord({ words }: { words: string[] }) {
 
 export default function Hero() {
   const { lang, t } = useLang()
+  const d = makeD(lang)
   const words = t('hero.titleWords').split('|').map((w) => w.trim()).filter(Boolean)
+  /* Une simple apparition en fondu, rien qui glisse (Nathan, 8 novembre 2026). */
+  const fade = (delay: number) => ({ initial: { opacity: 0 }, animate: { opacity: 1 }, transition: { duration: 0.9, delay, ease } })
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center text-center hero-section" style={{ padding: '140px 24px 80px' }}>
-      {/* Label */}
-      <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1, ease }} className="mb-8">
-        <span className="section-label hero-eyebrow">{t('hero.label')}</span>
-      </motion.div>
+    /* LE HERO DU 8 NOVEMBRE 2026, sur le modèle de gourmetmarketing.net : fond
+       sombre, texte aligné à gauche, deux grandes phrases en serif droite, la
+       seconde porte les chiffres, « 40 heures » en rouge. La ligne de preuve en
+       petites capitales et la pastille à icône sont retirées. */
+    <section className="hero-section" style={{ background: 'radial-gradient(80% 70% at 100% 0%, rgba(230,57,70,0.09), transparent 60%), #0e0e12', padding: '168px 24px 96px' }}>
+      <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+        <motion.p {...fade(0.05)} className="font-mono" style={{ fontSize: 11, letterSpacing: '0.22em', textTransform: 'uppercase', color: 'rgba(240,240,242,0.5)' }}>
+          {t('hero.label')}
+        </motion.p>
 
-      {/* Title, NateSystem signature: serif italic, scaled up for the new outcome-first H1 */}
-      <motion.h1
-        initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2, ease }}
-        className="font-serif italic font-normal"
-        style={{ fontSize: 'clamp(38px, 5.2vw, 64px)', lineHeight: 1.08, marginBottom: '28px', maxWidth: '820px', color: 'var(--text)' }}
-      >
-        {t('hero.titlePrefix')}{' '}
-        {/* Un seul mot : la headline est fixe, rien ne tourne. */}
-        {words.length > 1 ? <RotatingWord words={words} /> : <span>{words[0]}</span>}{' '}
-        {t('hero.titleSuffix')}
-      </motion.h1>
+        <motion.h1
+          {...fade(0.1)}
+          className="font-serif font-normal"
+          style={{ fontSize: 'clamp(42px, 6.2vw, 88px)', lineHeight: 1.02, letterSpacing: '-0.01em', marginTop: 28, maxWidth: 1080, color: '#f0f0f2' }}
+        >
+          {t('hero.titlePrefix')}{' '}
+          {words.length > 1 ? <RotatingWord words={words} /> : <span>{words[0]}</span>}{' '}
+          {t('hero.titleSuffix')}
+        </motion.h1>
 
-      {/* Sous-titre : sous le titre depuis le 4 novembre 2026 (avant, sous la vidéo). */}
-      <motion.p
-        initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.28, ease }}
-        className="font-sans"
-        style={{ fontSize: 'clamp(15px, 3vw, 18px)', fontWeight: 300, color: 'var(--text-secondary)', maxWidth: '720px', lineHeight: 1.6, marginBottom: '28px' }}
-      >
-        {t('hero.sub')}
-      </motion.p>
+        <motion.p
+          {...fade(0.25)}
+          className="font-serif"
+          style={{ fontSize: 'clamp(28px, 3.6vw, 48px)', lineHeight: 1.12, marginTop: 36, maxWidth: 980, color: 'rgba(240,240,242,0.86)' }}
+        >
+          {d('Nos clients nous rapportent ', 'Our clients report ', 'Ügyfeleink szerint havonta ')}
+          <span className="italic" style={{ color: '#E63946' }}>{d('40 heures', '40 hours', '40 órát')}</span>
+          {d(
+            ' rendues chaque mois, et une réactivité qui double.',
+            ' given back every month, and responsiveness that doubles.',
+            ' nyernek vissza, és kétszer gyorsabban reagálnak.'
+          )}
+        </motion.p>
 
-      {/* Ligne de preuve, sans pastille ni icône (8 novembre 2026, charte façon
-          Gourmet) : petites capitales espacées, grises, comme leurs libellés. */}
-      <motion.p
-        initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.36, ease }}
-        className="font-mono"
-        style={{ marginBottom: '36px', fontSize: '11px', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--text-secondary)', lineHeight: 1.8, maxWidth: 960 }}
-      >
-        {t('hero.aiNote')}
-      </motion.p>
+        <motion.p
+          {...fade(0.35)}
+          className="font-sans"
+          style={{ fontSize: 'clamp(15px, 1.6vw, 18px)', fontWeight: 300, lineHeight: 1.65, marginTop: 32, maxWidth: 640, color: 'rgba(240,240,242,0.6)' }}
+        >
+          {t('hero.sub')}
+        </motion.p>
 
-      {/* Deux boutons : l'audit gratuit en principal, l'appel en secondaire. */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.44, ease }}
-        className="flex flex-wrap items-center justify-center gap-3"
-        style={{ marginBottom: '48px' }}
-      >
-        <Link href={localizedHref(AUDIT_LINK, lang)} className="btn-primary" style={{ fontSize: '14px' }}>
-          <span className="btn-primary-dot" />
-          {t('hero.ctaAudit')} →
-        </Link>
-        <Link href={localizedHref(CAL_LINK, lang)} className="btn-ghost" style={{ fontSize: '14px', fontWeight: 500 }}>
-          {t('hero.ctaCall')} →
-        </Link>
-      </motion.div>
+        <motion.div {...fade(0.45)} className="flex flex-wrap items-center gap-3" style={{ marginTop: 44 }}>
+          <Link href={localizedHref(AUDIT_LINK, lang)} className="btn-primary btn-on-dark">
+            {t('hero.ctaAudit')} →
+          </Link>
+          <Link href={localizedHref(CAL_LINK, lang)} className="btn-ghost btn-on-dark">
+            {t('hero.ctaCall')} →
+          </Link>
+        </motion.div>
 
-      {/* VSL, self-hosted, plays inline on click (zero page-load cost). Inchangée. */}
-      <motion.div
-        initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.52, ease }}
-        className="w-full flex justify-center"
-      >
-        {/* Sous-titres incrustés dans la vidéo : pas de piste VTT, elle
-            doublerait le texte à l'écran. */}
-        <VslPlayer
-          src="/vsl-hospitality.mp4"
-          poster="/vsl-hospitality-poster.jpg"
-          label={t('hero.vslLabel')}
-          duration="51 s"
-          title={t('hero.vslTitle')}
-        />
-      </motion.div>
-
-      {/* Scroll hint, trust bar moved to dedicated <ClientsBar /> below the hero */}
-      <motion.div
-        initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 1.2 }}
-        className="absolute bottom-10 left-0 right-0 flex flex-col items-center gap-4"
-      >
-        <div className="w-px h-10" style={{ background: 'linear-gradient(to bottom, var(--text-muted), transparent)', animation: 'scrollPulse 2s ease infinite' }} />
-      </motion.div>
+        {/* VSL, self-hosted, plays inline on click (zero page-load cost). */}
+        <motion.div {...fade(0.55)} style={{ marginTop: 72, maxWidth: 880 }}>
+          {/* Sous-titres incrustés dans la vidéo : pas de piste VTT. */}
+          <VslPlayer
+            src="/vsl-hospitality.mp4"
+            poster="/vsl-hospitality-poster.jpg"
+            label={t('hero.vslLabel')}
+            duration="51 s"
+            title={t('hero.vslTitle')}
+          />
+        </motion.div>
+      </div>
 
       <style jsx>{`
-        .hero-eyebrow {
-          letter-spacing: 4px;
-        }
         @media (max-width: 540px) {
           .hero-section {
-            padding: 110px 18px 64px !important;
-            min-height: auto;
-          }
-          .hero-eyebrow {
-            letter-spacing: 2px;
-            font-size: 10px;
+            padding: 120px 18px 64px !important;
           }
         }
       `}</style>

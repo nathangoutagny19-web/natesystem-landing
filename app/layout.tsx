@@ -5,7 +5,6 @@ import { ThemeProvider } from '@/components/providers/ThemeProvider'
 import { LangProvider } from '@/components/providers/LangProvider'
 import WhatsAppFloat from '@/components/layout/WhatsAppFloat'
 import CookieConsent from '@/components/site/CookieConsent'
-import PointerGlow from '@/components/ui/PointerGlow'
 import { Analytics } from '@vercel/analytics/next'
 
 const dmSans = DM_Sans({
@@ -153,14 +152,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <ThemeProvider>
           <LangProvider>
-            <div className="grid-bg" aria-hidden="true" />
-            <div className="noise" aria-hidden="true" />
             <div className="content">
               {children}
             </div>
             <WhatsAppFloat />
             <CookieConsent />
-            <PointerGlow />
           </LangProvider>
         </ThemeProvider>
         <Analytics />

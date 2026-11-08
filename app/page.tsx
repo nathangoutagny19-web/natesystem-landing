@@ -2,10 +2,9 @@ import Nav from '@/components/layout/Nav'
 import MobileCta from '@/components/layout/MobileCta'
 import Hero from '@/components/home/Hero'
 import ClientsBar from '@/components/home/ClientsBar'
-import Outcomes from '@/components/home/Outcomes'
 import CaseStudy from '@/components/home/CaseStudy'
 import SectorsAccordion from '@/components/home/SectorsAccordion'
-import ServicesGrid from '@/components/home/ServicesGrid'
+import Ecosystem from '@/components/home/Ecosystem'
 import Process from '@/components/home/Process'
 import Faq from '@/components/home/Faq'
 import StatementBand from '@/components/home/StatementBand'
@@ -14,20 +13,16 @@ import Footer from '@/components/layout/Footer'
 import Divider from '@/components/ui/Divider'
 
 /**
- * HOME, version courte du 8 novembre 2026, sur le modèle de gourmetmarketing.net
- * (demande de Nathan : « plus clair, plus simple, de la valeur par mot, moins
- * de bordel »). Une section, un rôle :
+ * HOME, refonte du 8 novembre 2026 sur le modèle de gourmetmarketing.net
+ * (Nathan : « au moins le professionnalisme de Gourmet », « on vend un
+ * écosystème digital »). Une section, un rôle, alternance sombre / clair :
  *
- *   Hero → logos → résultats → preuve (témoignages) → secteurs en accordéon
- *   → services en accordéon → bande de positionnement → comment ça marche
- *   → FAQ → rendez-vous.
+ *   Hero sombre (deux grandes phrases, 40 heures en rouge, vidéo) → logos
+ *   → preuve (carrousel des cas) → secteurs (sombre) → écosystème digital
+ *   (schéma) → bande de positionnement (sombre) → méthode → FAQ → rendez-vous.
  *
- * Retirés de l'accueil (les composants restent dans le dépôt) : Transformation,
- * BrandFilm, Systems, MiniDiagnosticCta, WhatWeDo, Different, CredibilityBand,
- * SprintDiagnostic, Sectors (cartes), ComparisonV2, FunnyGuarantee, AskAI.
- *
- * Ancres du pied de page et du menu : #resultats, #case-study, #secteurs,
- * #prestations, #process, #faq, #rendez-vous.
+ * Plus de quadrillage, de halo ni d'effets qui suivent la souris (retirés du
+ * layout racine). Les composants retirés de l'accueil restent dans le dépôt.
  */
 export default function Home() {
   return (
@@ -35,10 +30,9 @@ export default function Home() {
       <Nav />
       <Hero />
       <ClientsBar />
-      <Outcomes />
       <CaseStudy />
       <SectorsAccordion />
-      <ServicesGrid />
+      <Ecosystem />
       <StatementBand />
       <Process home />
       <Divider />
