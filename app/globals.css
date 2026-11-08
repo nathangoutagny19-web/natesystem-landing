@@ -1263,26 +1263,3 @@ html:not(.light) .trust-logo {
   .sec-row::before { top: auto; bottom: 0; left: 14px; right: 14px; width: auto; height: 2px; }
   .sec-panel { border-left: 0 !important; padding: 8px 0 !important; }
 }
-
-/* Sectors : l'écran du métier actif, sous la liste (8 novembre 2026). */
-.sec-shot {
-  margin-top: 40px;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  overflow: hidden;
-  background: var(--bg-card);
-  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04), 0 18px 40px -24px rgba(15, 23, 42, 0.18);
-}
-.sec-shot-bar { display: flex; gap: 6px; padding: 10px 14px; border-bottom: 1px solid var(--border); background: var(--bg-elevated); }
-.sec-shot-bar i { width: 8px; height: 8px; border-radius: 50%; background: var(--border-hover); }
-.sec-shot-stack { display: grid; }
-.sec-shot-stack img {
-  grid-area: 1 / 1;
-  display: block;
-  width: 100%;
-  height: auto;
-  opacity: 0;
-  transition: opacity 0.35s ease;
-}
-.sec-shot-stack img.sec-shot-on { opacity: 1; }
-@media (max-width: 760px) { .sec-shot { margin-top: 28px; border-radius: 10px; } }
