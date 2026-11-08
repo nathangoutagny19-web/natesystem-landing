@@ -48,10 +48,10 @@ type ClientRef =
   // langue s'applique.
   | { name: string; type: 'photo'; src: string; href: string; internal: true }
 
-// Vendéglátás Menedzsment Kft. is the Hungarian hospitality reference,
-// kept as wordmark until the official logo lands. When `/public/logos/
-// vendeglatas.png` arrives, flip `type: 'wordmark'` to `type: 'logo'`
-// and add the `src`.
+// Vendéglátás Menedzsment Kft. is the Hungarian hospitality reference. Its
+// official logo (the header logo of vendeglatasmenedzsment.hu, 450 px,
+// transparent) replaced the wordmark on 08/11/2026. Wide like Aloess, so
+// `compact`.
 const clients: ClientRef[] = [
   /* LES DEUX PREMIERS CLIENTS QUI NE CONNAISSAIENT PAS NATHAN, en tête de
      rangée (8 novembre 2026). Accord oral de Judith (Wandering Yacht) et
@@ -88,7 +88,7 @@ const clients: ClientRef[] = [
     internal: true,
   },
   { name: 'Chromosome', type: 'logo', src: '/logos/chromosome.png', href: 'https://chromosome-saint-etienne.fr/' },
-  { name: 'Vendéglátás Menedzsment Kft.', type: 'wordmark', href: 'https://vendeglatasmenedzsment.hu/' },
+  { name: 'Vendéglátás Menedzsment Kft.', type: 'logo', src: '/logos/vendeglatas.png', href: 'https://vendeglatasmenedzsment.hu/', compact: true },
   {
     name: 'Kis Zoltán, à Budapest',
     type: 'photo',
