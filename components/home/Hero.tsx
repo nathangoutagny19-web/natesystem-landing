@@ -101,14 +101,38 @@ export default function Hero({ label }: { label?: string } = {}) {
         {t('hero.titleSuffix')}
       </motion.h1>
 
-      {/* Sous-titre : sous le titre depuis le 4 novembre 2026 (avant, sous la vidéo). */}
-      <motion.p
-        initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.28, ease }}
-        className="font-sans"
-        style={{ fontSize: 'clamp(15px, 3vw, 18px)', fontWeight: 300, color: 'var(--text-secondary)', maxWidth: '720px', lineHeight: 1.6, marginBottom: '28px' }}
+      {/* VSL juste sous le titre (Nathan, 8 novembre 2026) : titre → vidéo →
+          boutons → chiffres → paragraphe. */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.52, ease }}
+        className="w-full flex justify-center"
+        style={{ marginBottom: '36px' }}
       >
-        {t('hero.sub')}
-      </motion.p>
+        {/* Sous-titres incrustés dans la vidéo : pas de piste VTT, elle
+            doublerait le texte à l'écran. */}
+        <VslPlayer
+          src="/vsl-hospitality.mp4"
+          poster="/vsl-hospitality-poster.jpg"
+          label={t('hero.vslLabel')}
+          duration="51 s"
+          title={t('hero.vslTitle')}
+        />
+      </motion.div>
+
+      {/* Deux boutons : l'audit gratuit en principal, l'appel en secondaire. */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.44, ease }}
+        className="flex flex-wrap items-center justify-center gap-3"
+        style={{ marginBottom: '28px' }}
+      >
+        <Link href={localizedHref(AUDIT_LINK, lang)} className="btn-primary" style={{ fontSize: '14px' }}>
+          <span className="btn-primary-dot" />
+          {t('hero.ctaAudit')} →
+        </Link>
+        <Link href={localizedHref(CAL_LINK, lang)} className="btn-ghost" style={{ fontSize: '14px', fontWeight: 500 }}>
+          {t('hero.ctaCall')} →
+        </Link>
+      </motion.div>
 
       {/* Badge de preuve : même pastille qu'avant, le texte porte maintenant les trois chiffres. */}
       <motion.div
@@ -128,36 +152,15 @@ export default function Hero({ label }: { label?: string } = {}) {
         </span>
       </motion.div>
 
-      {/* Deux boutons : l'audit gratuit en principal, l'appel en secondaire. */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.44, ease }}
-        className="flex flex-wrap items-center justify-center gap-3"
-        style={{ marginBottom: '48px' }}
+      {/* Sous-titre : sous le titre depuis le 4 novembre 2026 (avant, sous la vidéo). */}
+      <motion.p
+        initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.28, ease }}
+        className="font-sans"
+        style={{ fontSize: 'clamp(15px, 3vw, 18px)', fontWeight: 300, color: 'var(--text-secondary)', maxWidth: '720px', lineHeight: 1.6, marginBottom: '0' }}
       >
-        <Link href={localizedHref(AUDIT_LINK, lang)} className="btn-primary" style={{ fontSize: '14px' }}>
-          <span className="btn-primary-dot" />
-          {t('hero.ctaAudit')} →
-        </Link>
-        <Link href={localizedHref(CAL_LINK, lang)} className="btn-ghost" style={{ fontSize: '14px', fontWeight: 500 }}>
-          {t('hero.ctaCall')} →
-        </Link>
-      </motion.div>
+        {t('hero.sub')}
+      </motion.p>
 
-      {/* VSL, self-hosted, plays inline on click (zero page-load cost). Inchangée. */}
-      <motion.div
-        initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.52, ease }}
-        className="w-full flex justify-center"
-      >
-        {/* Sous-titres incrustés dans la vidéo : pas de piste VTT, elle
-            doublerait le texte à l'écran. */}
-        <VslPlayer
-          src="/vsl-hospitality.mp4"
-          poster="/vsl-hospitality-poster.jpg"
-          label={t('hero.vslLabel')}
-          duration="51 s"
-          title={t('hero.vslTitle')}
-        />
-      </motion.div>
 
       {/* Scroll hint, trust bar moved to dedicated <ClientsBar /> below the hero */}
       <motion.div
