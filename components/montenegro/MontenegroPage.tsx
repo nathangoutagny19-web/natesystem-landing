@@ -158,7 +158,7 @@ export default function MontenegroPage({ data }: { data: MontenegroPageData }) {
         <section className="flex flex-col items-center text-center" style={{ padding: '24px 20px 96px' }}>
           <h2 className="font-serif italic font-normal" style={{ ...h2, maxWidth: 720 }}>{data.ctaTitle}</h2>
           <p className="font-sans" style={{ ...body, maxWidth: 600, marginTop: 16 }}>{data.ctaText}</p>
-          <Link href="/en/audit-gratuit" className="btn-primary" style={{ fontSize: 14, marginTop: 28 }}>
+          <Link href="/en#rendez-vous" className="btn-primary" style={{ fontSize: 14, marginTop: 28 }}>
             <span className="btn-primary-dot" />
             Get your free audit →
           </Link>

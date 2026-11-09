@@ -6,8 +6,8 @@ import { useLang } from '@/components/providers/LangProvider'
 import { makeD } from '@/lib/lang'
 
 /**
- * LE FONDATEUR (accueil, refonte du 9 novembre 2026). L'audit gratuit
- * (AuditFinal) se pose juste dessous : plus d'agenda ni d'appel à réserver.
+ * LE FONDATEUR (accueil, refonte du 9 novembre 2026). Dessous : l'audit
+ * gratuit (AuditFinal) et son agenda Calendly (CtaFinal, #rendez-vous).
  *
  * L'hébergement « en Europe ou aux États-Unis, selon où vous êtes » est une
  * décision de Nathan du 21/10/2026 (mémoire project-hosting-follows-client) :

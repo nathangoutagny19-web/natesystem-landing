@@ -10,6 +10,7 @@ import StatementBand from '@/components/home/StatementBand'
 import BandQuotes from '@/components/home/Testimonials'
 import Fondateur from '@/components/home/Fondateur'
 import AuditFinal from '@/components/home/AuditFinal'
+import CtaFinal from '@/components/home/CtaFinal'
 import Footer from '@/components/layout/Footer'
 
 /**
@@ -55,12 +56,14 @@ export default function Home() {
       {/* La section tout en noir, avec la seule phrase de positionnement */}
       <StatementBand />
 
-      {/* 8, Le fondateur, puis l'audit gratuit (plus d'agenda : « jamais
-          réserver un appel mais un audit », Nathan, 9 novembre 2026) */}
+      {/* 8, Le fondateur, puis l'audit gratuit et son agenda Calendly : c'est là
+          que mènent tous les boutons « Recevoir votre audit gratuit » du site
+          (Nathan, 9 novembre 2026) */}
       <div style={{ paddingTop: 'clamp(112px, 14vw, 176px)' }}>
         <Fondateur />
       </div>
-      <AuditFinal />
+      <AuditFinal button={false} />
+      <CtaFinal />
 
       <Footer />
       <MobileCta />

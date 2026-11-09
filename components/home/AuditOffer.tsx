@@ -173,7 +173,7 @@ export default function AuditOffer() {
 
             {/* CTA */}
             <div style={{ marginBottom: 20 }}>
-              <Button href="/audit-gratuit" variant="primary">
+              <Button href="/#rendez-vous" variant="primary">
                 {"Recevoir votre audit gratuit →"}
               </Button>
             </div>

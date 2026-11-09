@@ -20,7 +20,7 @@ import Link from 'next/link'
 import FadeUp from '@/components/ui/FadeUp'
 import { useLang } from '@/components/providers/LangProvider'
 import { makeD } from '@/lib/lang'
-const AUDIT_LINK = '/audit-gratuit'
+const AUDIT_LINK = '/#rendez-vous'
 import { localizedHref } from '@/lib/routes'
 
 type Card = {

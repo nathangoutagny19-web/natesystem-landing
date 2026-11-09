@@ -207,11 +207,10 @@ export default function BlogPostClient({ post }: { post: BlogPost }) {
                   margin: '0 auto 32px',
                 }}
               >
-                Laissez-moi votre site. Je regarde comment vos demandes arrivent et ce
-                qui repose sur une seule personne, puis je vous envoie mon audit,
-                personnellement. Gratuit, sans engagement.
+                Choisissez un créneau. On regarde ensemble comment vous travaillez
+                aujourd’hui, et vous repartez avec votre audit. Gratuit, sans engagement.
               </p>
-              <Link href="/audit-gratuit" className="btn-primary" style={{ margin: '0 auto' }}>
+              <Link href="/#rendez-vous" className="btn-primary" style={{ margin: '0 auto' }}>
                 <span className="btn-primary-dot" />
                 Recevoir votre audit gratuit
               </Link>

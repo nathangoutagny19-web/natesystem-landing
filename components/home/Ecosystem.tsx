@@ -137,7 +137,7 @@ export default function Ecosystem() {
               'Ön dönt, a szoftver elvégzi a többit. Egy modul vagy a teljes ökoszisztéma: ott kezdjük, ahol a legtöbbe kerül.'
             )}
           </p>
-          <Link href={localizedHref('/audit-gratuit', lang)} className="btn-primary btn-on-dark">
+          <Link href={localizedHref('/#rendez-vous', lang)} className="btn-primary btn-on-dark">
             {d('Recevoir votre audit gratuit', 'Get your free audit', 'Kérje ingyenes auditját')} →
           </Link>
         </div>

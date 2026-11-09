@@ -5,10 +5,12 @@
 // to '/book' to restore the form-first flow everywhere at once.
 export const CAL_LINK = '/#rendez-vous'
 
-// LE bouton du site depuis le 9 novembre 2026. Nathan : « jamais réserver un
-// appel mais un audit ». Le visiteur laisse son site, Nathan revient vers lui.
+// LE bouton du site depuis le 9 novembre 2026 : « Recevoir votre audit gratuit »,
+// jamais « Réserver un appel » (Nathan). Il mène à l'agenda Calendly de
+// l'accueil (#rendez-vous), pas au formulaire /audit-gratuit (Nathan, même jour :
+// « le free audit doit rediriger au Calendly sur la section home »).
 // Menu, barre mobile, pied de page, hero, fins de page : tout pointe ici.
-export const AUDIT_LINK = '/audit-gratuit'
+export const AUDIT_LINK = '/#rendez-vous'
 export const SITE_URL = 'https://www.natesystem.com'
 export const API_URL = 'https://natesystem-backend.vercel.app'
 

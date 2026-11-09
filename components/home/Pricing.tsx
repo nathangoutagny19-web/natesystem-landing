@@ -115,7 +115,7 @@ function PricingCard({ title, price, subtitle, features, cta, ctaVariant, badge,
         ))}
       </ul>
 
-      <Button href="/audit-gratuit" variant={ctaVariant}>
+      <Button href="/#rendez-vous" variant={ctaVariant}>
         {cta}
       </Button>
     </div>
