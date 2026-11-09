@@ -1,8 +1,9 @@
 'use client'
 
 import Link from 'next/link'
-import Image from 'next/image'
 import { useLang } from '@/components/providers/LangProvider'
+import { makeD } from '@/lib/lang'
+import { CAL_LINK } from '@/lib/constants'
 import { localizedHref } from '@/lib/routes'
 import { useTheme } from '@/components/providers/ThemeProvider'
 
@@ -23,7 +24,8 @@ import { useTheme } from '@/components/providers/ThemeProvider'
  * Bottom row, copyright + SIRET + lang note.
  */
 export default function Footer() {
-  const { lang, t } = useLang()
+  const { lang, t, setLang } = useLang()
+  const d = makeD(lang)
   const { theme, toggleTheme } = useTheme()
 
   return (
@@ -37,185 +39,84 @@ export default function Footer() {
         overflow: 'hidden',
       }}
     >
-      {/* Top row, brand + 4 link columns */}
-      <div
-        className="footer-grid"
-        style={{
-          display: 'grid',
-          gridTemplateColumns: `minmax(0, 1.4fr) repeat(${lang === 'en' ? 4 : 5}, minmax(0, 1fr))`,
-          gap: 32,
-          alignItems: 'flex-start',
-          position: 'relative',
-          zIndex: 1,
-        }}
-      >
-        {/* Brand block */}
-        <div className="flex flex-col gap-3">
+      {/* Refonte du 9 novembre 2026 : le logo et une phrase, les quatre pages,
+          le contact et le bouton, puis les mentions légales. L'ancienne grille
+          de liens (pages restauration, Lyon, écoles…) quitte le pied de page ;
+          ces pages restent en ligne et dans le plan du site. */}
+      <div className="footer-top" style={{ position: 'relative', zIndex: 1 }}>
+        <div className="footer-brand">
           <div className="flex items-center gap-1">
-            <span className="font-serif italic" style={{ fontSize: '22px', fontWeight: 400, color: 'var(--text)' }}>
-              N
-            </span>
-            <span
-              className="w-[5px] h-[5px] rounded-full -ml-[2px] mt-[10px]"
-              style={{ backgroundColor: 'var(--accent)' }}
-            />
-            <span
-              className="font-sans ml-2"
-              style={{ fontSize: '11px', fontWeight: 500, letterSpacing: '2px', textTransform: 'uppercase', color: 'var(--text-muted)' }}
-            >
-              NateSystem
-            </span>
+            <span className="font-serif italic" style={{ fontSize: '24px', fontWeight: 400, color: 'var(--text)' }}>N</span>
+            <span className="w-[5px] h-[5px] rounded-full -ml-[2px] mt-[10px]" style={{ backgroundColor: 'var(--accent)' }} />
           </div>
-          <p className="font-sans" style={{ fontSize: '12px', color: 'var(--text-muted)', maxWidth: '240px', fontWeight: 300, lineHeight: 1.6 }}>
-            {t('footer.tagline')}
+          <p className="font-serif italic footer-phrase">
+            {d('Logiciels sur mesure pour l’hospitalité de luxe.', 'Bespoke software for luxury hospitality.', 'Egyedi szoftverek a luxusvendéglátásnak.')}
           </p>
-
-          {/* Carte fondateur, avatar + nom + rôle (l'« à propos » vit ici). Jamais « seul ». */}
-          <div className="footer-founder-card">
-            <div className="footer-avatar">
-              <Image src="/nathan.png" alt="Nathan Goutagny" fill sizes="52px" style={{ objectFit: 'cover' }} />
-            </div>
-            <div>
-              <div className="font-sans" style={{ fontSize: 14.5, fontWeight: 600, color: 'var(--text)', lineHeight: 1.15 }}>
-                Nathan Goutagny
-              </div>
-              <div
-                className="font-mono"
-                style={{ fontSize: 10, letterSpacing: 1.6, textTransform: 'uppercase', color: 'var(--accent)', marginTop: 5, fontWeight: 500 }}
-              >
-                {t('footer.founderRole')}
-              </div>
-            </div>
-          </div>
-
-          {/* Réseaux, LinkedIn + YouTube + e-mail (icônes) */}
           <div className="footer-socials">
-            <a
-              href="https://www.linkedin.com/in/nathan-goutagny/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="footer-soc"
-              aria-label="LinkedIn, Nathan Goutagny"
-            >
+            <a href="https://www.linkedin.com/in/nathan-goutagny/" target="_blank" rel="noopener noreferrer" className="footer-soc" aria-label="LinkedIn, Nathan Goutagny">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
               </svg>
             </a>
-            <a
-              href="https://www.youtube.com/channel/UC4FHx5cD7xsePnIVZ13abmw"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="footer-soc"
-              aria-label="YouTube, Nathan Goutagny"
-            >
+            <a href="https://www.youtube.com/channel/UC4FHx5cD7xsePnIVZ13abmw" target="_blank" rel="noopener noreferrer" className="footer-soc" aria-label="YouTube, Nathan Goutagny">
               <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
               </svg>
             </a>
-            <a href="mailto:nathan@natesystem.com" className="footer-soc" aria-label="E-mail, nathan@natesystem.com">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <rect x="2" y="4" width="20" height="16" rx="2" />
-                <path d="m22 7-10 6L2 7" />
-              </svg>
-            </a>
           </div>
-
-          {/* Fondateur, texte */}
-          <p className="font-sans" style={{ fontSize: '12px', color: 'var(--text-muted)', fontWeight: 300, lineHeight: 1.6, marginTop: 6, maxWidth: 240 }}>
-            {t('footer.founder')}
-          </p>
         </div>
 
-        {/* Sections column */}
-        <FooterCol title={t('footer.col.sections')}>
-          <FooterLink href="/">{t('footer.link.home')}</FooterLink>
-          <FooterLink href="/#prestations">{t('footer.link.services')}</FooterLink>
-          <FooterLink href="/a-propos">{t('footer.link.about')}</FooterLink>
-          {/* Pages Monténégro, anglaises seulement : lien interne depuis tout le site. */}
-          <FooterLink href="/en/montenegro">Montenegro · Tivat · Kotor</FooterLink>
-          <FooterLink href="/#probleme">{t('footer.link.problem')}</FooterLink>
-          <FooterLink href="/methode">{t('footer.link.process')}</FooterLink>
-          <FooterLink href="/case-studies">{t('footer.link.results')}</FooterLink>
-          <FooterLink href="/#contact">{t('footer.link.contact')}</FooterLink>
-        </FooterCol>
-
-        {/* Solutions column, conversion + sector SEO pages.
-            Ces sept pages n'existent qu'en français, par choix : elles visent
-            des requêtes françaises. Sous /en la colonne serait vide. */}
-        {lang === 'fr' && (
-          <FooterCol title={t('footer.col.solutions')}>
-            <FooterLink href="/prix-logiciel-sur-mesure">{t('footer.link.pricing')}</FooterLink>
-            <FooterLink href="/logiciel-sur-mesure-vs-saas">{t('footer.link.vsSaas')}</FooterLink>
-            <FooterLink href="/agence-logiciel-ia-lyon">{t('footer.link.lyon')}</FooterLink>
-            <FooterLink href="/logiciel-sur-mesure-restauration">{t('footer.link.restaurant')}</FooterLink>
-            <FooterLink href="/logiciel-sur-mesure-enseignement-superieur">{t('footer.link.education')}</FooterLink>
-            <FooterLink href="/logiciel-sur-mesure-conseil">{t('footer.link.consulting')}</FooterLink>
-            <FooterLink href="/logiciel-sur-mesure-club-sportif">{t('footer.link.sportsclub')}</FooterLink>
-          </FooterCol>
-        )}
-
-        {/* Tools & demos column */}
-        <FooterCol title={t('footer.col.toolsDemos')}>
-          <FooterLink href="/outils">{t('nav.freeTools')}</FooterLink>
-          <FooterLink href="/tools">{t('footer.link.allTools')}</FooterLink>
-          <FooterLink href="/tools/diagnostic-ia">{t('tools.diagnostic.title')}</FooterLink>
-          <FooterLink href="/reviews">{t('footer.link.reviewsDemo')}</FooterLink>
-          <FooterLink href="https://actifs.natesystem.com" external>{t('footer.link.actifsDemo')}</FooterLink>
-          <FooterLink href="https://stack-stock.natesystem.com" external>{t('footer.link.stockDemo')}</FooterLink>
-        </FooterCol>
-
-        {/* Resources column */}
-        <FooterCol title={t('footer.col.resources')}>
-          {lang === 'fr' && <FooterLink href="/blog">{t('resources.blog')}</FooterLink>}
-          <FooterLink href="/glossaire">{t('footer.link.glossary')}</FooterLink>
-          <FooterLink href="/resources#videos">{t('resources.caseStudies')}</FooterLink>
+        <nav className="footer-nav" aria-label={d('Pages', 'Pages', 'Oldalak')}>
+          <FooterLink href="/services">{t('nav.services')}</FooterLink>
+          <FooterLink href="/case-studies">{t('nav.realisations')}</FooterLink>
           <FooterLink href="/resources">{t('nav.resources')}</FooterLink>
-          <FooterLink href="/book">{t('footer.link.book')}</FooterLink>
-        </FooterCol>
+          <FooterLink href="/a-propos">{t('nav.about')}</FooterLink>
+        </nav>
 
-        {/* Legal column + theme toggle */}
-        <FooterCol title={t('footer.col.legal')}>
-          <FooterLink href="/mentions-legales">{t('footer.legal')}</FooterLink>
-          <div className="theme-toggle" style={{ marginTop: 8 }}>
-            <button
-              className={`theme-toggle-option ${theme === 'light' ? 'active' : ''}`}
-              onClick={() => theme !== 'light' && toggleTheme()}
-              aria-label="Switch to light mode"
-            >
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
-            </button>
-            <button
-              className={`theme-toggle-option ${theme === 'dark' ? 'active' : ''}`}
-              onClick={() => theme !== 'dark' && toggleTheme()}
-              aria-label="Switch to dark mode"
-            >
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-            </button>
-          </div>
-        </FooterCol>
+        <div className="footer-contact">
+          <a href="mailto:nathan@natesystem.com" className="font-sans footer-mail">nathan@natesystem.com</a>
+          <Link href={localizedHref(CAL_LINK, lang)} className="btn-primary" style={{ padding: '12px 22px', fontSize: 13 }}>
+            <span className="btn-primary-dot" />{d('Réserver un appel', 'Book a call', 'Hívás foglalása')}
+          </Link>
+        </div>
       </div>
 
-      {/* Bottom row, copyright + SIRET */}
+      {/* Bottom row : mentions légales, langues, Monténégro, copyright */}
       <div
         className="footer-bottom"
         style={{
-          marginTop: 48,
+          marginTop: 56,
           paddingTop: 20,
           borderTop: '1px solid var(--border)',
           display: 'flex',
           flexWrap: 'wrap',
-          gap: 14,
+          gap: '10px 22px',
           justifyContent: 'space-between',
           alignItems: 'center',
           position: 'relative',
           zIndex: 1,
         }}
       >
+        <div className="flex flex-wrap items-center" style={{ gap: '8px 20px' }}>
+          <FooterLink href="/mentions-legales">{t('footer.legal')}</FooterLink>
+          {/* Pages Monténégro, anglaises seulement : leur seul lien interne. */}
+          <FooterLink href="/en/montenegro">Montenegro · Tivat · Kotor</FooterLink>
+          <span className="font-sans" style={{ fontSize: 12, color: 'var(--text-muted)' }}>
+            <button type="button" className="footer-lang" onClick={() => setLang('fr')} aria-pressed={lang === 'fr'}>FR</button>
+            {' / '}
+            <button type="button" className="footer-lang" onClick={() => setLang('en')} aria-pressed={lang === 'en'}>EN</button>
+          </span>
+          <div className="theme-toggle">
+            <button className={`theme-toggle-option ${theme === 'light' ? 'active' : ''}`} onClick={() => theme !== 'light' && toggleTheme()} aria-label="Switch to light mode">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+            </button>
+            <button className={`theme-toggle-option ${theme === 'dark' ? 'active' : ''}`} onClick={() => theme !== 'dark' && toggleTheme()} aria-label="Switch to dark mode">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            </button>
+          </div>
+        </div>
         <p className="font-sans" style={{ fontSize: '11px', color: 'var(--text-muted)', fontWeight: 300 }}>
-          © 2026 NateSystem · Nathan Goutagny
-        </p>
-        <p className="font-sans" style={{ fontSize: '11px', color: 'var(--text-muted)', fontWeight: 300 }}>
-          SIRET 92949816000035
+          © 2026 NateSystem · Nathan Goutagny · SIRET 92949816000035
         </p>
       </div>
 
@@ -224,11 +125,6 @@ export default function Footer() {
       <span aria-hidden="true" className="footer-watermark font-serif italic">NateSystem</span>
 
       <style>{`
-        .footer-founder-card { display: flex; align-items: center; gap: 12px; margin-top: 10px; }
-        .footer-avatar {
-          width: 52px; height: 52px; border-radius: 50%; overflow: hidden;
-          position: relative; border: 1px solid var(--border); flex-shrink: 0;
-        }
         .footer-socials { display: flex; gap: 8px; margin-top: 4px; }
         .footer-soc {
           width: 36px; height: 36px; display: inline-flex; align-items: center; justify-content: center;
@@ -236,6 +132,21 @@ export default function Footer() {
           color: var(--text-secondary); transition: color .2s, border-color .2s, transform .2s;
         }
         .footer-soc:hover { color: var(--accent); border-color: var(--accent); transform: translateY(-2px); }
+        .footer-top { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 40px; align-items: start; }
+        .footer-phrase { font-size: 20px; line-height: 1.35; color: var(--text); margin: 14px 0 18px; max-width: 280px; }
+        .footer-nav { display: flex; flex-direction: column; gap: 10px; }
+        .footer-nav a { font-size: 15px !important; color: var(--text) !important; font-weight: 400 !important; }
+        .footer-contact { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; }
+        .footer-mail { font-size: 14px; color: var(--text); text-decoration: none; border-bottom: 1px solid var(--border-hover); padding-bottom: 2px; }
+        .footer-mail:hover { color: var(--accent); border-color: var(--accent); }
+        .footer-lang { background: none; border: 0; padding: 0; cursor: pointer; font: inherit; color: var(--text-muted); }
+        .footer-lang[aria-pressed=true] { color: var(--text); font-weight: 500; }
+        @media (max-width: 768px) {
+          .footer-top { grid-template-columns: 1fr 1fr; gap: 32px 20px; }
+          .footer-brand { grid-column: 1 / -1; }
+          .footer-contact { grid-column: 1 / -1; }
+          .footer-contact a { white-space: nowrap; }
+        }
         .footer-watermark {
           position: absolute;
           left: 50%;
@@ -253,56 +164,8 @@ export default function Footer() {
           -webkit-mask: linear-gradient(to bottom, #000 30%, rgba(0,0,0,0.12));
                   mask: linear-gradient(to bottom, #000 30%, rgba(0,0,0,0.12));
         }
-        /* Narrow desktop / tablet: 5 columns + brand block get cramped, so
-           drop the brand block to full width and show 3 link columns. */
-        @media (max-width: 1080px) and (min-width: 769px) {
-          .footer-grid {
-            grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-            gap: 28px 32px !important;
-          }
-          .footer-grid > div:first-child {
-            grid-column: 1 / -1;
-          }
-        }
-        @media (max-width: 768px) {
-          .footer-grid {
-            grid-template-columns: 1fr 1fr !important;
-            gap: 32px !important;
-          }
-          .footer-grid > div:first-child {
-            grid-column: 1 / -1;
-          }
-        }
-        /* Téléphone : on garde deux colonnes de liens (8 novembre 2026),
-           une seule colonne faisait un pied de page interminable. */
-        @media (max-width: 480px) {
-          .footer-grid {
-            gap: 28px 20px !important;
-          }
-        }
       `}</style>
     </footer>
-  )
-}
-
-function FooterCol({ title, children }: { title: string; children: React.ReactNode }) {
-  return (
-    <div className="flex flex-col gap-2">
-      <p
-        className="font-mono"
-        style={{
-          fontSize: 10,
-          letterSpacing: 2,
-          textTransform: 'uppercase',
-          color: 'var(--text)',
-          fontWeight: 600,
-          marginBottom: 6,
-        }}
-      >
-        {title}
-      </p>
-      {children}
-    </div>
   )
 }
 
