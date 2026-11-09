@@ -158,59 +158,16 @@ export default function Nav() {
           {/* Center links, desktop. Menu cible : Notre approche · Services ·
               Réalisations · Ressources. « Notre approche » = page /methode (Lot 2).
               Ressources = lien direct (pas de méga). */}
+          {/* Refonte du 9 novembre 2026 : quatre entrées, pas de menu
+              déroulant, pas d'« Accueil » (le logo y mène). Les quatre pages
+              de service détaillées restent en ligne pour le référencement,
+              liées depuis la page Services seulement. /methode devient une
+              section de Services. */}
           <nav className="nav-links">
-            <Link href={l('/methode')} className="nav-link">{t('nav.methode')}</Link>
-
-            {/* Services, méga avec panneau photo (façon concurrents, sauce NateSystem) */}
-            <div className="nav-dropdown">
-              <Link href={l('/services')} className="nav-link nav-link-dropdown">
-                {t('nav.services')} <Chevron />
-              </Link>
-              <div className="nav-mega nav-mega-feature">
-                <div className="nav-mega-inner">
-                  <div className="nav-mega-col">
-                    <p className="nav-mega-label">{t('mega.services')}</p>
-                    <MegaItem href={l('/services/audit')} icon={icons.clipboard} title={t('nav.svc.sprint')} desc={t('nav.svc.sprintDesc')} />
-                    <MegaItem href={l('/services/logiciel-sur-mesure')} icon={icons.laptop} title={t('nav.svc.logiciel')} desc={t('nav.svc.logicielDesc')} />
-                    <MegaItem href={l('/services/ia')} icon={icons.brain} title={t('nav.svc.ia')} desc={t('nav.svc.iaDesc')} />
-                    <MegaItem href={l('/services/formation')} icon={icons.book} title={t('nav.svc.audit')} desc={t('nav.svc.auditDesc')} />
-                  </div>
-                  <div className="nav-mega-features">
-                    <MegaFeature
-                      href={l('/resources')}
-                      img="/realisations/prototype/proto-front.jpg"
-                      label={d('Ressources', 'Resources', 'Források')}
-                      title={d('Utilisez nos apps, gratuitement', 'Use our apps, for free', 'Használja az appjainkat, ingyen')}
-                      cta={d('Voir les ressources', 'See resources', 'Források megtekintése')}
-                    />
-                    <MegaFeature
-                      photo
-                      href={l('/case-studies/chromosome')}
-                      img="/realisations/prototype/diag-feuille.jpg"
-                      label={d('Réalisation', 'Case study', 'Esettanulmány')}
-                      title={d('Le cas Chromosome', 'The Chromosome case', 'A Chromosome-eset')}
-                      cta={d('Voir le cas client', 'See the case study', 'Esettanulmány megtekintése')}
-                    />
-                  </div>
-                </div>
-                <div className="nav-mega-foot">
-                  <div className="nav-mega-more">
-                    <Link href={l('/methode')} className="nav-mega-foot-link">{d('Voir comment on travaille', 'See how we work', 'Nézze meg, hogyan dolgozunk')}</Link>
-                  </div>
-                  <Link href={l(CAL_LINK)} className="nav-mega-foot-cta">{d('Réserver un appel', 'Book a call', 'Hívás foglalása')} &rarr;</Link>
-                </div>
-              </div>
-            </div>
-
-            {/* Réalisations, lien direct */}
+            <Link href={l('/services')} className="nav-link">{t('nav.services')}</Link>
             <Link href={l('/case-studies')} className="nav-link">{t('nav.realisations')}</Link>
-
-            {/* Ressources, lien direct (seul Services garde un déroulant).
-                « Outils gratuits » a quitté le menu le 8 novembre 2026
-                (Nathan : « mets que Ressources ») : les outils sont dans
-                /resources, section « Outils & démos ». La page /outils reste
-                en ligne pour le référencement. */}
             <Link href={l('/resources')} className="nav-link">{t('nav.resources')}</Link>
+            <Link href={l('/a-propos')} className="nav-link">{t('nav.about')}</Link>
           </nav>
 
           {/* Right side, lang + CTA */}
@@ -257,9 +214,9 @@ export default function Nav() {
       </Link>
 
       <div className="flex items-center gap-1">
-      <Link href={l('/audit-gratuit')} className="nav-mcta" onClick={() => setMenuOpen(false)}>
+      <Link href={l(CAL_LINK)} className="nav-mcta" onClick={() => setMenuOpen(false)}>
         <span className="nav-mcta-dot" />
-        {d('Audit gratuit', 'Free audit', 'Ingyenes audit')}
+        {d('Réserver un appel', 'Book a call', 'Hívás foglalása')}
       </Link>
 
       {/* ——— Mobile hamburger ——— */}
@@ -289,18 +246,10 @@ export default function Nav() {
         style={{ backdropFilter: 'blur(24px)', WebkitBackdropFilter: 'blur(24px)', background: 'var(--mobile-menu-bg, rgba(14,14,18,0.95))' }}
       >
         <div className="pt-20 px-6 flex flex-col gap-1">
-          <MobileLink href={l('/methode')} onClick={() => setMenuOpen(false)}>{t('nav.methode')}</MobileLink>
-
-          <MobileAccordion label={t('nav.services')} open={mobileServicesOpen} onToggle={() => setMobileServicesOpen(!mobileServicesOpen)}>
-            <MobileLink href={l('/services/audit')} onClick={() => setMenuOpen(false)}>{t('nav.svc.sprint')}</MobileLink>
-            <MobileLink href={l('/services/logiciel-sur-mesure')} onClick={() => setMenuOpen(false)}>{t('nav.svc.logiciel')}</MobileLink>
-            <MobileLink href={l('/services/ia')} onClick={() => setMenuOpen(false)}>{t('nav.svc.ia')}</MobileLink>
-            <MobileLink href={l('/services/formation')} onClick={() => setMenuOpen(false)}>{t('nav.svc.audit')}</MobileLink>
-          </MobileAccordion>
-
+          <MobileLink href={l('/services')} onClick={() => setMenuOpen(false)}>{t('nav.services')}</MobileLink>
           <MobileLink href={l('/case-studies')} onClick={() => setMenuOpen(false)}>{t('nav.realisations')}</MobileLink>
-
           <MobileLink href={l('/resources')} onClick={() => setMenuOpen(false)}>{t('nav.resources')}</MobileLink>
+          <MobileLink href={l('/a-propos')} onClick={() => setMenuOpen(false)}>{t('nav.about')}</MobileLink>
 
           <div className="flex gap-2 mt-4 flex-wrap">
             {(['en', 'fr'] as const).map(l => (
