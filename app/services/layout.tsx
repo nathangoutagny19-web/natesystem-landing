@@ -4,9 +4,9 @@ import type { Metadata } from 'next'
 // metadata/schema onto the child pillar pages, each pillar page (and the
 // /services index page) declares its own metadata + JSON-LD.
 export const metadata: Metadata = {
-  title: 'Nos services pour l’hospitalité de luxe et de prestige | NateSystem',
+  title: 'Nos services pour l’hospitalité de luxe | NateSystem',
   description:
-    'Diagnostic, système sur mesure et image en ligne, automatisation et données, formation : un partenariat dans la durée pour villas, chalets, domaines, conciergeries, yachts, hôtels indépendants et maisons de réception. Le code vous appartient.',
+    'Le diagnostic, l’outil sur mesure, les tâches qui se font seules, la formation et le suivi, pour yachting, villas, conciergeries, voyage, sécurité privée et événements. Le code vous appartient.',
 }
 
 export default function ServicesSegmentLayout({ children }: { children: React.ReactNode }) {
