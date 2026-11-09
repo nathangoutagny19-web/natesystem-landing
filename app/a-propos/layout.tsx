@@ -3,12 +3,12 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'À propos, Nathan Goutagny, fondateur de NateSystem',
   description:
-    'Nathan Goutagny, ingénieur logiciel & IA appliquée basé à Lyon. Fondateur de NateSystem. Des années à construire des systèmes opérationnels sur-mesure pour des PME françaises et hongroises, restauration, enseignement supérieur, conseil.',
+    'NateSystem construit des logiciels sur mesure pour l’hospitalité de luxe, et ils appartiennent à leurs clients. Fondé par Nathan Goutagny, basé au Monténégro et en France.',
   alternates: { canonical: 'https://www.natesystem.com/a-propos' },
   openGraph: {
     title: 'À propos, Nathan Goutagny, fondateur de NateSystem',
     description:
-      'Ingénieur logiciel & IA appliquée à Lyon. Fondateur de NateSystem. Si vous me parlez, c\'est moi qui code derrière, pas un commercial, pas un junior.',
+      'Logiciels sur mesure pour l’hospitalité de luxe. Fondé par Nathan Goutagny : celui qui vous écoute est celui qui code.',
     url: 'https://www.natesystem.com/a-propos',
     type: 'profile',
     locale: 'fr_FR',
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'À propos, Nathan Goutagny, fondateur de NateSystem',
-    description: 'Ingénieur logiciel & IA appliquée à Lyon. Fondateur de NateSystem.',
+    description: 'Logiciels sur mesure pour l’hospitalité de luxe. Fondé par Nathan Goutagny.',
   },
 }
 
@@ -32,7 +32,7 @@ const personJsonLd = {
   image: 'https://www.natesystem.com/nathan.png',
   jobTitle: 'Fondateur · Ingénieur logiciel & IA appliquée',
   worksFor: { '@id': 'https://www.natesystem.com/#organization' },
-  homeLocation: { '@type': 'Place', name: 'Lyon, France' },
+  homeLocation: { '@type': 'Place', name: 'Tivat, Montenegro' },
   sameAs: ['https://www.linkedin.com/in/nathan-goutagny'],
   knowsAbout: [
     'Logiciel métier sur-mesure',

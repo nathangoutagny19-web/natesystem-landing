@@ -6,12 +6,25 @@ import { Mail } from 'lucide-react'
 import Nav from '@/components/layout/Nav'
 import Footer from '@/components/layout/Footer'
 import MobileCta from '@/components/layout/MobileCta'
-import Divider from '@/components/ui/Divider'
 import FadeUp from '@/components/ui/FadeUp'
 import { CAL_LINK } from '@/lib/constants'
 import { useLang } from '@/components/providers/LangProvider'
 import { makeD } from '@/lib/lang'
 import { localizedHref } from '@/lib/routes'
+
+/**
+ * À PROPOS (refonte du 9 novembre 2026) : l'histoire en trois phrases,
+ * l'équipe, où l'on est basés, où l'on intervient, trois engagements.
+ *
+ * ⚠︎ CHOIX PAR DÉFAUT, À CONFIRMER PAR NATHAN (proposition du 09/11, §10) :
+ *   - l'équipe : Nathan seul, personne d'autre n'est inventé ;
+ *   - « basés au Monténégro (Tivat) et en France » : sa demande du 8 novembre
+ *     (« dire qu'on est basé à Tivat ») et l'entreprise française (SIRET) ;
+ *   - « nous intervenons en » : la liste des marchés prospectés de la
+ *     proposition ;
+ *   - l'hébergement en Europe ou aux États-Unis selon le client : décision
+ *     de Nathan du 21/10/2026.
+ */
 
 function LinkedInIcon({ size = 15 }: { size?: number }) {
   return (
@@ -21,196 +34,192 @@ function LinkedInIcon({ size = 15 }: { size?: number }) {
   )
 }
 
-// Credibility points reflect real, documented deployments (see case studies).
-// Les chiffres sont ceux des cas clients : traduits, jamais réinterprétés.
-type Proof = { kFr: string; kEn: string; kHu: string; vFr: string; vEn: string; vHu: string }
-const proof: Proof[] = [
-  {
-    kFr: 'Lyon, France', kEn: 'Lyon, France', kHu: 'Lyon, Franciaország',
-    vFr: 'Basé à Lyon · interventions FR & HU',
-    vEn: 'Based in Lyon · working in France & Hungary', vHu: 'Lyoni székhellyel · Franciaországban és Magyarországon dolgozunk',
-  },
-  {
-    kFr: 'Restauration', kEn: 'Restaurants', kHu: 'Vendéglátás',
-    vFr: 'Cockpit ops & KPI, contrôle de factures, RH, réputation, groupe Chromosome (×11 sur le temps de pilotage hebdo)',
-    vEn: 'Ops & KPI cockpit, invoice checking, HR, reputation, for the Chromosome group (×11 on weekly steering time)', vHu: 'Működési és KPI-vezérlőpult, számlaellenőrzés, HR, hírnév, a Chromosome-csoportnak (×11 a heti irányítási időn)',
-  },
-  {
-    kFr: 'Enseignement supérieur', kEn: 'Higher education', kHu: 'Felsőoktatás',
-    vFr: 'CRM pédagogique, 200+ étudiants suivis, 90 %+ d\u2019adoption',
-    vEn: 'Teaching CRM, 200+ students tracked, 90 %+ adoption', vHu: 'Oktatási CRM, 200+ követett hallgató, 90%+ használat',
-  },
-  {
-    kFr: 'Conseil & événementiel', kEn: 'Consulting & events', kHu: 'Tanácsadás és rendezvény',
-    vFr: 'Relance commerciale automatisée, gestion d\u2019équipes & bénévoles',
-    vEn: 'Automated sales follow-up, team and volunteer management', vHu: 'Automatizált értékesítési utánkövetés, csapat- és önkéntes-kezelés',
-  },
-]
-
 export default function AProposPage() {
   const { lang } = useLang()
   const d = makeD(lang)
+
+  const regions = [
+    { name: d('France', 'France', 'Franciaország'), detail: d('Côte d’Azur, Alpes, Paris, Lyon', 'Côte d’Azur, the Alps, Paris, Lyon', 'Côte d’Azur, Alpok, Párizs, Lyon') },
+    { name: d('Monaco', 'Monaco', 'Monaco'), detail: null },
+    { name: d('Suisse', 'Switzerland', 'Svájc'), detail: null },
+    { name: d('Antilles françaises', 'French West Indies', 'Francia Antillák'), detail: d('Saint-Barth, Saint-Martin', 'St Barts, Saint-Martin', 'Saint-Barth, Saint-Martin') },
+    { name: d('Adriatique et Méditerranée', 'Adriatic and Mediterranean', 'Adria és Földközi-tenger'), detail: d('Monténégro, Croatie, Italie, Grèce, Espagne, Portugal', 'Montenegro, Croatia, Italy, Greece, Spain, Portugal', 'Montenegró, Horvátország, Olaszország, Görögország, Spanyolország, Portugália') },
+    { name: d('Hongrie', 'Hungary', 'Magyarország'), detail: null },
+    { name: d('Golfe', 'The Gulf', 'Öböl-térség'), detail: d('Émirats, Qatar, Oman', 'UAE, Qatar, Oman', 'Emírségek, Katar, Omán') },
+  ]
+
+  const commitments = [
+    {
+      title: d('Le code et les données vous appartiennent', 'The code and the data are yours', 'A kód és az adatok az Önéi'),
+      text: d('Tout ce qu’on construit est à vous, et vous pouvez le reprendre à tout moment.', 'Everything we build is yours, and you can take it back at any time.', 'Minden, amit építünk, az Öné, és bármikor átveheti.'),
+    },
+    {
+      title: d('Celui qui vous écoute est celui qui code', 'The person who listens is the person who codes', 'Aki meghallgatja, az írja a kódot'),
+      text: d('Pas de commercial, pas de développeur junior entre nous.', 'No sales rep, no junior developer between us.', 'Nincs köztünk értékesítő, sem junior fejlesztő.'),
+    },
+    {
+      title: d('Vos données hébergées près de vous', 'Your data hosted close to you', 'Az adatai Önhöz közel tárolva'),
+      text: d('En Europe ou aux États-Unis, selon où vous êtes.', 'In Europe or in the United States, depending on where you are.', 'Európában vagy az Egyesült Államokban, attól függően, hol működik.'),
+    },
+  ]
 
   return (
     <main>
       <Nav />
 
-      {/* Hero */}
-      <section style={{ padding: '160px 24px 40px' }}>
-        <div className="mx-auto" style={{ maxWidth: 880 }}>
-          <FadeUp className="text-center mb-2">
-            <span className="section-label">{d('Qui construit', 'Who builds it', 'Ki építi')}</span>
-            <h1
-              className="font-serif italic"
-              style={{
-                fontSize: 'clamp(32px, 5.5vw, 52px)',
-                fontWeight: 400,
-                lineHeight: 1.1,
-                color: 'var(--text)',
-                maxWidth: 720,
-                margin: '14px auto 0',
-              }}
-            >
-              Nathan Goutagny.{' '}
-              <span className="accent" style={{ color: 'var(--accent)' }}>{d('Le fondateur code, pas un commercial.', 'The founder writes the code, not a sales rep.', 'Az alapító írja a kódot, nem egy értékesítő.')}</span>
-            </h1>
-          </FadeUp>
-        </div>
-      </section>
-
-      {/* Profile card */}
-      <section style={{ padding: '24px 24px 60px' }}>
-        <div className="mx-auto" style={{ maxWidth: 880 }}>
-          <FadeUp delay={0.1}>
-            <article
-              className="apropos-card"
-              style={{
-                background: 'var(--bg-card)',
-                border: '1px solid var(--border)',
-                borderRadius: 14,
-                padding: 36,
-                display: 'grid',
-                gridTemplateColumns: '140px 1fr',
-                gap: 32,
-                alignItems: 'flex-start',
-              }}
-            >
-              <div style={{ width: 140, height: 140, borderRadius: '50%', overflow: 'hidden', border: '1px solid var(--border)', position: 'relative', flexShrink: 0 }}>
-                <Image src="/nathan.png" alt={d('Nathan Goutagny, fondateur de NateSystem', 'Nathan Goutagny, founder of NateSystem', 'Nathan Goutagny, a NateSystem alapítója')} fill sizes="140px" style={{ objectFit: 'cover' }} priority />
-              </div>
-
-              <div>
-                <p className="font-mono" style={{ fontSize: 11, letterSpacing: 1.8, color: 'var(--accent)', textTransform: 'uppercase', margin: '0 0 16px', fontWeight: 500 }}>
-                  {d('Fondateur · Plateformes sur-mesure pour écoles · Lyon', 'Founder · Custom platforms for schools · Lyon', 'Alapító · Egyedi platformok iskoláknak · Lyon')}
-                </p>
-                <p className="font-sans" style={{ fontSize: 15.5, color: 'var(--text-secondary)', lineHeight: 1.75, fontWeight: 300, margin: '0 0 16px' }}>
-                  {d(
-                    'Ingénieur formé au croisement du logiciel et de l\u2019IA appliquée. Des années à construire des systèmes opérationnels pour des organisations à forte contrainte, en France et en Hongrie, dont des établissements scolaires. Une conviction simple : le logiciel qui appartient à l\u2019entreprise vaut mieux que dix SaaS qu\u2019elle loue à vie.',
-                    'An engineer trained where software meets applied AI. Years spent building operational systems for organisations under heavy operational constraint, in France and Hungary, schools among them. One simple conviction: software a company owns beats ten it rents for life.'
-                  , 'Mérnök, a szoftverfejlesztés és az alkalmazott MI metszéspontján. Évek működő rendszerek építésével erősen terhelt szervezeteknek Franciaországban és Magyarországon, köztük oktatási intézményeknek. Egy egyszerű meggyőződés: az a szoftver, amely a cégé, többet ér tíz élethosszig bérelt SaaS-előfizetésnél.')}
-                </p>
-                <p className="font-sans" style={{ fontSize: 14, color: 'var(--text)', fontWeight: 500, fontStyle: 'italic', borderLeft: '2px solid var(--accent)', paddingLeft: 14, margin: '0 0 22px', lineHeight: 1.6 }}>
-                  {d('Si vous me parlez, c\u2019est moi qui code derrière. Pas un commercial, pas un junior.', 'If you are talking to me, I am the one writing the code. Not a sales rep, not a junior.', 'Ha velem beszél, én írom mögötte a kódot. Nem egy értékesítő, nem egy junior.')}
-                </p>
-                <div className="flex gap-3 items-center flex-wrap">
-                  <a href="https://www.linkedin.com/in/nathan-goutagny" target="_blank" rel="noopener noreferrer" aria-label={d('LinkedIn Nathan Goutagny', 'Nathan Goutagny on LinkedIn', 'Nathan Goutagny a LinkedInen')} className="apropos-link" style={linkStyle}>
-                    <LinkedInIcon size={15} /><span>LinkedIn</span>
-                  </a>
-                  <a href="mailto:nathan@natesystem.com" aria-label={d('Email Nathan', 'Email Nathan', 'E-mail Nathannak')} className="apropos-link" style={linkStyle}>
-                    <Mail size={15} strokeWidth={1.8} /><span>nathan@natesystem.com</span>
-                  </a>
-                </div>
-              </div>
-            </article>
-          </FadeUp>
-        </div>
-      </section>
-
-      <Divider />
-
-      {/* Proof / expertise */}
-      <section style={{ padding: '80px 24px' }}>
-        <div className="mx-auto" style={{ maxWidth: 880 }}>
-          <FadeUp className="text-center mb-12">
-            <span className="section-label">{d('Sur quoi je fais autorité', 'Where I have real ground', 'Miben van valódi alapom')}</span>
-            <h2 className="section-title" style={{ maxWidth: 640, margin: '0 auto' }}>
-              {d('Des secteurs réels. ', 'Real sectors. ', 'Valódi ágazatok. ')}<span className="accent">{d('Des chiffres vérifiés.', 'Figures that hold up.', 'Számok, amelyek megállják a helyüket.')}</span>
-            </h2>
-          </FadeUp>
-
-          {/* No per-card FadeUp here: this is E-E-A-T proof content that must be
-              visible to users and crawlers regardless of scroll/JS state. */}
-          <div className="apropos-proof-grid">
-            {proof.map((p) => (
-              <div key={p.kEn} style={{ background: 'var(--bg-card)', border: '1px solid var(--border)', borderRadius: 12, padding: '22px 24px', height: '100%' }}>
-                <p className="font-mono" style={{ fontSize: 10.5, letterSpacing: 1.5, textTransform: 'uppercase', color: 'var(--accent)', fontWeight: 600, margin: '0 0 8px' }}>{d(p.kFr, p.kEn, p.kHu)}</p>
-                <p className="font-sans" style={{ fontSize: 13.5, color: 'var(--text-secondary)', lineHeight: 1.6, fontWeight: 300, margin: 0 }}>{d(p.vFr, p.vEn, p.vHu)}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <Divider />
-
-      {/* CTA */}
-      <section style={{ padding: '80px 24px' }}>
-        <div className="mx-auto" style={{ maxWidth: 760 }}>
+      {/* L'histoire, en trois phrases */}
+      <section className="lx-section" style={{ paddingTop: 'clamp(150px, 18vw, 200px)' }}>
+        <div className="lx-wrap">
           <FadeUp>
-            <div style={{ background: 'var(--bg-card)', border: '1px solid rgba(230,57,70,0.15)', borderRadius: 12, padding: '48px 40px', textAlign: 'center' }}>
-              <h2 className="font-serif italic" style={{ fontSize: 'clamp(24px, 4vw, 32px)', fontWeight: 400, marginBottom: 16, color: 'var(--text)' }}>
-                {d('Parlons de ce que vous construisez.', 'Let us talk about what you are building.', 'Beszéljünk arról, amit épít.')}
-              </h2>
-              <p className="font-sans" style={{ fontSize: 15, fontWeight: 300, color: 'var(--text-secondary)', lineHeight: 1.7, maxWidth: 500, margin: '0 auto 32px' }}>
+            <span className="lx-eyebrow">{d('À propos', 'About', 'Rólunk')}</span>
+            <h1 className="lx-title" style={{ fontSize: 'clamp(38px, 5.6vw, 68px)', maxWidth: '15ch' }}>
+              {d('Un outil qui vous ', 'A tool that truly ', 'Egy eszköz, amely ')}
+              <span className="accent">{d('appartient vraiment.', 'belongs to you.', 'valóban az Öné.')}</span>
+            </h1>
+            <p className="lx-lead" style={{ maxWidth: 700 }}>
+              {d(
+                'Les maisons qui servent une clientèle exigeante tournent sur WhatsApp, sur des tableurs et sur la mémoire d’une ou deux personnes, parce que les logiciels du marché ne collent pas à leur façon de travailler. NateSystem existe pour construire l’outil qui colle, à partir de la façon dont chaque maison travaille déjà. Et cet outil leur appartient : le code, les données, tout.',
+                'Businesses that serve demanding clients run on WhatsApp, on spreadsheets and on the memory of one or two people, because off-the-shelf software does not fit the way they work. NateSystem exists to build the tool that fits, starting from the way each business already works. And that tool belongs to them: the code, the data, everything.',
+                'Az igényes ügyfeleket kiszolgáló vállalkozások WhatsAppon, táblázatokon és egy-két ember emlékezetén futnak, mert a piaci szoftverek nem illeszkednek a munkamódjukhoz. A NateSystem azért létezik, hogy megépítse az illeszkedő eszközt, abból kiindulva, ahogyan az adott vállalkozás már dolgozik. És ez az eszköz az övék: a kód, az adatok, minden.'
+              )}
+            </p>
+          </FadeUp>
+        </div>
+      </section>
+
+      {/* L'équipe */}
+      <section id="equipe" className="lx-section" style={{ paddingTop: 0 }}>
+        <div className="lx-wrap ap-team">
+          <FadeUp>
+            <div className="ap-photo">
+              <Image src="/nathan.png" alt={d('Nathan Goutagny, fondateur de NateSystem', 'Nathan Goutagny, founder of NateSystem', 'Nathan Goutagny, a NateSystem alapítója')} fill sizes="(max-width: 860px) 70vw, 340px" style={{ objectFit: 'cover' }} />
+            </div>
+          </FadeUp>
+          <FadeUp delay={0.08}>
+            <div>
+              <span className="lx-eyebrow">{d('L’équipe', 'The team', 'A csapat')}</span>
+              <h2 className="lx-title" style={{ maxWidth: '16ch' }}>Nathan Goutagny</h2>
+              <p className="font-mono ap-role">{d('Fondateur', 'Founder', 'Alapító')}</p>
+              <p className="lx-lead">
                 {d(
-                  'Un appel offert. On regarde votre situation, et vous repartez avec une vision claire, même si on ne travaille pas ensemble.',
-                  'A free call. We look at where you stand, and you leave with a clear view, even if we never work together.'
-                , 'Egy ingyenes hívás. Megnézzük, hol tart, és világos képpel távozik, akkor is, ha soha nem dolgozunk együtt.')}
+                  'Je construis moi-même chaque outil. Quand vous me parlez, c’est moi qui code derrière : pas de commercial, pas de développeur junior entre nous.',
+                  'I build every tool myself. When you talk to me, I am the one writing the code: no sales rep, no junior developer between us.',
+                  'Minden eszközt magam építek. Ha velem beszél, én írom a kódot: nincs köztünk értékesítő, sem junior fejlesztő.'
+                )}
               </p>
-              <Link href={localizedHref(CAL_LINK, lang)} className="btn-primary" style={{ margin: '0 auto' }}>
-                <span className="btn-primary-dot" />{d('Réserver un appel · offert', 'Book a call · free', 'Hívás foglalása · ingyenes')}
-              </Link>
+              <div className="ap-links">
+                <a href="https://www.linkedin.com/in/nathan-goutagny" target="_blank" rel="noopener noreferrer" className="ap-link">
+                  <LinkedInIcon /> LinkedIn
+                </a>
+                <a href="mailto:nathan@natesystem.com" className="ap-link">
+                  <Mail size={15} strokeWidth={1.8} /> nathan@natesystem.com
+                </a>
+              </div>
             </div>
           </FadeUp>
         </div>
       </section>
 
-      <Divider />
+      {/* Où on est basés, où on intervient */}
+      <section id="ou" className="lx-section" style={{ background: '#0e0e12' }}>
+        <div className="lx-wrap ap-where">
+          <FadeUp>
+            <div>
+              <span className="lx-eyebrow" style={{ color: 'rgba(240,240,242,0.5)' }}>{d('Où nous sommes', 'Where we are', 'Hol vagyunk')}</span>
+              <h2 className="lx-title" style={{ color: '#f0f0f2', maxWidth: '14ch' }}>
+                {d('Basés au Monténégro ', 'Based in Montenegro ', 'Montenegróban ')}
+                <span className="accent">{d('et en France.', 'and France.', 'és Franciaországban.')}</span>
+              </h2>
+              <p className="lx-lead" style={{ color: 'rgba(240,240,242,0.65)' }}>
+                {d('À Tivat, sur la baie de Kotor, et en France. Le travail se fait sur place quand il le faut, à distance le reste du temps.', 'In Tivat, on the Bay of Kotor, and in France. We work on site when it matters, remotely the rest of the time.', 'Tivatban, a Kotori-öbölnél, és Franciaországban. Ha kell, a helyszínen dolgozunk, egyébként távolról.')}
+              </p>
+            </div>
+          </FadeUp>
+          <FadeUp delay={0.08}>
+            <div>
+              <span className="lx-eyebrow" style={{ color: 'rgba(240,240,242,0.5)' }}>{d('Nous intervenons en', 'We work in', 'Ahol dolgozunk')}</span>
+              <ul className="ap-regions">
+                {regions.map((r) => (
+                  <li key={r.name}>
+                    <span className="font-sans ap-region">{r.name}</span>
+                    {r.detail && <span className="font-sans ap-region-detail">{r.detail}</span>}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </FadeUp>
+        </div>
+      </section>
+
+      {/* Trois engagements */}
+      <section id="engagements" className="lx-section">
+        <div className="lx-wrap">
+          <FadeUp>
+            <span className="lx-eyebrow">{d('Nos engagements', 'Our commitments', 'Vállalásaink')}</span>
+            <h2 className="lx-title">{d('Trois choses qui ', 'Three things that ', 'Három dolog, ami ')}<span className="accent">{d('ne changent pas.', 'never change.', 'nem változik.')}</span></h2>
+          </FadeUp>
+          <ol className="ap-commit">
+            {commitments.map((c, i) => (
+              <FadeUp key={c.title} delay={0.08 * i}>
+                <li>
+                  <span className="font-mono ap-num">{String(i + 1).padStart(2, '0')}</span>
+                  <h3 className="font-serif italic ap-commit-title">{c.title}</h3>
+                  <p className="font-sans ap-commit-text">{c.text}</p>
+                </li>
+              </FadeUp>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      {/* Appel final */}
+      <section className="lx-section" style={{ paddingTop: 0 }}>
+        <div className="lx-narrow" style={{ textAlign: 'center' }}>
+          <FadeUp>
+            <h2 className="lx-title" style={{ margin: '0 auto', maxWidth: 'none' }}>
+              {d('Parlons de ', 'Let’s talk about ', 'Beszéljünk ')}
+              <span className="accent">{d('votre maison.', 'your business.', 'a vállalkozásáról.')}</span>
+            </h2>
+            <p className="lx-lead" style={{ margin: '22px auto 36px' }}>
+              {d(
+                '20 minutes sur Google Meet. Vous m’expliquez comment vous travaillez aujourd’hui, je vous dis ce qu’on peut vous rendre.',
+                '20 minutes on Google Meet. You tell me how you work today, I tell you what we can give back to you.',
+                '20 perc Google Meeten. Ön elmondja, hogyan dolgozik ma, én megmondom, mit tudunk visszaadni Önnek.'
+              )}
+            </p>
+            <Link href={localizedHref(CAL_LINK, lang)} className="btn-primary" style={{ margin: '0 auto' }}>
+              <span className="btn-primary-dot" />{d('Réserver un appel', 'Book a call', 'Hívás foglalása')} &rarr;
+            </Link>
+          </FadeUp>
+        </div>
+      </section>
+
       <Footer />
       <MobileCta />
 
       <style jsx>{`
-        .apropos-proof-grid {
-          display: grid;
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-          gap: 18px;
-          align-items: stretch;
-        }
-        @media (max-width: 700px) {
-          .apropos-card {
-            grid-template-columns: 1fr !important;
-            text-align: center;
-            justify-items: center;
-          }
-          .apropos-proof-grid {
-            grid-template-columns: 1fr;
-          }
+        .ap-team { display: grid; grid-template-columns: 340px 1fr; gap: 72px; align-items: center; }
+        .ap-photo { position: relative; width: 100%; aspect-ratio: 4 / 5; overflow: hidden; border-radius: 4px; background: var(--bg-elevated); }
+        .ap-role { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin: 14px 0 0; }
+        .ap-links { display: flex; flex-wrap: wrap; gap: 20px; margin-top: 28px; }
+        .ap-link { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-sans); font-size: 14px; color: var(--text); text-decoration: none; border-bottom: 1px solid var(--border-hover); padding-bottom: 3px; }
+        .ap-link:hover { color: var(--accent); border-color: var(--accent); }
+        .ap-where { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
+        .ap-regions { list-style: none; margin: 0; padding: 0; }
+        .ap-regions li { display: flex; flex-direction: column; gap: 2px; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .ap-regions li:first-child { padding-top: 0; }
+        .ap-region { font-size: 16px; font-weight: 500; color: #f0f0f2; }
+        .ap-region-detail { font-size: 14px; font-weight: 300; color: rgba(240,240,242,0.6); }
+        .ap-commit { list-style: none; margin: 64px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 48px; }
+        .ap-num { font-size: 11px; letter-spacing: 2px; color: var(--accent); }
+        .ap-commit-title { font-size: clamp(21px, 2vw, 25px); font-weight: 400; line-height: 1.25; color: var(--text); margin: 16px 0 10px; }
+        .ap-commit-text { font-size: 15px; font-weight: 300; line-height: 1.65; color: var(--text-secondary); margin: 0; }
+        @media (max-width: 860px) {
+          .ap-team, .ap-where { grid-template-columns: 1fr; gap: 40px; }
+          .ap-photo { width: 72%; max-width: 300px; }
+          .ap-commit { grid-template-columns: 1fr; gap: 36px; margin-top: 44px; }
         }
       `}</style>
     </main>
   )
-}
-
-const linkStyle: React.CSSProperties = {
-  display: 'inline-flex',
-  alignItems: 'center',
-  gap: 8,
-  fontSize: 13,
-  fontWeight: 500,
-  color: 'var(--text)',
-  textDecoration: 'none',
-  padding: '8px 14px',
-  border: '1px solid var(--border)',
-  borderRadius: 8,
-  transition: 'border-color 0.2s ease, background 0.2s ease',
 }
