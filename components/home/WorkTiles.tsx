@@ -10,9 +10,10 @@ import type { Lang } from '@/lib/i18n'
 
 /**
  * LES TUILES DE RÉALISATIONS (refonte du 9 novembre 2026). Trois sur
- * l'accueil, cinq sur /case-studies. Chaque tuile : une vraie photo prise sur
- * place (ou, pour la conciergerie sous NDA, aucune photo : son nom ne se
- * montre pas), le client, le secteur, une ligne de résultat.
+ * l'accueil, quatre sur /case-studies. Chaque tuile : une vraie photo prise
+ * sur place, cadrée sur les visages, le client, le secteur, une ligne de
+ * résultat. La conciergerie sous NDA n'a pas de tuile (Nathan, 09/11 :
+ * « ne mets pas la conciergerie ») ; le podcast Chromosome prend sa place.
  *
  * ⚠︎ Les lignes de résultat reprennent mot pour mot ce qui est déjà publié
  * ou validé par Nathan : la forme imposée de la conciergerie sous NDA
@@ -25,31 +26,37 @@ type Tile = {
   line: Record<Lang, string>
   href: string
   photo?: string
+  /** Cadrage de la photo dans la tuile (object-position), pour garder les visages. */
+  pos?: string
   glyph?: number
 }
 
 const TILES: Tile[] = [
   {
-    key: 'nda',
-    label: { fr: 'Conciergerie de luxe · sous NDA', en: 'Luxury concierge · under NDA', hu: 'Luxus concierge · titoktartás alatt' },
+    key: 'chromosome',
+    label: { fr: 'Chromosome · Saint-Étienne', en: 'Chromosome · Saint-Étienne', hu: 'Chromosome · Saint-Étienne' },
     line: {
-      fr: '30 h par mois récupérées, et une expérience client nettement meilleure.',
-      en: '30 hours a month back, and a clearly better client experience.',
-      hu: 'Havi 30 óra visszanyerve, és érezhetően jobb ügyfélélmény.',
+      fr: 'Tout leur fonctionnement sur un logiciel qui leur appartient.',
+      en: 'Everything they run, on software that belongs to them.',
+      hu: 'A teljes működésük egy szoftveren, amely az övék.',
     },
-    href: '/case-studies',
-    glyph: 2,
+    href: '/case-studies/chromosome',
+    /* Image de la vidéo du podcast (YouTube aMIjJbzuhDc), en 1280 px : la
+       version du bandeau ne faisait que 400 px. */
+    photo: '/realisations/podcast-chromosome.jpg',
+    pos: 'center 45%',
   },
   {
     key: 'chartreux',
     label: { fr: 'Institut des Chartreux · Lyon', en: 'Institut des Chartreux · Lyon', hu: 'Institut des Chartreux · Lyon' },
     line: {
-      fr: 'Neuf tableurs remplacés par un seul outil. 40 h par mois rendues à l’équipe.',
+      fr: 'Neuf tableurs remplacés par un seul outil. 40\u00A0h par mois rendues à l’équipe.',
       en: 'Nine spreadsheets replaced by one tool. 40 hours a month given back to the team.',
       hu: 'Kilenc táblázat helyett egyetlen eszköz. Havi 40 óra visszaadva a csapatnak.',
     },
     href: '/case-studies',
     photo: '/realisations/chartreux-terrasse.webp',
+    pos: 'center 18%',
   },
   {
     key: 'vendeglatas',
@@ -61,17 +68,7 @@ const TILES: Tile[] = [
     },
     href: '/case-studies/conseil-b2b-budapest',
     photo: '/realisations/zoltan-budapest.webp',
-  },
-  {
-    key: 'chromosome',
-    label: { fr: 'Chromosome · Saint-Étienne', en: 'Chromosome · Saint-Étienne', hu: 'Chromosome · Saint-Étienne' },
-    line: {
-      fr: 'Tout leur fonctionnement sur un logiciel qui leur appartient.',
-      en: 'Everything they run, on software that belongs to them.',
-      hu: 'A teljes működésük egy szoftveren, amely az övék.',
-    },
-    href: '/case-studies/chromosome',
-    photo: '/realisations/bandeau/catherine.webp',
+    pos: 'center top',
   },
   {
     key: 'iut',
@@ -83,6 +80,7 @@ const TILES: Tile[] = [
     },
     href: '/case-studies',
     photo: '/realisations/iut-temoignage-poster.jpg',
+    pos: 'left center',
   },
 ]
 
@@ -108,7 +106,7 @@ export default function WorkTiles({ variant = 'home' }: { variant?: 'home' | 'al
                 <div className={`wt-media${t.photo ? '' : ' wt-media-plain'}`}>
                   {t.photo ? (
                     /* eslint-disable-next-line @next/next/no-img-element */
-                    <img src={t.photo} alt={t.label[lang]} loading="lazy" />
+                    <img src={t.photo} alt={t.label[lang]} loading="lazy" style={{ objectPosition: t.pos ?? 'center' }} />
                   ) : (
                     <span className="wt-glyph"><SectorGlyph index={t.glyph ?? 2} /></span>
                   )}
@@ -134,7 +132,7 @@ export default function WorkTiles({ variant = 'home' }: { variant?: 'home' | 'al
           margin-top: 64px;
           display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px;
         }
-        .wt-grid-all { margin-top: 0; }
+        .wt-grid-all { margin-top: 0; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px; }
         :global(.wt-tile) { display: flex; flex-direction: column; text-decoration: none; color: inherit; }
         .wt-media {
           position: relative; aspect-ratio: 4 / 3; overflow: hidden; border-radius: 4px;
