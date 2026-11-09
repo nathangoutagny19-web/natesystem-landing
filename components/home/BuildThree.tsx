@@ -32,11 +32,11 @@ export default function BuildThree() {
       ),
     },
     {
-      title: d('Vos clients et vos propriétaires suivis', 'Your clients and owners looked after', 'Ügyfelei és tulajdonosai figyelemmel kísérve'),
+      title: d('Vos clients, propriétaires et partenaires suivis', 'Your clients, owners and partners looked after', 'Ügyfelei, tulajdonosai és partnerei figyelemmel kísérve'),
       text: d(
-        'Leur espace, leurs documents, leurs préférences, sans que vous ayez à répondre à chaque message.',
-        'Their own space, their documents, their preferences, without you answering every message.',
-        'Saját felületük, dokumentumaik, preferenciáik, anélkül hogy minden üzenetre Önnek kellene válaszolnia.'
+        'Chacun son espace, ses documents, ses informations, sans que vous ayez à répondre à chaque message.',
+        'Each with their own space, documents and information, without you answering every message.',
+        'Mindegyiknek saját felülete, dokumentumai és információi, anélkül hogy minden üzenetre Önnek kellene válaszolnia.'
       ),
     },
   ]
