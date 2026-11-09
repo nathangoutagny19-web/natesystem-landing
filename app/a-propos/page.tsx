@@ -7,7 +7,7 @@ import Footer from '@/components/layout/Footer'
 import MobileCta from '@/components/layout/MobileCta'
 import FadeUp from '@/components/ui/FadeUp'
 import AuditFinal from '@/components/home/AuditFinal'
-import CountrySlides from '@/components/about/CountrySlides'
+import WorldMap from '@/components/about/WorldMap'
 import { useLang } from '@/components/providers/LangProvider'
 import { makeD } from '@/lib/lang'
 
@@ -121,9 +121,9 @@ export default function AProposPage() {
             ))}
           </div>
 
-          {/* Les pays, en slides qui tournent : un dessin au trait par pays (Nathan, 9 novembre 2026) */}
+          {/* Les pays : un planisphère en points, un trait depuis Tivat vers chacun (Nathan, 9 novembre 2026) */}
           <span className="font-mono ap-regions-label">{d('Nous intervenons en', 'We work in', 'Ahol dolgozunk')}</span>
-          <CountrySlides />
+          <WorldMap />
         </div>
       </section>
 
