@@ -1,30 +1,34 @@
 'use client'
 
 import Image from 'next/image'
-import Link from 'next/link'
 import { Mail } from 'lucide-react'
 import Nav from '@/components/layout/Nav'
 import Footer from '@/components/layout/Footer'
 import MobileCta from '@/components/layout/MobileCta'
 import FadeUp from '@/components/ui/FadeUp'
-import { CAL_LINK } from '@/lib/constants'
+import AuditFinal from '@/components/home/AuditFinal'
 import { useLang } from '@/components/providers/LangProvider'
 import { makeD } from '@/lib/lang'
-import { localizedHref } from '@/lib/routes'
-import ClientsGlobe from '@/components/about/ClientsGlobe'
 
 /**
- * À PROPOS (refonte du 9 novembre 2026) : l'histoire en trois phrases,
- * l'équipe, où l'on est basés, où l'on intervient, trois engagements.
+ * À PROPOS (9 novembre 2026). Nathan, sur le globe : « trop tech, faut plus
+ * clair, court et humain, donc photo ». La page tient en quatre temps : qui on
+ * est, en photos et en une phrase ; Nathan ; trois engagements ; l'audit.
  *
- * ⚠︎ CHOIX PAR DÉFAUT, À CONFIRMER PAR NATHAN (proposition du 09/11, §10) :
- *   - l'équipe : Nathan seul, personne d'autre n'est inventé ;
- *   - « basés au Monténégro (Tivat) et en France » : sa demande du 8 novembre
- *     (« dire qu'on est basé à Tivat ») et l'entreprise française (SIRET) ;
- *   - « nous intervenons en » : la liste des marchés prospectés de la
- *     proposition ;
- *   - l'hébergement en Europe ou aux États-Unis selon le client : décision
- *     de Nathan du 21/10/2026.
+ * ⚠︎ LES PHOTOS : uniquement des vraies, prises sur place.
+ *   - Lyon : la poignée de main sur la terrasse de Fourvière, déjà publiée
+ *     sur la tuile Institut des Chartreux de l'accueil.
+ *   - Budapest : la poignée de main déjà publiée sur la tuile Vendéglátás
+ *     Menedzsment.
+ *   - Baie de Kotor : une image du tournage du 8 novembre 2026
+ *     (Business/Media/Videos/0-RUSHES/2026-11-08-kotor, IMG_7460).
+ *   Nommés : seulement les clients déjà publics sur le site. Jamais la
+ *   conciergerie sous NDA, Wandering Yacht ni Services Exclusifs.
+ *
+ * Choix par défaut, à confirmer par Nathan : l'équipe = Nathan seul ; « basés
+ * au Monténégro et en France » ; la liste « nous intervenons en » (marchés
+ * prospectés) ; l'hébergement en Europe ou aux États-Unis selon le client
+ * (décision du 21/10/2026).
  */
 
 function LinkedInIcon({ size = 15 }: { size?: number }) {
@@ -39,14 +43,38 @@ export default function AProposPage() {
   const { lang } = useLang()
   const d = makeD(lang)
 
+  const photos = [
+    {
+      src: '/realisations/chartreux-terrasse.webp',
+      pos: '65% center',
+      place: d('Lyon · France', 'Lyon · France', 'Lyon · Franciaország'),
+      who: d('Avec l’Institut des Chartreux', 'With the Institut des Chartreux', 'Az Institut des Chartreux-val'),
+      alt: d('Nathan serre la main d’une cliente sur une terrasse de Lyon, Fourvière derrière eux', 'Nathan shaking hands with a client on a terrace in Lyon, Fourvière behind them', 'Nathan kezet fog egy ügyféllel egy lyoni teraszon, mögöttük Fourvière'),
+    },
+    {
+      src: '/realisations/zoltan-budapest.webp',
+      pos: 'center',
+      place: d('Budapest · Hongrie', 'Budapest · Hungary', 'Budapest · Magyarország'),
+      who: d('Avec Vendéglátás Menedzsment', 'With Vendéglátás Menedzsment', 'A Vendéglátás Menedzsmenttel'),
+      alt: d('Nathan serre la main d’un client à Budapest', 'Nathan shaking hands with a client in Budapest', 'Nathan kezet fog egy ügyféllel Budapesten'),
+    },
+    {
+      src: '/a-propos/baie-de-kotor.jpg',
+      pos: 'center',
+      place: d('Baie de Kotor · Monténégro', 'Bay of Kotor · Montenegro', 'Kotori-öböl · Montenegró'),
+      who: d('Là où nous sommes basés', 'Where we are based', 'Ahol a bázisunk van'),
+      alt: d('Nathan devant la baie de Kotor, au Monténégro', 'Nathan in front of the Bay of Kotor, Montenegro', 'Nathan a Kotori-öböl előtt, Montenegróban'),
+    },
+  ]
+
   const regions = [
-    { name: d('France', 'France', 'Franciaország'), detail: d('Côte d’Azur, Alpes, Paris, Lyon', 'Côte d’Azur, the Alps, Paris, Lyon', 'Côte d’Azur, Alpok, Párizs, Lyon') },
-    { name: d('Monaco', 'Monaco', 'Monaco'), detail: null },
-    { name: d('Suisse', 'Switzerland', 'Svájc'), detail: null },
-    { name: d('Antilles françaises', 'French West Indies', 'Francia Antillák'), detail: d('Saint-Barth, Saint-Martin', 'St Barts, Saint-Martin', 'Saint-Barth, Saint-Martin') },
-    { name: d('Adriatique et Méditerranée', 'Adriatic and Mediterranean', 'Adria és Földközi-tenger'), detail: d('Monténégro, Croatie, Italie, Grèce, Espagne, Portugal', 'Montenegro, Croatia, Italy, Greece, Spain, Portugal', 'Montenegró, Horvátország, Olaszország, Görögország, Spanyolország, Portugália') },
-    { name: d('Hongrie', 'Hungary', 'Magyarország'), detail: null },
-    { name: d('Golfe', 'The Gulf', 'Öböl-térség'), detail: d('Émirats, Qatar, Oman', 'UAE, Qatar, Oman', 'Emírségek, Katar, Omán') },
+    d('France', 'France', 'Franciaország'),
+    'Monaco',
+    d('Suisse', 'Switzerland', 'Svájc'),
+    d('Antilles françaises', 'French West Indies', 'Francia Antillák'),
+    d('Adriatique et Méditerranée', 'Adriatic and Mediterranean', 'Adria és Földközi-tenger'),
+    d('Hongrie', 'Hungary', 'Magyarország'),
+    d('Golfe', 'The Gulf', 'Öböl-térség'),
   ]
 
   const commitments = [
@@ -68,41 +96,50 @@ export default function AProposPage() {
     <main>
       <Nav />
 
-      {/* Le hero (Nathan, 9 novembre 2026) : « une agence human to human »,
-          où l'on est basés et où sont nos clients, puis le globe des clients.
-          Version 1 des trois proposées ; c'est Nathan qui tranche. */}
+      {/* Qui on est : une phrase, puis trois vraies photos, chacune avec son lieu */}
       <section className="lx-section" style={{ paddingTop: 'clamp(140px, 16vw, 190px)' }}>
-        <div className="lx-wrap ap-hero">
+        <div className="lx-wrap">
           <FadeUp>
-            <div>
-              <span className="lx-eyebrow">{d('À propos', 'About', 'Rólunk')}</span>
-              <h1 className="lx-title" style={{ fontSize: 'clamp(38px, 4.6vw, 60px)', maxWidth: '15ch' }}>
-                {d('Une agence ', 'A ', 'Egy ')}
-                <span className="accent">{d('human to human.', 'human-to-human agency.', 'human to human ügynökség.')}</span>
-              </h1>
-              <p className="lx-lead" style={{ color: 'var(--text)', fontWeight: 400 }}>
-                {d(
-                  'Basés au Monténégro et en France. Nos clients sont à Lyon, à Saint-Étienne et à Budapest, et nous intervenons de l’Europe aux Antilles et au Golfe.',
-                  'Based in Montenegro and France. Our clients are in Lyon, Saint-Étienne and Budapest, and we work from Europe to the French West Indies and the Gulf.',
-                  'Montenegróban és Franciaországban működünk. Ügyfeleink Lyonban, Saint-Étienne-ben és Budapesten vannak, és Európától a Francia Antillákig és az Öböl-térségig dolgozunk.'
-                )}
-              </p>
-              <p className="lx-lead" style={{ maxWidth: 560, fontSize: 15.5, marginTop: 20 }}>
-                {d(
-                  'Les maisons qui servent une clientèle exigeante tournent sur WhatsApp, sur des tableurs et sur la mémoire d’une ou deux personnes, parce que les logiciels du marché ne collent pas à leur façon de travailler. NateSystem existe pour construire l’outil qui colle, à partir de la façon dont chaque maison travaille déjà. Et cet outil leur appartient : le code, les données, tout.',
-                  'Businesses that serve demanding clients run on WhatsApp, on spreadsheets and on the memory of one or two people, because off-the-shelf software does not fit the way they work. NateSystem exists to build the tool that fits, starting from the way each business already works. And that tool belongs to them: the code, the data, everything.',
-                  'Az igényes ügyfeleket kiszolgáló vállalkozások WhatsAppon, táblázatokon és egy-két ember emlékezetén futnak, mert a piaci szoftverek nem illeszkednek a munkamódjukhoz. A NateSystem azért létezik, hogy megépítse az illeszkedő eszközt, abból kiindulva, ahogyan az adott vállalkozás már dolgozik. És ez az eszköz az övék: a kód, az adatok, minden.'
-                )}
-              </p>
-            </div>
+            <span className="lx-eyebrow">{d('À propos', 'About', 'Rólunk')}</span>
+            <h1 className="lx-title" style={{ fontSize: 'clamp(40px, 5.4vw, 72px)', maxWidth: 'none' }}>
+              {d('Une agence ', 'A ', 'Egy ')}
+              <span className="accent">{d('human to human.', 'human-to-human agency.', 'human to human ügynökség.')}</span>
+            </h1>
+            <p className="lx-lead" style={{ maxWidth: 600 }}>
+              {d(
+                'Basés au Monténégro et en France, sur place quand il le faut. On construit votre outil avec vous, et il vous appartient.',
+                'Based in Montenegro and France, on site when it matters. We build your tool with you, and it belongs to you.',
+                'Montenegróban és Franciaországban működünk, és ha kell, a helyszínen vagyunk. Az eszközét Önnel együtt építjük, és az Öné.'
+              )}
+            </p>
           </FadeUp>
-          <FadeUp delay={0.1}>
-            <ClientsGlobe />
+
+          <div className="ap-photos">
+            {photos.map((p, i) => (
+              <FadeUp key={p.src} delay={0.08 * i}>
+                <figure className="ap-fig">
+                  <div className="ap-img">
+                    <Image src={p.src} alt={p.alt} fill sizes="(max-width: 760px) 80vw, 400px" style={{ objectFit: 'cover', objectPosition: p.pos }} />
+                  </div>
+                  <figcaption>
+                    <span className="font-mono ap-place">{p.place}</span>
+                    <span className="font-sans ap-who">{p.who}</span>
+                  </figcaption>
+                </figure>
+              </FadeUp>
+            ))}
+          </div>
+
+          <FadeUp>
+            <p className="font-sans ap-regions">
+              <span className="font-mono ap-regions-label">{d('Nous intervenons en', 'We work in', 'Ahol dolgozunk')}</span>
+              {regions.join(' · ')}
+            </p>
           </FadeUp>
         </div>
       </section>
 
-      {/* L'équipe */}
+      {/* Nathan */}
       <section id="equipe" className="lx-section" style={{ paddingTop: 0 }}>
         <div className="lx-wrap ap-team">
           <FadeUp>
@@ -135,39 +172,8 @@ export default function AProposPage() {
         </div>
       </section>
 
-      {/* Où on est basés, où on intervient */}
-      <section id="ou" className="lx-section" style={{ background: '#0e0e12' }}>
-        <div className="lx-wrap ap-where">
-          <FadeUp>
-            <div>
-              <span className="lx-eyebrow" style={{ color: 'rgba(240,240,242,0.5)' }}>{d('Où nous sommes', 'Where we are', 'Hol vagyunk')}</span>
-              <h2 className="lx-title" style={{ color: '#f0f0f2', maxWidth: '16ch' }}>
-                {d('Sur place quand il le faut, ', 'On site when it matters, ', 'Ha kell, a helyszínen, ')}
-                <span className="accent">{d('à distance le reste du temps.', 'remotely the rest of the time.', 'egyébként távolról.')}</span>
-              </h2>
-              <p className="lx-lead" style={{ color: 'rgba(240,240,242,0.65)' }}>
-                {d('Depuis Tivat, sur la baie de Kotor, et depuis la France.', 'From Tivat, on the Bay of Kotor, and from France.', 'Tivatból, a Kotori-öböl partjáról, és Franciaországból.')}
-              </p>
-            </div>
-          </FadeUp>
-          <FadeUp delay={0.08}>
-            <div>
-              <span className="lx-eyebrow" style={{ color: 'rgba(240,240,242,0.5)' }}>{d('Nous intervenons en', 'We work in', 'Ahol dolgozunk')}</span>
-              <ul className="ap-regions">
-                {regions.map((r) => (
-                  <li key={r.name}>
-                    <span className="font-sans ap-region">{r.name}</span>
-                    {r.detail && <span className="font-sans ap-region-detail">{r.detail}</span>}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </FadeUp>
-        </div>
-      </section>
-
       {/* Trois engagements */}
-      <section id="engagements" className="lx-section">
+      <section id="engagements" className="lx-section" style={{ paddingTop: 0 }}>
         <div className="lx-wrap">
           <FadeUp>
             <span className="lx-eyebrow">{d('Nos engagements', 'Our commitments', 'Vállalásaink')}</span>
@@ -187,53 +193,57 @@ export default function AProposPage() {
         </div>
       </section>
 
-      {/* Appel final */}
-      <section className="lx-section" style={{ paddingTop: 0 }}>
-        <div className="lx-narrow" style={{ textAlign: 'center' }}>
-          <FadeUp>
-            <h2 className="lx-title" style={{ margin: '0 auto', maxWidth: 'none' }}>
-              {d('Parlons de ', 'Let’s talk about ', 'Beszéljünk ')}
-              <span className="accent">{d('votre maison.', 'your business.', 'a vállalkozásáról.')}</span>
-            </h2>
-            <p className="lx-lead" style={{ margin: '22px auto 36px' }}>
-              {d(
-                '20 minutes sur Google Meet. Vous m’expliquez comment vous travaillez aujourd’hui, je vous dis ce qu’on peut vous rendre.',
-                '20 minutes on Google Meet. You tell me how you work today, I tell you what we can give back to you.',
-                '20 perc Google Meeten. Ön elmondja, hogyan dolgozik ma, én megmondom, mit tudunk visszaadni Önnek.'
-              )}
-            </p>
-            <Link href={localizedHref(CAL_LINK, lang)} className="btn-primary" style={{ margin: '0 auto' }}>
-              <span className="btn-primary-dot" />{d('Réserver un appel', 'Book a call', 'Hívás foglalása')} &rarr;
-            </Link>
-          </FadeUp>
-        </div>
-      </section>
+      {/* Fin de page : l'audit gratuit, jamais un appel à réserver */}
+      <AuditFinal paddingTop={0} />
 
       <Footer />
       <MobileCta />
 
       <style jsx>{`
-        .ap-hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 460px); gap: 72px; align-items: center; }
+        .ap-photos {
+          margin-top: clamp(48px, 6vw, 80px);
+          display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; align-items: start;
+        }
+        /* La photo du milieu descend un peu : une rangée posée à la main, pas une grille. */
+        .ap-photos > :global(*:nth-child(2)) { margin-top: 56px; }
+        .ap-fig { margin: 0; }
+        .ap-img { position: relative; aspect-ratio: 4 / 5; overflow: hidden; border-radius: 4px; background: var(--bg-elevated); }
+        .ap-fig figcaption { display: flex; flex-direction: column; gap: 4px; margin-top: 16px; }
+        .ap-place { font-size: 10.5px; letter-spacing: 1.8px; text-transform: uppercase; color: var(--text-muted); }
+        .ap-who { font-size: 15px; color: var(--text); }
+        .ap-regions {
+          margin: clamp(48px, 6vw, 72px) 0 0; max-width: 760px;
+          font-size: 16px; font-weight: 300; line-height: 1.7; color: var(--text-secondary);
+        }
+        .ap-regions-label {
+          display: block; margin-bottom: 8px;
+          font-size: 10.5px; letter-spacing: 1.8px; text-transform: uppercase; color: var(--accent);
+        }
         .ap-team { display: grid; grid-template-columns: 340px 1fr; gap: 72px; align-items: center; }
         .ap-photo { position: relative; width: 100%; aspect-ratio: 4 / 5; overflow: hidden; border-radius: 4px; background: var(--bg-elevated); }
         .ap-role { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin: 14px 0 0; }
         .ap-links { display: flex; flex-wrap: wrap; gap: 20px; margin-top: 28px; }
         .ap-link { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-sans); font-size: 14px; color: var(--text); text-decoration: none; border-bottom: 1px solid var(--border-hover); padding-bottom: 3px; }
         .ap-link:hover { color: var(--accent); border-color: var(--accent); }
-        .ap-where { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
-        .ap-regions { list-style: none; margin: 0; padding: 0; }
-        .ap-regions li { display: flex; flex-direction: column; gap: 2px; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
-        .ap-regions li:first-child { padding-top: 0; }
-        .ap-region { font-size: 16px; font-weight: 500; color: #f0f0f2; }
-        .ap-region-detail { font-size: 14px; font-weight: 300; color: rgba(240,240,242,0.6); }
         .ap-commit { list-style: none; margin: 64px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 48px; }
         .ap-num { font-size: 11px; letter-spacing: 2px; color: var(--accent); }
         .ap-commit-title { font-size: clamp(21px, 2vw, 25px); font-weight: 400; line-height: 1.25; color: var(--text); margin: 16px 0 10px; }
         .ap-commit-text { font-size: 15px; font-weight: 300; line-height: 1.65; color: var(--text-secondary); margin: 0; }
         @media (max-width: 860px) {
-          .ap-hero, .ap-team, .ap-where { grid-template-columns: 1fr; gap: 40px; }
+          .ap-team { grid-template-columns: 1fr; gap: 40px; }
           .ap-photo { width: 72%; max-width: 300px; }
           .ap-commit { grid-template-columns: 1fr; gap: 36px; margin-top: 44px; }
+        }
+        /* Sur téléphone : les photos défilent au doigt, une et un peu de la suivante. */
+        @media (max-width: 760px) {
+          .ap-photos {
+            display: flex; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding: 0 20px;
+            margin-left: -20px; margin-right: -20px; padding: 0 20px 4px;
+            scrollbar-width: none;
+          }
+          .ap-photos::-webkit-scrollbar { display: none; }
+          .ap-photos > :global(*) { flex: 0 0 78%; scroll-snap-align: start; }
+          .ap-photos > :global(*:nth-child(2)) { margin-top: 0; }
         }
       `}</style>
     </main>
