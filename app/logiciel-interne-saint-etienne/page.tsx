@@ -8,7 +8,7 @@ import MobileCta from '@/components/layout/MobileCta'
 import Divider from '@/components/ui/Divider'
 import FadeUp from '@/components/ui/FadeUp'
 import RelatedLinks from '@/components/ui/RelatedLinks'
-import { CAL_LINK } from '@/lib/constants'
+import { AUDIT_LINK } from '@/lib/constants'
 
 const solutions = [
   {
@@ -65,8 +65,8 @@ export default function LogicielInterneSaintEtiennePage() {
               la Loire. Un seul logiciel pour réunir vos outils, vos données et votre équipe, que votre entreprise
               possède à vie.
             </p>
-            <Link href={CAL_LINK} className="btn-primary" style={{ margin: '0 auto', fontSize: 14 }}>
-              <span className="btn-primary-dot" />Réserver un appel · offert →
+            <Link href={AUDIT_LINK} className="btn-primary" style={{ margin: '0 auto', fontSize: 14 }}>
+              <span className="btn-primary-dot" />Recevoir votre audit gratuit →
             </Link>
           </FadeUp>
         </div>
@@ -243,8 +243,8 @@ export default function LogicielInterneSaintEtiennePage() {
                 Un appel offert. On regarde vos outils actuels et on identifie ce qu&apos;un logiciel interne sur-mesure
                 ferait gagner à votre entreprise, en temps, en clients, en clarté. Même si on ne travaille pas ensemble.
               </p>
-              <Link href={CAL_LINK} className="btn-primary" style={{ margin: '0 auto' }}>
-                <span className="btn-primary-dot" />Réserver un appel · offert
+              <Link href={AUDIT_LINK} className="btn-primary" style={{ margin: '0 auto' }}>
+                <span className="btn-primary-dot" />Recevoir votre audit gratuit
               </Link>
             </div>
           </FadeUp>

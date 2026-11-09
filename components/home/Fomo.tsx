@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import FadeUp from '@/components/ui/FadeUp'
 import { useLang } from '@/components/providers/LangProvider'
-import { CAL_LINK } from '@/lib/constants'
+import { AUDIT_LINK } from '@/lib/constants'
 import { localizedHref } from '@/lib/routes'
 
 export default function Fomo() {
@@ -108,7 +108,7 @@ export default function Fomo() {
 
           <div className="text-center">
             <Link
-              href={localizedHref(CAL_LINK, lang)}
+              href={localizedHref(AUDIT_LINK, lang)}
               className="btn-primary"
               style={{ fontSize: 14, display: 'inline-flex', alignItems: 'center', gap: 8 }}
             >

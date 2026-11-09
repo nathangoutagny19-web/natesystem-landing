@@ -7,7 +7,7 @@ import MobileCta from '@/components/layout/MobileCta'
 import FadeUp from '@/components/ui/FadeUp'
 import Divider from '@/components/ui/Divider'
 import LiteYouTube from '@/components/ui/LiteYouTube'
-import { CAL_LINK } from '@/lib/constants'
+import { AUDIT_LINK } from '@/lib/constants'
 import { useLang } from '@/components/providers/LangProvider'
 import { makeD } from '@/lib/lang'
 import { localizedHref } from '@/lib/routes'
@@ -260,9 +260,9 @@ export default function CaseStudyDetail({ study }: { study: CaseStudy }) {
               {d('On commence par un diagnostic, on regarde où partent vos heures avant de proposer quoi que ce soit.', 'We start with a diagnostic, and look at where your hours go before proposing anything at all.', 'Diagnosztikával kezdünk: megnézzük, hová mennek az órái, mielőtt bármit javasolnánk.')}
             </p>
             <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
-              <Link href={localizedHref(CAL_LINK, lang)} className="btn-primary">
+              <Link href={localizedHref(AUDIT_LINK, lang)} className="btn-primary">
                 <span className="btn-primary-dot" />
-                {d('Réserver un appel', 'Book a call', 'Hívás foglalása')} &rarr;
+                {d('Recevoir votre audit gratuit', 'Get your free audit', 'Kérje ingyenes auditját')} &rarr;
               </Link>
               <Link href={localizedHref('/case-studies', lang)} className="btn-ghost">
                 {d('Voir les réalisations', 'See the case studies', 'Esettanulmányok megtekintése')}

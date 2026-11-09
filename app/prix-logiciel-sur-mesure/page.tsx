@@ -8,7 +8,7 @@ import MobileCta from '@/components/layout/MobileCta'
 import Divider from '@/components/ui/Divider'
 import FadeUp from '@/components/ui/FadeUp'
 import RelatedLinks from '@/components/ui/RelatedLinks'
-import { CAL_LINK } from '@/lib/constants'
+import { AUDIT_LINK } from '@/lib/constants'
 
 const tiers = [
   {
@@ -141,8 +141,8 @@ export default function PrixPage() {
                 On regarde votre périmètre et vos outils actuels, et on vous donne une fourchette claire pour votre cas précis.
                 Offert, sans pitch, vous repartez avec le chiffre, même si on ne travaille pas ensemble.
               </p>
-              <Link href={CAL_LINK} className="btn-primary" style={{ margin: '0 auto' }}>
-                <span className="btn-primary-dot" />Réserver un appel · offert
+              <Link href={AUDIT_LINK} className="btn-primary" style={{ margin: '0 auto' }}>
+                <span className="btn-primary-dot" />Recevoir votre audit gratuit
               </Link>
             </div>
           </FadeUp>

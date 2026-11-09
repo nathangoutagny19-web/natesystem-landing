@@ -8,7 +8,7 @@ import MobileCta from '@/components/layout/MobileCta'
 import Divider from '@/components/ui/Divider'
 import FadeUp from '@/components/ui/FadeUp'
 import RelatedLinks from '@/components/ui/RelatedLinks'
-import { CAL_LINK } from '@/lib/constants'
+import { AUDIT_LINK } from '@/lib/constants'
 
 // Real systems deployed for hospitality clients (see home "Systems" section).
 const systems = [
@@ -58,8 +58,8 @@ export default function RestaurationPage() {
               aujourd&apos;hui entre une caisse, des tableurs et des outils qui ne se parlent pas. Avec l&apos;IA intégrée
               uniquement là où elle remplace de vraies heures.
             </p>
-            <Link href={CAL_LINK} className="btn-primary" style={{ margin: '0 auto', fontSize: 14 }}>
-              <span className="btn-primary-dot" />Réserver un appel · offert →
+            <Link href={AUDIT_LINK} className="btn-primary" style={{ margin: '0 auto', fontSize: 14 }}>
+              <span className="btn-primary-dot" />Recevoir votre audit gratuit →
             </Link>
           </FadeUp>
         </div>
@@ -176,8 +176,8 @@ export default function RestaurationPage() {
                 Un appel offert. On regarde vos outils actuels et on identifie ce qu&apos;un seul système vous ferait gagner,
                 en temps, en marge, en clarté. Même si on ne travaille pas ensemble.
               </p>
-              <Link href={CAL_LINK} className="btn-primary" style={{ margin: '0 auto' }}>
-                <span className="btn-primary-dot" />Réserver un appel · offert
+              <Link href={AUDIT_LINK} className="btn-primary" style={{ margin: '0 auto' }}>
+                <span className="btn-primary-dot" />Recevoir votre audit gratuit
               </Link>
             </div>
           </FadeUp>

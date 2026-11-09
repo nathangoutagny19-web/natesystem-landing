@@ -103,7 +103,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>Le plus simple, c'est qu'on regarde votre cas ensemble et qu'on vous donne une fourchette honnête, rapidement.</p>
 
-<p><strong><a href="/book">Réserver un appel · offert &rarr;</a></strong></p>
+<p><strong><a href="/audit-gratuit">Recevoir votre audit gratuit &rarr;</a></strong></p>
 `,
   },
   {
@@ -201,7 +201,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>Le plus simple, c'est qu'on regarde votre projet ensemble et qu'on vous donne un délai réaliste, rapidement.</p>
 
-<p><strong><a href="/book">Réserver un appel · offert &rarr;</a></strong></p>
+<p><strong><a href="/audit-gratuit">Recevoir votre audit gratuit &rarr;</a></strong></p>
 `,
   },
   {
@@ -288,7 +288,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>Le plus simple pour savoir par où commencer, c'est qu'on regarde votre cas ensemble.</p>
 
-<p><strong><a href="/book">Réserver un appel · offert &rarr;</a></strong></p>
+<p><strong><a href="/audit-gratuit">Recevoir votre audit gratuit &rarr;</a></strong></p>
 `,
   },
   {
@@ -417,7 +417,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>La meilleure façon de savoir si elle peut vous aider, c'est de regarder vos vraies tâches. C'est ce qu'on fait avec vous, sans engagement.</p>
 
-<p><strong><a href="/book">Réserver un appel · offert &rarr;</a></strong></p>
+<p><strong><a href="/audit-gratuit">Recevoir votre audit gratuit &rarr;</a></strong></p>
 `,
   },
   {
@@ -670,7 +670,7 @@ export const blogPosts: BlogPost[] = [
   <li>Maintenance et évolution continue de l\'infrastructure</li>
 </ul>
 
-<p><strong>Tarifs :</strong> Sur devis selon la complexité. Infrastructure de base à partir de 2 000 €/mois (conception + maintenance). Voir le détail des <a href="/prix-logiciel-sur-mesure">fourchettes de prix d\'un logiciel sur-mesure</a>, ou <a href="/book">réservez un appel stratégique</a> pour un chiffrage personnalisé.</p>
+<p><strong>Tarifs :</strong> Sur devis selon la complexité. Infrastructure de base à partir de 2 000 €/mois (conception + maintenance). Voir le détail des <a href="/prix-logiciel-sur-mesure">fourchettes de prix d\'un logiciel sur-mesure</a>, ou demandez <a href="/audit-gratuit">votre audit gratuit</a> pour un chiffrage personnalisé.</p>
 
 <h2 id="comparatif">Tableau comparatif</h2>
 
@@ -818,7 +818,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>Chez NateSystem, on aide les PME à identifier ces opportunités et à construire l\'infrastructure qui les exploite. Pas outil par outil, mais comme un système intégré qui fonctionne ensemble. Découvrez nos <a href="/tools">outils gratuits d\'évaluation</a>, ou passez directement à l\'action.</p>
 
-<p><strong><a href="/book">Réserver un appel stratégique pour identifier vos 3 automatisations prioritaires &rarr;</a></strong></p>
+<p><strong><a href="/audit-gratuit">Recevoir votre audit gratuit pour identifier vos 3 automatisations prioritaires &rarr;</a></strong></p>
 `,
   },
   {
@@ -1127,7 +1127,7 @@ export const blogPosts: BlogPost[] = [
 
 <h3>Quel budget prévoir ?</h3>
 
-<p>Infrastructure : 50-300 €/mois (Supabase + Make + hébergement). Accompagnement initial : 3 000-10 000 € selon la complexité. C\'est un investissement qui se rembourse en 1-3 mois grâce au temps économisé et aux erreurs évitées. Chez NateSystem, l\'audit initial est inclus dans nos packages, <a href="/book">réservez un appel</a> pour en discuter.</p>
+<p>Infrastructure : 50-300 €/mois (Supabase + Make + hébergement). Accompagnement initial : 3 000-10 000 € selon la complexité. C\'est un investissement qui se rembourse en 1-3 mois grâce au temps économisé et aux erreurs évitées. Chez NateSystem, l\'audit initial est inclus dans nos packages, demandez <a href="/audit-gratuit">votre audit gratuit</a> pour en discuter.</p>
 
 <h3>Peut-on centraliser sans compétence technique en interne ?</h3>
 
@@ -1151,7 +1151,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>Si vous voulez aller plus vite, nous pouvons faire l\'audit ensemble. Découvrez nos <a href="/tools">outils gratuits d\'évaluation</a> ou passons directement à l\'action.</p>
 
-<p><strong><a href="/book">Réserver un appel stratégique pour auditer vos données et planifier la centralisation &rarr;</a></strong></p>
+<p><strong><a href="/audit-gratuit">Recevoir votre audit gratuit pour auditer vos données et planifier la centralisation &rarr;</a></strong></p>
 `,
   },
   {
@@ -1515,7 +1515,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>La première étape est toujours la même : comprendre où vous en êtes et où vous pourriez être. Prenons un moment pour en parler.</p>
 
-<p><strong><a href="/book">Réserver un appel stratégique pour évaluer votre potentiel IA &rarr;</a></strong></p>
+<p><strong><a href="/audit-gratuit">Recevoir votre audit gratuit pour évaluer votre potentiel IA &rarr;</a></strong></p>
 `,
   },
   {
@@ -1709,7 +1709,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>Les PME qui automatisent leur onboarding aujourd'hui prennent une avance considérable sur celles qui continuent à envoyer des emails "quand elles y pensent".</p>
 
-<p><strong><a href="/book">Réserver un appel stratégique pour automatiser votre onboarding client &rarr;</a></strong></p>
+<p><strong><a href="/audit-gratuit">Recevoir votre audit gratuit pour automatiser votre onboarding client &rarr;</a></strong></p>
 `,
   },
   {
@@ -1894,7 +1894,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>Si vous hésitez entre un outil du marché et une solution qui vous appartient, lisez notre comparatif <a href="/logiciel-sur-mesure-vs-saas">logiciel sur-mesure vs SaaS</a>.</p>
 
-<p><strong><a href="/book">Réserver un appel pour planifier votre migration Excel → Base de données &rarr;</a></strong></p>
+<p><strong><a href="/audit-gratuit">Recevoir votre audit gratuit pour planifier votre migration Excel → Base de données &rarr;</a></strong></p>
 `,
   },
   {
@@ -2069,7 +2069,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>Chez NateSystem, nous commençons toujours par un <strong>appel de consulting offert</strong> pour identifier vos 3 processus à plus fort potentiel d'automatisation. Pas de jargon technique, pas d'engagement, juste une analyse claire de ce que l'IA peut faire pour votre entreprise. Vous repartez avec une roadmap, même si on ne bosse pas ensemble.</p>
 
-<p><strong><a href="/book">Réserver votre audit gratuit &rarr;</a></strong></p>
+<p><strong><a href="/audit-gratuit">Réserver votre audit gratuit &rarr;</a></strong></p>
 `,
   },
   {
@@ -2303,7 +2303,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>Si vous utilisez déjà ChatGPT dans votre entreprise, vous avez fait le premier pas. Il est temps de passer au suivant.</p>
 
-<p><strong><a href="/book">Réserver un appel stratégique pour identifier vos premiers agents &rarr;</a></strong></p>
+<p><strong><a href="/audit-gratuit">Recevoir votre audit gratuit pour identifier vos premiers agents &rarr;</a></strong></p>
 `,
   },
   {
@@ -2507,7 +2507,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>Commencez par chiffrer votre perte avec notre <a href="/tools/saas-calculator">calculateur de coût SaaS</a>. Puis, si les résultats vous interpellent (et ils le feront), parlons-en.</p>
 
-<p><strong><a href="/book">Réserver votre audit gratuit pour identifier vos 3 automatisations prioritaires &rarr;</a></strong></p>
+<p><strong><a href="/audit-gratuit">Réserver votre audit gratuit pour identifier vos 3 automatisations prioritaires &rarr;</a></strong></p>
 `,
   },
   {
@@ -2636,7 +2636,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>Chez NateSystem, le code source est livré, vous êtes propriétaire à 100 %, les données sont hébergées en UE, et l'IA n'est intégrée que là où elle remplace de vraies heures. <a href="/a-propos">Qui construit</a> · <a href="/logiciel-sur-mesure-vs-saas">Sur-mesure vs SaaS</a></p>
 
-<p><strong><a href="/book">Réserver un appel · offert pour évaluer votre projet &rarr;</a></strong></p>
+<p><strong><a href="/audit-gratuit">Recevoir votre audit gratuit pour évaluer votre projet &rarr;</a></strong></p>
 `,
   },
   {
@@ -2747,7 +2747,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>Un ERP centralise la gestion de l'entreprise dans une base unique, puissant, mais standardisé, coûteux dans la durée et long à déployer. Pour une PME aux process spécifiques, la vraie question n'est pas « quel ERP ? » mais « ai-je besoin d'un ERP complet, ou d'un outil sur-mesure qui ne fait que ce qui compte et m'appartient ? ».</p>
 
-<p><strong><a href="/book">Réserver un appel · offert pour en discuter &rarr;</a></strong></p>
+<p><strong><a href="/audit-gratuit">Recevoir votre audit gratuit pour en discuter &rarr;</a></strong></p>
 `,
   },
   {
@@ -2847,7 +2847,7 @@ export const blogPosts: BlogPost[] = [
 
 <p><a href="/logiciel-sur-mesure-vs-saas">Comparatif sur-mesure vs SaaS</a> · <a href="/prix-logiciel-sur-mesure">Prix d'un logiciel sur-mesure</a></p>
 
-<p><strong><a href="/book">Réserver un appel · offert pour chiffrer votre cas &rarr;</a></strong></p>
+<p><strong><a href="/audit-gratuit">Recevoir votre audit gratuit pour chiffrer votre cas &rarr;</a></strong></p>
 `,
   },
   {
@@ -2969,7 +2969,7 @@ export const blogPosts: BlogPost[] = [
 
 <p><a href="/blog/10-meilleurs-outils-ia-automatisation-operations-2026">Les 10 meilleurs outils IA d'automatisation</a></p>
 
-<p><strong><a href="/book">Réserver un appel · offert pour identifier vos 3 automatisations prioritaires &rarr;</a></strong></p>
+<p><strong><a href="/audit-gratuit">Recevoir votre audit gratuit pour identifier vos 3 automatisations prioritaires &rarr;</a></strong></p>
 `,
   },
   {
@@ -3076,7 +3076,7 @@ export const blogPosts: BlogPost[] = [
 
 <p><a href="/prix-logiciel-sur-mesure">Prix d'un logiciel sur-mesure</a> · <a href="/a-propos">Qui construit</a></p>
 
-<p><strong><a href="/book">Réserver un appel · offert &rarr;</a></strong></p>
+<p><strong><a href="/audit-gratuit">Recevoir votre audit gratuit &rarr;</a></strong></p>
 `,
   },
   {
@@ -3189,7 +3189,7 @@ export const blogPosts: BlogPost[] = [
 
 <p><a href="/blog/agents-ia-vs-chatgpt-quelle-difference">Agents IA vs ChatGPT</a> · <a href="/logiciel-sur-mesure-conseil">L'IA pour les cabinets de conseil</a></p>
 
-<p><strong><a href="/book">Réserver un appel · offert pour identifier vos cas d'usage IA &rarr;</a></strong></p>
+<p><strong><a href="/audit-gratuit">Recevoir votre audit gratuit pour identifier vos cas d'usage IA &rarr;</a></strong></p>
 `,
   },
   {
@@ -3268,7 +3268,7 @@ export const blogPosts: BlogPost[] = [
 <h2>En résumé</h2>
 <p>Zapier pour la simplicité, Make pour l'équilibre, n8n pour la puissance et la souveraineté. Et quand vos automatisations deviennent critiques, posséder le système bat la location d'un outil tiers.</p>
 
-<p><strong><a href="/book">Réserver un appel · offert &rarr;</a></strong></p>
+<p><strong><a href="/audit-gratuit">Recevoir votre audit gratuit &rarr;</a></strong></p>
 `,
   },
   {
@@ -3359,7 +3359,7 @@ export const blogPosts: BlogPost[] = [
 
 <p><a href="/blog/integrer-ia-entreprise-guide-pme">Guide : intégrer l'IA en entreprise</a> · <a href="/prix-logiciel-sur-mesure">Prix d'un logiciel sur-mesure</a></p>
 
-<p><strong><a href="/book">Réserver un appel · offert pour chiffrer votre cas &rarr;</a></strong></p>
+<p><strong><a href="/audit-gratuit">Recevoir votre audit gratuit pour chiffrer votre cas &rarr;</a></strong></p>
 `,
   },
   {
@@ -3429,7 +3429,7 @@ export const blogPosts: BlogPost[] = [
 <h2>En résumé</h2>
 <p>Airtable pour organiser vite à plusieurs, Supabase pour bâtir un vrai socle de données. Et quand l'outil devient le cœur de votre activité, une application sur-mesure que vous possédez bat les deux.</p>
 
-<p><strong><a href="/book">Réserver un appel · offert &rarr;</a></strong></p>
+<p><strong><a href="/audit-gratuit">Recevoir votre audit gratuit &rarr;</a></strong></p>
 `,
   },
   {
@@ -3500,7 +3500,7 @@ export const blogPosts: BlogPost[] = [
 <h2>En résumé</h2>
 <p>Le SaaS est parfait pour démarrer, mais à l'échelle vous louez de plus en plus cher sans rien posséder. Au-delà de 15-20k€/an sur un périmètre qui fait votre différence, le sur-mesure devient un actif rentable.</p>
 
-<p><strong><a href="/book">Réserver un appel · offert pour faire le calcul &rarr;</a></strong></p>
+<p><strong><a href="/audit-gratuit">Recevoir votre audit gratuit pour faire le calcul &rarr;</a></strong></p>
 `,
   },
   {
@@ -3569,7 +3569,7 @@ export const blogPosts: BlogPost[] = [
 
 <p><a href="/blog/integrer-ia-entreprise-guide-pme">Guide : intégrer l'IA en entreprise</a></p>
 
-<p><strong><a href="/book">Réserver un appel · offert &rarr;</a></strong></p>
+<p><strong><a href="/audit-gratuit">Recevoir votre audit gratuit &rarr;</a></strong></p>
 `,
   },
   {
@@ -3648,7 +3648,7 @@ export const blogPosts: BlogPost[] = [
 <h2>En résumé</h2>
 <p>Le bon logiciel de cabinet récupère le temps non facturable, s'intègre au RPVA et respecte le secret professionnel. Pour un cabinet aux process spécifiques, un outil sur-mesure qu'il possède, interfacé au RPVA, hébergé en UE, bat un LGC standard auquel on s'adapte.</p>
 
-<p><strong><a href="/book">Réserver un appel · offert &rarr;</a></strong></p>
+<p><strong><a href="/audit-gratuit">Recevoir votre audit gratuit &rarr;</a></strong></p>
 `,
   },
   {
@@ -3723,7 +3723,7 @@ export const blogPosts: BlogPost[] = [
 <h2>En résumé</h2>
 <p>Gardez le cœur comptable certifié (FEC, TVA, liasse). Construisez sur-mesure la surcouche où vous travaillez vraiment (portail, missions, relances), avec l'OCR/IA pour absorber la saisie. NateSystem complète votre logiciel certifié, il ne le remplace pas.</p>
 
-<p><strong><a href="/book">Réserver un appel · offert &rarr;</a></strong></p>
+<p><strong><a href="/audit-gratuit">Recevoir votre audit gratuit &rarr;</a></strong></p>
 `,
   },
   {
@@ -3801,7 +3801,7 @@ export const blogPosts: BlogPost[] = [
 <h2>En résumé</h2>
 <p>Un CRM immobilier doit couvrir le registre Hoguet, eIDAS, la diffusion et le rapprochement. Pour une agence seule, le SaaS suffit ; pour un réseau, un outil sur-mesure qui intègre votre vrai pipeline et la conformité, et que vous possédez, l'emporte.</p>
 
-<p><strong><a href="/book">Réserver un appel · offert &rarr;</a></strong></p>
+<p><strong><a href="/audit-gratuit">Recevoir votre audit gratuit &rarr;</a></strong></p>
 `,
   },
   {
@@ -3882,7 +3882,7 @@ export const blogPosts: BlogPost[] = [
 <h2>En résumé</h2>
 <p>Un PMS pilote l'hôtel et conditionne votre dépendance aux OTA. Au-delà des fonctions de base, ce sont la conformité (fiche de police, taxe de séjour, NF525) et la propriété qui départagent. Pour un indépendant, un outil sur-mesure peut automatiser le légal et réduire les coûts récurrents.</p>
 
-<p><strong><a href="/book">Réserver un appel · offert &rarr;</a></strong></p>
+<p><strong><a href="/audit-gratuit">Recevoir votre audit gratuit &rarr;</a></strong></p>
 `,
   },
   {
@@ -3952,7 +3952,7 @@ export const blogPosts: BlogPost[] = [
 <h2>En résumé</h2>
 <p>Un logiciel de propreté efficace relie planning multi-sites, pointage géolocalisé (encadré CNIL), facturation récurrente et contrôle qualité. À l'échelle, posséder cet outil, au lieu de payer par agent, et maîtriser la conformité géoloc fait la différence.</p>
 
-<p><strong><a href="/book">Réserver un appel · offert &rarr;</a></strong></p>
+<p><strong><a href="/audit-gratuit">Recevoir votre audit gratuit &rarr;</a></strong></p>
 `,
   },
   {
@@ -4026,7 +4026,7 @@ export const blogPosts: BlogPost[] = [
 <h2>En résumé</h2>
 <p>Le traiteur a un workflow unique (vente ≠ production, food cost, allergènes) que les généralistes modélisent mal. Un logiciel métier, idéalement sur-mesure et possédé, qui intègre devis, food cost, HACCP et conformité 2026 (INCO, NF525, e-facture) fait gagner du temps et sécurise.</p>
 
-<p><strong><a href="/book">Réserver un appel · offert &rarr;</a></strong></p>
+<p><strong><a href="/audit-gratuit">Recevoir votre audit gratuit &rarr;</a></strong></p>
 `,
   },
   {
@@ -4100,7 +4100,7 @@ export const blogPosts: BlogPost[] = [
 <h2>En résumé</h2>
 <p>Dans un marché PV qui se concentre, l'efficacité opérationnelle fait la différence. Un logiciel qui relie calepinage, devis conformes aux aides (RGE QualiPV) et démarches Enedis/Consuel sans ressaisie, idéalement sur-mesure et possédé, accélère l'encaissement et protège vos données prospects.</p>
 
-<p><strong><a href="/book">Réserver un appel · offert &rarr;</a></strong></p>
+<p><strong><a href="/audit-gratuit">Recevoir votre audit gratuit &rarr;</a></strong></p>
 `,
   },
 ]

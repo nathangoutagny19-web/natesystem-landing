@@ -23,9 +23,9 @@ export const translations = {
   'nav.realisations': { en: 'Case studies', fr: 'Réalisations', hu: 'Esettanulmányok' },
   'nav.services': { en: 'Services', fr: 'Services', hu: 'Szolgáltatások' },
   'nav.about': { en: 'About', fr: 'À propos', hu: 'Rólunk' },
-  'nav.ctaSprint': { en: 'Book a call', fr: 'Réserver un appel', hu: 'Hívás foglalása' },
+  'nav.ctaSprint': { en: 'Get your free audit', fr: 'Recevoir votre audit gratuit', hu: 'Kérje ingyenes auditját' },
   // CTA du bouton nav : action simple et comprise par l'ICP (pas le nom de l'offre).
-  'nav.ctaCall': { en: 'Book a call', fr: 'Réserver un appel', hu: 'Hívás foglalása' },
+  'nav.ctaCall': { en: 'Free audit', fr: 'Audit gratuit', hu: 'Ingyenes audit' },
   'mega.services': { en: 'Our services', fr: 'Nos services', hu: 'Szolgáltatásaink' },
   'mega.sectors': {
     en: 'By role',
@@ -169,8 +169,8 @@ export const translations = {
   },
 
   'hero.ctaAudit': { en: 'Get your free audit', fr: 'Recevoir votre audit gratuit', hu: 'Kérje ingyenes auditját' },
-  'hero.ctaCall': { en: 'Book a call', fr: 'Réserver un appel', hu: 'Hívás foglalása' },
-  'hero.cta': { en: 'Book a call · free', fr: 'Réserver un appel · offert', hu: 'Hívás foglalása · ingyenes' },
+  'hero.ctaCall': { en: 'Get your free audit', fr: 'Recevoir votre audit gratuit', hu: 'Kérje ingyenes auditját' },
+  'hero.cta': { en: 'Get your free audit', fr: 'Recevoir votre audit gratuit', hu: 'Kérje ingyenes auditját' },
   /* La VSL du 13 octobre 2026, tournée en anglais à Budapest, sous-titres
      incrustés. Nathan l'a voulue sur les trois langues, y compris en
      français, à la place de l'ancienne démo de juillet. */
@@ -450,9 +450,9 @@ export const translations = {
     hu: 'Egy hívás. Megnézzük, hogyan működik valójában a szervezete, honnan jönnek az ügyfelei, és hol vész el az információ. Világos tervvel távozik, akkor is, ha soha nem dolgozunk együtt.',
   },
   'cta.button': {
-    en: 'Book a call',
-    fr: 'Réserver un appel',
-    hu: 'Hívás foglalása',
+    en: 'Get your free audit',
+    fr: 'Recevoir votre audit gratuit',
+    hu: 'Kérje ingyenes auditját',
   },
   'cta.r1': {
     en: 'Free call',
@@ -1154,7 +1154,7 @@ export const translations = {
   'sols.infra.step4': { en: 'Tracking, we measure what you actually gain', fr: 'Tracking, on mesure ce que vous gagnez vraiment', hu: 'Mérés: megnézzük, mit nyer valójában' },
   'sols.infra.step5': { en: 'Training, your teams brought to full autonomy', fr: 'Formation, vos équipes montées en autonomie', hu: 'Képzés: a csapatai eljutnak a teljes önállóságig' },
   'sols.infra.step6': { en: 'Autonomy, we step back, we stay reachable', fr: 'Autonomie, on se retire, on reste disponible', hu: 'Önállóság: hátralépünk, de elérhetők maradunk' },
-  'sols.infra.cta': { en: 'Book a call · free', fr: 'Réserver un appel · offert', hu: 'Hívás foglalása · ingyenes' },
+  'sols.infra.cta': { en: 'Get your free audit', fr: 'Recevoir votre audit gratuit', hu: 'Kérje ingyenes auditját' },
   // Offre séparée, Formation IA opérationnelle (wedge DIY)
   'sols.form.badge': { en: 'New', fr: 'Nouveau', hu: 'Új' },
   'sols.form.title': { en: 'Operational AI training', fr: 'Formation IA opérationnelle', hu: 'Gyakorlati MI-képzés' },
@@ -1195,7 +1195,7 @@ export const translations = {
     hu:
       'Miközben az európai kkv-k egy része már beépíti az MI-t a működésébe, a másik fizeti a rejtett számlát: a munkaidő akár 30%-át olyan feladatok viszik el, amelyeket egy jól megépített infrastruktúra kiváltana. És egy újabb hónap, amíg a versenytársai növelik az előnyüket.',
   },
-  'fomo.cta': { en: 'Book a call before they widen the gap', fr: 'Réserver un appel avant qu\'ils ne creusent l\'écart', hu: 'Foglaljon hívást, mielőtt tovább nő az előnyük' },
+  'fomo.cta': { en: 'Get your free audit', fr: 'Recevoir votre audit gratuit', hu: 'Kérje ingyenes auditját' },
 
   // ───────────────────────────────────────────────────────────────
   // Results, mesurable client outcomes
@@ -1323,7 +1323,7 @@ export const translations = {
   'footer.link.reviewsDemo': { en: 'Reviews (demo)', fr: 'Reviews (démo)', hu: 'Reviews (demó)' },
   'footer.link.actifsDemo': { en: 'Actifs (demo)', fr: 'Actifs (démo)', hu: 'Actifs (demó)' },
   'footer.link.stockDemo': { en: 'Stock (demo)', fr: 'Stock (démo)', hu: 'Stock (demó)' },
-  'footer.link.book': { en: 'Book a call', fr: 'Réserver un appel', hu: 'Hívás foglalása' },
+  'footer.link.book': { en: 'Get your free audit', fr: 'Recevoir votre audit gratuit', hu: 'Kérje ingyenes auditját' },
   'footer.link.about': { en: 'About', fr: 'À propos', hu: 'Rólunk' },
   'footer.link.glossary': { en: 'Glossary', fr: 'Glossaire', hu: 'Szójegyzék' },
 
@@ -1745,12 +1745,12 @@ export const translations = {
   },
 
   // StrategyCall section
-  'strategy.label': { en: 'BOOK A CALL · FREE', fr: 'RÉSERVER UN APPEL · OFFERT', hu: 'HÍVÁS FOGLALÁSA · INGYENES' },
+  'strategy.label': { en: 'FREE AUDIT', fr: 'AUDIT GRATUIT', hu: 'INGYENES AUDIT' },
   'strategy.title': { en: 'Book your', fr: 'Réservez votre', hu: 'Foglalja le a' },
   'strategy.titleAccent': { en: 'strategy call.', fr: 'appel stratégique.', hu: 'stratégiai hívását.' },
   'strategy.founder': { en: 'FOUNDER · NATESYSTEM', fr: 'FONDATEUR · NATESYSTEM', hu: 'ALAPÍTÓ · NATESYSTEM' },
   'strategy.sub': { en: 'For companies that want to make their operations autonomous with AI, without hiring and without depending on a SaaS.', fr: 'Pour les entreprises qui veulent rendre leurs opérations autonomes grâce à l\'IA, sans recruter et sans dépendre d\'un SaaS.', hu: 'Cégeknek, amelyek MI-vel akarják önállóvá tenni a működésüket, új munkaerő felvétele és SaaS-függőség nélkül.' },
-  'strategy.cta': { en: 'Book my free call', fr: 'Réserver mon appel · offert', hu: 'Lefoglalom a hívást · ingyenes' },
+  'strategy.cta': { en: 'Get your free audit', fr: 'Recevoir votre audit gratuit', hu: 'Kérje ingyenes auditját' },
   'strategy.item1': { en: 'Analysis of your current tools', fr: 'Analyse de vos outils actuels', hu: 'A jelenlegi eszközei elemzése' },
   'strategy.item2': { en: 'Quick win identification', fr: 'Identification des quick wins', hu: 'A gyors nyereségek azonosítása' },
   'strategy.item3': { en: 'Personalized action plan', fr: 'Plan d\'action personnalisé', hu: 'Személyre szabott cselekvési terv' },
@@ -1765,7 +1765,7 @@ export const translations = {
   'blog.back': { en: '← Back to blog', fr: '← Retour au blog', hu: '← Vissza a bloghoz' },
   'blog.ctaTitle': { en: 'Ready to automate your operations?', fr: 'Prêt à automatiser vos opérations ?', hu: 'Készen áll a működése automatizálására?' },
   'blog.ctaDesc': { en: 'A call to identify how to automate your repetitive tasks.', fr: 'Un appel pour identifier comment automatiser vos tâches répétitives.', hu: 'Egy hívás, hogy kiderüljön, hogyan automatizálhatók az ismétlődő feladatai.' },
-  'blog.ctaButton': { en: 'Book a call · free →', fr: 'Réserver un appel · offert →', hu: 'Hívás foglalása · ingyenes →' },
+  'blog.ctaButton': { en: 'Get your free audit →', fr: 'Recevoir votre audit gratuit →', hu: 'Kérje ingyenes auditját →' },
 
   // ═══════════════════════════════════════════════════════════════
   // NateSystem · Reviews, agency-positioned landing (v2)
@@ -1782,7 +1782,7 @@ export const translations = {
     hu:
       'Budapesti székhelyű ügynökség, amely ~30 közép-kategóriás étterem véleményeit, válaszait és hírnevét kezeli. Havonta feljebb visszük az értékelését, az ügyfelei nyelvén válaszolunk nekik, és egyetlen PDF-ben számolunk be Önnek.',
   },
-  'reviews.hero.ctaPrimary': { en: 'Book a call · free', fr: 'Réserver un appel · offert', hu: 'Hívás foglalása · ingyenes' },
+  'reviews.hero.ctaPrimary': { en: 'Get your free audit', fr: 'Recevoir votre audit gratuit', hu: 'Kérje ingyenes auditját' },
   'reviews.hero.ctaGhost': { en: 'See what we do', fr: 'Voir ce que l\'on fait', hu: 'Nézze meg, mit csinálunk' },
   'reviews.hero.socialProof': {
     en: '~30 restaurants in Budapest · +14 points average reputation lift in 90 days',
@@ -1952,10 +1952,10 @@ export const translations = {
   // Final CTA
   'reviews.finalCta.title1': { en: 'Your reputation is already being written.', fr: 'Votre réputation s\'écrit déjà.', hu: 'A hírneve már most íródik.' },
   'reviews.finalCta.titleAccent': { en: 'Let us run it.', fr: 'Laissez-nous la gérer.', hu: 'Bízza ránk.' },
-  'reviews.finalCta.cta': { en: 'Book a call · free', fr: 'Réserver un appel · offert', hu: 'Hívás foglalása · ingyenes' },
+  'reviews.finalCta.cta': { en: 'Get your free audit', fr: 'Recevoir votre audit gratuit', hu: 'Kérje ingyenes auditját' },
 
   // Sticky mobile
-  'reviews.stickyCta': { en: 'Book a call · free', fr: 'Réserver un appel · offert', hu: 'Hívás foglalása · ingyenes' },
+  'reviews.stickyCta': { en: 'Get your free audit', fr: 'Recevoir votre audit gratuit', hu: 'Kérje ingyenes auditját' },
 
 
   // ───────────────────────────────────────────────────────────────
@@ -2449,7 +2449,7 @@ export const translations = {
   'v2.hero.title': { en: 'Your data is scattered, your teams re-enter everything, and you\'re the one holding it all together.', fr: 'Vos données sont éparpillées, vos équipes ressaisissent, et c\'est vous qui recollez tout.', hu: 'Az adatai szétszórva, a csapatai újra meg újra begépelnek, és Ön tartja össze az egészet.' },
   'v2.hero.sub': { en: 'We map how your business actually runs, build the infrastructure to run it, and add AI where it replaces real hours.', fr: 'On cartographie comment votre activité tourne vraiment, on construit l\'infrastructure qui la fait tourner, et on y met de l\'IA là où elle remplace de vraies heures.', hu: 'Feltérképezzük, hogyan működik valójában a cége, megépítjük az infrastruktúrát, ami működteti, és MI-t teszünk bele ott, ahol valódi munkaórákat vált ki.' },
   'v2.hero.proof': { en: 'On average, 10+ hours a week recovered for our clients.', fr: 'En moyenne 10 h+ par semaine récupérées chez nos clients.', hu: 'Ügyfeleinknél átlagosan heti 10+ óra visszanyerve.' },
-  'v2.hero.cta': { en: 'Book a call', fr: 'Réserver un appel', hu: 'Hívás foglalása' },
+  'v2.hero.cta': { en: 'Get your free audit', fr: 'Recevoir votre audit gratuit', hu: 'Kérje ingyenes auditját' },
 
   'v2.sprint.eyebrow': { en: 'First step · no commitment', fr: 'Première étape · sans engagement', hu: 'Első lépés · kötelezettség nélkül' },
   'v2.sprint.title': { en: 'The Diagnostic', fr: 'Le Diagnostic', hu: 'A diagnosztika' },
@@ -2482,7 +2482,7 @@ export const translations = {
     fr: 'Vous savez où se perdent le temps, les erreurs et les clients, et vous cliquez dans le logiciel qui règle tout ça.',
     hu: 'Tudja, hol vész el az idő, hol csúsznak be a hibák és hol tűnnek el az ügyfelek, és belekattinthat a szoftverbe, amely mindezt rendezi.',
   },
-  'v2.sprint.cta': { en: 'Book a call · free', fr: 'Réserver un appel · offert', hu: 'Hívás foglalása · ingyenes' },
+  'v2.sprint.cta': { en: 'Get your free audit', fr: 'Recevoir votre audit gratuit', hu: 'Kérje ingyenes auditját' },
   'v2.sprint.selfserve': { en: 'Or run the online diagnostic, 3 min, no email', fr: 'Ou lancez le diagnostic en ligne, 3 min, sans e-mail', hu: 'Vagy indítsa el az online diagnosztikát: 3 perc, e-mail nélkül' },
   'v2.sprint.afterA': {
     en: 'What then? Two options: a long-term partnership where the system keeps evolving with you, or we stop here. ',
@@ -2562,7 +2562,7 @@ export const translations = {
   'v2.cta.eyebrow': { en: 'THE NEXT STEP', fr: 'L\'ÉTAPE SUIVANTE', hu: 'A KÖVETKEZŐ LÉPÉS' },
   'v2.cta.title': { en: 'You never leap into the dark.', fr: 'Vous ne sautez jamais dans le vide.', hu: 'Soha nem ugrik a sötétbe.' },
   'v2.cta.sub': { en: 'You see the map, you click through the prototype, you approve the roadmap. Only then does anything get built.', fr: 'Vous voyez la carte, vous cliquez dans le prototype, vous approuvez la feuille de route. Ensuite seulement, on construit quelque chose.', hu: 'Látja a térképet, végigkattintja a prototípust, jóváhagyja az ütemtervet. Csak ezután épül meg bármi.' },
-  'v2.cta.button': { en: 'Book a call', fr: 'Réserver un appel', hu: 'Hívás foglalása' },
+  'v2.cta.button': { en: 'Get your free audit', fr: 'Recevoir votre audit gratuit', hu: 'Kérje ingyenes auditját' },
 
   /* ─────────── Page /methode « Notre approche » (Lot 2) ─────────── */
   'methode.hero.eyebrow': {
@@ -2586,9 +2586,9 @@ export const translations = {
     hu: 'Először megértjük, hol vész el a csapata ideje és hol tűnnek el az ügyfelei. Aztán megépítjük a rendszert, amely ezt rendezi, az Ön szabályaira, mindenkit betanítunk, és szezonról szezonra együtt fejlesztjük tovább.',
   },
   'methode.hero.cta': {
-    en: 'Book a call · free',
-    fr: 'Réserver un appel · offert',
-    hu: 'Hívás foglalása · ingyenes',
+    en: 'Get your free audit',
+    fr: 'Recevoir votre audit gratuit',
+    hu: 'Kérje ingyenes auditját',
   },
 
   'radio.eyebrow': {
@@ -2751,9 +2751,9 @@ export const translations = {
     hu: 'Egy ingyenes hívás. Megnézzük, hogyan működik valójában a szervezete, és őszintén megmondjuk, mi változtatna a helyzeten, akkor is, ha nem mi csináljuk.',
   },
   'methode.cta.button': {
-    en: 'Book a call · free',
-    fr: 'Réserver un appel · offert',
-    hu: 'Hívás foglalása · ingyenes',
+    en: 'Get your free audit',
+    fr: 'Recevoir votre audit gratuit',
+    hu: 'Kérje ingyenes auditját',
   },
 
   /* ═══════════════════════════════════════════════════════════════════════
@@ -2776,7 +2776,7 @@ export const translations = {
     hu:
       'Egyedi szoftvereket építünk kis- és középvállalkozásoknak. Itt van belőlük néhány ingyenes változat, azonnal kipróbálható, regisztráció nélkül.',
   },
-  'outils.hero.link': { en: 'Need a tool built for you? Book a call', fr: 'Besoin d’un outil taillé pour vous ? Réserver un appel', hu: 'Önre szabott eszközre van szüksége? Foglaljon hívást' },
+  'outils.hero.link': { en: 'Need a tool built for you? Get your free audit', fr: 'Besoin d’un outil taillé pour vous ? Recevoir votre audit gratuit', hu: 'Önre szabott eszközre van szüksége? Kérje ingyenes auditját' },
 
   'outils.cta.demo': { en: 'Try the demo', fr: 'Essayer la démo', hu: 'Demó kipróbálása' },
   'outils.cta.test': { en: 'Take the test', fr: 'Faire le test', hu: 'Teszt kitöltése' },
@@ -2953,7 +2953,7 @@ export const translations = {
     hu:
       'Ezek az ingyenes eszközök nyilvános változatai annak, amit építünk. A NateSystemnél azt az egyedi szoftvert fejlesztjük, amely pontosan illeszkedik a működéséhez. Egy ingyenes hívás, hogy átbeszéljük, kötelezettség nélkül.',
   },
-  'outils.conv.cta': { en: 'Book a free call', fr: 'Réserver un appel gratuit', hu: 'Ingyenes hívás foglalása' },
+  'outils.conv.cta': { en: 'Get your free audit', fr: 'Recevoir votre audit gratuit', hu: 'Kérje ingyenes auditját' },
 
   /* ═══════════════════════════════════════════════════════════════════════
      /outils/pret-pour-lia · /en/outils/pret-pour-lia — LE DIAGNOSTIC IA

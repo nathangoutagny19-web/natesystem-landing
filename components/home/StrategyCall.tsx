@@ -21,7 +21,7 @@ export default function StrategyCall() {
         <FadeUp className="text-center">
           {/* Top pill */}
           <a
-            href="/book"
+            href="/audit-gratuit"
             style={{
               display: 'inline-flex', alignItems: 'center', gap: 8,
               padding: '8px 20px', borderRadius: 100,
@@ -87,7 +87,7 @@ export default function StrategyCall() {
           }}>
             {/* Email + CTA row */}
             <a
-              href="/book"
+              href="/audit-gratuit"
               style={{
                 display: 'inline-flex', alignItems: 'center', gap: 12,
                 padding: '16px 40px',

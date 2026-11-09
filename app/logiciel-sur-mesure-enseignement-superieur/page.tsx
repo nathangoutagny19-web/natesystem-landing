@@ -8,7 +8,7 @@ import MobileCta from '@/components/layout/MobileCta'
 import Divider from '@/components/ui/Divider'
 import FadeUp from '@/components/ui/FadeUp'
 import RelatedLinks from '@/components/ui/RelatedLinks'
-import { CAL_LINK } from '@/lib/constants'
+import { AUDIT_LINK } from '@/lib/constants'
 
 const modules = [
   {
@@ -56,8 +56,8 @@ export default function EducationPage() {
               Parcours étudiant, suivi de stages, relation alumni, réunis dans un seul outil bâti pour votre établissement,
               là où vous jonglez aujourd&apos;hui entre des tableurs que chaque service maintient à sa façon. Hébergé en UE, RGPD-natif.
             </p>
-            <Link href={CAL_LINK} className="btn-primary" style={{ margin: '0 auto', fontSize: 14 }}>
-              <span className="btn-primary-dot" />Réserver un appel · offert →
+            <Link href={AUDIT_LINK} className="btn-primary" style={{ margin: '0 auto', fontSize: 14 }}>
+              <span className="btn-primary-dot" />Recevoir votre audit gratuit →
             </Link>
           </FadeUp>
         </div>
@@ -172,8 +172,8 @@ export default function EducationPage() {
                 Un appel offert. On regarde vos outils actuels et on identifie ce qu&apos;un CRM pédagogique sur-mesure vous
                 ferait gagner. Même si on ne travaille pas ensemble.
               </p>
-              <Link href={CAL_LINK} className="btn-primary" style={{ margin: '0 auto' }}>
-                <span className="btn-primary-dot" />Réserver un appel · offert
+              <Link href={AUDIT_LINK} className="btn-primary" style={{ margin: '0 auto' }}>
+                <span className="btn-primary-dot" />Recevoir votre audit gratuit
               </Link>
             </div>
           </FadeUp>

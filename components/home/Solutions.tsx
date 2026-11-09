@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { ArrowRight, Check, ClipboardCheck, Boxes, Brain, GraduationCap, type LucideIcon } from 'lucide-react'
 import FadeUp from '@/components/ui/FadeUp'
 import { useLang } from '@/components/providers/LangProvider'
-import { CAL_LINK } from '@/lib/constants'
+import { AUDIT_LINK } from '@/lib/constants'
 import { localizedHref } from '@/lib/routes'
 
 type Solution = {
@@ -118,7 +118,7 @@ export default function Solutions() {
                 </li>
               ))}
             </ol>
-            <Link href={localizedHref(CAL_LINK, lang)} className="infra-cta">
+            <Link href={localizedHref(AUDIT_LINK, lang)} className="infra-cta">
               {t('sols.infra.cta')} <ArrowRight size={16} strokeWidth={2} />
             </Link>
           </div>
@@ -252,7 +252,7 @@ export default function Solutions() {
                 </div>
 
                 <Link
-                  href={localizedHref(CAL_LINK, lang)}
+                  href={localizedHref(AUDIT_LINK, lang)}
                   className="sols-cta"
                   style={{
                     display: 'flex',
@@ -303,7 +303,7 @@ export default function Solutions() {
               <p className="form-desc font-sans">{t('sols.form.desc')}</p>
             </div>
             <div className="form-cta-wrap">
-              <Link href={localizedHref(CAL_LINK, lang)} className="form-cta">
+              <Link href={localizedHref(AUDIT_LINK, lang)} className="form-cta">
                 {t('sols.form.cta')} <ArrowRight size={14} strokeWidth={2} />
               </Link>
               <span className="form-ctasub font-mono">{t('sols.form.ctaSub')}</span>

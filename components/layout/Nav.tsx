@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { useLang } from '@/components/providers/LangProvider'
 import { useTheme } from '@/components/providers/ThemeProvider'
-import { CAL_LINK } from '@/lib/constants'
+import { AUDIT_LINK } from '@/lib/constants'
 import { localizedHref } from '@/lib/routes'
 import { LANG_LABEL, makeD } from '@/lib/lang'
 import { PREFIXED_LANGS } from '@/lib/i18n'
@@ -194,9 +194,9 @@ export default function Nav() {
               </div>
             </div>
 
-            {/* CTA unique (Lot 1), action simple « Réserver un appel » (le nom
-                « Sprint Diagnostic » vit sur la page, pas sur le bouton). */}
-            <Link href={l(CAL_LINK)} className="nav-cta-btn">
+            {/* CTA unique : l'audit gratuit, jamais « Réserver un appel »
+                (Nathan, 9 novembre 2026). */}
+            <Link href={l(AUDIT_LINK)} className="nav-cta-btn">
               {t('nav.ctaCall')}
             </Link>
           </div>
@@ -214,9 +214,9 @@ export default function Nav() {
       </Link>
 
       <div className="flex items-center gap-1">
-      <Link href={l(CAL_LINK)} className="nav-mcta" onClick={() => setMenuOpen(false)}>
+      <Link href={l(AUDIT_LINK)} className="nav-mcta" onClick={() => setMenuOpen(false)}>
         <span className="nav-mcta-dot" />
-        {d('Réserver un appel', 'Book a call', 'Hívás foglalása')}
+        {t('nav.ctaCall')}
       </Link>
 
       {/* ——— Mobile hamburger ——— */}
@@ -283,8 +283,8 @@ export default function Nav() {
             </button>
           </div>
 
-          <Link href={l(CAL_LINK)} className="btn-primary mt-6 justify-center">
-            <span className="btn-primary-dot" />{t('nav.ctaCall')}
+          <Link href={l(AUDIT_LINK)} className="btn-primary mt-6 justify-center">
+            <span className="btn-primary-dot" />{t('hero.ctaAudit')}
           </Link>
         </div>
       </motion.div>

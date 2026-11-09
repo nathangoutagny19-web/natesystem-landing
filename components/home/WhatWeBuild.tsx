@@ -18,7 +18,7 @@
 import Link from 'next/link'
 import { useLang } from '@/components/providers/LangProvider'
 import { makeD } from '@/lib/lang'
-import { CAL_LINK } from '@/lib/constants'
+import { AUDIT_LINK } from '@/lib/constants'
 import { localizedHref } from '@/lib/routes'
 
 type Mockup = { slug: string; fr: string; en: string }
@@ -82,7 +82,7 @@ export default function WhatWeBuild() {
       </div>
 
       <div className="mx-auto text-center" style={{ maxWidth: 1100, padding: '36px 24px 0' }}>
-        <Link href={localizedHref(CAL_LINK, lang)} className="btn-primary">
+        <Link href={localizedHref(AUDIT_LINK, lang)} className="btn-primary">
           <span className="btn-primary-dot" />{d('Je veux le mien', 'I want mine', 'Kérem a sajátomat')} &rarr;
         </Link>
       </div>

@@ -12,7 +12,7 @@ import LiteYouTube from '@/components/ui/LiteYouTube'
 import Link from 'next/link'
 import { useLang } from '@/components/providers/LangProvider'
 import { makeD } from '@/lib/lang'
-import { CAL_LINK } from '@/lib/constants'
+import { AUDIT_LINK } from '@/lib/constants'
 import { localizedHref } from '@/lib/routes'
 
 export default function CaseStudiesPage() {
@@ -126,9 +126,9 @@ export default function CaseStudiesPage() {
             <h2 className="font-serif italic" style={{ fontSize: 'clamp(24px, 3.4vw, 34px)', fontWeight: 400, color: 'var(--text)', lineHeight: 1.25, marginBottom: 24 }}>
               {d('Envie du même résultat chez vous ?', 'Want the same result at your company?', 'Szeretné ugyanezt az eredményt a cégénél?')}
             </h2>
-            <Link href={localizedHref(CAL_LINK, lang)} className="btn-primary">
+            <Link href={localizedHref(AUDIT_LINK, lang)} className="btn-primary">
               <span className="btn-primary-dot" />
-              {d('Réserver un appel', 'Book a call', 'Hívás foglalása')} &rarr;
+              {d('Recevoir votre audit gratuit', 'Get your free audit', 'Kérje ingyenes auditját')} &rarr;
             </Link>
           </FadeUp>
         </div>

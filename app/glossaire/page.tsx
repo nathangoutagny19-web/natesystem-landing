@@ -5,7 +5,7 @@ import Nav from '@/components/layout/Nav'
 import Footer from '@/components/layout/Footer'
 import MobileCta from '@/components/layout/MobileCta'
 import Divider from '@/components/ui/Divider'
-import { CAL_LINK } from '@/lib/constants'
+import { AUDIT_LINK } from '@/lib/constants'
 import { useLang } from '@/components/providers/LangProvider'
 import { makeD } from '@/lib/lang'
 import type { Lang } from '@/lib/i18n'
@@ -163,8 +163,8 @@ export default function GlossairePage() {
               'We speak your language, not jargon. A call to turn what you need into a concrete plan. Free.'
             , 'Az Ön nyelvén beszélünk, nem szakzsargonban. Egy hívás, hogy az igényéből konkrét terv legyen. Ingyenes.')}
           </p>
-          <Link href={localizedHref(CAL_LINK, lang)} className="btn-primary" style={{ margin: '0 auto' }}>
-            <span className="btn-primary-dot" />{d('Réserver un appel · offert', 'Book a call · free', 'Hívás foglalása · ingyenes')}
+          <Link href={localizedHref(AUDIT_LINK, lang)} className="btn-primary" style={{ margin: '0 auto' }}>
+            <span className="btn-primary-dot" />{d('Recevoir votre audit gratuit', 'Get your free audit', 'Kérje ingyenes auditját')}
           </Link>
         </div>
       </section>

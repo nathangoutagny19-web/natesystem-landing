@@ -9,7 +9,7 @@ import WhatWeDo from '@/components/home/WhatWeDo'
 import Sectors from '@/components/home/Sectors'
 import Faq from '@/components/home/Faq'
 import ComparisonV2 from '@/components/v2/ComparisonV2'
-import { CAL_LINK } from '@/lib/constants'
+import AuditFinal from '@/components/home/AuditFinal'
 import { useLang } from '@/components/providers/LangProvider'
 import { makeD } from '@/lib/lang'
 import type { Lang } from '@/lib/i18n'
@@ -251,27 +251,8 @@ export default function ServicesPage() {
       {/* FAQ */}
       <Faq />
 
-      {/* Appel final */}
-      <section className="lx-section">
-        <div className="lx-narrow" style={{ textAlign: 'center' }}>
-          <FadeUp>
-            <h2 className="lx-title" style={{ margin: '0 auto', maxWidth: 'none' }}>
-              {d('Parlons de ', 'Let’s talk about ', 'Beszéljünk ')}
-              <span className="accent">{d('votre maison.', 'your business.', 'a vállalkozásáról.')}</span>
-            </h2>
-            <p className="lx-lead" style={{ margin: '22px auto 36px' }}>
-              {d(
-                '20 minutes sur Google Meet. Vous m’expliquez comment vous travaillez aujourd’hui, je vous dis ce qu’on peut vous rendre.',
-                '20 minutes on Google Meet. You tell me how you work today, I tell you what we can give back to you.',
-                '20 perc Google Meeten. Ön elmondja, hogyan dolgozik ma, én megmondom, mit tudunk visszaadni Önnek.'
-              )}
-            </p>
-            <Link href={localizedHref(CAL_LINK, lang)} className="btn-primary" style={{ margin: '0 auto' }}>
-              <span className="btn-primary-dot" />{d('Réserver un appel', 'Book a call', 'Hívás foglalása')} &rarr;
-            </Link>
-          </FadeUp>
-        </div>
-      </section>
+      {/* Fin de page : l'audit gratuit */}
+      <AuditFinal />
 
       <Footer />
       <MobileCta />

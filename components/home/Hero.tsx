@@ -5,11 +5,10 @@ import { useEffect, useState } from 'react'
 import { useLang } from '@/components/providers/LangProvider'
 import Link from 'next/link'
 import { Sparkles } from 'lucide-react'
-import { CAL_LINK } from '@/lib/constants'
 
 /* Bouton principal : l'audit gratuit, sans appel (Nathan, 8 novembre 2026).
    Jamais « prototype » : règle de la prospection. */
-const AUDIT_LINK = '/audit-gratuit'
+import { AUDIT_LINK } from '@/lib/constants'
 import { localizedHref } from '@/lib/routes'
 import VslPlayer from '@/components/ui/VslPlayer'
 
@@ -137,7 +136,8 @@ export default function Hero({ label }: { label?: string } = {}) {
         />
       </motion.div>
 
-      {/* Deux boutons : l'audit gratuit en principal, l'appel en secondaire. */}
+      {/* Un seul bouton : l'audit gratuit. Plus jamais « Réserver un appel »
+          (Nathan, 9 novembre 2026). */}
       <motion.div
         initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.44, ease }}
         className="flex flex-wrap items-center justify-center gap-3 hero-ctas"
@@ -146,9 +146,6 @@ export default function Hero({ label }: { label?: string } = {}) {
         <Link href={localizedHref(AUDIT_LINK, lang)} className="btn-primary" style={{ fontSize: '14px' }}>
           <span className="btn-primary-dot" />
           {t('hero.ctaAudit')} →
-        </Link>
-        <Link href={localizedHref(CAL_LINK, lang)} className="btn-ghost" style={{ fontSize: '14px', fontWeight: 500 }}>
-          {t('hero.ctaCall')} →
         </Link>
       </motion.div>
 

@@ -8,7 +8,7 @@ import MobileCta from '@/components/layout/MobileCta'
 import Divider from '@/components/ui/Divider'
 import FadeUp from '@/components/ui/FadeUp'
 import RelatedLinks from '@/components/ui/RelatedLinks'
-import { CAL_LINK } from '@/lib/constants'
+import { AUDIT_LINK } from '@/lib/constants'
 
 const doors = [
   {
@@ -53,8 +53,8 @@ export default function LyonPage() {
               NateSystem est une agence lyonnaise qui construit le logiciel métier qui pilote votre activité, avec l&apos;IA intégrée
               là où elle vous fait gagner du temps. Vos données, votre infrastructure, votre code. Vous restez propriétaire.
             </p>
-            <Link href={CAL_LINK} className="btn-primary" style={{ margin: '0 auto', fontSize: 14 }}>
-              <span className="btn-primary-dot" />Réserver un appel · offert →
+            <Link href={AUDIT_LINK} className="btn-primary" style={{ margin: '0 auto', fontSize: 14 }}>
+              <span className="btn-primary-dot" />Recevoir votre audit gratuit →
             </Link>
           </FadeUp>
         </div>
@@ -135,8 +135,8 @@ export default function LyonPage() {
                 Un appel offert. On regarde votre situation et vous repartez avec une vision claire du logiciel dont votre
                 activité a besoin, même si on ne travaille pas ensemble.
               </p>
-              <Link href={CAL_LINK} className="btn-primary" style={{ margin: '0 auto' }}>
-                <span className="btn-primary-dot" />Réserver un appel · offert
+              <Link href={AUDIT_LINK} className="btn-primary" style={{ margin: '0 auto' }}>
+                <span className="btn-primary-dot" />Recevoir votre audit gratuit
               </Link>
             </div>
           </FadeUp>

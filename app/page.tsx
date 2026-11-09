@@ -9,7 +9,7 @@ import WorkTiles from '@/components/home/WorkTiles'
 import StatementBand from '@/components/home/StatementBand'
 import BandQuotes from '@/components/home/Testimonials'
 import Fondateur from '@/components/home/Fondateur'
-import CtaFinal from '@/components/home/CtaFinal'
+import AuditFinal from '@/components/home/AuditFinal'
 import Footer from '@/components/layout/Footer'
 
 /**
@@ -55,11 +55,12 @@ export default function Home() {
       {/* La section tout en noir, avec la seule phrase de positionnement */}
       <StatementBand />
 
-      {/* 8, Le fondateur, puis l'appel final et l'agenda */}
+      {/* 8, Le fondateur, puis l'audit gratuit (plus d'agenda : « jamais
+          réserver un appel mais un audit », Nathan, 9 novembre 2026) */}
       <div style={{ paddingTop: 'clamp(112px, 14vw, 176px)' }}>
         <Fondateur />
       </div>
-      <CtaFinal />
+      <AuditFinal />
 
       <Footer />
       <MobileCta />

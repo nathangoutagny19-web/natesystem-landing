@@ -115,7 +115,7 @@ function PricingCard({ title, price, subtitle, features, cta, ctaVariant, badge,
         ))}
       </ul>
 
-      <Button href="/book" variant={ctaVariant}>
+      <Button href="/audit-gratuit" variant={ctaVariant}>
         {cta}
       </Button>
     </div>
@@ -154,7 +154,7 @@ const plans: PricingCardProps[] = [
       'Support 60 jours',
       'Dashboard de suivi',
     ],
-    cta: 'Réserver un appel · offert →',
+    cta: 'Recevoir votre audit gratuit →',
     ctaVariant: 'primary',
   },
   {

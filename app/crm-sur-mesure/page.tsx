@@ -8,7 +8,7 @@ import MobileCta from '@/components/layout/MobileCta'
 import Divider from '@/components/ui/Divider'
 import FadeUp from '@/components/ui/FadeUp'
 import RelatedLinks from '@/components/ui/RelatedLinks'
-import { CAL_LINK } from '@/lib/constants'
+import { AUDIT_LINK } from '@/lib/constants'
 
 const solutions = [
   {
@@ -65,8 +65,8 @@ export default function CrmSurMesurePage() {
               relances, pipeline, intégrations à vos outils, le tout avec une IA qui qualifie et relance. Un logiciel que
               votre entreprise possède à vie, pas un CRM standard que vous subissez.
             </p>
-            <Link href={CAL_LINK} className="btn-primary" style={{ margin: '0 auto', fontSize: 14 }}>
-              <span className="btn-primary-dot" />Réserver un appel · offert →
+            <Link href={AUDIT_LINK} className="btn-primary" style={{ margin: '0 auto', fontSize: 14 }}>
+              <span className="btn-primary-dot" />Recevoir votre audit gratuit →
             </Link>
           </FadeUp>
         </div>
@@ -244,8 +244,8 @@ export default function CrmSurMesurePage() {
                 identifie ce qu'un CRM sur-mesure ferait gagner à votre entreprise, en temps, en deals, en clarté.
                 Même si on ne travaille pas ensemble.
               </p>
-              <Link href={CAL_LINK} className="btn-primary" style={{ margin: '0 auto' }}>
-                <span className="btn-primary-dot" />Réserver un appel · offert
+              <Link href={AUDIT_LINK} className="btn-primary" style={{ margin: '0 auto' }}>
+                <span className="btn-primary-dot" />Recevoir votre audit gratuit
               </Link>
             </div>
           </FadeUp>

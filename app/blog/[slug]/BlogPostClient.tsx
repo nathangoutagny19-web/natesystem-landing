@@ -207,13 +207,13 @@ export default function BlogPostClient({ post }: { post: BlogPost }) {
                   margin: '0 auto 32px',
                 }}
               >
-                Réservez un appel offert. On regarde comment votre établissement
-                fonctionne vraiment et on vous dit où partent les heures de vos équipes.
-                Vous repartez avec un plan clair, même si on ne travaille jamais ensemble.
+                Laissez-moi votre site. Je regarde comment vos demandes arrivent et ce
+                qui repose sur une seule personne, puis je vous envoie mon audit,
+                personnellement. Gratuit, sans engagement.
               </p>
-              <Link href="/book" className="btn-primary" style={{ margin: '0 auto' }}>
+              <Link href="/audit-gratuit" className="btn-primary" style={{ margin: '0 auto' }}>
                 <span className="btn-primary-dot" />
-                Réserver un appel · offert
+                Recevoir votre audit gratuit
               </Link>
             </div>
           </FadeUp>

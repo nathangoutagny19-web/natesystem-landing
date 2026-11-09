@@ -9,7 +9,7 @@ import Divider from '@/components/ui/Divider'
 import FadeUp from '@/components/ui/FadeUp'
 import RelatedLinks from '@/components/ui/RelatedLinks'
 import ServiceFit from '@/components/services/ServiceFit'
-import { CAL_LINK } from '@/lib/constants'
+import { AUDIT_LINK } from '@/lib/constants'
 import { useLang } from '@/components/providers/LangProvider'
 import { makeD, pick } from '@/lib/lang'
 import { localizedHref } from '@/lib/routes'
@@ -113,8 +113,8 @@ export default function IaPage() {
                 'A first reply in the client’s language, reconfirmations, deposit follow-ups, WhatsApp threads turned into clear requests: automation takes the repetitive work. The tool suggests, someone on your team decides. Your data stays in the EU.'
               , 'Első válasz az ügyfél nyelvén, megerősítések, előleg-emlékeztetők, WhatsApp-beszélgetésekből rendezett kérések: az automatizálás átveszi az ismétlődő munkát. Az eszköz javasol, a csapata egy tagja dönt. Az adatai az EU-ban maradnak.')}
             </p>
-            <Link href={localizedHref(CAL_LINK, lang)} className="btn-primary" style={{ margin: '0 auto', fontSize: 14 }}>
-              <span className="btn-primary-dot" />{d('Réserver un appel · offert', 'Book a call · free', 'Hívás foglalása · ingyenes')} &rarr;
+            <Link href={localizedHref(AUDIT_LINK, lang)} className="btn-primary" style={{ margin: '0 auto', fontSize: 14 }}>
+              <span className="btn-primary-dot" />{d('Recevoir votre audit gratuit', 'Get your free audit', 'Kérje ingyenes auditját')} &rarr;
             </Link>
           </FadeUp>
         </div>
@@ -296,8 +296,8 @@ export default function IaPage() {
                   'A free call. We look at what your team redoes by hand every day, and what can run on its own without taking anything away from the care you give your clients. Even if we never work together.'
                 , 'Egy ingyenes hívás. Megnézzük, mit végez el újra és újra kézzel a csapata nap mint nap, és mi futhat magától úgy, hogy semmit ne vegyen el az ügyfeleinek szentelt figyelemből. Akkor is, ha soha nem dolgozunk együtt.')}
               </p>
-              <Link href={localizedHref(CAL_LINK, lang)} className="btn-primary" style={{ margin: '0 auto' }}>
-                <span className="btn-primary-dot" />{d('Réserver un appel · offert', 'Book a call · free', 'Hívás foglalása · ingyenes')}
+              <Link href={localizedHref(AUDIT_LINK, lang)} className="btn-primary" style={{ margin: '0 auto' }}>
+                <span className="btn-primary-dot" />{d('Recevoir votre audit gratuit', 'Get your free audit', 'Kérje ingyenes auditját')}
               </Link>
             </div>
           </FadeUp>

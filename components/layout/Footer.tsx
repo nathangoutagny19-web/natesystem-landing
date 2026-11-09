@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { useLang } from '@/components/providers/LangProvider'
 import { makeD } from '@/lib/lang'
-import { CAL_LINK } from '@/lib/constants'
+import { AUDIT_LINK } from '@/lib/constants'
 import { localizedHref } from '@/lib/routes'
 import { useTheme } from '@/components/providers/ThemeProvider'
 
@@ -14,7 +14,7 @@ import { useTheme } from '@/components/providers/ThemeProvider'
  *   1. Brand: logo + tagline
  *   2. Sections (home anchors): services, problem, process, results, contact
  *   3. Tools & demos: interactive tools + product demos (Actifs / Stock / Reviews)
- *   4. Resources: blog, case studies, all tools index, book a call
+ *   4. Resources: blog, case studies, all tools index, the free audit
  *   5. Legal: mentions légales + theme toggle
  *
  * The dense link grid is intentional, it gives crawlers and LLM citers
@@ -75,8 +75,8 @@ export default function Footer() {
 
         <div className="footer-contact">
           <a href="mailto:nathan@natesystem.com" className="font-sans footer-mail">nathan@natesystem.com</a>
-          <Link href={localizedHref(CAL_LINK, lang)} className="btn-primary" style={{ padding: '12px 22px', fontSize: 13 }}>
-            <span className="btn-primary-dot" />{d('Réserver un appel', 'Book a call', 'Hívás foglalása')}
+          <Link href={localizedHref(AUDIT_LINK, lang)} className="btn-primary" style={{ padding: '12px 22px', fontSize: 13 }}>
+            <span className="btn-primary-dot" />{d('Recevoir votre audit gratuit', 'Get your free audit', 'Kérje ingyenes auditját')}
           </Link>
         </div>
       </div>

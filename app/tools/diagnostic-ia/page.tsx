@@ -6,7 +6,7 @@ import { ArrowLeft, ArrowRight, Calendar, Download, RotateCcw } from 'lucide-rea
 import Nav from '@/components/layout/Nav'
 import Footer from '@/components/layout/Footer'
 import MobileCta from '@/components/layout/MobileCta'
-import { CAL_LINK } from '@/lib/constants'
+import { AUDIT_LINK } from '@/lib/constants'
 import { localizedHref } from '@/lib/routes'
 import { useLang } from '@/components/providers/LangProvider'
 import { makeD } from '@/lib/lang'
@@ -26,7 +26,7 @@ type Stage = 'intro' | 'act1' | 'act2' | 'act3' | 'report'
  * un diagnostic complet du gaspillage opérationnel d'une PME.
  *
  * Structure : intro → 3 actes (4 questions chacun) → rapport.
- * Rapport sans gate email, la conversion vient du CTA "Réserver un appel · offert"
+ * Rapport sans gate email, la conversion vient du CTA "Recevoir votre audit gratuit"
  * en fin de rapport, pas d'un capture-form intrusif.
  */
 export default function DiagnosticIaPage() {
@@ -931,7 +931,7 @@ function Report({
           style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 12 }}
         >
           <Link
-            href={localizedHref(CAL_LINK, lang)}
+            href={localizedHref(AUDIT_LINK, lang)}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary inline-flex"
@@ -939,7 +939,7 @@ function Report({
           >
             <span className="btn-primary-dot" />
             <Calendar size={14} />
-            {d('Réserver un appel · offert', 'Book a call · free', 'Hívás foglalása · ingyenes')}
+            {d('Recevoir votre audit gratuit', 'Get your free audit', 'Kérje ingyenes auditját')}
           </Link>
           <button
             type="button"

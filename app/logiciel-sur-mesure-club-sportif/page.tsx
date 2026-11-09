@@ -9,7 +9,7 @@ import MobileCta from '@/components/layout/MobileCta'
 import Divider from '@/components/ui/Divider'
 import FadeUp from '@/components/ui/FadeUp'
 import RelatedLinks from '@/components/ui/RelatedLinks'
-import { CAL_LINK } from '@/lib/constants'
+import { AUDIT_LINK } from '@/lib/constants'
 
 const YOUTUBE_ID = '4ae5mATIjhw'
 
@@ -113,8 +113,8 @@ export default function ClubSportifPage() {
               offres partenaires reliée au CRM, et la gestion des bénévoles. Un seul système, qui appartient au club.
               L&apos;IA intégrée uniquement là où elle remplace de vraies heures.
             </p>
-            <Link href={CAL_LINK} className="btn-primary" style={{ margin: '0 auto', fontSize: 14 }}>
-              <span className="btn-primary-dot" />Réserver un appel · offert →
+            <Link href={AUDIT_LINK} className="btn-primary" style={{ margin: '0 auto', fontSize: 14 }}>
+              <span className="btn-primary-dot" />Recevoir votre audit gratuit →
             </Link>
           </FadeUp>
         </div>
@@ -251,8 +251,8 @@ export default function ClubSportifPage() {
                 Un appel offert. On regarde votre back-office commercial et votre gestion des bénévoles, et on identifie ce
                 qu&apos;un seul système vous ferait gagner. Même si on ne travaille pas ensemble.
               </p>
-              <Link href={CAL_LINK} className="btn-primary" style={{ margin: '0 auto' }}>
-                <span className="btn-primary-dot" />Réserver un appel · offert
+              <Link href={AUDIT_LINK} className="btn-primary" style={{ margin: '0 auto' }}>
+                <span className="btn-primary-dot" />Recevoir votre audit gratuit
               </Link>
             </div>
           </FadeUp>

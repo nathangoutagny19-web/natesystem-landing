@@ -4,6 +4,11 @@
 // (qualification step) for when volume justifies re-enabling it; flip this back
 // to '/book' to restore the form-first flow everywhere at once.
 export const CAL_LINK = '/#rendez-vous'
+
+// LE bouton du site depuis le 9 novembre 2026. Nathan : « jamais réserver un
+// appel mais un audit ». Le visiteur laisse son site, Nathan revient vers lui.
+// Menu, barre mobile, pied de page, hero, fins de page : tout pointe ici.
+export const AUDIT_LINK = '/audit-gratuit'
 export const SITE_URL = 'https://www.natesystem.com'
 export const API_URL = 'https://natesystem-backend.vercel.app'
 

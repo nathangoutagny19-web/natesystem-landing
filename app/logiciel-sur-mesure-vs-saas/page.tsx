@@ -7,7 +7,7 @@ import MobileCta from '@/components/layout/MobileCta'
 import Divider from '@/components/ui/Divider'
 import FadeUp from '@/components/ui/FadeUp'
 import RelatedLinks from '@/components/ui/RelatedLinks'
-import { CAL_LINK } from '@/lib/constants'
+import { AUDIT_LINK } from '@/lib/constants'
 
 const rows: { criterion: string; saas: string; custom: string }[] = [
   { criterion: 'Coût à l\'entrée', saas: 'Faible, abonnement mensuel', custom: 'Plus élevé, investissement initial' },
@@ -128,8 +128,8 @@ export default function VsPage() {
                 En un appel, on regarde vos abonnements actuels et vos process, et on vous dit franchement si le sur-mesure
                 est rentable pour vous, ou si un SaaS fait le job. Offert, sans pitch.
               </p>
-              <Link href={CAL_LINK} className="btn-primary" style={{ margin: '0 auto' }}>
-                <span className="btn-primary-dot" />Réserver un appel · offert
+              <Link href={AUDIT_LINK} className="btn-primary" style={{ margin: '0 auto' }}>
+                <span className="btn-primary-dot" />Recevoir votre audit gratuit
               </Link>
             </div>
           </FadeUp>
