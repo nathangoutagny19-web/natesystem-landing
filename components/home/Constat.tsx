@@ -5,9 +5,10 @@ import { useLang } from '@/components/providers/LangProvider'
 import { makeD } from '@/lib/lang'
 
 /**
- * LE CONSTAT (accueil, refonte du 9 novembre 2026). Une seule section pour la
- * chaîne des douleurs, à la place de l'avant/après : pas de tableau, pas de
- * schéma. Texte de la proposition du 09/11
+ * LE CONSTAT (accueil, refonte du 9 novembre 2026). Une seule section, à la
+ * place de l'avant/après : pas de tableau, pas de schéma. Nathan, 09/11 :
+ * viser l'expérience de service, que le client vit, et montrer qu'elle tient
+ * aux opérations en coulisses. Texte de la proposition du 09/11
  * (~/Business/Commercial/6:10prospection/04-prompts-et-contexte/website-refonte-structure-2026-11-09.md).
  */
 export default function Constat() {
@@ -20,14 +21,14 @@ export default function Constat() {
         <FadeUp>
           <span className="lx-eyebrow">{d('Le constat', 'The problem', 'A helyzet')}</span>
           <h2 className="lx-title" style={{ maxWidth: '20ch' }}>
-            {d('La demande est là. ', 'The demand is there. ', 'A kereslet megvan. ')}
-            <span className="accent">{d('C’est l’opérationnel qui bloque.', 'Operations are what hold you back.', 'A működés az, ami visszatart.')}</span>
+            {d('Vos clients jugent le service. ', 'Your clients judge the service. ', 'Ügyfelei a szolgáltatást ítélik meg. ')}
+            <span className="accent">{d('Il dépend de vos opérations.', 'It depends on your operations.', 'Az pedig a működésén múlik.')}</span>
           </h2>
           <p className="lx-lead" style={{ maxWidth: 680 }}>
             {d(
-              'Les demandes arrivent sur WhatsApp, par mail, par téléphone, à toute heure. Les prestataires se relancent un par un. Les préférences de chaque client vivent dans une seule tête, souvent la vôtre. Et chaque extra oublié sur une facture, c’est de la marge perdue. Votre maison grandit, mais tout repose encore sur vous.',
-              'Requests come in on WhatsApp, by email, by phone, at any hour. Suppliers get chased one by one. Every client’s preferences live in a single head, often yours. And every extra left off an invoice is margin lost. Your business is growing, but everything still rests on you.',
-              'A kérések WhatsAppon, e-mailben és telefonon érkeznek, bármelyik órában. A beszállítókat egyenként kell emlékeztetni. Minden ügyfél preferenciái egyetlen fejben élnek, gyakran az Önében. És minden számláról lemaradt extra elveszett árrés. A vállalkozása nő, de még mindig minden Önön múlik.'
+              'Votre client ne voit pas vos messages WhatsApp ni vos tableurs. Il voit le chauffeur à l’heure et la villa prête à son arrivée. Aujourd’hui, tout ça tient sur des relances à la main et sur la mémoire d’une seule personne, souvent la vôtre. Le jour où un détail glisse, c’est lui qui le remarque en premier.',
+              'Your client never sees your WhatsApp threads or your spreadsheets. They see the driver on time and the villa ready when they arrive. Today, all of that rests on chasing by hand and on the memory of one person, often you. The day a detail slips, they are the first to notice.',
+              'Ügyfele nem látja a WhatsApp-üzeneteit és a táblázatait. Azt látja, hogy a sofőr pontos, és a villa készen várja. Ma mindez kézi utánajáráson és egyetlen ember emlékezetén múlik, gyakran az Önén. Ha egy részlet elcsúszik, ő veszi észre elsőként.'
             )}
           </p>
         </FadeUp>
