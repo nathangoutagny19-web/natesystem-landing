@@ -154,10 +154,11 @@ export const translations = {
      deux boutons. Les chiffres du badge sont ceux qu'il a arrêtés ce jour-là :
      11+ équipes, 35 h par mois en moyenne (remplace les 40 h), réactivité ×2.
      ⚠︎ Aucun délai de livraison ni prix ici, même règle qu'avant. */
+  /* Raccourci le 9 novembre 2026 (refonte) : une phrase, plus « écosystème ». */
   'hero.sub': {
-    en: 'Your own digital ecosystem, built around how your team already works and ready to grow with your company. Client requests, bookings, team operations, suppliers, finances and reporting, everything finally in one place, for true operational excellence and a guest experience in a league of its own. 100% yours.',
-    fr: 'Votre propre écosystème digital, construit autour de la façon dont votre équipe travaille déjà et prêt à grandir avec votre entreprise. Demandes clients, réservations, opérations, prestataires, finances et reporting, tout enfin réuni au même endroit, pour une véritable excellence opérationnelle et une expérience client hors du commun. 100 % à vous.',
-    hu: 'Saját digitális ökoszisztéma, amely a csapata meglévő munkamódjára épül, és együtt nő a vállalkozásával. Vendégkérések, foglalások, csapatműveletek, beszállítók, pénzügyek és riportok: végre minden egy helyen, a valódi működési kiválóságért és egy páratlan vendégélményért. 100%-ban az Öné.',
+    en: 'A tool built around the way your business already works: requests, suppliers, bookings and invoicing, all in one place. And it belongs to you.',
+    fr: 'Un outil construit autour de la façon dont votre maison travaille déjà : demandes, prestataires, réservations, facturation, tout au même endroit. Et il vous appartient.',
+    hu: 'Egy eszköz, amely a vállalkozása meglévő munkamódjára épül: kérések, beszállítók, foglalások és számlázás, minden egy helyen. És az Öné.',
   },
   /* Ligne de preuve (8 novembre 2026, Nathan) : 40 h rapportées par les
      clients, réactivité ×2, expérience client unique. */

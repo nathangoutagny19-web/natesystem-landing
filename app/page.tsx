@@ -2,112 +2,60 @@ import Nav from '@/components/layout/Nav'
 import MobileCta from '@/components/layout/MobileCta'
 import Hero from '@/components/home/Hero'
 import ClientsBar from '@/components/home/ClientsBar'
-import Transformation from '@/components/home/Transformation'
-import CredibilityBand from '@/components/home/CredibilityBand'
-import Systems from '@/components/home/Systems'
-import WhatWeDo from '@/components/home/WhatWeDo'
-import Different from '@/components/home/Different'
-import Sectors from '@/components/home/Sectors'
-import Faq from '@/components/home/Faq'
-import CtaFinal from '@/components/home/CtaFinal'
-import ComparisonV2 from '@/components/v2/ComparisonV2'
+import Constat from '@/components/home/Constat'
+import BuildThree from '@/components/home/BuildThree'
+import PourQui from '@/components/home/PourQui'
+import WorkTiles from '@/components/home/WorkTiles'
 import StatementBand from '@/components/home/StatementBand'
-import AskAI from '@/components/home/AskAI'
+import Fondateur from '@/components/home/Fondateur'
+import CtaFinal from '@/components/home/CtaFinal'
 import Footer from '@/components/layout/Footer'
-import Divider from '@/components/ui/Divider'
 
 /**
- * HOME, remodelage inspiré OpsKings/Frontal, sauce NateSystem.
- * Le HAUT (Hero → mini-diagnostic → vidéo témoignage Chromosome) est validé.
- * Corps : Ce qu'on fait → Comment on travaille (→ /methode) → Ce qu'on construit
- *   → Cas concrets chiffrés → Ce qui nous rend différents (vidéo) → Le Diagnostic
- *   (offre) + secteurs → prise de RDV (Cal.com) → comparatif → garanties → FAQ →
- *   IA → crédibilité. « Qui code » (Nathan) est déplacé dans le footer.
+ * ACCUEIL, REFONTE DU 9 NOVEMBRE 2026. Nathan : « mon site est un gros
+ * bordel, aucun luxe, aucune cohérence, ça fait site tech ». Huit sections,
+ * une idée chacune, beaucoup d'air, plus de grille ni de séparateurs.
+ * Proposition : ~/Business/Commercial/6:10prospection/04-prompts-et-contexte/website-refonte-structure-2026-11-09.md
+ *
+ * Quittent l'accueil : l'avant/après (Transformation), les systèmes, les
+ * quatre étapes et les secteurs (page Services), les différenciateurs et sa
+ * vidéo, la bande de crédibilité, le comparatif et la FAQ (page Services),
+ * « Demandez à l'IA ». Les composants restent dans le dépôt.
  */
 export default function Home() {
   return (
     <main>
       <Nav />
 
-      {/* ─────────── HAUT VALIDÉ (jusqu'à la vidéo témoignage) ─────────── */}
-
-      {/* 1, Hero : promesse business + VSL */}
+      {/* 1, Hero : gardé, sous-titre raccourci */}
       <Hero />
 
-      {/* 2, Logos clients */}
+      {/* 2, Les logos, en une bande fine */}
       <ClientsBar />
 
-      {/* Bande noire de positionnement, juste sous les logos et avant les
-          secteurs (Nathan, 8 novembre 2026 : « mets avant les secteurs »). */}
+      {/* 3, Le constat */}
+      <Constat />
+
+      {/* 4, Ce qu'on construit, trois points */}
+      <BuildThree />
+
+      {/* 5, Pour qui, six tuiles */}
+      <PourQui />
+
+      {/* 6, Réalisations, trois tuiles */}
+      <WorkTiles variant="home" />
+
+      {/* 7, Ils en parlent : la bande noire, ses photos et les citations qui
+          défilent, sans nom (version de Nathan du 8 novembre 2026) */}
       <StatementBand />
 
-      {/* Les citations des clients sont DANS la bande noire, sous la phrase et
-          les photos (Nathan, 8 novembre 2026) : voir StatementBand. */}
-
-      {/* 3, Avant/Après (diagonale) + bascule « ils sont de l'autre côté » */}
-      <Transformation />
-
-      {/* Les secteurs, juste après « Avant, après » (Nathan, 8 novembre 2026). */}
-      <Divider />
-      <Sectors />
-      <Divider />
-
-      {/* Le film de marque « Déployé. Mesuré. Rentabilisé. » (BrandFilm) est
-          retiré de l'accueil le 8 novembre 2026 (Nathan). Il affichait aussi
-          « En production en 4 à 8 semaines », une durée qu'on ne promet plus. */}
-
-      {/* 3b, Bandeau « Déployé. Mesuré. Rentabilisé. » (Systems) + CTA « Je veux le mien » */}
-      <Systems />
-      <Divider />
-
-      {/* Les témoignages sont remontés sous la bande noire (Nathan, 8 novembre
-          2026). Le carrousel de cas et ses vidéos sont sur /case-studies. */}
-
-      {/* L'encart « diagnostic gratuit » (MiniDiagnosticCta) est retiré de
-          l'accueil le 8 novembre 2026 (Nathan). */}
-
-      {/* ─────────── CORPS REMODELÉ ─────────── */}
-
-      {/* 5, Ce qu'on fait (What we do) : 4 piliers */}
-      <WhatWeDo />
-      <Divider />
-
-      {/* « Comment on travaille » (Process) retiré de l'accueil le 8 novembre
-          2026 : il répétait « Ce qu'on fait » juste au-dessus (Nathan). */}
-
-      {/* 8, Ce qui nous rend différents : vidéo + différenciateurs */}
-      <Different />
-      <Divider />
-
-      {/* 9b, Bandeau crédibilité (4 engagements), juste sous « Ce qui nous rend
-             différents » (choix Nathan). [[À CONFIRMER : bandeau = crédibilité ?]] */}
-      <CredibilityBand />
-      <Divider />
-
-      {/* « Le Diagnostic » (SprintDiagnostic) retiré de l'accueil le 8 novembre
-          2026 (Nathan). */}
-
-      {/* 11, Embed Cal.com SEUL (entête retirée), juste après l'offre d'entrée */}
+      {/* 8, Le fondateur, puis l'appel final et l'agenda */}
+      <div style={{ paddingTop: 'clamp(112px, 14vw, 176px)' }}>
+        <Fondateur />
+      </div>
       <CtaFinal />
-      <Divider />
 
-
-      {/* 13, Comparatif honnête 4 colonnes */}
-      <ComparisonV2 />
-      <Divider />
-
-      {/* 14, FAQ */}
-      <Faq />
-      <Divider />
-
-      {/* Garantie Voisine retirée de l'accueil le 8 novembre 2026 (Nathan). */}
-
-      {/* 16, Demandez à l'IA : preuve sociale via IA */}
-      <AskAI />
-
-      {/* Footer, inclut désormais le bloc fondateur (Nathan + LinkedIn) en bas-gauche */}
       <Footer />
-
       <MobileCta />
     </main>
   )
