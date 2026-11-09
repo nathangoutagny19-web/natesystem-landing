@@ -11,6 +11,7 @@ import { CAL_LINK } from '@/lib/constants'
 import { useLang } from '@/components/providers/LangProvider'
 import { makeD } from '@/lib/lang'
 import { localizedHref } from '@/lib/routes'
+import ClientsGlobe from '@/components/about/ClientsGlobe'
 
 /**
  * À PROPOS (refonte du 9 novembre 2026) : l'histoire en trois phrases,
@@ -67,22 +68,36 @@ export default function AProposPage() {
     <main>
       <Nav />
 
-      {/* L'histoire, en trois phrases */}
-      <section className="lx-section" style={{ paddingTop: 'clamp(150px, 18vw, 200px)' }}>
-        <div className="lx-wrap">
+      {/* Le hero (Nathan, 9 novembre 2026) : « une agence human to human »,
+          où l'on est basés et où sont nos clients, puis le globe des clients.
+          Version 1 des trois proposées ; c'est Nathan qui tranche. */}
+      <section className="lx-section" style={{ paddingTop: 'clamp(140px, 16vw, 190px)' }}>
+        <div className="lx-wrap ap-hero">
           <FadeUp>
-            <span className="lx-eyebrow">{d('À propos', 'About', 'Rólunk')}</span>
-            <h1 className="lx-title" style={{ fontSize: 'clamp(38px, 5.6vw, 68px)', maxWidth: '15ch' }}>
-              {d('Un outil qui vous ', 'A tool that truly ', 'Egy eszköz, amely ')}
-              <span className="accent">{d('appartient vraiment.', 'belongs to you.', 'valóban az Öné.')}</span>
-            </h1>
-            <p className="lx-lead" style={{ maxWidth: 700 }}>
-              {d(
-                'Les maisons qui servent une clientèle exigeante tournent sur WhatsApp, sur des tableurs et sur la mémoire d’une ou deux personnes, parce que les logiciels du marché ne collent pas à leur façon de travailler. NateSystem existe pour construire l’outil qui colle, à partir de la façon dont chaque maison travaille déjà. Et cet outil leur appartient : le code, les données, tout.',
-                'Businesses that serve demanding clients run on WhatsApp, on spreadsheets and on the memory of one or two people, because off-the-shelf software does not fit the way they work. NateSystem exists to build the tool that fits, starting from the way each business already works. And that tool belongs to them: the code, the data, everything.',
-                'Az igényes ügyfeleket kiszolgáló vállalkozások WhatsAppon, táblázatokon és egy-két ember emlékezetén futnak, mert a piaci szoftverek nem illeszkednek a munkamódjukhoz. A NateSystem azért létezik, hogy megépítse az illeszkedő eszközt, abból kiindulva, ahogyan az adott vállalkozás már dolgozik. És ez az eszköz az övék: a kód, az adatok, minden.'
-              )}
-            </p>
+            <div>
+              <span className="lx-eyebrow">{d('À propos', 'About', 'Rólunk')}</span>
+              <h1 className="lx-title" style={{ fontSize: 'clamp(38px, 4.6vw, 60px)', maxWidth: '15ch' }}>
+                {d('Une agence ', 'A ', 'Egy ')}
+                <span className="accent">{d('human to human.', 'human-to-human agency.', 'human to human ügynökség.')}</span>
+              </h1>
+              <p className="lx-lead" style={{ color: 'var(--text)', fontWeight: 400 }}>
+                {d(
+                  'Basés au Monténégro et en France. Nos clients sont à Lyon, à Saint-Étienne et à Budapest, et nous intervenons de l’Europe aux Antilles et au Golfe.',
+                  'Based in Montenegro and France. Our clients are in Lyon, Saint-Étienne and Budapest, and we work from Europe to the French West Indies and the Gulf.',
+                  'Montenegróban és Franciaországban működünk. Ügyfeleink Lyonban, Saint-Étienne-ben és Budapesten vannak, és Európától a Francia Antillákig és az Öböl-térségig dolgozunk.'
+                )}
+              </p>
+              <p className="lx-lead" style={{ maxWidth: 560, fontSize: 15.5, marginTop: 20 }}>
+                {d(
+                  'Les maisons qui servent une clientèle exigeante tournent sur WhatsApp, sur des tableurs et sur la mémoire d’une ou deux personnes, parce que les logiciels du marché ne collent pas à leur façon de travailler. NateSystem existe pour construire l’outil qui colle, à partir de la façon dont chaque maison travaille déjà. Et cet outil leur appartient : le code, les données, tout.',
+                  'Businesses that serve demanding clients run on WhatsApp, on spreadsheets and on the memory of one or two people, because off-the-shelf software does not fit the way they work. NateSystem exists to build the tool that fits, starting from the way each business already works. And that tool belongs to them: the code, the data, everything.',
+                  'Az igényes ügyfeleket kiszolgáló vállalkozások WhatsAppon, táblázatokon és egy-két ember emlékezetén futnak, mert a piaci szoftverek nem illeszkednek a munkamódjukhoz. A NateSystem azért létezik, hogy megépítse az illeszkedő eszközt, abból kiindulva, ahogyan az adott vállalkozás már dolgozik. És ez az eszköz az övék: a kód, az adatok, minden.'
+                )}
+              </p>
+            </div>
+          </FadeUp>
+          <FadeUp delay={0.1}>
+            <ClientsGlobe />
           </FadeUp>
         </div>
       </section>
@@ -126,12 +141,12 @@ export default function AProposPage() {
           <FadeUp>
             <div>
               <span className="lx-eyebrow" style={{ color: 'rgba(240,240,242,0.5)' }}>{d('Où nous sommes', 'Where we are', 'Hol vagyunk')}</span>
-              <h2 className="lx-title" style={{ color: '#f0f0f2', maxWidth: '14ch' }}>
-                {d('Basés au Monténégro ', 'Based in Montenegro ', 'Montenegróban ')}
-                <span className="accent">{d('et en France.', 'and France.', 'és Franciaországban.')}</span>
+              <h2 className="lx-title" style={{ color: '#f0f0f2', maxWidth: '16ch' }}>
+                {d('Sur place quand il le faut, ', 'On site when it matters, ', 'Ha kell, a helyszínen, ')}
+                <span className="accent">{d('à distance le reste du temps.', 'remotely the rest of the time.', 'egyébként távolról.')}</span>
               </h2>
               <p className="lx-lead" style={{ color: 'rgba(240,240,242,0.65)' }}>
-                {d('À Tivat, sur la baie de Kotor, et en France. Le travail se fait sur place quand il le faut, à distance le reste du temps.', 'In Tivat, on the Bay of Kotor, and in France. We work on site when it matters, remotely the rest of the time.', 'Tivatban, a Kotori-öbölnél, és Franciaországban. Ha kell, a helyszínen dolgozunk, egyébként távolról.')}
+                {d('Depuis Tivat, sur la baie de Kotor, et depuis la France.', 'From Tivat, on the Bay of Kotor, and from France.', 'Tivatból, a Kotori-öböl partjáról, és Franciaországból.')}
               </p>
             </div>
           </FadeUp>
@@ -198,6 +213,7 @@ export default function AProposPage() {
       <MobileCta />
 
       <style jsx>{`
+        .ap-hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 460px); gap: 72px; align-items: center; }
         .ap-team { display: grid; grid-template-columns: 340px 1fr; gap: 72px; align-items: center; }
         .ap-photo { position: relative; width: 100%; aspect-ratio: 4 / 5; overflow: hidden; border-radius: 4px; background: var(--bg-elevated); }
         .ap-role { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin: 14px 0 0; }
@@ -215,7 +231,7 @@ export default function AProposPage() {
         .ap-commit-title { font-size: clamp(21px, 2vw, 25px); font-weight: 400; line-height: 1.25; color: var(--text); margin: 16px 0 10px; }
         .ap-commit-text { font-size: 15px; font-weight: 300; line-height: 1.65; color: var(--text-secondary); margin: 0; }
         @media (max-width: 860px) {
-          .ap-team, .ap-where { grid-template-columns: 1fr; gap: 40px; }
+          .ap-hero, .ap-team, .ap-where { grid-template-columns: 1fr; gap: 40px; }
           .ap-photo { width: 72%; max-width: 300px; }
           .ap-commit { grid-template-columns: 1fr; gap: 36px; margin-top: 44px; }
         }
