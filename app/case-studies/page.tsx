@@ -6,6 +6,7 @@ import MobileCta from '@/components/layout/MobileCta'
 import FadeUp from '@/components/ui/FadeUp'
 import Divider from '@/components/ui/Divider'
 import CaseStudy from '@/components/home/CaseStudy'
+import WorkTiles from '@/components/home/WorkTiles'
 import ChartreuxCase from '@/components/case-studies/ChartreuxCase'
 import LiteYouTube from '@/components/ui/LiteYouTube'
 import Link from 'next/link'
@@ -37,6 +38,10 @@ export default function CaseStudiesPage() {
           </FadeUp>
         </div>
       </section>
+
+      {/* Refonte du 9 novembre 2026 : d'abord la grille des cas (une photo,
+          le client, le secteur, une ligne de résultat), puis le détail. */}
+      <WorkTiles variant="all" />
 
       {/* 1er cas : Les Chartreux. En tête parce que c'est le plus lourd du
           portefeuille et celui que vise le positionnement écoles. */}
