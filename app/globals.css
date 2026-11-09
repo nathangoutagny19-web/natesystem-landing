@@ -150,9 +150,10 @@ body {
 .section-title {
   font-family: var(--font-serif);
   font-style: italic;
-  font-size: clamp(22px, 2.4vw, 30px);
+  /* Agrandi le 9 novembre 2026 pour s'accorder aux titres de la refonte. */
+  font-size: clamp(26px, 3.2vw, 40px);
   font-weight: 400;
-  line-height: 1.25;
+  line-height: 1.18;
   margin-bottom: 20px;
 }
 .section-title .accent { color: var(--accent); }
@@ -1341,3 +1342,42 @@ html:not(.light) .nav-mbar { background: rgba(14, 14, 18, 0.9); }
   .hero-ctas > a { width: 100%; justify-content: center; }
   .clients-label { font-size: 9.5px !important; letter-spacing: 1.8px !important; margin-bottom: 22px !important; }
 }
+
+/* ═══ REFONTE DU 9 NOVEMBRE 2026 : sections « maison » ═══
+   Une idée par section, beaucoup d'air, un titre serif de 4 à 9 mots, un
+   surtitre mono discret, un texte court. Pas de grille, pas de séparateur. */
+.lx-section { padding: clamp(96px, 13vw, 168px) 24px; }
+.lx-wrap { max-width: 1120px; margin: 0 auto; }
+.lx-narrow { max-width: 760px; margin: 0 auto; }
+.lx-eyebrow {
+  display: block; font-family: var(--font-mono); font-size: 10.5px; font-weight: 400;
+  letter-spacing: 2.6px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 22px;
+}
+.lx-title {
+  font-family: var(--font-serif); font-style: italic; font-weight: 400;
+  font-size: clamp(32px, 4.4vw, 54px); line-height: 1.08; color: var(--text);
+  margin: 0; max-width: 18ch;
+}
+.lx-title .accent { color: var(--accent); }
+.lx-lead {
+  font-family: var(--font-sans); font-size: clamp(16px, 1.5vw, 18px); font-weight: 300;
+  line-height: 1.75; color: var(--text-secondary); margin: 28px 0 0; max-width: 640px;
+}
+.lx-link {
+  display: inline-flex; align-items: center; gap: 10px; margin-top: 40px;
+  font-family: var(--font-sans); font-size: 14.5px; font-weight: 500; color: var(--text);
+  text-decoration: none; border-bottom: 1px solid var(--border-hover); padding-bottom: 4px;
+  transition: color .2s ease, border-color .2s ease;
+}
+.lx-link:hover { color: var(--accent); border-color: var(--accent); }
+@media (max-width: 640px) {
+  .lx-section { padding: 80px 20px; }
+  .lx-title { font-size: 30px; line-height: 1.12; }
+  .lx-lead { font-size: 15.5px; margin-top: 20px; }
+  .lx-eyebrow { font-size: 10px; letter-spacing: 2.2px; margin-bottom: 16px; }
+}
+
+/* Ressources : les deux vidéos de fond côte à côte (9 novembre 2026) */
+.res-value-videos { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.res-value-lang { margin: 12px 0 0; font-size: 10.5px; letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted); }
+@media (max-width: 760px) { .res-value-videos { grid-template-columns: 1fr; gap: 28px; } }
