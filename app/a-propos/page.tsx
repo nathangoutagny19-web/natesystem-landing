@@ -7,6 +7,7 @@ import Footer from '@/components/layout/Footer'
 import MobileCta from '@/components/layout/MobileCta'
 import FadeUp from '@/components/ui/FadeUp'
 import AuditFinal from '@/components/home/AuditFinal'
+import CountrySlides from '@/components/about/CountrySlides'
 import { useLang } from '@/components/providers/LangProvider'
 import { makeD } from '@/lib/lang'
 
@@ -26,8 +27,8 @@ import { makeD } from '@/lib/lang'
  *   conciergerie sous NDA, Wandering Yacht ni Services Exclusifs.
  *
  * Choix par défaut, à confirmer par Nathan : l'équipe = Nathan seul ; « basés
- * au Monténégro et en France » ; la liste « nous intervenons en » (marchés
- * prospectés) ; l'hébergement en Europe ou aux États-Unis selon le client
+ * au Monténégro et en France » ; les pays « nous intervenons en » (liste de
+ * Nathan du 09/11 : France, Suisse, Hongrie, Monténégro, Espagne, USA, UAE) ; l'hébergement en Europe ou aux États-Unis selon le client
  * (décision du 21/10/2026).
  */
 
@@ -65,16 +66,6 @@ export default function AProposPage() {
       who: d('Là où nous sommes basés', 'Where we are based', 'Ahol a bázisunk van'),
       alt: d('Nathan devant la baie de Kotor, au Monténégro', 'Nathan in front of the Bay of Kotor, Montenegro', 'Nathan a Kotori-öböl előtt, Montenegróban'),
     },
-  ]
-
-  const regions = [
-    d('France', 'France', 'Franciaország'),
-    'Monaco',
-    d('Suisse', 'Switzerland', 'Svájc'),
-    d('Antilles françaises', 'French West Indies', 'Francia Antillák'),
-    d('Adriatique et Méditerranée', 'Adriatic and Mediterranean', 'Adria és Földközi-tenger'),
-    d('Hongrie', 'Hungary', 'Magyarország'),
-    d('Golfe', 'The Gulf', 'Öböl-térség'),
   ]
 
   const commitments = [
@@ -130,12 +121,9 @@ export default function AProposPage() {
             ))}
           </div>
 
-          <FadeUp>
-            <p className="font-sans ap-regions">
-              <span className="font-mono ap-regions-label">{d('Nous intervenons en', 'We work in', 'Ahol dolgozunk')}</span>
-              {regions.join(' · ')}
-            </p>
-          </FadeUp>
+          {/* Les pays, en slides qui tournent : un dessin au trait par pays (Nathan, 9 novembre 2026) */}
+          <span className="font-mono ap-regions-label">{d('Nous intervenons en', 'We work in', 'Ahol dolgozunk')}</span>
+          <CountrySlides />
         </div>
       </section>
 
@@ -211,12 +199,8 @@ export default function AProposPage() {
         .ap-fig figcaption { display: flex; flex-direction: column; gap: 4px; margin-top: 16px; }
         .ap-place { font-size: 10.5px; letter-spacing: 1.8px; text-transform: uppercase; color: var(--text-muted); }
         .ap-who { font-size: 15px; color: var(--text); }
-        .ap-regions {
-          margin: clamp(48px, 6vw, 72px) 0 0; max-width: 760px;
-          font-size: 16px; font-weight: 300; line-height: 1.7; color: var(--text-secondary);
-        }
         .ap-regions-label {
-          display: block; margin-bottom: 8px;
+          display: block; margin: clamp(72px, 9vw, 120px) 0 0;
           font-size: 10.5px; letter-spacing: 1.8px; text-transform: uppercase; color: var(--accent);
         }
         .ap-team { display: grid; grid-template-columns: 340px 1fr; gap: 72px; align-items: center; }
