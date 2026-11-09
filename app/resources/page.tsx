@@ -16,6 +16,9 @@ import { blogPosts } from '@/lib/blog'
 
 // Vidéo témoignage (paysage 16:9). Plus tard : vidéos éducation + vlogs internes.
 const TESTIMONIAL_VIDEO_ID = 'aMIjJbzuhDc'
+// Les deux vidéos de fond, 15 min, publiées le 23/10/2026 (relances vidéo).
+const VALUE_VIDEO_FR = 'uzU4z6dm0Uw'
+const VALUE_VIDEO_EN = 'f_A07eDnxts'
 
 // Démos live + outil interactif.
 type Demo = { titleFr: string; titleEn: string; titleHu: string; descFr: string; descEn: string; descHu: string; badge: 'new' | 'gated'; href: string; external?: boolean; img: string }
@@ -103,8 +106,27 @@ export default function ResourcesPage() {
             </p>
           </FadeUp>
 
+          {/* Les deux vidéos de fond (refonte du 9 novembre 2026), en français et
+              en anglais : ce qui bloque la croissance d'une conciergerie de luxe
+              alors que la demande est là. Liens des relances du 23/10/2026. */}
+          <FadeUp delay={0.08}>
+            <h3 className="font-serif italic" style={{ fontSize: 'clamp(22px, 2.6vw, 30px)', fontWeight: 400, color: 'var(--text)', lineHeight: 1.25, margin: '40px 0 22px', maxWidth: 760 }}>
+              {d('Pourquoi votre conciergerie de luxe ne grandit plus alors que la demande est là', 'Why your luxury concierge business stops growing while the demand is there', 'Miért nem nő tovább a luxus concierge-vállalkozása, miközben a kereslet megvan')}
+            </h3>
+            <div className="res-value-videos">
+              <div>
+                <div className="res-video"><LiteYouTube id={VALUE_VIDEO_FR} title="Pourquoi votre conciergerie de luxe ne grandit plus alors que la demande est là" /></div>
+                <p className="font-mono res-value-lang">{d('En français', 'In French', 'Franciául')}</p>
+              </div>
+              <div>
+                <div className="res-video"><LiteYouTube id={VALUE_VIDEO_EN} title="Why your luxury concierge business stops growing while the demand is there" /></div>
+                <p className="font-mono res-value-lang">{d('En anglais', 'In English', 'Angolul')}</p>
+              </div>
+            </div>
+          </FadeUp>
+
           <FadeUp delay={0.12}>
-            <div className="res-video-row" style={{ marginTop: 36 }}>
+            <div className="res-video-row" style={{ marginTop: 64 }}>
               <div className="res-video-copy">
                 <span className="font-mono" style={{ fontSize: '10px', letterSpacing: '2.5px', textTransform: 'uppercase', color: 'var(--accent)' }}>
                   {d('Témoignage · Chromosome', 'Testimonial · Chromosome', 'Ajánlás · Chromosome')}
@@ -128,11 +150,57 @@ export default function ResourcesPage() {
 
       <Divider />
 
+      {/* ═══ 3, BLOG ═══
+           Trente articles écrits pour des requêtes françaises : le blog est
+           resté français et /en/blog redirige. Masqué ici aussi. */}
+      {lang === 'fr' && (
+        <>
+        <section id="blog" style={{ padding: '80px 24px' }}>
+          <div className="mx-auto" style={{ maxWidth: '1120px' }}>
+            <FadeUp>
+              <div className="flex items-center justify-between mb-2" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                <span className="section-label mb-0">{d('Guides', 'Guides', 'Útmutatók')}</span>
+                <Link href="/blog" className="arrow-link">
+                  {d('Voir tous les articles', 'View all articles', 'Összes cikk megtekintése')}
+                </Link>
+              </div>
+              <h2 className="font-serif italic" style={{ fontSize: 'clamp(28px, 4vw, 40px)', fontWeight: 400, color: 'var(--text)', lineHeight: 1.15, margin: '4px 0 28px' }}>
+                {d('À lire pour décider juste.', 'Reading to decide well.', 'Olvasnivaló a jó döntéshez.')}
+              </h2>
+            </FadeUp>
+
+            <div className="res-grid-3">
+              {blogPosts.slice(0, 6).map((post, i) => (
+                <FadeUp key={post.slug} delay={Math.min(i * 0.06, 0.3)}>
+                  <Link href={`/blog/${post.slug}`} style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
+                    <motion.div className="res-card" whileHover={{ borderColor: 'var(--border-hover)' }}>
+                      <span className="font-mono res-badge" style={{ marginBottom: 10 }}>{post.category}</span>
+                      <h3 className="font-serif italic" style={{ fontSize: '19px', fontWeight: 400, color: 'var(--text)', lineHeight: 1.3, margin: '0 0 10px' }}>
+                        {post.title}
+                      </h3>
+                      <p className="font-sans" style={{ fontSize: '13px', fontWeight: 300, color: 'var(--text-secondary)', lineHeight: 1.6, flex: 1, display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
+                        {post.description}
+                      </p>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginTop: 14 }}>
+                        <span className="font-mono" style={{ fontSize: '11px', color: 'var(--text-muted)' }}>{post.date}</span>
+                        <span style={{ color: 'var(--text-muted)' }}>·</span>
+                        <span className="font-mono" style={{ fontSize: '11px', color: 'var(--text-muted)' }}>{post.readTime}</span>
+                      </div>
+                    </motion.div>
+                  </Link>
+                </FadeUp>
+              ))}
+            </div>
+          </div>
+        </section>
+        </>
+      )}
+
       {/* ═══ 2, OUTILS & DÉMOS LIVE ═══ */}
       <section id="outils" style={{ padding: '80px 24px' }}>
         <div className="mx-auto" style={{ maxWidth: '1120px' }}>
           <FadeUp>
-            <span className="section-label">{d('Outils & démos', 'Tools & demos', 'Eszközök és demók')}</span>
+            <span className="section-label">{d('Outils', 'Tools', 'Eszközök')}</span>
             <h2 className="font-serif italic" style={{ fontSize: 'clamp(28px, 4vw, 40px)', fontWeight: 400, color: 'var(--text)', lineHeight: 1.15, margin: '4px 0 10px' }}>
               {d('Essayez le produit réel.', 'Try the real product.', 'Próbálja ki a valódi terméket.')}
             </h2>
@@ -204,52 +272,6 @@ export default function ResourcesPage() {
       </section>
 
       <Divider />
-
-      {/* ═══ 3, BLOG ═══
-           Trente articles écrits pour des requêtes françaises : le blog est
-           resté français et /en/blog redirige. Masqué ici aussi. */}
-      {lang === 'fr' && (
-        <>
-        <section id="blog" style={{ padding: '80px 24px' }}>
-          <div className="mx-auto" style={{ maxWidth: '1120px' }}>
-            <FadeUp>
-              <div className="flex items-center justify-between mb-2" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                <span className="section-label mb-0">{t('resources.blog')}</span>
-                <Link href="/blog" className="arrow-link">
-                  {d('Voir tous les articles', 'View all articles', 'Összes cikk megtekintése')}
-                </Link>
-              </div>
-              <h2 className="font-serif italic" style={{ fontSize: 'clamp(28px, 4vw, 40px)', fontWeight: 400, color: 'var(--text)', lineHeight: 1.15, margin: '4px 0 28px' }}>
-                {d('À lire pour décider juste.', 'Reading to decide well.', 'Olvasnivaló a jó döntéshez.')}
-              </h2>
-            </FadeUp>
-
-            <div className="res-grid-3">
-              {blogPosts.slice(0, 6).map((post, i) => (
-                <FadeUp key={post.slug} delay={Math.min(i * 0.06, 0.3)}>
-                  <Link href={`/blog/${post.slug}`} style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
-                    <motion.div className="res-card" whileHover={{ borderColor: 'var(--border-hover)' }}>
-                      <span className="font-mono res-badge" style={{ marginBottom: 10 }}>{post.category}</span>
-                      <h3 className="font-serif italic" style={{ fontSize: '19px', fontWeight: 400, color: 'var(--text)', lineHeight: 1.3, margin: '0 0 10px' }}>
-                        {post.title}
-                      </h3>
-                      <p className="font-sans" style={{ fontSize: '13px', fontWeight: 300, color: 'var(--text-secondary)', lineHeight: 1.6, flex: 1, display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
-                        {post.description}
-                      </p>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginTop: 14 }}>
-                        <span className="font-mono" style={{ fontSize: '11px', color: 'var(--text-muted)' }}>{post.date}</span>
-                        <span style={{ color: 'var(--text-muted)' }}>·</span>
-                        <span className="font-mono" style={{ fontSize: '11px', color: 'var(--text-muted)' }}>{post.readTime}</span>
-                      </div>
-                    </motion.div>
-                  </Link>
-                </FadeUp>
-              ))}
-            </div>
-          </div>
-        </section>
-        </>
-      )}
 
       <Footer />
       <MobileCta />
