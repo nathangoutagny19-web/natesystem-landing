@@ -133,14 +133,16 @@ const TESTIMONIALS: Testimonial[] = [
 /* Espaces insécables en français, pour que « » » ne parte jamais seul à la ligne. */
 const MARKS: Record<Lang, [string, string]> = { fr: ['«\u00A0', '\u00A0»'], en: ['“', '”'], hu: ['„', '”'] }
 
-export default function BandQuotes() {
+/* `tone` : « dark » dans une section noire, « light » sur le fond clair de
+   l'accueil, sous les réalisations (Nathan, 9 novembre 2026). */
+export default function BandQuotes({ tone = 'dark' }: { tone?: 'dark' | 'light' }) {
   const { lang } = useLang()
   const [open, close] = MARKS[lang]
   const N = TESTIMONIALS.length
 
   return (
-    <div className="bq">
-      <div className="bq-rule" />
+    <div className={`bq bq-${tone}`}>
+      {tone === 'dark' && <div className="bq-rule" />}
       <div className="bq-marquee">
         {/* La piste est doublée pour une boucle sans couture ; la copie est
             masquée aux lecteurs d'écran. */}
@@ -188,6 +190,8 @@ export default function BandQuotes() {
           line-height: 1.3;
           color: #f0f0f2;
         }
+        .bq-light .bq-quote { color: var(--text); }
+        .bq-light .bq-marquee { padding: 0; }
         @keyframes bqScroll {
           from { transform: translateX(0); }
           to { transform: translateX(-50%); }

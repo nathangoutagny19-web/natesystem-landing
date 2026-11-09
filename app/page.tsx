@@ -7,6 +7,7 @@ import BuildThree from '@/components/home/BuildThree'
 import PourQui from '@/components/home/PourQui'
 import WorkTiles from '@/components/home/WorkTiles'
 import StatementBand from '@/components/home/StatementBand'
+import BandQuotes from '@/components/home/Testimonials'
 import Fondateur from '@/components/home/Fondateur'
 import CtaFinal from '@/components/home/CtaFinal'
 import Footer from '@/components/layout/Footer'
@@ -42,11 +43,16 @@ export default function Home() {
       {/* 5, Pour qui, six tuiles */}
       <PourQui />
 
-      {/* 6, Réalisations, trois tuiles */}
+      {/* 6, Réalisations, trois tuiles (photos cadrées, le podcast à la place
+          de la conciergerie sous NDA, Nathan 9 novembre 2026) */}
       <WorkTiles variant="home" />
 
-      {/* 7, Ils en parlent : la bande noire, ses photos et les citations qui
-          défilent, sans nom (version de Nathan du 8 novembre 2026) */}
+      {/* 7, Les avis écrits, qui défilent sous les réalisations, sans nom */}
+      <section id="avis" style={{ padding: '0 0 clamp(96px, 12vw, 150px)' }}>
+        <BandQuotes tone="light" />
+      </section>
+
+      {/* La section tout en noir, avec la seule phrase de positionnement */}
       <StatementBand />
 
       {/* 8, Le fondateur, puis l'appel final et l'agenda */}
