@@ -267,7 +267,7 @@ export default function ClientsBar({ hideLabel = false, split = false }: { hideL
         }
         .clients-logo {
           /* Match the visual weight of the long Hungarian wordmark.
-             max-width caps short logos so they don't blow up on wide
+             max-width caps short logos so they don’t blow up on wide
              screens; height covers the typical case. */
           height: 46px;
           width: auto;
@@ -304,14 +304,14 @@ export default function ClientsBar({ hideLabel = false, split = false }: { hideL
           filter: brightness(0) invert(1) opacity(1);
         }
         /* La rencontre prend la hauteur de la rangee et un format fixe, pour
-           qu'elle pese exactement comme un logo. object-fit: cover recadre
-           au centre : les photos n'ont pas toutes le meme rapport. */
+           qu’elle pese exactement comme un logo. object-fit: cover recadre
+           au centre : les photos n’ont pas toutes le meme rapport. */
         /* ⚠︎ LES SOURCES SONT DEJA AU FORMAT DE LA CASE, 1,391 pour
            1. object-fit: cover recadre depuis le CENTRE : sur les photos
-           carrees d'origine, 1200x1200, il coupait les tetes. Les trois
+           carrees d’origine, 1200x1200, il coupait les tetes. Les trois
            fichiers de public/realisations/bandeau/ sont donc recadres a
            la main, cadres sur les visages et la poignee de main, et cover
-           n'a plus rien a rogner. Les originaux carres restent intacts,
+           n’a plus rien a rogner. Les originaux carres restent intacts,
            ils servent au carrousel, a /atelier et aux pages de cas. */
         .clients-photo {
           height: 46px;
