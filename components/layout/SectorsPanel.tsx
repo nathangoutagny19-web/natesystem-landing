@@ -53,7 +53,7 @@ export function SectorsPanel({
       <div className="smp-inner">
         <div className="smp-intro">
           <span className="font-mono smp-eyebrow">{d('Secteurs', 'Industries', 'Ágazatok')}</span>
-          <p className="font-serif italic smp-title">
+          <p className="font-serif smp-title">
             {d('Les maisons qui servent ', 'Businesses that serve ', 'Vállalkozások, amelyek ')}
             <span className="accent">{d('une clientèle exigeante.', 'demanding clients.', 'igényes ügyfeleket szolgálnak ki.')}</span>
           </p>
@@ -75,7 +75,7 @@ export function SectorsPanel({
               >
                 <span className="font-mono smp-num">{String(i + 1).padStart(2, '0')}</span>
                 <span className="smp-text">
-                  <span className="font-serif italic smp-name">{s.name[lang]}</span>
+                  <span className="font-serif smp-name">{s.name[lang]}</span>
                   <span className="font-sans smp-line">{s.line[lang]}</span>
                 </span>
                 <span className="smp-arrow" aria-hidden="true">→</span>
@@ -98,8 +98,8 @@ export function SectorsPanel({
       <style jsx>{`
         .smp {
           position: absolute; top: 100%; left: 0; right: 0; z-index: 2;
-          background: var(--bg);
-          border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+          background: #0e0e12; color: #f0f0f2;
+          border-top: 1px solid rgba(255, 255, 255, 0.08); border-bottom: 1px solid rgba(255, 255, 255, 0.08);
           box-shadow: 0 48px 80px -40px rgba(10, 10, 14, 0.35);
           clip-path: inset(0 0 100% 0); opacity: 0; visibility: hidden;
           transition: clip-path 0.55s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.3s ease, visibility 0s linear 0.55s;
@@ -115,18 +115,18 @@ export function SectorsPanel({
 
         .smp-intro { display: flex; flex-direction: column; }
         .smp-eyebrow { font-size: 10.5px; letter-spacing: 2.6px; text-transform: uppercase; color: var(--accent); }
-        .smp-title { margin: 20px 0 0; font-size: 31px; font-weight: 400; line-height: 1.14; color: var(--text); }
-        .smp-title .accent { color: var(--accent); }
+        .smp-title { margin: 20px 0 0; font-size: 31px; font-weight: 400; line-height: 1.14; color: #f0f0f2; }
+        .smp-title .accent { color: var(--accent); font-style: italic; }
         .smp-intro :global(.smp-all) {
           margin-top: auto; align-self: flex-start;
-          font-size: 13.5px; color: var(--text-secondary); text-decoration: none;
-          border-bottom: 1px solid var(--border-hover); padding-bottom: 3px;
+          font-size: 13.5px; color: rgba(240, 240, 242, 0.7); text-decoration: none;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.2); padding-bottom: 3px;
           transition: color 0.2s ease, border-color 0.2s ease;
         }
         .smp-intro :global(.smp-all:hover) { color: var(--accent); border-color: var(--accent); }
 
-        .smp-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--border); }
-        .smp-list li { border-bottom: 1px solid var(--border); }
+        .smp-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+        .smp-list li { border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
         .smp-open .smp-list li { animation: smpIn 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) both; animation-delay: calc(var(--i) * 60ms + 140ms); }
         @keyframes smpIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
 
@@ -140,12 +140,12 @@ export function SectorsPanel({
           transition: transform 0.55s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
         .smp-list :global(.smp-on)::after { transform: scaleX(1); }
-        .smp-num { font-size: 11px; letter-spacing: 1.6px; color: var(--text-muted); transition: color 0.3s ease; }
+        .smp-num { font-size: 11px; letter-spacing: 1.6px; color: rgba(240, 240, 242, 0.45); transition: color 0.3s ease; }
         .smp-list :global(.smp-on) .smp-num { color: var(--accent); }
         .smp-text { display: block; transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1); }
         .smp-list :global(.smp-on) .smp-text { transform: translateX(8px); }
-        .smp-name { display: block; font-size: 29px; font-weight: 400; line-height: 1.1; color: var(--text); }
-        .smp-line { display: block; margin-top: 7px; font-size: 13.5px; font-weight: 300; line-height: 1.5; color: var(--text-secondary); }
+        .smp-name { display: block; font-size: 29px; font-weight: 400; line-height: 1.1; color: #f0f0f2; }
+        .smp-line { display: block; margin-top: 7px; font-size: 13.5px; font-weight: 300; line-height: 1.5; color: rgba(240, 240, 242, 0.6); }
         .smp-arrow {
           align-self: center; justify-self: end; font-size: 18px; color: var(--accent);
           opacity: 0; transform: translateX(-10px);
@@ -156,12 +156,9 @@ export function SectorsPanel({
         .smp-card {
           position: relative; display: flex; flex-direction: column; justify-content: space-between;
           min-height: 320px; padding: 22px 24px; border-radius: 4px; overflow: hidden;
-          background: radial-gradient(120% 90% at 75% 15%, rgba(230, 57, 70, 0.12), transparent 60%), #0e0e12;
-          color: #f0f0f2;
-        }
-        :global(html:not(.light)) .smp-card {
-          background: radial-gradient(120% 90% at 75% 15%, rgba(230, 57, 70, 0.12), transparent 60%), #17171c;
+          background: radial-gradient(120% 90% at 75% 15%, rgba(230, 57, 70, 0.14), transparent 60%), #17171c;
           box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+          color: #f0f0f2;
         }
         .smp-card-idx, .smp-card-label { font-size: 10.5px; letter-spacing: 2.2px; text-transform: uppercase; color: rgba(240, 240, 242, 0.55); }
         .smp-card-label { color: rgba(240, 240, 242, 0.85); }

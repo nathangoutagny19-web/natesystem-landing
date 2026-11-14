@@ -124,7 +124,8 @@ const Chevron = () => (
   </svg>
 )
 
-export default function Nav() {
+/** `tone="dark"` : la barre posée sur une section nuit (l'accueil, refonte du 14/11/2026). */
+export default function Nav({ tone }: { tone?: 'dark' } = {}) {
   const { lang, setLang, t } = useLang()
   const d = makeD(lang)
   /* Les href sont écrits en français. Sous /en ils sont préfixés ici, sinon le
@@ -156,7 +157,7 @@ export default function Nav() {
   return (
     <>
       {/* ——— Full-width nav bar ——— */}
-      <header className={`nav-bar ${scrolled ? 'nav-scrolled' : ''}${sec.open ? ' nav-menu-open' : ''}`}>
+      <header className={`nav-bar ${scrolled ? 'nav-scrolled' : ''}${sec.open ? ' nav-menu-open' : ''}${tone === 'dark' ? ' nav-dark' : ''}`}>
         <div className="nav-inner">
           {/* Logo */}
           <Link href={l('/')} className="nav-logo">
@@ -244,7 +245,7 @@ export default function Nav() {
           une vraie barre fixe avec fond, le logo, l'audit gratuit toujours
           à portée de pouce, et le menu. Avant, le logo et le menu flottaient
           sur le contenu qui défilait dessous. ——— */}
-      <div className="nav-mbar">
+      <div className={`nav-mbar${tone === 'dark' ? ' nav-mbar-dark' : ''}`}>
       <Link href={l('/')} className="flex items-center gap-[6px]" style={{ textDecoration: 'none' }} onClick={() => setMenuOpen(false)}>
         <span className="nav-logo-n">N</span>
         <span className="nav-logo-dot" />
@@ -258,7 +259,7 @@ export default function Nav() {
 
       {/* ——— Mobile hamburger ——— */}
       <button
-        className="flex flex-col gap-[5px] p-3 cursor-pointer bg-transparent border-none"
+        className="nav-burger flex flex-col gap-[5px] p-3 cursor-pointer bg-transparent border-none"
         onClick={() => setMenuOpen(!menuOpen)}
         aria-label="Menu"
       >
