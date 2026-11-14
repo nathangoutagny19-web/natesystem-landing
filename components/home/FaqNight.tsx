@@ -64,7 +64,7 @@ export default function FaqNight() {
           padding: 24px 0; background: none; border: 0; cursor: pointer; text-align: left; color: inherit;
           -webkit-tap-highlight-color: transparent;
         }
-        .fq-num { font-size: 11px; letter-spacing: 1.6px; color: rgba(240, 240, 242, 0.42); transition: color 0.3s ease; }
+        .fq-num { font-family: var(--font-serif); font-style: italic; font-size: 17px; letter-spacing: 0; color: rgba(240, 240, 242, 0.42); transition: color 0.3s ease; }
         .fq-open .fq-num, .fq-head:hover .fq-num { color: var(--accent); }
         .fq-q { font-size: clamp(16px, 1.5vw, 18px); font-weight: 400; line-height: 1.45; color: #f0f0f2; padding-right: 16px; }
         .fq-plus { position: relative; align-self: center; width: 14px; height: 14px; }

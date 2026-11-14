@@ -131,7 +131,7 @@ export default function SplitList({
           padding: 22px 0; background: none; border: 0; cursor: pointer; text-align: left; color: inherit;
           -webkit-tap-highlight-color: transparent;
         }
-        .sl-num { font-size: 11px; letter-spacing: 1.6px; color: var(--sl-muted); transition: color 0.3s ease; }
+        .sl-num { font-family: var(--font-serif); font-style: italic; font-size: 17px; letter-spacing: 0; color: var(--sl-muted); transition: color 0.3s ease; }
         .sl-open .sl-num, .sl-head:hover .sl-num { color: var(--accent); }
         .sl-name { font-size: clamp(22px, 2.2vw, 28px); line-height: 1.15; color: var(--sl-text); font-weight: 400; transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); }
         .sl-head:hover .sl-name { transform: translateX(6px); }

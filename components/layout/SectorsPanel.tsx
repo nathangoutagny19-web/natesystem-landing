@@ -140,7 +140,7 @@ export function SectorsPanel({
           transition: transform 0.55s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
         .smp-list :global(.smp-on)::after { transform: scaleX(1); }
-        .smp-num { font-size: 11px; letter-spacing: 1.6px; color: rgba(240, 240, 242, 0.45); transition: color 0.3s ease; }
+        .smp-num { font-family: var(--font-serif); font-style: italic; font-size: 17px; letter-spacing: 0; color: rgba(240, 240, 242, 0.45); transition: color 0.3s ease; }
         .smp-list :global(.smp-on) .smp-num { color: var(--accent); }
         .smp-text { display: block; transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1); }
         .smp-list :global(.smp-on) .smp-text { transform: translateX(8px); }

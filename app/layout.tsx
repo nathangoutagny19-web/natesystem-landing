@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { DM_Sans, JetBrains_Mono } from 'next/font/google'
+import { DM_Sans } from 'next/font/google'
 import './globals.css'
 import { ThemeProvider } from '@/components/providers/ThemeProvider'
 import { LangProvider } from '@/components/providers/LangProvider'
@@ -14,12 +14,9 @@ const dmSans = DM_Sans({
   display: 'swap',
 })
 
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ['latin'],
-  weight: ['300', '400'],
-  variable: '--font-mono',
-  display: 'swap',
-})
+/* JetBrains Mono n'est plus chargée (14 novembre 2026, Nathan : « cette typo
+   fait IA, fais un truc plus élégant »). Les étiquettes passent en DM Sans,
+   en petites capitales espacées : --font-mono pointe sur DM Sans (globals.css). */
 
 export const metadata: Metadata = {
   /* Title ≤ 60 et description ≤ 155 caractères : au-delà, Google coupe (08/11/2026). */
@@ -77,7 +74,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="fr" className={`${dmSans.variable} ${jetbrainsMono.variable} light`} suppressHydrationWarning>
+    <html lang="fr" className={`${dmSans.variable} light`} suppressHydrationWarning>
       <head>
         {/* Organization + LocalBusiness schema (JSON-LD), invisible to users,
             powers Google rich results and AI citability (ChatGPT / Perplexity /

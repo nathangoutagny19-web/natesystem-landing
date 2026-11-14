@@ -20,7 +20,9 @@
   --grid-hot: rgba(255,255,255,0.18);
   --font-serif: 'Instrument Serif', Georgia, serif;
   --font-sans: 'DM Sans', -apple-system, sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
+  /* Plus de mono (14 novembre 2026, « ça fait IA ») : les étiquettes, le menu
+     et les boutons sont en DM Sans, en petites capitales espacées. */
+  --font-mono: var(--font-sans);
 }
 
 /* ——— LIGHT MODE ——— */
@@ -454,7 +456,7 @@ html.light .nav-bar.nav-scrolled {
   font-family: var(--font-serif); font-style: italic; font-size: 21px; line-height: 1.2;
   color: var(--text); text-decoration: none; border-bottom: 1px solid var(--border);
 }
-.nav-msec-num { font-style: normal; font-size: 10px; letter-spacing: 1.4px; color: var(--accent); }
+.nav-msec-num { font-family: var(--font-serif); font-style: italic; font-size: 15px; letter-spacing: 0; color: var(--accent); }
 .nav-msec-item:hover { color: var(--accent); }
 
 /* 3-column variant for the Tools dropdown (Interactive · Demos · Templates) */
