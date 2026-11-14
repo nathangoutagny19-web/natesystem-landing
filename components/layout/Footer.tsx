@@ -28,7 +28,7 @@ export default function Footer() {
         <div className="ft-top">
           <div className="ft-brand">
             <Link href={localizedHref('/', lang)} className="ft-logo" aria-label="NateSystem">
-              <span className="font-serif ft-logo-n">N</span>
+              <span className="font-serif ft-logo-n">NateSystem</span>
               <span className="ft-logo-dot" />
             </Link>
             <p className="font-serif ft-phrase">
@@ -103,7 +103,7 @@ export default function Footer() {
         .ft-brand { display: flex; flex-direction: column; align-items: flex-start; }
         .ft-brand :global(.ft-logo) { display: inline-flex; align-items: flex-start; text-decoration: none; }
         .ft-logo-n { font-style: italic; font-size: 40px; line-height: 1; color: #f0f0f2; }
-        .ft-logo-dot { width: 7px; height: 7px; border-radius: 50%; margin: 26px 0 0 -2px; background: var(--accent); }
+        .ft-logo-dot { width: 7px; height: 7px; border-radius: 50%; margin: 27px 0 0 3px; background: var(--accent); }
         .ft-phrase { margin: 26px 0 0; font-size: clamp(26px, 2.6vw, 34px); line-height: 1.12; font-weight: 400; color: #f0f0f2; max-width: 14ch; }
         .ft-phrase em { font-style: italic; color: var(--accent); }
         .ft-brand :global(.ft-cta) { margin-top: 32px; }

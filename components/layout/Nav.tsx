@@ -160,10 +160,13 @@ export default function Nav({ tone }: { tone?: 'dark' } = {}) {
       <header className={`nav-bar ${scrolled ? 'nav-scrolled' : ''}${sec.open ? ' nav-menu-open' : ''}${tone === 'dark' ? ' nav-dark' : ''}`}>
         <div className="nav-inner">
           {/* Logo */}
-          <Link href={l('/')} className="nav-logo">
-            <span className="nav-logo-n">N</span>
+          {/* Le logo écrit en entier, « NateSystem » et le point rouge (Nathan,
+              14 novembre 2026 : « mon autre logo, avec toute l'écriture »). Sur
+              les écrans moyens, le monogramme N. prend le relais. */}
+          <Link href={l('/')} className="nav-logo nav-wordmark" aria-label="NateSystem">
+            <span className="nav-wm-full">NateSystem</span>
+            <span className="nav-wm-short" aria-hidden="true">N</span>
             <span className="nav-logo-dot" />
-            <span className={`nav-logo-text ${scrolled ? 'nav-logo-text-hidden' : ''}`}>NateSystem</span>
           </Link>
 
           {/* Center links, desktop. Menu cible : Notre approche · Services ·
@@ -247,7 +250,7 @@ export default function Nav({ tone }: { tone?: 'dark' } = {}) {
           sur le contenu qui défilait dessous. ——— */}
       <div className={`nav-mbar${tone === 'dark' ? ' nav-mbar-dark' : ''}`}>
       <Link href={l('/')} className="flex items-center gap-[6px]" style={{ textDecoration: 'none' }} onClick={() => setMenuOpen(false)}>
-        <span className="nav-logo-n">N</span>
+        <span className="nav-wm-full">NateSystem</span>
         <span className="nav-logo-dot" />
       </Link>
 

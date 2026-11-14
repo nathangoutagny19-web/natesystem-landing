@@ -1479,3 +1479,21 @@ html.light .nav-bar.nav-dark.nav-menu-open {
   border-bottom: 1px solid currentColor; padding-bottom: 3px; opacity: 0.85; transition: opacity 0.2s ease, color 0.2s ease;
 }
 .v3-link:hover { opacity: 1; color: var(--accent); }
+
+/* Le logo écrit en entier (14 novembre 2026) : « NateSystem » en Instrument
+   Serif italique, le point rouge à droite. Le monogramme N. sur écran moyen. */
+.nav-wm-full, .nav-wm-short {
+  font-family: var(--font-serif); font-style: italic; font-weight: 400;
+  font-size: 26px; line-height: 1; letter-spacing: -0.005em; color: var(--text);
+}
+.nav-wm-short { display: none; }
+.nav-wordmark { gap: 0; align-items: flex-start; }
+.nav-wordmark .nav-logo-dot { margin: 17px 0 0 2px; }
+.nav-bar.nav-dark .nav-wm-full, .nav-bar.nav-dark .nav-wm-short,
+.nav-mbar.nav-mbar-dark .nav-wm-full { color: #f0f0f2; }
+.nav-mbar .nav-wm-full { font-size: 23px; }
+.nav-mbar .nav-logo-dot { margin: 15px 0 0 -4px; align-self: flex-start; }
+@media (max-width: 1080px) {
+  .nav-bar .nav-wm-full { display: none; }
+  .nav-bar .nav-wm-short { display: inline; }
+}
