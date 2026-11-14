@@ -23,7 +23,7 @@ const at = (lon: number, lat: number) => ({
   y: Math.round((MAP.lat1 - lat) * MAP.k),
 })
 
-const BASE = at(18.7, 42.43)
+export const BASE = at(18.7, 42.43)
 
 type Dest = {
   key: string
@@ -34,7 +34,7 @@ type Dest = {
   anchor: 'start' | 'middle' | 'end'
 }
 
-const DESTS: Dest[] = [
+export const DESTS: Dest[] = [
   { key: 'fr', p: at(4.84, 45.76), lx: -9, ly: -4, anchor: 'end' },
   { key: 'ch', p: at(8.2, 46.8), lx: -2, ly: -12, anchor: 'middle' },
   { key: 'hu', p: at(19.04, 47.5), lx: 8, ly: -6, anchor: 'start' },
@@ -44,7 +44,7 @@ const DESTS: Dest[] = [
 ]
 
 /** Un trait courbe de Tivat vers le pays, bombé vers le haut selon la distance. */
-function arc(to: { x: number; y: number }) {
+export function arc(to: { x: number; y: number }) {
   const mx = (BASE.x + to.x) / 2
   const my = (BASE.y + to.y) / 2
   const dist = Math.hypot(to.x - BASE.x, to.y - BASE.y)

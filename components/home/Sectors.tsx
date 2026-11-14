@@ -9,7 +9,7 @@ import SectorGlyph from '@/components/home/SectorGlyph'
 import { SECTOR_LIST, SECTOR_EVENT, type SectorSlug } from '@/lib/sectors'
 
 // Socle commun, ce que la plateforme apporte quel que soit le métier.
-type Sector = {
+export type Sector = {
   slug: SectorSlug
   painFr: string; painEn: string; painHu: string
   buildsFr: string[]; buildsEn: string[]; buildsHu: string[]
@@ -31,7 +31,7 @@ type Sector = {
  * et des sites lus pendant la prospection. Aucun chiffre inventé.
  * La restauration n'apparaît pas : règle permanente, jamais en niche.
  */
-const SECTORS: Sector[] = [
+export const SECTORS: Sector[] = [
   /* Les quatre secteurs de Nathan (14 novembre 2026), dans son ordre. Les
      noms viennent de lib/sectors.ts. Les textes reprennent ceux déjà publiés :
      hôtels (version d'octobre, avant leur retrait du 8 novembre), conciergerie
