@@ -31,10 +31,10 @@ function servicesJsonLd(lang: Lang) {
   const root = lang === 'en' ? `${base}/en` : lang === 'hu' ? `${base}/hu` : base
   const names =
     lang === 'en'
-      ? ['The diagnostic', 'The bespoke tool', 'Tasks that run themselves', 'Training and support']
+      ? ['The diagnostic', 'The bespoke tool', 'Tasks that run themselves', 'Support and follow-up']
       : lang === 'hu'
-        ? ['A diagnózis', 'Az egyedi eszköz', 'Magától elvégzett feladatok', 'Képzés és támogatás']
-        : ['Le diagnostic', 'L’outil sur mesure', 'Les tâches qui se font seules', 'Formation et suivi']
+        ? ['A diagnózis', 'Az egyedi eszköz', 'Magától elvégzett feladatok', 'Támogatás és nyomon követés']
+        : ['Le diagnostic', 'L’outil sur mesure', 'Les tâches qui se font seules', 'Accompagnement et suivi']
   const paths = ['/services/audit', '/services/logiciel-sur-mesure', '/services/ia', '/services/formation']
 
   return {
@@ -129,7 +129,7 @@ export default function ServicesPage() {
       href: '/services/ia',
     },
     {
-      title: d('Formation et suivi', 'Training and support', 'Képzés és támogatás'),
+      title: d('Accompagnement et suivi', 'Support and follow-up', 'Támogatás és nyomon követés'),
       line: d(
         'De la direction au terrain, jusqu’à ce que ça tourne sans nous.',
         'From management to the field, until it runs without us.',

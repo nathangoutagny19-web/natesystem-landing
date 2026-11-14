@@ -102,7 +102,7 @@ export function ServicesSplit() {
     },
     {
       key: 'formation',
-      title: d('Formation et suivi', 'Training and support', 'Képzés és támogatás'),
+      title: d('Accompagnement et suivi', 'Support and follow-up', 'Támogatás és nyomon követés'),
       line: d('De la direction au terrain, jusqu’à ce que ça tourne sans nous.', 'From management to the field, until it runs without us.', 'A vezetéstől a terepig, amíg nélkülünk is működik.'),
       points: [
         d('Toute l’équipe formée, jusqu’à l’autonomie', 'The whole team trained until autonomous', 'Az egész csapat betanítva, amíg önálló nem lesz'),

@@ -68,9 +68,9 @@ export const translations = {
     hu: 'Ahol valódi órákat ad vissza a csapatainak, máshol soha',
   },
   'nav.svc.audit': {
-    en: 'Training and support',
-    fr: 'Formation et suivi',
-    hu: 'Képzés és támogatás',
+    en: 'Support and follow-up',
+    fr: 'Accompagnement et suivi',
+    hu: 'Támogatás és nyomon követés',
   },
   'nav.svc.auditDesc': {
     en: 'From leadership to the front desk, until it runs without us',

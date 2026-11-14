@@ -54,7 +54,7 @@ export default function Footer() {
               <FtLink href="/services/audit">{d('Le diagnostic', 'The diagnostic', 'A diagnózis')}</FtLink>
               <FtLink href="/services/logiciel-sur-mesure">{d('L’outil sur mesure', 'The bespoke tool', 'Az egyedi eszköz')}</FtLink>
               <FtLink href="/services/ia">{d('Les tâches qui se font seules', 'Tasks that run themselves', 'Magától elvégzett feladatok')}</FtLink>
-              <FtLink href="/services/formation">{d('Formation et suivi', 'Training and support', 'Képzés és támogatás')}</FtLink>
+              <FtLink href="/services/formation">{d('Accompagnement et suivi', 'Support and follow-up', 'Támogatás és nyomon követés')}</FtLink>
             </div>
             <div className="ft-col">
               <span className="font-mono ft-col-label">{d('L’agence', 'The agency', 'Az ügynökség')}</span>
