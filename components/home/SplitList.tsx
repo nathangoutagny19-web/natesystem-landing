@@ -40,7 +40,8 @@ export default function SplitList({
   label: string
   title: ReactNode
   items: SplitItem[]
-  media: { src: string; alt: string; pos?: string; kpi: string; kpiText: string; tag: string; href: string }
+  /** `kpi` facultatif : rien sur la photo quand le chiffre ferait dire au visiteur ce qui n'est pas vrai. */
+  media: { src: string; alt: string; pos?: string; kpi?: string; kpiText?: string; tag: string; href: string }
 }) {
   const [open, setOpen] = useState(0)
 
@@ -56,12 +57,14 @@ export default function SplitList({
           <FadeUp className="sl-media-col">
             <Link href={media.href} className="sl-media">
               <Image src={media.src} alt={media.alt} fill sizes="(max-width: 900px) 92vw, 560px" style={{ objectFit: 'cover', objectPosition: media.pos ?? 'center' }} />
-              <span className="sl-shade" aria-hidden="true" />
+              {media.kpi && <span className="sl-shade" aria-hidden="true" />}
               <span className="font-mono sl-tag">{media.tag}</span>
-              <span className="sl-kpi">
-                <span className="font-serif sl-kpi-value">{media.kpi}</span>
-                <span className="font-sans sl-kpi-text">{media.kpiText}</span>
-              </span>
+              {media.kpi && (
+                <span className="sl-kpi">
+                  <span className="font-serif sl-kpi-value">{media.kpi}</span>
+                  <span className="font-sans sl-kpi-text">{media.kpiText}</span>
+                </span>
+              )}
             </Link>
           </FadeUp>
 

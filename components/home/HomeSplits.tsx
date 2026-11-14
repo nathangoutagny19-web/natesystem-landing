@@ -10,9 +10,10 @@ import { SECTOR_LIST, sectorHash } from '@/lib/sectors'
 /**
  * LES DEUX SECTIONS EN DEUX COLONNES DE L'ACCUEIL (refonte du 14 novembre
  * 2026) : les quatre secteurs de la cible, puis les quatre services. Les
- * textes sont ceux déjà publiés sur la page Services ; les chiffres posés sur
- * les photos sont sourcés (les 40 h rapportées par l'Institut des Chartreux)
- * ou des faits (le code appartient au client).
+ * textes sont ceux déjà publiés sur la page Services. Sur la photo des
+ * secteurs, seulement le nom de l'Institut des Chartreux (ce n'est pas un
+ * hôtel, ni à présenter comme une école) ; sur celle des services, un fait :
+ * le code appartient au client.
  */
 export function SectorsSplit() {
   const { lang } = useLang()
@@ -51,9 +52,10 @@ export function SectorsSplit() {
         src: '/realisations/chartreux-terrasse.webp',
         alt: d('Poignée de main sur une terrasse de Lyon, Fourvière derrière', 'Handshake on a terrace in Lyon, Fourvière behind', 'Kézfogás egy lyoni teraszon, mögötte Fourvière'),
         pos: '62% 30%',
-        kpi: '40 h',
-        kpiText: d('par mois rendues à l’équipe, rapporté par le client', 'a month given back to the team, as reported by the client', 'havonta visszaadva a csapatnak, az ügyfél beszámolója szerint'),
-        tag: d('Institut des Chartreux · Lyon', 'Institut des Chartreux · Lyon', 'Institut des Chartreux · Lyon'),
+        /* Pas de chiffre ici (Nathan, 14 novembre 2026) : posé à côté des
+           secteurs, « 40 h » faisait passer l'Institut des Chartreux pour un
+           hôtel. La photo, et son nom, rien d'autre. */
+        tag: 'Institut des Chartreux',
         href: localizedHref('/case-studies', lang),
       }}
     />
