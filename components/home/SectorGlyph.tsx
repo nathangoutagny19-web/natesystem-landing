@@ -15,12 +15,14 @@ import { useReducedMotion } from 'framer-motion'
  */
 const ROUTE = 'M12 46 C 22 20, 40 54, 51 22'
 
-export default function SectorGlyph({ index }: { index: number }) {
+/** `size` : la taille affichée ; `stroke` : l'épaisseur du trait dans le dessin
+ *  (plus fine quand on l'affiche en grand, pour garder un trait délicat). */
+export default function SectorGlyph({ index, size = 56, stroke = 1.4 }: { index: number; size?: number; stroke?: number }) {
   const reduce = useReducedMotion()
 
   return (
-    <span className={`glyph${reduce ? ' glyph-still' : ''}`} aria-hidden="true">
-      <svg viewBox="0 0 64 64" width="56" height="56" fill="none">
+    <span className={`glyph${reduce ? ' glyph-still' : ''}`} aria-hidden="true" style={{ ['--g-stroke' as string]: stroke }}>
+      <svg viewBox="0 0 64 64" width={size} height={size} fill="none">
         {index === 0 && (
           /* Yacht : le bateau tangue, l'eau défile. */
           <>
@@ -131,7 +133,7 @@ export default function SectorGlyph({ index }: { index: number }) {
         .glyph :global(circle:not(.g-accent-fill)),
         .glyph :global(rect) {
           stroke: currentColor;
-          stroke-width: 1.4;
+          stroke-width: var(--g-stroke, 1.4);
           stroke-linecap: round;
           stroke-linejoin: round;
         }

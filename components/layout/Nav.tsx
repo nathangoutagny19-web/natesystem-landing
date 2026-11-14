@@ -11,6 +11,7 @@ import { LANG_LABEL, makeD } from '@/lib/lang'
 import { PREFIXED_LANGS } from '@/lib/i18n'
 import ScreenMock from '@/components/ui/ScreenMock'
 import { SECTOR_LIST, SECTOR_EVENT, sectorHash, type SectorSlug } from '@/lib/sectors'
+import { SectorsPanel, SectorsVeil, useHoverPanel } from '@/components/layout/SectorsPanel'
 
 /* Ouvre le secteur sur la page Services quand on y est déjà (sinon la page
    le lit dans l'adresse en arrivant). */
@@ -135,6 +136,8 @@ export default function Nav() {
   const [langOpen, setLangOpen] = useState(false)
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false)
   const langRef = useRef<HTMLDivElement>(null)
+  /* Le panneau « Secteurs » (14 novembre 2026, version luxe). */
+  const sec = useHoverPanel()
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 40)
@@ -153,7 +156,7 @@ export default function Nav() {
   return (
     <>
       {/* ——— Full-width nav bar ——— */}
-      <header className={`nav-bar ${scrolled ? 'nav-scrolled' : ''}`}>
+      <header className={`nav-bar ${scrolled ? 'nav-scrolled' : ''}${sec.open ? ' nav-menu-open' : ''}`}>
         <div className="nav-inner">
           {/* Logo */}
           <Link href={l('/')} className="nav-logo">
@@ -175,19 +178,17 @@ export default function Nav() {
               ouvre son détail sur la page Services. */}
           <nav className="nav-links">
             <Link href={l('/services')} className="nav-link">{t('nav.services')}</Link>
-            <div className="nav-dropdown">
-              <Link href={l('/services') + '#secteurs'} className="nav-link nav-link-dropdown">
+            <div className={`nav-sec-trigger${sec.open ? ' is-open' : ''}`} onMouseEnter={sec.openNow} onMouseLeave={sec.closeSoon}>
+              <Link
+                href={l('/services') + '#secteurs'}
+                className="nav-link nav-link-dropdown"
+                aria-expanded={sec.open}
+                onFocus={sec.openNow}
+                onBlur={sec.closeSoon}
+                onClick={sec.closeNow}
+              >
                 {d('Secteurs', 'Industries', 'Ágazatok')} <Chevron />
               </Link>
-              <div className="nav-mega nav-mega-sectors">
-                <div className="nav-mega-inner-single">
-                  {SECTOR_LIST.map((s) => (
-                    <Link key={s.slug} href={l('/services') + sectorHash(s.slug)} className="nav-sector-item" onClick={() => announceSector(s.slug)}>
-                      {s.name[lang]}
-                    </Link>
-                  ))}
-                </div>
-              </div>
             </div>
             <Link href={l('/case-studies')} className="nav-link">{t('nav.realisations')}</Link>
             <Link href={l('/resources')} className="nav-link">{t('nav.resources')}</Link>
@@ -225,7 +226,19 @@ export default function Nav() {
             </Link>
           </div>
         </div>
+        <SectorsPanel
+          open={sec.open}
+          lang={lang}
+          href={l}
+          onEnter={sec.openNow}
+          onLeave={sec.closeSoon}
+          onPick={(slug) => {
+            sec.closeNow()
+            if (slug) announceSector(slug)
+          }}
+        />
       </header>
+      <SectorsVeil open={sec.open} onClose={sec.closeNow} />
 
       {/* ——— Barre mobile (8 novembre 2026, sur le modèle de frontal.so) :
           une vraie barre fixe avec fond, le logo, l'audit gratuit toujours
@@ -282,7 +295,8 @@ export default function Nav() {
                 announceSector(s.slug)
               }}
             >
-              {s.name[lang]}
+              <span className="font-mono nav-msec-num">{String(SECTOR_LIST.indexOf(s) + 1).padStart(2, '0')}</span>
+              <span>{s.name[lang]}</span>
             </Link>
           ))}
           <MobileLink href={l('/case-studies')} onClick={() => setMenuOpen(false)}>{t('nav.realisations')}</MobileLink>

@@ -429,21 +429,12 @@ html.light .nav-bar.nav-scrolled {
 }
 .nav-mega-sm { min-width: 340px; }
 
-/* Menu « Secteurs » (14 novembre 2026) : les quatre secteurs de la cible. */
-.nav-mega-sectors { min-width: 290px; padding: 8px; }
-.nav-sector-item {
-  display: block; padding: 10px 14px; border-radius: 8px;
-  font-family: var(--font-sans); font-size: 14px; color: var(--text);
-  text-decoration: none; white-space: nowrap;
-  transition: background 0.15s ease, color 0.15s ease;
-}
-.nav-sector-item:hover { background: var(--bg-elevated); color: var(--accent); }
-html.light .nav-sector-item:hover { background: #f5f5f0; }
-/* Au clavier aussi, pas seulement au survol. */
-.nav-dropdown:focus-within .nav-mega {
-  opacity: 1; visibility: visible; pointer-events: auto;
-  transform: translateX(-50%) translateY(0);
-}
+/* Menu « Secteurs » (14 novembre 2026) : le déclencheur du panneau pleine
+   largeur (components/layout/SectorsPanel.tsx). */
+.nav-sec-trigger { position: relative; }
+.nav-sec-trigger.is-open .nav-link { color: var(--text); }
+.nav-sec-trigger.is-open .chevron-icon { transform: rotate(180deg); }
+.nav-bar.nav-menu-open { background: var(--bg); border-bottom-color: transparent; box-shadow: none; }
 /* Cinq entrées : on resserre sur les écrans moyens. */
 @media (max-width: 1080px) {
   .nav-links .nav-link { padding: 8px 10px; font-size: 13.5px; }
@@ -459,9 +450,11 @@ html.light .nav-sector-item:hover { background: #f5f5f0; }
   margin: 14px 0 2px; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted);
 }
 .nav-msec-item {
-  display: block; padding: 10px 0 10px 14px; font-family: var(--font-sans); font-size: 14px; font-weight: 300;
-  color: var(--text-secondary); text-decoration: none; border-bottom: 1px solid var(--border);
+  display: flex; align-items: baseline; gap: 14px; padding: 11px 0 11px 2px;
+  font-family: var(--font-serif); font-style: italic; font-size: 21px; line-height: 1.2;
+  color: var(--text); text-decoration: none; border-bottom: 1px solid var(--border);
 }
+.nav-msec-num { font-style: normal; font-size: 10px; letter-spacing: 1.4px; color: var(--accent); }
 .nav-msec-item:hover { color: var(--accent); }
 
 /* 3-column variant for the Tools dropdown (Interactive · Demos · Templates) */
