@@ -6,42 +6,18 @@ import SectorGlyph from '@/components/home/SectorGlyph'
 import { useLang } from '@/components/providers/LangProvider'
 import { makeD } from '@/lib/lang'
 import { localizedHref } from '@/lib/routes'
+import { SECTOR_LIST, sectorHash } from '@/lib/sectors'
 
 /**
- * POUR QUI (accueil, refonte du 9 novembre 2026) : six tuiles courtes, une
- * ligne chacune, avec le petit dessin animé du métier (SectorGlyph, dans le
- * même ordre). Le détail par métier vit sur la page Services (#secteurs).
+ * POUR QUI (accueil). Depuis le 14 novembre 2026, les quatre secteurs de la
+ * cible de Nathan (lib/sectors.ts) : hôtels de luxe, conciergerie et travel
+ * designers, gestion de propriétés, yachting et charter. Une ligne chacun,
+ * avec le petit dessin du métier ; chaque tuile ouvre son détail sur la page
+ * Services.
  */
 export default function PourQui() {
   const { lang } = useLang()
   const d = makeD(lang)
-
-  const tiles = [
-    {
-      name: d('Yachting : charter, gestion et agents', 'Yachting: charter, management and agents', 'Jachtozás: bérlés, kezelés és ügynökök'),
-      line: d('Devis, dépenses et relevés des propriétaires, bateau par bateau.', 'Quotes, expenses and owner statements, boat by boat.', 'Árajánlatok, kiadások és tulajdonosi kimutatások, hajóról hajóra.'),
-    },
-    {
-      name: d('Villas, chalets et gestion de propriétés', 'Villas, chalets and property management', 'Villák, faházak és ingatlankezelés'),
-      line: d('Chaque maison, ses interventions et son propriétaire, suivis.', 'Every house, its jobs and its owner, kept on track.', 'Minden ház, a munkái és a tulajdonosa, nyomon követve.'),
-    },
-    {
-      name: d('Conciergerie privée', 'Private concierge', 'Magán concierge'),
-      line: d('Toutes les demandes au même endroit, suivies jusqu’à la facture.', 'Every request in one place, followed through to the invoice.', 'Minden kérés egy helyen, a számláig követve.'),
-    },
-    {
-      name: d('Voyage sur mesure et DMC', 'Bespoke travel and DMC', 'Egyedi utazás és DMC'),
-      line: d('Devis, itinéraires et partenaires confirmés, sans relance à la main.', 'Quotes, itineraries and confirmed partners, without chasing by hand.', 'Árajánlatok, útitervek és visszaigazolt partnerek, kézi utánajárás nélkül.'),
-    },
-    {
-      name: d('Sécurité privée haut de gamme', 'High-end private security', 'Prémium magánbiztonság'),
-      line: d('Missions, agents et comptes rendus au même endroit.', 'Missions, agents and reports in one place.', 'Megbízások, ügynökök és jelentések egy helyen.'),
-    },
-    {
-      name: d('Événements et mariages d’exception', 'Exceptional events and weddings', 'Kivételes rendezvények és esküvők'),
-      line: d('Le déroulé, les prestataires et le budget, partagés en temps réel.', 'The run of show, the suppliers and the budget, shared in real time.', 'A forgatókönyv, a beszállítók és a költségvetés, valós időben megosztva.'),
-    },
-  ]
 
   return (
     <section id="pour-qui" className="lx-section" style={{ paddingTop: 0 }}>
@@ -55,42 +31,44 @@ export default function PourQui() {
         </FadeUp>
 
         <div className="pq-grid">
-          {tiles.map((t, i) => (
-            <FadeUp key={t.name} delay={0.05 * i}>
-              <div className="pq-tile">
-                <SectorGlyph index={i} />
-                <h3 className="font-sans pq-name">{t.name}</h3>
-                <p className="font-sans pq-line">{t.line}</p>
-              </div>
+          {SECTOR_LIST.map((s, i) => (
+            <FadeUp key={s.slug} delay={0.05 * i}>
+              <Link href={localizedHref('/services', lang) + sectorHash(s.slug)} className="pq-tile">
+                <SectorGlyph index={s.glyph} />
+                <h3 className="font-sans pq-name">{s.name[lang]}</h3>
+                <p className="font-sans pq-line">{s.line[lang]}</p>
+                <span className="font-sans pq-more">
+                  {d('Voir le détail', 'See the detail', 'Részletek')} <span aria-hidden="true">→</span>
+                </span>
+              </Link>
             </FadeUp>
           ))}
         </div>
-
-        <FadeUp>
-          <Link href={localizedHref('/services', lang) + '#secteurs'} className="lx-link">
-            {d('Le détail par métier', 'The detail for each trade', 'Részletek szakmánként')} <span aria-hidden="true">→</span>
-          </Link>
-        </FadeUp>
       </div>
 
       <style jsx>{`
         .pq-grid {
           margin-top: 64px;
-          display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+          display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
           border-top: 1px solid var(--border); border-left: 1px solid var(--border);
         }
-        .pq-tile {
-          height: 100%;
-          padding: 30px 28px 32px;
+        .pq-grid > :global(*) { display: flex; }
+        :global(.pq-tile) {
+          display: flex; flex-direction: column; width: 100%;
+          padding: 30px 26px 28px;
           border-right: 1px solid var(--border); border-bottom: 1px solid var(--border);
-          background: var(--bg-card);
+          background: var(--bg-card); text-decoration: none; color: inherit;
+          transition: background 0.2s ease;
         }
+        :global(.pq-tile:hover) { background: var(--bg-elevated); }
         .pq-name { font-size: 16px; font-weight: 500; color: var(--text); margin: 0 0 8px; line-height: 1.35; }
-        .pq-line { font-size: 14.5px; font-weight: 300; color: var(--text-secondary); margin: 0; line-height: 1.6; }
-        @media (max-width: 900px) { .pq-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+        .pq-line { font-size: 14.5px; font-weight: 300; color: var(--text-secondary); margin: 0; line-height: 1.6; flex: 1; }
+        .pq-more { margin-top: 18px; font-size: 13px; color: var(--text-muted); transition: color 0.2s ease; }
+        :global(.pq-tile:hover) .pq-more { color: var(--accent); }
+        @media (max-width: 980px) { .pq-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
         @media (max-width: 560px) {
           .pq-grid { grid-template-columns: 1fr; margin-top: 40px; }
-          .pq-tile { padding: 22px 20px 24px; }
+          :global(.pq-tile) { padding: 22px 20px 24px; }
         }
       `}</style>
     </section>

@@ -10,6 +10,13 @@ import { localizedHref } from '@/lib/routes'
 import { LANG_LABEL, makeD } from '@/lib/lang'
 import { PREFIXED_LANGS } from '@/lib/i18n'
 import ScreenMock from '@/components/ui/ScreenMock'
+import { SECTOR_LIST, SECTOR_EVENT, sectorHash, type SectorSlug } from '@/lib/sectors'
+
+/* Ouvre le secteur sur la page Services quand on y est déjà (sinon la page
+   le lit dans l'adresse en arrivant). */
+const announceSector = (slug: SectorSlug) => {
+  if (typeof window !== 'undefined') window.dispatchEvent(new CustomEvent(SECTOR_EVENT, { detail: slug }))
+}
 
 /* ——— SVG Icons (monoline, 18px) ——— */
 const icons = {
@@ -163,8 +170,25 @@ export default function Nav() {
               de service détaillées restent en ligne pour le référencement,
               liées depuis la page Services seulement. /methode devient une
               section de Services. */}
+          {/* 14 novembre 2026 : « Secteurs » entre Services et Réalisations, les
+              quatre secteurs de la cible de Nathan (lib/sectors.ts), chacun
+              ouvre son détail sur la page Services. */}
           <nav className="nav-links">
             <Link href={l('/services')} className="nav-link">{t('nav.services')}</Link>
+            <div className="nav-dropdown">
+              <Link href={l('/services') + '#secteurs'} className="nav-link nav-link-dropdown">
+                {d('Secteurs', 'Industries', 'Ágazatok')} <Chevron />
+              </Link>
+              <div className="nav-mega nav-mega-sectors">
+                <div className="nav-mega-inner-single">
+                  {SECTOR_LIST.map((s) => (
+                    <Link key={s.slug} href={l('/services') + sectorHash(s.slug)} className="nav-sector-item" onClick={() => announceSector(s.slug)}>
+                      {s.name[lang]}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
             <Link href={l('/case-studies')} className="nav-link">{t('nav.realisations')}</Link>
             <Link href={l('/resources')} className="nav-link">{t('nav.resources')}</Link>
             <Link href={l('/a-propos')} className="nav-link">{t('nav.about')}</Link>
@@ -247,6 +271,20 @@ export default function Nav() {
       >
         <div className="pt-20 px-6 flex flex-col gap-1">
           <MobileLink href={l('/services')} onClick={() => setMenuOpen(false)}>{t('nav.services')}</MobileLink>
+          <span className="font-mono nav-msec-label">{d('Secteurs', 'Industries', 'Ágazatok')}</span>
+          {SECTOR_LIST.map((s) => (
+            <Link
+              key={s.slug}
+              href={l('/services') + sectorHash(s.slug)}
+              className="nav-msec-item"
+              onClick={() => {
+                setMenuOpen(false)
+                announceSector(s.slug)
+              }}
+            >
+              {s.name[lang]}
+            </Link>
+          ))}
           <MobileLink href={l('/case-studies')} onClick={() => setMenuOpen(false)}>{t('nav.realisations')}</MobileLink>
           <MobileLink href={l('/resources')} onClick={() => setMenuOpen(false)}>{t('nav.resources')}</MobileLink>
           <MobileLink href={l('/a-propos')} onClick={() => setMenuOpen(false)}>{t('nav.about')}</MobileLink>

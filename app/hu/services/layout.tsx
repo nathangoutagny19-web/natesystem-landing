@@ -6,7 +6,7 @@ export const metadata: Metadata = localeMetadata({
   path: '/services',
   title: 'Szolgáltatásaink a luxus- és presztízsvendéglátásnak | NateSystem',
   description:
-    'Diagnózis, egyedi rendszer és online megjelenés, automatizálás és adatok, képzés: hosszú távú partnerség villáknak, faházaknak, birtokoknak, concierge-szolgáltatásoknak, jachtoknak, független szállodáknak és rendezvényházaknak. A forráskód az Öné.',
+    'Diagnózis, egyedi rendszer és online megjelenés, automatizálás és adatok, képzés: hosszú távú partnerség luxusszállodáknak, concierge-szolgáltatásoknak és utazástervezőknek, ingatlankezelőknek, jachtozásnak és charternek. A forráskód az Öné.',
 })
 
 export default function HuServicesLayout({ children }: { children: React.ReactNode }) {

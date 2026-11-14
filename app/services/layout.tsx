@@ -6,7 +6,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Nos services pour l’hospitalité de luxe | NateSystem',
   description:
-    'Le diagnostic, l’outil sur mesure, les tâches qui se font seules, la formation et le suivi, pour yachting, villas, conciergeries, voyage, sécurité privée et événements. Le code vous appartient.',
+    'Le diagnostic, l’outil sur mesure, les tâches qui se font seules, la formation et le suivi, pour les hôtels de luxe, la conciergerie et les travel designers, la gestion de propriétés, le yachting et le charter. Le code vous appartient.',
 }
 
 export default function ServicesSegmentLayout({ children }: { children: React.ReactNode }) {

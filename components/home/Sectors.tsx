@@ -1,15 +1,16 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import FadeUp from '@/components/ui/FadeUp'
 import { useLang } from '@/components/providers/LangProvider'
 import { makeD, pick } from '@/lib/lang'
 import SectorGlyph from '@/components/home/SectorGlyph'
+import { SECTOR_LIST, SECTOR_EVENT, type SectorSlug } from '@/lib/sectors'
 
 // Socle commun, ce que la plateforme apporte quel que soit le métier.
 type Sector = {
-  nameFr: string; nameEn: string; nameHu: string
+  slug: SectorSlug
   painFr: string; painEn: string; painHu: string
   buildsFr: string[]; buildsEn: string[]; buildsHu: string[]
   /** Remplace la dernière pastille du socle (« Des clients mieux servis ») quand le métier ne parle pas de clients. */
@@ -17,7 +18,7 @@ type Sector = {
 }
 
 /**
- * HUIT MÉTIERS DU LUXE ET DE L'HOSPITALITÉ.
+ * LES MÉTIERS DE LA CIBLE (quatre depuis le 14 novembre 2026, lib/sectors.ts).
  *
  * 30 septembre 2026 : la liste tenait les huit métiers d'une école privée.
  * 8 octobre 2026, sur décision de Nathan : elle passe aux métiers qui
@@ -31,22 +32,30 @@ type Sector = {
  * La restauration n'apparaît pas : règle permanente, jamais en niche.
  */
 const SECTORS: Sector[] = [
-  /* Six secteurs du 8 novembre 2026, réécrits par la session prospection sur
-     les données du CRM (6:10prospection/04-prompts-et-contexte/
-     website-secteurs-2026-11-08.md) : douleurs tirées des appels et de la
-     pain map, sans nom ni chiffre. Hôtels, écoles et immobilier (vente)
-     retirés ; le transport VIP rejoint le voyage sur mesure. */
+  /* Les quatre secteurs de Nathan (14 novembre 2026), dans son ordre. Les
+     noms viennent de lib/sectors.ts. Les textes reprennent ceux déjà publiés :
+     hôtels (version d'octobre, avant leur retrait du 8 novembre), conciergerie
+     et voyage sur mesure réunis, villas et yachting inchangés. Aucun chiffre. */
   {
-    nameFr: 'Yachting : charter, gestion et agents', nameEn: 'Yachting: charter, management and agents', nameHu: 'Jachtozás: bérlés, kezelés és ügynökök',
-    painFr: 'Arrivées, avitaillement, disponibilités : chaque demande de charter repart de zéro, bateau par bateau, et chaque dépense avancée pour un yacht en gestion doit finir sur le relevé de son propriétaire, ligne par ligne.',
-    painEn: 'Arrivals, provisioning, availability: every charter request starts from scratch, boat by boat, and every expense advanced for a managed yacht has to end up on its owner’s statement, line by line.',
-    painHu: 'Érkezések, ellátmány, elérhetőség: minden bérlési kérés nulláról indul, hajóról hajóra, és minden kezelt jachtért megelőlegezett költségnek tételesen meg kell jelennie a tulajdonos kimutatásán.',
-    buildsFr: ['Le devis monté depuis votre flotte et vos tarifs, sans tout ressaisir', 'Chaque dépense rattachée à son yacht et refacturée avec votre commission', 'Le relevé mensuel de chaque propriétaire, prêt à envoyer'],
-    buildsEn: ['The quote built from your fleet and your rates, without retyping', 'Every expense tied to its yacht and recharged with your commission', 'Each owner’s monthly statement, ready to send'],
-    buildsHu: ['Az árajánlat a flottájából és áraiból, újragépelés nélkül', 'Minden költség a jachtjához kötve, jutalékkal továbbszámlázva', 'Minden tulajdonos havi kimutatása, küldésre készen'],
+    slug: 'hotels',
+    painFr: 'Un groupe passe de 40 à 20 la veille, et il faut tout refaire à la main : les repas, le planning des équipes, le ménage, la facture. Le logiciel hôtelier garde les réservations, le reste vit dans des Word et des Excel.',
+    painEn: 'A group drops from 40 to 20 the day before, and everything has to be redone by hand: meals, staff rota, housekeeping, invoice. The hotel software keeps the bookings, the rest lives in Word and Excel files.',
+    painHu: 'Egy csoport előző nap 40-ről 20 főre csökken, és mindent kézzel kell újracsinálni: étkezések, beosztás, takarítás, számla. A szállodai szoftver tárolja a foglalásokat, a többi Word- és Excel-fájlokban él.',
+    buildsFr: ['Un changement d’effectif qui se répercute partout, tout seul', 'Les chambres, les salles et le ménage sur un seul planning', 'Vous gardez la main sur chaque détail : plan de table, chambre calme, exception'],
+    buildsEn: ['A change in numbers that ripples everywhere on its own', 'Rooms, function rooms and housekeeping on one planner', 'You stay in control of every detail: table plan, quiet room, exception'],
+    buildsHu: ['A létszámváltozás magától mindenhol megjelenik', 'Szobák, termek és takarítás egyetlen tervezőn', 'Minden részlet az Ön kezében marad: ültetési rend, csendes szoba, kivétel'],
   },
   {
-    nameFr: 'Villas, chalets et gestion de propriétés', nameEn: 'Villas, chalets and property management', nameHu: 'Villák, faházak és ingatlankezelés',
+    slug: 'conciergerie',
+    painFr: 'Tout arrive sur WhatsApp, à toute heure, et tout passe par vous : chaque devis refait à la main, savoir quel partenaire a confirmé, ce que tel client préfère, ce qu’il reste à facturer.',
+    painEn: 'Everything comes in on WhatsApp, at all hours, and everything goes through you: every quote rebuilt by hand, which partner confirmed, what this client prefers, what is left to invoice.',
+    painHu: 'Minden WhatsAppon érkezik, bármikor, és minden Önön megy keresztül: minden árajánlat kézzel újra, melyik partner igazolt vissza, mit szeret az adott ügyfél, mit kell még számlázni.',
+    buildsFr: ['Toutes les demandes au même endroit, attribuées et suivies jusqu’au bout', 'Le devis et l’itinéraire montés depuis votre grille de prix, à vos couleurs', 'Guides, chauffeurs et partenaires : qui a accepté, qui a refusé, qui relancer'],
+    buildsEn: ['Every request in one place, assigned and followed through', 'The quote and itinerary built from your price grid, in your colours', 'Guides, drivers and partners: who accepted, who declined, who to chase'],
+    buildsHu: ['Minden kérés egy helyen, kiosztva és végigkövetve', 'Az árajánlat és az útiterv az árlistájából, az Ön színeiben', 'Idegenvezetők, sofőrök és partnerek: ki fogadta el, ki utasította el, kit kell megkeresni'],
+  },
+  {
+    slug: 'proprietes',
     painFr: 'Vous pourriez gérer plus de maisons, mais chaque nouveau bien met des semaines à être prêt, les prestataires se coordonnent un par un, et les propriétaires attendent des nouvelles.',
     painEn: 'You could manage more homes, but every new property takes weeks to get ready, suppliers are coordinated one by one, and owners are waiting for news.',
     painHu: 'Több házat is kezelhetne, de minden új ingatlan hetekig tart, mire elkészül, a beszállítókat egyesével kell összehangolni, a tulajdonosok pedig hírekre várnak.',
@@ -55,42 +64,17 @@ const SECTORS: Sector[] = [
     buildsHu: ['Minden ház munkái ütemezve, követve és fotóval igazolva', 'A tulajdonosi jelentés a helyszínről összeállítva és időben elküldve', 'Minden új ingatlan lépésről lépésre követve a kiadásig'],
   },
   {
-    nameFr: 'Conciergerie privée', nameEn: 'Private concierge', nameHu: 'Magán concierge',
-    painFr: 'Tout arrive sur WhatsApp, à toute heure, et tout passe par vous : savoir quel prestataire a accepté, ce que tel client préfère, ce qu’il reste à facturer.',
-    painEn: 'Everything comes in on WhatsApp, at all hours, and everything goes through you: which supplier accepted, what this client prefers, what is left to invoice.',
-    painHu: 'Minden WhatsAppon érkezik, bármikor, és minden Önön megy keresztül: melyik beszállító fogadta el, mit szeret az adott ügyfél, mit kell még számlázni.',
-    buildsFr: ['Toutes les demandes au même endroit, attribuées et suivies jusqu’au bout', 'La fiche de chaque client, qui se souvient de ses préférences', 'Chaque extra retrouvé sur la facture'],
-    buildsEn: ['Every request in one place, assigned and followed through', 'Each client’s profile, remembering their preferences', 'Every extra back on the invoice'],
-    buildsHu: ['Minden kérés egy helyen, kiosztva és végigkövetve', 'Minden ügyfél adatlapja, amely emlékszik a preferenciáira', 'Minden extra a számlán'],
-  },
-  {
-    nameFr: 'Voyage sur mesure, DMC et transport VIP', nameEn: 'Bespoke travel, DMC and VIP transport', nameHu: 'Egyedi utazás, DMC és VIP szállítás',
-    painFr: 'Chaque devis est refait à la main alors que vos tarifs ne changent pas, et sur le terrain il faut savoir qui a accepté le transfert, qui a confirmé l’hôtel et qui reste à relancer.',
-    painEn: 'Every quote is rebuilt by hand even though your rates don’t change, and on the ground you need to know who accepted the transfer, who confirmed the hotel and who still needs chasing.',
-    painHu: 'Minden árajánlatot kézzel készítenek újra, pedig az árak nem változnak, a helyszínen pedig tudni kell, ki vállalta a transzfert, ki igazolta vissza a szállodát, és kit kell még megkeresni.',
-    buildsFr: ['Le devis et l’itinéraire montés depuis votre grille de prix, à vos couleurs', 'Guides, chauffeurs et partenaires : qui a accepté, qui a refusé, qui relancer', 'Vos prestataires voient leur mission, jamais le numéro de vos clients'],
-    buildsEn: ['The quote and itinerary built from your price grid, in your colours', 'Guides, drivers and partners: who accepted, who declined, who to chase', 'Your suppliers see their mission, never your clients’ numbers'],
-    buildsHu: ['Az árajánlat és az útiterv az árlistájából, az Ön színeiben', 'Idegenvezetők, sofőrök és partnerek: ki fogadta el, ki utasította el, kit kell megkeresni', 'A beszállítók a feladatukat látják, soha nem az ügyfelei számát'],
-  },
-  {
-    nameFr: 'Sécurité privée haut de gamme', nameEn: 'High-end private security', nameHu: 'Prémium magánbiztonság',
-    painFr: 'Des audits sur site, des rapports recopiés à la main, des agents à affecter, et des clients qui veulent savoir sans attendre où en est leur dispositif.',
-    painEn: 'On-site audits, reports copied out by hand, agents to assign, and clients who want to know right away where their protection plan stands.',
-    painHu: 'Helyszíni auditok, kézzel átmásolt jelentések, beosztandó ügynökök, és ügyfelek, akik azonnal tudni akarják, hol tart a védelmük.',
-    buildsFr: ['Le diagnostic sur tablette, et le rapport qui se rédige à partir du terrain', 'Les missions, les agents et les comptes rendus au même endroit', 'Un espace client : son plan d’action, ses équipements, ses échéances'],
-    buildsEn: ['The assessment on a tablet, and the report written from the field', 'Missions, agents and reports in one place', 'A client space: their action plan, their equipment, their deadlines'],
-    buildsHu: ['A felmérés tableten, a jelentés a helyszínről készül', 'Megbízások, ügynökök és jelentések egy helyen', 'Ügyfélfelület: akcióterv, eszközök, határidők'],
-  },
-  {
-    nameFr: 'Événementiel et mariages haut de gamme', nameEn: 'High-end events and weddings', nameHu: 'Prémium rendezvények és esküvők',
-    painFr: 'Un lieu, dix prestataires, un rétroplanning et un budget à tenir, souvent pour plusieurs événements à la fois en saison. Le moindre changement se propage par message, un par un.',
-    painEn: 'One venue, ten suppliers, a countdown plan and a budget to hold, often for several events at once in season. Every change spreads by message, one by one.',
-    painHu: 'Egy helyszín, tíz szolgáltató, egy visszaszámláló terv és egy tartandó költségvetés, szezonban gyakran több rendezvényre egyszerre. Minden változás üzenetenként, egyesével terjed.',
-    buildsFr: ['Le déroulé de chaque événement, partagé en temps réel', 'Les prestataires confirmés, et les manques visibles', 'Le budget suivi ligne par ligne'],
-    buildsEn: ['Each event’s run of show, shared in real time', 'Suppliers confirmed, and gaps visible', 'The budget tracked line by line'],
-    buildsHu: ['Minden rendezvény menete valós időben megosztva', 'A megerősített szolgáltatók, és a hiányok láthatóan', 'A költségvetés tételenként követve'],
+    slug: 'yachting',
+    painFr: 'Arrivées, avitaillement, disponibilités : chaque demande de charter repart de zéro, bateau par bateau, et chaque dépense avancée pour un yacht en gestion doit finir sur le relevé de son propriétaire, ligne par ligne.',
+    painEn: 'Arrivals, provisioning, availability: every charter request starts from scratch, boat by boat, and every expense advanced for a managed yacht has to end up on its owner’s statement, line by line.',
+    painHu: 'Érkezések, ellátmány, elérhetőség: minden bérlési kérés nulláról indul, hajóról hajóra, és minden kezelt jachtért megelőlegezett költségnek tételesen meg kell jelennie a tulajdonos kimutatásán.',
+    buildsFr: ['Le devis monté depuis votre flotte et vos tarifs, sans tout ressaisir', 'Chaque dépense rattachée à son yacht et refacturée avec votre commission', 'Le relevé mensuel de chaque propriétaire, prêt à envoyer'],
+    buildsEn: ['The quote built from your fleet and your rates, without retyping', 'Every expense tied to its yacht and recharged with your commission', 'Each owner’s monthly statement, ready to send'],
+    buildsHu: ['Az árajánlat a flottájából és áraiból, újragépelés nélkül', 'Minden költség a jachtjához kötve, jutalékkal továbbszámlázva', 'Minden tulajdonos havi kimutatása, küldésre készen'],
   },
 ]
+
+const infoOf = (s: Sector) => SECTOR_LIST.find((x) => x.slug === s.slug)!
 
 export default function Sectors() {
   const { lang } = useLang()
@@ -99,6 +83,37 @@ export default function Sectors() {
   /* Téléphone et tablette : accordéon, un métier ouvert à la fois (-1 : aucun). */
   const [open, setOpen] = useState(0)
   const cur = SECTORS[active]
+  const nameOf = (s: Sector) => infoOf(s).name[lang]
+
+  /* Ouvre le secteur demandé par le menu ou par une tuile de l'accueil
+     (/services#secteur-hotels…), à l'arrivée sur la page comme quand on est
+     déjà dessus. */
+  useEffect(() => {
+    const go = (slug: string | null, scroll: boolean) => {
+      const i = SECTORS.findIndex((x) => x.slug === slug)
+      if (i < 0) return
+      setActive(i)
+      setOpen(i)
+      if (scroll) {
+        window.setTimeout(() => {
+          const el = document.getElementById('secteurs')
+          if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 80, behavior: 'smooth' })
+        }, 120)
+      }
+    }
+    const fromHash = () => {
+      const m = window.location.hash.match(/^#secteur-([a-z]+)$/)
+      go(m ? m[1] : null, true)
+    }
+    const onEvent = (e: Event) => go((e as CustomEvent<string>).detail, true)
+    fromHash()
+    window.addEventListener('hashchange', fromHash)
+    window.addEventListener(SECTOR_EVENT, onEvent)
+    return () => {
+      window.removeEventListener('hashchange', fromHash)
+      window.removeEventListener(SECTOR_EVENT, onEvent)
+    }
+  }, [])
 
   return (
     <section id="secteurs" style={{ padding: '40px 24px 24px' }}>
@@ -123,7 +138,7 @@ export default function Sectors() {
                 const on = i === active
                 return (
                   <button
-                    key={s.nameFr}
+                    key={s.slug}
                     role="tab"
                     aria-selected={on}
                     className={`sec-row${on ? ' sec-row-on' : ''}`}
@@ -131,7 +146,7 @@ export default function Sectors() {
                     onMouseEnter={() => setActive(i)}
                   >
                     <span className="font-mono sec-row-idx">{String(i + 1).padStart(2, '0')}</span>
-                    <span className="font-sans sec-row-name">{d(s.nameFr, s.nameEn, s.nameHu)}</span>
+                    <span className="font-sans sec-row-name">{nameOf(s)}</span>
                   </button>
                 )
               })}
@@ -147,8 +162,8 @@ export default function Sectors() {
                   exit={{ opacity: 0, y: -10 }}
                   transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
                 >
-                  <SectorGlyph index={active} />
-                  <h3 className="font-serif italic sec-panel-title">{d(cur.nameFr, cur.nameEn, cur.nameHu)}</h3>
+                  <SectorGlyph index={infoOf(cur).glyph} />
+                  <h3 className="font-serif italic sec-panel-title">{nameOf(cur)}</h3>
                   <p className="font-sans sec-panel-pain">{d(cur.painFr, cur.painEn, cur.painHu)}</p>
 
                   {/* Personnalisation secteur */}
@@ -167,19 +182,19 @@ export default function Sectors() {
 
           {/* Téléphone et tablette (8 novembre 2026) : un accordéon à la place
               de la bande d'onglets qui défilait de côté et n'en montrait qu'un.
-              Les six métiers sont visibles d'un coup d'œil, un seul s'ouvre. */}
+              Les métiers sont visibles d'un coup d'œil, un seul s'ouvre. */}
           <div className="sec-acc">
             {SECTORS.map((s, i) => {
               const isOpen = i === open
               return (
-                <div key={s.nameFr} className={`sec-acc-item${isOpen ? ' sec-acc-open' : ''}`}>
+                <div key={s.slug} className={`sec-acc-item${isOpen ? ' sec-acc-open' : ''}`}>
                   <button
                     className="sec-acc-head"
                     aria-expanded={isOpen}
                     onClick={() => setOpen(isOpen ? -1 : i)}
                   >
                     <span className="font-mono sec-acc-idx">{String(i + 1).padStart(2, '0')}</span>
-                    <span className="font-sans sec-acc-name">{d(s.nameFr, s.nameEn, s.nameHu)}</span>
+                    <span className="font-sans sec-acc-name">{nameOf(s)}</span>
                     <span className="sec-acc-plus" aria-hidden="true" />
                   </button>
                   <AnimatePresence initial={false}>
@@ -193,7 +208,7 @@ export default function Sectors() {
                         style={{ overflow: 'hidden' }}
                       >
                         <div className="sec-acc-body">
-                          <SectorGlyph index={i} />
+                          <SectorGlyph index={infoOf(s).glyph} />
                           <p className="font-sans sec-panel-pain">{d(s.painFr, s.painEn, s.painHu)}</p>
                           <span className="font-sans sec-panel-label">{d('Concrètement', 'In practice', 'A gyakorlatban')}</span>
                           <ul className="sec-builds">

@@ -429,6 +429,41 @@ html.light .nav-bar.nav-scrolled {
 }
 .nav-mega-sm { min-width: 340px; }
 
+/* Menu « Secteurs » (14 novembre 2026) : les quatre secteurs de la cible. */
+.nav-mega-sectors { min-width: 290px; padding: 8px; }
+.nav-sector-item {
+  display: block; padding: 10px 14px; border-radius: 8px;
+  font-family: var(--font-sans); font-size: 14px; color: var(--text);
+  text-decoration: none; white-space: nowrap;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.nav-sector-item:hover { background: var(--bg-elevated); color: var(--accent); }
+html.light .nav-sector-item:hover { background: #f5f5f0; }
+/* Au clavier aussi, pas seulement au survol. */
+.nav-dropdown:focus-within .nav-mega {
+  opacity: 1; visibility: visible; pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+/* Cinq entrées : on resserre sur les écrans moyens. */
+@media (max-width: 1080px) {
+  .nav-links .nav-link { padding: 8px 10px; font-size: 13.5px; }
+}
+/* Tablette (768 à 1000 px) : le menu passe dans le flux, le nom à côté du logo se cache. */
+@media (max-width: 1000px) {
+  .nav-logo-text { display: none; }
+  .nav-links { position: static; transform: none; flex: 1; justify-content: center; }
+  .nav-links .nav-link { padding: 8px 8px; }
+}
+/* Menu mobile : les secteurs, en retrait sous Services. */
+.nav-msec-label {
+  margin: 14px 0 2px; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted);
+}
+.nav-msec-item {
+  display: block; padding: 10px 0 10px 14px; font-family: var(--font-sans); font-size: 14px; font-weight: 300;
+  color: var(--text-secondary); text-decoration: none; border-bottom: 1px solid var(--border);
+}
+.nav-msec-item:hover { color: var(--accent); }
+
 /* 3-column variant for the Tools dropdown (Interactive · Demos · Templates) */
 .nav-mega-3col { min-width: 820px; }
 .nav-mega-3col .nav-mega-inner { grid-template-columns: 1fr 1fr 1fr; }

@@ -8,8 +8,10 @@ import { useReducedMotion } from 'framer-motion'
  * Nathan : « une petite animation ou un petit design, tout petit, pour chaque
  * secteur ». Dessins au trait faits main en SVG, couleur du texte, un seul
  * détail en rouge qui bouge. Pas d'image, pas de capture d'écran (refusées).
- * Même ordre que SECTORS : yacht, villa, conciergerie, voyage, sécurité,
- * événementiel. Figés si l'utilisateur réduit les animations.
+ * Index : 0 yacht, 1 villa, 2 conciergerie, 3 voyage, 4 sécurité,
+ * 5 événementiel, 6 hôtel (14 novembre 2026). Les secteurs de la cible
+ * choisissent le leur dans lib/sectors.ts. Figés si l'utilisateur réduit les
+ * animations.
  */
 const ROUTE = 'M12 46 C 22 20, 40 54, 51 22'
 
@@ -97,6 +99,23 @@ export default function SectorGlyph({ index }: { index: number }) {
             <circle className="g-accent-fill g-bubble g-bubble-c" cx="31.8" cy="31.5" r="0.7" />
           </>
         )}
+        {index === 6 && (
+          /* Hôtel de luxe (14 novembre 2026) : les fenêtres s'allument, l'une après l'autre. */
+          <>
+            <path d="M17 50 V19 H47 V50" />
+            <path d="M14 19 H50" />
+            <path d="M32 19 V13" />
+            <path className="g-accent-fill" d="M32 13 L37 14.8 L32 16.6 Z" />
+            <rect x="21.5" y="24" width="5" height="5" rx="0.6" />
+            <rect className="g-light g-light-a" x="29.5" y="24" width="5" height="5" rx="0.6" />
+            <rect x="37.5" y="24" width="5" height="5" rx="0.6" />
+            <rect className="g-light g-light-b" x="21.5" y="33" width="5" height="5" rx="0.6" />
+            <rect x="29.5" y="33" width="5" height="5" rx="0.6" />
+            <rect className="g-light g-light-c" x="37.5" y="33" width="5" height="5" rx="0.6" />
+            <path d="M28.5 50 V44 Q32 40.5 35.5 44 V50" />
+            <path className="g-soft" d="M8 50 H56" />
+          </>
+        )}
       </svg>
 
       <style jsx>{`
@@ -130,6 +149,7 @@ export default function SectorGlyph({ index }: { index: number }) {
         /* Villa */
         .glyph :global(.g-light) { fill: var(--accent); fill-opacity: 0; animation: gLight 4s ease-in-out infinite; }
         .glyph :global(.g-light-b) { animation-delay: 1s; }
+        .glyph :global(.g-light-c) { animation-delay: 2s; }
         @keyframes gLight { 0%, 15% { fill-opacity: 0; } 35%, 75% { fill-opacity: 0.85; } 100% { fill-opacity: 0; } }
 
         /* Conciergerie */
