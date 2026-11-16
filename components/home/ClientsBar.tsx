@@ -53,12 +53,18 @@ type ClientRef =
 // transparent) replaced the wordmark on 08/11/2026. Wide like Aloess, so
 // `compact`.
 const clients: ClientRef[] = [
-  /* Services Exclusifs : accord oral d'Achille d'après Nathan (8 novembre 2026).
-     ⚠︎ WANDERING YACHT N'APPARAÎT PLUS (Nathan, 16 novembre 2026 : « supprime
-     vite le logo de Wandering Yacht »). Leur contrat (art. 8) demande un
-     accord ÉCRIT pour les citer : pas de logo, pas de nom, nulle part, tant
-     que cet accord n'existe pas. Le fichier du logo a été supprimé. */
+  /* LES DEUX PREMIERS CLIENTS QUI NE CONNAISSAIENT PAS NATHAN, en tête de
+     rangée (8 novembre 2026). Accord oral d'Achille (Services Exclusifs)
+     d'après Nathan.
+     Wandering Yacht : ACCORD ÉCRIT de Ray, sur WhatsApp, le 16/11/2026 à
+     17 h 18 : « If you want to put the logo on your website as a business
+     partner, sure. » Il couvre le logo sur le site, comme partenaire. Leur
+     contrat (art. 8) demandait cet accord écrit. Les réseaux sociaux ne sont
+     pas couverts par cette réponse.
+     Logo Wandering Yacht : leur monogramme officiel en 512 px, celui de leur
+     site (favicon de wanderingyacht.com), récupéré le 08/11/2026. */
   { name: 'Services Exclusifs', type: 'logo', src: '/logos/services-exclusifs.png', href: 'https://services-exclusifs.ch/' },
+  { name: 'Wandering Yacht', type: 'logo', src: '/logos/wandering-yacht.png', href: 'https://www.wanderingyacht.com/' },
   /* ⚠︎ LES RENCONTRES (photos) NE DÉFILENT PLUS DANS LA RANGÉE DE LOGOS
      depuis le 8 novembre 2026 (Nathan : « dans la bande de logos supprime
      les images »). La rangée ne montre que des logos, partout. Les photos ne
