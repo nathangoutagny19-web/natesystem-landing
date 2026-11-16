@@ -14,8 +14,8 @@ import type { MontenegroPageData } from '@/lib/montenegro'
  * mot pour mot ce qui est affiché (Google pénalise un schema qui diverge).
  *
  * ⚠︎ Aucun prix, aucun délai, aucun chiffre qui ne soit pas dans la liste des
- * preuves autorisées, aucun nom de client sous NDA. Wandering Yacht apparaît
- * seulement par son logo, dans la barre (accord oral, voir ClientsBar).
+ * preuves autorisées, aucun nom de client sous NDA. Wandering Yacht n'apparaît
+ * nulle part, pas même par son logo (retiré le 16/11/2026, voir ClientsBar).
  */
 export default function MontenegroPage({ data }: { data: MontenegroPageData }) {
   const url = `${SITE_URL}/en${data.path}/`
