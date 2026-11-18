@@ -26,7 +26,7 @@ import { makeD } from '@/lib/lang'
  */
 
 const STORAGE_KEY = 'ns-cookie-consent'
-const GA_ID = 'G-JCM93QPKTD'
+const GA_ID = 'G-ST71BPBQ4S' // GA4 property « natesystem.com » on nathan@natesystem.com (18/11/2026)
 const CLARITY_ID = 'w4g9vbwe3u'
 
 function loadTrackingScripts() {
