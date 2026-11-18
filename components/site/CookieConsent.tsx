@@ -39,13 +39,18 @@ function loadTrackingScripts() {
   ga.async = true
   ga.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`
   document.head.appendChild(ga)
-  ;(window as unknown as { dataLayer: unknown[] }).dataLayer =
-    (window as unknown as { dataLayer: unknown[] }).dataLayer || []
-  function gtag(...args: unknown[]) {
-    ;(window as unknown as { dataLayer: unknown[] }).dataLayer.push(args)
+  // gtag.js only reads the `arguments` object: pushing a plain array (what
+  // `...args` gives) is silently ignored, and GA4 recorded nothing from the
+  // Iubenda replacement until 18/11/2026. Keep `arguments`, and expose
+  // window.gtag so the pages can send key events (lib/track.ts).
+  const w = window as unknown as { dataLayer: unknown[]; gtag: (...a: unknown[]) => void }
+  w.dataLayer = w.dataLayer || []
+  w.gtag = function gtag() {
+    // eslint-disable-next-line prefer-rest-params
+    w.dataLayer.push(arguments)
   }
-  gtag('js', new Date())
-  gtag('config', GA_ID)
+  w.gtag('js', new Date())
+  w.gtag('config', GA_ID)
 
   // Microsoft Clarity
   ;(function (c: any, l: Document, a: string, r: string, i: string) {
