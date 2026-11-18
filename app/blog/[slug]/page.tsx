@@ -21,7 +21,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
       type: 'article',
       publishedTime: post.date,
       authors: [post.author],
-      images: post.ogImage ? [{ url: post.ogImage }] : [{ url: '/og-image.png' }],
+      images: post.ogImage ? [{ url: post.ogImage }] : [{ url: '/og-image-2026-11.png' }],
       siteName: 'NateSystem',
       locale: 'fr_FR',
     },
@@ -79,7 +79,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
       keywords: post.tags.join(', '),
       wordCount,
       inLanguage: 'fr-FR',
-      image: post.ogImage ? [post.ogImage] : ['https://www.natesystem.com/og-image.png'],
+      image: post.ogImage ? [post.ogImage] : ['https://www.natesystem.com/og-image-2026-11.png'],
     },
     {
       '@type': 'BreadcrumbList',

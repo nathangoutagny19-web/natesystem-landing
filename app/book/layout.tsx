@@ -11,7 +11,7 @@ export const metadata: Metadata = {
       'Appel de consulting offert. Vous repartez avec une roadmap IA, même si on ne travaille pas ensemble.',
     url: 'https://www.natesystem.com/book',
     type: 'website',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'NateSystem' }],
+    images: [{ url: '/og-image-2026-11.png', width: 1200, height: 630, alt: 'NateSystem' }],
   },
 }
 

@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     description:
       'Votre façon de servir vos clients est unique. Votre logiciel devrait l’être aussi. Conciergeries, villas, chalets, yachts. Le code vous appartient.',
     siteName: 'NateSystem',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'NateSystem' }],
+    images: [{ url: '/og-image-2026-11.png', width: 1200, height: 630, alt: 'NateSystem' }],
     locale: 'fr_FR',
     alternateLocale: ['en_US', 'hu_HU'],
   },
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Logiciel sur mesure pour l’hospitalité de luxe | NateSystem',
     description: 'Votre façon de servir vos clients est unique. Votre logiciel devrait l’être aussi.',
-    images: ['/og-image.png'],
+    images: ['/og-image-2026-11.png'],
   },
 }
 

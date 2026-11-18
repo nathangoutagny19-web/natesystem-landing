@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     url: `${SITE_URL}/bibliotheque`,
     type: 'website',
     locale: 'fr_FR',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'NateSystem' }],
+    images: [{ url: '/og-image-2026-11.png', width: 1200, height: 630, alt: 'NateSystem' }],
   },
 }
 

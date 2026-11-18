@@ -59,7 +59,7 @@ export function localeMetadata({
       url,
       type: 'website',
       locale: OG_LOCALE[lang],
-      images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'NateSystem' }],
+      images: [{ url: '/og-image-2026-11.png', width: 1200, height: 630, alt: 'NateSystem' }],
     },
   }
 }

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     url: 'https://www.natesystem.com/logiciel-interne-villeurbanne',
     type: 'website',
     locale: 'fr_FR',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'NateSystem' }],
+    images: [{ url: '/og-image-2026-11.png', width: 1200, height: 630, alt: 'NateSystem' }],
   },
   twitter: {
     card: 'summary_large_image',
