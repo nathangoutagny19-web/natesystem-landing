@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect, useCallback } from 'react'
 import { useLang } from '@/components/providers/LangProvider'
 import { whatsappLink } from '@/lib/whatsapp'
+import { track } from '@/lib/track'
 
 const SIZE = 56
 const MARGIN = 24
@@ -64,6 +65,7 @@ export default function WhatsAppFloat() {
   const onClick = useCallback(() => {
     // A real drag (moved past threshold) must not open the chat.
     if (drag.current.moved > 5) { drag.current.moved = 0; return }
+    track('whatsapp_click', { page: window.location.pathname })
     window.open(href, '_blank', 'noopener,noreferrer')
   }, [href])
 

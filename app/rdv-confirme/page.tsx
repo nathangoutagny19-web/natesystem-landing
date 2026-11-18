@@ -9,6 +9,7 @@ import ClientsBar from '@/components/home/ClientsBar'
 import FadeUp from '@/components/ui/FadeUp'
 import { useLang } from '@/components/providers/LangProvider'
 import { makeD } from '@/lib/lang'
+import { track } from '@/lib/track'
 
 /**
  * LA PAGE APRÈS LA RÉSERVATION.
@@ -35,6 +36,8 @@ export default function RdvConfirmePage() {
     const p = new URLSearchParams(window.location.search)
     const name = p.get('invitee_first_name') || p.get('prenom') || p.get('first_name') || ''
     setFirstName(name.trim().slice(0, 40))
+    // Key event in GA4: a meeting was booked (Calendly redirects here).
+    track('booking_confirmed', { page: window.location.pathname })
   }, [])
 
   const showVideoSlot = VIDEO_EMBED_URL !== '' || process.env.NODE_ENV !== 'production'
