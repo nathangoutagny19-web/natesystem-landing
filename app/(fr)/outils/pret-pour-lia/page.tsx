@@ -379,7 +379,7 @@ function Gauge({ name, score, level }: { name: string; score: number; level: Lev
       <style jsx>{`
         .g-wrap { display: flex; flex-direction: column; align-items: center; width: 148px; }
         .g-svg { display: block; }
-        .g-score { font-family: 'Instrument Serif', Georgia, serif; font-style: italic; font-size: 30px; }
+        .g-score { font-family: var(--font-serif); font-style: italic; font-size: 30px; }
         .g-max { font-family: 'JetBrains Mono', monospace; font-size: 11px; }
         .g-name { font-size: 13.5px; font-weight: 500; color: var(--text); text-align: center; margin-top: 8px; line-height: 1.25; }
         .g-level { font-size: 10px; letter-spacing: 1.2px; text-transform: uppercase; font-weight: 600; margin-top: 4px; }

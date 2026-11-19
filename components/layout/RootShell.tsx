@@ -1,7 +1,7 @@
-/* eslint-disable @next/next/no-head-element, @next/next/no-page-custom-font --
+/* eslint-disable @next/next/no-head-element --
    Ce fichier est le <html> des layouts racines de l'App Router, pas un
    _document du Pages Router : ces deux règles ne s'y appliquent pas. */
-import { DM_Sans } from 'next/font/google'
+import { DM_Sans, Instrument_Serif } from 'next/font/google'
 import { ThemeProvider } from '@/components/providers/ThemeProvider'
 import StyledJsxRegistry from '@/components/providers/StyledJsxRegistry'
 import { LangProvider } from '@/components/providers/LangProvider'
@@ -31,6 +31,20 @@ const dmSans = DM_Sans({
   display: 'swap',
 })
 
+/* La police des titres, hébergée sur le site (19/11/2026). Elle venait d'une
+   feuille de style Google Fonts qui bloquait l'affichage (deux domaines de plus
+   à joindre sur mobile), et sa police de secours, plus large, faisait sauter
+   toute la page à son arrivée : CLS de 0,35 mesuré sur la page yachting.
+   next/font la sert depuis le domaine du site, la précharge, et cale la police
+   de secours sur ses dimensions. latin-ext : les ő et ű du hongrois. */
+const instrumentSerif = Instrument_Serif({
+  weight: '400',
+  style: ['normal', 'italic'],
+  subsets: ['latin', 'latin-ext'],
+  variable: '--font-instrument',
+  display: 'swap',
+})
+
 /* JetBrains Mono n'est plus chargée (14 novembre 2026, Nathan : « cette typo
    fait IA, fais un truc plus élégant »). Les étiquettes passent en DM Sans,
    en petites capitales espacées : --font-mono pointe sur DM Sans (globals.css). */
@@ -54,7 +68,7 @@ export default function RootShell({ lang, children }: { lang: Lang; children: Re
   const text = lang === 'fr' ? ORG_TEXT.fr : ORG_TEXT.en
 
   return (
-    <html lang={lang} className={`${dmSans.variable} light`} suppressHydrationWarning>
+    <html lang={lang} className={`${dmSans.variable} ${instrumentSerif.variable} light`} suppressHydrationWarning>
       <head>
         {/* Organization + LocalBusiness schema (JSON-LD), invisible to users,
             powers Google rich results and AI citability (ChatGPT / Perplexity /
@@ -107,13 +121,6 @@ export default function RootShell({ lang, children }: { lang: Lang; children: Re
               slogan: text.slogan,
             }),
           }}
-        />
-        {/* Instrument Serif from Google Fonts (no next/font support for italic-only) */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap"
-          rel="stylesheet"
         />
         {/* Le site ouvre TOUJOURS en clair. Decision de Nathan, 8 septembre 2026.
             Le theme n'est plus persiste : ce script efface la preference laissee
