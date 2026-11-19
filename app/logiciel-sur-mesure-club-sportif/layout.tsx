@@ -1,6 +1,9 @@
 import type { Metadata } from 'next'
+import { PRUNED_ROBOTS } from '@/lib/seo-pruned'
 
 export const metadata: Metadata = {
+  /* Retirée de Google le 19/11/2026 (hors niche), voir lib/seo-pruned.ts. */
+  robots: PRUNED_ROBOTS,
   title: 'Logiciel & IA sur-mesure pour clubs sportifs, NateSystem',
   description:
     'Logiciel métier et IA sur-mesure pour clubs sportifs : génération automatique des offres de sponsoring (PDF, slides, mail) après vos appels, back-office commercial relié au CRM, gestion des bénévoles. Démo en 2 minutes + audit offert.',

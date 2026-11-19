@@ -1,6 +1,9 @@
 import type { Metadata } from 'next'
+import { PRUNED_ROBOTS } from '@/lib/seo-pruned'
 
 export const metadata: Metadata = {
+  /* Retirée de Google le 19/11/2026 (hors niche), voir lib/seo-pruned.ts. */
+  robots: PRUNED_ROBOTS,
   title: 'Logiciel interne Lyon : solutions sur-mesure pour entreprise',
   description:
     'Logiciel interne à Lyon : NateSystem conçoit des solutions logicielles sur-mesure pour entreprise, gestion, données, équipe. Code livré, propriété 100 %, hébergé en UE. Audit offert.',

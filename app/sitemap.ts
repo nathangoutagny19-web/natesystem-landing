@@ -2,6 +2,7 @@ import type { MetadataRoute } from 'next'
 import { blogPosts } from '@/lib/blog'
 import { allCaseSlugs } from '@/lib/case-studies'
 import { TRANSLATED_ROUTES } from '@/lib/routes'
+import { isPruned } from '@/lib/seo-pruned'
 
 const BASE_URL = 'https://www.natesystem.com'
 
@@ -171,5 +172,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...caseStudyRoutes,
     ...translatedRoutes,
     ...translatedCaseRoutes,
-  ].map(normalize)
+  ]
+    /* Les pages hors niche retirées de Google le 19/11/2026 (lib/seo-pruned.ts). */
+    .filter((r) => !isPruned(r.url))
+    .map(normalize)
 }

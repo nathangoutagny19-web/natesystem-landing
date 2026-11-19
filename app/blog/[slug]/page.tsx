@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { blogPosts } from '@/lib/blog'
+import { isPruned, PRUNED_ROBOTS } from '@/lib/seo-pruned'
 import BlogPostClient from './BlogPostClient'
 
 export function generateStaticParams() {
@@ -12,6 +13,8 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   if (!post) return {}
 
   return {
+    /* Article hors niche retiré de Google le 19/11/2026 (lib/seo-pruned.ts). */
+    ...(isPruned(`/blog/${post.slug}`) ? { robots: PRUNED_ROBOTS } : {}),
     title: `${post.title} | NateSystem Blog`,
     description: post.description,
     authors: [{ name: post.author }],

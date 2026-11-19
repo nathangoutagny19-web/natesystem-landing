@@ -1,6 +1,9 @@
 import type { Metadata } from 'next'
+import { PRUNED_ROBOTS } from '@/lib/seo-pruned'
 
 export const metadata: Metadata = {
+  /* Retirée de Google le 19/11/2026 (hors niche), voir lib/seo-pruned.ts. */
+  robots: PRUNED_ROBOTS,
   title: 'Logiciel sur-mesure pour l\'enseignement supérieur, NateSystem',
   description:
     'CRM pédagogique sur-mesure pour écoles et universités : parcours étudiant, suivi de stages, relance alumni, tout centralisé. Cas réels : 200+ étudiants suivis, 90 %+ d\'adoption. Audit offert.',

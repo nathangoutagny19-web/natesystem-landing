@@ -1,6 +1,9 @@
 import type { Metadata } from 'next'
+import { PRUNED_ROBOTS } from '@/lib/seo-pruned'
 
 export const metadata: Metadata = {
+  /* Retirée de Google le 19/11/2026 (hors niche), voir lib/seo-pruned.ts. */
+  robots: PRUNED_ROBOTS,
   title: 'Logiciel sur-mesure pour la restauration, NateSystem',
   description:
     'Le logiciel métier qui pilote un restaurant ou un groupe : cockpit KPI temps réel, contrôle des factures fournisseurs, pointeuse & paie, gestion des avis. Cas réel : ×11 sur le temps de pilotage. Audit offert.',

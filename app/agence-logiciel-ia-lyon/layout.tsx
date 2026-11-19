@@ -1,6 +1,9 @@
 import type { Metadata } from 'next'
+import { PRUNED_ROBOTS } from '@/lib/seo-pruned'
 
 export const metadata: Metadata = {
+  /* Retirée de Google le 19/11/2026 (hors niche), voir lib/seo-pruned.ts. */
+  robots: PRUNED_ROBOTS,
   title: 'Agence logiciel sur-mesure & IA à Lyon, NateSystem',
   description:
     'NateSystem, agence lyonnaise de logiciel métier sur-mesure et d\'intégration IA pour PME. On construit l\'outil qui pilote votre établissement, code livré, propriété 100 %, hébergé en UE. Audit offert.',

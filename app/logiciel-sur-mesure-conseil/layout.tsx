@@ -1,6 +1,9 @@
 import type { Metadata } from 'next'
+import { PRUNED_ROBOTS } from '@/lib/seo-pruned'
 
 export const metadata: Metadata = {
+  /* Retirée de Google le 19/11/2026 (hors niche), voir lib/seo-pruned.ts. */
+  robots: PRUNED_ROBOTS,
   title: 'Logiciel & IA sur-mesure pour cabinets de conseil, NateSystem',
   description:
     'Logiciel métier et IA sur-mesure pour cabinets de conseil et consultants B2B : relance commerciale automatique, réactivation des contacts dormants, reporting interne auto. Cas réel : conversion 4 % → 12 %. Audit offert.',
