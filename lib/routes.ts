@@ -54,6 +54,7 @@ export const TRANSLATED_ROUTES = [
 export const EN_ONLY_ROUTES = [
   '/montenegro', '/montenegro/tivat', '/montenegro/kotor',
   '/yacht-management-software', '/luxury-concierge-software', '/luxury-villa-management-software', '/luxury-hotel-software',
+  '/guides/yacht-charter-apa-tracking', '/guides/owner-statement',
 ] as const
 
 /**
@@ -66,6 +67,7 @@ export const PILLAR_ROUTE_PAIRS: { fr: string; en: string }[] = [
   { fr: '/logiciel-conciergerie-de-luxe', en: '/luxury-concierge-software' },
   { fr: '/logiciel-gestion-villas-de-luxe', en: '/luxury-villa-management-software' },
   { fr: '/logiciel-hotel-de-luxe-sur-mesure', en: '/luxury-hotel-software' },
+  { fr: '/guides/releve-proprietaire', en: '/guides/owner-statement' },
 ]
 
 const EN_ONLY_SET = new Set<string>(EN_ONLY_ROUTES)

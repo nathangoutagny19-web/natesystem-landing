@@ -4,6 +4,7 @@ import { allCaseSlugs } from '@/lib/case-studies'
 import { TRANSLATED_ROUTES } from '@/lib/routes'
 import { isPruned } from '@/lib/seo-pruned'
 import { PILLARS } from '@/lib/pillars'
+import { GUIDES } from '@/lib/guides'
 
 const BASE_URL = 'https://www.natesystem.com'
 
@@ -31,6 +32,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/en/montenegro`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${BASE_URL}/en/montenegro/tivat`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${BASE_URL}/en/montenegro/kotor`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
+    // Guides « problèmes » (19/11/2026), avec l'autre langue quand elle existe.
+    ...GUIDES.map((g) => ({
+      url: `${BASE_URL}${g.path}`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+      ...(g.alternate
+        ? { alternates: { languages: g.lang === 'fr'
+            ? { 'fr-FR': `${BASE_URL}${g.path}`, en: `${BASE_URL}${g.alternate}` }
+            : { 'fr-FR': `${BASE_URL}${g.alternate}`, en: `${BASE_URL}${g.path}` } } }
+        : {}),
+    })),
     // Pages piliers par métier (19/11/2026), françaises et anglaises reliées.
     ...PILLARS.flatMap((p) => {
       const languages = { 'fr-FR': `${BASE_URL}${p.path.fr}`, en: `${BASE_URL}${p.path.en}` }

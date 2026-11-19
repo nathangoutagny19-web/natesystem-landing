@@ -14,6 +14,7 @@ import { useLang } from '@/components/providers/LangProvider'
 import { localizedHref } from '@/lib/routes'
 import { AUDIT_LINK, SITE_URL } from '@/lib/constants'
 import type { Pillar } from '@/lib/pillars'
+import { GUIDES } from '@/lib/guides'
 
 /**
  * LE GABARIT DES PAGES PILIERS PAR MÉTIER (stratégie SEO du 19 novembre 2026).
@@ -205,6 +206,25 @@ export default function SectorPillar({ pillar }: { pillar: Pillar }) {
         </div>
       </section>
 
+      {/* Les guides du métier, dans la langue de la page (maillage interne) */}
+      {GUIDES.some((g) => g.lang === lang && g.pillar.href === pillar.path[lang]) && (
+        <section className="lx-section" style={{ paddingTop: 0 }}>
+          <div className="lx-wrap">
+            <span className="v3-label">{fr ? 'Guides' : 'Guides'}</span>
+            <ul className="sp-guides">
+              {GUIDES.filter((g) => g.lang === lang && g.pillar.href === pillar.path[lang]).map((g) => (
+                <li key={g.path}>
+                  <Link href={g.path} className="sp-guide">
+                    <span className="font-serif sp-guide-title">{g.h1.join('')}</span>
+                    <span aria-hidden="true">→</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
+
       {/* 7, nuit : la FAQ */}
       <section className="lx-section v3-night">
         <div className="sp-faq-wrap">
@@ -285,6 +305,11 @@ export default function SectorPillar({ pillar }: { pillar: Pillar }) {
         .sp-row-head > .sp-col-us { color: var(--accent); }
         .sp-row > .sp-crit { font-size: clamp(18px, 1.6vw, 21px); color: #f0f0f2; font-weight: 400; }
 
+        .sp-guides { list-style: none; margin: 18px 0 0; padding: 0; border-top: 1px solid var(--border); }
+        .sp-guides li { border-bottom: 1px solid var(--border); }
+        .sp-guides :global(.sp-guide) { display: flex; justify-content: space-between; align-items: baseline; gap: 20px; padding: 20px 0; text-decoration: none; color: var(--text); }
+        .sp-guides :global(.sp-guide:hover) { color: var(--accent); }
+        .sp-guide-title { font-size: clamp(20px, 2vw, 26px); line-height: 1.2; }
         .sp-faq-wrap { max-width: 860px; margin: 0 auto; }
         .sp-faq { list-style: none; margin: clamp(48px, 6vw, 72px) 0 0; padding: 0; border-top: 1px solid rgba(255, 255, 255, 0.1); }
         .sp-faq-item { border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
