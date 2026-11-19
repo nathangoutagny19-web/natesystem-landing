@@ -93,26 +93,32 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               logo: 'https://www.natesystem.com/logo.png',
               image: 'https://www.natesystem.com/logo.png',
               description:
-                'NateSystem construit des logiciels sur mesure pour l’hospitalité de luxe : conciergeries, villas et chalets, yachts. Construits autour de la façon dont chaque organisation sert ses clients. Le client possède 100 % du code et des données. Hébergé en UE, RGPD-natif.',
+                'NateSystem construit des logiciels sur mesure pour les métiers du service dans l’hospitalité de luxe : yachting (charter, management, agents et brokers), conciergerie de luxe et travel designers, gestion de propriétés de luxe (villas, chalets, domaines) et hôtels de luxe. Chaque outil est construit autour de la façon dont la maison travaille déjà. Le client possède 100 % du code et des données.',
               founder: {
                 '@type': 'Person',
                 name: 'Nathan Goutagny',
-                jobTitle: 'Fondateur · Ingénieur logiciel & IA appliquée',
+                jobTitle: 'Fondateur · Ingénieur logiciel',
                 url: 'https://www.natesystem.com',
               },
-              areaServed: ['FR', 'HU', 'EU'],
+              /* Les pays de la carte de la page À propos (Nathan, 14/11/2026). */
+              areaServed: ['FR', 'CH', 'HU', 'ME', 'ES', 'US', 'AE'],
+              /* La base : Tivat (19/11/2026, « je vais settle down à Tivat »).
+                 Ville seulement, aucune adresse de rue inventée. */
               address: {
                 '@type': 'PostalAddress',
-                addressLocality: 'Lyon',
-                addressCountry: 'FR',
+                addressLocality: 'Tivat',
+                addressRegion: 'Baie de Kotor',
+                addressCountry: 'ME',
               },
               knowsAbout: [
                 'Logiciel sur mesure',
-                'Logiciel de gestion pour conciergerie de luxe',
-                'Gestion de villas et chalets de luxe',
-                'Gestion de yachts',
+                'Logiciel de gestion de yachts et de charter',
+                'Yacht management software',
+                'Logiciel pour conciergerie de luxe',
+                'Logiciel pour travel designers',
+                'Gestion de propriétés de luxe : villas, chalets, domaines',
+                'Logiciel pour hôtels de luxe',
                 'Hospitalité de luxe',
-                'Hébergement des données en UE',
               ],
               slogan: 'Votre façon de servir vos clients est unique. Votre logiciel devrait l’être aussi.',
             }),
