@@ -51,7 +51,10 @@ export const TRANSLATED_ROUTES = [
  * française ni version hongroise. Le drapeau de la nav ramène donc à
  * l'accueil de la langue visée au lieu d'ouvrir une 404.
  */
-export const EN_ONLY_ROUTES = ['/montenegro', '/montenegro/tivat', '/montenegro/kotor', '/yacht-management-software'] as const
+export const EN_ONLY_ROUTES = [
+  '/montenegro', '/montenegro/tivat', '/montenegro/kotor',
+  '/yacht-management-software', '/luxury-concierge-software', '/luxury-villa-management-software', '/luxury-hotel-software',
+] as const
 
 /**
  * LES PAGES PILIERS (19/11/2026) : une adresse française et une adresse
@@ -60,6 +63,9 @@ export const EN_ONLY_ROUTES = ['/montenegro', '/montenegro/tivat', '/montenegro/
  */
 export const PILLAR_ROUTE_PAIRS: { fr: string; en: string }[] = [
   { fr: '/logiciel-gestion-yacht-sur-mesure', en: '/yacht-management-software' },
+  { fr: '/logiciel-conciergerie-de-luxe', en: '/luxury-concierge-software' },
+  { fr: '/logiciel-gestion-villas-de-luxe', en: '/luxury-villa-management-software' },
+  { fr: '/logiciel-hotel-de-luxe-sur-mesure', en: '/luxury-hotel-software' },
 ]
 
 const EN_ONLY_SET = new Set<string>(EN_ONLY_ROUTES)

@@ -76,6 +76,9 @@ export const sectorHash = (slug: SectorSlug) => `#secteur-${slug}`
  */
 const PILLAR_HREF: Partial<Record<SectorSlug, { fr: string; en: string }>> = {
   yachting: { fr: '/logiciel-gestion-yacht-sur-mesure', en: '/en/yacht-management-software' },
+  conciergerie: { fr: '/logiciel-conciergerie-de-luxe', en: '/en/luxury-concierge-software' },
+  proprietes: { fr: '/logiciel-gestion-villas-de-luxe', en: '/en/luxury-villa-management-software' },
+  hotels: { fr: '/logiciel-hotel-de-luxe-sur-mesure', en: '/en/luxury-hotel-software' },
 }
 
 export function sectorHref(slug: SectorSlug, lang: Lang): string {
