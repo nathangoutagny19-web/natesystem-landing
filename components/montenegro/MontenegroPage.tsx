@@ -85,16 +85,18 @@ export default function MontenegroPage({ data }: { data: MontenegroPageData }) {
       <Nav />
       <main>
         {/* Le même hero que l'accueil (Nathan, 8 novembre 2026 : « remets la même
-            hero que ce matin »). Le titre local de la page passe en H2 juste
-            en dessous, pour garder Tivat / Kotor dans le contenu. */}
-        <Hero label="Based in Tivat · Working worldwide" />
+            hero que ce matin »). Depuis le 19/11/2026, son slogan n'est plus
+            balisé H1 (même apparence) : le H1 est le titre local juste en
+            dessous, pour que Google lise Tivat, Kotor ou l'Adriatique comme
+            sujet principal de la page. */}
+        <Hero label="Based in Tivat · Working worldwide" titleAs="p" />
 
         <ClientsBar />
 
         {/* Le titre local et son introduction */}
         <section className="flex flex-col items-center text-center" style={{ padding: '72px 20px 0' }}>
           <span className="section-label" style={{ letterSpacing: 3 }}>{data.eyebrow}</span>
-          <h2 className="font-serif italic font-normal" style={{ ...h2, maxWidth: 820, marginTop: 18 }}>{data.h1}</h2>
+          <h1 className="font-serif italic font-normal" style={{ ...h2, maxWidth: 820, marginTop: 18 }}>{data.h1}</h1>
           <p className="font-sans" style={{ ...body, maxWidth: 680, marginTop: 18 }}>{data.intro}</p>
         </section>
 

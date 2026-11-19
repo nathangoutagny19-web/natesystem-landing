@@ -77,7 +77,11 @@ function RotatingWord({ words }: { words: string[] }) {
 
 /** `label` remplace le surtitre, sans toucher au reste : les pages Monténégro
     y disent « Based in Tivat » (8 novembre 2026). */
-export default function Hero({ label }: { label?: string } = {}) {
+/* `titleAs` : sur les pages locales, le slogan garde son apparence mais n'est
+   plus le H1. Le H1 de la page doit dire Tivat, Kotor ou l'Adriatique, sinon
+   Google lit le même titre principal sur toutes les pages (19/11/2026). */
+export default function Hero({ label, titleAs = 'h1' }: { label?: string; titleAs?: 'h1' | 'p' } = {}) {
+  const TitleTag = titleAs
   const { lang, t } = useLang()
   const words = t('hero.titleWords').split('|').map((w) => w.trim()).filter(Boolean)
 
@@ -91,7 +95,7 @@ export default function Hero({ label }: { label?: string } = {}) {
       </div>
 
       {/* Title, NateSystem signature: serif italic, scaled up for the new outcome-first H1 */}
-      <h1
+      <TitleTag
         className="font-serif italic font-normal hero-title ns-in"
         style={{ animationDelay: '0.2s', animationDuration: '0.8s', ...({ '--ns-y': '30px' } as React.CSSProperties), fontSize: 'clamp(38px, 5.2vw, 64px)', lineHeight: 1.08, marginBottom: '28px', maxWidth: '820px', color: 'var(--text)' }}
       >
@@ -99,7 +103,7 @@ export default function Hero({ label }: { label?: string } = {}) {
         {/* Un seul mot : la headline est fixe, rien ne tourne. */}
         {words.length > 1 ? <RotatingWord words={words} /> : <span>{words[0]}</span>}{' '}
         {t('hero.titleSuffix')}
-      </h1>
+      </TitleTag>
 
       {/* Badge de preuve, entre le titre et la vidéo (Nathan, 8 novembre 2026). */}
       <div
