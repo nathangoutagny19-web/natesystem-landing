@@ -1,4 +1,4 @@
-import PolitiqueAntiSpam from '../../politique-anti-spam/page'
+import PolitiqueAntiSpam from '@/app/(fr)/politique-anti-spam/page'
 
 /**
  * `/en/politique-anti-spam` : la page sert déjà le français et l'anglais sur

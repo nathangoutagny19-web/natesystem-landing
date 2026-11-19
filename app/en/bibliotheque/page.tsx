@@ -5,4 +5,4 @@
  * L'URL garde le mot français, comme /atelier : une adresse se dicte et se
  * colle, la couper en deux selon la langue crée des liens morts pour rien.
  */
-export { default } from '../../bibliotheque/page'
+export { default } from '@/app/(fr)/bibliotheque/page'

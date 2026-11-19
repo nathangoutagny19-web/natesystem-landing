@@ -5,4 +5,4 @@
  * Même slug que le français et l'anglais, pour la même raison : l'adresse
  * se dicte et se colle dans des emails, une seule forme vaut mieux que trois.
  */
-export { default } from '../../atelier/page'
+export { default } from '@/app/(fr)/atelier/page'

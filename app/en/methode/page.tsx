@@ -1,4 +1,4 @@
-import { MethodeRoute } from '../../methode/page'
+import { MethodeRoute } from '@/app/(fr)/methode/page'
 
 /**
  * `/en/methode` : le même composant, servi en anglais.

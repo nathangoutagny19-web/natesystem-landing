@@ -1,41 +1,30 @@
 import type { Metadata } from 'next'
-import { LangProvider } from '@/components/providers/LangProvider'
-import { SITE_URL } from '@/lib/constants'
+import '../globals.css'
+import RootShell from '@/components/layout/RootShell'
+import { BASE_METADATA } from '@/lib/root-metadata'
 
 /**
- * L'ARBRE HONGROIS.
+ * LE LAYOUT RACINE HONGROIS (19/11/2026).
  *
- * Même mécanique que `/en` : ce layout est imbriqué dans le layout racine,
- * donc son `LangProvider` l'emporte, et tout ce qui est rendu sous `/hu`
- * reçoit `lang="hu"` par le contexte, sans qu'aucune page n'ait à le savoir.
+ * C'est un layout racine à part entière, au même niveau que `app/(fr)` :
+ * le serveur sert donc `<html lang="hu">` dès le premier octet, sans
+ * script de rattrapage. Tout ce qui est rendu sous /hu reçoit `lang="hu"`
+ * par le LangProvider de RootShell, et les pages de /hu ré-exportent leur
+ * équivalent français au lieu d'en dupliquer le contenu.
  *
- * Budapest est le second marché de NateSystem. La règle posée le 17 septembre
- * 2026 : tout ce qui est traduit en français et en anglais l'est en hongrois.
- *
- * ⚠︎ Le `<html lang>` servi par le serveur reste `fr` : le layout racine est
- * statique et ne connaît pas la route. Le script ci-dessous le corrige avant
- * la peinture. Ce qui pilote l'indexation, ce sont les `hreflang` et le
- * canonique, et ceux-là sont posés côté serveur.
+ * La canonique et les hreflang de l'accueil /hu sont dans `page.tsx` :
+ * posés ici, ils étaient hérités par toutes les pages de l'arbre.
  */
 
 export const metadata: Metadata = {
+  ...BASE_METADATA,
   title: 'Egyedi szoftver a luxusvendéglátásnak | NateSystem',
   description:
     'Concierge-szolgáltatások, villák, faházak, jachtok: szoftver, amely ahhoz igazodik, ahogyan Ön a vendégeit kiszolgálja. A forráskód az Öné.',
-  alternates: {
-    canonical: `${SITE_URL}/hu`,
-    languages: {
-      'fr-FR': `${SITE_URL}/`,
-      en: `${SITE_URL}/en`,
-      hu: `${SITE_URL}/hu`,
-      'x-default': `${SITE_URL}/`,
-    },
-  },
   /* Même règle qu'en /en : l'openGraph enfant remplace celui du parent. */
   openGraph: {
     type: 'website',
     locale: 'hu_HU',
-    url: `${SITE_URL}/hu/`,
     siteName: 'NateSystem',
     title: 'Egyedi szoftver a luxusvendéglátásnak | NateSystem',
     description: 'Az Ön vendégfogadása egyedi. A szoftvere is legyen az. Concierge-szolgáltatások, villák, faházak, jachtok. A forráskód az Öné.',
@@ -50,14 +39,5 @@ export const metadata: Metadata = {
 }
 
 export default function HuLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <LangProvider initialLang="hu">
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `document.documentElement.lang='hu'`,
-        }}
-      />
-      {children}
-    </LangProvider>
-  )
+  return <RootShell lang="hu">{children}</RootShell>
 }

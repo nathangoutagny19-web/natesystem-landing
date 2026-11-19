@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { CaseStudyRoute, caseStudyMetadata, generateStaticParams } from '../../../case-studies/[slug]/page'
+import { CaseStudyRoute, caseStudyMetadata, generateStaticParams } from '@/app/(fr)/case-studies/[slug]/page'
 
 /**
  * `/hu/case-studies/[slug]` : la même route, servie en hongrois.

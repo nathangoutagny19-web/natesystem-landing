@@ -1,11 +1,27 @@
-import type { Metadata } from 'next'
+/* eslint-disable @next/next/no-head-element, @next/next/no-page-custom-font --
+   Ce fichier est le <html> des layouts racines de l'App Router, pas un
+   _document du Pages Router : ces deux règles ne s'y appliquent pas. */
 import { DM_Sans } from 'next/font/google'
-import './globals.css'
 import { ThemeProvider } from '@/components/providers/ThemeProvider'
 import { LangProvider } from '@/components/providers/LangProvider'
 import WhatsAppFloat from '@/components/layout/WhatsAppFloat'
 import CookieConsent from '@/components/site/CookieConsent'
 import { Analytics } from '@vercel/analytics/next'
+import type { Lang } from '@/lib/i18n'
+
+/**
+ * LE SOCLE COMMUN DES TROIS LAYOUTS RACINES (19/11/2026).
+ *
+ * Le site a trois layouts racines, un par langue : `app/(fr)/layout.tsx`,
+ * `app/en/layout.tsx`, `app/hu/layout.tsx`. C'est la seule façon, en
+ * Next 14, de servir `<html lang="en">` dès le HTML sous /en : le layout
+ * racine est statique et ne connaît pas l'URL. Avant, toutes les pages
+ * partaient en `lang="fr"` et un script corrigeait après coup, ce que Bing
+ * (donc ChatGPT) ne voit pas forcément.
+ *
+ * Tout ce qui était dans l'ancien layout racine vit ici, une seule fois.
+ * Changer une ligne ici la change dans les trois langues.
+ */
 
 const dmSans = DM_Sans({
   subsets: ['latin'],
@@ -18,50 +34,26 @@ const dmSans = DM_Sans({
    fait IA, fais un truc plus élégant »). Les étiquettes passent en DM Sans,
    en petites capitales espacées : --font-mono pointe sur DM Sans (globals.css). */
 
-export const metadata: Metadata = {
-  /* Title ≤ 60 et description ≤ 155 caractères : au-delà, Google coupe (08/11/2026). */
-  title: 'Logiciel sur mesure pour l’hospitalité de luxe | NateSystem',
-  description:
-    'Conciergeries, villas, chalets, yachts : un logiciel construit autour de votre façon de servir vos clients. Le code vous appartient. Audit gratuit.',
-  keywords: [
-    'logiciel sur mesure conciergerie de luxe',
-    'logiciel gestion villa de luxe',
-    'logiciel maison de réception',
-    'logiciel hôtel de groupe sur mesure',
-    'site internet conciergerie de luxe',
-    'suivi des demandes clients hospitalité',
-    'NateSystem',
-    'Nathan Goutagny',
-  ],
-  authors: [{ name: 'Nathan Goutagny', url: 'https://www.natesystem.com' }],
-  creator: 'Nathan Goutagny',
-  metadataBase: new URL('https://www.natesystem.com'),
-  /* PAS de canonique ni de hreflang ici (19/11/2026). Posés à la racine, ils
-     étaient hérités par toute page qui n'en déclarait pas : /services et
-     /politique-anti-spam disaient à Google « l'original, c'est l'accueil ».
-     L'accueil déclare les siens dans app/page.tsx, chaque page les siens. */
-  robots: { index: true, follow: true },
-  openGraph: {
-    type: 'website',
-    title: 'Logiciel sur mesure pour l’hospitalité de luxe | NateSystem',
+const ORG_TEXT = {
+  fr: {
     description:
-      'Votre façon de servir vos clients est unique. Votre logiciel devrait l’être aussi. Conciergeries, villas, chalets, yachts. Le code vous appartient.',
-    siteName: 'NateSystem',
-    images: [{ url: '/og-image-2026-11.png', width: 1200, height: 630, alt: 'NateSystem' }],
-    locale: 'fr_FR',
-    alternateLocale: ['en_US', 'hu_HU'],
+      'NateSystem construit des logiciels sur mesure pour les métiers du service dans l’hospitalité de luxe : yachting (charter, management, agents et brokers), conciergerie de luxe et travel designers, gestion de propriétés de luxe (villas, chalets, domaines) et hôtels de luxe. Chaque outil est construit autour de la façon dont la maison travaille déjà. Le client possède 100 % du code et des données.',
+    jobTitle: 'Fondateur · Ingénieur logiciel',
+    slogan: 'Votre façon de servir vos clients est unique. Votre logiciel devrait l’être aussi.',
   },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Logiciel sur mesure pour l’hospitalité de luxe | NateSystem',
-    description: 'Votre façon de servir vos clients est unique. Votre logiciel devrait l’être aussi.',
-    images: ['/og-image-2026-11.png'],
+  en: {
+    description:
+      'NateSystem builds bespoke software for service businesses in luxury hospitality: yachting (charter, yacht management, agents and brokers), luxury concierge services and travel designers, luxury property management (villas, chalets, estates) and luxury hotels. Each tool is built around the way the business already works. The client owns 100% of the code and data. Based in Tivat, Montenegro.',
+    jobTitle: 'Founder · Software engineer',
+    slogan: 'The way you serve your clients is unique. Your software should be too.',
   },
-}
+} as const
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootShell({ lang, children }: { lang: Lang; children: React.ReactNode }) {
+  const text = lang === 'fr' ? ORG_TEXT.fr : ORG_TEXT.en
+
   return (
-    <html lang="fr" className={`${dmSans.variable} light`} suppressHydrationWarning>
+    <html lang={lang} className={`${dmSans.variable} light`} suppressHydrationWarning>
       <head>
         {/* Organization + LocalBusiness schema (JSON-LD), invisible to users,
             powers Google rich results and AI citability (ChatGPT / Perplexity /
@@ -79,12 +71,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               email: 'nathan@natesystem.com',
               logo: 'https://www.natesystem.com/logo.png',
               image: 'https://www.natesystem.com/logo.png',
-              description:
-                'NateSystem construit des logiciels sur mesure pour les métiers du service dans l’hospitalité de luxe : yachting (charter, management, agents et brokers), conciergerie de luxe et travel designers, gestion de propriétés de luxe (villas, chalets, domaines) et hôtels de luxe. Chaque outil est construit autour de la façon dont la maison travaille déjà. Le client possède 100 % du code et des données.',
+              description: text.description,
               founder: {
                 '@type': 'Person',
                 name: 'Nathan Goutagny',
-                jobTitle: 'Fondateur · Ingénieur logiciel',
+                jobTitle: text.jobTitle,
                 url: 'https://www.natesystem.com',
               },
               /* Les pays de la carte de la page À propos (Nathan, 14/11/2026). */
@@ -99,24 +90,23 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               },
               knowsAbout: [
                 'Logiciel sur mesure',
+                'Bespoke software',
                 'Logiciel de gestion de yachts et de charter',
                 'Yacht management software',
+                'Yacht charter software',
                 'Logiciel pour conciergerie de luxe',
+                'Luxury concierge software',
                 'Logiciel pour travel designers',
                 'Gestion de propriétés de luxe : villas, chalets, domaines',
+                'Luxury villa management software',
                 'Logiciel pour hôtels de luxe',
+                'Luxury hotel software',
                 'Hospitalité de luxe',
               ],
-              slogan: 'Votre façon de servir vos clients est unique. Votre logiciel devrait l’être aussi.',
+              slogan: text.slogan,
             }),
           }}
         />
-        {/* Le schema FAQPage vivait ici, donc sur les 160 pages du site, et en
-            français y compris sous /en. Il est désormais émis par le composant
-            FAQ lui-même (components/home/Faq.tsx) : sur la seule page qui
-            l'affiche, dans la langue affichée, et avec exactement le texte que
-            le visiteur lit. C'est ce que Google demande, et ça ne peut plus
-            diverger du visible. */}
         {/* Instrument Serif from Google Fonts (no next/font support for italic-only) */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -135,19 +125,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }}
         />
         {/* Cookie consent & all analytics/tracking (GA4, Clarity, Leadsy/Instantly)
-            are now handled by the self-hosted <CookieConsent /> component, which
-            only injects those scripts AFTER the visitor clicks "Accepter".
-            Replaced Iubenda (its autoblocking veil + offscreen buttons broke UX). */}
+            are handled by the self-hosted <CookieConsent /> component, which
+            only injects those scripts AFTER the visitor clicks "Accepter". */}
       </head>
       <body>
         <ThemeProvider>
-          <LangProvider>
+          <LangProvider initialLang={lang}>
             {/* La grille de fond et la lueur qui suivait la souris sont retirées
                 le 9 novembre 2026 (Nathan : « ça fait site tech »). */}
             <div className="noise" aria-hidden="true" />
-            <div className="content">
-              {children}
-            </div>
+            <div className="content">{children}</div>
             <WhatsAppFloat />
             <CookieConsent />
           </LangProvider>
