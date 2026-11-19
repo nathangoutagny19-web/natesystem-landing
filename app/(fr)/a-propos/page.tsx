@@ -110,7 +110,7 @@ export default function AProposPage() {
               <FadeUp key={p.src} delay={0.08 * i}>
                 <figure className="ap-fig">
                   <div className="ap-img">
-                    <Image src={p.src} alt={p.alt} fill sizes="(max-width: 760px) 80vw, 400px" style={{ objectFit: 'cover', objectPosition: p.pos }} />
+                    <Image src={p.src} alt={p.alt} fill sizes="(max-width: 760px) 80vw, 400px" priority={i === 0} style={{ objectFit: 'cover', objectPosition: p.pos }} />
                   </div>
                   <figcaption>
                     <span className="font-mono ap-place">{p.place}</span>

@@ -129,6 +129,7 @@ export default function Hero({ label }: { label?: string } = {}) {
         <VslPlayer
           src="/vsl-hospitality.mp4"
           poster="/vsl-hospitality-poster.jpg"
+          priority
           label={t('hero.vslLabel')}
           duration="51 s"
           title={t('hero.vslTitle')}

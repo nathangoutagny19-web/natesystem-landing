@@ -1,5 +1,7 @@
 'use client'
 
+import Image from 'next/image'
+
 import { useEffect, useRef, useState } from 'react'
 import { Play } from 'lucide-react'
 import { useLang } from '@/components/providers/LangProvider'
@@ -28,6 +30,7 @@ export default function VslPlayer({
   duration,
   title = 'Démo NateSystem',
   subtitles,
+  priority = false,
 }: {
   /** Path to the self-hosted file, e.g. "/vsl.mp4" (put it in /public). */
   src: string
@@ -39,6 +42,12 @@ export default function VslPlayer({
   title?: string
   /** Base des pistes, sans langue ni extension : 'vsl' → /subtitles/vsl.en.vtt */
   subtitles?: string
+  /**
+   * Vrai quand la vidéo est en haut de page (19/11/2026). L'aperçu est alors
+   * chargé en premier : c'était l'élément le plus lent de l'accueil sur mobile
+   * (LCP 4,3 s), parce qu'il était en chargement paresseux.
+   */
+  priority?: boolean
 }) {
   const { lang } = useLang()
   const [playing, setPlaying] = useState(false)
@@ -99,8 +108,16 @@ export default function VslPlayer({
       ) : (
         <button type="button" onClick={() => setPlaying(true)} aria-label={label} className="vsl-trigger group">
           {poster ? (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img src={poster} alt={title} loading="lazy" className="vsl-media vsl-poster" />
+            /* next/image : servi en WebP ou AVIF, à la taille de l'écran (le JPEG
+               d'origine fait 128 Ko en 1280 px pour un cadre de 380 à 720 px). */
+            <Image
+              src={poster}
+              alt={title}
+              fill
+              sizes="(max-width: 760px) 100vw, 720px"
+              priority={priority}
+              className="vsl-media vsl-poster"
+            />
           ) : (
             <span className="vsl-media vsl-poster vsl-poster--fallback" aria-hidden />
           )}
@@ -128,7 +145,7 @@ export default function VslPlayer({
           background: #000;
           box-shadow: 0 20px 60px -20px rgba(0, 0, 0, 0.55);
         }
-        .vsl-media {
+        .vsl-frame :global(.vsl-media) {
           position: absolute;
           inset: 0;
           width: 100%;
@@ -146,15 +163,15 @@ export default function VslPlayer({
           cursor: pointer;
           background: #000;
         }
-        .vsl-poster {
+        .vsl-frame :global(.vsl-poster) {
           opacity: 0.92;
           transition: transform 0.5s ease, opacity 0.35s ease;
         }
-        .vsl-trigger:hover .vsl-poster {
+        .vsl-trigger:hover :global(.vsl-poster) {
           transform: scale(1.03);
           opacity: 1;
         }
-        .vsl-poster--fallback {
+        .vsl-frame :global(.vsl-poster--fallback) {
           background: radial-gradient(120% 120% at 50% 0%, #1a1a1c 0%, #0a0a0b 70%);
         }
         .vsl-overlay {
