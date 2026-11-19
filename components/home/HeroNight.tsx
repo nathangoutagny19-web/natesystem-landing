@@ -1,7 +1,6 @@
 'use client'
 
 import Link from 'next/link'
-import { motion } from 'framer-motion'
 import { useLang } from '@/components/providers/LangProvider'
 import { makeD } from '@/lib/lang'
 import { localizedHref } from '@/lib/routes'
@@ -19,7 +18,6 @@ import { BASE, DESTS, arc } from '@/components/about/WorldMap'
  * partent de Tivat ; à côté du titre, la vidéo de Nathan. Le titre, le
  * sous-titre et la ligne de preuve sont ceux déjà validés (lib/i18n.ts).
  */
-const ease = [0.22, 1, 0.36, 1] as const
 
 export default function HeroNight() {
   const { lang, t } = useLang()
@@ -42,32 +40,32 @@ export default function HeroNight() {
 
       <div className="hn-inner">
         <div className="hn-text">
-          <motion.p
-            className="v3-label"
-            initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease }}
+          <p
+            className="v3-label ns-in"
+            style={{ animationDelay: '0s', animationDuration: '0.8s', '--ns-y': '12px' } as React.CSSProperties}
           >
             {d('Logiciels sur mesure · Hospitalité de luxe', 'Bespoke software · Luxury hospitality', 'Egyedi szoftverek · Luxusvendéglátás')}
-          </motion.p>
+          </p>
 
-          <motion.h1
+          <h1
             id="hn-title"
-            className="font-serif hn-title"
-            initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, delay: 0.1, ease }}
+            className="font-serif hn-title ns-in"
+            style={{ animationDelay: '0.1s', animationDuration: '0.9s', '--ns-y': '24px' } as React.CSSProperties}
           >
             {t('hero.titlePrefix')} {t('hero.titleWords')} {d('est unique.', 'is unique.', 'egyedi.')}{' '}
             <em className="hn-accent">{d('Votre logiciel devrait l’être aussi.', 'Your software should be too.', 'A szoftvere is legyen az.')}</em>
-          </motion.h1>
+          </h1>
 
-          <motion.p
-            className="font-sans hn-sub"
-            initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, delay: 0.25, ease }}
+          <p
+            className="font-sans hn-sub ns-in"
+            style={{ animationDelay: '0.25s', animationDuration: '0.9s', '--ns-y': '16px' } as React.CSSProperties}
           >
             {t('hero.sub')}
-          </motion.p>
+          </p>
 
-          <motion.div
-            className="hn-ctas"
-            initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, delay: 0.38, ease }}
+          <div
+            className="hn-ctas ns-in"
+            style={{ animationDelay: '0.38s', animationDuration: '0.9s', '--ns-y': '16px' } as React.CSSProperties}
           >
             <Link href={localizedHref(AUDIT_LINK, lang)} className="v3-pill">
               {t('hero.ctaAudit')} <span aria-hidden="true">→</span>
@@ -75,20 +73,20 @@ export default function HeroNight() {
             <Link href={localizedHref('/case-studies', lang)} className="v3-link hn-link">
               {d('Voir nos réalisations', 'See our work', 'Munkáink')}
             </Link>
-          </motion.div>
+          </div>
 
-          <motion.p
-            className="font-mono hn-proof"
-            initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 0.6 }}
+          <p
+            className="font-mono hn-proof ns-in"
+            style={{ animationDelay: '0.6s', animationDuration: '1s', '--ns-y': '0px' } as React.CSSProperties}
           >
             <span className="hn-proof-dot" aria-hidden="true" />
             {t('hero.aiNote')}
-          </motion.p>
+          </p>
         </div>
 
-        <motion.div
-          className="hn-video"
-          initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.3, ease }}
+        <div
+          className="hn-video ns-in"
+          style={{ animationDelay: '0.3s', animationDuration: '1s', '--ns-y': '30px' } as React.CSSProperties}
         >
           <VslPlayer
             src="/vsl-hospitality.mp4"
@@ -97,7 +95,7 @@ export default function HeroNight() {
             duration="51 s"
             title={t('hero.vslTitle')}
           />
-        </motion.div>
+        </div>
       </div>
 
       <style jsx>{`

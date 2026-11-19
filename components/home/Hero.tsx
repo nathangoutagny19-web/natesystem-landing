@@ -84,27 +84,27 @@ export default function Hero({ label }: { label?: string } = {}) {
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center text-center hero-section" style={{ padding: '140px 24px 80px' }}>
       {/* Label */}
-      <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1, ease }} className="mb-8">
+      <div className="mb-8 ns-in"
+        style={{ animationDelay: '0.1s', animationDuration: '0.6s', ...({ '--ns-y': '20px' } as React.CSSProperties) }}
+      >
         <span className="section-label hero-eyebrow">{label ?? t('hero.label')}</span>
-      </motion.div>
+      </div>
 
       {/* Title, NateSystem signature: serif italic, scaled up for the new outcome-first H1 */}
-      <motion.h1
-        initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2, ease }}
-        className="font-serif italic font-normal hero-title"
-        style={{ fontSize: 'clamp(38px, 5.2vw, 64px)', lineHeight: 1.08, marginBottom: '28px', maxWidth: '820px', color: 'var(--text)' }}
+      <h1
+        className="font-serif italic font-normal hero-title ns-in"
+        style={{ animationDelay: '0.2s', animationDuration: '0.8s', ...({ '--ns-y': '30px' } as React.CSSProperties), fontSize: 'clamp(38px, 5.2vw, 64px)', lineHeight: 1.08, marginBottom: '28px', maxWidth: '820px', color: 'var(--text)' }}
       >
         {t('hero.titlePrefix')}{' '}
         {/* Un seul mot : la headline est fixe, rien ne tourne. */}
         {words.length > 1 ? <RotatingWord words={words} /> : <span>{words[0]}</span>}{' '}
         {t('hero.titleSuffix')}
-      </motion.h1>
+      </h1>
 
       {/* Badge de preuve, entre le titre et la vidéo (Nathan, 8 novembre 2026). */}
-      <motion.div
-        initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.36, ease }}
-        className="inline-flex items-center gap-2 hero-badge"
-        style={{
+      <div
+        className="inline-flex items-center gap-2 hero-badge ns-in"
+        style={{ animationDelay: '0.36s', animationDuration: '0.7s', ...({ '--ns-y': '12px' } as React.CSSProperties),
           marginBottom: '28px',
           padding: '7px 14px',
           borderRadius: '999px',
@@ -116,14 +116,13 @@ export default function Hero({ label }: { label?: string } = {}) {
         <span className="font-sans" style={{ fontSize: '13px', fontWeight: 400, color: 'var(--text-secondary)' }}>
           {t('hero.aiNote')}
         </span>
-      </motion.div>
+      </div>
 
       {/* VSL sous le titre et le badge (Nathan, 8 novembre 2026) : titre →
           badge → vidéo → boutons → paragraphe. */}
-      <motion.div
-        initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.52, ease }}
-        className="w-full flex justify-center"
-        style={{ marginBottom: '36px' }}
+      <div
+        className="w-full flex justify-center ns-in"
+        style={{ animationDelay: '0.52s', animationDuration: '0.8s', ...({ '--ns-y': '30px' } as React.CSSProperties), marginBottom: '36px' }}
       >
         {/* Sous-titres incrustés dans la vidéo : pas de piste VTT, elle
             doublerait le texte à l'écran. */}
@@ -134,38 +133,36 @@ export default function Hero({ label }: { label?: string } = {}) {
           duration="51 s"
           title={t('hero.vslTitle')}
         />
-      </motion.div>
+      </div>
 
       {/* Un seul bouton : l'audit gratuit. Plus jamais « Réserver un appel »
           (Nathan, 9 novembre 2026). */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.44, ease }}
-        className="flex flex-wrap items-center justify-center gap-3 hero-ctas"
-        style={{ marginBottom: '28px' }}
+      <div
+        className="flex flex-wrap items-center justify-center gap-3 hero-ctas ns-in"
+        style={{ animationDelay: '0.44s', animationDuration: '0.8s', ...({ '--ns-y': '20px' } as React.CSSProperties), marginBottom: '28px' }}
       >
         <Link href={localizedHref(AUDIT_LINK, lang)} className="btn-primary" style={{ fontSize: '14px' }}>
           <span className="btn-primary-dot" />
           {t('hero.ctaAudit')} →
         </Link>
-      </motion.div>
+      </div>
 
       {/* Sous-titre : sous le titre depuis le 4 novembre 2026 (avant, sous la vidéo). */}
-      <motion.p
-        initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.28, ease }}
-        className="font-sans"
-        style={{ fontSize: 'clamp(15px, 3vw, 18px)', fontWeight: 300, color: 'var(--text-secondary)', maxWidth: '720px', lineHeight: 1.6, marginBottom: '0' }}
+      <p
+        className="font-sans ns-in"
+        style={{ animationDelay: '0.28s', animationDuration: '0.8s', ...({ '--ns-y': '20px' } as React.CSSProperties), fontSize: 'clamp(15px, 3vw, 18px)', fontWeight: 300, color: 'var(--text-secondary)', maxWidth: '720px', lineHeight: 1.6, marginBottom: '0' }}
       >
         {t('hero.sub')}
-      </motion.p>
+      </p>
 
 
       {/* Scroll hint, trust bar moved to dedicated <ClientsBar /> below the hero */}
-      <motion.div
-        initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 1.2 }}
-        className="absolute bottom-10 left-0 right-0 flex flex-col items-center gap-4"
+      <div
+        className="absolute bottom-10 left-0 right-0 flex flex-col items-center gap-4 ns-in"
+        style={{ animationDelay: '1.2s', animationDuration: '0.8s', ...({ '--ns-y': '0px' } as React.CSSProperties) }}
       >
         <div className="w-px h-10" style={{ background: 'linear-gradient(to bottom, var(--text-muted), transparent)', animation: 'scrollPulse 2s ease infinite' }} />
-      </motion.div>
+      </div>
 
       <style jsx>{`
         .hero-eyebrow {

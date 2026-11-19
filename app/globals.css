@@ -1497,3 +1497,18 @@ html.light .nav-bar.nav-dark.nav-menu-open {
   .nav-bar .nav-wm-full { display: none; }
   .nav-bar .nav-wm-short { display: inline; }
 }
+
+/* ——— L'ENTRÉE EN FONDU, EN CSS (19/11/2026) ———
+   Le haut des pages était rendu invisible par le serveur (opacité 0) et ne
+   s'affichait qu'une fois le JavaScript chargé : 5,7 s sur mobile en 4G pour le
+   titre de l'accueil, que Google mesure comme LCP. Ce fondu tourne dès que la
+   page s'affiche, sans attendre le JavaScript. Même courbe, même distance.
+   Utilisé par FadeUp (components/ui/FadeUp.tsx) et HeroNight. */
+@keyframes ns-in {
+  from { opacity: 0; transform: translate3d(0, var(--ns-y, 30px), 0); }
+  to { opacity: 1; transform: none; }
+}
+.ns-in { animation: ns-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) both; }
+@media (prefers-reduced-motion: reduce) {
+  .ns-in { animation: none; }
+}
