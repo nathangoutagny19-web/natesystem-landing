@@ -1,4 +1,5 @@
 import type { Lang } from '@/lib/i18n'
+import { localizedHref } from '@/lib/routes'
 
 /**
  * LA CIBLE DE NATESYSTEM : QUATRE SECTEURS (Nathan, 14 novembre 2026 :
@@ -67,6 +68,21 @@ export const SECTOR_LIST: SectorInfo[] = [
 
 /** Le lien vers le détail d'un secteur, sur la page Services. */
 export const sectorHash = (slug: SectorSlug) => `#secteur-${slug}`
+
+/**
+ * LES PAGES PILIERS (stratégie SEO du 19/11/2026) : quand un métier a la
+ * sienne, tous les liens « secteur » du site y mènent (menu, pied de page,
+ * accueil). Sinon, le détail sur la page Services.
+ */
+const PILLAR_HREF: Partial<Record<SectorSlug, { fr: string; en: string }>> = {
+  yachting: { fr: '/logiciel-gestion-yacht-sur-mesure', en: '/en/yacht-management-software' },
+}
+
+export function sectorHref(slug: SectorSlug, lang: Lang): string {
+  const p = PILLAR_HREF[slug]
+  if (p) return lang === 'fr' ? p.fr : p.en
+  return localizedHref('/services', lang) + sectorHash(slug)
+}
 
 /** Événement envoyé par le menu quand on clique un secteur alors qu'on est déjà sur Services. */
 export const SECTOR_EVENT = 'ns:sector'

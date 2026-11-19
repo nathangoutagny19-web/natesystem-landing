@@ -5,7 +5,7 @@ import { SECTORS } from '@/components/home/Sectors'
 import { useLang } from '@/components/providers/LangProvider'
 import { makeD, pick } from '@/lib/lang'
 import { localizedHref } from '@/lib/routes'
-import { SECTOR_LIST, sectorHash } from '@/lib/sectors'
+import { SECTOR_LIST, sectorHref } from '@/lib/sectors'
 
 /**
  * LES DEUX SECTIONS EN DEUX COLONNES DE L'ACCUEIL (refonte du 14 novembre
@@ -32,7 +32,7 @@ export function SectorsSplit() {
           <ul>{builds.map((b) => <li key={b}>{b}</li>)}</ul>
         </>
       ),
-      href: localizedHref('/services', lang) + sectorHash(s.slug),
+      href: sectorHref(s.slug, lang),
       linkLabel: d('Le détail pour ce métier', 'The detail for this trade', 'Részletek ehhez a szakmához'),
     }
   })

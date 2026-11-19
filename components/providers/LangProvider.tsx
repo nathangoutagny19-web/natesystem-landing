@@ -3,7 +3,7 @@
 import { createContext, useContext, useCallback } from 'react'
 import { usePathname, useRouter } from 'next/navigation'
 import { translations, type TranslationKey, type Lang } from '@/lib/i18n'
-import { hasTranslation, isEnglishOnly } from '@/lib/routes'
+import { hasTranslation, isEnglishOnly, PILLAR_ROUTE_PAIRS } from '@/lib/routes'
 
 export type { Lang }
 
@@ -65,6 +65,10 @@ export function useLang() {
  */
 export function mirrorPath(pathname: string, target: Lang): string {
   const withoutPrefix = pathname.replace(/^\/(en|hu)(?=\/|$)/, '') || '/'
+  /* Pages piliers : la version française et l'anglaise ont chacune leur adresse. */
+  const cleanPath = withoutPrefix.replace(/\/+$/, '') || '/'
+  const pair = PILLAR_ROUTE_PAIRS.find((p) => p.fr === cleanPath || p.en === cleanPath)
+  if (pair) return target === 'fr' ? pair.fr : `/en${pair.en}`
   if (isEnglishOnly(withoutPrefix)) return target === 'fr' ? '/' : target === 'en' ? `/en${withoutPrefix.replace(/\/+$/, '')}` : `/${target}`
   if (target === 'fr') return withoutPrefix
   /* Toutes les pages françaises n'ont pas d'équivalent traduit : les villes,

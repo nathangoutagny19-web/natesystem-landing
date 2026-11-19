@@ -6,7 +6,7 @@ import SectorGlyph from '@/components/home/SectorGlyph'
 import { useLang } from '@/components/providers/LangProvider'
 import { makeD } from '@/lib/lang'
 import { localizedHref } from '@/lib/routes'
-import { SECTOR_LIST, sectorHash } from '@/lib/sectors'
+import { SECTOR_LIST, sectorHref } from '@/lib/sectors'
 
 /**
  * POUR QUI (accueil). Depuis le 14 novembre 2026, les quatre secteurs de la
@@ -33,7 +33,7 @@ export default function PourQui() {
         <div className="pq-grid">
           {SECTOR_LIST.map((s, i) => (
             <FadeUp key={s.slug} delay={0.05 * i}>
-              <Link href={localizedHref('/services', lang) + sectorHash(s.slug)} className="pq-tile">
+              <Link href={sectorHref(s.slug, lang)} className="pq-tile">
                 <SectorGlyph index={s.glyph} />
                 <h3 className="font-sans pq-name">{s.name[lang]}</h3>
                 <p className="font-sans pq-line">{s.line[lang]}</p>

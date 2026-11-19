@@ -5,7 +5,7 @@ import Link from 'next/link'
 import SectorGlyph from '@/components/home/SectorGlyph'
 import { makeD } from '@/lib/lang'
 import type { Lang } from '@/lib/i18n'
-import { SECTOR_LIST, sectorHash, type SectorSlug } from '@/lib/sectors'
+import { SECTOR_LIST, sectorHash, type SectorSlug, sectorHref } from '@/lib/sectors'
 
 /**
  * LE PANNEAU « SECTEURS » DU MENU (14 novembre 2026). Nathan, sur la première
@@ -66,7 +66,7 @@ export function SectorsPanel({
           {SECTOR_LIST.map((s, i) => (
             <li key={s.slug} style={{ ['--i' as string]: i }}>
               <Link
-                href={href('/services') + sectorHash(s.slug)}
+                href={sectorHref(s.slug, lang)}
                 className={`smp-item${i === hover ? ' smp-on' : ''}`}
                 tabIndex={open ? 0 : -1}
                 onMouseEnter={() => setHover(i)}

@@ -51,7 +51,16 @@ export const TRANSLATED_ROUTES = [
  * française ni version hongroise. Le drapeau de la nav ramène donc à
  * l'accueil de la langue visée au lieu d'ouvrir une 404.
  */
-export const EN_ONLY_ROUTES = ['/montenegro', '/montenegro/tivat', '/montenegro/kotor'] as const
+export const EN_ONLY_ROUTES = ['/montenegro', '/montenegro/tivat', '/montenegro/kotor', '/yacht-management-software'] as const
+
+/**
+ * LES PAGES PILIERS (19/11/2026) : une adresse française et une adresse
+ * anglaise par métier, chacune écrite pour les recherches de sa langue.
+ * Le drapeau de langue passe de l'une à l'autre.
+ */
+export const PILLAR_ROUTE_PAIRS: { fr: string; en: string }[] = [
+  { fr: '/logiciel-gestion-yacht-sur-mesure', en: '/yacht-management-software' },
+]
 
 const EN_ONLY_SET = new Set<string>(EN_ONLY_ROUTES)
 

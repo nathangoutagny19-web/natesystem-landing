@@ -10,7 +10,7 @@ import { localizedHref } from '@/lib/routes'
 import { LANG_LABEL, makeD } from '@/lib/lang'
 import { PREFIXED_LANGS } from '@/lib/i18n'
 import ScreenMock from '@/components/ui/ScreenMock'
-import { SECTOR_LIST, SECTOR_EVENT, sectorHash, type SectorSlug } from '@/lib/sectors'
+import { SECTOR_LIST, SECTOR_EVENT, sectorHash, type SectorSlug, sectorHref } from '@/lib/sectors'
 import { SectorsPanel, SectorsVeil, useHoverPanel } from '@/components/layout/SectorsPanel'
 
 /* Ouvre le secteur sur la page Services quand on y est déjà (sinon la page
@@ -292,7 +292,7 @@ export default function Nav({ tone }: { tone?: 'dark' } = {}) {
           {SECTOR_LIST.map((s) => (
             <Link
               key={s.slug}
-              href={l('/services') + sectorHash(s.slug)}
+              href={sectorHref(s.slug, lang)}
               className="nav-msec-item"
               onClick={() => {
                 setMenuOpen(false)

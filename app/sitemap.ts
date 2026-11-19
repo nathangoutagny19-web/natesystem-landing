@@ -3,6 +3,7 @@ import { blogPosts } from '@/lib/blog'
 import { allCaseSlugs } from '@/lib/case-studies'
 import { TRANSLATED_ROUTES } from '@/lib/routes'
 import { isPruned } from '@/lib/seo-pruned'
+import { PILLARS } from '@/lib/pillars'
 
 const BASE_URL = 'https://www.natesystem.com'
 
@@ -30,6 +31,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/en/montenegro`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${BASE_URL}/en/montenegro/tivat`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${BASE_URL}/en/montenegro/kotor`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
+    // Pages piliers par métier (19/11/2026), françaises et anglaises reliées.
+    ...PILLARS.flatMap((p) => {
+      const languages = { 'fr-FR': `${BASE_URL}${p.path.fr}`, en: `${BASE_URL}${p.path.en}` }
+      return [
+        { url: `${BASE_URL}${p.path.fr}`, lastModified: now, changeFrequency: 'monthly' as const, priority: 0.95, alternates: { languages } },
+        { url: `${BASE_URL}${p.path.en}`, lastModified: now, changeFrequency: 'monthly' as const, priority: 0.95, alternates: { languages } },
+      ]
+    }),
     { url: `${BASE_URL}/hu/atelier`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
     { url: `${BASE_URL}/glossaire`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
     { url: `${BASE_URL}/a-propos`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },

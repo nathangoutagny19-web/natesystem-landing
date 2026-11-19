@@ -6,7 +6,7 @@ import { makeD } from '@/lib/lang'
 import { AUDIT_LINK } from '@/lib/constants'
 import { localizedHref } from '@/lib/routes'
 import { useTheme } from '@/components/providers/ThemeProvider'
-import { SECTOR_LIST, sectorHash } from '@/lib/sectors'
+import { SECTOR_LIST, sectorHash, sectorHref } from '@/lib/sectors'
 
 /**
  * LE PIED DE PAGE, VERSION NUIT (refonte du 14 novembre 2026). Toujours sur
@@ -44,7 +44,7 @@ export default function Footer() {
             <div className="ft-col">
               <span className="font-mono ft-col-label">{d('Secteurs', 'Industries', 'Ágazatok')}</span>
               {SECTOR_LIST.map((s) => (
-                <Link key={s.slug} href={localizedHref('/services', lang) + sectorHash(s.slug)} className="font-sans ft-link">
+                <Link key={s.slug} href={sectorHref(s.slug, lang)} className="font-sans ft-link">
                   {s.name[lang]}
                 </Link>
               ))}
