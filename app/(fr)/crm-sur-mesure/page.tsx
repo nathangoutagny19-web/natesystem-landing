@@ -159,7 +159,7 @@ export default function CrmSurMesurePage() {
             </p>
             <p className="font-sans" style={{ fontSize: 15.5, color: 'var(--text-secondary)', lineHeight: 1.75, fontWeight: 300, maxWidth: 680, margin: '0 auto', textAlign: 'center' }}>
               C'est souvent la brique commerciale d'un <Link href="/services/logiciel-sur-mesure" style={{ color: 'var(--accent)', textDecoration: 'none' }}>logiciel sur-mesure</Link> plus
-              large. Basé à Lyon, NateSystem accompagne les PME partout en France, à distance et en présentiel selon vos besoins.
+              large. Basé au Monténégro et en France, NateSystem accompagne les PME partout en France, à distance et en présentiel selon vos besoins.
             </p>
           </FadeUp>
         </div>

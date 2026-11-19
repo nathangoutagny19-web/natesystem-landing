@@ -153,7 +153,7 @@ export default function AgenceLogicielSurMesurePage() {
           </FadeUp>
           <FadeUp>
             <p className="font-sans" style={{ fontSize: 15.5, color: 'var(--text-secondary)', lineHeight: 1.75, fontWeight: 300, maxWidth: 680, margin: '0 auto 16px', textAlign: 'center' }}>
-              Basé à Lyon, NateSystem accompagne les entreprises partout en France. On commence par un audit pour
+              Basé au Monténégro et en France, NateSystem accompagne les entreprises partout en France. On commence par un audit pour
               comprendre vos process et chiffrer l'impact, on fixe le périmètre et le prix, puis on livre une
               première version utile, sur le process le plus urgent. On étend ensuite, process après process, sans projet qui
               s'éternise.
