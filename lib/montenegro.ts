@@ -15,7 +15,7 @@
 
 export type MontenegroPageData = {
   /** Chemin sans préfixe de langue, sans slash final. */
-  path: '/montenegro' | '/montenegro/tivat' | '/montenegro/kotor'
+  path: '/montenegro' | '/montenegro/tivat' | '/montenegro/kotor' | '/adriatic'
   title: string
   description: string
   eyebrow: string
@@ -138,6 +138,7 @@ export const MONTENEGRO_PAGES: Record<MontenegroPageData['path'], MontenegroPage
     related: [
       { label: 'Web design and software in Tivat', href: '/en/montenegro/tivat' },
       { label: 'Web design and software in Kotor', href: '/en/montenegro/kotor' },
+      { label: 'Yacht charter software for the Adriatic', href: '/en/adriatic' },
     ],
     why: WHY,
     faq: [
@@ -221,6 +222,7 @@ export const MONTENEGRO_PAGES: Record<MontenegroPageData['path'], MontenegroPage
     related: [
       { label: 'All of Montenegro', href: '/en/montenegro' },
       { label: 'Web design and software in Kotor', href: '/en/montenegro/kotor' },
+      { label: 'Yacht charter software for the Adriatic', href: '/en/adriatic' },
     ],
     why: WHY,
     faq: [
@@ -328,6 +330,114 @@ export const MONTENEGRO_PAGES: Record<MontenegroPageData['path'], MontenegroPage
     ],
     ctaTitle: 'See where your business loses time and direct bookings.',
     ctaText: 'Leave your website. We look at it, and at how your bookings and requests are handled, then send you our audit. Free, no commitment.',
+  },
+  /* LA PAGE ADRIATIQUE (19/11/2026). Charter et gestion de yachts, Monténégro
+     et Croatie. Règle posée par Nathan le 19/11 : la Croatie se fait À
+     DISTANCE, jamais « sur place ». Aucun client croate, aucun chiffre, aucune
+     intégration promise avec les logiciels de réservation du marché. */
+  '/adriatic': {
+    path: '/adriatic',
+    title: 'Yacht Charter Software for the Adriatic | NateSystem',
+    description:
+      'Bespoke software for yacht charter and management companies in Montenegro and Croatia, built from Tivat. Owner statements, APA, check-ins. You own the code.',
+    eyebrow: 'Adriatic · Montenegro · Croatia',
+    h1: 'Bespoke software for yacht charter companies in the Adriatic.',
+    intro:
+      'NateSystem builds custom software for yacht charter and yacht management companies on the Adriatic, from the Bay of Kotor to Dubrovnik, Split and the Croatian islands. We are based in Tivat, Montenegro. In Montenegro we meet you on site; with companies in Croatia we work remotely, by video call and shared screen. The tool is built around the way your team already works, and you own the code.',
+    breadcrumb: [
+      { name: 'NateSystem', href: '/en' },
+      { name: 'Adriatic', href: '/en/adriatic' },
+    ],
+    areaServed: ['Adriatic Sea', 'Montenegro', 'Croatia', 'Tivat', 'Bay of Kotor', 'Dubrovnik', 'Split'],
+    servicesTitle: 'What we build for charter and management companies',
+    services: [
+      {
+        title: 'Charter operations, boat by boat',
+        text: 'Saturday is the hard day: boats come back, boats go out, and the base has a few hours in between. We build the tool that follows each boat through the week, next to the booking system you already use for availability and agents.',
+        items: [
+          'Check-in and check-out per boat, with photos and notes',
+          'Cleaning, repairs and base tasks between two charters',
+          'Extras and deposits followed through to the final invoice',
+        ],
+      },
+      {
+        title: 'Yacht management and owner statements',
+        text: 'Owners want to know what their boat earned and what it cost. Charter income, expenses, invoices and approvals go into one place, and the monthly statement is generated instead of rebuilt in a spreadsheet.',
+        items: [
+          'Expenses and invoices per yacht',
+          'Owner approval before the work starts',
+          'The monthly owner statement, ready to send',
+        ],
+      },
+      {
+        title: 'Crewed charters and APA',
+        text: 'On a crewed charter the APA is spent fast, in several places, by several people. We build the tracking that ties every receipt to the right charter, so the statement is ready when the guests step off.',
+        items: [
+          'Receipts captured on board by the crew',
+          'The APA balance visible during the charter',
+          'The final statement for the client, without retyping',
+        ],
+      },
+      {
+        title: 'Requests, quotes and clients',
+        text: 'Requests arrive by email, WhatsApp and through brokers, in several languages. They go into one list with one person in charge of each, and quotes reuse what you already know about the boat and the client.',
+        items: [
+          'Every request in one list, with who follows it',
+          'Quotes built from the boat and season data',
+          'The client history kept, whoever is on shift',
+        ],
+      },
+    ],
+    painsTitle: 'Where charter operations usually lose time',
+    pains: [
+      'Check-in notes on paper or in someone’s phone, and nobody finds them when the boat comes back damaged.',
+      'Extras and damage found at check-out, then missing from the invoice.',
+      'The owner statement rebuilt every month from the booking system, the bank and a spreadsheet.',
+      'Requests from brokers and direct clients spread across email and WhatsApp.',
+      'A booking system that handles availability well, and everything else kept in spreadsheets around it.',
+    ],
+    painsOutro: 'That work around the booking system is the part we build.',
+    localTitle: 'Based in Tivat, working along the coast',
+    local: [
+      'We are based in Tivat, on the Bay of Kotor, and already build software for a yacht company here. In Montenegro, we come to your office or your base.',
+      'With charter and management companies in Croatia, we work remotely: video calls, shared screens and regular check-ins through the season. Same method, same ownership of the code.',
+    ],
+    related: [
+      { label: 'Web design and software in Tivat', href: '/en/montenegro/tivat' },
+      { label: 'All of Montenegro', href: '/en/montenegro' },
+    ],
+    why: [
+      WHY[1],
+      WHY[2],
+      {
+        title: 'The person who listens writes the code',
+        text: 'Nathan Goutagny, the founder, runs the audit and builds the tool. No sales rep and no junior developer in between.',
+      },
+    ],
+    faq: [
+      {
+        q: 'Do you build software for yacht charter companies in Croatia?',
+        a: 'Yes, remotely. We are based in Tivat, Montenegro, and work with companies in Croatia by video call and shared screen. In Montenegro, we meet on site.',
+      },
+      {
+        q: 'Do we have to replace our booking system?',
+        a: 'No. You keep the booking system you use for availability and agents, and we build what is missing around it: check-ins, extras, owner statements, APA, requests. Whether the two can exchange data depends on the system, and we check it during the audit.',
+      },
+      {
+        q: 'Can you track the APA on crewed charters?',
+        a: 'Yes. We build it around your process: receipts captured on board and tied to the charter, the balance visible during the trip, and the final statement generated at the end.',
+      },
+      {
+        q: 'Who owns the software?',
+        a: 'You do. The code and the data are yours, and you keep everything if you stop working with us.',
+      },
+      {
+        q: 'How do we start?',
+        a: 'With a free audit. We look at how your boats, requests and owners are handled today, and you leave with what we found. No commitment.',
+      },
+    ],
+    ctaTitle: 'See where your charter operation loses time.',
+    ctaText: 'Book a slot for the free audit. We look at how your boats, requests and owners are handled today, and you leave with what we found. Free, no commitment.',
   },
 }
 

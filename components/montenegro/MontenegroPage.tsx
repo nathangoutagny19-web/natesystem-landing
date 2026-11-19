@@ -19,6 +19,7 @@ const LOCAL_LINKS: Record<string, { href: string; label: string }[]> = {
   '/montenegro': [PILLAR_LINKS.yacht, PILLAR_LINKS.concierge, PILLAR_LINKS.villas, PILLAR_LINKS.hotels],
   '/montenegro/tivat': [PILLAR_LINKS.yacht, PILLAR_LINKS.apa, PILLAR_LINKS.concierge, PILLAR_LINKS.villas, PILLAR_LINKS.owner],
   '/montenegro/kotor': [PILLAR_LINKS.hotels, PILLAR_LINKS.villas, PILLAR_LINKS.concierge],
+  '/adriatic': [PILLAR_LINKS.yacht, PILLAR_LINKS.apa, PILLAR_LINKS.owner],
 }
 
 /**

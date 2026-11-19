@@ -32,6 +32,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/en/montenegro`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${BASE_URL}/en/montenegro/tivat`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${BASE_URL}/en/montenegro/kotor`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
+    // Adriatique, Monténégro et Croatie (19/11/2026).
+    { url: `${BASE_URL}/en/adriatic`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
     // Guides « problèmes » (19/11/2026), avec l'autre langue quand elle existe.
     ...GUIDES.map((g) => ({
       url: `${BASE_URL}${g.path}`,

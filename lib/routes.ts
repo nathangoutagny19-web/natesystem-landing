@@ -52,7 +52,7 @@ export const TRANSLATED_ROUTES = [
  * l'accueil de la langue visée au lieu d'ouvrir une 404.
  */
 export const EN_ONLY_ROUTES = [
-  '/montenegro', '/montenegro/tivat', '/montenegro/kotor',
+  '/montenegro', '/montenegro/tivat', '/montenegro/kotor', '/adriatic',
   '/yacht-management-software', '/luxury-concierge-software', '/luxury-villa-management-software', '/luxury-hotel-software',
   '/guides/yacht-charter-apa-tracking', '/guides/owner-statement',
 ] as const
