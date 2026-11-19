@@ -81,7 +81,7 @@ export const blogPosts: BlogPost[] = [
   <li><strong>Pas de chiffrage du ROI.</strong> Un bon prestataire estime ce que le logiciel vous fait gagner. Si on ne vous parle que de coût, c'est mauvais signe.</li>
 </ul>
 
-<p>Pour creuser ce point, voir aussi notre guide pour <a href="/comment-choisir-prestataire-logiciel-ia">choisir son prestataire</a>.</p>
+<p>Pour creuser ce point, voir aussi notre guide pour <a href="/blog/comment-choisir-prestataire-logiciel-ia">choisir son prestataire</a>.</p>
 
 <h2 id="faq">FAQ</h2>
 

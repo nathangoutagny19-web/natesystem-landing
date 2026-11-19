@@ -158,7 +158,7 @@ export default function LogicielGestionSurMesurePage() {
               votre entreprise a besoin, épouse vos process réels, et vous appartient, code livré, hébergé en UE.
             </p>
             <p className="font-sans" style={{ fontSize: 15.5, color: 'var(--text-secondary)', lineHeight: 1.75, fontWeight: 300, maxWidth: 680, margin: '0 auto', textAlign: 'center' }}>
-              Pour comparer les deux approches en détail, voyez notre page <Link href="/erp-vs-logiciel-sur-mesure" style={{ color: 'var(--accent)', textDecoration: 'none' }}>ERP vs logiciel sur-mesure</Link>.
+              Pour comparer les deux approches en détail, voyez notre page <Link href="/blog/erp-vs-logiciel-sur-mesure" style={{ color: 'var(--accent)', textDecoration: 'none' }}>ERP vs logiciel sur-mesure</Link>.
               Le choix dépend de votre activité, de vos volumes et de votre budget, on en parle pendant l'audit.
             </p>
           </FadeUp>
@@ -222,7 +222,7 @@ export default function LogicielGestionSurMesurePage() {
       <RelatedLinks
         links={[
           { href: '/', label: 'Vous êtes une école privée ?', desc: 'C\'est là qu\'on a le plus de valeur à apporter.' },
-          { href: '/erp-vs-logiciel-sur-mesure', label: 'ERP vs logiciel sur-mesure', desc: 'Quelle approche pour votre PME ?' },
+          { href: '/blog/erp-vs-logiciel-sur-mesure', label: 'ERP vs logiciel sur-mesure', desc: 'Quelle approche pour votre PME ?' },
           { href: '/services/logiciel-sur-mesure', label: 'Le logiciel sur-mesure', desc: 'Ce qu\'on construit, en détail.' },
           { href: '/prix-logiciel-sur-mesure', label: 'Combien ça coûte ?', desc: 'Les fourchettes de prix réalistes.' },
           { href: '/services/audit', label: 'L\'audit offert', desc: 'Comment se passe le premier appel.' },

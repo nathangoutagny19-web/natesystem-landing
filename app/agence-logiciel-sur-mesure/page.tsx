@@ -160,7 +160,7 @@ export default function AgenceLogicielSurMesurePage() {
             </p>
             <p className="font-sans" style={{ fontSize: 15.5, color: 'var(--text-secondary)', lineHeight: 1.75, fontWeight: 300, maxWidth: 680, margin: '0 auto', textAlign: 'center' }}>
               Pour aller plus loin sur les critères de sélection, on a détaillé{' '}
-              <Link href="/comment-choisir-prestataire-logiciel-ia" style={{ color: 'var(--accent)', textDecoration: 'none' }}>comment choisir son prestataire</Link>{' '}
+              <Link href="/blog/comment-choisir-prestataire-logiciel-ia" style={{ color: 'var(--accent)', textDecoration: 'none' }}>comment choisir son prestataire</Link>{' '}
               de logiciel et d'IA. C'est le meilleur point de départ avant de lancer un projet.
             </p>
           </FadeUp>
@@ -224,7 +224,7 @@ export default function AgenceLogicielSurMesurePage() {
       <RelatedLinks
         links={[
           { href: '/', label: 'Vous êtes une école privée ?', desc: 'C\'est là qu\'on a le plus de valeur à apporter.' },
-          { href: '/comment-choisir-prestataire-logiciel-ia', label: 'Comment choisir son prestataire', desc: 'Les critères pour ne pas se tromper.' },
+          { href: '/blog/comment-choisir-prestataire-logiciel-ia', label: 'Comment choisir son prestataire', desc: 'Les critères pour ne pas se tromper.' },
           { href: '/services/logiciel-sur-mesure', label: 'Le logiciel sur-mesure', desc: 'Ce qu\'on construit, en détail.' },
           { href: '/prix-logiciel-sur-mesure', label: 'Combien ça coûte ?', desc: 'Les fourchettes de prix réalistes.' },
           { href: '/services/audit', label: 'L\'audit de besoins', desc: 'Le point de départ de tout projet.' },

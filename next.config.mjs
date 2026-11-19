@@ -39,6 +39,10 @@ const nextConfig = {
         permanent: true,
       },
       // Les 3 anciennes calculettes sont consolidées dans Le Diagnostic IA.
+      // Liens internes écrits sans /blog/ (404 relevées par Search Console, 19/11/2026).
+      { source: '/comment-choisir-prestataire-logiciel-ia', destination: '/blog/comment-choisir-prestataire-logiciel-ia/', permanent: true },
+      { source: '/crm-agence-immobiliere-sur-mesure', destination: '/blog/crm-agence-immobiliere-sur-mesure/', permanent: true },
+      { source: '/erp-vs-logiciel-sur-mesure', destination: '/blog/erp-vs-logiciel-sur-mesure/', permanent: true },
       // Redirections 301 permanentes pour préserver le SEO et les liens partagés.
       {
         source: '/tools/saas-calculator',
