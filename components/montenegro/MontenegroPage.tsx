@@ -6,6 +6,21 @@ import Hero from '@/components/home/Hero'
 import { SITE_URL } from '@/lib/constants'
 import type { MontenegroPageData } from '@/lib/montenegro'
 
+/* Les liens vers les pages métiers depuis chaque page locale (19/11/2026). */
+const PILLAR_LINKS = {
+  yacht: { href: '/en/yacht-management-software', label: 'Custom yacht management software' },
+  apa: { href: '/en/guides/yacht-charter-apa-tracking', label: 'Guide: tracking the APA on a yacht charter' },
+  concierge: { href: '/en/luxury-concierge-software', label: 'Software for luxury concierge services' },
+  villas: { href: '/en/luxury-villa-management-software', label: 'Luxury villa and estate management software' },
+  hotels: { href: '/en/luxury-hotel-software', label: 'Custom software for luxury hotels' },
+  owner: { href: '/en/guides/owner-statement', label: 'Guide: owner statements for villas and yachts' },
+}
+const LOCAL_LINKS: Record<string, { href: string; label: string }[]> = {
+  '/montenegro': [PILLAR_LINKS.yacht, PILLAR_LINKS.concierge, PILLAR_LINKS.villas, PILLAR_LINKS.hotels],
+  '/montenegro/tivat': [PILLAR_LINKS.yacht, PILLAR_LINKS.apa, PILLAR_LINKS.concierge, PILLAR_LINKS.villas, PILLAR_LINKS.owner],
+  '/montenegro/kotor': [PILLAR_LINKS.hotels, PILLAR_LINKS.villas, PILLAR_LINKS.concierge],
+}
+
 /**
  * Les pages Monténégro (/en/montenegro, /tivat, /kotor), anglais seulement.
  *
@@ -140,6 +155,22 @@ export default function MontenegroPage({ data }: { data: MontenegroPageData }) {
               </div>
             ))}
           </div>
+        </section>
+
+        {/* Par métier : les pages piliers et les guides (SEO local, 19/11/2026).
+            Chaque page locale renvoie vers les métiers qu'elle sert. */}
+        <section style={{ padding: '24px 20px 72px', maxWidth: 820, margin: '0 auto' }}>
+          <h2 className="font-serif italic font-normal text-center" style={h2}>By industry</h2>
+          <ul style={{ listStyle: 'none', margin: '28px 0 0', padding: 0, borderTop: '1px solid var(--border)' }}>
+            {(LOCAL_LINKS[data.path] ?? []).map((l) => (
+              <li key={l.href} style={{ borderBottom: '1px solid var(--border)' }}>
+                <Link href={l.href} className="font-sans" style={{ display: 'flex', justifyContent: 'space-between', gap: 16, padding: '16px 0', fontSize: 17, color: 'var(--text)', textDecoration: 'none' }}>
+                  <span>{l.label}</span>
+                  <span aria-hidden="true">→</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
         </section>
 
         {/* FAQ */}
