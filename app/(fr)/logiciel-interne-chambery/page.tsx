@@ -43,7 +43,7 @@ const pains = [
 const guarantees = [
   'Code source livré · votre entreprise est propriétaire à 100 %',
   'Données hébergées en UE · RGPD-natif',
-  'En production en 4 à 8 semaines · périmètre et prix fixes',
+  'Périmètre et prix fixés avant de commencer',
   'Formation de l\'équipe jusqu\'à l\'autonomie',
 ]
 

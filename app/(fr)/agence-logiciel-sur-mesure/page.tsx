@@ -22,9 +22,9 @@ const solutions = [
     metric: 'Aucune mauvaise surprise sur le devis',
   },
   {
-    title: 'Une livraison en 4 à 8 semaines',
+    title: 'Une première version, puis on étend',
     desc: 'On met en production le process qui vous fait le plus mal, puis on étend. C\'est la méthode qui évite les projets sans fin et les solutions livrées un an trop tard.',
-    metric: 'En production en 4 à 8 semaines',
+    metric: 'Le process le plus urgent en premier',
   },
   {
     title: 'Un logiciel que vous possédez',
@@ -43,7 +43,7 @@ const pains = [
 const guarantees = [
   'Code source livré · votre entreprise est propriétaire à 100 %',
   'Données hébergées en UE · RGPD-natif',
-  'En production en 4 à 8 semaines · périmètre et prix fixes',
+  'Périmètre et prix fixés avant de commencer',
   'Formation de l\'équipe jusqu\'à l\'autonomie',
 ]
 
@@ -155,7 +155,7 @@ export default function AgenceLogicielSurMesurePage() {
             <p className="font-sans" style={{ fontSize: 15.5, color: 'var(--text-secondary)', lineHeight: 1.75, fontWeight: 300, maxWidth: 680, margin: '0 auto 16px', textAlign: 'center' }}>
               Basé à Lyon, NateSystem accompagne les entreprises partout en France. On commence par un audit pour
               comprendre vos process et chiffrer l'impact, on fixe le périmètre et le prix, puis on livre une
-              première version utile en 4 à 8 semaines. On étend ensuite, process après process, sans projet qui
+              première version utile, sur le process le plus urgent. On étend ensuite, process après process, sans projet qui
               s'éternise.
             </p>
             <p className="font-sans" style={{ fontSize: 15.5, color: 'var(--text-secondary)', lineHeight: 1.75, fontWeight: 300, maxWidth: 680, margin: '0 auto', textAlign: 'center' }}>
@@ -203,7 +203,7 @@ export default function AgenceLogicielSurMesurePage() {
               },
               {
                 q: 'Combien de temps pour développer un logiciel sur-mesure ?',
-                a: 'Une première version utile se livre en général en 4 à 8 semaines, à condition que le périmètre soit cadré dès le départ. On commence par le process qui vous fait le plus mal, on le met en production, puis on étend. C\'est la méthode qui évite les projets sans fin.',
+                a: 'Le délai dépend surtout du périmètre : on le fixe ensemble pendant l\'audit, avant de commencer. On commence par le process qui vous fait le plus mal, on le met en production, puis on étend. C\'est la méthode qui évite les projets sans fin.',
               },
               {
                 q: 'À qui appartient le logiciel développé par l\'agence ?',

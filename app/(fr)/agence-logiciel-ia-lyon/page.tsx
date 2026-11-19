@@ -28,7 +28,7 @@ const doors = [
 const points = [
   'Code source livré · vous êtes propriétaire à 100 %',
   'Données hébergées en UE · RGPD-natif',
-  'En production en 4 à 8 semaines · périmètre et prix fixes',
+  'Périmètre et prix fixés avant de commencer',
   'Stack moderne : Next.js · Supabase · Claude API',
 ]
 

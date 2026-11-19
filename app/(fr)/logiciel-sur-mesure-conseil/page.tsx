@@ -167,7 +167,7 @@ export default function ConseilPage() {
             {[
               'Votre secret client préservé · données hébergées en UE · RGPD-natif',
               'Code source livré · vous êtes propriétaire à 100 %',
-              'En production en 4 à 8 semaines · ROI mesuré dès les premières semaines',
+              'ROI mesuré dès les premières semaines',
             ].map((g) => (
               <li key={g} className="flex items-start gap-3" style={{ fontSize: 14.5, color: 'var(--text-secondary)', lineHeight: 1.55, fontWeight: 300 }}>
                 <Check size={16} strokeWidth={2.2} style={{ color: 'var(--accent)', flexShrink: 0, marginTop: 3 }} />

@@ -215,7 +215,7 @@ export default function ClubSportifPage() {
             {[
               'Code source livré · le club est propriétaire à 100 %',
               'Données hébergées en UE · RGPD-natif',
-              'En production en 4 à 8 semaines · vos équipes continuent de travailler',
+              'Vos équipes continuent de travailler pendant la construction',
             ].map((g) => (
               <li key={g} className="flex items-start gap-3" style={{ fontSize: 14.5, color: 'var(--text-secondary)', lineHeight: 1.55, fontWeight: 300 }}>
                 <Check size={16} strokeWidth={2.2} style={{ color: 'var(--accent)', flexShrink: 0, marginTop: 3 }} />

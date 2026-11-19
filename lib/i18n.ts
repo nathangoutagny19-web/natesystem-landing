@@ -1104,7 +1104,7 @@ export const translations = {
   'sols.s2.bullet3': { en: 'Your processes structured, streamlined and automated', fr: 'Vos process structurés, fluidifiés et automatisés', hu: 'A folyamatai rendszerezve, gördülékenyebben, automatizálva' },
   'sols.s2.bullet4': { en: 'Clear roles and workflows, your team knows what to do', fr: 'Rôles et workflows clairs, l\'équipe sait quoi faire', hu: 'Világos szerepkörök és munkafolyamatok, a csapat tudja a dolgát' },
   'sols.s2.bullet5': { en: 'The code belongs to you, 100%', fr: 'Le code vous appartient à 100%', hu: 'A kód 100%-ban az Öné' },
-  'sols.s2.bullet6': { en: 'In production in 4 to 8 weeks · hosted in the EU', fr: 'En production en 4 à 8 semaines · hébergé en UE', hu: 'Élesben 4-8 hét alatt · EU-s tárhelyen' },
+  'sols.s2.bullet6': { en: 'Hosted in the EU', fr: 'Hébergé en UE', hu: 'EU-s tárhelyen' },
   'sols.s2.ideal': {
     en: 'Executives tired of juggling spreadsheets, emails and ten tools that don\'t talk to each other.',
     fr: 'Les dirigeants qui en ont marre de jongler entre Excel, mails et dix logiciels qui ne se parlent pas.',

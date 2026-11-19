@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Agence de logiciel sur-mesure : comment choisir',
     description:
-      'Comment choisir une agence de logiciel sur-mesure : méthode, périmètre fixe, livraison en 4 à 8 semaines, propriété du code. NateSystem conçoit vos solutions logicielles.',
+      'Comment choisir une agence de logiciel sur-mesure : méthode, périmètre fixe, livraison par étapes, propriété du code. NateSystem conçoit vos solutions logicielles.',
     url: 'https://www.natesystem.com/agence-logiciel-sur-mesure',
     type: 'website',
     locale: 'fr_FR',
@@ -38,7 +38,7 @@ const jsonLd = {
       serviceType: 'Développement de logiciel sur-mesure, logiciel métier, solutions logicielles, intégration IA, audit de besoins',
       audience: { '@type': 'BusinessAudience', audienceType: 'Entreprises et PME de 5 à 100 collaborateurs en France' },
       description:
-        'Agence de développement de logiciel sur-mesure : audit du besoin, périmètre et prix fixes, livraison en 4 à 8 semaines, code source livré et propriété 100 %. Solutions logicielles métier pour entreprise, avec ou sans IA, hébergées en UE.',
+        'Agence de développement de logiciel sur-mesure : audit du besoin, périmètre et prix fixes, livraison par étapes, code source livré et propriété 100 %. Solutions logicielles métier pour entreprise, avec ou sans IA, hébergées en UE.',
     },
     {
       '@type': 'FAQPage',
@@ -64,7 +64,7 @@ const jsonLd = {
           name: 'Combien de temps pour développer un logiciel sur-mesure ?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Une première version utile d\'un logiciel sur-mesure se livre en général en 4 à 8 semaines, à condition que le périmètre soit cadré dès le départ. On commence par le process qui vous fait le plus mal, on le met en production, puis on étend. C\'est la méthode qui évite les projets sans fin.',
+            text: 'Le délai dépend surtout du périmètre : on le fixe ensemble pendant l\'audit, avant de commencer. On commence par le process qui vous fait le plus mal, on le met en production, puis on étend. C\'est la méthode qui évite les projets sans fin.',
           },
         },
         {
