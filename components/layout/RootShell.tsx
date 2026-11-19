@@ -3,6 +3,7 @@
    _document du Pages Router : ces deux règles ne s'y appliquent pas. */
 import { DM_Sans } from 'next/font/google'
 import { ThemeProvider } from '@/components/providers/ThemeProvider'
+import StyledJsxRegistry from '@/components/providers/StyledJsxRegistry'
 import { LangProvider } from '@/components/providers/LangProvider'
 import WhatsAppFloat from '@/components/layout/WhatsAppFloat'
 import CookieConsent from '@/components/site/CookieConsent'
@@ -129,6 +130,7 @@ export default function RootShell({ lang, children }: { lang: Lang; children: Re
             only injects those scripts AFTER the visitor clicks "Accepter". */}
       </head>
       <body>
+        <StyledJsxRegistry>
         <ThemeProvider>
           <LangProvider initialLang={lang}>
             {/* La grille de fond et la lueur qui suivait la souris sont retirées
@@ -139,6 +141,7 @@ export default function RootShell({ lang, children }: { lang: Lang; children: Re
             <CookieConsent />
           </LangProvider>
         </ThemeProvider>
+        </StyledJsxRegistry>
         <Analytics />
       </body>
     </html>
