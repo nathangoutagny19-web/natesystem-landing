@@ -3,9 +3,9 @@ import { enMetadata } from '@/lib/en-metadata'
 
 export const metadata: Metadata = enMetadata({
   path: '/services/ia',
-  title: 'Agentic AI & data analytics: AI that works for you | NateSystem',
+  title: 'Automation for luxury hospitality | NateSystem',
   description:
-    'Agentic AI with a lasting memory that runs tasks end to end, learns your trade and improves over time. Data analytics so you decide on facts. Built in only where it replaces real hours. Free audit.',
+    'A first reply in the client’s language, reconfirmations, deposit follow-ups, WhatsApp threads sorted into clear requests. The tool suggests, you decide.',
 })
 
 export default function EnServicesIaLayout({ children }: { children: React.ReactNode }) {

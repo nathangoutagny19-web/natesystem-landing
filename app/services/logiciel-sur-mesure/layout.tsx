@@ -1,9 +1,10 @@
 import type { Metadata } from 'next'
+import { localeAlternates } from '@/lib/en-metadata'
 
 export const metadata: Metadata = {
-  title: 'Logiciel sur-mesure pour l\'hôtellerie de prestige, NateSystem',
+  title: 'Logiciel sur mesure : villas, conciergeries, yachts, hôtels',
   description:
-    'Le logiciel sur-mesure des villas, chalets, conciergeries de luxe, yachts, hôtels indépendants et lieux de réception : vous saisissez une fois, toute l\'organisation suit. Code 100 % à vous, hébergé en UE, un partenariat qui évolue avec vous. Appel offert.',
+    'Le logiciel sur mesure des villas, conciergeries de luxe, yachts et hôtels : vous saisissez une fois, toute l’équipe suit. Le code est à vous. Audit gratuit.',
   keywords: [
     'logiciel sur-mesure hôtellerie de luxe',
     'logiciel conciergerie de luxe',
@@ -13,9 +14,9 @@ export const metadata: Metadata = {
     'logiciel gestion yacht',
     'logiciel métier sur-mesure',
   ],
-  alternates: { canonical: 'https://www.natesystem.com/services/logiciel-sur-mesure' },
+  alternates: localeAlternates('fr', '/services/logiciel-sur-mesure'),
   openGraph: {
-    title: 'Logiciel sur-mesure pour l\'hôtellerie de prestige, NateSystem',
+    title: 'Logiciel sur mesure : villas, conciergeries, yachts, hôtels',
     description:
       'Fournisseurs, équipes, séjours et événements, devis, facturation : une seule saisie, toute l\'organisation suit. L\'outil propose, une personne décide. Code livré, hébergé en UE.',
     url: 'https://www.natesystem.com/services/logiciel-sur-mesure',
@@ -25,7 +26,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Logiciel sur-mesure pour l\'hôtellerie de prestige, NateSystem',
+    title: 'Logiciel sur mesure : villas, conciergeries, yachts, hôtels',
     description: 'Vous saisissez une fois, toute l\'organisation suit. Code 100 % à vous, hébergé en UE.',
   },
 }

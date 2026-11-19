@@ -6,7 +6,7 @@ export const metadata: Metadata = localeMetadata({
   path: '/services/logiciel-sur-mesure',
   title: 'Egyedi szoftver és platform | NateSystem',
   description:
-    'Az egyedi üzleti szoftver, amely egyetlen platformba vonja az eszközeit és az adatait: egységes adatbázis, irányítópultok, portálok, belső eszközök. A kód az Öné, EU-s tárhelyen. Élesben 4-8 hét alatt. Ingyenes audit.',
+    'Egyedi üzleti szoftver, amely egyetlen platformba vonja az eszközeit és az adatait: egységes adatbázis, irányítópultok, portálok. A kód az Öné.',
 })
 
 export default function HuServicesLogicielSurMesureLayout({ children }: { children: React.ReactNode }) {

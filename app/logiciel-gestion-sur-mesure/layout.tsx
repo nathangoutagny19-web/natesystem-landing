@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Logiciel de gestion sur-mesure pour PME | NateSystem',
   description:
-    'Logiciel de gestion sur-mesure pour piloter toute votre PME : ventes, opérations, stocks, équipe. Une solution unique qui remplace l\'ERP rigide. Code livré, propriété 100 %, hébergé en UE. Audit offert.',
+    'Un logiciel de gestion sur mesure pour piloter ventes, opérations, stocks et équipe au même endroit. Le code vous appartient, hébergé en UE. Audit gratuit.',
   alternates: { canonical: 'https://www.natesystem.com/logiciel-gestion-sur-mesure' },
   openGraph: {
     title: 'Logiciel de gestion sur-mesure pour PME | NateSystem',

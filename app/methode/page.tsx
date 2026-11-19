@@ -1,18 +1,20 @@
 import type { Lang } from '@/lib/i18n'
 import type { Metadata } from 'next'
+import { localeAlternates } from '@/lib/en-metadata'
 import MethodeContent from '@/components/methode/MethodeContent'
 
 export const metadata: Metadata = {
-  title: 'Notre méthode : on cartographie votre organisation avant de construire | NateSystem',
+  title: 'La méthode : cartographier avant de construire | NateSystem',
   description:
-    'La méthode NateSystem pour l\'hospitalité de luxe et de prestige : cartographier, réunir, automatiser, former, puis faire évoluer avec vous. On comprend d\'abord où se perdent le temps et les clients, puis on construit le système sur mesure qui règle ça. Vous êtes propriétaire du code.',
-  alternates: {
-    canonical: 'https://www.natesystem.com/methode',
-    languages: {
-      'fr-FR': 'https://www.natesystem.com/methode',
-      en: 'https://www.natesystem.com/en/methode',
-      'x-default': 'https://www.natesystem.com/methode',
-    },
+    'Cartographier, réunir, automatiser, former, faire évoluer. On trouve d’abord où se perdent le temps et les clients, puis on construit. Le code est à vous.',
+  alternates: localeAlternates('fr', '/methode'),
+  openGraph: {
+    title: 'La méthode : cartographier avant de construire | NateSystem',
+    description: 'Cartographier, réunir, automatiser, former, faire évoluer. On trouve d’abord où se perdent le temps et les clients, puis on construit. Le code est à vous.',
+    url: 'https://www.natesystem.com/methode/',
+    type: 'website',
+    locale: 'fr_FR',
+    images: [{ url: '/og-image-2026-11.png', width: 1200, height: 630, alt: 'NateSystem' }],
   },
 }
 

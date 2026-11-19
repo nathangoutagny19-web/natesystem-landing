@@ -4,7 +4,7 @@ import { SITE_URL } from '@/lib/constants'
 export const metadata: Metadata = {
   title: 'Ingyenes 3 órás workshop a tantestületének · NateSystem',
   description:
-    'Három óra ajándékba a tantestületének: minden tanár megépíti a saját tanórai eszközét, kipróbálja a diákjai valódi dolgozatain, és magával viszi. Fejlesztő nélkül, az iskolában vagy online. Ebben a negyedévben három intézmény.',
+    'Három óra ajándékba a tantestületének: minden tanár megépíti a saját tanórai eszközét, kipróbálja a diákjai valódi dolgozatain, és magával viszi.',
   keywords: [
     'workshop tanároknak',
     'digitális eszközök tanároknak',

@@ -3,9 +3,9 @@ import { enMetadata } from '@/lib/en-metadata'
 
 export const metadata: Metadata = enMetadata({
   path: '/services/formation',
-  title: 'Training & support, all the way to full autonomy | NateSystem',
+  title: 'Training & support, all the way to autonomy | NateSystem',
   description:
-    'We train your teams, from leadership to the field, to run their own custom software until they are fully autonomous. Full documentation, code and infrastructure 100 % yours. You depend on nobody. Free call.',
+    'We train your teams, from management to the field, to run their own software until they are fully autonomous. Full documentation. Code and data are yours.',
 })
 
 export default function EnServicesFormationLayout({ children }: { children: React.ReactNode }) {

@@ -3,9 +3,9 @@ import { enMetadata } from '@/lib/en-metadata'
 
 export const metadata: Metadata = enMetadata({
   path: '/services',
-  title: 'Our services for luxury and prestige hospitality | NateSystem',
+  title: 'Our services for luxury hospitality | NateSystem',
   description:
-    'Diagnostic, bespoke system and online presence, automation and data, training: a long-term partnership for luxury hotels, concierge and travel designers, property management, yachting and charter. You own the code.',
+    'Diagnostic, bespoke software, automation and training for luxury hotels, concierge services, property managers and yachting. You own the code.',
 })
 
 export default function EnServicesLayout({ children }: { children: React.ReactNode }) {

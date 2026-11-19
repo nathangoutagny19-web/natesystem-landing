@@ -385,7 +385,7 @@ export const PROPERTIES: Pillar = {
   glyph: 1,
   path: { fr: '/logiciel-gestion-villas-de-luxe', en: '/en/luxury-villa-management-software' },
   meta: {
-    title: { fr: 'Logiciel de gestion de villas et domaines de luxe | NateSystem', en: 'Luxury Villa & Estate Management Software | NateSystem' },
+    title: { fr: 'Logiciel de gestion de villas et domaines de luxe', en: 'Luxury Villa & Estate Management Software | NateSystem' },
     description: {
       fr: 'Interventions, prestataires, propriétaires, facturation : un logiciel sur mesure pour gérer villas, chalets et domaines de luxe. Le code vous appartient.',
       en: 'Jobs, suppliers, owners and invoicing in one place: custom software to manage luxury villas, chalets and estates. You own the code.',

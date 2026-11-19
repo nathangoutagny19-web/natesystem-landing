@@ -7,9 +7,9 @@ import { SITE_URL } from '@/lib/constants'
  * fait venir les gens. Les livrables, eux, sont derrière la porte.
  */
 export const metadata: Metadata = {
-  title: 'La bibliothèque NateSystem · vidéos et outils pour écoles privées',
+  title: 'Vidéos et outils pour les écoles privées | NateSystem',
   description:
-    'Tout ce que NateSystem publie pour les écoles privées, au même endroit : les vidéos, et surtout les cartographies, grilles de décision et modèles qui vont avec. Accès avec votre prénom et votre email.',
+    'Les vidéos NateSystem pour les écoles privées, avec les cartographies, grilles de décision et modèles qui vont avec. Accès avec votre prénom et votre email.',
   keywords: [
     'ressources école privée',
     'outils gestion établissement scolaire',

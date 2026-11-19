@@ -5,7 +5,7 @@ export const metadata: Metadata = enMetadata({
   path: '/reviews',
   title: 'NateSystem · Reviews, review intelligence software (demo)',
   description:
-    'NateSystem · Reviews is a review intelligence product: AI scoring on six aspects, response drafting in your brand voice, 90-day action plans. The demo runs on mock data, request access via the form.',
+    'NateSystem · Reviews reads your guest reviews: a score on six aspects, replies in your brand voice, a 90-day action plan. The demo runs on sample data.',
 })
 
 export default function EnReviewsLayout({ children }: { children: React.ReactNode }) {

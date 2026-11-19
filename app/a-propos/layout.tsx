@@ -1,10 +1,11 @@
 import type { Metadata } from 'next'
+import { localeAlternates } from '@/lib/en-metadata'
 
 export const metadata: Metadata = {
   title: 'À propos, Nathan Goutagny, fondateur de NateSystem',
   description:
-    'NateSystem construit des logiciels sur mesure pour l’hospitalité de luxe, et ils appartiennent à leurs clients. Fondé par Nathan Goutagny, basé au Monténégro et en France.',
-  alternates: { canonical: 'https://www.natesystem.com/a-propos' },
+    'Des logiciels sur mesure pour l’hospitalité de luxe, qui appartiennent à leurs clients. Fondé par Nathan Goutagny, basé au Monténégro et en France.',
+  alternates: localeAlternates('fr', '/a-propos'),
   openGraph: {
     title: 'À propos, Nathan Goutagny, fondateur de NateSystem',
     description:

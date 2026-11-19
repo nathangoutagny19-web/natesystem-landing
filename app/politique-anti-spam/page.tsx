@@ -1,13 +1,16 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import type { Lang } from '@/lib/i18n'
+import { localeMetadata } from '@/lib/en-metadata'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = localeMetadata({
+  lang: 'fr',
+  path: '/politique-anti-spam',
   title: 'Politique anti-spam, NateSystem',
   description:
-    'Politique de NateSystem contre la promotion par messages non sollicités. Engagements, pratiques d\'envoi, droit d\'opposition. Anti-spam policy in English below.',
+    'Politique de NateSystem contre les messages non sollicités : nos engagements, nos pratiques d’envoi, votre droit d’opposition. English version below.',
   robots: { index: true, follow: true },
-}
+})
 
 export default function PolitiqueAntiSpam({ lang = 'fr' }: { lang?: Lang }) {
   /* Servie aussi sous /en : le lien de retour doit rester dans l'arbre affiché,

@@ -8,6 +8,30 @@ export function generateStaticParams() {
   return blogPosts.map((post) => ({ slug: post.slug }))
 }
 
+/* TITRES GOOGLE DES ARTICLES INDEXÉS (19/11/2026) : 60 caractères au plus,
+   sinon Google coupe au milieu de la phrase. Le titre de l'article (H1)
+   reste le titre long de lib/blog.ts. */
+const SEO_TITLES: Record<string, string> = {
+  'combien-coute-logiciel-sur-mesure-2026': 'Combien coûte un logiciel sur-mesure en 2026 ? | NateSystem',
+  'combien-de-temps-developper-logiciel-metier': 'Combien de temps pour développer un logiciel métier ?',
+  'logiciel-sur-mesure-par-ou-commencer-audit': 'Logiciel sur-mesure : par où commencer ? | NateSystem',
+  'construire-base-donnees-centralisee-pme-guide': 'Base de données centralisée pour PME : le guide pas à pas',
+  'base-de-donnees-vs-excel-pourquoi-migrer': 'Base de données ou Excel : pourquoi migrer maintenant',
+  'cout-reel-outils-non-connectes-pme': 'Le coût réel des outils non connectés dans votre PME',
+  'comment-choisir-prestataire-logiciel-ia': 'Comment choisir son prestataire logiciel et IA en 2026',
+  'erp-vs-logiciel-sur-mesure': 'ERP ou logiciel sur-mesure : lequel choisir ? | NateSystem',
+  'logiciel-interne-developper-ou-externaliser': 'Logiciel interne : développer, acheter ou externaliser ?',
+  'alternative-saas-sur-mesure-remplacer-logiciel': 'Alternative au SaaS : quand le sur-mesure devient rentable',
+  'logiciel-gestion-hotel-independant-pms': 'Hôtel indépendant : PMS standard ou logiciel sur-mesure ?',
+}
+
+/** Le titre de l'onglet et de Google : celui de la table, sinon le titre de l'article, avec la marque s'il reste la place. */
+function seoTitle(slug: string, title: string): string {
+  if (SEO_TITLES[slug]) return SEO_TITLES[slug]
+  const branded = `${title} | NateSystem`
+  return branded.length <= 60 ? branded : title
+}
+
 export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
   const post = blogPosts.find((p) => p.slug === params.slug)
   if (!post) return {}
@@ -15,12 +39,17 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   return {
     /* Article hors niche retiré de Google le 19/11/2026 (lib/seo-pruned.ts). */
     ...(isPruned(`/blog/${post.slug}`) ? { robots: PRUNED_ROBOTS } : {}),
-    title: `${post.title} | NateSystem Blog`,
+    title: seoTitle(post.slug, post.title),
     description: post.description,
     authors: [{ name: post.author }],
+    /* Chaque article est sa propre adresse officielle (19/11/2026). Sans
+       cette ligne, il héritait de la canonique de /blog et demandait à
+       Google d'indexer la liste à sa place. */
+    alternates: { canonical: `https://www.natesystem.com/blog/${post.slug}/` },
     openGraph: {
       title: post.title,
       description: post.description,
+      url: `https://www.natesystem.com/blog/${post.slug}/`,
       type: 'article',
       publishedTime: post.date,
       authors: [post.author],

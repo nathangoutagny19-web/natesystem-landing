@@ -73,7 +73,7 @@ const caseStudiesFr: CaseStudy[] = [
     quoteAuthor: 'Catherine F.',
     quoteRole: 'Chromosome Saint-Étienne',
     metaDescription:
-      'Étude de cas Chromosome (Saint-Étienne) : deux logiciels sur-mesure, réservations et planning des bénévoles, pour un restaurant inclusif. +50 % de réservations en ligne, 30 min/jour économisées, gestion en temps réel.',
+      'Deux logiciels sur-mesure, réservations et planning des bénévoles, pour un restaurant inclusif à Saint-Étienne. +50 % de réservations en ligne.',
   },
   {
     slug: 'conseil-b2b-budapest',
@@ -114,7 +114,7 @@ const caseStudiesFr: CaseStudy[] = [
       'Le portail client renforce l’expérience et positionne le cabinet comme une référence, un vrai avantage concurrentiel dans un métier où tout le monde vend « de l’expertise ».',
     ],
     metaDescription:
-      'Étude de cas : le cabinet de Kis Zoltán, à Budapest, a capitalisé 25 ans d’expertise dans une IA sur-mesure, automatisé ses rapports clients sur 280 KPIs et déployé un portail client.',
+      'Le cabinet de Kis Zoltán, à Budapest, a mis 25 ans d’expertise dans une IA sur-mesure : rapports clients automatisés sur 280 KPIs et portail client.',
   },
 ]
 
@@ -166,7 +166,7 @@ const caseStudiesEn: CaseStudy[] = [
     quoteAuthor: 'Catherine F.',
     quoteRole: 'Chromosome Saint-Étienne',
     metaDescription:
-      'Chromosome case study (Saint-Étienne): two pieces of custom software, bookings and volunteer rota, for an inclusive restaurant. +50 % of bookings online, 30 minutes a day saved, everything managed in real time.',
+      'Two pieces of custom software, bookings and volunteer rota, for an inclusive restaurant in Saint-Étienne. +50 % of bookings now made online.',
   },
   {
     slug: 'conseil-b2b-budapest',
@@ -207,7 +207,7 @@ const caseStudiesEn: CaseStudy[] = [
       'The client portal strengthens the experience and positions the firm as a reference, a real edge in a trade where everyone sells “expertise”.',
     ],
     metaDescription:
-      'Case study: Kis Zoltán’s consulting firm in Budapest captured 25 years of expertise in a custom AI, automated its client reports across 280 KPIs and deployed a client portal.',
+      'Kis Zoltán’s consulting firm in Budapest put 25 years of expertise into a custom AI: client reports automated across 280 KPIs, plus a client portal.',
   },
 ]
 
@@ -251,7 +251,7 @@ const caseStudiesHu: CaseStudy[] = [
     quoteAuthor: 'Catherine F.',
     quoteRole: 'Chromosome Saint-Étienne',
     metaDescription:
-      'Chromosome esettanulmány (Saint-Étienne): két egyedi szoftver, foglalás és önkéntes-beosztás egy inkluzív étteremnek. A foglalások +50%-a online, napi 30 perc megspórolva, minden valós időben.',
+      'Chromosome esettanulmány (Saint-Étienne): két egyedi szoftver, foglalás és önkéntes-beosztás egy inkluzív étteremnek.',
   },
   {
     slug: 'conseil-b2b-budapest',
@@ -292,7 +292,7 @@ const caseStudiesHu: CaseStudy[] = [
       'Az ügyfélportál erősíti az élményt, és referenciává teszi a céget, ami valódi előny egy olyan szakmában, ahol mindenki „szaktudást” árul.',
     ],
     metaDescription:
-      'Esettanulmány: Kis Zoltán budapesti tanácsadó cége 25 év szaktudását mentette egyedi MI-be, automatizálta az ügyfélriportjait 280 KPI-n, és ügyfélportált vezetett be.',
+      'Kis Zoltán budapesti tanácsadó cége 25 év szaktudását mentette egyedi MI-be, és automatizálta az ügyfélriportjait 280 KPI-n.',
   },
 ]
 

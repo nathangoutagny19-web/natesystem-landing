@@ -17,6 +17,26 @@ import { SITE_URL } from './constants'
 
 const OG_LOCALE: Record<Lang, string> = { fr: 'fr_FR', en: 'en_US', hu: 'hu_HU' }
 
+/**
+ * La canonique et les trois hreflang d'une route traduite, seuls.
+ * Pour les layouts français qui gardent leurs propres titre, mots-clés et
+ * Open Graph : un hreflang n'est pris en compte par Google que s'il est
+ * réciproque, donc la page française doit déclarer /en et /hu comme celles-ci
+ * la déclarent (19/11/2026, 16 pages françaises ne le faisaient pas).
+ */
+export function localeAlternates(lang: Lang, path: string): NonNullable<Metadata['alternates']> {
+  const fr = `${SITE_URL}${path}`
+  return {
+    canonical: lang === 'fr' ? fr : `${SITE_URL}/${lang}${path}`,
+    languages: {
+      'fr-FR': fr,
+      en: `${SITE_URL}/en${path}`,
+      hu: `${SITE_URL}/hu${path}`,
+      'x-default': fr,
+    },
+  }
+}
+
 export function localeMetadata({
   lang,
   path,

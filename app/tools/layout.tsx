@@ -1,10 +1,11 @@
 import type { Metadata } from 'next'
+import { localeAlternates } from '@/lib/en-metadata'
 
 export const metadata: Metadata = {
   title: 'Outils & démos NateSystem, Diagnostic IA gratuit pour PME',
   description:
-    'Le Diagnostic IA : chiffrez ce que votre stack SaaS gaspille, le temps que votre équipe perd et votre maturité IA, 3 leviers priorisés, PDF téléchargeable. Plus deux démos live de logiciels métier en conditions réelles.',
-  alternates: { canonical: 'https://www.natesystem.com/tools' },
+    'Le Diagnostic IA : ce que vos abonnements SaaS gaspillent, le temps perdu par l’équipe et votre maturité IA, avec 3 leviers prioritaires et un PDF.',
+  alternates: localeAlternates('fr', '/tools'),
   openGraph: {
     title: 'Outils & démos NateSystem, Diagnostic IA gratuit pour PME',
     description:

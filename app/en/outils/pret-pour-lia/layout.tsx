@@ -4,9 +4,9 @@ import { SITE_URL } from '@/lib/constants'
 /** Équivalent anglais de `app/outils/pret-pour-lia/layout.tsx`. */
 
 export const metadata: Metadata = {
-  title: 'Test: is your company ready for AI? (2 min, free) | NateSystem',
+  title: 'Free test: is your company ready for AI? | NateSystem',
   description:
-    'Free AI readiness test for business owners: twelve questions tell you whether your company is ready for AI. Process, data, adoption, a straight verdict and one concrete first step. No signup.',
+    'Twelve questions tell you whether your company is ready for AI: process, data, adoption. A straight verdict and one concrete first step. No signup.',
   keywords: [
     'is my company ready for AI',
     'AI readiness assessment',

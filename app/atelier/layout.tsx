@@ -17,9 +17,9 @@ import type { Metadata } from 'next'
  */
 
 export const metadata: Metadata = {
-  title: 'Atelier de 3 h offert pour votre équipe pédagogique · NateSystem',
+  title: 'Atelier de 3 h offert pour votre équipe pédagogique',
   description:
-    'Trois heures offertes à votre équipe pédagogique : chaque professeur construit son propre outil de classe, le teste sur ses vraies copies, et repart avec. Sans développeur, chez vous ou en visio. Trois établissements ce trimestre.',
+    'Trois heures offertes : chaque professeur construit son propre outil de classe, le teste sur ses vraies copies et repart avec. Chez vous ou en visio.',
   keywords: [
     'atelier numérique équipe pédagogique',
     'formation professeurs outils numériques',

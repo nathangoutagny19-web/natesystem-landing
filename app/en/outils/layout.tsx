@@ -11,9 +11,9 @@ import { SITE_URL } from '@/lib/constants'
  */
 
 export const metadata: Metadata = {
-  title: 'Free tools for small businesses: inventory & cash flow forecast | NateSystem',
+  title: 'Free tools: inventory and cash flow forecast | NateSystem',
   description:
-    'Free tools for owners of small and mid-sized companies, no signup. Simple free inventory management software, a free cash flow forecasting tool and an AI readiness test. Try them right now.',
+    'Free tools, no signup: simple inventory management, a cash flow forecast and an AI readiness test. Try them right now.',
   keywords: [
     'free inventory management software',
     'free stock management software small business',
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'Free tools for small businesses: inventory & cash flow forecast | NateSystem',
+    title: 'Free tools: inventory and cash flow forecast | NateSystem',
     description:
       'Free inventory management software and a free cash flow forecasting tool, live with no signup. Free versions of the custom software we build.',
     url: `${SITE_URL}/en/outils`,

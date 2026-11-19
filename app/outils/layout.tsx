@@ -1,9 +1,10 @@
 import type { Metadata } from 'next'
+import { localeAlternates } from '@/lib/en-metadata'
 
 export const metadata: Metadata = {
-  title: 'Outils gratuits pour PME : gestion de stock & prévision de trésorerie | NateSystem',
+  title: 'Outils gratuits pour PME : stock et trésorerie | NateSystem',
   description:
-    'Des outils gratuits pour dirigeants de PME et TPE, sans inscription. Logiciel de gestion de stock gratuit et simple, outil de prévision de trésorerie gratuit (tableau prévisionnel entreprise). À tester tout de suite.',
+    'Des outils gratuits, sans inscription : gestion de stock simple, prévision de trésorerie et test de maturité IA. À essayer tout de suite.',
   keywords: [
     'logiciel gestion de stock gratuit PME',
     'logiciel gestion stock TPE simple',
@@ -16,16 +17,9 @@ export const metadata: Metadata = {
   ],
   /* Le hreflang doit être réciproque : /en/outils déclare le français, donc
      le français déclare l'anglais, sinon Google écarte la paire. */
-  alternates: {
-    canonical: 'https://www.natesystem.com/outils',
-    languages: {
-      'fr-FR': 'https://www.natesystem.com/outils',
-      en: 'https://www.natesystem.com/en/outils',
-      'x-default': 'https://www.natesystem.com/outils',
-    },
-  },
+  alternates: localeAlternates('fr', '/outils'),
   openGraph: {
-    title: 'Outils gratuits pour PME : gestion de stock & prévision de trésorerie | NateSystem',
+    title: 'Outils gratuits pour PME : stock et trésorerie | NateSystem',
     description:
       'Logiciel de gestion de stock gratuit et outil de prévision de trésorerie gratuit, à tester sans inscription. Des versions gratuites de ce qu’on construit sur-mesure.',
     url: 'https://www.natesystem.com/outils',

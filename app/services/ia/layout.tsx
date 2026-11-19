@@ -1,9 +1,10 @@
 import type { Metadata } from 'next'
+import { localeAlternates } from '@/lib/en-metadata'
 
 export const metadata: Metadata = {
-  title: 'Automatisation pour l\'hôtellerie de prestige, votre équipe décide | NateSystem',
+  title: 'Automatisation pour l’hospitalité de luxe | NateSystem',
   description:
-    'Première réponse dans la langue du client, reconfirmations, relances d\'acompte, fils WhatsApp transformés en demandes claires. L\'outil propose, une personne de votre équipe décide. Données hébergées en UE. Appel offert.',
+    'Première réponse dans la langue du client, reconfirmations, relances d’acompte, fils WhatsApp triés. L’outil propose, votre équipe décide. Données en UE.',
   keywords: [
     'automatisation hôtellerie de luxe',
     'automatisation conciergerie de luxe',
@@ -12,9 +13,9 @@ export const metadata: Metadata = {
     'relance acompte automatique',
     'WhatsApp demandes clients hôtellerie',
   ],
-  alternates: { canonical: 'https://www.natesystem.com/services/ia' },
+  alternates: localeAlternates('fr', '/services/ia'),
   openGraph: {
-    title: 'Automatisation pour l\'hôtellerie de prestige, votre équipe décide | NateSystem',
+    title: 'Automatisation pour l’hospitalité de luxe | NateSystem',
     description:
       'Chaque demande reçoit une première réponse dans la langue du client. Reconfirmations et relances partent seules. L\'outil propose, une personne décide.',
     url: 'https://www.natesystem.com/services/ia',
@@ -24,7 +25,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Automatisation pour l\'hôtellerie de prestige, votre équipe décide | NateSystem',
+    title: 'Automatisation pour l’hospitalité de luxe | NateSystem',
     description: 'Plus une demande qui attend sa réponse. L\'outil propose, votre équipe décide.',
   },
 }

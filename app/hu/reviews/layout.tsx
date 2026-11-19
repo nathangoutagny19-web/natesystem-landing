@@ -6,7 +6,7 @@ export const metadata: Metadata = localeMetadata({
   path: '/reviews',
   title: 'NateSystem · Reviews, véleményelemző szoftver (demó)',
   description:
-    'A NateSystem · Reviews véleményelemző termék: MI-pontozás hat szempont szerint, válaszfogalmazás az Ön márkahangján, 90 napos cselekvési tervek. A demó kitalált adatokon fut, hozzáférés az űrlapon keresztül.',
+    'A NateSystem · Reviews véleményelemző termék: MI-pontozás hat szempont szerint, válaszfogalmazás az Ön márkahangján, 90 napos cselekvési tervek.',
 })
 
 export default function HuReviewsLayout({ children }: { children: React.ReactNode }) {

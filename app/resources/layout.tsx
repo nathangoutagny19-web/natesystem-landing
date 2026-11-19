@@ -1,10 +1,11 @@
 import type { Metadata } from 'next'
+import { localeAlternates } from '@/lib/en-metadata'
 
 export const metadata: Metadata = {
   title: 'Ressources, guides, cas clients et démos NateSystem',
   description:
     'Cas clients vérifiés, guides pratiques et ressources pour les dirigeants qui veulent intégrer l\'IA et le logiciel sur-mesure dans leur PME.',
-  alternates: { canonical: 'https://www.natesystem.com/resources' },
+  alternates: localeAlternates('fr', '/resources'),
   openGraph: {
     title: 'Ressources NateSystem, guides, cas clients et démos',
     description:

@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import Nav from '@/components/layout/Nav'
 import MobileCta from '@/components/layout/MobileCta'
 import HeroNight from '@/components/home/HeroNight'
@@ -12,6 +13,32 @@ import FaqNight from '@/components/home/FaqNight'
 import { AuditBand } from '@/components/home/AuditFinal'
 import CtaFinal from '@/components/home/CtaFinal'
 import Footer from '@/components/layout/Footer'
+import { SITE_URL } from '@/lib/constants'
+
+/* La canonique et les hreflang de l'accueil vivent ici, et plus dans le
+   layout racine qui les faisait hériter à toutes les pages (19/11/2026).
+   Titre et description restent ceux du layout racine. */
+export const metadata: Metadata = {
+  alternates: {
+    canonical: `${SITE_URL}/`,
+    languages: {
+      'fr-FR': `${SITE_URL}/`,
+      en: `${SITE_URL}/en/`,
+      hu: `${SITE_URL}/hu/`,
+      'x-default': `${SITE_URL}/`,
+    },
+  },
+  openGraph: {
+    type: 'website',
+    url: `${SITE_URL}/`,
+    siteName: 'NateSystem',
+    locale: 'fr_FR',
+    title: 'Logiciel sur mesure pour l’hospitalité de luxe | NateSystem',
+    description:
+      'Votre façon de servir vos clients est unique. Votre logiciel devrait l’être aussi. Conciergeries, villas, chalets, yachts. Le code vous appartient.',
+    images: [{ url: '/og-image-2026-11.png', width: 1200, height: 630, alt: 'NateSystem' }],
+  },
+}
 
 /**
  * ACCUEIL, REFONTE DU 14 NOVEMBRE 2026. Nathan : « refais tout, inspire-toi

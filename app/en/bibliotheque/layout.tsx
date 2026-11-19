@@ -2,9 +2,9 @@ import type { Metadata } from 'next'
 import { SITE_URL } from '@/lib/constants'
 
 export const metadata: Metadata = {
-  title: 'The NateSystem library · videos and tools for private schools',
+  title: 'Videos and tools for private schools | NateSystem',
   description:
-    'Everything NateSystem publishes for private schools, in one place: the videos, and above all the maps, decision grids and templates that come with them. Access with your first name and email.',
+    'NateSystem videos for private schools, with the maps, decision grids and templates that go with them. Access with your first name and email.',
   alternates: {
     canonical: `${SITE_URL}/en/bibliotheque`,
     languages: {

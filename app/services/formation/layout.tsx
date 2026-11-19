@@ -1,9 +1,10 @@
 import type { Metadata } from 'next'
+import { localeAlternates } from '@/lib/en-metadata'
 
 export const metadata: Metadata = {
-  title: 'Formation des équipes de l\'hôtellerie de prestige, jusqu\'à l\'autonomie | NateSystem',
+  title: 'Formation et accompagnement jusqu’à l’autonomie | NateSystem',
   description:
-    'On forme la réception, la conciergerie, les équipes terrain et la direction à leur outil et à l\'usage de l\'IA au quotidien, jusqu\'à l\'autonomie complète. Documentation pour vos saisonniers, code et données 100 % à vous. Appel offert.',
+    'On forme réception, conciergerie, équipes terrain et direction à leur outil et à l’IA au quotidien, jusqu’à l’autonomie. Le code et les données sont à vous.',
   keywords: [
     'formation équipes hôtellerie de luxe',
     'formation conciergerie outils et IA',
@@ -11,9 +12,9 @@ export const metadata: Metadata = {
     'formation IA équipes réception',
     'accompagnement adoption logiciel sur-mesure',
   ],
-  alternates: { canonical: 'https://www.natesystem.com/services/formation' },
+  alternates: localeAlternates('fr', '/services/formation'),
   openGraph: {
-    title: 'Formation des équipes de l\'hôtellerie de prestige, jusqu\'à l\'autonomie | NateSystem',
+    title: 'Formation et accompagnement jusqu’à l’autonomie | NateSystem',
     description:
       'De la réception à la direction, chaque équipe formée sur son propre outil et sur l\'IA au quotidien. Documentation pour chaque saison. Code et données à vous.',
     url: 'https://www.natesystem.com/services/formation',
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Formation des équipes de l\'hôtellerie de prestige, jusqu\'à l\'autonomie | NateSystem',
+    title: 'Formation et accompagnement jusqu’à l’autonomie | NateSystem',
     description: 'Vos équipes formées à leur outil et à l\'IA au quotidien, jusqu\'à ce que tout ne passe plus par vous.',
   },
 }

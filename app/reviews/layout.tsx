@@ -1,16 +1,15 @@
 import type { Metadata } from 'next'
+import { localeAlternates } from '@/lib/en-metadata'
 
 export const metadata: Metadata = {
-  title: 'NateSystem · Reviews, Review intelligence software (demo)',
+  title: 'NateSystem · Reviews, analyse d’avis clients (démo)',
   description:
-    'NateSystem · Reviews is a review intelligence product: AI scoring on six aspects, response drafting in your brand voice, 90-day action plans. The demo runs on mock data, request access via the form.',
-  alternates: {
-    canonical: 'https://www.natesystem.com/reviews',
-  },
+    'NateSystem · Reviews lit vos avis clients : une note sur six dimensions, des réponses dans votre ton, un plan d’action à 90 jours. Démo sur données fictives.',
+  alternates: localeAlternates('fr', '/reviews'),
   openGraph: {
     type: 'website',
     url: 'https://www.natesystem.com/reviews',
-    title: 'NateSystem · Reviews, Review intelligence software (demo)',
+    title: 'NateSystem · Reviews, analyse d’avis clients (démo)',
     description:
       'Review intelligence software in demo. AI scoring, response drafts, action plans. Request demo access via the form.',
     siteName: 'NateSystem Reviews',
@@ -27,7 +26,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'NateSystem · Reviews, Review intelligence software (demo)',
+    title: 'NateSystem · Reviews, analyse d’avis clients (démo)',
     description: 'Review intelligence in demo, request access via the form.',
     images: ['/reviews/01-reputation-score.png'],
   },

@@ -1,9 +1,10 @@
 import type { Metadata } from 'next'
+import { localeAlternates } from '@/lib/en-metadata'
 
 export const metadata: Metadata = {
-  title: 'Le Diagnostic, votre organisation cartographiée avant tout engagement | NateSystem',
+  title: 'Audit d’organisation pour l’hospitalité de luxe | NateSystem',
   description:
-    'Le Diagnostic : on cartographie votre organisation, on repère où se perdent le temps, les erreurs et les clients, et vous cliquez dans un prototype construit sur vos vraies données avant tout engagement. Villas, conciergeries, yachts, hôtels indépendants, lieux de réception. Appel offert.',
+    'On cartographie votre organisation et on repère où se perdent le temps, les erreurs et les clients, avant tout engagement. Villas, conciergeries, yachts.',
   keywords: [
     'diagnostic organisation hôtellerie de luxe',
     'cartographie des process conciergerie',
@@ -11,9 +12,9 @@ export const metadata: Metadata = {
     'audit organisation lieu de réception',
     'feuille de route logiciel hôtel indépendant',
   ],
-  alternates: { canonical: 'https://www.natesystem.com/services/audit' },
+  alternates: localeAlternates('fr', '/services/audit'),
   openGraph: {
-    title: 'Le Diagnostic, votre organisation cartographiée avant tout engagement | NateSystem',
+    title: 'Audit d’organisation pour l’hospitalité de luxe | NateSystem',
     description:
       'La carte de votre organisation, un prototype cliquable sur vos vraies données, une feuille de route chiffrée. Vous ne préparez rien : vous parlez, on fait le travail.',
     url: 'https://www.natesystem.com/services/audit',
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Le Diagnostic, votre organisation cartographiée avant tout engagement | NateSystem',
+    title: 'Audit d’organisation pour l’hospitalité de luxe | NateSystem',
     description: 'On repère où se perdent le temps, les erreurs et les clients. Un prototype sur vos vraies données, avant tout engagement.',
   },
 }

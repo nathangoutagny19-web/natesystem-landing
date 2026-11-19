@@ -3,9 +3,9 @@ import { enMetadata } from '@/lib/en-metadata'
 
 export const metadata: Metadata = enMetadata({
   path: '/methode',
-  title: 'Our method: we map your organisation before building anything | NateSystem',
+  title: 'Our method: map your operation, then build | NateSystem',
   description:
-    'The NateSystem method for luxury and prestige hospitality: map, unify, automate, train, then keep evolving with you. We find first where time and clients slip away, then build the bespoke system that fixes it. You own the code.',
+    'Map, unify, automate, train, then keep improving. We first find where time and clients slip away, then build the system that fixes it. You own the code.',
 })
 
 export default function EnMethodeLayout({ children }: { children: React.ReactNode }) {

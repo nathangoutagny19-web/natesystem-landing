@@ -1,9 +1,10 @@
 import type { Metadata } from 'next'
+import { localeAlternates } from '@/lib/en-metadata'
 
 export const metadata: Metadata = {
-  title: 'Test : votre entreprise est-elle prête pour l’IA ? (2 min, gratuit) | NateSystem',
+  title: 'Test gratuit : votre entreprise est-elle prête pour l’IA ?',
   description:
-    'Diagnostic IA gratuit pour dirigeants de PME : en 12 questions, découvrez si votre entreprise est prête pour l’IA. Processus, données, adoption : un vrai verdict et un premier pas concret, sans inscription.',
+    '12 questions pour savoir si votre entreprise est prête pour l’IA : processus, données, adoption. Un verdict clair et un premier pas concret, sans inscription.',
   keywords: [
     'entreprise prête pour l’IA',
     'diagnostic IA entreprise',
@@ -12,14 +13,7 @@ export const metadata: Metadata = {
     'audit IA gratuit',
     'par où commencer avec l’IA PME',
   ],
-  alternates: {
-    canonical: 'https://www.natesystem.com/outils/pret-pour-lia',
-    languages: {
-      'fr-FR': 'https://www.natesystem.com/outils/pret-pour-lia',
-      en: 'https://www.natesystem.com/en/outils/pret-pour-lia',
-      'x-default': 'https://www.natesystem.com/outils/pret-pour-lia',
-    },
-  },
+  alternates: localeAlternates('fr', '/outils/pret-pour-lia'),
   openGraph: {
     title: 'Votre entreprise est-elle prête pour l’IA ? Le test en 2 min',
     description:

@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Prix d\'un logiciel sur-mesure en 2026 : combien prévoir ?',
   description:
-    'Combien coûte un logiciel métier sur-mesure pour une PME en 2026 ? Les fourchettes réalistes, les facteurs qui font le prix, et comment le comparer au coût cumulé de vos SaaS. Chiffrage précis lors d\'un appel offert.',
+    'Combien coûte un logiciel métier sur mesure en 2026 ? Ce qui fait le prix, et comment le comparer au coût cumulé de vos abonnements SaaS.',
   alternates: { canonical: 'https://www.natesystem.com/prix-logiciel-sur-mesure' },
   openGraph: {
     title: 'Prix d\'un logiciel sur-mesure en 2026 : combien prévoir ?',

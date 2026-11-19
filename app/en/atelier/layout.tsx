@@ -4,7 +4,7 @@ import { SITE_URL } from '@/lib/constants'
 export const metadata: Metadata = {
   title: 'A free 3-hour workshop for your teaching team · NateSystem',
   description:
-    'Three hours offered to your teaching team: every teacher builds their own classroom tool, tests it on their own students’ work, and leaves with it. No developer, at your school or online. Three schools this term.',
+    'Three hours for your teaching team: each teacher builds their own classroom tool, tests it on real student work and keeps it. At your school or online.',
   keywords: [
     'digital workshop for teachers',
     'build classroom tools without a developer',

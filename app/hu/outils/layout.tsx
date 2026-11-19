@@ -11,9 +11,9 @@ import { SITE_URL } from '@/lib/constants'
  */
 
 export const metadata: Metadata = {
-  title: 'Ingyenes eszközök kkv-knak: készlet és pénzforgalmi előrejelzés | NateSystem',
+  title: 'Ingyenes eszközök: készlet és pénzforgalom | NateSystem',
   description:
-    'Ingyenes eszközök cégvezetőknek, regisztráció nélkül. Egyszerű, ingyenes készletkezelő szoftver, ingyenes pénzforgalmi előrejelző és MI-érettségi teszt. Próbálja ki most.',
+    'Ingyenes eszközök cégvezetőknek, regisztráció nélkül: készletkezelő, pénzforgalmi előrejelző és MI-érettségi teszt. Próbálja ki most.',
   keywords: [
     'ingyenes készletkezelő szoftver',
     'ingyenes raktárkezelő program kkv',
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'Ingyenes eszközök kkv-knak: készlet és pénzforgalmi előrejelzés | NateSystem',
+    title: 'Ingyenes eszközök: készlet és pénzforgalom | NateSystem',
     description:
       'Ingyenes készletkezelő szoftver és ingyenes pénzforgalmi előrejelző, élesben, regisztráció nélkül. Ingyenes változatai annak, amit egyedire építünk.',
     url: `${SITE_URL}/hu/outils`,

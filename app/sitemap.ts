@@ -35,7 +35,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Guides « problèmes » (19/11/2026), avec l'autre langue quand elle existe.
     ...GUIDES.map((g) => ({
       url: `${BASE_URL}${g.path}`,
-      lastModified: now,
+      lastModified: g.date,
       changeFrequency: 'monthly' as const,
       priority: 0.8,
       ...(g.alternate
@@ -79,7 +79,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/logiciel-sur-mesure-enseignement-superieur`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/logiciel-sur-mesure-conseil`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/logiciel-sur-mesure-club-sportif`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE_URL}/mentions-legales`, lastModified: now, changeFrequency: 'yearly', priority: 0.2 },
   ]
 
   // Blog posts
@@ -173,8 +172,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
      redirection pour chaque page (constaté le 08/11/2026). Toutes les
      adresses, alternates compris, sont ramenées à leur forme canonique. */
   const canonical = (u: string) => (u.endsWith('/') ? u : `${u}/`)
+  /* LA DATE DE MODIFICATION N'EST GARDÉE QUE QUAND ELLE EST VRAIE (19/11/2026) :
+     articles et guides portent leur date. Les autres pages recevaient la date
+     du build, donc « modifiée aujourd'hui » sur 104 pages à chaque mise en
+     ligne : Google repère ce motif et cesse de lire les dates du site. */
   const normalize = (r: MetadataRoute.Sitemap[number]): MetadataRoute.Sitemap[number] => ({
     ...r,
+    lastModified: r.lastModified === now ? undefined : r.lastModified,
     url: canonical(r.url),
     ...(r.alternates?.languages
       ? {
@@ -197,5 +201,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ]
     /* Les pages hors niche retirées de Google le 19/11/2026 (lib/seo-pruned.ts). */
     .filter((r) => !isPruned(r.url))
+    /* Les mentions légales sont en noindex : un sitemap ne liste que des
+       pages à indexer, sinon les deux signaux se contredisent. */
+    .filter((r) => !/\/mentions-legales\/?$/.test(r.url))
     .map(normalize)
 }

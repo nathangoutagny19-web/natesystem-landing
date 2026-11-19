@@ -36,26 +36,13 @@ export const metadata: Metadata = {
   authors: [{ name: 'Nathan Goutagny', url: 'https://www.natesystem.com' }],
   creator: 'Nathan Goutagny',
   metadataBase: new URL('https://www.natesystem.com'),
-  alternates: {
-    canonical: 'https://www.natesystem.com',
-    /* 08/09/2026 — LE HREFLANG ANGLAIS EST RÉTABLI.
-       Il avait été retiré parce que les deux langues partageaient une seule
-       URL : déclarer 'en' vers la même adresse est invalide, et une
-       déclaration invalide vaut moins que pas de déclaration. L'anglais a
-       maintenant ses propres routes sous /en, donc la déclaration redevient
-       vraie. x-default pointe sur le français, qui reste la version servie
-       par défaut. */
-    languages: {
-      'fr-FR': 'https://www.natesystem.com',
-      en: 'https://www.natesystem.com/en',
-      hu: 'https://www.natesystem.com/hu',
-      'x-default': 'https://www.natesystem.com',
-    },
-  },
+  /* PAS de canonique ni de hreflang ici (19/11/2026). Posés à la racine, ils
+     étaient hérités par toute page qui n'en déclarait pas : /services et
+     /politique-anti-spam disaient à Google « l'original, c'est l'accueil ».
+     L'accueil déclare les siens dans app/page.tsx, chaque page les siens. */
   robots: { index: true, follow: true },
   openGraph: {
     type: 'website',
-    url: 'https://www.natesystem.com',
     title: 'Logiciel sur mesure pour l’hospitalité de luxe | NateSystem',
     description:
       'Votre façon de servir vos clients est unique. Votre logiciel devrait l’être aussi. Conciergeries, villas, chalets, yachts. Le code vous appartient.',

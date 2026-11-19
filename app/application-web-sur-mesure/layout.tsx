@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Application web sur-mesure : votre outil métier en ligne',
   description:
-    'Application web sur-mesure : NateSystem conçoit votre outil métier en ligne, accessible navigateur, multi-utilisateurs, temps réel. Code livré, propriété 100 %, hébergé en UE. Audit offert.',
+    'Votre outil métier en ligne, dans le navigateur, multi-utilisateurs et en temps réel. Le code vous appartient, hébergé en UE. Audit gratuit.',
   alternates: { canonical: 'https://www.natesystem.com/application-web-sur-mesure' },
   openGraph: {
     title: 'Application web sur-mesure : votre outil métier en ligne',

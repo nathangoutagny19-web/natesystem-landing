@@ -1,10 +1,11 @@
 import type { Metadata } from 'next'
+import { localeAlternates } from '@/lib/en-metadata'
 
 export const metadata: Metadata = {
-  title: 'Glossaire, logiciel sur-mesure, IA & automatisation pour PME | NateSystem',
+  title: 'Glossaire : logiciel sur mesure, IA et automatisation',
   description:
-    'Le glossaire NateSystem : définitions claires des termes du logiciel sur-mesure, de l\'IA en entreprise et de l\'automatisation, agent IA, RAG, ERP, RGPD, no-code, API, et plus. Pour dirigeants de PME.',
-  alternates: { canonical: 'https://www.natesystem.com/glossaire' },
+    'Les termes du logiciel sur mesure, de l’IA en entreprise et de l’automatisation, expliqués simplement : agent IA, RAG, ERP, RGPD, no-code, API, et d’autres.',
+  alternates: localeAlternates('fr', '/glossaire'),
   openGraph: {
     title: 'Glossaire, logiciel sur-mesure, IA & automatisation pour PME',
     description:
@@ -16,7 +17,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Glossaire, logiciel sur-mesure, IA & automatisation pour PME | NateSystem',
+    title: 'Glossaire : logiciel sur mesure, IA et automatisation',
     description: 'Définitions claires des termes du logiciel sur-mesure, de l\'IA et de l\'automatisation pour PME.',
   },
 }

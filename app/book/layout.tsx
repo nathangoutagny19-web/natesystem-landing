@@ -1,10 +1,11 @@
 import type { Metadata } from 'next'
+import { localeAlternates } from '@/lib/en-metadata'
 
 export const metadata: Metadata = {
   title: 'Réserver un appel · offert, NateSystem',
   description:
     'Appel de consulting offert : on évalue ensemble si on peut bosser ensemble. Vous repartez avec une roadmap IA sur-mesure, même si on ne travaille pas ensemble.',
-  alternates: { canonical: 'https://www.natesystem.com/book' },
+  alternates: localeAlternates('fr', '/book'),
   openGraph: {
     title: 'Réserver un appel · offert, NateSystem',
     description:

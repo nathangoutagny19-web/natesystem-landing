@@ -15,7 +15,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'combien-coute-logiciel-sur-mesure-2026',
     title: 'Combien coûte un logiciel sur-mesure en 2026 ? (fourchettes réelles)',
-    description: 'Le prix d\'un logiciel ou d\'une plateforme sur-mesure pour PME en 2026 : fourchettes réelles, ce qui fait varier le devis, sur-mesure vs SaaS sur la durée, et comment éviter les mauvaises surprises.',
+    description: 'Le prix d’un logiciel sur-mesure pour PME en 2026 : ce qui fait varier le devis, sur-mesure contre SaaS sur la durée, et les mauvaises surprises à éviter.',
     date: '2026-06-20',
     author: 'Nathan Goutagny',
     readTime: '11 min',
@@ -109,7 +109,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'combien-de-temps-developper-logiciel-metier',
     title: 'Combien de temps pour développer un logiciel métier sur-mesure ?',
-    description: 'Délai de développement d\'un logiciel métier sur-mesure pour PME : combien de temps pour la première version, les phases du projet, ce qui accélère ou ralentit, et comment éviter les projets qui n\'en finissent pas.',
+    description: 'Le temps qu’il faut pour la première version d’un logiciel métier sur-mesure, les phases du projet, ce qui accélère ou ralentit, et les pièges à éviter.',
     date: '2026-06-20',
     author: 'Nathan Goutagny',
     readTime: '9 min',
@@ -207,7 +207,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'logiciel-sur-mesure-par-ou-commencer-audit',
     title: 'Logiciel sur-mesure : par où commencer ? Le rôle de l\'audit',
-    description: 'Vous voulez un logiciel sur-mesure pour votre PME mais ne savez pas par où commencer ? Pourquoi tout part de l\'audit : cartographier vos process, chiffrer l\'inaction, et construire le bon outil, pas le mauvais.',
+    description: 'Un logiciel sur-mesure, mais par où commencer ? Tout part de l’audit : cartographier vos process, chiffrer ce que l’inaction coûte, construire le bon outil.',
     date: '2026-06-20',
     author: 'Nathan Goutagny',
     readTime: '9 min',
@@ -824,7 +824,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'construire-base-donnees-centralisee-pme-guide',
     title: 'Comment construire une base de données centralisée pour votre PME (guide pas-à-pas)',
-    description: 'Guide complet pour construire une base de données centralisée dans votre PME : audit des sources, choix d\'architecture, migration, intégrations et automatisation de la maintenance.',
+    description: 'Construire une base de données centralisée dans votre PME : audit des sources, choix d’architecture, migration, intégrations et maintenance automatisée.',
     date: '2026-03-24',
     author: 'Nathan Goutagny',
     readTime: '12 min',
@@ -1715,7 +1715,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'base-de-donnees-vs-excel-pourquoi-migrer',
     title: 'Base de données vs Excel : pourquoi votre PME doit migrer maintenant',
-    description: "73% des PME utilisent encore Excel comme base de données. Découvrez pourquoi migrer vers une vraie base de données est indispensable et comment le faire sans tout casser.",
+    description: "Pourquoi passer d’Excel à une vraie base de données quand votre PME grandit, et comment migrer sans tout casser.",
     date: '2026-03-24',
     author: 'Nathan Goutagny',
     readTime: '9 min',
@@ -2309,7 +2309,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'cout-reel-outils-non-connectes-pme',
     title: 'Le coût réel des outils non connectés dans votre PME',
-    description: 'Calculez le coût caché de vos outils SaaS déconnectés. Étude de cas, formule de calcul et solution concrète pour les PME qui veulent arrêter de perdre du temps et de l\'argent.',
+    description: 'Calculez le coût caché de vos outils SaaS qui ne se parlent pas : étude de cas, formule de calcul et solution concrète pour arrêter de perdre du temps.',
     date: '2026-03-06',
     author: 'Nathan Goutagny',
     readTime: '9 min',
@@ -2513,7 +2513,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'comment-choisir-prestataire-logiciel-ia',
     title: 'Comment choisir son prestataire pour un logiciel (et son IA) en 2026',
-    description: 'Les 10 critères pour choisir le bon prestataire logiciel ou IA : propriété du code, réversibilité, SLA, références. Grille d\'évaluation, questions à poser et comparatif SaaS / régie / sur-mesure.',
+    description: '10 critères pour choisir un prestataire logiciel ou IA : propriété du code, réversibilité, SLA, références. Grille d’évaluation et questions à poser.',
     date: '2026-06-13',
     author: 'Nathan Goutagny',
     readTime: '14 min',
@@ -2753,7 +2753,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'erp-vs-logiciel-sur-mesure',
     title: 'ERP vs logiciel sur-mesure : lequel choisir pour votre PME ?',
-    description: 'Comparatif ERP standard, no-code et logiciel sur-mesure propriétaire pour une PME : propriété, coût, adaptation, scalabilité, intégration API. Tableau complet et critères de décision.',
+    description: 'ERP standard, no-code ou logiciel sur-mesure : propriété, coût, adaptation, montée en charge et intégrations. Le tableau complet et les critères de décision.',
     date: '2026-06-13',
     author: 'Nathan Goutagny',
     readTime: '13 min',
@@ -2975,7 +2975,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'logiciel-interne-developper-ou-externaliser',
     title: 'Logiciel interne : développer en interne, acheter un SaaS ou externaliser ?',
-    description: 'Faut-il développer un logiciel interne, acheter un SaaS ou externaliser en sur-mesure ? Avantages, inconvénients, coûts et la troisième voie qui combine propriété et zéro charge d\'équipe.',
+    description: 'Développer un logiciel en interne, acheter un SaaS ou externaliser en sur-mesure ? Avantages, limites et coûts de chaque voie, et comment trancher.',
     date: '2026-06-13',
     author: 'Nathan Goutagny',
     readTime: '12 min',
@@ -3435,7 +3435,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'alternative-saas-sur-mesure-remplacer-logiciel',
     title: 'Alternative aux logiciels SaaS : quand le sur-mesure devient rentable',
-    description: 'Vos abonnements SaaS coûtent en moyenne ~4 800 $/employé/an et augmentent de 15-25 %/an. À partir de quel seuil le sur-mesure devient rentable ? Test en 3 questions et comparatif.',
+    description: 'À partir de quel seuil un logiciel sur-mesure coûte moins cher que vos abonnements SaaS ? Un test en 3 questions et un comparatif sur la durée.',
     date: '2026-06-15',
     author: 'Nathan Goutagny',
     readTime: '11 min',
@@ -3807,7 +3807,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'logiciel-gestion-hotel-independant-pms',
     title: 'Logiciel de gestion pour hôtel indépendant : PMS standard ou sur-mesure ?',
-    description: 'Un PMS pilote réservations, check-in, ménage et conformité (fiche de police, taxe de séjour, NF525). Comparatif PMS standard vs sur-mesure pour un hôtel indépendant, et comment réduire la dépendance aux OTA.',
+    description: 'Ce que fait un PMS (réservations, check-in, ménage, taxe de séjour) et quand un logiciel sur-mesure sert mieux un hôtel indépendant face aux OTA.',
     date: '2026-06-16',
     author: 'Nathan Goutagny',
     readTime: '12 min',

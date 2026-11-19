@@ -8,7 +8,7 @@ export const metadata: Metadata = localeMetadata({
   path: '/politique-anti-spam',
   title: 'Spamellenes irányelv, NateSystem',
   description:
-    'A NateSystem irányelve a kéretlen megkeresésekről: vállalásaink, a küldés gyakorlata, és hogyan lehet leiratkozni. Francia és angol nyelven ugyanazon az oldalon.',
+    'A NateSystem irányelve a kéretlen megkeresésekről: vállalásaink, a küldés gyakorlata, és hogyan lehet leiratkozni.',
   robots: { index: true, follow: true },
 })
 

@@ -5,7 +5,7 @@ export const metadata: Metadata = enMetadata({
   path: '/a-propos',
   title: 'About: Nathan Goutagny, founder of NateSystem',
   description:
-    'Nathan Goutagny, software and applied-AI engineer based in Lyon. Founder of NateSystem. Years spent building custom operational systems for French and Hungarian companies, in restaurants, higher education and consulting.',
+    'NateSystem builds bespoke software for luxury hospitality, and the client owns it. Founded by Nathan Goutagny, based in Montenegro and France.',
 })
 
 export default function EnAProposLayout({ children }: { children: React.ReactNode }) {

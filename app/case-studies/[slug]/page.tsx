@@ -24,12 +24,15 @@ export function caseStudyMetadata(slug: string, lang: Lang): Metadata {
   const frUrl = `${BASE}/case-studies/${study.slug}`
   const url = lang === 'fr' ? frUrl : `${BASE}/${lang}/case-studies/${study.slug}`
 
+  /* Le premier titre qui tient dans les 60 caractères que Google affiche (19/11/2026). */
+  const label = lang === 'en' ? 'case study' : lang === 'hu' ? 'esettanulmány' : 'étude de cas'
   const title =
-    lang === 'en'
-      ? `${study.title}, ${study.sector}, ${study.location} | NateSystem case study`
-      : lang === 'hu'
-        ? `${study.title}, ${study.sector}, ${study.location} | NateSystem esettanulmány`
-        : `${study.title}, ${study.sector}, ${study.location} | Étude de cas NateSystem`
+    [
+      `${study.title}, ${study.sector}, ${study.location} | NateSystem`,
+      `${study.title}, ${study.location}, ${label} | NateSystem`,
+      `${study.title}, ${study.location} | NateSystem`,
+      `${study.title}, ${study.location}`,
+    ].find((t) => t.length <= 60) ?? study.title
 
   return {
     title,

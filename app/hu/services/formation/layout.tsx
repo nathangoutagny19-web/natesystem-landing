@@ -6,7 +6,7 @@ export const metadata: Metadata = localeMetadata({
   path: '/services/formation',
   title: 'Képzés és támogatás a teljes önállóságig | NateSystem',
   description:
-    'Betanítjuk a csapatait, a vezetőtől a terepen dolgozóig, hogy önállóan vigyék a saját egyedi szoftverüket. Teljes dokumentáció, a kód és az infrastruktúra 100%-ban az Öné. Senkitől nem függ. Ingyenes hívás.',
+    'Betanítjuk a csapatait, a vezetőtől a terepen dolgozóig, hogy önállóan vigyék a saját egyedi szoftverüket. Teljes dokumentáció, a kód az Öné.',
 })
 
 export default function HuServicesFormationLayout({ children }: { children: React.ReactNode }) {

@@ -4,9 +4,9 @@ import { SITE_URL } from '@/lib/constants'
 /** Équivalent hongrois de `app/outils/pret-pour-lia/layout.tsx`. */
 
 export const metadata: Metadata = {
-  title: 'Teszt: készen áll a cége az MI-re? (2 perc, ingyenes) | NateSystem',
+  title: 'Ingyenes teszt: készen áll a cége az MI-re? | NateSystem',
   description:
-    'Ingyenes MI-érettségi teszt cégvezetőknek: tizenkét kérdés megmondja, készen áll-e a cége az MI-re. Folyamatok, adatok, elfogadás, őszinte ítélet és egy konkrét első lépés. Regisztráció nélkül.',
+    'Tizenkét kérdés megmondja, készen áll-e a cége az MI-re: folyamatok, adatok, elfogadás. Őszinte ítélet és egy konkrét első lépés, regisztráció nélkül.',
   keywords: [
     'készen áll a cégem az MI-re',
     'MI-érettség felmérés',
